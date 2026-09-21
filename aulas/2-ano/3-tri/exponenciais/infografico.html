@@ -1,0 +1,380 @@
+<title>Guia Visual das Exponenciais</title>
+<style>
+  :root{
+    --bg:#F4F5FB;
+    --surface:#FFFFFF;
+    --surface-2:#ECEEFA;
+    --ink:#14162B;
+    --ink-soft:#54577A;
+    --ink-faint:#8688AB;
+    --line:#D8DAF0;
+    --line-strong:#BEC1E8;
+    --primary:#382EAE;
+    --primary-ink:#FFFFFF;
+    --primary-soft:#E7E4FB;
+    --growth:#D9531A;
+    --growth-soft:#FBE5D8;
+    --growth-ink:#7A2E0C;
+    --decay:#0B7C82;
+    --decay-soft:#D9F1EF;
+    --decay-ink:#0A4B4F;
+    --success:#1C8A52;
+    --success-soft:#DCF3E6;
+    --shadow:rgba(24,26,60,.14);
+    --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  sup{ font-size:.62em; }
+  .frac{ display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; font-size:.72em; line-height:1.05; margin:0 .16em; position:relative; top:.05em; }
+  .frac .n{ padding:0 .2em; border-bottom:1.4px solid currentColor; }
+  .frac .d{ padding:0 .2em; }
+
+  .sheet{
+    max-width:1080px;
+    margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:relative;
+    padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .masthead h1{ font-size:clamp(2.1rem,5.4vw,3.4rem); font-weight:900; line-height:.98; margin:0 0 8px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--primary); }
+  .masthead p.lede{ font-family:'Source Serif 4',serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.12rem); max-width:56ch; margin:0; }
+  .mast-curve{ position:absolute; right:-10px; bottom:-30px; width:min(46%,440px); height:auto; opacity:.92; pointer-events:none; }
+  @media (max-width:640px){ .mast-curve{ display:none; } }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+
+  /* ---------- layout grid ---------- */
+  .body-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:0;
+  }
+  @media (max-width:820px){ .body-grid{ grid-template-columns:1fr; } }
+
+  .section{ padding:clamp(20px,3vw,32px) clamp(22px,4vw,40px); border-bottom:1px solid var(--line); }
+  .section:nth-child(odd){ border-right:1px solid var(--line); }
+  @media (max-width:820px){ .section:nth-child(odd){ border-right:none; } }
+
+  .section h2{ font-size:1.2rem; font-weight:800; margin:0 0 4px; display:flex; align-items:center; gap:.5em; }
+  .section .tag{ font-size:.68rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .icon{ width:22px; height:22px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 12px 12px 0; padding:12px 16px; margin:12px 0; }
+  .callout p{ margin:0; font-size:.92rem; }
+  .callout strong{ display:block; font-family:'Archivo',sans-serif; font-size:.82rem; margin-bottom:2px; }
+
+  .formula{ font-size:1.05rem; background:var(--surface-2); border:1.4px solid var(--line-strong); border-radius:10px; padding:10px 14px; display:inline-flex; align-items:center; gap:.35em; margin:6px 0; }
+  .arrow{ color:var(--ink-faint); margin:0 .28em; }
+
+  p{ line-height:1.56; font-size:.94rem; }
+  .lede-s{ color:var(--ink-soft); font-size:.9rem; }
+
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.82rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; }
+
+  /* graph duo */
+  .graph-duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:8px; }
+  @media (max-width:480px){ .graph-duo{ grid-template-columns:1fr; } }
+  .gcard{ border-radius:14px; padding:12px 14px 14px; }
+  .gcard.growth{ background:var(--growth-soft); }
+  .gcard.decay{ background:var(--decay-soft); }
+  .gcard strong{ font-size:.82rem; }
+
+  .props{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.84rem; color:var(--ink-soft); }
+  .props li::before{ content:"·"; color:var(--primary); font-weight:900; margin-right:.5em; }
+
+  .app-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }
+  .app-chip{ flex:1 1 130px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; background:var(--surface-2); border-radius:12px; padding:12px 8px; font-size:.78rem; }
+
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+  .steps li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.88rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:var(--primary); color:var(--primary-ink); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.72rem; display:flex; align-items:center; justify-content:center; }
+
+  .footer{ padding:20px clamp(22px,4vw,40px) 26px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); }
+  .footer p{ margin:0; font-size:.76rem; color:var(--ink-faint); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <svg class="mast-curve" viewBox="0 0 500 200" aria-hidden="true">
+      <line x1="20" y1="170" x2="480" y2="170" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="20" y1="170" x2="20" y2="16" stroke="var(--line-strong)" stroke-width="2"/>
+      <path d="M20,164 C 150,158 260,120 340,80 C 400,50 440,30 470,16" fill="none" stroke="var(--growth)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M20,16 C 90,44 160,84 230,116 C 320,156 400,168 470,169" fill="none" stroke="var(--decay)" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+      <circle cx="470" cy="16" r="6" fill="var(--growth)"/>
+      <circle cx="470" cy="169" r="6" fill="var(--decay)"/>
+    </svg>
+    <div class="eyebrow">Matemática · 2ª série · Aulas 69–74</div>
+    <h1>Guia rápido das <span>exponenciais</span></h1>
+    <p class="lede">Tudo o que você precisa lembrar sobre equações e funções exponenciais, numa página só.</p>
+    <div class="badges">
+      <span class="badge">f(x) = a<sup>x</sup></span>
+      <span class="badge">a &gt; 0, a ≠ 1</span>
+      <span class="badge">H15 · H20 · H21</span>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+    <!-- EQUAÇÃO EXPONENCIAL -->
+    <div class="section">
+      <div class="tag">Aula 69</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 21h12M8 21c0-4 1-7 4-9m4 9c0-4-1-7-4-9M12 3v6"/></svg>Equação exponencial</h2>
+      <p class="lede-s">A incógnita aparece <strong>no expoente</strong> de pelo menos uma potência.</p>
+      <div class="callout">
+        <strong>Regra de ouro</strong>
+        <p>Reduza os dois lados à mesma base. Se a&nbsp;&gt;&nbsp;0, a&nbsp;≠&nbsp;1 e a<sup>m</sup>&nbsp;=&nbsp;a<sup>n</sup>, então <strong>m&nbsp;=&nbsp;n</strong></p>
+      </div>
+      <p class="formula">2<sup>x</sup> = 32 <span class="arrow">⟹</span> 2<sup>x</sup> = 2<sup>5</sup> <span class="arrow">⟹</span> x = 5</p>
+      <div class="callout" style="border-color:var(--decay);background:var(--decay-soft);">
+        <strong style="color:var(--decay-ink);">Bases não batem?</strong>
+        <p>Troque de variável: faça y = a<sup>x</sup> e resolva como equação do 2º grau. Depois, volte à troca para achar x.</p>
+      </div>
+    </div>
+
+    <!-- FUNÇÃO EXPONENCIAL -->
+    <div class="section">
+      <div class="tag">Aula 70</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19h16M4 19V5m0 14 5-8 4 3 7-11"/></svg>Função exponencial</h2>
+      <p class="lede-s">Dado a real, com <strong>a &gt; 0</strong> e <strong>a ≠ 1</strong>: f(x) = a<sup>x</sup>, para todo x real.</p>
+      <table class="tbl">
+        <tr><th>por quê</th><th>condição</th></tr>
+        <tr><td>a &gt; 0</td><td style="text-align:left;">senão f(x) não existe pra todo x real</td></tr>
+        <tr><td>a ≠ 1</td><td style="text-align:left;">senão f(x) = 1 sempre (função constante)</td></tr>
+      </table>
+      <p style="margin:12px 0 4px;font-size:.86rem;"><strong>Valor numérico</strong> de f(x) = 3<sup>x</sup>:</p>
+      <table class="tbl">
+        <tr><th>x</th><td>−2</td><td>0</td><td>2</td></tr>
+        <tr><th>f(x)</th><td>1/9</td><td>1</td><td>9</td></tr>
+      </table>
+    </div>
+
+    <!-- GRÁFICOS -->
+    <div class="section">
+      <div class="tag">Aula 71</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Como ler o gráfico</h2>
+      <div class="graph-duo">
+        <div class="gcard growth">
+          <strong style="color:var(--growth-ink);">Crescente — a &gt; 1</strong>
+          <svg viewBox="0 0 200 110" style="width:100%;height:auto;margin-top:6px;">
+            <line x1="16" y1="94" x2="188" y2="94" stroke="var(--line-strong)" stroke-width="1.2"/>
+            <line x1="16" y1="94" x2="16" y2="12" stroke="var(--line-strong)" stroke-width="1.2"/>
+            <line x1="16" y1="76" x2="188" y2="76" stroke="var(--growth)" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+            <path d="M16,92 C 55,88 90,72 118,50 C 148,28 168,16 184,10" fill="none" stroke="var(--growth)" stroke-width="3.4" stroke-linecap="round"/>
+            <circle cx="58" cy="76" r="3.6" fill="var(--growth)"/>
+          </svg>
+        </div>
+        <div class="gcard decay">
+          <strong style="color:var(--decay-ink);">Decrescente — 0 &lt; a &lt; 1</strong>
+          <svg viewBox="0 0 200 110" style="width:100%;height:auto;margin-top:6px;">
+            <line x1="16" y1="94" x2="188" y2="94" stroke="var(--line-strong)" stroke-width="1.2"/>
+            <line x1="16" y1="94" x2="16" y2="12" stroke="var(--line-strong)" stroke-width="1.2"/>
+            <line x1="16" y1="76" x2="188" y2="76" stroke="var(--decay)" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+            <path d="M16,12 C 40,26 62,44 92,64 C 118,80 150,90 184,92" fill="none" stroke="var(--decay)" stroke-width="3.4" stroke-linecap="round"/>
+            <circle cx="58" cy="76" r="3.6" fill="var(--decay)"/>
+          </svg>
+        </div>
+      </div>
+      <ul class="props">
+        <li>Domínio D = ℝ &nbsp;/&nbsp; Imagem Im = ℝ*₊ (só valores positivos)</li>
+        <li>Sempre passa pelo ponto (0, 1)</li>
+        <li>Nunca toca o eixo x — assíntota horizontal y = 0</li>
+      </ul>
+    </div>
+
+    <!-- FÓRMULAS-CHAVE -->
+    <div class="section">
+      <div class="tag">Aplicações centrais</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9 9.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .8-3 1.9 1 1.8 3 1.8 3-.8 3-1.8"/></svg>Fórmulas-chave</h2>
+      <div class="gcard growth" style="margin-bottom:10px;">
+        <strong style="color:var(--growth-ink);">Juros compostos</strong>
+        <p class="formula" style="margin-top:6px;font-size:.98rem;">M = C · (1 + i)<sup>t</sup></p>
+        <p style="font-size:.8rem;margin:4px 0 0;color:var(--ink-soft);">M = montante · C = capital · i = taxa · t = tempo</p>
+      </div>
+      <div class="gcard decay">
+        <strong style="color:var(--decay-ink);">Meia-vida</strong>
+        <p class="formula" style="margin-top:6px;font-size:.94rem;">Q(t) = Q<sub>0</sub> · (1/2)<sup class="frac" style="font-size:.7em;"><span class="n">t</span><span class="d">T</span></sup></p>
+        <p style="font-size:.8rem;margin:4px 0 0;color:var(--ink-soft);">Q₀ = quantidade inicial · T = tempo de meia-vida</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- APLICAÇÕES + PASSO A PASSO -->
+  <div class="section" style="border-right:none;">
+    <div class="tag">Aula 72 · Onde aparece</div>
+    <h2 style="margin-bottom:10px;">De população a remédios</h2>
+    <div class="app-row">
+      <div class="app-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21c0-3.3 2.7-6 6-6s6 2.7 6 6M11 21c0-3.3 2.7-6 6-6s5 2.7 5 6"/></svg>
+        População
+      </div>
+      <div class="app-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9 9.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .8-3 1.9 1 1.8 3 1.8 3-.8 3-1.8"/></svg>
+        Finanças
+      </div>
+      <div class="app-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="2.4"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg>
+        Física (decaimento)
+      </div>
+      <div class="app-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>
+        Farmacologia
+      </div>
+      <div class="app-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13l2-6h14l2 6M5 13h14v5H5z"/><circle cx="8" cy="18" r="1.4"/><circle cx="16" cy="18" r="1.4"/></svg>
+        Depreciação
+      </div>
+    </div>
+
+    <div class="hairline" style="height:1px;background:var(--line);margin:18px 0;"></div>
+
+    <h2 style="font-size:1.05rem;margin-bottom:2px;">Como resolver uma equação exponencial</h2>
+    <ol class="steps">
+      <li>Isole a expressão exponencial de cada lado da igualdade.</li>
+      <li>Reescreva os dois lados como potência de <strong>mesma base</strong> — ou identifique uma troca de variável (y = a<sup>x</sup>).</li>
+      <li>Iguale os expoentes (a<sup>m</sup>=a<sup>n</sup> ⟹ m=n) ou resolva a equação auxiliar em y.</li>
+      <li>Volte à variável original e escreva o conjunto solução S.</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    <p>Matemática · 2ª série do Ensino Médio · Aulas 69–74 · Equação e Função Exponencial</p>
+    <p>FUGITA et al., 2024 · DANTE, 2016 · BALESTRI, 2016 · ENEM/INEP</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-info-exponenciais';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>

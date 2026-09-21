@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prof. Eduardo — Matemática</title>
+<meta name="description" content="Aulas interativas e guias visuais de Matemática — 2ª série do Ensino Médio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23382EAE'/%3E%3Cpath d='M22 72 C40 70 52 54 62 38 C68 28 74 22 80 18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:inherit; }
+  img,svg{ max-width:100%; }
+
+  /* ============ THEME TOGGLE ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px; height:44px; padding:0;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+
+  /* ============ LAYOUT ============ */
+  .wrap{ max-width:980px; margin:0 auto; padding:0 20px; }
+
+  header.hero{
+    border-bottom:1px solid var(--line);
+    padding:52px 0 36px;
+    background:
+      radial-gradient(600px 220px at 85% -40px, var(--primary-soft), transparent 70%),
+      var(--bg);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:.74rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary);
+    display:inline-flex; align-items:center; gap:.5em;
+  }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--primary); display:inline-block; }
+  h1.title{
+    font-size:clamp(1.9rem, 4.2vw, 2.7rem);
+    font-weight:900; margin:10px 0 8px; color:var(--ink);
+  }
+  p.lede{
+    font-size:1.05rem; color:var(--ink-soft); max-width:56ch; margin:0;
+  }
+
+  .stats{ display:flex; gap:22px; flex-wrap:wrap; margin-top:26px; }
+  .stat{ display:flex; flex-direction:column; gap:2px; }
+  .stat b{ font-family:'Archivo',sans-serif; font-size:1.4rem; font-weight:800; color:var(--ink); }
+  .stat span{ font-size:.76rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em; font-family:'JetBrains Mono',monospace; }
+
+  main{ padding:40px 0 70px; }
+
+  .tri-block + .tri-block{ margin-top:44px; }
+  .tri-heading{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:18px;
+    flex-wrap:wrap;
+  }
+  .tri-heading h2{
+    font-size:1.05rem; font-weight:800; margin:0;
+    text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);
+  }
+  .tri-heading .line{ flex:1; height:1px; background:var(--line); min-width:24px; }
+
+  .units{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+    gap:16px;
+  }
+
+  .unit-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:20px 20px 18px;
+    box-shadow:0 1px 0 var(--shadow-soft);
+    display:flex; flex-direction:column; gap:14px;
+    position:relative; overflow:hidden;
+  }
+  .unit-card::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:4px;
+    background:var(--accent, var(--primary));
+  }
+  .unit-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+  .unit-title{ font-size:1.18rem; font-weight:800; margin:0; }
+  .unit-icon{
+    width:38px; height:38px; border-radius:10px; flex:none;
+    background:var(--accent-soft, var(--primary-soft)); color:var(--accent, var(--primary));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .unit-icon svg{ width:20px; height:20px; }
+
+  .item-list{ display:flex; flex-direction:column; gap:8px; }
+  .item-link{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none; color:var(--ink);
+    border:1px solid var(--line); border-radius:10px;
+    padding:9px 12px;
+    font-family:'Archivo',sans-serif; font-size:.86rem; font-weight:700;
+    background:var(--surface-2);
+    transition:border-color .15s ease, transform .1s ease, background .15s ease;
+  }
+  .item-link:hover{ border-color:var(--accent, var(--primary)); transform:translateX(2px); }
+  .item-link .badge{
+    font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.05em;
+    padding:.22em .5em; border-radius:6px;
+    background:var(--accent-soft, var(--primary-soft)); color:var(--accent, var(--primary));
+    flex:none;
+  }
+  .item-link .txt{ flex:1; }
+  .item-link .arrow{ opacity:.4; flex:none; }
+  .item-link:hover .arrow{ opacity:1; transform:translateX(2px); }
+  .item-link .arrow svg{ width:14px; height:14px; display:block; }
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0 40px;
+    color:var(--ink-faint); font-size:.8rem;
+  }
+  footer .wrap{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center; }
+  footer .mono{ font-size:.74rem; }
+
+  @media (max-width:640px){
+    header.hero{ padding:64px 0 30px; }
+    .units{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Prof. Eduardo · Matemática</div>
+    <h1 class="title">Aulas e guias visuais</h1>
+    <p class="lede">Material interativo de Matemática para a 2ª série do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<main class="wrap" id="catalog"></main>
+
+<footer>
+  <div class="wrap">
+    <span>Feito para uso em sala — funciona offline, sem instalação.</span>
+    <span class="mono" id="updated"></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ================================================================
+  // CATÁLOGO — adicione novas unidades/trimestres/anos aqui.
+  // Cada "arquivo" é o caminho relativo a partir deste index.html.
+  // ================================================================
+  var LAST_UPDATED = '2026-09-21';
+
+  var CATALOG = [
+    {
+      ano: '2° Ano',
+      trimestres: [
+        {
+          nome: '3° Trimestre',
+          unidades: [
+            {
+              titulo: 'Exponenciais',
+              accent: 'growth',
+              icon: 'curve-up',
+              itens: [
+                { tipo:'Aula', titulo:'Função e equação exponencial', arquivo:'aulas/2-ano/3-tri/exponenciais/aula.html' },
+                { tipo:'Guia', titulo:'Guia visual — Exponenciais', arquivo:'aulas/2-ano/3-tri/exponenciais/infografico.html' }
+              ]
+            },
+            {
+              titulo: 'Logaritmos',
+              accent: 'decay',
+              icon: 'curve-log',
+              itens: [
+                { tipo:'Aula 1', titulo:'Fundamentos', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-1-fundamentos.html' },
+                { tipo:'Aula 2', titulo:'Propriedades', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-2-propriedades.html' },
+                { tipo:'Aula 3', titulo:'Equações e função', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-3-equacoes-funcao.html' },
+                { tipo:'Guia', titulo:'Guia visual — Logaritmos', arquivo:'aulas/2-ano/3-tri/logaritmos/infografico.html' }
+              ]
+            },
+            {
+              titulo: 'Funções',
+              accent: 'primary',
+              icon: 'grid',
+              itens: [
+                { tipo:'Aula 1', titulo:'Por partes e propriedades', arquivo:'aulas/2-ano/3-tri/funcoes/aula-1-partes-propriedades.html' },
+                { tipo:'Aula 2', titulo:'Composição e inversa', arquivo:'aulas/2-ano/3-tri/funcoes/aula-2-composta-inversa.html' },
+                { tipo:'Guia', titulo:'Guia visual — Funções', arquivo:'aulas/2-ano/3-tri/funcoes/infografico.html' }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+
+  var ICONS = {
+    'curve-up': '<path d="M4 19 C 9,17 13,11 17,6 L20,3"/><path d="M13 3h7v7" fill="none"/>',
+    'curve-log': '<path d="M4 17 C 8,17 10,15 12,11 C 14,7 17,5 20,5"/>',
+    'grid': '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>'
+  };
+
+  function svgIcon(name){
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[name]||ICONS['grid'])+'</svg>';
+  }
+
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  var catalogRoot = document.getElementById('catalog');
+  var totalAulas = 0, totalUnidades = 0, totalGuias = 0;
+
+  CATALOG.forEach(function(anoBlock){
+    anoBlock.trimestres.forEach(function(tri){
+      var block = el('section','tri-block');
+      var heading = el('div','tri-heading');
+      heading.appendChild(el('h2', null, anoBlock.ano + ' &middot; ' + tri.nome));
+      heading.appendChild(el('div','line'));
+      block.appendChild(heading);
+
+      var grid = el('div','units');
+      tri.unidades.forEach(function(unidade){
+        totalUnidades++;
+        var card = el('div','unit-card');
+        card.style.setProperty('--accent','var(--'+unidade.accent+')');
+        card.style.setProperty('--accent-soft','var(--'+unidade.accent+'-soft)');
+
+        var head = el('div','unit-head');
+        head.appendChild(el('h3','unit-title', unidade.titulo));
+        head.appendChild(el('div','unit-icon', svgIcon(unidade.icon)));
+        card.appendChild(head);
+
+        var list = el('div','item-list');
+        unidade.itens.forEach(function(item){
+          if(item.tipo.indexOf('Aula') === 0) totalAulas++; else totalGuias++;
+          var a = el('a','item-link');
+          a.href = item.arquivo;
+          a.innerHTML =
+            '<span class="badge">'+item.tipo+'</span>' +
+            '<span class="txt">'+item.titulo+'</span>' +
+            '<span class="arrow">'+ARROW+'</span>';
+          list.appendChild(a);
+        });
+        card.appendChild(list);
+        grid.appendChild(card);
+      });
+      block.appendChild(grid);
+      catalogRoot.appendChild(block);
+    });
+  });
+
+  var statsRoot = document.getElementById('stats');
+  function stat(num, label){
+    var s = el('div','stat');
+    s.appendChild(el('b', null, num));
+    s.appendChild(el('span', null, label));
+    statsRoot.appendChild(s);
+  }
+  stat(totalUnidades, 'Unidades');
+  stat(totalAulas, 'Aulas');
+  stat(totalGuias, 'Guias visuais');
+
+  var d = new Date(LAST_UPDATED + 'T00:00:00');
+  document.getElementById('updated').textContent = 'Atualizado em ' + d.toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' });
+
+  // ============ THEME TOGGLE ============
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-hub';
+
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
+    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+</body>
+</html>
