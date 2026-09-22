@@ -3,6 +3,24 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // --- Regras para consultas "collectionGroup" (buscam em TODAS as
+    // subcoleções "classes"/"students" de qualquer professor, não só de
+    // um caminho específico). O Firestore exige essa sintaxe recursiva
+    // à parte — a regra aninhada normal abaixo NÃO cobre esse tipo de
+    // consulta, mesmo liberando o mesmo caminho. ---
+
+    // Usada para o aluno localizar uma turma pelo código de convite,
+    // antes de estar matriculado nela.
+    match /{path=**}/classes/{classId} {
+      allow read: if request.auth != null;
+    }
+
+    // Usada para o aluno listar todas as turmas em que já está
+    // matriculado (de qualquer professor), a partir do seu próprio uid.
+    match /{path=**}/students/{studentUid} {
+      allow read: if request.auth != null && request.auth.uid == studentUid;
+    }
+
     // --- Perfil do usuário (professor ou aluno) ---
     match /users/{uid} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
