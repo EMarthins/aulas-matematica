@@ -1,6 +1,6 @@
 # Prof. Eduardo — Matemática
 
-Site com as aulas interativas e os guias visuais (infográficos) de Matemática da 2ª série do Ensino Médio. Funciona 100% offline — cada página é um arquivo HTML autocontido, sem instalação, sem servidor, sem login. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
+Site com as aulas interativas e os guias visuais (infográficos) de Matemática da 2ª e 3ª séries do Ensino Médio. Funciona 100% offline — cada página é um arquivo HTML autocontido, sem instalação, sem servidor, sem login. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
 
 ## Como publicar isso no GitHub Pages
 
@@ -31,6 +31,27 @@ aulas/
       funcoes/
         aula-1-partes-propriedades.html
         aula-2-composta-inversa.html
+        infografico.html
+  3-ano/
+    3-tri/
+      sequencias/
+        aula.html
+        infografico.html
+      progressao-aritmetica/
+        aula-1-termo-geral.html
+        aula-2-soma-termos.html
+        infografico.html
+      progressao-geometrica/
+        aula-1-termo-geral.html
+        aula-2-soma-termos.html
+        infografico.html
+      trigonometria-triangulo/
+        aula-1-relacoes-seno.html
+        aula-2-cosseno-tangente.html
+        infografico.html
+      trigonometria-ciclo/
+        aula-1-arcos-seno-cosseno.html
+        aula-2-reducao-funcoes.html
         infografico.html
 ```
 

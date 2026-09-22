@@ -1,0 +1,394 @@
+<title>Guia Visual — Trigonometria no Ciclo</title>
+<style>
+  :root{
+    --bg:#F4F5FB;
+    --surface:#FFFFFF;
+    --surface-2:#ECEEFA;
+    --ink:#14162B;
+    --ink-soft:#54577A;
+    --ink-faint:#8688AB;
+    --line:#D8DAF0;
+    --line-strong:#BEC1E8;
+    --primary:#382EAE;
+    --primary-ink:#FFFFFF;
+    --primary-soft:#E7E4FB;
+    --growth:#D9531A;
+    --growth-soft:#FBE5D8;
+    --growth-ink:#7A2E0C;
+    --decay:#0B7C82;
+    --decay-soft:#D9F1EF;
+    --decay-ink:#0A4B4F;
+    --success:#1C8A52;
+    --success-soft:#DCF3E6;
+    --shadow:rgba(24,26,60,.14);
+    --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  sup{ font-size:.62em; }
+  sub{ font-size:.62em; }
+
+  .sheet{
+    max-width:1140px;
+    margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:relative;
+    padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .masthead h1{ font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:900; line-height:1.02; margin:0 0 8px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--primary); }
+  .masthead p.lede{ font-family:'Source Serif 4',serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.12rem); max-width:60ch; margin:0; }
+  .mast-curve{ position:absolute; right:0px; bottom:-10px; width:min(36%,340px); height:auto; opacity:.92; pointer-events:none; }
+  @media (max-width:640px){ .mast-curve{ display:none; } }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+
+  /* ---------- layout grid ---------- */
+  .body-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; }
+  @media (max-width:920px){ .body-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .body-grid{ grid-template-columns:1fr; } }
+
+  .section{ padding:clamp(18px,2.6vw,26px) clamp(18px,3vw,30px); border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+  .body-grid .section:nth-child(3n){ border-right:none; }
+  @media (max-width:920px){ .body-grid .section:nth-child(3n){ border-right:1px solid var(--line); } .body-grid .section:nth-child(2n){ border-right:none; } }
+  @media (max-width:600px){ .body-grid .section{ border-right:none !important; } }
+
+  .section h2{ font-size:1.04rem; font-weight:800; margin:0 0 4px; display:flex; align-items:center; gap:.5em; }
+  .section .tag{ font-size:.66rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .icon{ width:20px; height:20px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0; }
+  .callout p{ margin:0; font-size:.86rem; }
+  .callout strong{ display:block; font-family:'Archivo',sans-serif; font-size:.78rem; margin-bottom:2px; }
+
+  .formula{ font-size:.94rem; background:var(--surface-2); border:1.4px solid var(--line-strong); border-radius:10px; padding:8px 12px; display:inline-flex; align-items:center; gap:.35em; margin:6px 0; }
+  .arrow{ color:var(--ink-faint); margin:0 .26em; }
+
+  p{ line-height:1.52; font-size:.88rem; }
+  .lede-s{ color:var(--ink-soft); font-size:.86rem; }
+
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.76rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:5px 6px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.62rem; text-transform:uppercase; letter-spacing:.03em; }
+
+  .props{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.82rem; color:var(--ink-soft); }
+  .props li::before{ content:"·"; color:var(--primary); font-weight:900; margin-right:.5em; }
+
+  /* graph duo */
+  .graph-duo{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+  @media (max-width:480px){ .graph-duo{ grid-template-columns:1fr; } }
+  .gcard{ border-radius:14px; padding:10px 12px 12px; }
+  .gcard.growth{ background:var(--growth-soft); }
+  .gcard.decay{ background:var(--decay-soft); }
+  .gcard strong{ font-size:.78rem; }
+
+  .app-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+  .app-chip{ flex:1 1 90px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; background:var(--surface-2); border-radius:12px; padding:10px 6px; font-size:.72rem; }
+
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  .steps li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.84rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:20px; height:20px; border-radius:50%; background:var(--primary); color:var(--primary-ink); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.68rem; display:flex; align-items:center; justify-content:center; }
+
+  .footer{ padding:20px clamp(22px,4vw,40px) 26px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); }
+  .footer p{ margin:0; font-size:.76rem; color:var(--ink-faint); }
+
+  .wide{ grid-column:1 / -1; border-right:none !important; }
+  .quad-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:10px; }
+  @media (max-width:820px){ .quad-grid{ grid-template-columns:repeat(2,1fr); } }
+  .quad-card{ background:var(--surface-2); border-radius:12px; padding:10px; text-align:center; }
+  .quad-card .lbl{ font-size:.66rem; color:var(--ink-faint); font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+  .quad-card .signs{ font-family:'JetBrains Mono',monospace; font-size:.9rem; font-weight:700; margin-top:4px; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <svg class="mast-curve" viewBox="0 0 400 200" aria-hidden="true">
+      <line x1="20" y1="170" x2="20" y2="20" stroke="var(--line-strong)" stroke-width="1.6" stroke-dasharray="3 4"/>
+      <line x1="180" y1="100" x2="380" y2="100" stroke="var(--line-strong)" stroke-width="1.6" stroke-dasharray="3 4"/>
+      <circle cx="180" cy="100" r="78" fill="none" stroke="var(--primary)" stroke-width="4.5"/>
+      <line x1="180" y1="100" x2="237" y2="49" stroke="var(--ink-soft)" stroke-width="3"/>
+      <line x1="237" y1="49" x2="237" y2="100" stroke="var(--growth)" stroke-width="4" stroke-dasharray="3 3"/>
+      <line x1="237" y1="49" x2="180" y2="49" stroke="var(--decay)" stroke-width="4" stroke-dasharray="3 3"/>
+      <circle cx="237" cy="49" r="6" fill="var(--primary)"/>
+    </svg>
+    <div class="eyebrow">Matemática · 3ª série · Aulas 93–100</div>
+    <h1>Guia visual — <span>trigonometria no ciclo</span></h1>
+    <p class="lede">Arcos, circunferência trigonométrica, sinais por quadrante, redução ao 1º quadrante e os gráficos de seno, cosseno e tangente — tudo numa página só.</p>
+    <div class="badges">
+      <span class="badge">sen θ = y · cos θ = x</span>
+      <span class="badge">π rad = 180°</span>
+      <span class="badge">H20 · H6</span>
+    </div>
+  </div>
+
+  <!-- CICLO TRIGONOMÉTRICO -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Aulas 93 e 94</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M4 12h16M12 3v18"/></svg>Ciclo trigonométrico</h2>
+    <p class="lede-s">Circunferência de <strong>raio 1</strong>, centrada na origem. Sentido anti-horário é positivo; horário, negativo. Divide-se em 4 quadrantes.</p>
+    <svg viewBox="0 0 200 200" style="width:100%;max-width:180px;height:auto;margin:6px auto;display:block;">
+      <line x1="10" y1="100" x2="190" y2="100" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <circle cx="100" cy="100" r="75" fill="none" stroke="var(--primary)" stroke-width="3"/>
+      <text x="132" y="62" font-family="Archivo" font-size="12" font-weight="700" fill="var(--ink-faint)">I</text>
+      <text x="60" y="62" font-family="Archivo" font-size="12" font-weight="700" fill="var(--ink-faint)">II</text>
+      <text x="58" y="145" font-family="Archivo" font-size="12" font-weight="700" fill="var(--ink-faint)">III</text>
+      <text x="130" y="145" font-family="Archivo" font-size="12" font-weight="700" fill="var(--ink-faint)">IV</text>
+    </svg>
+    <p class="props" style="margin-top:0;"><li>Arcos côngruos: α + k·360° (mesma extremidade, k voltas)</li></p>
+  </div>
+
+  <!-- SINAIS -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Aulas 95 e 96</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/></svg>Sinais por quadrante</h2>
+    <p class="lede-s">sen θ = y (eixo dos senos) · cos θ = x (eixo dos cossenos)</p>
+    <div class="quad-grid">
+      <div class="quad-card"><span class="lbl">Q I</span><div class="signs">sen + · cos +</div></div>
+      <div class="quad-card"><span class="lbl">Q II</span><div class="signs">sen + · cos −</div></div>
+      <div class="quad-card"><span class="lbl">Q III</span><div class="signs">sen − · cos −</div></div>
+      <div class="quad-card"><span class="lbl">Q IV</span><div class="signs">sen − · cos +</div></div>
+    </div>
+  </div>
+
+  <!-- ÂNGULOS NOTÁVEIS -->
+  <div class="section">
+    <div class="tag">Decore estes três</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20 20 4M14 4h6v6"/></svg>Ângulos notáveis</h2>
+    <table class="tbl">
+      <tr><th>α</th><td>30°</td><td>45°</td><td>60°</td></tr>
+      <tr><th>sen α</th><td>1/2</td><td>√2/2</td><td>√3/2</td></tr>
+      <tr><th>cos α</th><td>√3/2</td><td>√2/2</td><td>1/2</td></tr>
+    </table>
+    <p class="lede-s" style="margin-top:6px;">Esses valores aparecem o tempo todo — combinados com o quadrante certo, resolvem quase tudo.</p>
+  </div>
+
+  <!-- REDUÇÃO AO 1º QUADRANTE -->
+  <div class="section wide">
+    <div class="tag">Aula 97</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16M4 12l5-5M4 12l5 5"/></svg>Redução ao 1º quadrante</h2>
+    <p class="lede-s">Para calcular sen e cos de um arco θ fora do 1º quadrante: reduza, depois aplique o sinal do quadrante original.</p>
+    <table class="tbl">
+      <tr><th>quadrante de θ</th><th>fórmula (grau)</th><th>fórmula (radiano)</th></tr>
+      <tr><td>2º</td><td>x = 180° − θ</td><td>x = π − θ</td></tr>
+      <tr><td>3º</td><td>x = θ − 180°</td><td>x = θ − π</td></tr>
+      <tr><td>4º</td><td>x = 360° − θ</td><td>x = 2π − θ</td></tr>
+    </table>
+    <div class="callout" style="margin-top:10px;">
+      <strong>Exemplo</strong>
+      <p>sen 120°: Q2 → x=180−120=60° → sen 120° = +sen 60° = √3/2</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+    <!-- FUNÇÃO SENO -->
+    <div class="section">
+      <div class="tag">Aula 98</div>
+      <h2><svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12c2-8 4-8 6 0s4 8 6 0 4-8 6 0"/></svg>Função seno</h2>
+      <svg viewBox="0 0 200 90" style="width:100%;height:auto;margin-top:4px;">
+        <line x1="10" y1="45" x2="190" y2="45" stroke="var(--line-strong)" stroke-width="1.1"/>
+        <path d="M14,45 C30,45 40,17 57,17 C74,17 84,45 100,45 C116,45 126,73 143,73 C160,73 170,45 186,45" fill="none" stroke="var(--growth)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <table class="tbl"><tr><th>período</th><td>2π</td></tr><tr><th>domínio</th><td>ℝ</td></tr><tr><th>imagem</th><td>[−1,1]</td></tr></table>
+    </div>
+
+    <!-- FUNÇÃO COSSENO -->
+    <div class="section">
+      <div class="tag">Aula 99</div>
+      <h2><svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6c2 8 4 8 6 0s4-8 6 0 4 8 6 0"/></svg>Função cosseno</h2>
+      <svg viewBox="0 0 200 90" style="width:100%;height:auto;margin-top:4px;">
+        <line x1="10" y1="45" x2="190" y2="45" stroke="var(--line-strong)" stroke-width="1.1"/>
+        <path d="M14,17 C30,17 40,45 57,45 C74,45 84,73 100,73 C116,73 126,45 143,45 C160,45 170,17 186,17" fill="none" stroke="var(--decay)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <table class="tbl"><tr><th>período</th><td>2π</td></tr><tr><th>domínio</th><td>ℝ</td></tr><tr><th>imagem</th><td>[−1,1]</td></tr></table>
+    </div>
+
+    <!-- FUNÇÃO TANGENTE -->
+    <div class="section">
+      <div class="tag">Aula 100</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 21V3M20 21V3"/></svg>Função tangente</h2>
+      <svg viewBox="0 0 200 90" style="width:100%;height:auto;margin-top:4px;">
+        <line x1="10" y1="45" x2="190" y2="45" stroke="var(--line-strong)" stroke-width="1.1"/>
+        <line x1="45" y1="8" x2="45" y2="82" stroke="var(--ink-faint)" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <line x1="150" y1="8" x2="150" y2="82" stroke="var(--ink-faint)" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <path d="M47,10 C60,30 68,40 97,45 C126,50 134,60 148,80" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <table class="tbl"><tr><th>período</th><td>π</td></tr><tr><th>domínio</th><td>x≠π/2+kπ</td></tr><tr><th>imagem</th><td>ℝ</td></tr></table>
+      <p class="formula" style="font-size:.86rem;">tg x = sen x / cos x</p>
+    </div>
+
+  </div>
+
+  <!-- PARÂMETROS DA FUNÇÃO -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Alterando o gráfico</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16M4 6h10M4 18h7"/></svg>f(x) = A + B·cos(Cx + D)</h2>
+    <ul class="props">
+      <li><strong>B</strong> — altera a amplitude (multiplica a imagem [−1,1])</li>
+      <li><strong>C</strong> — altera o período (novo período = 2π/|C|)</li>
+      <li><strong>A</strong> — desloca o gráfico na vertical</li>
+      <li><strong>D</strong> — desloca o gráfico na horizontal (fase)</li>
+    </ul>
+  </div>
+
+  <!-- ONDE APARECE -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Fenômenos periódicos</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Onde aparece</h2>
+    <div class="app-row">
+      <div class="app-chip">Marés e dia/noite</div>
+      <div class="app-chip">Roda-gigante</div>
+      <div class="app-chip">Batimentos cardíacos</div>
+      <div class="app-chip">Ondas sonoras</div>
+    </div>
+  </div>
+
+  <!-- DICAS ENEM -->
+  <div class="section">
+    <div class="tag">Dicas de prova</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>No ENEM, atenção a</h2>
+    <ol class="steps">
+      <li>Ângulo central = 2 × ângulo inscrito (mesmo arco)</li>
+      <li>Comprimento de arco: s = α · r (α em radianos)</li>
+      <li>Gráfico de movimento circular uniforme é sempre <strong>suave</strong>, nunca com bicos ou retas</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    <p>Matemática · 3ª série do Ensino Médio · Aulas 93–100 · Trigonometria no ciclo</p>
+    <p>BONJORNO, GIOVANNI JR. e SOUSA, 2020 · DANTE, 2016 · IEZZI, 2013 · ENEM/INEP</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-tric-info';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>

@@ -1,0 +1,891 @@
+<title>Sequências Numéricas: Padrões e Termo Geral</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · Sequências Numéricas</div>
+    <div>3ª Série do Ensino Médio · Aulas 69–72</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+      <!-- 0 CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,220 C 160,210 260,150 360,120 C 480,84 620,90 840,30" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="120" cy="216" r="6" fill="var(--primary)"/>
+            <circle cx="280" cy="150" r="6" fill="var(--primary)"/>
+            <circle cx="480" cy="98" r="6" fill="var(--primary)"/>
+            <circle cx="700" cy="58" r="6" fill="var(--primary)"/>
+            <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">Matemática · 3ª série · Trimestre 3</div>
+          <h1 class="disp" style="font-size:clamp(2.2rem,6vw,4rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:15ch;">Sequências numéricas: <span style="color:var(--primary);">o padrão por trás dos números</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Da casca do abacaxi à razão áurea do ENEM: como transformar um padrão em uma fórmula que prevê qualquer termo, sem contar um por um.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">AULAS 69–72</span>
+            <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">a<sub>n</sub> = f(n)</span>
+            <span class="badge">H2 · H21</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+      <!-- 1 ROTEIRO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">Seis paradas até o termo geral</h2>
+          <p class="lede">Do reconhecimento de um padrão até resolver questões reais do ENEM e da Prova Brasil.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">01</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+              <div><strong>O que é uma sequência numérica</strong><div class="hint">lista ordenada de números, notação a<sub>n</sub></div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">02</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 8l4 6 6-10"/></svg>
+              <div><strong>Da lista à fórmula</strong><div class="hint">lei do termo geral e método das diferenças constantes</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">03</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 4v16M4 8h16"/></svg>
+              <div><strong>Padrões figurais</strong><div class="hint">canudos e pontos em questões da Prova Brasil</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">04</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3"/></svg>
+              <div><strong>ENEM: a razão áurea (φ)</strong><div class="hint">potências, recorrência e Fibonacci escondido</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">05</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 12 4l8 16H4Z"/></svg>
+              <div><strong>Padrões quadráticos e exponenciais</strong><div class="hint">números pentagonais e crescimento por dobras</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">06</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>
+              <div><strong>Aplicações reais</strong><div class="hint">do mosaico de blocos ao anfiteatro</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 OBJETIVOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Reconhecer um <strong>padrão numérico ou figural</strong> e descrevê-lo com palavras.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Construir a <strong>expressão algébrica do termo geral</strong> (a<sub>n</sub>) de uma sequência.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Aplicar o <strong>método das diferenças constantes</strong> para sequências lineares e quadráticas.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Resolver questões do <strong>ENEM e da Prova Brasil</strong> que envolvem sequências.</span></li>
+            </ul>
+            <div class="card">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Habilidades trabalhadas</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div><span class="badge">H2</span> <span style="font-size:.88rem;color:var(--ink-soft);">Identificar padrões numéricos ou princípios de contagem</span></div>
+                <div><span class="badge">H21</span> <span style="font-size:.88rem;color:var(--ink-soft);">Resolver situação-problema cuja modelagem envolva conhecimentos algébricos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 GANCHO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">O que a casca do abacaxi, o girassol e os anéis da árvore têm em comum?</h2>
+          <div class="grid2">
+            <div>
+              <p><strong>Dendrocronologia</strong> é o ramo da ciência que estuda a datação dos anéis de crescimento das plantas. Por meio dos padrões dos anéis, conseguimos determinar a idade das árvores e analisar outras características.</p>
+              <p>Já a casca de um abacaxi não organiza suas escamas de forma aleatória: há uma ordem clara em como cada camada cresce e se sobrepõe — um padrão que se repete e se transforma segundo uma regra.</p>
+            </div>
+            <div>
+              <div class="callout">
+                <h4>No centro do girassol</h4>
+                <p>As sementes crescem em espirais intercaladas — algumas no sentido horário, outras no anti-horário. Contando as espirais de cada sentido, os dois números quase sempre são termos consecutivos da sequência de Fibonacci, brotando em ângulos de aproximadamente 137,5° (o Ângulo de Ouro).</p>
+              </div>
+              <button class="reveal" onclick="toggleAnswer(this)">Qual é a conexão matemática?</button>
+              <div class="answer">
+                <p>Em todos os casos, a natureza segue um <strong>padrão que se repete e se transforma de acordo com uma regra</strong> — exatamente o que chamamos de <strong>sequência numérica</strong>.</p>
+                <p class="hint">Quando enxergamos essa regra oculta, ganhamos a capacidade de prever exatamente a próxima etapa, sem precisar construí-la ou contá-la uma por uma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 TEORIA: O QUE É UMA SEQUÊNCIA -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 71 · Teoria</div>
+          <h2 class="title">O que é uma sequência numérica</h2>
+          <div class="callout">
+            <h4>Definição</h4>
+            <p>Uma sequência numérica é uma <strong>lista ordenada</strong> de números. A ordem importa: mudar a posição de um número altera a sequência.</p>
+          </div>
+          <div class="grid2" style="margin-top:14px;">
+            <div class="card">
+              <strong>Finitas e infinitas</strong>
+              <p style="font-size:.9rem;margin-top:8px;">Finita: tem um número determinado de termos.<br>Exemplo: (2, 4, 6, 8).</p>
+              <p style="font-size:.9rem;">Infinita: continua indefinidamente.<br>Exemplo: (1, 3, 5, 7, …).</p>
+            </div>
+            <div class="card">
+              <strong>Notação a<sub>n</sub></strong>
+              <p style="font-size:.9rem;margin-top:8px;">a<sub>1</sub>: primeiro termo · a<sub>2</sub>: segundo termo · a<sub>n</sub>: termo geral (posição n)</p>
+              <p class="formula" style="font-size:.95rem;margin-top:6px;">(5, 10, 15, 20) <span class="arrow">⟹</span> a<sub>1</sub>=5, a<sub>3</sub>=15</p>
+            </div>
+          </div>
+          <p class="hint" style="margin-top:14px;">Verificação rápida — clique em cada afirmação:</p>
+          <div id="vfCards" style="display:flex;flex-direction:column;gap:8px;margin-top:6px;">
+            <button class="choice vf" data-ok="0" data-why="É finita: tem exatamente 4 termos.">A sequência (2, 4, 6, 8) é infinita.</button>
+            <button class="choice vf" data-ok="1" data-why="Correto — a₁ é sempre o primeiro termo da sequência.">Em uma sequência, a<sub>1</sub> representa o primeiro termo.</button>
+            <button class="choice vf" data-ok="0" data-why="A ordem importa — trocar a posição dos termos gera uma sequência diferente.">Trocar a ordem dos termos não muda a sequência.</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 ATIVIDADE 1 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 1 · No quadro, oral</div>
+          <h2 class="title">Complete o padrão</h2>
+          <p class="lede">Chame estudantes para descobrir, em voz alta, o próximo termo de cada sequência.</p>
+          <div class="grid3" style="margin-top:14px;">
+            <div class="card"><p class="formula" style="font-size:.92rem;">13, −1, −15, −29, −43, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>Diferença constante de −14 → <strong>−57</strong></p></div></div>
+            <div class="card"><p class="formula" style="font-size:.92rem;">1, 4, 9, 16, 25, 36, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>São os quadrados perfeitos (n²) → <strong>49</strong></p></div></div>
+            <div class="card"><p class="formula" style="font-size:.92rem;">1, 4, 7, 10, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>Diferença constante de +3 → <strong>13</strong></p></div></div>
+            <div class="card"><p class="formula" style="font-size:.92rem;">½, ¼, ⅛, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>Cada termo é metade do anterior → <strong>1/16</strong></p></div></div>
+            <div class="card"><p class="formula" style="font-size:.92rem;">0, 3, 8, 15, 24, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>É sempre 1 a menos que um quadrado perfeito → <strong>35</strong></p></div></div>
+            <div class="card"><p class="formula" style="font-size:.92rem;">3, 6, 12, 24, ___</p><button class="reveal" onclick="toggleAnswer(this)">Conferir</button><div class="answer"><p>Cada termo é o dobro do anterior → <strong>48</strong></p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 TEORIA: TERMO GERAL + MÉTODO DAS DIFERENÇAS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aulas 71 e 72 · Teoria</div>
+          <h2 class="title">Da lista de números à fórmula</h2>
+          <p class="lede">A lei do termo geral (a<sub>n</sub>) é uma regra matemática que calcula o valor do termo usando apenas a sua posição n.</p>
+          <div class="grid2" style="margin-top:12px;">
+            <div class="card">
+              <strong>Termo geral</strong>
+              <p class="formula" style="font-size:1rem;margin-top:8px;">a<sub>n</sub> = 3n + 1</p>
+              <p style="font-size:.85rem;margin-top:6px;">a<sub>1</sub> = 3(1)+1 = 4 &nbsp;·&nbsp; a<sub>2</sub> = 3(2)+1 = 7</p>
+              <p style="font-size:.85rem;color:var(--ink-soft);">Já (1, 4, 9, 16, 25, …) tem termo geral a<sub>n</sub> = n².</p>
+            </div>
+            <div class="card">
+              <strong>Método das diferenças constantes</strong>
+              <p style="font-size:.85rem;margin-top:6px;">Sequência de assentos: (14, 18, 22, 26, …). Diferença sempre <strong>+4</strong> → forma A<sub>n</sub> = 4n + k.</p>
+              <p style="font-size:.85rem;">Usando A<sub>1</sub>=14: 4(1)+k=14 ⟹ <strong>k=10</strong> ⟹ A<sub>n</sub> = 4n + 10.</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Regra prática</h4>
+            <p>Se a diferença entre termos consecutivos é sempre a <strong>mesma</strong>, a sequência é linear (a<sub>n</sub>=kn+b). Se a diferença das diferenças (2ª diferença) é constante, a sequência é quadrática (a<sub>n</sub>=an²+bn+c).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 ATIVIDADE 2 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 2 · Qual é a regra?</div>
+          <h2 class="title">Encontre a expressão geral</h2>
+          <p class="lede">Observe a sequência (1, 4, 7, 10, …), onde n é a posição de cada termo. Qual é a regra geral?</p>
+          <div class="mc-block" style="margin-top:14px;max-width:520px;">
+            <div class="mc-options">
+              <button class="choice mcopt" data-ok="0">A) n + 3</button>
+              <button class="choice mcopt" data-ok="0">B) 2n − 1</button>
+              <button class="choice mcopt" data-ok="1">C) 3n − 2</button>
+              <button class="choice mcopt" data-ok="0">D) 4n − 3</button>
+            </div>
+            <div class="fb"></div>
+            <div class="answer">
+              <p><strong>Testando n=1</strong> (esperado 1): apenas a alternativa A erra (n+3=4).</p>
+              <p><strong>Testando n=2</strong> (esperado 4): B dá 3 e D dá 5 — só C dá 4.</p>
+              <p>Logo, a regra geral é <strong>a<sub>n</sub> = 3n − 2</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 CANUDOS (ENEM) -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 3 · No ENEM é assim</div>
+          <h2 class="title">Canudos de refrigerante</h2>
+          <p class="lede">Uma professora realizou uma atividade com seus alunos utilizando canudos de refrigerante para montar figuras, em que cada lado foi representado por um canudo. A quantidade de canudos (C) de cada figura depende da quantidade de quadrados (Q) que formam cada figura.</p>
+          <table class="tbl" style="max-width:420px;margin:10px 0;">
+            <tr><th>Figura</th><th>Q (quadrados)</th><th>C (canudos)</th></tr>
+            <tr><td>I</td><td>1</td><td>4</td></tr>
+            <tr><td>II</td><td>2</td><td>7</td></tr>
+            <tr><td>III</td><td>3</td><td>10</td></tr>
+          </table>
+          <p class="lede" style="font-weight:700;color:var(--ink);">Que expressão fornece a quantidade de canudos em função da quantidade de quadrados de cada figura?</p>
+          <div class="mc-block" style="margin-top:8px;max-width:420px;">
+            <div class="mc-options">
+              <button class="choice mcopt" data-ok="0">(A) C = 4Q</button>
+              <button class="choice mcopt" data-ok="1">(B) C = 3Q + 1</button>
+              <button class="choice mcopt" data-ok="0">(C) C = 4Q − 1</button>
+              <button class="choice mcopt" data-ok="0">(D) C = Q + 3</button>
+            </div>
+            <div class="fb"></div>
+            <div class="answer">
+              <p><strong>1ª estratégia — padrão visual:</strong> o primeiro quadrado usa 4 canudos "fixos". A partir daí, um lado já existe, então cada novo quadrado soma apenas <strong>3 canudos</strong>. Logo C = 3Q + 1.</p>
+              <p><strong>2ª estratégia — teste de alternativas:</strong> para Q=1 (C=4), A, B e D funcionam, mas C erra (4·1−1=3). Para Q=2 (C=7), apenas B bate: 3·2+1=7.</p>
+              <p>Resposta: <strong>C = 3Q + 1</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 PROVA BRASIL: PONTOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 4 · Como na Prova Brasil</div>
+          <h2 class="title">O padrão dos pontos</h2>
+          <p class="lede">As figuras abaixo estão organizadas dentro de um padrão que se repete: em cada etapa, forma-se um quadrado com mais um ponto abaixo.</p>
+          <table class="tbl" style="max-width:480px;margin:10px 0;">
+            <tr><th>n</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+            <tr><th>N</th><td>2</td><td>5</td><td>10</td><td>17</td><td>26</td><td>37</td></tr>
+          </table>
+          <p class="lede" style="font-weight:700;color:var(--ink);">Mantendo esta disposição, a expressão algébrica que representa o número de pontos N em função da ordem n é:</p>
+          <div class="mc-block" style="margin-top:8px;max-width:420px;">
+            <div class="mc-options">
+              <button class="choice mcopt" data-ok="0">(A) N = n + 1</button>
+              <button class="choice mcopt" data-ok="0">(B) N = n² − 1</button>
+              <button class="choice mcopt" data-ok="0">(C) N = 2n + 1</button>
+              <button class="choice mcopt" data-ok="1">(D) N = n² + 1</button>
+            </div>
+            <div class="fb"></div>
+            <div class="answer">
+              <p>Observe que N − 1 forma sempre um quadrado perfeito:</p>
+              <p>n=1 → 1²=1 (N=2) &nbsp;·&nbsp; n=2 → 2²=4 (N=5) &nbsp;·&nbsp; n=3 → 3²=9 (N=10)</p>
+              <p>Logo, a expressão é <strong>N = n² + 1</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ENEM 2021 Q136 ENUNCIADO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 5 · No ENEM é assim (ENEM 2021 · Questão 136 · Prova Azul)</div>
+          <h2 class="title">As potências da razão áurea</h2>
+          <p class="lede">Um segmento de reta está dividido em duas partes na proporção áurea quando o todo está para uma das partes na mesma razão em que essa parte está para a outra. Essa constante de proporcionalidade é comumente representada pela letra grega <strong>φ</strong>, e seu valor é dado pela solução positiva da equação <strong>φ² = φ + 1</strong>.</p>
+          <p class="lede">Assim como a potência φ², as potências superiores de φ podem ser expressas da forma <strong>aφ + b</strong>, em que a e b são inteiros positivos, como apresentado no quadro.</p>
+          <table class="tbl" style="max-width:320px;margin:12px 0;">
+            <tr><th>potência</th><th>forma aφ + b</th></tr>
+            <tr><td>φ²</td><td>1φ + 1</td></tr>
+            <tr><td>φ³</td><td>2φ + 1</td></tr>
+            <tr><td>φ⁴</td><td>3φ + 2</td></tr>
+            <tr><td>φ⁵</td><td>5φ + 3</td></tr>
+            <tr><td>φ⁶</td><td>8φ + 5</td></tr>
+            <tr><td>φ⁷</td><td>?</td></tr>
+          </table>
+          <div class="callout">
+            <h4>Comando da questão</h4>
+            <p>Determine qual é a expressão algébrica equivalente à potência φ⁷ na forma aφ + b.</p>
+          </div>
+          <p class="hint">Avance para o próximo slide para ver as duas estratégias de resolução.</p>
+        </div>
+      </section>
+
+      <!-- 11 ENEM 2021 RESOLVENDO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">ENEM 2021 · Resolvendo</div>
+          <h2 class="title">Duas estratégias para chegar à resposta</h2>
+          <button class="reveal" onclick="toggleAnswer(this)">Ver resolução passo a passo</button>
+          <div class="answer">
+            <div class="grid2" style="margin-top:4px;">
+              <div class="card">
+                <strong>1ª estratégia — padrão da sequência</strong>
+                <p style="font-size:.86rem;margin-top:6px;">Sequência dos valores de <strong>a</strong>: 1, 2, 3, 5, 8, … <br>1+2=3 &nbsp;·&nbsp; 2+3=5 &nbsp;·&nbsp; 3+5=8 &nbsp;·&nbsp; próximo: 5+8=<strong>13</strong></p>
+                <p style="font-size:.86rem;">Sequência dos valores de <strong>b</strong>: 1, 1, 2, 3, 5, … <br>1+1=2 &nbsp;·&nbsp; 1+2=3 &nbsp;·&nbsp; 2+3=5 &nbsp;·&nbsp; próximo: 3+5=<strong>8</strong></p>
+                <p style="font-size:.86rem;color:var(--ink-soft);">Cada número é a soma dos dois anteriores — um Fibonacci escondido!</p>
+              </div>
+              <div class="card">
+                <strong>2ª estratégia — raciocínio algébrico</strong>
+                <p style="font-size:.86rem;margin-top:6px;">φ⁷ = φ⁶ · φ, e do quadro φ⁶ = 8φ + 5. Logo:</p>
+                <p class="formula" style="font-size:.86rem;">φ⁷ = (8φ+5)·φ = 8φ² + 5φ</p>
+                <p style="font-size:.86rem;">Substituindo φ² = φ+1: φ⁷ = 8(φ+1) + 5φ = 8φ + 8 + 5φ</p>
+              </div>
+            </div>
+            <div class="callout" style="margin-top:10px;">
+              <h4>Resposta</h4>
+              <p>φ⁷ = <strong>13φ + 8</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 ENEM 2023 Q176 ENUNCIADO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">ENEM 2023 · Questão 176 · Prova Azul</div>
+          <h2 class="title">Os números pentagonais</h2>
+          <p class="lede">Os números figurados pentagonais provavelmente foram introduzidos pelos pitagóricos por volta do século V a.C. As figuras ilustram como obter os seis primeiros deles, sendo os demais obtidos seguindo o mesmo padrão geométrico.</p>
+          <table class="tbl" style="max-width:520px;margin:12px 0;">
+            <tr><th>posição</th><td>P<sub>1</sub></td><td>P<sub>2</sub></td><td>P<sub>3</sub></td><td>P<sub>4</sub></td><td>P<sub>5</sub></td><td>P<sub>6</sub></td></tr>
+            <tr><th>valor</th><td>1</td><td>5</td><td>12</td><td>22</td><td>35</td><td>51</td></tr>
+          </table>
+          <div class="callout">
+            <h4>Comando da questão</h4>
+            <p>O oitavo número pentagonal é... (determine P<sub>8</sub>)</p>
+          </div>
+          <p class="hint">Avance para o próximo slide para ver o método das diferenças sucessivas.</p>
+        </div>
+      </section>
+
+      <!-- 13 ENEM 2023 RESOLVENDO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">ENEM 2023 · Resolvendo</div>
+          <h2 class="title">O método das diferenças sucessivas</h2>
+          <button class="reveal" onclick="toggleAnswer(this)">Ver resolução passo a passo</button>
+          <div class="answer">
+            <p><strong>Passo 1 — calcule as diferenças entre termos consecutivos:</strong></p>
+            <p style="font-size:.9rem;">5−1=4 &nbsp;·&nbsp; 12−5=7 &nbsp;·&nbsp; 22−12=10 &nbsp;·&nbsp; 35−22=13 &nbsp;·&nbsp; 51−35=16</p>
+            <p style="font-size:.9rem;color:var(--ink-soft);">A sequência de diferenças é 4, 7, 10, 13, 16 — e ela cresce sempre <strong>+3</strong>.</p>
+            <p><strong>Passo 2 — continue o padrão das diferenças até a posição desejada:</strong></p>
+            <p style="font-size:.9rem;">próxima diferença (para P<sub>7</sub>): 16+3=19 &nbsp;·&nbsp; próxima diferença (para P<sub>8</sub>): 19+3=22</p>
+            <p><strong>Passo 3 — some as diferenças aos termos anteriores:</strong></p>
+            <p style="font-size:.9rem;">P<sub>7</sub> = 51+19 = 70 &nbsp;·&nbsp; P<sub>8</sub> = 70+22 = 92</p>
+            <div class="callout" style="margin-top:6px;">
+              <h4>Resposta</h4>
+              <p>O oitavo número pentagonal é <strong>92</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14 TEORIA: EXPONENCIAL -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aulas 70 e 72 · Teoria</div>
+          <h2 class="title">Quando o crescimento é multiplicativo</h2>
+          <p class="lede">Nem toda sequência cresce por soma constante. Às vezes, cada termo é obtido multiplicando o anterior por um fator fixo — um crescimento exponencial.</p>
+          <div class="grid2" style="margin-top:12px;">
+            <div class="card growth">
+              <strong style="color:var(--growth-ink);">Dobrando a cada passo</strong>
+              <p class="formula" style="font-size:.95rem;margin-top:8px;">(3, 6, 12, 24, 48, …) <span class="arrow">⟹</span> a<sub>n</sub> = 3·2<sup>n−1</sup></p>
+            </div>
+            <div class="card">
+              <strong>Metade a cada passo</strong>
+              <p class="formula" style="font-size:.95rem;margin-top:8px;">(½, ¼, ⅛, …) <span class="arrow">⟹</span> a<sub>n</sub> = 2<sup>−n</sup></p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Dica</h4>
+            <p>Se a <strong>razão</strong> entre termos consecutivos (a<sub>n+1</sub>/a<sub>n</sub>) é sempre a mesma, a sequência é exponencial (geométrica) — não linear. Se a <strong>diferença</strong> é constante, é linear.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 ENEM 2024 Q142 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 6 · No ENEM é assim (ENEM 2024 · Questão 142 · Prova Azul)</div>
+          <h2 class="title">Copiar, colar e a mensagem de emojis</h2>
+          <p class="lede">Uma criança, utilizando um aplicativo, escreveu uma mensagem seguindo estas etapas: <strong>1ª etapa</strong> — inseriu três figuras do tipo 🙂 no visor. <strong>2ª etapa</strong> — copiou o que havia inserido e colou ao lado. <strong>3ª etapa</strong> — copiou o que tinha no visor na 2ª etapa e colou ao lado. A criança seguiu copiando e colando, em cada etapa, o que tinha na etapa imediatamente anterior, até concluir a <strong>20ª etapa</strong>.</p>
+          <p class="lede" style="font-weight:700;color:var(--ink);">Qual foi o total de figuras contidas na mensagem enviada?</p>
+          <div class="mc-block" style="margin-top:8px;max-width:420px;">
+            <div class="mc-options">
+              <button class="choice mcopt" data-ok="1">(A) 3 × 2<sup>19</sup></button>
+              <button class="choice mcopt" data-ok="0">(B) 3 × 2<sup>20</sup></button>
+              <button class="choice mcopt" data-ok="0">(C) 3 × 2<sup>21</sup></button>
+              <button class="choice mcopt" data-ok="0">(D) 3 × 2<sup>20</sup> − 1</button>
+              <button class="choice mcopt" data-ok="0">(E) 3 × 2<sup>20</sup> − 3</button>
+            </div>
+            <div class="fb"></div>
+            <div class="answer">
+              <p>1ª etapa: 3 figuras = 3·2⁰ &nbsp;·&nbsp; 2ª etapa: 6 = 3·2¹ &nbsp;·&nbsp; 3ª etapa: 12 = 3·2² &nbsp;·&nbsp; 4ª etapa: 24 = 3·2³</p>
+              <p>Padrão: na etapa n, o total é <strong>3 · 2<sup>n−1</sup></strong>.</p>
+              <p>Para n = 20: total = 3 · 2<sup>20−1</sup> = <strong>3 × 2¹⁹</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 ATIVIDADE PRÁTICA: APLICAÇÕES REAIS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade 7 · Aplicações reais</div>
+          <h2 class="title">Do mosaico ao anfiteatro</h2>
+          <p class="lede">Copie os dados e resolva no caderno; depois confira a resolução.</p>
+          <div class="grid2" style="margin-top:10px;">
+            <div class="card">
+              <strong>Pavimentação sustentável</strong>
+              <p style="font-size:.85rem;margin-top:6px;">Blocos cinzas (C) ao redor de n blocos brancos: n=1→C=6, n=2→C=8 (+2), n=3→C=10 (+2).</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver fórmula e resposta</button>
+              <div class="answer">
+                <p>Diferença constante = 2 ⟹ C(n) = 2n + b. Usando n=1: 2+b=6 ⟹ b=4.</p>
+                <p><strong>C(n) = 2n + 4</strong></p>
+                <p>Para 45 blocos brancos: C(45) = 2·45+4 = <strong>94 blocos cinzas</strong>.</p>
+              </div>
+            </div>
+            <div class="card">
+              <strong>Anfiteatro universitário</strong>
+              <p style="font-size:.85rem;margin-top:6px;">Assentos por fila: (14, 18, 22, 26, …), diferença constante = 4.</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver fórmula e resposta</button>
+              <div class="answer">
+                <p>A<sub>n</sub> = 4n + k. Usando A<sub>1</sub>=14: 4+k=14 ⟹ k=10 ⟹ <strong>A<sub>n</sub> = 4n + 10</strong>.</p>
+                <p>Para 78 pessoas: 4n+10=78 ⟹ 4n=68 ⟹ n=17.</p>
+                <p>A <strong>17ª fila</strong> acomoda exatamente o grupo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Um mapa dos padrões</h2>
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Linear</span><p style="font-size:.85rem;margin-top:8px;">Diferença constante entre termos.</p><p class="formula" style="font-size:.9rem;">a<sub>n</sub> = kn + b</p></div>
+            <div class="card"><span class="badge">Quadrática</span><p style="font-size:.85rem;margin-top:8px;">2ª diferença constante.</p><p class="formula" style="font-size:.9rem;">a<sub>n</sub> = an² + bn + c</p></div>
+            <div class="card growth"><span class="badge" style="color:var(--growth-ink);background:var(--surface);">Exponencial</span><p style="font-size:.85rem;margin-top:8px;color:var(--growth-ink);">Razão constante entre termos.</p><p class="formula" style="font-size:.9rem;">a<sub>n</sub> = a<sub>1</sub>·r<sup>n−1</sup></p></div>
+          </div>
+          <div class="callout" style="margin-top:16px;">
+            <h4>A ideia central</h4>
+            <p>Toda sequência esconde uma regra. Encontrar essa regra — e escrevê-la como <strong>expressão algébrica do termo geral</strong> — é o que nos permite prever qualquer posição, mesmo a 100ª, sem contar um por um.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 QUIZ FINAL -->
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.92rem;">1. Qual é o próximo termo de (2, 5, 8, 11, …)?</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">13</button>
+                <button class="choice qopt" data-ok="1">14</button>
+                <button class="choice qopt" data-ok="0">15</button>
+                <button class="choice qopt" data-ok="0">17</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.92rem;">2. A expressão geral de (1, 4, 9, 16, …) é:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">n + 3</button>
+                <button class="choice qopt" data-ok="0">2n</button>
+                <button class="choice qopt" data-ok="1">n²</button>
+                <button class="choice qopt" data-ok="0">n³</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.92rem;">3. Se a diferença entre termos consecutivos é sempre constante, a sequência é:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">quadrática</button>
+                <button class="choice qopt" data-ok="1">linear</button>
+                <button class="choice qopt" data-ok="0">exponencial</button>
+                <button class="choice qopt" data-ok="0">aleatória</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.92rem;">4. Na sequência (3, 6, 12, 24, …), o termo geral é:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="0">3n</button>
+                <button class="choice qopt" data-ok="0">3 + 2n</button>
+                <button class="choice qopt" data-ok="1">3·2<sup>n−1</sup></button>
+                <button class="choice qopt" data-ok="0">2·3<sup>n−1</sup></button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.92rem;">5. Se a<sub>n</sub> = 3n − 2, o valor de a<sub>5</sub> é:</p>
+              <div class="qz" data-q="5">
+                <button class="choice qopt" data-ok="0">10</button>
+                <button class="choice qopt" data-ok="1">13</button>
+                <button class="choice qopt" data-ok="0">15</button>
+                <button class="choice qopt" data-ok="0">17</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19 ENCERRAMENTO -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">A régua que descreve o mundo</h2>
+          <p class="lede">Sequências numéricas aparecem sempre que algo cresce, se repete ou se transforma seguindo uma regra — de espirais de girassóis a mensagens de emoji. Dominar o termo geral é a chave para prever, sem contar um a um, o que vem a seguir.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              BONJORNO, José Roberto; GIOVANNI JÚNIOR, José Ruy; SOUSA, Paulo Roberto Câmara de. <em>Prisma matemática: funções e progressões: ensino médio</em>. 1. ed. São Paulo: Editora FTD, 2020.<br>
+              DANTE, Luiz Roberto. <em>Matemática: contexto &amp; aplicações</em>. 3. ed. São Paulo: Ática, 2016. v. 1 e 2.<br>
+              IEZZI, Gelson; HAZZAN, Samuel. <em>Fundamentos de Matemática Elementar, Volume 2: Logaritmos e Sequências</em>. 10. ed. São Paulo: Atual, 2013.<br>
+              Questões adaptadas do ENEM (INEP) 2021, 2023 e 2024, e da Prova Brasil.<br>
+              Imagens sobre dendrocronologia adaptadas de matanativa.com.br.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 20</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-seq1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Conferir') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  document.querySelectorAll('.mc-block').forEach(function(block){
+    var fb = block.querySelector('.fb');
+    var steps = block.querySelector('.answer');
+    var opts = block.querySelectorAll('.mcopt');
+    opts.forEach(function(btnEl){
+      btnEl.addEventListener('click', function(){
+        if(block.dataset.done) return; block.dataset.done='1';
+        var ok = btnEl.dataset.ok==='1';
+        opts.forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btnEl.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o passo a passo:' : '✘ Quase! Veja a resposta correta e o passo a passo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  });
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>

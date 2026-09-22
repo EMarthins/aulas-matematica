@@ -1,0 +1,356 @@
+<title>Guia Visual — Trigonometria no Triângulo Retângulo</title>
+<style>
+  :root{
+    --bg:#F4F5FB;
+    --surface:#FFFFFF;
+    --surface-2:#ECEEFA;
+    --ink:#14162B;
+    --ink-soft:#54577A;
+    --ink-faint:#8688AB;
+    --line:#D8DAF0;
+    --line-strong:#BEC1E8;
+    --primary:#382EAE;
+    --primary-ink:#FFFFFF;
+    --primary-soft:#E7E4FB;
+    --growth:#D9531A;
+    --growth-soft:#FBE5D8;
+    --growth-ink:#7A2E0C;
+    --decay:#0B7C82;
+    --decay-soft:#D9F1EF;
+    --decay-ink:#0A4B4F;
+    --success:#1C8A52;
+    --success-soft:#DCF3E6;
+    --shadow:rgba(24,26,60,.14);
+    --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  sup{ font-size:.62em; }
+  sub{ font-size:.62em; }
+
+  .sheet{
+    max-width:1140px;
+    margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:relative;
+    padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .masthead h1{ font-size:clamp(1.7rem,4.4vw,2.9rem); font-weight:900; line-height:1; margin:0 0 8px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--primary); }
+  .masthead p.lede{ font-family:'Source Serif 4',serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.12rem); max-width:60ch; margin:0; }
+  .mast-curve{ position:absolute; right:-10px; bottom:-14px; width:min(38%,360px); height:auto; opacity:.92; pointer-events:none; }
+  @media (max-width:640px){ .mast-curve{ display:none; } }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+
+  /* ---------- layout grid ---------- */
+  .body-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; }
+  @media (max-width:920px){ .body-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .body-grid{ grid-template-columns:1fr; } }
+
+  .section{ padding:clamp(18px,2.6vw,26px) clamp(18px,3vw,30px); border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+  .body-grid .section:nth-child(3n){ border-right:none; }
+  @media (max-width:920px){ .body-grid .section:nth-child(3n){ border-right:1px solid var(--line); } .body-grid .section:nth-child(2n){ border-right:none; } }
+  @media (max-width:600px){ .body-grid .section{ border-right:none !important; } }
+
+  .section h2{ font-size:1.04rem; font-weight:800; margin:0 0 4px; display:flex; align-items:center; gap:.5em; }
+  .section .tag{ font-size:.66rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .icon{ width:20px; height:20px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0; }
+  .callout.decay{ border-left-color:var(--decay); background:var(--decay-soft); }
+  .callout p{ margin:0; font-size:.86rem; }
+  .callout strong{ display:block; font-family:'Archivo',sans-serif; font-size:.78rem; margin-bottom:2px; }
+
+  .formula{ font-size:.96rem; background:var(--surface-2); border:1.4px solid var(--line-strong); border-radius:10px; padding:8px 12px; display:inline-flex; align-items:center; gap:.35em; margin:6px 0; }
+  .arrow{ color:var(--ink-faint); margin:0 .26em; }
+
+  p{ line-height:1.52; font-size:.87rem; }
+  .lede-s{ color:var(--ink-soft); font-size:.85rem; }
+
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.78rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:5px 7px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.64rem; text-transform:uppercase; letter-spacing:.04em; }
+
+  .props{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.82rem; color:var(--ink-soft); }
+  .props li::before{ content:"·"; color:var(--primary); font-weight:900; margin-right:.5em; }
+
+  .app-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+  .app-chip{ flex:1 1 140px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; background:var(--surface-2); border-radius:12px; padding:10px 8px; font-size:.74rem; }
+
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  .steps li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.84rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:20px; height:20px; border-radius:50%; background:var(--primary); color:var(--primary-ink); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.68rem; display:flex; align-items:center; justify-content:center; }
+
+  .footer{ padding:20px clamp(22px,4vw,40px) 26px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); }
+  .footer p{ margin:0; font-size:.76rem; color:var(--ink-faint); }
+
+  .wide{ grid-column:1 / -1; border-right:none !important; }
+  .prop-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:10px; }
+  @media (max-width:700px){ .prop-grid{ grid-template-columns:1fr; } }
+  .prop-card{ background:var(--surface-2); border-radius:12px; padding:12px; }
+  .prop-card strong{ font-size:.82rem; }
+  .prop-card svg{ width:100%; height:auto; margin-top:6px; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <svg class="mast-curve" viewBox="0 0 500 220" aria-hidden="true">
+      <polygon points="40,190 460,190 460,30" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M40,190 A50,50 0 0,0 78,155" fill="none" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="52" y="182" font-family="JetBrains Mono" font-size="15" fill="var(--ink-faint)">α</text>
+      <circle cx="460" cy="30" r="6" fill="var(--decay)"/>
+    </svg>
+    <div class="eyebrow">Matemática · 3ª série · Aulas 85–92</div>
+    <h1>Guia rápido da <span>trigonometria no triângulo retângulo</span></h1>
+    <p class="lede">Elementos, relações métricas, as três razões trigonométricas e a relação fundamental — tudo o que você precisa lembrar, numa página só.</p>
+    <div class="badges">
+      <span class="badge">sen α = op/hip</span>
+      <span class="badge">cos α = adj/hip</span>
+      <span class="badge">tg α = op/adj</span>
+      <span class="badge">sen²θ+cos²θ=1</span>
+      <span class="badge">H8</span>
+    </div>
+  </div>
+
+  <!-- ELEMENTOS DO TRIÂNGULO -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Aulas 85–86</div>
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16M4 20 12 4l8 16M12 4v16"/></svg>Elementos do triângulo</h2>
+    <svg viewBox="0 0 220 150" style="width:100%;height:auto;margin-top:4px;">
+      <polygon points="20,130 200,130 20,20" fill="none" stroke="var(--ink-soft)" stroke-width="1.6"/>
+      <path d="M20,118 h12 v12" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>
+      <path d="M176,130 A24,24 0 0,0 185,109" fill="none" stroke="var(--primary)" stroke-width="1.6"/>
+      <text x="168" y="122" font-family="JetBrains Mono" font-size="11" fill="var(--primary)">α</text>
+      <text x="80" y="70" font-family="Archivo" font-size="10.5" font-weight="700" fill="var(--ink)" transform="rotate(-36 80 70)">hipotenusa</text>
+      <text x="-72" y="14" font-family="Archivo" font-size="10" font-weight="800" fill="var(--decay)" transform="rotate(-90)">cateto oposto</text>
+      <text x="55" y="144" font-family="Archivo" font-size="10" font-weight="800" fill="var(--growth)">cateto adjacente</text>
+    </svg>
+    <p class="lede-s" style="margin-top:6px;">Hipotenusa: lado oposto ao ângulo de 90°. Cateto oposto/adjacente: sempre relativos ao ângulo α escolhido.</p>
+  </div>
+
+  <!-- RELAÇÕES MÉTRICAS -->
+  <div class="section wide">
+    <div class="tag">Aula 85</div>
+    <h2 style="margin-bottom:2px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="7" cy="8" r="2.2"/><circle cx="7" cy="16" r="2.2"/><circle cx="17" cy="12" r="2.2"/><path d="M9 8h6M9 16h6"/></svg>Relações métricas</h2>
+    <p class="lede-s">Traçando a altura h relativa à hipotenusa a, surgem as projeções m e n dos catetos b e c. Nascem cinco relações (a primeira é o Teorema de Pitágoras):</p>
+    <table class="tbl">
+      <tr><td style="text-align:left;">I) a² = b² + c²</td><td style="text-align:left;">II) b² = a·m</td><td style="text-align:left;">III) c² = a·n</td></tr>
+      <tr><td style="text-align:left;">IV) h² = m·n</td><td style="text-align:left;" colspan="2">V) a·h = b·c</td></tr>
+    </table>
+    <p class="lede-s" style="margin-top:6px;">Todas nascem da semelhança AA entre o triângulo grande e os dois menores formados pela altura.</p>
+  </div>
+
+  <div class="body-grid">
+
+    <!-- SENO -->
+    <div class="section">
+      <div class="tag">Aula 86</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Seno</h2>
+      <p class="formula" style="font-size:.88rem;">sen α = op / hip</p>
+      <p class="lede-s">Cateto oposto ao ângulo, dividido pela hipotenusa.</p>
+    </div>
+
+    <!-- COSSENO -->
+    <div class="section">
+      <div class="tag">Aula 88</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>Cosseno</h2>
+      <p class="formula" style="font-size:.88rem;">cos α = adj / hip</p>
+      <p class="lede-s">Cateto adjacente ao ângulo, dividido pela hipotenusa.</p>
+    </div>
+
+    <!-- TANGENTE -->
+    <div class="section" style="border-right:none;">
+      <div class="tag">Aulas 90–91</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20 20 4M14 4h6v6"/></svg>Tangente</h2>
+      <p class="formula" style="font-size:.88rem;">tg α = op / adj = sen α / cos α</p>
+      <p class="lede-s">Cateto oposto sobre o cateto adjacente ao ângulo.</p>
+    </div>
+
+  </div>
+
+  <!-- RELAÇÃO FUNDAMENTAL -->
+  <div class="section wide">
+    <div class="tag">Aula 92</div>
+    <h2 style="margin-bottom:6px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16M4 20 12 4l8 16M12 4v16"/></svg>Relação fundamental da trigonometria</h2>
+    <ol class="steps">
+      <li>Pitágoras: a² = b² + c²</li>
+      <li>Divide-se tudo por a²: (b/a)² + (c/a)² = 1</li>
+      <li>Como b/a = cos θ e c/a = sen θ: <strong>sen²θ + cos²θ = 1</strong></li>
+    </ol>
+    <div class="callout decay" style="margin-top:10px;">
+      <strong>Consequência prática</strong>
+      <p>Conhecendo sen θ (ou cos θ), sempre dá para calcular o outro — e também a tangente, via tg θ = sen θ / cos θ.</p>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+    <!-- ÂNGULOS NOTÁVEIS -->
+    <div class="section wide" style="border-right:none;">
+      <div class="tag">Decore estes três</div>
+      <h2 style="margin-bottom:2px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h10M4 18h13"/></svg>Ângulos notáveis</h2>
+      <table class="tbl">
+        <tr><th>α</th><th>30°</th><th>45°</th><th>60°</th></tr>
+        <tr><td>sen α</td><td>1/2</td><td>√2/2</td><td>√3/2</td></tr>
+        <tr><td>cos α</td><td>√3/2</td><td>√2/2</td><td>1/2</td></tr>
+        <tr><td>tg α</td><td>√3/3</td><td>1</td><td>√3</td></tr>
+      </table>
+      <p class="lede-s" style="margin-top:6px;">Repare: sen 30° = cos 60° e sen 60° = cos 30° — ângulos complementares trocam seno por cosseno.</p>
+    </div>
+
+  </div>
+
+  <!-- DICAS PARA O ENEM -->
+  <div class="section" style="border-right:none;">
+    <div class="tag">Onde cai no ENEM</div>
+    <h2 style="margin-bottom:10px;">Situações-problema clássicas (H8)</h2>
+    <div class="app-row">
+      <div class="app-chip">Balanço / estrutura com correntes (Pitágoras)</div>
+      <div class="app-chip">Cabos de sustentação de mastro (seno)</div>
+      <div class="app-chip">Túnel triangular e altura de veículo (tangente)</div>
+      <div class="app-chip">Pipa / área com diagonais perpendiculares</div>
+    </div>
+    <div class="callout" style="margin-top:14px;">
+      <strong>Regra de ouro para resolver</strong>
+      <p>1) Desenhe o triângulo retângulo. 2) Marque o ângulo de referência. 3) Identifique hipotenusa, oposto e adjacente. 4) Escolha a razão que relaciona o que você tem com o que você quer.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Matemática · 3ª série do Ensino Médio · Aulas 85–92 · Trigonometria no Triângulo Retângulo</p>
+    <p>BONJORNO, GIOVANNI Jr. e CÂMARA, P., FTD, 2020 · ENEM/INEP</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-trit-info';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
