@@ -162,6 +162,12 @@ import { escapeHtml, linkSeguro } from '../app/util.js';
 
 iniciarThemeToggle('theme-pref-app');
 
+window.__DEBUG_ERRORS = [];
+window.addEventListener('unhandledrejection', function(e){
+  window.__DEBUG_ERRORS.push({ code: e.reason && e.reason.code, message: e.reason && e.reason.message, stack: e.reason && e.reason.stack });
+  console.log('DEBUG_UNHANDLED', JSON.stringify(window.__DEBUG_ERRORS[window.__DEBUG_ERRORS.length-1]));
+});
+
 var uid = null;
 var turmasCache = [];
 var atividadesCache = [];
