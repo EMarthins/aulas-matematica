@@ -83,7 +83,9 @@ Não é necessário nenhum processo de build: é HTML puro, servido como está.
 
 ## Plataforma (login, turmas e atividades)
 
-Além do catálogo público de aulas, o site tem uma camada de plataforma para você (e, se quiser, outros professores) usar com turmas de verdade: login de aluno/professor, aprovação manual de cada aluno, atribuição de atividades (quiz autocorrigido, aula assistida, ou envio de resposta/arquivo para correção) e um painel de engajamento por turma.
+Além do catálogo público de aulas, o site tem uma camada de plataforma para você (e, se quiser, outros professores) usar com turmas de verdade: login de aluno/professor, aprovação manual de cada aluno, atribuição de atividades (quiz autocorrigido, aula assistida, ou envio de resposta/link para correção) e um painel de engajamento por turma.
+
+**Sem Cloud Storage / sem cartão de crédito:** desde outubro de 2024 o Firebase Storage passou a exigir o plano pago (Blaze, com cartão cadastrado) mesmo dentro da cota gratuita. Por isso a plataforma não faz upload de arquivo — nas atividades do tipo "envio", o aluno escreve a resposta e/ou cola um link (Google Drive, Google Docs etc.). O restante (Authentication + Firestore) continua 100% no plano gratuito (Spark), sem cartão.
 
 Essa camada usa o **Firebase** (Google) como backend — é a única parte do site que precisa de configuração externa; o catálogo de aulas continua funcionando sem ela.
 
@@ -100,17 +102,17 @@ app/
   auth.js                    → cadastro/login/logout, proteção de página por papel (aluno/professor)
   data.js                    → leitura/escrita no Firestore (turmas, matrículas, atividades, submissões)
   catalog.js                 → catálogo de aulas (fonte única, usado pelo index.html e pelo painel do professor)
+  util.js                    → escape de HTML e validação de links (segurança contra XSS)
   style.css, theme-toggle.js → visual e tema claro/escuro compartilhados pelas páginas da plataforma
 firestore.rules              → regras de segurança do banco (publique no console do Firebase)
-storage.rules                → regras de segurança dos arquivos enviados pelos alunos
 scripts/inject-progress-hook.js → anexa às aulas o gancho que reporta progresso ao player.html
 ```
 
 ### Configuração (uma vez só)
 
-1. Crie um projeto gratuito em [console.firebase.google.com](https://console.firebase.google.com/), ative **Authentication** (provedor E-mail/senha), **Firestore Database** e **Storage**.
+1. Crie um projeto gratuito em [console.firebase.google.com](https://console.firebase.google.com/), ative **Authentication** (provedor E-mail/senha) e **Firestore Database**.
 2. Em Configurações do projeto → Seus apps → app Web, copie o objeto `firebaseConfig` e cole em `app/firebase-config.js`.
-3. No console do Firebase, vá em **Firestore Database → Regras**, cole o conteúdo de `firestore.rules` e publique. Faça o mesmo em **Storage → Regras** com `storage.rules`.
+3. No console do Firebase, vá em **Firestore Database → Regras**, cole o conteúdo de `firestore.rules` e publique.
 4. Suba as mudanças com `git push` — pronto, o login e os painéis passam a funcionar no site publicado.
 
 ### Como funciona, por trás

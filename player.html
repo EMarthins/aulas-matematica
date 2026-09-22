@@ -42,8 +42,9 @@
   <div class="submit-panel hidden" id="submitPanel">
     <label for="respostaTxt">Sua resposta</label>
     <textarea id="respostaTxt" placeholder="Escreva sua resposta aqui..."></textarea>
-    <label for="arquivoInput">Ou envie um arquivo (opcional)</label>
-    <input type="file" id="arquivoInput">
+    <label for="linkInput">Ou cole um link do seu arquivo (opcional)</label>
+    <input type="text" id="linkInput" placeholder="Ex.: link do Google Drive, Google Docs, Canva...">
+    <p class="hint">Envie o arquivo para o Google Drive (ou similar), deixe o link visível para "qualquer pessoa com o link" e cole aqui.</p>
     <button type="button" class="btn" id="enviarBtn" style="margin-top:14px;">Enviar atividade</button>
     <div id="submitAlert"></div>
   </div>
@@ -58,8 +59,6 @@
 import { protegerPagina } from './app/auth.js';
 import { buscarSubmissao, salvarSubmissao } from './app/data.js';
 import { iniciarThemeToggle } from './app/theme-toggle.js';
-import { storage } from './app/firebase-init.js';
-import { ref as storageRef, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js';
 
 iniciarThemeToggle('theme-pref-app');
 
@@ -88,6 +87,7 @@ protegerPagina('aluno', async function(user){
   if(tipo === 'submissao'){
     document.getElementById('submitPanel').classList.remove('hidden');
     if(atual && atual.resposta) document.getElementById('respostaTxt').value = atual.resposta;
+    if(atual && atual.linkArquivo) document.getElementById('linkInput').value = atual.linkArquivo;
   } else if(tipo === 'leitura'){
     document.getElementById('leituraPanel').classList.remove('hidden');
     if(atual && atual.status === 'concluido'){ document.getElementById('leituraStatus').textContent = 'Concluída ✔'; }
@@ -110,23 +110,21 @@ window.addEventListener('message', async function(e){
   }
 });
 
-// ---------- Envio de resposta/arquivo ----------
+// ---------- Envio de resposta/link ----------
 document.getElementById('enviarBtn').addEventListener('click', async function(){
   var alertBox = document.getElementById('submitAlert');
   alertBox.innerHTML = '';
   var resposta = document.getElementById('respostaTxt').value.trim();
-  var arquivo = document.getElementById('arquivoInput').files[0];
-  var dados = { status: 'em-analise', resposta: resposta, submittedAt: new Date().toISOString() };
+  var linkArquivo = document.getElementById('linkInput').value.trim();
+  var dados = { status: 'em-analise', resposta: resposta, linkArquivo: linkArquivo, submittedAt: new Date().toISOString() };
+
+  if(!resposta && !linkArquivo){
+    alertBox.innerHTML = '<div class="alert error">Escreva uma resposta ou cole um link antes de enviar.</div>';
+    return;
+  }
 
   this.disabled = true;
   try{
-    if(arquivo){
-      var caminho = 'submissions/'+teacherUid+'/'+activityId+'/'+studentUid+'/'+arquivo.name;
-      var fileRef = storageRef(storage, caminho);
-      await uploadBytes(fileRef, arquivo);
-      dados.arquivoUrl = await getDownloadURL(fileRef);
-      dados.arquivoNome = arquivo.name;
-    }
     await salvarSubmissao(teacherUid, activityId, studentUid, dados);
     alertBox.innerHTML = '<div class="alert success">Enviado! Seu(sua) professor(a) vai corrigir em breve.</div>';
     atualizarStatusLine({ status: 'em-analise' });

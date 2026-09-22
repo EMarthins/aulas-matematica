@@ -158,6 +158,7 @@ import {
 } from '../app/data.js';
 import { listarAulasParaSelecao } from '../app/catalog.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
+import { escapeHtml, linkSeguro } from '../app/util.js';
 
 iniciarThemeToggle('theme-pref-app');
 
@@ -235,7 +236,7 @@ async function carregarTurmas(){
     var aprovados = matriculas.filter(function(m){ return m.status === 'approved'; });
 
     var card = el('div','card class-card');
-    card.appendChild(el('h2', null, turma.nome + (turma.ano ? ' · '+turma.ano : '')));
+    card.appendChild(el('h2', null, escapeHtml(turma.nome) + (turma.ano ? ' · '+escapeHtml(turma.ano) : '')));
     var codeRow = el('div','code-row');
     codeRow.appendChild(el('span', null, 'Código de convite: '));
     codeRow.appendChild(el('span','code-pill', turma.joinCode));
@@ -246,7 +247,7 @@ async function carregarTurmas(){
     if(pendentes.length === 0){ pendWrap.appendChild(el('div','hint','Nenhuma solicitação pendente.')); }
     pendentes.forEach(function(p){
       var row = el('div','pending-row');
-      row.appendChild(el('span','name', p.nome));
+      row.appendChild(el('span','name', escapeHtml(p.nome)));
       var btns = el('div','row');
       var okBtn = el('button','btn sm', 'Aprovar');
       var noBtn = el('button','btn sm secondary', 'Rejeitar');
@@ -263,7 +264,7 @@ async function carregarTurmas(){
     if(aprovados.length === 0){ apWrap.appendChild(el('div','hint','Ninguém aprovado ainda.')); }
     aprovados.forEach(function(a){
       var row = el('div','approved-row');
-      row.appendChild(el('span', null, a.nome));
+      row.appendChild(el('span', null, escapeHtml(a.nome)));
       row.appendChild(el('span','badge approved','aprovado'));
       apWrap.appendChild(row);
     });
@@ -326,10 +327,10 @@ async function carregarAtividades(){
     }).join(', ');
     var tr = document.createElement('tr');
     tr.innerHTML =
-      '<td>'+a.titulo+'</td>' +
-      '<td><span class="badge">'+a.tipo+'</span></td>' +
-      '<td>'+turmaNomes+'</td>' +
-      '<td>'+(a.dueDate || '—')+'</td>' +
+      '<td>'+escapeHtml(a.titulo)+'</td>' +
+      '<td><span class="badge">'+escapeHtml(a.tipo)+'</span></td>' +
+      '<td>'+escapeHtml(turmaNomes)+'</td>' +
+      '<td>'+escapeHtml(a.dueDate || '—')+'</td>' +
       '<td></td>';
     var delBtn = el('button','btn sm danger','Excluir');
     delBtn.addEventListener('click', async function(){
@@ -357,19 +358,31 @@ document.getElementById('corrAtividade').addEventListener('change', function(){ 
 
 async function carregarCorrecao(activityId){
   if(!activityId){ return; }
+  var atividade = atividadesCache.find(function(a){ return a.id === activityId; });
+  var nomesPorUid = {};
+  if(atividade){
+    for(var i=0; i<atividade.classIds.length; i++){
+      var matriculas = await listarMatriculas(uid, atividade.classIds[i]);
+      matriculas.forEach(function(m){ nomesPorUid[m.id] = m.nome; });
+    }
+  }
+
   var submissoes = await listarSubmissoes(uid, activityId);
   var tbody = document.querySelector('#corrTable tbody');
   tbody.innerHTML = '';
   document.getElementById('corrEmpty').hidden = submissoes.length > 0;
   submissoes.forEach(function(s){
     var tr = document.createElement('tr');
-    var respostaTxt = s.resposta ? s.resposta : (s.arquivoUrl ? '<a href="'+s.arquivoUrl+'" target="_blank" rel="noopener">Ver arquivo</a>' : '—');
+    var nome = nomesPorUid[s.studentUid] || s.studentUid;
+    var link = linkSeguro(s.linkArquivo);
+    var respostaTxt = escapeHtml(s.resposta) || '—';
+    if(link) respostaTxt += ' <a href="'+escapeHtml(link)+'" target="_blank" rel="noopener noreferrer">(link enviado)</a>';
     tr.innerHTML =
-      '<td>'+(s.nome || s.studentUid)+'</td>' +
-      '<td><span class="badge '+(s.status||'')+'">'+(s.status||'—')+'</span></td>' +
+      '<td>'+escapeHtml(nome)+'</td>' +
+      '<td><span class="badge '+escapeHtml(s.status||'')+'">'+escapeHtml(s.status||'—')+'</span></td>' +
       '<td>'+respostaTxt+'</td>' +
-      '<td><input type="text" class="grade-input" value="'+(s.score!=null?s.score:'')+'"></td>' +
-      '<td><input type="text" value="'+(s.feedback||'')+'" placeholder="Comentário"></td>' +
+      '<td><input type="text" class="grade-input" value="'+escapeHtml(s.score!=null?s.score:'')+'"></td>' +
+      '<td><input type="text" value="'+escapeHtml(s.feedback||'')+'" placeholder="Comentário"></td>' +
       '<td></td>';
     var saveBtn = el('button','btn sm','Salvar');
     saveBtn.addEventListener('click', async function(){
@@ -404,7 +417,7 @@ async function carregarEngajamento(classId){
 
   var head = document.getElementById('engHead');
   head.innerHTML = '<th>Aluno</th>';
-  atividadesTurma.forEach(function(a){ head.appendChild(el('th', null, a.titulo)); });
+  atividadesTurma.forEach(function(a){ head.appendChild(el('th', null, escapeHtml(a.titulo))); });
 
   var tbody = document.querySelector('#engTable tbody');
   tbody.innerHTML = '';
@@ -413,14 +426,14 @@ async function carregarEngajamento(classId){
   for(var i=0; i<aprovados.length; i++){
     var aluno = aprovados[i];
     var tr = document.createElement('tr');
-    tr.appendChild(el('td', null, aluno.nome));
+    tr.appendChild(el('td', null, escapeHtml(aluno.nome)));
     for(var j=0; j<atividadesTurma.length; j++){
       var a = atividadesTurma[j];
       var subs = await listarSubmissoes(uid, a.id);
       var minha = subs.find(function(s){ return s.studentUid === aluno.id; });
       var status = minha ? minha.status : 'nao-iniciado';
-      var nota = minha && minha.score != null ? ' ('+minha.score+')' : '';
-      tr.appendChild(el('td', null, '<span class="badge '+status+'">'+status+nota+'</span>'));
+      var nota = minha && minha.score != null ? ' ('+escapeHtml(minha.score)+')' : '';
+      tr.appendChild(el('td', null, '<span class="badge '+escapeHtml(status)+'">'+escapeHtml(status)+nota+'</span>'));
     }
     tbody.appendChild(tr);
   }

@@ -72,6 +72,7 @@ import {
   listarAtividadesDoAluno, buscarSubmissao
 } from '../app/data.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
+import { escapeHtml } from '../app/util.js';
 
 iniciarThemeToggle('theme-pref-app');
 
@@ -106,7 +107,7 @@ document.getElementById('formJoin').addEventListener('submit', async function(e)
       return;
     }
     await solicitarMatricula(turma.teacherUid, turma.classId, uid, nomeAluno, emailAluno);
-    alertBox.innerHTML = '<div class="alert success">Pedido enviado para a turma "'+turma.classNome+'"! Assim que o(a) professor(a) aprovar, as atividades aparecem aqui.</div>';
+    alertBox.innerHTML = '<div class="alert success">Pedido enviado para a turma "'+escapeHtml(turma.classNome)+'"! Assim que o(a) professor(a) aprovar, as atividades aparecem aqui.</div>';
     document.getElementById('formJoin').reset();
     carregarTurmas();
   }catch(err){
@@ -123,7 +124,7 @@ async function carregarTurmas(){
     var m = matriculas[i];
     var turma = await buscarTurma(m.teacherUid, m.classId);
     var row = el('div','turma-row');
-    row.appendChild(el('span', null, turma ? turma.nome : 'Turma'));
+    row.appendChild(el('span', null, escapeHtml(turma ? turma.nome : 'Turma')));
     row.appendChild(el('span','badge '+m.status, m.status === 'pending' ? 'aguardando aprovação' : (m.status === 'approved' ? 'aprovado' : 'rejeitado')));
     root.appendChild(row);
   }
@@ -142,12 +143,12 @@ async function carregarAtividades(){
 
     var row = el('div','atividade-row');
     var left = el('div', null);
-    left.appendChild(el('div', null, '<strong>'+a.titulo+'</strong>'));
-    left.appendChild(el('div','meta', (a.tipo === 'quiz' ? 'Quiz autocorrigido' : a.tipo === 'submissao' ? 'Envio de resposta/arquivo' : 'Aula assistida') + (a.dueDate ? ' · prazo '+a.dueDate : '')));
+    left.appendChild(el('div', null, '<strong>'+escapeHtml(a.titulo)+'</strong>'));
+    left.appendChild(el('div','meta', (a.tipo === 'quiz' ? 'Quiz autocorrigido' : a.tipo === 'submissao' ? 'Envio de resposta/arquivo' : 'Aula assistida') + (a.dueDate ? ' · prazo '+escapeHtml(a.dueDate) : '')));
     row.appendChild(left);
 
     var right = el('div','row');
-    right.appendChild(el('span','badge '+status, status.replace('-',' ')+nota));
+    right.appendChild(el('span','badge '+status, escapeHtml(status.replace('-',' ')+nota)));
     var link = document.createElement('a');
     link.className = 'btn sm';
     link.href = '../player.html?teacher='+encodeURIComponent(a.teacherUid)+'&activity='+encodeURIComponent(a.id)+

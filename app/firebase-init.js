@@ -6,10 +6,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-import { getStorage } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
 import { firebaseConfig } from "./firebase-config.js";
 
+// Sem Cloud Storage: desde out/2024 o Firebase Storage exige o plano pago
+// (Blaze, com cartão cadastrado) mesmo dentro da cota gratuita. Em vez de
+// upload de arquivo, os alunos colam um link (Google Drive etc.) nas
+// atividades do tipo "envio de resposta/arquivo" — ver player.html.
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const storage = getStorage(app);
