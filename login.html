@@ -73,6 +73,11 @@
     <p class="hint" style="text-align:center;margin-top:14px;">
       Alunos: só é possível ver as atividades de uma turma depois que o(a) professor(a) aprovar sua entrada.
     </p>
+    <p class="hint" style="text-align:center;margin-top:6px;">
+      <a href="para-professores.html" style="color:var(--ink-faint);">Sou professor(a) e quero saber mais</a>
+      &nbsp;·&nbsp;
+      <a href="termos.html" style="color:var(--ink-faint);">Termos de uso e privacidade</a>
+    </p>
   </div>
 </div>
 
@@ -82,8 +87,9 @@
   import { escapeHtml } from './app/util.js';
   iniciarThemeToggle('theme-pref-app');
 
-  var mode = 'entrar';
-  var role = 'aluno';
+  var params = new URLSearchParams(window.location.search);
+  var mode = params.get('modo') === 'cadastrar' ? 'cadastrar' : 'entrar';
+  var role = params.get('papel') === 'professor' ? 'professor' : 'aluno';
 
   var modeTabs = document.getElementById('modeTabs');
   var cadastroFields = document.getElementById('cadastroFields');
@@ -95,6 +101,18 @@
   var form = document.getElementById('authForm');
   var esqueciWrap = document.getElementById('esqueciWrap');
   var esqueciLink = document.getElementById('esqueciLink');
+
+  // Aplica modo/papel iniciais vindos da URL (ex.: CTA "criar conta de professor").
+  if(mode === 'cadastrar'){
+    modeTabs.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b.dataset.mode === 'cadastrar'); });
+    cadastroFields.hidden = false;
+    senhaHint.hidden = false;
+    esqueciWrap.hidden = true;
+    submitLabel.textContent = 'Criar conta';
+  }
+  if(role === 'professor'){
+    rolePick.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b.dataset.role === 'professor'); });
+  }
 
   modeTabs.querySelectorAll('button').forEach(function(btn){
     btn.addEventListener('click', function(){

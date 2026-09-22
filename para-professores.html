@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para Professores</title>
+<meta name="description" content="Aulas prontas, turmas, atividades e correção num só lugar — plataforma gratuita para professores.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .hero{
+    border-bottom:1px solid var(--line); padding:64px 0 50px; text-align:center;
+    background: radial-gradient(700px 260px at 50% -60px, var(--primary-soft), transparent 70%), var(--bg);
+  }
+  .hero h1{ font-size:clamp(2rem,5vw,3rem); font-weight:900; margin:14px 0 14px; line-height:1.05; }
+  .hero p.lede{ max-width:56ch; margin:0 auto 26px; font-size:1.05rem; color:var(--ink-soft); }
+  .hero-ctas{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+  .features{ padding:56px 0; }
+  .features h2.section-title{ text-align:center; font-size:1.6rem; font-weight:900; margin:0 0 40px; }
+  .feature-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+  .feature-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px; }
+  .feature-card .icon{ width:38px; height:38px; border-radius:10px; background:var(--primary-soft); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .feature-card .icon svg{ width:20px; height:20px; }
+  .feature-card h3{ font-size:1.02rem; font-weight:800; margin:0 0 6px; }
+  .feature-card p{ font-size:.88rem; color:var(--ink-soft); margin:0; line-height:1.55; }
+
+  .steps{ padding:56px 0; background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .step-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; }
+  .step{ text-align:center; }
+  .step .num{ width:36px; height:36px; border-radius:50%; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
+  .step h3{ font-size:.95rem; font-weight:800; margin:0 0 6px; }
+  .step p{ font-size:.84rem; color:var(--ink-soft); margin:0; }
+
+  .cta-final{ padding:64px 0; text-align:center; }
+  .cta-final h2{ font-size:1.5rem; font-weight:900; margin:0 0 10px; }
+  .cta-final p{ color:var(--ink-soft); margin:0 0 22px; }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar">
+  <div class="wrap row between">
+    <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+    <nav><a href="index.html">Ver catálogo</a> <a href="login.html">Entrar</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">Para professores</div>
+    <h1>Sua sala de aula, <span style="color:var(--primary);">organizada num só lugar</span></h1>
+    <p class="lede">Aulas interativas prontas, turmas com aprovação de alunos, atividades com correção automática ou manual, e um painel de engajamento — tudo pronto pra usar, sem mexer em planilha nenhuma.</p>
+    <div class="hero-ctas">
+      <a href="login.html?modo=cadastrar&papel=professor" class="btn">Criar minha conta de professor →</a>
+      <a href="index.html" class="btn secondary">Ver o catálogo de aulas</a>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <h2 class="section-title">O que você ganha</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Catálogo de aulas prontas</h3>
+        <p>Slides interativos e infográficos de Matemática e Educação Financeira, com questões reais de ENEM resolvidas passo a passo. Use direto ou como ponto de partida.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M3 10h18"/></svg></div>
+        <h3>Turmas com aprovação</h3>
+        <p>Crie uma turma, compartilhe um código de 6 letras, e aprove cada aluno manualmente antes que ele veja qualquer atividade.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg></div>
+        <h3>3 formatos de atividade</h3>
+        <p>Quiz com correção automática, aula assistida (só marca conclusão), ou envio de resposta/link pra você corrigir manualmente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Engajamento e correção</h3>
+        <p>Veja quem fez o quê numa tabela só, corrija respostas manuais com feedback, e baixe tudo em CSV pra levar ao diário oficial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2 class="section-title">Como começar</h2>
+    <div class="step-grid">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Crie sua conta</h3>
+        <p>Cadastro grátis, só nome, e-mail e senha.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Crie uma turma</h3>
+        <p>Gera um código — compartilhe com seus alunos junto do link do site.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Aprove os alunos</h3>
+        <p>Você decide quem entra em cada turma.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Atribua e acompanhe</h3>
+        <p>Escolha uma aula do catálogo, defina o prazo, e veja o progresso em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Pronto pra organizar sua turma?</h2>
+    <p>Sem custo para começar a usar.</p>
+    <a href="login.html?modo=cadastrar&papel=professor" class="btn">Criar minha conta de professor →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Feito por um professor, para professores. <a href="termos.html" style="color:inherit;">Termos e privacidade</a></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { iniciarThemeToggle } from './app/theme-toggle.js';
+  iniciarThemeToggle('theme-pref-app');
+</script>
+</body>
+</html>

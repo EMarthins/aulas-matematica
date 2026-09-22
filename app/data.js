@@ -97,22 +97,50 @@ export async function excluirAtividade(teacherUid, activityId){
 }
 
 // Busca as atividades de todas as turmas (de qualquer professor) em que
-// o aluno está aprovado.
+// o aluno está aprovado. Cada item já vem com a turma correspondente
+// (classId/turmaNome) anexada, útil pra exibir de onde veio a atividade.
 export async function listarAtividadesDoAluno(studentUid){
   var matriculas = await listarMinhasMatriculas(studentUid);
   var aprovadas = matriculas.filter(function(m){ return m.status === "approved"; });
   var todas = [];
   for(var i=0; i<aprovadas.length; i++){
     var m = aprovadas[i];
+    var turma = await buscarTurma(m.teacherUid, m.classId);
     var snap = await getDocs(collection(db, "teachers", m.teacherUid, "activities"));
     snap.docs.forEach(function(d){
       var dados = d.data();
       if(dados.classIds && dados.classIds.indexOf(m.classId) !== -1){
-        todas.push(Object.assign({ id: d.id, teacherUid: m.teacherUid }, dados));
+        todas.push(Object.assign({ id: d.id, teacherUid: m.teacherUid, classId: m.classId, turmaNome: turma ? turma.nome : "" }, dados));
       }
     });
   }
   return todas;
+}
+
+// Histórico completo do aluno: cada atividade atribuída, junto com a
+// própria submissão (status/nota/datas), pronto pra listar em ordem
+// cronológica sem consultas extras na tela.
+export async function listarHistoricoDoAluno(studentUid){
+  var atividades = await listarAtividadesDoAluno(studentUid);
+  var historico = [];
+  for(var i=0; i<atividades.length; i++){
+    var a = atividades[i];
+    var sub = await buscarSubmissao(a.teacherUid, a.id, studentUid);
+    historico.push(Object.assign({ atividade: a }, {
+      status: sub ? sub.status : "nao-iniciado",
+      score: sub ? sub.score : null,
+      total: sub ? sub.total : null,
+      submittedAt: sub ? sub.submittedAt : null,
+      gradedAt: sub ? sub.gradedAt : null,
+      firstOpenedAt: sub ? sub.firstOpenedAt : null
+    }));
+  }
+  historico.sort(function(x, y){
+    var dx = x.gradedAt || x.submittedAt || x.firstOpenedAt || "";
+    var dy = y.gradedAt || y.submittedAt || y.firstOpenedAt || "";
+    return dy < dx ? -1 : (dy > dx ? 1 : 0);
+  });
+  return historico;
 }
 
 // ---------- Submissões ----------

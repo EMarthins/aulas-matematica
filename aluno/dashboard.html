@@ -59,9 +59,16 @@
   </div>
 
   <div class="card">
-    <h2>Minhas atividades</h2>
+    <h2>Atividades pendentes</h2>
     <div id="atividadesList"></div>
-    <div class="empty" id="atividadesEmpty" hidden>Nenhuma atividade atribuída ainda — assim que seu professor aprovar sua entrada numa turma e criar uma atividade, ela aparece aqui.</div>
+    <div class="empty" id="atividadesEmpty" hidden>Nenhuma atividade pendente — assim que seu professor aprovar sua entrada numa turma e criar uma atividade, ela aparece aqui.</div>
+  </div>
+
+  <div class="card">
+    <h2>Meu histórico</h2>
+    <p class="sub">Tudo que você já concluiu ou enviou, de todas as suas turmas, mais recente primeiro.</p>
+    <div id="historicoList"></div>
+    <div class="empty" id="historicoEmpty" hidden>Nada concluído ainda.</div>
   </div>
 </main>
 
@@ -69,7 +76,7 @@
 import { protegerPagina, sair } from '../app/auth.js';
 import {
   buscarTurmaPorCodigo, solicitarMatricula, listarMinhasMatriculas, buscarTurma,
-  listarAtividadesDoAluno, buscarSubmissao
+  listarAtividadesDoAluno, buscarSubmissao, listarHistoricoDoAluno
 } from '../app/data.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml } from '../app/util.js';
@@ -85,6 +92,7 @@ protegerPagina('aluno', function(user, perfil){
   document.getElementById('userNome').textContent = perfil.nome;
   carregarTurmas();
   carregarAtividades();
+  carregarHistorico();
 }, '../login.html');
 
 function el(tag, cls, html){
@@ -92,6 +100,16 @@ function el(tag, cls, html){
   if(cls) e.className = cls;
   if(html !== undefined) e.innerHTML = html;
   return e;
+}
+
+// Aceita tanto string ISO (submittedAt/firstOpenedAt) quanto Timestamp do
+// Firestore (gradedAt, via serverTimestamp()).
+function formatarData(valor){
+  if(!valor) return '';
+  var data = typeof valor === 'string' ? new Date(valor) : (valor.toDate ? valor.toDate() : null);
+  if(!data || isNaN(data.getTime())) return '';
+  return data.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' às ' +
+    data.toLocaleTimeString('pt-BR', { hour:'2-digit', minute:'2-digit' });
 }
 
 document.getElementById('formJoin').addEventListener('submit', async function(e){
@@ -130,35 +148,71 @@ async function carregarTurmas(){
   }
 }
 
+function linkAbrir(a){
+  var link = document.createElement('a');
+  link.className = 'btn sm';
+  link.href = '../player.html?teacher='+encodeURIComponent(a.teacherUid)+'&activity='+encodeURIComponent(a.id)+
+    '&lesson='+encodeURIComponent(a.lessonPath)+'&titulo='+encodeURIComponent(a.titulo)+'&tipo='+encodeURIComponent(a.tipo);
+  link.textContent = 'Abrir';
+  return link;
+}
+
+function tipoLabel(tipo){
+  return tipo === 'quiz' ? 'Quiz autocorrigido' : tipo === 'submissao' ? 'Envio de resposta/link' : 'Aula assistida';
+}
+
 async function carregarAtividades(){
   var atividades = await listarAtividadesDoAluno(uid);
   var root = document.getElementById('atividadesList');
   root.innerHTML = '';
-  document.getElementById('atividadesEmpty').hidden = atividades.length > 0;
+  var pendentes = [];
   for(var i=0; i<atividades.length; i++){
     var a = atividades[i];
     var sub = await buscarSubmissao(a.teacherUid, a.id, uid);
     var status = sub ? sub.status : 'nao-iniciado';
-    var nota = sub && sub.score != null ? ' · nota '+sub.score : '';
+    if(status === 'concluido' || status === 'corrigido') continue; // vai pro histórico
+    pendentes.push(a);
 
     var row = el('div','atividade-row');
     var left = el('div', null);
     left.appendChild(el('div', null, '<strong>'+escapeHtml(a.titulo)+'</strong>'));
-    left.appendChild(el('div','meta', (a.tipo === 'quiz' ? 'Quiz autocorrigido' : a.tipo === 'submissao' ? 'Envio de resposta/arquivo' : 'Aula assistida') + (a.dueDate ? ' · prazo '+escapeHtml(a.dueDate) : '')));
+    left.appendChild(el('div','meta', escapeHtml(a.turmaNome) + ' · ' + tipoLabel(a.tipo) + (a.dueDate ? ' · prazo '+escapeHtml(a.dueDate) : '')));
     row.appendChild(left);
 
     var right = el('div','row');
-    right.appendChild(el('span','badge '+status, escapeHtml(status.replace('-',' ')+nota)));
-    var link = document.createElement('a');
-    link.className = 'btn sm';
-    link.href = '../player.html?teacher='+encodeURIComponent(a.teacherUid)+'&activity='+encodeURIComponent(a.id)+
-      '&lesson='+encodeURIComponent(a.lessonPath)+'&titulo='+encodeURIComponent(a.titulo)+'&tipo='+encodeURIComponent(a.tipo);
-    link.textContent = 'Abrir';
-    right.appendChild(link);
+    right.appendChild(el('span','badge '+status, escapeHtml(status.replace('-',' '))));
+    right.appendChild(linkAbrir(a));
     row.appendChild(right);
 
     root.appendChild(row);
   }
+  document.getElementById('atividadesEmpty').hidden = pendentes.length > 0;
+}
+
+async function carregarHistorico(){
+  var historico = await listarHistoricoDoAluno(uid);
+  var concluidos = historico.filter(function(h){ return h.status === 'concluido' || h.status === 'corrigido'; });
+  var root = document.getElementById('historicoList');
+  root.innerHTML = '';
+  document.getElementById('historicoEmpty').hidden = concluidos.length > 0;
+  concluidos.forEach(function(h){
+    var a = h.atividade;
+    var nota = h.score != null ? ' · nota '+escapeHtml(h.score)+(h.total!=null?'/'+escapeHtml(h.total):'') : '';
+    var data = formatarData(h.gradedAt || h.submittedAt);
+
+    var row = el('div','atividade-row');
+    var left = el('div', null);
+    left.appendChild(el('div', null, '<strong>'+escapeHtml(a.titulo)+'</strong>'));
+    left.appendChild(el('div','meta', escapeHtml(a.turmaNome) + ' · ' + tipoLabel(a.tipo) + (data ? ' · ' + escapeHtml(data) : '')));
+    row.appendChild(left);
+
+    var right = el('div','row');
+    right.appendChild(el('span','badge '+h.status, escapeHtml(h.status.replace('-',' ')+nota)));
+    right.appendChild(linkAbrir(a));
+    row.appendChild(right);
+
+    root.appendChild(row);
+  });
 }
 </script>
 </body>

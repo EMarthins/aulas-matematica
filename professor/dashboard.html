@@ -135,7 +135,10 @@
   <!-- ===== ENGAJAMENTO ===== -->
   <div class="panel" id="panel-engajamento">
     <div class="card">
-      <h2>Engajamento por turma</h2>
+      <div class="row between">
+        <h2 style="margin:0;">Engajamento por turma</h2>
+        <button type="button" class="btn sm secondary" id="exportCsvBtn">Baixar CSV</button>
+      </div>
       <label for="engTurma">Escolha a turma</label>
       <select id="engTurma"></select>
       <div class="engagement-table">
@@ -409,35 +412,83 @@ function popularSelectTurmasEngajamento(){
 }
 document.getElementById('engTurma').addEventListener('change', function(){ carregarEngajamento(this.value); });
 
-async function carregarEngajamento(classId){
-  if(!classId) return;
+var engajamentoAtual = null; // cache da última grade montada, para o CSV
+
+async function montarGradeEngajamento(classId){
   var matriculas = await listarMatriculas(uid, classId);
   var aprovados = matriculas.filter(function(m){ return m.status === 'approved'; });
   var atividadesTurma = atividadesCache.filter(function(a){ return a.classIds.indexOf(classId) !== -1; });
 
+  var grid = [];
+  for(var i=0; i<aprovados.length; i++){
+    var linha = [];
+    for(var j=0; j<atividadesTurma.length; j++){
+      var subs = await listarSubmissoes(uid, atividadesTurma[j].id);
+      var minha = subs.find(function(s){ return s.studentUid === aprovados[i].id; });
+      linha.push({ status: minha ? minha.status : 'nao-iniciado', score: minha ? minha.score : null });
+    }
+    grid.push(linha);
+  }
+  return { aprovados: aprovados, atividadesTurma: atividadesTurma, grid: grid };
+}
+
+async function carregarEngajamento(classId){
+  if(!classId) return;
+  var dados = await montarGradeEngajamento(classId);
+  engajamentoAtual = dados;
+
   var head = document.getElementById('engHead');
   head.innerHTML = '<th>Aluno</th>';
-  atividadesTurma.forEach(function(a){ head.appendChild(el('th', null, escapeHtml(a.titulo))); });
+  dados.atividadesTurma.forEach(function(a){ head.appendChild(el('th', null, escapeHtml(a.titulo))); });
 
   var tbody = document.querySelector('#engTable tbody');
   tbody.innerHTML = '';
-  document.getElementById('engEmpty').hidden = !(aprovados.length === 0 || atividadesTurma.length === 0);
+  document.getElementById('engEmpty').hidden = !(dados.aprovados.length === 0 || dados.atividadesTurma.length === 0);
 
-  for(var i=0; i<aprovados.length; i++){
-    var aluno = aprovados[i];
+  for(var i=0; i<dados.aprovados.length; i++){
     var tr = document.createElement('tr');
-    tr.appendChild(el('td', null, escapeHtml(aluno.nome)));
-    for(var j=0; j<atividadesTurma.length; j++){
-      var a = atividadesTurma[j];
-      var subs = await listarSubmissoes(uid, a.id);
-      var minha = subs.find(function(s){ return s.studentUid === aluno.id; });
-      var status = minha ? minha.status : 'nao-iniciado';
-      var nota = minha && minha.score != null ? ' ('+escapeHtml(minha.score)+')' : '';
-      tr.appendChild(el('td', null, '<span class="badge '+escapeHtml(status)+'">'+escapeHtml(status)+nota+'</span>'));
-    }
+    tr.appendChild(el('td', null, escapeHtml(dados.aprovados[i].nome)));
+    dados.grid[i].forEach(function(cel){
+      var nota = cel.score != null ? ' ('+escapeHtml(cel.score)+')' : '';
+      tr.appendChild(el('td', null, '<span class="badge '+escapeHtml(cel.status)+'">'+escapeHtml(cel.status)+nota+'</span>'));
+    });
     tbody.appendChild(tr);
   }
 }
+
+function baixarCsv(nomeArquivo, linhas){
+  var conteudo = linhas.map(function(linha){
+    return linha.map(function(campo){
+      var texto = String(campo == null ? '' : campo).replace(/"/g, '""');
+      return '"'+texto+'"';
+    }).join(',');
+  }).join('\r\n');
+  var blob = new Blob(['﻿'+conteudo], { type: 'text/csv;charset=utf-8;' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = nomeArquivo;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('exportCsvBtn').addEventListener('click', function(){
+  if(!engajamentoAtual || engajamentoAtual.aprovados.length === 0){
+    alert('Escolha uma turma com alunos aprovados antes de baixar.');
+    return;
+  }
+  var turmaSel = document.getElementById('engTurma');
+  var turmaNome = turmaSel.options[turmaSel.selectedIndex] ? turmaSel.options[turmaSel.selectedIndex].textContent : 'turma';
+  var cabecalho = ['Aluno'].concat(engajamentoAtual.atividadesTurma.map(function(a){ return a.titulo; }));
+  var linhas = [cabecalho];
+  engajamentoAtual.aprovados.forEach(function(aluno, i){
+    var linha = [aluno.nome];
+    engajamentoAtual.grid[i].forEach(function(cel){
+      linha.push(cel.score != null ? (cel.status + ' - ' + cel.score) : cel.status);
+    });
+    linhas.push(linha);
+  });
+  baixarCsv('engajamento-'+turmaNome.replace(/[^a-z0-9]+/gi,'-')+'.csv', linhas);
+});
 
 // popular checkboxes de turma sempre que a aba de atividades é usada
 document.querySelector('[data-panel="atividades"]').addEventListener('click', popularCheckboxesTurmas);
