@@ -1,0 +1,726 @@
+<title>Empreendedorismo: Perfil e Pesquisa</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--growth); }
+  .topbar .dot.b{ background:var(--decay); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.growth{ border-left-color:var(--growth); background:var(--growth-soft); }
+  .callout.growth h4{ color:var(--growth-ink); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.8rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:500px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:10px; margin:14px 0 0; padding:0; }
+  .steps li{ list-style:none; display:flex; gap:14px; align-items:flex-start; font-size:.92rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--growth); color:var(--surface); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.78rem; display:flex; align-items:center; justify-content:center; margin-top:.1em; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span><span class="dot b"></span> Educação Financeira · Empreendedorismo · Parte 1</div>
+    <div>3ª Série do Ensino Médio · Aulas 36–38</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+      <!-- 0 CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:0px;width:min(60%,560px);height:auto;opacity:.92;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="60" y1="230" x2="860" y2="230" stroke="var(--line-strong)" stroke-width="1.4"/>
+            <line x1="60" y1="230" x2="60" y2="20" stroke="var(--line-strong)" stroke-width="1.4"/>
+            <path d="M60,200 L280,200 L280,150 L470,150 L470,90 L680,90 L680,30 L850,30" fill="none" stroke="var(--growth)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="280" cy="200" r="6" fill="var(--primary)"/>
+            <circle cx="470" cy="150" r="6" fill="var(--primary)"/>
+            <circle cx="680" cy="90" r="6" fill="var(--primary)"/>
+            <circle cx="850" cy="30" r="6" fill="var(--decay)"/>
+          </svg>
+          <div class="eyebrow growth">Educação Financeira · 3ª série · Trimestre 3 · Parte 1 de 3</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.8rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:16ch;">Do <span style="color:var(--growth);">perfil</span> à pesquisa: primeiros passos do empreendedor</h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Descubra que tipo de empreendedor você pode ser — e aprenda a ouvir o mercado antes de criar qualquer negócio.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">AULAS 36–38</span>
+            <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">PERFIL → PESQUISA</span>
+            <span class="badge">LC H23 · MT H25 · MT H21</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;border-color:var(--growth);color:var(--growth-ink);" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+      <!-- 1 ROTEIRO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Do autoconhecimento empreendedor até as duas pesquisas que evitam decisões no escuro.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">01</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+              <div><strong>O perfil do empreendedor</strong><div class="hint">características, projeto de vida e um estudo de caso real</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">02</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+              <div><strong>Pesquisa de demanda</strong><div class="hint">o que o cliente realmente quer</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
+              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
+              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6"/></svg>
+              <div><strong>Pesquisa de mercado</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">foco, público-alvo, amostragem e questionário</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 OBJETIVOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Reconhecer as <strong>características de um empreendedor</strong> e como elas aparecem no dia a dia.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Relacionar o empreendedorismo ao seu <strong>projeto de vida</strong>.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Entender o que é e como aplicar uma <strong>pesquisa de demanda</strong>.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Planejar e conduzir uma <strong>pesquisa de mercado</strong>, incluindo amostragem.</span></li>
+            </ul>
+            <div class="card">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Habilidades trabalhadas</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div><span class="badge">LC H23</span> <span style="font-size:.88rem;color:var(--ink-soft);">Inferir em um texto objetivos do produtor e público-alvo, pela análise dos procedimentos argumentativos</span></div>
+                <div><span class="badge">MT H25</span> <span style="font-size:.88rem;color:var(--ink-soft);">Resolver problema com dados apresentados em tabelas ou gráficos</span></div>
+                <div><span class="badge">MT H21</span> <span style="font-size:.88rem;color:var(--ink-soft);">Resolver situação-problema cuja modelagem envolva conhecimentos algébricos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 GANCHO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">O "empreendedor de palco" x o empreendedor real</h2>
+          <p class="lede">Um texto cobrado no ENEM descreve o "empreendedor de palco": aquele que troca fórmulas e cálculos por frases como "Você irá chegar lá!" — um discurso motivacional cheio de jargão em inglês e clichês persuasivos.</p>
+          <div class="grid2" style="margin-top:10px;">
+            <div class="card"><strong style="font-size:.88rem;">O que o identifica não é o produto</strong><p style="font-size:.85rem;margin-top:6px;">É a maneira como ele fala e o vocabulário que repete — padrões de linguagem, não eficiência real.</p></div>
+            <div class="card"><strong style="font-size:.88rem;">Pense e responda</strong><p style="font-size:.85rem;margin-top:6px;">Você se vê empreendendo no futuro? O que isso significa no seu projeto de vida?</p></div>
+          </div>
+          <div class="callout growth" style="margin-top:14px;">
+            <h4>Vamos além do discurso</h4>
+            <p>Nesta aula, empreendedorismo não é frase de efeito: é <strong>perfil real</strong>, <strong>projeto de vida</strong> e <strong>decisões baseadas em pesquisa</strong> — não em promessas mágicas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 TEORIA: O QUE É EMPREENDEDORISMO + PERFIL -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 36 · Teoria</div>
+          <h2 class="title">O que é ser empreendedor</h2>
+          <div class="card">
+            <strong>Empreendedorismo</strong>
+            <p style="font-size:.92rem;margin:6px 0 0;">É a habilidade de reconhecer problemas e oportunidades, elaborando soluções e aplicando recursos para criar impactos positivos na sociedade — por meio de um negócio, um projeto ou um movimento capaz de transformar o dia a dia das pessoas.</p>
+          </div>
+          <p class="lede" style="margin-top:14px;">Pela natureza de suas atitudes, o empreendedor costuma ser:</p>
+          <div class="grid3" style="margin-top:6px;">
+            <span class="badge" style="justify-content:center;padding:.6em;">Criativo(a)</span>
+            <span class="badge" style="justify-content:center;padding:.6em;">Persistente</span>
+            <span class="badge" style="justify-content:center;padding:.6em;">Proativo(a)</span>
+            <span class="badge" style="justify-content:center;padding:.6em;">Disposto(a) a arriscar</span>
+            <span class="badge" style="justify-content:center;padding:.6em;">Líder</span>
+            <span class="badge" style="justify-content:center;padding:.6em;">Resiliente</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 ATIVIDADE: SITUAÇÕES-PROBLEMA -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade · No quadro, oral · 1 min por situação</div>
+          <h2 class="title">Você tem espírito empreendedor?</h2>
+          <p class="lede">Para cada situação, pense como você agiria — depois confira a resposta.</p>
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card">
+              <p style="font-size:.85rem;">A festa do seu irmão está uma bagunça: sua mãe não dá conta de tudo, ele chora pedindo colo, faltam bexigas e salgadinhos.</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Conferir</button>
+              <div class="answer"><p><strong>Proatividade:</strong> oferecer-se para buscar os salgadinhos, organizar quem ajuda com as bexigas e propor uma brincadeira para o irmãozinho.</p></div>
+            </div>
+            <div class="card">
+              <p style="font-size:.85rem;">Sua feira de ciências ficou com um tema já muito repetido em anos anteriores.</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Conferir</button>
+              <div class="answer"><p><strong>Criatividade:</strong> propor uma abordagem diferente, misturando ciência com teatro, vídeo ou uma maquete interativa.</p></div>
+            </div>
+            <div class="card">
+              <p style="font-size:.85rem;">Você tentou vender docinhos na escola e, no primeiro dia, só vendeu dois.</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Conferir</button>
+              <div class="answer"><p><strong>Persistência:</strong> em vez de desistir, conversar com os colegas, ajustar o produto ou o horário de venda.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 CASE STUDY: JANE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Estudo de caso</div>
+          <h2 class="title">De manicure a dona de marca: a história de Jane</h2>
+          <p class="lede" style="font-size:.9rem;">Jane, manicure de Cascavel-PR, era reconhecida pelo talento em unhas decoradas e tinha agenda cheia — mas, para ganhar mais, precisaria trabalhar mais horas. Em vez disso, começou a criar conteúdo nas redes, lançou um curso online... que vendeu pouco. Tentou de novo, ensinando a misturar esmaltes para criar cores exclusivas — melhor aceitação, mas ainda aquém do esperado.</p>
+          <div class="callout growth" style="margin-top:10px;">
+            <h4>O ponto de virada</h4>
+            <p>Ouvindo os clientes, percebeu: as pessoas amavam as cores únicas, mas tinham medo de misturar esmaltes em casa. Daí nasceu sua própria marca de esmaltes — hoje uma linha completa de cosméticos, enquanto ela ainda reserva horas para atender voluntariamente um lar de idosos.</p>
+          </div>
+          <p class="hint" style="margin-top:10px;">Projeto de vida: nasce de um talento pessoal, cresce ouvindo o público, se adaptando e persistindo.</p>
+        </div>
+      </section>
+
+      <!-- 7 ATIVIDADE: PROJETO DE VIDA -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade · Projeto de vida · 5 min</div>
+          <h2 class="title">Onde estou? Onde quero chegar?</h2>
+          <p class="lede">Crie uma linha do tempo com três pontos entre onde você está e onde quer chegar. Em cada ponto, escreva quais metas você já alcançou e como o empreendedorismo te ajudou a chegar até ali.</p>
+          <svg viewBox="0 0 700 140" style="width:100%;max-width:640px;height:auto;margin:14px 0;" aria-hidden="true">
+            <line x1="40" y1="100" x2="660" y2="100" stroke="var(--line-strong)" stroke-width="2"/>
+            <circle cx="40" cy="100" r="8" fill="var(--primary)"/>
+            <circle cx="230" cy="100" r="7" fill="var(--growth)"/>
+            <circle cx="440" cy="100" r="7" fill="var(--growth)"/>
+            <circle cx="660" cy="100" r="8" fill="var(--decay)"/>
+            <text x="20" y="128" class="mono" font-size="12" fill="var(--ink-faint)">Onde estou</text>
+            <text x="590" y="128" class="mono" font-size="12" fill="var(--ink-faint)">Onde quero chegar</text>
+          </svg>
+          <div class="callout">
+            <h4>Para refletir</h4>
+            <p>Quais outras características você considera importantes para um empreendedor, além das que já vimos?</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 TEORIA: PESQUISA DE DEMANDA -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 37 · Teoria</div>
+          <h2 class="title">Pesquisa de demanda</h2>
+          <div class="card">
+            <strong>O que é</strong>
+            <p style="font-size:.92rem;margin:6px 0 0;">Estudo que busca entender e quantificar a demanda (procura) por produtos ou serviços em um mercado. Permite prever níveis de consumo, identificar padrões de compra e alinhar a produção às necessidades reais dos clientes.</p>
+          </div>
+          <div class="callout" style="margin-top:12px;">
+            <h4>Por que fazer</h4>
+            <p>Evita desperdício e decisões no escuro — cada pergunta da pesquisa ajuda a definir uma característica do produto: frequência, tipo, sabor, preço, horário, gatilho de compra.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 EXEMPLO: LANCHONETE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Como fazer, na prática</div>
+          <h2 class="title">O cardápio novo da lanchonete</h2>
+          <p class="lede" style="font-size:.9rem;">O dono de uma lanchonete em frente à escola quer lançar um novo lanche e monta uma pesquisa com os clientes:</p>
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Frequência</strong><br>Com que frequência você consome os lanches daqui?</p></div>
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Tipo e sabor</strong><br>Salgado, doce, saudável ou bebida diferente? Qual sabor?</p></div>
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Preço</strong><br>Quanto você pagaria por esse novo lanche?</p></div>
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Horário</strong><br>Em qual horário costuma comprar?</p></div>
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Gatilho de compra</strong><br>Compraria se fosse diferente, promovido por amigos, com embalagem legal ou brinde?</p></div>
+            <div class="card"><p style="font-size:.82rem;margin:0;"><strong>Pergunta aberta</strong><br>Espaço livre para sugestões que você não pensou em perguntar.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 ATIVIDADE: TABELA DE DADOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade · Leitura de dados (MT H25)</div>
+          <h2 class="title">10 respostas, uma decisão</h2>
+          <p class="lede" style="font-size:.88rem;">10 pessoas responderam à pesquisa da lanchonete. Analise a tabela:</p>
+          <div style="overflow-x:auto;margin-top:8px;">
+            <table class="tbl">
+              <tr><th>Pessoa</th><th>Frequência</th><th>Tipo</th><th>Sabor</th><th>Preço</th></tr>
+              <tr><td>1</td><td>3-4x/sem</td><td>Salgado</td><td>Queijo</td><td>R$5,01–8</td></tr>
+              <tr><td>2</td><td>1-2x/sem</td><td>Saudável</td><td>Vegetar.</td><td>Até R$5</td></tr>
+              <tr><td>3</td><td>Todo dia</td><td>Doce</td><td>Frango</td><td>R$5,01–8</td></tr>
+              <tr><td>4</td><td>Raramente</td><td>Bebida</td><td>Carne</td><td>Acima R$12</td></tr>
+              <tr><td>5</td><td>1-2x/sem</td><td>Salgado</td><td>Carne</td><td>R$5,01–8</td></tr>
+              <tr><td>6</td><td>1-2x/sem</td><td>Saudável</td><td>Vegetar.</td><td>Até R$5</td></tr>
+              <tr><td>7</td><td>Todo dia</td><td>Salgado</td><td>Queijo</td><td>R$5,01–8</td></tr>
+              <tr><td>8</td><td>3-4x/sem</td><td>Doce</td><td>Carne</td><td>R$8,01–12</td></tr>
+              <tr><td>9</td><td>1-2x/sem</td><td>Salgado</td><td>Carne</td><td>R$5,01–8</td></tr>
+              <tr><td>10</td><td>Todo dia</td><td>Saudável</td><td>Vegetar.</td><td>Até R$5</td></tr>
+            </table>
+          </div>
+          <p style="font-size:.88rem;margin-top:10px;"><strong>Qual tipo e sabor de lanche entra no cardápio? Por qual preço? Quantas vezes por semana oferecer?</strong></p>
+          <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+          <div class="answer">
+            <p>O lanche mais indicado é <strong>salgado de carne</strong>, custando entre <strong>R$ 8 e R$ 12</strong>, oferecido inicialmente de <strong>uma a duas vezes por semana</strong>.</p>
+            <p class="hint">Outra pergunta útil: que dia costuma frequentar a lanchonete, ou se tem alguma intolerância alimentar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 TEORIA: PESQUISA DE MERCADO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 38 · Teoria</div>
+          <h2 class="title">Pesquisa de mercado: um passo além</h2>
+          <div class="grid2">
+            <div>
+              <p class="lede">Lançar um produto sem saber se ele será bem aceito é arriscado. A pesquisa de mercado é <strong>mais completa</strong> que a de demanda: pode envolver concorrência, público e oportunidades, não só o desejo por um produto.</p>
+              <div class="callout">
+                <h4>Antes de qualquer ação</h4>
+                <p>Organizar ou reorganizar um empreendimento envolve recursos que o empreendedor muitas vezes não tem — pesquisar reduz o risco.</p>
+              </div>
+            </div>
+            <div class="card growth">
+              <strong style="color:var(--growth-ink);">"Água diet! O que vocês acham? Comprariam?"</strong>
+              <p style="font-size:.85rem;margin-top:8px;">Faltou pesquisa de mercado para essa ideia. Vamos ver como pesquisar de verdade antes de lançar algo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 PASSO A PASSO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Como conduzir</div>
+          <h2 class="title">4 passos para pesquisar direito</h2>
+          <ol class="steps">
+            <li><span><strong>Defina o foco.</strong> Por quê você está pesquisando? Ex.: entender o mercado, analisar a concorrência, conhecer o público, identificar oportunidades.</span></li>
+            <li><span><strong>Trace o público-alvo.</strong> Para quem é a pesquisa? Público-alvo diferente exige linguagem diferente.</span></li>
+            <li><span><strong>Defina a amostragem.</strong> Quem, de toda a população, será ouvido?</span></li>
+            <li><span><strong>Construa o questionário.</strong> Perguntas objetivas e categorizáveis, com uma pergunta aberta ao final.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 13 AMOSTRAGEM -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Amostragem</div>
+          <h2 class="title">Aleatória ou estratificada?</h2>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="card"><strong>Aleatória</strong><p style="font-size:.85rem;margin-top:6px;">Como um sorteio. Ex.: numa escola com 500 alunos, sortear 50 números entre 1 e 500 — a amostra está pronta.</p></div>
+            <div class="card growth"><strong style="color:var(--growth-ink);">Estratificada</strong><p style="font-size:.85rem;margin-top:6px;">Sorteia-se um percentual de cada grupo (estrato) — ex.: 10% de cada turma — garantindo um representante de cada parte da população.</p></div>
+          </div>
+          <div class="card" style="margin-top:12px;">
+            <p style="font-size:.86rem;"><strong>Atividade:</strong> uma escola quer ouvir uma amostra estratificada de 15% dos alunos. Numa turma de 18 alunas do 9ºA, quantas devem ser ouvidas?</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver cálculo</button>
+            <div class="answer"><p>0,15 × 18 = 2,7 → arredondando, <strong>3 alunas</strong> do 9ºA entram na amostra. O mesmo cálculo se repete para cada turma.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Perfil + pesquisa: a base do seu plano de negócio</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+            <div class="card" style="flex:1 1 180px;"><strong>Perfil do empreendedor</strong><p style="margin:6px 0 0;font-size:.84rem;color:var(--ink-soft);">criativo, persistente, proativo, disposto a arriscar, líder</p></div>
+            <div class="card" style="flex:1 1 180px;"><strong>Pesquisa de demanda</strong><p style="margin:6px 0 0;font-size:.84rem;color:var(--ink-soft);">o que o cliente quer consumir</p></div>
+            <div class="card growth" style="flex:1 1 180px;"><strong style="color:var(--growth-ink);">Pesquisa de mercado</strong><p style="margin:6px 0 0;font-size:.84rem;">foco, público, amostra e questionário</p></div>
+          </div>
+          <div class="callout growth" style="margin-top:16px;">
+            <h4>Próximo passo</h4>
+            <p>Na Parte 2, vamos usar tudo isso para <strong>gerar ideias</strong> e construir uma <strong>proposta de valor</strong> que fale com o público certo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 QUIZ FINAL -->
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. O que realmente identifica o "empreendedor de palco" do texto do ENEM?</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="1">Os padrões de linguagem que ele usa — jargão e clichês motivacionais</button>
+                <button class="choice qopt" data-ok="0">Os livros que ele indica</button>
+                <button class="choice qopt" data-ok="0">Os preços dos seus treinamentos</button>
+                <button class="choice qopt" data-ok="0">Sua fluência em inglês</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Diante de vendas fracas no primeiro dia, agir com persistência significa:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="1">Conversar com os clientes e ajustar produto ou horário, sem desistir</button>
+                <button class="choice qopt" data-ok="0">Baixar o preço até zero</button>
+                <button class="choice qopt" data-ok="0">Encerrar o negócio imediatamente</button>
+                <button class="choice qopt" data-ok="0">Esperar sem mudar nada</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. A principal diferença entre pesquisa de demanda e pesquisa de mercado é:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="1">A de mercado é mais ampla — pode incluir concorrência, público e oportunidades</button>
+                <button class="choice qopt" data-ok="0">Não existe diferença, são a mesma coisa</button>
+                <button class="choice qopt" data-ok="0">A de demanda é sempre estratificada</button>
+                <button class="choice qopt" data-ok="0">A de mercado não usa questionário</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. A amostragem estratificada é útil porque:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="1">Garante um representante proporcional de cada grupo da população</button>
+                <button class="choice qopt" data-ok="0">É sempre mais rápida que a aleatória</button>
+                <button class="choice qopt" data-ok="0">Dispensa cálculo de percentual</button>
+                <button class="choice qopt" data-ok="0">Só funciona com números pares</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 ENCERRAMENTO -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da parte 1</div>
+          <h2 class="title">Próxima parada: da ideia à proposta de valor</h2>
+          <p class="lede">Você já sabe quem pode ser como empreendedor e como ouvir o mercado. Na Parte 2, vamos gerar ideias de negócio com técnicas de criatividade e construir uma proposta de valor irresistível para o público certo.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              BARROS, Josi Gomes. <em>Educação Financeira: 3ª série do ensino médio</em>. 1. ed. Maceió, AL: Editora Cab, 2024.<br>
+              SEBRAE. <em>O que é empreendedorismo</em>. Sebrae/SC.<br>
+              SERGIPE. Secretaria de Estado da Educação. <em>Projeto de vida e empreendedorismo</em>.<br>
+              FUNDAÇÃO TELEFÔNICA VIVO. <em>Como o projeto de vida pode potencializar o empreendedorismo social</em>.<br>
+              LUCID. <em>Pesquisa de demanda: o que é e como fazer uma</em>. · SOLUÇÕES UFV. <em>Análise de demanda</em>. · COBLI. <em>Análise de demanda</em>.<br>
+              SEBRAE. <em>Pesquisa de mercado: o que é e para que serve?</em> · SERASA EXPERIAN. <em>Pesquisa de mercado</em>. · ESTATÍSTICA FÁCIL. <em>O que é amostra estratificada?</em><br>
+              Questões adaptadas do ENEM (INEP).
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 17</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Conferir') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.classify').forEach(function(card){
+    var answer = card.dataset.answer;
+    var fb = card.querySelector('.cfb');
+    card.querySelectorAll('.cbtn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(card.dataset.done) return;
+        card.dataset.done='1';
+        var ok = btn.dataset.choice === answer;
+        card.querySelectorAll('.cbtn').forEach(function(b){
+          if(b.dataset.choice===answer){ b.style.borderColor='var(--success)'; b.style.background='var(--success-soft)'; b.style.color='var(--success)'; }
+        });
+        if(!ok){ btn.style.borderColor='var(--danger)'; btn.style.background='var(--danger-soft)'; btn.style.color='var(--danger)'; }
+        fb.textContent = ok ? '✔ Correto!' : '✘ Era ' + answer + '.';
+        fb.className = 'cfb fb ' + (ok?'ok':'no');
+      });
+    });
+  });
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>

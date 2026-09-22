@@ -1,6 +1,6 @@
-# Prof. Eduardo — Matemática
+# Prof. Eduardo — Aulas e Guias
 
-Site com as aulas interativas e os guias visuais (infográficos) de Matemática da 2ª e 3ª séries do Ensino Médio. Funciona 100% offline — cada página é um arquivo HTML autocontido, sem instalação, sem servidor, sem login. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
+Site com as aulas interativas e os guias visuais (infográficos) de Matemática (2ª e 3ª séries) e Educação Financeira (3ª série) do Ensino Médio. A página inicial tem abas para alternar entre as matérias. Funciona 100% offline — cada página é um arquivo HTML autocontido, sem instalação, sem servidor, sem login. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
 
 ## Como publicar isso no GitHub Pages
 
@@ -53,15 +53,27 @@ aulas/
         aula-1-arcos-seno-cosseno.html
         aula-2-reducao-funcoes.html
         infografico.html
+educacao-financeira/
+  3-ano/
+    3-tri/
+      jogos-de-azar/
+        aula.html
+        infografico.html
+      empreendedorismo/
+        aula-1-perfil-pesquisa.html
+        aula-2-ideia-proposta.html
+        aula-3-canais-custos.html
+        infografico.html
 ```
 
-A estrutura segue `aulas/<ano>/<trimestre>/<unidade>/<arquivo>.html`, do mesmo jeito que suas pastas no OneDrive — assim fica fácil saber onde cada coisa nova entra.
+A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `aulas/` é sempre Matemática (nome histórico, mantido para não quebrar links já publicados) e cada nova matéria ganha sua própria pasta de primeiro nível (ex.: `educacao-financeira/`).
 
 ## Como adicionar uma aula nova no futuro
 
-1. Coloque o novo arquivo `.html` na pasta certa (crie a pasta se for um trimestre/unidade novo, seguindo o padrão acima — ex.: `aulas/2-ano/4-tri/probabilidade/aula.html`).
-2. Abra o `index.html` e encontre o bloco `CATALOG` no `<script>`, perto do topo. Ele é uma lista simples de objetos JavaScript: um por ano, dentro dele os trimestres, dentro de cada trimestre as unidades, e dentro de cada unidade os itens (aulas/guias).
-3. Copie um bloco de unidade existente como modelo e ajuste `titulo`, `accent` (`growth`, `decay` ou `primary` — cores já usadas no material), `icon` (`curve-up`, `curve-log` ou `grid`) e a lista de `itens`, apontando `arquivo` para o caminho relativo do novo `.html`.
-4. Suba o `index.html` atualizado e a nova pasta pelo mesmo caminho do passo 2 acima (Add file → Upload files). O site atualiza sozinho, sem precisar mexer em mais nada — os contadores do topo ("Unidades", "Aulas", "Guias visuais") se recalculam automaticamente a partir da lista.
+1. Coloque o novo arquivo `.html` na pasta certa (crie a pasta se for uma matéria/trimestre/unidade novos, seguindo o padrão acima — ex.: `aulas/2-ano/4-tri/probabilidade/aula.html` ou `educacao-financeira/3-ano/4-tri/orcamento/aula.html`).
+2. Abra o `index.html` e encontre o array `MATERIAS` no `<script>`, perto do topo. Cada matéria tem `id`, `nome`, `icon`, `lede` (frase de apresentação) e um `CATALOG` — uma lista de objetos JavaScript: um por ano, dentro dele os trimestres, dentro de cada trimestre as unidades, e dentro de cada unidade os itens (aulas/guias).
+3. Para uma aula em matéria já existente: copie um bloco de unidade existente dentro do `CATALOG` daquela matéria como modelo e ajuste `titulo`, `accent` (`growth`, `decay`, `primary` ou `danger` — cores já usadas no material), `icon` (veja o objeto `ICONS` logo abaixo do `CATALOG` para as opções disponíveis, ou crie uma nova entrada lá) e a lista de `itens`, apontando `arquivo` para o caminho relativo do novo `.html`.
+4. Para uma matéria nova: copie um bloco de matéria inteiro (de `{ id: ...` até o `}` que fecha o `CATALOG` dela) como modelo dentro do array `MATERIAS`, e ajuste `id`, `nome`, `icon` e `lede`. A aba aparece automaticamente no topo da página.
+5. Suba o `index.html` atualizado e a nova pasta pelo mesmo caminho do passo 2 acima (Add file → Upload files). O site atualiza sozinho, sem precisar mexer em mais nada — os contadores do topo ("Unidades", "Aulas", "Guias visuais") se recalculam automaticamente a partir da matéria selecionada.
 
 Não é necessário nenhum processo de build: é HTML puro, servido como está.

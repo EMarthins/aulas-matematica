@@ -1,0 +1,894 @@
+<title>Empreendedorismo: Canais, Parcerias e Custos</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--growth); }
+  .topbar .dot.b{ background:var(--decay); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span><span class="dot b"></span> Educação Financeira · Empreendedorismo · Parte 3</div>
+    <div>3ª Série do Ensino Médio · Aulas 42, 44–46</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+      <!-- 0 CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="20" y1="240" x2="880" y2="240" stroke="var(--line-strong)" stroke-width="1.4"/>
+            <line x1="20" y1="240" x2="20" y2="10" stroke="var(--line-strong)" stroke-width="1.4"/>
+            <line x1="30" y1="230" x2="860" y2="20" stroke="var(--line-strong)" stroke-width="1.4" stroke-dasharray="4 5"/>
+            <path d="M40,230 C 150,210 260,160 360,110 C 460,60 560,30 850,15" fill="none" stroke="var(--growth)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M230,20 C 210,120 175,190 130,225 C 100,245 70,235 40,230" fill="none" stroke="var(--decay)" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+            <circle cx="360" cy="110" r="6" fill="var(--growth)"/>
+            <circle cx="130" cy="225" r="6" fill="var(--decay)"/>
+          </svg>
+          <div class="eyebrow growth">Educação Financeira · 3ª série · Trimestre 3 · Parte 3 de 3</div>
+          <h1 class="disp" style="font-size:clamp(2rem,5.4vw,3.6rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:17ch;">Canais, parcerias e <span style="color:var(--growth);">custos</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Do primeiro contato com o cliente ao último centavo do orçamento — as peças que faltavam para fechar o seu plano de negócio.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">AULAS 42, 44–46</span>
+            <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">C(x) = CF + CV·x</span>
+            <span class="badge">H20 · H21 · H23 · Hd10</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+      <!-- 1 ROTEIRO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Do primeiro contato com o cliente até o ponto de equilíbrio do negócio.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">01</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></svg>
+              <div><strong>Canais e relacionamento</strong><div class="hint">a ponte entre a empresa e o cliente</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">02</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><rect x="15" y="4" width="6" height="6" rx="1"/></svg>
+              <div><strong>FAZER · TER · CONTAR COM</strong><div class="hint">atividades, recursos e parcerias</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
+              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
+              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14" r="1.3" fill="currentColor" stroke="none"/></svg>
+              <div><strong>Custos fixos e variáveis</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">de onde vem o preço final</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
+              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
+              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
+              <div><strong>O papel do SEBRAE</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">apoio para quem empreende</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">05</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M9 12l2 2 4-4"/></svg>
+              <div><strong>ENEM 2025 · licitação</strong><div class="hint">uma disputa real, passo a passo</div></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
+              <span class="badge">06</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 4"/></svg>
+              <div><strong>Estudo de caso</strong><div class="hint">a fábrica de brownies</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 OBJETIVOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Definir <strong>canais de distribuição</strong> e <strong>relacionamento com o cliente</strong> em um plano de negócios.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Identificar <strong>atividades, recursos e parcerias</strong> principais de um negócio (FAZER / TER / CONTAR COM).</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Diferenciar <strong>custos fixos</strong> de <strong>custos variáveis</strong> e aplicar a função custo.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Reconhecer o papel do <strong>SEBRAE</strong> no apoio ao pequeno empreendedor.</span></li>
+            </ul>
+            <div class="card">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Habilidades trabalhadas</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div><span class="badge">LC H23</span> <span style="font-size:.86rem;color:var(--ink-soft);">Inferir em um texto os objetivos do produtor e o público-alvo, pela análise de procedimentos argumentativos</span></div>
+                <div><span class="badge">CH H20</span> <span style="font-size:.86rem;color:var(--ink-soft);">Selecionar argumentos sobre os impactos das novas tecnologias na vida social e no mundo do trabalho</span></div>
+                <div><span class="badge">MT H21</span> <span style="font-size:.86rem;color:var(--ink-soft);">Resolver situação-problema cuja modelagem envolva conhecimentos algébricos</span></div>
+                <div><span class="badge">Hd10</span> <span style="font-size:.86rem;color:var(--ink-soft);">Reconhecer recursos e/ou legislações relacionadas ao empreendedorismo</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 GANCHO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">Uma boa ideia é suficiente para abrir um negócio?</h2>
+          <div class="grid2">
+            <div class="card">
+              <strong>O sonho</strong>
+              <p style="margin-top:6px;font-size:.9rem;">É comum sonhar em ter o próprio negócio — mas quase metade das pequenas empresas brasileiras fecha as portas antes de completar 5 anos. O motivo mais citado pelos empresários não é falta de vontade: é <strong>falta de gestão, planejamento financeiro e pesquisa de mercado</strong>.</p>
+            </div>
+            <div class="card">
+              <strong>A pergunta de amanhã</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Imagine que amanhã é o primeiro dia de funcionamento da sua empresa. Você já definiu a proposta de valor, o público, os canais e o relacionamento com o cliente. O que mais precisa estar pronto? <strong>O que fazer? O que ter? Com quem contar?</strong></p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Da comunicação à conta no fim do mês</h4>
+            <p>Hoje fechamos o plano de negócios: como o cliente chega até você, o que a operação exige por trás da proposta de valor — e quanto tudo isso custa.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 TEORIA: CANAIS E RELACIONAMENTO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 44 · Teoria</div>
+          <h2 class="title">A ponte até o cliente</h2>
+          <p class="lede">Relacionamento com o cliente e canais são os blocos do Canvas que formam a ponte entre a <strong>proposta de valor</strong> e o <strong>segmento de clientes</strong> — o meio pelo qual o cliente acessa o produto ou serviço.</p>
+          <div class="grid2">
+            <div class="card">
+              <strong>Relacionamento com o cliente</strong>
+              <p style="font-size:.88rem;margin-top:6px;">Determina a natureza das interações entre a empresa e o público-alvo. Impacta a experiência, o grau de satisfação e a fidelização com a marca.</p>
+              <p class="hint" style="margin-top:8px;">Exemplos: redes sociais, atendimento personalizado, lista de transmissão, WhatsApp, close friends para clientes especiais.</p>
+            </div>
+            <div class="card growth">
+              <strong style="color:var(--growth-ink);">Canais de relacionamento</strong>
+              <p style="font-size:.88rem;margin-top:6px;">É o meio pelo qual o cliente <strong>recebe</strong> o produto ou serviço — não trata só de logística, mas de toda a relação desde a produção. Torna o caminho entre cliente e empresa o mais curto possível.</p>
+              <p class="hint" style="margin-top:8px;">Exemplos: loja física, internet, entregas, feiras, aplicativos, delivery, atendimento em casa, downloads.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 ATIVIDADE: MICHELE E JULIANA + DICAS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Estudo de caso · Em duplas</div>
+          <h2 class="title">Por que Michele é fiel à Juliana?</h2>
+          <div class="card">
+            <p style="font-size:.9rem;">Michele é cliente fiel da manicure Juliana e faz questão de divulgar o trabalho dela nas redes sociais. Quais razões fazem um cliente ser fiel assim? Se aparecer uma nova manicure na cidade, você acha que Michele vai trocar de profissional? Por quê?</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver sugestão de resposta</button>
+            <div class="answer">
+              <p>É bem provável que Juliana tenha um ótimo relacionamento com as clientes, tanto pessoalmente quanto nas redes sociais — ela chegou a usar o próprio horário de almoço para atender Michele.</p>
+              <p>Para que a chegada de novas profissionais não afete sua carteira de clientes, Juliana precisa trazer novidades, se atualizar, participar de eventos do setor e, principalmente, <strong>oferecer sempre o melhor serviço e o melhor atendimento</strong>.</p>
+            </div>
+          </div>
+          <p class="hint" style="margin-top:14px;">Como desenvolver esse relacionamento, na prática:</p>
+          <div class="grid3" style="margin-top:8px;">
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Saiba quem é seu cliente</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">use o bloco segmento de clientes</p></div>
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Esteja onde ele está</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">Instagram, Facebook, Pinterest...</p></div>
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Tenha empatia</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">coloque-se no lugar do cliente</p></div>
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Personalize o atendimento</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">trate-o pelo nome</p></div>
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Seja ágil e honesto</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">ninguém gosta de esperar ou ser enganado</p></div>
+            <div class="card" style="padding:10px 14px;"><strong style="font-size:.82rem;">Mantenha contato</strong><p style="font-size:.78rem;margin-top:2px;color:var(--ink-soft);">após a compra — e tenha um histórico do cliente</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 ATIVIDADE: PEDRO E O CARDÁPIO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade · Em duplas</div>
+          <h2 class="title">Pedro está perdendo clientes. Por quê?</h2>
+          <div class="card">
+            <p style="font-size:.88rem;">Pedro tem um serviço de delivery de lanches. Ele distribuía panfletos com o cardápio e o WhatsApp. Mas, a cada mudança no cardápio, precisava reimprimir tudo — e alguns clientes continuavam usando panfletos antigos, com preços e itens errados.</p>
+            <p style="font-size:.88rem;margin-top:8px;"><strong>Qual é a solução mais rápida, eficiente e de baixo custo</strong> para o problema de Pedro?</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+            <div class="answer">
+              <p><strong>Criar um cardápio virtual</strong> e disponibilizar para os clientes consultarem antes de fazer o pedido.</p>
+              <p class="hint">Não é a única solução possível, mas é a mais rápida para o momento. No futuro, Pedro precisaria repensar todo o relacionamento e os canais de relacionamento com seus clientes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 TEORIA: FAZER/TER/CONTAR COM -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 45 · Teoria</div>
+          <h2 class="title">Da ideia à operação</h2>
+          <p class="lede">Você já definiu a proposta de valor, o público, os canais e o relacionamento. Três perguntas organizam a operação do negócio:</p>
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card growth"><strong style="color:var(--growth-ink);">FAZER</strong><p style="font-size:.8rem;margin-top:4px;">Atividades principais — quais ações são indispensáveis para entregar a proposta de valor?</p></div>
+            <div class="card"><strong>TER</strong><p style="font-size:.8rem;margin-top:4px;">Recursos principais — o que a empresa precisa ter ou acessar para executar essas atividades?</p></div>
+            <div class="card decay"><strong style="color:var(--decay-ink);">CONTAR COM</strong><p style="font-size:.8rem;margin-top:4px;">Parcerias principais — quem fornece recursos, conhecimento ou serviços importantes?</p></div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Atividades principais: negócios diferentes, listas diferentes</h4>
+            <p><strong>Cafeteria:</strong> comprar insumos, preparar, atender, controlar estoque. <strong>Loja virtual:</strong> selecionar produtos, atualizar a plataforma, processar pedidos, enviar mercadorias. <strong>Aplicativo:</strong> manter a plataforma, cadastrar usuários, processar pagamentos, oferecer suporte.</p>
+          </div>
+          <p class="hint">No Canvas, priorizamos o que é mais importante para o funcionamento do modelo — não tudo o que a empresa faz.</p>
+        </div>
+      </section>
+
+      <!-- 8 ATIVIDADE: CAMISETAS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Atividade · Analise o negócio</div>
+          <h2 class="title">Quais atividades são essenciais?</h2>
+          <div class="card">
+            <p style="font-size:.88rem;">Uma pequena marca produz camisetas estampadas sob encomenda e vende exclusivamente pela internet. Das ações abaixo, quais são essenciais para entregar a proposta de valor?</p>
+            <p style="font-size:.85rem;margin-top:8px;color:var(--ink-soft);">A) Criar as estampas · B) Produzir/personalizar as camisetas · C) Processar os pedidos · D) Embalar e enviar os produtos · E) Trocar a decoração do escritório mensalmente · F) Atualizar a loja virtual</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+            <div class="answer">
+              <p><strong>A, B, C, D e F</strong> são essenciais.</p>
+              <p>A alternativa <strong>E</strong> pode até fazer parte da rotina da empresa, mas não é essencial para que esse modelo de negócio entregue sua proposta de valor.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 TEORIA: RECURSOS PRINCIPAIS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 45 · Teoria</div>
+          <h2 class="title">Recursos principais — o que precisamos TER?</h2>
+          <p class="lede">Se as atividades mostram o que a empresa precisa <strong>fazer</strong>, os recursos mostram o que ela precisa <strong>ter ou acessar</strong> para conseguir fazer.</p>
+          <div class="grid2">
+            <div class="grid2" style="gap:10px;">
+              <div class="card" style="padding:12px 14px;"><strong style="font-size:.82rem;">Físicos</strong><p style="font-size:.78rem;margin-top:2px;">instalações, máquinas, veículos, matéria-prima, estoque</p></div>
+              <div class="card" style="padding:12px 14px;"><strong style="font-size:.82rem;">Intelectuais</strong><p style="font-size:.78rem;margin-top:2px;">marca, receitas, softwares, processos</p></div>
+              <div class="card" style="padding:12px 14px;"><strong style="font-size:.82rem;">Humanos</strong><p style="font-size:.78rem;margin-top:2px;">pessoas e competências indispensáveis</p></div>
+              <div class="card" style="padding:12px 14px;"><strong style="font-size:.82rem;">Financeiros</strong><p style="font-size:.78rem;margin-top:2px;">capital próprio, crédito, investimentos</p></div>
+            </div>
+            <div class="card classify" data-answer="recurso">
+              <strong style="font-size:.85rem;">Cuidado: recurso ≠ atividade</strong>
+              <p style="font-size:.82rem;margin-top:6px;">Forno profissional (recurso) ≠ assar os produtos (atividade). Veículo (recurso) ≠ realizar entregas (atividade).</p>
+              <p style="font-size:.86rem;margin-top:10px;font-weight:700;">E o Instagram da empresa: é um recurso ou uma atividade?</p>
+              <div style="display:flex;gap:8px;margin-top:8px;">
+                <button class="choice cbtn" data-choice="recurso" style="margin-bottom:0;">Recurso</button>
+                <button class="choice cbtn" data-choice="atividade" style="margin-bottom:0;">Atividade</button>
+              </div>
+              <p class="cfb fb" style="margin-top:8px;"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 TEORIA: PARCERIAS + ATIVIDADE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 45 · Teoria</div>
+          <h2 class="title">Parcerias principais — com quem contar?</h2>
+          <p class="lede">Nenhuma empresa precisa fazer tudo sozinha. Parceiros são pessoas, fornecedores ou organizações externas importantes para o modelo de negócio funcionar: acesso a recursos, redução de custos e riscos, conhecimento especializado, maior capacidade de produção, inovação.</p>
+          <div class="card">
+            <strong style="font-size:.88rem;">Comprar de alguém já é uma parceria?</strong>
+            <p style="font-size:.85rem;margin-top:6px;"><strong>Situação A:</strong> uma cafeteria fica sem leite e compra algumas caixas no supermercado mais próximo. <strong>Situação B:</strong> a mesma cafeteria mantém contrato com um produtor local, que entrega semanalmente leite na quantidade necessária, com padrão de qualidade combinado.</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver diferença</button>
+            <div class="answer">
+              <p>A situação A é uma <strong>compra pontual</strong> — resolve o problema imediato, mas não garante regularidade nem qualidade combinada.</p>
+              <p>A situação B é uma <strong>parceria de fato</strong>: fornecimento constante, padrão de qualidade e condições acordadas, o que dá mais segurança para entregar valor ao cliente de forma consistente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 TEORIA: CUSTOS FIXOS E VARIÁVEIS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 46 · Teoria</div>
+          <h2 class="title">O que são custos?</h2>
+          <p class="lede">Custo é todo gasto ou saída de caixa que uma empresa tem, diretamente relacionado à produção de seus produtos ou serviços. Se os custos forem mais altos que a receita, o negócio não consegue "se manter em pé" por muito tempo.</p>
+          <div class="grid2">
+            <div class="card decay">
+              <strong style="color:var(--decay-ink);">Custos fixos (indiretos)</strong>
+              <p style="font-size:.86rem;margin-top:6px;">Não dependem da quantidade produzida — são iguais, ou muito parecidos, em todos os períodos.</p>
+              <p class="hint" style="margin-top:6px;">Exemplos: aluguel, segurança, manutenção, limpeza, salários.</p>
+            </div>
+            <div class="card growth">
+              <strong style="color:var(--growth-ink);">Custos variáveis (diretos)</strong>
+              <p style="font-size:.86rem;margin-top:6px;">Dependem da quantidade produzida ou vendida.</p>
+              <p class="hint" style="margin-top:6px;">Exemplos: matéria-prima, transporte, comissão de vendas, embalagens, mão de obra por unidade.</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:12px;">
+            <h4>Exemplo prático — carrinho de cachorro-quente</h4>
+            <p><strong>Variáveis:</strong> pão, salsicha, milho, ervilha, mostarda, ketchup, embalagens. <strong>Fixos:</strong> aluguel do ponto, divulgação, eletricidade, conta de celular, pró-labore (remuneração mensal dos sócios).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 TEORIA: FUNÇÃO CUSTO + ATIVIDADE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 46 · Teoria</div>
+          <h2 class="title">A função custo</h2>
+          <p class="lede">Ferramenta matemática para encontrar o custo total de produção, dependendo da quantidade.</p>
+          <p class="formula">C(x) = CF + CV · x</p>
+          <p class="hint" style="margin-top:2px;">C(x): custo total para x unidades · CF: custo fixo · CV: custo variável por unidade</p>
+          <div class="card" style="margin-top:12px;">
+            <p style="font-size:.88rem;"><strong>Atividade:</strong> um carrinho de cachorro-quente tem custo fixo de R$ 850/mês e custo variável médio de R$ 3,85 por lanche. Qual é o custo total para 990 lanches em um mês?</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+            <div class="answer">
+              <p>Função custo: C(x) = 850 + 3,85 · x</p>
+              <p>C(990) = 850 + 3,85 · 990 = 850 + 3.811,50 = <strong>R$ 4.661,50</strong></p>
+              <p class="hint">A quantidade produzida não afeta o custo fixo — ele independe de x.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 TEORIA: SEBRAE + 6 PASSOS -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Aula 42 · Teoria</div>
+          <h2 class="title">Você não precisa fazer isso sozinho</h2>
+          <p class="lede">Para evitar que boas ideias deem errado por falta de conhecimento técnico, existe uma instituição no Brasil cuja missão é guiar, capacitar e apoiar o micro e pequeno empreendedor em todas as etapas: o <strong>SEBRAE</strong> — Serviço Brasileiro de Apoio às Micro e Pequenas Empresas.</p>
+          <div class="grid2">
+            <div class="card">
+              <strong style="font-size:.85rem;">O que é</strong>
+              <p style="font-size:.84rem;margin-top:6px;">Entidade <strong>privada e sem fins lucrativos</strong>. Funciona como um "treinador" ou um "farol" para quem quer abrir uma empresa com segurança, ou melhorar um negócio que já existe. Foco: micro e pequenas empresas (faturamento bruto anual de até R$ 4,8 milhões).</p>
+              <p class="hint" style="margin-top:6px;">Ajuda com: formalização, treinamentos, crédito e inovação, feiras e rodadas de negócios, educação empreendedora, associativismo.</p>
+            </div>
+            <div class="card growth">
+              <strong style="color:var(--growth-ink);font-size:.85rem;">Os 6 passos para começar a empreender</strong>
+              <ol style="margin:8px 0 0;padding-left:20px;font-size:.82rem;line-height:1.7;">
+                <li>Descubra o negócio</li>
+                <li>Avalie seu perfil</li>
+                <li>Reúna informações</li>
+                <li>Organize-se</li>
+                <li>Busque crédito</li>
+                <li>Mão na massa</li>
+              </ol>
+            </div>
+          </div>
+          <p class="hint" style="margin-top:10px;">Você entra com a ideia — o SEBRAE ajuda com o plano.</p>
+        </div>
+      </section>
+
+      <!-- 14 ENEM 2025 SETUP -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">No ENEM é assim (ENEM 2025 · Reaplicação · Caderno Azul · MT · Competência 6 · H25)</div>
+          <h2 class="title">Vencendo uma licitação sem gastar demais</h2>
+          <p class="lede">Uma empresa foi contratada para instalar placas fotovoltaicas em um condomínio residencial. Cinco empresas participam de um pregão e dão lances em três modalidades: <strong>maquinário</strong>, <strong>recursos humanos</strong> e <strong>manta asfáltica</strong>.</p>
+          <div class="card">
+            <p style="font-size:.84rem;">Regras: os lances são conhecidos por todos e não podem ser alterados até o fim do pregão · devem ser <strong>múltiplos de R$ 500,00</strong> · vence quem tiver a <strong>menor soma total</strong> · em caso de empate, vence quem ofereceu o menor lance em "maquinário" — se também empatarem nesse valor, as empresas compartilham os serviços.</p>
+          </div>
+          <table class="tbl" style="margin-top:12px;">
+            <tr><th>Empresa</th><th>Maquinário</th><th>Rec. Humanos</th><th>Manta Asfáltica</th><th>Total</th></tr>
+            <tr><td>1</td><td>10.000</td><td>5.500</td><td>12.000</td><td>27.500</td></tr>
+            <tr><td>2</td><td>11.000</td><td>7.000</td><td>x</td><td>18.000 + x</td></tr>
+            <tr><td>3</td><td>11.500</td><td>6.000</td><td>11.000</td><td>28.500</td></tr>
+            <tr><td>4</td><td>12.000</td><td>5.000</td><td>11.500</td><td>28.500</td></tr>
+            <tr><td>5</td><td>11.000</td><td>5.000</td><td>12.500</td><td>28.500</td></tr>
+          </table>
+          <div class="callout" style="margin-top:12px;">
+            <h4>Comando</h4>
+            <p>O dono da Empresa 2 pretende que seu lance em manta asfáltica seja o <strong>maior valor possível</strong>, mas garantindo que sua empresa seja a <strong>única vencedora</strong>. Qual deve ser esse lance?</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+            <span class="badge">A) R$ 4.500,00</span><span class="badge">B) R$ 6.500,00</span><span class="badge">C) R$ 9.000,00</span><span class="badge">D) R$ 9.500,00</span><span class="badge">E) R$ 10.500,00</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 ENEM 2025 RESOLUÇÃO -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Resolvendo o item</div>
+          <h2 class="title">Passo a passo até o lance ideal</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card">
+              <p style="font-size:.86rem;"><strong>1.</strong> Quem é a concorrência real da Empresa 2?</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver passo</button>
+              <div class="answer"><p>A Empresa 1 tem a menor soma entre as demais: <strong>R$ 27.500</strong>. As empresas 3, 4 e 5 somam R$ 28.500 cada — não ameaçam a Empresa 2. O alvo a bater é a Empresa 1.</p></div>
+            </div>
+            <div class="card">
+              <p style="font-size:.86rem;"><strong>2.</strong> Quanto a Empresa 2 já tem comprometido?</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver passo</button>
+              <div class="answer"><p>Maquinário R$ 11.000 + Recursos Humanos R$ 7.000 = <strong>R$ 18.000</strong>. O total da Empresa 2 é 18.000 + x, sendo x o lance em manta asfáltica.</p></div>
+            </div>
+            <div class="card">
+              <p style="font-size:.86rem;"><strong>3.</strong> Qual condição x precisa satisfazer?</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver passo</button>
+              <div class="answer"><p>Um empate favoreceria a Empresa 1 (seu lance em maquinário, R$10.000, é menor que o da Empresa 2, R$11.000). Por isso o total precisa ser <strong>estritamente menor</strong> que 27.500: 18.000 + x &lt; 27.500 → x &lt; 9.500.</p></div>
+            </div>
+            <div class="card growth">
+              <p style="font-size:.86rem;color:var(--growth-ink);"><strong>4.</strong> Maior valor possível, múltiplo de R$ 500</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver passo</button>
+              <div class="answer"><p>O maior múltiplo de R$ 500 menor que 9.500 é <strong>R$ 9.000</strong>. Total final da Empresa 2: 18.000 + 9.000 = 27.000 &lt; 27.500 ✔</p></div>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:12px;">
+            <h4>Resposta</h4>
+            <p><strong>R$ 9.000,00 — alternativa C.</strong> Ler a tabela com atenção e transformar a condição de vitória em uma desigualdade foi o que resolveu o problema, sem precisar testar todas as alternativas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 ESTUDO DE CASO BROWNIES 1 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Estudo de caso · SEBRAE</div>
+          <h2 class="title">A fábrica de brownies: por onde começar?</h2>
+          <p class="lede">Sua família quer montar um pequeno negócio de produção de brownies. Antes de vender o primeiro doce, é preciso planejar os custos.</p>
+          <div class="grid2">
+            <div class="card">
+              <strong style="font-size:.85rem;">Investimento inicial (equipamentos)</strong>
+              <table class="tbl" style="margin-top:8px;">
+                <tr><th>Item</th><th>Valor</th></tr>
+                <tr><td>Batedeira</td><td>R$ 2.200</td></tr>
+                <tr><td>Forno</td><td>R$ 1.800</td></tr>
+                <tr><td>Formas</td><td>R$ 350</td></tr>
+                <tr><td><strong>Custo inicial</strong></td><td><strong>R$ 4.350</strong></td></tr>
+              </table>
+            </div>
+            <div class="card growth">
+              <strong style="font-size:.85rem;color:var(--growth-ink);">Custo para produzir um lote de 200 brownies</strong>
+              <table class="tbl" style="margin-top:8px;">
+                <tr><th>Item</th><th>Valor</th></tr>
+                <tr><td>Ingredientes</td><td>R$ 500</td></tr>
+                <tr><td>Custos fixos do lote</td><td>R$ 200</td></tr>
+                <tr><td>Embalagens</td><td>R$ 75</td></tr>
+                <tr><td><strong>Custo do lote</strong></td><td><strong>R$ 775</strong></td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="card" style="margin-top:12px;">
+            <p style="font-size:.88rem;">Se cada um dos 200 brownies for vendido por <strong>R$ 8,50</strong>, qual será o faturamento por lote?</p>
+            <button class="reveal" onclick="toggleAnswer(this)">Ver cálculo</button>
+            <div class="answer"><p>Faturamento = 200 × 8,50 = <strong>R$ 1.700,00 por lote</strong></p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17 ESTUDO DE CASO BROWNIES 2 -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Estudo de caso · SEBRAE</div>
+          <h2 class="title">Quantos lotes para cobrir o investimento?</h2>
+          <div class="grid2">
+            <div class="card">
+              <p style="font-size:.86rem;"><strong>Lucro por lote</strong></p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver cálculo</button>
+              <div class="answer"><p>Lucro = Faturamento − Custo do lote = 1.700 − 775 = <strong>R$ 925,00 por lote</strong></p></div>
+            </div>
+            <div class="card growth">
+              <p style="font-size:.86rem;color:var(--growth-ink);"><strong>Lotes necessários para cobrir o investimento inicial (R$ 4.350)</strong></p>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver cálculo</button>
+              <div class="answer"><p>4.350 ÷ 925 ≈ 4,7 → como não existe lote fracionado, são necessários <strong>5 lotes</strong> (1.000 brownies) para cobrir o investimento inicial.</p></div>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>O que essa conta não considerou</h4>
+            <p>A origem dos recursos (próprios ou empréstimo, com juros) · cerca de 5 horas de trabalho por lote · despesas de venda · períodos em que as vendas não atingem as 200 unidades. Por isso é essencial pesquisar o mercado, planejar — e replanejar — antes de investir ou entrar em uma dívida.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Do plano ao primeiro lucro</h2>
+          <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:14px;">
+            <div class="card" style="flex:1 1 190px;"><span class="badge">1</span><p style="margin:8px 0 0;font-weight:700;">Canais e relacionamento</p><p style="margin:2px 0 0;font-size:.82rem;color:var(--ink-soft);">a ponte entre proposta de valor e cliente</p></div>
+            <div style="display:flex;align-items:center;color:var(--ink-faint);">→</div>
+            <div class="card" style="flex:1 1 190px;"><span class="badge">2</span><p style="margin:8px 0 0;font-weight:700;">FAZER · TER · CONTAR COM</p><p style="margin:2px 0 0;font-size:.82rem;color:var(--ink-soft);">atividades, recursos e parcerias da operação</p></div>
+            <div style="display:flex;align-items:center;color:var(--ink-faint);">→</div>
+            <div class="card growth" style="flex:1 1 190px;"><span class="badge" style="color:var(--growth-ink);background:var(--surface);">3</span><p style="margin:8px 0 0;font-weight:700;color:var(--growth-ink);">Custos e função custo</p><p style="margin:2px 0 0;font-size:.82rem;">C(x) = CF + CV·x define o preço final</p></div>
+            <div style="display:flex;align-items:center;color:var(--ink-faint);">→</div>
+            <div class="card decay" style="flex:1 1 190px;"><span class="badge" style="color:var(--decay-ink);background:var(--surface);">4</span><p style="margin:8px 0 0;font-weight:700;color:var(--decay-ink);">SEBRAE</p><p style="margin:2px 0 0;font-size:.82rem;">apoio gratuito em cada etapa do caminho</p></div>
+          </div>
+          <div class="callout" style="margin-top:16px;">
+            <h4>O fio que une tudo</h4>
+            <p>Todo bloco do Canvas — cliente, canais, atividades, recursos, parcerias e custos — precisa estar coerente entre si. Um plano de negócios só funciona quando essas peças se encaixam.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19 QUIZ FINAL -->
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. O bloco do Canvas que torna o caminho entre cliente e empresa o mais curto possível é:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="1">Canais de relacionamento</button>
+                <button class="choice qopt" data-ok="0">Parcerias principais</button>
+                <button class="choice qopt" data-ok="0">Estrutura de custos</button>
+                <button class="choice qopt" data-ok="0">Fontes de receita</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Nos recursos principais (TER), uma das quatro categorias é:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="1">Financeiros</button>
+                <button class="choice qopt" data-ok="0">Emocionais</button>
+                <button class="choice qopt" data-ok="0">Geográficos</button>
+                <button class="choice qopt" data-ok="0">Religiosos</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. O aluguel de um ponto comercial é um exemplo de custo:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="1">Fixo (indireto)</button>
+                <button class="choice qopt" data-ok="0">Variável (direto)</button>
+                <button class="choice qopt" data-ok="0">Nenhum dos dois</button>
+                <button class="choice qopt" data-ok="0">Depende do lucro</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. Na função custo C(x) = CF + CV·x, o x representa:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="1">A quantidade de unidades produzidas</button>
+                <button class="choice qopt" data-ok="0">O custo fixo</button>
+                <button class="choice qopt" data-ok="0">O lucro do mês</button>
+                <button class="choice qopt" data-ok="0">O preço de venda</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">5. O SEBRAE é uma entidade:</p>
+              <div class="qz" data-q="5">
+                <button class="choice qopt" data-ok="1">Privada e sem fins lucrativos, que apoia micro e pequenas empresas</button>
+                <button class="choice qopt" data-ok="0">Pública, responsável por fiscalizar impostos</button>
+                <button class="choice qopt" data-ok="0">Um banco que empresta dinheiro sem juros</button>
+                <button class="choice qopt" data-ok="0">Um sindicato de trabalhadores</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20 ENCERRAMENTO -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da unidade</div>
+          <h2 class="title">Seu plano de negócios está completo!</h2>
+          <p class="lede">Do perfil do empreendedor à pesquisa de mercado, da proposta de valor aos canais, parcerias e custos — os nove blocos do Canvas já foram trabalhados. Revise tudo com o guia visual da unidade completa.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.78rem;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+              BARROS, Josi Gomes. <em>Educação Financeira: 3ª série do ensino médio</em>. 1. ed. Maceió, AL: Editora Cab, 2024.<br>
+              SEBRAE. Portal Sebrae. Disponível em: sebrae.com.br/sites/PortalSebrae. Acesso em: 02 set. 2026.<br>
+              O que é o relacionamento com clientes no canvas? Portal Insights. Acesso em: 01 ago. 2025.<br>
+              Canvas – Canais. Hora de Empreender. Acesso em: 01 ago. 2025.<br>
+              PLATAFORMA ASSAAD. Questões do ENEM (2020 PPL, 2021, 2023, 2025). Disponível em: plataformaassaad.com.br<br>
+              INEP. Provas e Gabaritos. Disponível em: gov.br/inep. Acesso em: 17 set. 2026.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 21</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp3';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Conferir') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.classify').forEach(function(card){
+    var answer = card.dataset.answer;
+    var fb = card.querySelector('.cfb');
+    card.querySelectorAll('.cbtn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(card.dataset.done) return;
+        card.dataset.done='1';
+        var ok = btn.dataset.choice === answer;
+        card.querySelectorAll('.cbtn').forEach(function(b){
+          if(b.dataset.choice===answer){ b.style.borderColor='var(--success)'; b.style.background='var(--success-soft)'; b.style.color='var(--success)'; }
+        });
+        if(!ok){ btn.style.borderColor='var(--danger)'; btn.style.background='var(--danger-soft)'; btn.style.color='var(--danger)'; }
+        fb.textContent = ok ? '✔ Correto! O Instagram é uma ferramenta que a empresa TEM — um recurso intelectual/digital.' : '✘ Pense de novo: o Instagram em si é algo que a empresa TEM (um recurso). Publicar nele é que seria a atividade.';
+        fb.className = 'cfb fb ' + (ok?'ok':'no');
+      });
+    });
+  });
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>

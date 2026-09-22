@@ -1,0 +1,374 @@
+<title>Guia Visual — Empreendedorismo</title>
+<style>
+  :root{
+    --bg:#F4F5FB;
+    --surface:#FFFFFF;
+    --surface-2:#ECEEFA;
+    --ink:#14162B;
+    --ink-soft:#54577A;
+    --ink-faint:#8688AB;
+    --line:#D8DAF0;
+    --line-strong:#BEC1E8;
+    --primary:#382EAE;
+    --primary-ink:#FFFFFF;
+    --primary-soft:#E7E4FB;
+    --growth:#D9531A;
+    --growth-soft:#FBE5D8;
+    --growth-ink:#7A2E0C;
+    --decay:#0B7C82;
+    --decay-soft:#D9F1EF;
+    --decay-ink:#0A4B4F;
+    --success:#1C8A52;
+    --success-soft:#DCF3E6;
+    --shadow:rgba(24,26,60,.14);
+    --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  sup{ font-size:.62em; }
+  sub{ font-size:.62em; }
+
+  .sheet{
+    max-width:1140px;
+    margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:relative;
+    padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--growth-ink); background:var(--growth-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .masthead h1{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; line-height:.98; margin:0 0 8px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--growth); }
+  .masthead p.lede{ font-family:'Source Serif 4',serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.12rem); max-width:64ch; margin:0; }
+  .mast-curve{ position:absolute; right:-10px; bottom:-14px; width:min(40%,380px); height:auto; opacity:.92; pointer-events:none; }
+  @media (max-width:640px){ .mast-curve{ display:none; } }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+
+  /* ---------- layout grid ---------- */
+  .body-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; }
+  @media (max-width:920px){ .body-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .body-grid{ grid-template-columns:1fr; } }
+
+  .section{ padding:clamp(18px,2.6vw,26px) clamp(18px,3vw,30px); border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+  .body-grid .section:nth-child(3n){ border-right:none; }
+  @media (max-width:920px){ .body-grid .section:nth-child(3n){ border-right:1px solid var(--line); } .body-grid .section:nth-child(2n){ border-right:none; } }
+  @media (max-width:600px){ .body-grid .section{ border-right:none !important; } }
+
+  .section h2{ font-size:1.02rem; font-weight:800; margin:0 0 4px; display:flex; align-items:center; gap:.5em; }
+  .section .tag{ font-size:.66rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .icon{ width:20px; height:20px; flex:0 0 auto; color:var(--growth); }
+  .icon.decay{ color:var(--decay); } .icon.primary{ color:var(--primary); }
+
+  .callout{ border-left:4px solid var(--growth); background:var(--growth-soft); border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0; }
+  .callout p{ margin:0; font-size:.86rem; }
+  .callout strong{ display:block; font-family:'Archivo',sans-serif; font-size:.78rem; margin-bottom:2px; color:var(--growth-ink); }
+
+  .formula{ font-size:.96rem; background:var(--surface-2); border:1.4px solid var(--line-strong); border-radius:10px; padding:8px 12px; display:inline-flex; align-items:center; gap:.35em; margin:6px 0; }
+  .arrow{ color:var(--ink-faint); margin:0 .26em; }
+
+  p{ line-height:1.52; font-size:.87rem; }
+  .lede-s{ color:var(--ink-soft); font-size:.85rem; }
+
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.76rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:5px 7px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.62rem; text-transform:uppercase; letter-spacing:.04em; }
+
+  .props{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.82rem; color:var(--ink-soft); }
+  .props li::before{ content:"·"; color:var(--growth); font-weight:900; margin-right:.5em; }
+
+  .app-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+  .app-chip{ flex:1 1 130px; display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center; background:var(--surface-2); border-radius:12px; padding:10px 8px; font-size:.74rem; font-weight:700; }
+  .app-chip span{ font-weight:400; font-size:.68rem; color:var(--ink-soft); }
+
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  .steps li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.84rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:20px; height:20px; border-radius:50%; background:var(--growth); color:#fff; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.68rem; display:flex; align-items:center; justify-content:center; }
+
+  .footer{ padding:20px clamp(22px,4vw,40px) 26px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); }
+  .footer p{ margin:0; font-size:.76rem; color:var(--ink-faint); }
+
+  .wide{ grid-column:1 / -1; border-right:none !important; }
+  .canvas-grid{ display:grid; grid-template-columns:repeat(9,1fr); gap:8px; margin-top:10px; }
+  @media (max-width:920px){ .canvas-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:520px){ .canvas-grid{ grid-template-columns:repeat(2,1fr); } }
+  .canvas-cell{ background:var(--surface-2); border-radius:10px; padding:8px 6px; text-align:center; font-size:.66rem; font-weight:700; line-height:1.3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:62px; }
+  .canvas-cell.done{ background:var(--growth-soft); color:var(--growth-ink); }
+  .canvas-cell .n{ font-family:'JetBrains Mono',monospace; font-size:.6rem; opacity:.7; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <svg class="mast-curve" viewBox="0 0 500 200" aria-hidden="true">
+      <line x1="20" y1="170" x2="480" y2="170" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="20" y1="170" x2="20" y2="16" stroke="var(--line-strong)" stroke-width="2"/>
+      <path d="M20,150 L150,150 L150,105 L280,105 L280,55 L410,55 L410,16 L470,16" fill="none" stroke="var(--growth)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="150" cy="150" r="6" fill="var(--growth)"/>
+      <circle cx="280" cy="105" r="6" fill="var(--growth)"/>
+      <circle cx="410" cy="55" r="6" fill="var(--decay)"/>
+    </svg>
+    <div class="eyebrow">Educação Financeira · 3ª série · Aulas 36–46</div>
+    <h1>Guia visual — <span>Empreendedorismo</span></h1>
+    <p class="lede">Do perfil do empreendedor ao ponto de equilíbrio do negócio: os nove blocos do modelo Canvas, do primeiro rascunho ao plano completo, numa página só.</p>
+    <div class="badges">
+      <span class="badge">Business Model Canvas</span>
+      <span class="badge">C(x) = CF + CV·x</span>
+      <span class="badge">H20 · H21 · H23 · Hd10</span>
+    </div>
+  </div>
+
+  <!-- OS 9 BLOCOS DO CANVAS -->
+  <div class="section wide">
+    <div class="tag">Visão geral · Unidade completa</div>
+    <h2 style="margin-bottom:2px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><rect x="15" y="4" width="6" height="6" rx="1"/></svg>Do perfil ao plano de negócios</h2>
+    <p class="lede-s">Cada aula preencheu um pedaço do modelo Canvas. No fim, as peças se encaixam num plano só.</p>
+    <div class="canvas-grid">
+      <div class="canvas-cell done"><span class="n">36–37</span>Perfil do empreendedor</div>
+      <div class="canvas-cell done"><span class="n">37</span>Projeto de vida</div>
+      <div class="canvas-cell done"><span class="n">38</span>Pesquisa de mercado</div>
+      <div class="canvas-cell done"><span class="n">39</span>Ideias e criatividade</div>
+      <div class="canvas-cell done"><span class="n">40</span>Proposta de valor</div>
+      <div class="canvas-cell done"><span class="n">43</span>Público-alvo</div>
+      <div class="canvas-cell done"><span class="n">44</span>Canais e relacionamento</div>
+      <div class="canvas-cell done"><span class="n">45</span>Atividades, recursos, parcerias</div>
+      <div class="canvas-cell done"><span class="n">42, 46</span>SEBRAE e custos</div>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+    <!-- PERFIL DO EMPREENDEDOR -->
+    <div class="section">
+      <div class="tag">Aulas 36–37</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Perfil do empreendedor</h2>
+      <p class="lede-s">Características que ajudam a tirar uma ideia do papel: iniciativa, persistência, planejamento, tolerância ao risco calculado e busca constante por oportunidades.</p>
+      <p class="lede-s" style="margin-top:6px;">O <strong>projeto de vida</strong> conecta essas características aos seus objetivos pessoais — empreender é uma escolha que deve fazer sentido para onde você quer chegar.</p>
+    </div>
+
+    <!-- PESQUISA -->
+    <div class="section">
+      <div class="tag">Aula 38</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg>Demanda x mercado</h2>
+      <p class="lede-s"><strong>Demanda:</strong> a necessidade real do público — o que o cliente busca.</p>
+      <p class="lede-s"><strong>Mercado:</strong> o ambiente em que o negócio vai competir — concorrentes, tendências, tamanho do público.</p>
+      <p class="lede-s" style="margin-top:6px;">Pesquisar as duas coisas evita abrir um negócio sem demanda real ou entrar num mercado saturado.</p>
+    </div>
+
+    <!-- IDEIAS -->
+    <div class="section" style="border-right:none;">
+      <div class="tag">Aula 39</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3 11c.6.5 1 1.2 1 2h4c0-.8.4-1.5 1-2a6 6 0 00-3-11z"/></svg>Criatividade e ideias</h2>
+      <p class="lede-s">Boas ideias nascem de observar problemas do dia a dia, não apenas de "inventar do zero". Testar e validar a ideia com o público antes de investir evita prejuízo.</p>
+    </div>
+
+  </div>
+
+  <div class="body-grid">
+
+    <!-- PROPOSTA DE VALOR -->
+    <div class="section">
+      <div class="tag">Aulas 40 e 43</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4L12 2z"/></svg>Proposta de valor e público</h2>
+      <p class="lede-s"><strong>Proposta de valor:</strong> o benefício único que o negócio entrega.</p>
+      <p class="lede-s"><strong>Público-alvo:</strong> o segmento específico de clientes cuja dor real essa proposta resolve.</p>
+    </div>
+
+    <!-- CANAIS -->
+    <div class="section">
+      <div class="tag">Aula 44</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></svg>Canais e relacionamento</h2>
+      <p class="lede-s">A ponte entre a proposta de valor e o cliente. Canal = como o produto chega até ele. Relacionamento = como a empresa cuida dele antes, durante e depois da compra.</p>
+      <div class="app-row">
+        <div class="app-chip">Loja física<span>canal</span></div>
+        <div class="app-chip">Redes sociais<span>relacionamento</span></div>
+        <div class="app-chip">Delivery<span>canal</span></div>
+      </div>
+    </div>
+
+    <!-- FAZER TER CONTAR COM -->
+    <div class="section" style="border-right:none;">
+      <div class="tag">Aula 45</div>
+      <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><rect x="15" y="4" width="6" height="6" rx="1"/></svg>Fazer · Ter · Contar com</h2>
+      <ol class="steps" style="margin-top:6px;">
+        <li><strong>FAZER</strong> — atividades essenciais para entregar a proposta</li>
+        <li><strong>TER</strong> — recursos físicos, intelectuais, humanos, financeiros</li>
+        <li><strong>CONTAR COM</strong> — fornecedores e parceiros externos</li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- CUSTOS -->
+  <div class="section" style="border-right:1px solid var(--line);">
+    <div class="tag">Aula 46 · Onde entra a matemática</div>
+    <h2 style="margin-bottom:10px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14" r="1.3" fill="currentColor" stroke="none"/></svg>Custos e a função custo</h2>
+    <div class="app-row">
+      <div class="app-chip">Custos fixos<span>não variam · aluguel, salários</span></div>
+      <div class="app-chip">Custos variáveis<span>variam com a produção · insumos</span></div>
+    </div>
+    <p class="formula" style="margin-top:10px;">C(x) = CF + CV · x</p>
+    <p class="lede-s">C(x): custo total para x unidades · CF: custo fixo · CV: custo variável por unidade.</p>
+  </div>
+
+  <!-- SEBRAE -->
+  <div class="section" style="border-right:none;">
+    <div class="tag">Aula 42 · Apoio ao empreendedor</div>
+    <h2 style="margin-bottom:10px;"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>O papel do SEBRAE</h2>
+    <p class="lede-s">Entidade privada e sem fins lucrativos que apoia micro e pequenas empresas com formalização, crédito, treinamentos e educação empreendedora.</p>
+    <ol class="steps" style="margin-top:8px;">
+      <li>Descubra o negócio</li>
+      <li>Avalie seu perfil</li>
+      <li>Reúna informações</li>
+      <li>Organize-se · busque crédito · mão na massa</li>
+    </ol>
+  </div>
+
+  <!-- DICAS FINAIS -->
+  <div class="section wide">
+    <div class="tag">Dicas finais</div>
+    <h2 style="margin-bottom:10px;">Antes de abrir as portas</h2>
+    <div class="callout">
+      <strong>Regra de ouro do plano de negócios</strong>
+      <p>Nenhum bloco do Canvas funciona sozinho: cliente, canais, atividades, recursos, parcerias e custos precisam estar coerentes entre si. Quase metade das pequenas empresas brasileiras fecha antes de 5 anos — o motivo mais citado não é falta de vontade, é falta de planejamento e pesquisa.</p>
+    </div>
+    <div class="app-row" style="margin-top:10px;">
+      <div class="app-chip">Pesquise antes<span>demanda e mercado</span></div>
+      <div class="app-chip">Calcule os custos<span>fixos e variáveis</span></div>
+      <div class="app-chip">Não empreenda sozinho<span>parcerias e SEBRAE</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Educação Financeira · 3ª série do Ensino Médio · Aulas 36–46 · Empreendedorismo: do Perfil ao Plano de Negócios</p>
+    <p>BARROS, 2024 · SEBRAE · ENEM/INEP</p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp-info';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
