@@ -61,8 +61,11 @@
         <label for="senha">Senha</label>
         <input type="password" id="senha" autocomplete="current-password" required>
         <p class="hint" id="senhaHint" hidden>Mínimo de 6 caracteres.</p>
+        <p class="hint" id="esqueciWrap" style="margin-top:8px;">
+          <a href="#" id="esqueciLink" style="color:var(--primary);font-weight:700;">Esqueci minha senha</a>
+        </p>
 
-        <button type="submit" class="btn block" id="submitBtn" style="margin-top:22px;">
+        <button type="submit" class="btn block" id="submitBtn" style="margin-top:14px;">
           <span id="submitLabel">Entrar</span>
         </button>
       </form>
@@ -74,8 +77,9 @@
 </div>
 
 <script type="module">
-  import { cadastrar, entrar, mensagemErroAuth, aoMudarAuth, buscarPerfil } from './app/auth.js';
+  import { cadastrar, entrar, mensagemErroAuth, aoMudarAuth, buscarPerfil, recuperarSenha } from './app/auth.js';
   import { iniciarThemeToggle } from './app/theme-toggle.js';
+  import { escapeHtml } from './app/util.js';
   iniciarThemeToggle('theme-pref-app');
 
   var mode = 'entrar';
@@ -89,6 +93,8 @@
   var submitBtn = document.getElementById('submitBtn');
   var alertBox = document.getElementById('alertBox');
   var form = document.getElementById('authForm');
+  var esqueciWrap = document.getElementById('esqueciWrap');
+  var esqueciLink = document.getElementById('esqueciLink');
 
   modeTabs.querySelectorAll('button').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -96,9 +102,26 @@
       modeTabs.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
       cadastroFields.hidden = mode !== 'cadastrar';
       senhaHint.hidden = mode !== 'cadastrar';
+      esqueciWrap.hidden = mode !== 'entrar';
       submitLabel.textContent = mode === 'cadastrar' ? 'Criar conta' : 'Entrar';
       alertBox.innerHTML = '';
     });
+  });
+
+  esqueciLink.addEventListener('click', async function(e){
+    e.preventDefault();
+    alertBox.innerHTML = '';
+    var email = document.getElementById('email').value.trim();
+    if(!email){
+      mostrarErro('Digite seu e-mail no campo acima primeiro.');
+      return;
+    }
+    try{
+      await recuperarSenha(email);
+      alertBox.innerHTML = '<div class="alert success">Enviamos um link de redefinição de senha para '+escapeHtml(email)+'. Confira sua caixa de entrada (e o spam).</div>';
+    }catch(err){
+      mostrarErro(mensagemErroAuth(err));
+    }
   });
 
   rolePick.querySelectorAll('button').forEach(function(btn){

@@ -8,7 +8,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  updateProfile
+  updateProfile,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import {
   doc, setDoc, getDoc, serverTimestamp
@@ -40,6 +41,10 @@ export async function entrar(email, senha){
 
 export function sair(){
   return signOut(auth);
+}
+
+export function recuperarSenha(email){
+  return sendPasswordResetEmail(auth, email);
 }
 
 export function aoMudarAuth(callback){
