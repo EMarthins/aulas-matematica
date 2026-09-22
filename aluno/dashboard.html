@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel do Aluno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../app/style.css">
+<style>
+  .turma-row, .atividade-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 4px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  .turma-row:last-child, .atividade-row:last-child{ border-bottom:none; }
+  .atividade-row .meta{ font-size:.78rem; color:var(--ink-faint); }
+  .join-row{ display:flex; gap:10px; align-items:flex-end; flex-wrap:wrap; }
+  .join-row input{ text-transform:uppercase; letter-spacing:.1em; max-width:180px; }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar">
+  <div class="wrap row between">
+    <a class="brand" href="../index.html"><span class="dot"></span> Prof. Eduardo</a>
+    <nav>
+      <a href="../index.html">Catálogo</a>
+      <span id="userNome" class="mono" style="color:var(--ink-faint);"></span>
+      <a href="#" id="logoutBtn">Sair</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="eyebrow">Painel do aluno</div>
+  <h1 class="title">Minhas turmas e atividades</h1>
+  <p class="lede">Entre numa turma com o código que seu professor passou, e acompanhe as atividades atribuídas a você.</p>
+
+  <div class="card">
+    <h2>Entrar numa turma</h2>
+    <p class="sub">Peça o código de 6 letras ao seu professor.</p>
+    <form id="formJoin" class="join-row">
+      <div>
+        <label for="joinCode">Código da turma</label>
+        <input type="text" id="joinCode" maxlength="6" placeholder="EX: 7K3PQR" required>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <div id="joinAlert"></div>
+  </div>
+
+  <div class="card">
+    <h2>Minhas turmas</h2>
+    <div id="turmasList"></div>
+    <div class="empty" id="turmasEmpty" hidden>Você ainda não entrou em nenhuma turma.</div>
+  </div>
+
+  <div class="card">
+    <h2>Minhas atividades</h2>
+    <div id="atividadesList"></div>
+    <div class="empty" id="atividadesEmpty" hidden>Nenhuma atividade atribuída ainda — assim que seu professor aprovar sua entrada numa turma e criar uma atividade, ela aparece aqui.</div>
+  </div>
+</main>
+
+<script type="module">
+import { protegerPagina, sair } from '../app/auth.js';
+import {
+  buscarTurmaPorCodigo, solicitarMatricula, listarMinhasMatriculas, buscarTurma,
+  listarAtividadesDoAluno, buscarSubmissao
+} from '../app/data.js';
+import { iniciarThemeToggle } from '../app/theme-toggle.js';
+
+iniciarThemeToggle('theme-pref-app');
+
+var uid = null, nomeAluno = '', emailAluno = '';
+
+document.getElementById('logoutBtn').addEventListener('click', function(e){ e.preventDefault(); sair(); });
+
+protegerPagina('aluno', function(user, perfil){
+  uid = user.uid; nomeAluno = perfil.nome; emailAluno = perfil.email;
+  document.getElementById('userNome').textContent = perfil.nome;
+  carregarTurmas();
+  carregarAtividades();
+}, '../login.html');
+
+function el(tag, cls, html){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+document.getElementById('formJoin').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var codigo = document.getElementById('joinCode').value.trim().toUpperCase();
+  var alertBox = document.getElementById('joinAlert');
+  alertBox.innerHTML = '';
+  if(!codigo) return;
+  try{
+    var turma = await buscarTurmaPorCodigo(codigo);
+    if(!turma){
+      alertBox.innerHTML = '<div class="alert error">Código não encontrado. Confira com seu professor.</div>';
+      return;
+    }
+    await solicitarMatricula(turma.teacherUid, turma.classId, uid, nomeAluno, emailAluno);
+    alertBox.innerHTML = '<div class="alert success">Pedido enviado para a turma "'+turma.classNome+'"! Assim que o(a) professor(a) aprovar, as atividades aparecem aqui.</div>';
+    document.getElementById('formJoin').reset();
+    carregarTurmas();
+  }catch(err){
+    alertBox.innerHTML = '<div class="alert error">Não foi possível entrar nessa turma. Tente de novo.</div>';
+  }
+});
+
+async function carregarTurmas(){
+  var matriculas = await listarMinhasMatriculas(uid);
+  var root = document.getElementById('turmasList');
+  root.innerHTML = '';
+  document.getElementById('turmasEmpty').hidden = matriculas.length > 0;
+  for(var i=0; i<matriculas.length; i++){
+    var m = matriculas[i];
+    var turma = await buscarTurma(m.teacherUid, m.classId);
+    var row = el('div','turma-row');
+    row.appendChild(el('span', null, turma ? turma.nome : 'Turma'));
+    row.appendChild(el('span','badge '+m.status, m.status === 'pending' ? 'aguardando aprovação' : (m.status === 'approved' ? 'aprovado' : 'rejeitado')));
+    root.appendChild(row);
+  }
+}
+
+async function carregarAtividades(){
+  var atividades = await listarAtividadesDoAluno(uid);
+  var root = document.getElementById('atividadesList');
+  root.innerHTML = '';
+  document.getElementById('atividadesEmpty').hidden = atividades.length > 0;
+  for(var i=0; i<atividades.length; i++){
+    var a = atividades[i];
+    var sub = await buscarSubmissao(a.teacherUid, a.id, uid);
+    var status = sub ? sub.status : 'nao-iniciado';
+    var nota = sub && sub.score != null ? ' · nota '+sub.score : '';
+
+    var row = el('div','atividade-row');
+    var left = el('div', null);
+    left.appendChild(el('div', null, '<strong>'+a.titulo+'</strong>'));
+    left.appendChild(el('div','meta', (a.tipo === 'quiz' ? 'Quiz autocorrigido' : a.tipo === 'submissao' ? 'Envio de resposta/arquivo' : 'Aula assistida') + (a.dueDate ? ' · prazo '+a.dueDate : '')));
+    row.appendChild(left);
+
+    var right = el('div','row');
+    right.appendChild(el('span','badge '+status, status.replace('-',' ')+nota));
+    var link = document.createElement('a');
+    link.className = 'btn sm';
+    link.href = '../player.html?teacher='+encodeURIComponent(a.teacherUid)+'&activity='+encodeURIComponent(a.id)+
+      '&lesson='+encodeURIComponent(a.lessonPath)+'&titulo='+encodeURIComponent(a.titulo)+'&tipo='+encodeURIComponent(a.tipo);
+    link.textContent = 'Abrir';
+    right.appendChild(link);
+    row.appendChild(right);
+
+    root.appendChild(row);
+  }
+}
+</script>
+</body>
+</html>

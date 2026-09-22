@@ -1,0 +1,15 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Arquivos enviados pelos alunos em atividades do tipo "submissão".
+    // Caminho: submissions/{teacherUid}/{activityId}/{studentUid}/{arquivo}
+    match /submissions/{teacherUid}/{activityId}/{studentUid}/{fileName} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == teacherUid || request.auth.uid == studentUid);
+
+      allow write: if request.auth != null && request.auth.uid == studentUid &&
+        request.resource.size < 15 * 1024 * 1024; // até 15MB por arquivo
+    }
+  }
+}

@@ -1,0 +1,67 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Perfil do usuário (professor ou aluno) ---
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    match /teachers/{teacherUid} {
+      allow read, write: if request.auth != null && request.auth.uid == teacherUid;
+
+      // --- Turmas ---
+      match /classes/{classId} {
+        // Leitura liberada a qualquer usuário autenticado: é assim que um
+        // aluno consegue localizar uma turma pelo código de convite antes
+        // de estar matriculado. Nada sensível fica aqui (só nome/código).
+        allow read: if request.auth != null;
+        allow write: if request.auth != null && request.auth.uid == teacherUid;
+
+        // --- Matrículas (aprovação de alunos) ---
+        match /students/{studentUid} {
+          allow read: if request.auth != null &&
+            (request.auth.uid == teacherUid || request.auth.uid == studentUid);
+
+          // O próprio aluno só pode CRIAR a própria solicitação, sempre como 'pending'.
+          allow create: if request.auth != null && request.auth.uid == studentUid &&
+            request.resource.data.uid == studentUid &&
+            request.resource.data.status == 'pending';
+
+          // Só o professor aprova/rejeita (muda o status).
+          allow update, delete: if request.auth != null && request.auth.uid == teacherUid;
+        }
+      }
+
+      // --- Atividades ---
+      match /activities/{activityId} {
+        // Definição da atividade não é sensível (espelha uma aula pública);
+        // liberar leitura a qualquer autenticado simplifica bastante as regras.
+        allow read: if request.auth != null;
+        allow write: if request.auth != null && request.auth.uid == teacherUid;
+
+        // --- Submissões / notas ---
+        match /submissions/{studentUid} {
+          allow read: if request.auth != null &&
+            (request.auth.uid == teacherUid || request.auth.uid == studentUid);
+
+          // Professor pode escrever qualquer campo (correção).
+          allow write: if request.auth != null && request.auth.uid == teacherUid;
+
+          // Aluno só pode criar/atualizar sua própria submissão, e nunca
+          // os campos de correção (score, feedback, gradedAt, status='corrigido').
+          allow create: if request.auth != null && request.auth.uid == studentUid &&
+            request.resource.data.status != 'corrigido' &&
+            !('score' in request.resource.data) &&
+            !('feedback' in request.resource.data);
+
+          allow update: if request.auth != null && request.auth.uid == studentUid &&
+            request.resource.data.status != 'corrigido' &&
+            !request.resource.data.diff(resource.data).affectedKeys()
+              .hasAny(['score', 'feedback', 'gradedAt']);
+        }
+      }
+    }
+  }
+}

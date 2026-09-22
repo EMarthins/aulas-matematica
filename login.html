@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entrar — Prof. Eduardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .auth-shell{ display:flex; align-items:center; justify-content:center; min-height:calc(100vh - 76px); padding:30px 16px; }
+  .role-pick{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
+  .role-pick button{
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:.86rem;
+    border:1.5px solid var(--line-strong); background:var(--surface-2); color:var(--ink-soft);
+    border-radius:12px; padding:12px 10px; cursor:pointer; text-align:center;
+  }
+  .role-pick button.active{ background:var(--primary-soft); border-color:var(--primary); color:var(--primary); }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar">
+  <div class="wrap row between">
+    <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+    <nav><a href="index.html">Ver catálogo de aulas</a></nav>
+  </div>
+</header>
+
+<div class="auth-shell">
+  <div class="wrap narrow" style="padding:0;">
+    <div class="card">
+      <div class="tabs" id="modeTabs">
+        <button type="button" class="active" data-mode="entrar">Entrar</button>
+        <button type="button" data-mode="cadastrar">Criar conta</button>
+      </div>
+
+      <div id="alertBox"></div>
+
+      <form id="authForm">
+        <div id="cadastroFields" hidden>
+          <label>Eu sou</label>
+          <div class="role-pick" id="rolePick">
+            <button type="button" class="active" data-role="aluno">Aluno(a)</button>
+            <button type="button" data-role="professor">Professor(a)</button>
+          </div>
+
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" autocomplete="name">
+        </div>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" autocomplete="email" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" required>
+        <p class="hint" id="senhaHint" hidden>Mínimo de 6 caracteres.</p>
+
+        <button type="submit" class="btn block" id="submitBtn" style="margin-top:22px;">
+          <span id="submitLabel">Entrar</span>
+        </button>
+      </form>
+    </div>
+    <p class="hint" style="text-align:center;margin-top:14px;">
+      Alunos: só é possível ver as atividades de uma turma depois que o(a) professor(a) aprovar sua entrada.
+    </p>
+  </div>
+</div>
+
+<script type="module">
+  import { cadastrar, entrar, mensagemErroAuth, aoMudarAuth, buscarPerfil } from './app/auth.js';
+  import { iniciarThemeToggle } from './app/theme-toggle.js';
+  iniciarThemeToggle('theme-pref-app');
+
+  var mode = 'entrar';
+  var role = 'aluno';
+
+  var modeTabs = document.getElementById('modeTabs');
+  var cadastroFields = document.getElementById('cadastroFields');
+  var rolePick = document.getElementById('rolePick');
+  var senhaHint = document.getElementById('senhaHint');
+  var submitLabel = document.getElementById('submitLabel');
+  var submitBtn = document.getElementById('submitBtn');
+  var alertBox = document.getElementById('alertBox');
+  var form = document.getElementById('authForm');
+
+  modeTabs.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      mode = btn.dataset.mode;
+      modeTabs.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+      cadastroFields.hidden = mode !== 'cadastrar';
+      senhaHint.hidden = mode !== 'cadastrar';
+      submitLabel.textContent = mode === 'cadastrar' ? 'Criar conta' : 'Entrar';
+      alertBox.innerHTML = '';
+    });
+  });
+
+  rolePick.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      role = btn.dataset.role;
+      rolePick.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    });
+  });
+
+  function mostrarErro(msg){
+    alertBox.innerHTML = '<div class="alert error">'+msg+'</div>';
+  }
+
+  function destinoPara(perfilRole){
+    return perfilRole === 'professor' ? 'professor/dashboard.html' : 'aluno/dashboard.html';
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    alertBox.innerHTML = '';
+    var email = document.getElementById('email').value.trim();
+    var senha = document.getElementById('senha').value;
+
+    submitBtn.disabled = true;
+    try{
+      if(mode === 'cadastrar'){
+        var nome = document.getElementById('nome').value.trim();
+        if(!nome){ mostrarErro('Digite seu nome.'); submitBtn.disabled = false; return; }
+        var user = await cadastrar(nome, email, senha, role);
+        window.location.href = destinoPara(role);
+      } else {
+        var user = await entrar(email, senha);
+        var perfil = await buscarPerfil(user.uid);
+        window.location.href = destinoPara(perfil ? perfil.role : 'aluno');
+      }
+    }catch(err){
+      mostrarErro(mensagemErroAuth(err));
+      submitBtn.disabled = false;
+    }
+  });
+
+  // Se já estiver logado, manda direto pro painel certo.
+  aoMudarAuth(async function(user){
+    if(!user) return;
+    var perfil = await buscarPerfil(user.uid);
+    if(perfil) window.location.href = destinoPara(perfil.role);
+  });
+</script>
+</body>
+</html>

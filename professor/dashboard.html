@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel do Professor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../app/style.css">
+<style>
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+  .class-card{ position:relative; }
+  .class-card .code-row{ margin:10px 0 14px; }
+  .pending-row{ background:var(--growth-soft); border-radius:10px; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px; }
+  .pending-row .name{ font-weight:700; font-size:.88rem; }
+  .approved-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:6px 4px; font-size:.86rem; border-bottom:1px solid var(--line); }
+  .approved-row:last-child{ border-bottom:none; }
+  .check-list{ display:flex; flex-wrap:wrap; gap:8px; }
+  .check-list label{ margin:0; display:flex; align-items:center; gap:6px; font-weight:600; background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:.4em .7em; font-size:.82rem; cursor:pointer; }
+  .check-list input{ width:auto; }
+  .grade-input{ width:70px !important; display:inline-block; }
+  .engagement-table{ overflow-x:auto; }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar">
+  <div class="wrap row between">
+    <a class="brand" href="../index.html"><span class="dot"></span> Prof. Eduardo</a>
+    <nav>
+      <a href="../index.html">Catálogo</a>
+      <span id="userNome" class="mono" style="color:var(--ink-faint);"></span>
+      <a href="#" id="logoutBtn">Sair</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="eyebrow">Painel do professor</div>
+  <h1 class="title">Turmas, atividades e correção</h1>
+  <p class="lede">Crie turmas, aprove alunos, atribua aulas/quizzes como atividades e acompanhe o engajamento — tudo num só lugar.</p>
+
+  <div class="tabs" id="mainTabs">
+    <button type="button" class="active" data-panel="turmas">Turmas</button>
+    <button type="button" data-panel="atividades">Atividades</button>
+    <button type="button" data-panel="correcao">Correção</button>
+    <button type="button" data-panel="engajamento">Engajamento</button>
+  </div>
+
+  <!-- ===== TURMAS ===== -->
+  <div class="panel active" id="panel-turmas">
+    <div class="card">
+      <h2>Nova turma</h2>
+      <p class="sub">Cria um código de convite para você compartilhar com os alunos.</p>
+      <form id="formTurma" class="row">
+        <div style="flex:1;min-width:160px;">
+          <label for="turmaNome">Nome da turma</label>
+          <input type="text" id="turmaNome" placeholder="Ex.: 3º A" required>
+        </div>
+        <div style="flex:1;min-width:120px;">
+          <label for="turmaAno">Ano/série</label>
+          <input type="text" id="turmaAno" placeholder="Ex.: 3º ano">
+        </div>
+        <div style="align-self:flex-end;">
+          <button type="submit" class="btn" style="margin-top:14px;">Criar turma</button>
+        </div>
+      </form>
+      <div id="turmaAlert"></div>
+    </div>
+
+    <div id="turmasList" class="grid-cards" style="margin-top:16px;"></div>
+  </div>
+
+  <!-- ===== ATIVIDADES ===== -->
+  <div class="panel" id="panel-atividades">
+    <div class="card">
+      <h2>Nova atividade</h2>
+      <p class="sub">Atribua uma aula/quiz/infográfico já publicado a uma ou mais turmas.</p>
+      <form id="formAtividade">
+        <label for="atvTitulo">Título</label>
+        <input type="text" id="atvTitulo" placeholder="Ex.: Quiz — Progressão Aritmética" required>
+
+        <label for="atvTipo">Tipo</label>
+        <select id="atvTipo">
+          <option value="quiz">Quiz autocorrigido (nota vem do quiz da aula)</option>
+          <option value="leitura">Aula assistida (sem nota, só marca conclusão)</option>
+          <option value="submissao">Envio de resposta/arquivo (você corrige)</option>
+        </select>
+
+        <label for="atvAula">Aula/guia do catálogo</label>
+        <select id="atvAula"></select>
+
+        <label>Turmas</label>
+        <div class="check-list" id="atvTurmas"></div>
+
+        <label for="atvPrazo">Prazo (opcional)</label>
+        <input type="date" id="atvPrazo">
+
+        <button type="submit" class="btn" style="margin-top:18px;">Criar atividade</button>
+      </form>
+      <div id="atividadeAlert"></div>
+    </div>
+
+    <div class="card">
+      <h2>Atividades criadas</h2>
+      <table class="tbl" id="atividadesTable">
+        <thead><tr><th>Título</th><th>Tipo</th><th>Turmas</th><th>Prazo</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="atividadesEmpty" hidden>Nenhuma atividade criada ainda.</div>
+    </div>
+  </div>
+
+  <!-- ===== CORREÇÃO ===== -->
+  <div class="panel" id="panel-correcao">
+    <div class="card">
+      <h2>Fila de correção</h2>
+      <label for="corrAtividade">Escolha a atividade</label>
+      <select id="corrAtividade"></select>
+      <table class="tbl" id="corrTable" style="margin-top:16px;">
+        <thead><tr><th>Aluno</th><th>Status</th><th>Resposta</th><th>Nota</th><th>Feedback</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="corrEmpty" hidden>Nenhuma submissão ainda para esta atividade.</div>
+    </div>
+  </div>
+
+  <!-- ===== ENGAJAMENTO ===== -->
+  <div class="panel" id="panel-engajamento">
+    <div class="card">
+      <h2>Engajamento por turma</h2>
+      <label for="engTurma">Escolha a turma</label>
+      <select id="engTurma"></select>
+      <div class="engagement-table">
+        <table class="tbl" id="engTable" style="margin-top:16px;">
+          <thead><tr id="engHead"><th>Aluno</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="empty" id="engEmpty" hidden>Sem alunos aprovados ou atividades nesta turma ainda.</div>
+    </div>
+  </div>
+</main>
+
+<script type="module">
+import { protegerPagina, sair } from '../app/auth.js';
+import {
+  criarTurma, listarTurmas, listarMatriculas, definirStatusMatricula,
+  criarAtividade, listarAtividades, excluirAtividade,
+  listarSubmissoes, corrigirSubmissao
+} from '../app/data.js';
+import { listarAulasParaSelecao } from '../app/catalog.js';
+import { iniciarThemeToggle } from '../app/theme-toggle.js';
+
+iniciarThemeToggle('theme-pref-app');
+
+var uid = null;
+var turmasCache = [];
+var atividadesCache = [];
+
+document.getElementById('logoutBtn').addEventListener('click', function(e){ e.preventDefault(); sair(); });
+
+protegerPagina('professor', function(user, perfil){
+  uid = user.uid;
+  document.getElementById('userNome').textContent = perfil.nome;
+  popularAulas();
+  carregarTurmas();
+  carregarAtividades();
+}, '../login.html');
+
+// ---------- Tabs ----------
+document.getElementById('mainTabs').querySelectorAll('button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#mainTabs button').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.toggle('active', p.id === 'panel-'+btn.dataset.panel); });
+    if(btn.dataset.panel === 'correcao') popularSelectAtividadesCorrecao();
+    if(btn.dataset.panel === 'engajamento') popularSelectTurmasEngajamento();
+  });
+});
+
+function el(tag, cls, html){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+// ---------- Turmas ----------
+function popularAulas(){
+  var sel = document.getElementById('atvAula');
+  listarAulasParaSelecao().forEach(function(a){
+    var opt = document.createElement('option');
+    opt.value = a.path;
+    opt.textContent = a.label;
+    sel.appendChild(opt);
+  });
+}
+
+document.getElementById('formTurma').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var nome = document.getElementById('turmaNome').value.trim();
+  var ano = document.getElementById('turmaAno').value.trim();
+  if(!nome) return;
+  var alertBox = document.getElementById('turmaAlert');
+  alertBox.innerHTML = '';
+  try{
+    var res = await criarTurma(uid, nome, ano);
+    alertBox.innerHTML = '<div class="alert success">Turma criada! Código de convite: <span class="code-pill">'+res.joinCode+'</span> — compartilhe esse código junto do link do site com seus alunos.</div>';
+    document.getElementById('formTurma').reset();
+    carregarTurmas();
+  }catch(err){
+    alertBox.innerHTML = '<div class="alert error">Não foi possível criar a turma. Tente de novo.</div>';
+  }
+});
+
+async function carregarTurmas(){
+  turmasCache = await listarTurmas(uid);
+  var root = document.getElementById('turmasList');
+  root.innerHTML = '';
+  if(turmasCache.length === 0){
+    root.appendChild(el('div','empty','Nenhuma turma criada ainda.'));
+    return;
+  }
+  for(var i=0; i<turmasCache.length; i++){
+    var turma = turmasCache[i];
+    var matriculas = await listarMatriculas(uid, turma.id);
+    var pendentes = matriculas.filter(function(m){ return m.status === 'pending'; });
+    var aprovados = matriculas.filter(function(m){ return m.status === 'approved'; });
+
+    var card = el('div','card class-card');
+    card.appendChild(el('h2', null, turma.nome + (turma.ano ? ' · '+turma.ano : '')));
+    var codeRow = el('div','code-row');
+    codeRow.appendChild(el('span', null, 'Código de convite: '));
+    codeRow.appendChild(el('span','code-pill', turma.joinCode));
+    card.appendChild(codeRow);
+
+    card.appendChild(el('div', null, '<strong style="font-size:.82rem;">Pendentes ('+pendentes.length+')</strong>'));
+    var pendWrap = el('div', null);
+    if(pendentes.length === 0){ pendWrap.appendChild(el('div','hint','Nenhuma solicitação pendente.')); }
+    pendentes.forEach(function(p){
+      var row = el('div','pending-row');
+      row.appendChild(el('span','name', p.nome));
+      var btns = el('div','row');
+      var okBtn = el('button','btn sm', 'Aprovar');
+      var noBtn = el('button','btn sm secondary', 'Rejeitar');
+      okBtn.addEventListener('click', async function(){ await definirStatusMatricula(uid, turma.id, p.id, 'approved'); carregarTurmas(); });
+      noBtn.addEventListener('click', async function(){ await definirStatusMatricula(uid, turma.id, p.id, 'rejected'); carregarTurmas(); });
+      btns.appendChild(okBtn); btns.appendChild(noBtn);
+      row.appendChild(btns);
+      pendWrap.appendChild(row);
+    });
+    card.appendChild(pendWrap);
+
+    card.appendChild(el('div', null, '<strong style="font-size:.82rem;margin-top:10px;display:block;">Alunos aprovados ('+aprovados.length+')</strong>'));
+    var apWrap = el('div', null);
+    if(aprovados.length === 0){ apWrap.appendChild(el('div','hint','Ninguém aprovado ainda.')); }
+    aprovados.forEach(function(a){
+      var row = el('div','approved-row');
+      row.appendChild(el('span', null, a.nome));
+      row.appendChild(el('span','badge approved','aprovado'));
+      apWrap.appendChild(row);
+    });
+    card.appendChild(apWrap);
+
+    root.appendChild(card);
+  }
+}
+
+// ---------- Atividades ----------
+async function popularCheckboxesTurmas(){
+  var wrap = document.getElementById('atvTurmas');
+  wrap.innerHTML = '';
+  if(turmasCache.length === 0){
+    wrap.appendChild(el('div','hint','Crie uma turma primeiro.'));
+    return;
+  }
+  turmasCache.forEach(function(t){
+    var label = document.createElement('label');
+    var input = document.createElement('input');
+    input.type = 'checkbox'; input.value = t.id;
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(t.nome));
+    wrap.appendChild(label);
+  });
+}
+
+document.getElementById('formAtividade').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var titulo = document.getElementById('atvTitulo').value.trim();
+  var tipo = document.getElementById('atvTipo').value;
+  var lessonPath = document.getElementById('atvAula').value;
+  var prazo = document.getElementById('atvPrazo').value;
+  var classIds = Array.prototype.slice.call(document.querySelectorAll('#atvTurmas input:checked')).map(function(i){ return i.value; });
+  var alertBox = document.getElementById('atividadeAlert');
+  alertBox.innerHTML = '';
+  if(!titulo || classIds.length === 0){
+    alertBox.innerHTML = '<div class="alert error">Preencha o título e escolha ao menos uma turma.</div>';
+    return;
+  }
+  try{
+    await criarAtividade(uid, { titulo: titulo, tipo: tipo, lessonPath: lessonPath, classIds: classIds, dueDate: prazo });
+    alertBox.innerHTML = '<div class="alert success">Atividade criada!</div>';
+    document.getElementById('formAtividade').reset();
+    carregarAtividades();
+  }catch(err){
+    alertBox.innerHTML = '<div class="alert error">Não foi possível criar a atividade.</div>';
+  }
+});
+
+async function carregarAtividades(){
+  atividadesCache = await listarAtividades(uid);
+  var tbody = document.querySelector('#atividadesTable tbody');
+  tbody.innerHTML = '';
+  document.getElementById('atividadesEmpty').hidden = atividadesCache.length > 0;
+  atividadesCache.forEach(function(a){
+    var turmaNomes = a.classIds.map(function(cid){
+      var t = turmasCache.find(function(x){ return x.id === cid; });
+      return t ? t.nome : '?';
+    }).join(', ');
+    var tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td>'+a.titulo+'</td>' +
+      '<td><span class="badge">'+a.tipo+'</span></td>' +
+      '<td>'+turmaNomes+'</td>' +
+      '<td>'+(a.dueDate || '—')+'</td>' +
+      '<td></td>';
+    var delBtn = el('button','btn sm danger','Excluir');
+    delBtn.addEventListener('click', async function(){
+      if(!confirm('Excluir a atividade "'+a.titulo+'"?')) return;
+      await excluirAtividade(uid, a.id);
+      carregarAtividades();
+    });
+    tr.lastElementChild.appendChild(delBtn);
+    tbody.appendChild(tr);
+  });
+}
+
+// ---------- Correção ----------
+function popularSelectAtividadesCorrecao(){
+  var sel = document.getElementById('corrAtividade');
+  sel.innerHTML = '';
+  atividadesCache.forEach(function(a){
+    var opt = document.createElement('option');
+    opt.value = a.id; opt.textContent = a.titulo;
+    sel.appendChild(opt);
+  });
+  if(atividadesCache.length){ carregarCorrecao(atividadesCache[0].id); }
+}
+document.getElementById('corrAtividade').addEventListener('change', function(){ carregarCorrecao(this.value); });
+
+async function carregarCorrecao(activityId){
+  if(!activityId){ return; }
+  var submissoes = await listarSubmissoes(uid, activityId);
+  var tbody = document.querySelector('#corrTable tbody');
+  tbody.innerHTML = '';
+  document.getElementById('corrEmpty').hidden = submissoes.length > 0;
+  submissoes.forEach(function(s){
+    var tr = document.createElement('tr');
+    var respostaTxt = s.resposta ? s.resposta : (s.arquivoUrl ? '<a href="'+s.arquivoUrl+'" target="_blank" rel="noopener">Ver arquivo</a>' : '—');
+    tr.innerHTML =
+      '<td>'+(s.nome || s.studentUid)+'</td>' +
+      '<td><span class="badge '+(s.status||'')+'">'+(s.status||'—')+'</span></td>' +
+      '<td>'+respostaTxt+'</td>' +
+      '<td><input type="text" class="grade-input" value="'+(s.score!=null?s.score:'')+'"></td>' +
+      '<td><input type="text" value="'+(s.feedback||'')+'" placeholder="Comentário"></td>' +
+      '<td></td>';
+    var saveBtn = el('button','btn sm','Salvar');
+    saveBtn.addEventListener('click', async function(){
+      var nota = tr.querySelector('.grade-input').value;
+      var feedback = tr.querySelectorAll('input')[1].value;
+      await corrigirSubmissao(uid, activityId, s.studentUid, nota, feedback);
+      carregarCorrecao(activityId);
+    });
+    tr.lastElementChild.appendChild(saveBtn);
+    tbody.appendChild(tr);
+  });
+}
+
+// ---------- Engajamento ----------
+function popularSelectTurmasEngajamento(){
+  var sel = document.getElementById('engTurma');
+  sel.innerHTML = '';
+  turmasCache.forEach(function(t){
+    var opt = document.createElement('option');
+    opt.value = t.id; opt.textContent = t.nome;
+    sel.appendChild(opt);
+  });
+  if(turmasCache.length){ carregarEngajamento(turmasCache[0].id); }
+}
+document.getElementById('engTurma').addEventListener('change', function(){ carregarEngajamento(this.value); });
+
+async function carregarEngajamento(classId){
+  if(!classId) return;
+  var matriculas = await listarMatriculas(uid, classId);
+  var aprovados = matriculas.filter(function(m){ return m.status === 'approved'; });
+  var atividadesTurma = atividadesCache.filter(function(a){ return a.classIds.indexOf(classId) !== -1; });
+
+  var head = document.getElementById('engHead');
+  head.innerHTML = '<th>Aluno</th>';
+  atividadesTurma.forEach(function(a){ head.appendChild(el('th', null, a.titulo)); });
+
+  var tbody = document.querySelector('#engTable tbody');
+  tbody.innerHTML = '';
+  document.getElementById('engEmpty').hidden = !(aprovados.length === 0 || atividadesTurma.length === 0);
+
+  for(var i=0; i<aprovados.length; i++){
+    var aluno = aprovados[i];
+    var tr = document.createElement('tr');
+    tr.appendChild(el('td', null, aluno.nome));
+    for(var j=0; j<atividadesTurma.length; j++){
+      var a = atividadesTurma[j];
+      var subs = await listarSubmissoes(uid, a.id);
+      var minha = subs.find(function(s){ return s.studentUid === aluno.id; });
+      var status = minha ? minha.status : 'nao-iniciado';
+      var nota = minha && minha.score != null ? ' ('+minha.score+')' : '';
+      tr.appendChild(el('td', null, '<span class="badge '+status+'">'+status+nota+'</span>'));
+    }
+    tbody.appendChild(tr);
+  }
+}
+
+// popular checkboxes de turma sempre que a aba de atividades é usada
+document.querySelector('[data-panel="atividades"]').addEventListener('click', popularCheckboxesTurmas);
+</script>
+</body>
+</html>

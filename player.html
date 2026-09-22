@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atividade — Prof. Eduardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  body{ padding-bottom:0; }
+  .player-shell{ display:flex; flex-direction:column; height:100vh; }
+  .player-top{ border-bottom:1px solid var(--line); padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .player-top h1{ font-size:1rem; font-weight:800; margin:0; font-family:'Archivo',sans-serif; }
+  .player-frame-wrap{ flex:1; min-height:0; }
+  iframe#lessonFrame{ width:100%; height:100%; border:none; display:block; }
+  .submit-panel{ border-top:1px solid var(--line); padding:16px 20px; background:var(--surface); }
+  .submit-panel.hidden{ display:none; }
+  .status-line{ font-size:.82rem; color:var(--ink-faint); display:flex; align-items:center; gap:8px; }
+</style>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="player-shell">
+  <div class="player-top">
+    <div class="row">
+      <a href="aluno/dashboard.html" class="btn sm secondary">← Minhas atividades</a>
+      <h1 id="tituloAtividade">Atividade</h1>
+    </div>
+    <div class="status-line" id="statusLine"></div>
+  </div>
+  <div class="player-frame-wrap">
+    <iframe id="lessonFrame" title="Conteúdo da aula"></iframe>
+  </div>
+
+  <div class="submit-panel hidden" id="submitPanel">
+    <label for="respostaTxt">Sua resposta</label>
+    <textarea id="respostaTxt" placeholder="Escreva sua resposta aqui..."></textarea>
+    <label for="arquivoInput">Ou envie um arquivo (opcional)</label>
+    <input type="file" id="arquivoInput">
+    <button type="button" class="btn" id="enviarBtn" style="margin-top:14px;">Enviar atividade</button>
+    <div id="submitAlert"></div>
+  </div>
+
+  <div class="submit-panel hidden" id="leituraPanel">
+    <button type="button" class="btn" id="marcarConcluidoBtn">Marcar aula como concluída</button>
+    <span id="leituraStatus" class="hint" style="margin-left:10px;"></span>
+  </div>
+</div>
+
+<script type="module">
+import { protegerPagina } from './app/auth.js';
+import { buscarSubmissao, salvarSubmissao } from './app/data.js';
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { storage } from './app/firebase-init.js';
+import { ref as storageRef, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js';
+
+iniciarThemeToggle('theme-pref-app');
+
+var params = new URLSearchParams(window.location.search);
+var teacherUid = params.get('teacher');
+var activityId = params.get('activity');
+var lessonPath = params.get('lesson');
+var titulo = params.get('titulo') || 'Atividade';
+var tipo = params.get('tipo') || 'leitura';
+
+document.getElementById('tituloAtividade').textContent = titulo;
+document.getElementById('lessonFrame').src = lessonPath;
+
+var studentUid = null;
+
+protegerPagina('aluno', async function(user){
+  studentUid = user.uid;
+
+  // Marca "abriu a aula" na primeira vez, sem sobrescrever se já estiver em andamento/concluída.
+  var atual = await buscarSubmissao(teacherUid, activityId, studentUid);
+  if(!atual){
+    await salvarSubmissao(teacherUid, activityId, studentUid, { status: 'em-andamento', firstOpenedAt: new Date().toISOString() });
+  }
+  atualizarStatusLine(atual);
+
+  if(tipo === 'submissao'){
+    document.getElementById('submitPanel').classList.remove('hidden');
+    if(atual && atual.resposta) document.getElementById('respostaTxt').value = atual.resposta;
+  } else if(tipo === 'leitura'){
+    document.getElementById('leituraPanel').classList.remove('hidden');
+    if(atual && atual.status === 'concluido'){ document.getElementById('leituraStatus').textContent = 'Concluída ✔'; }
+  }
+});
+
+function atualizarStatusLine(sub){
+  var status = sub ? sub.status : 'em-andamento';
+  document.getElementById('statusLine').innerHTML = '<span class="badge '+status+'">'+status.replace('-',' ')+'</span>';
+}
+
+// ---------- Quiz: escuta a nota que a própria aula reporta ----------
+window.addEventListener('message', async function(e){
+  if(!e.data || e.data.type !== 'lesson-progress' || !studentUid) return;
+  if(e.data.event === 'quiz-completed'){
+    await salvarSubmissao(teacherUid, activityId, studentUid, {
+      status: 'concluido', score: e.data.score, total: e.data.total, submittedAt: new Date().toISOString()
+    });
+    atualizarStatusLine({ status: 'concluido' });
+  }
+});
+
+// ---------- Envio de resposta/arquivo ----------
+document.getElementById('enviarBtn').addEventListener('click', async function(){
+  var alertBox = document.getElementById('submitAlert');
+  alertBox.innerHTML = '';
+  var resposta = document.getElementById('respostaTxt').value.trim();
+  var arquivo = document.getElementById('arquivoInput').files[0];
+  var dados = { status: 'em-analise', resposta: resposta, submittedAt: new Date().toISOString() };
+
+  this.disabled = true;
+  try{
+    if(arquivo){
+      var caminho = 'submissions/'+teacherUid+'/'+activityId+'/'+studentUid+'/'+arquivo.name;
+      var fileRef = storageRef(storage, caminho);
+      await uploadBytes(fileRef, arquivo);
+      dados.arquivoUrl = await getDownloadURL(fileRef);
+      dados.arquivoNome = arquivo.name;
+    }
+    await salvarSubmissao(teacherUid, activityId, studentUid, dados);
+    alertBox.innerHTML = '<div class="alert success">Enviado! Seu(sua) professor(a) vai corrigir em breve.</div>';
+    atualizarStatusLine({ status: 'em-analise' });
+  }catch(err){
+    alertBox.innerHTML = '<div class="alert error">Não foi possível enviar. Tente de novo.</div>';
+  }
+  this.disabled = false;
+});
+
+// ---------- Marcar aula assistida como concluída ----------
+document.getElementById('marcarConcluidoBtn').addEventListener('click', async function(){
+  await salvarSubmissao(teacherUid, activityId, studentUid, { status: 'concluido', submittedAt: new Date().toISOString() });
+  document.getElementById('leituraStatus').textContent = 'Concluída ✔';
+  atualizarStatusLine({ status: 'concluido' });
+});
+</script>
+</body>
+</html>
