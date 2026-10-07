@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triângulos — Aulas 23–27 · Recomposição Matemática 9º ano</title>
+<meta name="description" content="Condição de existência, classificações, soma dos ângulos e ângulo externo. Aulas 23–27 da Recomposição de Aprendizagem de Matemática do 9º ano, com exercícios e problemas.">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA; --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8; --primary:#382EAE; --primary-soft:#E7E4FB;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08); --on-accent:#FFFFFF;
+    --c0:#382EAE; --c1:#0B7C82; --c2:#D9531A; --c3:#9A3C8F; --c4:#1F62C9; --c5:#1C8A52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+      --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+    --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+  }
+  .t0,.b0{ --accent:var(--c0); } .t1,.b1{ --accent:var(--c1); } .t2,.b2{ --accent:var(--c2); }
+  .t3,.b3{ --accent:var(--c3); } .t4,.b4{ --accent:var(--c4); } .t5,.b5{ --accent:var(--c5); }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,h4,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono,.formula-text{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:inherit; }
+  .sheet{ max-width:1140px; margin:0 auto; background:var(--surface); border:1px solid var(--line); border-radius:26px; box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft); overflow:hidden; }
+
+  /* ---------- masthead ---------- */
+  .masthead{ position:relative; padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px; padding-right:clamp(70px,9vw,110px); border-bottom:1px solid var(--line); overflow:hidden; }
+  .crumbs{ display:flex; flex-wrap:wrap; gap:6px 14px; font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 16px; }
+  .crumbs a{ text-decoration:none; color:var(--ink-soft); } .crumbs a:hover{ text-decoration:underline; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,var(--primary)); background:color-mix(in srgb, var(--accent,var(--primary)) 14%, var(--surface)); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .masthead h1{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; line-height:1; margin:0 0 10px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--accent,var(--primary)); }
+  .masthead p.lede{ font-style:italic; color:var(--ink-soft); font-size:clamp(.98rem,1.6vw,1.15rem); max-width:62ch; margin:0; line-height:1.5; }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+  .mast-shapes{ display:none; position:absolute; right:-6px; bottom:-10px; width:270px; height:auto; opacity:.95; pointer-events:none; }
+  @media (min-width:1000px){ .mast-shapes{ display:block; } .masthead{ padding-right:300px; } }
+
+  /* ---------- seções ---------- */
+  .section{ padding:clamp(22px,3vw,34px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .section:last-child{ border-bottom:none; }
+  .section > h2{ font-size:clamp(1.25rem,2.4vw,1.6rem); font-weight:800; margin:0 0 4px; }
+  .section > .tag{ font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 16px; }
+  .intro{ color:var(--ink-soft); font-size:.95rem; margin:0 0 18px; max-width:70ch; line-height:1.55; }
+  .cards{ display:grid; gap:14px; grid-template-columns:repeat(3,1fr); }
+  .cards.two{ grid-template-columns:repeat(2,1fr); } .cards.four{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:900px){ .cards, .cards.four{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .cards, .cards.two, .cards.four{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px; text-decoration:none; display:block; }
+  a.card{ transition:transform .15s ease, border-color .15s ease; }
+  a.card:hover{ transform:translateY(-2px); border-color:var(--accent,var(--line-strong)); }
+  a.card:focus-visible, .btn:focus-visible, summary:focus-visible, .theme-toggle:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .card h3{ font-size:1.08rem; font-weight:800; margin:10px 0 2px; }
+  .card .meta{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 8px; }
+  .card p{ margin:0; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+  .chip{ display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--accent,var(--primary)); color:var(--on-accent); flex:none; }
+  .chip .glyph{ width:56%; height:56%; }
+  .pill{ display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; padding:.25em .8em; border-radius:999px; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .num{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:'Archivo',sans-serif; font-weight:800; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .moments{ margin-top:16px; background:color-mix(in srgb, var(--c1) 12%, var(--surface)); border-radius:14px; padding:14px 18px; font-size:.9rem; line-height:1.55; }
+  .stats{ display:flex; gap:28px; flex-wrap:wrap; margin-top:20px; }
+  .stats div{ display:flex; flex-direction:column; }
+  .stats b{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.1rem; line-height:1; color:var(--ink); }
+  .stats span{ font-size:.8rem; color:var(--ink-soft); }
+  .fcard{ background:color-mix(in srgb, var(--accent) 10%, var(--surface)); border:1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); border-radius:14px; padding:14px 16px; }
+  .fcard .f{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.95rem; line-height:1.45; margin-top:6px; }
+  .fcard h3{ font-size:.92rem; font-weight:700; margin:8px 0 0; }
+  .notes{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .notes li{ display:flex; gap:16px; align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:14px 18px; font-size:.92rem; line-height:1.5; }
+  .notes .pill{ flex:none; min-width:84px; text-align:center; }
+  @media (max-width:560px){ .notes li{ flex-direction:column; align-items:flex-start; } }
+
+  /* ---------- aulas ---------- */
+  .lesson{ padding:clamp(24px,3.2vw,38px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .lesson-head{ display:flex; gap:16px; align-items:center; margin-bottom:14px; }
+  .lesson-head .chip{ width:56px; height:56px; }
+  .lesson-head .kicker{ font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0; }
+  .lesson-head h2{ font-size:clamp(1.35rem,2.8vw,1.85rem); font-weight:800; margin:2px 0 0; line-height:1.15; }
+  .objetivo{ margin:0 0 18px; font-size:.98rem; color:var(--ink-soft); font-style:italic; max-width:70ch; line-height:1.5; }
+  .objetivo strong{ font-style:normal; color:var(--ink); }
+  .lesson-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:860px){ .lesson-grid{ grid-template-columns:1fr; } }
+  .lesson h4{ font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .lesson ul{ margin:0; padding-left:1.15rem; }
+  .lesson li{ margin:0 0 8px; font-size:.95rem; line-height:1.55; }
+  .lesson li::marker{ color:var(--accent); }
+  .formula{ background:var(--accent); color:var(--on-accent); border-radius:14px; padding:14px 18px; margin-bottom:14px; }
+  .formula-label{ display:block; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:.92; margin-bottom:4px; }
+  .formula-text{ display:block; font-weight:700; font-size:clamp(1.05rem,2.2vw,1.35rem); line-height:1.4; overflow-wrap:anywhere; }
+  .exemplo{ background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 16px 8px; margin-bottom:14px; }
+  .exemplo h4{ color:var(--ink); text-transform:none; letter-spacing:0; font-size:.88rem; margin:0 0 6px; }
+  .exemplo p{ margin:0 0 6px; font-size:.92rem; line-height:1.5; }
+  .pratica{ margin:0; padding:10px 14px; border-radius:12px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+  .pratica strong{ font-family:'Archivo',sans-serif; }
+  .practice{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; align-items:start; }
+  @media (max-width:860px){ .practice{ grid-template-columns:1fr; } }
+  .sect{ border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+  .sect > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; padding:12px 16px; font-family:'Archivo',sans-serif; font-weight:800; border-radius:14px; }
+  .sect > summary::-webkit-details-marker{ display:none; }
+  .sect > summary::after{ content:"+"; margin-left:auto; font-size:1.3rem; line-height:1; color:var(--accent); }
+  .sect[open] > summary::after{ content:"−"; }
+  .sect > summary .count{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--accent); color:var(--on-accent); border-radius:999px; padding:.15em .7em; }
+  .qa{ margin:0; padding:2px 16px 12px 40px; }
+  .qa li{ margin:0 0 12px; padding-left:4px; font-size:.95rem; line-height:1.5; }
+  .qa li::marker{ font-family:'Archivo',sans-serif; font-weight:800; color:var(--accent); }
+  .ans{ margin-top:3px; }
+  .ans > summary{ cursor:pointer; display:inline-block; font-family:'Archivo',sans-serif; font-size:.78rem; font-weight:700; color:var(--accent); padding:2px 0; }
+  .ans p{ margin:4px 0 0; padding:8px 12px; border-radius:10px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+
+  /* ---------- barra de ações e navegação ---------- */
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; padding:14px clamp(22px,5vw,52px); border-bottom:1px solid var(--line); background:var(--surface-2); align-items:center; }
+  .actions .hint{ font-size:.82rem; color:var(--ink-soft); margin-right:auto; }
+  .btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; padding:.55em 1.1em; border-radius:999px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; }
+  .btn:hover{ border-color:var(--primary); }
+  .pager{ display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; padding:22px clamp(22px,5vw,52px) 28px; }
+  .pager a{ display:flex; flex-direction:column; gap:2px; text-decoration:none; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 18px; min-width:200px; flex:1; }
+  .pager a:hover{ border-color:var(--accent,var(--primary)); }
+  .pager small{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-faint); }
+  .pager b{ font-family:'Archivo',sans-serif; font-size:.98rem; }
+  .pager .next{ text-align:right; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); } .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; } .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media print{
+    body{ background:#fff; padding:0; } .theme-toggle,.actions,.pager,.mast-shapes{ display:none; }
+    .sheet{ box-shadow:none; border:none; } .lesson{ break-inside:avoid; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } a.card{ transition:none; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<div class="sheet">
+
+  <header class="masthead b1">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="../../../../index.html">Início</a><span>›</span><span>Matemática · 9° Ano · 2° Trimestre</span><span>›</span><a href="infografico.html">Guia</a><span>›</span><span>Bloco 2</span>
+    </nav>
+    <span class="eyebrow">Recomposição Matemática · Bloco 2 de 6</span>
+    <h1>Triângulos</h1>
+    <p class="lede">Condição de existência, classificações, soma dos ângulos e ângulo externo.</p>
+    <div class="badges"><span class="badge">Aulas 23–27</span><span class="badge">Habilidade 9G1.5</span><span class="badge">40 exercícios · 15 problemas</span></div>
+    <svg class="mast-shapes" viewBox="0 0 300 200" aria-hidden="true">
+      <polygon points="60,20 110,56 91,114 29,114 10,56" fill="var(--c3)"/>
+      <polygon points="200,18 250,18 275,62 250,106 200,106 175,62" fill="var(--c2)"/>
+      <polygon points="40,190 120,190 80,126" fill="var(--c1)"/>
+      <circle cx="205" cy="152" r="40" fill="var(--c4)"/>
+      <polygon points="140,128 168,128 188,148 188,176 168,196 140,196 120,176 120,148" fill="var(--c5)" opacity=".92"/>
+    </svg>
+  </header>
+  <div class="actions">
+    <span class="hint">Exercícios e problemas começam recolhidos. As respostas ficam escondidas até você abrir.</span>
+    <button type="button" class="btn" id="toggleAll" aria-pressed="false">Abrir exercícios e respostas</button>
+    <a class="btn" href="infografico.html">Guia da unidade</a>
+  </div>
+  
+  <article class="lesson b1" id="aula-23">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12,3.5 21,19.5 3,19.5"/></svg></span>
+      <div>
+        <p class="kicker">Aula 23</p>
+        <h2>Condição de existência de um triângulo</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Identificar, pelas medidas dos lados, se um triângulo pode ser formado.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Nem três medidas quaisquer formam um triângulo: a figura pode não “fechar”.</li><li>Para existir, o maior lado precisa ser menor que a soma dos outros dois.</li><li>Se a soma for igual ou menor que o terceiro lado, não há triângulo (7 + 7 = 14 não fecha).</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Condição de existência</span><span class="formula-text">a &lt; b + c  ·  b &lt; a + c  ·  c &lt; a + b</span></div>
+        <div class="exemplo"><h4>Exemplo: 5, 8, 15 e 17 cm</h4><p>8-15-17: 17 &lt; 23 ✔ forma.</p><p>5-15-17: 17 &lt; 20 ✔ forma.</p><p>5-8-17: 17 &lt; 13 ✘.</p><p>5-8-15: 15 &lt; 13 ✘.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Canudos plásticos e barbante: 6 tentativas (12-12-12, 8-8-15, 3-4-8, 6-8-10, 7-7-14, 4-6-12). Formam triângulo: 1ª, 2ª e 4ª.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Os lados 3 cm, 4 cm e 5 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Sim, pois 5 &lt; 3 + 4.</p></details></li><li>Os lados 2 cm, 3 cm e 6 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Não, pois 6 &gt; 2 + 3.</p></details></li><li>Os lados 5 cm, 5 cm e 10 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Não, pois 10 = 5 + 5 (a soma precisa ser maior).</p></details></li><li>Os lados 6 cm, 7 cm e 8 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Sim, pois 8 &lt; 6 + 7.</p></details></li><li>Os lados 1 cm, 1 cm e 1 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Sim, pois 1 &lt; 1 + 1.</p></details></li><li>Os lados 4 cm, 9 cm e 13 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Não, pois 13 = 4 + 9.</p></details></li><li>Os lados 10 cm, 12 cm e 15 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Sim, pois 15 &lt; 10 + 12.</p></details></li><li>Os lados 3 cm, 3 cm e 7 cm formam um triângulo?<details class="ans"><summary>Resposta</summary><p>Não, pois 7 &gt; 3 + 3.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Tenho varetas de 5 cm, 7 cm, 9 cm e 15 cm. Quantos triângulos diferentes posso montar usando três varetas?<details class="ans"><summary>Resolução</summary><p>Testando: 5-7-9 forma (9 &lt; 12); 5-7-15 não; 5-9-15 não (15 &gt; 14); 7-9-15 forma (15 &lt; 16). Dá para montar 2 triângulos.</p></details></li><li>Dois lados de um triângulo medem 5 cm e 9 cm. Quais medidas inteiras o terceiro lado pode ter?<details class="ans"><summary>Resolução</summary><p>O terceiro lado x deve ser menor que 5 + 9 = 14 e maior que 9 − 5 = 4. Inteiros: 5, 6, 7, 8, 9, 10, 11, 12 e 13 (9 valores).</p></details></li><li>Um triângulo isósceles tem dois lados de 7 cm. Qual é o maior valor inteiro possível para o terceiro lado?<details class="ans"><summary>Resolução</summary><p>O terceiro lado x deve ser menor que 7 + 7 = 14. O maior inteiro é 13 cm.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b1" id="aula-24">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12,3.5 21,19.5 3,19.5"/></svg></span>
+      <div>
+        <p class="kicker">Aula 24</p>
+        <h2>Triângulos quanto aos lados</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Classificar triângulos pelas medidas dos lados.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Equilátero: os três lados têm a mesma medida.</li><li>Isósceles: ao menos dois lados têm a mesma medida.</li><li>Escaleno: todos os lados têm medidas diferentes.</li><li>Triângulos aparecem em telhados, estruturas metálicas, placas de trânsito e na arte.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Três tipos</span><span class="formula-text">equilátero · isósceles · escaleno</span></div>
+        <div class="exemplo"><h4>Isósceles de perímetro 20 cm com um lado de 6 cm</h4><p>Há duas soluções:</p><p>• lado de 6 é um dos iguais: 6 + 6 + x = 20 → x = 8 (6, 6, 8)</p><p>• lado de 6 é o diferente: 2x + 6 = 20 → x = 7 (7, 7, 6)</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Classificar triângulos a partir dos registros da aula anterior (12-12-12 equilátero, 8-8-15 isósceles, 6-8-10 escaleno). Desafio: equilátero de perímetro entre 13 e 17 cm e lado inteiro mede 5 cm.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Classifique o triângulo de lados 5 cm, 5 cm e 5 cm.<details class="ans"><summary>Resposta</summary><p>Equilátero.</p></details></li><li>Classifique o triângulo de lados 4 cm, 4 cm e 7 cm.<details class="ans"><summary>Resposta</summary><p>Isósceles.</p></details></li><li>Classifique o triângulo de lados 3 cm, 4 cm e 5 cm.<details class="ans"><summary>Resposta</summary><p>Escaleno.</p></details></li><li>Classifique o triângulo de lados 9 cm, 9 cm e 2 cm.<details class="ans"><summary>Resposta</summary><p>Isósceles.</p></details></li><li>Classifique o triângulo de lados 6 cm, 8 cm e 10 cm.<details class="ans"><summary>Resposta</summary><p>Escaleno.</p></details></li><li>Qual é o perímetro de um triângulo equilátero de lado 6 cm?<details class="ans"><summary>Resposta</summary><p>18 cm.</p></details></li><li>Um isósceles tem dois lados de 8 cm e a base de 5 cm. Qual é o perímetro?<details class="ans"><summary>Resposta</summary><p>8 + 8 + 5 = 21 cm.</p></details></li><li>Um triângulo equilátero tem perímetro de 27 cm. Quanto mede cada lado?<details class="ans"><summary>Resposta</summary><p>27 ÷ 3 = 9 cm.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Um triângulo isósceles tem perímetro de 25 cm e base de 7 cm. Quanto mede cada um dos lados iguais?<details class="ans"><summary>Resolução</summary><p>25 − 7 = 18; 18 ÷ 2 = 9 cm.</p></details></li><li>Um triângulo isósceles tem perímetro de 29 cm e um dos lados mede 11 cm. Quais triângulos são possíveis?<details class="ans"><summary>Resolução</summary><p>Se 11 é lado igual: 11 + 11 + x = 29, x = 7 (11, 11, 7). Se 11 é a base: 2x + 11 = 29, x = 9 (9, 9, 11). Os dois existem.</p></details></li><li>Os lados de um triângulo são três números inteiros consecutivos e o perímetro é 36 cm. Quanto medem os lados? Como se classifica o triângulo?<details class="ans"><summary>Resolução</summary><p>x + (x + 1) + (x + 2) = 36, então x = 11. Lados: 11, 12 e 13 cm (13 &lt; 23, existe). É escaleno.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b1" id="aula-25">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="5,4 5,20 20,20"/></svg></span>
+      <div>
+        <p class="kicker">Aula 25</p>
+        <h2>Triângulos quanto aos ângulos</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Classificar triângulos pela medida dos ângulos internos e usar o transferidor.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Acutângulo: todos os ângulos internos são agudos (menores que 90°).</li><li>Retângulo: possui um ângulo reto (90°).</li><li>Obtusângulo: possui um ângulo interno obtuso (maior que 90°).</li><li>Transferidor: centro no vértice, um lado no zero, escolher a escala que cresce e ler onde passa o outro lado.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Referência</span><span class="formula-text">90° separa agudo, reto e obtuso</span></div>
+        <div class="exemplo"><h4>Verdadeiro ou falso?</h4><p>Equilátero pode ser retângulo: F.</p><p>Todo retângulo é escaleno: F.</p><p>Todo equilátero é acutângulo: V.</p><p>Obtusângulo pode ser isósceles: V.</p><p>Todo isósceles é acutângulo: F.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Desenhar um triângulo equilátero, um isósceles e um escaleno em papel colorido, medir lados e ângulos e classificar cada um duas vezes (lados e ângulos).</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Classifique o triângulo de ângulos 60°, 60° e 60°.<details class="ans"><summary>Resposta</summary><p>Acutângulo.</p></details></li><li>Classifique o triângulo de ângulos 90°, 45° e 45°.<details class="ans"><summary>Resposta</summary><p>Retângulo.</p></details></li><li>Classifique o triângulo de ângulos 100°, 40° e 40°.<details class="ans"><summary>Resposta</summary><p>Obtusângulo.</p></details></li><li>Classifique o triângulo de ângulos 80°, 50° e 50°.<details class="ans"><summary>Resposta</summary><p>Acutângulo.</p></details></li><li>Classifique o triângulo de ângulos 120°, 30° e 30°.<details class="ans"><summary>Resposta</summary><p>Obtusângulo.</p></details></li><li>Quantos ângulos retos um triângulo pode ter, no máximo?<details class="ans"><summary>Resposta</summary><p>Um.</p></details></li><li>Quantos ângulos obtusos um triângulo pode ter, no máximo?<details class="ans"><summary>Resposta</summary><p>Um.</p></details></li><li>Um ângulo de 90° é agudo, reto ou obtuso?<details class="ans"><summary>Resposta</summary><p>Reto.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Um triângulo tem ângulos de 35° e 55°. Quanto mede o terceiro ângulo e como o triângulo se classifica? (A soma dos ângulos é 180°.)<details class="ans"><summary>Resolução</summary><p>180° − 35° − 55° = 90°. É um triângulo retângulo.</p></details></li><li>Um triângulo tem dois ângulos de 40°. Qual é o terceiro ângulo? Classifique o triângulo quanto aos ângulos e quanto aos lados.<details class="ans"><summary>Resolução</summary><p>180° − 80° = 100°. É obtusângulo e isósceles (dois ângulos iguais).</p></details></li><li>Os ângulos de um triângulo medem 2x, 3x e 4x. Quanto vale cada ângulo e qual é a classificação?<details class="ans"><summary>Resolução</summary><p>9x = 180°, x = 20°. Ângulos: 40°, 60° e 80°. Todos menores que 90°: acutângulo.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b1" id="aula-26">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12,3.5 21,19.5 3,19.5"/></svg></span>
+      <div>
+        <p class="kicker">Aula 26</p>
+        <h2>Propriedades dos triângulos I</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Compreender que a soma dos ângulos internos de um triângulo é 180°.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Ao recortar os três cantos de qualquer triângulo e juntá-los lado a lado, eles formam um ângulo raso (180°).</li><li>Isso vale para todo triângulo, seja qual for a forma.</li><li>Ângulos desconhecidos saem de uma equação: soma dos três = 180°.</li><li>No triângulo retângulo, os dois agudos somam 90°.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Soma dos ângulos internos</span><span class="formula-text">a + b + c = 180°</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Isósceles com 80° no vértice: 2x + 80° = 180° → x = 50° cada ângulo da base.</p><p>Ângulos x, 2x e 75°: 3x + 75° = 180° → x = 35°.</p><p>Retângulo com agudo de 32°: o outro mede 58°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Colorir os três ângulos de um triângulo, recortar e colar os vértices lado a lado sobre uma reta. Aprofundar no GeoGebra.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Dois ângulos de um triângulo medem 50° e 60°. Quanto mede o terceiro?<details class="ans"><summary>Resposta</summary><p>70°.</p></details></li><li>Dois ângulos de um triângulo medem 90° e 30°. Quanto mede o terceiro?<details class="ans"><summary>Resposta</summary><p>60°.</p></details></li><li>Dois ângulos de um triângulo medem 100° e 45°. Quanto mede o terceiro?<details class="ans"><summary>Resposta</summary><p>35°.</p></details></li><li>Dois ângulos de um triângulo medem 72° e 72°. Quanto mede o terceiro?<details class="ans"><summary>Resposta</summary><p>36°.</p></details></li><li>Quanto mede cada ângulo de um triângulo equilátero?<details class="ans"><summary>Resposta</summary><p>60°.</p></details></li><li>Em um triângulo retângulo, um ângulo agudo mede 25°. Quanto mede o outro?<details class="ans"><summary>Resposta</summary><p>65°.</p></details></li><li>Um triângulo isósceles tem ângulo do vértice de 40°. Quanto mede cada ângulo da base?<details class="ans"><summary>Resposta</summary><p>(180° − 40°) ÷ 2 = 70°.</p></details></li><li>Um triângulo isósceles tem ângulos da base de 35°. Quanto mede o ângulo do vértice?<details class="ans"><summary>Resposta</summary><p>180° − 70° = 110°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Os ângulos de um triângulo medem x, x + 10° e x + 20°. Quanto mede cada um?<details class="ans"><summary>Resolução</summary><p>3x + 30° = 180°, x = 50°. Ângulos: 50°, 60° e 70°.</p></details></li><li>Em um triângulo isósceles, cada ângulo da base mede 3x + 5° e o ângulo do vértice mede 2x + 10°. Calcule x e os ângulos.<details class="ans"><summary>Resolução</summary><p>2(3x + 5°) + 2x + 10° = 180°, 8x = 160°, x = 20°. Base: 65° e 65°; vértice: 50°.</p></details></li><li>Em um triângulo retângulo, o maior ângulo agudo é o dobro do menor. Quanto medem os ângulos agudos?<details class="ans"><summary>Resolução</summary><p>a + 2a = 90°, a = 30°. Os ângulos agudos medem 30° e 60°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b1" id="aula-27">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="5,4 5,20 20,20"/></svg></span>
+      <div>
+        <p class="kicker">Aula 27</p>
+        <h2>Propriedades dos triângulos II</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Reconhecer a relação do ângulo externo com os ângulos internos não adjacentes.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Ângulo externo é o formado ao prolongar um dos lados do triângulo.</li><li>Em qualquer triângulo, o ângulo externo é igual à soma dos dois ângulos internos não adjacentes.</li><li>Ângulo interno + externo adjacente = 180° (ângulo raso). Os três externos somam 360°.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Teorema do ângulo externo</span><span class="formula-text">externo = interno₁ + interno₂</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>130° = 45° + 85°.</p><p>Externos de um triângulo 50°, 60°, 70°: 130°, 120° e 110° (soma 360°).</p><p>Externos a = 100° e b = 110°: o interno adjacente a a mede 80° e x = 110° − 80° = 30°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Em duplas: desenhar um isósceles e um escaleno, prolongar um lado, medir o ângulo externo e os dois internos não adjacentes e testar a hipótese.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Os ângulos internos não adjacentes medem 40° e 50°. Quanto mede o ângulo externo?<details class="ans"><summary>Resposta</summary><p>90°.</p></details></li><li>Os ângulos internos não adjacentes medem 65° e 55°. Quanto mede o ângulo externo?<details class="ans"><summary>Resposta</summary><p>120°.</p></details></li><li>Um ângulo interno mede 70°. Quanto mede o externo adjacente a ele?<details class="ans"><summary>Resposta</summary><p>180° − 70° = 110°.</p></details></li><li>Um ângulo externo mede 140° e um dos internos não adjacentes mede 60°. Quanto mede o outro?<details class="ans"><summary>Resposta</summary><p>140° − 60° = 80°.</p></details></li><li>Um ângulo externo mede 100° e os dois internos não adjacentes são iguais. Quanto mede cada um?<details class="ans"><summary>Resposta</summary><p>100° ÷ 2 = 50°.</p></details></li><li>Quanto somam os três ângulos externos de um triângulo?<details class="ans"><summary>Resposta</summary><p>360°.</p></details></li><li>Um ângulo externo mede 150°. Quanto mede o interno adjacente?<details class="ans"><summary>Resposta</summary><p>30°.</p></details></li><li>Quanto mede cada ângulo externo de um triângulo equilátero?<details class="ans"><summary>Resposta</summary><p>180° − 60° = 120°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>No triângulo ABC, os ângulos A e B medem 50° e 60°. Prolongando o lado BC, qual é o ângulo externo no vértice C?<details class="ans"><summary>Resolução</summary><p>Externo = soma dos internos não adjacentes: 50° + 60° = 110°.</p></details></li><li>Dois ângulos externos de um triângulo medem 120° e 130°. Quanto mede o terceiro externo? E quanto medem os ângulos internos?<details class="ans"><summary>Resolução</summary><p>Terceiro externo: 360° − 250° = 110°. Internos: 180° − 120° = 60°, 180° − 130° = 50° e 180° − 110° = 70°.</p></details></li><li>Um ângulo externo mede 125°. Os dois internos não adjacentes medem x e 2x − 10°. Calcule x e os três ângulos internos.<details class="ans"><summary>Resolução</summary><p>x + 2x − 10° = 125°, 3x = 135°, x = 45°. Internos não adjacentes: 45° e 80°. O adjacente mede 180° − 125° = 55°.</p></details></li></ol></details>
+    </div>
+  </article>
+  <nav class="pager b1" aria-label="Navegar entre blocos">
+    <a class="b0" href="aula-1-poligonos.html"><small>← Bloco 1</small><b>Polígonos</b></a>
+    <a class="next b2" href="aula-3-quadrilateros.html"><small>Bloco 3 →</small><b>Quadriláteros</b></a>
+  </nav>
+</div>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-recomposicao-9ano';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
+    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.getElementById('toggleAll');
+  if(!toggle) return;
+  var all = false;
+  function setAll(v){ document.querySelectorAll('.sect, .ans').forEach(function(d){ d.open = v; }); }
+  toggle.addEventListener('click', function(){
+    all = !all; setAll(all);
+    toggle.textContent = all ? 'Recolher exercícios e respostas' : 'Abrir exercícios e respostas';
+    toggle.setAttribute('aria-pressed', String(all));
+  });
+  window.addEventListener('beforeprint', function(){ setAll(true); });
+  window.addEventListener('afterprint', function(){ setAll(all); });
+})();
+</script>
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+})();
+</script>
+</body>
+</html>

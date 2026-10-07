@@ -12,7 +12,7 @@ export const MATERIAS = [
     id: 'matematica',
     nome: 'Matemática',
     icon: 'sigma',
-    lede: 'Material interativo de Matemática para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
+    lede: 'Material interativo de Matemática para o 9º ano do Ensino Fundamental e para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
     CATALOG: [
       {
         ano: '3° Ano',
@@ -112,6 +112,30 @@ export const MATERIAS = [
             ]
           }
         ]
+      },
+      {
+        ano: '9° Ano',
+        trimestres: [
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Recomposição Matemática',
+                accent: 'primary',
+                icon: 'polygon',
+                itens: [
+                  { tipo:'Aulas 21–22', titulo:'Polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-1-poligonos.html' },
+                  { tipo:'Aulas 23–27', titulo:'Triângulos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-2-triangulos.html' },
+                  { tipo:'Aulas 28–29', titulo:'Quadriláteros', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-3-quadrilateros.html' },
+                  { tipo:'Aulas 30–34', titulo:'Propriedades dos polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-4-propriedades-poligonos.html' },
+                  { tipo:'Aulas 35–38', titulo:'Circunferência e o número π', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-5-circunferencia.html' },
+                  { tipo:'Aulas 39–42', titulo:'Ângulos na circunferência e problemas', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-6-angulos-problemas.html' },
+                  { tipo:'Guia', titulo:'Guia — Recomposição Matemática', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/infografico.html' }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -163,6 +187,7 @@ export const ICONS = {
   'stairs': '<path d="M4 20h4v-4h4v-4h4v-4h4V4"/>',
   'triangle': '<path d="M4 20h16L6 4Z"/><path d="M4 20V4" stroke-dasharray="1 3"/>',
   'wave': '<path d="M3 12c2 -6 4 -6 6 0s4 6 6 0 4 -6 6 0"/>',
+  'polygon': '<path d="M12 3 19.5 7.5v9L12 21 4.5 16.5v-9Z"/><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9" stroke-dasharray="1 3"/>',
   'sigma': '<path d="M6 4h12l-6 8 6 8H6l5-8Z"/>',
   'coin': '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.3 9.3c0-1.2 1.2-1.8 2.7-1.8 1.7 0 2.7.8 2.7 1.9 0 2.6-5.4 1-5.4 3.6 0 1.1 1.2 1.9 2.7 1.9 1.5 0 2.7-.6 2.7-1.8"/>',
   'dice': '<rect x="4" y="4" width="16" height="16" rx="3.5"/><circle cx="8.3" cy="8.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.7" cy="15.7" r="1.15" fill="currentColor" stroke="none"/>',

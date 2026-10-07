@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propriedades dos polígonos — Aulas 30–34 · Recomposição Matemática 9º ano</title>
+<meta name="description" content="Soma dos ângulos internos e externos, diagonais, ladrilhamentos e problemas. Aulas 30–34 da Recomposição de Aprendizagem de Matemática do 9º ano, com exercícios e problemas.">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA; --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8; --primary:#382EAE; --primary-soft:#E7E4FB;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08); --on-accent:#FFFFFF;
+    --c0:#382EAE; --c1:#0B7C82; --c2:#D9531A; --c3:#9A3C8F; --c4:#1F62C9; --c5:#1C8A52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+      --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+    --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+  }
+  .t0,.b0{ --accent:var(--c0); } .t1,.b1{ --accent:var(--c1); } .t2,.b2{ --accent:var(--c2); }
+  .t3,.b3{ --accent:var(--c3); } .t4,.b4{ --accent:var(--c4); } .t5,.b5{ --accent:var(--c5); }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,h4,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono,.formula-text{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:inherit; }
+  .sheet{ max-width:1140px; margin:0 auto; background:var(--surface); border:1px solid var(--line); border-radius:26px; box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft); overflow:hidden; }
+
+  /* ---------- masthead ---------- */
+  .masthead{ position:relative; padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px; padding-right:clamp(70px,9vw,110px); border-bottom:1px solid var(--line); overflow:hidden; }
+  .crumbs{ display:flex; flex-wrap:wrap; gap:6px 14px; font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 16px; }
+  .crumbs a{ text-decoration:none; color:var(--ink-soft); } .crumbs a:hover{ text-decoration:underline; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,var(--primary)); background:color-mix(in srgb, var(--accent,var(--primary)) 14%, var(--surface)); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .masthead h1{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; line-height:1; margin:0 0 10px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--accent,var(--primary)); }
+  .masthead p.lede{ font-style:italic; color:var(--ink-soft); font-size:clamp(.98rem,1.6vw,1.15rem); max-width:62ch; margin:0; line-height:1.5; }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+  .mast-shapes{ display:none; position:absolute; right:-6px; bottom:-10px; width:270px; height:auto; opacity:.95; pointer-events:none; }
+  @media (min-width:1000px){ .mast-shapes{ display:block; } .masthead{ padding-right:300px; } }
+
+  /* ---------- seções ---------- */
+  .section{ padding:clamp(22px,3vw,34px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .section:last-child{ border-bottom:none; }
+  .section > h2{ font-size:clamp(1.25rem,2.4vw,1.6rem); font-weight:800; margin:0 0 4px; }
+  .section > .tag{ font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 16px; }
+  .intro{ color:var(--ink-soft); font-size:.95rem; margin:0 0 18px; max-width:70ch; line-height:1.55; }
+  .cards{ display:grid; gap:14px; grid-template-columns:repeat(3,1fr); }
+  .cards.two{ grid-template-columns:repeat(2,1fr); } .cards.four{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:900px){ .cards, .cards.four{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .cards, .cards.two, .cards.four{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px; text-decoration:none; display:block; }
+  a.card{ transition:transform .15s ease, border-color .15s ease; }
+  a.card:hover{ transform:translateY(-2px); border-color:var(--accent,var(--line-strong)); }
+  a.card:focus-visible, .btn:focus-visible, summary:focus-visible, .theme-toggle:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .card h3{ font-size:1.08rem; font-weight:800; margin:10px 0 2px; }
+  .card .meta{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 8px; }
+  .card p{ margin:0; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+  .chip{ display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--accent,var(--primary)); color:var(--on-accent); flex:none; }
+  .chip .glyph{ width:56%; height:56%; }
+  .pill{ display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; padding:.25em .8em; border-radius:999px; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .num{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:'Archivo',sans-serif; font-weight:800; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .moments{ margin-top:16px; background:color-mix(in srgb, var(--c1) 12%, var(--surface)); border-radius:14px; padding:14px 18px; font-size:.9rem; line-height:1.55; }
+  .stats{ display:flex; gap:28px; flex-wrap:wrap; margin-top:20px; }
+  .stats div{ display:flex; flex-direction:column; }
+  .stats b{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.1rem; line-height:1; color:var(--ink); }
+  .stats span{ font-size:.8rem; color:var(--ink-soft); }
+  .fcard{ background:color-mix(in srgb, var(--accent) 10%, var(--surface)); border:1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); border-radius:14px; padding:14px 16px; }
+  .fcard .f{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.95rem; line-height:1.45; margin-top:6px; }
+  .fcard h3{ font-size:.92rem; font-weight:700; margin:8px 0 0; }
+  .notes{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .notes li{ display:flex; gap:16px; align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:14px 18px; font-size:.92rem; line-height:1.5; }
+  .notes .pill{ flex:none; min-width:84px; text-align:center; }
+  @media (max-width:560px){ .notes li{ flex-direction:column; align-items:flex-start; } }
+
+  /* ---------- aulas ---------- */
+  .lesson{ padding:clamp(24px,3.2vw,38px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .lesson-head{ display:flex; gap:16px; align-items:center; margin-bottom:14px; }
+  .lesson-head .chip{ width:56px; height:56px; }
+  .lesson-head .kicker{ font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0; }
+  .lesson-head h2{ font-size:clamp(1.35rem,2.8vw,1.85rem); font-weight:800; margin:2px 0 0; line-height:1.15; }
+  .objetivo{ margin:0 0 18px; font-size:.98rem; color:var(--ink-soft); font-style:italic; max-width:70ch; line-height:1.5; }
+  .objetivo strong{ font-style:normal; color:var(--ink); }
+  .lesson-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:860px){ .lesson-grid{ grid-template-columns:1fr; } }
+  .lesson h4{ font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .lesson ul{ margin:0; padding-left:1.15rem; }
+  .lesson li{ margin:0 0 8px; font-size:.95rem; line-height:1.55; }
+  .lesson li::marker{ color:var(--accent); }
+  .formula{ background:var(--accent); color:var(--on-accent); border-radius:14px; padding:14px 18px; margin-bottom:14px; }
+  .formula-label{ display:block; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:.92; margin-bottom:4px; }
+  .formula-text{ display:block; font-weight:700; font-size:clamp(1.05rem,2.2vw,1.35rem); line-height:1.4; overflow-wrap:anywhere; }
+  .exemplo{ background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 16px 8px; margin-bottom:14px; }
+  .exemplo h4{ color:var(--ink); text-transform:none; letter-spacing:0; font-size:.88rem; margin:0 0 6px; }
+  .exemplo p{ margin:0 0 6px; font-size:.92rem; line-height:1.5; }
+  .pratica{ margin:0; padding:10px 14px; border-radius:12px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+  .pratica strong{ font-family:'Archivo',sans-serif; }
+  .practice{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; align-items:start; }
+  @media (max-width:860px){ .practice{ grid-template-columns:1fr; } }
+  .sect{ border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+  .sect > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; padding:12px 16px; font-family:'Archivo',sans-serif; font-weight:800; border-radius:14px; }
+  .sect > summary::-webkit-details-marker{ display:none; }
+  .sect > summary::after{ content:"+"; margin-left:auto; font-size:1.3rem; line-height:1; color:var(--accent); }
+  .sect[open] > summary::after{ content:"−"; }
+  .sect > summary .count{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--accent); color:var(--on-accent); border-radius:999px; padding:.15em .7em; }
+  .qa{ margin:0; padding:2px 16px 12px 40px; }
+  .qa li{ margin:0 0 12px; padding-left:4px; font-size:.95rem; line-height:1.5; }
+  .qa li::marker{ font-family:'Archivo',sans-serif; font-weight:800; color:var(--accent); }
+  .ans{ margin-top:3px; }
+  .ans > summary{ cursor:pointer; display:inline-block; font-family:'Archivo',sans-serif; font-size:.78rem; font-weight:700; color:var(--accent); padding:2px 0; }
+  .ans p{ margin:4px 0 0; padding:8px 12px; border-radius:10px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+
+  /* ---------- barra de ações e navegação ---------- */
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; padding:14px clamp(22px,5vw,52px); border-bottom:1px solid var(--line); background:var(--surface-2); align-items:center; }
+  .actions .hint{ font-size:.82rem; color:var(--ink-soft); margin-right:auto; }
+  .btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; padding:.55em 1.1em; border-radius:999px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; }
+  .btn:hover{ border-color:var(--primary); }
+  .pager{ display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; padding:22px clamp(22px,5vw,52px) 28px; }
+  .pager a{ display:flex; flex-direction:column; gap:2px; text-decoration:none; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 18px; min-width:200px; flex:1; }
+  .pager a:hover{ border-color:var(--accent,var(--primary)); }
+  .pager small{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-faint); }
+  .pager b{ font-family:'Archivo',sans-serif; font-size:.98rem; }
+  .pager .next{ text-align:right; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); } .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; } .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media print{
+    body{ background:#fff; padding:0; } .theme-toggle,.actions,.pager,.mast-shapes{ display:none; }
+    .sheet{ box-shadow:none; border:none; } .lesson{ break-inside:avoid; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } a.card{ transition:none; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<div class="sheet">
+
+  <header class="masthead b3">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="../../../../index.html">Início</a><span>›</span><span>Matemática · 9° Ano · 2° Trimestre</span><span>›</span><a href="infografico.html">Guia</a><span>›</span><span>Bloco 4</span>
+    </nav>
+    <span class="eyebrow">Recomposição Matemática · Bloco 4 de 6</span>
+    <h1>Propriedades dos polígonos</h1>
+    <p class="lede">Soma dos ângulos internos e externos, diagonais, ladrilhamentos e problemas.</p>
+    <div class="badges"><span class="badge">Aulas 30–34</span><span class="badge">Habilidade 9G1.5</span><span class="badge">40 exercícios · 15 problemas</span></div>
+    <svg class="mast-shapes" viewBox="0 0 300 200" aria-hidden="true">
+      <polygon points="60,20 110,56 91,114 29,114 10,56" fill="var(--c3)"/>
+      <polygon points="200,18 250,18 275,62 250,106 200,106 175,62" fill="var(--c2)"/>
+      <polygon points="40,190 120,190 80,126" fill="var(--c1)"/>
+      <circle cx="205" cy="152" r="40" fill="var(--c4)"/>
+      <polygon points="140,128 168,128 188,148 188,176 168,196 140,196 120,176 120,148" fill="var(--c5)" opacity=".92"/>
+    </svg>
+  </header>
+  <div class="actions">
+    <span class="hint">Exercícios e problemas começam recolhidos. As respostas ficam escondidas até você abrir.</span>
+    <button type="button" class="btn" id="toggleAll" aria-pressed="false">Abrir exercícios e respostas</button>
+    <a class="btn" href="infografico.html">Guia da unidade</a>
+  </div>
+  
+  <article class="lesson b3" id="aula-30">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="20.78,8.36 20.78,15.64 15.64,20.78 8.36,20.78 3.22,15.64 3.22,8.36 8.36,3.22 15.64,3.22"/></svg></span>
+      <div>
+        <p class="kicker">Aula 30</p>
+        <h2>Propriedades dos polígonos I</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Reconhecer e aplicar a soma dos ângulos internos de polígonos.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Escolhendo um vértice e ligando-o aos não consecutivos, o polígono se decompõe em n − 2 triângulos.</li><li>Cada triângulo soma 180°, então a soma dos ângulos internos é (n − 2) · 180°.</li><li>Se o polígono é regular, cada ângulo interno mede a soma ÷ n.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Soma dos ângulos internos</span><span class="formula-text">S = (n − 2) · 180°</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Decágono (n = 10): 8 · 180° = 1 440°.</p><p>Heptágono regular: S = 900° e cada ângulo ≈ 128,6°.</p><p>S = 1 260° → n − 2 = 7 → n = 9 lados.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Desenhar um pentágono e um hexágono, traçar as diagonais de um vértice e contar os triângulos formados (3 e 4).</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Qual é a soma dos ângulos internos de um pentágono?<details class="ans"><summary>Resposta</summary><p>(5 − 2) · 180° = 540°.</p></details></li><li>Qual é a soma dos ângulos internos de um hexágono?<details class="ans"><summary>Resposta</summary><p>720°.</p></details></li><li>Qual é a soma dos ângulos internos de um octógono?<details class="ans"><summary>Resposta</summary><p>1 080°.</p></details></li><li>Qual é a soma dos ângulos internos de um dodecágono?<details class="ans"><summary>Resposta</summary><p>1 800°.</p></details></li><li>Quanto mede cada ângulo interno de um hexágono regular?<details class="ans"><summary>Resposta</summary><p>720° ÷ 6 = 120°.</p></details></li><li>Quanto mede cada ângulo interno de um octógono regular?<details class="ans"><summary>Resposta</summary><p>1 080° ÷ 8 = 135°.</p></details></li><li>A soma dos ângulos internos de um polígono é 1 440°. Quantos lados ele tem?<details class="ans"><summary>Resposta</summary><p>n − 2 = 8, então n = 10.</p></details></li><li>Quanto mede cada ângulo interno de um pentágono regular?<details class="ans"><summary>Resposta</summary><p>540° ÷ 5 = 108°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>A soma dos ângulos internos de um polígono é 2 340°. Quantos lados ele tem?<details class="ans"><summary>Resolução</summary><p>2 340 ÷ 180 = 13 triângulos; n − 2 = 13, então n = 15 lados.</p></details></li><li>Um polígono regular tem ângulos internos de 156°. Quantos lados ele tem?<details class="ans"><summary>Resolução</summary><p>156n = (n − 2) · 180, então 24n = 360 e n = 15 lados.</p></details></li><li>Os ângulos internos de um pentágono medem x, x + 20°, x + 40°, x + 60° e x + 80°. Calcule cada um.<details class="ans"><summary>Resolução</summary><p>5x + 200° = 540°, x = 68°. Ângulos: 68°, 88°, 108°, 128° e 148°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b3" id="aula-31">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12.00,3.00 20.56,9.22 17.29,19.28 6.71,19.28 3.44,9.22"/></svg></span>
+      <div>
+        <p class="kicker">Aula 31</p>
+        <h2>Propriedades dos polígonos II</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Determinar o número de diagonais de um polígono.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Diagonal liga dois vértices não vizinhos e passa pelo interior; ligação entre vizinhos coincide com o lado.</li><li>De cada vértice partem n − 3 diagonais, e há n vértices.</li><li>Cada diagonal é contada duas vezes (A–C e C–A), por isso divide-se por 2.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Número de diagonais</span><span class="formula-text">d = n · (n − 3) ÷ 2</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Quadrado 2, pentágono 5, hexágono 9, octógono 20.</p><p>8 aeroportos ligados dois a dois: 20 diagonais + 8 lados = 28 linhas.</p><p>Polígono de 12 lados: 54 diagonais; com 4 já traçadas, faltam 50.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Dinâmica de grupos de 3 a 7 estudantes como vértices, ligados com barbante: cada ligação é lado ou diagonal. Respostas: 11 lados = 44 diagonais; decágono = 35; 13 lados = 65.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Quantas diagonais tem um pentágono?<details class="ans"><summary>Resposta</summary><p>5.</p></details></li><li>Quantas diagonais tem um hexágono?<details class="ans"><summary>Resposta</summary><p>9.</p></details></li><li>Quantas diagonais tem um heptágono?<details class="ans"><summary>Resposta</summary><p>7 · 4 ÷ 2 = 14.</p></details></li><li>Quantas diagonais tem um octógono?<details class="ans"><summary>Resposta</summary><p>20.</p></details></li><li>Quantas diagonais tem um eneágono?<details class="ans"><summary>Resposta</summary><p>27.</p></details></li><li>Quantas diagonais tem um decágono?<details class="ans"><summary>Resposta</summary><p>35.</p></details></li><li>Quantas diagonais partem de cada vértice de um dodecágono?<details class="ans"><summary>Resposta</summary><p>12 − 3 = 9.</p></details></li><li>Quantas diagonais tem um triângulo?<details class="ans"><summary>Resposta</summary><p>Nenhuma.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Dez pessoas sentam em volta de uma mesa redonda. Cada uma troca mensagem com todas, menos ela mesma e as duas vizinhas. Quantas conversas existem?<details class="ans"><summary>Resolução</summary><p>Cada pessoa é um vértice e cada conversa, uma diagonal: 10 · 7 ÷ 2 = 35 conversas.</p></details></li><li>Em um campeonato, 7 times jogam entre si uma única vez. Quantos jogos há no total?<details class="ans"><summary>Resolução</summary><p>Jogos = lados + diagonais do heptágono: 7 + 14 = 21 jogos.</p></details></li><li>Um polígono convexo tem 27 diagonais. Quantos lados ele tem?<details class="ans"><summary>Resolução</summary><p>n · (n − 3) = 54. Como 9 · 6 = 54, n = 9 lados.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b3" id="aula-32">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="21.00,12.00 16.50,19.79 7.50,19.79 3.00,12.00 7.50,4.21 16.50,4.21"/></svg></span>
+      <div>
+        <p class="kicker">Aula 32</p>
+        <h2>Propriedades dos polígonos III</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Determinar a soma dos ângulos externos de um polígono convexo.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Ao dar uma volta completa em torno da figura, cada “virada” em um vértice é um ângulo externo.</li><li>A soma dos ângulos externos de qualquer polígono convexo é 360°.</li><li>Interno + externo do mesmo vértice = 180°.</li><li>Em polígono regular, o ângulo externo permite achar o número de lados: n = 360° ÷ ae.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Ângulo externo regular</span><span class="formula-text">ae = 360° ÷ n  ·  ai = 180° − ae</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Dodecágono regular: ae = 360° ÷ 12 = 30° e ai = 150°.</p><p>Icoságono regular: ae = 18° e ai = 162°.</p><p>ae = ¼ de ai → ae = 36° → n = 10, um decágono.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Em grupos, medir ângulos externos de polígonos regulares impressos, multiplicar pelo número de lados e verificar que o resultado é 360°.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Qual é a soma dos ângulos externos de um hexágono?<details class="ans"><summary>Resposta</summary><p>360°.</p></details></li><li>Quanto mede cada ângulo externo de um triângulo equilátero?<details class="ans"><summary>Resposta</summary><p>360° ÷ 3 = 120°.</p></details></li><li>Quanto mede cada ângulo externo de um quadrado?<details class="ans"><summary>Resposta</summary><p>90°.</p></details></li><li>Quanto mede cada ângulo externo de um pentágono regular?<details class="ans"><summary>Resposta</summary><p>360° ÷ 5 = 72°.</p></details></li><li>Quanto mede cada ângulo externo de um hexágono regular?<details class="ans"><summary>Resposta</summary><p>60°.</p></details></li><li>Quanto mede cada ângulo externo de um octógono regular?<details class="ans"><summary>Resposta</summary><p>45°.</p></details></li><li>Um polígono regular tem ângulo externo de 40°. Quantos lados ele tem?<details class="ans"><summary>Resposta</summary><p>360° ÷ 40° = 9 lados.</p></details></li><li>Em um polígono regular, o ângulo externo mede 30°. Quanto mede o interno?<details class="ans"><summary>Resposta</summary><p>180° − 30° = 150°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>O ângulo externo de um polígono regular mede 24°. Quantos lados ele tem e quanto mede o ângulo interno?<details class="ans"><summary>Resolução</summary><p>n = 360° ÷ 24° = 15 lados. Interno: 180° − 24° = 156°.</p></details></li><li>O ângulo interno de um polígono regular mede 160°. Quantos lados ele tem?<details class="ans"><summary>Resolução</summary><p>Externo: 180° − 160° = 20°. n = 360° ÷ 20° = 18 lados.</p></details></li><li>Um robô anda em linha reta e vira 36° em cada vértice de um polígono regular, até voltar ao ponto de partida. Quantos lados tem o polígono? Quanto o robô gira ao todo?<details class="ans"><summary>Resolução</summary><p>n = 360° ÷ 36° = 10 lados (decágono). O giro total é de 360°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b3" id="aula-33">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="21.00,12.00 16.50,19.79 7.50,19.79 3.00,12.00 7.50,4.21 16.50,4.21"/></svg></span>
+      <div>
+        <p class="kicker">Aula 33</p>
+        <h2>Problemas I: ladrilhamentos</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Resolver problemas com propriedades dos polígonos, usando ladrilhamentos.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Ladrilhar é cobrir o plano com polígonos, sem sobrepor e sem deixar buracos.</li><li>Em cada vértice do ladrilhamento, os ângulos internos dos polígonos juntos somam 360°.</li><li>Sozinhos ladrilham: triângulo (6 × 60°), quadrado (4 × 90°) e hexágono (3 × 120°).</li><li>Pentágono (108°), heptágono, octógono e outros não fecham 360° só com ele mesmo.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Condição do encaixe</span><span class="formula-text">soma dos ângulos no vértice = 360°</span></div>
+        <div class="exemplo"><h4>Combinações</h4><p>Octógono (ai = 135°) + quadrado: 135° + 135° + 90° = 360°.</p><p>Quadrado, triângulo e hexágono: 90° + 90° + 60° + 120° = 360°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Recortar polígonos regulares e tentar forrar uma região plana usando um só tipo de polígono.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Quanto mede cada ângulo interno de um triângulo equilátero?<details class="ans"><summary>Resposta</summary><p>60°.</p></details></li><li>Quanto mede cada ângulo interno de um quadrado?<details class="ans"><summary>Resposta</summary><p>90°.</p></details></li><li>Quanto mede cada ângulo interno de um hexágono regular?<details class="ans"><summary>Resposta</summary><p>120°.</p></details></li><li>Quanto mede cada ângulo interno de um pentágono regular?<details class="ans"><summary>Resposta</summary><p>108°.</p></details></li><li>Quantos triângulos equiláteros se encaixam em torno de um vértice?<details class="ans"><summary>Resposta</summary><p>6, pois 6 × 60° = 360°.</p></details></li><li>Quantos quadrados se encaixam em torno de um vértice?<details class="ans"><summary>Resposta</summary><p>4, pois 4 × 90° = 360°.</p></details></li><li>Quantos hexágonos regulares se encaixam em torno de um vértice?<details class="ans"><summary>Resposta</summary><p>3, pois 3 × 120° = 360°.</p></details></li><li>O octógono regular ladrilha o plano sozinho? Por quê?<details class="ans"><summary>Resposta</summary><p>Não. 360° ÷ 135° não é número inteiro.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Explique por que pentágonos regulares não ladrilham o plano sozinhos.<details class="ans"><summary>Resolução</summary><p>Cada ângulo mede 108°. 3 · 108° = 324° deixa um buraco de 36°, e 4 · 108° = 432° passa de 360°. Não fecha.</p></details></li><li>Mostre que dois dodecágonos regulares e um triângulo equilátero se encaixam em um vértice. (Ângulo interno do dodecágono: 150°.)<details class="ans"><summary>Resolução</summary><p>150° + 150° + 60° = 360°, então se encaixam sem sobras nem buracos.</p></details></li><li>Dois hexágonos regulares e dois triângulos equiláteros podem se encaixar em torno de um mesmo vértice?<details class="ans"><summary>Resolução</summary><p>Sim: 2 · 120° + 2 · 60° = 240° + 120° = 360°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b3" id="aula-34">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12.00,2.00 14.35,8.76 21.51,8.91 15.80,13.24 17.88,20.09 12.00,16.00 6.12,20.09 8.20,13.24 2.49,8.91 9.65,8.76"/></svg></span>
+      <div>
+        <p class="kicker">Aula 34</p>
+        <h2>Problemas II: a estrela de 5 pontas</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Resolver problemas combinando ângulos internos, diagonais e decomposição em triângulos.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>A estrela de 5 pontas se decompõe em um pentágono regular e cinco triângulos isósceles.</li><li>Pentágono: S = 3 · 180° = 540° e cada ângulo mede 108°.</li><li>Nos triângulos, cada ângulo da base é 180° − 108° = 72°, então o ângulo da ponta é 180° − 144° = 36°.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Ponta da estrela</span><span class="formula-text">108° → 72° + 72° + 36° = 180°</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Coreto octogonal com bandeirinhas nas diagonais: 20 diagonais × 20 bandeirinhas = 400.</p><p>Eneágono regular: S = 1 260°, 27 diagonais e cada ângulo interno mede 140°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Responder, em grupo: quais figuras estão escondidas na estrela, quais ângulos precisam ser conhecidos e como os triângulos ajudam.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Qual é a soma dos ângulos internos de um pentágono?<details class="ans"><summary>Resposta</summary><p>540°.</p></details></li><li>Quanto mede cada ângulo interno de um pentágono regular?<details class="ans"><summary>Resposta</summary><p>108°.</p></details></li><li>Quantas diagonais tem um pentágono?<details class="ans"><summary>Resposta</summary><p>5.</p></details></li><li>Quantas diagonais tem um eneágono?<details class="ans"><summary>Resposta</summary><p>27.</p></details></li><li>Qual é a soma dos ângulos internos de um eneágono?<details class="ans"><summary>Resposta</summary><p>1 260°.</p></details></li><li>Quanto mede cada ângulo interno de um eneágono regular?<details class="ans"><summary>Resposta</summary><p>1 260° ÷ 9 = 140°.</p></details></li><li>Quanto mede o ângulo da ponta de uma estrela perfeita de 5 pontas?<details class="ans"><summary>Resposta</summary><p>36°.</p></details></li><li>Quantas diagonais tem um decágono?<details class="ans"><summary>Resposta</summary><p>35.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Um coreto tem a forma de um octógono regular. Em cada diagonal será pendurado um varal com 15 bandeirinhas, e cada bandeirinha custa R$ 0,50. Qual é o custo total?<details class="ans"><summary>Resolução</summary><p>Diagonais: 8 · 5 ÷ 2 = 20. Bandeirinhas: 20 · 15 = 300. Custo: 300 · 0,50 = R$ 150,00.</p></details></li><li>Quanto somam os ângulos das 5 pontas de uma estrela de 5 pontas regular?<details class="ans"><summary>Resolução</summary><p>Cada ponta mede 36°. 5 · 36° = 180°.</p></details></li><li>Um mirante tem a forma de um heptágono regular. Calcule a soma dos ângulos internos, o número de diagonais e o valor aproximado de cada ângulo interno.<details class="ans"><summary>Resolução</summary><p>Soma: 5 · 180° = 900°. Diagonais: 7 · 4 ÷ 2 = 14. Cada ângulo: 900° ÷ 7 ≈ 128,6°.</p></details></li></ol></details>
+    </div>
+  </article>
+  <nav class="pager b3" aria-label="Navegar entre blocos">
+    <a class="b2" href="aula-3-quadrilateros.html"><small>← Bloco 3</small><b>Quadriláteros</b></a>
+    <a class="next b4" href="aula-5-circunferencia.html"><small>Bloco 5 →</small><b>Circunferência</b></a>
+  </nav>
+</div>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-recomposicao-9ano';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
+    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.getElementById('toggleAll');
+  if(!toggle) return;
+  var all = false;
+  function setAll(v){ document.querySelectorAll('.sect, .ans').forEach(function(d){ d.open = v; }); }
+  toggle.addEventListener('click', function(){
+    all = !all; setAll(all);
+    toggle.textContent = all ? 'Recolher exercícios e respostas' : 'Abrir exercícios e respostas';
+    toggle.setAttribute('aria-pressed', String(all));
+  });
+  window.addEventListener('beforeprint', function(){ setAll(true); });
+  window.addEventListener('afterprint', function(){ setAll(all); });
+})();
+</script>
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ângulos e problemas — Aulas 39–42 · Recomposição Matemática 9º ano</title>
+<meta name="description" content="Ângulo central e inscrito e problemas com círculo e circunferência. Aulas 39–42 da Recomposição de Aprendizagem de Matemática do 9º ano, com exercícios e problemas.">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA; --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8; --primary:#382EAE; --primary-soft:#E7E4FB;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08); --on-accent:#FFFFFF;
+    --c0:#382EAE; --c1:#0B7C82; --c2:#D9531A; --c3:#9A3C8F; --c4:#1F62C9; --c5:#1C8A52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+      --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+    --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+  }
+  .t0,.b0{ --accent:var(--c0); } .t1,.b1{ --accent:var(--c1); } .t2,.b2{ --accent:var(--c2); }
+  .t3,.b3{ --accent:var(--c3); } .t4,.b4{ --accent:var(--c4); } .t5,.b5{ --accent:var(--c5); }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,h4,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono,.formula-text{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:inherit; }
+  .sheet{ max-width:1140px; margin:0 auto; background:var(--surface); border:1px solid var(--line); border-radius:26px; box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft); overflow:hidden; }
+
+  /* ---------- masthead ---------- */
+  .masthead{ position:relative; padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px; padding-right:clamp(70px,9vw,110px); border-bottom:1px solid var(--line); overflow:hidden; }
+  .crumbs{ display:flex; flex-wrap:wrap; gap:6px 14px; font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 16px; }
+  .crumbs a{ text-decoration:none; color:var(--ink-soft); } .crumbs a:hover{ text-decoration:underline; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,var(--primary)); background:color-mix(in srgb, var(--accent,var(--primary)) 14%, var(--surface)); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .masthead h1{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; line-height:1; margin:0 0 10px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--accent,var(--primary)); }
+  .masthead p.lede{ font-style:italic; color:var(--ink-soft); font-size:clamp(.98rem,1.6vw,1.15rem); max-width:62ch; margin:0; line-height:1.5; }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+  .mast-shapes{ display:none; position:absolute; right:-6px; bottom:-10px; width:270px; height:auto; opacity:.95; pointer-events:none; }
+  @media (min-width:1000px){ .mast-shapes{ display:block; } .masthead{ padding-right:300px; } }
+
+  /* ---------- seções ---------- */
+  .section{ padding:clamp(22px,3vw,34px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .section:last-child{ border-bottom:none; }
+  .section > h2{ font-size:clamp(1.25rem,2.4vw,1.6rem); font-weight:800; margin:0 0 4px; }
+  .section > .tag{ font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 16px; }
+  .intro{ color:var(--ink-soft); font-size:.95rem; margin:0 0 18px; max-width:70ch; line-height:1.55; }
+  .cards{ display:grid; gap:14px; grid-template-columns:repeat(3,1fr); }
+  .cards.two{ grid-template-columns:repeat(2,1fr); } .cards.four{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:900px){ .cards, .cards.four{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .cards, .cards.two, .cards.four{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px; text-decoration:none; display:block; }
+  a.card{ transition:transform .15s ease, border-color .15s ease; }
+  a.card:hover{ transform:translateY(-2px); border-color:var(--accent,var(--line-strong)); }
+  a.card:focus-visible, .btn:focus-visible, summary:focus-visible, .theme-toggle:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .card h3{ font-size:1.08rem; font-weight:800; margin:10px 0 2px; }
+  .card .meta{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 8px; }
+  .card p{ margin:0; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+  .chip{ display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--accent,var(--primary)); color:var(--on-accent); flex:none; }
+  .chip .glyph{ width:56%; height:56%; }
+  .pill{ display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; padding:.25em .8em; border-radius:999px; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .num{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:'Archivo',sans-serif; font-weight:800; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .moments{ margin-top:16px; background:color-mix(in srgb, var(--c1) 12%, var(--surface)); border-radius:14px; padding:14px 18px; font-size:.9rem; line-height:1.55; }
+  .stats{ display:flex; gap:28px; flex-wrap:wrap; margin-top:20px; }
+  .stats div{ display:flex; flex-direction:column; }
+  .stats b{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.1rem; line-height:1; color:var(--ink); }
+  .stats span{ font-size:.8rem; color:var(--ink-soft); }
+  .fcard{ background:color-mix(in srgb, var(--accent) 10%, var(--surface)); border:1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); border-radius:14px; padding:14px 16px; }
+  .fcard .f{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.95rem; line-height:1.45; margin-top:6px; }
+  .fcard h3{ font-size:.92rem; font-weight:700; margin:8px 0 0; }
+  .notes{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .notes li{ display:flex; gap:16px; align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:14px 18px; font-size:.92rem; line-height:1.5; }
+  .notes .pill{ flex:none; min-width:84px; text-align:center; }
+  @media (max-width:560px){ .notes li{ flex-direction:column; align-items:flex-start; } }
+
+  /* ---------- aulas ---------- */
+  .lesson{ padding:clamp(24px,3.2vw,38px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .lesson-head{ display:flex; gap:16px; align-items:center; margin-bottom:14px; }
+  .lesson-head .chip{ width:56px; height:56px; }
+  .lesson-head .kicker{ font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0; }
+  .lesson-head h2{ font-size:clamp(1.35rem,2.8vw,1.85rem); font-weight:800; margin:2px 0 0; line-height:1.15; }
+  .objetivo{ margin:0 0 18px; font-size:.98rem; color:var(--ink-soft); font-style:italic; max-width:70ch; line-height:1.5; }
+  .objetivo strong{ font-style:normal; color:var(--ink); }
+  .lesson-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:860px){ .lesson-grid{ grid-template-columns:1fr; } }
+  .lesson h4{ font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .lesson ul{ margin:0; padding-left:1.15rem; }
+  .lesson li{ margin:0 0 8px; font-size:.95rem; line-height:1.55; }
+  .lesson li::marker{ color:var(--accent); }
+  .formula{ background:var(--accent); color:var(--on-accent); border-radius:14px; padding:14px 18px; margin-bottom:14px; }
+  .formula-label{ display:block; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:.92; margin-bottom:4px; }
+  .formula-text{ display:block; font-weight:700; font-size:clamp(1.05rem,2.2vw,1.35rem); line-height:1.4; overflow-wrap:anywhere; }
+  .exemplo{ background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 16px 8px; margin-bottom:14px; }
+  .exemplo h4{ color:var(--ink); text-transform:none; letter-spacing:0; font-size:.88rem; margin:0 0 6px; }
+  .exemplo p{ margin:0 0 6px; font-size:.92rem; line-height:1.5; }
+  .pratica{ margin:0; padding:10px 14px; border-radius:12px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+  .pratica strong{ font-family:'Archivo',sans-serif; }
+  .practice{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; align-items:start; }
+  @media (max-width:860px){ .practice{ grid-template-columns:1fr; } }
+  .sect{ border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+  .sect > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; padding:12px 16px; font-family:'Archivo',sans-serif; font-weight:800; border-radius:14px; }
+  .sect > summary::-webkit-details-marker{ display:none; }
+  .sect > summary::after{ content:"+"; margin-left:auto; font-size:1.3rem; line-height:1; color:var(--accent); }
+  .sect[open] > summary::after{ content:"−"; }
+  .sect > summary .count{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--accent); color:var(--on-accent); border-radius:999px; padding:.15em .7em; }
+  .qa{ margin:0; padding:2px 16px 12px 40px; }
+  .qa li{ margin:0 0 12px; padding-left:4px; font-size:.95rem; line-height:1.5; }
+  .qa li::marker{ font-family:'Archivo',sans-serif; font-weight:800; color:var(--accent); }
+  .ans{ margin-top:3px; }
+  .ans > summary{ cursor:pointer; display:inline-block; font-family:'Archivo',sans-serif; font-size:.78rem; font-weight:700; color:var(--accent); padding:2px 0; }
+  .ans p{ margin:4px 0 0; padding:8px 12px; border-radius:10px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+
+  /* ---------- barra de ações e navegação ---------- */
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; padding:14px clamp(22px,5vw,52px); border-bottom:1px solid var(--line); background:var(--surface-2); align-items:center; }
+  .actions .hint{ font-size:.82rem; color:var(--ink-soft); margin-right:auto; }
+  .btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; padding:.55em 1.1em; border-radius:999px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; }
+  .btn:hover{ border-color:var(--primary); }
+  .pager{ display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; padding:22px clamp(22px,5vw,52px) 28px; }
+  .pager a{ display:flex; flex-direction:column; gap:2px; text-decoration:none; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 18px; min-width:200px; flex:1; }
+  .pager a:hover{ border-color:var(--accent,var(--primary)); }
+  .pager small{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-faint); }
+  .pager b{ font-family:'Archivo',sans-serif; font-size:.98rem; }
+  .pager .next{ text-align:right; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); } .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; } .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media print{
+    body{ background:#fff; padding:0; } .theme-toggle,.actions,.pager,.mast-shapes{ display:none; }
+    .sheet{ box-shadow:none; border:none; } .lesson{ break-inside:avoid; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } a.card{ transition:none; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<div class="sheet">
+
+  <header class="masthead b5">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="../../../../index.html">Início</a><span>›</span><span>Matemática · 9° Ano · 2° Trimestre</span><span>›</span><a href="infografico.html">Guia</a><span>›</span><span>Bloco 6</span>
+    </nav>
+    <span class="eyebrow">Recomposição Matemática · Bloco 6 de 6</span>
+    <h1>Ângulos e problemas</h1>
+    <p class="lede">Ângulo central e inscrito e problemas com círculo e circunferência.</p>
+    <div class="badges"><span class="badge">Aulas 39–42</span><span class="badge">Habilidade 9G1.8</span><span class="badge">32 exercícios · 12 problemas</span></div>
+    <svg class="mast-shapes" viewBox="0 0 300 200" aria-hidden="true">
+      <polygon points="60,20 110,56 91,114 29,114 10,56" fill="var(--c3)"/>
+      <polygon points="200,18 250,18 275,62 250,106 200,106 175,62" fill="var(--c2)"/>
+      <polygon points="40,190 120,190 80,126" fill="var(--c1)"/>
+      <circle cx="205" cy="152" r="40" fill="var(--c4)"/>
+      <polygon points="140,128 168,128 188,148 188,176 168,196 140,196 120,176 120,148" fill="var(--c5)" opacity=".92"/>
+    </svg>
+  </header>
+  <div class="actions">
+    <span class="hint">Exercícios e problemas começam recolhidos. As respostas ficam escondidas até você abrir.</span>
+    <button type="button" class="btn" id="toggleAll" aria-pressed="false">Abrir exercícios e respostas</button>
+    <a class="btn" href="infografico.html">Guia da unidade</a>
+  </div>
+  
+  <article class="lesson b5" id="aula-39">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 12 L12 3.5 A8.5 8.5 0 1 1 3.5 12 Z"/></svg></span>
+      <div>
+        <p class="kicker">Aula 39</p>
+        <h2>Ângulo central e ângulo inscrito I</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Reconhecer a relação entre ângulo central e ângulo inscrito.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Ângulo central tem vértice no centro da circunferência e mede o mesmo que o arco que ele determina.</li><li>Ângulo inscrito tem vértice em um ponto da circunferência.</li><li>O inscrito mede a metade do central que intercepta o mesmo arco. Arco maior = 360° − arco menor.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Inscrito × central</span><span class="formula-text">inscrito = central ÷ 2</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>Central de 96°: o inscrito mede 48°.</p><p>Central 4x + 10° e inscrito 3x − 10°: 4x + 10 = 2(3x − 10) → x = 15° e o arco AB mede 70°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Desenhar uma circunferência com a borda do transferidor (sem compasso), marcar A, B e C e medir os ângulos AÔB e ACB.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Um ângulo central mede 80°. Quanto mede o ângulo inscrito no mesmo arco?<details class="ans"><summary>Resposta</summary><p>40°.</p></details></li><li>Um ângulo central mede 120°. Quanto mede o inscrito?<details class="ans"><summary>Resposta</summary><p>60°.</p></details></li><li>Um ângulo central mede 150°. Quanto mede o inscrito?<details class="ans"><summary>Resposta</summary><p>75°.</p></details></li><li>Um ângulo inscrito mede 25°. Quanto mede o ângulo central correspondente?<details class="ans"><summary>Resposta</summary><p>50°.</p></details></li><li>Um ângulo inscrito mede 45°. Quanto mede o arco que ele intercepta?<details class="ans"><summary>Resposta</summary><p>90°.</p></details></li><li>Um ângulo inscrito mede 90°. Quanto mede o ângulo central correspondente?<details class="ans"><summary>Resposta</summary><p>180° (o arco é uma semicircunferência).</p></details></li><li>Um arco mede 70°. Quanto mede o ângulo inscrito nesse arco?<details class="ans"><summary>Resposta</summary><p>35°.</p></details></li><li>Um arco menor mede 100°. Quanto mede o arco maior?<details class="ans"><summary>Resposta</summary><p>360° − 100° = 260°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Em uma circunferência, o ângulo central mede 4x e o inscrito no mesmo arco mede x + 30°. Calcule x e os dois ângulos.<details class="ans"><summary>Resolução</summary><p>4x = 2 · (x + 30°), 2x = 60°, x = 30°. Central: 120°. Inscrito: 60°.</p></details></li><li>Um triângulo está inscrito em uma circunferência e um de seus lados é um diâmetro. Quanto mede o ângulo oposto a esse lado? Justifique.<details class="ans"><summary>Resolução</summary><p>O ângulo central do diâmetro mede 180°, então o inscrito mede 180° ÷ 2 = 90°.</p></details></li><li>Os pontos A e B dividem uma circunferência em dois arcos, e o arco maior é o triplo do menor. Quanto medem os arcos? Quanto mede o ângulo inscrito no arco menor?<details class="ans"><summary>Resolução</summary><p>x + 3x = 360°, x = 90°. Arcos: 90° e 270°. Inscrito no arco menor: 90° ÷ 2 = 45°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b5" id="aula-40">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 12 L12 3.5 A8.5 8.5 0 1 1 3.5 12 Z"/></svg></span>
+      <div>
+        <p class="kicker">Aula 40</p>
+        <h2>Ângulo central e ângulo inscrito II</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Verificar que a relação vale para qualquer posição do vértice do ângulo inscrito.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Todos os ângulos inscritos que interceptam o mesmo arco são iguais.</li><li>O ângulo central é o dobro do inscrito que intercepta o mesmo arco.</li><li>Três casos: o centro está dentro do ângulo inscrito, sobre um dos lados ou fora dele.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Em todos os casos</span><span class="formula-text">central = 2 · inscrito</span></div>
+        <div class="exemplo"><h4>Exemplos</h4><p>AB é diâmetro e o inscrito em A mede 32°: arco CB = 64°; o triângulo BOC é isósceles, então 64° + 2θ = 180° → θ = 58°.</p><p>Inscrito de 36° → menor central 72° → maior central x = 360° − 72° = 288°.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Recortar ângulos central e inscrito de três figuras e sobrepô-los para comparar suas medidas.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>O que se pode dizer dos ângulos inscritos que interceptam o mesmo arco?<details class="ans"><summary>Resposta</summary><p>São todos iguais.</p></details></li><li>Como o ângulo central se relaciona com o inscrito de mesmo arco?<details class="ans"><summary>Resposta</summary><p>O central é o dobro do inscrito.</p></details></li><li>Um ângulo inscrito mede 33°. Quanto mede o ângulo central correspondente?<details class="ans"><summary>Resposta</summary><p>66°.</p></details></li><li>Um ângulo central mede 98°. Quanto mede o inscrito correspondente?<details class="ans"><summary>Resposta</summary><p>49°.</p></details></li><li>Dois ângulos inscritos interceptam o mesmo arco e um mede 28°. Quanto mede o outro?<details class="ans"><summary>Resposta</summary><p>28°.</p></details></li><li>Um ângulo inscrito mede 72°. Quanto mede o arco que ele intercepta?<details class="ans"><summary>Resposta</summary><p>144°.</p></details></li><li>Os pontos O (centro), B e C estão na circunferência de modo que OB e OC são raios. Que tipo de triângulo é BOC?<details class="ans"><summary>Resposta</summary><p>Isósceles, pois OB = OC.</p></details></li><li>Um ângulo inscrito de 60° intercepta o arco menor. Quanto mede o arco maior?<details class="ans"><summary>Resposta</summary><p>Arco menor: 120°. Arco maior: 360° − 120° = 240°.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>AB é um diâmetro e C é um ponto da circunferência. O ângulo CAB mede 35°. Quanto mede o ângulo ABC?<details class="ans"><summary>Resolução</summary><p>O ângulo em C está inscrito no diâmetro e mede 90°. Logo, ABC = 180° − 90° − 35° = 55°.</p></details></li><li>Um ângulo inscrito de 40° intercepta o arco AB de uma circunferência de centro O. Quanto medem os ângulos do triângulo AOB?<details class="ans"><summary>Resolução</summary><p>Central AÔB = 80°. O triângulo é isósceles: cada ângulo da base mede (180° − 80°) ÷ 2 = 50°. Ângulos: 80°, 50° e 50°.</p></details></li><li>Três pontos A, B e C dividem uma circunferência em arcos AB = 100°, BC = 120° e CA = 140°. Quanto medem os ângulos do triângulo ABC?<details class="ans"><summary>Resolução</summary><p>Cada ângulo é inscrito no arco oposto: em C, 100° ÷ 2 = 50°; em A, 120° ÷ 2 = 60°; em B, 140° ÷ 2 = 70°. Soma: 180°.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b5" id="aula-41">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="4"/></svg></span>
+      <div>
+        <p class="kicker">Aula 41</p>
+        <h2>Problemas com círculo e circunferência I</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Resolver problemas envolvendo circunferência e círculo.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>Contexto: um jardim comestível circular com aspersor no centro e alcance de 2 m.</li><li>Aspersor = centro; alcance = raio (2 m); distância entre pontos opostos pelo centro = diâmetro (4 m).</li><li>Tela para cercar = comprimento da circunferência. Ângulo central de 63° → inscrito oposto de 31,5°.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Tela do jardim</span><span class="formula-text">C = π · d = 3,14 · 4 = 12,56 m</span></div>
+        <div class="exemplo"><h4>Custo e outros</h4><p>Tela vendida em metros inteiros: 13 m × R$ 8,72 = R$ 113,36.</p><p>Borda de piscina de 28,5 m: d = 28,5 ÷ 3,14 ≈ 9,08 m.</p><p>Canteiro de r = 3 m: C = 18,84 m ÷ 0,12 m = 157 roseiras.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Em duplas: resolver o problema do contorno por duas maneiras (C = 2πr e C = πd) e conferir na calculadora.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Calcule o comprimento de uma circunferência de raio 2 m. (π = 3,14)<details class="ans"><summary>Resposta</summary><p>12,56 m.</p></details></li><li>Calcule o comprimento de uma circunferência de diâmetro 6 m.<details class="ans"><summary>Resposta</summary><p>18,84 m.</p></details></li><li>Quanto custam 13 m de cerca a R$ 8,00 o metro?<details class="ans"><summary>Resposta</summary><p>13 · 8 = R$ 104,00.</p></details></li><li>Uma circunferência tem raio de 3 m. Qual é o diâmetro?<details class="ans"><summary>Resposta</summary><p>6 m.</p></details></li><li>Uma circunferência tem comprimento de 31,4 m. Qual é o diâmetro?<details class="ans"><summary>Resposta</summary><p>31,4 ÷ 3,14 = 10 m.</p></details></li><li>Um ângulo central mede 70°. Quanto mede o inscrito no mesmo arco?<details class="ans"><summary>Resposta</summary><p>35°.</p></details></li><li>Se a tela só é vendida em metros inteiros, quantos metros devem ser comprados para cercar 12,56 m?<details class="ans"><summary>Resposta</summary><p>13 m.</p></details></li><li>Um aspersor no centro de um jardim alcança 5 m. Qual é o maior diâmetro do jardim que ele atende?<details class="ans"><summary>Resposta</summary><p>10 m.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>Um jardim circular tem 6 m de diâmetro e será cercado com tela vendida só em metros inteiros, a R$ 7,50 o metro. Quanto será gasto?<details class="ans"><summary>Resolução</summary><p>C = 3,14 · 6 = 18,84 m, então são 19 m de tela. Custo: 19 · 7,50 = R$ 142,50.</p></details></li><li>Em um jardim circular de centro O, as placas A e B estão na borda e o ângulo AÔB mede 84°. Uma placa C é fixada na borda, no lado oposto ao arco AB. Quanto mede o ângulo ACB?<details class="ans"><summary>Resolução</summary><p>AÔB é central; ACB é inscrito no mesmo arco: 84° ÷ 2 = 42°.</p></details></li><li>Mudas serão plantadas ao longo da borda de um canteiro circular de 2 m de raio, uma a cada 25 cm. Quantas mudas inteiras podem ser plantadas?<details class="ans"><summary>Resolução</summary><p>C = 2 · 3,14 · 200 = 1 256 cm. 1 256 ÷ 25 = 50,24, então são 50 mudas.</p></details></li></ol></details>
+    </div>
+  </article>
+
+  <article class="lesson b5" id="aula-42">
+    <div class="lesson-head">
+      <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="12" cy="12" r="8.5"/></svg></span>
+      <div>
+        <p class="kicker">Aula 42</p>
+        <h2>Problemas com círculo e circunferência II</h2>
+      </div>
+    </div>
+    <p class="objetivo"><strong>Objetivo:</strong> Resolver problemas de circunferências inscritas em outras figuras.</p>
+    <div class="lesson-grid">
+      <div>
+        <h4>Ideias-chave</h4>
+        <ul><li>A maior circunferência numa folha retangular tem centro no meio e diâmetro igual ao menor lado.</li><li>Logo, o raio máximo é metade da menor dimensão, e o retângulo maior nem sempre dá o maior círculo.</li><li>Em um triângulo equilátero, o maior círculo inscrito tem raio igual a 1/3 da altura.</li></ul>
+      </div>
+      <div>
+        <div class="formula" role="note"><span class="formula-label">Maior círculo na folha</span><span class="formula-text">r = (menor lado) ÷ 2</span></div>
+        <div class="exemplo"><h4>Exemplos (π = 3,14)</h4><p>Folha de 30 × 20 cm: r = 10 cm, C = 62,8 cm.</p><p>Selo em triângulo equilátero de altura 18 cm: r = 6 cm, C = 37,68 cm.</p><p>Fonte em hexágono de lado 8 m (r ≈ 6,9 m): 48 − 43,33 ≈ 4,67 m de diferença.</p></div>
+        <p class="pratica"><strong>Na prática:</strong> Em grupos, com cartolinas de tamanhos diferentes, desenhar com compasso a maior circunferência possível e justificar o raio.</p>
+      </div>
+    </div>
+    <div class="practice">
+      <details class="sect"><summary><span>Exercícios</span><span class="count">8</span></summary><ol class="qa"><li>Qual é o raio máximo de uma circunferência desenhada em uma folha de 20 cm por 30 cm?<details class="ans"><summary>Resposta</summary><p>10 cm.</p></details></li><li>Qual é o raio máximo de uma circunferência desenhada em uma folha de 16 cm por 25 cm?<details class="ans"><summary>Resposta</summary><p>8 cm.</p></details></li><li>Qual é o raio máximo de uma circunferência em um quadrado de lado 12 cm?<details class="ans"><summary>Resposta</summary><p>6 cm.</p></details></li><li>Qual é o maior diâmetro possível em um retângulo de 14 cm por 9 cm?<details class="ans"><summary>Resposta</summary><p>9 cm.</p></details></li><li>Qual é o comprimento da maior circunferência que cabe em um retângulo de 40 cm por 18 cm? (π = 3,14)<details class="ans"><summary>Resposta</summary><p>d = 18 cm; C = 3,14 · 18 = 56,52 cm.</p></details></li><li>Qual é o comprimento da maior circunferência que cabe em um quadrado de lado 10 cm?<details class="ans"><summary>Resposta</summary><p>31,4 cm.</p></details></li><li>Qual é o raio máximo em uma folha de 24 cm por 36 cm?<details class="ans"><summary>Resposta</summary><p>12 cm.</p></details></li><li>Qual é o maior diâmetro em um retângulo de 15 cm por 21 cm?<details class="ans"><summary>Resposta</summary><p>15 cm.</p></details></li></ol></details>
+      <details class="sect"><summary><span>Problemas</span><span class="count">3</span></summary><ol class="qa"><li>De uma chapa retangular de 50 cm por 30 cm será cortado o maior círculo possível. Qual é o comprimento da borda desse círculo?<details class="ans"><summary>Resolução</summary><p>O diâmetro é o menor lado, 30 cm, e o raio é 15 cm. C = 2 · 3,14 · 15 = 94,2 cm.</p></details></li><li>Uma tampa circular será feita para a maior abertura possível dentro de uma caixa quadrada de 24 cm de lado. Qual é o comprimento da borda da tampa?<details class="ans"><summary>Resolução</summary><p>O diâmetro é 24 cm. C = 3,14 · 24 = 75,36 cm.</p></details></li><li>Um selo circular toca os três lados de um adesivo em forma de triângulo equilátero de 27 cm de altura. O raio do selo é 1/3 da altura. Qual é o comprimento do contorno do selo?<details class="ans"><summary>Resolução</summary><p>Raio: 27 ÷ 3 = 9 cm. C = 2 · 3,14 · 9 = 56,52 cm.</p></details></li></ol></details>
+    </div>
+  </article>
+  <nav class="pager b5" aria-label="Navegar entre blocos">
+    <a class="b4" href="aula-5-circunferencia.html"><small>← Bloco 5</small><b>Circunferência</b></a>
+    <a class="next" href="infografico.html#formulas"><small>Fim da unidade →</small><b>Fórmulas para guardar</b></a>
+  </nav>
+</div>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-recomposicao-9ano';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
+    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.getElementById('toggleAll');
+  if(!toggle) return;
+  var all = false;
+  function setAll(v){ document.querySelectorAll('.sect, .ans').forEach(function(d){ d.open = v; }); }
+  toggle.addEventListener('click', function(){
+    all = !all; setAll(all);
+    toggle.textContent = all ? 'Recolher exercícios e respostas' : 'Abrir exercícios e respostas';
+    toggle.setAttribute('aria-pressed', String(all));
+  });
+  window.addEventListener('beforeprint', function(){ setAll(true); });
+  window.addEventListener('afterprint', function(){ setAll(all); });
+})();
+</script>
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+})();
+</script>
+</body>
+</html>

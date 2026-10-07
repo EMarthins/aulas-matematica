@@ -1,6 +1,6 @@
 # Prof. Eduardo — Aulas e Guias
 
-Site com as aulas interativas e os guias visuais (infográficos) de Matemática (2ª e 3ª séries) e Educação Financeira (3ª série) do Ensino Médio. A página inicial tem abas para alternar entre as matérias. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
+Site com as aulas interativas e os guias visuais (infográficos) de Matemática (9º ano do Ensino Fundamental e 2ª e 3ª séries do Ensino Médio) e Educação Financeira (3ª série do Ensino Médio). A página inicial tem abas para alternar entre as matérias. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
 
 Cada aula/guia continua sendo um arquivo HTML autocontido que funciona 100% offline, sem instalação e sem login — pode ser aberto direto e usado em sala normalmente. Além disso, o site agora tem uma **plataforma** (login, turmas, atividades, correção e engajamento) que usa o Firebase como backend; veja a seção [Plataforma (login, turmas e atividades)](#plataforma-login-turmas-e-atividades) mais abaixo.
 
@@ -20,6 +20,16 @@ Qualquer atualização futura (novo arquivo, edição) segue o mesmo caminho: **
 ```
 index.html                          → página inicial (catálogo das aulas)
 aulas/
+  9-ano/
+    2-tri/
+      recomposicao-matematica/
+        aula-1-poligonos.html                  → aulas 21–22
+        aula-2-triangulos.html                 → aulas 23–27
+        aula-3-quadrilateros.html              → aulas 28–29
+        aula-4-propriedades-poligonos.html     → aulas 30–34
+        aula-5-circunferencia.html             → aulas 35–38
+        aula-6-angulos-problemas.html          → aulas 39–42
+        infografico.html                       → guia da unidade (mapa, habilidades, fórmulas)
   2-ano/
     3-tri/
       exponenciais/

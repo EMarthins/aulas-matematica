@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia — Recomposição Matemática 9º ano (2º trimestre)</title>
+<meta name="description" content="Guia da unidade de Recomposição de Aprendizagem de Matemática do 9º ano: mapa das aulas 21 a 42, habilidades, fórmulas e conferências.">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA; --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8; --primary:#382EAE; --primary-soft:#E7E4FB;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08); --on-accent:#FFFFFF;
+    --c0:#382EAE; --c1:#0B7C82; --c2:#D9531A; --c3:#9A3C8F; --c4:#1F62C9; --c5:#1C8A52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+      --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38; --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68; --primary:#9089F5; --primary-soft:#26224F;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35); --on-accent:#0C0D18;
+    --c0:#9089F5; --c1:#44D8CF; --c2:#FF8E56; --c3:#E08AD6; --c4:#7FAEFF; --c5:#4ADE80;
+  }
+  .t0,.b0{ --accent:var(--c0); } .t1,.b1{ --accent:var(--c1); } .t2,.b2{ --accent:var(--c2); }
+  .t3,.b3{ --accent:var(--c3); } .t4,.b4{ --accent:var(--c4); } .t5,.b5{ --accent:var(--c5); }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,h4,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono,.formula-text{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:inherit; }
+  .sheet{ max-width:1140px; margin:0 auto; background:var(--surface); border:1px solid var(--line); border-radius:26px; box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft); overflow:hidden; }
+
+  /* ---------- masthead ---------- */
+  .masthead{ position:relative; padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px; padding-right:clamp(70px,9vw,110px); border-bottom:1px solid var(--line); overflow:hidden; }
+  .crumbs{ display:flex; flex-wrap:wrap; gap:6px 14px; font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 16px; }
+  .crumbs a{ text-decoration:none; color:var(--ink-soft); } .crumbs a:hover{ text-decoration:underline; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--accent,var(--primary)); background:color-mix(in srgb, var(--accent,var(--primary)) 14%, var(--surface)); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .masthead h1{ font-size:clamp(2rem,5vw,3.2rem); font-weight:900; line-height:1; margin:0 0 10px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--accent,var(--primary)); }
+  .masthead p.lede{ font-style:italic; color:var(--ink-soft); font-size:clamp(.98rem,1.6vw,1.15rem); max-width:62ch; margin:0; line-height:1.5; }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+  .mast-shapes{ display:none; position:absolute; right:-6px; bottom:-10px; width:270px; height:auto; opacity:.95; pointer-events:none; }
+  @media (min-width:1000px){ .mast-shapes{ display:block; } .masthead{ padding-right:300px; } }
+
+  /* ---------- seções ---------- */
+  .section{ padding:clamp(22px,3vw,34px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .section:last-child{ border-bottom:none; }
+  .section > h2{ font-size:clamp(1.25rem,2.4vw,1.6rem); font-weight:800; margin:0 0 4px; }
+  .section > .tag{ font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 16px; }
+  .intro{ color:var(--ink-soft); font-size:.95rem; margin:0 0 18px; max-width:70ch; line-height:1.55; }
+  .cards{ display:grid; gap:14px; grid-template-columns:repeat(3,1fr); }
+  .cards.two{ grid-template-columns:repeat(2,1fr); } .cards.four{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:900px){ .cards, .cards.four{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .cards, .cards.two, .cards.four{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px; text-decoration:none; display:block; }
+  a.card{ transition:transform .15s ease, border-color .15s ease; }
+  a.card:hover{ transform:translateY(-2px); border-color:var(--accent,var(--line-strong)); }
+  a.card:focus-visible, .btn:focus-visible, summary:focus-visible, .theme-toggle:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .card h3{ font-size:1.08rem; font-weight:800; margin:10px 0 2px; }
+  .card .meta{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin:0 0 8px; }
+  .card p{ margin:0; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+  .chip{ display:inline-grid; place-items:center; width:46px; height:46px; border-radius:50%; background:var(--accent,var(--primary)); color:var(--on-accent); flex:none; }
+  .chip .glyph{ width:56%; height:56%; }
+  .pill{ display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; padding:.25em .8em; border-radius:999px; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .num{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:'Archivo',sans-serif; font-weight:800; background:var(--accent,var(--primary)); color:var(--on-accent); }
+  .moments{ margin-top:16px; background:color-mix(in srgb, var(--c1) 12%, var(--surface)); border-radius:14px; padding:14px 18px; font-size:.9rem; line-height:1.55; }
+  .stats{ display:flex; gap:28px; flex-wrap:wrap; margin-top:20px; }
+  .stats div{ display:flex; flex-direction:column; }
+  .stats b{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.1rem; line-height:1; color:var(--ink); }
+  .stats span{ font-size:.8rem; color:var(--ink-soft); }
+  .fcard{ background:color-mix(in srgb, var(--accent) 10%, var(--surface)); border:1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); border-radius:14px; padding:14px 16px; }
+  .fcard .f{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.95rem; line-height:1.45; margin-top:6px; }
+  .fcard h3{ font-size:.92rem; font-weight:700; margin:8px 0 0; }
+  .notes{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .notes li{ display:flex; gap:16px; align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:14px 18px; font-size:.92rem; line-height:1.5; }
+  .notes .pill{ flex:none; min-width:84px; text-align:center; }
+  @media (max-width:560px){ .notes li{ flex-direction:column; align-items:flex-start; } }
+
+  /* ---------- aulas ---------- */
+  .lesson{ padding:clamp(24px,3.2vw,38px) clamp(22px,5vw,52px); border-bottom:1px solid var(--line); }
+  .lesson-head{ display:flex; gap:16px; align-items:center; margin-bottom:14px; }
+  .lesson-head .chip{ width:56px; height:56px; }
+  .lesson-head .kicker{ font-family:'Archivo',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0; }
+  .lesson-head h2{ font-size:clamp(1.35rem,2.8vw,1.85rem); font-weight:800; margin:2px 0 0; line-height:1.15; }
+  .objetivo{ margin:0 0 18px; font-size:.98rem; color:var(--ink-soft); font-style:italic; max-width:70ch; line-height:1.5; }
+  .objetivo strong{ font-style:normal; color:var(--ink); }
+  .lesson-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:860px){ .lesson-grid{ grid-template-columns:1fr; } }
+  .lesson h4{ font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; }
+  .lesson ul{ margin:0; padding-left:1.15rem; }
+  .lesson li{ margin:0 0 8px; font-size:.95rem; line-height:1.55; }
+  .lesson li::marker{ color:var(--accent); }
+  .formula{ background:var(--accent); color:var(--on-accent); border-radius:14px; padding:14px 18px; margin-bottom:14px; }
+  .formula-label{ display:block; font-family:'Archivo',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:.92; margin-bottom:4px; }
+  .formula-text{ display:block; font-weight:700; font-size:clamp(1.05rem,2.2vw,1.35rem); line-height:1.4; overflow-wrap:anywhere; }
+  .exemplo{ background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 16px 8px; margin-bottom:14px; }
+  .exemplo h4{ color:var(--ink); text-transform:none; letter-spacing:0; font-size:.88rem; margin:0 0 6px; }
+  .exemplo p{ margin:0 0 6px; font-size:.92rem; line-height:1.5; }
+  .pratica{ margin:0; padding:10px 14px; border-radius:12px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+  .pratica strong{ font-family:'Archivo',sans-serif; }
+  .practice{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; align-items:start; }
+  @media (max-width:860px){ .practice{ grid-template-columns:1fr; } }
+  .sect{ border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+  .sect > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; padding:12px 16px; font-family:'Archivo',sans-serif; font-weight:800; border-radius:14px; }
+  .sect > summary::-webkit-details-marker{ display:none; }
+  .sect > summary::after{ content:"+"; margin-left:auto; font-size:1.3rem; line-height:1; color:var(--accent); }
+  .sect[open] > summary::after{ content:"−"; }
+  .sect > summary .count{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--accent); color:var(--on-accent); border-radius:999px; padding:.15em .7em; }
+  .qa{ margin:0; padding:2px 16px 12px 40px; }
+  .qa li{ margin:0 0 12px; padding-left:4px; font-size:.95rem; line-height:1.5; }
+  .qa li::marker{ font-family:'Archivo',sans-serif; font-weight:800; color:var(--accent); }
+  .ans{ margin-top:3px; }
+  .ans > summary{ cursor:pointer; display:inline-block; font-family:'Archivo',sans-serif; font-size:.78rem; font-weight:700; color:var(--accent); padding:2px 0; }
+  .ans p{ margin:4px 0 0; padding:8px 12px; border-radius:10px; background:color-mix(in srgb, var(--accent) 12%, var(--surface)); font-size:.9rem; line-height:1.5; }
+
+  /* ---------- barra de ações e navegação ---------- */
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; padding:14px clamp(22px,5vw,52px); border-bottom:1px solid var(--line); background:var(--surface-2); align-items:center; }
+  .actions .hint{ font-size:.82rem; color:var(--ink-soft); margin-right:auto; }
+  .btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; padding:.55em 1.1em; border-radius:999px; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; }
+  .btn:hover{ border-color:var(--primary); }
+  .pager{ display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; padding:22px clamp(22px,5vw,52px) 28px; }
+  .pager a{ display:flex; flex-direction:column; gap:2px; text-decoration:none; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:12px 18px; min-width:200px; flex:1; }
+  .pager a:hover{ border-color:var(--accent,var(--primary)); }
+  .pager small{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-faint); }
+  .pager b{ font-family:'Archivo',sans-serif; font-size:.98rem; }
+  .pager .next{ text-align:right; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); } .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; } .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media print{
+    body{ background:#fff; padding:0; } .theme-toggle,.actions,.pager,.mast-shapes{ display:none; }
+    .sheet{ box-shadow:none; border:none; } .lesson{ break-inside:avoid; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } a.card{ transition:none; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<div class="sheet">
+
+  <header class="masthead">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="../../../../index.html">Início</a><span>›</span><span>Matemática · 9° Ano · 2° Trimestre</span><span>›</span><span>Guia</span>
+    </nav>
+    <span class="eyebrow">9° Ano · 2° Trimestre</span>
+    <h1>Recomposição <span>Matemática</span></h1>
+    <p class="lede">Resumo das aulas 21 a 42: polígonos, triângulos, quadriláteros, ângulos e circunferência. Cada aula traz ideias-chave, fórmula, exemplo resolvido, atividade prática, 8 exercícios e 3 problemas com gabarito.</p>
+    <div class="stats"><div><b>22</b><span>aulas</span></div><div><b>6</b><span>blocos</span></div><div><b>176</b><span>exercícios</span></div><div><b>66</b><span>problemas</span></div></div>
+    <svg class="mast-shapes" viewBox="0 0 300 200" aria-hidden="true">
+      <polygon points="60,20 110,56 91,114 29,114 10,56" fill="var(--c3)"/>
+      <polygon points="200,18 250,18 275,62 250,106 200,106 175,62" fill="var(--c2)"/>
+      <polygon points="40,190 120,190 80,126" fill="var(--c1)"/>
+      <circle cx="205" cy="152" r="40" fill="var(--c4)"/>
+      <polygon points="140,128 168,128 188,148 188,176 168,196 140,196 120,176 120,148" fill="var(--c5)" opacity=".92"/>
+    </svg>
+  </header>
+
+  <section class="section" id="mapa">
+    <h2>Mapa das aulas</h2>
+    <p class="tag">6 blocos, na ordem em que acontecem</p>
+    <div class="cards">
+      <a class="card t0" href="aula-1-poligonos.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12.00,3.00 20.56,9.22 17.29,19.28 6.71,19.28 3.44,9.22"/></svg></span>
+        <h3>Polígonos</h3>
+        <p class="meta">Aulas 21–22 · 9G1.5</p>
+        <p>O que é (e o que não é) um polígono, seus elementos, regulares e nomes.</p>
+      </a><a class="card t1" href="aula-2-triangulos.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="12,3.5 21,19.5 3,19.5"/></svg></span>
+        <h3>Triângulos</h3>
+        <p class="meta">Aulas 23–27 · 9G1.5</p>
+        <p>Condição de existência, classificações, soma dos ângulos e ângulo externo.</p>
+      </a><a class="card t2" href="aula-3-quadrilateros.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="8,5 21,5 16,19 3,19"/></svg></span>
+        <h3>Quadriláteros</h3>
+        <p class="meta">Aulas 28–29 · 9G1.5</p>
+        <p>Paralelogramos, retângulo, losango, quadrado e trapézios.</p>
+      </a><a class="card t3" href="aula-4-propriedades-poligonos.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><polygon points="20.78,8.36 20.78,15.64 15.64,20.78 8.36,20.78 3.22,15.64 3.22,8.36 8.36,3.22 15.64,3.22"/></svg></span>
+        <h3>Propriedades dos polígonos</h3>
+        <p class="meta">Aulas 30–34 · 9G1.5</p>
+        <p>Soma dos ângulos internos e externos, diagonais, ladrilhamentos e problemas.</p>
+      </a><a class="card t4" href="aula-5-circunferencia.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><circle cx="12" cy="12" r="8.5"/></svg></span>
+        <h3>Circunferência</h3>
+        <p class="meta">Aulas 35–38 · 9G1.8</p>
+        <p>Círculo × circunferência, elementos, o número π e o comprimento C = 2πr.</p>
+      </a><a class="card t5" href="aula-6-angulos-problemas.html">
+        <span class="chip"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 12 L12 3.5 A8.5 8.5 0 1 1 3.5 12 Z"/></svg></span>
+        <h3>Ângulos e problemas</h3>
+        <p class="meta">Aulas 39–42 · 9G1.8</p>
+        <p>Ângulo central e inscrito e problemas com círculo e circunferência.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Como cada aula funciona</h2>
+    <p class="tag">Roteiro de cada aula dos slides originais</p>
+    <div class="cards four">
+      <div class="card t0"><span class="num">1</span><h3>Momento socioemocional</h3><p>3 minutos de conversa sobre um tema da vida, antes de entrar na matemática.</p></div><div class="card t1"><span class="num">2</span><h3>Objetivo e conversa inicial</h3><p>Pergunta provocadora e observação de figuras para levantar hipóteses.</p></div><div class="card t2"><span class="num">3</span><h3>Atividade prática</h3><p>Construir, medir ou jogar com material simples: palitos, canudos, transferidor, barbante, compasso.</p></div><div class="card t3"><span class="num">4</span><h3>Pratique mais</h3><p>Problemas resolvidos juntos e exercícios; depois, atividades na Khan Academy.</p></div>
+    </div>
+    <p class="moments"><strong>Momentos socioemocionais, nas aulas ímpares:</strong> Limites (21) · Pertencimento (23) · Autocontrole (25) · Infância (27) · Família (29) · Escolhas (31) · Diálogo (33) · Autoconhecimento (35) · Equilíbrio (37) · Liberdade (39) · Respeito (41).</p>
+  </section>
+
+  <section class="section">
+    <h2>Duas habilidades guiam as aulas</h2>
+    <p class="tag">Matriz de referência alinhada à BNCC</p>
+    <div class="cards two">
+      <div class="card t1"><span class="pill">9G1.5</span><h3>Triângulos e polígonos</h3><p class="meta">Aulas 21 a 34</p><p>Propriedades e relações entre os elementos de um triângulo: condição de existência, relação entre lados e ângulos, soma dos ângulos internos e medida de ângulo interno ou externo.</p></div>
+      <div class="card t4"><span class="pill">9G1.8</span><h3>Circunferência e círculo</h3><p class="meta">Aulas 35 a 42</p><p>Circunferência e círculo como lugares geométricos e seus elementos: centro, raio, diâmetro, corda, arco, ângulo central e ângulo inscrito.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="formulas">
+    <h2>Fórmulas e regras para guardar</h2>
+    <p class="tag">Onde cada uma aparece</p>
+    <div class="cards four">
+      <div class="fcard t1"><span class="pill">Aula 23</span><h3>Condição de existência</h3><div class="f">maior lado &lt; soma dos outros dois</div></div><div class="fcard t1"><span class="pill">Aula 26</span><h3>Ângulos do triângulo</h3><div class="f">a + b + c = 180°</div></div><div class="fcard t1"><span class="pill">Aula 27</span><h3>Ângulo externo</h3><div class="f">externo = soma dos internos não adjacentes</div></div><div class="fcard t3"><span class="pill">Aula 30</span><h3>Soma dos ângulos internos</h3><div class="f">S = (n − 2) · 180°</div></div><div class="fcard t3"><span class="pill">Aula 31</span><h3>Número de diagonais</h3><div class="f">d = n · (n − 3) ÷ 2</div></div><div class="fcard t3"><span class="pill">Aula 32</span><h3>Ângulos externos</h3><div class="f">soma = 360°<br>ae = 360° ÷ n</div></div><div class="fcard t4"><span class="pill">Aula 35–38</span><h3>Circunferência</h3><div class="f">d = 2r<br>C = 2πr = πd</div></div><div class="fcard t5"><span class="pill">Aula 39–40</span><h3>Ângulos na circunferência</h3><div class="f">central = 2 · inscrito</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="conferencias">
+    <h2>Conferências nos slides originais</h2>
+    <p class="tag">Valores corrigidos neste material</p>
+    <p class="intro">Pontos em que os slides trazem conta ou gabarito diferente do correto. Este material usa os valores corrigidos.</p>
+    <ul class="notes">
+      <li class="t0"><span class="pill">Aula 32</span><span>No gabarito do exercício do polígono de 17 lados, o slide traz ae = 12° e ai = 168°. Esses valores são de um polígono de 30 lados; para 17 lados, ae ≈ 21,18° e ai ≈ 158,82°.</span></li><li class="t1"><span class="pill">Aula 38</span><span>No problema da pista de 1,5 km de raio, o slide traz 9,51 km por volta e 57,06 km por semana. A conta correta é 2 · 3,14 · 1,5 = 9,42 km por volta e 6 voltas = 56,52 km.</span></li><li class="t2"><span class="pill">Aula 42</span><span>Piscina no quintal de 1,7 m de lado: o slide indica 10,68 m, valor que usaria 1,7 m como raio. Com diâmetro de 1,7 m, a borda mede 3,14 · 1,7 ≈ 5,34 m.</span></li><li class="t3"><span class="pill">Aula 39</span><span>O slide de abertura da aula 39 está rotulado como “Aula 37”, e o de encerramento aparece como “A37”. É só erro de numeração.</span></li>
+    </ul>
+  </section>
+
+  <nav class="pager" aria-label="Começar">
+    <a class="b0" href="aula-1-poligonos.html"><small>Começar →</small><b>Bloco 1 · Polígonos</b></a>
+    <a href="../../../../index.html"><small>Voltar ao catálogo</small><b>Página inicial</b></a>
+  </nav>
+</div>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-recomposicao-9ano';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
+    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.getElementById('toggleAll');
+  if(!toggle) return;
+  var all = false;
+  function setAll(v){ document.querySelectorAll('.sect, .ans').forEach(function(d){ d.open = v; }); }
+  toggle.addEventListener('click', function(){
+    all = !all; setAll(all);
+    toggle.textContent = all ? 'Recolher exercícios e respostas' : 'Abrir exercícios e respostas';
+    toggle.setAttribute('aria-pressed', String(all));
+  });
+  window.addEventListener('beforeprint', function(){ setAll(true); });
+  window.addEventListener('afterprint', function(){ setAll(all); });
+})();
+</script>
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+})();
+</script>
+</body>
+</html>
