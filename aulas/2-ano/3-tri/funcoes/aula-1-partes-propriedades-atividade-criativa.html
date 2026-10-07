@@ -1,0 +1,426 @@
+<title>Oficina da Tarifa e Sala de Classificação</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:1000px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  h2.sec-title{ font-size:clamp(1.2rem,2.6vw,1.6rem); font-weight:800; margin:0 0 6px; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:70ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0 22px; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* --- oficina da tarifa --- */
+  .tariff-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (max-width:760px){ .tariff-grid{ grid-template-columns:1fr; } }
+  .tariff-formula{ font-family:'JetBrains Mono',monospace; font-size:.92rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 14px; margin:12px 0 10px; line-height:1.8; }
+  .blank{ display:inline-block; min-width:2.4em; text-align:center; border-bottom:2px solid var(--primary); color:var(--primary); font-weight:700; padding:0 .2em; }
+  .tile-pool{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+  .tile{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.85rem; border:1.5px solid var(--line-strong); background:var(--surface); border-radius:10px; padding:.45em .9em; cursor:pointer; transition:border-color .15s, background .15s, opacity .2s; color:var(--ink); }
+  .tile:hover{ border-color:var(--primary); }
+  .tile.used{ opacity:.3; pointer-events:none; }
+  .tile.flash-wrong{ animation:shake .3s; border-color:var(--danger); background:var(--danger-soft); }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-4px);} 75%{transform:translateX(4px);} }
+  .tariff-status{ margin-top:10px; font-size:.84rem; font-weight:700; min-height:1.2em; }
+  .tariff-status.ok{ color:var(--success); }
+  .solved-card{ border-color:color-mix(in srgb, var(--success) 35%, var(--line)) !important; background:var(--success-soft) !important; }
+
+  /* --- sala de classificação --- */
+  .diag-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:760px){ .diag-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .diag-grid{ grid-template-columns:1fr; } }
+  .diag-card{ text-align:center; }
+  .diag-card svg{ width:100%; height:auto; display:block; margin:4px auto 8px; }
+  .diag-btns{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
+  .diag-btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.72rem; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); border-radius:8px; padding:.4em .7em; cursor:pointer; }
+  .diag-btn:hover{ border-color:var(--primary); }
+  .diag-btn.correct-pick{ border-color:var(--success); background:var(--success-soft); color:var(--success); }
+  .diag-btn.wrong-pick{ border-color:var(--danger); background:var(--danger-soft); color:var(--danger); }
+  .diag-fb{ font-size:.78rem; font-weight:700; margin-top:6px; min-height:1.1em; }
+  .diag-fb.ok{ color:var(--success); } .diag-fb.no{ color:var(--danger); }
+
+  .final{ display:none; text-align:center; padding:28px 20px; margin-top:8px; }
+  .final.show{ display:block; }
+  .final .big-score{ font-family:'JetBrains Mono',monospace; font-size:2.4rem; font-weight:700; color:var(--primary); }
+
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · Função por partes e propriedades · Atividade criativa</div>
+    <div class="score-pill">Resolvidos: <span id="scoreVal">0</span>/10</div>
+  </div>
+
+  <div class="eyebrow">Laboratório interativo</div>
+  <h1 class="title">A oficina da tarifa e a sala de classificação</h1>
+  <p class="subtitle">Duas mecânicas para praticar os dois temas da aula. Primeiro, monte fórmulas reais de tarifa por partes encaixando os números certos. Depois, classifique diagramas de setas como injetora, sobrejetora, bijetora ou nenhuma das três.</p>
+
+  <!-- PARTE 1: OFICINA DA TARIFA -->
+  <h2 class="sec-title">Parte 1 · A oficina da tarifa por partes</h2>
+  <div class="callout">
+    <h4>Como jogar</h4>
+    <p>Cada situação real vira uma fórmula por partes com dois números faltando. Clique nas peças na ordem certa (primeiro o valor fixo, depois a taxa extra) para completar a fórmula.</p>
+  </div>
+  <div class="tariff-grid" id="tariffWrap"></div>
+
+  <!-- PARTE 2: SALA DE CLASSIFICAÇÃO -->
+  <h2 class="sec-title" style="margin-top:8px;">Parte 2 · Sala de classificação</h2>
+  <div class="callout">
+    <h4>Como jogar</h4>
+    <p>Cada diagrama mostra uma função f: A → B pelas setas. Observe se sobra gente em B (não sobrejetora), se algum elemento de B recebe duas setas (não injetora), e classifique.</p>
+  </div>
+  <div class="diag-grid" id="diagWrap"></div>
+
+  <div class="card final" id="finalCard">
+    <div class="eyebrow">Atividade concluída</div>
+    <h2 class="sec-title">Resultado final</h2>
+    <div class="big-score"><span id="finalScore">0</span>/10</div>
+    <p class="hint" id="finalMsg" style="margin:10px auto 0;font-style:normal;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-funcoes1-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var TOTAL = 10;
+  var score = 0;
+  var scoreEl = document.getElementById('scoreVal');
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+  function bumpScore(){
+    score++;
+    scoreEl.textContent = score;
+    if(score === TOTAL) finish();
+  }
+  function finish(){
+    var finalCard = document.getElementById('finalCard');
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('finalMsg').textContent = 'Você montou todas as tarifas e classificou todos os diagramas corretamente. Função por partes e propriedades, na prática!';
+    finalCard.classList.add('show');
+    finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+
+  /* ================= PARTE 1: OFICINA DA TARIFA ================= */
+  var rounds = [
+    {
+      title: 'Rodada 1 · Estacionamento Vila Nova',
+      context: 'Uma vaga custa um valor fixo até 1 hora (ou fração). Depois da 1ª hora, cada hora extra custa uma taxa a mais. Valor fixo: R$ 8,00. Taxa por hora extra: R$ 3,00.',
+      slot0: '8', slot1: '3',
+      tiles: ['8','3','5','10'],
+      testX: 3,
+      calc: function(x){ return 8 + 3*(x-1); },
+      testLabel: function(x, r){ return 'f(3) = 8 + 3·(3−1) = R$ ' + r.toFixed(2).replace('.',',') + ' — motorista que ficou 3 horas.'; }
+    },
+    {
+      title: 'Rodada 2 · Conta de luz',
+      context: 'Até 100 kWh, a conta é de um valor fixo. Acima disso, cada kWh extra custa uma taxa a mais. Valor fixo: R$ 40,00. Taxa por kWh extra: R$ 0,80.',
+      slot0: '40', slot1: '0,80',
+      tiles: ['40','0,80','25','1,20'],
+      testX: 130,
+      calc: function(x){ return 40 + 0.8*(x-100); },
+      testLabel: function(x, r){ return 'f(130) = 40 + 0,80·(130−100) = R$ ' + r.toFixed(2).replace('.',',') + '.'; }
+    },
+    {
+      title: 'Rodada 3 · App de corrida',
+      context: 'A corrida custa um valor fixo até 2 km. Depois disso, cada km extra custa uma taxa a mais. Valor fixo: R$ 6,00. Taxa por km extra: R$ 2,00.',
+      slot0: '6', slot1: '2',
+      tiles: ['6','2','4','3'],
+      testX: 7,
+      calc: function(x){ return 6 + 2*(x-2); },
+      testLabel: function(x, r){ return 'f(7) = 6 + 2·(7−2) = R$ ' + r.toFixed(2).replace('.',',') + '.'; }
+    },
+    {
+      title: 'Rodada 4 · Plano de internet',
+      context: 'O plano custa um valor fixo até 10 GB de consumo. Cada GB usado além da franquia custa uma taxa a mais. Valor fixo: R$ 50,00. Taxa por GB extra: R$ 5,00.',
+      slot0: '50', slot1: '5',
+      tiles: ['50','5','45','7'],
+      testX: 16,
+      calc: function(x){ return 50 + 5*(x-10); },
+      testLabel: function(x, r){ return 'f(16) = 50 + 5·(16−10) = R$ ' + r.toFixed(2).replace('.',',') + '.'; }
+    }
+  ];
+
+  var tariffWrap = document.getElementById('tariffWrap');
+  rounds.forEach(function(round){
+    var card = document.createElement('div');
+    card.className = 'card';
+
+    var h3 = document.createElement('strong');
+    h3.textContent = round.title;
+    card.appendChild(h3);
+
+    var ctx = document.createElement('p');
+    ctx.style.fontSize = '.86rem';
+    ctx.style.marginTop = '4px';
+    ctx.textContent = round.context;
+    card.appendChild(ctx);
+
+    var formulaBox = document.createElement('div');
+    formulaBox.className = 'tariff-formula';
+    var blank0a = document.createElement('span'); blank0a.className='blank'; blank0a.dataset.slot='0'; blank0a.textContent='?';
+    var blank0b = document.createElement('span'); blank0b.className='blank'; blank0b.dataset.slot='1'; blank0b.textContent='?';
+    var blank1a = document.createElement('span'); blank1a.className='blank'; blank1a.dataset.slot='0'; blank1a.textContent='?';
+
+    var line1 = document.createElement('div');
+    line1.appendChild(document.createTextNode('f(x) = '));
+    line1.appendChild(blank0a);
+    line1.appendChild(document.createTextNode(', se 0 < x ≤ 1'));
+    formulaBox.appendChild(line1);
+
+    var line2 = document.createElement('div');
+    line2.appendChild(document.createTextNode('f(x) = '));
+    line2.appendChild(blank1a);
+    line2.appendChild(document.createTextNode(' + '));
+    line2.appendChild(blank0b);
+    line2.appendChild(document.createTextNode('·(x−1), se x > 1'));
+    formulaBox.appendChild(line2);
+
+    card.appendChild(formulaBox);
+
+    var pool = document.createElement('div');
+    pool.className = 'tile-pool';
+    var status = document.createElement('div');
+    status.className = 'tariff-status';
+
+    var filledCount = 0;
+    var solved = false;
+    var slotAnswers = [round.slot0, round.slot1];
+
+    shuffle(round.tiles).forEach(function(label){
+      var tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'tile';
+      tile.textContent = label;
+      tile.addEventListener('click', function(){
+        if(solved || tile.classList.contains('used')) return;
+        var expected = slotAnswers[filledCount];
+        if(label === expected){
+          tile.classList.add('used');
+          card.querySelectorAll('.blank[data-slot="'+filledCount+'"]').forEach(function(b){ b.textContent = label; });
+          filledCount++;
+          if(filledCount === 2){
+            solved = true;
+            var result = round.calc(round.testX);
+            status.textContent = '✔ ' + round.testLabel(round.testX, result);
+            status.className = 'tariff-status ok';
+            card.classList.add('solved-card');
+            bumpScore();
+          }
+        } else {
+          tile.classList.add('flash-wrong');
+          setTimeout(function(){ tile.classList.remove('flash-wrong'); }, 320);
+        }
+      });
+      pool.appendChild(tile);
+    });
+
+    card.appendChild(pool);
+    card.appendChild(status);
+    tariffWrap.appendChild(card);
+  });
+
+  /* ================= PARTE 2: SALA DE CLASSIFICAÇÃO ================= */
+  var diagrams = [
+    { answer:'bijetora', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="45" r="4" fill="var(--primary)"/><circle cx="45" cy="70" r="4" fill="var(--primary)"/><circle cx="45" cy="95" r="4" fill="var(--primary)"/>'+
+      '<circle cx="150" cy="45" r="4" fill="var(--primary)"/><circle cx="150" cy="70" r="4" fill="var(--primary)"/><circle cx="150" cy="95" r="4" fill="var(--primary)"/>'+
+      '<path d="M48,45 L146,45" stroke="var(--primary)" stroke-width="1.4"/><path d="M48,70 L146,70" stroke="var(--primary)" stroke-width="1.4"/><path d="M48,95 L146,95" stroke="var(--primary)" stroke-width="1.4"/>'
+    },
+    { answer:'injetora', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="40" r="4" fill="var(--decay)"/><circle cx="45" cy="70" r="4" fill="var(--decay)"/><circle cx="45" cy="100" r="4" fill="var(--decay)"/>'+
+      '<circle cx="150" cy="35" r="4" fill="var(--decay)"/><circle cx="150" cy="60" r="4" fill="var(--decay)"/><circle cx="150" cy="85" r="4" fill="var(--decay)"/><circle cx="150" cy="110" r="4" fill="var(--decay)"/>'+
+      '<path d="M48,40 L146,35" stroke="var(--decay)" stroke-width="1.4"/><path d="M48,70 L146,60" stroke="var(--decay)" stroke-width="1.4"/><path d="M48,100 L146,110" stroke="var(--decay)" stroke-width="1.4"/>'
+    },
+    { answer:'sobrejetora', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="30" r="4" fill="var(--growth)"/><circle cx="45" cy="55" r="4" fill="var(--growth)"/><circle cx="45" cy="80" r="4" fill="var(--growth)"/><circle cx="45" cy="105" r="4" fill="var(--growth)"/>'+
+      '<circle cx="150" cy="50" r="4" fill="var(--growth)"/><circle cx="150" cy="90" r="4" fill="var(--growth)"/>'+
+      '<path d="M48,30 L146,50" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,55 L146,50" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,80 L146,90" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,105 L146,90" stroke="var(--growth)" stroke-width="1.4"/>'
+    },
+    { answer:'nenhuma', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="40" r="4" fill="var(--danger)"/><circle cx="45" cy="70" r="4" fill="var(--danger)"/><circle cx="45" cy="100" r="4" fill="var(--danger)"/>'+
+      '<circle cx="150" cy="40" r="4" fill="var(--danger)"/><circle cx="150" cy="70" r="4" fill="var(--danger)"/><circle cx="150" cy="100" r="4" fill="var(--danger)"/>'+
+      '<path d="M48,40 L146,40" stroke="var(--danger)" stroke-width="1.4"/><path d="M48,70 L146,40" stroke="var(--danger)" stroke-width="1.4"/><path d="M48,100 L146,70" stroke="var(--danger)" stroke-width="1.4"/>'
+    },
+    { answer:'injetora', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="55" r="4" fill="var(--decay)"/><circle cx="45" cy="85" r="4" fill="var(--decay)"/>'+
+      '<circle cx="150" cy="30" r="4" fill="var(--decay)"/><circle cx="150" cy="60" r="4" fill="var(--decay)"/><circle cx="150" cy="90" r="4" fill="var(--decay)"/><circle cx="150" cy="120" r="4" fill="var(--decay)"/>'+
+      '<path d="M48,55 L146,60" stroke="var(--decay)" stroke-width="1.4"/><path d="M48,85 L146,120" stroke="var(--decay)" stroke-width="1.4"/>'
+    },
+    { answer:'sobrejetora', svg:
+      '<ellipse cx="60" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/><ellipse cx="160" cy="70" rx="42" ry="55" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>'+
+      '<text x="52" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">A</text><text x="152" y="20" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">B</text>'+
+      '<circle cx="45" cy="30" r="4" fill="var(--growth)"/><circle cx="45" cy="58" r="4" fill="var(--growth)"/><circle cx="45" cy="86" r="4" fill="var(--growth)"/><circle cx="45" cy="114" r="4" fill="var(--growth)"/>'+
+      '<circle cx="150" cy="45" r="4" fill="var(--growth)"/><circle cx="150" cy="72" r="4" fill="var(--growth)"/><circle cx="150" cy="99" r="4" fill="var(--growth)"/>'+
+      '<path d="M48,30 L146,45" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,58 L146,72" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,86 L146,99" stroke="var(--growth)" stroke-width="1.4"/><path d="M48,114 L146,99" stroke="var(--growth)" stroke-width="1.4"/>'
+    }
+  ];
+
+  var diagWrap = document.getElementById('diagWrap');
+  var LABELS = {injetora:'Injetora', sobrejetora:'Sobrejetora', bijetora:'Bijetora', nenhuma:'Nenhuma'};
+
+  diagrams.forEach(function(d, i){
+    var card = document.createElement('div');
+    card.className = 'card diag-card';
+    card.dataset.answer = d.answer;
+
+    var label = document.createElement('div');
+    label.className = 'hint';
+    label.textContent = 'Diagrama ' + (i+1);
+    card.appendChild(label);
+
+    var svg = document.createElement('div');
+    svg.innerHTML = '<svg viewBox="0 0 220 140">' + d.svg + '</svg>';
+    card.appendChild(svg.firstChild);
+
+    var btns = document.createElement('div');
+    btns.className = 'diag-btns';
+    var fb = document.createElement('div');
+    fb.className = 'diag-fb';
+
+    Object.keys(LABELS).forEach(function(key){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'diag-btn';
+      b.textContent = LABELS[key];
+      b.dataset.choice = key;
+      b.addEventListener('click', function(){
+        if(card.dataset.done) return;
+        card.dataset.done = '1';
+        var ok = key === d.answer;
+        btns.querySelectorAll('.diag-btn').forEach(function(other){
+          if(other.dataset.choice === d.answer) other.classList.add('correct-pick');
+        });
+        if(!ok) b.classList.add('wrong-pick');
+        fb.textContent = ok ? '✔ Correto!' : '✘ Era ' + LABELS[d.answer] + '.';
+        fb.className = 'diag-fb ' + (ok ? 'ok' : 'no');
+        if(ok) bumpScore();
+      });
+      btns.appendChild(b);
+    });
+
+    card.appendChild(btns);
+    card.appendChild(fb);
+    diagWrap.appendChild(card);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

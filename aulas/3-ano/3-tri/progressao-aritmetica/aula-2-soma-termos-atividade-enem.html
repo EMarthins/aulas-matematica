@@ -1,0 +1,336 @@
+<title>Atividade ENEM: Soma dos Termos da P.A.</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:900px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  h2.title{ font-size:clamp(1.4rem, 3vw, 2rem); font-weight:800; line-height:1.08; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.1rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:22px; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:right; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; text-align:left; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:800px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:sticky; top:14px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .num-input{ font-family:'JetBrains Mono',monospace; font-size:1rem; border:1.5px solid var(--line-strong); border-radius:10px; padding:.5em .8em; background:var(--surface); color:var(--ink); width:150px; margin-right:8px; }
+  .num-input:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+  button.check{ border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:700; font-size:.85rem; border-radius:10px; padding:.6em 1.2em; cursor:pointer; }
+  button.check:hover{ opacity:.9; }
+  .final-card{ text-align:center; padding:28px 22px; }
+  .final-card .big{ font-size:2.4rem; font-weight:900; font-family:'Archivo',sans-serif; color:var(--primary); }
+  ::selection{ background:var(--primary-soft); }
+  header.top{ text-align:center; margin-bottom:28px; }
+  header.top h1{ font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; margin:0 0 8px; }
+
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+    .score-pill{ float:none; display:block; width:fit-content; margin:0 auto 16px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="score-pill">Acertos: <span id="scoreVal">0</span>/5</div>
+  <header class="top">
+    <div class="eyebrow">Atividade extra · Questões reais de vestibular</div>
+    <h1>Soma dos termos no ENEM e em vestibulares</h1>
+    <p class="subtitle">5 questões reais de ENEM, UERJ, UNESP e SAEPE — todas resolvidas com S<sub>n</sub> = (a<sub>1</sub>+a<sub>n</sub>)·n/2. Responda, confira e estude a resolução passo a passo.</p>
+  </header>
+
+  <!-- Q1 -->
+  <div class="card" data-q="1">
+    <div class="eyebrow">ENEM 2013 · Questão 149</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">A produção de arroz</h3>
+    <p>As projeções para a produção de arroz no período de 2012–2021, em uma determinada região produtora, apontam para uma perspectiva de crescimento constante da produção anual. O quadro apresenta a quantidade de arroz, em toneladas, que será produzida nos primeiros anos desse período, de acordo com essa projeção:</p>
+    <table class="tbl" style="margin:10px 0;">
+      <tr><th>Ano</th><td>2012</td><td>2013</td><td>2014</td><td>2015</td></tr>
+      <tr><th>Toneladas</th><td>50,25</td><td>51,50</td><td>52,75</td><td>54,00</td></tr>
+    </table>
+    <p class="lede"><strong>A quantidade total de arroz, em toneladas, que deverá ser produzida no período de 2012 a 2021 será de:</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 497,25</button>
+      <button class="choice opt" data-ok="0">B) 500,85</button>
+      <button class="choice opt" data-ok="0">C) 502,87</button>
+      <button class="choice opt" data-ok="1">D) 558,75</button>
+      <button class="choice opt" data-ok="0">E) 563,25</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>P.A.: a<sub>1</sub> = 50,25, r = 1,25. De 2012 a 2021 são <strong>n = 10</strong> anos.</p>
+      <p>a<sub>10</sub> = 50,25 + 9·1,25 = 61,50 (produção projetada para 2021).</p>
+      <p>S<sub>10</sub> = (50,25 + 61,50)·10/2 = 111,75·5 = <strong>558,75 toneladas</strong>.</p>
+      <p><strong>Resposta: D.</strong></p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="card" data-q="2">
+    <div class="eyebrow">ENEM 2010 · Questão 179</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">Ronaldo e as caixas empilhadas</h3>
+    <p>Ronaldo é um garoto que adora brincar com números. Numa dessas brincadeiras, ele empilhou caixas numeradas: a linha 1 contém apenas o número 1; a linha 2 contém os números 1, 2, 1; a linha 3 contém os números 1, 2, 3, 2, 1; e assim sucessivamente. Ronaldo notou que a soma dos números de cada linha tinha uma propriedade que possibilitava prever a soma de uma linha construída posteriormente.</p>
+    <p class="lede"><strong>Com base nessa propriedade, qual será a soma dos números da linha 9?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 9</button>
+      <button class="choice opt" data-ok="0">B) 45</button>
+      <button class="choice opt" data-ok="0">C) 64</button>
+      <button class="choice opt" data-ok="1">D) 81</button>
+      <button class="choice opt" data-ok="0">E) 285</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>A linha n é, na verdade, <strong>duas somas de P.A. coladas</strong>: 1+2+...+n (subindo) seguido de (n−1)+...+1 (descendo).</p>
+      <p>Soma de 1 a n: S = n(n+1)/2. Soma de 1 a (n−1): S' = (n−1)n/2. Somando as duas partes: n(n+1)/2 + n(n−1)/2 = n².</p>
+      <p>Para a linha 9: soma = 9² = <strong>81</strong>.</p>
+      <p><strong>Resposta: D.</strong> É um belo exemplo de como duas somas de P.A. explicam um padrão numérico.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card" data-q="3">
+    <div class="eyebrow">UERJ 2017 · 1º Exame de Qualificação</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">O plano do fisioterapeuta</h3>
+    <p>Um fisioterapeuta elaborou o seguinte plano de treinos diários para o condicionamento de um maratonista que se recupera de uma contusão: no primeiro dia, corrida de 6 km; nos dias subsequentes, acréscimo de 2 km à corrida do dia imediatamente anterior. O último dia de treino será aquele em que o atleta correr 42 km.</p>
+    <p class="lede"><strong>O total percorrido pelo atleta nesse treinamento, do primeiro ao último dia, em quilômetros, corresponde a:</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">a) 414 km</button>
+      <button class="choice opt" data-ok="0">b) 438 km</button>
+      <button class="choice opt" data-ok="1">c) 456 km</button>
+      <button class="choice opt" data-ok="0">d) 484 km</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>P.A.: a<sub>1</sub> = 6, r = 2, a<sub>n</sub> = 42. Primeiro descobrimos n: 42 = 6 + (n−1)·2 → n = 19 dias.</p>
+      <p>S<sub>19</sub> = (6 + 42)·19/2 = 48·9,5 = <strong>456 km</strong>.</p>
+      <p><strong>Resposta: c.</strong></p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="card" data-q="4">
+    <div class="eyebrow">UNESP 2007 · Vestibular</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">O fazendeiro e as árvores</h3>
+    <p>Um fazendeiro plantou 3.960 árvores em sua propriedade ao longo de 24 meses. No primeiro mês, plantou x árvores; em cada mês seguinte, plantou (x + r) árvores a mais que no mês anterior, com r &gt; 0 — uma progressão aritmética. Ao final dos primeiros 15 meses, ainda restavam 2.160 árvores a plantar para completar o total de 3.960.</p>
+    <p class="lede"><strong>Quantas árvores esse fazendeiro plantou no primeiro mês?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="1">a) 50</button>
+      <button class="choice opt" data-ok="0">b) 75</button>
+      <button class="choice opt" data-ok="0">c) 100</button>
+      <button class="choice opt" data-ok="0">d) 150</button>
+      <button class="choice opt" data-ok="0">e) 165</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>Em 15 meses plantou 3.960 − 2.160 = 1.800 árvores → S<sub>15</sub> = 1.800. Em 24 meses, S<sub>24</sub> = 3.960.</p>
+      <p>Usando S<sub>n</sub> = [2a<sub>1</sub> + (n−1)r]·n/2 para os dois casos: 2a<sub>1</sub>+23r = 330 e 2a<sub>1</sub>+14r = 240.</p>
+      <p>Subtraindo as equações: 9r = 90 → r = 10. Substituindo: 2a<sub>1</sub> + 140 = 240 → a<sub>1</sub> = <strong>50 árvores</strong>.</p>
+      <p><strong>Resposta: a.</strong></p>
+    </div>
+  </div>
+
+  <!-- Q5 (open answer) -->
+  <div class="card" data-q="5" id="q5card">
+    <div class="eyebrow">SAEPE · 3ª série do Ensino Médio</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">Cláudia no teatro</h3>
+    <p>Cláudia foi a um teatro e observou que a distribuição das cadeiras para a plateia foi feita assim: a primeira fileira, mais próxima do palco, possui 6 assentos; a segunda fileira, 8 assentos; e assim sucessivamente, de modo que as quantidades de assentos em cada fileira formam uma progressão aritmética. Cláudia sentou-se em uma cadeira da <strong>última fileira</strong>, que continha 26 assentos.</p>
+    <p class="lede"><strong>De acordo com essa distribuição, qual era a quantidade total de cadeiras da plateia?</strong> <span class="hint">(esta questão não tem alternativas no original — digite o número)</span></p>
+    <div class="answer-row" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:10px;">
+      <input type="text" inputmode="numeric" class="num-input" id="q5input" placeholder="total de cadeiras">
+      <button class="check" id="q5check">Conferir</button>
+    </div>
+    <div class="fb" id="q5fb"></div>
+    <div class="answer" id="q5answer">
+      <p>Razão: r = 8 − 6 = 2. Descobrindo n com a última fileira (a<sub>n</sub> = 26): 26 = 6 + (n−1)·2 → n = 11 fileiras.</p>
+      <p>S<sub>11</sub> = (6 + 26)·11/2 = 32·5,5 = <strong>176 cadeiras</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card final-card" id="finalCard" style="display:none;">
+    <div class="eyebrow">Resultado final</div>
+    <div class="big"><span id="finalScore">0</span>/5</div>
+    <p id="finalMsg" style="max-width:48ch;margin:10px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-pa2-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var total = 5;
+  var score = 0, answered = 0;
+  var scoreVal = document.getElementById('scoreVal');
+
+  var mcCards = Array.prototype.slice.call(document.querySelectorAll('.card[data-q]')).filter(function(c){ return c.id !== 'q5card'; });
+  mcCards.forEach(function(card){
+    var fb = card.querySelector('.fb');
+    var ans = card.querySelector('.answer');
+    var opts = card.querySelectorAll('.opt');
+    opts.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(card.dataset.done) return;
+        card.dataset.done = '1';
+        answered++;
+        var ok = btn.dataset.ok === '1';
+        opts.forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        if(ok){ score++; scoreVal.textContent = score; }
+        fb.textContent = ok ? '✔ Resposta correta! Veja a resolução:' : '✘ Não foi dessa vez. Veja a resolução completa:';
+        fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        ans.classList.add('open');
+        if(answered === total) finish();
+      });
+    });
+  });
+
+  var q5card = document.getElementById('q5card');
+  var q5input = document.getElementById('q5input');
+  var q5check = document.getElementById('q5check');
+  var q5fb = document.getElementById('q5fb');
+  var q5answer = document.getElementById('q5answer');
+  q5check.addEventListener('click', function(){
+    if(q5card.dataset.done) return;
+    var val = parseFloat((q5input.value||'').replace(',','.'));
+    if(isNaN(val)){ q5fb.textContent = 'Digite um número para conferir.'; q5fb.className='fb no'; return; }
+    q5card.dataset.done = '1';
+    answered++;
+    var ok = Math.abs(val-176) < 0.5;
+    if(ok){ score++; scoreVal.textContent = score; }
+    q5fb.textContent = ok ? '✔ Resposta correta! Veja a resolução:' : '✘ Não foi dessa vez (resposta: 176). Veja a resolução completa:';
+    q5fb.className = 'fb ' + (ok?'ok':'no');
+    q5answer.classList.add('open');
+    q5input.disabled = true; q5check.disabled = true;
+    if(answered === total) finish();
+  });
+
+  function finish(){
+    var finalCard = document.getElementById('finalCard');
+    document.getElementById('finalScore').textContent = score;
+    var msg;
+    if(score === total) msg = 'Show de bola! Você domina a soma dos termos da P.A. em contextos reais de prova.';
+    else if(score >= total-1) msg = 'Muito bem! Revise a questão que errou e a fórmula ficará ainda mais natural.';
+    else if(score >= total/2) msg = 'Bom começo. Releia as resoluções acima com atenção às pegadinhas.';
+    else msg = 'Vale revisar a aula de soma dos termos antes de tentar de novo — as resoluções acima ajudam bastante.';
+    document.getElementById('finalMsg').textContent = msg;
+    finalCard.style.display = 'block';
+    finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, total);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

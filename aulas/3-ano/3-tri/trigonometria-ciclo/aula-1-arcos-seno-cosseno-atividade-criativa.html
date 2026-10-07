@@ -1,0 +1,384 @@
+<title>Ciclo Interativo: Arraste o Ponto</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:1000px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .hero{ text-align:center; padding:34px 8px 22px; }
+  .hero h1{ font-size:clamp(1.6rem,4.2vw,2.4rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.92rem,1.5vw,1.05rem); max-width:58ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badgerow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 24px 50px -30px var(--shadow); }
+  .layout{ display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
+  @media (max-width:820px){ .layout{ grid-template-columns:1fr; } }
+  .circle-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; touch-action:none; }
+  .readouts{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:100%; max-width:360px; }
+  .readout{ background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:8px 6px; text-align:center; }
+  .readout .lab{ font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); font-weight:700; }
+  .readout .val{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.05rem; margin-top:2px; }
+  .readout.growth .val{ color:var(--growth-ink); } .readout.decay .val{ color:var(--decay-ink); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.92rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.9rem; }
+  .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  button.primary{ background:var(--primary); color:var(--primary-ink); border:none; font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; border-radius:10px; padding:.7em 1.3em; cursor:pointer; }
+  button.primary:hover{ opacity:.92; }
+  button.ghost{ background:var(--surface); border:1.5px solid var(--line-strong); color:var(--ink); font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; border-radius:10px; padding:.7em 1.3em; cursor:pointer; }
+  button.ghost:hover{ border-color:var(--primary); }
+  button:disabled{ opacity:.4; cursor:default; }
+  .target-banner{ display:flex; align-items:center; gap:12px; background:var(--growth-soft); border:1px solid color-mix(in srgb, var(--growth) 30%, var(--line)); border-radius:14px; padding:12px 16px; margin-bottom:14px; }
+  .target-banner .n{ font-family:'JetBrains Mono',monospace; font-weight:800; font-size:1.3rem; color:var(--growth-ink); }
+  .fb-line{ font-weight:700; font-size:.88rem; margin-top:8px; min-height:1.3em; }
+  .fb-line.ok{ color:var(--success); } .fb-line.no{ color:var(--danger); }
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:22px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  #dragPoint{ cursor:grab; }
+  #dragPoint:active{ cursor:grabbing; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · Ciclo interativo</div>
+    <h1>Arraste o ponto pelo <span style="color:var(--primary);">ciclo trigonométrico</span></h1>
+    <p class="subtitle">Puxe o ponto ao redor da circunferência e veja, em tempo real, como as coordenadas (cos θ, sen θ) mudam — e como isso desenha as ondas do seno e do cosseno.</p>
+    <div class="badgerow">
+      <span class="badge">Explore livremente</span>
+      <span class="badge">Depois: 6 desafios de mira</span>
+      <span class="badge">Aula 1 · Trigonometria no ciclo</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="layout">
+      <div class="circle-wrap">
+        <svg id="circleSvg" viewBox="0 0 320 320" style="width:100%;max-width:320px;height:auto;">
+          <line x1="20" y1="160" x2="300" y2="160" stroke="var(--line-strong)" stroke-width="1.4"/>
+          <line x1="160" y1="20" x2="160" y2="300" stroke="var(--line-strong)" stroke-width="1.4"/>
+          <circle cx="160" cy="160" r="128" fill="none" stroke="var(--primary)" stroke-width="3"/>
+          <line id="targetLine" x1="160" y1="160" x2="160" y2="32" stroke="var(--growth)" stroke-width="2" stroke-dasharray="5 4" opacity="0" />
+          <line id="radiusLine" x1="160" y1="160" x2="288" y2="160" stroke="var(--ink-soft)" stroke-width="2.6"/>
+          <line id="cosLine" x1="288" y1="160" x2="288" y2="160" stroke="var(--decay)" stroke-width="4" stroke-dasharray="3 3"/>
+          <line id="senLine" x1="288" y1="160" x2="288" y2="160" stroke="var(--growth)" stroke-width="4" stroke-dasharray="3 3"/>
+          <circle id="dragPoint" cx="288" cy="160" r="11" fill="var(--surface)" stroke="var(--primary)" stroke-width="3.4"/>
+          <text x="292" y="150" font-family="JetBrains Mono" font-size="11" fill="var(--ink-faint)">P</text>
+        </svg>
+        <div class="readouts">
+          <div class="readout"><div class="lab">Ângulo θ</div><div class="val" id="valDeg">0°</div></div>
+          <div class="readout growth"><div class="lab">sen θ</div><div class="val" id="valSen">0,00</div></div>
+          <div class="readout decay"><div class="lab">cos θ</div><div class="val" id="valCos">1,00</div></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="lede" style="font-size:.88rem;">A onda abaixo mostra sen θ (laranja) e cos θ (verde-água) para todos os ângulos de 0° a 360°. O ponto branco em cada curva acompanha, ao vivo, a posição do ponto P que você arrasta no ciclo.</p>
+        <svg id="waveSvg" viewBox="0 0 360 150" style="width:100%;height:auto;">
+          <line x1="10" y1="75" x2="350" y2="75" stroke="var(--line-strong)" stroke-width="1.2"/>
+          <line x1="10" y1="20" x2="350" y2="20" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+          <line x1="10" y1="130" x2="350" y2="130" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+          <path id="senPath" d="" fill="none" stroke="var(--growth)" stroke-width="2.6" stroke-linecap="round"/>
+          <path id="cosPath" d="" fill="none" stroke="var(--decay)" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+          <circle id="senDot" cx="10" cy="75" r="5" fill="var(--growth)" stroke="var(--surface)" stroke-width="1.6"/>
+          <circle id="cosDot" cx="10" cy="20" r="5" fill="var(--decay)" stroke="var(--surface)" stroke-width="1.6"/>
+          <text x="12" y="12" font-family="JetBrains Mono" font-size="9" fill="var(--growth-ink)">sen θ</text>
+          <text x="12" y="145" font-family="JetBrains Mono" font-size="9" fill="var(--decay-ink)">cos θ</text>
+        </svg>
+        <div class="callout" style="margin-top:8px;">
+          <h4>Observe</h4>
+          <p>Quando P está no eixo horizontal (0° ou 180°), sen θ = 0. Quando está no eixo vertical (90° ou 270°), cos θ = 0. O sinal de cada coordenada muda exatamente quando P cruza um eixo — é isso que define os sinais por quadrante.</p>
+        </div>
+        <div class="btnrow">
+          <button class="primary" id="startChallengeBtn">Começar desafio de mira →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="challengeArea" style="display:none;margin-top:22px;">
+      <div class="hairline"></div>
+      <div class="target-banner">
+        <span>Leve o ponto P até</span>
+        <span class="n" id="targetLabel">30°</span>
+        <span style="color:var(--ink-faint);font-size:.82rem;margin-left:auto;">Desafio <span id="challengeIdx">1</span>/6</span>
+      </div>
+      <p class="lede" style="font-size:.86rem;">Arraste o ponto até alinhar com a linha tracejada verde e clique em "Conferir". Tolerância de ±10°.</p>
+      <div class="btnrow">
+        <button class="ghost" id="checkBtn">Conferir posição</button>
+      </div>
+      <p class="fb-line" id="challengeFb"></p>
+    </div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado do desafio</div>
+    <div class="num"><span id="finalScore">0</span>/6</div>
+    <p id="finalMsg" class="lede" style="max-width:44ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-tric1-atv-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+(function(){
+  var svg = document.getElementById('circleSvg');
+  var cx = 160, cy = 160, r = 128;
+  var dragPoint = document.getElementById('dragPoint');
+  var radiusLine = document.getElementById('radiusLine');
+  var cosLine = document.getElementById('cosLine');
+  var senLine = document.getElementById('senLine');
+  var targetLine = document.getElementById('targetLine');
+  var valDeg = document.getElementById('valDeg');
+  var valSen = document.getElementById('valSen');
+  var valCos = document.getElementById('valCos');
+  var senPath = document.getElementById('senPath');
+  var cosPath = document.getElementById('cosPath');
+  var senDot = document.getElementById('senDot');
+  var cosDot = document.getElementById('cosDot');
+
+  var angleDeg = 0;
+  var dragging = false;
+
+  // build static sine/cosine curves once
+  (function buildCurves(){
+    var wx0 = 10, wx1 = 350, wy0 = 20, wy1 = 130, mid = 75, amp = 55;
+    var sPts = [], cPts = [];
+    for(var d = 0; d <= 360; d += 5){
+      var rad = d * Math.PI / 180;
+      var x = wx0 + (wx1 - wx0) * (d / 360);
+      sPts.push(x.toFixed(1) + ',' + (mid - amp * Math.sin(rad)).toFixed(1));
+      cPts.push(x.toFixed(1) + ',' + (mid - amp * Math.cos(rad)).toFixed(1));
+    }
+    senPath.setAttribute('d', 'M' + sPts.join(' L'));
+    cosPath.setAttribute('d', 'M' + cPts.join(' L'));
+  })();
+
+  function waveX(d){ return 10 + (350 - 10) * (d / 360); }
+  function waveYsen(d){ return 75 - 55 * Math.sin(d * Math.PI / 180); }
+  function waveYcos(d){ return 75 - 55 * Math.cos(d * Math.PI / 180); }
+
+  function setAngle(deg){
+    angleDeg = ((deg % 360) + 360) % 360;
+    var rad = angleDeg * Math.PI / 180;
+    var px = cx + r * Math.cos(rad);
+    var py = cy - r * Math.sin(rad);
+    dragPoint.setAttribute('cx', px); dragPoint.setAttribute('cy', py);
+    radiusLine.setAttribute('x2', px); radiusLine.setAttribute('y2', py);
+    cosLine.setAttribute('x1', px); cosLine.setAttribute('y1', cy);
+    cosLine.setAttribute('x2', px); cosLine.setAttribute('y2', py);
+    senLine.setAttribute('x1', cx); senLine.setAttribute('y1', py);
+    senLine.setAttribute('x2', px); senLine.setAttribute('y2', py);
+
+    var s = Math.sin(rad), c = Math.cos(rad);
+    valDeg.textContent = Math.round(angleDeg) + '°';
+    valSen.textContent = s.toFixed(2).replace('-','−');
+    valCos.textContent = c.toFixed(2).replace('-','−');
+
+    senDot.setAttribute('cx', waveX(angleDeg)); senDot.setAttribute('cy', waveYsen(angleDeg));
+    cosDot.setAttribute('cx', waveX(angleDeg)); cosDot.setAttribute('cy', waveYcos(angleDeg));
+  }
+
+  function angleFromEvent(clientX, clientY){
+    var rect = svg.getBoundingClientRect();
+    var scale = 320 / rect.width;
+    var x = (clientX - rect.left) * scale;
+    var y = (clientY - rect.top) * scale;
+    var dx = x - cx, dy = cy - y;
+    var rad = Math.atan2(dy, dx);
+    return rad * 180 / Math.PI;
+  }
+
+  function pointerDown(e){
+    dragging = true;
+    move(e);
+    e.preventDefault();
+  }
+  function pointerMove(e){
+    if(!dragging) return;
+    move(e);
+  }
+  function pointerUp(){ dragging = false; }
+  function move(e){
+    var pt = e.touches ? e.touches[0] : e;
+    setAngle(angleFromEvent(pt.clientX, pt.clientY));
+  }
+
+  dragPoint.addEventListener('pointerdown', pointerDown);
+  svg.addEventListener('pointerdown', function(e){ if(e.target === dragPoint) return; pointerDown(e); });
+  window.addEventListener('pointermove', pointerMove);
+  window.addEventListener('pointerup', pointerUp);
+
+  setAngle(0);
+
+  // ---- challenge mode ----
+  var targets = [30, 120, 200, 315, 90, 270];
+  var idx = 0, score = 0;
+  var TOTAL = targets.length;
+  var startBtn = document.getElementById('startChallengeBtn');
+  var challengeArea = document.getElementById('challengeArea');
+  var targetLabel = document.getElementById('targetLabel');
+  var challengeIdx = document.getElementById('challengeIdx');
+  var checkBtn = document.getElementById('checkBtn');
+  var challengeFb = document.getElementById('challengeFb');
+  var finalPanel = document.getElementById('finalPanel');
+
+  function showTarget(){
+    var t = targets[idx];
+    targetLabel.textContent = t + '°';
+    challengeIdx.textContent = (idx + 1);
+    var rad = t * Math.PI / 180;
+    targetLine.setAttribute('x2', cx + r * Math.cos(rad));
+    targetLine.setAttribute('y2', cy - r * Math.sin(rad));
+    targetLine.setAttribute('opacity', '1');
+    challengeFb.textContent = '';
+    challengeFb.className = 'fb-line';
+    checkBtn.disabled = false;
+  }
+
+  startBtn.addEventListener('click', function(){
+    challengeArea.style.display = 'block';
+    startBtn.disabled = true;
+    idx = 0; score = 0;
+    showTarget();
+    challengeArea.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  checkBtn.addEventListener('click', function(){
+    var t = targets[idx];
+    var diff = Math.abs(angleDeg - t);
+    diff = Math.min(diff, 360 - diff);
+    var hit = diff <= 10;
+    if(hit){
+      score++;
+      challengeFb.textContent = 'Certo! Você acertou o ângulo de ' + t + '°.';
+      challengeFb.className = 'fb-line ok';
+    } else {
+      challengeFb.textContent = 'Quase — você estava a ' + Math.round(diff) + '° de distância do alvo (' + t + '°).';
+      challengeFb.className = 'fb-line no';
+    }
+    checkBtn.disabled = true;
+    setTimeout(function(){
+      idx++;
+      if(idx < TOTAL){ showTarget(); }
+      else { finish(); }
+    }, 1300);
+  });
+
+  function finish(){
+    targetLine.setAttribute('opacity', '0');
+    challengeArea.style.display = 'none';
+    document.getElementById('finalScore').textContent = score;
+    var msg = document.getElementById('finalMsg');
+    if(score === TOTAL) msg.textContent = 'Excelente! Você posicionou o ponto certinho em todos os ângulos — domina bem o ciclo trigonométrico.';
+    else if(score >= TOTAL/2) msg.textContent = 'Bom resultado! Continue praticando a localização de ângulos notáveis nos quatro quadrantes.';
+    else msg.textContent = 'Volte a explorar o ciclo livremente e tente o desafio de novo para fixar a posição dos ângulos.';
+    finalPanel.style.display = 'block';
+    finalPanel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

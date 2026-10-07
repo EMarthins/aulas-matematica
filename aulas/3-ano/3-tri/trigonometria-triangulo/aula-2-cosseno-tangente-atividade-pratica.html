@@ -1,0 +1,339 @@
+<title>Lista Progressiva: Cosseno, Tangente e Relação Fundamental</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:68px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:720px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h1.title{ font-size:clamp(1.6rem, 4vw, 2.5rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.1rem); margin:0 0 8px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:22px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badge.lvl1{ color:var(--success); border-color:color-mix(in srgb, var(--success) 40%, var(--line-strong)); }
+  .badge.lvl2{ color:var(--growth-ink); border-color:color-mix(in srgb, var(--growth) 40%, var(--line-strong)); }
+  .badge.lvl3{ color:var(--danger); border-color:color-mix(in srgb, var(--danger) 40%, var(--line-strong)); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .score-pill{ position:fixed; top:calc(14px + env(safe-area-inset-top,0px)); left:14px; z-index:50; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .qtext{ font-size:.97rem; margin:8px 0 12px; }
+  svg.diagram{ width:100%; max-width:220px; height:auto; display:block; margin:0 auto 12px; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.65em 1em; margin-bottom:8px; cursor:pointer; font-size:.94rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  button.hintbtn{ border:1.5px dashed var(--line-strong); background:transparent; color:var(--ink-soft); font-family:'Archivo',sans-serif; font-weight:700; font-size:.76rem; border-radius:10px; padding:.4em .9em; cursor:pointer; margin-bottom:12px; display:inline-flex; align-items:center; gap:.4em; }
+  button.hintbtn:hover{ border-color:var(--primary); color:var(--primary); }
+  .hinttext{ display:none; font-size:.82rem; color:var(--ink-faint); font-style:italic; margin:-6px 0 12px; }
+  .hinttext.open{ display:block; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:400px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.9rem; }
+  .final{ text-align:center; padding:32px 20px; border-radius:18px; background:var(--surface-2); border:1px solid var(--line); margin-top:8px; display:none; }
+  .final.show{ display:block; }
+  .final .big{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.4rem; color:var(--primary); }
+
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+    .score-pill{ font-size:.72rem; padding:.35em .8em; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="score-pill">Pontos: <span id="scoreVal">0</span>/7</div>
+
+<div class="app">
+  <div class="eyebrow">Atividade extra · Pratique mais</div>
+  <h1 class="title">Lista progressiva: cosseno, tangente e relação fundamental</h1>
+  <p class="subtitle">7 problemas em ordem crescente de dificuldade. Use a dica se travar, mas tente resolver antes de conferir a resposta.</p>
+
+  <div class="hairline"></div>
+
+  <!-- NÍVEL 1 -->
+  <p class="badge lvl1" style="margin:18px 0 10px;">NÍVEL 1 · FÁCIL</p>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>1.</strong> Se cos α = 0,8 num triângulo retângulo de hipotenusa 10 cm, qual é o cateto adjacente a α?</p>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">cos α = cateto adjacente / hipotenusa. Isole o cateto adjacente.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">8 cm</button>
+      <button class="choice qopt" data-ok="0">6 cm</button>
+      <button class="choice qopt" data-ok="0">2 cm</button>
+      <button class="choice qopt" data-ok="0">12,5 cm</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>0,8 = adjacente / 10 → adjacente = 0,8 × 10 = <strong>8 cm</strong>.</p></div>
+  </div>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>2.</strong> tg α = cateto oposto / cateto adjacente. Se o cateto oposto mede 9 cm e o adjacente mede 12 cm, qual é o valor de tg α?</p>
+    <svg class="diagram" viewBox="0 0 180 130">
+      <polygon points="20,110 160,110 20,40" fill="none" stroke="var(--ink-soft)" stroke-width="1.8"/>
+      <path d="M20,95 h15 v15" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>
+      <text x="0" y="78" font-family="JetBrains Mono" font-size="11" fill="var(--decay)">9 cm</text>
+      <text x="70" y="124" font-family="JetBrains Mono" font-size="11" fill="var(--growth)">12 cm</text>
+    </svg>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">É uma divisão direta: oposto ÷ adjacente.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">0,75</button>
+      <button class="choice qopt" data-ok="0">1,33</button>
+      <button class="choice qopt" data-ok="0">3</button>
+      <button class="choice qopt" data-ok="0">0,25</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>tg α = 9 / 12 = <strong>0,75</strong>.</p></div>
+  </div>
+
+  <!-- NÍVEL 2 -->
+  <p class="badge lvl2" style="margin:18px 0 10px;">NÍVEL 2 · MÉDIO</p>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>3.</strong> Sabendo que sen θ = 0,28 (θ agudo), use a relação fundamental para encontrar cos θ.</p>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">cos²θ = 1 − sen²θ. Depois extraia a raiz quadrada.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">0,96</button>
+      <button class="choice qopt" data-ok="0">0,72</button>
+      <button class="choice qopt" data-ok="0">0,84</button>
+      <button class="choice qopt" data-ok="0">0,60</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>cos²θ = 1 − 0,28² = 1 − 0,0784 = 0,9216 → cos θ = √0,9216 = <strong>0,96</strong>.</p></div>
+  </div>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>4.</strong> Um cabo de sustentação de um poste faz 60° com o chão e tem 8 m de comprimento. Qual é a distância entre o pé do cabo e a base do poste? (cos 60° = 0,5)</p>
+    <svg class="diagram" viewBox="0 0 180 130">
+      <polygon points="20,110 160,110 160,20" fill="none" stroke="var(--ink-soft)" stroke-width="1.8"/>
+      <path d="M35,110 A15,15 0 0,1 45,97" fill="none" stroke="var(--primary)" stroke-width="1.6"/>
+      <text x="32" y="98" font-family="JetBrains Mono" font-size="10" fill="var(--primary)">60°</text>
+      <text x="60" y="72" font-family="Archivo" font-size="11" font-weight="700" fill="var(--decay)" transform="rotate(-56 60 72)">cabo · 8 m</text>
+    </svg>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">O cabo é a hipotenusa; a distância no chão é o cateto adjacente ao ângulo de 60°.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">4 m</button>
+      <button class="choice qopt" data-ok="0">6,93 m</button>
+      <button class="choice qopt" data-ok="0">8 m</button>
+      <button class="choice qopt" data-ok="0">2 m</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>cos 60° = distância / 8 → distância = 0,5 × 8 = <strong>4 m</strong>.</p></div>
+  </div>
+
+  <!-- NÍVEL 3 -->
+  <p class="badge lvl3" style="margin:18px 0 10px;">NÍVEL 3 · DIFÍCIL</p>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>5.</strong> Um telhado tem inclinação tal que tg α = 0,75 em relação à horizontal. Se a base (cateto adjacente) mede 6 m, qual é a altura do telhado (cateto oposto)?</p>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">tg α = oposto / adjacente. Isole o cateto oposto.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">4,5 m</button>
+      <button class="choice qopt" data-ok="0">8 m</button>
+      <button class="choice qopt" data-ok="0">4 m</button>
+      <button class="choice qopt" data-ok="0">6,75 m</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>0,75 = oposto / 6 → oposto = 0,75 × 6 = <strong>4,5 m</strong>.</p></div>
+  </div>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>6.</strong> Se tg θ = 3/4 (θ agudo), qual é o valor de sen θ? (Dica: 3, 4 e 5 formam uma trinca pitagórica.)</p>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">Se oposto = 3 e adjacente = 4, a hipotenusa é 5. sen θ = oposto/hipotenusa.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">0,6</button>
+      <button class="choice qopt" data-ok="0">0,8</button>
+      <button class="choice qopt" data-ok="0">0,75</button>
+      <button class="choice qopt" data-ok="0">0,43</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>Com oposto = 3 e adjacente = 4, a hipotenusa é √(3²+4²) = √25 = 5.</p><p>sen θ = 3/5 = <strong>0,6</strong> (e cos θ = 4/5 = 0,8; confira: 0,6² + 0,8² = 0,36 + 0,64 = 1 ✓).</p></div>
+  </div>
+
+  <div class="card qz-block">
+    <p class="qtext"><strong>7.</strong> Uma rampa forma um ângulo α com o solo tal que cos α = 0,96. Se a rampa (hipotenusa) mede 25 m, qual é a altura vencida por ela (cateto oposto)? Use a relação fundamental para achar sen α primeiro.</p>
+    <button class="hintbtn" onclick="toggleHint(this)">💡 Dica</button>
+    <div class="hinttext">sen²α = 1 − cos²α. Depois use sen α = oposto/hipotenusa.</div>
+    <div class="choices">
+      <button class="choice qopt" data-ok="1">7 m</button>
+      <button class="choice qopt" data-ok="0">24 m</button>
+      <button class="choice qopt" data-ok="0">4 m</button>
+      <button class="choice qopt" data-ok="0">9,6 m</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer"><p>sen²α = 1 − 0,96² = 1 − 0,9216 = 0,0784 → sen α = 0,28.</p><p>sen α = altura / 25 → altura = 0,28 × 25 = <strong>7 m</strong>.</p></div>
+  </div>
+
+  <div class="final" id="finalCard">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;">Resultado final</div>
+    <div class="big"><span id="finalScore">0</span>/7</div>
+    <p id="finalMsg" style="margin-top:8px;color:var(--ink-soft);"></p>
+  </div>
+</div>
+
+<script>
+function toggleHint(btn){
+  var h = btn.nextElementSibling;
+  h.classList.toggle('open');
+}
+</script>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-trit2-pratica';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var scoreEl = document.getElementById('scoreVal');
+  var score = 0, answered = 0;
+  var blocks = document.querySelectorAll('.qz-block');
+  var TOTAL = blocks.length;
+
+  blocks.forEach(function(block){
+    var fb = block.querySelector('.fb');
+    var ans = block.querySelector('.answer');
+    var group = block.querySelector('.choices');
+    group.querySelectorAll('.qopt').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        var ok = b.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(bb){ bb.disabled = true; if(bb.dataset.ok === '1') bb.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        fb.textContent = ok ? '✔ Correto!' : '✘ Não foi dessa vez.';
+        fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        ans.classList.add('open');
+        if(ok){ score++; scoreEl.textContent = score; }
+        answered++;
+        if(answered === TOTAL){
+          var finalCard = document.getElementById('finalCard');
+          document.getElementById('finalScore').textContent = score;
+          var msg = document.getElementById('finalMsg');
+          if(score === TOTAL) msg.textContent = 'Perfeito! Lista inteira sem erros.';
+          else if(score >= TOTAL-2) msg.textContent = 'Muito bom domínio de cosseno, tangente e relação fundamental.';
+          else if(score >= TOTAL/2) msg.textContent = 'Bom começo — revise os níveis onde errou.';
+          else msg.textContent = 'Releia a aula e tente novamente com calma.';
+          finalCard.classList.add('show');
+          finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+          try{ window.reportarConclusao(score, TOTAL); }catch(e){}
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

@@ -1,0 +1,347 @@
+<title>Exponenciais no ENEM — Atividade</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:760px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  h1.title{ font-size:clamp(1.7rem,4.4vw,2.6rem); font-weight:900; line-height:1.04; margin:0 0 8px; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:1.02rem; margin:0 0 18px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:18px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); margin:8px 0; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.7rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal:disabled{ opacity:.45; cursor:default; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* page-specific */
+  header.hero{ position:relative; background:var(--surface); border:1px solid var(--line); border-radius:22px; box-shadow:0 20px 44px -20px var(--shadow), 0 2px 0 var(--shadow-soft); padding:clamp(22px,4vw,36px); margin-bottom:22px; }
+  .progress-wrap{ position:sticky; top:calc(14px + env(safe-area-inset-top,0px)); z-index:50; display:flex; justify-content:center; margin-bottom:18px; }
+  .progress-pill{ display:flex; align-items:center; gap:10px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.5em 1.1em; box-shadow:0 10px 24px -10px var(--shadow); font-family:'JetBrains Mono',monospace; font-size:.78rem; font-weight:700; color:var(--ink-soft); }
+  .progress-track{ width:120px; height:7px; border-radius:999px; background:var(--surface-2); overflow:hidden; }
+  .progress-fill{ height:100%; width:0%; background:var(--primary); transition:width .35s ease; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:clamp(18px,3vw,28px); margin-bottom:24px; box-shadow:0 14px 30px -18px var(--shadow); }
+  .qcard .qnum{ display:inline-flex; align-items:center justify-content:center; width:30px; height:30px; }
+  .qmeta{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+  .qmeta .source{ font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--decay-ink); background:var(--decay-soft); border-radius:999px; padding:.32em .8em; }
+  .qtitle{ font-size:1.05rem; font-weight:800; margin:0 0 10px; font-family:'Archivo',sans-serif; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.84rem; font-variant-numeric:tabular-nums; margin:10px 0; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 9px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; }
+  .final-card{ text-align:center; padding:clamp(26px,5vw,40px); }
+  .final-card .big{ font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(2.2rem,7vw,3.2rem); color:var(--primary); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top,0px)); right:calc(14px + env(safe-area-inset-right,0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } .progress-track{ width:80px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <header class="hero">
+    <div class="eyebrow">Atividade extra · Exponenciais</div>
+    <h1 class="title">No ENEM é assim: <span style="color:var(--primary);">exponenciais</span></h1>
+    <p class="subtitle">5 questões reais de provas oficiais do ENEM sobre equações e funções exponenciais — cada uma com fonte, ano e resolução passo a passo.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <span class="badge">5 QUESTÕES</span>
+      <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">f(x) = a<sup>x</sup></span>
+      <span class="badge">ENEM 2011 · 2013 · 2016 · 2024</span>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-pill">
+      <span>Pontuação: <span id="scoreVal">0</span>/5</span>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <section class="qcard" data-q="1">
+    <div class="qmeta"><span class="badge qnum">1</span><span class="source">ENEM 2013 · PPL</span></div>
+    <p class="qtitle">Qual é o tipo da função?</p>
+    <p>Em um experimento, uma cultura de bactérias tem sua população <strong>reduzida pela metade a cada hora</strong>, devido à ação de um agente bactericida. O número de bactérias, em função do tempo (em horas), pode ser representado por uma função do tipo:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">a) afim</button>
+      <button class="choice qopt" data-ok="0">b) seno</button>
+      <button class="choice qopt" data-ok="0">c) cosseno</button>
+      <button class="choice qopt" data-ok="0">d) logarítmica crescente</button>
+      <button class="choice qopt" data-ok="1">e) exponencial</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>Por que não é afim:</strong> numa função afim, a população cairia sempre a mesma <em>quantidade</em> por hora — mas aqui ela cai à <em>metade</em>, isto é, é multiplicada pelo mesmo fator (1/2) a cada hora.</p>
+      <p>Multiplicar por um fator fixo a cada intervalo igual de tempo é exatamente a definição de <strong>função exponencial</strong>: P(t) = P<sub>0</sub> · (1/2)<sup>t</sup>.</p>
+      <p><strong>Resposta: E</strong></p>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="qcard" data-q="2">
+    <div class="qmeta"><span class="badge qnum">2</span><span class="source">ENEM 2016 · 2ª aplicação</span></div>
+    <p class="qtitle">A epidemia de bactérias</p>
+    <p>O governo de uma cidade está preocupado com a possível epidemia de uma doença infectocontagiosa causada por bactéria. Em experimentos de laboratório, com uma cultura dessa bactéria contendo inicialmente 40 mil unidades, obteve-se a fórmula da população: <strong>p(t) = 40 · 2<sup>3t</sup></strong>, em que t é o tempo em horas e p(t) é a população em milhares de bactérias.</p>
+    <p>Em relação à quantidade inicial de bactérias, depois de <strong>20 minutos</strong>, essa população estará:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">a) reduzida a um terço</button>
+      <button class="choice qopt" data-ok="0">b) reduzida à metade</button>
+      <button class="choice qopt" data-ok="0">c) reduzida a dois terços</button>
+      <button class="choice qopt" data-ok="1">d) duplicada</button>
+      <button class="choice qopt" data-ok="0">e) triplicada</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>Passo 1:</strong> 20 minutos = 1/3 de hora, então t = 1/3.</p>
+      <p class="formula" style="font-size:.95rem;">p(1/3) = 40 · 2<sup>3·(1/3)</sup> = 40 · 2<sup>1</sup> = 80</p>
+      <p><strong>Passo 2:</strong> a população foi de 40 mil para 80 mil — exatamente o <strong>dobro</strong>.</p>
+      <p><strong>Resposta: D</strong></p>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="qcard" data-q="3">
+    <div class="qmeta"><span class="badge qnum">3</span><span class="source">ENEM 2016 · 2ª aplicação (adaptada)</span></div>
+    <p class="qtitle">O eucalipto e o corte no tempo certo</p>
+    <p>Admita que um tipo de eucalipto tenha expectativa de crescimento exponencial, nos primeiros anos após seu plantio, modelado pela função <strong>y(t) = a<sup>t−1</sup></strong>, em que y é a altura da planta em metros, t é o tempo em anos, e a é uma constante maior que 1. O gráfico da função mostra que, no plantio (t = 0), a muda tem <strong>0,5 m</strong> de altura. Os produtores desejam cortar os eucaliptos quando eles tiverem crescido <strong>7,5 m</strong> a mais desde o plantio (ou seja, altura total de 8 m).</p>
+    <p>Após quantos anos do plantio os eucaliptos deverão ser cortados?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">a) 2 anos</button>
+      <button class="choice qopt" data-ok="1">b) 4 anos</button>
+      <button class="choice qopt" data-ok="0">c) 5 anos</button>
+      <button class="choice qopt" data-ok="0">d) 6 anos</button>
+      <button class="choice qopt" data-ok="0">e) 8 anos</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>Passo 1 — encontrar a:</strong> em t=0, y(0) = a<sup>0−1</sup> = a<sup>−1</sup> = 1/a = 0,5 ⟹ <strong>a = 2</strong>.</p>
+      <p>A função fica <strong>y(t) = 2<sup>t−1</sup></strong>.</p>
+      <p><strong>Passo 2 — encontrar t para y=8:</strong></p>
+      <p class="formula" style="font-size:.95rem;">2<sup>t−1</sup> = 8 = 2<sup>3</sup> ⟹ t−1 = 3 ⟹ t = 4</p>
+      <p><strong>Resposta: B (4 anos)</strong></p>
+    </div>
+  </section>
+
+  <!-- Q4 -->
+  <section class="qcard" data-q="4">
+    <div class="qmeta"><span class="badge qnum">4</span><span class="source">ENEM 2011 · PPL</span></div>
+    <p class="qtitle">O risco da superdosagem</p>
+    <p>Um paciente com uma infecção bacteriana foi orientado por seu médico a tomar, por via oral, comprimidos de <strong>800 mg</strong> de determinado antibiótico, de <strong>12 em 12 horas</strong>, durante 3 dias. Esse antibiótico tem <strong>meia-vida de 6 horas</strong> na corrente sanguínea (a cada 6h, metade do que está no sangue é eliminada). Sabe-se que uma quantidade superior a <strong>1.520 mg</strong> desse medicamento no sangue provoca efeitos tóxicos.</p>
+    <p>Impaciente para se recuperar, o paciente cogita tomar uma dose a <strong>cada 6 horas</strong> em vez de 12 em 12h. Se ele fizer isso, após quanto tempo desde a primeira dose ocorrerá a intoxicação?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">a) 12 horas</button>
+      <button class="choice qopt" data-ok="1">b) 24 horas</button>
+      <button class="choice qopt" data-ok="0">c) 36 horas</button>
+      <button class="choice qopt" data-ok="0">d) 48 horas</button>
+      <button class="choice qopt" data-ok="0">e) 72 horas</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>Simulando dose a dose</strong> (a cada 6h, metade do que havia é eliminada, e uma nova dose de 800 mg é somada):</p>
+      <table class="tbl">
+        <tr><th>momento</th><td>0h</td><td>6h</td><td>12h</td><td>18h</td><td>24h</td></tr>
+        <tr><th>no sangue</th><td>800</td><td>1 200</td><td>1 400</td><td>1 500</td><td><strong>1 550</strong></td></tr>
+      </table>
+      <p>Em cada linha: metade do valor anterior + 800 mg da nova dose. Em <strong>24h</strong>, o total (1.550 mg) já <strong>ultrapassa 1.520 mg</strong> — ocorre a intoxicação.</p>
+      <p><strong>Resposta: B (24 horas)</strong></p>
+    </div>
+  </section>
+
+  <!-- Q5 -->
+  <section class="qcard" data-q="5">
+    <div class="qmeta"><span class="badge qnum">5</span><span class="source">ENEM 2024 · caderno azul</span></div>
+    <p class="qtitle">A caneca de água fervendo</p>
+    <p>Uma caneca com água fervendo é retirada de um forno de micro-ondas. A temperatura T, em graus Celsius, da água na caneca, em função do tempo t, em minutos, pode ser modelada pela função <strong>T(t) = a + 80·b<sup>t</sup></strong>. O gráfico dessa função mostra que, no instante em que a caneca sai do forno (t = 0), a temperatura é <strong>100 °C</strong>, e que, após <strong>20 minutos</strong> (t = 20), a temperatura chega a <strong>40 °C</strong>.</p>
+    <p>Quais são os valores de a e b?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">a) a = 100; b = 0,5</button>
+      <button class="choice qopt" data-ok="1">b) a = 20; b = (0,5)<sup>1/10</sup></button>
+      <button class="choice qopt" data-ok="0">c) a = 20; b = 40</button>
+      <button class="choice qopt" data-ok="0">d) a = 80; b = 0,25</button>
+      <button class="choice qopt" data-ok="0">e) a = 20; b = 0,25</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>Passo 1 — usando t=0, T=100:</strong></p>
+      <p class="formula" style="font-size:.95rem;">100 = a + 80·b<sup>0</sup> = a + 80 ⟹ a = 20</p>
+      <p><strong>Passo 2 — usando t=20, T=40:</strong></p>
+      <p class="formula" style="font-size:.9rem;">40 = 20 + 80·b<sup>20</sup> ⟹ 80·b<sup>20</sup> = 20 ⟹ b<sup>20</sup> = 1/4 = (1/2)<sup>2</sup></p>
+      <p>Extraindo a raiz 20ª de ambos os lados: b = (1/2)<sup>2/20</sup> = <strong>(0,5)<sup>1/10</sup></strong>.</p>
+      <p class="hint">É a questão mais difícil da prova — exige montar duas equações e manipular expoentes fracionários.</p>
+      <p><strong>Resposta: B</strong></p>
+    </div>
+  </section>
+
+  <section class="card final-card" id="finalCard" hidden>
+    <div class="eyebrow">Atividade concluída</div>
+    <div class="big"><span id="finalScore">0</span>/5</div>
+    <p id="finalMsg" class="lede" style="margin:0 auto;max-width:46ch;"></p>
+  </section>
+
+  <p style="text-align:center;font-size:.74rem;color:var(--ink-faint);margin-top:20px;">Fontes: ENEM (INEP) — provas de 2011 (PPL), 2013 (PPL), 2016 (2ª aplicação) e 2024. Questão 3 adaptada a partir do enunciado original para uso didático.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-expo-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  window.toggleAnswer = function(btn){ var ans = btn.nextElementSibling; if(!ans) return; ans.classList.toggle('open'); };
+
+  var TOTAL = 5;
+  var score = 0;
+  var answered = 0;
+  var scoreEl = document.getElementById('scoreVal');
+  var fill = document.getElementById('progressFill');
+  var finalCard = document.getElementById('finalCard');
+  var finalScore = document.getElementById('finalScore');
+  var finalMsg = document.getElementById('finalMsg');
+
+  function msgFor(s){
+    if(s===TOTAL) return 'Gabarito cheio! Você domina exponenciais no estilo ENEM.';
+    if(s>=TOTAL-1) return 'Excelente! Quase perfeito — revise a questão que errou e siga em frente.';
+    if(s>=TOTAL/2) return 'Bom resultado. Releia as resoluções das questões erradas antes de seguir.';
+    return 'Vale a pena revisar equações e funções exponenciais antes de tentar de novo.';
+  }
+
+  document.querySelectorAll('.qcard').forEach(function(card){
+    var group = card.querySelector('.qz');
+    var fb = card.querySelector('.fb');
+    var answerBox = card.querySelector('.answer');
+    group.querySelectorAll('.qopt').forEach(function(opt){
+      opt.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        answered++;
+        var ok = opt.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(b){
+          b.disabled = true;
+          if(b.dataset.ok === '1') b.classList.add('correct');
+        });
+        if(!ok) opt.classList.add('wrong');
+        fb.textContent = ok ? '✔ Correto!' : '✘ Não foi dessa vez — veja a resolução abaixo.';
+        fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        answerBox.classList.add('open');
+        if(ok){ score++; scoreEl.textContent = score; }
+        fill.style.width = Math.round((answered/TOTAL)*100) + '%';
+        if(answered === TOTAL){
+          finalCard.hidden = false;
+          finalScore.textContent = score;
+          finalMsg.textContent = msgFor(score);
+          finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+          if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

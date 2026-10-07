@@ -1,0 +1,301 @@
+<title>ENEM: Canais, Parcerias e Custos</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; } input{ font:inherit; }
+  .app{ max-width:880px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  h2.title{ font-size:clamp(1.5rem, 3.4vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .formula{ font-size:1.05rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.82rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.35em 0; font-size:.9rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.92rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  .hero{ background:var(--surface); border:1px solid var(--line); border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft); padding:clamp(22px,4vw,40px); margin-bottom:22px; }
+  .score-pill{ position:sticky; top:12px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:20px; box-shadow:0 10px 26px -14px var(--shadow); }
+  .qsrc{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:700; letter-spacing:.05em; color:var(--growth-ink); background:var(--growth-soft); display:inline-block; border-radius:8px; padding:.3em .6em; margin-bottom:10px; }
+  .qnum{ display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--primary-soft); color:var(--primary); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; margin-right:8px; }
+  .qtext{ font-size:.98rem; margin:10px 0 14px; }
+  .numinput{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  .numinput input{ width:140px; border:1.5px solid var(--line-strong); border-radius:10px; padding:.55em .8em; background:var(--surface); color:var(--ink); font-family:'JetBrains Mono',monospace; }
+  .numinput button{ border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.6em 1.1em; cursor:pointer; }
+  .numfb{ font-size:.85rem; font-weight:700; margin-top:6px; min-height:1.2em; }
+  .numfb.ok{ color:var(--success); } .numfb.no{ color:var(--danger); }
+  .final{ text-align:center; padding:28px 20px; border-radius:18px; background:var(--primary-soft); border:1px solid var(--line-strong); display:none; }
+  .final.show{ display:block; }
+  .final h3{ margin:0 0 8px; font-size:1.3rem; }
+  .backlink{ display:inline-flex; align-items:center; gap:.4em; font-size:.82rem; color:var(--ink-soft); text-decoration:none; margin-bottom:14px; }
+  .backlink:hover{ color:var(--primary); }
+
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow growth">Atividade extra · Questões reais de vestibular</div>
+    <h1 class="disp" style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;line-height:1.05;margin:0 0 10px;">Custos e finanças do negócio no ENEM</h1>
+    <p class="subtitle">4 questões reais do ENEM sobre custo fixo e variável, lucro, receita e precificação — o coração matemático desta aula. Cada questão indica o ano e a edição em que foi aplicada.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <span class="badge">4 QUESTÕES</span>
+      <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">MT · Competência 6</span>
+    </div>
+  </div>
+
+  <div class="score-pill">Acertos: <span id="scoreVal">0</span>/4</div>
+  <div style="clear:both;"></div>
+
+  <!-- Q1 -->
+  <div class="qcard" data-q="1">
+    <span class="qsrc">ENEM 2024 · 2º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">1</span>Uma empresa produz mochilas escolares sob encomenda. O custo total de produção é formado por um custo fixo (independente da quantidade) somado a um custo variável, proporcional ao número de mochilas produzidas. Os registros da empresa mostram que a produção de <strong>30 mochilas</strong> custou, no total, <strong>R$ 1.050,00</strong>, e a produção de <strong>50 mochilas</strong> custou, no total, <strong>R$ 1.650,00</strong>.</p>
+    <p class="qtext">Qual será o custo total, em reais, para a produção de <strong>80 mochilas</strong>?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) R$ 2.400,00</button>
+      <button class="choice qopt" data-ok="0">B) R$ 2.520,00</button>
+      <button class="choice qopt" data-ok="1">C) R$ 2.550,00</button>
+      <button class="choice qopt" data-ok="0">D) R$ 2.700,00</button>
+      <button class="choice qopt" data-ok="0">E) R$ 2.800,00</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa C.</strong></p>
+      <p>De 30 para 50 mochilas (20 unidades a mais), o custo subiu de 1.050 para 1.650 — um aumento de R$ 600,00. Custo variável por mochila: 600 ÷ 20 = <strong>R$ 30,00</strong>. Custo fixo: 1.050 − 30×30 = 1.050 − 900 = <strong>R$ 150,00</strong>. Função custo: C(x) = 150 + 30x. Para 80 mochilas: C(80) = 150 + 30×80 = 150 + 2.400 = <strong>R$ 2.550,00</strong>. É a mesmíssima fórmula C(x) = CF + CV·x do carrinho de cachorro-quente da aula, só que descoberta a partir de duas observações da tabela, em vez de valores já dados prontos.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard" data-q="2">
+    <span class="qsrc">ENEM 2021 · 2º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">2</span>A receita R de uma empresa ao final de um mês é o volume de dinheiro captado com a venda de mercadorias ou a prestação de serviços nesse mês; a despesa D é todo o dinheiro utilizado para pagamento de salários, contas de água e luz, impostos, entre outros. O <strong>lucro mensal</strong> é a diferença entre a receita e a despesa registradas no mês. Um gráfico com os lucros mensais da empresa mostra: Janeiro = R$ 5 milhões · Fevereiro = R$ 10 milhões · Março = R$ 5 milhões · Abril = R$ 5 milhões · Maio = R$ 3 milhões.</p>
+    <p class="qtext">A previsão para os próximos meses é que o lucro mensal não seja inferior ao <strong>maior lucro obtido até maio</strong>. Nessas condições, o lucro mensal dos próximos meses deve ser maior ou igual ao lucro de qual mês?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) Janeiro</button>
+      <button class="choice qopt" data-ok="1">B) Fevereiro</button>
+      <button class="choice qopt" data-ok="0">C) Março</button>
+      <button class="choice qopt" data-ok="0">D) Abril</button>
+      <button class="choice qopt" data-ok="0">E) Maio</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa B.</strong></p>
+      <p>Lucro = Receita − Despesa, mês a mês. Entre os cinco meses, o <strong>maior lucro</strong> foi em <strong>fevereiro (R$ 10 milhões)</strong> — muito acima dos demais. Como a meta é nunca ficar abaixo do melhor resultado histórico, a referência passa a ser fevereiro. Ler um histórico de lucro é exatamente o tipo de "pesquisa de dados internos" que ajuda um empreendedor a planejar metas realistas, em vez de chutar um número qualquer.</p>
+    </div>
+  </div>
+
+  <!-- Q3 (resposta numérica) -->
+  <div class="qcard" data-q="3">
+    <span class="qsrc">ENEM PPL 2017 · 2ª aplicação · 2º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">3</span>Em certa loja de roupas, o lucro na venda de uma camiseta é de <strong>25%</strong> sobre o preço de custo da camiseta; o lucro na venda de uma bermuda é de <strong>30%</strong> sobre o preço de custo da bermuda; e o lucro na venda de uma calça é de <strong>20%</strong> sobre o preço de custo da calça. Um cliente comprou <strong>duas camisetas</strong> (preço de custo de R$ 40,00 cada), <strong>uma bermuda</strong> (preço de custo de R$ 60,00) e <strong>duas calças</strong> de mesmo preço de custo. Com essa compra, o cliente gerou um <strong>lucro total de R$ 78,00</strong> para a loja.</p>
+    <p class="qtext">Qual foi o preço de custo de <strong>cada calça</strong>? (Esta questão pede um valor em reais — digite apenas o número.)</p>
+    <div class="numinput">
+      <span>R$</span>
+      <input type="number" id="q3input" placeholder="0,00" step="0.01">
+      <button type="button" onclick="checkNum(3, 100, 'q3input', 'q3fb')">Conferir</button>
+    </div>
+    <p class="numfb" id="q3fb"></p>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: R$ 100,00.</strong></p>
+      <p>Lucro das camisetas: 2 × 40 × 0,25 = R$ 20,00. Lucro da bermuda: 60 × 0,30 = R$ 18,00. Chamando o preço de custo de cada calça de x, o lucro das duas calças é 2 × 0,20 × x = 0,4x. Como o lucro total foi R$ 78,00: 20 + 18 + 0,4x = 78 → 0,4x = 40 → <strong>x = R$ 100,00</strong>. Cada linha de produto pode ter uma margem de lucro diferente — é a mesma lógica de definir a "margem sobre o custo" antes de colocar qualquer preço na etiqueta.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard" data-q="4">
+    <span class="qsrc">ENEM 2012 · 2ª aplicação · 2º dia</span>
+    <p class="qtext"><span class="qnum">4</span>Uma loja decidiu promover um produto que custava <strong>R$ 100,00</strong> em fevereiro: em março, deu 10% de desconto sobre o preço de fevereiro; em abril, deu mais 10% de desconto sobre o preço de março. Depois de vender bem, resolveu aumentar o preço: em maio, aumentou 10% sobre o preço de abril; em junho, aumentou mais 10% sobre o preço de maio.</p>
+    <p class="qtext">Qual foi o preço do produto ao final de junho?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) R$ 100,00</button>
+      <button class="choice qopt" data-ok="0">B) R$ 99,00</button>
+      <button class="choice qopt" data-ok="1">C) R$ 98,01</button>
+      <button class="choice qopt" data-ok="0">D) R$ 97,20</button>
+      <button class="choice qopt" data-ok="0">E) R$ 96,00</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa C.</strong></p>
+      <p>Dois descontos de 10% seguidos de dois aumentos de 10% <strong>não se cancelam</strong>, porque cada percentual incide sobre um valor diferente: 100 × 0,9 × 0,9 × 1,1 × 1,1 = <strong>R$ 98,01</strong>. Essa é uma armadilha clássica de precificação: descontos e aumentos sucessivos em percentual nunca voltam exatamente ao preço original — um detalhe essencial para qualquer negócio que promete "desconto e depois reajuste".</p>
+    </div>
+  </div>
+
+  <div class="final" id="final">
+    <h3 id="finalTitle">Atividade concluída!</h3>
+    <p id="finalText" style="color:var(--ink-soft);"></p>
+  </div>
+
+  <a class="backlink" href="aula-3-canais-custos.html">← Voltar para a aula</a>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp3-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+window.toggleAnswer = function(btn){
+  var ans = btn.nextElementSibling; if(!ans) return;
+  var open = ans.classList.toggle('open');
+  btn.innerHTML = open ? 'Ocultar resolução' : 'Ver resolução';
+};
+
+var TOTAL_Q = 4;
+var score = 0;
+var answeredSet = {};
+
+function registerAnswer(qn, isOk){
+  if(answeredSet[qn]) return;
+  answeredSet[qn] = true;
+  if(isOk) score++;
+  document.getElementById('scoreVal').textContent = score;
+  if(Object.keys(answeredSet).length === TOTAL_Q) finish();
+}
+
+(function(){
+  document.querySelectorAll('.qz').forEach(function(group){
+    var qn = group.closest('.qcard').dataset.q;
+    group.querySelectorAll('.qopt').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        var ok = b.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(x){ x.disabled = true; if(x.dataset.ok==='1') x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        registerAnswer(qn, ok);
+      });
+    });
+  });
+})();
+
+function checkNum(qn, expected, inputId, fbId){
+  var input = document.getElementById(inputId);
+  var fb = document.getElementById(fbId);
+  var val = parseFloat((input.value || '').replace(',', '.'));
+  var ok = Math.abs(val - expected) < 0.5;
+  fb.textContent = ok ? '✔ Correto! R$ ' + expected.toFixed(2).replace('.', ',') : '✘ Ainda não é isso — revise o cálculo.';
+  fb.className = 'numfb ' + (ok ? 'ok' : 'no');
+  input.disabled = true;
+  document.querySelector('.qcard[data-q="'+qn+'"] .numinput button').disabled = true;
+  registerAnswer(String(qn), ok);
+}
+
+function finish(){
+  var finalEl = document.getElementById('final');
+  var title = document.getElementById('finalTitle');
+  var text = document.getElementById('finalText');
+  title.textContent = 'Você acertou ' + score + ' de ' + TOTAL_Q + ' questões!';
+  var msg = score === TOTAL_Q ? 'Nota máxima — sua calculadora mental de custos está afiada!' :
+    score >= TOTAL_Q*0.5 ? 'Bom trabalho! Revise as resoluções das que errou.' :
+    'Vale a pena reler as resoluções com calma — cada uma explica o raciocínio completo.';
+  text.textContent = msg;
+  finalEl.classList.add('show');
+  finalEl.scrollIntoView({behavior:'smooth', block:'center'});
+  if(window.reportarConclusao) window.reportarConclusao(score, TOTAL_Q);
+}
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

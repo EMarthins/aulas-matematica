@@ -1,0 +1,500 @@
+<title>Jogo: Redução e Monte a Onda</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:1020px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .hero{ text-align:center; padding:34px 8px 22px; }
+  .hero h1{ font-size:clamp(1.6rem,4.2vw,2.4rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.92rem,1.5vw,1.05rem); max-width:60ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badgerow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 24px 50px -30px var(--shadow); margin-bottom:24px; }
+  .panel h2{ font-size:1.3rem; margin:0 0 4px; }
+  .stagebadge{ display:inline-flex; align-items:center; gap:.5em; font-family:'JetBrains Mono',monospace; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.3em .8em; margin-bottom:10px; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.92rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.9rem; }
+  .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  button.primary{ background:var(--primary); color:var(--primary-ink); border:none; font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; border-radius:10px; padding:.7em 1.3em; cursor:pointer; }
+  button.primary:hover{ opacity:.92; }
+  button.primary:disabled{ opacity:.4; cursor:default; }
+  button.ghost{ background:var(--surface); border:1.5px solid var(--line-strong); color:var(--ink); font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; border-radius:10px; padding:.7em 1.3em; cursor:pointer; }
+  button.ghost:hover{ border-color:var(--primary); }
+  button.ghost:disabled{ opacity:.4; cursor:default; }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ---- Stage A: matching game ---- */
+  .matchWrap{ display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:760px){ .matchWrap{ grid-template-columns:1fr; } }
+  .cardTray{ display:flex; flex-wrap:wrap; gap:8px; }
+  .angleCard{
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.92rem;
+    background:var(--surface); border:2px solid var(--line-strong); border-radius:10px;
+    padding:.6em 1em; cursor:pointer; color:var(--ink); transition:border-color .15s, background .15s, transform .1s;
+  }
+  .angleCard:hover{ border-color:var(--primary); transform:translateY(-1px); }
+  .angleCard.selected{ border-color:var(--primary); background:var(--primary-soft); }
+  .angleCard.placed{ opacity:.35; cursor:default; pointer-events:none; }
+  .angleCard.flash-ok{ border-color:var(--success); background:var(--success-soft); }
+  .angleCard.flash-no{ border-color:var(--danger); background:var(--danger-soft); }
+  .bins{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .bin{
+    border:2px dashed var(--line-strong); border-radius:14px; padding:10px; min-height:96px;
+    background:var(--surface-2); cursor:pointer; transition:border-color .15s, background .15s;
+  }
+  .bin:hover{ border-color:var(--primary); }
+  .bin .binlabel{ font-family:'Archivo',sans-serif; font-weight:800; font-size:.82rem; color:var(--ink-soft); margin-bottom:6px; display:flex; align-items:center; justify-content:space-between; }
+  .bin .binlabel .signs{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.72rem; }
+  .bin .binitems{ display:flex; flex-wrap:wrap; gap:6px; min-height:24px; }
+  .bin .binitems .chip{ font-family:'JetBrains Mono',monospace; font-size:.76rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.25em .55em; }
+  .matchFb{ font-weight:700; font-size:.86rem; margin-top:10px; min-height:1.3em; }
+  .matchFb.ok{ color:var(--success); } .matchFb.no{ color:var(--danger); }
+  .scoreRow{ display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--ink-soft); margin-top:4px; }
+  .scoreRow .bar{ flex:1; height:8px; border-radius:999px; background:var(--surface-2); overflow:hidden; border:1px solid var(--line); }
+  .scoreRow .bar>span{ display:block; height:100%; background:var(--primary); width:0%; transition:width .3s ease; }
+
+  /* ---- Stage B: wave builder ---- */
+  .waveBox{ touch-action:none; }
+  .waveBox svg{ width:100%; height:auto; display:block; }
+  .dot{ cursor:grab; }
+  .dot:active{ cursor:grabbing; }
+  .dot.correct{ }
+  .waveReadout{ display:flex; gap:16px; flex-wrap:wrap; margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--ink-soft); }
+
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:8px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · Dois jogos em um</div>
+    <h1>Redução ao quadrante <span style="color:var(--primary);">+</span> monte a onda</h1>
+    <p class="subtitle">Primeiro, toque para encaixar cada arco no quadrante certo. Depois, arraste os pontos até a altura exata para desenhar, você mesmo, as curvas do seno e do cosseno.</p>
+    <div class="badgerow">
+      <span class="badge">Etapa 1 · Combine 8 arcos</span>
+      <span class="badge">Etapa 2 · Monte 2 ondas</span>
+      <span class="badge">Aula 2 · Trigonometria no ciclo</span>
+    </div>
+  </div>
+
+  <!-- ETAPA A -->
+  <div class="panel" id="stageA">
+    <span class="stagebadge">Etapa 1 de 2</span>
+    <h2>Toque para combinar: arco → quadrante</h2>
+    <p class="lede" style="font-size:.88rem;">Toque em um arco na bandeja e depois toque no quadrante correspondente. Se acertar, o arco fica verde e entra na caixa; se errar, pisca vermelho e você pode tentar de novo.</p>
+    <div class="matchWrap" style="margin-top:14px;">
+      <div>
+        <div class="card">
+          <strong style="font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Bandeja de arcos</strong>
+          <div class="cardTray" id="cardTray" style="margin-top:10px;"></div>
+        </div>
+        <div class="scoreRow">
+          <span>Acertos: <strong id="matchScore">0</strong>/8</span>
+          <div class="bar"><span id="matchBar"></span></div>
+        </div>
+        <p class="matchFb" id="matchFb"></p>
+      </div>
+      <div class="bins" id="bins"></div>
+    </div>
+    <div class="btnrow">
+      <button class="primary" id="toStageB" disabled>Ir para a Etapa 2 →</button>
+    </div>
+  </div>
+
+  <!-- ETAPA B -->
+  <div class="panel" id="stageB" style="display:none;">
+    <span class="stagebadge">Etapa 2 de 2</span>
+    <h2 id="waveTitle">Monte a onda do seno</h2>
+    <p class="lede" style="font-size:.88rem;">Cada bolinha está travada num valor de x (0, π/2, π, 3π/2, 2π). Arraste cada uma na <strong>vertical</strong> até a altura que você acha que é o valor da função ali. Depois toque em "Conferir".</p>
+    <div class="waveBox card" style="margin-top:14px;">
+      <svg id="waveSvg" viewBox="0 0 400 220">
+        <line x1="20" y1="110" x2="380" y2="110" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <line x1="20" y1="20" x2="380" y2="20" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+        <line x1="20" y1="200" x2="380" y2="200" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+        <text x="4" y="24" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">1</text>
+        <text x="0" y="204" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">−1</text>
+        <text x="16" y="122" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">0</text>
+        <text x="105" y="122" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">π/2</text>
+        <text x="192" y="122" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">π</text>
+        <text x="270" y="122" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">3π/2</text>
+        <text x="358" y="122" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">2π</text>
+        <path id="revealPath" d="" fill="none" stroke="var(--line-strong)" stroke-width="2.4" stroke-dasharray="4 4" opacity="0"/>
+        <g id="dotsGroup"></g>
+      </svg>
+      <div class="waveReadout" id="waveReadout"></div>
+    </div>
+    <div class="btnrow">
+      <button class="ghost" id="checkWaveBtn">Conferir</button>
+      <button class="primary" id="nextWaveBtn" style="display:none;">Ir para a onda do cosseno →</button>
+    </div>
+    <div class="callout" style="margin-top:14px;" id="waveHint">
+      <h4>Dica</h4>
+      <p>Lembre-se: sen(0) = 0, sen(π/2) = 1, sen(π) = 0, sen(3π/2) = −1, sen(2π) = 0.</p>
+    </div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado final</div>
+    <div class="num"><span id="finalScore">0</span>/18</div>
+    <p id="finalMsg" class="lede" style="max-width:46ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-tric2-atv-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+/* ================= ETAPA A — arco -> quadrante ================= */
+(function(){
+  var angles = [
+    {label:'120°', q:2}, {label:'200°', q:3}, {label:'315°', q:4}, {label:'70°', q:1},
+    {label:'5π/6', q:2}, {label:'7π/6', q:3}, {label:'11π/6', q:4}, {label:'π/5', q:1}
+  ];
+  var quadrants = [
+    {n:1, sen:'+', cos:'+'},
+    {n:2, sen:'+', cos:'−'},
+    {n:3, sen:'−', cos:'−'},
+    {n:4, sen:'−', cos:'+'}
+  ];
+  var tray = document.getElementById('cardTray');
+  var binsEl = document.getElementById('bins');
+  var matchFb = document.getElementById('matchFb');
+  var matchScoreEl = document.getElementById('matchScore');
+  var matchBar = document.getElementById('matchBar');
+  var toStageB = document.getElementById('toStageB');
+  var score = 0, placed = 0;
+  var selected = null;
+
+  angles.forEach(function(a, i){
+    var b = document.createElement('button');
+    b.className = 'angleCard';
+    b.type = 'button';
+    b.textContent = a.label;
+    b.dataset.idx = i;
+    b.addEventListener('click', function(){
+      if(b.classList.contains('placed')) return;
+      if(selected === b){ b.classList.remove('selected'); selected = null; return; }
+      if(selected) selected.classList.remove('selected');
+      selected = b;
+      b.classList.add('selected');
+      matchFb.textContent = 'Agora toque no quadrante em que ' + a.label + ' está.';
+      matchFb.className = 'matchFb';
+    });
+    tray.appendChild(b);
+  });
+
+  quadrants.forEach(function(q){
+    var bin = document.createElement('div');
+    bin.className = 'bin';
+    bin.innerHTML = '<div class="binlabel"><span>Quadrante ' + q.n + '</span><span class="signs">sen ' + q.sen + ' · cos ' + q.cos + '</span></div><div class="binitems" data-q="' + q.n + '"></div>';
+    bin.addEventListener('click', function(){
+      if(!selected){ matchFb.textContent = 'Toque primeiro em um arco na bandeja.'; matchFb.className = 'matchFb'; return; }
+      var idx = +selected.dataset.idx;
+      var a = angles[idx];
+      var ok = a.q === q.n;
+      if(ok){
+        selected.classList.add('placed');
+        selected.classList.remove('selected');
+        var chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = a.label;
+        bin.querySelector('.binitems').appendChild(chip);
+        score++; placed++;
+        matchScoreEl.textContent = score;
+        matchBar.style.width = (placed/8*100) + '%';
+        matchFb.textContent = 'Isso mesmo! ' + a.label + ' está no ' + q.n + 'º quadrante.';
+        matchFb.className = 'matchFb ok';
+        selected = null;
+        if(placed === 8){
+          matchFb.textContent = 'Etapa 1 completa! Você combinou os 8 arcos corretamente.';
+          toStageB.disabled = false;
+        }
+      } else {
+        selected.classList.add('flash-no');
+        matchFb.textContent = 'Não é esse quadrante — repare no sinal de seno e cosseno e tente outra vez.';
+        matchFb.className = 'matchFb no';
+        setTimeout(function(){ if(selected) selected.classList.remove('flash-no'); }, 550);
+      }
+    });
+    binsEl.appendChild(bin);
+  });
+
+  // allow moving on even if not all correct, after a few tries (avoid getting stuck)
+  var attempts = 0;
+  binsEl.addEventListener('click', function(){ attempts++; if(attempts > 20) toStageB.disabled = false; });
+
+  toStageB.addEventListener('click', function(){
+    document.getElementById('stageA').style.display = 'none';
+    document.getElementById('stageB').style.display = 'block';
+    document.getElementById('stageB').scrollIntoView({behavior:'smooth', block:'start'});
+    stageAScore = score;
+  });
+
+  window.__stageAScore = function(){ return score; };
+})();
+
+/* ================= ETAPA B — monte a onda ================= */
+(function(){
+  var svg = document.getElementById('waveSvg');
+  var dotsGroup = document.getElementById('dotsGroup');
+  var revealPath = document.getElementById('revealPath');
+  var checkBtn = document.getElementById('checkWaveBtn');
+  var nextBtn = document.getElementById('nextWaveBtn');
+  var waveTitle = document.getElementById('waveTitle');
+  var waveReadout = document.getElementById('waveReadout');
+  var waveHint = document.getElementById('waveHint');
+  var finalPanel = document.getElementById('finalPanel');
+
+  var xPositions = [20, 110, 200, 290, 380]; // 0, pi/2, pi, 3pi/2, 2pi
+  var xLabels = ['0','π/2','π','3π/2','2π'];
+  var yMid = 110, yAmp = 90; // y=1 -> 20, y=-1 -> 200
+
+  var rounds = [
+    { name:'seno', targets:[0, 1, 0, -1, 0], color:'var(--growth)', fn:function(t){ return Math.sin(t); } },
+    { name:'cosseno', targets:[1, 0, -1, 0, 1], color:'var(--decay)', fn:function(t){ return Math.cos(t); } }
+  ];
+  var roundIdx = 0;
+  var dots = [];
+  var wavePoints = [0, Math.PI/2, Math.PI, 3*Math.PI/2, 2*Math.PI];
+  var roundScores = [0,0];
+  var totalWaveScore = 0;
+  var checked = false;
+
+  function yToVal(y){ return (yMid - y) / yAmp; }
+  function valToY(v){ return yMid - v * yAmp; }
+
+  function buildRound(){
+    dotsGroup.innerHTML = '';
+    dots = [];
+    revealPath.setAttribute('opacity', '0');
+    checked = false;
+    checkBtn.style.display = 'inline-flex';
+    checkBtn.disabled = false;
+    nextBtn.style.display = 'none';
+    var r = rounds[roundIdx];
+    waveTitle.textContent = 'Monte a onda do ' + r.name;
+    waveHint.querySelector('p').textContent = r.name === 'seno'
+      ? 'Lembre-se: sen(0) = 0, sen(π/2) = 1, sen(π) = 0, sen(3π/2) = −1, sen(2π) = 0.'
+      : 'Lembre-se: cos(0) = 1, cos(π/2) = 0, cos(π) = −1, cos(3π/2) = 0, cos(2π) = 1.';
+
+    xPositions.forEach(function(x, i){
+      var startY = yMid; // start flat at zero
+      var g = document.createElementNS('http://www.w3.org/2000/svg','g');
+      var line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1', x); line.setAttribute('x2', x);
+      line.setAttribute('y1', yMid); line.setAttribute('y2', startY);
+      line.setAttribute('stroke', 'var(--ink-faint)'); line.setAttribute('stroke-width','1'); line.setAttribute('stroke-dasharray','2 3');
+      var circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx', x); circle.setAttribute('cy', startY); circle.setAttribute('r', 9);
+      circle.setAttribute('fill', 'var(--surface)'); circle.setAttribute('stroke', r.color); circle.setAttribute('stroke-width', 3);
+      circle.classList.add('dot');
+      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('x', x); label.setAttribute('y', 215); label.setAttribute('text-anchor','middle');
+      label.setAttribute('font-family','JetBrains Mono'); label.setAttribute('font-size','10'); label.setAttribute('fill','var(--ink-faint)');
+      label.textContent = xLabels[i];
+      g.appendChild(line); g.appendChild(circle); g.appendChild(label);
+      dotsGroup.appendChild(g);
+      dots.push({circle:circle, line:line, x:x, y:startY});
+
+      var dragging = false;
+      function toSvgY(clientY){
+        var rect = svg.getBoundingClientRect();
+        var scale = 220 / rect.height;
+        return (clientY - rect.top) * scale;
+      }
+      function move(e){
+        if(!dragging) return;
+        var pt = e.touches ? e.touches[0] : e;
+        var y = toSvgY(pt.clientY);
+        y = Math.max(20, Math.min(200, y));
+        circle.setAttribute('cy', y);
+        line.setAttribute('y1', yMid); line.setAttribute('y2', y);
+        dots[i].y = y;
+        updateReadout();
+        e.preventDefault();
+      }
+      circle.addEventListener('pointerdown', function(e){ dragging = true; move(e); });
+      window.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', function(){ dragging = false; });
+    });
+    updateReadout();
+  }
+
+  function updateReadout(){
+    var r = rounds[roundIdx];
+    var parts = dots.map(function(d, i){
+      return xLabels[i] + ': ' + yToVal(d.y).toFixed(2);
+    });
+    waveReadout.innerHTML = parts.map(function(p){ return '<span>' + p + '</span>'; }).join('');
+  }
+
+  checkBtn.addEventListener('click', function(){
+    if(checked) return;
+    checked = true;
+    var r = rounds[roundIdx];
+    var roundScore = 0;
+    dots.forEach(function(d, i){
+      var val = yToVal(d.y);
+      var target = r.targets[i];
+      var ok = Math.abs(val - target) <= 0.18;
+      d.circle.setAttribute('stroke', ok ? 'var(--success)' : 'var(--danger)');
+      d.circle.setAttribute('fill', ok ? 'var(--success-soft)' : 'var(--danger-soft)');
+      if(ok) roundScore++;
+    });
+    roundScores[roundIdx] = roundScore;
+    totalWaveScore = roundScores[0] + roundScores[1];
+
+    // draw the real curve for reference
+    var pts = [];
+    for(var deg = 0; deg <= 360; deg += 5){
+      var t = deg * Math.PI / 180;
+      var xx = 20 + (380-20) * (deg/360);
+      var yy = valToY(r.fn(t));
+      pts.push(xx.toFixed(1) + ',' + yy.toFixed(1));
+    }
+    revealPath.setAttribute('d', 'M' + pts.join(' L'));
+    revealPath.setAttribute('stroke', r.color);
+    revealPath.setAttribute('stroke-dasharray', '0');
+    revealPath.setAttribute('opacity', '1');
+
+    checkBtn.disabled = true;
+    if(roundIdx === 0){
+      nextBtn.style.display = 'inline-flex';
+      nextBtn.textContent = 'Ir para a onda do cosseno → (' + roundScore + '/5 nessa rodada)';
+    } else {
+      nextBtn.style.display = 'inline-flex';
+      nextBtn.textContent = 'Ver resultado final → (' + roundScore + '/5 nessa rodada)';
+    }
+  });
+
+  nextBtn.addEventListener('click', function(){
+    if(roundIdx === 0){
+      roundIdx = 1;
+      buildRound();
+    } else {
+      finish();
+    }
+  });
+
+  function finish(){
+    var stageA = (window.__stageAScore ? window.__stageAScore() : 0);
+    var total = stageA + totalWaveScore;
+    document.getElementById('finalScore').textContent = total;
+    var msg = document.getElementById('finalMsg');
+    if(total >= 16) msg.textContent = 'Excelente! Você domina a redução ao 1º quadrante e conhece de cor o formato das curvas de seno e cosseno.';
+    else if(total >= 10) msg.textContent = 'Bom resultado! Revise os quadrantes ou os pontos-chave das curvas que você errou.';
+    else msg.textContent = 'Vale revisar a tabela de sinais por quadrante e os valores de sen/cos nos pontos 0, π/2, π, 3π/2 e 2π.';
+    finalPanel.style.display = 'block';
+    finalPanel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(total, 18);
+  }
+
+  buildRound();
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

@@ -1,0 +1,289 @@
+<title>Prática Progressiva: Propriedades Operatórias</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--growth); }
+  .topbar .dot.b{ background:var(--decay); }
+  .level-head{ display:flex; align-items:center; gap:10px; margin:30px 0 12px; }
+  .level-head h2{ font-size:1.2rem; margin:0; }
+  .level-badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; border-radius:8px; padding:.35em .7em; border:1px solid var(--line-strong); background:var(--surface); }
+  .level-badge.l1{ color:var(--success); border-color:color-mix(in srgb, var(--success) 40%, var(--line)); background:var(--success-soft); }
+  .level-badge.l2{ color:var(--growth-ink); border-color:color-mix(in srgb, var(--growth) 40%, var(--line)); background:var(--growth-soft); }
+  .level-badge.l3{ color:var(--danger); border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); background:var(--danger-soft); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:14px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .formula{ font-size:1.05rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); margin:8px 0; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  button.reveal{ margin-top:8px; margin-right:8px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.8rem; border-radius:10px; padding:.5em 1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal.secondary{ border-color:var(--line-strong); color:var(--ink-soft); }
+  .hint-box{ margin-top:8px; max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .25s ease, margin .25s ease; background:var(--surface); border:1px dashed var(--line-strong); border-radius:12px; padding:0 14px; }
+  .hint-box.open{ max-height:300px; opacity:1; padding:10px 14px; margin-top:8px; }
+  .hint-box p{ margin:0; font-size:.86rem; color:var(--ink-soft); }
+  .answer{ margin-top:8px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:500px; opacity:1; padding:12px 16px; margin-top:8px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .self-check{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span><span class="dot b"></span> Matemática · Logaritmos (Parte 2) · Prática dirigida</div>
+    <div class="score-pill">Resolvidos: <span id="scoreVal">0</span>/9</div>
+  </div>
+
+  <div class="eyebrow">Prática progressiva</div>
+  <h1 class="title">Produto, quociente, potência e mudança de base</h1>
+  <p class="subtitle">Nove exercícios sobre as propriedades operatórias, organizados em três níveis. Tente resolver sozinho(a) antes de pedir uma dica — e use a resolução completa só depois.</p>
+
+  <!-- NÍVEL 1 -->
+  <div class="level-head"><span class="level-badge l1">Nível 1</span><h2>Aquecimento</h2></div>
+
+  <div class="card exercise" data-hint="Use log(x·y) = logx + logy. 10 = 2·5, mas é mais fácil pensar 10=10." data-answer="<p>log 20 = log(2·10) = log2 + log10 = 0,301 + 1 = <strong>1,301</strong>.</p>">
+    <p><strong>1.</strong> Sabendo log2 ≅ 0,301, calcule log 20</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="5 = 10/2. Use a propriedade do quociente." data-answer="<p>log 5 = log(10/2) = log10 − log2 = 1 − 0,301 = <strong>0,699</strong>.</p>">
+    <p><strong>2.</strong> Sabendo log2 ≅ 0,301, calcule log 5</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="9 = 3². Use a propriedade da potência." data-answer="<p>log 9 = log 3² = 2·log3 = 2(0,477) = <strong>0,954</strong>.</p>">
+    <p><strong>3.</strong> Sabendo log3 ≅ 0,477, calcule log 9</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <!-- NÍVEL 2 -->
+  <div class="level-head"><span class="level-badge l2">Nível 2</span><h2>Ganhando ritmo</h2></div>
+
+  <div class="card exercise" data-hint="Escreva 72 como produto de potências de 2 e 3: 72 = 2³·3²." data-answer="<p>72 = 8·9 = 2³·3². log72 = 3·log2 + 2·log3 = 3(0,301) + 2(0,477) = 0,903 + 0,954 = <strong>1,857</strong>.</p>">
+    <p><strong>4.</strong> Sabendo log2 ≅ 0,301 e log3 ≅ 0,477, calcule log 72</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="Junte log5x e log53 num único logaritmo com a propriedade do produto." data-answer="<p>log₅x + log₅3 = log₅30 → log₅(3x) = log₅30 → 3x = 30 → <strong>x = 10</strong>. Verificação: x&gt;0 ✔.</p>">
+    <p><strong>5.</strong> Resolva: log₅x + log₅3 = log₅30</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="Junte os dois logaritmos num só usando a propriedade do quociente, depois use a definição." data-answer="<p>log₂(x+3) − log₂x = 2 → log₂[(x+3)/x] = 2 → (x+3)/x = 2² = 4 → x+3 = 4x → <strong>x = 1</strong>. Verificação: x&gt;0 e x+3&gt;0 ✔.</p>">
+    <p><strong>6.</strong> Resolva: log₂(x+3) − log₂x = 2</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <!-- NÍVEL 3 -->
+  <div class="level-head"><span class="level-badge l3">Nível 3</span><h2>Desafio</h2></div>
+
+  <div class="card exercise" data-hint="Escreva log_8 x em termos de log_2 x, usando mudança de base (8=2³)." data-answer="<p>Mudança de base: log₈x = log₂x / log₂8 = log₂x / 3.</p><p>Se log₂x = 6, então log₈x = 6/3 = <strong>2</strong>.</p>">
+    <p><strong>7.</strong> Sabendo que log₂x = 6, calcule log₈x</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="Lembre que log_a b · log_b a = 1 (são operações inversas ao mudar de base)." data-answer="<p>Por mudança de base, log₂5 = 1/log₅2. Logo log₂5 · log₅2 = log₂5 · (1/log₂5) = <strong>1</strong> — vale para quaisquer bases válidas, não só 2 e 5.</p>">
+    <p><strong>8.</strong> Sem calcular log₂5 nem log₅2 separadamente, calcule log₂5 · log₅2</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card exercise" data-hint="Fatore 243 e 256 como potências de 3 e 2, depois aplique a propriedade da potência em cada termo." data-answer="<p>243 = 3⁵ e 256 = 2⁸. log243 − log256 = 5·log3 − 8·log2.</p><p>Com log3 ≅ 0,477 e log2 ≅ 0,301: 5(0,477) − 8(0,301) = 2,385 − 2,408 = <strong>−0,023</strong>.</p><p class="hint">Combina potência (nos dois termos) com quociente (na subtração) — as três propriedades trabalhando juntas.</p>">
+    <p><strong>9.</strong> Sabendo log2 ≅ 0,301 e log3 ≅ 0,477, calcule log 243 − log 256</p>
+    <div class="self-check">
+      <button class="reveal" data-action="hint">Pedir dica</button>
+      <button class="reveal" data-action="answer">Ver resolução</button>
+    </div>
+    <div class="hint-box"></div>
+    <div class="answer"></div>
+  </div>
+
+  <div class="card success" id="finalCard" style="display:none;">
+    <h4 class="disp" style="margin:0 0 6px;">Prática concluída!</h4>
+    <p id="finalMsg" style="margin:0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-log2-pratica';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var exercises = Array.prototype.slice.call(document.querySelectorAll('.exercise'));
+  var TOTAL = exercises.length;
+  var scoreEl = document.getElementById('scoreVal');
+  var finalCard = document.getElementById('finalCard');
+  var finalMsg = document.getElementById('finalMsg');
+  var solvedCount = 0;
+
+  exercises.forEach(function(ex){
+    var hintBox = ex.querySelector('.hint-box');
+    var answerBox = ex.querySelector('.answer');
+    var buttons = ex.querySelectorAll('.reveal');
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){
+        if(b.dataset.action === 'hint'){
+          if(!hintBox.dataset.filled){ hintBox.innerHTML = '<p>💡 ' + ex.dataset.hint + '</p>'; hintBox.dataset.filled='1'; }
+          hintBox.classList.toggle('open');
+        } else {
+          if(!answerBox.dataset.filled){ answerBox.innerHTML = ex.dataset.answer; answerBox.dataset.filled='1'; }
+          var wasOpen = answerBox.classList.contains('open');
+          answerBox.classList.add('open');
+          if(!wasOpen && !ex.dataset.counted){
+            ex.dataset.counted = '1';
+            solvedCount++;
+            scoreEl.textContent = solvedCount;
+            if(solvedCount === TOTAL){
+              finalCard.style.display = 'block';
+              finalMsg.textContent = 'Você percorreu os ' + TOTAL + ' exercícios, do aquecimento ao desafio. Releia as resoluções que precisaram de dica antes da Parte 3 (equações e função logarítmica).';
+              finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+              try{ window.reportarConclusao(solvedCount, TOTAL); }catch(e){}
+            }
+          }
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

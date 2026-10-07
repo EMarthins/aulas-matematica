@@ -1,0 +1,406 @@
+<title>Atividade ENEM: Redução e Funções Trigonométricas</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .hero{ text-align:center; padding:38px 8px 26px; }
+  .hero h1{ font-size:clamp(1.7rem,4.4vw,2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.1rem); max-width:56ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badgerow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .progress-pill{
+    position:sticky; top:calc(10px + env(safe-area-inset-top,0px)); z-index:50;
+    max-width:820px; margin:0 auto 18px; background:var(--surface); border:1.5px solid var(--line-strong);
+    border-radius:999px; padding:.55em 1.1em; box-shadow:0 10px 24px -12px var(--shadow);
+    display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--ink-soft);
+  }
+  .progress-pill .bar{ flex:1; height:8px; border-radius:999px; background:var(--surface-2); overflow:hidden; }
+  .progress-pill .bar > span{ display:block; height:100%; background:var(--primary); border-radius:999px; transition:width .35s ease; width:0%; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:0 0 22px; box-shadow:0 20px 40px -28px var(--shadow); }
+  .qsource{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--decay-ink); background:var(--decay-soft); border-radius:999px; padding:.3em .8em; display:inline-block; margin-bottom:10px; }
+  .qcard h3{ font-size:1.12rem; font-weight:800; margin:0 0 8px; line-height:1.25; }
+  .qcard .statement{ font-size:.95rem; color:var(--ink); margin:0 0 14px; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.92rem; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .choice{ display:flex; align-items:center; gap:.6em; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.94rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .choice .let{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--ink-faint); flex:0 0 auto; }
+  .fb{ font-size:.85rem; margin-top:6px; font-weight:700; min-height:1.2em; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  button.reveal{ margin-top:8px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal:disabled{ opacity:.45; cursor:default; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.9rem; }
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:8px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media (max-width:600px){ .qcard{ padding:18px 16px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · No ENEM é assim</div>
+    <h1>Redução e funções trigonométricas <span style="color:var(--primary);">caindo no ENEM</span></h1>
+    <p class="subtitle">5 questões reais de ENEM e vestibular sobre redução ao 1º quadrante, período, amplitude e modelagem de fenômenos periódicos — pistão, mola, som, roda-gigante. Resolva, confira e veja a resolução passo a passo.</p>
+    <div class="badgerow">
+      <span class="badge">5 questões</span>
+      <span class="badge">ENEM · ENEM PPL · UFRGS</span>
+      <span class="badge">Aula 2 · Trigonometria no ciclo</span>
+    </div>
+  </div>
+
+  <div class="progress-pill">
+    <span>Progresso</span>
+    <div class="bar"><span id="barFill"></span></div>
+    <span id="progressText">0/5 respondidas</span>
+    <span style="margin-left:auto;">Acertos: <strong id="scoreText">0</strong></span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qcard" data-q="1">
+    <span class="qsource">ENEM PPL 2019 · 2º dia — Questão 158</span>
+    <h3>O pistão do motor</h3>
+    <p class="statement">Os movimentos ondulatórios (periódicos) são representados por equações do tipo ±A sen(ωt + φ), em que ω = 2π/T é a frequência (T é o período), A é a amplitude (deslocamento máximo) e φ é o ângulo de fase, com 0 ≤ φ &lt; 2π/ω. O gráfico a seguir representa um movimento periódico P = P(t), em centímetro, que descreve a posição da cabeça do pistão de um motor de carro em um instante t.</p>
+    <svg viewBox="0 0 260 110" style="width:100%;max-width:300px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="10" y1="55" x2="250" y2="55" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <line x1="20" y1="10" x2="20" y2="100" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <path d="M20,55 C40,15 60,15 80,55 C100,95 120,95 140,55 C160,15 180,15 200,55 C220,95 240,95 250,72" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="20" cy="55" r="3" fill="var(--primary)"/>
+      <circle cx="140" cy="55" r="3" fill="var(--primary)"/>
+      <text x="8" y="14" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">4</text>
+      <text x="2" y="99" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">−4</text>
+      <text x="136" y="70" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">π</text>
+    </svg>
+    <p class="hint" style="font-size:.82rem;color:var(--ink-faint);font-style:italic;margin:-6px 0 10px;">No gráfico: valor máximo P = 4 cm, mínimo P = −4 cm, e um ciclo completo ocorre de t = 0 a t = π segundos, começando na origem e subindo.</p>
+    <p class="statement" style="margin-bottom:10px;"><strong>A expressão algébrica que representa esse movimento é:</strong></p>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="1"><span class="let">A)</span> P(t) = 4 sen(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">B)</span> P(t) = −4 sen(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> P(t) = −4 sen(4t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">D)</span> P(t) = 4 sen(2t + π/4)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> P(t) = 4 sen(4t + π/4)</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Amplitude:</strong> os valores máximo e mínimo são +4 e −4, logo A = 4.</p>
+      <p><strong>Frequência ω:</strong> o ciclo completo (período T) vai de t = 0 até t = π, então T = π. Como ω = 2π/T: ω = 2π/π = <strong>2</strong>.</p>
+      <p><strong>Fase φ:</strong> em t = 0, o gráfico começa exatamente na origem (P = 0) e sobe — é o comportamento de sen(x) puro, sem deslocamento horizontal, então φ = 0.</p>
+      <p>Reunindo os três parâmetros: P(t) = <strong>4 sen(2t)</strong> — alternativa <strong>A</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard" data-q="2">
+    <span class="qsource">ENEM 2021 · 2º dia — Questão 156</span>
+    <h3>A mola e o sistema massa-mola</h3>
+    <p class="statement">Uma mola presa a uma parede tem uma extremidade livre, na qual está fixado um corpo de massa m. O corpo é colocado para oscilar sobre uma superfície horizontal sem atrito e sua posição P, em centímetro, em função do tempo t, em segundo, é descrita por uma expressão do tipo P(t) = ±A cos(ωt) ou P(t) = ±A sen(ωt), sendo A &gt; 0 a amplitude máxima de deslocamento e ω a frequência angular, relacionada ao período T pela expressão ω = 2π/T. O gráfico representa a oscilação desse sistema, iniciada a partir do instante em que a mola foi esticada e solta.</p>
+    <svg viewBox="0 0 260 110" style="width:100%;max-width:300px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="10" y1="55" x2="250" y2="55" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <line x1="20" y1="10" x2="20" y2="100" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <path d="M20,95 C50,95 60,15 90,15 C120,15 130,95 160,95 C190,95 200,15 230,15" fill="none" stroke="var(--decay)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="20" cy="95" r="3" fill="var(--decay)"/>
+      <text x="6" y="14" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">3</text>
+      <text x="2" y="99" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">−3</text>
+      <text x="155" y="52" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">π</text>
+    </svg>
+    <p class="hint" style="font-size:.82rem;color:var(--ink-faint);font-style:italic;margin:-6px 0 10px;">No gráfico: oscila entre −3 e +3 cm, começa em P = −3 (mínimo) em t = 0, e completa um ciclo até t = π.</p>
+    <p class="statement" style="margin-bottom:10px;"><strong>Desprezadas as forças dissipativas, a expressão que representa esse movimento é:</strong></p>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="1"><span class="let">A)</span> P(t) = −3 cos(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">B)</span> P(t) = −3 sen(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> P(t) = 3 cos(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">D)</span> P(t) = −6 cos(2t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> P(t) = 6 cos(2t)</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Amplitude:</strong> o deslocamento máximo é 3 cm (para mais ou para menos), logo A = 3 — descarta D e E, que têm amplitude 6.</p>
+      <p><strong>Frequência ω:</strong> um ciclo completo ocorre de t = 0 a t = π, então T = π e ω = 2π/π = <strong>2</strong>.</p>
+      <p><strong>Seno ou cosseno?</strong> Em t = 0, a posição é P = −3, ou seja, um valor extremo (mínimo) — característica do cosseno, não do seno (que começaria em zero). Isso descarta B.</p>
+      <p><strong>Sinal:</strong> como cos(0) = 1 e queremos P(0) = −3, é preciso o sinal negativo: −3·cos(0) = −3 ✔.</p>
+      <p>Logo, P(t) = <strong>−3 cos(2t)</strong> — alternativa <strong>A</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qcard" data-q="3">
+    <span class="qsource">ENEM 2014 PPL — Questão 158</span>
+    <h3>Deixando o som mais agudo</h3>
+    <p class="statement">Uma pessoa usa um programa de computador que descreve o desenho de uma onda sonora por meio da equação y = a · sen[b(x + c)], em que a, b e c são números reais positivos que podem ser ajustados. Ao alterar esses parâmetros, o programa modifica a onda representada e, consequentemente, o som correspondente. Sabe-se que, quanto menor o período de uma onda sonora, mais agudo (mais fino) é o som produzido. Para tornar o som mais agudo, ou seja, para diminuir o período da onda, a pessoa deve necessariamente alterar o parâmetro:</p>
+    <svg viewBox="0 0 260 90" style="width:100%;max-width:280px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="10" y1="45" x2="250" y2="45" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <path d="M10,45 C25,15 35,15 50,45 C65,75 75,75 90,45 C105,15 115,15 130,45" fill="none" stroke="var(--growth)" stroke-width="2.6" stroke-linecap="round" opacity=".55"/>
+      <path d="M130,45 C140,20 147,20 155,45 C163,70 170,70 178,45 C186,20 193,20 200,45 C208,70 215,70 222,45 C230,20 237,20 245,45" fill="none" stroke="var(--growth)" stroke-width="2.6" stroke-linecap="round"/>
+      <text x="55" y="12" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">período maior</text>
+      <text x="165" y="12" font-family="JetBrains Mono" font-size="9" fill="var(--growth-ink)">período menor → agudo</text>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">A)</span> a</button>
+      <button class="choice qopt" data-ok="1"><span class="let">B)</span> b</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> c</button>
+      <button class="choice qopt" data-ok="0"><span class="let">D)</span> a e b</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> b e c</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>Na expressão y = a·sen[b(x + c)], cada parâmetro tem um papel diferente: <strong>a</strong> controla apenas a amplitude (a altura da onda), <strong>c</strong> controla apenas o deslocamento horizontal (a fase) — nenhum dos dois altera o período.</p>
+      <p>O período dessa função é T = 2π/b. Como o período está no <strong>denominador</strong> em relação a b, quanto <strong>maior</strong> o valor de b, <strong>menor</strong> o período T.</p>
+      <p>Para deixar o som mais agudo (período menor), a pessoa precisa aumentar o valor de <strong>b</strong> — alternativa <strong>B</strong>. É a mesma relação C que vimos na aula controlando o período de sen(Cx+D): quanto maior |C|, menor o período.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard" data-q="4">
+    <span class="qsource">ENEM 2018 · 2º dia — Questão 170</span>
+    <h3>A roda-gigante High Roller</h3>
+    <p class="statement">Em 2014, foi inaugurada a maior roda-gigante do mundo, a High Roller, situada em Las Vegas, nos Estados Unidos. A figura mostra o gráfico da altura h (em metro) da cadeira de um passageiro em relação ao solo, em função do ângulo t (em radiano) que a roda gira a partir do instante em que o passageiro embarcou. O eixo de rotação da roda está a 88 m de altura em relação ao solo, e o raio da roda mede 80 m.</p>
+    <svg viewBox="0 0 260 110" style="width:100%;max-width:300px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="10" y1="90" x2="250" y2="90" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <line x1="20" y1="10" x2="20" y2="100" stroke="var(--line-strong)" stroke-width="1.3"/>
+      <line x1="20" y1="50" x2="245" y2="50" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 3"/>
+      <path d="M20,90 C45,90 55,10 90,10 C125,10 135,90 160,90 C195,90 205,10 240,10" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round"/>
+      <text x="4" y="14" font-family="JetBrains Mono" font-size="8.5" fill="var(--ink-faint)">168</text>
+      <text x="4" y="53" font-family="JetBrains Mono" font-size="8.5" fill="var(--ink-faint)">88</text>
+      <text x="10" y="94" font-family="JetBrains Mono" font-size="8.5" fill="var(--ink-faint)">8</text>
+    </svg>
+    <p class="statement" style="margin-bottom:10px;"><strong>A expressão da função altura h(t) é dada por:</strong></p>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="1"><span class="let">A)</span> h(t) = 80 sen(t) + 88</button>
+      <button class="choice qopt" data-ok="0"><span class="let">B)</span> h(t) = 80 cos(t) + 88</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> h(t) = 88 cos(t) + 168</button>
+      <button class="choice qopt" data-ok="0"><span class="let">D)</span> h(t) = 168 sen(t) + 88 cos(t)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> h(t) = 88 sen(t) + 168 cos(t)</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Deslocamento vertical:</strong> o centro do movimento (a "linha média" do gráfico) está na altura do eixo da roda, 88 m — esse é o termo somado no final.</p>
+      <p><strong>Amplitude:</strong> a altura máxima é 88 + 80 = 168 m (topo da roda). A amplitude é o raio, <strong>80</strong> — descarta C, que soma 168 em vez de 88.</p>
+      <p><strong>Seno ou cosseno?</strong> No gráfico, em t = 0 a cadeira está exatamente na altura do eixo (88 m, a "linha média") e sobe a partir daí — esse é o comportamento típico do <strong>seno</strong> (que começa em zero e cresce), diferente do cosseno (que começaria já no valor extremo).</p>
+      <p>Testando o ponto-chave do gráfico com h(t) = 80 sen(t) + 88: em t = π/2, sen(π/2) = 1, então h = 80(1) + 88 = <strong>168 m</strong> — exatamente o topo da roda ✔.</p>
+      <p>A expressão correta é <strong>h(t) = 80 sen(t) + 88</strong> — alternativa <strong>A</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qcard" data-q="5">
+    <span class="qsource">UFRGS 2022 (vestibular)</span>
+    <h3>O arco do primeiro quadrante</h3>
+    <p class="statement">Se α é um arco do primeiro quadrante tal que sen α = 3/5, então sen 2α é igual a:</p>
+    <svg viewBox="0 0 200 160" style="width:150px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="15" y1="130" x2="185" y2="130" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <line x1="100" y1="20" x2="100" y2="130" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <circle cx="100" cy="130" r="90" fill="none" stroke="var(--line)" stroke-width="1.2" opacity=".4"/>
+      <path d="M100,130 L100,50 A80,80 0 0,1 148,90 Z" fill="var(--primary-soft)" opacity=".7"/>
+      <line x1="100" y1="130" x2="148" y2="46" stroke="var(--primary)" stroke-width="3"/>
+      <line x1="148" y1="46" x2="148" y2="130" stroke="var(--growth)" stroke-width="3" stroke-dasharray="3 3"/>
+      <line x1="148" y1="130" x2="100" y2="130" stroke="var(--decay)" stroke-width="3" stroke-dasharray="3 3"/>
+      <text x="154" y="92" font-family="JetBrains Mono" font-size="11" fill="var(--growth-ink)">3</text>
+      <text x="120" y="145" font-family="JetBrains Mono" font-size="11" fill="var(--decay-ink)">4</text>
+      <text x="112" y="115" font-family="JetBrains Mono" font-size="11" fill="var(--ink-soft)">5</text>
+      <text x="106" y="120" font-family="JetBrains Mono" font-size="11" fill="var(--ink-faint)">α</text>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">a)</span> 3/5</button>
+      <button class="choice qopt" data-ok="0"><span class="let">b)</span> 4/5</button>
+      <button class="choice qopt" data-ok="0"><span class="let">c)</span> 6/5</button>
+      <button class="choice qopt" data-ok="1"><span class="let">d)</span> 24/25</button>
+      <button class="choice qopt" data-ok="0"><span class="let">e)</span> 25/24</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>Para achar sen 2α, usamos a fórmula do arco duplo: <strong>sen 2α = 2 · sen α · cos α</strong>. Já temos sen α = 3/5, mas falta cos α.</p>
+      <p>Usando a relação fundamental sen²α + cos²α = 1: cos²α = 1 − (3/5)² = 1 − 9/25 = 16/25 → cos α = ±4/5.</p>
+      <p>Como α é um arco do <strong>1º quadrante</strong>, tanto sen α quanto cos α são positivos — logo cos α = <strong>4/5</strong> (é o mesmo raciocínio de sinal por quadrante da aula anterior, só que aqui o quadrante já garante o sinal positivo).</p>
+      <p>sen 2α = 2 · (3/5) · (4/5) = 24/25 — alternativa <strong>d)</strong>.</p>
+    </div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado final</div>
+    <div class="num"><span id="finalScore">0</span>/5</div>
+    <p id="finalMsg" class="lede" style="max-width:44ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-tric2-atv-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+function toggleAnswer(btn){
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('open');
+  btn.textContent = ans.classList.contains('open') ? 'Ocultar resolução' : 'Ver resolução';
+}
+
+(function(){
+  var TOTAL = 5;
+  var score = 0, answered = 0;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.qcard'));
+  var barFill = document.getElementById('barFill');
+  var progressText = document.getElementById('progressText');
+  var scoreText = document.getElementById('scoreText');
+
+  cards.forEach(function(card){
+    var opts = card.querySelectorAll('.qopt');
+    var fb = card.querySelector('.fb');
+    var locked = false;
+    opts.forEach(function(opt){
+      opt.addEventListener('click', function(){
+        if(locked) return;
+        locked = true;
+        var ok = opt.getAttribute('data-ok') === '1';
+        opts.forEach(function(o){
+          o.disabled = true;
+          if(o.getAttribute('data-ok') === '1'){ o.classList.add('correct'); }
+          else if(o === opt){ o.classList.add('wrong'); }
+        });
+        if(ok){
+          score++;
+          fb.textContent = 'Certo! Essa é a alternativa correta.';
+          fb.className = 'fb ok';
+        } else {
+          fb.textContent = 'Não é essa — veja a resolução para entender o raciocínio certo.';
+          fb.className = 'fb no';
+        }
+        answered++;
+        updateProgress();
+        if(answered === TOTAL){ finish(); }
+      });
+    });
+  });
+
+  function updateProgress(){
+    barFill.style.width = (answered / TOTAL * 100) + '%';
+    progressText.textContent = answered + '/' + TOTAL + ' respondidas';
+    scoreText.textContent = score;
+  }
+
+  function finish(){
+    var panel = document.getElementById('finalPanel');
+    document.getElementById('finalScore').textContent = score;
+    var msg = document.getElementById('finalMsg');
+    if(score === TOTAL) msg.textContent = 'Mandou muito bem — acertou todas! Você domina redução ao 1º quadrante e modelagem com funções periódicas.';
+    else if(score >= TOTAL/2) msg.textContent = 'Bom resultado! Releia as resoluções das que errou para fechar os detalhes de período, amplitude e fase.';
+    else msg.textContent = 'Vale revisar redução ao 1º quadrante e os parâmetros de amplitude e período antes de seguir em frente.';
+    panel.style.display = 'block';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+})();
+
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

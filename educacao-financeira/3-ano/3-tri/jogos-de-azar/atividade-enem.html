@@ -1,0 +1,290 @@
+<title>Apostas no ENEM: questões reais</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .qnum{ color:var(--primary); font-family:'Archivo',sans-serif; font-weight:900; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:800px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.82rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Educação Financeira · Jogos de Azar · Atividade extra</div>
+    <div class="score-pill">Acertos: <span id="scoreVal">0</span>/4</div>
+  </div>
+
+  <div class="eyebrow danger">No ENEM é assim · questões reais</div>
+  <h1 class="title">A matemática das apostas <span style="color:var(--danger);">no ENEM</span></h1>
+  <p class="subtitle">Quatro questões reais de provas do ENEM sobre probabilidade em jogos de apostas, loterias e sorteios — exatamente o tipo de conta que mostra, com números, por que a organizadora do jogo sempre sai ganhando.</p>
+
+  <div class="callout danger">
+    <h4>Antes de começar</h4>
+    <p>Todas as situações abaixo são enunciados oficiais de provas do ENEM. Resolvê-las é uma forma de treinar para a prova — e, ao mesmo tempo, enxergar na prática que jogos de apostas são desenhados matematicamente contra quem aposta.</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="card qcard" data-qid="1">
+    <span class="badge">ENEM 2020 (Digital)</span>
+    <p style="margin-top:10px;"><span class="qnum">1.</span> Um apostador deve escolher uma entre cinco moedas ao acaso e lançá-la sobre uma mesa, tentando acertar qual resultado (cara ou coroa) sairá na face superior da moeda. As cinco moedas que ele pode escolher são diferentes: duas delas têm "cara" nas duas faces; uma delas tem "coroa" nas duas faces; duas delas são normais (cara em uma face e coroa na outra).</p>
+    <p>Nesse jogo, qual é a probabilidade de o apostador obter uma face "cara" no lado superior da moeda lançada por ele?</p>
+    <div class="qz" data-q="1">
+      <button class="choice qopt" data-ok="0">a) 1/8</button>
+      <button class="choice qopt" data-ok="0">b) 2/5</button>
+      <button class="choice qopt" data-ok="1">c) 3/5</button>
+      <button class="choice qopt" data-ok="0">d) 3/4</button>
+      <button class="choice qopt" data-ok="0">e) 4/5</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>Ao todo são 5 moedas × 2 faces = 10 faces possíveis, todas igualmente prováveis (escolha da moeda + lançamento justo).</p>
+      <p>Faces "cara": 2 moedas cara-cara → 4 faces cara; 2 moedas normais → 2 faces cara; 1 moeda coroa-coroa → 0 faces cara. Total: <strong>6 faces cara em 10</strong>.</p>
+      <p>P(cara) = 6/10 = <strong>3/5</strong>.</p>
+      <p class="hint">Um jogo "de azar" pode até parecer justo (uma moeda, cara ou coroa), mas o desenho completo do jogo — aqui, quais moedas existem — é o que de fato define as chances reais.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="card qcard" data-qid="2">
+    <span class="badge">ENEM 2020 (PPL/Reaplicação)</span>
+    <p style="margin-top:10px;"><span class="qnum">2.</span> Em uma campanha promocional de uma loja, um cliente gira uma roleta dividida em 12 setores congruentes, almejando obter um desconto sobre o valor total de sua compra. O resultado é o que está marcado na região apontada pela seta, e apenas um dos 12 setores dá direito ao desconto máximo. Um dispositivo impede que a seta aponte exatamente para a linha de fronteira entre dois setores adjacentes.</p>
+    <p>A probabilidade, em porcentagem, de esse cliente ganhar o desconto máximo com um único giro da roleta é mais bem aproximada por:</p>
+    <div class="qz" data-q="2">
+      <button class="choice qopt" data-ok="1">a) 8,3</button>
+      <button class="choice qopt" data-ok="0">b) 10,0</button>
+      <button class="choice qopt" data-ok="0">c) 12,5</button>
+      <button class="choice qopt" data-ok="0">d) 16,6</button>
+      <button class="choice qopt" data-ok="0">e) 50,0</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>A roleta tem 12 setores iguais, e apenas 1 deles dá o desconto máximo.</p>
+      <p>P = 1/12 ≈ 0,0833 = <strong>8,3%</strong>.</p>
+      <p class="hint">Toda roleta de "jogo do bicho", raspadinha ou caça-níquel segue a mesma lógica: o número de resultados que pagam é sempre uma fração pequena do total de resultados possíveis — a organizadora sabe exatamente essa fração, e o jogador quase nunca sabe.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card qcard" data-qid="3">
+    <span class="badge">ENEM 2009</span>
+    <p style="margin-top:10px;"><span class="qnum">3.</span> A população brasileira sabe, pelo menos intuitivamente, que a probabilidade de acertar as seis dezenas sorteadas na Mega-Sena, apostando apenas seis números, é muito pequena. Até junho de 2009, cada aposta simples de seis números, escolhidos entre 60 disponíveis, custava R$ 1,50.</p>
+    <p>Uma pessoa resolve gastar exatamente R$ 126,00 e está interessada em acertar pelo menos cinco das seis dezenas sorteadas (a "quina"). Ela tem duas estratégias: fazer <strong>84 apostas simples diferentes de 6 números</strong> (sem repetir nenhuma quina entre elas) ou fazer <strong>uma única aposta com 9 números</strong> (que custa o mesmo total). A probabilidade de fazer a quina na segunda estratégia (9 números), comparada com a primeira (84 apostas), é:</p>
+    <div class="qz" data-q="3">
+      <button class="choice qopt" data-ok="0">a) 4 vezes maior</button>
+      <button class="choice qopt" data-ok="0">b) igual</button>
+      <button class="choice qopt" data-ok="1">c) 4 vezes menor</button>
+      <button class="choice qopt" data-ok="0">d) 2 vezes menor</button>
+      <button class="choice qopt" data-ok="0">e) 8 vezes menor</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p><strong>84 apostas de 6 números:</strong> cada uma contém C(6,5) = 6 combinações de 5 números diferentes ("quinas"). Total: 84 × 6 = <strong>504 quinas cobertas</strong>.</p>
+      <p><strong>1 aposta de 9 números:</strong> o número de quinas possíveis dentro de 9 números é C(9,5) = 9!/(5!·4!) = <strong>126 quinas cobertas</strong>.</p>
+      <p>Como 504 é 4 vezes 126, a aposta de 9 números cobre 4 vezes menos combinações de quina que as 84 apostas simples — logo, a chance de ganhar é <strong>4 vezes menor</strong>.</p>
+      <p class="hint">O jogo é sempre igual: gastar o mesmo dinheiro de formas diferentes muda a chance, mas o valor esperado de retorno continua sempre a favor da casa.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="card qcard" data-qid="4">
+    <span class="badge">ENEM 2013</span>
+    <p style="margin-top:10px;"><span class="qnum">4.</span> Considere o seguinte jogo de apostas: numa cartela com 60 números disponíveis, um apostador escolhe de 6 a 10 números. Dentre os números disponíveis, serão sorteados apenas 6. O apostador é premiado caso os 6 números sorteados estejam entre os números que ele escolheu numa mesma cartela.</p>
+    <p>Cinco apostadores, cada um com R$ 500,00 para apostar, fizeram as seguintes escolhas:</p>
+    <table class="tbl">
+      <tr><th>apostador</th><th>cartelas</th></tr>
+      <tr><td>Arthur</td><td>250 cartelas de 6 números</td></tr>
+      <tr><td>Bruno</td><td>41 cartelas de 7 + 4 cartelas de 6 números</td></tr>
+      <tr><td>Caio</td><td>12 cartelas de 8 + 10 cartelas de 6 números</td></tr>
+      <tr><td>Douglas</td><td>4 cartelas de 9 números</td></tr>
+      <tr><td>Eduardo</td><td>2 cartelas de 10 números</td></tr>
+    </table>
+    <p style="margin-top:8px;">Os dois apostadores com as maiores probabilidades de serem premiados são:</p>
+    <div class="qz" data-q="4">
+      <button class="choice qopt" data-ok="1">a) Caio e Eduardo</button>
+      <button class="choice qopt" data-ok="0">b) Arthur e Bruno</button>
+      <button class="choice qopt" data-ok="0">c) Douglas e Eduardo</button>
+      <button class="choice qopt" data-ok="0">d) Arthur e Douglas</button>
+      <button class="choice qopt" data-ok="0">e) Bruno e Caio</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>Para uma cartela de k números, o número de "sextinhas" (combinações de 6 números sorteáveis) que ela cobre é C(k,6). Multiplicando pelo número de cartelas de cada apostador:</p>
+      <p>Arthur: 250·C(6,6) = 250·1 = <strong>250</strong></p>
+      <p>Bruno: 41·C(7,6) + 4·C(6,6) = 41·7 + 4·1 = <strong>291</strong></p>
+      <p>Caio: 12·C(8,6) + 10·C(6,6) = 12·28 + 10·1 = <strong>346</strong></p>
+      <p>Douglas: 4·C(9,6) = 4·84 = <strong>336</strong></p>
+      <p>Eduardo: 2·C(10,6) = 2·210 = <strong>420</strong></p>
+      <p>Os dois maiores valores são Eduardo (420) e Caio (346) → alternativa <strong>A</strong>.</p>
+      <p class="hint">Note que gastar o mesmo dinheiro (R$ 500) de formas diferentes muda bastante a chance individual — mas em nenhuma das cinco estratégias a chance de ganhar chega perto de ser "boa": mesmo o melhor caso (Eduardo) cobre só 420 das C(60,6) ≈ 50 milhões de combinações possíveis.</p>
+    </div>
+  </div>
+
+  <div class="card success" id="finalCard" style="display:none;">
+    <h4 class="disp" style="margin:0 0 6px;">Atividade concluída!</h4>
+    <p id="finalMsg" style="margin:0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-jogos-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var TOTAL = 4;
+  var scoreEl = document.getElementById('scoreVal');
+  var score = 0, answered = 0;
+  var finalCard = document.getElementById('finalCard');
+  var finalMsg = document.getElementById('finalMsg');
+
+  document.querySelectorAll('.qz').forEach(function(group){
+    group.querySelectorAll('.qopt').forEach(function(optBtn){
+      optBtn.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        var card = group.closest('.qcard');
+        var fb = card.querySelector('.fb');
+        var ans = card.querySelector('.answer');
+        var ok = optBtn.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(b){
+          b.disabled = true;
+          if(b.dataset.ok === '1') b.classList.add('correct');
+        });
+        if(!ok) optBtn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Resposta correta! Veja a resolução:' : '✘ Não é essa — veja a resolução completa:';
+        fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        ans.classList.add('open');
+        answered++;
+        if(ok){ score++; scoreEl.textContent = score; }
+        if(answered === TOTAL){
+          finalCard.style.display = 'block';
+          finalMsg.textContent = 'Você acertou ' + score + ' de ' + TOTAL + ' questões reais do ENEM sobre probabilidade em jogos de aposta. Em todas elas, a matemática mostrou o mesmo padrão: as chances reais de ganhar são sempre bem menores do que a propaganda faz parecer.';
+          finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+          try{ window.reportarConclusao(score, TOTAL); }catch(e){}
+        }
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

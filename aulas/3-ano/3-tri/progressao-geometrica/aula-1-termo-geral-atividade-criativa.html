@@ -1,0 +1,418 @@
+<title>Laboratório da PG: Construa e Preveja</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:1020px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .hero{ text-align:center; padding:34px 8px 22px; }
+  .hero h1{ font-size:clamp(1.6rem,4.2vw,2.4rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.92rem,1.5vw,1.05rem); max-width:60ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badgerow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .panel{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px; box-shadow:0 24px 50px -30px var(--shadow); margin-bottom:24px; }
+  .panel h2{ font-size:1.2rem; margin:0 0 4px; }
+  .controls{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px; }
+  @media (max-width:760px){ .controls{ grid-template-columns:1fr; } }
+  .field label{ display:block; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); margin-bottom:6px; }
+  .field input[type=number]{ width:100%; font:inherit; font-family:'JetBrains Mono',monospace; font-size:1rem; padding:.55em .7em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .field input[type=range]{ width:100%; accent-color:var(--primary); }
+  .chiprow{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .chip{ font-family:'JetBrains Mono',monospace; font-size:.76rem; font-weight:700; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink-soft); border-radius:8px; padding:.32em .6em; cursor:pointer; }
+  .chip:hover{ border-color:var(--primary); }
+  .chip.active{ border-color:var(--primary); background:var(--primary-soft); color:var(--primary); }
+  .rangeval{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--primary); }
+  .barzone{ margin-top:20px; background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 14px 10px; }
+  .bars{ display:flex; align-items:flex-end; gap:6px; height:180px; }
+  .bars .col{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; min-width:0; }
+  .bars .val{ font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:700; color:var(--ink-soft); margin-bottom:4px; white-space:nowrap; }
+  .bars .bar{ width:70%; border-radius:6px 6px 0 0; background:var(--primary); transition:height .3s ease, background .2s ease; min-height:3px; }
+  .bars .bar.g{ background:var(--growth); } .bars .bar.d{ background:var(--decay); }
+  .bars .bar.target{ outline:3px solid var(--ink); outline-offset:2px; }
+  .bars .idx{ font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--ink-faint); margin-top:6px; }
+  .readout-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+  .readout{ flex:1 1 200px; background:var(--surface); border:1px solid var(--line-strong); border-radius:14px; padding:12px 16px; }
+  .readout .lab{ font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); font-weight:700; }
+  .readout .val{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.05rem; margin-top:3px; }
+  .readout.growth .val{ color:var(--growth-ink); } .readout.decay .val{ color:var(--decay-ink); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.92rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.9rem; }
+  button.primary{ background:var(--primary); color:var(--primary-ink); border:none; font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; border-radius:10px; padding:.7em 1.3em; cursor:pointer; }
+  button.primary:hover{ opacity:.92; }
+  button.primary:disabled{ opacity:.4; cursor:default; }
+  .roundhead{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
+  .timerbar{ height:6px; border-radius:999px; background:var(--surface-2); overflow:hidden; margin-bottom:16px; }
+  .timerbar > span{ display:block; height:100%; background:var(--growth); border-radius:999px; width:100%; transform-origin:left; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb-line{ font-weight:700; font-size:.88rem; margin-top:8px; min-height:1.3em; }
+  .fb-line.ok{ color:var(--success); } .fb-line.no{ color:var(--danger); }
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:22px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · Laboratório interativo</div>
+    <h1>Construa sua <span style="color:var(--primary);">PG</span> e depois preveja</h1>
+    <p class="subtitle">Primeiro, brinque com a₁, q e n no simulador e veja as barras crescerem, encolherem ou oscilarem ao vivo. Depois, encare 8 rodadas relâmpago prevendo termos gerais antes que o tempo acabe.</p>
+    <div class="badgerow">
+      <span class="badge">Parte 1 · Simulador livre</span>
+      <span class="badge">Parte 2 · 8 rodadas relâmpago</span>
+      <span class="badge">Aula 1 · Termo geral da PG</span>
+    </div>
+  </div>
+
+  <!-- PARTE 1: SIMULADOR -->
+  <div class="panel">
+    <div class="eyebrow" style="margin-bottom:2px;">Parte 1</div>
+    <h2>Simulador do termo geral</h2>
+    <p class="lede" style="font-size:.9rem;">Ajuste a₁ (primeiro termo), q (razão) e n (quantos termos mostrar) e observe a sequência tomar forma.</p>
+
+    <div class="controls">
+      <div class="field">
+        <label for="inA1">a₁ (primeiro termo)</label>
+        <input type="number" id="inA1" value="2" step="1">
+      </div>
+      <div class="field">
+        <label for="inQ">q (razão)</label>
+        <input type="number" id="inQ" value="2" step="0.5">
+        <div class="chiprow" id="qChips">
+          <button class="chip" data-q="2">2</button>
+          <button class="chip" data-q="3">3</button>
+          <button class="chip" data-q="0.5">0,5</button>
+          <button class="chip" data-q="1">1</button>
+          <button class="chip" data-q="-2">−2</button>
+          <button class="chip" data-q="-0.5">−0,5</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="inN">n (termos exibidos) — <span class="rangeval" id="nVal">6</span></label>
+        <input type="range" id="inN" min="2" max="10" step="1" value="6" style="margin-top:10px;">
+      </div>
+    </div>
+
+    <div class="barzone">
+      <div class="bars" id="barsWrap"></div>
+    </div>
+
+    <div class="readout-row">
+      <div class="readout"><div class="lab">Fórmula aplicada</div><div class="val formula" id="formulaOut" style="font-size:.92rem;padding:0;border:none;box-shadow:none;background:transparent;">a<sub>n</sub> = a₁ · q<sup>n−1</sup></div></div>
+      <div class="readout"><div class="lab">Último termo mostrado</div><div class="val" id="lastTermOut">—</div></div>
+      <div class="readout"><div class="lab">Classificação da PG</div><div class="val" id="classOut">—</div></div>
+    </div>
+  </div>
+
+  <!-- PARTE 2: DESAFIO -->
+  <div class="panel" id="challengePanel">
+    <div class="eyebrow" style="margin-bottom:2px;">Parte 2</div>
+    <h2>Desafio relâmpago — 8 rodadas</h2>
+    <p class="lede" style="font-size:.9rem;">Cada rodada dá uma PG do mundo real e 12 segundos para prever o termo pedido. Responda antes que a barra zere!</p>
+
+    <div class="roundhead">
+      <span class="badge" id="roundBadge">Rodada 1/8</span>
+      <span class="badge">Pontos: <strong id="scoreBadge">0</strong></span>
+    </div>
+    <div class="timerbar"><span id="timerFill"></span></div>
+
+    <div class="card">
+      <p id="roundText" style="font-size:.95rem;margin:0 0 12px;font-weight:600;"></p>
+      <div id="roundChoices"></div>
+      <div class="fb-line" id="roundFb"></div>
+    </div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado do desafio</div>
+    <div class="num"><span id="finalScore">0</span>/8</div>
+    <p id="finalMsg" class="lede" style="max-width:44ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-pg1-atv-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+/* ============ PARTE 1: SIMULADOR ============ */
+(function(){
+  var inA1 = document.getElementById('inA1');
+  var inQ = document.getElementById('inQ');
+  var inN = document.getElementById('inN');
+  var nVal = document.getElementById('nVal');
+  var barsWrap = document.getElementById('barsWrap');
+  var lastTermOut = document.getElementById('lastTermOut');
+  var classOut = document.getElementById('classOut');
+  var qChips = document.querySelectorAll('#qChips .chip');
+
+  function fmt(v){
+    if(!isFinite(v)) return '—';
+    if(Math.abs(v) >= 1000 || (Math.abs(v) < 0.01 && v !== 0)) return v.toExponential(2).replace('+','');
+    var r = Math.round(v*1000)/1000;
+    return r.toLocaleString('pt-BR', {maximumFractionDigits:3});
+  }
+
+  function classify(a1, q){
+    if(q === 1) return 'Constante (q = 1)';
+    if(q < 0) return 'Alternante (q < 0)';
+    if(q > 1) return 'Crescente (q > 1)';
+    if(q > 0 && q < 1) return 'Decrescente (0 < q < 1)';
+    return '—';
+  }
+
+  function render(){
+    var a1 = parseFloat(inA1.value); if(isNaN(a1)) a1 = 0;
+    var q = parseFloat(inQ.value); if(isNaN(q)) q = 0;
+    var n = parseInt(inN.value, 10);
+    nVal.textContent = n;
+
+    var terms = [];
+    for(var i=1;i<=n;i++){ terms.push(a1 * Math.pow(q, i-1)); }
+    var maxAbs = Math.max.apply(null, terms.map(function(t){ return Math.abs(t); }).concat([1e-9]));
+
+    barsWrap.innerHTML = '';
+    terms.forEach(function(t, idx){
+      var col = document.createElement('div');
+      col.className = 'col';
+      var valEl = document.createElement('div');
+      valEl.className = 'val';
+      valEl.textContent = fmt(t);
+      var barEl = document.createElement('div');
+      var h = 8 + 160 * (Math.log(Math.abs(t)+1) / Math.log(maxAbs+1));
+      if(!isFinite(h)) h = 8;
+      barEl.style.height = h + 'px';
+      barEl.className = 'bar' + (t > (terms[0]||0) && q>1 ? ' g' : (q>0 && q<1 ? ' d' : ''));
+      if(idx === terms.length-1) barEl.classList.add('target');
+      var idxEl = document.createElement('div');
+      idxEl.className = 'idx';
+      idxEl.textContent = 'a' + (idx+1);
+      col.appendChild(valEl); col.appendChild(barEl); col.appendChild(idxEl);
+      barsWrap.appendChild(col);
+    });
+
+    lastTermOut.textContent = 'a' + n + ' = ' + fmt(terms[terms.length-1]);
+    classOut.textContent = classify(a1, q);
+  }
+
+  inA1.addEventListener('input', render);
+  inQ.addEventListener('input', function(){ qChips.forEach(function(c){ c.classList.toggle('active', parseFloat(c.dataset.q) === parseFloat(inQ.value)); }); render(); });
+  inN.addEventListener('input', render);
+  qChips.forEach(function(c){
+    c.addEventListener('click', function(){
+      inQ.value = c.dataset.q;
+      qChips.forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      render();
+    });
+  });
+
+  render();
+})();
+
+/* ============ PARTE 2: DESAFIO RELÂMPAGO ============ */
+(function(){
+  var rounds = [
+    { text: 'Uma colônia de fungo começa com a₁ = 3 esporos e QUADRUPLICA a cada dia (q = 4). Quantos esporos há no 4º dia (a₄)?', choices: [192, 768, 48, 81], ok: 0 },
+    { text: 'PG com a₁ = 100 e q = 0,5. Qual é o valor de a₅?', choices: [6.25, 3.125, 250, 12.5], ok: 0 },
+    { text: 'Uma dívida de R$ 800,00 TRIPLICA a cada 2 meses (q = 3). Depois de 3 desses períodos (a₄), a dívida será de quanto?', choices: [21600, 64800, 7200, 2400], ok: 0 },
+    { text: 'PG alternante: a₁ = 5 e q = −2. Qual é a₆?', choices: [-160, 320, -60, 160], ok: 0 },
+    { text: 'Um vírus digital começa em a₁ = 2 arquivos infectados e q = 5 (cada arquivo gera 5 novos por hora). Quantos arquivos há na 5ª hora (a₅)?', choices: [1250, 6250, 50, 250], ok: 0 },
+    { text: 'Um capital rende juros compostos com razão q = 1,1 ao mês. Após o 1º mês o montante é a₁ = R$ 550,00. Qual é o montante no 4º mês (a₄)? (arredonde em 2 casas)', choices: ['R$ 732,05', 'R$ 805,26', 'R$ 2.420,00', 'R$ 665,50'], ok: 0 },
+    { text: 'PG decrescente: a₁ = 1000 e q = 0,1. Qual é a₃?', choices: [10, 1, 300, 100], ok: 0 },
+    { text: 'PG constante: a₁ = 7 e q = 1. Qual é a₁₀?', choices: [7, 70, '7¹⁰', 17], ok: 0 }
+  ];
+
+  var idx = 0, score = 0;
+  var TOTAL = rounds.length;
+  var roundBadge = document.getElementById('roundBadge');
+  var scoreBadge = document.getElementById('scoreBadge');
+  var timerFill = document.getElementById('timerFill');
+  var roundText = document.getElementById('roundText');
+  var roundChoices = document.getElementById('roundChoices');
+  var roundFb = document.getElementById('roundFb');
+  var timer = null, timeLeft = 12, locked = false;
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){ var j = Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+
+  function startRound(){
+    locked = false;
+    var r = rounds[idx];
+    roundBadge.textContent = 'Rodada ' + (idx+1) + '/' + TOTAL;
+    scoreBadge.textContent = score;
+    roundText.textContent = r.text;
+    roundFb.textContent = '';
+    roundFb.className = 'fb-line';
+
+    var correctVal = r.choices[r.ok];
+    var order = shuffle(r.choices.map(function(v,i){ return i; }));
+    roundChoices.innerHTML = '';
+    order.forEach(function(choiceIdx){
+      var b = document.createElement('button');
+      b.className = 'choice';
+      b.textContent = r.choices[choiceIdx];
+      b.addEventListener('click', function(){ answer(choiceIdx === r.ok, b); });
+      roundChoices.appendChild(b);
+    });
+
+    timeLeft = 12;
+    timerFill.style.transition = 'none';
+    timerFill.style.width = '100%';
+    // force reflow then animate
+    void timerFill.offsetWidth;
+    timerFill.style.transition = 'width 12s linear';
+    timerFill.style.width = '0%';
+    clearTimeout(timer);
+    timer = setTimeout(function(){ if(!locked) answer(false, null); }, 12000);
+  }
+
+  function answer(correct, btnEl){
+    if(locked) return;
+    locked = true;
+    clearTimeout(timer);
+    timerFill.style.transition = 'none';
+    Array.prototype.forEach.call(roundChoices.querySelectorAll('.choice'), function(b){ b.disabled = true; });
+    if(correct){
+      score++;
+      if(btnEl) btnEl.classList.add('correct');
+      roundFb.textContent = 'Certo! Termo geral aplicado corretamente.';
+      roundFb.className = 'fb-line ok';
+    } else {
+      if(btnEl) btnEl.classList.add('wrong');
+      var r = rounds[idx];
+      var correctBtn = Array.prototype.find.call(roundChoices.querySelectorAll('.choice'), function(b){ return b.textContent == r.choices[r.ok]; });
+      if(correctBtn) correctBtn.classList.add('correct');
+      roundFb.textContent = btnEl ? 'Não foi dessa vez.' : 'Tempo esgotado!';
+      roundFb.className = 'fb-line no';
+    }
+    scoreBadge.textContent = score;
+    setTimeout(function(){
+      idx++;
+      if(idx < TOTAL) startRound(); else finish();
+    }, 1400);
+  }
+
+  function finish(){
+    document.getElementById('challengePanel').style.display = 'none';
+    var panel = document.getElementById('finalPanel');
+    document.getElementById('finalScore').textContent = score;
+    var msg = document.getElementById('finalMsg');
+    if(score === TOTAL) msg.textContent = 'Perfeito! Você calcula o termo geral da PG na velocidade do relâmpago.';
+    else if(score >= TOTAL/2) msg.textContent = 'Bom ritmo! Volte ao simulador da Parte 1 para reforçar os casos que travaram.';
+    else msg.textContent = 'Sem problema — pratique mais no simulador (Parte 1) e tente o desafio novamente.';
+    panel.style.display = 'block';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+
+  startRound();
+})();
+
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

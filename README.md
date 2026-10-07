@@ -91,6 +91,18 @@ A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `au
 
 Não é necessário nenhum processo de build: é HTML puro, servido como está.
 
+## Atividades extras (ENEM, criativa e prática)
+
+Cada aula tem 3 atividades prontas, que aparecem no catálogo dentro do bloco recolhível **Atividades** de cada unidade e também na lista de aulas que o professor escolhe ao criar uma atividade na plataforma (com o prefixo `[Atividade ENEM]`, `[Atividade Criativa]` ou `[Atividade Prática]`):
+
+- **ENEM** — questões reais de provas anteriores (ENEM, ENEM PPL e alguns vestibulares), com ano/edição citados e resolução passo a passo.
+- **Criativa** — formato interativo diferente de quiz: simuladores, jogos de arrastar, tabuleiros, calculadoras ao vivo.
+- **Prática** — lista progressiva (fácil → difícil) com dicas e resolução.
+
+Nomes dos arquivos: `atividade-enem.html` / `atividade-criativa.html` / `atividade-pratica.html` quando a unidade tem uma aula só; `aula-N-<slug>-atividade-enem.html` etc. quando tem várias, na mesma pasta da aula.
+
+**Contrato com a plataforma:** toda atividade define `window.reportarConclusao(pontos, total)` (que envia a nota ao `player.html` via `postMessage`) e a chama uma vez ao terminar. Fora da plataforma isso não faz nada. Por isso `scripts/inject-progress-hook.js` pula esses arquivos — não rode o gancho genérico neles. Ao criar atividade nova, copie o bloco `<script>` do final de qualquer atividade existente e registre-a em `app/catalog.js` com `tipo:'Atividade'` e `sub:'ENEM' | 'Criativa' | 'Prática'`.
+
 ## Plataforma (login, turmas e atividades)
 
 Além do catálogo público de aulas, o site tem uma camada de plataforma para você (e, se quiser, outros professores) usar com turmas de verdade: login de aluno/professor, aprovação manual de cada aluno, atribuição de atividades (quiz autocorrigido, aula assistida, ou envio de resposta/link para correção) e um painel de engajamento por turma.

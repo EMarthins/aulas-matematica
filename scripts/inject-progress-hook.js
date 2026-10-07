@@ -61,7 +61,9 @@ for(const sub of ['aulas', 'educacao-financeira']){
 let aulaCount = 0, infoCount = 0, skipCount = 0;
 for(const f of files){
   let content = fs.readFileSync(f, 'utf8');
-  if(content.includes(MARKER)){ skipCount++; continue; }
+  // Atividades já trazem o contrato próprio (window.reportarConclusao); injetar o
+  // gancho genérico nelas duplicaria o evento "opened" e a nota do quiz.
+  if(content.includes(MARKER) || content.includes('window.reportarConclusao')){ skipCount++; continue; }
   const isInfografico = path.basename(f) === 'infografico.html';
   content += isInfografico ? HOOK_INFOGRAFICO : HOOK_AULA;
   fs.writeFileSync(f, content, 'utf8');

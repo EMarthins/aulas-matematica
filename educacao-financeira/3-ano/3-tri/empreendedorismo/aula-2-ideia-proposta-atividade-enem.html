@@ -1,0 +1,295 @@
+<title>ENEM: Ideia e Proposta de Valor</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:880px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  h2.title{ font-size:clamp(1.5rem, 3.4vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.35em 0; font-size:.9rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.92rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  .hero{ background:var(--surface); border:1px solid var(--line); border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft); padding:clamp(22px,4vw,40px); margin-bottom:22px; }
+  .score-pill{ position:sticky; top:12px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:20px; box-shadow:0 10px 26px -14px var(--shadow); }
+  .qsrc{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:700; letter-spacing:.05em; color:var(--growth-ink); background:var(--growth-soft); display:inline-block; border-radius:8px; padding:.3em .6em; margin-bottom:10px; }
+  .qnum{ display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--primary-soft); color:var(--primary); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; margin-right:8px; }
+  .qtext{ font-size:.98rem; margin:10px 0 14px; }
+  .final{ text-align:center; padding:28px 20px; border-radius:18px; background:var(--primary-soft); border:1px solid var(--line-strong); display:none; }
+  .final.show{ display:block; }
+  .final h3{ margin:0 0 8px; font-size:1.3rem; }
+  .backlink{ display:inline-flex; align-items:center; gap:.4em; font-size:.82rem; color:var(--ink-soft); text-decoration:none; margin-bottom:14px; }
+  .backlink:hover{ color:var(--primary); }
+
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow growth">Atividade extra · Questões reais de vestibular</div>
+    <h1 class="disp" style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;line-height:1.05;margin:0 0 10px;">Ideia e proposta de valor no ENEM</h1>
+    <p class="subtitle">5 questões reais do ENEM sobre persuasão, marcas, consumidor digital e precificação — os ingredientes por trás de toda proposta de valor. Cada questão traz o ano e a edição em que foi aplicada.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <span class="badge">5 QUESTÕES</span>
+      <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">LC · MT · CH · Competência 6</span>
+    </div>
+  </div>
+
+  <div class="score-pill">Acertos: <span id="scoreVal">0</span>/5</div>
+  <div style="clear:both;"></div>
+
+  <!-- Q1 -->
+  <div class="qcard" data-q="1">
+    <span class="qsrc">ENEM 2012 · 2ª aplicação · 2º dia</span>
+    <p class="qtext"><span class="qnum">1</span><strong>Texto de referência (resumo):</strong> "Quando a propaganda é decisiva na troca de marcas, todo supermercadista sabe que, quando um produto é bem divulgado, o consumidor se sente atraído a experimentá-lo — mas só continuará comprando se a qualidade confirmar a promessa da propaganda."</p>
+    <p class="qtext">De acordo com o texto e as informações do gráfico associado, para aumentar as vendas de um produto, é necessário que:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) A campanha foque apenas em alimentos, categoria com menor percentual de troca</button>
+      <button class="choice qopt" data-ok="0">B) A preferência ocorra só pela influência emocional da propaganda com a marca</button>
+      <button class="choice qopt" data-ok="1">C) A propaganda influencie a troca de marca e o consumidor valorize a qualidade do produto</button>
+      <button class="choice qopt" data-ok="0">D) Os produtos mais vendidos não sejam divulgados como tal, para não gerar desconfiança</button>
+      <button class="choice qopt" data-ok="0">E) Marcas de menor qualidade sejam o foco da publicidade, por serem mais econômicas</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa C.</strong></p>
+      <p>A propaganda até consegue fazer alguém experimentar um produto pela primeira vez — isso é a persuasão. Mas quem faz o cliente <strong>voltar</strong> é a proposta de valor cumprida de verdade: o produto precisa entregar a qualidade prometida. É a mesma lição do brigadeiro com "20 gramas de felicidade": a frase atrai, mas só a experiência real fideliza.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard" data-q="2">
+    <span class="qsrc">ENEM 2016 · 2º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">2</span>Uma pessoa comercializa picolés em um evento. No segundo dia, ela compra 4 caixas com 20 picolés cada, pagando R$ 16,00 por caixa — o mesmo valor pago no dia anterior, quando obteve um lucro de R$ 40,00 vendendo todos os picolés. Avaliando o público do evento, ela decide que é possível obter, no segundo dia, um lucro <strong>20% maior</strong> que o do primeiro dia, também vendendo todos os picolés.</p>
+    <p class="qtext">Qual deve ser o preço de venda de cada picolé no segundo dia, para atingir essa meta de lucro?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) R$ 0,96</button>
+      <button class="choice qopt" data-ok="0">B) R$ 1,00</button>
+      <button class="choice qopt" data-ok="1">C) R$ 1,40</button>
+      <button class="choice qopt" data-ok="0">D) R$ 1,50</button>
+      <button class="choice qopt" data-ok="0">E) R$ 1,56</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa C.</strong></p>
+      <p>Custo total das 4 caixas: 4 × 16 = R$ 64,00. Lucro desejado: 20% maior que R$ 40,00, ou seja, 40 + 0,2×40 = R$ 48,00. Faturamento necessário: 64 + 48 = R$ 112,00, para 4 × 20 = 80 picolés. Preço de cada picolé: 112 ÷ 80 = <strong>R$ 1,40</strong>. Definir preço não é chutar um número — é calcular a partir do custo e da meta de lucro, exatamente como fizemos com a fórmula C(x) = CF + CV·x na aula seguinte.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qcard" data-q="3">
+    <span class="qsrc">ENEM 2023 · 1º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">3</span><strong>Texto de referência (resumo):</strong> o autor diferencia "concorrência" de "competitividade". A concorrência pode ser saudável quando respeita regras de convivência preestabelecidas entre os agentes de mercado. Já a competitividade se funda em inventar novas armas de disputa, em que a única regra é alcançar a melhor posição — uma espécie de guerra onde vale tudo, provocando um afrouxamento dos valores morais.</p>
+    <p class="qtext">De acordo com a diferenciação feita pelo autor, qual prática econômica é considerada moralmente condenável?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="1">A) Adoção de dumping comercial</button>
+      <button class="choice qopt" data-ok="0">B) Fusão de função administrativa entre empresas</button>
+      <button class="choice qopt" data-ok="0">C) Criação de holding empresarial</button>
+      <button class="choice qopt" data-ok="0">D) Limitação de mercado monopolista</button>
+      <button class="choice qopt" data-ok="0">E) Modernização da produção industrial</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa A.</strong></p>
+      <p>Dumping é vender abaixo do custo de forma predatória, só para eliminar concorrentes — o exemplo perfeito de competitividade "sem regras" descrita no texto. Isso reforça algo importante para o seu plano de negócio: <strong>diferenciar-se de verdade</strong> (proposta de valor, atendimento, qualidade) é bem diferente de tentar vencer destruindo a concorrência a qualquer custo.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard" data-q="4">
+    <span class="qsrc">ENEM 2017 · 1º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">4</span><strong>Texto de referência (resumo):</strong> "O exame dos textos e mensagens de propaganda revela que eles apresentam posições parciais, que refletem o pensamento de uma minoria, como se exprimissem a convicção de uma população inteira; trata-se, no fundo, de convencer o ouvinte ou leitor de que, em termos de opinião, está fora do caminho certo, e de induzi-lo a aderir às teses apresentadas, por um mecanismo conhecido da psicologia social: o conformismo induzido pelas pressões do grupo sobre o indivíduo isolado."</p>
+    <p class="qtext">De acordo com o texto, as estratégias argumentativas e o uso da linguagem na produção da propaganda favorecem a:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) Reflexão da sociedade sobre os produtos anunciados</button>
+      <button class="choice qopt" data-ok="0">B) Difusão do pensamento e das preferências das grandes massas</button>
+      <button class="choice qopt" data-ok="1">C) Imposição das ideias e posições de grupos específicos</button>
+      <button class="choice qopt" data-ok="0">D) Decisão consciente do consumidor a respeito de sua compra</button>
+      <button class="choice qopt" data-ok="0">E) Identificação dos interesses do responsável pelo produto divulgado</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa C.</strong></p>
+      <p>O texto mostra que a propaganda finge falar por "todo mundo", mas na verdade impõe a visão de um grupo específico usando pressão social. Saber disso ajuda você a construir uma proposta de valor <strong>honesta</strong>: comunicar um benefício real para o seu público, em vez de fabricar um consenso que não existe.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qcard" data-q="5">
+    <span class="qsrc">ENEM 2017 · 1º dia</span>
+    <p class="qtext"><span class="qnum">5</span>O consumidor do século XXI, chamado de "novo consumidor social", tende a se comportar de modo diferente do consumidor tradicional. Um diagrama associado à questão reúne características desse novo consumidor: ele prefere comprar on-line, avalia produtos em posts e blogs, se informa e dá feedback pela internet, e espera ter uma boa experiência de compra digital.</p>
+    <p class="qtext">Pela associação dessas características, infere-se que esse novo consumidor sofre influência da:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="1">A) Cultura do comércio eletrônico</button>
+      <button class="choice qopt" data-ok="0">B) Busca constante pelo menor preço</button>
+      <button class="choice qopt" data-ok="0">C) Divulgação de informações pelas empresas</button>
+      <button class="choice qopt" data-ok="0">D) Necessidade recorrente de consumo</button>
+      <button class="choice qopt" data-ok="0">E) Postura comum aos consumidores tradicionais</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa A.</strong></p>
+      <p>Todas as características do diagrama giram em torno do universo on-line: comprar, avaliar, pesquisar e se informar pela internet. Isso é exatamente por que construir uma persona importa — a mesma Ana do exemplo da aula pode comprar tanto decoração quanto aulas de dança, mas sempre pesquisando e decidindo dentro dessa cultura digital.</p>
+    </div>
+  </div>
+
+  <div class="final" id="final">
+    <h3 id="finalTitle">Atividade concluída!</h3>
+    <p id="finalText" style="color:var(--ink-soft);"></p>
+  </div>
+
+  <a class="backlink" href="aula-2-ideia-proposta.html">← Voltar para a aula</a>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp2-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+window.toggleAnswer = function(btn){
+  var ans = btn.nextElementSibling; if(!ans) return;
+  var open = ans.classList.toggle('open');
+  btn.innerHTML = open ? 'Ocultar resolução' : 'Ver resolução';
+};
+
+(function(){
+  var scoreEl = document.getElementById('scoreVal');
+  var groups = document.querySelectorAll('.qz');
+  var total = groups.length;
+  var score = 0, answered = 0;
+
+  groups.forEach(function(group){
+    group.querySelectorAll('.qopt').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        answered++;
+        var ok = b.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(x){ x.disabled = true; if(x.dataset.ok==='1') x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        if(ok){ score++; scoreEl.textContent = score; }
+        if(answered === total){ finish(); }
+      });
+    });
+  });
+
+  function finish(){
+    var finalEl = document.getElementById('final');
+    var title = document.getElementById('finalTitle');
+    var text = document.getElementById('finalText');
+    title.textContent = 'Você acertou ' + score + ' de ' + total + ' questões!';
+    var msg = score === total ? 'Nota máxima — você lê propaganda com olhar crítico!' :
+      score >= total*0.6 ? 'Muito bom! Revise as resoluções das que errou.' :
+      'Vale a pena reler as resoluções com calma — cada uma explica o raciocínio completo.';
+    text.textContent = msg;
+    finalEl.classList.add('show');
+    finalEl.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, total);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

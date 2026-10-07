@@ -1,0 +1,317 @@
+<title>Emparelhando com Gauss</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:760px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  header.top{ text-align:center; margin-bottom:22px; }
+  header.top h1{ font-size:clamp(1.7rem,4vw,2.4rem); font-weight:900; margin:0 0 8px; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.92rem,1.4vw,1.05rem); margin:0 auto; max-width:56ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin-bottom:18px; }
+  .formula{ font-size:1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 14px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .score-pill{ position:sticky; top:14px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .round-title{ font-size:1.05rem; font-weight:800; margin:0 0 4px; }
+  .round-sub{ color:var(--ink-soft); font-size:.88rem; margin:0 0 16px; }
+  .target-box{ text-align:center; margin-bottom:16px; }
+  .target-box .val{ font-family:'JetBrains Mono',monospace; font-weight:900; font-size:1.6rem; color:var(--primary); }
+  .grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; }
+  .gcard{
+    aspect-ratio:1; border-radius:12px; border:1.5px solid var(--line-strong); background:var(--surface);
+    display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace;
+    font-weight:800; font-size:1.15rem; cursor:pointer; transition:border-color .15s, background .15s, transform .12s;
+    color:var(--ink);
+  }
+  .gcard:hover:not(.matched):not(.selected){ border-color:var(--primary); transform:translateY(-2px); }
+  .gcard.selected{ border-color:var(--primary); background:var(--primary-soft); }
+  .gcard.matched{ background:var(--success-soft); border-color:var(--success); color:var(--success); cursor:default; opacity:.75; }
+  .gcard.wrong{ background:var(--danger-soft); border-color:var(--danger); }
+  .round-msg{ text-align:center; font-weight:700; font-size:.92rem; margin-top:16px; min-height:1.4em; }
+  .round-msg.ok{ color:var(--success); }
+  .pairs-log{ margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; justify-content:center; min-height:1.6em; }
+  .pairs-log span{ font-family:'JetBrains Mono',monospace; font-size:.72rem; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.25em .55em; color:var(--ink-soft); }
+  button.reveal{ margin-top:16px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.85rem; border-radius:10px; padding:.6em 1.3em; cursor:pointer; display:block; margin-left:auto; margin-right:auto; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .progress-dots{ display:flex; gap:7px; justify-content:center; margin-bottom:6px; }
+  .progress-dots span{ width:9px; height:9px; border-radius:50%; background:var(--line-strong); }
+  .progress-dots span.done{ background:var(--success); }
+  .progress-dots span.current{ background:var(--primary); }
+  .final-card{ text-align:center; padding:30px 22px; }
+  .final-card .big{ font-size:2.4rem; font-weight:900; font-family:'Archivo',sans-serif; color:var(--primary); }
+  ::selection{ background:var(--primary-soft); }
+
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+    .score-pill{ float:none; display:block; width:fit-content; margin:0 auto 16px; }
+    .grid{ grid-template-columns:repeat(4, 1fr); gap:8px; }
+    .gcard{ font-size:.95rem; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="score-pill">Pontos: <span id="scoreVal">0</span>/<span id="scoreTotal">17</span></div>
+  <header class="top">
+    <div class="eyebrow">Atividade extra · Jogo de pares</div>
+    <h1>Emparelhando com Gauss</h1>
+    <p class="subtitle">Redescubra a sacada de Gauss: em cada rodada, clique em dois números da P.A. cuja soma seja igual à constante mostrada — sempre a<sub>1</sub> + a<sub>n</sub>. Encontre todos os pares para revelar a soma total.</p>
+  </header>
+
+  <div class="progress-dots" id="dots"></div>
+
+  <div class="card" id="gameCard">
+    <div class="round-title" id="roundTitle"></div>
+    <div class="round-sub" id="roundSub"></div>
+    <div class="target-box">Cada par deve somar <span class="val" id="targetVal"></span></div>
+    <div class="grid" id="grid"></div>
+    <div class="pairs-log" id="pairsLog"></div>
+    <div class="round-msg" id="roundMsg"></div>
+    <button class="reveal" id="nextBtn" style="display:none;">Próxima rodada →</button>
+  </div>
+
+  <div class="card final-card" id="finalCard" style="display:none;">
+    <div class="eyebrow">Fim do jogo</div>
+    <div class="big"><span id="finalScore">0</span>/<span id="finalTotal">17</span></div>
+    <p id="finalMsg" style="max-width:48ch;margin:10px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-pa2-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var ROUNDS = [
+    { a1:1,  r:1, n:8,  label:'Rodada 1 · números de 1 a 8' },
+    { a1:5,  r:3, n:8,  label:'Rodada 2 · razão 3' },
+    { a1:-6, r:4, n:8,  label:'Rodada 3 · com números negativos' },
+    { a1:2,  r:5, n:10, label:'Rodada 4 · desafio final (5 pares)' }
+  ];
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var tmp=a[i]; a[i]=a[j]; a[j]=tmp;
+    }
+    return a;
+  }
+
+  var totalPairs = ROUNDS.reduce(function(s,r){ return s + r.n/2; }, 0);
+  document.getElementById('scoreTotal').textContent = totalPairs;
+  document.getElementById('finalTotal').textContent = totalPairs;
+
+  var mistakes = 0;
+  var pairsFound = 0;
+  var roundIdx = 0;
+  var scoreVal = document.getElementById('scoreVal');
+  var dotsEl = document.getElementById('dots');
+  ROUNDS.forEach(function(){ dotsEl.appendChild(document.createElement('span')); });
+  function updateDots(){
+    Array.prototype.forEach.call(dotsEl.children, function(d,i){
+      d.className = i < roundIdx ? 'done' : (i === roundIdx ? 'current' : '');
+    });
+  }
+
+  var grid = document.getElementById('grid');
+  var roundTitle = document.getElementById('roundTitle');
+  var roundSub = document.getElementById('roundSub');
+  var targetVal = document.getElementById('targetVal');
+  var pairsLog = document.getElementById('pairsLog');
+  var roundMsg = document.getElementById('roundMsg');
+  var nextBtn = document.getElementById('nextBtn');
+
+  var selected = [];
+  var roundConfig, target, matchedCount, roundPairs;
+
+  function buildRound(){
+    roundConfig = ROUNDS[roundIdx];
+    target = 2*roundConfig.a1 + (roundConfig.n-1)*roundConfig.r;
+    matchedCount = 0;
+    roundPairs = roundConfig.n/2;
+    selected = [];
+    grid.innerHTML = ''; pairsLog.innerHTML = ''; roundMsg.textContent=''; roundMsg.className='round-msg';
+    nextBtn.style.display = 'none';
+    updateDots();
+
+    roundTitle.textContent = roundConfig.label;
+    roundSub.innerHTML = 'P.A.: a<sub>1</sub> = ' + roundConfig.a1 + ', r = ' + roundConfig.r + ', ' + roundConfig.n + ' termos.';
+    targetVal.textContent = target;
+
+    var values = [];
+    for(var i=0;i<roundConfig.n;i++){ values.push(roundConfig.a1 + i*roundConfig.r); }
+    var shuffled = shuffle(values);
+    shuffled.forEach(function(v){
+      var c = document.createElement('button');
+      c.className = 'gcard';
+      c.type = 'button';
+      c.textContent = v;
+      c.dataset.value = v;
+      c.addEventListener('click', function(){ onPick(c); });
+      grid.appendChild(c);
+    });
+  }
+
+  function onPick(card){
+    if(card.classList.contains('matched') || card.classList.contains('selected')) return;
+    if(selected.length === 2) return;
+    card.classList.add('selected');
+    selected.push(card);
+    if(selected.length === 2){
+      var sum = Number(selected[0].dataset.value) + Number(selected[1].dataset.value);
+      if(sum === target){
+        selected.forEach(function(c){ c.classList.remove('selected'); c.classList.add('matched'); });
+        matchedCount++;
+        pairsFound++;
+        scoreVal.textContent = Math.max(0, pairsFound - mistakes);
+        var tag = document.createElement('span');
+        tag.textContent = selected[0].dataset.value + ' + ' + selected[1].dataset.value + ' = ' + target;
+        pairsLog.appendChild(tag);
+        selected = [];
+        if(matchedCount === roundPairs) roundComplete();
+      } else {
+        mistakes++;
+        scoreVal.textContent = Math.max(0, pairsFound - mistakes);
+        selected.forEach(function(c){ c.classList.add('wrong'); });
+        setTimeout(function(){
+          selected.forEach(function(c){ c.classList.remove('selected'); c.classList.remove('wrong'); });
+          selected = [];
+        }, 500);
+      }
+    }
+  }
+
+  function roundComplete(){
+    var total = target * roundPairs;
+    roundMsg.innerHTML = '✔ Todos os pares encontrados! ' + roundPairs + ' pares × ' + target + ' = <strong>S = ' + total + '</strong> — exatamente a fórmula S<sub>n</sub> = (a<sub>1</sub>+a<sub>n</sub>)·n/2 em ação.';
+    roundMsg.className = 'round-msg ok';
+    nextBtn.textContent = (roundIdx === ROUNDS.length-1) ? 'Ver resultado final' : 'Próxima rodada →';
+    nextBtn.style.display = 'block';
+  }
+
+  nextBtn.addEventListener('click', function(){
+    roundIdx++;
+    if(roundIdx >= ROUNDS.length) finish();
+    else buildRound();
+  });
+
+  function finish(){
+    updateDots();
+    document.getElementById('gameCard').style.display = 'none';
+    var finalCard = document.getElementById('finalCard');
+    var perfScore = Math.max(0, pairsFound - mistakes);
+    document.getElementById('finalScore').textContent = perfScore;
+    var msg;
+    if(mistakes === 0) msg = 'Perfeito! Você encontrou todos os pares de Gauss sem nenhum erro — a lógica da soma está craque.';
+    else if(perfScore/totalPairs >= 0.7) msg = 'Muito bom, com ' + mistakes + ' tentativas erradas. Você já enxerga os extremos que se equilibram.';
+    else msg = 'Você terminou com ' + mistakes + ' tentativas erradas. Vale jogar de novo prestando atenção em a1 + an.';
+    document.getElementById('finalMsg').textContent = msg;
+    finalCard.style.display = 'block';
+    finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(perfScore, totalPairs);
+  }
+
+  buildRound();
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

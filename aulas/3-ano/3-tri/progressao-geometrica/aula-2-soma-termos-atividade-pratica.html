@@ -1,0 +1,362 @@
+<title>Pratique: Soma da PG em 3 Níveis</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.tier2{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.tier3{ color:var(--decay-ink); background:var(--decay-soft); }
+  .hero{ text-align:center; padding:38px 8px 26px; }
+  .hero h1{ font-size:clamp(1.7rem,4.4vw,2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.1rem); max-width:56ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .progress-pill{
+    position:sticky; top:calc(10px + env(safe-area-inset-top,0px)); z-index:50;
+    max-width:820px; margin:0 auto 22px; background:var(--surface); border:1.5px solid var(--line-strong);
+    border-radius:999px; padding:.55em 1.1em; box-shadow:0 10px 24px -12px var(--shadow);
+    display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--ink-soft);
+  }
+  .progress-pill .bar{ flex:1; height:8px; border-radius:999px; background:var(--surface-2); overflow:hidden; }
+  .progress-pill .bar > span{ display:block; height:100%; background:var(--primary); border-radius:999px; transition:width .35s ease; width:0%; }
+  .tiertitle{ display:flex; align-items:center; gap:10px; margin:30px 0 14px; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin:0 0 16px; box-shadow:0 16px 34px -26px var(--shadow); }
+  .qcard.done{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .qcard .statement{ font-size:.95rem; color:var(--ink); margin:0 0 4px; font-weight:600; }
+  .btnrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  button.reveal{ border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.8rem; border-radius:10px; padding:.5em 1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal.ghost{ border-color:var(--line-strong); color:var(--ink-soft); }
+  .hintbox{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .25s ease, margin .25s ease; background:var(--surface-2); border:1px dashed var(--line-strong); border-radius:10px; padding:0 14px; }
+  .hintbox.open{ max-height:200px; opacity:1; padding:10px 14px; margin-top:10px; }
+  .hintbox p{ margin:0; font-size:.86rem; color:var(--ink-soft); font-style:italic; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:500px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.9rem; }
+  .selfcheck{ display:none; gap:8px; margin-top:12px; }
+  .selfcheck.show{ display:flex; flex-wrap:wrap; }
+  button.self{ flex:1 1 160px; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); font-family:'Archivo',sans-serif; font-weight:700; font-size:.8rem; padding:.6em 1em; cursor:pointer; }
+  button.self.ok:hover{ border-color:var(--success); background:var(--success-soft); }
+  button.self.no:hover{ border-color:var(--danger); background:var(--danger-soft); }
+  button.self:disabled{ opacity:.5; cursor:default; }
+  button.self.picked-ok{ border-color:var(--success); background:var(--success-soft); color:var(--success); }
+  button.self.picked-no{ border-color:var(--danger); background:var(--danger-soft); color:var(--danger); }
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:22px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · Pratique mais</div>
+    <h1>Soma da PG em <span style="color:var(--primary);">3 níveis</span></h1>
+    <p class="subtitle">9 problemas organizados do básico ao avançado/financeiro. Peça uma dica se travar, confira a resolução e diga sinceramente se você acertou sozinho — isso vira seu resultado final.</p>
+  </div>
+
+  <div class="progress-pill">
+    <span>Progresso</span>
+    <div class="bar"><span id="barFill"></span></div>
+    <span id="progressText">0/9 concluídos</span>
+  </div>
+
+  <div class="tiertitle"><span class="eyebrow" style="margin:0;">Nível 1 · Básico</span></div>
+
+  <div class="qcard" data-hint="Identifique a₁ e q na sequência dada, depois aplique Sₙ = a₁(qⁿ−1)/(q−1).">
+    <p class="statement">1. Calcule a soma dos 5 primeiros termos da PG (3, 6, 12, 24, …).</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>a₁ = 3, q = 6 ÷ 3 = 2, n = 5.</p>
+      <p>S₅ = a₁·(q⁵ − 1) ÷ (q − 1) = 3·(32 − 1) ÷ 1 = 3·31</p>
+      <p><strong>S₅ = 93</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="Substitua direto os valores na fórmula da soma: a₁ = 4, q = 3, n = 4.">
+    <p class="statement">2. Numa PG, a₁ = 4 e q = 3. Determine a soma dos 4 primeiros termos.</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>S₄ = a₁·(q⁴ − 1) ÷ (q − 1) = 4·(81 − 1) ÷ 2 = 4·80 ÷ 2</p>
+      <p><strong>S₄ = 160</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="Quando q &lt; 1, prefira Sₙ = a₁(1 − qⁿ)/(1 − q) para trabalhar só com números positivos.">
+    <p class="statement">3. Determine a soma dos termos da PG (100, 50, 25, 12,5) — apenas esses 4 termos.</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>a₁ = 100, q = 50 ÷ 100 = 0,5, n = 4.</p>
+      <p>S₄ = a₁·(1 − q⁴) ÷ (1 − q) = 100·(1 − 0,0625) ÷ 0,5 = 100·0,9375 ÷ 0,5</p>
+      <p><strong>S₄ = 187,5</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="tiertitle"><span class="eyebrow tier2" style="margin:0;">Nível 2 · Intermediário</span></div>
+
+  <div class="qcard" data-hint="Isole a₁ na fórmula da soma, substituindo Sₙ = 728, q = 3 e n = 6.">
+    <p class="statement">4. A soma dos 6 primeiros termos de uma PG é 728 e a razão é 3. Determine o primeiro termo a₁.</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>728 = a₁·(3⁶ − 1) ÷ (3 − 1) = a₁·728 ÷ 2 = a₁·364</p>
+      <p><strong>a₁ = 728 ÷ 364 = 2</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="Isole qⁿ na equação da soma e reconheça a potência de 3 resultante.">
+    <p class="statement">5. Uma PG tem a₁ = 5, razão q = 3, e a soma dos n primeiros termos é 605. Determine n.</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>605 = 5·(3<sup>n</sup> − 1) ÷ (3 − 1) → 605 = 5·(3<sup>n</sup> − 1) ÷ 2 → 242 = 3<sup>n</sup> − 1 → 3<sup>n</sup> = 243</p>
+      <p>Como 3⁵ = 243, então <strong>n = 5</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="Ache q usando a₄ = a₂·q², depois volte a a₁ = a₂ ÷ q antes de somar.">
+    <p class="statement">6. Numa PG, a₂ = 6 e a₄ = 54 (razão positiva). Determine a soma dos 4 primeiros termos.</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>a₄ = a₂·q² → 54 = 6·q² → q² = 9 → q = 3.</p>
+      <p>a₁ = a₂ ÷ q = 6 ÷ 3 = 2.</p>
+      <p>S₄ = a₁·(q⁴ − 1) ÷ (q − 1) = 2·(81 − 1) ÷ 2 = 2·80 ÷ 2</p>
+      <p><strong>S₄ = 80</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="tiertitle"><span class="eyebrow tier3" style="margin:0;">Nível 3 · Avançado / financeiro</span></div>
+
+  <div class="qcard" data-hint="Modele como no exemplo da aula: a₁ = R·(1+i) (o primeiro depósito já rendeu 1 mês), razão q = (1+i), e aplique a fórmula da soma.">
+    <p class="statement">7. Uma pessoa deposita R$ 300,00 no início de cada mês numa aplicação que rende 2% ao mês, durante 6 meses. Qual é o total acumulado ao final do 6º mês?</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>a₁ = 300 · 1,02 = 306 (montante do 1º depósito após 1 mês) · q = 1,02 · n = 6.</p>
+      <p>S₆ = a₁·(q⁶ − 1) ÷ (q − 1) = 306·(1,126162 − 1) ÷ 0,02 = 306·0,126162 ÷ 0,02</p>
+      <p><strong>S₆ ≈ R$ 1.930,28</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="Aplique diretamente Sₙ = a₁(qⁿ−1)/(q−1) com a₁ = 700, q = 1,05 e n = 4.">
+    <p class="statement">8. Uma compra de R$ 3.000,00 será paga em 4 parcelas mensais que formam uma PG crescente de razão 1,05 (juros de 5% ao mês embutidos), sendo a primeira parcela de R$ 700,00. Qual é o valor total pago ao final das 4 parcelas?</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>S₄ = 700·(1,05⁴ − 1) ÷ (1,05 − 1) = 700·(1,21550625 − 1) ÷ 0,05 = 700·0,21550625 ÷ 0,05</p>
+      <p><strong>S₄ ≈ R$ 3.017,09</strong></p>
+      <p class="hint" style="font-style:italic;color:var(--ink-faint);">Faz sentido pagar um pouco mais que os R$ 3.000,00 à vista: é o custo do parcelamento com juros.</p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="qcard" data-hint="É uma PG de razão inteira; aplique Sₙ = a₁(qⁿ−1)/(q−1) diretamente, com a₁ = 150, q = 2, n = 7.">
+    <p class="statement">9. Uma ONG recebe doações mensais que dobram a cada mês, começando com R$ 150,00 no 1º mês. Depois de 7 meses de campanha, qual foi o total arrecadado?</p>
+    <div class="btnrow">
+      <button class="reveal ghost" onclick="toggleHint(this)">💡 Dica</button>
+      <button class="reveal" onclick="toggleAnswer(this)">Ver resposta</button>
+    </div>
+    <div class="hintbox"><p></p></div>
+    <div class="answer">
+      <p>S₇ = a₁·(q⁷ − 1) ÷ (q − 1) = 150·(128 − 1) ÷ 1 = 150·127</p>
+      <p><strong>S₇ = R$ 19.050,00</strong></p>
+    </div>
+    <div class="selfcheck"><button class="self ok" onclick="selfReport(this,true)">✓ Acertei sozinho</button><button class="self no" onclick="selfReport(this,false)">✗ Precisei de ajuda</button></div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado da prática</div>
+    <div class="num"><span id="finalScore">0</span>/9</div>
+    <p id="finalMsg" class="lede" style="max-width:46ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-pg2-atv-pratica';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+function toggleHint(btn){
+  var box = btn.closest('.qcard').querySelector('.hintbox');
+  var p = box.querySelector('p');
+  if(!p.textContent){ p.textContent = btn.closest('.qcard').dataset.hint; }
+  var open = box.classList.toggle('open');
+  btn.textContent = open ? '💡 Ocultar dica' : '💡 Dica';
+}
+
+function toggleAnswer(btn){
+  var card = btn.closest('.qcard');
+  var ans = card.querySelector('.answer');
+  var open = ans.classList.toggle('open');
+  btn.textContent = open ? 'Ocultar resposta' : 'Ver resposta';
+  if(open){ card.querySelector('.selfcheck').classList.add('show'); }
+}
+
+(function(){
+  var TOTAL = document.querySelectorAll('.qcard').length;
+  var done = 0, correct = 0;
+  var barFill = document.getElementById('barFill');
+  var progressText = document.getElementById('progressText');
+
+  window.selfReport = function(btn, ok){
+    var group = btn.closest('.selfcheck');
+    if(group.dataset.done) return;
+    group.dataset.done = '1';
+    Array.prototype.forEach.call(group.querySelectorAll('.self'), function(b){ b.disabled = true; });
+    btn.classList.add(ok ? 'picked-ok' : 'picked-no');
+    if(ok) correct++;
+    done++;
+    btn.closest('.qcard').classList.add('done');
+    updateProgress();
+    if(done === TOTAL){ finish(); }
+  };
+
+  function updateProgress(){
+    barFill.style.width = (done / TOTAL * 100) + '%';
+    progressText.textContent = done + '/' + TOTAL + ' concluídos';
+  }
+
+  function finish(){
+    var panel = document.getElementById('finalPanel');
+    document.getElementById('finalScore').textContent = correct;
+    var msg = document.getElementById('finalMsg');
+    if(correct === TOTAL) msg.textContent = 'Excelente! Você resolveu os 9 problemas sozinho, do básico ao financeiro.';
+    else if(correct >= TOTAL/2) msg.textContent = 'Bom progresso! Revise os problemas em que precisou de ajuda antes da próxima aula.';
+    else msg.textContent = 'Continue praticando — releia as dicas e resoluções com calma antes de seguir em frente.';
+    panel.style.display = 'block';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(correct, TOTAL);
+  }
+})();
+
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

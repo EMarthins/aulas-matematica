@@ -1,0 +1,367 @@
+<title>Atividade ENEM: Arcos, Seno e Cosseno no Ciclo</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:70ch; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .hero{ text-align:center; padding:38px 8px 26px; }
+  .hero h1{ font-size:clamp(1.7rem,4.4vw,2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; }
+  .hero .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.1rem); max-width:56ch; margin:0 auto; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badgerow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+  .progress-pill{
+    position:sticky; top:calc(10px + env(safe-area-inset-top,0px)); z-index:50;
+    max-width:820px; margin:0 auto 18px; background:var(--surface); border:1.5px solid var(--line-strong);
+    border-radius:999px; padding:.55em 1.1em; box-shadow:0 10px 24px -12px var(--shadow);
+    display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--ink-soft);
+  }
+  .progress-pill .bar{ flex:1; height:8px; border-radius:999px; background:var(--surface-2); overflow:hidden; }
+  .progress-pill .bar > span{ display:block; height:100%; background:var(--primary); border-radius:999px; transition:width .35s ease; width:0%; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:0 0 22px; box-shadow:0 20px 40px -28px var(--shadow); }
+  .qsource{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--decay-ink); background:var(--decay-soft); border-radius:999px; padding:.3em .8em; display:inline-block; margin-bottom:10px; }
+  .qcard h3{ font-size:1.12rem; font-weight:800; margin:0 0 8px; line-height:1.25; }
+  .qcard .statement{ font-size:.95rem; color:var(--ink); margin:0 0 14px; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.92rem; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .choice{ display:flex; align-items:center; gap:.6em; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.94rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .choice .let{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--ink-faint); flex:0 0 auto; }
+  .fb{ font-size:.85rem; margin-top:6px; font-weight:700; min-height:1.2em; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  button.reveal{ margin-top:8px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal:disabled{ opacity:.45; cursor:default; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.9rem; }
+  .final-panel{ text-align:center; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:20px; padding:34px 24px; margin-top:8px; box-shadow:0 20px 44px -24px var(--shadow); }
+  .final-panel .num{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--primary); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+  @media (max-width:600px){ .qcard{ padding:18px 16px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow">Atividade extra · No ENEM é assim</div>
+    <h1>Arcos, seno e cosseno <span style="color:var(--primary);">caindo no ENEM</span></h1>
+    <p class="subtitle">4 questões reais de ENEM e vestibulares sobre arcos côngruos, comprimento de arco, radianos e coordenadas no ciclo trigonométrico. Resolva, confira e veja a resolução passo a passo.</p>
+    <div class="badgerow">
+      <span class="badge">4 questões</span>
+      <span class="badge">ENEM · UFSCar · UFRGS</span>
+      <span class="badge">Aula 1 · Trigonometria no ciclo</span>
+    </div>
+  </div>
+
+  <div class="progress-pill">
+    <span>Progresso</span>
+    <div class="bar"><span id="barFill"></span></div>
+    <span id="progressText">0/4 respondidas</span>
+    <span style="margin-left:auto;">Acertos: <strong id="scoreText">0</strong></span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="qcard" data-q="1">
+    <span class="qsource">ENEM 2004 · X-Games Brasil</span>
+    <h3>A manobra "900" do skatista Mineirinho</h3>
+    <p class="statement">Nos X-Games Brasil, em maio de 2004, o skatista brasileiro Sandro Dias, apelidado "Mineirinho", conseguiu realizar a manobra denominada "900", na modalidade skate vertical, tornando-se o segundo atleta no mundo a conseguir esse feito. A denominação "900" refere-se ao número de graus que o atleta gira no ar em torno de seu próprio corpo. Assim, um atleta que realiza essa manobra dá, em torno do próprio corpo:</p>
+    <svg viewBox="0 0 200 120" style="width:180px;height:auto;display:block;margin:0 auto 14px;">
+      <circle cx="100" cy="60" r="42" fill="none" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="5 5"/>
+      <path d="M100,18 A42,42 0 1,1 64,88" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" marker-end="url(#arwS)"/>
+      <defs><marker id="arwS" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--primary)"/></marker></defs>
+      <circle cx="100" cy="60" r="3" fill="var(--ink-faint)"/>
+      <text x="100" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="var(--ink-soft)">900°</text>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">A)</span> uma volta completa.</button>
+      <button class="choice qopt" data-ok="0"><span class="let">B)</span> uma volta e meia.</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> duas voltas completas.</button>
+      <button class="choice qopt" data-ok="1"><span class="let">D)</span> duas voltas e meia.</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> cinco voltas completas.</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>Uma volta completa em torno de um eixo corresponde a uma revolução de <strong>360°</strong>. Para saber quantas voltas o atleta deu, dividimos os 900° pela medida de uma volta completa:</p>
+      <p class="formula" style="font-size:.95rem;">900° ÷ 360° = 2,5 voltas</p>
+      <p>2,5 voltas é o mesmo que <strong>duas voltas e meia</strong> — alternativa <strong>D</strong>. É a mesma lógica dos arcos côngruos: 900° é côngruo a 900° − 2·360° = 180°, ou seja, termina na mesma posição que meia volta (180°) a mais de duas voltas completas.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard" data-q="2">
+    <span class="qsource">UFSCar (vestibular)</span>
+    <h3>A pizza fatiada em setores circulares</h3>
+    <p class="statement">Uma pizza circular será fatiada, a partir do seu centro, em setores circulares. Se o arco de cada setor medir 0,8 radiano, obtém-se um número máximo N de fatias idênticas, sobrando, no final, uma fatia menor, que é indicada por fatia N + 1. Considerando π = 3,14, a medida do arco correspondente a essa fatia menor, em radiano, é de aproximadamente:</p>
+    <svg viewBox="0 0 200 200" style="width:170px;height:auto;display:block;margin:0 auto 14px;">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="var(--growth)" stroke-width="3"/>
+      <g stroke="var(--line-strong)" stroke-width="1.4">
+        <line x1="100" y1="100" x2="100" y2="20"/>
+        <line x1="100" y1="100" x2="167.5" y2="43.2"/>
+        <line x1="100" y1="100" x2="178.9" y2="120.9"/>
+        <line x1="100" y1="100" x2="127.8" y2="176.6"/>
+        <line x1="100" y1="100" x2="55.7" y2="171.6"/>
+        <line x1="100" y1="100" x2="21.9" y2="107.1"/>
+        <line x1="100" y1="100" x2="39.7" y2="35.8"/>
+      </g>
+      <path d="M100,20 A80,80 0 0,1 39.7,35.8 Z" fill="var(--growth-soft)" opacity=".7"/>
+      <text x="100" y="102" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="var(--ink-faint)">0,8 rad cada</text>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">a)</span> 0,74</button>
+      <button class="choice qopt" data-ok="0"><span class="let">b)</span> 0,72</button>
+      <button class="choice qopt" data-ok="1"><span class="let">c)</span> 0,68</button>
+      <button class="choice qopt" data-ok="0"><span class="let">d)</span> 0,56</button>
+      <button class="choice qopt" data-ok="0"><span class="let">e)</span> 0,34</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>A pizza inteira corresponde a uma volta completa: 2π = 2 · 3,14 = <strong>6,28 rad</strong>.</p>
+      <p>Dividindo pelo arco de cada fatia: 6,28 ÷ 0,8 = <strong>7,85</strong>. Isso significa que cabem <strong>7 fatias completas</strong> de 0,8 rad (N = 7), sobrando uma fração de 0,85 de fatia.</p>
+      <p>O arco da fatia menor (N+1) é essa fração multiplicada pelo arco de uma fatia inteira: 0,85 × 0,8 = <strong>0,68 rad</strong> — alternativa <strong>c</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qcard" data-q="3">
+    <span class="qsource">UFRGS 2019 (vestibular)</span>
+    <h3>Distância entre dois pontos no ciclo trigonométrico</h3>
+    <p class="statement">Na circunferência de raio 1, os pontos M e N são tais que o arco de extremidades A e M mede π/2 rad e o arco de extremidades A e N mede −π/3 rad (A é a origem dos arcos, no eixo horizontal). A distância entre os pontos M e N é:</p>
+    <svg viewBox="0 0 220 220" style="width:190px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="20" y1="110" x2="200" y2="110" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <line x1="110" y1="20" x2="110" y2="200" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="3 3"/>
+      <circle cx="110" cy="110" r="80" fill="none" stroke="var(--primary)" stroke-width="2.6"/>
+      <circle cx="190" cy="110" r="3.5" fill="var(--ink-faint)"/>
+      <text x="196" y="106" font-family="JetBrains Mono" font-size="11" fill="var(--ink-faint)">A</text>
+      <circle cx="110" cy="30" r="4.5" fill="var(--growth)"/>
+      <text x="118" y="26" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="var(--growth)">M</text>
+      <circle cx="150" cy="179.3" r="4.5" fill="var(--decay)"/>
+      <text x="156" y="182" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="var(--decay)">N</text>
+      <line x1="110" y1="30" x2="150" y2="179.3" stroke="var(--ink-soft)" stroke-width="1.8" stroke-dasharray="2 3"/>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">a)</span> √(2 − √3)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">b)</span> 2 − √3</button>
+      <button class="choice qopt" data-ok="1"><span class="let">c)</span> √(2 + √3)</button>
+      <button class="choice qopt" data-ok="0"><span class="let">d)</span> 1</button>
+      <button class="choice qopt" data-ok="0"><span class="let">e)</span> 2 + √3</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>No ciclo (raio 1), cada ponto tem coordenadas (cos θ, sen θ). Para M, θ = π/2: M = (cos 90°, sen 90°) = <strong>(0, 1)</strong>.</p>
+      <p>Para N, θ = −π/3 = −60°: N = (cos(−60°), sen(−60°)) = <strong>(1/2, −√3/2)</strong>.</p>
+      <p>Distância MN pelo teorema de Pitágoras: d² = (0 − 1/2)² + (1 − (−√3/2))² = 1/4 + (1 + √3/2)²</p>
+      <p>(1 + √3/2)² = 1 + √3 + 3/4 = 7/4 + √3, então d² = 1/4 + 7/4 + √3 = 2 + √3.</p>
+      <p>Logo, d = <strong>√(2 + √3)</strong> — alternativa <strong>c</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard" data-q="4">
+    <span class="qsource">ENEM 2021 · 2º dia — Questão 131</span>
+    <h3>O eletrocardiograma e o batimento cardíaco</h3>
+    <p class="statement">O eletrocardiograma é um exame cardíaco que registra a atividade elétrica do coração ao longo do tempo, produzindo um gráfico periódico — cada "onda" do gráfico corresponde a um batimento. No exame de um paciente, o gráfico mostrou que cada batimento (um ciclo completo) demorou exatamente 1 segundo para se repetir. De acordo com o eletrocardiograma apresentado, qual foi o número de batimentos cardíacos por minuto desse paciente?</p>
+    <svg viewBox="0 0 260 90" style="width:100%;max-width:320px;height:auto;display:block;margin:0 auto 14px;">
+      <line x1="10" y1="45" x2="250" y2="45" stroke="var(--line)" stroke-width="1"/>
+      <path d="M10,45 L40,45 L48,10 L56,80 L64,45 L100,45 L108,10 L116,80 L124,45 L160,45 L168,10 L176,80 L184,45 L220,45 L228,10 L236,80 L244,45 L250,45" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+      <line x1="64" y1="60" x2="124" y2="60" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="2 2"/>
+      <text x="94" y="72" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--ink-faint)">1 período = 1 s</text>
+    </svg>
+    <div class="enemq">
+      <button class="choice qopt" data-ok="0"><span class="let">A)</span> 30</button>
+      <button class="choice qopt" data-ok="1"><span class="let">B)</span> 60</button>
+      <button class="choice qopt" data-ok="0"><span class="let">C)</span> 90</button>
+      <button class="choice qopt" data-ok="0"><span class="let">D)</span> 120</button>
+      <button class="choice qopt" data-ok="0"><span class="let">E)</span> 150</button>
+    </div>
+    <div class="fb"></div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p>O <strong>período</strong> de um fenômeno periódico é o tempo que leva para um ciclo completo se repetir — igual ao que vimos para o ciclo trigonométrico e as funções seno e cosseno.</p>
+      <p>Se cada batimento (1 ciclo) dura <strong>1 segundo</strong>, em 60 segundos (1 minuto) o coração completa 60 ciclos.</p>
+      <p>Frequência = 60 batimentos por minuto — alternativa <strong>B</strong>. É o mesmo raciocínio usado para achar o período de sen x e cos x, só que aqui aplicado a um sinal do corpo humano em vez de um gráfico trigonométrico.</p>
+    </div>
+  </div>
+
+  <div class="final-panel" id="finalPanel" style="display:none;">
+    <div class="eyebrow">Resultado final</div>
+    <div class="num"><span id="finalScore">0</span>/4</div>
+    <p id="finalMsg" class="lede" style="max-width:44ch;margin:8px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-tric1-atv-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+function toggleAnswer(btn){
+  var ans = btn.nextElementSibling;
+  ans.classList.toggle('open');
+  btn.textContent = ans.classList.contains('open') ? 'Ocultar resolução' : 'Ver resolução';
+}
+
+(function(){
+  var TOTAL = 4;
+  var score = 0, answered = 0;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.qcard'));
+  var barFill = document.getElementById('barFill');
+  var progressText = document.getElementById('progressText');
+  var scoreText = document.getElementById('scoreText');
+
+  cards.forEach(function(card){
+    var opts = card.querySelectorAll('.qopt');
+    var fb = card.querySelector('.fb');
+    var locked = false;
+    opts.forEach(function(opt){
+      opt.addEventListener('click', function(){
+        if(locked) return;
+        locked = true;
+        var ok = opt.getAttribute('data-ok') === '1';
+        opts.forEach(function(o){
+          o.disabled = true;
+          if(o.getAttribute('data-ok') === '1'){ o.classList.add('correct'); }
+          else if(o === opt){ o.classList.add('wrong'); }
+        });
+        if(ok){
+          score++;
+          fb.textContent = 'Certo! Essa é a alternativa correta.';
+          fb.className = 'fb ok';
+        } else {
+          fb.textContent = 'Não é essa — veja a resolução para entender o raciocínio certo.';
+          fb.className = 'fb no';
+        }
+        answered++;
+        updateProgress();
+        if(answered === TOTAL){ finish(); }
+      });
+    });
+  });
+
+  function updateProgress(){
+    barFill.style.width = (answered / TOTAL * 100) + '%';
+    progressText.textContent = answered + '/' + TOTAL + ' respondidas';
+    scoreText.textContent = score;
+  }
+
+  function finish(){
+    var panel = document.getElementById('finalPanel');
+    document.getElementById('finalScore').textContent = score;
+    var msg = document.getElementById('finalMsg');
+    if(score === TOTAL) msg.textContent = 'Mandou muito bem — acertou todas! Você domina arcos, radianos e coordenadas no ciclo trigonométrico.';
+    else if(score >= TOTAL/2) msg.textContent = 'Bom resultado! Releia as resoluções das que errou para fechar os detalhes.';
+    else msg.textContent = 'Vale revisar arcos côngruos, comprimento de arco e coordenadas no ciclo antes de seguir para a próxima aula.';
+    panel.style.display = 'block';
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+})();
+
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

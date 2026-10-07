@@ -1,0 +1,467 @@
+<title>Fábrica da Composta e Espelho da Inversa</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:980px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  h2.sec-title{ font-size:clamp(1.2rem,2.6vw,1.6rem); font-weight:800; margin:0 0 6px; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:70ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:66ch; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0 22px; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* --- fábrica da composta --- */
+  .factory-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (max-width:760px){ .factory-grid{ grid-template-columns:1fr; } }
+  .conveyor{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:14px 0 10px; }
+  .chip{ font-family:'JetBrains Mono',monospace; font-weight:700; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:10px; padding:.45em .75em; font-size:.86rem; }
+  .chip.input{ background:var(--primary-soft); border-color:var(--primary); color:var(--primary); }
+  .chip.output{ background:var(--surface-2); border-color:var(--line-strong); color:var(--ink-faint); min-width:2.6em; text-align:center; transition:background .2s, border-color .2s, color .2s; }
+  .chip.output.ready{ background:var(--success-soft); border-color:var(--success); color:var(--success); }
+  .arrow-sep{ color:var(--ink-faint); font-size:1rem; }
+  .slot{ min-width:56px; min-height:38px; border:2px dashed var(--line-strong); border-radius:10px; display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.86rem; color:var(--ink-faint); background:var(--surface); padding:.2em .5em; }
+  .slot.filled{ border-style:solid; border-color:var(--primary); color:var(--primary); background:var(--primary-soft); }
+  .tile-pool{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .tile{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.85rem; border:1.5px solid var(--line-strong); background:var(--surface); border-radius:10px; padding:.45em .9em; cursor:pointer; transition:border-color .15s, background .15s, opacity .2s; color:var(--ink); }
+  .tile:hover{ border-color:var(--primary); }
+  .tile.used{ opacity:.3; pointer-events:none; }
+  .tile.flash-wrong{ animation:shake .3s; border-color:var(--danger); background:var(--danger-soft); }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-4px);} 75%{transform:translateX(4px);} }
+  .factory-status{ margin-top:10px; font-size:.84rem; font-weight:700; min-height:1.2em; }
+  .factory-status.ok{ color:var(--success); }
+  .factory-status.solved-card{ border-color:color-mix(in srgb, var(--success) 35%, var(--line)) !important; background:var(--success-soft) !important; }
+
+  /* --- espelho da inversa --- */
+  .mirror-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .mirror-grid{ grid-template-columns:1fr; } }
+  .mirror-card{ text-align:center; }
+  .mirror-svg{ width:100%; max-width:260px; height:auto; display:block; margin:6px auto 0; }
+  .candidate circle{ transition:fill .15s, stroke .15s; cursor:pointer; }
+  .candidate:hover circle{ stroke:var(--primary); stroke-width:2.4; }
+  .candidate text{ font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; pointer-events:none; fill:var(--ink); }
+  .mirror-msg{ font-size:.82rem; font-weight:700; margin-top:6px; min-height:1.2em; }
+  .mirror-msg.ok{ color:var(--success); } .mirror-msg.no{ color:var(--danger); }
+
+  .final{ display:none; text-align:center; padding:28px 20px; margin-top:8px; }
+  .final.show{ display:block; }
+  .final .big-score{ font-family:'JetBrains Mono',monospace; font-size:2.4rem; font-weight:700; color:var(--primary); }
+
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · Composição e inversa · Atividade criativa</div>
+    <div class="score-pill">Resolvidos: <span id="scoreVal">0</span>/7</div>
+  </div>
+
+  <div class="eyebrow">Laboratório interativo</div>
+  <h1 class="title">A fábrica da composta e o espelho da inversa</h1>
+  <p class="subtitle">Duas mecânicas, um só tema. Primeiro, monte a linha de montagem certa clicando nas peças na ordem correta para calcular uma função composta. Depois, ache o "reflexo" exato de cada ponto no espelho da reta y = x.</p>
+
+  <!-- PARTE 1: FÁBRICA -->
+  <h2 class="sec-title">Parte 1 · A fábrica da função composta</h2>
+  <div class="callout">
+    <h4>Como jogar</h4>
+    <p>Cada linha de montagem tem peças embaralhadas — algumas certas, outras armadilhas. Clique nelas <strong>na ordem em que a composta age</strong> (de dentro para fora) para preencher os encaixes. Peça errada no lugar errado balança e não avança.</p>
+  </div>
+  <div class="factory-grid" id="factoryWrap"></div>
+
+  <!-- PARTE 2: ESPELHO -->
+  <h2 class="sec-title" style="margin-top:8px;">Parte 2 · O espelho da função inversa</h2>
+  <div class="callout">
+    <h4>Como jogar</h4>
+    <p>O gráfico de f⁻¹ é o reflexo do gráfico de f na reta y = x — basta trocar as coordenadas de cada ponto. Em cada rodada, um ponto de f está destacado; clique no ponto que corresponde a ele em f⁻¹.</p>
+  </div>
+  <div class="mirror-grid" id="mirrorWrap"></div>
+
+  <div class="card final" id="finalCard">
+    <div class="eyebrow">Atividade concluída</div>
+    <h2 class="sec-title">Resultado final</h2>
+    <div class="big-score"><span id="finalScore">0</span>/7</div>
+    <p class="lede" id="finalMsg" style="margin:10px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-funcoes2-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var TOTAL = 7;
+  var score = 0;
+  var scoreEl = document.getElementById('scoreVal');
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var t=a[i]; a[i]=a[j]; a[j]=t;
+    }
+    return a;
+  }
+
+  function bumpScore(){
+    score++;
+    scoreEl.textContent = score;
+    if(score === TOTAL) finish();
+  }
+
+  function finish(){
+    var finalCard = document.getElementById('finalCard');
+    document.getElementById('finalScore').textContent = score;
+    document.getElementById('finalMsg').textContent = 'Você montou todas as linhas de montagem e achou todos os reflexos. Composição e inversa, dominadas na prática!';
+    finalCard.classList.add('show');
+    finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, TOTAL);
+  }
+
+  /* ================= PARTE 1: FÁBRICA ================= */
+  var puzzles = [
+    {
+      title: 'Linha 1 · (g∘f)(x)',
+      context: 'f(x) = 2x  ·  g(x) = x + 5. Monte primeiro f, depois g.',
+      start: 3,
+      correctOrder: ['×2','+5'],
+      tiles: [
+        {label:'×2', fn:function(x){return x*2;}},
+        {label:'+5', fn:function(x){return x+5;}},
+        {label:'+2', fn:function(x){return x+2;}},
+        {label:'×5', fn:function(x){return x*5;}}
+      ]
+    },
+    {
+      title: 'Linha 2 · (g∘f)(x)',
+      context: 'f(x) = x − 1  ·  g(x) = x². Monte primeiro f, depois g.',
+      start: 4,
+      correctOrder: ['−1','x²'],
+      tiles: [
+        {label:'−1', fn:function(x){return x-1;}},
+        {label:'x²', fn:function(x){return x*x;}},
+        {label:'+1', fn:function(x){return x+1;}},
+        {label:'x³', fn:function(x){return x*x*x;}}
+      ]
+    },
+    {
+      title: 'Linha 3 · (f∘g)(x) — atenção à ordem!',
+      context: 'f(x) = x/2  ·  g(x) = x + 10. Desta vez é f∘g: primeiro g, depois f.',
+      start: 6,
+      correctOrder: ['+10','÷2'],
+      tiles: [
+        {label:'+10', fn:function(x){return x+10;}},
+        {label:'÷2', fn:function(x){return x/2;}},
+        {label:'−10', fn:function(x){return x-10;}},
+        {label:'×2', fn:function(x){return x*2;}}
+      ]
+    },
+    {
+      title: 'Linha 4 · (h∘g∘f)(x) — três etapas',
+      context: 'f(x) = 3x  ·  g(x) = x − 4  ·  h(x) = x². Monte f, depois g, depois h.',
+      start: 2,
+      correctOrder: ['×3','−4','x²'],
+      tiles: [
+        {label:'×3', fn:function(x){return x*3;}},
+        {label:'−4', fn:function(x){return x-4;}},
+        {label:'x²', fn:function(x){return x*x;}},
+        {label:'+4', fn:function(x){return x+4;}},
+        {label:'÷3', fn:function(x){return x/3;}}
+      ]
+    }
+  ];
+
+  var factoryWrap = document.getElementById('factoryWrap');
+  puzzles.forEach(function(puzzle, idx){
+    var card = document.createElement('div');
+    card.className = 'card';
+
+    var h3 = document.createElement('strong');
+    h3.textContent = puzzle.title;
+    card.appendChild(h3);
+
+    var ctx = document.createElement('p');
+    ctx.style.fontSize = '.86rem';
+    ctx.style.marginTop = '4px';
+    ctx.textContent = puzzle.context;
+    card.appendChild(ctx);
+
+    var conveyor = document.createElement('div');
+    conveyor.className = 'conveyor';
+
+    var inChip = document.createElement('span');
+    inChip.className = 'chip input';
+    inChip.textContent = 'x = ' + puzzle.start;
+    conveyor.appendChild(inChip);
+
+    var slots = [];
+    puzzle.correctOrder.forEach(function(){
+      var sep = document.createElement('span');
+      sep.className = 'arrow-sep';
+      sep.textContent = '→';
+      conveyor.appendChild(sep);
+      var slot = document.createElement('span');
+      slot.className = 'slot';
+      slot.textContent = '?';
+      conveyor.appendChild(slot);
+      slots.push(slot);
+    });
+
+    var sepOut = document.createElement('span');
+    sepOut.className = 'arrow-sep';
+    sepOut.textContent = '→';
+    conveyor.appendChild(sepOut);
+
+    var outChip = document.createElement('span');
+    outChip.className = 'chip output';
+    outChip.textContent = '?';
+    conveyor.appendChild(outChip);
+
+    card.appendChild(conveyor);
+
+    var pool = document.createElement('div');
+    pool.className = 'tile-pool';
+    var status = document.createElement('div');
+    status.className = 'factory-status';
+
+    var filledIndex = 0;
+    var appliedFns = [];
+    var solved = false;
+
+    shuffle(puzzle.tiles).forEach(function(tileData){
+      var tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'tile';
+      tile.textContent = tileData.label;
+      tile.addEventListener('click', function(){
+        if(solved || tile.classList.contains('used')) return;
+        var expected = puzzle.correctOrder[filledIndex];
+        if(tileData.label === expected){
+          tile.classList.add('used');
+          appliedFns.push(tileData.fn);
+          slots[filledIndex].textContent = tileData.label;
+          slots[filledIndex].classList.add('filled');
+          filledIndex++;
+          if(filledIndex === puzzle.correctOrder.length){
+            solved = true;
+            var result = puzzle.start;
+            appliedFns.forEach(function(fn){ result = fn(result); });
+            outChip.textContent = result;
+            outChip.classList.add('ready');
+            status.textContent = '✔ Linha montada! Resultado = ' + result + '.';
+            status.className = 'factory-status ok';
+            card.classList.add('solved-card');
+            bumpScore();
+          }
+        } else {
+          tile.classList.add('flash-wrong');
+          setTimeout(function(){ tile.classList.remove('flash-wrong'); }, 320);
+        }
+      });
+      pool.appendChild(tile);
+    });
+
+    card.appendChild(pool);
+    card.appendChild(status);
+    factoryWrap.appendChild(card);
+  });
+
+  /* ================= PARTE 2: ESPELHO ================= */
+  var VBW = 220, VBH = 220, ORIGIN = {x:26, y:194}, SCALE = 14;
+  function toPx(dx, dy){ return {x: ORIGIN.x + dx*SCALE, y: ORIGIN.y - dy*SCALE}; }
+
+  var rounds = [
+    { point:[2,8], candidates:[ {p:[8,2], ok:true}, {p:[2,8], ok:false}, {p:[8,8], ok:false}, {p:[6,2], ok:false} ] },
+    { point:[5,1], candidates:[ {p:[1,5], ok:true}, {p:[5,1], ok:false}, {p:[1,1], ok:false}, {p:[5,5], ok:false} ] },
+    { point:[9,3], candidates:[ {p:[3,9], ok:true}, {p:[9,9], ok:false}, {p:[3,3], ok:false}, {p:[9,3], ok:false} ] }
+  ];
+
+  var svgNS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs){
+    var e = document.createElementNS(svgNS, tag);
+    for(var k in attrs){ e.setAttribute(k, attrs[k]); }
+    return e;
+  }
+
+  var mirrorWrap = document.getElementById('mirrorWrap');
+  rounds.forEach(function(round, ri){
+    var card = document.createElement('div');
+    card.className = 'card mirror-card';
+
+    var label = document.createElement('strong');
+    label.style.fontSize = '.88rem';
+    label.innerHTML = 'Rodada ' + (ri+1) + ' &middot; f passa por (' + round.point[0] + ', ' + round.point[1] + ')';
+    card.appendChild(label);
+
+    var p = document.createElement('p');
+    p.className = 'hint';
+    p.style.marginTop = '2px';
+    p.textContent = 'Clique no ponto correspondente em f⁻¹.';
+    card.appendChild(p);
+
+    var svg = el('svg', {viewBox:'0 0 '+VBW+' '+VBH, class:'mirror-svg'});
+    // axes
+    svg.appendChild(el('line', {x1:ORIGIN.x, y1:10, x2:ORIGIN.x, y2:ORIGIN.y, stroke:'var(--line-strong)', 'stroke-width':1.2}));
+    svg.appendChild(el('line', {x1:ORIGIN.x, y1:ORIGIN.y, x2:206, y2:ORIGIN.y, stroke:'var(--line-strong)', 'stroke-width':1.2}));
+    // y = x diagonal (dashed)
+    var d1 = toPx(0,0), d2 = toPx(12,12);
+    svg.appendChild(el('line', {x1:d1.x, y1:d1.y, x2:d2.x, y2:d2.y, stroke:'var(--line-strong)', 'stroke-width':1, 'stroke-dasharray':'3 3'}));
+
+    // highlighted f point
+    var fp = toPx(round.point[0], round.point[1]);
+    svg.appendChild(el('circle', {cx:fp.x, cy:fp.y, r:5, fill:'var(--growth)'}));
+    var fLbl = el('text', {x:fp.x+7, y:fp.y-6});
+    fLbl.textContent = 'f';
+    fLbl.setAttribute('fill', 'var(--growth-ink)');
+    fLbl.setAttribute('font-family', 'JetBrains Mono');
+    fLbl.setAttribute('font-size', '10');
+    fLbl.setAttribute('font-weight', '700');
+    svg.appendChild(fLbl);
+
+    var msg = document.createElement('div');
+    msg.className = 'mirror-msg';
+
+    var shuffled = shuffle(round.candidates.map(function(c,i){ return {p:c.p, ok:c.ok, letter:String.fromCharCode(65+i)}; }));
+    var roundSolved = false;
+
+    shuffled.forEach(function(cand){
+      var pos = toPx(cand.p[0], cand.p[1]);
+      var g = el('g', {class:'candidate'});
+      var circle = el('circle', {cx:pos.x, cy:pos.y, r:8, fill:'var(--surface)', stroke:'var(--line-strong)', 'stroke-width':1.6});
+      var txt = el('text', {x:pos.x, y:pos.y+3.5, 'text-anchor':'middle'});
+      txt.textContent = cand.letter;
+      g.appendChild(circle);
+      g.appendChild(txt);
+      g.addEventListener('click', function(){
+        if(roundSolved) return;
+        if(cand.ok){
+          roundSolved = true;
+          circle.setAttribute('fill', 'var(--success-soft)');
+          circle.setAttribute('stroke', 'var(--success)');
+          msg.textContent = '✔ Correto! (' + round.point[1] + ', ' + round.point[0] + ') é o reflexo de (' + round.point[0] + ', ' + round.point[1] + ').';
+          msg.className = 'mirror-msg ok';
+          bumpScore();
+        } else {
+          circle.setAttribute('fill', 'var(--danger-soft)');
+          circle.setAttribute('stroke', 'var(--danger)');
+          msg.textContent = '✘ Esse não é o reflexo — tente outro ponto.';
+          msg.className = 'mirror-msg no';
+          setTimeout(function(){
+            if(!roundSolved){
+              circle.setAttribute('fill', 'var(--surface)');
+              circle.setAttribute('stroke', 'var(--line-strong)');
+            }
+          }, 500);
+        }
+      });
+      svg.appendChild(g);
+    });
+
+    card.appendChild(svg);
+    card.appendChild(msg);
+    mirrorWrap.appendChild(card);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

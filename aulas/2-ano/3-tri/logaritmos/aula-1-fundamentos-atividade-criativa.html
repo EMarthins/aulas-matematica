@@ -1,0 +1,351 @@
+<title>A Máquina do Logaritmo</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:980px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1.05fr .95fr; gap:22px; align-items:start; }
+  @media (max-width:800px){ .grid2{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+
+  /* --- painel da máquina (parte 1) --- */
+  .machine-panel{ background:var(--surface); border:1px solid var(--line-strong); border-radius:16px; padding:18px; position:sticky; top:70px; }
+  .machine-panel svg{ width:100%; height:auto; display:block; }
+  .slider-row{ display:flex; flex-direction:column; gap:6px; margin-top:14px; }
+  .slider-row label{ font-size:.78rem; font-weight:700; color:var(--ink-soft); display:flex; justify-content:space-between; }
+  input[type="range"]{ width:100%; accent-color:var(--primary); }
+  .equiv-box{ display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:14px; padding:14px; background:var(--surface-2); border-radius:12px; }
+  .equiv-side{ font-family:'JetBrains Mono',monospace; font-size:1.15rem; font-weight:700; text-align:center; padding:.4em .7em; border-radius:10px; }
+  .equiv-side.exp{ color:var(--growth-ink); background:var(--growth-soft); }
+  .equiv-side.log{ color:var(--decay-ink); background:var(--decay-soft); }
+  .equiv-arrow{ font-size:1.3rem; color:var(--ink-faint); }
+
+  /* --- jogo "existe ou não existe" (parte 2) --- */
+  .sort-wrap{ display:flex; flex-direction:column; gap:14px; }
+  .pool{ display:flex; flex-wrap:wrap; gap:10px; min-height:52px; }
+  .logcard{ font-family:'JetBrains Mono',monospace; font-size:.98rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; cursor:pointer; transition:border-color .15s, transform .1s, background .15s; }
+  .logcard:hover{ border-color:var(--primary); }
+  .logcard.selected{ border-color:var(--primary); background:var(--primary-soft); transform:scale(1.05); }
+  .logcard.solved-yes{ border-color:var(--success); background:var(--success-soft); cursor:default; opacity:.6; }
+  .logcard.solved-no{ border-color:var(--danger); background:var(--danger-soft); cursor:default; opacity:.6; }
+  .bins{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:560px){ .bins{ grid-template-columns:1fr; } }
+  .bin{ border:2px dashed var(--line-strong); border-radius:14px; padding:16px; text-align:center; cursor:pointer; transition:border-color .15s, background .15s; min-height:70px; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-weight:800; font-size:.95rem; color:var(--ink-soft); }
+  .bin:hover{ border-color:var(--primary); background:var(--primary-soft); }
+  .bin.yes{ border-color:color-mix(in srgb, var(--success) 50%, var(--line-strong)); }
+  .bin.no{ border-color:color-mix(in srgb, var(--danger) 50%, var(--line-strong)); }
+  .bin.shake{ animation:shake .3s; }
+  @keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+  .why-box{ font-size:.82rem; color:var(--ink-soft); margin-top:4px; min-height:1.2em; }
+
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · Logaritmos (Parte 1) · Atividade criativa</div>
+    <div class="score-pill">Cartas resolvidas: <span id="scoreVal">0</span>/8</div>
+  </div>
+
+  <div class="eyebrow">Laboratório interativo</div>
+  <h1 class="title">A máquina do logaritmo</h1>
+  <p class="subtitle">Primeiro, brinque com a <strong>máquina de conversão</strong>: ajuste a base e o expoente e veja, em tempo real, a forma exponencial virar a forma logarítmica. Depois, jogue o <strong>desafio de existência</strong>: cada carta é um logaritmo — sua missão é decidir se ele existe ou não, e justificar por quê.</p>
+
+  <!-- PARTE 1: MÁQUINA DE CONVERSÃO -->
+  <div class="grid2">
+    <div>
+      <div class="card">
+        <h4 class="disp" style="margin:0 0 8px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Parte 1 · A máquina de conversão</h4>
+        <p style="font-size:.92rem;margin:0;">Toda vez que você escreve <strong>a<sup>x</sup> = b</strong>, existe uma frase equivalente escondida: <strong>log<sub>a</sub>b = x</strong>. Mexa nos controles ao lado e observe as duas formas mudando juntas — são sempre a mesma informação, só que escrita de dois jeitos.</p>
+      </div>
+      <div class="callout" id="readCallout">
+        <h4 id="readTitle">Como ler a máquina</h4>
+        <p id="readText">"A elevado a X é igual a B" é exatamente a mesma frase que "o logaritmo de B na base A é X". Se você sabe uma, sabe a outra — é só trocar de idioma.</p>
+      </div>
+      <div class="card">
+        <strong style="font-size:.85rem;">Desafio de leitura</strong>
+        <p style="font-size:.88rem;margin-top:6px;">Deixe a base em 2 e o expoente em 0. O que a máquina mostra? Depois tente base 5, expoente 0. Você percebe por que log<sub>a</sub>1 = 0 <strong>para qualquer base</strong>?</p>
+        <p class="hint">Dica: quando x = 0, b é sempre igual a 1 — não importa a base. É a 1ª propriedade em ação.</p>
+      </div>
+    </div>
+    <div class="machine-panel">
+      <svg viewBox="0 0 320 200" id="machineSvg" aria-label="Balança mostrando a equivalência entre potência e logaritmo">
+        <rect x="10" y="150" width="300" height="6" rx="3" fill="var(--line-strong)"/>
+        <line id="beamLine" x1="160" y1="150" x2="160" y2="60" stroke="var(--line-strong)" stroke-width="4"/>
+        <line id="beam" x1="60" y1="60" x2="260" y2="60" stroke="var(--primary)" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="160" cy="60" r="7" fill="var(--primary)"/>
+        <g id="leftPan">
+          <line x1="60" y1="60" x2="60" y2="95" stroke="var(--growth)" stroke-width="2.5"/>
+          <rect x="25" y="95" width="70" height="34" rx="8" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="1.5"/>
+          <text id="expText" x="60" y="117" text-anchor="middle" font-size="13" class="mono" fill="var(--growth-ink)">2⁰ = 1</text>
+        </g>
+        <g id="rightPan">
+          <line x1="260" y1="60" x2="260" y2="95" stroke="var(--decay)" stroke-width="2.5"/>
+          <rect x="225" y="95" width="70" height="34" rx="8" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="1.5"/>
+          <text id="logText" x="260" y="117" text-anchor="middle" font-size="12" class="mono" fill="var(--decay-ink)">log₂1 = 0</text>
+        </g>
+      </svg>
+      <div class="slider-row">
+        <label>Base a <span id="aVal" class="mono">2</span></label>
+        <input type="range" id="aSlider" min="2" max="10" step="1" value="2">
+      </div>
+      <div class="slider-row">
+        <label>Expoente x <span id="xVal" class="mono">0</span></label>
+        <input type="range" id="xSlider" min="0" max="5" step="1" value="0">
+      </div>
+      <div class="equiv-box">
+        <span class="equiv-side exp" id="equivExp">2⁰ = 1</span>
+        <span class="equiv-arrow">⟺</span>
+        <span class="equiv-side log" id="equivLog">log₂1 = 0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTE 2: EXISTE OU NÃO EXISTE -->
+  <div class="card" style="margin-top:8px;">
+    <h4 class="disp" style="margin:0 0 8px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Parte 2 · Existe ou não existe?</h4>
+    <p style="font-size:.92rem;margin:0;">Clique em uma carta para selecioná-la e depois clique em um dos dois baldes. Acertou: a carta trava em verde ou vermelho, com a explicação. Errou: o balde treme e você tenta de novo.</p>
+  </div>
+
+  <div class="sort-wrap">
+    <div class="pool" id="cardPool"></div>
+    <div class="bins">
+      <div class="bin yes" id="binYes">✔ Existe</div>
+      <div class="bin no" id="binNo">✘ Não existe</div>
+    </div>
+    <div class="why-box" id="whyBox"></div>
+  </div>
+
+  <div class="card success" id="finalCard" style="display:none;margin-top:18px;">
+    <h4 class="disp" style="margin:0 0 6px;">Todas as cartas classificadas!</h4>
+    <p id="finalMsg" style="margin:0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-log1-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  // ---- Parte 1: máquina de conversão ----
+  var aSlider = document.getElementById('aSlider');
+  var xSlider = document.getElementById('xSlider');
+  var aVal = document.getElementById('aVal');
+  var xVal = document.getElementById('xVal');
+  var expText = document.getElementById('expText');
+  var logText = document.getElementById('logText');
+  var equivExp = document.getElementById('equivExp');
+  var equivLog = document.getElementById('equivLog');
+  var beam = document.getElementById('beam');
+  var readTitle = document.getElementById('readTitle');
+  var readText = document.getElementById('readText');
+
+  var supMap = {0:'⁰',1:'¹',2:'²',3:'³',4:'⁴',5:'⁵'};
+  var subMap = {2:'₂',3:'₃',4:'₄',5:'₅',6:'₆',7:'₇',8:'₈',9:'₉',10:'₁₀'};
+
+  function update(){
+    var a = parseInt(aSlider.value, 10);
+    var x = parseInt(xSlider.value, 10);
+    var b = Math.pow(a, x);
+    aVal.textContent = a;
+    xVal.textContent = x;
+    var expStr = a + supMap[x] + ' = ' + b;
+    var logStr = 'log' + subMap[a] + b + ' = ' + x;
+    expText.textContent = expStr;
+    logText.textContent = logStr;
+    equivExp.textContent = expStr;
+    equivLog.textContent = logStr;
+    beam.setAttribute('x1', 60); beam.setAttribute('y1', 60);
+    beam.setAttribute('x2', 260); beam.setAttribute('y2', 60);
+
+    if(x === 0){
+      readTitle.textContent = 'Propriedade 1 em ação: logₐ1 = 0';
+      readText.textContent = 'Qualquer base elevada a zero dá 1. Por isso log de 1, em qualquer base, é sempre 0.';
+    } else if(x === 1){
+      readTitle.textContent = 'Propriedade 2 em ação: logₐa = 1';
+      readText.textContent = a + '¹ = ' + a + ', então o logaritmo da própria base é sempre 1.';
+    } else {
+      readTitle.textContent = 'Como ler a máquina';
+      readText.textContent = '"' + a + ' elevado a ' + x + ' é igual a ' + b + '" é a mesma frase que "o logaritmo de ' + b + ' na base ' + a + ' é ' + x + '". Duas linguagens, uma única ideia.';
+    }
+  }
+  aSlider.addEventListener('input', update);
+  xSlider.addEventListener('input', update);
+  update();
+
+  // ---- Parte 2: existe ou não existe ----
+  var cards = [
+    { text:'log₂ 8',      exists:true,  why:'Base 2 (>0, ≠1) e logaritmando 8 (>0). Existe: log₂8 = 3.' },
+    { text:'log₂(−8)',    exists:false, why:'O logaritmando é negativo. Nenhuma potência de base positiva dá resultado negativo.' },
+    { text:'log₁ 5',      exists:false, why:'A base é 1. 1 elevado a qualquer expoente é sempre 1, nunca 5 — a base não pode ser 1.' },
+    { text:'log₅ 1',      exists:true,  why:'Base 5 (válida) e logaritmando 1 (>0). Existe e vale 0, pela 1ª propriedade.' },
+    { text:'log₋₂ 4',     exists:false, why:'A base é negativa. Bases negativas não geram uma função logarítmica bem definida.' },
+    { text:'log₃ 0',      exists:false, why:'O logaritmando é 0. Nenhuma potência de base positiva resulta em 0.' },
+    { text:'log₀,₅ 8',    exists:true,  why:'Base 0,5 (>0, ≠1) e logaritmando 8 (>0). Existe: (0,5)⁻³ = 8, então log₀,₅8 = −3.' },
+    { text:'log₇ 7',      exists:true,  why:'Base 7 (válida) e logaritmando 7 (>0). Existe e vale 1, pela 2ª propriedade.' }
+  ];
+
+  var pool = document.getElementById('cardPool');
+  var binYes = document.getElementById('binYes');
+  var binNo = document.getElementById('binNo');
+  var whyBox = document.getElementById('whyBox');
+  var scoreEl = document.getElementById('scoreVal');
+  var finalCard = document.getElementById('finalCard');
+  var finalMsg = document.getElementById('finalMsg');
+  var solved = 0;
+  var selected = null;
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+
+  shuffle(cards).forEach(function(c, idx){
+    var el = document.createElement('button');
+    el.className = 'logcard'; el.type = 'button';
+    el.textContent = c.text;
+    el.dataset.idx = idx;
+    el._data = c;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('solved-yes') || el.classList.contains('solved-no')) return;
+      document.querySelectorAll('.logcard').forEach(function(o){ o.classList.remove('selected'); });
+      el.classList.add('selected');
+      selected = el;
+      whyBox.textContent = '';
+    });
+    pool.appendChild(el);
+  });
+
+  function tryBin(binIsYes, binEl){
+    if(!selected) return;
+    var data = selected._data;
+    if(data.exists === binIsYes){
+      selected.classList.remove('selected');
+      selected.classList.add(binIsYes ? 'solved-yes' : 'solved-no');
+      whyBox.textContent = '✔ ' + data.why;
+      solved++;
+      scoreEl.textContent = solved;
+      selected = null;
+      if(solved === cards.length){
+        finalCard.style.display = 'block';
+        finalMsg.textContent = 'Você classificou corretamente todas as ' + cards.length + ' cartas. A condição de existência não tem mais segredo!';
+        finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+        try{ window.reportarConclusao(solved, cards.length); }catch(e){}
+      }
+    } else {
+      binEl.classList.add('shake');
+      whyBox.textContent = '✘ Não é isso — pense de novo na base e no logaritmando.';
+      setTimeout(function(){ binEl.classList.remove('shake'); }, 320);
+    }
+  }
+  binYes.addEventListener('click', function(){ tryBin(true, binYes); });
+  binNo.addEventListener('click', function(){ tryBin(false, binNo); });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

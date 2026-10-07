@@ -1,0 +1,273 @@
+<title>Monte sua Pesquisa</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:920px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  h2.title{ font-size:clamp(1.4rem, 3.2vw, 2.1rem); font-weight:800; line-height:1.08; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.92rem,1.4vw,1.05rem); margin:0 0 16px; max-width:66ch; }
+  p{ line-height:1.58; }
+  .lede{ color:var(--ink-soft); max-width:66ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.92rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+
+  .hero{ background:var(--surface); border:1px solid var(--line); border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft); padding:clamp(22px,4vw,40px); margin-bottom:24px; }
+  .stagecard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:clamp(18px,3vw,28px); margin-bottom:26px; box-shadow:0 10px 26px -16px var(--shadow); }
+  .stagecard h3{ margin:0 0 4px; font-size:1.15rem; }
+
+  .tray{ display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; min-height:52px; }
+  .piece{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.65em 1em; font-size:.86rem; cursor:pointer; transition:border-color .15s, background .15s, transform .1s; user-select:none; }
+  .piece:hover{ border-color:var(--primary); }
+  .piece.selected{ border-color:var(--primary); background:var(--primary-soft); transform:translateY(-2px); box-shadow:0 6px 14px -6px var(--shadow); }
+  .piece.placed{ display:none; }
+
+  .targets{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:6px; }
+  .targets.two{ grid-template-columns:1fr 1fr; }
+  @media (max-width:700px){ .targets{ grid-template-columns:1fr 1fr; } .targets.two{ grid-template-columns:1fr; } }
+  .bucket{ border:1.5px dashed var(--line-strong); border-radius:14px; padding:12px; min-height:110px; background:var(--surface-2); cursor:pointer; transition:border-color .15s, background .15s; }
+  .bucket:hover{ border-color:var(--primary); }
+  .bucket.flash-ok{ border-color:var(--success); background:var(--success-soft); }
+  .bucket.flash-no{ border-color:var(--danger); background:var(--danger-soft); }
+  .bucket-label{ font-family:'Archivo',sans-serif; font-weight:800; font-size:.8rem; color:var(--ink-soft); margin-bottom:8px; display:block; }
+  .bucket .piece{ display:block; width:100%; text-align:left; margin-bottom:6px; font-size:.78rem; cursor:default; background:var(--surface); }
+  .bucket .piece.ok{ border-color:var(--success); background:var(--success-soft); }
+
+  .progressbar{ height:8px; border-radius:999px; background:var(--surface-2); border:1px solid var(--line); overflow:hidden; margin:14px 0 4px; }
+  .progressfill{ height:100%; background:var(--growth); width:0%; transition:width .3s ease; }
+  .progresstext{ font-size:.76rem; color:var(--ink-faint); }
+
+  .final{ text-align:center; padding:28px 20px; border-radius:18px; background:var(--primary-soft); border:1px solid var(--line-strong); display:none; margin-top:10px; }
+  .final.show{ display:block; }
+  .final h3{ margin:0 0 8px; font-size:1.3rem; }
+  .backlink{ display:inline-flex; align-items:center; gap:.4em; font-size:.82rem; color:var(--ink-soft); text-decoration:none; margin-top:18px; }
+  .backlink:hover{ color:var(--primary); }
+
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow growth">Atividade criativa · Jogo de encaixe</div>
+    <h1 class="disp" style="font-size:clamp(1.6rem,3.8vw,2.3rem);font-weight:900;line-height:1.05;margin:0 0 10px;">Monte sua pesquisa de mercado</h1>
+    <p class="subtitle">Dois desafios rápidos: primeiro organize perguntas de uma pesquisa de demanda em suas categorias certas, depois classifique situações reais como amostragem aleatória ou estratificada. Toque numa peça para selecioná-la e depois toque no lugar onde ela se encaixa.</p>
+    <div class="progressbar"><div class="progressfill" id="progressFill"></div></div>
+    <p class="progresstext"><span id="progressText">0</span> de 12 encaixadas corretamente</p>
+  </div>
+
+  <!-- DESAFIO 1 -->
+  <div class="stagecard">
+    <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">DESAFIO 1</span>
+    <h3>Qual pergunta pertence a qual categoria?</h3>
+    <p class="lede" style="font-size:.9rem;">O dono de uma sorveteria quer montar uma pesquisa de demanda. Toque numa pergunta abaixo e depois toque na categoria certa.</p>
+
+    <div class="tray" id="tray1">
+      <button class="piece" data-cat="freq">"Quantas vezes por semana você compra um sorvete?"</button>
+      <button class="piece" data-cat="tipo">"Você prefere sabores clássicos, exóticos ou opções sem açúcar?"</button>
+      <button class="piece" data-cat="preco">"Quanto você pagaria por uma casquinha grande?"</button>
+      <button class="piece" data-cat="horario">"Em qual horário do dia costuma comprar sorvete?"</button>
+      <button class="piece" data-cat="gatilho">"Compraria mais se ganhasse um combo com desconto ou brinde?"</button>
+      <button class="piece" data-cat="aberta">"Tem alguma sugestão que a gente ainda não perguntou?"</button>
+    </div>
+
+    <div class="targets" id="targets1">
+      <div class="bucket" data-cat="freq"><span class="bucket-label">Frequência</span></div>
+      <div class="bucket" data-cat="tipo"><span class="bucket-label">Tipo e sabor</span></div>
+      <div class="bucket" data-cat="preco"><span class="bucket-label">Preço</span></div>
+      <div class="bucket" data-cat="horario"><span class="bucket-label">Horário</span></div>
+      <div class="bucket" data-cat="gatilho"><span class="bucket-label">Gatilho de compra</span></div>
+      <div class="bucket" data-cat="aberta"><span class="bucket-label">Pergunta aberta</span></div>
+    </div>
+  </div>
+
+  <!-- DESAFIO 2 -->
+  <div class="stagecard">
+    <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">DESAFIO 2</span>
+    <h3>Aleatória ou estratificada?</h3>
+    <p class="lede" style="font-size:.9rem;">Toque numa situação e depois no tipo de amostragem que ela representa.</p>
+
+    <div class="tray" id="tray2">
+      <button class="piece" data-cat="aleatoria">Sortear 40 números entre os 800 alunos matriculados na escola.</button>
+      <button class="piece" data-cat="estratificada">Entrevistar 10% dos alunos de cada uma das 12 turmas da escola.</button>
+      <button class="piece" data-cat="aleatoria">Colocar o nome de todos os moradores do bairro numa urna e sortear 50.</button>
+      <button class="piece" data-cat="estratificada">Ouvir 5% dos clientes de cada faixa etária: jovens, adultos e idosos.</button>
+      <button class="piece" data-cat="aleatoria">Sortear números de CPF cadastrados, sem separar por grupo algum.</button>
+      <button class="piece" data-cat="estratificada">Selecionar um percentual fixo de funcionários de cada setor da empresa.</button>
+    </div>
+
+    <div class="targets two" id="targets2">
+      <div class="bucket" data-cat="aleatoria"><span class="bucket-label">Amostragem aleatória</span></div>
+      <div class="bucket" data-cat="estratificada"><span class="bucket-label">Amostragem estratificada</span></div>
+    </div>
+  </div>
+
+  <div class="final" id="final">
+    <h3 id="finalTitle">Pesquisa montada!</h3>
+    <p id="finalText" style="color:var(--ink-soft);"></p>
+  </div>
+
+  <a class="backlink" href="aula-1-perfil-pesquisa.html">← Voltar para a aula</a>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp1-criativa';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+(function(){
+  var TOTAL = 12;
+  var correct = 0;
+  var selected = null; // {el, cat, trayId}
+
+  var progressFill = document.getElementById('progressFill');
+  var progressText = document.getElementById('progressText');
+
+  function selectPiece(piece){
+    document.querySelectorAll('.piece.selected').forEach(function(p){ p.classList.remove('selected'); });
+    piece.classList.add('selected');
+    selected = piece;
+  }
+
+  function tryPlace(bucket){
+    if(!selected) return;
+    var ok = selected.dataset.cat === bucket.dataset.cat;
+    if(ok){
+      bucket.classList.remove('flash-no');
+      bucket.classList.add('flash-ok');
+      setTimeout(function(){ bucket.classList.remove('flash-ok'); }, 500);
+      var clone = document.createElement('div');
+      clone.className = 'piece ok';
+      clone.textContent = selected.textContent;
+      bucket.appendChild(clone);
+      selected.classList.add('placed');
+      selected.disabled = true;
+      correct++;
+      selected = null;
+      updateProgress();
+    } else {
+      bucket.classList.remove('flash-ok');
+      bucket.classList.add('flash-no');
+      setTimeout(function(){ bucket.classList.remove('flash-no'); }, 450);
+    }
+  }
+
+  function updateProgress(){
+    var pct = Math.round((correct/TOTAL)*100);
+    progressFill.style.width = pct + '%';
+    progressText.textContent = correct;
+    if(correct === TOTAL) finish();
+  }
+
+  document.querySelectorAll('.piece').forEach(function(piece){
+    piece.addEventListener('click', function(){ selectPiece(piece); });
+  });
+  document.querySelectorAll('.bucket').forEach(function(bucket){
+    bucket.addEventListener('click', function(){ tryPlace(bucket); });
+  });
+
+  function finish(){
+    var finalEl = document.getElementById('final');
+    var title = document.getElementById('finalTitle');
+    var text = document.getElementById('finalText');
+    title.textContent = 'Pesquisa e amostragem dominadas!';
+    text.textContent = 'Você encaixou todas as ' + TOTAL + ' peças nos lugares certos — sinal de que já sabe separar tipos de pergunta e escolher a amostragem certa para cada situação.';
+    finalEl.classList.add('show');
+    finalEl.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(TOTAL, TOTAL);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

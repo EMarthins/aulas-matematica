@@ -1,0 +1,324 @@
+<title>Atividade ENEM: Termo Geral da P.A.</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:900px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  h2.title{ font-size:clamp(1.4rem, 3vw, 2rem); font-weight:800; line-height:1.08; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.1rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:22px; }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  button.reveal:disabled{ opacity:.45; cursor:default; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:800px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:sticky; top:14px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .num-input{ font-family:'JetBrains Mono',monospace; font-size:1rem; border:1.5px solid var(--line-strong); border-radius:10px; padding:.5em .8em; background:var(--surface); color:var(--ink); width:160px; margin-right:8px; }
+  .num-input:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+  .final-card{ text-align:center; padding:28px 22px; }
+  .final-card .big{ font-size:2.4rem; font-weight:900; font-family:'Archivo',sans-serif; color:var(--primary); }
+  ::selection{ background:var(--primary-soft); }
+  header.top{ text-align:center; margin-bottom:28px; }
+  header.top h1{ font-size:clamp(1.8rem,4vw,2.6rem); font-weight:900; margin:0 0 8px; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+    .score-pill{ float:none; display:block; width:fit-content; margin:0 auto 16px; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="score-pill">Acertos: <span id="scoreVal">0</span>/5</div>
+  <header class="top">
+    <div class="eyebrow">Atividade extra · Questões reais de vestibular</div>
+    <h1>Termo geral da P.A. no ENEM</h1>
+    <p class="subtitle">5 questões reais — todas exigem a fórmula a<sub>n</sub> = a<sub>1</sub> + (n − 1)·r para resolver. Responda, confira e veja a resolução completa de cada uma.</p>
+  </header>
+
+  <!-- Q1 -->
+  <div class="card" data-q="1">
+    <div class="eyebrow">ENEM 2011 · Questão 162</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">A empresa aérea</h3>
+    <p>O número mensal de passagens de uma determinada empresa aérea aumentou nos últimos meses nas seguintes condições: em janeiro foram vendidas 33.000 passagens; em fevereiro, 34.500; em março, 36.000. Esse padrão de crescimento se manteve nos meses subsequentes.</p>
+    <p class="lede"><strong>Quantas passagens foram vendidas por essa empresa em julho?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 38.000</button>
+      <button class="choice opt" data-ok="0">B) 40.500</button>
+      <button class="choice opt" data-ok="0">C) 41.000</button>
+      <button class="choice opt" data-ok="1">D) 42.000</button>
+      <button class="choice opt" data-ok="0">E) 48.000</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>As vendas formam uma P.A.: a<sub>1</sub> = 33.000, r = 34.500 − 33.000 = <strong>1.500</strong>.</p>
+      <p>Julho é o 7º mês: a<sub>7</sub> = a<sub>1</sub> + (7−1)·r = 33.000 + 6·1.500 = 33.000 + 9.000 = <strong>42.000 passagens</strong>.</p>
+      <p><strong>Resposta: D.</strong></p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="card" data-q="2">
+    <div class="eyebrow">ENEM 2012 · Questão 157</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">O maquinista de trem</h3>
+    <p>Um maquinista de trem ganha R$ 100,00 por viagem e só pode viajar a cada 4 dias. Ele ganha somente se fizer a viagem e sabe que estará de férias de 1º a 10 de junho, quando não poderá viajar. Sua primeira viagem ocorreu no dia 1º de janeiro. Considere que o ano tem 365 dias.</p>
+    <p class="lede"><strong>Se o maquinista quiser ganhar o máximo possível, quantas viagens precisará fazer?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 37</button>
+      <button class="choice opt" data-ok="0">B) 51</button>
+      <button class="choice opt" data-ok="1">C) 88</button>
+      <button class="choice opt" data-ok="0">D) 89</button>
+      <button class="choice opt" data-ok="0">E) 91</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>As viagens (dias 1, 5, 9, 13, ...) formam uma P.A. de razão 4. Os 10 dias de férias (1 a 10 de junho) ficam fora do período em que ele pode viajar e ganhar.</p>
+      <p>Dias efetivamente disponíveis: 365 − 10 = <strong>355 dias</strong>. Como uma viagem ocorre a cada 4 dias: 355 ÷ 4 = 88,75.</p>
+      <p>Só cabem viagens <strong>completas</strong> de 4 em 4 dias nesse período — a fração restante (0,75) não fecha uma nova viagem, então o máximo é <strong>88 viagens</strong>.</p>
+      <p><strong>Resposta: C.</strong> (A alternativa D é a pegadinha de quem esquece de descontar as férias corretamente.)</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="card" data-q="3">
+    <div class="eyebrow">ENEM PPL 2010 · Questão 141</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">O plano de treino do corredor</h3>
+    <p>Um corredor estabeleceu um plano de treinamento diário, correndo 3 km no primeiro dia e aumentando 500 m por dia a partir do segundo dia. Seu cardiologista autorizou essa atividade somente até o corredor atingir um máximo de 10 km de corrida em um único dia de treino.</p>
+    <p class="lede"><strong>Se o atleta seguir a recomendação médica, em quantos dias exatamente esse plano poderá ser executado?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 12 dias</button>
+      <button class="choice opt" data-ok="0">B) 13 dias</button>
+      <button class="choice opt" data-ok="0">C) 14 dias</button>
+      <button class="choice opt" data-ok="1">D) 15 dias</button>
+      <button class="choice opt" data-ok="0">E) 16 dias</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>P.A.: a<sub>1</sub> = 3 km, r = 0,5 km, a<sub>n</sub> = 10 km (o limite médico).</p>
+      <p>10 = 3 + (n−1)·0,5 → 7 = 0,5·(n−1) → n−1 = 14 → <strong>n = 15 dias</strong>.</p>
+      <p><strong>Resposta: D.</strong></p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="card" data-q="4">
+    <div class="eyebrow">ENEM 2022 · Questão 152</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">A ampliação da sala de cinema</h3>
+    <p>Uma sala de cinema, mantendo a posição da tela e das poltronas já instaladas, passará por uma ampliação segundo normas da ABNT: a primeira fileira deve ficar a uma distância mínima de 60% da largura L da tela; a última fileira pode ficar a, no máximo, 2,9 vezes essa largura; o espaçamento entre os encostos de fileiras consecutivas deve ser de 1 metro. Considere L = 12 metros.</p>
+    <p class="lede"><strong>Após a ampliação máxima permitida pelas normas, quantas fileiras de poltronas a sala comportará?</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 26</button>
+      <button class="choice opt" data-ok="0">B) 27</button>
+      <button class="choice opt" data-ok="1">C) 28</button>
+      <button class="choice opt" data-ok="0">D) 29</button>
+      <button class="choice opt" data-ok="0">E) 35</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>Distância mínima: 0,6 × 12 = 7,2 m. Distância máxima: 2,9 × 12 = 34,8 m. Espaço útil para as fileiras: 34,8 − 7,2 = <strong>27,6 m</strong>.</p>
+      <p>As fileiras formam uma P.A. de razão 1 m a partir de 7,2 m. Cabem 27 "saltos" inteiros de 1 metro nesse espaço — e cada salto separa duas fileiras. Total de fileiras = 27 intervalos + 1 (a primeira fileira) = <strong>28 fileiras</strong>.</p>
+      <p><strong>Resposta: C.</strong> (Erro comum: esquecer de somar +1 e marcar a alternativa B.)</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="card" data-q="5">
+    <div class="eyebrow">ENEM PPL 2009 · Matemática e suas Tecnologias</div>
+    <h3 class="title" style="font-size:1.15rem;margin:0 0 8px;">O treino do atleta</h3>
+    <p>Um gráfico da prova mostra o aumento progressivo do número de horas de treino diário de um atleta, registrado a cada 5 dias, ao longo do mês de setembro (30 dias), desde que ele iniciou o treinamento. <span class="hint">Adaptação: os valores do gráfico original estão aqui organizados em tabela.</span></p>
+    <table style="width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:.85rem;margin:10px 0;">
+      <tr style="color:var(--ink-soft);"><th style="text-align:left;padding:4px 0;">Dia</th><td style="text-align:right;">5</td><td style="text-align:right;">10</td><td style="text-align:right;">15</td><td style="text-align:right;">20</td><td style="text-align:right;">25</td><td style="text-align:right;">30</td></tr>
+      <tr><th style="text-align:left;padding:4px 0;">Horas</th><td style="text-align:right;">1h30</td><td style="text-align:right;">3h</td><td style="text-align:right;">4h30</td><td style="text-align:right;">6h</td><td style="text-align:right;">?</td><td style="text-align:right;">?</td></tr>
+    </table>
+    <p class="lede"><strong>Mantida essa tendência de crescimento, no último dia de setembro (dia 30) o atleta deverá treinar, diariamente:</strong></p>
+    <div class="opts">
+      <button class="choice opt" data-ok="0">A) 7 horas e 30 minutos</button>
+      <button class="choice opt" data-ok="0">B) 8 horas</button>
+      <button class="choice opt" data-ok="1">C) 9 horas</button>
+      <button class="choice opt" data-ok="0">D) 9 horas e 45 minutos</button>
+      <button class="choice opt" data-ok="0">E) 12 horas</button>
+    </div>
+    <div class="fb"></div>
+    <div class="answer">
+      <p>Os registros formam uma P.A. de razão 1,5 h a cada marca de 5 dias: a<sub>1</sub>(dia 5) = 1,5h; a<sub>2</sub>(dia 10) = 3h; a<sub>3</sub>(dia 15) = 4,5h; a<sub>4</sub>(dia 20) = 6h.</p>
+      <p>O dia 30 é o <strong>6º termo</strong> dessa P.A.: a<sub>6</sub> = a<sub>1</sub> + 5·r = 1,5 + 5·1,5 = 1,5 + 7,5 = <strong>9 horas</strong>.</p>
+      <p><strong>Resposta: C.</strong></p>
+    </div>
+  </div>
+
+  <div class="card final-card" id="finalCard" style="display:none;">
+    <div class="eyebrow">Resultado final</div>
+    <div class="big"><span id="finalScore">0</span>/5</div>
+    <p id="finalMsg" style="max-width:48ch;margin:10px auto 0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-pa1-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro');
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-q]'));
+  var total = cards.length;
+  var score = 0, answered = 0;
+  var scoreVal = document.getElementById('scoreVal');
+
+  cards.forEach(function(card){
+    var fb = card.querySelector('.fb');
+    var ans = card.querySelector('.answer');
+    var opts = card.querySelectorAll('.opt');
+    opts.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(card.dataset.done) return;
+        card.dataset.done = '1';
+        answered++;
+        var ok = btn.dataset.ok === '1';
+        opts.forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        if(ok){ score++; scoreVal.textContent = score; }
+        fb.textContent = ok ? '✔ Resposta correta! Veja a resolução:' : '✘ Não foi dessa vez. Veja a resolução completa:';
+        fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        ans.classList.add('open');
+        if(answered === total){ finish(); }
+      });
+    });
+  });
+
+  function finish(){
+    var finalCard = document.getElementById('finalCard');
+    var finalScore = document.getElementById('finalScore');
+    var finalMsg = document.getElementById('finalMsg');
+    finalScore.textContent = score;
+    var msg;
+    if(score === total) msg = 'Show de bola! Você domina o termo geral da P.A. nas questões do ENEM.';
+    else if(score >= total - 1) msg = 'Muito bem! Revise a questão que errou e a fórmula ficará ainda mais natural.';
+    else if(score >= total/2) msg = 'Bom começo. Releia as resoluções acima com atenção às pegadinhas.';
+    else msg = 'Vale revisar a aula de termo geral antes de tentar de novo — as resoluções acima ajudam bastante.';
+    finalMsg.textContent = msg;
+    finalCard.style.display = 'block';
+    finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, total);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

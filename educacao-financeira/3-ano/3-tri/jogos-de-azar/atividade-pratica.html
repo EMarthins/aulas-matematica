@@ -1,0 +1,421 @@
+<title>Jogos de Azar: Trilha de Problemas</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button, input{ font:inherit; }
+  .app{ max-width:800px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.5rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.93rem,1.4vw,1.1rem); margin:0 0 18px; max-width:68ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.locked-ok{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .card.locked-no{ border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badge.lvl1{ color:var(--success); border-color:color-mix(in srgb, var(--success) 40%, var(--line-strong)); }
+  .badge.lvl2{ color:var(--growth-ink); background:var(--growth-soft); border-color:transparent; }
+  .badge.lvl3{ color:var(--danger); background:var(--danger-soft); border-color:transparent; }
+  .qnum{ color:var(--primary); font-family:'Archivo',sans-serif; font-weight:900; }
+  .formula{ font-size:1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); margin:8px 0; }
+  .answer-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .answer-row input[type=text]{ flex:1; min-width:160px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:10px; padding:.6em .9em; font-family:'JetBrains Mono',monospace; font-size:.95rem; color:var(--ink); }
+  .answer-row input[type=text]:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+  .btn{ border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:800; font-size:.82rem; border-radius:10px; padding:.65em 1.2em; cursor:pointer; white-space:nowrap; }
+  .btn:hover{ filter:brightness(1.08); }
+  .btn:disabled{ opacity:.45; cursor:default; }
+  .btn.ghost{ background:var(--surface); color:var(--primary); border:1.5px solid var(--primary); }
+  .btn.ghost:hover{ background:var(--primary-soft); }
+  .btnrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .fb{ font-size:.85rem; margin-top:10px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .hinttext{ font-size:.85rem; color:var(--ink-soft); margin-top:8px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:none; }
+  .hinttext.open{ display:block; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  ul.plain li{ display:flex; gap:.6em; align-items:flex-start; font-size:.9rem; }
+  ul.plain li input[type=checkbox]{ margin-top:.3em; accent-color:var(--danger); flex:0 0 auto; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Educação Financeira · Jogos de Azar · Atividade extra</div>
+    <div class="score-pill">Resolvidos: <span id="scoreVal">0</span>/6</div>
+  </div>
+
+  <div class="eyebrow danger">Prática guiada · dificuldade crescente</div>
+  <h1 class="title">A conta que as <span style="color:var(--danger);">bets</span> não mostram</h1>
+  <p class="subtitle">Seis problemas, do mais simples ao mais desafiador, todos baseados na matemática real por trás de apostas online: RTP, probabilidade, valor esperado e o risco de "dobrar a aposta". Digite sua resposta numérica e use as dicas se precisar.</p>
+
+  <div class="card">
+    <span class="badge lvl1">Nível 1 · RTP na prática</span>
+    <p style="margin-top:10px;"><span class="qnum">1.</span> Uma plataforma de apostas tem RTP de 90%. Em um jogo, 15.000 pessoas apostam R$ 8,00 cada uma.</p>
+    <p>Quantos <strong>reais a plataforma lucra</strong> nessa rodada?</p>
+    <div class="answer-row">
+      <input type="text" id="in1" placeholder="Sua resposta em R$" inputmode="numeric">
+      <button class="btn" data-check="1">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="1" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="1" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="1">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint1-1">Primeiro calcule o total apostado: número de pessoas × valor de cada aposta.</div>
+    <div class="hinttext" id="hint1-2">O lucro da plataforma é o total apostado menos o que ela devolve aos jogadores (90% do total apostado).</div>
+    <div class="fb" id="fb1"></div>
+    <div class="answer" id="ans1">
+      <p class="formula">total apostado = 15.000 × R$ 8,00 = R$ 120.000,00</p>
+      <p class="formula">devolvido (RTP 90%) = 0,90 × 120.000 = R$ 108.000,00</p>
+      <p>Lucro da plataforma = 120.000 − 108.000 = <strong>R$ 12.000,00</strong></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge lvl1">Nível 1 · probabilidade real</span>
+    <p style="margin-top:10px;"><span class="qnum">2.</span> Um caça-níqueis tem 3 rolos com 20 símbolos cada, e existe apenas 1 símbolo especial em cada rolo capaz de formar a combinação premiada.</p>
+    <p>Em média, <strong>a cada quantas jogadas</strong> essa combinação premiada deveria aparecer?</p>
+    <div class="answer-row">
+      <input type="text" id="in2" placeholder="Sua resposta" inputmode="numeric">
+      <button class="btn" data-check="2">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="2" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="2" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="2">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint2-1">Calcule o total de combinações possíveis nos 3 rolos: 20 × 20 × 20.</div>
+    <div class="hinttext" id="hint2-2">Como existe só 1 combinação premiada entre todas as possíveis, "a cada quantas jogadas" é justamente esse total de combinações.</div>
+    <div class="fb" id="fb2"></div>
+    <div class="answer" id="ans2">
+      <p class="formula">20³ = 20 × 20 × 20 = 8.000</p>
+      <p>Em média, a combinação premiada só apareceria a cada <strong>8.000 jogadas</strong> — e a maioria das pessoas nunca chega perto disso.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge lvl2">Nível 2 · o risco de dobrar a aposta</span>
+    <p style="margin-top:10px;"><span class="qnum">3.</span> Uma pessoa aposta R$ 40,00 e perde. Ela decide "recuperar o prejuízo" dobrando a aposta a cada rodada até ganhar: R$ 40, depois R$ 80, depois R$ 160, e assim por diante.</p>
+    <p>Se ela perder <strong>5 vezes seguidas</strong> (sempre dobrando), quanto ela terá <strong>gastado no total</strong> nessas 5 apostas?</p>
+    <div class="answer-row">
+      <input type="text" id="in3" placeholder="Sua resposta em R$" inputmode="numeric">
+      <button class="btn" data-check="3">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="3" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="3" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="3">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint3-1">Liste o valor apostado em cada uma das 5 rodadas: 40, 80, 160, 320, 640. É uma progressão geométrica de razão 2.</div>
+    <div class="hinttext" id="hint3-2">Some os 5 valores da lista para achar o total gasto.</div>
+    <div class="fb" id="fb3"></div>
+    <div class="answer" id="ans3">
+      <p>Apostas: R$ 40 + R$ 80 + R$ 160 + R$ 320 + R$ 640 = <strong>R$ 1.240,00</strong> gastos, apenas para tentar recuperar uma perda inicial de R$ 40.</p>
+      <p class="hint">Essa estratégia é conhecida como "martingale". Ela parece lógica, mas exige dinheiro crescendo exponencialmente — e uma sequência de azar comum o suficiente pode quebrar qualquer apostador antes de ele "ganhar de volta".</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge lvl2">Nível 2 · valor esperado</span>
+    <p style="margin-top:10px;"><span class="qnum">4.</span> Em vez de apostar, uma pessoa poderia investir R$ 150,00 por mês. Só neste mês, ela decide apostar esse valor de uma vez, num jogo com RTP de 80%.</p>
+    <p>Qual é a <strong>perda esperada</strong>, em reais, apenas com essa aposta de R$ 150,00?</p>
+    <div class="answer-row">
+      <input type="text" id="in4" placeholder="Sua resposta em R$" inputmode="numeric">
+      <button class="btn" data-check="4">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="4" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="4" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="4">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint4-1">O RTP indica, em média, qual fração do valor apostado volta para o jogador. Calcule quanto de R$ 150 volta em média.</div>
+    <div class="hinttext" id="hint4-2">Retorno esperado = R$ 150 × 0,80. A perda esperada é a diferença entre o valor apostado e esse retorno.</div>
+    <div class="fb" id="fb4"></div>
+    <div class="answer" id="ans4">
+      <p class="formula">retorno esperado = 150 × 0,80 = R$ 120,00</p>
+      <p>Perda esperada = 150 − 120 = <strong>R$ 30,00</strong>, apenas nesse único mês. Repetindo esse comportamento todo mês, a perda esperada se acumula ano após ano.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge lvl3">Nível 3 · desafio</span>
+    <p style="margin-top:10px;"><span class="qnum">5.</span> Um jogo online custa R$ 5,00 por rodada. A cada rodada, há 2% de chance de pagar R$ 150,00 e 98% de chance de não pagar nada.</p>
+    <p>Qual é o <strong>valor esperado de retorno</strong> (em R$) por rodada desse jogo?</p>
+    <div class="answer-row">
+      <input type="text" id="in5" placeholder="Sua resposta em R$" inputmode="numeric">
+      <button class="btn" data-check="5">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="5" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="5" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="5">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint5-1">Valor esperado = (probabilidade de ganhar) × (valor do prêmio) + (probabilidade de perder) × (valor ao perder, aqui R$ 0).</div>
+    <div class="hinttext" id="hint5-2">Calcule 0,02 × 150.</div>
+    <div class="fb" id="fb5"></div>
+    <div class="answer" id="ans5">
+      <p class="formula">valor esperado = 0,02 × 150 + 0,98 × 0 = <strong>R$ 3,00</strong></p>
+      <p>Como cada rodada custa R$ 5,00 e o retorno esperado é de apenas R$ 3,00, o jogador perde, em média, R$ 2,00 por rodada — mesmo que, de vez em quando, ganhe o prêmio de R$ 150.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="badge lvl3">Nível 3 · desafio</span>
+    <p style="margin-top:10px;"><span class="qnum">6.</span> Uma máquina de apostas tem 4 rolos com 12 símbolos cada. Ela está programada para pagar o prêmio máximo assim que se esgotarem todas as combinações possíveis que não premiam (ou seja, na última combinação possível).</p>
+    <p>Quantas <strong>jogadas no total</strong> serão feitas até essa máquina pagar o prêmio máximo (contando a jogada premiada)?</p>
+    <div class="answer-row">
+      <input type="text" id="in6" placeholder="Sua resposta" inputmode="numeric">
+      <button class="btn" data-check="6">Verificar</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn ghost" data-hint="6" data-n="1">💡 Dica 1</button>
+      <button class="btn ghost" data-hint="6" data-n="2">💡 Dica 2</button>
+      <button class="btn ghost" data-reveal="6">Ver resolução</button>
+    </div>
+    <div class="hinttext" id="hint6-1">Calcule o total de combinações possíveis: 12 elevado ao número de rolos (4).</div>
+    <div class="hinttext" id="hint6-2">12⁴ = 12 × 12 × 12 × 12.</div>
+    <div class="fb" id="fb6"></div>
+    <div class="answer" id="ans6">
+      <p class="formula">12⁴ = 12 × 12 × 12 × 12 = <strong>20.736 jogadas</strong></p>
+      <p class="hint">Para pagar o prêmio, é preciso que muitíssimas pessoas tenham apostado (e perdido) antes — o dinheiro do prêmio sempre sai do bolso de outros jogadores, nunca "aparece do nada".</p>
+    </div>
+  </div>
+
+  <div class="card danger">
+    <h4 class="disp" style="margin:0 0 8px;font-size:1rem;">Antes de encerrar: uma autoavaliação</h4>
+    <p style="font-size:.9rem;margin:0 0 10px;">Isto não vale nota — é só para reflexão pessoal. Marque o que se aplica a você ou a alguém que você conhece:</p>
+    <ul class="plain">
+      <li><input type="checkbox"><span>Já apostei ou pensei em apostar dinheiro que era para outra coisa (transporte, alimentação, contas).</span></li>
+      <li><input type="checkbox"><span>Já tentei "recuperar" uma perda apostando mais, como no problema 3.</span></li>
+      <li><input type="checkbox"><span>Já vi um colega ou familiar apostando com frequência e fiquei preocupado(a).</span></li>
+      <li><input type="checkbox"><span>Sigo influenciadores que divulgam bets ou o "jogo do Tigrinho".</span></li>
+    </ul>
+    <div class="callout success" style="margin-top:14px;margin-bottom:0;">
+      <p>Se você marcou alguma dessas caixas, isso não é motivo de vergonha — é um sinal para conversar com alguém de confiança. Ajuda gratuita: <strong>Jogadores Anônimos</strong> (jogadoresanonimos.com.br), o <strong>CAPS</strong> da sua região ou o app <strong>Meu SUS Digital</strong>, e o <strong>CVV</strong> pelo telefone <strong>188</strong> (24h).</p>
+    </div>
+  </div>
+
+  <div class="card success" id="finalCard" style="display:none;">
+    <h4 class="disp" style="margin:0 0 6px;">Trilha concluída!</h4>
+    <p id="finalMsg" style="margin:0;"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-jogos-pratica';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var ANSWERS = { 1:12000, 2:8000, 3:1240, 4:30, 5:3, 6:20736 };
+  var TOTAL = Object.keys(ANSWERS).length;
+  var state = {};
+  for(var k in ANSWERS){ state[k] = { done:false, correct:false }; }
+
+  var scoreVal = document.getElementById('scoreVal');
+  var finalCard = document.getElementById('finalCard');
+  var finalMsg = document.getElementById('finalMsg');
+
+  function parseNum(str){
+    if(!str) return NaN;
+    var s = str.toString().trim().toLowerCase();
+    s = s.replace(/r\$/g,'').replace(/\s/g,'');
+    if(s.indexOf(',') > -1){ s = s.replace(/\./g,'').replace(',', '.'); }
+    s = s.replace(/[^\d.\-]/g,'');
+    return parseFloat(s);
+  }
+
+  function updateScore(){
+    var score = 0;
+    for(var k in state){ if(state[k].correct) score++; }
+    scoreVal.textContent = score;
+    return score;
+  }
+
+  function maybeFinish(){
+    var allDone = true;
+    for(var k in state){ if(!state[k].done) allDone = false; }
+    if(allDone){
+      var score = updateScore();
+      finalCard.style.display = 'block';
+      var pct = Math.round(score/TOTAL*100);
+      var msg = 'Você resolveu corretamente ' + score + ' de ' + TOTAL + ' problemas (' + pct + '%). ';
+      if(pct >= 80) msg += 'Você domina bem a matemática do RTP, da probabilidade e do valor esperado nas apostas.';
+      else if(pct >= 50) msg += 'Bom progresso — revise as resoluções dos que você não acertou de primeira.';
+      else msg += 'Vale a pena revisar RTP, probabilidade e valor esperado com calma antes de seguir em frente.';
+      msg += ' Em todos os problemas, a matemática mostrou o mesmo padrão: a conta é sempre desenhada a favor da plataforma.';
+      finalMsg.textContent = msg;
+      finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+      try{ window.reportarConclusao(score, TOTAL); }catch(e){}
+    }
+  }
+
+  function lockProblem(n, ok){
+    var card = document.getElementById('in' + n).closest('.card');
+    card.classList.add(ok ? 'locked-ok' : 'locked-no');
+    document.getElementById('in' + n).disabled = true;
+    card.querySelectorAll('button[data-check], button[data-reveal]').forEach(function(b){ b.disabled = true; });
+  }
+
+  document.querySelectorAll('button[data-check]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.check;
+      if(state[n].done) return;
+      var input = document.getElementById('in' + n);
+      var val = parseNum(input.value);
+      var fb = document.getElementById('fb' + n);
+      var ans = document.getElementById('ans' + n);
+      var expected = ANSWERS[n];
+      var ok = !isNaN(val) && Math.abs(val - expected) < 0.01;
+      if(ok){
+        state[n].done = true; state[n].correct = true;
+        fb.textContent = '✔ Correto! Veja a resolução completa abaixo.';
+        fb.className = 'fb ok';
+        ans.classList.add('open');
+        lockProblem(n, true);
+        updateScore();
+        maybeFinish();
+      } else {
+        fb.textContent = '✘ Ainda não é isso — tente de novo ou use uma dica.';
+        fb.className = 'fb no';
+      }
+    });
+  });
+
+  document.querySelectorAll('button[data-hint]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.hint, lvl = b.dataset.n;
+      document.getElementById('hint' + n + '-' + lvl).classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('button[data-reveal]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.reveal;
+      if(state[n].done) return;
+      state[n].done = true; state[n].correct = false;
+      var fb = document.getElementById('fb' + n);
+      fb.textContent = 'Resolução revelada — sem problema, o importante é entender o caminho.';
+      fb.className = 'fb no';
+      document.getElementById('ans' + n).classList.add('open');
+      lockProblem(n, false);
+      updateScore();
+      maybeFinish();
+    });
+  });
+
+  document.querySelectorAll('.answer-row input[type=text]').forEach(function(inp){
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        var n = inp.id.replace('in','');
+        document.querySelector('button[data-check="' + n + '"]').click();
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

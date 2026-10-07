@@ -1,0 +1,410 @@
+<title>Laboratório do Triângulo: Seno na Prática</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:68px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:720px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h1.title{ font-size:clamp(1.6rem, 4vw, 2.5rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.1rem); margin:0 0 8px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:24px; }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout.decay{ border-left-color:var(--decay); background:var(--decay-soft); }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .score-pill{ position:fixed; top:calc(14px + env(safe-area-inset-top,0px)); left:14px; z-index:50; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+
+  /* Phase 1: drag/click labeling */
+  .chips{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; justify-content:center; }
+  .chip{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.86rem; padding:.6em 1.1em; border-radius:999px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; transition:all .15s; }
+  .chip:hover{ border-color:var(--primary); }
+  .chip.selected{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); transform:scale(1.06); }
+  .chip.used{ display:none; }
+  .labsvg{ width:100%; max-width:380px; height:auto; display:block; margin:0 auto; }
+  .dropzone{ cursor:pointer; }
+  .dropzone rect{ fill:var(--surface); stroke:var(--line-strong); stroke-width:1.6; }
+  .dropzone.correct rect{ fill:var(--success-soft); stroke:var(--success); }
+  .dropzone.wrong rect{ fill:var(--danger-soft); stroke:var(--danger); }
+  .dropzone text{ font-family:'JetBrains Mono',monospace; font-size:10px; fill:var(--ink-faint); }
+  .dropzone.correct text{ fill:var(--success); font-weight:700; }
+  .phase-status{ font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--ink-faint); text-align:center; margin-top:6px; }
+
+  /* Phase 2/3: slider explorer */
+  .explorer{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .anglebox{ width:100%; max-width:340px; height:auto; }
+  input[type=range]{ width:100%; max-width:340px; accent-color:var(--primary); }
+  .readout{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:.9rem; margin-top:6px; }
+  .readout .k{ color:var(--ink-faint); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; display:block; }
+  .readout .v{ font-size:1.2rem; font-weight:700; color:var(--primary); }
+  .readout .v.decay{ color:var(--decay-ink); }
+  .target-badge{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.1rem; color:var(--decay-ink); background:var(--decay-soft); border-radius:10px; padding:.4em 1em; display:inline-block; margin:6px 0; }
+  button.confirm{ margin-top:14px; border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:800; font-size:.9rem; border-radius:12px; padding:.7em 1.6em; cursor:pointer; }
+  button.confirm:hover{ opacity:.9; }
+  button.confirm:disabled{ opacity:.4; cursor:default; }
+  .round-fb{ margin-top:10px; font-weight:700; font-size:.9rem; text-align:center; min-height:1.4em; }
+  .round-fb.ok{ color:var(--success); } .round-fb.no{ color:var(--danger); }
+  .round-dots{ display:flex; gap:6px; justify-content:center; margin-top:10px; }
+  .round-dots span{ width:9px; height:9px; border-radius:50%; background:var(--line-strong); display:inline-block; }
+  .round-dots span.hit{ background:var(--success); }
+  .round-dots span.miss{ background:var(--danger); }
+  .final{ text-align:center; padding:32px 20px; border-radius:18px; background:var(--surface-2); border:1px solid var(--line); margin-top:8px; display:none; }
+  .final.show{ display:block; }
+  .final .big{ font-family:'Archivo',sans-serif; font-weight:900; font-size:2.4rem; color:var(--primary); }
+
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+    .score-pill{ font-size:.72rem; padding:.35em .8em; }
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="score-pill">Pontos: <span id="scoreVal">0</span>/7</div>
+
+<div class="app">
+  <div class="eyebrow decay">Atividade extra · Laboratório interativo</div>
+  <h1 class="title">Laboratório do triângulo: seno na prática</h1>
+  <p class="subtitle">Nada de alternativas desta vez — aqui você monta o triângulo com as próprias mãos e usa um controle deslizante para caçar o valor certo do seno.</p>
+
+  <div class="hairline"></div>
+
+  <!-- FASE 1 -->
+  <h2 class="disp" style="font-size:1.3rem;margin:20px 0 4px;">Fase 1 · Monte o triângulo</h2>
+  <p class="lede">Clique num rótulo abaixo e depois clique no lado correspondente do triângulo, considerando α como ângulo de referência.</p>
+  <div class="card" style="text-align:center;">
+    <svg class="labsvg" viewBox="0 0 320 220">
+      <polygon points="40,190 280,190 40,40" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>
+      <path d="M40,170 h16 v20" fill="none" stroke="var(--ink-faint)" stroke-width="1.6"/>
+      <path d="M240,190 A40,40 0 0,0 254,158" fill="none" stroke="var(--primary)" stroke-width="2"/>
+      <text x="228" y="182" font-family="JetBrains Mono" font-size="14" fill="var(--primary)">α</text>
+
+      <g class="dropzone" data-answer="hipotenusa" transform="translate(120,100) rotate(-32)">
+        <rect x="-52" y="-13" width="104" height="26" rx="8"/>
+        <text x="0" y="4" text-anchor="middle">hipotenusa?</text>
+      </g>
+      <g class="dropzone" data-answer="oposto" transform="translate(28,120) rotate(-90)">
+        <rect x="-50" y="-13" width="100" height="26" rx="8"/>
+        <text x="0" y="4" text-anchor="middle">? do ângulo α</text>
+      </g>
+      <g class="dropzone" data-answer="adjacente" transform="translate(160,206)">
+        <rect x="-56" y="-13" width="112" height="26" rx="8"/>
+        <text x="0" y="4" text-anchor="middle">? do ângulo α</text>
+      </g>
+    </svg>
+    <div class="chips" id="chipPool">
+      <button class="chip" data-label="hipotenusa">hipotenusa</button>
+      <button class="chip" data-label="oposto">cateto oposto</button>
+      <button class="chip" data-label="adjacente">cateto adjacente</button>
+    </div>
+    <div class="phase-status" id="phase1Status">0 de 3 lados identificados corretamente</div>
+  </div>
+
+  <!-- FASE 2 -->
+  <h2 class="disp" style="font-size:1.3rem;margin:28px 0 4px;">Fase 2 · Explorador do seno</h2>
+  <p class="lede">Arraste o controle e observe: o triângulo muda de formato, mas sen α sempre é a razão entre o cateto oposto e a hipotenusa.</p>
+  <div class="card" style="text-align:center;">
+    <svg class="anglebox" id="explSvg" viewBox="0 0 300 200"></svg>
+    <input type="range" id="explSlider" min="10" max="80" value="40" step="1">
+    <div class="readout">
+      <div><span class="k">ângulo α</span><span class="v" id="explAngle">40°</span></div>
+      <div><span class="k">cateto oposto</span><span class="v decay" id="explOp">—</span></div>
+      <div><span class="k">hipotenusa</span><span class="v decay" id="explHip">120</span></div>
+      <div><span class="k">sen α</span><span class="v" id="explSen">—</span></div>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <h2 class="disp" style="font-size:1.3rem;margin:28px 0 4px;">Fase 3 · Desafio: caçe o ângulo</h2>
+  <p class="lede">4 rodadas. Em cada uma, ajuste o controle até que sen α fique bem próximo do valor-alvo e clique em confirmar.</p>
+  <div class="card" style="text-align:center;">
+    <div>Rodada <span id="roundNum">1</span> de 4 — encontre o ângulo cujo <strong>sen α ≈</strong></div>
+    <div class="target-badge" id="targetVal">0,50</div>
+    <svg class="anglebox" id="chalSvg" viewBox="0 0 300 200"></svg>
+    <input type="range" id="chalSlider" min="5" max="85" value="45" step="1">
+    <div class="readout">
+      <div><span class="k">ângulo α</span><span class="v" id="chalAngle">45°</span></div>
+      <div><span class="k">sen α (calculado)</span><span class="v decay" id="chalSen">—</span></div>
+    </div>
+    <button class="confirm" id="chalConfirm">Confirmar palpite</button>
+    <div class="round-fb" id="chalFb"></div>
+    <div class="round-dots" id="roundDots"><span></span><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="final" id="finalCard">
+    <div class="qnum" style="font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;">Resultado final</div>
+    <div class="big"><span id="finalScore">0</span>/7</div>
+    <p id="finalMsg" style="margin-top:8px;color:var(--ink-soft);"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-trit1-criativa';
+  function systemTheme(){
+    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; }
+  }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var totalScore = 0;
+  var scoreEl = document.getElementById('scoreVal');
+  function addScore(n){ totalScore += n; scoreEl.textContent = totalScore; }
+
+  // ---------- FASE 1: rotulagem ----------
+  var selectedChip = null;
+  var solvedCount = 0;
+  var zones = Array.prototype.slice.call(document.querySelectorAll('.dropzone'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var status1 = document.getElementById('phase1Status');
+  var phase1Done = false;
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      if(chip.classList.contains('used')) return;
+      chips.forEach(function(c){ c.classList.remove('selected'); });
+      if(selectedChip === chip){ selectedChip = null; return; }
+      selectedChip = chip;
+      chip.classList.add('selected');
+    });
+  });
+
+  zones.forEach(function(zone){
+    zone.dataset.solved = '';
+    zone.addEventListener('click', function(){
+      if(zone.dataset.solved || !selectedChip) return;
+      var ok = selectedChip.dataset.label === zone.dataset.answer;
+      if(ok){
+        zone.classList.add('correct');
+        zone.dataset.solved = '1';
+        var t = zone.querySelector('text');
+        var label = selectedChip.dataset.label === 'hipotenusa' ? 'hipotenusa' : (selectedChip.dataset.label === 'oposto' ? 'cateto oposto' : 'cateto adjacente');
+        t.textContent = label;
+        selectedChip.classList.add('used');
+        selectedChip.classList.remove('selected');
+        selectedChip = null;
+        solvedCount++;
+        addScore(1);
+        status1.textContent = solvedCount + ' de 3 lados identificados corretamente';
+        if(solvedCount === 3 && !phase1Done){
+          phase1Done = true;
+          status1.textContent = 'Fase 1 completa! Os três lados foram identificados.';
+          checkAllDone();
+        }
+      } else {
+        zone.classList.add('wrong');
+        setTimeout(function(){ zone.classList.remove('wrong'); }, 500);
+      }
+    });
+  });
+
+  // ---------- FASE 2: explorador ----------
+  function drawTriangle(svg, angleDeg, opId, hipId, senId){
+    var HIP = 120;
+    var rad = angleDeg * Math.PI/180;
+    var op = HIP * Math.sin(rad);
+    var adj = HIP * Math.cos(rad);
+    var x0 = 40, y0 = 170;
+    var xA = x0 + adj, yA = y0;
+    var xTop = x0, yTop = y0 - op;
+    svg.innerHTML =
+      '<polygon points="'+x0+','+y0+' '+xA+','+y0+' '+x0+','+yTop+'" fill="none" stroke="var(--ink-soft)" stroke-width="2"/>' +
+      '<path d="M'+x0+','+(y0-14)+' h14 v14" fill="none" stroke="var(--ink-faint)" stroke-width="1.4"/>' +
+      '<path d="M'+(xA-28)+','+y0+' A28,28 0 0,0 '+xA+','+(y0-28)+'" fill="none" stroke="var(--primary)" stroke-width="1.8"/>' +
+      '<text x="'+(xA-24)+'" y="'+(y0-8)+'" font-family="JetBrains Mono" font-size="12" fill="var(--primary)">α</text>' +
+      '<text x="'+(x0-30)+'" y="'+((y0+yTop)/2)+'" font-family="JetBrains Mono" font-size="11" fill="var(--decay-ink)">op</text>' +
+      '<text x="'+((x0+xA)/2 - 10)+'" y="'+(y0+16)+'" font-family="JetBrains Mono" font-size="11" fill="var(--ink-faint)">adj</text>';
+    if(opId) document.getElementById(opId).textContent = op.toFixed(1);
+    if(hipId) document.getElementById(hipId).textContent = HIP;
+    if(senId) document.getElementById(senId).textContent = Math.sin(rad).toFixed(2);
+    return Math.sin(rad);
+  }
+
+  var explSvg = document.getElementById('explSvg');
+  var explSlider = document.getElementById('explSlider');
+  function updateExplorer(){
+    var a = parseInt(explSlider.value, 10);
+    document.getElementById('explAngle').textContent = a + '°';
+    drawTriangle(explSvg, a, 'explOp', 'explHip', 'explSen');
+  }
+  explSlider.addEventListener('input', updateExplorer);
+  updateExplorer();
+
+  // ---------- FASE 3: desafio ----------
+  var targets = [0.50, 0.71, 0.87, 0.26];
+  var round = 0;
+  var roundScore = 0;
+  var chalSvg = document.getElementById('chalSvg');
+  var chalSlider = document.getElementById('chalSlider');
+  var targetValEl = document.getElementById('targetVal');
+  var roundNumEl = document.getElementById('roundNum');
+  var chalFb = document.getElementById('chalFb');
+  var chalConfirm = document.getElementById('chalConfirm');
+  var dots = document.querySelectorAll('#roundDots span');
+  var phase3Done = false;
+
+  function updateChallenge(){
+    var a = parseInt(chalSlider.value, 10);
+    document.getElementById('chalAngle').textContent = a + '°';
+    drawTriangle(chalSvg, a, null, null, 'chalSen');
+  }
+  chalSlider.addEventListener('input', updateChallenge);
+
+  function loadRound(){
+    targetValEl.textContent = targets[round].toFixed(2).replace('.', ',');
+    roundNumEl.textContent = round + 1;
+    chalFb.textContent = '';
+    chalFb.className = 'round-fb';
+    chalConfirm.disabled = false;
+    chalSlider.disabled = false;
+    updateChallenge();
+  }
+  loadRound();
+
+  chalConfirm.addEventListener('click', function(){
+    var a = parseInt(chalSlider.value, 10);
+    var sen = Math.sin(a * Math.PI/180);
+    var ok = Math.abs(sen - targets[round]) <= 0.02;
+    dots[round].classList.add(ok ? 'hit' : 'miss');
+    if(ok){
+      chalFb.textContent = '✔ Encontrou! sen ' + a + '° ≈ ' + sen.toFixed(2);
+      chalFb.classList.add('ok');
+      roundScore++;
+      addScore(1);
+    } else {
+      chalFb.textContent = '✘ Ainda não — sen ' + a + '° = ' + sen.toFixed(2) + ' (alvo: ' + targets[round].toFixed(2) + ')';
+      chalFb.classList.add('no');
+    }
+    chalConfirm.disabled = true;
+    chalSlider.disabled = true;
+    round++;
+    if(round < targets.length){
+      setTimeout(loadRound, 1400);
+    } else {
+      phase3Done = true;
+      setTimeout(checkAllDone, 1400);
+    }
+  });
+
+  function checkAllDone(){
+    if(phase1Done && phase3Done){
+      var finalCard = document.getElementById('finalCard');
+      document.getElementById('finalScore').textContent = totalScore;
+      var msg = document.getElementById('finalMsg');
+      if(totalScore >= 6) msg.textContent = 'Excelente! Você domina o triângulo e o seno.';
+      else if(totalScore >= 4) msg.textContent = 'Bom trabalho — continue praticando com o explorador.';
+      else msg.textContent = 'Volte à Fase 2 e explore mais antes de tentar de novo.';
+      finalCard.classList.add('show');
+      finalCard.scrollIntoView({behavior:'smooth', block:'center'});
+      try{ window.reportarConclusao(totalScore, 7); }catch(e){}
+    }
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

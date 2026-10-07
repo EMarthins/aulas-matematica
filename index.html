@@ -196,6 +196,25 @@
   .item-link:hover .arrow{ opacity:1; transform:translateX(2px); }
   .item-link .arrow svg{ width:14px; height:14px; display:block; }
 
+  .act-box{ border-top:1px dashed var(--line-strong); padding-top:12px; }
+  .act-box summary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px;
+    font-family:'Archivo',sans-serif; font-size:.8rem; font-weight:800;
+    text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft);
+  }
+  .act-box summary::-webkit-details-marker{ display:none; }
+  .act-box summary::before{
+    content:''; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+    transform:rotate(-45deg); transition:transform .15s ease; flex:none;
+  }
+  .act-box[open] summary::before{ transform:rotate(45deg); }
+  .act-box summary:hover{ color:var(--accent, var(--primary)); }
+  .act-box .act-count{
+    font-family:'JetBrains Mono',monospace; font-size:.66rem; padding:.15em .55em; border-radius:999px;
+    background:var(--accent-soft, var(--primary-soft)); color:var(--accent, var(--primary));
+  }
+  .act-box .item-list{ margin-top:10px; }
+
   footer{
     border-top:1px solid var(--line); padding:26px 0 40px;
     color:var(--ink-faint); font-size:.8rem;
@@ -288,7 +307,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
     catalogRoot.innerHTML = '';
     statsRoot.innerHTML = '';
-    var totalAulas = 0, totalUnidades = 0, totalGuias = 0;
+    var totalAulas = 0, totalUnidades = 0, totalGuias = 0, totalAtividades = 0;
 
     materia.CATALOG.forEach(function(anoBlock){
       anoBlock.trimestres.forEach(function(tri){
@@ -310,18 +329,34 @@ import { MATERIAS, ICONS } from './app/catalog.js';
           head.appendChild(el('div','unit-icon', svgIcon(unidade.icon)));
           card.appendChild(head);
 
-          var list = el('div','item-list');
-          unidade.itens.forEach(function(item){
-            if(item.tipo.indexOf('Aula') === 0) totalAulas++; else totalGuias++;
+          function linkItem(item, rotulo){
             var a = el('a','item-link');
             a.href = item.arquivo;
             a.innerHTML =
-              '<span class="badge">'+item.tipo+'</span>' +
+              '<span class="badge">'+rotulo+'</span>' +
               '<span class="txt">'+item.titulo+'</span>' +
               '<span class="arrow">'+ARROW+'</span>';
-            list.appendChild(a);
+            return a;
+          }
+
+          var list = el('div','item-list');
+          var atividades = [];
+          unidade.itens.forEach(function(item){
+            if(item.tipo === 'Atividade'){ atividades.push(item); totalAtividades++; return; }
+            if(item.tipo.indexOf('Aula') === 0) totalAulas++; else totalGuias++;
+            list.appendChild(linkItem(item, item.tipo));
           });
           card.appendChild(list);
+
+          // Atividades extras ficam recolhidas, para o card não crescer demais.
+          if(atividades.length){
+            var box = el('details','act-box');
+            box.appendChild(el('summary', null, 'Atividades <span class="act-count">'+atividades.length+'</span>'));
+            var actList = el('div','item-list');
+            atividades.forEach(function(item){ actList.appendChild(linkItem(item, item.sub || 'Atividade')); });
+            box.appendChild(actList);
+            card.appendChild(box);
+          }
           grid.appendChild(card);
         });
         block.appendChild(grid);
@@ -332,6 +367,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     stat(totalUnidades, 'Unidades');
     stat(totalAulas, 'Aulas');
     stat(totalGuias, 'Guias visuais');
+    if(totalAtividades) stat(totalAtividades, 'Atividades');
 
     setStoredMateria(materia.id);
   }

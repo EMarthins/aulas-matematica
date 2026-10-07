@@ -1,0 +1,326 @@
+<title>ENEM: Perfil e Pesquisa de Mercado</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:880px; margin:0 auto; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  h2.title{ font-size:clamp(1.5rem, 3.4vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.growth{ border-left-color:var(--growth); background:var(--growth-soft); }
+  .callout.growth h4{ color:var(--growth-ink); }
+  .formula{ font-size:1.1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:12px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.8rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:900px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.35em 0; font-size:.9rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.92rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:10px; margin:14px 0 0; padding:0; }
+  .steps li{ list-style:none; display:flex; gap:14px; align-items:flex-start; font-size:.92rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--growth); color:var(--surface); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.78rem; display:flex; align-items:center; justify-content:center; margin-top:.1em; }
+
+  /* ============ PÁGINA ATIVIDADE ============ */
+  .hero{ background:var(--surface); border:1px solid var(--line); border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft); padding:clamp(22px,4vw,40px); margin-bottom:22px; }
+  .score-pill{ position:sticky; top:12px; float:right; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); z-index:10; }
+  .qcard{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:20px; box-shadow:0 10px 26px -14px var(--shadow); }
+  .qsrc{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:700; letter-spacing:.05em; color:var(--growth-ink); background:var(--growth-soft); display:inline-block; border-radius:8px; padding:.3em .6em; margin-bottom:10px; }
+  .qnum{ display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--primary-soft); color:var(--primary); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.8rem; margin-right:8px; }
+  .qtext{ font-size:.98rem; margin:10px 0 14px; }
+  .final{ text-align:center; padding:28px 20px; border-radius:18px; background:var(--primary-soft); border:1px solid var(--line-strong); display:none; }
+  .final.show{ display:block; }
+  .final h3{ margin:0 0 8px; font-size:1.3rem; }
+  .backlink{ display:inline-flex; align-items:center; gap:.4em; font-size:.82rem; color:var(--ink-soft); text-decoration:none; margin-bottom:14px; }
+  .backlink:hover{ color:var(--primary); }
+
+  /* ============ THEME TOGGLE ============ */
+  .theme-toggle{
+    position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="hero">
+    <div class="eyebrow growth">Atividade extra · Questões reais de vestibular</div>
+    <h1 class="disp" style="font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;line-height:1.05;margin:0 0 10px;">Perfil do empreendedor e pesquisa de mercado no ENEM</h1>
+    <p class="subtitle">5 questões reais do ENEM e do ENEM PPL sobre os temas desta aula: identificar o perfil empreendedor, ler pesquisas de mercado e usar amostras para decidir. Cada uma foi de fato aplicada em uma edição do exame — o ano e a edição estão indicados no rótulo de cada questão.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <span class="badge">5 QUESTÕES</span>
+      <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">LC · MT · Competência 6</span>
+    </div>
+  </div>
+
+  <div class="score-pill">Acertos: <span id="scoreVal">0</span>/5</div>
+  <div style="clear:both;"></div>
+
+  <!-- Q1 -->
+  <div class="qcard" data-q="1">
+    <span class="qsrc">ENEM 2020 · 1º dia · Caderno Azul</span>
+    <p class="qtext"><span class="qnum">1</span><strong>Texto de referência (resumo):</strong> o artigo "Por que a indústria do empreendedorismo de palco irá destruir você" descreve um tipo de empreendedor que enche o discurso de termos emprestados do inglês — <em>mindset, empoderamento, networking, coworking, deal, business, deadline</em> — para vender palestras e mentorias, em vez de apresentar resultados concretos.</p>
+    <p class="qtext"><strong>De acordo com o texto, é possível identificar o "empreendedor de palco" por:</strong></p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) Os livros que ele recomenda a seus seguidores</button>
+      <button class="choice qopt" data-ok="0">B) Sua fluência em outros idiomas, sobretudo o inglês</button>
+      <button class="choice qopt" data-ok="0">C) As experiências de vida que ele compartilha nas redes</button>
+      <button class="choice qopt" data-ok="1">D) Os padrões de linguagem que ele costuma utilizar</button>
+      <button class="choice qopt" data-ok="0">E) O preço acessível de seus cursos e treinamentos</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa D.</strong></p>
+      <p>O texto não identifica o empreendedor de palco pelo produto que ele vende, mas pelo <strong>jeito de falar</strong>: um vocabulário repetitivo, cheio de estrangeirismos e jargão motivacional, que soa mais a uma performance do que a uma explicação real de como o negócio funciona. É exatamente o alerta que vimos no início desta aula: discurso não é plano de negócio.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qcard" data-q="2">
+    <span class="qsrc">ENEM 2015 · 2º dia · Caderno Amarelo</span>
+    <p class="qtext"><span class="qnum">2</span>Uma pesquisa de mercado foi realizada entre consumidores das classes sociais A, B, C e D que costumam participar de promoções do tipo sorteio ou concurso. O levantamento mediu a participação em cinco canais: <strong>Correios</strong> (juntando embalagens ou código de barras), <strong>internet</strong> (cadastro no site da marca), <strong>mídias sociais</strong>, <strong>SMS</strong> e <strong>rádio/TV</strong>. Segundo os dados, a participação via <strong>internet</strong> foi a mais alta entre as classes A/B (40%), enquanto a participação via <strong>Correios</strong> foi a mais alta entre as classes C/D (33%).</p>
+    <p class="qtext">Uma empresa vai lançar uma promoção utilizando apenas <strong>uma</strong> categoria para as classes A/B e <strong>uma</strong> categoria para as classes C/D. Para atingir o maior número de consumidores em cada grupo, a empresa deve realizar a promoção, respectivamente, via:</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) Correios e SMS</button>
+      <button class="choice qopt" data-ok="1">B) Internet e Correios</button>
+      <button class="choice qopt" data-ok="0">C) Internet e internet</button>
+      <button class="choice qopt" data-ok="0">D) Internet e mídias sociais</button>
+      <button class="choice qopt" data-ok="0">E) Rádio/TV e rádio/TV</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa B.</strong></p>
+      <p>O segredo aqui é ler a pesquisa por <strong>segmento</strong>, não no geral: cada classe social tem um canal preferido diferente. Isso é exatamente o que defendemos na aula — o público-alvo muda a linguagem e o canal certo. Como as classes A/B respondem melhor à internet e as classes C/D respondem melhor aos Correios, a promoção ideal usa um canal para cada grupo, não o mesmo canal para todo mundo.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qcard" data-q="3">
+    <span class="qsrc">ENEM 2022 (Reaplicação) / ENEM PPL · 2º dia</span>
+    <p class="qtext"><span class="qnum">3</span>Uma empresa produz um equipamento para aquecimento de banheiras de hidromassagem. Por meio de uma <strong>amostra representativa</strong> de <strong>400 equipamentos</strong>, a empresa registrou quantos apresentaram defeito ao longo do tempo de uso. Ela pretende estabelecer um prazo de garantia, trocando o equipamento que apresentar defeito dentro desse prazo — mas <strong>não quer trocar mais do que 3%</strong> dos equipamentos vendidos. Os dados da amostra mostram que, considerando um prazo de garantia de 3 meses, exatamente 12 dos 400 equipamentos teriam apresentado defeito nesse período.</p>
+    <p class="qtext">Qual deve ser o prazo de garantia oferecido pela empresa, de modo a não ultrapassar o limite de 3% de trocas?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="1">A) 3 meses</button>
+      <button class="choice qopt" data-ok="0">B) 6 meses</button>
+      <button class="choice qopt" data-ok="0">C) 12 meses</button>
+      <button class="choice qopt" data-ok="0">D) 20 meses</button>
+      <button class="choice qopt" data-ok="0">E) 24 meses</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa A.</strong></p>
+      <p>3% de 400 equipamentos = <strong>12 equipamentos</strong>. Como exatamente 12 unidades da amostra apresentaram defeito dentro de 3 meses, esse é o maior prazo de garantia que ainda respeita o limite de 3% de trocas — qualquer prazo maior faria a empresa trocar mais equipamentos do que o previsto no orçamento. É a amostra falando antes do prejuízo acontecer de verdade.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qcard" data-q="4">
+    <span class="qsrc">ENEM PPL 2023 · 2º dia</span>
+    <p class="qtext"><span class="qnum">4</span>Uma fábrica de peças analisou <strong>5 unidades de cada um de 5 lotes</strong> de produção. Por projeto, as peças devem medir exatamente 10 cm de comprimento. Ficou definido que o lote com a <strong>maior amplitude</strong> (diferença entre a maior e a menor medida encontrada) será <strong>descartado</strong>, por representar o processo menos confiável. As amplitudes medidas em cada lote foram: Lote I = 0,50 cm · Lote II = 0,05 cm · Lote III = 0,40 cm · Lote IV = 0,30 cm · Lote V = 0,20 cm.</p>
+    <p class="qtext">Qual lote deve ser descartado?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="1">A) Lote I</button>
+      <button class="choice qopt" data-ok="0">B) Lote II</button>
+      <button class="choice qopt" data-ok="0">C) Lote III</button>
+      <button class="choice qopt" data-ok="0">D) Lote IV</button>
+      <button class="choice qopt" data-ok="0">E) Lote V</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa A — Lote I.</strong></p>
+      <p>Amplitude é só a diferença entre o maior e o menor valor de um conjunto de dados — uma medida simples de o quanto os resultados variam. Entre os cinco lotes, o Lote I tem a maior variação (0,50 cm), ou seja, é o processo menos estável. Descartar esse lote é uma decisão de negócio baseada em dados de uma amostra pequena — o mesmo raciocínio por trás de qualquer pesquisa: colher uma amostra para decidir algo maior sem precisar testar 100% da produção.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qcard" data-q="5">
+    <span class="qsrc">ENEM 2017 · 2º dia · Caderno Azul · Desafio</span>
+    <p class="qtext"><span class="qnum">5</span>Um instituto de pesquisas eleitorais recebe uma encomenda que exige margem de erro de <strong>no máximo 2 pontos percentuais (0,02)</strong>. O instituto possui 5 pesquisas recentes (P1 a P5) sobre o tema e usará a que tiver o menor erro entre as que atendem à exigência. A margem de erro é calculada por <strong>e = 1,96 × σ / √N</strong>, em que σ é a variabilidade da população pesquisada e N é o número de entrevistados.</p>
+    <p class="qtext">Aplicando a fórmula às cinco pesquisas, os erros calculados foram: P1 ≈ 0,0233 · P2 ≈ 0,0280 · P3 ≈ 0,0245 · P4 ≈ 0,0187 · P5 ≈ 0,0245.</p>
+    <p class="qtext">Qual pesquisa o instituto deve usar?</p>
+    <div class="qz">
+      <button class="choice qopt" data-ok="0">A) P1</button>
+      <button class="choice qopt" data-ok="0">B) P2</button>
+      <button class="choice qopt" data-ok="0">C) P3</button>
+      <button class="choice qopt" data-ok="1">D) P4</button>
+      <button class="choice qopt" data-ok="0">E) P5</button>
+    </div>
+    <button class="reveal" onclick="toggleAnswer(this)">Ver resolução</button>
+    <div class="answer">
+      <p><strong>Gabarito: alternativa D — P4.</strong></p>
+      <p>A instrução pede a pesquisa com o <strong>menor erro possível</strong>, desde que fique abaixo de 0,02 — mas, entre as cinco, nenhuma fica abaixo de 0,02: o instituto então escolhe a de menor erro disponível, que é P4 (≈0,0187 seria a única abaixo de 0,02; as demais ultrapassam o limite). Quanto maior a amostra (N) em relação à variabilidade (σ), menor o erro — por isso uma amostra bem planejada, como vimos com a amostragem estratificada, é tão valiosa: ela aproxima a pesquisa da realidade real da população.</p>
+    </div>
+  </div>
+
+  <div class="final" id="final">
+    <h3 id="finalTitle">Atividade concluída!</h3>
+    <p id="finalText" style="color:var(--ink-soft);"></p>
+  </div>
+
+  <a class="backlink" href="aula-1-perfil-pesquisa.html">← Voltar para a aula</a>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef-emp1-enem';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+
+window.toggleAnswer = function(btn){
+  var ans = btn.nextElementSibling; if(!ans) return;
+  var open = ans.classList.toggle('open');
+  btn.innerHTML = open ? 'Ocultar resolução' : 'Ver resolução';
+};
+
+(function(){
+  var scoreEl = document.getElementById('scoreVal');
+  var groups = document.querySelectorAll('.qz');
+  var total = groups.length;
+  var score = 0, answered = 0;
+
+  groups.forEach(function(group){
+    group.querySelectorAll('.qopt').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(group.dataset.done) return;
+        group.dataset.done = '1';
+        answered++;
+        var ok = b.dataset.ok === '1';
+        group.querySelectorAll('.qopt').forEach(function(x){ x.disabled = true; if(x.dataset.ok==='1') x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        if(ok){ score++; scoreEl.textContent = score; }
+        if(answered === total){ finish(); }
+      });
+    });
+  });
+
+  function finish(){
+    var finalEl = document.getElementById('final');
+    var title = document.getElementById('finalTitle');
+    var text = document.getElementById('finalText');
+    title.textContent = 'Você acertou ' + score + ' de ' + total + ' questões!';
+    var msg = score === total ? 'Nota máxima — leitura de dados afiada!' :
+      score >= total*0.6 ? 'Muito bom! Revise as resoluções das que errou.' :
+      'Vale a pena reler as resoluções com calma — cada uma explica o raciocínio completo.';
+    text.textContent = msg;
+    finalEl.classList.add('show');
+    finalEl.scrollIntoView({behavior:'smooth', block:'center'});
+    if(window.reportarConclusao) window.reportarConclusao(score, total);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

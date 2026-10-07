@@ -26,7 +26,10 @@ export const MATERIAS = [
                 icon: 'dots',
                 itens: [
                   { tipo:'Aula', titulo:'Padrões e termo geral', arquivo:'aulas/3-ano/3-tri/sequencias/aula.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Sequências Numéricas', arquivo:'aulas/3-ano/3-tri/sequencias/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Sequências Numéricas', arquivo:'aulas/3-ano/3-tri/sequencias/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Sequências no ENEM: questões reais', arquivo:'aulas/3-ano/3-tri/sequencias/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Arraste o Próximo Número', arquivo:'aulas/3-ano/3-tri/sequencias/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Sequências: Trilha de Desafios', arquivo:'aulas/3-ano/3-tri/sequencias/atividade-pratica.html' }
                 ]
               },
               {
@@ -36,7 +39,13 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Termo geral', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-1-termo-geral.html' },
                   { tipo:'Aula 2', titulo:'Soma dos termos', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-2-soma-termos.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Progressão Aritmética', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Aritmética', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Termo Geral da P.A.', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-1-termo-geral-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Monte a P.A.: Arraste os Termos', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-1-termo-geral-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Prática Progressiva: Termo Geral', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-1-termo-geral-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Soma dos Termos da P.A.', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-2-soma-termos-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Emparelhando com Gauss', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-2-soma-termos-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Prática Progressiva: Soma dos Termos', arquivo:'aulas/3-ano/3-tri/progressao-aritmetica/aula-2-soma-termos-atividade-pratica.html' }
                 ]
               },
               {
@@ -46,7 +55,13 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Termo geral', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-1-termo-geral.html' },
                   { tipo:'Aula 2', titulo:'Soma dos termos', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-2-soma-termos.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Progressão Geométrica', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Geométrica', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Termo Geral da PG', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-1-termo-geral-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Laboratório da PG: Construa e Preveja', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-1-termo-geral-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Pratique: Termo Geral em 3 Níveis', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-1-termo-geral-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Soma dos Termos da PG', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-2-soma-termos-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Tabuleiro Infinito: Explore a Soma da PG', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-2-soma-termos-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Pratique: Soma da PG em 3 Níveis', arquivo:'aulas/3-ano/3-tri/progressao-geometrica/aula-2-soma-termos-atividade-pratica.html' }
                 ]
               },
               {
@@ -56,7 +71,13 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Relações métricas e seno', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-1-relacoes-seno.html' },
                   { tipo:'Aula 2', titulo:'Cosseno, tangente e relação fundamental', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-2-cosseno-tangente.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Trigonometria no Triângulo', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Trigonometria no Triângulo', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Relações Métricas e Seno', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-1-relacoes-seno-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Laboratório do Triângulo: Seno na Prática', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-1-relacoes-seno-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Lista Progressiva: Relações Métricas e Seno', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-1-relacoes-seno-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Cosseno, Tangente e Relação Fundamental', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-2-cosseno-tangente-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Painel Ao Vivo: Cosseno e Tangente', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-2-cosseno-tangente-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Lista Progressiva: Cosseno, Tangente e Relação Fundamental', arquivo:'aulas/3-ano/3-tri/trigonometria-triangulo/aula-2-cosseno-tangente-atividade-pratica.html' }
                 ]
               },
               {
@@ -66,7 +87,13 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Arcos, seno e cosseno no ciclo', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-1-arcos-seno-cosseno.html' },
                   { tipo:'Aula 2', titulo:'Redução ao 1º quadrante e funções', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-2-reducao-funcoes.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Trigonometria no Ciclo', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Trigonometria no Ciclo', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Arcos, Seno e Cosseno no Ciclo', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-1-arcos-seno-cosseno-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Ciclo Interativo: Arraste o Ponto', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-1-arcos-seno-cosseno-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Prática: Arcos, Seno e Cosseno no Ciclo', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-1-arcos-seno-cosseno-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Redução e Funções Trigonométricas', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-2-reducao-funcoes-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Jogo: Redução e Monte a Onda', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-2-reducao-funcoes-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Prática: Redução e Funções Trigonométricas', arquivo:'aulas/3-ano/3-tri/trigonometria-ciclo/aula-2-reducao-funcoes-atividade-pratica.html' }
                 ]
               }
             ]
@@ -85,7 +112,10 @@ export const MATERIAS = [
                 icon: 'curve-up',
                 itens: [
                   { tipo:'Aula', titulo:'Função e equação exponencial', arquivo:'aulas/2-ano/3-tri/exponenciais/aula.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Exponenciais', arquivo:'aulas/2-ano/3-tri/exponenciais/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Exponenciais', arquivo:'aulas/2-ano/3-tri/exponenciais/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Exponenciais no ENEM — Atividade', arquivo:'aulas/2-ano/3-tri/exponenciais/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Laboratório de Exponenciais', arquivo:'aulas/2-ano/3-tri/exponenciais/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Treino Progressivo — Exponenciais', arquivo:'aulas/2-ano/3-tri/exponenciais/atividade-pratica.html' }
                 ]
               },
               {
@@ -96,7 +126,16 @@ export const MATERIAS = [
                   { tipo:'Aula 1', titulo:'Fundamentos', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-1-fundamentos.html' },
                   { tipo:'Aula 2', titulo:'Propriedades', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-2-propriedades.html' },
                   { tipo:'Aula 3', titulo:'Equações e função', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-3-equacoes-funcao.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Logaritmos', arquivo:'aulas/2-ano/3-tri/logaritmos/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Logaritmos', arquivo:'aulas/2-ano/3-tri/logaritmos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Logaritmos no ENEM: definição e propriedades', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-1-fundamentos-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · A Máquina do Logaritmo', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-1-fundamentos-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Prática Progressiva: Fundamentos dos Logaritmos', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-1-fundamentos-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Logaritmos no ENEM: propriedades operatórias', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-2-propriedades-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Laboratório de Escalas Logarítmicas', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-2-propriedades-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Prática Progressiva: Propriedades Operatórias', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-2-propriedades-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 3 · Logaritmos no ENEM: questões reais', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-3-equacoes-funcao-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 3 · Laboratório da Função Logarítmica', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-3-equacoes-funcao-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 3 · Prática Progressiva: Logaritmos', arquivo:'aulas/2-ano/3-tri/logaritmos/aula-3-equacoes-funcao-atividade-pratica.html' }
                 ]
               },
               {
@@ -106,7 +145,13 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Por partes e propriedades', arquivo:'aulas/2-ano/3-tri/funcoes/aula-1-partes-propriedades.html' },
                   { tipo:'Aula 2', titulo:'Composição e inversa', arquivo:'aulas/2-ano/3-tri/funcoes/aula-2-composta-inversa.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Funções', arquivo:'aulas/2-ano/3-tri/funcoes/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Funções', arquivo:'aulas/2-ano/3-tri/funcoes/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Função por Partes e Propriedades', arquivo:'aulas/2-ano/3-tri/funcoes/aula-1-partes-propriedades-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Oficina da Tarifa e Sala de Classificação', arquivo:'aulas/2-ano/3-tri/funcoes/aula-1-partes-propriedades-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Prática Progressiva: Por Partes e Propriedades', arquivo:'aulas/2-ano/3-tri/funcoes/aula-1-partes-propriedades-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Composição e Inversa', arquivo:'aulas/2-ano/3-tri/funcoes/aula-2-composta-inversa-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Fábrica da Composta e Espelho da Inversa', arquivo:'aulas/2-ano/3-tri/funcoes/aula-2-composta-inversa-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Prática Progressiva: Composição e Inversa', arquivo:'aulas/2-ano/3-tri/funcoes/aula-2-composta-inversa-atividade-pratica.html' }
                 ]
               }
             ]
@@ -157,7 +202,10 @@ export const MATERIAS = [
                 icon: 'dice',
                 itens: [
                   { tipo:'Aula', titulo:'A matemática por trás das bets', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/aula.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Jogos de Azar', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Jogos de Azar', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Apostas no ENEM: questões reais', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Simulador: A Casa Sempre Ganha', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Jogos de Azar: Trilha de Problemas', arquivo:'educacao-financeira/3-ano/3-tri/jogos-de-azar/atividade-pratica.html' }
                 ]
               },
               {
@@ -168,7 +216,16 @@ export const MATERIAS = [
                   { tipo:'Aula 1', titulo:'Perfil e pesquisa de mercado', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-1-perfil-pesquisa.html' },
                   { tipo:'Aula 2', titulo:'Ideia e proposta de valor', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-2-ideia-proposta.html' },
                   { tipo:'Aula 3', titulo:'Canais, parcerias e custos', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-3-canais-custos.html' },
-                  { tipo:'Guia', titulo:'Guia visual — Empreendedorismo', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/infografico.html' }
+                  { tipo:'Guia', titulo:'Guia visual — Empreendedorismo', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Perfil e Pesquisa de Mercado', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-1-perfil-pesquisa-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Monte sua Pesquisa', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-1-perfil-pesquisa-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Prática: Perfil e Pesquisa', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-1-perfil-pesquisa-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Ideia e Proposta de Valor', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-2-ideia-proposta-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · O Caminho do Empreendedor', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-2-ideia-proposta-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Prática: Minha Proposta de Valor', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-2-ideia-proposta-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 3 · Canais, Parcerias e Custos', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-3-canais-custos-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 3 · Calculadora do Ponto de Equilíbrio', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-3-canais-custos-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 3 · Prática: Custos em Progressão', arquivo:'educacao-financeira/3-ano/3-tri/empreendedorismo/aula-3-canais-custos-atividade-pratica.html' }
                 ]
               }
             ]
@@ -203,9 +260,10 @@ export function listarAulasParaSelecao(){
       anoBlock.trimestres.forEach(function(tri){
         tri.unidades.forEach(function(unidade){
           unidade.itens.forEach(function(item){
+            var prefixo = item.tipo === 'Atividade' ? '[Atividade ' + item.sub + '] ' : '';
             lista.push({
               path: item.arquivo,
-              label: materia.nome + ' · ' + anoBlock.ano + ' · ' + unidade.titulo + ' — ' + item.titulo,
+              label: materia.nome + ' · ' + anoBlock.ano + ' · ' + unidade.titulo + ' — ' + prefixo + item.titulo,
               tipoConteudo: item.tipo
             });
           });
