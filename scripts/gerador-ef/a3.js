@@ -248,4 +248,4 @@ const c5 = mk({
   });`
 });
 
-module.exports = [c1, c2, c3, c4, c5];
+module.exports = [c1, c2, c3, c4, c5]; module.exports.CSS = COMMON_CSS;

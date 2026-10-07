@@ -313,7 +313,17 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Cheque especial e juros compostos', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-1-cheque-especial-juros-compostos.html' },
                   { tipo:'Aula 2', titulo:'Financiamento, prestações e calculadora financeira', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-2-financiamento-calculadora-financeira.html' },
-                  { tipo:'Aula 3', titulo:'Cartão de crédito, nome limpo e score', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score.html' }
+                  { tipo:'Aula 3', titulo:'Cartão de crédito, nome limpo e score', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Crédito, Juros e Financiamento', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Crédito e juros compostos no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-1-cheque-especial-juros-compostos-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Quem eu pago primeiro?', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-1-cheque-especial-juros-compostos-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · A bola de neve da dívida', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-1-cheque-especial-juros-compostos-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Financiamento e prestações no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-2-financiamento-calculadora-financeira-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Ranking das ofertas de parcelamento', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-2-financiamento-calculadora-financeira-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Parcelas, taxas e prazos', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-2-financiamento-calculadora-financeira-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 3 · Cartão de crédito e score no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 3 · Score Quest', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 3 · Fatura, limite e score', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score-atividade-pratica.html' }
                 ]
               },
               {
@@ -321,7 +331,11 @@ export const MATERIAS = [
                 accent: 'decay',
                 icon: 'grid',
                 itens: [
-                  { tipo:'Aula', titulo:'Código de Defesa do Consumidor e PROCON', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/aula.html' }
+                  { tipo:'Aula', titulo:'Código de Defesa do Consumidor e PROCON', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Direitos do Consumidor', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Consumidor e matemática no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Júri do consumidor', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Contas de quem conhece seus direitos', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/atividade-pratica.html' }
                 ]
               },
               {
@@ -330,7 +344,14 @@ export const MATERIAS = [
                 icon: 'dots',
                 itens: [
                   { tipo:'Aula 1', titulo:'Armadilhas de consumo e consumismo', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-1-armadilhas-consumismo.html' },
-                  { tipo:'Aula 2', titulo:'Compras inteligentes: supermercado e promoções', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes.html' }
+                  { tipo:'Aula 2', titulo:'Compras inteligentes: supermercado e promoções', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Consumo Consciente', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Armadilhas de consumo no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-1-armadilhas-consumismo-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Caça às armadilhas', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-1-armadilhas-consumismo-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · As contas por trás das armadilhas', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-1-armadilhas-consumismo-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Supermercado e promoções no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · O carrinho do mercado', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · Promoção de verdade?', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes-atividade-pratica.html' }
                 ]
               },
               {
@@ -338,7 +359,11 @@ export const MATERIAS = [
                 accent: 'danger',
                 icon: 'dice',
                 itens: [
-                  { tipo:'Aula', titulo:'A ilusão do dinheiro fácil', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/aula.html' }
+                  { tipo:'Aula', titulo:'A ilusão do dinheiro fácil', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Apostas, Bets e Cassino', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'A matemática das apostas no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detector de anúncios enganosos', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'A matemática da casa', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/atividade-pratica.html' }
                 ]
               },
               {
@@ -346,7 +371,11 @@ export const MATERIAS = [
                 accent: 'primary',
                 icon: 'briefcase',
                 itens: [
-                  { tipo:'Aula', titulo:'Perfil empreendedor: o quê, como e por quê', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/aula.html' }
+                  { tipo:'Aula', titulo:'Perfil empreendedor: o quê, como e por quê', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Perfil Empreendedor', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Números do empreendedor no ENEM', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Você é o dono da barraca', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'As contas da barraca', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/atividade-pratica.html' }
                 ]
               }
             ]

@@ -68,11 +68,11 @@ aulas/
 educacao-financeira/
   1-ano/
     3-tri/
-      credito-juros-financiamento/   (3 aulas — atividades e guias a fazer)
-      direitos-do-consumidor/        (aula)
-      consumo-consciente/            (2 aulas)
-      apostas-bets-cassino/          (aula)
-      perfil-empreendedor/           (aula)
+      credito-juros-financiamento/   (3 aulas + guia + 9 atividades)
+      direitos-do-consumidor/        (aula + guia + 3 atividades)
+      consumo-consciente/            (2 aulas + guia + 6 atividades)
+      apostas-bets-cassino/          (aula + guia + 3 atividades)
+      perfil-empreendedor/           (aula + guia + 3 atividades)
   2-ano/
     3-tri/
       investimentos-renda-fixa/      (2 aulas + guia + 6 atividades)
