@@ -1,0 +1,916 @@
+<title>Financiamento, Prestações e Calculadora Financeira</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+</style>
+<style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Educação Financeira · Financiamento e Calculadora Financeira</div>
+    <div>Aulas 38, 40 · 1ª Série do Ensino Médio · Trimestre 3</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,205 C 160,200 280,170 400,130 C 520,90 700,50 840,26" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="26" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">Educação Financeira · 1ª série · Trimestre 3</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Financiamento, prestações e a <span style="color:var(--primary);">calculadora financeira</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Taxas equivalentes, o cálculo da prestação de um crediário e como a HP 12C (e um simulador) resolvem juros, prazo e parcelas em segundos.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">AULAS 38, 40</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">PV · PMT · n · i · FV</span>
+            <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">Taxa equivalente</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Da geladeira que estragou até a conta exata da prestação.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 9h6v12h-6M8 7h2M8 11h2M8 15h2"/></svg><div><strong>O crediário e as financeiras</strong><div class="hint">quem financia e por que os juros são altos</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Taxas equivalentes</strong><div class="hint">12% ao ano não é 1% ao mês — converta certo</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>ENEM: comparando financiamentos</strong><div class="hint">qual loja custa menos ao final de um ano?</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15c.6.7 1.7 1 3 1s2.7-.6 2.7-1.7c0-1-1-1.4-3-1.8s-3-.9-3-1.9C8.7 9.6 10.2 9 12 9s2.4.3 3 1"/></svg><div><strong>A prestação (PMT)</strong><div class="hint">dona Angelina, a geladeira e o sofá</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>A calculadora financeira</strong><div class="hint">PV, PMT, n, i e FV — e por que a HP 12C não tem "="</div></div></div>
+            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Mão na massa</strong><div class="hint">taxa do notebook, prestação do empréstimo, preço à vista e prazo da geladeira</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Compreender <strong>financiamentos e crediários</strong>, suas taxas e demais serviços.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Converter <strong>taxas equivalentes</strong> (diária, mensal e anual) em juros compostos.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Calcular o valor da <strong>prestação</strong> e o <strong>total pago</strong> em um parcelamento.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Usar a <strong>calculadora financeira</strong> (HP 12C ou simulador) para achar taxa, prazo, preço à vista ou prestação.</span></li></ul>
+            <div class="card primary">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--primary);">Habilidades do ENEM</h4>
+              <p style="font-size:.9rem;margin:0;">MT H3 — resolver situação-problema envolvendo conhecimentos numéricos · MT H22 — conhecimentos algébricos como recurso na argumentação.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 40 · para início de conversa</div>
+          <h2 class="title">A geladeira estragou e não há cartão nem dinheiro</h2>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">A geladeira da sua casa estragou. Vocês <strong>não têm cartão de crédito</strong> nem dinheiro para comprar à vista. Qual forma de crédito é a ideal para este caso?</p>
+              <div class="callout"><h4>Para estas situações existe o crediário</h4><p>Empresas especializadas, as <strong>financeiras</strong>, oferecem crédito para móveis, automóveis e eletrodomésticos.</p></div>
+            </div>
+            <div>
+              <div class="card"><strong>Como funciona</strong><p style="font-size:.9rem;margin-top:8px;">A financeira <strong>paga a loja</strong> e o cliente paga <strong>parcelado, em carnê/boleto, para a financeira</strong>. Como o risco de inadimplência é alto, os juros também são altos.</p></div>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em juros compostos, 12% ao ano é a mesma coisa que 1% ao mês?</p><button class="choice mqo" data-i="0">Sim, é só dividir por 12</button><button class="choice mqo" data-i="1">Não: a taxa mensal equivalente é um pouco menor que 1%</button><button class="choice mqo" data-i="2">Não: a taxa mensal equivalente é maior que 1%</button><button class="choice mqo" data-i="3">Depende do banco</button><div class="fb"></div><div class="answer"><p>Não é dividir por 12! A taxa equivalente é (1,12)<sup>1/12</sup> − 1 ≈ <strong>0,949% ao mês</strong>. Vamos entender essa conversão.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 40 · teoria</div>
+          <h2 class="title">Taxa equivalente</h2>
+          
+          <p class="lede">Em <strong>juros compostos</strong>, a taxa anual não se converte dividindo: <strong>1 + i<sub>a</sub> = (1 + i<sub>m</sub>)<sup>12</sup></strong>. Logo, <strong>i<sub>m</sub> = (1 + i<sub>a</sub>)<sup>1/12</sup> − 1</strong>.</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="wid">
+              <label>Converter de</label>
+              <select id="te-de"><option value="a">ao ano</option><option value="m" selected>ao mês</option><option value="d">ao dia</option></select>
+              <label>Para</label>
+              <select id="te-pa"><option value="a">ao ano</option><option value="m">ao mês</option><option value="d" selected>ao dia</option></select>
+              <label>Taxa (%)</label><input type="number" id="te-t" value="9.78" step="0.01">
+              <p class="small" style="margin:12px 0 0;">Taxa equivalente</p><div class="out" id="te-r" style="font-size:1.6rem;"></div>
+            </div>
+            <div>
+              <table class="tbl">
+  <tr><th>taxa</th><th>equivalente mensal</th></tr>
+  <tr><td style="text-align:left;">12% ao ano</td><td>≈ 0,9489% a.m.</td></tr>
+  <tr><td style="text-align:left;">15% ao ano</td><td>≈ 1,1715% a.m.</td></tr>
+  <tr><td style="text-align:left;">6% ao ano</td><td>≈ 0,4868% a.m.</td></tr>
+</table>
+              <div class="callout"><h4>Na calculadora do celular</h4><p>1,12 → tecla <span class="mono">xʸ</span> → ( 1 ÷ 12 ) → <span class="mono">=</span> → subtrair 1 → multiplicar por 100.</p></div>
+              <p class="hint">Mês de 30 dias, ano de 12 meses (convenção da aula): mensal → diária usa o expoente 1/30; diária → mensal, o expoente 30.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">ENEM 2018 PPL · comparando financiamentos</div>
+          <h2 class="title">Qual loja tem o menor valor final?</h2>
+          
+          <p class="lede">Um cliente quer trocar de carro. As três lojas aceitam o carro usado como entrada e financiam o restante por um ano, com juros (modelo da questão): <strong>valor final = (novo − usado) × fator de juros</strong>.</p>
+          <table class="tbl">
+  <tr><th>loja</th><th>carro novo</th><th>carro usado</th><th>a financiar</th><th>juros</th><th>valor final</th></tr>
+  <tr><td style="text-align:left;">A</td><td>R$ 28.500</td><td>R$ 13.500</td><td>R$ 15.000</td><td>18%</td><td><b>R$ 17.700</b></td></tr>
+  <tr><td style="text-align:left;">B</td><td>R$ 27.000</td><td>R$ 13.000</td><td>R$ 14.000</td><td>20%</td><td><b>R$ 16.800</b></td></tr>
+  <tr><td style="text-align:left;">C</td><td>R$ 26.500</td><td>R$ 12.000</td><td>R$ 14.500</td><td>19%</td><td><b>R$ 17.255</b></td></tr>
+</table>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual o menor valor final?</p><button class="choice mqo" data-i="0">R$ 14 mil</button><button class="choice mqo" data-i="1">R$ 15 mil</button><button class="choice mqo" data-i="2">R$ 16.800</button><button class="choice mqo" data-i="3">R$ 17.255</button><button class="choice mqo" data-i="4">R$ 17.700</button><div class="fb"></div><div class="answer"><p><strong>R$ 16.800 (loja B)</strong>: 14.000 × 1,20. Repare: a maior taxa (20%) não é a pior oferta, porque o valor financiado também importa.</p></div></div>
+            <div class="callout"><h4>Atenção</h4><p>Uma compra a prazo hoje é feita em condições diferentes das da questão (juros compostos). Por isso estudamos, a seguir, o parcelamento no sistema de juros compostos.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 40 · estudo de caso</div>
+          <h2 class="title">A geladeira da dona Angelina</h2>
+          
+          <p class="lede">Dona Angelina comprou uma geladeira de <strong>R$ 2.500</strong> em <strong>12 vezes sem entrada</strong>, com juros de <strong>0,85% ao mês</strong>. Qual o valor de cada prestação?</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p class="formula big">PMT = PV · i ÷ [1 − (1 + i)<sup>−n</sup>]</p>
+              <p class="small"><b>PV</b> preço à vista · <b>n</b> nº de prestações · <b>i</b> taxa mensal · <b>PMT</b> prestação</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p>PV = 2.500 · n = 12 · i = 0,85% = 0,0085</p><p>PMT = 2.500 · 0,0085 ÷ [1 − (1,0085)<sup>−12</sup>] ≈ <strong>R$ 220,02</strong></p><p class="hint">Podem existir outras taxas e serviços embutidos. Total pago: 12 × 220,02 = R$ 2.640,24.</p></div>
+            </div>
+            <div class="wid">
+              <div class="row"><div><label>Preço à vista (R$)</label><input type="number" id="pm-v" value="2500" step="100"></div><div><label>Taxa (% ao mês)</label><input type="number" id="pm-i" value="0.85" step="0.05"></div><div><label>Prestações</label><input type="number" id="pm-n" value="12" min="1" step="1"></div></div>
+              <p class="small" style="margin:12px 0 0;">Prestação</p><div class="out" id="pm-p" style="font-size:1.8rem;"></div>
+              <p class="small" id="pm-t" style="margin:4px 0 0;"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Atividade · o sofá do crediário</div>
+          <h2 class="title">Taxa diária, mensal e prestação</h2>
+          
+          <p class="lede">Um sofá de <strong>R$ 1.800</strong> será financiado em <strong>18 meses</strong>, com juros anunciados de <strong>0,08% ao dia</strong>. Siga as etapas:</p>
+          <div class="grid3" style="margin-top:8px;">
+            <div class="card"><span class="badge">1º</span><p style="font-size:.9rem;margin-top:8px;">Converta a taxa <strong>diária em mensal</strong>: (1,0008)<sup>30</sup> − 1 ≈ <strong>2,428%</strong> ao mês.</p></div>
+            <div class="card"><span class="badge">2º</span><p style="font-size:.9rem;margin-top:8px;">Calcule a <strong>prestação</strong> com PV = 1.800, n = 18, i = 0,02428.</p></div>
+            <div class="card"><span class="badge">3º</span><p style="font-size:.9rem;margin-top:8px;">Multiplique a prestação pelo prazo para ter o <strong>total pago</strong>.</p></div>
+          </div>
+          <button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p>PMT = 1.800 · 0,02428 ÷ [1 − (1,02428)<sup>−18</sup>] ≈ <strong>R$ 124,63</strong>.</p><p>Total: 18 × 124,63 ≈ <strong>R$ 2.243,34</strong> — cerca de R$ 443 de juros sobre os R$ 1.800.</p></div>
+          <div class="callout success"><h4>Para saber mais</h4><p>Use o conversor de taxas do <em>Clube dos Poupadores</em> e a <strong>Calculadora do Cidadão</strong> do Banco Central (financiamento com prestações fixas) para conferir.</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 38 · teoria</div>
+          <h2 class="title">A calculadora financeira</h2>
+          
+          <p class="lede">As fórmulas de juros e parcelamento envolvem <strong>cinco elementos</strong>. Na calculadora financeira, cada um tem uma tecla:</p>
+          <div class="grid4" style="margin-top:8px;">
+            <div class="card"><span class="badge">n</span><p style="font-size:.86rem;margin-top:8px;">Número de <strong>períodos</strong>.</p></div>
+            <div class="card"><span class="badge">i</span><p style="font-size:.86rem;margin-top:8px;"><strong>Taxa</strong> (digite em %, sem converter para decimal).</p></div>
+            <div class="card"><span class="badge">PV</span><p style="font-size:.86rem;margin-top:8px;"><strong>Capital</strong> / preço à vista.</p></div>
+            <div class="card"><span class="badge">PMT</span><p style="font-size:.86rem;margin-top:8px;"><strong>Prestação</strong>.</p></div>
+          </div>
+          <div class="grid2" style="margin-top:10px;">
+            <div class="callout"><h4>Regras de uso</h4><p>Informe pelo menos <strong>3 dados</strong> para obter o quarto. <b>PV e FV/PMT têm sinais opostos</b> (um é saída e o outro entrada de caixa): use <span class="mono">[CHS]</span> para trocar o sinal. Zere a memória antes: <span class="mono">[f] [CLX]</span>.</p></div>
+            <div class="card"><strong>Por que a HP 12C não tem a tecla [=]?</strong><p style="font-size:.9rem;margin-top:6px;">Ela usa a <strong>Notação Polonesa Reversa</strong>: a operação é concluída pela própria tecla da operação, sem "igual". Digita-se o número, [ENTER] e depois o próximo.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Simulador · calculadora financeira</div>
+          <h2 class="title">Descubra a incógnita</h2>
+          
+          <p class="lede">Escolha o que quer descobrir, preencha os outros três dados e veja o resultado — exatamente como na HP 12C (sem [=]!).</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="wid">
+              <label>Quero descobrir</label>
+              <select id="cf-x"><option value="pmt">PMT — a prestação</option><option value="pv">PV — o preço à vista</option><option value="n">n — o prazo (meses)</option><option value="i">i — a taxa (% ao mês)</option></select>
+              <div class="row"><div><label>PV (R$)</label><input type="number" id="cf-pv" value="2000" step="100"></div><div><label>PMT (R$)</label><input type="number" id="cf-pmt" value="170" step="10"></div></div>
+              <div class="row"><div><label>n (meses)</label><input type="number" id="cf-n" value="12" step="1"></div><div><label>i (% ao mês)</label><input type="number" id="cf-i" value="1.5" step="0.05"></div></div>
+            </div>
+            <div class="wid">
+              <p class="small" id="cf-l" style="margin:0;"></p><div class="out" id="cf-r" style="font-size:2rem;"></div>
+              <p class="small" id="cf-t" style="margin:6px 0 0;"></p>
+              <p class="hint" id="cf-s" style="margin:10px 0 0;"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 38 · passo a passo</div>
+          <h2 class="title">André e a promoção do notebook</h2>
+          
+          <p class="lede">Um notebook de <strong>R$ 2.000</strong> sai em <strong>12 × R$ 170</strong>. André quer saber qual a <strong>taxa de juros</strong> do financiamento para comparar com as taxas do site do Banco Central.</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div class="step-row"><span class="badge">1</span><div><strong>2000 [PV]</strong><div class="hint">preço à vista</div></div></div>
+                <div class="step-row"><span class="badge">2</span><div><strong>12 [n]</strong><div class="hint">prazo em meses</div></div></div>
+                <div class="step-row"><span class="badge">3</span><div><strong>170 [CHS] [PMT]</strong><div class="hint">prestação (saída de dinheiro = sinal negativo)</div></div></div>
+                <div class="step-row"><span class="badge">4</span><div><strong>[i]</strong><div class="hint">a taxa aparece no visor</div></div></div>
+              </div>
+            </div>
+            <div>
+              <div class="stat" style="background:var(--primary-soft);"><span class="num" style="color:var(--primary);">≈ 0,31%</span><span class="lbl">taxa de juros mensal do financiamento (use [f] [4] para quatro casas decimais)</span></div>
+              <div class="callout"><h4>Atenção</h4><p>A ordem de inserção dos dados não importa. Para um novo cálculo, zere a memória: <span class="mono">[f] [CLX]</span>.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Atividades · mão na massa com a HP 12C</div>
+          <h2 class="title">Três problemas de crédito</h2>
+          
+          <div class="grid3">
+            <div class="card"><strong>1 · João e o empréstimo</strong><p style="font-size:.88rem;margin-top:6px;">Empréstimo de <strong>R$ 10 mil</strong> a <strong>1,5% a.m.</strong> por <strong>6 meses</strong>. Qual a prestação?</p><button class="reveal" onclick="toggleAnswer(this)">Resolver</button>
+<div class="answer"><p><span class="mono">10000 [CHS] [PV] · 1.5 [i] · 6 [n] · [PMT]</span></p><p>Prestação: <strong>R$ 1.755,25</strong>.</p></div></div>
+            <div class="card"><strong>2 · Camila e o celular</strong><p style="font-size:.88rem;margin-top:6px;">Comprou em <strong>5 × R$ 500</strong> com juros de <strong>2% a.m.</strong> Qual o preço à vista?</p><button class="reveal" onclick="toggleAnswer(this)">Resolver</button>
+<div class="answer"><p><span class="mono">500 [CHS] [PMT] · 5 [n] · 2 [i] · [PV]</span></p><p>À vista: <strong>R$ 2.356,73</strong> (ela paga R$ 2.500 no total).</p></div></div>
+            <div class="card"><strong>3 · Andréa e a geladeira</strong><p style="font-size:.88rem;margin-top:6px;">Geladeira de <strong>R$ 3.250</strong>; só cabe <strong>R$ 295/mês</strong>; juros de <strong>0,95% a.m.</strong> Em quantas prestações?</p><button class="reveal" onclick="toggleAnswer(this)">Resolver</button>
+<div class="answer"><p><span class="mono">3250 [CHS] [PV] · 295 [PMT] · 0.95 [i] · [n]</span></p><p>n ≈ 11,7 → <strong>12 prestações</strong> (a calculadora arredonda para cima).</p></div></div>
+          </div>
+          <p class="hint" style="margin-top:10px;">Confira todos no simulador da slide anterior! Emulador da HP 12C online disponível no material da aula.</p>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Taxa equivalente</span><p style="font-size:.85rem;margin-top:8px;">Em juros compostos, converta com expoente: (1,12)^(1/12) − 1 ≈ 0,949% a.m. — nunca só dividir.</p></div>
+            <div class="card"><span class="badge">Prestação</span><p style="font-size:.85rem;margin-top:8px;">PMT = PV·i ÷ [1 − (1+i)^(−n)]. O total pago é PMT × n: compare sempre com o preço à vista.</p></div>
+            <div class="card"><span class="badge">Ferramenta</span><p style="font-size:.85rem;margin-top:8px;">Calculadora financeira: com 3 dados você obtém o 4º (PV, PMT, n ou i). Atenção aos sinais e a zerar a memória.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">"Parcelar é pagar mais tarde — e quase sempre pagar mais."</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. A taxa mensal equivalente a 12% ao ano em juros compostos é:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">Exatamente 1%</button>
+                <button class="choice qopt" data-ok="1">Cerca de 0,949%</button>
+                <button class="choice qopt" data-ok="0">Cerca de 1,5%</button>
+                <button class="choice qopt" data-ok="0">12%</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Na fórmula da prestação, PV representa:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">O prazo</button>
+                <button class="choice qopt" data-ok="0">A taxa</button>
+                <button class="choice qopt" data-ok="1">O preço à vista</button>
+                <button class="choice qopt" data-ok="0">O total pago</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. Dona Angelina: R$ 2.500 em 12 vezes a 0,85% a.m. A prestação é aproximadamente:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">R$ 208,33</button>
+                <button class="choice qopt" data-ok="1">R$ 220,02</button>
+                <button class="choice qopt" data-ok="0">R$ 250,00</button>
+                <button class="choice qopt" data-ok="0">R$ 185,00</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. Por que a HP 12C não tem a tecla [=]?</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="0">Porque é defeito</button>
+                <button class="choice qopt" data-ok="1">Porque usa Notação Polonesa Reversa</button>
+                <button class="choice qopt" data-ok="0">Porque só faz somas</button>
+                <button class="choice qopt" data-ok="0">Porque exige internet</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">5. Na questão do ENEM com as lojas A, B e C, qual tem o menor valor final?</p>
+              <div class="qz" data-q="5">
+                <button class="choice qopt" data-ok="0">Loja A</button>
+                <button class="choice qopt" data-ok="1">Loja B</button>
+                <button class="choice qopt" data-ok="0">Loja C</button>
+                <button class="choice qopt" data-ok="0">Todas iguais</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">Antes de parcelar, calcule</h2>
+          <p class="lede">Compare a prestação com o orçamento e o total pago com o preço à vista. Próxima aula: o cartão de crédito e o seu nome limpo.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">BARROS, Josi Gomes. <em>Educação financeira sustentável — 1ª série EM</em>. Maceió: [s.n.], 2024 (p. 135–136).<br>
+              VIANNA, Renata de Moura Issa. <em>Matemática financeira</em>. Salvador: UFBA, 2018.<br>
+              BANCO CENTRAL DO BRASIL. <em>Calculadora do Cidadão</em> — financiamento com prestações fixas.<br>
+              INEP. <em>Provas do ENEM</em> (ENEM 2018 PPL, questão 145).</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 15</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef2-cred2';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+  function $(id){ return document.getElementById(id); }
+  function brl(v){ return 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  var UN = {a: 360, m: 30, d: 1};
+  function teUp(){
+    var de = $('te-de').value, pa = $('te-pa').value, t = (+$('te-t').value || 0) / 100;
+    var r = Math.pow(1 + t, UN[pa] / UN[de]) - 1;
+    $('te-r').textContent = (r * 100).toLocaleString('pt-BR', {maximumFractionDigits: 4}) + '% ' + (pa === 'a' ? 'ao ano' : pa === 'm' ? 'ao mês' : 'ao dia');
+  }
+  ['te-de','te-pa','te-t'].forEach(function(i){ $(i).addEventListener('input', teUp); }); teUp();
+  function pmt(pv, i, n){ return i === 0 ? pv / n : pv * i / (1 - Math.pow(1 + i, -n)); }
+  function pmUp(){
+    var v = +$('pm-v').value || 0, i = (+$('pm-i').value || 0) / 100, n = Math.max(1, +$('pm-n').value || 1), p = pmt(v, i, n);
+    $('pm-p').textContent = brl(p); $('pm-t').textContent = 'Total pago: ' + brl(p * n) + ' · juros: ' + brl(p * n - v);
+  }
+  ['pm-v','pm-i','pm-n'].forEach(function(i){ $(i).addEventListener('input', pmUp); }); pmUp();
+  function cfUp(){
+    var x = $('cf-x').value, pv = +$('cf-pv').value || 0, p = +$('cf-pmt').value || 0, n = +$('cf-n').value || 0, i = (+$('cf-i').value || 0) / 100;
+    ['pv','pmt','n','i'].forEach(function(k){ $('cf-' + k).disabled = (k === x); $('cf-' + k).style.opacity = (k === x ? .4 : 1); });
+    var r, lab, s = '';
+    if(x === 'pmt'){ r = pmt(pv, i, n); lab = 'Prestação (PMT)'; $('cf-r').textContent = brl(r); s = 'Total pago: ' + brl(r * n) + ' (juros: ' + brl(r * n - pv) + ')'; $('cf-s').textContent = 'HP 12C: ' + pv + ' [CHS] [PV] · ' + (i*100) + ' [i] · ' + n + ' [n] · [PMT]'; }
+    else if(x === 'pv'){ r = i === 0 ? p * n : p * (1 - Math.pow(1 + i, -n)) / i; lab = 'Preço à vista (PV)'; $('cf-r').textContent = brl(r); s = 'Total pago: ' + brl(p * n) + ' (juros: ' + brl(p * n - r) + ')'; $('cf-s').textContent = 'HP 12C: ' + p + ' [CHS] [PMT] · ' + n + ' [n] · ' + (i*100) + ' [i] · [PV]'; }
+    else if(x === 'n'){ lab = 'Prazo (n)'; var q = 1 - pv * i / p; if(p <= 0 || q <= 0){ $('cf-r').textContent = 'impossível'; s = 'A prestação não cobre nem os juros mensais.'; } else { r = -Math.log(q) / Math.log(1 + i); $('cf-r').textContent = r.toFixed(2).replace('.', ',') + ' meses'; s = 'Na prática: ' + Math.ceil(r - 1e-9) + ' prestações.'; } $('cf-s').textContent = 'HP 12C: ' + pv + ' [CHS] [PV] · ' + p + ' [PMT] · ' + (i*100) + ' [i] · [n]'; }
+    else { lab = 'Taxa (i)'; if(pv <= 0 || p * n <= pv){ $('cf-r').textContent = '0%'; s = 'Sem juros: a soma das prestações não supera o preço à vista.'; } else { var lo = 0, hi = 1; for(var k = 0; k < 200; k++){ var m = (lo + hi) / 2; var v = p * (1 - Math.pow(1 + m, -n)) / m; if(v > pv) lo = m; else hi = m; } r = lo; $('cf-r').textContent = (r * 100).toFixed(4).replace('.', ',') + '% a.m.'; s = 'Equivale a ' + ((Math.pow(1 + r, 12) - 1) * 100).toFixed(2).replace('.', ',') + '% ao ano.'; } $('cf-s').textContent = 'HP 12C: ' + pv + ' [PV] · ' + n + ' [n] · ' + p + ' [CHS] [PMT] · [i]'; }
+    $('cf-l').textContent = lab; $('cf-t').textContent = s;
+  }
+  ['cf-x','cf-pv','cf-pmt','cf-n','cf-i'].forEach(function(i){ $(i).addEventListener('input', cfUp); }); cfUp();
+
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>

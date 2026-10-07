@@ -66,6 +66,13 @@ aulas/
         aula-2-reducao-funcoes.html
         infografico.html
 educacao-financeira/
+  1-ano/
+    3-tri/
+      credito-juros-financiamento/   (3 aulas — atividades e guias a fazer)
+      direitos-do-consumidor/        (aula)
+      consumo-consciente/            (2 aulas)
+      apostas-bets-cassino/          (aula)
+      perfil-empreendedor/           (aula)
   2-ano/
     3-tri/
       investimentos-renda-fixa/      (2 aulas + guia + 6 atividades)
@@ -93,6 +100,7 @@ A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `au
 3. Para uma aula em matéria já existente: copie um bloco de unidade existente dentro do `CATALOG` daquela matéria como modelo e ajuste `titulo`, `accent` (`growth`, `decay`, `primary` ou `danger` — cores já usadas no material), `icon` (veja o objeto `ICONS` logo abaixo do `CATALOG`, no mesmo arquivo, para as opções disponíveis, ou crie uma nova entrada lá) e a lista de `itens`, apontando `arquivo` para o caminho relativo do novo `.html` (relativo à raiz do site).
 4. Para uma matéria nova: copie um bloco de matéria inteiro (de `{ id: ...` até o `}` que fecha o `CATALOG` dela) como modelo dentro do array `MATERIAS`, e ajuste `id`, `nome`, `icon` e `lede`. A aba aparece automaticamente no topo da página inicial.
 5. **Se a aula tiver um quiz pontuado (`.qz`)**, rode `node scripts/inject-progress-hook.js .` a partir da raiz do site (veja [`scripts/inject-progress-hook.js`](scripts/inject-progress-hook.js)) — isso anexa automaticamente o gancho que reporta a nota do quiz para o painel do professor quando a aula é aberta via atividade. É idempotente: pode rodar sempre que quiser, ele pula arquivos que já têm o gancho.
+   Os decks, guias e atividades de Educação Financeira (1ª e 2ª séries) são gerados por `scripts/gerador-ef/` (`lib.js` traz os componentes; `d*.js`, `i1.js`, `a*.js` são os conteúdos; `node build.js` gera as páginas). Editar o conteúdo e rodar de novo é mais rápido que mexer no HTML.
 6. **Layout legível em qualquer tela:** rode `node scripts/aplicar-layout.js .` (veja [`scripts/aplicar-layout.js`](scripts/aplicar-layout.js)). Ele adiciona o `<meta viewport>` (sem ele o celular encolhe a página) e o layout v2: nos slides, palco em tela cheia, letra que cresce com a tela (projetor Full HD ≈ 23px de base, celular 16px), barra de navegação fora do conteúdo, trilha de progresso reta no lugar das bolinhas e ajuste automático para o slide caber sem rolar; nas demais páginas, texto fluido e contêiner mais largo. É idempotente e atualiza páginas já aplicadas.
 7. Suba os arquivos (novo `.html`, `app/catalog.js` atualizado) com o fluxo normal de `git push` (ou Add file → Upload files, se preferir pelo navegador). O site atualiza sozinho — os contadores do topo ("Unidades", "Aulas", "Guias visuais") se recalculam automaticamente a partir da matéria selecionada.
 

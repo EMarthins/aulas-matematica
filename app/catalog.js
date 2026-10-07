@@ -194,7 +194,7 @@ export const MATERIAS = [
     id: 'educacao-financeira',
     nome: 'Educação Financeira',
     icon: 'coin',
-    lede: 'Material interativo de Educação Financeira para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis, infográficos e atividades, prontos para projetar em sala.',
+    lede: 'Material interativo de Educação Financeira para a 1ª, a 2ª e a 3ª séries do Ensino Médio — slides navegáveis, infográficos e atividades, prontos para projetar em sala.',
     CATALOG: [
       {
         ano: '3° Ano',
@@ -294,6 +294,59 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'ENEM', titulo:'Criptoativos no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-enem.html' },
                   { tipo:'Atividade', sub:'Criativa', titulo:'Golpe ou legítimo?', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Contas de cripto', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Crédito, Juros e Financiamento',
+                accent: 'danger',
+                icon: 'coin',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Cheque especial e juros compostos', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-1-cheque-especial-juros-compostos.html' },
+                  { tipo:'Aula 2', titulo:'Financiamento, prestações e calculadora financeira', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-2-financiamento-calculadora-financeira.html' },
+                  { tipo:'Aula 3', titulo:'Cartão de crédito, nome limpo e score', arquivo:'educacao-financeira/1-ano/3-tri/credito-juros-financiamento/aula-3-cartao-credito-spc-score.html' }
+                ]
+              },
+              {
+                titulo: 'Direitos do Consumidor',
+                accent: 'decay',
+                icon: 'grid',
+                itens: [
+                  { tipo:'Aula', titulo:'Código de Defesa do Consumidor e PROCON', arquivo:'educacao-financeira/1-ano/3-tri/direitos-do-consumidor/aula.html' }
+                ]
+              },
+              {
+                titulo: 'Consumo Consciente',
+                accent: 'growth',
+                icon: 'dots',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Armadilhas de consumo e consumismo', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-1-armadilhas-consumismo.html' },
+                  { tipo:'Aula 2', titulo:'Compras inteligentes: supermercado e promoções', arquivo:'educacao-financeira/1-ano/3-tri/consumo-consciente/aula-2-supermercado-promocoes.html' }
+                ]
+              },
+              {
+                titulo: 'Apostas, Bets e Cassino',
+                accent: 'danger',
+                icon: 'dice',
+                itens: [
+                  { tipo:'Aula', titulo:'A ilusão do dinheiro fácil', arquivo:'educacao-financeira/1-ano/3-tri/apostas-bets-cassino/aula.html' }
+                ]
+              },
+              {
+                titulo: 'Perfil Empreendedor',
+                accent: 'primary',
+                icon: 'briefcase',
+                itens: [
+                  { tipo:'Aula', titulo:'Perfil empreendedor: o quê, como e por quê', arquivo:'educacao-financeira/1-ano/3-tri/perfil-empreendedor/aula.html' }
                 ]
               }
             ]
