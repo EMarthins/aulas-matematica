@@ -103,6 +103,8 @@ Nomes dos arquivos: `atividade-enem.html` / `atividade-criativa.html` / `ativida
 
 **Contrato com a plataforma:** toda atividade define `window.reportarConclusao(pontos, total)` (que envia a nota ao `player.html` via `postMessage`) e a chama uma vez ao terminar. Fora da plataforma isso não faz nada. Por isso `scripts/inject-progress-hook.js` pula esses arquivos — não rode o gancho genérico neles. Ao criar atividade nova, copie o bloco `<script>` do final de qualquer atividade existente e registre-a em `app/catalog.js` com `tipo:'Atividade'` e `sub:'ENEM' | 'Criativa' | 'Prática'`.
 
+**9º ano (Recomposição Matemática):** os slides já trazem, dentro de cada aula, as seções "Exercícios" e "Problemas" com resposta escondida. Eles continuam lá, intactos; além disso, cada um dos 6 blocos tem uma atividade avulsa `aula-N-<slug>-atividade-pratica.html` com os mesmos itens (resposta revelada sob demanda e autoavaliação "acertei/errei", que vira a nota). Essas 6 páginas são geradas por `node scripts/gerar-atividades-9ano.js .` a partir dos slides — se editar um exercício nos slides, rode o script de novo para atualizar a atividade.
+
 ## Plataforma (login, turmas e atividades)
 
 Além do catálogo público de aulas, o site tem uma camada de plataforma para você (e, se quiser, outros professores) usar com turmas de verdade: login de aluno/professor, aprovação manual de cada aluno, atribuição de atividades (quiz autocorrigido, aula assistida, ou envio de resposta/link para correção) e um painel de engajamento por turma.

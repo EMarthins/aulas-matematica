@@ -1,0 +1,609 @@
+<title>Exercícios e problemas — Circunferência (9º ano)</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button, input{ font:inherit; }
+  .app{ max-width:800px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.5rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.93rem,1.4vw,1.1rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .card.locked-ok{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .card.locked-no{ border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badge.lvl1{ color:var(--success); border-color:color-mix(in srgb, var(--success) 40%, var(--line-strong)); }
+  .badge.lvl2{ color:var(--growth-ink); background:var(--growth-soft); border-color:transparent; }
+  .badge.lvl3{ color:var(--danger); background:var(--danger-soft); border-color:transparent; }
+  .qnum{ color:var(--primary); font-family:'Archivo',sans-serif; font-weight:900; }
+  .formula{ font-size:1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); margin:8px 0; }
+  .answer-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .answer-row input[type=text]{ flex:1; min-width:160px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:10px; padding:.6em .9em; font-family:'JetBrains Mono',monospace; font-size:.95rem; color:var(--ink); }
+  .answer-row input[type=text]:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+  .btn{ border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:800; font-size:.82rem; border-radius:10px; padding:.65em 1.2em; cursor:pointer; white-space:nowrap; }
+  .btn:hover{ filter:brightness(1.08); }
+  .btn:disabled{ opacity:.45; cursor:default; }
+  .btn.ghost{ background:var(--surface); color:var(--primary); border:1.5px solid var(--primary); }
+  .btn.ghost:hover{ background:var(--primary-soft); }
+  .btnrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .fb{ font-size:.85rem; margin-top:10px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .hinttext{ font-size:.85rem; color:var(--ink-soft); margin-top:8px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:none; }
+  .hinttext.open{ display:block; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+
+<style>
+  .app{ max-width:820px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; }
+  .chips a{ text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.4em .9em; }
+  .chips a:hover{ filter:brightness(.95); }
+  .aula-sec{ margin:34px 0 8px; scroll-margin-top:16px; }
+  .aula-sec h2{ font-size:clamp(1.2rem,2.6vw,1.6rem); font-weight:900; margin:0 0 4px; }
+  .aula-sec .kicker{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--primary); margin:0 0 4px; }
+  .aula-sec .objetivo{ font-size:.9rem; color:var(--ink-soft); margin:6px 0 0; }
+  .sec-label{ display:flex; align-items:center; gap:10px; margin:22px 0 10px; font-family:'Archivo',sans-serif; font-weight:800; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+  .sec-label::after{ content:''; flex:1; height:1px; background:var(--line); }
+  .q .qtext{ margin:10px 0 0; }
+  .q .ans-label{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--success); margin:0 0 4px; }
+  .q .grade{ display:none; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .q .grade.show{ display:flex; }
+  .q .grade span.ask{ font-size:.82rem; color:var(--ink-soft); font-weight:700; }
+  .q.g-ok{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .q.g-no{ border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); }
+  .q .stamp{ font-size:.82rem; font-weight:700; margin-top:10px; display:none; }
+  .q.g-ok .stamp{ display:block; color:var(--success); }
+  .q.g-no .stamp{ display:block; color:var(--danger); }
+  .finish-card{ text-align:center; }
+  .finish-card .btn{ margin-top:6px; }
+  .progress{ height:8px; border-radius:999px; background:var(--line); overflow:hidden; margin:0 0 6px; }
+  .progress > i{ display:block; height:100%; width:0; background:var(--primary); transition:width .3s ease; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · 9º ano · Recomposição · Atividade extra</div>
+    <div class="score-pill">Acertos: <span id="scoreVal">0</span>/44</div>
+  </div>
+
+  <div class="eyebrow">Prática · Bloco 5 de 6 · Aulas 35–38</div>
+  <h1 class="title">Exercícios e problemas: <span style="color:var(--primary);">Circunferência</span></h1>
+  <p class="subtitle">Os 44 exercícios e problemas dos slides deste bloco (Habilidade 9G1.8), reunidos numa atividade só. Resolva no caderno, toque em "Ver resposta" para conferir e diga se acertou. No fim, a atividade registra seus acertos.</p>
+  <div class="chips"><a href="#aula-35">Aula 35</a><a href="#aula-36">Aula 36</a><a href="#aula-37">Aula 37</a><a href="#aula-38">Aula 38</a></div>
+  <div class="progress"><i id="bar"></i></div>
+  <p class="hint" id="progTxt">0 de 44 respondidos</p>
+
+<section class="aula-sec" id="aula-35">
+  <p class="kicker">Aula 35</p>
+  <h2>Círculo e circunferência</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Compreender os conceitos de círculo e circunferência e a relação entre eles.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="1">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Uma circunferência tem raio de 7 cm. Qual é o diâmetro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="1" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans1"><p class="ans-label">Resposta</p><p>14 cm.</p></div>
+    <div class="grade" id="grade1"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="1" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="1" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp1"></div>
+  </div>
+  <div class="card q" data-id="2">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Uma circunferência tem diâmetro de 30 cm. Qual é o raio?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="2" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans2"><p class="ans-label">Resposta</p><p>15 cm.</p></div>
+    <div class="grade" id="grade2"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="2" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="2" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp2"></div>
+  </div>
+  <div class="card q" data-id="3">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Qual é o diâmetro de uma circunferência de raio 2,5 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="3" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans3"><p class="ans-label">Resposta</p><p>5 cm.</p></div>
+    <div class="grade" id="grade3"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="3" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="3" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp3"></div>
+  </div>
+  <div class="card q" data-id="4">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Qual é o raio de uma circunferência de diâmetro 9 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="4" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans4"><p class="ans-label">Resposta</p><p>4,5 cm.</p></div>
+    <div class="grade" id="grade4"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="4" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="4" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp4"></div>
+  </div>
+  <div class="card q" data-id="5">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Qual é a maior corda de uma circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="5" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans5"><p class="ans-label">Resposta</p><p>O diâmetro.</p></div>
+    <div class="grade" id="grade5"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="5" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="5" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp5"></div>
+  </div>
+  <div class="card q" data-id="6">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Uma moeda é círculo ou circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="6" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans6"><p class="ans-label">Resposta</p><p>Círculo, pois é preenchida.</p></div>
+    <div class="grade" id="grade6"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="6" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="6" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp6"></div>
+  </div>
+  <div class="card q" data-id="7">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">O aro de um bambolê é círculo ou circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="7" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans7"><p class="ans-label">Resposta</p><p>Circunferência, pois só tem o contorno.</p></div>
+    <div class="grade" id="grade7"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="7" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="7" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp7"></div>
+  </div>
+  <div class="card q" data-id="8">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Como se chama o ponto que está à mesma distância de todos os pontos da circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="8" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans8"><p class="ans-label">Resposta</p><p>Centro.</p></div>
+    <div class="grade" id="grade8"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="8" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="8" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp8"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="9">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Uma mesa redonda tem raio de 60 cm. Ela passa por uma porta de 1 m de largura sem ser inclinada?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="9" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans9"><p class="ans-label">Resolução</p><p>Diâmetro: 2 · 60 = 120 cm. Como 120 cm &gt; 100 cm, não passa.</p></div>
+    <div class="grade" id="grade9"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="9" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="9" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp9"></div>
+  </div>
+  <div class="card q" data-id="10">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Duas circunferências têm o mesmo centro e raios de 5 cm e 8 cm. Quais são os diâmetros? Qual é a distância entre as duas circunferências?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="10" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans10"><p class="ans-label">Resolução</p><p>Diâmetros: 10 cm e 16 cm. Distância entre elas: 8 − 5 = 3 cm.</p></div>
+    <div class="grade" id="grade10"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="10" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="10" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp10"></div>
+  </div>
+  <div class="card q" data-id="11">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Quatro moedas iguais, encostadas lado a lado em linha reta, ocupam 18 cm. Qual é o diâmetro e qual é o raio de cada moeda?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="11" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans11"><p class="ans-label">Resolução</p><p>Diâmetro: 18 ÷ 4 = 4,5 cm. Raio: 4,5 ÷ 2 = 2,25 cm.</p></div>
+    <div class="grade" id="grade11"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="11" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="11" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp11"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-36">
+  <p class="kicker">Aula 36</p>
+  <h2>Elementos da circunferência</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Reconhecer raio, diâmetro e comprimento da circunferência.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="12">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Como se chama o segmento que vai do centro até a circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="12" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans12"><p class="ans-label">Resposta</p><p>Raio.</p></div>
+    <div class="grade" id="grade12"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="12" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="12" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp12"></div>
+  </div>
+  <div class="card q" data-id="13">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Como se chama a corda que passa pelo centro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="13" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans13"><p class="ans-label">Resposta</p><p>Diâmetro.</p></div>
+    <div class="grade" id="grade13"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="13" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="13" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp13"></div>
+  </div>
+  <div class="card q" data-id="14">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Qual é o diâmetro de uma circunferência de raio 10 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="14" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans14"><p class="ans-label">Resposta</p><p>20 cm.</p></div>
+    <div class="grade" id="grade14"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="14" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="14" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp14"></div>
+  </div>
+  <div class="card q" data-id="15">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Qual é a maior corda de uma circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="15" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans15"><p class="ans-label">Resposta</p><p>O diâmetro.</p></div>
+    <div class="grade" id="grade15"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="15" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="15" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp15"></div>
+  </div>
+  <div class="card q" data-id="16">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Uma circunferência tem diâmetro de 1 m. Quanto mede o raio?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="16" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans16"><p class="ans-label">Resposta</p><p>0,5 m.</p></div>
+    <div class="grade" id="grade16"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="16" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="16" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp16"></div>
+  </div>
+  <div class="card q" data-id="17">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Quando uma roda dá uma volta completa, a distância percorrida é igual a quê?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="17" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans17"><p class="ans-label">Resposta</p><p>Ao comprimento da circunferência da roda.</p></div>
+    <div class="grade" id="grade17"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="17" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="17" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp17"></div>
+  </div>
+  <div class="card q" data-id="18">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Uma roda maior percorre, em uma volta, uma distância maior ou menor que uma roda menor?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="18" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans18"><p class="ans-label">Resposta</p><p>Maior.</p></div>
+    <div class="grade" id="grade18"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="18" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="18" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp18"></div>
+  </div>
+  <div class="card q" data-id="19">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Uma circunferência tem diâmetro de 18 cm. Quanto mede o raio?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="19" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans19"><p class="ans-label">Resposta</p><p>9 cm.</p></div>
+    <div class="grade" id="grade19"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="19" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="19" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp19"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="20">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Duas rodas têm diâmetros de 60 cm e 80 cm. Quais são os raios? Qual roda percorre mais em uma volta?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="20" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans20"><p class="ans-label">Resolução</p><p>Raios: 30 cm e 40 cm. A roda de 80 cm de diâmetro percorre mais, pois seu comprimento de circunferência é maior.</p></div>
+    <div class="grade" id="grade20"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="20" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="20" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp20"></div>
+  </div>
+  <div class="card q" data-id="21">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Uma circunferência tem raio de 7 cm. Ela pode ter uma corda de 13 cm? E uma de 15 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="21" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans21"><p class="ans-label">Resolução</p><p>A maior corda é o diâmetro: 14 cm. Corda de 13 cm: pode. Corda de 15 cm: não.</p></div>
+    <div class="grade" id="grade21"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="21" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="21" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp21"></div>
+  </div>
+  <div class="card q" data-id="22">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Uma pizza tem raio de 17 cm. Ela cabe em uma caixa quadrada de 36 cm de lado? E em uma de 32 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="22" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans22"><p class="ans-label">Resolução</p><p>Diâmetro: 34 cm. Em 36 cm cabe (34 &lt; 36). Em 32 cm não cabe (34 &gt; 32).</p></div>
+    <div class="grade" id="grade22"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="22" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="22" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp22"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-37">
+  <p class="kicker">Aula 37</p>
+  <h2>Circunferência e o número π</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Compreender π como a constante da relação entre comprimento e diâmetro.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="23">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de raio 1 cm. (π = 3,14)</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="23" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans23"><p class="ans-label">Resposta</p><p>C = 2 · 3,14 · 1 = 6,28 cm.</p></div>
+    <div class="grade" id="grade23"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="23" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="23" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp23"></div>
+  </div>
+  <div class="card q" data-id="24">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de raio 5 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="24" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans24"><p class="ans-label">Resposta</p><p>31,4 cm.</p></div>
+    <div class="grade" id="grade24"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="24" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="24" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp24"></div>
+  </div>
+  <div class="card q" data-id="25">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de diâmetro 10 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="25" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans25"><p class="ans-label">Resposta</p><p>C = 3,14 · 10 = 31,4 cm.</p></div>
+    <div class="grade" id="grade25"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="25" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="25" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp25"></div>
+  </div>
+  <div class="card q" data-id="26">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de diâmetro 20 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="26" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans26"><p class="ans-label">Resposta</p><p>62,8 cm.</p></div>
+    <div class="grade" id="grade26"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="26" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="26" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp26"></div>
+  </div>
+  <div class="card q" data-id="27">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de raio 10 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="27" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans27"><p class="ans-label">Resposta</p><p>62,8 cm.</p></div>
+    <div class="grade" id="grade27"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="27" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="27" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp27"></div>
+  </div>
+  <div class="card q" data-id="28">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de diâmetro 100 m.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="28" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans28"><p class="ans-label">Resposta</p><p>314 m.</p></div>
+    <div class="grade" id="grade28"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="28" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="28" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp28"></div>
+  </div>
+  <div class="card q" data-id="29">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Qual é o resultado da divisão C ÷ d em qualquer circunferência?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="29" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans29"><p class="ans-label">Resposta</p><p>π, aproximadamente 3,14.</p></div>
+    <div class="grade" id="grade29"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="29" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="29" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp29"></div>
+  </div>
+  <div class="card q" data-id="30">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Calcule o comprimento de uma circunferência de raio 2 m.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="30" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans30"><p class="ans-label">Resposta</p><p>12,56 m.</p></div>
+    <div class="grade" id="grade30"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="30" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="30" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp30"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="31">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Uma roda de bicicleta tem diâmetro de 70 cm. Qual distância a bicicleta anda em uma volta da roda? E em 100 voltas?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="31" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans31"><p class="ans-label">Resolução</p><p>Uma volta: 3,14 · 70 = 219,8 cm. Cem voltas: 21 980 cm = 219,8 m.</p></div>
+    <div class="grade" id="grade31"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="31" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="31" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp31"></div>
+  </div>
+  <div class="card q" data-id="32">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Uma fita dá uma volta em torno de um tronco de 40 cm de diâmetro e ainda precisa de 10 cm de sobra para o laço. Qual é o comprimento da fita?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="32" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans32"><p class="ans-label">Resolução</p><p>C = 3,14 · 40 = 125,6 cm. Com a sobra: 125,6 + 10 = 135,6 cm.</p></div>
+    <div class="grade" id="grade32"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="32" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="32" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp32"></div>
+  </div>
+  <div class="card q" data-id="33">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Uma pista circular mede 157 m de comprimento. Qual é o diâmetro e qual é o raio? Quantas voltas completas são necessárias para correr pelo menos 1 km?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="33" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans33"><p class="ans-label">Resolução</p><p>d = 157 ÷ 3,14 = 50 m e r = 25 m. Seis voltas = 942 m (não basta); sete voltas = 1 099 m. São 7 voltas.</p></div>
+    <div class="grade" id="grade33"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="33" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="33" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp33"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-38">
+  <p class="kicker">Aula 38</p>
+  <h2>Comprimento da circunferência e perímetro do círculo</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Comparar medida e cálculo do comprimento e aplicar a fórmula em problemas.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="34">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Calcule C para r = 3 cm. (π = 3,14)</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="34" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans34"><p class="ans-label">Resposta</p><p>C = 2 · 3,14 · 3 = 18,84 cm.</p></div>
+    <div class="grade" id="grade34"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="34" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="34" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp34"></div>
+  </div>
+  <div class="card q" data-id="35">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Calcule C para r = 4 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="35" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans35"><p class="ans-label">Resposta</p><p>25,12 cm.</p></div>
+    <div class="grade" id="grade35"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="35" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="35" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp35"></div>
+  </div>
+  <div class="card q" data-id="36">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Calcule C para d = 6 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="36" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans36"><p class="ans-label">Resposta</p><p>3,14 · 6 = 18,84 cm.</p></div>
+    <div class="grade" id="grade36"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="36" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="36" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp36"></div>
+  </div>
+  <div class="card q" data-id="37">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Calcule C para r = 0,5 m.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="37" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans37"><p class="ans-label">Resposta</p><p>3,14 m.</p></div>
+    <div class="grade" id="grade37"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="37" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="37" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp37"></div>
+  </div>
+  <div class="card q" data-id="38">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Calcule C para r = 7 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="38" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans38"><p class="ans-label">Resposta</p><p>43,96 cm.</p></div>
+    <div class="grade" id="grade38"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="38" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="38" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp38"></div>
+  </div>
+  <div class="card q" data-id="39">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Calcule C para d = 12 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="39" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans39"><p class="ans-label">Resposta</p><p>37,68 cm.</p></div>
+    <div class="grade" id="grade39"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="39" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="39" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp39"></div>
+  </div>
+  <div class="card q" data-id="40">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Usando π = 3, calcule C para r = 5 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="40" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans40"><p class="ans-label">Resposta</p><p>C = 2 · 3 · 5 = 30 cm.</p></div>
+    <div class="grade" id="grade40"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="40" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="40" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp40"></div>
+  </div>
+  <div class="card q" data-id="41">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Uma circunferência tem C = 62,8 cm. Qual é o raio?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="41" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans41"><p class="ans-label">Resposta</p><p>62,8 ÷ 6,28 = 10 cm.</p></div>
+    <div class="grade" id="grade41"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="41" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="41" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp41"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="42">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Uma praça circular tem raio de 20 m. Uma pessoa dá 3 voltas ao redor dela. Quantos metros ela anda?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="42" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans42"><p class="ans-label">Resolução</p><p>C = 2 · 3,14 · 20 = 125,6 m. Três voltas: 3 · 125,6 = 376,8 m.</p></div>
+    <div class="grade" id="grade42"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="42" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="42" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp42"></div>
+  </div>
+  <div class="card q" data-id="43">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Uma pista circular tem raio de 0,5 km. Um atleta corre 4 voltas por dia, durante 5 dias. Quantos quilômetros ele corre?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="43" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans43"><p class="ans-label">Resolução</p><p>C = 2 · 3,14 · 0,5 = 3,14 km. Voltas: 4 · 5 = 20. Distância: 20 · 3,14 = 62,8 km.</p></div>
+    <div class="grade" id="grade43"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="43" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="43" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp43"></div>
+  </div>
+  <div class="card q" data-id="44">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Um canteiro circular de 8 m de diâmetro será cercado com 3 fios de arame. Quantos metros de arame são necessários?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="44" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans44"><p class="ans-label">Resolução</p><p>C = 3,14 · 8 = 25,12 m. Três fios: 3 · 25,12 = 75,36 m.</p></div>
+    <div class="grade" id="grade44"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="44" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="44" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp44"></div>
+  </div>
+</section>
+
+<div class="card finish-card" id="finishCard">
+  <h2 style="margin:0 0 6px;font-size:1.15rem;">Terminou?</h2>
+  <p class="hint" id="finishTxt">Responda todos os itens para concluir automaticamente, ou conclua agora com o que já fez.</p>
+  <button class="btn" id="concluirBtn" type="button">Concluir atividade</button>
+</div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-rec9-pratica-5';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var TOTAL = 44, respondidas = 0, acertos = 0, finished = false;
+  var scoreEl = document.getElementById('scoreVal'), bar = document.getElementById('bar'), prog = document.getElementById('progTxt');
+  function update(){
+    scoreEl.textContent = acertos;
+    bar.style.width = (100 * respondidas / TOTAL) + '%';
+    prog.textContent = respondidas + ' de ' + TOTAL + ' respondidos';
+    if(respondidas === TOTAL) finish();
+  }
+  function finish(){
+    if(finished) return; finished = true;
+    var btn = document.getElementById('concluirBtn'); btn.disabled = true;
+    document.getElementById('finishTxt').textContent = 'Atividade concluída: ' + acertos + ' de ' + TOTAL + ' acertos' + (respondidas < TOTAL ? ' (' + (TOTAL - respondidas) + ' sem responder)' : '') + '.';
+    if(window.reportarConclusao) window.reportarConclusao(acertos, TOTAL);
+  }
+  document.querySelectorAll('button[data-reveal]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.reveal;
+      document.getElementById('ans' + n).classList.add('open');
+      document.getElementById('grade' + n).classList.add('show');
+      b.disabled = true;
+    });
+  });
+  document.querySelectorAll('button[data-grade]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.q, card = b.closest('.q');
+      if(card.dataset.graded) return; card.dataset.graded = '1';
+      var ok = b.dataset.grade === 'ok';
+      card.classList.add(ok ? 'g-ok' : 'g-no');
+      document.getElementById('stamp' + n).textContent = ok ? '✔ Marcado como acerto' : '✘ Marcado como erro — releia a resolução e tente de novo no caderno';
+      card.querySelectorAll('[data-grade]').forEach(function(x){ x.disabled = true; });
+      respondidas++; if(ok) acertos++;
+      update();
+    });
+  });
+  document.getElementById('concluirBtn').addEventListener('click', finish);
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>

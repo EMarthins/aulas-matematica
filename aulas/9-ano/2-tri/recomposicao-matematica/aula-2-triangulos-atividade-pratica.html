@@ -1,0 +1,705 @@
+<title>Exercícios e problemas — Triângulos (9º ano)</title>
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button, input{ font:inherit; }
+  .app{ max-width:800px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.5rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.93rem,1.4vw,1.1rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .card.locked-ok{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .card.locked-no{ border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .badge.lvl1{ color:var(--success); border-color:color-mix(in srgb, var(--success) 40%, var(--line-strong)); }
+  .badge.lvl2{ color:var(--growth-ink); background:var(--growth-soft); border-color:transparent; }
+  .badge.lvl3{ color:var(--danger); background:var(--danger-soft); border-color:transparent; }
+  .qnum{ color:var(--primary); font-family:'Archivo',sans-serif; font-weight:900; }
+  .formula{ font-size:1rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:10px 16px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); margin:8px 0; }
+  .answer-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .answer-row input[type=text]{ flex:1; min-width:160px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:10px; padding:.6em .9em; font-family:'JetBrains Mono',monospace; font-size:.95rem; color:var(--ink); }
+  .answer-row input[type=text]:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+  .btn{ border:none; background:var(--primary); color:var(--primary-ink); font-family:'Archivo',sans-serif; font-weight:800; font-size:.82rem; border-radius:10px; padding:.65em 1.2em; cursor:pointer; white-space:nowrap; }
+  .btn:hover{ filter:brightness(1.08); }
+  .btn:disabled{ opacity:.45; cursor:default; }
+  .btn.ghost{ background:var(--surface); color:var(--primary); border:1.5px solid var(--primary); }
+  .btn.ghost:hover{ background:var(--primary-soft); }
+  .btnrow{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .fb{ font-size:.85rem; margin-top:10px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .hinttext{ font-size:.85rem; color:var(--ink-soft); margin-top:8px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:none; }
+  .hinttext.open{ display:block; }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+
+<style>
+  .app{ max-width:820px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; }
+  .chips a{ text-decoration:none; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.4em .9em; }
+  .chips a:hover{ filter:brightness(.95); }
+  .aula-sec{ margin:34px 0 8px; scroll-margin-top:16px; }
+  .aula-sec h2{ font-size:clamp(1.2rem,2.6vw,1.6rem); font-weight:900; margin:0 0 4px; }
+  .aula-sec .kicker{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--primary); margin:0 0 4px; }
+  .aula-sec .objetivo{ font-size:.9rem; color:var(--ink-soft); margin:6px 0 0; }
+  .sec-label{ display:flex; align-items:center; gap:10px; margin:22px 0 10px; font-family:'Archivo',sans-serif; font-weight:800; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+  .sec-label::after{ content:''; flex:1; height:1px; background:var(--line); }
+  .q .qtext{ margin:10px 0 0; }
+  .q .ans-label{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--success); margin:0 0 4px; }
+  .q .grade{ display:none; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .q .grade.show{ display:flex; }
+  .q .grade span.ask{ font-size:.82rem; color:var(--ink-soft); font-weight:700; }
+  .q.g-ok{ border-color:color-mix(in srgb, var(--success) 45%, var(--line)); }
+  .q.g-no{ border-color:color-mix(in srgb, var(--danger) 40%, var(--line)); }
+  .q .stamp{ font-size:.82rem; font-weight:700; margin-top:10px; display:none; }
+  .q.g-ok .stamp{ display:block; color:var(--success); }
+  .q.g-no .stamp{ display:block; color:var(--danger); }
+  .finish-card{ text-align:center; }
+  .finish-card .btn{ margin-top:6px; }
+  .progress{ height:8px; border-radius:999px; background:var(--line); overflow:hidden; margin:0 0 6px; }
+  .progress > i{ display:block; height:100%; width:0; background:var(--primary); transition:width .3s ease; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · 9º ano · Recomposição · Atividade extra</div>
+    <div class="score-pill">Acertos: <span id="scoreVal">0</span>/55</div>
+  </div>
+
+  <div class="eyebrow">Prática · Bloco 2 de 6 · Aulas 23–27</div>
+  <h1 class="title">Exercícios e problemas: <span style="color:var(--primary);">Triângulos</span></h1>
+  <p class="subtitle">Os 55 exercícios e problemas dos slides deste bloco (Habilidade 9G1.5), reunidos numa atividade só. Resolva no caderno, toque em "Ver resposta" para conferir e diga se acertou. No fim, a atividade registra seus acertos.</p>
+  <div class="chips"><a href="#aula-23">Aula 23</a><a href="#aula-24">Aula 24</a><a href="#aula-25">Aula 25</a><a href="#aula-26">Aula 26</a><a href="#aula-27">Aula 27</a></div>
+  <div class="progress"><i id="bar"></i></div>
+  <p class="hint" id="progTxt">0 de 55 respondidos</p>
+
+<section class="aula-sec" id="aula-23">
+  <p class="kicker">Aula 23</p>
+  <h2>Condição de existência de um triângulo</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Identificar, pelas medidas dos lados, se um triângulo pode ser formado.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="1">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Os lados 3 cm, 4 cm e 5 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="1" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans1"><p class="ans-label">Resposta</p><p>Sim, pois 5 &lt; 3 + 4.</p></div>
+    <div class="grade" id="grade1"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="1" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="1" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp1"></div>
+  </div>
+  <div class="card q" data-id="2">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Os lados 2 cm, 3 cm e 6 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="2" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans2"><p class="ans-label">Resposta</p><p>Não, pois 6 &gt; 2 + 3.</p></div>
+    <div class="grade" id="grade2"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="2" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="2" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp2"></div>
+  </div>
+  <div class="card q" data-id="3">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Os lados 5 cm, 5 cm e 10 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="3" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans3"><p class="ans-label">Resposta</p><p>Não, pois 10 = 5 + 5 (a soma precisa ser maior).</p></div>
+    <div class="grade" id="grade3"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="3" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="3" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp3"></div>
+  </div>
+  <div class="card q" data-id="4">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Os lados 6 cm, 7 cm e 8 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="4" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans4"><p class="ans-label">Resposta</p><p>Sim, pois 8 &lt; 6 + 7.</p></div>
+    <div class="grade" id="grade4"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="4" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="4" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp4"></div>
+  </div>
+  <div class="card q" data-id="5">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Os lados 1 cm, 1 cm e 1 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="5" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans5"><p class="ans-label">Resposta</p><p>Sim, pois 1 &lt; 1 + 1.</p></div>
+    <div class="grade" id="grade5"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="5" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="5" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp5"></div>
+  </div>
+  <div class="card q" data-id="6">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Os lados 4 cm, 9 cm e 13 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="6" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans6"><p class="ans-label">Resposta</p><p>Não, pois 13 = 4 + 9.</p></div>
+    <div class="grade" id="grade6"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="6" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="6" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp6"></div>
+  </div>
+  <div class="card q" data-id="7">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Os lados 10 cm, 12 cm e 15 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="7" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans7"><p class="ans-label">Resposta</p><p>Sim, pois 15 &lt; 10 + 12.</p></div>
+    <div class="grade" id="grade7"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="7" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="7" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp7"></div>
+  </div>
+  <div class="card q" data-id="8">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Os lados 3 cm, 3 cm e 7 cm formam um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="8" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans8"><p class="ans-label">Resposta</p><p>Não, pois 7 &gt; 3 + 3.</p></div>
+    <div class="grade" id="grade8"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="8" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="8" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp8"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="9">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Tenho varetas de 5 cm, 7 cm, 9 cm e 15 cm. Quantos triângulos diferentes posso montar usando três varetas?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="9" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans9"><p class="ans-label">Resolução</p><p>Testando: 5-7-9 forma (9 &lt; 12); 5-7-15 não; 5-9-15 não (15 &gt; 14); 7-9-15 forma (15 &lt; 16). Dá para montar 2 triângulos.</p></div>
+    <div class="grade" id="grade9"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="9" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="9" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp9"></div>
+  </div>
+  <div class="card q" data-id="10">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Dois lados de um triângulo medem 5 cm e 9 cm. Quais medidas inteiras o terceiro lado pode ter?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="10" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans10"><p class="ans-label">Resolução</p><p>O terceiro lado x deve ser menor que 5 + 9 = 14 e maior que 9 − 5 = 4. Inteiros: 5, 6, 7, 8, 9, 10, 11, 12 e 13 (9 valores).</p></div>
+    <div class="grade" id="grade10"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="10" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="10" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp10"></div>
+  </div>
+  <div class="card q" data-id="11">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Um triângulo isósceles tem dois lados de 7 cm. Qual é o maior valor inteiro possível para o terceiro lado?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="11" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans11"><p class="ans-label">Resolução</p><p>O terceiro lado x deve ser menor que 7 + 7 = 14. O maior inteiro é 13 cm.</p></div>
+    <div class="grade" id="grade11"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="11" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="11" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp11"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-24">
+  <p class="kicker">Aula 24</p>
+  <h2>Triângulos quanto aos lados</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Classificar triângulos pelas medidas dos lados.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="12">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Classifique o triângulo de lados 5 cm, 5 cm e 5 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="12" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans12"><p class="ans-label">Resposta</p><p>Equilátero.</p></div>
+    <div class="grade" id="grade12"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="12" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="12" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp12"></div>
+  </div>
+  <div class="card q" data-id="13">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Classifique o triângulo de lados 4 cm, 4 cm e 7 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="13" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans13"><p class="ans-label">Resposta</p><p>Isósceles.</p></div>
+    <div class="grade" id="grade13"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="13" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="13" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp13"></div>
+  </div>
+  <div class="card q" data-id="14">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Classifique o triângulo de lados 3 cm, 4 cm e 5 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="14" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans14"><p class="ans-label">Resposta</p><p>Escaleno.</p></div>
+    <div class="grade" id="grade14"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="14" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="14" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp14"></div>
+  </div>
+  <div class="card q" data-id="15">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Classifique o triângulo de lados 9 cm, 9 cm e 2 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="15" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans15"><p class="ans-label">Resposta</p><p>Isósceles.</p></div>
+    <div class="grade" id="grade15"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="15" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="15" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp15"></div>
+  </div>
+  <div class="card q" data-id="16">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Classifique o triângulo de lados 6 cm, 8 cm e 10 cm.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="16" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans16"><p class="ans-label">Resposta</p><p>Escaleno.</p></div>
+    <div class="grade" id="grade16"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="16" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="16" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp16"></div>
+  </div>
+  <div class="card q" data-id="17">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Qual é o perímetro de um triângulo equilátero de lado 6 cm?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="17" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans17"><p class="ans-label">Resposta</p><p>18 cm.</p></div>
+    <div class="grade" id="grade17"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="17" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="17" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp17"></div>
+  </div>
+  <div class="card q" data-id="18">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Um isósceles tem dois lados de 8 cm e a base de 5 cm. Qual é o perímetro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="18" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans18"><p class="ans-label">Resposta</p><p>8 + 8 + 5 = 21 cm.</p></div>
+    <div class="grade" id="grade18"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="18" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="18" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp18"></div>
+  </div>
+  <div class="card q" data-id="19">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Um triângulo equilátero tem perímetro de 27 cm. Quanto mede cada lado?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="19" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans19"><p class="ans-label">Resposta</p><p>27 ÷ 3 = 9 cm.</p></div>
+    <div class="grade" id="grade19"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="19" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="19" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp19"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="20">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Um triângulo isósceles tem perímetro de 25 cm e base de 7 cm. Quanto mede cada um dos lados iguais?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="20" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans20"><p class="ans-label">Resolução</p><p>25 − 7 = 18; 18 ÷ 2 = 9 cm.</p></div>
+    <div class="grade" id="grade20"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="20" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="20" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp20"></div>
+  </div>
+  <div class="card q" data-id="21">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Um triângulo isósceles tem perímetro de 29 cm e um dos lados mede 11 cm. Quais triângulos são possíveis?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="21" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans21"><p class="ans-label">Resolução</p><p>Se 11 é lado igual: 11 + 11 + x = 29, x = 7 (11, 11, 7). Se 11 é a base: 2x + 11 = 29, x = 9 (9, 9, 11). Os dois existem.</p></div>
+    <div class="grade" id="grade21"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="21" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="21" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp21"></div>
+  </div>
+  <div class="card q" data-id="22">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Os lados de um triângulo são três números inteiros consecutivos e o perímetro é 36 cm. Quanto medem os lados? Como se classifica o triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="22" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans22"><p class="ans-label">Resolução</p><p>x + (x + 1) + (x + 2) = 36, então x = 11. Lados: 11, 12 e 13 cm (13 &lt; 23, existe). É escaleno.</p></div>
+    <div class="grade" id="grade22"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="22" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="22" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp22"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-25">
+  <p class="kicker">Aula 25</p>
+  <h2>Triângulos quanto aos ângulos</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Classificar triângulos pela medida dos ângulos internos e usar o transferidor.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="23">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Classifique o triângulo de ângulos 60°, 60° e 60°.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="23" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans23"><p class="ans-label">Resposta</p><p>Acutângulo.</p></div>
+    <div class="grade" id="grade23"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="23" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="23" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp23"></div>
+  </div>
+  <div class="card q" data-id="24">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Classifique o triângulo de ângulos 90°, 45° e 45°.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="24" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans24"><p class="ans-label">Resposta</p><p>Retângulo.</p></div>
+    <div class="grade" id="grade24"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="24" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="24" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp24"></div>
+  </div>
+  <div class="card q" data-id="25">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Classifique o triângulo de ângulos 100°, 40° e 40°.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="25" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans25"><p class="ans-label">Resposta</p><p>Obtusângulo.</p></div>
+    <div class="grade" id="grade25"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="25" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="25" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp25"></div>
+  </div>
+  <div class="card q" data-id="26">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Classifique o triângulo de ângulos 80°, 50° e 50°.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="26" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans26"><p class="ans-label">Resposta</p><p>Acutângulo.</p></div>
+    <div class="grade" id="grade26"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="26" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="26" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp26"></div>
+  </div>
+  <div class="card q" data-id="27">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Classifique o triângulo de ângulos 120°, 30° e 30°.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="27" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans27"><p class="ans-label">Resposta</p><p>Obtusângulo.</p></div>
+    <div class="grade" id="grade27"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="27" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="27" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp27"></div>
+  </div>
+  <div class="card q" data-id="28">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Quantos ângulos retos um triângulo pode ter, no máximo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="28" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans28"><p class="ans-label">Resposta</p><p>Um.</p></div>
+    <div class="grade" id="grade28"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="28" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="28" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp28"></div>
+  </div>
+  <div class="card q" data-id="29">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Quantos ângulos obtusos um triângulo pode ter, no máximo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="29" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans29"><p class="ans-label">Resposta</p><p>Um.</p></div>
+    <div class="grade" id="grade29"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="29" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="29" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp29"></div>
+  </div>
+  <div class="card q" data-id="30">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Um ângulo de 90° é agudo, reto ou obtuso?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="30" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans30"><p class="ans-label">Resposta</p><p>Reto.</p></div>
+    <div class="grade" id="grade30"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="30" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="30" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp30"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="31">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Um triângulo tem ângulos de 35° e 55°. Quanto mede o terceiro ângulo e como o triângulo se classifica? (A soma dos ângulos é 180°.)</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="31" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans31"><p class="ans-label">Resolução</p><p>180° − 35° − 55° = 90°. É um triângulo retângulo.</p></div>
+    <div class="grade" id="grade31"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="31" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="31" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp31"></div>
+  </div>
+  <div class="card q" data-id="32">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Um triângulo tem dois ângulos de 40°. Qual é o terceiro ângulo? Classifique o triângulo quanto aos ângulos e quanto aos lados.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="32" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans32"><p class="ans-label">Resolução</p><p>180° − 80° = 100°. É obtusângulo e isósceles (dois ângulos iguais).</p></div>
+    <div class="grade" id="grade32"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="32" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="32" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp32"></div>
+  </div>
+  <div class="card q" data-id="33">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Os ângulos de um triângulo medem 2x, 3x e 4x. Quanto vale cada ângulo e qual é a classificação?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="33" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans33"><p class="ans-label">Resolução</p><p>9x = 180°, x = 20°. Ângulos: 40°, 60° e 80°. Todos menores que 90°: acutângulo.</p></div>
+    <div class="grade" id="grade33"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="33" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="33" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp33"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-26">
+  <p class="kicker">Aula 26</p>
+  <h2>Propriedades dos triângulos I</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Compreender que a soma dos ângulos internos de um triângulo é 180°.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="34">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Dois ângulos de um triângulo medem 50° e 60°. Quanto mede o terceiro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="34" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans34"><p class="ans-label">Resposta</p><p>70°.</p></div>
+    <div class="grade" id="grade34"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="34" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="34" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp34"></div>
+  </div>
+  <div class="card q" data-id="35">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Dois ângulos de um triângulo medem 90° e 30°. Quanto mede o terceiro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="35" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans35"><p class="ans-label">Resposta</p><p>60°.</p></div>
+    <div class="grade" id="grade35"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="35" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="35" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp35"></div>
+  </div>
+  <div class="card q" data-id="36">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Dois ângulos de um triângulo medem 100° e 45°. Quanto mede o terceiro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="36" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans36"><p class="ans-label">Resposta</p><p>35°.</p></div>
+    <div class="grade" id="grade36"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="36" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="36" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp36"></div>
+  </div>
+  <div class="card q" data-id="37">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Dois ângulos de um triângulo medem 72° e 72°. Quanto mede o terceiro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="37" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans37"><p class="ans-label">Resposta</p><p>36°.</p></div>
+    <div class="grade" id="grade37"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="37" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="37" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp37"></div>
+  </div>
+  <div class="card q" data-id="38">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Quanto mede cada ângulo de um triângulo equilátero?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="38" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans38"><p class="ans-label">Resposta</p><p>60°.</p></div>
+    <div class="grade" id="grade38"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="38" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="38" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp38"></div>
+  </div>
+  <div class="card q" data-id="39">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Em um triângulo retângulo, um ângulo agudo mede 25°. Quanto mede o outro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="39" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans39"><p class="ans-label">Resposta</p><p>65°.</p></div>
+    <div class="grade" id="grade39"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="39" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="39" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp39"></div>
+  </div>
+  <div class="card q" data-id="40">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Um triângulo isósceles tem ângulo do vértice de 40°. Quanto mede cada ângulo da base?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="40" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans40"><p class="ans-label">Resposta</p><p>(180° − 40°) ÷ 2 = 70°.</p></div>
+    <div class="grade" id="grade40"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="40" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="40" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp40"></div>
+  </div>
+  <div class="card q" data-id="41">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Um triângulo isósceles tem ângulos da base de 35°. Quanto mede o ângulo do vértice?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="41" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans41"><p class="ans-label">Resposta</p><p>180° − 70° = 110°.</p></div>
+    <div class="grade" id="grade41"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="41" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="41" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp41"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="42">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">Os ângulos de um triângulo medem x, x + 10° e x + 20°. Quanto mede cada um?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="42" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans42"><p class="ans-label">Resolução</p><p>3x + 30° = 180°, x = 50°. Ângulos: 50°, 60° e 70°.</p></div>
+    <div class="grade" id="grade42"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="42" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="42" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp42"></div>
+  </div>
+  <div class="card q" data-id="43">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Em um triângulo isósceles, cada ângulo da base mede 3x + 5° e o ângulo do vértice mede 2x + 10°. Calcule x e os ângulos.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="43" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans43"><p class="ans-label">Resolução</p><p>2(3x + 5°) + 2x + 10° = 180°, 8x = 160°, x = 20°. Base: 65° e 65°; vértice: 50°.</p></div>
+    <div class="grade" id="grade43"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="43" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="43" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp43"></div>
+  </div>
+  <div class="card q" data-id="44">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Em um triângulo retângulo, o maior ângulo agudo é o dobro do menor. Quanto medem os ângulos agudos?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="44" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans44"><p class="ans-label">Resolução</p><p>a + 2a = 90°, a = 30°. Os ângulos agudos medem 30° e 60°.</p></div>
+    <div class="grade" id="grade44"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="44" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="44" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp44"></div>
+  </div>
+</section>
+
+<section class="aula-sec" id="aula-27">
+  <p class="kicker">Aula 27</p>
+  <h2>Propriedades dos triângulos II</h2>
+  <p class="objetivo"><strong>Objetivo:</strong> Reconhecer a relação do ângulo externo com os ângulos internos não adjacentes.</p>
+  <div class="sec-label">Exercícios · 8</div>
+  <div class="card q" data-id="45">
+    <span class="badge">Exercício 1</span>
+    <div class="qtext">Os ângulos internos não adjacentes medem 40° e 50°. Quanto mede o ângulo externo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="45" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans45"><p class="ans-label">Resposta</p><p>90°.</p></div>
+    <div class="grade" id="grade45"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="45" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="45" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp45"></div>
+  </div>
+  <div class="card q" data-id="46">
+    <span class="badge">Exercício 2</span>
+    <div class="qtext">Os ângulos internos não adjacentes medem 65° e 55°. Quanto mede o ângulo externo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="46" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans46"><p class="ans-label">Resposta</p><p>120°.</p></div>
+    <div class="grade" id="grade46"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="46" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="46" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp46"></div>
+  </div>
+  <div class="card q" data-id="47">
+    <span class="badge">Exercício 3</span>
+    <div class="qtext">Um ângulo interno mede 70°. Quanto mede o externo adjacente a ele?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="47" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans47"><p class="ans-label">Resposta</p><p>180° − 70° = 110°.</p></div>
+    <div class="grade" id="grade47"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="47" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="47" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp47"></div>
+  </div>
+  <div class="card q" data-id="48">
+    <span class="badge">Exercício 4</span>
+    <div class="qtext">Um ângulo externo mede 140° e um dos internos não adjacentes mede 60°. Quanto mede o outro?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="48" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans48"><p class="ans-label">Resposta</p><p>140° − 60° = 80°.</p></div>
+    <div class="grade" id="grade48"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="48" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="48" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp48"></div>
+  </div>
+  <div class="card q" data-id="49">
+    <span class="badge">Exercício 5</span>
+    <div class="qtext">Um ângulo externo mede 100° e os dois internos não adjacentes são iguais. Quanto mede cada um?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="49" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans49"><p class="ans-label">Resposta</p><p>100° ÷ 2 = 50°.</p></div>
+    <div class="grade" id="grade49"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="49" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="49" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp49"></div>
+  </div>
+  <div class="card q" data-id="50">
+    <span class="badge">Exercício 6</span>
+    <div class="qtext">Quanto somam os três ângulos externos de um triângulo?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="50" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans50"><p class="ans-label">Resposta</p><p>360°.</p></div>
+    <div class="grade" id="grade50"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="50" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="50" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp50"></div>
+  </div>
+  <div class="card q" data-id="51">
+    <span class="badge">Exercício 7</span>
+    <div class="qtext">Um ângulo externo mede 150°. Quanto mede o interno adjacente?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="51" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans51"><p class="ans-label">Resposta</p><p>30°.</p></div>
+    <div class="grade" id="grade51"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="51" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="51" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp51"></div>
+  </div>
+  <div class="card q" data-id="52">
+    <span class="badge">Exercício 8</span>
+    <div class="qtext">Quanto mede cada ângulo externo de um triângulo equilátero?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="52" type="button">Ver resposta</button></div>
+    <div class="answer" id="ans52"><p class="ans-label">Resposta</p><p>180° − 60° = 120°.</p></div>
+    <div class="grade" id="grade52"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="52" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="52" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp52"></div>
+  </div>
+  <div class="sec-label">Problemas · 3</div>
+  <div class="card q" data-id="53">
+    <span class="badge">Problema 9</span>
+    <div class="qtext">No triângulo ABC, os ângulos A e B medem 50° e 60°. Prolongando o lado BC, qual é o ângulo externo no vértice C?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="53" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans53"><p class="ans-label">Resolução</p><p>Externo = soma dos internos não adjacentes: 50° + 60° = 110°.</p></div>
+    <div class="grade" id="grade53"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="53" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="53" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp53"></div>
+  </div>
+  <div class="card q" data-id="54">
+    <span class="badge">Problema 10</span>
+    <div class="qtext">Dois ângulos externos de um triângulo medem 120° e 130°. Quanto mede o terceiro externo? E quanto medem os ângulos internos?</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="54" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans54"><p class="ans-label">Resolução</p><p>Terceiro externo: 360° − 250° = 110°. Internos: 180° − 120° = 60°, 180° − 130° = 50° e 180° − 110° = 70°.</p></div>
+    <div class="grade" id="grade54"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="54" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="54" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp54"></div>
+  </div>
+  <div class="card q" data-id="55">
+    <span class="badge">Problema 11</span>
+    <div class="qtext">Um ângulo externo mede 125°. Os dois internos não adjacentes medem x e 2x − 10°. Calcule x e os três ângulos internos.</div>
+    <div class="btnrow"><button class="btn ghost" data-reveal="55" type="button">Ver resolução</button></div>
+    <div class="answer" id="ans55"><p class="ans-label">Resolução</p><p>x + 2x − 10° = 125°, 3x = 135°, x = 45°. Internos não adjacentes: 45° e 80°. O adjacente mede 180° − 125° = 55°.</p></div>
+    <div class="grade" id="grade55"><span class="ask">Você acertou?</span><button class="btn" data-grade="ok" data-q="55" type="button">✔ Acertei</button><button class="btn ghost" data-grade="no" data-q="55" type="button">✘ Errei</button></div>
+    <div class="stamp" id="stamp55"></div>
+  </div>
+</section>
+
+<div class="card finish-card" id="finishCard">
+  <h2 style="margin:0 0 6px;font-size:1.15rem;">Terminou?</h2>
+  <p class="hint" id="finishTxt">Responda todos os itens para concluir automaticamente, ou conclua agora com o que já fez.</p>
+  <button class="btn" id="concluirBtn" type="button">Concluir atividade</button>
+</div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-rec9-pratica-2';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var TOTAL = 55, respondidas = 0, acertos = 0, finished = false;
+  var scoreEl = document.getElementById('scoreVal'), bar = document.getElementById('bar'), prog = document.getElementById('progTxt');
+  function update(){
+    scoreEl.textContent = acertos;
+    bar.style.width = (100 * respondidas / TOTAL) + '%';
+    prog.textContent = respondidas + ' de ' + TOTAL + ' respondidos';
+    if(respondidas === TOTAL) finish();
+  }
+  function finish(){
+    if(finished) return; finished = true;
+    var btn = document.getElementById('concluirBtn'); btn.disabled = true;
+    document.getElementById('finishTxt').textContent = 'Atividade concluída: ' + acertos + ' de ' + TOTAL + ' acertos' + (respondidas < TOTAL ? ' (' + (TOTAL - respondidas) + ' sem responder)' : '') + '.';
+    if(window.reportarConclusao) window.reportarConclusao(acertos, TOTAL);
+  }
+  document.querySelectorAll('button[data-reveal]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.reveal;
+      document.getElementById('ans' + n).classList.add('open');
+      document.getElementById('grade' + n).classList.add('show');
+      b.disabled = true;
+    });
+  });
+  document.querySelectorAll('button[data-grade]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var n = b.dataset.q, card = b.closest('.q');
+      if(card.dataset.graded) return; card.dataset.graded = '1';
+      var ok = b.dataset.grade === 'ok';
+      card.classList.add(ok ? 'g-ok' : 'g-no');
+      document.getElementById('stamp' + n).textContent = ok ? '✔ Marcado como acerto' : '✘ Marcado como erro — releia a resolução e tente de novo no caderno';
+      card.querySelectorAll('[data-grade]').forEach(function(x){ x.disabled = true; });
+      respondidas++; if(ok) acertos++;
+      update();
+    });
+  });
+  document.getElementById('concluirBtn').addEventListener('click', finish);
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>
