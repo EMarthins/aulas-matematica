@@ -1,0 +1,1094 @@
+<title>Renda Variável e Bolsa de Valores: Ser Sócio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+</style>
+<style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Educação Financeira · Renda Variável e Bolsa</div>
+    <div>Aulas 43–45 · 2ª Série do Ensino Médio · Trimestre 3</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,200 C 120,150 170,190 250,140 C 330,90 380,170 470,120 C 560,70 620,130 700,80 C 760,45 800,60 840,26" fill="none" stroke="var(--growth)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="26" r="8" fill="var(--growth)"/>
+          </svg>
+          <div class="eyebrow">Educação Financeira · 2ª série · Trimestre 3</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Ser sócio: <span style="color:var(--growth);">renda variável</span> e a Bolsa</h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Ações, fundos imobiliários e ETFs; como o preço nasce da oferta e da demanda; quais são os riscos e como proteger o patrimônio quando o mercado oscila.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">AULAS 43, 44, 45</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">Ações · FIIs · ETFs</span>
+            <span class="badge" style="color:var(--danger);background:var(--danger-soft);border-color:transparent;">Volatilidade e mitigação de riscos</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">De credor a sócio: o mapa da renda variável.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Fixo x variável</strong><div class="hint">o que a corrida de aplicativo ensina sobre previsibilidade</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 9h6v12h-6M8 7h2M8 11h2M8 15h2"/></svg><div><strong>Ações, FIIs e ETFs</strong><div class="hint">sócio de empresas, "aluguel" sem imóvel e a cesta de ativos</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Volatilidade</strong><div class="hint">o sobe e desce — e por que não é para a reserva de emergência</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15c.6.7 1.7 1 3 1s2.7-.6 2.7-1.7c0-1-1-1.4-3-1.8s-3-.9-3-1.9C8.7 9.6 10.2 9 12 9s2.4.3 3 1"/></svg><div><strong>A Bolsa por dentro</strong><div class="hint">B3, corretora, home broker e a lei da oferta e da demanda</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Ibovespa, horários e regras</strong><div class="hint">o termômetro da economia e o xerife (CVM)</div></div></div>
+            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg><div><strong>Mapa dos riscos</strong><div class="hint">mercado, crédito, liquidez e operacional — e a crise de 2008</div></div></div>
+            <div class="step-row"><span class="badge">07</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Mitigar ≠ eliminar</strong><div class="hint">diversificar, ter prazo e alocar entre fixa e variável</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Conhecer os tipos de <strong>renda variável</strong> (ações, FIIs e ETFs) e diferenciá-los da renda fixa.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Compreender o <strong>funcionamento da Bolsa</strong> (B3) e a dinâmica de oferta e demanda.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Analisar os <strong>riscos</strong> da renda variável e os fatores que movem os preços.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Identificar <strong>estratégias de mitigação</strong>: diversificação, prazo e alocação.</span></li></ul>
+            <div class="card growth">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--growth-ink);">Habilidade em foco</h4>
+              <p style="font-size:.9rem;margin:0;">Matemática e decisões financeiras no ENEM: funções com parte fixa e variável (aula 43), leitura de operações no tempo (aula 44) e juros compostos com logaritmo (aula 45).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · ENEM · parte fixa + parte variável</div>
+          <h2 class="title">Quanto custa a corrida de aplicativo?</h2>
+          
+          <p class="lede">O valor de uma corrida tem uma <strong>tarifa base de R$ 2</strong> (fixa), mais <strong>R$ 0,26 por minuto (T)</strong> e <strong>R$ 1,40 por quilômetro (D)</strong>. Qual expressão dá o valor total V?</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div><div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alternativas</p><button class="choice mqo" data-i="0">V = 2,26T + 1,40D</button><button class="choice mqo" data-i="1">V = 2 + 0,26T + 1,40D</button><button class="choice mqo" data-i="2">V = 2 + 1,66(T + D)</button><button class="choice mqo" data-i="3">V = 2·(0,26T + 1,40D)</button><button class="choice mqo" data-i="4">V = 3,66 + T + D</button><div class="fb"></div><div class="answer"><p><strong>V = 2 + 0,26T + 1,40D</strong> (alternativa B): parte fixa + parte variável pelo tempo + parte variável pela distância.</p></div></div></div>
+            <div>
+              <table class="tbl">
+  <tr><th>elemento do aplicativo</th><th>equivalente no investimento</th></tr>
+  <tr><td style="text-align:left;">Tarifa base fixa</td><td>Renda fixa: previsibilidade</td></tr>
+  <tr><td style="text-align:left;">Tempo e distância (variam)</td><td>Renda variável: fatores externos</td></tr>
+  <tr><td style="text-align:left;">Trânsito muda o preço</td><td>O mercado muda a cotação</td></tr>
+</table>
+              <div class="callout success"><h4>Ponte para a aula</h4><p>Assim como o trânsito afeta a corrida, <strong>o mercado afeta a renda variável</strong>: o retorno depende do desempenho da empresa, dos dividendos e do "humor" dos investidores.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · gancho</div>
+          <h2 class="title">Credor ou sócio?</h2>
+          
+          <div class="grid2">
+            <div class="card decay"><strong>Na renda fixa você é credor</strong><p style="margin-top:8px;font-size:.92rem;">Empresta dinheiro para o banco ou o governo e recebe <strong>juros</strong> combinados.</p></div>
+            <div class="card growth"><strong>Na renda variável você é sócio</strong><p style="margin-top:8px;font-size:.92rem;">Ao comprar ações você é <strong>dono de um pedacinho</strong> do negócio e participa dos <strong>lucros</strong>.</p></div>
+          </div>
+          <div class="callout"><h4>Pergunta</h4><p>Você prefere emprestar dinheiro para o banco ou ser "dono" de um pedacinho dele? Qual a diferença entre receber <strong>juros</strong> e receber <strong>lucros</strong>?</p></div>
+          <button class="reveal" onclick="toggleAnswer(this)">Pensando juntos</button>
+<div class="answer"><p><strong>Juros</strong> são combinados antes e não dependem do desempenho do banco. <strong>Lucros</strong> dependem do resultado da empresa: podem ser maiores — ou não existir. Mais retorno potencial, mais risco.</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · teoria</div>
+          <h2 class="title">O que é renda variável?</h2>
+          
+          <p class="lede">É a classe de ativos em que a <strong>rentabilidade não é garantida nem conhecida</strong> no momento da compra. O preço "varia" conforme o mercado.</p>
+          <div class="grid3">
+            <div class="card danger"><span class="badge">RISCO</span><p style="font-size:.88rem;margin-top:8px;">Maior: o preço pode cair e você pode perder parte do capital.</p></div>
+            <div class="card success"><span class="badge">RETORNO</span><p style="font-size:.88rem;margin-top:8px;">Potencialmente maior no longo prazo: <strong>valorização do preço</strong> + <strong>proventos (dividendos)</strong>.</p></div>
+            <div class="card decay"><span class="badge">LIQUIDEZ</span><p style="font-size:.88rem;margin-top:8px;">Em geral boa (dá para vender em dias de pregão), mas o preço de venda pode ser menor que o de compra.</p></div>
+          </div>
+          <div class="callout"><h4>Destaque</h4><p>Na renda variável aceitamos <strong>mais risco</strong> em busca de um <strong>retorno potencialmente maior</strong> no longo prazo.</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · teoria</div>
+          <h2 class="title">Ações: sócio das empresas</h2>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">Uma <strong>ação</strong> é a menor parte de uma empresa. Ao comprá-la você vira <strong>acionista</strong> (sócio). Ganhos possíveis:</p>
+              <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Valorização</strong> do preço da ação.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Dividendos</strong>: sua parte no lucro distribuído aos sócios — "dinheiro pingando na conta".</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Ser "sócio" de marcas como Apple, Vale ou Petrobras.</span></li></ul>
+            </div>
+            <div>
+              <div class="card growth"><strong>Atividade</strong><p style="font-size:.9rem;margin-top:6px;">De qual empresa que você usa todo dia gostaria de ser sócio (rede social, streaming, vestuário)? Por que ela continuará lucrando em 10 anos? <strong>O que pode dar errado?</strong></p></div>
+              <button class="reveal" onclick="toggleAnswer(this)">Sugestão de resposta</button>
+<div class="answer"><p>Ser sócio exige análise. Uma empresa lucra quando <strong>resolve problemas das pessoas de forma eficiente</strong>. Os riscos: concorrência e mudanças no comportamento do consumidor. Pensar como dono é olhar para o <strong>futuro do negócio</strong>, não só para o preço de hoje.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · FIIs</div>
+          <h2 class="title">"Aluguel" sem ter imóvel</h2>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">Os <strong>Fundos de Investimento Imobiliário</strong> permitem investir em shoppings, galpões e prédios <strong>sem comprar o imóvel inteiro</strong>.</p>
+              <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Receba <strong>aluguéis mensais</strong> direto na conta.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Comece com pouco (R$ 10 a R$ 100 por cota).</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Gestão profissional</strong> cuida de tudo.</span></li></ul>
+              <div class="callout success"><h4>Dica</h4><p>FIIs são ótimos para quem busca <strong>renda passiva mensal</strong> e quer diversificar além da renda fixa.</p></div>
+            </div>
+            <div class="wid">
+              <p class="small" style="margin:0 0 4px;"><b>Quanto vou receber?</b></p>
+              <div class="row"><div><label>Cotas</label><input type="number" id="fi-n" value="100" min="0" step="10"></div><div><label>Dividendo por cota (R$)</label><input type="number" id="fi-d" value="1.10" min="0" step="0.05"></div></div>
+              <p class="small" style="margin:12px 0 0;">Recebimento neste mês</p><div class="out" id="fi-r" style="font-size:1.8rem;">R$ 110,00</div>
+              <p class="small" id="fi-t" style="margin:6px 0 0;"></p>
+              <p class="hint">Reinvestindo os dividendos você compra mais cotas e o efeito "bola de neve" começa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 43 · ETFs</div>
+          <h2 class="title">ETFs: a cesta de investimentos</h2>
+          
+          <p class="lede"><strong>Exchange Traded Funds</strong> são fundos que <strong>replicam um índice</strong> (como o Ibovespa): uma cesta que já vem com várias empresas dentro.</p>
+          <div class="grid3">
+            <div class="card success"><strong>Diversificação instantânea</strong><p style="font-size:.88rem;margin-top:8px;">Com uma cota você tem exposição a muitas empresas.</p></div>
+            <div class="card decay"><strong>Praticidade</strong><p style="font-size:.88rem;margin-top:8px;">Não precisa escolher empresa por empresa.</p></div>
+            <div class="card growth"><strong>Baixo custo</strong><p style="font-size:.88rem;margin-top:8px;">Taxa de administração geralmente menor.</p></div>
+          </div>
+          <table class="tbl">
+  <tr><th>ativo</th><th>o que é</th><th>como ganha</th></tr>
+  <tr><td style="text-align:left;">Ação</td><td>parte de uma empresa</td><td>valorização + dividendos</td></tr>
+  <tr><td style="text-align:left;">FII</td><td>cota de fundo de imóveis</td><td>valorização + aluguéis mensais</td></tr>
+  <tr><td style="text-align:left;">ETF</td><td>cesta que replica um índice</td><td>valorização do índice + proventos</td></tr>
+</table>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Aula 43 · risco e volatilidade</div>
+          <h2 class="title">O sobe e desce do mercado</h2>
+          
+          <p class="lede"><strong>Volatilidade</strong> é a oscilação de preços: um dia a ação sobe 2%, no outro cai 3%. É o comportamento normal da renda variável. Simule 30 dias (dados fictícios):</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="wid">
+              <button class="btn-sim reveal" id="vo-b" style="margin-top:0;">Simular 30 dias</button>
+              <p class="small" style="margin:10px 0 0;">Preço final: <span class="out" id="vo-f">—</span></p>
+              <p class="small" id="vo-t" style="margin:4px 0 0;">Variação: —</p>
+              <svg id="vo-svg" viewBox="0 0 400 150" style="width:100%;height:auto;display:block;margin-top:8px;"></svg>
+            </div>
+            <div>
+              <div class="callout danger"><h4>Atenção</h4><p>Renda variável <strong>NÃO é para o dinheiro da reserva de emergência</strong>: você pode precisar do dinheiro justamente num dia de queda.</p></div>
+              <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.88rem;">Notícias e economia.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.88rem;">Desempenho da empresa.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.88rem;">Humor dos investidores.</span></li></ul>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Lucas (17) tem R$ 200/mês para uma <strong>viagem no fim do ano</strong> e R$ 200/mês para a <strong>independência financeira em 20 anos</strong>. Onde a renda variável se encaixa melhor?</p><button class="choice mqo" data-i="0">Na viagem (curto prazo)</button><button class="choice mqo" data-i="1">Na independência financeira (longo prazo)</button><button class="choice mqo" data-i="2">Nos dois igualmente</button><button class="choice mqo" data-i="3">Em nenhum</button><div class="fb"></div><div class="answer"><p>No <strong>longo prazo</strong>: o tempo longo permite suportar as oscilações e aproveitar crescimento e dividendos. A viagem pede renda fixa (Tesouro Selic/CDB).</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 44 · teoria</div>
+          <h2 class="title">Bolsa de valores: o "shopping" dos investimentos</h2>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">É um mercado <strong>organizado e 100% digital</strong> em que compradores e vendedores se encontram para negociar ativos com segurança. As regras são iguais para todos.</p>
+              <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>B3</strong>: a bolsa oficial do Brasil, garantindo transparência.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Crescimento</strong>: ajuda empresas a captar recursos para investir.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Democracia</strong>: permite que qualquer pessoa seja investidora.</span></li></ul>
+            </div>
+            <div>
+              <p style="font-weight:700;margin:0 0 8px;">O fluxo de uma ordem:</p>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div class="step-row"><span class="badge">1</span><div><strong>Você envia a ordem</strong><div class="hint">pelo home broker (app ou site)</div></div></div>
+                <div class="step-row"><span class="badge">2</span><div><strong>A corretora valida</strong><div class="hint">ponte de acesso à Bolsa</div></div></div>
+                <div class="step-row"><span class="badge">3</span><div><strong>A B3 executa</strong><div class="hint">no pregão eletrônico</div></div></div>
+                <div class="step-row"><span class="badge">4</span><div><strong>O ativo é seu!</strong><div class="hint">em sua custódia</div></div></div>
+              </div>
+            </div>
+          </div>
+          <button class="reveal" onclick="toggleAnswer(this)">Debate: tecnologia torna o mercado mais justo ou mais perigoso?</button>
+<div class="answer"><p>Democratizou o acesso: com um celular e R$ 50 qualquer jovem envia uma ordem. Mas a facilidade exige <strong>mais responsabilidade e estudo</strong>: perder dinheiro por impulso ficou a "um clique de distância".</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 44 · teoria</div>
+          <h2 class="title">Oferta e demanda: quem define o preço?</h2>
+          
+          <p class="lede">A bolsa <strong>não é um cassino</strong>: é um leilão gigante, com regras claras. O preço nasce do equilíbrio entre quem quer comprar e quem quer vender.</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="wid">
+              <label>Compradores querendo comprar: <b id="od-d">50</b></label><input type="range" id="od-di" min="10" max="90" value="50">
+              <label>Vendedores querendo vender: <b id="od-o">50</b></label><input type="range" id="od-oi" min="10" max="90" value="50">
+              <p class="small" style="margin:12px 0 0;">Preço da ação (R$ 20,00 no equilíbrio)</p><div class="out" id="od-p" style="font-size:1.8rem;">R$ 20,00</div>
+              <p id="od-t" class="small" style="margin:4px 0 0;font-weight:700;"></p>
+            </div>
+            <div>
+              <table class="tbl">
+  <tr><th>situação</th><th>o que acontece com o preço</th></tr>
+  <tr><td style="text-align:left;">demanda > oferta</td><td>sobe</td></tr>
+  <tr><td style="text-align:left;">oferta > demanda</td><td>cai</td></tr>
+  <tr><td style="text-align:left;">oferta = demanda</td><td>preço de equilíbrio</td></tr>
+</table>
+              <div class="callout success"><h4>Exemplo da bateria</h4><p>Uma empresa anuncia uma bateria que dura 10 vezes mais. Investidores esperam lucros maiores → <strong>a demanda dispara</strong>, o volume de negociações aumenta e o preço sobe até um novo equilíbrio.</p></div>
+              <button class="reveal" onclick="toggleAnswer(this)">Livro de ofertas: e se alguém comprar mais do que existe a R$ 20?</button>
+<div class="answer"><p>1.000 ações à venda a R$ 20 e uma ordem de compra "a mercado" de 1.500: as 1.000 saem a R$ 20 e as 500 restantes buscam vendedores <strong>mais caros</strong> (R$ 20,05, R$ 20,10…): <strong>o preço sobe</strong>.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 44 · teoria</div>
+          <h2 class="title">Ibovespa, horários e o "xerife" do mercado</h2>
+          
+          <div class="grid3">
+            <div class="card growth"><strong>Ibovespa</strong><p style="font-size:.88rem;margin-top:8px;">O principal indicador da B3: uma <strong>carteira das maiores empresas</strong> (Vale, Petrobras, Itaú…). É o "termômetro" da economia.</p></div>
+            <div class="card decay"><strong>Horário e leilões</strong><p style="font-size:.88rem;margin-top:8px;">Pregão geralmente das <strong>10h às 17h ou 18h</strong>. Leilões de abertura e fechamento garantem preços justos.</p></div>
+            <div class="card success"><strong>CVM</strong><p style="font-size:.88rem;margin-top:8px;">O "xerife" que <strong>fiscaliza e protege o investidor</strong>, evitando manipulações.</p></div>
+          </div>
+          <div class="callout"><h4>Significado</h4><p>Quando dizem que "<strong>a bolsa subiu</strong>", significa que, na média, as ações que compõem o índice valorizaram.</p></div>
+          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">"Quem define os preços das ações" na Bolsa?</p><button class="choice mqo" data-i="0">A CVM, todos os dias</button><button class="choice mqo" data-i="1">A B3 por decreto</button><button class="choice mqo" data-i="2">A lei da oferta e da demanda entre compradores e vendedores</button><button class="choice mqo" data-i="3">O Banco Central</button><div class="fb"></div><div class="answer"><p>A <strong>oferta e a demanda</strong>. Já os valores de referência de uma estratégia (como Vi, Vm e Vo na questão do ENEM) são definidos pelo <strong>próprio investidor</strong>, conforme metas e gestão de risco.</p></div></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 44 · ENEM · leitura de operações</div>
+          <h2 class="title">Quantas operações o investidor faz no dia?</h2>
+          
+          <p class="lede">Na questão, um investidor segue regras sobre três valores de referência: <strong>mínimo (Vm)</strong>, <strong>ideal (Vi)</strong> e <strong>ótimo (Vo)</strong>. Acompanhe a resolução hora a hora:</p>
+          <div class="wid" style="margin-top:8px;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;" id="en-chips"></div>
+            <p id="en-t" style="margin:0;font-size:.95rem;"></p>
+            <div class="bar" style="margin-top:10px;height:12px;"><span id="en-b" style="background:var(--growth);width:0%"></span></div>
+            <p class="small" id="en-c" style="margin:6px 0 0;"></p>
+          </div>
+          <p class="hint" style="margin-top:8px;">Resolução resumida da aula: (1) entre 10h e 11h, o preço cruza <b>para cima de Vi</b> → vende 50%; (2) próximo às 12h, cai <b>abaixo de Vm</b> → compra quantidade igual à atual; (3) entre 12h e 13h, cruza <b>para cima de Vi</b> → vende 50%; (4) às 13h30, cruza <b>para cima de Vo</b> → vende 100%. <strong>Total: 4 operações → alternativa B.</strong></p>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 45 · ENEM · juros compostos e carência</div>
+          <h2 class="title">Em quanto tempo o dinheiro dobra a 5% ao mês?</h2>
+          
+          <p class="lede">Uma aplicação rende <strong>5% ao mês</strong> (juros compostos). O objetivo é <strong>duplicar o capital</strong>. Dados: <span class="mono">log 2 = 0,30</span> e <span class="mono">log 1,05 = 0,02</span>. Qual carência mínima do plano?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div><div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Planos de carência</p><button class="choice mqo" data-i="0">A) 10 meses</button><button class="choice mqo" data-i="1">B) 15 meses</button><button class="choice mqo" data-i="2">C) 20 meses</button><button class="choice mqo" data-i="3">D) 25 meses</button><button class="choice mqo" data-i="4">E) 30 meses</button><div class="fb"></div><div class="answer"><p>O plano de <strong>15 meses</strong> (B): é o menor prazo em que o capital duplica.</p></div></div></div>
+            <div><button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p>M = 2C → 2 = (1,05)<sup>t</sup></p><p>log 2 = t · log 1,05 → 0,30 = t · 0,02 → <strong>t = 15 meses</strong>.</p><p>Plano A (10 meses): o valor <strong>não</strong> duplica (t &lt; 15). Planos C, D e E: ultrapassam a menor carência necessária.</p><p class="hint">Na renda fixa, taxa e tempo jogam com previsibilidade total. E na renda variável? A taxa muda todo dia — por isso a volatilidade exige novas ferramentas.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Aula 45 · teoria</div>
+          <h2 class="title">Mapa dos riscos da renda variável</h2>
+          
+          <p class="lede">Por que as pessoas perdem dinheiro na Bolsa? Entender os riscos é o primeiro passo para <strong>controlá-los</strong>.</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card danger"><strong>Risco de mercado</strong><p style="font-size:.88rem;margin-top:8px;">Mudanças econômicas e políticas alteram a cotação de todos os ativos.</p></div>
+            <div class="card growth"><strong>Risco de crédito</strong><p style="font-size:.88rem;margin-top:8px;">A empresa não pagar suas dívidas ou entrar em falência.</p></div>
+            <div class="card decay"><strong>Risco de liquidez</strong><p style="font-size:.88rem;margin-top:8px;">Dificuldade de transformar o ativo em dinheiro rápido sem perder valor.</p></div>
+            <div class="card"><strong>Risco operacional</strong><p style="font-size:.88rem;margin-top:8px;">Erros de sistema, fraudes ou falhas humanas nas empresas.</p></div>
+          </div>
+          <button class="choice vf" data-ok="0" data-why="Falsa — o risco é uma constante inevitável; o que se faz é mitigar (reduzir impactos), não eliminar.">"Quem investe em renda variável consegue evitar completamente os riscos."</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Aula 45 · estudo de caso</div>
+          <h2 class="title">A crise de 2008: mercados conectados</h2>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">A <strong>Crise do Subprime</strong> nasceu nos EUA, quando bancos ofereceram hipotecas de alto risco a quem tinha baixo histórico de crédito.</p>
+              <div class="grid2" style="margin-top:8px;">
+                <div class="stat" style="background:var(--danger-soft);"><span class="num" style="color:var(--danger);">−40%</span><span class="lbl">queda aproximada do Ibovespa</span></div>
+                <div class="stat" style="background:var(--danger-soft);"><span class="num" style="color:var(--danger);">−50%</span><span class="lbl">desvalorização da Bolsa americana (Dow Jones)</span></div>
+              </div>
+            </div>
+            <div>
+              <div class="callout danger"><h4>A lição</h4><p><strong>Mercados globais estão conectados.</strong> Ficar atento ao cenário mundial é vital para antecipar quedas bruscas.</p></div>
+              <button class="reveal" onclick="toggleAnswer(this)">Fatores que se somam</button>
+<div class="answer"><p>Condições econômicas, política e regulação, desempenho das empresas e sentimento do mercado <strong>interagem</strong> e podem ter efeitos amplificados quando ocorrem juntos, como em 2008.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Aula 45 · teoria</div>
+          <h2 class="title">O que move os preços?</h2>
+          
+          <div class="grid2">
+            <div class="card success"><strong>Condições econômicas</strong><p style="font-size:.88rem;margin-top:8px;">Juros, inflação, PIB: com a economia forte, as ações tendem a valorizar.</p></div>
+            <div class="card decay"><strong>Política e regulação</strong><p style="font-size:.88rem;margin-top:8px;">Instabilidade, leis e decisões sobre impostos e juros geram incerteza.</p></div>
+            <div class="card growth"><strong>Desempenho das empresas</strong><p style="font-size:.88rem;margin-top:8px;">Lucros, prejuízos, novos produtos, escândalos e resultados trimestrais.</p></div>
+            <div class="card danger"><strong>Sentimento do mercado</strong><p style="font-size:.88rem;margin-top:8px;">Medo e ganância movem o curto prazo, amplificados por notícias.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Aula 45 · mitigação</div>
+          <h2 class="title">Proteja seu patrimônio: mitigar não é eliminar</h2>
+          
+          <p class="lede">No mercado de renda variável o risco é <strong>inevitável</strong>. Mitigar é adotar estratégias para <strong>controlar o tamanho dos prejuízos</strong> e sobreviver no longo prazo.</p>
+          <div class="grid3">
+            <div class="card success"><strong>Diversificação</strong><p style="font-size:.88rem;margin-top:8px;">Não colocar todo o dinheiro em uma única ação.</p></div>
+            <div class="card decay"><strong>Prazo</strong><p style="font-size:.88rem;margin-top:8px;">Investimentos de longo prazo reduzem o peso da volatilidade.</p></div>
+            <div class="card growth"><strong>Alocação</strong><p style="font-size:.88rem;margin-top:8px;">Combinar renda fixa e renda variável.</p></div>
+          </div>
+          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Sua ação caiu <strong>20%</strong> numa crise. A empresa continua com bons fundamentos. O que fazer para mitigar o prejuízo?</p><button class="choice mqo" data-i="0">Vender tudo na hora para parar de perder</button><button class="choice mqo" data-i="1">Rebalancear a carteira e/ou aguardar a recuperação com foco no longo prazo</button><button class="choice mqo" data-i="2">Colocar todo o dinheiro que sobrou na mesma ação</button><button class="choice mqo" data-i="3">Fechar os olhos para o mercado</button><div class="fb"></div><div class="answer"><p>Vender no pânico "tranca" o prejuízo de 20%. Se os <strong>fundamentos</strong> seguem bons, a crise cria oportunidades de comprar mais barato ou simplesmente esperar a recuperação — inteligência emocional e estratégica.</p></div></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Aula 45 · atividade</div>
+          <h2 class="title">Cenários A, B e C: onde está o risco?</h2>
+          
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px;" id="ce-chips"></div>
+          <div class="wid">
+            <p id="ce-d" style="margin:0 0 8px;font-weight:700;"></p>
+            <p id="ce-r" style="margin:0 0 6px;"></p>
+            <p id="ce-e" style="margin:0 0 6px;"></p>
+            <p id="ce-v" style="margin:0;"></p>
+          </div>
+          <p class="hint" style="margin-top:8px;">Discuta: em qual cenário a renda variável teria maior risco? Que estratégias um investidor jovem poderia adotar em cada um? Como a diversificação ajudaria?</p>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Aula 45 · atividade em grupo</div>
+          <h2 class="title">A carteira da Maria</h2>
+          
+          <p class="lede">Maria, <strong>17 anos</strong>, recebeu <strong>R$ 5.000</strong> de herança e quer investir em renda variável. Perfil <strong>moderado</strong>; vai usar o dinheiro na <strong>faculdade em 3 anos</strong>. Ajuste a distribuição:</p>
+          <div class="grid2" style="margin-top:8px;">
+            <div class="wid">
+              <label>Renda fixa: <b id="ma-p">70</b>%</label><input type="range" id="ma-pi" min="0" max="100" step="5" value="70">
+              <div class="bar" style="height:22px;margin:10px 0;"><span id="ma-b1" style="background:var(--decay);width:70%"></span><span id="ma-b2" style="background:var(--growth);width:30%"></span></div>
+              <p class="small" style="margin:0;"><b style="color:var(--decay);">● Renda fixa:</b> <span id="ma-rf" class="mono"></span><br><b style="color:var(--growth);">● Renda variável:</b> <span id="ma-rv" class="mono"></span></p>
+              <p class="small" id="ma-t" style="margin:8px 0 0;font-weight:700;"></p>
+            </div>
+            <div>
+              <div class="callout success"><h4>Sugestão de resposta</h4><p>Perfil moderado e prazo curto (3 anos) pedem <strong>priorizar a segurança</strong>: <strong>70% em renda fixa (R$ 3.500)</strong>, que garante a faculdade, e <strong>30% em renda variável (R$ 1.500)</strong>, que busca retornos maiores com risco controlado.</p></div>
+              <p class="hint">Atividade em grupo (5 min): criem uma carteira para Maria, justifiquem considerando os riscos e apresentem à turma.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Sócio, não credor</span><p style="font-size:.85rem;margin-top:8px;">Ações, FIIs e ETFs: você participa dos resultados — com preço oscilando todo dia.</p></div>
+            <div class="card"><span class="badge">Preço = oferta x demanda</span><p style="font-size:.85rem;margin-top:8px;">Na B3, quem define o preço é o mercado; a CVM fiscaliza e protege o investidor.</p></div>
+            <div class="card"><span class="badge">Mitigar riscos</span><p style="font-size:.85rem;margin-top:8px;">Diversificação, prazo e alocação entre fixa e variável; nunca use a reserva de emergência.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">"Na renda variável, o maior ativo é a paciência: foque no longo prazo e diversifique."</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. Ao comprar uma ação, você se torna:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">Credor da empresa</button>
+                <button class="choice qopt" data-ok="1">Sócio da empresa</button>
+                <button class="choice qopt" data-ok="0">Fiador da empresa</button>
+                <button class="choice qopt" data-ok="0">Funcionário da empresa</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Quando a demanda por uma ação supera a oferta, o preço tende a:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">Cair</button>
+                <button class="choice qopt" data-ok="1">Subir</button>
+                <button class="choice qopt" data-ok="0">Ficar igual sempre</button>
+                <button class="choice qopt" data-ok="0">Ser zerado</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. 100 cotas de um FII que paga R$ 1,10 por cota. Quanto será recebido no mês?</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">R$ 11,00</button>
+                <button class="choice qopt" data-ok="1">R$ 110,00</button>
+                <button class="choice qopt" data-ok="0">R$ 1.100,00</button>
+                <button class="choice qopt" data-ok="0">R$ 1,10</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. Por que a renda variável não deve ser usada na reserva de emergência?</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="0">Porque é proibida</button>
+                <button class="choice qopt" data-ok="1">Porque o preço pode estar em queda justamente quando você precisar</button>
+                <button class="choice qopt" data-ok="0">Porque não rende nada</button>
+                <button class="choice qopt" data-ok="0">Porque exige milhões</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">5. Mitigar riscos significa:</p>
+              <div class="qz" data-q="5">
+                <button class="choice qopt" data-ok="0">Eliminar todo o risco</button>
+                <button class="choice qopt" data-ok="1">Reduzir impactos e controlar o tamanho de prejuízos possíveis</button>
+                <button class="choice qopt" data-ok="0">Apostar tudo em uma ação</button>
+                <button class="choice qopt" data-ok="0">Ignorar o mercado</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">O primeiro passo é o conhecimento</h2>
+          <p class="lede">Comece a estudar antes de investir: renda variável pede paciência, diversificação e foco no longo prazo.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">B3 — Brasil, Bolsa, Balcão. <em>Bora Investir</em>. borainvestir.b3.com.br.<br>
+              COMISSÃO DE VALORES MOBILIÁRIOS (CVM). <em>Portal do Investidor</em>. investidor.gov.br.<br>
+              BARROS, Josi Gomes. <em>Educação Financeira Sustentável — 2ª série do Ensino Médio</em>. Apostila do estudante, p. 211–216: O mercado de ações e suas oscilações.<br>
+              INEP. <em>Matriz de Referência do ENEM</em> e provas e gabaritos.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 24</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ef2-rendavar';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+  function $(id){ return document.getElementById(id); }
+  function brl(v){ return 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  // FII
+  function fiUp(){ var n = +$('fi-n').value || 0, d = +$('fi-d').value || 0, r = n * d; $('fi-r').textContent = brl(r); $('fi-t').textContent = 'Se reinvestir tudo numa cota de R$ 10: +' + Math.floor(r / 10) + ' cota(s) no mês seguinte.'; }
+  ['fi-n','fi-d'].forEach(function(id){ $(id).addEventListener('input', fiUp); }); fiUp();
+  // volatilidade
+  $('vo-b').addEventListener('click', function(){
+    var p = 100, pts = [p];
+    for(var k = 0; k < 30; k++){ var r = (Math.random() - 0.48) * 0.07; p = Math.max(10, p * (1 + r)); pts.push(p); }
+    var mx = Math.max.apply(null, pts), mn = Math.min.apply(null, pts), W = 400, H = 150, pad = 12;
+    var d = pts.map(function(v, k){ return (pad + (W - 2*pad) * k / 30).toFixed(1) + ',' + (H - pad - (H - 2*pad) * (v - mn) / (mx - mn || 1)).toFixed(1); }).join(' ');
+    $('vo-svg').innerHTML = '<polyline fill="none" stroke="var(--growth)" stroke-width="3" points="' + d + '"/>';
+    var f = pts[30]; $('vo-f').textContent = brl(f);
+    var v = (f / 100 - 1) * 100; $('vo-t').innerHTML = 'Variação: <b style="color:' + (v >= 0 ? 'var(--success)' : 'var(--danger)') + ';">' + (v >= 0 ? '+' : '') + v.toFixed(1).replace('.', ',') + '%</b> · mínima ' + brl(mn) + ' · máxima ' + brl(mx);
+  });
+  // oferta e demanda
+  function odUp(){
+    var d = +$('od-di').value, o = +$('od-oi').value; $('od-d').textContent = d; $('od-o').textContent = o;
+    var p = 20 * (1 + (d - o) / 100); $('od-p').textContent = brl(p);
+    var t = $('od-t'); if(d > o){ t.textContent = '↑ Demanda maior que a oferta: o preço sobe.'; t.style.color = 'var(--success)'; } else if(d < o){ t.textContent = '↓ Oferta maior que a demanda: o preço cai.'; t.style.color = 'var(--danger)'; } else { t.textContent = '= Equilíbrio: o preço se mantém.'; t.style.color = 'var(--ink)'; }
+  }
+  ['od-di','od-oi'].forEach(function(id){ $(id).addEventListener('input', odUp); }); odUp();
+  // operações ENEM
+  var EN = [['10h–11h', 'O preço cruza para cima de Vi.', 'Vende 50% das ações', 1], ['≈ 12h', 'O preço cai abaixo de Vm.', 'Compra uma quantidade igual à atual', 2], ['12h–13h', 'O preço cruza de novo para cima de Vi.', 'Vende 50% das ações', 3], ['≈ 13h30', 'O preço cruza para cima de Vo.', 'Vende 100% (zera o estoque)', 4], ['depois', 'Oscilações restantes do gráfico.', 'Nenhuma operação: o estoque de ações é zero', 4]];
+  var ec = $('en-chips');
+  EN.forEach(function(e, k){ var b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (k === 0 ? ' on' : ''); b.textContent = e[0]; b.addEventListener('click', function(){ ec.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); en(k); }); ec.appendChild(b); });
+  function en(k){ var e = EN[k]; $('en-t').innerHTML = '<strong>' + e[1] + '</strong> → ' + e[2] + '.'; $('en-b').style.width = (e[3] / 4 * 100) + '%'; $('en-c').textContent = 'Operações realizadas até aqui: ' + e[3] + (k === 4 ? ' → gabarito: alternativa B (4 operações).' : ''); }
+  en(0);
+  // cenários
+  var CE = [['A · Crise econômica', 'O país entra em recessão, o desemprego aumenta, as empresas reduzem lucros e o governo aumenta impostos.', 'Risco: ALTO — empresas vendem menos e as ações podem cair muito.', 'Estratégia: manter cautela, mais renda fixa e aproveitar oportunidades de ações baratas.', 'Diversificação: a renda fixa amortece as perdas das ações.'], ['B · Crescimento econômico', 'A economia cresce, o desemprego diminui, as empresas lucram mais e há otimismo no mercado.', 'Risco: MENOR — a tendência é de lucros maiores e bolsa em alta.', 'Estratégia: aumentar a exposição em renda variável, aproveitando o otimismo.', 'Diversificação: garante ganhos na bolsa sem arriscar todo o capital.'], ['C · Instabilidade política', 'Mudanças frequentes no governo, incertezas sobre as políticas econômicas e tensões sociais.', 'Risco: ALTO — incertezas sobre regras e impostos geram insegurança e oscilação.', 'Estratégia: reduzir riscos, manter parte em renda fixa e diversificar em ativos externos.', 'Diversificação: manter parte em dólar ou no exterior reduz a exposição ao país.']];
+  var cc = $('ce-chips');
+  CE.forEach(function(e, k){ var b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (k === 0 ? ' on' : ''); b.textContent = e[0]; b.addEventListener('click', function(){ cc.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); }); b.classList.add('on'); ce(k); }); cc.appendChild(b); });
+  function ce(k){ var e = CE[k]; $('ce-d').textContent = e[1]; $('ce-r').innerHTML = '<strong>' + e[2] + '</strong>'; $('ce-e').textContent = e[3]; $('ce-v').textContent = e[4]; }
+  ce(0);
+  // Maria
+  function maUp(){
+    var p = +$('ma-pi').value; $('ma-p').textContent = p; $('ma-b1').style.width = p + '%'; $('ma-b2').style.width = (100 - p) + '%';
+    $('ma-rf').textContent = brl(5000 * p / 100); $('ma-rv').textContent = brl(5000 * (100 - p) / 100);
+    var t = $('ma-t');
+    if(p >= 60 && p <= 80){ t.textContent = '✔ Equilibrado para perfil moderado e prazo de 3 anos.'; t.style.color = 'var(--success)'; }
+    else if(p > 80){ t.textContent = 'Muito conservador: segura, mas pode render pouco.'; t.style.color = 'var(--decay)'; }
+    else { t.textContent = '⚠ Arriscado demais para um objetivo em 3 anos.'; t.style.color = 'var(--danger)'; }
+  }
+  $('ma-pi').addEventListener('input', maUp); maUp();
+
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>

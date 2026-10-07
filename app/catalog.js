@@ -194,7 +194,7 @@ export const MATERIAS = [
     id: 'educacao-financeira',
     nome: 'Educação Financeira',
     icon: 'coin',
-    lede: 'Material interativo de Educação Financeira para a 3ª série do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
+    lede: 'Material interativo de Educação Financeira para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis, infográficos e atividades, prontos para projetar em sala.',
     CATALOG: [
       {
         ano: '3° Ano',
@@ -237,6 +237,68 @@ export const MATERIAS = [
             ]
           }
         ]
+      },
+      {
+        ano: '2° Ano',
+        trimestres: [
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Investimentos e Renda Fixa',
+                accent: 'primary',
+                icon: 'coin',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Investir e renda fixa: Tesouro, CDB, LCI e LCA', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-1-investir-renda-fixa.html' },
+                  { tipo:'Aula 2', titulo:'Juros compostos, tempo e carteira', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-2-juros-compostos-carteira.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Investimentos e Renda Fixa', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 1 · Investir e renda fixa no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-1-investir-renda-fixa-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 1 · Memória da renda fixa', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-1-investir-renda-fixa-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 1 · Do colchão à LCI', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-1-investir-renda-fixa-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Aula 2 · Juros compostos e carteira no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-2-juros-compostos-carteira-atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aula 2 · Monte a carteira certa', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-2-juros-compostos-carteira-atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Aula 2 · O tempo trabalha por você', arquivo:'educacao-financeira/2-ano/3-tri/investimentos-renda-fixa/aula-2-juros-compostos-carteira-atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Renda Variável e Bolsa de Valores',
+                accent: 'growth',
+                icon: 'candles',
+                itens: [
+                  { tipo:'Aula', titulo:'Ser sócio: ações, FIIs, ETFs e a Bolsa', arquivo:'educacao-financeira/2-ano/3-tri/renda-variavel-bolsa/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Renda Variável e Bolsa', arquivo:'educacao-financeira/2-ano/3-tri/renda-variavel-bolsa/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Renda variável e Bolsa no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/renda-variavel-bolsa/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Pregão ao vivo: 12 dias na Bolsa', arquivo:'educacao-financeira/2-ano/3-tri/renda-variavel-bolsa/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'A Bolsa na ponta do lápis', arquivo:'educacao-financeira/2-ano/3-tri/renda-variavel-bolsa/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Apostas, Bets e Cassino',
+                accent: 'danger',
+                icon: 'dice',
+                itens: [
+                  { tipo:'Aula', titulo:'A ilusão do dinheiro fácil', arquivo:'educacao-financeira/2-ano/3-tri/apostas-bets-cassino/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Apostas, Bets e Cassino', arquivo:'educacao-financeira/2-ano/3-tri/apostas-bets-cassino/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'A matemática das apostas no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/apostas-bets-cassino/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detector de anúncios enganosos', arquivo:'educacao-financeira/2-ano/3-tri/apostas-bets-cassino/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'A matemática da casa', arquivo:'educacao-financeira/2-ano/3-tri/apostas-bets-cassino/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Criptoativos',
+                accent: 'decay',
+                icon: 'chain',
+                itens: [
+                  { tipo:'Aula', titulo:'Cripto: tecnologia, volatilidade e escolhas responsáveis', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/aula.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Criptoativos', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Criptoativos no ENEM', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Golpe ou legítimo?', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Contas de cripto', arquivo:'educacao-financeira/2-ano/3-tri/criptoativos/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }
@@ -254,6 +316,8 @@ export const ICONS = {
   'sigma': '<path d="M6 4h12l-6 8 6 8H6l5-8Z"/>',
   'coin': '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9M9.3 9.3c0-1.2 1.2-1.8 2.7-1.8 1.7 0 2.7.8 2.7 1.9 0 2.6-5.4 1-5.4 3.6 0 1.1 1.2 1.9 2.7 1.9 1.5 0 2.7-.6 2.7-1.8"/>',
   'dice': '<rect x="4" y="4" width="16" height="16" rx="3.5"/><circle cx="8.3" cy="8.3" r="1.15" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.7" cy="15.7" r="1.15" fill="currentColor" stroke="none"/>',
+  'candles': '<path d="M7 4v3M7 17v3M17 6v2M17 15v4"/><rect x="5" y="7" width="4" height="10" rx="1"/><rect x="15" y="8" width="4" height="7" rx="1"/>',
+  'chain': '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
   'briefcase': '<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/>'
 };
 
