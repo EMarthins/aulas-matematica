@@ -1,4 +1,6 @@
 <title>Painel Ao Vivo: Cosseno e Tangente</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
   :root{
     --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
@@ -120,6 +122,15 @@
     .score-pill{ font-size:.72rem; padding:.35em .8em; }
     .panel{ gap:20px; }
   }
+</style>
+<style id="layout-v2">
+/* ===== layout v2: texto que cresce com a tela e contêiner mais largo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+.app{ max-width:min(60rem, 100%) !important; }
+.sheet{ max-width:min(78rem, 100%) !important; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
