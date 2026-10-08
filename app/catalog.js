@@ -389,14 +389,28 @@ export const MATERIAS = [
     id: 'ena-profmat',
     nome: 'ENA · PROFMAT',
     icon: 'sigma',
+    destaque: { titulo: 'Trilha de estudo guiada pelo edital', texto: '14 itens do edital, 9 fases e calendário automático. Comece por aqui.', url: 'ena-profmat/trilha-de-estudo.html' },
     lede: 'Preparação para o Exame Nacional de Acesso ao PROFMAT (ENA): aulas completas em slides, guias visuais e atividades de cada tópico cobrado — da porcentagem à geometria espacial —, com as questões que já caíram em 2025 e 2026 resolvidas passo a passo.',
     CATALOG: [
       {
         ano: 'Parte 1 · Aritmética e Lógica',
         trimestres: [
           {
-            nome: 'Capítulos 1 a 4',
+            nome: 'Conjuntos numéricos e capítulos 1 a 4',
             unidades: [
+              {
+                titulo: 'Conjuntos Numéricos e Intervalos',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Naturais, inteiros, racionais e reais', arquivo:'ena-profmat/17-conjuntos-numericos/aula-1-naturais-inteiros-racionais-reais.html' },
+                  { tipo:'Aula 2', titulo:'Reta real, intervalos e operações', arquivo:'ena-profmat/17-conjuntos-numericos/aula-2-intervalos-reta-real.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Conjuntos Numéricos e Intervalos', arquivo:'ena-profmat/17-conjuntos-numericos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Conjuntos numéricos no estilo ENA', arquivo:'ena-profmat/17-conjuntos-numericos/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Que tipo de número é?', arquivo:'ena-profmat/17-conjuntos-numericos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Conjuntos numéricos: trilha de desafios', arquivo:'ena-profmat/17-conjuntos-numericos/atividade-pratica.html' }
+                ]
+              },
               {
                 titulo: 'Porcentagem, Razão e Proporção',
                 accent: 'growth',
@@ -456,8 +470,21 @@ export const MATERIAS = [
         ano: 'Parte 2 · Álgebra e Funções',
         trimestres: [
           {
-            nome: 'Capítulos 5 a 8',
+            nome: '1º grau, capítulos 5 a 8 e matrizes',
             unidades: [
+              {
+                titulo: 'Equações, Inequações e Sistemas do 1º Grau',
+                accent: 'growth',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações e inequações do 1º grau', arquivo:'ena-profmat/18-primeiro-grau-sistemas/aula-1-equacoes-inequacoes-primeiro-grau.html' },
+                  { tipo:'Aula 2', titulo:'Sistemas lineares e problemas', arquivo:'ena-profmat/18-primeiro-grau-sistemas/aula-2-sistemas-lineares-problemas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Equações, Inequações e Sistemas do 1º Grau', arquivo:'ena-profmat/18-primeiro-grau-sistemas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'1º grau no estilo ENA', arquivo:'ena-profmat/18-primeiro-grau-sistemas/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive do 1º grau', arquivo:'ena-profmat/18-primeiro-grau-sistemas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'1º grau: trilha de desafios', arquivo:'ena-profmat/18-primeiro-grau-sistemas/atividade-pratica.html' }
+                ]
+              },
               {
                 titulo: 'Álgebra: Produtos Notáveis, Radicais e Módulo',
                 accent: 'primary',
@@ -508,6 +535,19 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'ENA', titulo:'Sequências no estilo ENA', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-ena.html' },
                   { tipo:'Atividade', sub:'Criativa', titulo:'Memória das fórmulas de sequências', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Sequências: trilha de desafios', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Matrizes, Determinantes e Sistemas',
+                accent: 'growth',
+                icon: 'grid',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Matrizes: operações e inversa', arquivo:'ena-profmat/20-matrizes-determinantes/aula-1-matrizes-operacoes-inversa.html' },
+                  { tipo:'Aula 2', titulo:'Determinantes e sistemas lineares', arquivo:'ena-profmat/20-matrizes-determinantes/aula-2-determinantes-sistemas-cramer.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Matrizes, Determinantes e Sistemas', arquivo:'ena-profmat/20-matrizes-determinantes/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Matrizes no estilo ENA', arquivo:'ena-profmat/20-matrizes-determinantes/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de matrizes', arquivo:'ena-profmat/20-matrizes-determinantes/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Matrizes: trilha de desafios', arquivo:'ena-profmat/20-matrizes-determinantes/atividade-pratica.html' }
                 ]
               }
             ]
@@ -565,8 +605,21 @@ export const MATERIAS = [
         ano: 'Parte 4 · Geometria',
         trimestres: [
           {
-            nome: 'Capítulos 12 a 14',
+            nome: 'Triângulos e capítulos 12 a 14',
             unidades: [
+              {
+                titulo: 'Triângulos: Congruência e Semelhança',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Existência, congruência e pontos notáveis', arquivo:'ena-profmat/19-congruencia-semelhanca/aula-1-triangulos-congruencia-pontos-notaveis.html' },
+                  { tipo:'Aula 2', titulo:'Semelhança, Tales e bissetriz', arquivo:'ena-profmat/19-congruencia-semelhanca/aula-2-semelhanca-tales-bissetriz.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Triângulos: Congruência e Semelhança', arquivo:'ena-profmat/19-congruencia-semelhanca/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Triângulos no estilo ENA', arquivo:'ena-profmat/19-congruencia-semelhanca/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos triângulos', arquivo:'ena-profmat/19-congruencia-semelhanca/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Triângulos: trilha de desafios', arquivo:'ena-profmat/19-congruencia-semelhanca/atividade-pratica.html' }
+                ]
+              },
               {
                 titulo: 'Geometria Plana',
                 accent: 'primary',

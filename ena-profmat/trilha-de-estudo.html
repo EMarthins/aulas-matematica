@@ -1,0 +1,691 @@
+<title>Trilha de estudo guiada — edital do ENA · PROFMAT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB;
+    --surface:#FFFFFF;
+    --surface-2:#ECEEFA;
+    --ink:#14162B;
+    --ink-soft:#54577A;
+    --ink-faint:#8688AB;
+    --line:#D8DAF0;
+    --line-strong:#BEC1E8;
+    --primary:#382EAE;
+    --primary-ink:#FFFFFF;
+    --primary-soft:#E7E4FB;
+    --growth:#D9531A;
+    --growth-soft:#FBE5D8;
+    --growth-ink:#7A2E0C;
+    --decay:#0B7C82;
+    --decay-soft:#D9F1EF;
+    --decay-ink:#0A4B4F;
+    --success:#1C8A52;
+    --success-soft:#DCF3E6;
+    --danger:#C23B3B;
+    --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14);
+    --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 16px 40px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:32px 32px;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  sup{ font-size:.62em; }
+  sub{ font-size:.62em; }
+
+  .sheet{
+    max-width:1140px;
+    margin:0 auto;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:26px;
+    box-shadow:0 30px 70px -24px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    position:relative;
+    padding:clamp(26px,4vw,44px) clamp(22px,5vw,52px) 30px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .masthead h1{ font-size:clamp(1.8rem,4.6vw,2.9rem); font-weight:900; line-height:1.0; margin:0 0 8px; text-wrap:balance; }
+  .masthead h1 span{ color:var(--primary); }
+  .masthead p.lede{ font-family:'Source Serif 4',serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.6vw,1.12rem); max-width:60ch; margin:0; }
+  .mast-curve{ position:absolute; right:-10px; bottom:-30px; width:min(40%,380px); height:auto; opacity:.92; pointer-events:none; }
+  @media (max-width:640px){ .mast-curve{ display:none; } }
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+  .badge{ font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface-2); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .65em; color:var(--ink-soft); }
+
+  /* ---------- layout grid ---------- */
+  .body-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; }
+  @media (max-width:920px){ .body-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .body-grid{ grid-template-columns:1fr; } }
+
+  .section{ padding:clamp(18px,2.6vw,26px) clamp(18px,3vw,30px); border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+  .body-grid .section:nth-child(3n){ border-right:none; }
+  @media (max-width:920px){ .body-grid .section:nth-child(3n){ border-right:1px solid var(--line); } .body-grid .section:nth-child(2n){ border-right:none; } }
+  @media (max-width:600px){ .body-grid .section{ border-right:none !important; } }
+
+  .section h2{ font-size:1.06rem; font-weight:800; margin:0 0 4px; display:flex; align-items:center; gap:.5em; }
+  .section .tag{ font-size:.66rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 10px; }
+  .icon{ width:20px; height:20px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0; }
+  .callout p{ margin:0; font-size:.86rem; }
+  .callout strong{ display:block; font-family:'Archivo',sans-serif; font-size:.78rem; margin-bottom:2px; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+
+  .formula{ font-size:.98rem; background:var(--surface-2); border:1.4px solid var(--line-strong); border-radius:10px; padding:8px 12px; display:inline-flex; align-items:center; gap:.35em; margin:6px 0; }
+  .arrow{ color:var(--ink-faint); margin:0 .26em; }
+
+  p{ line-height:1.52; font-size:.88rem; }
+  .lede-s{ color:var(--ink-soft); font-size:.86rem; }
+
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.78rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:5px 7px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.64rem; text-transform:uppercase; letter-spacing:.04em; }
+
+  .props{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:.82rem; color:var(--ink-soft); }
+  .props li::before{ content:"·"; color:var(--primary); font-weight:900; margin-right:.5em; }
+  .warn-list{ list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .warn-list li{ display:flex; gap:.5em; align-items:flex-start; font-size:.82rem; color:var(--ink-soft); }
+  .warn-list li svg{ flex:0 0 auto; margin-top:.15em; }
+
+  .app-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+  .app-chip{ flex:1 1 110px; display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; background:var(--surface-2); border-radius:12px; padding:10px 6px; font-size:.74rem; }
+
+  .steps{ counter-reset:step; display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  .steps li{ list-style:none; display:flex; gap:10px; align-items:flex-start; font-size:.84rem; }
+  .steps li::before{ counter-increment:step; content:counter(step); flex:0 0 auto; width:20px; height:20px; border-radius:50%; background:var(--danger); color:var(--surface); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.68rem; display:flex; align-items:center; justify-content:center; }
+
+  .footer{ padding:20px clamp(22px,4vw,40px) 26px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; background:var(--surface-2); }
+  .footer p{ margin:0; font-size:.76rem; color:var(--ink-faint); }
+
+  .wide{ grid-column:1 / -1; border-right:none !important; }
+  .prop-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:10px; }
+  @media (max-width:820px){ .prop-grid{ grid-template-columns:repeat(2,1fr); } }
+  .prop-card{ background:var(--danger-soft); border-radius:12px; padding:10px; text-align:center; }
+  .prop-card .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.15rem; color:var(--danger); }
+  .prop-card .lbl{ font-size:.63rem; color:var(--ink-soft); font-weight:700; text-transform:uppercase; letter-spacing:.02em; display:block; margin-top:3px; line-height:1.3; }
+
+  .versus{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px; }
+  @media (max-width:480px){ .versus{ grid-template-columns:1fr; } }
+  .vcard{ border-radius:14px; padding:10px 12px 12px; }
+  .vcard.danger{ background:var(--danger-soft); }
+  .vcard.success{ background:var(--success-soft); }
+  .vcard strong{ font-size:.78rem; }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2: texto que cresce com a tela e contêiner mais largo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+.app{ max-width:min(60rem, 100%) !important; }
+.sheet{ max-width:min(78rem, 100%) !important; }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:11pt !important; }
+  body{ background:#fff !important; background-image:none !important; padding:0 !important; }
+  .theme-toggle{ display:none !important; }
+  .app, .sheet{ max-width:none !important; box-shadow:none !important; border-radius:0 !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .card, .qcard, .section, .tr-step, .callout{ break-inside:avoid; }
+  button.reveal, .btn, .tr-row, .hnt{ display:none !important; }
+}
+</style>
+<link href="../assets/fonts.css" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <svg class="mast-curve" viewBox="0 0 500 200" aria-hidden="true">
+      <line x1="20" y1="170" x2="480" y2="170" stroke="var(--line-strong)" stroke-width="2"/>
+      <line x1="20" y1="170" x2="20" y2="16" stroke="var(--line-strong)" stroke-width="2"/>
+      <path d="M20,160 C 120,150 200,120 280,90 C 360,60 420,40 480,24" fill="none" stroke="var(--primary)" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="480" cy="24" r="6" fill="var(--primary)"/>
+    </svg>
+    <div class="eyebrow">ENA · PROFMAT · Trilha de estudo guiada</div>
+    <h1>Trilha de estudo <span>guiada pelo edital</span></h1>
+    <p class="lede">Do diagnóstico ao simulado final: 9 fases, 20 unidades, 36 aulas e os 14 itens do edital, na ordem em que o conteúdo se apoia. Escolha quantas semanas e horas você tem e a trilha monta o calendário.</p>
+    <div class="badges">
+      <span class="badge">14 itens do edital</span>
+      <span class="badge">9 fases</span>
+      <span class="badge">calendário automático</span>
+      <span class="badge">progresso salvo no aparelho</span>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+  </div>
+
+
+  
+<style>
+  .tr-box{ border:1.5px solid var(--line-strong); border-radius:16px; padding:14px 16px; background:var(--surface); margin-bottom:14px; }
+  .tr-box label{ font-size:.82rem; font-weight:700; color:var(--ink-soft); font-family:'Archivo',sans-serif; }
+  .tr-box input[type=number]{ font:inherit; width:6rem; padding:.35em .5em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .plan{ display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr)); gap:8px; margin-top:10px; }
+  .plan div{ border:1px solid var(--line); border-radius:12px; padding:8px 10px; font-size:.82rem; background:var(--surface-2); } .plan b{ display:block; font-size:.9rem; }
+  details.fase{ border:1.5px solid var(--line-strong); border-radius:16px; padding:6px 14px 14px; margin:0 0 14px; background:var(--surface); }
+  details.fase summary{ cursor:pointer; display:flex; gap:12px; justify-content:space-between; align-items:center; padding:10px 0; font-family:'Archivo',sans-serif; font-weight:800; font-size:1.02rem; flex-wrap:wrap; }
+  .obj{ margin:0 0 8px; color:var(--ink-soft); font-size:.9rem; } .semanas{ font-size:.82rem; font-weight:700; color:var(--primary); margin-bottom:8px; }
+  .un{ border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:10px 0; background:var(--surface-2); }
+  .un.oculta{ display:none; }
+  .un-h{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; flex-wrap:wrap; } .meta{ font-size:.76rem; color:var(--ink-soft); margin-top:2px; }
+  .ed{ display:inline-block; background:var(--primary-soft); color:var(--primary); font-weight:800; border-radius:6px; padding:0 .4em; margin-left:2px; }
+  .un-bar{ display:inline-block; width:90px; height:8px; border-radius:99px; background:var(--line); overflow:hidden; vertical-align:middle; } .un-bar i{ display:block; height:100%; width:0; background:var(--success); }
+  .un-p{ display:flex; gap:6px; align-items:center; font-size:.76rem; color:var(--ink-soft); }
+  ol.steps2{ list-style:none; margin:8px 0 0; padding:0; display:grid; gap:4px; } ol.steps2 li{ font-size:.88rem; } ol.steps2 a{ color:var(--primary); font-weight:700; text-decoration:none; } ol.steps2 a:hover{ text-decoration:underline; }
+  .st{ font-size:.72rem; font-weight:700; color:var(--success); margin-left:4px; }
+  .check{ margin-top:10px; padding:10px 12px; border-left:4px solid var(--growth); background:var(--growth-soft); border-radius:8px; font-size:.86rem; }
+  .geral{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; } .geral .un-bar{ width:220px; height:12px; }
+  .chips2{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; } .chips2 button{ font:inherit; font-weight:700; font-size:.8rem; padding:.35em .9em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; } .chips2 button.on{ background:var(--primary); border-color:var(--primary); color:var(--primary-ink); }
+  a[id^=u]{ scroll-margin-top:90px; }
+  @media print{ details.fase{ break-inside:avoid; } details.fase > *{ display:block; } .chips2, .tr-box input{ display:none; } }
+</style>
+<div class="tr-box">
+  <div class="geral"><b>Seu progresso geral</b><span class="un-bar" id="gbar"><i></i></span><span id="gn" class="meta"></span><button class="btn ghost" id="zera" type="button" style="margin-left:auto;font-size:.75rem;">Zerar marcações</button></div>
+  <p class="meta" style="margin:6px 0 0;">As marcações ficam salvas <b>neste aparelho</b>. Aulas, guias e atividades que você abre no site aparecem como “visto” automaticamente; as atividades mostram a sua nota.</p>
+</div>
+
+<div class="tr-box">
+  <b>1 · Monte seu calendário</b>
+  <div class="row" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;align-items:flex-end;">
+    <div><label>Semanas até a prova<br><input type="number" id="pl-w" min="4" max="52" value="12"></label></div>
+    <div><label>Horas de estudo por semana<br><input type="number" id="pl-h" min="1" max="40" value="6"></label></div>
+  </div>
+  <div class="chips2" id="pl-m"><button type="button" data-m="tudo" class="on">Trilha completa</button><button type="button" data-m="prio">Só prioridade alta e média</button><button type="button" data-m="alta">Só prioridade alta (modo emergência)</button></div>
+  <p class="meta" id="pl-t" style="margin-top:10px;font-size:.84rem;"></p>
+  <div class="plan" id="pl-r"></div>
+</div>
+
+<div class="tr-box">
+  <b>2 · Cobertura do edital</b>
+  <p class="meta" style="margin:4px 0 8px;">Cada item do edital do exame e a unidade deste site que o cobre.</p>
+  <table class="tbl"><tr><th>Item do edital</th><th>Onde estudar</th></tr><tr><td style="text-align:left;"><b>a)</b> Proporcionalidade e porcentagem</td><td style="text-align:left;"><a href="#u01">Porcentagem, Razão e Proporção</a></td></tr><tr><td style="text-align:left;"><b>b)</b> Equações e inequações do 1º grau; função afim</td><td style="text-align:left;"><a href="#u18">Equações, Inequações e Sistemas do 1º Grau</a> · <a href="#u07">Funções Afim e Quadrática</a></td></tr><tr><td style="text-align:left;"><b>c)</b> Equações e inequações do 2º grau; função quadrática</td><td style="text-align:left;"><a href="#u06">Equações, Inequações e Sistemas</a> · <a href="#u07">Funções Afim e Quadrática</a></td></tr><tr><td style="text-align:left;"><b>d)</b> Teorema de Pitágoras</td><td style="text-align:left;"><a href="#u12">Geometria Plana</a></td></tr><tr><td style="text-align:left;"><b>e)</b> Áreas e volumes</td><td style="text-align:left;"><a href="#u12">Geometria Plana</a> · <a href="#u14">Geometria Espacial</a></td></tr><tr><td style="text-align:left;"><b>f)</b> Razões trigonométricas</td><td style="text-align:left;"><a href="#u13">Trigonometria</a></td></tr><tr><td style="text-align:left;"><b>g)</b> Métodos de contagem</td><td style="text-align:left;"><a href="#u09">Análise Combinatória</a></td></tr><tr><td style="text-align:left;"><b>h)</b> Probabilidade</td><td style="text-align:left;"><a href="#u10">Probabilidade</a></td></tr><tr><td style="text-align:left;"><b>i)</b> Noções de estatística</td><td style="text-align:left;"><a href="#u11">Estatística Descritiva</a></td></tr><tr><td style="text-align:left;"><b>j)</b> Triângulos: congruências e semelhanças</td><td style="text-align:left;"><a href="#u19">Triângulos: Congruência e Semelhança</a> · <a href="#u12">Geometria Plana</a></td></tr><tr><td style="text-align:left;"><b>k)</b> Progressões aritméticas e geométricas</td><td style="text-align:left;"><a href="#u08">Sequências: PA, PG e Somas</a></td></tr><tr><td style="text-align:left;"><b>l)</b> Conjuntos numéricos</td><td style="text-align:left;"><a href="#u17">Conjuntos Numéricos e Intervalos</a> · <a href="#u03">Conjuntos e Contagem de Elementos</a></td></tr><tr><td style="text-align:left;"><b>m)</b> Raciocínio lógico</td><td style="text-align:left;"><a href="#u04">Lógica e Demonstração</a></td></tr><tr><td style="text-align:left;"><b>n)</b> Equações e inequações racionais, irracionais e modulares</td><td style="text-align:left;"><a href="#u06">Equações, Inequações e Sistemas</a> · <a href="#u05">Álgebra: Produtos Notáveis, Radicais e Módulo</a></td></tr><tr><td style="text-align:left;"><b>Bibliografia</b> — matrizes, determinantes e sistemas</td><td style="text-align:left;"><a href="#u20">Matrizes, Determinantes e Sistemas</a></td></tr></table>
+</div>
+
+<b style="display:block;margin:6px 0 8px;">3 · A trilha, fase por fase</b>
+<p class="meta" style="margin:0 0 10px;">Em cada unidade siga a ordem: <b>aulas → guia visual → atividade estilo ENA → criativa → prática → revisão dos erros</b>. Antes de começar, faça um <a href="../simulado.html"><b>simulado de diagnóstico</b></a> para saber onde está; ao fim de cada fase, repita.</p>
+<details class="fase" data-fase="f1" open>
+  <summary><span class="fn">Fase 1 · Fundamentos numéricos</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Dominar números, intervalos, porcentagem, divisibilidade e conjuntos: a base de todo o resto.</p>
+  <div class="semanas" data-semanas="f1"></div>
+  <div class="un" data-un="17" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Conjuntos Numéricos e Intervalos</b><div class="meta">prioridade média · ≈ 3,8 h · edital: <span class="ed">l</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/17-conjuntos-numericos/aula-1-naturais-inteiros-racionais-reais.html" data-k="a0"><label><input type="checkbox" data-id="17:a0"> <a href="17-conjuntos-numericos/aula-1-naturais-inteiros-racionais-reais.html">Aula 1: Naturais, inteiros, racionais e reais</a></label> <span class="st"></span></li><li data-arq="ena-profmat/17-conjuntos-numericos/aula-2-intervalos-reta-real.html" data-k="a1"><label><input type="checkbox" data-id="17:a1"> <a href="17-conjuntos-numericos/aula-2-intervalos-reta-real.html">Aula 2: Reta real, intervalos e operações</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/17-conjuntos-numericos/infografico.html" data-k="g"><label><input type="checkbox" data-id="17:g"> <a href="17-conjuntos-numericos/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/17-conjuntos-numericos/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="17:e"> <a href="17-conjuntos-numericos/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/17-conjuntos-numericos/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="17:c"> <a href="17-conjuntos-numericos/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/17-conjuntos-numericos/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="17:p"> <a href="17-conjuntos-numericos/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="17:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="01" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Porcentagem, Razão e Proporção</b><div class="meta">prioridade alta · ≈ 3,8 h · 6 questões nas provas 2025–26 · edital: <span class="ed">a</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/01-porcentagem-razao-proporcao/aula-1-porcentagem.html" data-k="a0"><label><input type="checkbox" data-id="01:a0"> <a href="01-porcentagem-razao-proporcao/aula-1-porcentagem.html">Aula 1: Porcentagem: pense em fatores</a></label> <span class="st"></span></li><li data-arq="ena-profmat/01-porcentagem-razao-proporcao/aula-2-razao-proporcao-taxas.html" data-k="a1"><label><input type="checkbox" data-id="01:a1"> <a href="01-porcentagem-razao-proporcao/aula-2-razao-proporcao-taxas.html">Aula 2: Razão, proporção e taxas de trabalho</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/01-porcentagem-razao-proporcao/infografico.html" data-k="g"><label><input type="checkbox" data-id="01:g"> <a href="01-porcentagem-razao-proporcao/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/01-porcentagem-razao-proporcao/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="01:e"> <a href="01-porcentagem-razao-proporcao/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/01-porcentagem-razao-proporcao/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="01:c"> <a href="01-porcentagem-razao-proporcao/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/01-porcentagem-razao-proporcao/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="01:p"> <a href="01-porcentagem-razao-proporcao/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="01:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="02" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Números Inteiros</b><div class="meta">prioridade alta · ≈ 3,8 h · 5 questões nas provas 2025–26</div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/02-numeros-inteiros/aula-1-restos-divisibilidade-mmc-mdc.html" data-k="a0"><label><input type="checkbox" data-id="02:a0"> <a href="02-numeros-inteiros/aula-1-restos-divisibilidade-mmc-mdc.html">Aula 1: Restos, divisibilidade, MMC e MDC</a></label> <span class="st"></span></li><li data-arq="ena-profmat/02-numeros-inteiros/aula-2-paridade-algarismos-somas.html" data-k="a1"><label><input type="checkbox" data-id="02:a1"> <a href="02-numeros-inteiros/aula-2-paridade-algarismos-somas.html">Aula 2: Paridade, algarismos e somas de inteiros</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/02-numeros-inteiros/infografico.html" data-k="g"><label><input type="checkbox" data-id="02:g"> <a href="02-numeros-inteiros/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/02-numeros-inteiros/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="02:e"> <a href="02-numeros-inteiros/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/02-numeros-inteiros/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="02:c"> <a href="02-numeros-inteiros/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/02-numeros-inteiros/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="02:p"> <a href="02-numeros-inteiros/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="02:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="03" data-prio="média" data-h="2.8">
+    <div class="un-h"><div><b>Conjuntos e Contagem de Elementos</b><div class="meta">prioridade média · ≈ 2,8 h · 3 questões nas provas 2025–26 · edital: <span class="ed">l</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/03-conjuntos-contagem/aula-conjuntos-contagem.html" data-k="a0"><label><input type="checkbox" data-id="03:a0"> <a href="03-conjuntos-contagem/aula-conjuntos-contagem.html">Aula: Conjuntos e contagem de elementos</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/03-conjuntos-contagem/infografico.html" data-k="g"><label><input type="checkbox" data-id="03:g"> <a href="03-conjuntos-contagem/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/03-conjuntos-contagem/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="03:e"> <a href="03-conjuntos-contagem/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/03-conjuntos-contagem/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="03:c"> <a href="03-conjuntos-contagem/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/03-conjuntos-contagem/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="03:p"> <a href="03-conjuntos-contagem/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="03:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f2" open>
+  <summary><span class="fn">Fase 2 · Álgebra básica</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Equações, inequações e sistemas do 1º grau, produtos notáveis, potências, radicais e módulo.</p>
+  <div class="semanas" data-semanas="f2"></div>
+  <div class="un" data-un="18" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Equações, Inequações e Sistemas do 1º Grau</b><div class="meta">prioridade média · ≈ 3,8 h · edital: <span class="ed">b</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/18-primeiro-grau-sistemas/aula-1-equacoes-inequacoes-primeiro-grau.html" data-k="a0"><label><input type="checkbox" data-id="18:a0"> <a href="18-primeiro-grau-sistemas/aula-1-equacoes-inequacoes-primeiro-grau.html">Aula 1: Equações e inequações do 1º grau</a></label> <span class="st"></span></li><li data-arq="ena-profmat/18-primeiro-grau-sistemas/aula-2-sistemas-lineares-problemas.html" data-k="a1"><label><input type="checkbox" data-id="18:a1"> <a href="18-primeiro-grau-sistemas/aula-2-sistemas-lineares-problemas.html">Aula 2: Sistemas lineares e problemas</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/18-primeiro-grau-sistemas/infografico.html" data-k="g"><label><input type="checkbox" data-id="18:g"> <a href="18-primeiro-grau-sistemas/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/18-primeiro-grau-sistemas/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="18:e"> <a href="18-primeiro-grau-sistemas/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/18-primeiro-grau-sistemas/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="18:c"> <a href="18-primeiro-grau-sistemas/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/18-primeiro-grau-sistemas/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="18:p"> <a href="18-primeiro-grau-sistemas/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="18:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="05" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Álgebra: Produtos Notáveis, Radicais e Módulo</b><div class="meta">prioridade média · ≈ 3,8 h · 3 questões nas provas 2025–26 · edital: <span class="ed">n</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/05-algebra/aula-1-produtos-notaveis-fatoracao.html" data-k="a0"><label><input type="checkbox" data-id="05:a0"> <a href="05-algebra/aula-1-produtos-notaveis-fatoracao.html">Aula 1: Produtos notáveis e fatoração</a></label> <span class="st"></span></li><li data-arq="ena-profmat/05-algebra/aula-2-potencias-radicais-modulo-ordem.html" data-k="a1"><label><input type="checkbox" data-id="05:a1"> <a href="05-algebra/aula-2-potencias-radicais-modulo-ordem.html">Aula 2: Potências, radicais, módulo e ordem</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/05-algebra/infografico.html" data-k="g"><label><input type="checkbox" data-id="05:g"> <a href="05-algebra/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/05-algebra/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="05:e"> <a href="05-algebra/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/05-algebra/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="05:c"> <a href="05-algebra/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/05-algebra/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="05:p"> <a href="05-algebra/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="05:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f3" >
+  <summary><span class="fn">Fase 3 · Equações e funções</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">2º grau, Girard, sinal, equações racionais, irracionais e modulares; funções afim e quadrática.</p>
+  <div class="semanas" data-semanas="f3"></div>
+  <div class="un" data-un="06" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Equações, Inequações e Sistemas</b><div class="meta">prioridade alta · ≈ 3,8 h · 6 questões nas provas 2025–26 · edital: <span class="ed">c</span><span class="ed">n</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/aula-1-segundo-grau-girard-sinal.html" data-k="a0"><label><input type="checkbox" data-id="06:a0"> <a href="06-equacoes-inequacoes-sistemas/aula-1-segundo-grau-girard-sinal.html">Aula 1: Equação do 2º grau, Girard e sinal</a></label> <span class="st"></span></li><li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/aula-2-fracionarias-modulares-irracionais-sistemas.html" data-k="a1"><label><input type="checkbox" data-id="06:a1"> <a href="06-equacoes-inequacoes-sistemas/aula-2-fracionarias-modulares-irracionais-sistemas.html">Aula 2: Fracionárias, modulares, irracionais e sistemas</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/infografico.html" data-k="g"><label><input type="checkbox" data-id="06:g"> <a href="06-equacoes-inequacoes-sistemas/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="06:e"> <a href="06-equacoes-inequacoes-sistemas/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="06:c"> <a href="06-equacoes-inequacoes-sistemas/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/06-equacoes-inequacoes-sistemas/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="06:p"> <a href="06-equacoes-inequacoes-sistemas/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="06:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="07" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Funções Afim e Quadrática</b><div class="meta">prioridade alta · ≈ 3,8 h · 5 questões nas provas 2025–26 · edital: <span class="ed">b</span><span class="ed">c</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/07-funcoes-afim-quadratica/aula-1-funcao-afim-regioes.html" data-k="a0"><label><input type="checkbox" data-id="07:a0"> <a href="07-funcoes-afim-quadratica/aula-1-funcao-afim-regioes.html">Aula 1: Função afim e regiões do plano</a></label> <span class="st"></span></li><li data-arq="ena-profmat/07-funcoes-afim-quadratica/aula-2-funcao-quadratica-otimizacao.html" data-k="a1"><label><input type="checkbox" data-id="07:a1"> <a href="07-funcoes-afim-quadratica/aula-2-funcao-quadratica-otimizacao.html">Aula 2: Função quadrática, vértice e otimização</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/07-funcoes-afim-quadratica/infografico.html" data-k="g"><label><input type="checkbox" data-id="07:g"> <a href="07-funcoes-afim-quadratica/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/07-funcoes-afim-quadratica/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="07:e"> <a href="07-funcoes-afim-quadratica/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/07-funcoes-afim-quadratica/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="07:c"> <a href="07-funcoes-afim-quadratica/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/07-funcoes-afim-quadratica/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="07:p"> <a href="07-funcoes-afim-quadratica/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="07:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f4" >
+  <summary><span class="fn">Fase 4 · Raciocínio e padrões</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Lógica, contraexemplos e demonstração; progressões aritméticas e geométricas.</p>
+  <div class="semanas" data-semanas="f4"></div>
+  <div class="un" data-un="04" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Lógica e Demonstração</b><div class="meta">prioridade alta · ≈ 3,8 h · 5 questões nas provas 2025–26 · edital: <span class="ed">m</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/04-logica-demonstracao/aula-1-conectivos-negacoes.html" data-k="a0"><label><input type="checkbox" data-id="04:a0"> <a href="04-logica-demonstracao/aula-1-conectivos-negacoes.html">Aula 1: Lógica: conectivos e negações</a></label> <span class="st"></span></li><li data-arq="ena-profmat/04-logica-demonstracao/aula-2-contraexemplos-eliminacao-demonstracao.html" data-k="a1"><label><input type="checkbox" data-id="04:a1"> <a href="04-logica-demonstracao/aula-2-contraexemplos-eliminacao-demonstracao.html">Aula 2: Contraexemplos, eliminação e demonstração</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/04-logica-demonstracao/infografico.html" data-k="g"><label><input type="checkbox" data-id="04:g"> <a href="04-logica-demonstracao/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/04-logica-demonstracao/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="04:e"> <a href="04-logica-demonstracao/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/04-logica-demonstracao/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="04:c"> <a href="04-logica-demonstracao/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/04-logica-demonstracao/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="04:p"> <a href="04-logica-demonstracao/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="04:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="08" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Sequências: PA, PG e Somas</b><div class="meta">prioridade média · ≈ 3,8 h · 4 questões nas provas 2025–26 · edital: <span class="ed">k</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/08-sequencias-pa-pg/aula-1-progressao-aritmetica.html" data-k="a0"><label><input type="checkbox" data-id="08:a0"> <a href="08-sequencias-pa-pg/aula-1-progressao-aritmetica.html">Aula 1: Progressão aritmética e de Sₙ para aₙ</a></label> <span class="st"></span></li><li data-arq="ena-profmat/08-sequencias-pa-pg/aula-2-progressao-geometrica-recursivas.html" data-k="a1"><label><input type="checkbox" data-id="08:a1"> <a href="08-sequencias-pa-pg/aula-2-progressao-geometrica-recursivas.html">Aula 2: Progressão geométrica e sequências recursivas</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/08-sequencias-pa-pg/infografico.html" data-k="g"><label><input type="checkbox" data-id="08:g"> <a href="08-sequencias-pa-pg/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/08-sequencias-pa-pg/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="08:e"> <a href="08-sequencias-pa-pg/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/08-sequencias-pa-pg/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="08:c"> <a href="08-sequencias-pa-pg/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/08-sequencias-pa-pg/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="08:p"> <a href="08-sequencias-pa-pg/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="08:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f5" >
+  <summary><span class="fn">Fase 5 · Geometria plana</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Triângulos (congruência e semelhança), Pitágoras, áreas, círculo e os truques que valem pontos.</p>
+  <div class="semanas" data-semanas="f5"></div>
+  <div class="un" data-un="19" data-prio="alta" data-h="3.8">
+    <div class="un-h"><div><b>Triângulos: Congruência e Semelhança</b><div class="meta">prioridade alta · ≈ 3,8 h · edital: <span class="ed">j</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/19-congruencia-semelhanca/aula-1-triangulos-congruencia-pontos-notaveis.html" data-k="a0"><label><input type="checkbox" data-id="19:a0"> <a href="19-congruencia-semelhanca/aula-1-triangulos-congruencia-pontos-notaveis.html">Aula 1: Existência, congruência e pontos notáveis</a></label> <span class="st"></span></li><li data-arq="ena-profmat/19-congruencia-semelhanca/aula-2-semelhanca-tales-bissetriz.html" data-k="a1"><label><input type="checkbox" data-id="19:a1"> <a href="19-congruencia-semelhanca/aula-2-semelhanca-tales-bissetriz.html">Aula 2: Semelhança, Tales e bissetriz</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/19-congruencia-semelhanca/infografico.html" data-k="g"><label><input type="checkbox" data-id="19:g"> <a href="19-congruencia-semelhanca/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/19-congruencia-semelhanca/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="19:e"> <a href="19-congruencia-semelhanca/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/19-congruencia-semelhanca/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="19:c"> <a href="19-congruencia-semelhanca/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/19-congruencia-semelhanca/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="19:p"> <a href="19-congruencia-semelhanca/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="19:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="12" data-prio="alta" data-h="4.8">
+    <div class="un-h"><div><b>Geometria Plana</b><div class="meta">prioridade alta · ≈ 4,8 h · 10 questões nas provas 2025–26 · edital: <span class="ed">d</span><span class="ed">e</span><span class="ed">j</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/12-geometria-plana/aula-1-angulos-semelhanca-triangulos.html" data-k="a0"><label><input type="checkbox" data-id="12:a0"> <a href="12-geometria-plana/aula-1-angulos-semelhanca-triangulos.html">Aula 1: Ângulos, semelhança e triângulos retângulos</a></label> <span class="st"></span></li><li data-arq="ena-profmat/12-geometria-plana/aula-2-areas-razoes-de-areas.html" data-k="a1"><label><input type="checkbox" data-id="12:a1"> <a href="12-geometria-plana/aula-2-areas-razoes-de-areas.html">Aula 2: Áreas e razões de áreas</a></label> <span class="st"></span></li><li data-arq="ena-profmat/12-geometria-plana/aula-3-circulo-truques.html" data-k="a2"><label><input type="checkbox" data-id="12:a2"> <a href="12-geometria-plana/aula-3-circulo-truques.html">Aula 3: Círculo e truques para gabaritar</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/12-geometria-plana/infografico.html" data-k="g"><label><input type="checkbox" data-id="12:g"> <a href="12-geometria-plana/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/12-geometria-plana/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="12:e"> <a href="12-geometria-plana/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/12-geometria-plana/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="12:c"> <a href="12-geometria-plana/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/12-geometria-plana/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="12:p"> <a href="12-geometria-plana/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="12:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f6" >
+  <summary><span class="fn">Fase 6 · Trigonometria e geometria espacial</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Razões trigonométricas, identidades, volumes e o recipiente inclinado.</p>
+  <div class="semanas" data-semanas="f6"></div>
+  <div class="un" data-un="13" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Trigonometria</b><div class="meta">prioridade média · ≈ 3,8 h · 3 questões nas provas 2025–26 · edital: <span class="ed">f</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/13-trigonometria/aula-1-razoes-notaveis-identidades.html" data-k="a0"><label><input type="checkbox" data-id="13:a0"> <a href="13-trigonometria/aula-1-razoes-notaveis-identidades.html">Aula 1: Trigonometria no triângulo retângulo</a></label> <span class="st"></span></li><li data-arq="ena-profmat/13-trigonometria/aula-2-triangulo-qualquer-radianos-formulas.html" data-k="a1"><label><input type="checkbox" data-id="13:a1"> <a href="13-trigonometria/aula-2-triangulo-qualquer-radianos-formulas.html">Aula 2: Triângulo qualquer, radianos e fórmulas</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/13-trigonometria/infografico.html" data-k="g"><label><input type="checkbox" data-id="13:g"> <a href="13-trigonometria/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/13-trigonometria/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="13:e"> <a href="13-trigonometria/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/13-trigonometria/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="13:c"> <a href="13-trigonometria/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/13-trigonometria/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="13:p"> <a href="13-trigonometria/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="13:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="14" data-prio="média" data-h="2.8">
+    <div class="un-h"><div><b>Geometria Espacial</b><div class="meta">prioridade média · ≈ 2,8 h · 2 questões nas provas 2025–26 · edital: <span class="ed">e</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/14-geometria-espacial/aula-volumes-poliedros.html" data-k="a0"><label><input type="checkbox" data-id="14:a0"> <a href="14-geometria-espacial/aula-volumes-poliedros.html">Aula: Volumes, poliedros e recipiente inclinado</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/14-geometria-espacial/infografico.html" data-k="g"><label><input type="checkbox" data-id="14:g"> <a href="14-geometria-espacial/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/14-geometria-espacial/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="14:e"> <a href="14-geometria-espacial/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/14-geometria-espacial/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="14:c"> <a href="14-geometria-espacial/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/14-geometria-espacial/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="14:p"> <a href="14-geometria-espacial/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="14:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f7" >
+  <summary><span class="fn">Fase 7 · Contagem, probabilidade e estatística</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Princípio multiplicativo, anagramas, complementar, probabilidade e medidas estatísticas.</p>
+  <div class="semanas" data-semanas="f7"></div>
+  <div class="un" data-un="09" data-prio="média" data-h="3.8">
+    <div class="un-h"><div><b>Análise Combinatória</b><div class="meta">prioridade média · ≈ 3,8 h · 3 questões nas provas 2025–26 · edital: <span class="ed">g</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/09-analise-combinatoria/aula-1-principios-arranjo-permutacao-combinacao.html" data-k="a0"><label><input type="checkbox" data-id="09:a0"> <a href="09-analise-combinatoria/aula-1-principios-arranjo-permutacao-combinacao.html">Aula 1: Princípio multiplicativo, arranjo e combinação</a></label> <span class="st"></span></li><li data-arq="ena-profmat/09-analise-combinatoria/aula-2-anagramas-circular-complementar-binomio.html" data-k="a1"><label><input type="checkbox" data-id="09:a1"> <a href="09-analise-combinatoria/aula-2-anagramas-circular-complementar-binomio.html">Aula 2: Anagramas, mesa redonda e outros padrões</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/09-analise-combinatoria/infografico.html" data-k="g"><label><input type="checkbox" data-id="09:g"> <a href="09-analise-combinatoria/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/09-analise-combinatoria/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="09:e"> <a href="09-analise-combinatoria/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/09-analise-combinatoria/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="09:c"> <a href="09-analise-combinatoria/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/09-analise-combinatoria/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="09:p"> <a href="09-analise-combinatoria/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="09:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="10" data-prio="média" data-h="2.8">
+    <div class="un-h"><div><b>Probabilidade</b><div class="meta">prioridade média · ≈ 2,8 h · 3 questões nas provas 2025–26 · edital: <span class="ed">h</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/10-probabilidade/aula-probabilidade.html" data-k="a0"><label><input type="checkbox" data-id="10:a0"> <a href="10-probabilidade/aula-probabilidade.html">Aula: Probabilidade: contagem e fração</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/10-probabilidade/infografico.html" data-k="g"><label><input type="checkbox" data-id="10:g"> <a href="10-probabilidade/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/10-probabilidade/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="10:e"> <a href="10-probabilidade/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/10-probabilidade/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="10:c"> <a href="10-probabilidade/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/10-probabilidade/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="10:p"> <a href="10-probabilidade/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="10:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="11" data-prio="média" data-h="2.8">
+    <div class="un-h"><div><b>Estatística Descritiva</b><div class="meta">prioridade média · ≈ 2,8 h · 2 questões nas provas 2025–26 · edital: <span class="ed">i</span></div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/11-estatistica/aula-estatistica-descritiva.html" data-k="a0"><label><input type="checkbox" data-id="11:a0"> <a href="11-estatistica/aula-estatistica-descritiva.html">Aula: Média, mediana, moda e dispersão</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/11-estatistica/infografico.html" data-k="g"><label><input type="checkbox" data-id="11:g"> <a href="11-estatistica/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/11-estatistica/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="11:e"> <a href="11-estatistica/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/11-estatistica/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="11:c"> <a href="11-estatistica/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/11-estatistica/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="11:p"> <a href="11-estatistica/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="11:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f8" >
+  <summary><span class="fn">Fase 8 · Matrizes e tópicos extras</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Matrizes e determinantes (bibliografia do edital) e os tópicos complementares.</p>
+  <div class="semanas" data-semanas="f8"></div>
+  <div class="un" data-un="20" data-prio="extra" data-h="3.8">
+    <div class="un-h"><div><b>Matrizes, Determinantes e Sistemas</b><div class="meta">complementar · ≈ 3,8 h</div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/20-matrizes-determinantes/aula-1-matrizes-operacoes-inversa.html" data-k="a0"><label><input type="checkbox" data-id="20:a0"> <a href="20-matrizes-determinantes/aula-1-matrizes-operacoes-inversa.html">Aula 1: Matrizes: operações e inversa</a></label> <span class="st"></span></li><li data-arq="ena-profmat/20-matrizes-determinantes/aula-2-determinantes-sistemas-cramer.html" data-k="a1"><label><input type="checkbox" data-id="20:a1"> <a href="20-matrizes-determinantes/aula-2-determinantes-sistemas-cramer.html">Aula 2: Determinantes e sistemas lineares</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/20-matrizes-determinantes/infografico.html" data-k="g"><label><input type="checkbox" data-id="20:g"> <a href="20-matrizes-determinantes/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/20-matrizes-determinantes/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="20:e"> <a href="20-matrizes-determinantes/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/20-matrizes-determinantes/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="20:c"> <a href="20-matrizes-determinantes/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/20-matrizes-determinantes/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="20:p"> <a href="20-matrizes-determinantes/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="20:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+<div class="un" data-un="15" data-prio="extra" data-h="3.8">
+    <div class="un-h"><div><b>Tópicos Complementares (EXTRA)</b><div class="meta">complementar · ≈ 3,8 h</div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/15-topicos-complementares/aula-1-analitica-exponencial-logaritmo.html" data-k="a0"><label><input type="checkbox" data-id="15:a0"> <a href="15-topicos-complementares/aula-1-analitica-exponencial-logaritmo.html">Aula 1: Geometria analítica, exponencial e logaritmo</a></label> <span class="st"></span></li><li data-arq="ena-profmat/15-topicos-complementares/aula-2-polinomios-complexos-matrizes-financeira.html" data-k="a1"><label><input type="checkbox" data-id="15:a1"> <a href="15-topicos-complementares/aula-2-polinomios-complexos-matrizes-financeira.html">Aula 2: Polinômios, complexos, matrizes e financeira</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/15-topicos-complementares/infografico.html" data-k="g"><label><input type="checkbox" data-id="15:g"> <a href="15-topicos-complementares/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/15-topicos-complementares/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="15:e"> <a href="15-topicos-complementares/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/15-topicos-complementares/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="15:c"> <a href="15-topicos-complementares/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/15-topicos-complementares/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="15:p"> <a href="15-topicos-complementares/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="15:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+<details class="fase" data-fase="f9" >
+  <summary><span class="fn">Fase 9 · Estratégia e simulados</span><span class="fp"><span class="un-bar"><i></i></span> <span class="fpn"></span></span></summary>
+  <p class="obj">Método de prova, gestão de tempo, folha de fórmulas e simulados cronometrados.</p>
+  <div class="semanas" data-semanas="f9"></div>
+  <div class="un" data-un="16" data-prio="alta" data-h="2.8">
+    <div class="un-h"><div><b>Estratégia de Prova e Folha de Fórmulas</b><div class="meta">prioridade alta · ≈ 2,8 h</div></div><div class="un-p"><span class="un-bar"><i></i></span><span class="un-n"></span></div></div>
+    <ol class="steps2">
+      <li data-arq="ena-profmat/16-estrategia-de-prova/aula-estrategia-de-prova.html" data-k="a0"><label><input type="checkbox" data-id="16:a0"> <a href="16-estrategia-de-prova/aula-estrategia-de-prova.html">Aula: Estratégia, tempo e plano de estudo</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/16-estrategia-de-prova/infografico.html" data-k="g"><label><input type="checkbox" data-id="16:g"> <a href="16-estrategia-de-prova/infografico.html">Guia visual (resumão)</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/16-estrategia-de-prova/atividade-ena.html" data-k="e"><label><input type="checkbox" data-id="16:e"> <a href="16-estrategia-de-prova/atividade-ena.html">Atividade: estilo ENA</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/16-estrategia-de-prova/atividade-criativa.html" data-k="c"><label><input type="checkbox" data-id="16:c"> <a href="16-estrategia-de-prova/atividade-criativa.html">Atividade criativa</a></label> <span class="st"></span></li>
+      <li data-arq="ena-profmat/16-estrategia-de-prova/atividade-pratica.html" data-k="p"><label><input type="checkbox" data-id="16:p"> <a href="16-estrategia-de-prova/atividade-pratica.html">Atividade prática (trilha)</a></label> <span class="st"></span></li>
+      <li data-k="r"><label><input type="checkbox" data-id="16:r"> Refiz as questões que errei (página Revisão do site) e anotei o que aprendi</label></li>
+    </ol>
+  </div>
+  <div class="check">Ponto de controle: faça um <a href="../simulado.html">simulado</a> com as unidades desta fase e anote os erros. Meta: acertar pelo menos 70% antes de avançar.</div>
+</details>
+
+<div class="tr-box">
+  <b>4 · Rotina que funciona</b>
+  <p class="meta" style="font-size:.86rem;margin:6px 0 0;">Teoria de 1 tema (30 min) → 6 a 8 questões sem consulta (60 min) → correção e anotação dos erros (20 min) → revisão rápida das fórmulas do dia anterior (10 min). Pouco e todo dia vence maratona de fim de semana. Todo erro vai para a <a href="../revisao.html">Revisão</a> e é refeito 2 dias depois. Na véspera: só a folha de fórmulas (guia da unidade 16), as tabelas de cabeça e os erros.</p>
+</div>
+<div class="footer">
+    <p>ENA · PROFMAT · Trilha de estudo guiada · edital do exame</p>
+    <p>Edital do ENA/PROFMAT (itens a–n e bibliografia) · Guia completo ENA · PROFMAT · Provas ENA 2025 e 2026 (SBM/PROFMAT)</p>
+  </div>
+
+</div>
+
+
+<script>
+(function(){
+  var FASES = [{"id":"f1","nome":"Fase 1 · Fundamentos numéricos","un":["17","01","02","03"]},{"id":"f2","nome":"Fase 2 · Álgebra básica","un":["18","05"]},{"id":"f3","nome":"Fase 3 · Equações e funções","un":["06","07"]},{"id":"f4","nome":"Fase 4 · Raciocínio e padrões","un":["04","08"]},{"id":"f5","nome":"Fase 5 · Geometria plana","un":["19","12"]},{"id":"f6","nome":"Fase 6 · Trigonometria e geometria espacial","un":["13","14"]},{"id":"f7","nome":"Fase 7 · Contagem, probabilidade e estatística","un":["09","10","11"]},{"id":"f8","nome":"Fase 8 · Matrizes e tópicos extras","un":["20","15"]},{"id":"f9","nome":"Fase 9 · Estratégia e simulados","un":["16"]}];
+  var INFO = {}; document.querySelectorAll('.un').forEach(function(u){ INFO[u.dataset.un + '@' + (u.closest('.fase') || {}).dataset.fase] = u; });
+  var KEY = 'trilha-ena:';
+  function ls(k, v){ try{ if(v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }catch(e){ return null; } }
+  function prog(arq){ try{ return JSON.parse(localStorage.getItem('prog:' + arq) || 'null'); }catch(e){ return null; } }
+  var modo = ls(KEY + 'modo') || 'tudo';
+  // ---- estado das caixas (manual + automático) ----
+  function auto(li){ var p = prog(li.dataset.arq); if(!p) return null; if(li.dataset.k.charAt(0) === 'a' || li.dataset.k === 'g') return p.v ? 'visto' : null; return p.t ? 'nota ' + p.s + '/' + p.t : (p.v ? 'aberta' : null); }
+  function ok(li){ var cb = li.querySelector('input'); return cb.checked || (li.dataset.arq && auto(li) && (li.dataset.k.charAt(0) === 'a' || li.dataset.k === 'g' || !!(prog(li.dataset.arq) || {}).t)); }
+  function pintar(){
+    document.querySelectorAll('ol.steps2 input').forEach(function(cb){ cb.checked = ls(KEY + cb.dataset.id) === '1'; });
+    document.querySelectorAll('ol.steps2 li').forEach(function(li){ var st = li.querySelector('.st'); if(st) st.textContent = li.dataset.arq ? (auto(li) ? '✔ ' + auto(li) : '') : ''; });
+    var tot = 0, feitos = 0;
+    document.querySelectorAll('.un').forEach(function(u){ var lis = u.querySelectorAll('ol.steps2 li'), n = 0; lis.forEach(function(li){ if(ok(li)) n++; }); u.querySelector('.un-bar i').style.width = (n / lis.length * 100) + '%'; u.querySelector('.un-n').textContent = n + '/' + lis.length; if(!u.classList.contains('oculta')){ tot += lis.length; feitos += n; } });
+    document.querySelectorAll('details.fase').forEach(function(d){ var us = d.querySelectorAll('.un:not(.oculta)'), t = 0, f = 0; us.forEach(function(u){ var lis = u.querySelectorAll('ol.steps2 li'); t += lis.length; lis.forEach(function(li){ if(ok(li)) f++; }); }); d.querySelector('.fp .un-bar i').style.width = (t ? f / t * 100 : 0) + '%'; d.querySelector('.fpn').textContent = us.length ? f + '/' + t : 'fase fora do modo escolhido'; });
+    document.querySelector('#gbar i').style.width = (tot ? feitos / tot * 100 : 0) + '%'; document.getElementById('gn').textContent = feitos + ' de ' + tot + ' passos (' + (tot ? Math.round(feitos / tot * 100) : 0) + '%)';
+  }
+  document.querySelectorAll('ol.steps2 input').forEach(function(cb){ cb.addEventListener('change', function(){ ls(KEY + cb.dataset.id, cb.checked ? '1' : '0'); pintar(); }); });
+  document.getElementById('zera').addEventListener('click', function(){ if(!confirm('Apagar as marcações manuais desta trilha neste aparelho? (o histórico de aulas vistas é mantido)')) return; document.querySelectorAll('ol.steps2 input').forEach(function(cb){ ls(KEY + cb.dataset.id, '0'); }); pintar(); });
+  // ---- planejador ----
+  function planejar(){
+    var W = Math.max(4, Math.min(52, +document.getElementById('pl-w').value || 12)), H = Math.max(1, +document.getElementById('pl-h').value || 6); ls(KEY + 'sem', W); ls(KEY + 'hrs', H);
+    document.querySelectorAll('.un').forEach(function(u){ var p = u.dataset.prio; u.classList.toggle('oculta', (modo === 'alta' && p !== 'alta') || (modo === 'prio' && p === 'extra')); });
+    var fases = FASES.map(function(f){ var us = f.un.filter(function(n){ var p = document.querySelector('.un[data-un="' + n + '"]').dataset.prio; return !(modo === 'alta' && p !== 'alta') && !(modo === 'prio' && p === 'extra'); }); var h = us.reduce(function(a, n){ return a + (+document.querySelector('.un[data-un="' + n + '"]').dataset.h); }, 0); return {f: f, h: h, n: us.length}; });
+    var simul = Math.max(3, Math.round(W * 0.18 * H / 2)), total = fases.reduce(function(a, x){ return a + x.h; }, 0), disp = W * H, esc = Math.min(1, (disp * 0.85) / (total || 1));
+    document.getElementById('pl-t').innerHTML = 'Trilha escolhida: <b>' + total.toFixed(0) + ' h</b> de estudo + simulados. Você tem <b>' + disp + ' h</b> (' + W + ' sem × ' + H + ' h). ' + (total <= disp * 0.85 ? '✔ Cabe com folga para simulados e revisão.' : total <= disp ? '⚠ Cabe justo: reserve o fim para simulados.' : '✘ Não cabe: escolha “só prioridade alta e média” ou aumente as horas semanais.');
+    var semana = 1, saida = '';
+    fases.forEach(function(x){ if(!x.n) return; var ws = Math.max(1, Math.round(x.h / (total || 1) * (W - Math.max(1, Math.round(W * 0.12))))), a = semana, b = Math.min(W, semana + ws - 1); semana = b + 1; saida += '<div><b>' + x.f.nome.replace('Fase ', 'F') + '</b>' + (b > a ? 'semanas ' + a + '–' + b : 'semana ' + a) + ' · ' + x.h.toFixed(0) + ' h</div>'; var el = document.querySelector('[data-semanas="' + x.f.id + '"]'); if(el) el.textContent = 'Sugestão de calendário: semana' + (b > a ? 's ' + a + ' a ' + b : ' ' + a); });
+    document.querySelectorAll('[data-semanas]').forEach(function(el){ var f = fases.filter(function(x){ return x.f.id === el.dataset.semanas; })[0]; if(!f || !f.n) el.textContent = ''; });
+    if(semana <= W) saida += '<div><b>Simulados finais</b>' + (W > semana ? 'semanas ' + semana + '–' + W : 'semana ' + semana) + ' · ' + Math.max(1, W - semana + 1) + ' simulado(s) completo(s) + caderno de erros</div>'; else saida += '<div><b>Simulados</b>reserve a última semana</div>';
+    document.getElementById('pl-r').innerHTML = saida; pintar();
+  }
+  document.getElementById('pl-w').value = ls(KEY + 'sem') || 12; document.getElementById('pl-h').value = ls(KEY + 'hrs') || 6;
+  ['pl-w', 'pl-h'].forEach(function(i){ document.getElementById(i).addEventListener('input', planejar); });
+  document.querySelectorAll('#pl-m button').forEach(function(b){ b.classList.toggle('on', b.dataset.m === modo); b.addEventListener('click', function(){ modo = b.dataset.m; ls(KEY + 'modo', modo); document.querySelectorAll('#pl-m button').forEach(function(x){ x.classList.toggle('on', x === b); }); planejar(); }); });
+  // âncoras #uNN abrem a fase correspondente
+  function ancora(){ var h = location.hash; if(!/^#u\d\d$/.test(h)) return; var n = h.slice(2), u = document.querySelector('.un[data-un="' + n + '"]'); if(u){ var d = u.closest('details'); if(d) d.open = true; u.id = 'u' + n; u.scrollIntoView(); } }
+  document.querySelectorAll('.un').forEach(function(u){ if(!document.getElementById('u' + u.dataset.un)) u.id = 'u' + u.dataset.un; });
+  window.addEventListener('hashchange', ancora); window.addEventListener('storage', pintar); window.addEventListener('focus', pintar);
+  planejar(); ancora();
+})();
+</script>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ena-info-trilha';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../app/ferramentas.js" id="ferramentas"></script>

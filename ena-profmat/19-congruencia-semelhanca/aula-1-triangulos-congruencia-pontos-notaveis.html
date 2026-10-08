@@ -1,0 +1,926 @@
+<title>Triângulos: existência, congruência e pontos notáveis — ENA · PROFMAT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:10.5pt !important; }
+  html, body{ height:auto !important; overflow:visible !important; background:#fff !important; background-image:none !important; }
+  .app{ height:auto !important; display:block !important; padding:0 !important; }
+  .topbar, .navbar, .app > p, .theme-toggle{ display:none !important; }
+  .stage{ height:auto !important; display:block !important; border:0 !important; box-shadow:none !important; overflow:visible !important; background:#fff !important; }
+  .slides{ position:static !important; display:block !important; }
+  .slide{ position:relative !important; inset:auto !important; opacity:1 !important; transform:none !important; pointer-events:auto !important; display:block !important; overflow:visible !important; break-inside:avoid; page-break-inside:avoid; border:1px solid #ccc; border-radius:10px; margin:0 0 7mm; }
+  .slide-inner{ overflow:visible !important; max-height:none !important; padding:6mm 8mm !important; }
+  .cover-curve{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style><style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link href="../../assets/fonts.css" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> ENA · PROFMAT · Triângulos</div>
+    <div>Triângulos · Aula 1 · Congruência</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,210 C 200,205 340,180 480,130 C 620,80 740,50 840,30" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">ENA · PROFMAT · Triângulos · Aula 1</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Triângulos: <span style="color:var(--primary);">existência, congruência e pontos notáveis</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Desigualdade triangular, classificação, ângulos, os casos de congruência (LAL, ALA, LLL, LAAo, cateto–hipotenusa), triângulos isósceles e equiláteros, medianas, alturas, bissetrizes e os pontos notáveis.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">Edital: triângulos, congruências</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">LAL · ALA · LLL · LAAo</span>
+            <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">baricentro 2 : 1</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Da pergunta “existe esse triângulo?” até “por que dois triângulos são iguais?”.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Existência e classificação</strong><div class="hint">desigualdade triangular; por lados e por ângulos</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Ângulos</strong><div class="hint">soma 180° e ângulo externo</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Congruência</strong><div class="hint">casos LAL, ALA, LLL, LAAo e cateto–hipotenusa</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Isósceles e equilátero</strong><div class="hint">ângulos da base e a mediana que é tudo ao mesmo tempo</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Segmentos e pontos notáveis</strong><div class="hint">baricentro, incentro, circuncentro, ortocentro</div></div></div>
+            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Uso em prova</strong><div class="hint">ENA 2025 Q14: DAE ≅ ABF (LAL)</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Decidir se três medidas formam um triângulo e <strong>classificá-lo</strong> por lados e por ângulos.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Aplicar os <strong>casos de congruência</strong> e reconhecer o que <strong>não</strong> é caso (AAA, LLA).</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Usar as propriedades dos triângulos <strong>isósceles e equiláteros</strong>.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Localizar e usar os <strong>pontos notáveis</strong> (principalmente o baricentro).</span></li></ul>
+            <div class="card primary">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--primary);">No edital</h4>
+              <p style="font-size:.9rem;margin:0;">Item “j — triângulos: congruências e semelhanças”. Congruência é a justificativa de “são iguais”; semelhança (aula 2) é a de “são proporcionais”.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">Existe um triângulo de lados 3, 4 e 8?</h2>
+          
+          <p class="lede">Três varetas de <strong>3 cm, 4 cm e 8 cm</strong>: dá para formar um triângulo?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Resposta correta:</p><button class="choice mqo" data-i="0">Sim, é um triângulo escaleno</button><button class="choice mqo" data-i="1">Sim, é um triângulo retângulo</button><button class="choice mqo" data-i="2">Não: <span class="tex">3 + 4 &lt; 8</span></button><button class="choice mqo" data-i="3">Não: os lados precisam ser iguais</button><div class="fb"></div><div class="answer"><p><strong>Desigualdade triangular</strong>: cada lado deve ser menor que a soma dos outros dois. Aqui <span class="tex">3 + 4 = 7 &lt; 8</span>: as varetas de 3 e 4 não conseguem “fechar” o triângulo com a de 8.</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Em todo triângulo: <span class="tex">∣<i>b</i> − <i>c</i>∣ &lt; <i>a</i> &lt; <i>b</i> + <i>c</i></span>. O maior lado é oposto ao maior ângulo.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · classificação</div>
+          <h2 class="title">Existência e classificação de um triângulo</h2>
+          
+          <div class="grid2">
+            <div>
+              <table class="tbl">
+  <tr><th>Por lados</th><th>Por ângulos</th></tr>
+  <tr><td style="text-align:left;">Equilátero: 3 lados iguais</td><td>Acutângulo: 3 ângulos agudos (<span class="tex"><i>c</i><sup>2</sup> &lt; <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup></span>)</td></tr>
+  <tr><td style="text-align:left;">Isósceles: 2 lados iguais</td><td>Retângulo: um ângulo reto (<span class="tex"><i>c</i><sup>2</sup> = <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup></span>)</td></tr>
+  <tr><td style="text-align:left;">Escaleno: 3 lados diferentes</td><td>Obtusângulo: um ângulo obtuso (<span class="tex"><i>c</i><sup>2</sup> &gt; <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup></span>)</td></tr>
+</table>
+              <div class="callout success"><h4>Ângulos</h4><p>Soma dos internos <span class="tex">= 180<sup>∘</sup></span>. Ângulo <strong>externo</strong> = soma dos dois internos não adjacentes. Maior lado ↔ maior ângulo.</p></div>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Três lados</b></p><div class="row"><div><label>a</label><input type="number" id="c1-a" value="3" step="1" ></div><div><label>b</label><input type="number" id="c1-b" value="4" step="1" ></div><div><label>c</label><input type="number" id="c1-c" value="5" step="1" ></div></div><p class="small" style="margin:8px 0 0;"><b class="mono" id="c1-e"></b></p><p class="small" style="margin:8px 0 0;"><b class="mono" id="c1-l"></b></p><p class="small" style="margin:8px 0 0;"><b class="mono" id="c1-g"></b></p><p class="hint" id="c1-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · congruência</div>
+          <h2 class="title">Os casos de congruência</h2>
+          
+          <div class="grid2">
+            <div>
+              <table class="tbl">
+  <tr><th>Caso</th><th>O que precisa ser igual</th></tr>
+  <tr><td style="text-align:left;">LAL</td><td>dois lados e o <strong>ângulo entre eles</strong></td></tr>
+  <tr><td style="text-align:left;">ALA</td><td>dois ângulos e o <strong>lado entre eles</strong></td></tr>
+  <tr><td style="text-align:left;">LLL</td><td>os três lados</td></tr>
+  <tr><td style="text-align:left;">LAAo</td><td>um lado, um ângulo adjacente e o ângulo oposto a ele</td></tr>
+  <tr><td style="text-align:left;">Cat–Hip</td><td>hipotenusa e um cateto (triângulos retângulos)</td></tr>
+</table>
+            </div>
+            <div>
+              <div class="callout danger"><h4>O que NÃO é caso</h4><p><strong>AAA</strong> (três ângulos): dá triângulos <em>semelhantes</em>, não necessariamente iguais. <strong>LLA</strong> (dois lados e um ângulo <em>não</em> compreendido): pode dar dois triângulos diferentes.</p></div>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Dois triângulos têm os três ângulos respectivamente iguais. Eles são:</p><button class="choice mqo" data-i="0">sempre congruentes</button><button class="choice mqo" data-i="1">sempre semelhantes</button><button class="choice mqo" data-i="2">sempre iguais em área</button><button class="choice mqo" data-i="3">sempre isósceles</button><div class="fb"></div><div class="answer"><p>AAA é o caso de <strong>semelhança</strong> (AA basta). Para congruir, é preciso também um lado.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · isósceles</div>
+          <h2 class="title">Isósceles e equilátero: ângulos e a mediana “tudo em um”</h2>
+          
+          <div class="grid2">
+            <div><svg viewBox="0 0 240 170" style="width:100%;max-width:260px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="20,150 220,150 120,25" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><line x1="120" y1="25" x2="120" y2="150" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/><path d="M131,150 L131,139 L120,139" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="120" y="16" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="12" y="160" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="228" y="160" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="120" y="166" fill="var(--decay)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >M</text><text x="52" y="142" fill="var(--growth)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">β</text><text x="190" y="142" fill="var(--growth)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">β</text></svg></div>
+            <div>
+              <ul class="plain" style="font-size:.93rem;line-height:1.7;">
+                <li><strong>Isósceles</strong> (<span class="tex">AB = AC</span>): os ângulos da base são iguais (ângulo <span class="tex"><i>B</i></span> = ângulo <span class="tex"><i>C</i></span>) e vale a recíproca.</li>
+                <li>No isósceles, a <strong>mediana</strong> da base é também <strong>altura</strong>, <strong>bissetriz</strong> do vértice e parte da <strong>mediatriz</strong>.</li>
+                <li><strong>Equilátero</strong>: três ângulos de <span class="tex">60<sup>∘</sup></span>; altura <span class="tex"><i>h</i> = <span class="fr"><span><i>l</i><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span>.</li>
+              </ul>
+              <div class="callout success"><h4>Prova (LLL)</h4><p>Os triângulos <span class="tex">ABM</span> e <span class="tex">ACM</span> têm <span class="tex">AB = AC</span>, <span class="tex">BM = MC</span> e <span class="tex">AM</span> comum: são congruentes (LLL) ⇒ ângulos da base iguais e <span class="tex">AM ⟂ BC</span>.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Pontos notáveis</div>
+          <h2 class="title">Medianas, alturas, bissetrizes e mediatrizes se encontram</h2>
+          
+          <div class="grid2">
+            <div><svg viewBox="0 0 300 195" style="width:100%;max-width:320px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="110,25 25,170 270,170" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><line x1="110" y1="25" x2="147.5" y2="170" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/><line x1="25" y1="170" x2="190" y2="97.5" stroke="var(--growth)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/><line x1="270" y1="170" x2="67.5" y2="97.5" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/><circle cx="135" cy="121.66666666666667" r="5" fill="var(--danger)"/><text x="110" y="17" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="15" y="176" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="280" y="176" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="147.5" y="186" fill="var(--primary)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >M</text><text x="149" y="117.66666666666667" fill="var(--danger)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >G</text></svg></div>
+            <div>
+              <table class="tbl">
+  <tr><th>Ponto</th><th>Encontro de</th><th>Propriedade</th></tr>
+  <tr><td style="text-align:left;">Baricentro (G)</td><td>medianas</td><td>divide cada mediana na razão <span class="tex">2 : 1</span> (a partir do vértice)</td></tr>
+  <tr><td style="text-align:left;">Incentro (I)</td><td>bissetrizes</td><td>equidista dos lados: centro do círculo inscrito</td></tr>
+  <tr><td style="text-align:left;">Circuncentro (O)</td><td>mediatrizes</td><td>equidista dos vértices: centro do círculo circunscrito</td></tr>
+  <tr><td style="text-align:left;">Ortocentro (H)</td><td>alturas</td><td>—</td></tr>
+</table>
+              <div class="callout success"><h4>No equilátero</h4><p>Os quatro pontos coincidem. No retângulo, o circuncentro é o ponto médio da hipotenusa.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Ferramenta</div>
+          <h2 class="title">Pontos notáveis de um triângulo com coordenadas</h2>
+          
+          <p class="lede">Mexa nos vértices e veja baricentro, circuncentro, incentro e ortocentro (todos calculados). Note que <span class="tex"><i>G</i></span> fica sempre a <span class="tex">2/3</span> da mediana, a partir do vértice.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Vértices A, B, C</b></p><div class="row"><div><label>A: x</label><input type="number" id="c2-ax" value="0" step="1" ></div><div><label>A: y</label><input type="number" id="c2-ay" value="6" step="1" ></div></div><div class="row"><div><label>B: x</label><input type="number" id="c2-bx" value="-4" step="1" ></div><div><label>B: y</label><input type="number" id="c2-by" value="0" step="1" ></div></div><div class="row"><div><label>C: x</label><input type="number" id="c2-cx" value="6" step="1" ></div><div><label>C: y</label><input type="number" id="c2-cy" value="0" step="1" ></div></div><svg id="c2-s" viewBox="0 0 320 200" style="width:100%;max-width:340px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;"><b class="mono" id="c2-t"></b></p><p class="hint" id="c2-h" style="margin-top:6px;"></p></div>
+            <div class="callout success"><h4>Fórmulas</h4><p>Baricentro: <span class="tex"><i>G</i> = <span class="fr"><span><i>A</i> + <i>B</i> + <i>C</i></span><span>3</span></span></span>. Incentro: <span class="tex"><i>I</i> = <span class="fr"><span><i>aA</i> + <i>bB</i> + <i>cC</i></span><span><i>a</i> + <i>b</i> + <i>c</i></span></span></span> (<span class="tex"><i>a</i>, <i>b</i>, <i>c</i></span> lados opostos). Euler: <span class="tex"><i>H</i> = <i>A</i> + <i>B</i> + <i>C</i> − 2<i>O</i></span> (vetores).</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Já caiu · ENA 2025 · Q14</div>
+          <h2 class="title">Congruência dentro de uma questão de prova</h2>
+          
+          <p class="lede"><span class="tex">ABCD</span> é um quadrado de lado 3; <span class="tex"><i>E</i> ∈ AB</span> e <span class="tex"><i>F</i> ∈ BC</span> com <span class="tex">AE = BF = 2</span>; <span class="tex"><i>G</i></span> é a interseção de <span class="tex">DE</span> com <span class="tex">AF</span>. Qual a medida de <span class="tex">EG</span>?</p>
+          <div class="mq" data-a="4"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><span class="fr"><span>2</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="1"><span class="tex"><span class="fr"><span>3</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><span class="fr"><span>5</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="3"><span class="tex"><span class="fr"><span>6</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="4"><span class="tex"><span class="fr"><span>4</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><div class="fb"></div><div class="answer"><p>Os triângulos <span class="tex">DAE</span> e <span class="tex">ABF</span> são <strong>congruentes por LAL</strong> (<span class="tex">DA = AB = 3</span>, ângulo <span class="tex">DAE</span> = ângulo <span class="tex">ABF</span> = <span class="tex">90<sup>∘</sup></span>, <span class="tex">AE = BF = 2</span>). Logo ângulo <span class="tex">ADE</span> = ângulo <span class="tex">BAF</span> e, no triângulo <span class="tex">AGE</span>, o ângulo em <span class="tex"><i>G</i></span> é reto. Como <span class="tex">DAE ∼ AGE</span> (AA): <span class="tex"><span class="fr"><span>EA</span><span>EG</span></span> = <span class="fr"><span>ED</span><span>EA</span></span></span> com <span class="tex">ED = <span class="rt">√<span class="rr">13</span></span></span> ⇒ <span class="tex">EG = <span class="fr"><span>4</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span>. <strong>Alternativa E.</strong></p></div></div>
+          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Uso prático</div>
+          <h2 class="title">Mostre que as diagonais de um retângulo são iguais</h2>
+          
+          <p class="lede">Seja <span class="tex">ABCD</span> um retângulo. Mostre que <span class="tex">AC = BD</span>.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row"><span class="badge">1</span><div><strong>Escolha os triângulos</strong><div class="hint"><span class="tex">ABC</span> e <span class="tex">BAD</span> (compartilham o lado <span class="tex">AB</span>)</div></div></div>
+            <div class="step-row"><span class="badge">2</span><div><strong>Compare</strong><div class="hint"><span class="tex">AB</span> comum; <span class="tex">BC = AD</span> (lados opostos); <span class="tex">∠ABC = ∠BAD = 90<sup>∘</sup></span></div></div></div>
+            <div class="step-row"><span class="badge">3</span><div><strong>Caso LAL</strong><div class="hint"><span class="tex">ABC ≅ BAD</span> ⇒ <span class="tex">AC = BD</span> (lados correspondentes)</div></div></div>
+          </div>
+          <div class="callout success"><h4>Resultado</h4><p>As diagonais do retângulo são iguais (e, no mesmo raciocínio, o triângulo <span class="tex">ABC</span> com <span class="tex"><i>B</i></span> reto tem mediana <span class="tex">= </span> metade da hipotenusa).</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Cuidado</div>
+          <h2 class="title">Onde se perde ponto em triângulos</h2>
+          
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> “AAA” como congruência</strong><p style="font-size:.9rem;margin-top:8px;">Três ângulos iguais dão <strong>semelhança</strong>, não congruência.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> “LLA” como caso</strong><p style="font-size:.9rem;margin-top:8px;">Dois lados e um ângulo que <strong>não</strong> está entre eles não garante congruência (exceto em triângulos retângulos, que é o caso cateto–hipotenusa).</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Esquecer a desigualdade triangular</strong><p style="font-size:.9rem;margin-top:8px;">Antes de calcular, veja se o triângulo existe: o maior lado tem de ser menor que a soma dos outros.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Baricentro 1 : 2</strong><p style="font-size:.9rem;margin-top:8px;">O baricentro está a <strong>2/3</strong> da mediana a partir do vértice (e 1/3 a partir do lado).</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. Podem formar um triângulo as medidas:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">3, 4, 8</button>
+                <button class="choice qopt" data-ok="0">5, 5, 11</button>
+                <button class="choice qopt" data-ok="1">6, 8, 10</button>
+                <button class="choice qopt" data-ok="0">2, 3, 6</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Em um triângulo isósceles, o ângulo do vértice mede 40°. Cada ângulo da base mede:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">40°</button>
+                <button class="choice qopt" data-ok="0">60°</button>
+                <button class="choice qopt" data-ok="1">70°</button>
+                <button class="choice qopt" data-ok="0">140°</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. Qual NÃO é caso de congruência de triângulos?</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">LAL</button>
+                <button class="choice qopt" data-ok="0">ALA</button>
+                <button class="choice qopt" data-ok="0">LLL</button>
+                <button class="choice qopt" data-ok="1">AAA</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. O baricentro divide uma mediana de 12 cm em partes de:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="0">6 e 6</button>
+                <button class="choice qopt" data-ok="1">4 e 8</button>
+                <button class="choice qopt" data-ok="0">3 e 9</button>
+                <button class="choice qopt" data-ok="0">2 e 10</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Existência</span><p style="font-size:.85rem;margin-top:8px;">Cada lado menor que a soma dos outros dois; maior lado ↔ maior ângulo.</p></div>
+            <div class="card"><span class="badge">Congruência</span><p style="font-size:.85rem;margin-top:8px;">LAL, ALA, LLL, LAAo, cateto–hipotenusa. AAA e LLA não valem.</p></div>
+            <div class="card"><span class="badge">Notáveis</span><p style="font-size:.85rem;margin-top:8px;">Baricentro 2 : 1; incentro (inscrito); circuncentro (circunscrito).</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Congruência justifica “são iguais”; é o primeiro argumento de muita prova.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">Referências e próximos passos</h2>
+          <p class="lede">Refaça sozinho as questões que já caíram, sem olhar a resolução, e anote os erros no caderno de erros do guia.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">Guia completo ENA · PROFMAT (material de estudo), capítulos de teoria, fórmulas e questões comentadas.<br>
+              Provas ENA 2025 e ENA 2026 (Exame Nacional de Acesso ao PROFMAT) — SBM/PROFMAT. Enunciados resumidos para estudo.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 14</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ena-c19a1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+function $(i){ return document.getElementById(i); }
+function nf(v, d){ if(d == null) d = 2; return (Math.round(v * Math.pow(10, d)) / Math.pow(10, d)).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: d}); }
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for(var k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+// plano cartesiano: devolve {sx, sy, g} com conversão de coordenadas
+function plano(svg, xmin, xmax, ymin, ymax, W, H, grade){
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+  var sx = function(x){ return 30 + (x - xmin) / (xmax - xmin) * (W - 40); }, sy = function(y){ return H - 24 - (y - ymin) / (ymax - ymin) * (H - 40); };
+  for(var x = Math.ceil(xmin); x <= xmax; x++){ el('line', {x1: sx(x), y1: sy(ymin), x2: sx(x), y2: sy(ymax), stroke: 'var(--line)', 'stroke-width': x === 0 ? 0 : 1}, svg); if(grade && x !== 0 && (x % grade === 0)){ var t = el('text', {x: sx(x), y: sy(0) + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); t.textContent = x; } }
+  for(var y = Math.ceil(ymin); y <= ymax; y++){ el('line', {x1: sx(xmin), y1: sy(y), x2: sx(xmax), y2: sy(y), stroke: 'var(--line)', 'stroke-width': y === 0 ? 0 : 1}, svg); if(grade && y !== 0 && (y % grade === 0)){ var u = el('text', {x: sx(0) - 5, y: sy(y) + 4, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); u.textContent = y; } }
+  el('line', {x1: sx(xmin), y1: sy(0), x2: sx(xmax), y2: sy(0), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  el('line', {x1: sx(0), y1: sy(ymin), x2: sx(0), y2: sy(ymax), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  return {sx: sx, sy: sy};
+}
+function curva(svg, P, f, xmin, xmax, ymin, ymax, cor){
+  var pts = [], n = 160, up = false;
+  for(var i = 0; i <= n; i++){ var x = xmin + (xmax - xmin) * i / n, y = f(x); if(isFinite(y) && y >= ymin - 40 && y <= ymax + 40) pts.push(P.sx(x).toFixed(1) + ',' + P.sy(Math.max(ymin - 40, Math.min(ymax + 40, y))).toFixed(1)); }
+  el('polyline', {points: pts.join(' '), fill: 'none', stroke: cor || 'var(--primary)', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+}
+function ponto(svg, P, x, y, cor, rotulo){ el('circle', {cx: P.sx(x), cy: P.sy(y), r: 5, fill: cor || 'var(--growth)'}, svg); if(rotulo){ var t = el('text', {x: P.sx(x) + 8, y: P.sy(y) - 8, 'font-size': 12, fill: cor || 'var(--growth)', 'font-weight': 700}, svg); t.textContent = rotulo; } }
+function fmtN(v){ return (Math.round(v * 100) / 100).toLocaleString('pt-BR'); }
+function sgn(v){ return v < 0 ? '−' + fmtN(-v) : fmtN(v); }
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+function bind(ids, f){ ids.forEach(function(i){ var e = $(i); if(e) e.addEventListener('input', f); }); f(); }
+function mdc(a, b){ a = Math.abs(a); b = Math.abs(b); while(b){ var t = b; b = a % b; a = t; } return a; }
+function fatora(n){ var r = [], d = 2; while(n > 1 && d * d <= n){ var e = 0; while(n % d === 0){ n /= d; e++; } if(e) r.push([d, e]); d++; } if(n > 1) r.push([n, 1]); return r; }
+function sup(n){ return String(n).split('').map(function(c){ return '⁰¹²³⁴⁵⁶⁷⁸⁹'[+c]; }).join(''); }
+function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) : ''); }).join(' · '); }
+
+  bind(['c1-a', 'c1-b', 'c1-c'], function(){ var L = [+$('c1-a').value, +$('c1-b').value, +$('c1-c').value].sort(function(x, y){ return x - y; }); if(L[0] <= 0){ $('c1-e').textContent = 'Use medidas positivas.'; return; } var ok = L[0] + L[1] > L[2]; $('c1-e').textContent = ok ? 'Existe: ' + L[0] + ' + ' + L[1] + ' = ' + (L[0] + L[1]) + ' > ' + L[2] : 'Não existe: ' + L[0] + ' + ' + L[1] + ' = ' + (L[0] + L[1]) + ' ≤ ' + L[2]; if(!ok){ $('c1-l').textContent = ''; $('c1-g').textContent = ''; $('c1-h').textContent = 'Desigualdade triangular violada.'; return; } $('c1-l').textContent = 'Por lados: ' + (L[0] === L[2] ? 'equilátero' : (L[0] === L[1] || L[1] === L[2]) ? 'isósceles' : 'escaleno'); var d = L[2] * L[2], s = L[0] * L[0] + L[1] * L[1]; $('c1-g').textContent = 'Por ângulos: ' + (Math.abs(d - s) < 1e-9 ? 'retângulo' : d < s ? 'acutângulo' : 'obtusângulo') + ' (c² = ' + nf(d, 3) + ' × a² + b² = ' + nf(s, 3) + ')'; $('c1-h').textContent = 'Teste 3, 4, 5 (retângulo), 5, 5, 8 (obtusângulo) e 6, 6, 6 (equilátero).'; });
+  bind(['c2-ax', 'c2-ay', 'c2-bx', 'c2-by', 'c2-cx', 'c2-cy'], function(){ var A = [+$('c2-ax').value, +$('c2-ay').value], B = [+$('c2-bx').value, +$('c2-by').value], C = [+$('c2-cx').value, +$('c2-cy').value], svg = $('c2-s'), P = plano(svg, -10, 10, -4, 12, 320, 200, 0); var D = 2 * (A[0] * (B[1] - C[1]) + B[0] * (C[1] - A[1]) + C[0] * (A[1] - B[1])); if(Math.abs(D) < 1e-9){ $('c2-t').textContent = 'Pontos colineares: não há triângulo.'; $('c2-h').textContent = ''; return; } var a = Math.hypot(B[0] - C[0], B[1] - C[1]), b = Math.hypot(A[0] - C[0], A[1] - C[1]), c = Math.hypot(A[0] - B[0], A[1] - B[1]), G = [(A[0] + B[0] + C[0]) / 3, (A[1] + B[1] + C[1]) / 3], I = [(a * A[0] + b * B[0] + c * C[0]) / (a + b + c), (a * A[1] + b * B[1] + c * C[1]) / (a + b + c)], ux = ((A[0] * A[0] + A[1] * A[1]) * (B[1] - C[1]) + (B[0] * B[0] + B[1] * B[1]) * (C[1] - A[1]) + (C[0] * C[0] + C[1] * C[1]) * (A[1] - B[1])) / D, uy = ((A[0] * A[0] + A[1] * A[1]) * (C[0] - B[0]) + (B[0] * B[0] + B[1] * B[1]) * (A[0] - C[0]) + (C[0] * C[0] + C[1] * C[1]) * (B[0] - A[0])) / D, O = [ux, uy], H = [A[0] + B[0] + C[0] - 2 * ux, A[1] + B[1] + C[1] - 2 * uy];
+    el('polygon', {points: [A, B, C].map(function(p){ return P.sx(p[0]).toFixed(1) + ',' + P.sy(p[1]).toFixed(1); }).join(' '), fill: 'var(--primary)', 'fill-opacity': .12, stroke: 'var(--primary)', 'stroke-width': 2.5}, svg); ponto(svg, P, G[0], G[1], 'var(--danger)', 'G'); ponto(svg, P, I[0], I[1], 'var(--success)', 'I'); ponto(svg, P, O[0], O[1], 'var(--growth)', 'O'); ponto(svg, P, H[0], H[1], 'var(--decay)', 'H');
+    $('c2-t').textContent = 'G = (' + nf(G[0], 2) + '; ' + nf(G[1], 2) + ') · I = (' + nf(I[0], 2) + '; ' + nf(I[1], 2) + ') · O = (' + nf(O[0], 2) + '; ' + nf(O[1], 2) + ') · H = (' + nf(H[0], 2) + '; ' + nf(H[1], 2) + ')'; $('c2-h').textContent = 'G (vermelho), I (verde), O (laranja), H (azul-água). Para A = (0,6), B = (−4,0), C = (6,0): G = (0,67; 2).'; });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  // modo apresentação: F = tela cheia, B = tela preta (qualquer tecla ou clique volta)
+  var preto = null;
+  function pretoOff(){ if(preto){ preto.remove(); preto = null; } }
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if(preto){ pretoOff(); e.preventDefault(); return; }
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f'){ try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }catch(x){} }
+    else if(k === 'b' || k === '.'){ preto = document.createElement('div'); preto.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;cursor:none'; preto.addEventListener('click', pretoOff); document.body.appendChild(preto); }
+  });
+  var dica = document.querySelector('.app > p'); if(dica && dica.textContent.indexOf('tela cheia') < 0) dica.textContent = dica.textContent.replace(/[. ]+$/, '') + ' · F: tela cheia · B: tela preta.';
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../app/ferramentas.js" id="ferramentas"></script>

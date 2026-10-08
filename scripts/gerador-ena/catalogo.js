@@ -36,6 +36,7 @@ const bloco = `,
     id: 'ena-profmat',
     nome: 'ENA · PROFMAT',
     icon: 'sigma',
+    destaque: { titulo: 'Trilha de estudo guiada pelo edital', texto: '14 itens do edital, 9 fases e calendário automático. Comece por aqui.', url: 'ena-profmat/trilha-de-estudo.html' },
     lede: 'Preparação para o Exame Nacional de Acesso ao PROFMAT (ENA): aulas completas em slides, guias visuais e atividades de cada tópico cobrado — da porcentagem à geometria espacial —, com as questões que já caíram em 2025 e 2026 resolvidas passo a passo.',
     CATALOG: [
 ${catalogo}

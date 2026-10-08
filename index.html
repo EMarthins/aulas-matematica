@@ -384,6 +384,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
     eyebrowEl.textContent = 'Prof. Eduardo · ' + materia.nome;
     ledeEl.textContent = busca ? 'Resultados da busca em todas as matérias.' : materia.lede;
+    var dEl = document.getElementById('destaque'); if(!dEl){ dEl = document.createElement('div'); dEl.id = 'destaque'; dEl.style.cssText = 'margin-top:14px;max-width:34rem;'; ledeEl.parentNode.insertBefore(dEl, ledeEl.nextSibling); }
+    dEl.innerHTML = ''; if(materia.destaque && !busca){ var da = document.createElement('a'); da.className = 'cont-card'; da.href = materia.destaque.url; da.innerHTML = '<small>★ Comece por aqui</small><b>' + materia.destaque.titulo + '</b><span>' + materia.destaque.texto + '</span>'; dEl.appendChild(da); }
 
     catalogRoot.innerHTML = '';
     statsRoot.innerHTML = '';
