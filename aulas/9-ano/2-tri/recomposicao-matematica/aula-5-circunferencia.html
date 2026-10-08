@@ -154,7 +154,7 @@
 /* ===== layout v2: texto que cresce com a tela e contêiner mais largo ===== */
 :root{ --fit:1; }
 /* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
-html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
 sup, sub{ font-size:.8em !important; line-height:0; }
 .app{ max-width:min(60rem, 100%) !important; }
 .sheet{ max-width:min(78rem, 100%) !important; }
@@ -169,9 +169,7 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   button.reveal, .btn, .tr-row, .hnt{ display:none !important; }
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="../../../../assets/fonts.css" rel="stylesheet">
 </head>
 <body>
 <button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
@@ -383,3 +381,4 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   }catch(e){}
 })();
 </script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>

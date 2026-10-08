@@ -67,17 +67,20 @@ service cloud.firestore {
           // Professor pode escrever qualquer campo (correção).
           allow write: if request.auth != null && request.auth.uid == teacherUid;
 
-          // Aluno só pode criar/atualizar sua própria submissão, e nunca
-          // os campos de correção (score, feedback, gradedAt, status='corrigido').
+          // Aluno cria/atualiza só a própria submissão. A nota automática do quiz (score/total,
+          // status 'concluido') e a pesquisa de entendimento são gravadas pelo próprio aluno; ele nunca
+          // escreve campos de correção (feedback, gradedAt) nem status 'corrigido', e não altera uma
+          // submissão que o professor já corrigiu.
           allow create: if request.auth != null && request.auth.uid == studentUid &&
             request.resource.data.status != 'corrigido' &&
-            !('score' in request.resource.data) &&
-            !('feedback' in request.resource.data);
+            !('feedback' in request.resource.data) &&
+            !('gradedAt' in request.resource.data);
 
           allow update: if request.auth != null && request.auth.uid == studentUid &&
+            resource.data.status != 'corrigido' &&
             request.resource.data.status != 'corrigido' &&
             !request.resource.data.diff(resource.data).affectedKeys()
-              .hasAny(['score', 'feedback', 'gradedAt']);
+              .hasAny(['feedback', 'gradedAt']);
         }
       }
     }

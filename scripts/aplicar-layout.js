@@ -18,7 +18,7 @@ const META = '\n<meta charset="utf-8">\n<meta name="viewport" content="width=dev
 
 const FONT_FLUIDA = `
 /* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
-html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
 sup, sub{ font-size:.8em !important; line-height:0; }`;
 
 const CSS_DECK = `<style ${MARK}>
@@ -73,6 +73,19 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 @media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
 @media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
 @media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:10.5pt !important; }
+  html, body{ height:auto !important; overflow:visible !important; background:#fff !important; background-image:none !important; }
+  .app{ height:auto !important; display:block !important; padding:0 !important; }
+  .topbar, .navbar, .app > p, .theme-toggle{ display:none !important; }
+  .stage{ height:auto !important; display:block !important; border:0 !important; box-shadow:none !important; overflow:visible !important; background:#fff !important; }
+  .slides{ position:static !important; display:block !important; }
+  .slide{ position:relative !important; inset:auto !important; opacity:1 !important; transform:none !important; pointer-events:auto !important; display:block !important; overflow:visible !important; break-inside:avoid; page-break-inside:avoid; border:1px solid #ccc; border-radius:10px; margin:0 0 7mm; }
+  .slide-inner{ overflow:visible !important; max-height:none !important; padding:6mm 8mm !important; }
+  .cover-curve{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
 </style>`;
 
 const JS_DECK = `

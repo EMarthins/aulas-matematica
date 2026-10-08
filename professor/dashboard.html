@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Painel do Professor</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="../assets/fonts.css" rel="stylesheet">
 <link rel="stylesheet" href="../app/style.css">
 <style>
   .panel{ display:none; }
@@ -36,6 +34,7 @@
     <a class="brand" href="../index.html"><span class="dot"></span> Prof. Eduardo</a>
     <nav>
       <a href="../index.html">Catálogo</a>
+      <a href="banco.html">Banco de questões</a>
       <span id="userNome" class="mono" style="color:var(--ink-faint);"></span>
       <a href="#" id="logoutBtn">Sair</a>
     </nav>
@@ -425,7 +424,7 @@ async function montarGradeEngajamento(classId){
     for(var j=0; j<atividadesTurma.length; j++){
       var subs = await listarSubmissoes(uid, atividadesTurma[j].id);
       var minha = subs.find(function(s){ return s.studentUid === aprovados[i].id; });
-      linha.push({ status: minha ? minha.status : 'nao-iniciado', score: minha ? minha.score : null });
+      linha.push({ status: minha ? minha.status : 'nao-iniciado', score: minha ? minha.score : null, ent: minha ? minha.entendimento || null : null });
     }
     grid.push(linha);
   }
@@ -450,9 +449,22 @@ async function carregarEngajamento(classId){
     tr.appendChild(el('td', null, escapeHtml(dados.aprovados[i].nome)));
     dados.grid[i].forEach(function(cel){
       var nota = cel.score != null ? ' ('+escapeHtml(cel.score)+')' : '';
-      tr.appendChild(el('td', null, '<span class="badge '+escapeHtml(cel.status)+'">'+escapeHtml(cel.status)+nota+'</span>'));
+      var emo = cel.ent === 'sim' ? ' 🙂' : cel.ent === 'meio' ? ' 😐' : cel.ent === 'nao' ? ' 😕' : '';
+      tr.appendChild(el('td', null, '<span class="badge '+escapeHtml(cel.status)+'">'+escapeHtml(cel.status)+nota+'</span>'+emo));
     });
     tbody.appendChild(tr);
+  }
+  // termômetro de entendimento da turma por atividade (pesquisa "Como foi entender esta aula?")
+  if(dados.aprovados.length){
+    var rodape = document.createElement('tr');
+    rodape.appendChild(el('td', null, '<b>Entendimento da turma</b>'));
+    dados.atividadesTurma.forEach(function(a, j){
+      var c = { sim: 0, meio: 0, nao: 0 };
+      dados.grid.forEach(function(linha){ if(linha[j] && linha[j].ent && c[linha[j].ent] !== undefined) c[linha[j].ent]++; });
+      var tot = c.sim + c.meio + c.nao;
+      rodape.appendChild(el('td', null, tot ? '🙂 '+c.sim+' · 😐 '+c.meio+' · 😕 '+c.nao : '<span style="color:var(--ink-faint)">sem respostas</span>'));
+    });
+    tbody.appendChild(rodape);
   }
 }
 

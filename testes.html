@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testes no navegador — uso interno</title>
+<meta name="robots" content="noindex">
+<style>
+  body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:20px;max-width:70rem;margin-inline:auto}
+  h1{margin:0 0 4px} .hint{color:#667} button,select{font:inherit;padding:.4em .9em;border-radius:8px;border:1px solid #99a;background:#fff;cursor:pointer}
+  table{border-collapse:collapse;width:100%;margin-top:14px;font-size:13px} th,td{border-bottom:1px solid #ddd;padding:4px 6px;text-align:left;vertical-align:top}
+  .ok{color:#0a7a3c;font-weight:700}.no{color:#b00020;font-weight:700}.av{color:#a05a00}
+  #holder{position:absolute;left:-20000px;top:0}
+</style></head><body>
+<h1>Testes no navegador</h1>
+<p class="hint">Abre cada aula, guia e atividade do catálogo em um quadro invisível e confere: erros de JavaScript, rolagem horizontal, slides que não cabem na tela, conclusão das atividades (resposta certa em todas as questões → nota reportada) e funcionamento das ferramentas. Rode pelo endereço publicado ou por um servidor local (não por arquivo).</p>
+<p>Tamanho da tela: <select id="tam"><option value="1920x1080">1920×1080 (projetor)</option><option value="1366x768" selected>1366×768 (notebook)</option><option value="1280x720">1280×720</option><option value="390x844">390×844 (celular)</option></select>
+Filtro: <select id="filtro"><option value="">todas as páginas</option><option value="aula">só aulas (slides)</option><option value="ativ">só atividades</option><option value="guia">só guias</option></select>
+<button id="go">Rodar testes</button> <span id="prog" class="hint"></span></p>
+<div id="resumo"></div>
+<table id="tab"><thead><tr><th>Página</th><th>Resultado</th><th>Detalhes</th></tr></thead><tbody></tbody></table>
+<div id="holder"></div>
+<script type="module">
+import { MATERIAS } from './app/catalog.js';
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const $ = id => document.getElementById(id);
+const itens = [];
+MATERIAS.forEach(m => m.CATALOG.forEach(a => a.trimestres.forEach(t => t.unidades.forEach(u => u.itens.forEach(i => itens.push(Object.assign({ unidade: u.titulo }, i)))))));
+
+async function testa(it, w, h){
+  const out = { falhas: [], avisos: [], info: [] };
+  const f = document.createElement('iframe'); f.setAttribute('sandbox', 'allow-same-origin allow-scripts'); f.style.cssText = `width:${w}px;height:${h}px;border:0`;
+  $('holder').appendChild(f);
+  const erros = [];
+  try{
+    await new Promise((res, rej) => { f.onload = res; f.onerror = rej; f.src = it.arquivo + '?t=' + Date.now(); });
+    const win = f.contentWindow, d = f.contentDocument;
+    win.addEventListener('error', e => erros.push(e.message));
+    try{ await d.fonts.ready; }catch(e){}
+    await sleep(500);
+    win.__rep = null; const o = win.reportarConclusao; if(o) win.reportarConclusao = (s, t) => { win.__rep = [s, t]; o(s, t); };
+    const deck = !!(d.getElementById('stage') && d.querySelector('.slide'));
+    // ferramentas e progresso
+    if(!d.querySelector('.ft-dock')) out.falhas.push('menu de ferramentas ausente');
+    // rolagem horizontal da página
+    if(d.documentElement.scrollWidth > win.innerWidth + 2) out.falhas.push('rolagem horizontal (' + d.documentElement.scrollWidth + 'px)');
+    if(deck){
+      const n = d.querySelectorAll('.slide').length, rol = [];
+      for(let i = 0; i < n; i++){ win.goTo(i); await sleep(70); const inn = d.querySelector('.slide.active .slide-inner'); if(inn.scrollHeight - inn.clientHeight > 4) rol.push((i + 1) + ':' + (inn.scrollHeight - inn.clientHeight)); }
+      out.info.push(n + ' slides');
+      if(rol.length) out.avisos.push('slides que rolam: ' + rol.join(', '));
+      win.goTo(0);
+    }
+    // atividades: acerta tudo e confere a conclusão
+    const qs = [...d.querySelectorAll('.qz')];
+    if(qs.length && !deck){
+      qs.forEach(g => { const c = g.querySelector('.qopt[data-ok="1"]'); c && c.click(); }); await sleep(150);
+      if(!win.__rep) out.avisos.push('nota não reportada após responder os .qz (ok se houver outros tipos de questão)'); else out.info.push('nota ' + win.__rep.join('/'));
+    }
+    const tr = [...d.querySelectorAll('.tr-step')];
+    if(tr.length){ const src = await (await fetch(it.arquivo)).text(); const m = src.match(/var DATA = (\[.*?\]);/); if(m){ const data = JSON.parse(m[1]); for(let i = 0; i < tr.length; i++){ tr[i].querySelector('input').value = String(data[i].a).replace('.', ','); tr[i].querySelector('.chk').click(); await sleep(50); } if(!win.__rep || win.__rep[0] !== tr.length) out.falhas.push('trilha não concluiu com as respostas certas: ' + JSON.stringify(win.__rep)); else out.info.push('trilha ' + win.__rep.join('/')); } }
+    if(erros.length) out.falhas.push('erros de JS: ' + erros.slice(0, 2).join(' | '));
+  }catch(e){ out.falhas.push('não abriu: ' + e); }
+  f.remove(); return out;
+}
+
+$('go').addEventListener('click', async () => {
+  const [w, h] = $('tam').value.split('x').map(Number), filtro = $('filtro').value;
+  const lista = itens.filter(i => !filtro || (filtro === 'aula' ? i.tipo.startsWith('Aula') : filtro === 'ativ' ? i.tipo === 'Atividade' : i.tipo === 'Guia'));
+  const tb = document.querySelector('#tab tbody'); tb.innerHTML = ''; let f = 0, a = 0, ok = 0;
+  $('go').disabled = true;
+  for(let k = 0; k < lista.length; k++){
+    $('prog').textContent = (k + 1) + ' / ' + lista.length; const it = lista[k], r = await testa(it, w, h);
+    if(r.falhas.length) f++; else if(r.avisos.length) a++; else ok++;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${it.arquivo.replace('educacao-financeira/', 'EF/').replace('aulas/', 'Mat/')}</td><td class="${r.falhas.length ? 'no' : r.avisos.length ? 'av' : 'ok'}">${r.falhas.length ? 'FALHOU' : r.avisos.length ? 'aviso' : 'ok'}</td><td>${[...r.falhas, ...r.avisos, ...r.info].join(' · ')}</td>`;
+    if(r.falhas.length || r.avisos.length) tb.prepend(tr); else tb.appendChild(tr);
+    $('resumo').innerHTML = `<b class="ok">${ok} ok</b> · <b class="av">${a} avisos</b> · <b class="no">${f} falhas</b>`;
+  }
+  $('prog').textContent = 'concluído'; $('go').disabled = false; window.RESULTADO = { ok, avisos: a, falhas: f };
+});
+</script></body></html>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prof. Eduardo — Aulas e Guias</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#382EAE">
 <meta name="description" content="Aulas interativas e guias visuais de Matemática e Educação Financeira — Ensino Médio.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23382EAE'/%3E%3Cpath d='M22 72 C40 70 52 54 62 38 C68 28 74 22 80 18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="assets/fonts.css" rel="stylesheet">
 <style>
   :root{
     --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
@@ -154,6 +154,32 @@
     color:var(--success); background:var(--success-soft); border-radius:6px; padding:.2em .5em;
   }
   .item-link.done{ border-color:color-mix(in srgb, var(--success) 40%, var(--line)); }
+  .quick{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  a.fchip{ text-decoration:none; display:inline-flex; align-items:center; gap:.4em; }
+  .fchip .n{ background:var(--danger); color:#fff; border-radius:99px; padding:0 .5em; font-size:.7rem; }
+  .continuar{ margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; }
+  .cont-card{
+    flex:1 1 17rem; display:flex; flex-direction:column; gap:2px; text-decoration:none; color:var(--ink);
+    background:var(--surface); border:1.5px solid var(--line-strong); border-radius:14px; padding:.8em 1.1em;
+  }
+  .cont-card:hover{ border-color:var(--primary); }
+  .cont-card small{ font-family:'JetBrains Mono',monospace; font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; color:var(--primary); }
+  .cont-card b{ font-family:'Archivo',sans-serif; font-size:.95rem; }
+  .cont-card span{ font-size:.78rem; color:var(--ink-faint); }
+  .rev-flag{ font-family:'JetBrains Mono',monospace; font-size:.64rem; color:var(--ink-faint); margin-top:-4px; }
+  .rev-flag.velho{ color:var(--growth); }
+  .modal{ position:fixed; inset:0; z-index:9998; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(6px); display:none; overflow:auto; padding:clamp(14px,3vw,40px); }
+  .modal.on{ display:block; }
+  .modal .box{ max-width:min(56rem,100%); margin:0 auto; background:var(--surface); border:1px solid var(--line-strong); border-radius:20px; padding:clamp(16px,3vw,28px); box-shadow:0 30px 70px -24px var(--shadow); }
+  .modal h2{ margin:0 0 4px; }
+  .conqs{ display:grid; grid-template-columns:repeat(auto-fill,minmax(13rem,1fr)); gap:10px; margin-top:14px; }
+  .conq{ border:1.5px solid var(--line); border-radius:14px; padding:12px; background:var(--surface-2); opacity:.55; }
+  .conq.on{ opacity:1; border-color:var(--success); background:var(--success-soft); }
+  .conq .ic{ font-size:1.6rem; }
+  .conq b{ display:block; font-family:'Archivo',sans-serif; margin:.2em 0; }
+  .conq span{ font-size:.8rem; color:var(--ink-soft); }
+  .conq i{ display:block; margin-top:6px; height:6px; border-radius:99px; background:var(--line); overflow:hidden; }
+  .conq i u{ display:block; height:100%; background:var(--success); text-decoration:none; }
   .stats{ display:flex; gap:22px; flex-wrap:wrap; margin-top:26px; }
   .stat{ display:flex; flex-direction:column; gap:2px; }
   .stat b{ font-family:'Archivo',sans-serif; font-size:1.4rem; font-weight:800; color:var(--ink); }
@@ -276,11 +302,24 @@
       <button type="button" class="fchip" data-t="atividade">Atividades</button>
       <button type="button" class="fchip" data-t="pend" title="Só o que você ainda não abriu neste aparelho">Ainda não vistos</button>
     </div>
+    <div class="quick">
+      <a class="fchip" href="simulado.html">📝 Simulados</a>
+      <a class="fchip" href="revisao.html">🔁 Revisão <span class="n" id="revN" hidden></span></a>
+      <button type="button" class="fchip" id="btnConq">🏆 Conquistas</button>
+      <button type="button" class="fchip" id="btnInstalar" hidden>⬇ Instalar app</button>
+    </div>
+    <div class="continuar" id="continuar"></div>
     <div class="stats" id="stats"></div>
   </div>
 </header>
 
 <main class="wrap" id="catalog"></main>
+
+<div class="modal" id="mConq" role="dialog" aria-label="Conquistas"><div class="box">
+  <div class="row between"><h2 class="disp">Suas conquistas</h2><button type="button" class="fchip" id="fecharConq">Fechar ✕</button></div>
+  <p class="lede" style="font-size:.9rem;margin:0;">Calculadas a partir do que você já fez <b>neste aparelho</b>: aulas abertas, atividades, revisão e simulados.</p>
+  <div class="conqs" id="conqs"></div>
+</div></div>
 
 <footer>
   <div class="wrap">
@@ -383,6 +422,9 @@ import { MATERIAS, ICONS } from './app/catalog.js';
           head.appendChild(el('h3','unit-title', unidade.titulo));
           head.appendChild(el('div','unit-icon', svgIcon(unidade.icon)));
           card.appendChild(head);
+          var rv = unidade.revisado || materia.revisado || '2026-09-22';
+          var meses = (Date.now() - new Date(rv + 'T00:00:00').getTime()) / 2592e6;
+          card.appendChild(el('div', 'rev-flag' + (meses > 6 ? ' velho' : ''), 'conteúdo revisado em ' + new Date(rv + 'T00:00:00').toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }) + (meses > 6 ? ' · precisa de revisão' : '')));
 
           function linkItem(item, rotulo){
             var a = el('a','item-link');
@@ -437,6 +479,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     stat(totalGuias, 'Guias visuais');
     if(totalAtividades) stat(totalAtividades, 'Atividades');
     if(vistos) stat(vistos + '/' + totalItens, 'Vistos neste aparelho');
+    if(typeof renderContinuar === 'function'){ renderContinuar(); marcadores(); }
 
     setStoredMateria(materia.id);
   }
@@ -453,6 +496,70 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   Array.prototype.forEach.call(document.querySelectorAll('.fchip[data-t]'), function(b){
     b.addEventListener('click', function(){ estado.tipo = (estado.tipo === b.dataset.t && b.dataset.t !== 'todos') ? 'todos' : b.dataset.t; syncChips(); renderMateria(estado.idx); });
   });
+  // ---- "continuar de onde parou" e "próxima sugerida" ----
+  function achaItem(arq){ var r = null; MATERIAS.forEach(function(m, mi){ m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(i.arquivo === arq) r = { item: i, unidade: u, ano: a.ano, mi: mi }; }); }); }); }); }); return r; }
+  function sugerida(idx){
+    var m = MATERIAS[idx]; var achado = null;
+    m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(!achado && i.tipo.indexOf('Aula') === 0){ var p = prog(i.arquivo); if(!(p && p.v)) achado = { item: i, unidade: u, ano: a.ano }; } }); }); }); });
+    return achado;
+  }
+  function renderContinuar(){
+    var box = document.getElementById('continuar'); box.innerHTML = '';
+    var u = null; try{ u = JSON.parse(localStorage.getItem('prog:ultimo') || 'null'); }catch(e){}
+    if(u && u.a && achaItem(u.a)){ var a = document.createElement('a'); a.className = 'cont-card'; a.href = u.a + (u.s > 0 ? '#s=' + (u.s + 1) : '');
+      a.innerHTML = '<small>▶ Continuar de onde parou</small><b>' + achaItem(u.a).item.titulo + '</b><span>' + (u.s > 0 ? 'slide ' + (u.s + 1) + ' · ' : '') + achaItem(u.a).unidade.titulo + '</span>'; box.appendChild(a); }
+    var s = sugerida(estado.idx);
+    if(s){ var b = document.createElement('a'); b.className = 'cont-card'; b.href = s.item.arquivo; b.innerHTML = '<small>★ Próxima aula sugerida</small><b>' + s.item.titulo + '</b><span>' + s.ano + ' · ' + s.unidade.titulo + '</span>'; box.appendChild(b); }
+  }
+
+  // ---- revisão pendente, sequência de dias e conquistas ----
+  function jl(k, d){ try{ var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; }catch(e){ return d; } }
+  function sequencia(){
+    var dias = jl('prog:dias', []); if(!dias.length) return 0; var set = {}; dias.forEach(function(d){ set[d] = 1; });
+    var n = 0, d = new Date(); function f(x){ return x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2); }
+    if(!set[f(d)]) d.setDate(d.getDate() - 1);
+    while(set[f(d)]){ n++; d.setDate(d.getDate() - 1); }
+    return n;
+  }
+  function coletaProgresso(){
+    var vistos = 0, aulas = 0, ativ = 0, perfeitas = 0;
+    MATERIAS.forEach(function(m){ m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ var p = prog(i.arquivo); if(!(p && p.v)) return; vistos++; if(i.tipo.indexOf('Aula') === 0) aulas++; if(i.tipo === 'Atividade' && p.t){ ativ++; if(p.s === p.t) perfeitas++; } }); }); }); }); });
+    return { vistos: vistos, aulas: aulas, ativ: ativ, perfeitas: perfeitas };
+  }
+  function renderConquistas(){
+    var c = coletaProgresso(), seq = sequencia(), dom = +(localStorage.getItem('rev:dominadas') || 0), sims = jl('sim:hist', []), bom = sims.some(function(s){ return s.a / s.n >= .8; });
+    var L = [
+      ['🌱', 'Primeiro passo', 'Abra sua primeira aula', Math.min(1, c.aulas), 1],
+      ['📚', 'Estudante dedicado', 'Abra 10 aulas', Math.min(10, c.aulas), 10],
+      ['🏫', 'Maratonista', 'Abra 25 aulas', Math.min(25, c.aulas), 25],
+      ['🎯', 'Mão na massa', 'Conclua 10 atividades', Math.min(10, c.ativ), 10],
+      ['💯', 'Nota máxima', 'Gabarite uma atividade', Math.min(1, c.perfeitas), 1],
+      ['🏅', 'Colecionador de 10', 'Gabarite 10 atividades', Math.min(10, c.perfeitas), 10],
+      ['🔥', '3 dias seguidos', 'Estude 3 dias seguidos', Math.min(3, seq), 3],
+      ['⚡', 'Semana de fogo', 'Estude 7 dias seguidos', Math.min(7, seq), 7],
+      ['🔁', 'Persistente', 'Domine 1 questão na Revisão', Math.min(1, dom), 1],
+      ['🧠', 'Memória de elefante', 'Domine 10 questões', Math.min(10, dom), 10],
+      ['📝', 'Simulado feito', 'Termine um simulado', Math.min(1, sims.length), 1],
+      ['🏆', 'Mandou bem', 'Tire 80% ou mais em um simulado', bom ? 1 : 0, 1]
+    ];
+    var box = document.getElementById('conqs'); box.innerHTML = '';
+    L.forEach(function(x){ var ok = x[3] >= x[4]; var d = document.createElement('div'); d.className = 'conq' + (ok ? ' on' : ''); d.innerHTML = '<div class="ic">' + x[0] + '</div><b>' + x[1] + '</b><span>' + x[2] + '</span><i><u style="width:' + Math.round(x[3] / x[4] * 100) + '%"></u></i><span style="font-size:.7rem">' + x[3] + '/' + x[4] + (ok ? ' ✔' : '') + '</span>'; box.appendChild(d); });
+    return { feitas: L.filter(function(x){ return x[3] >= x[4]; }).length, total: L.length, seq: seq };
+  }
+  function marcadores(){
+    var due = jl('rev:itens', []).filter(function(x){ return x.due <= Date.now(); }).length, n = document.getElementById('revN');
+    n.hidden = !due; n.textContent = due;
+    var r = renderConquistas(); document.getElementById('btnConq').textContent = '🏆 Conquistas ' + r.feitas + '/' + r.total + (r.seq > 1 ? ' · 🔥 ' + r.seq + ' dias' : '');
+  }
+  document.getElementById('btnConq').addEventListener('click', function(){ renderConquistas(); document.getElementById('mConq').classList.add('on'); });
+  document.getElementById('fecharConq').addEventListener('click', function(){ document.getElementById('mConq').classList.remove('on'); });
+  document.getElementById('mConq').addEventListener('click', function(e){ if(e.target === this) this.classList.remove('on'); });
+  // instalar como app
+  var evInst = null;
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); evInst = e; document.getElementById('btnInstalar').hidden = false; });
+  document.getElementById('btnInstalar').addEventListener('click', function(){ if(evInst){ evInst.prompt(); evInst = null; this.hidden = true; } });
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+
   var qEl = document.getElementById('q'), qTimer = null;
   qEl.addEventListener('input', function(){ clearTimeout(qTimer); qTimer = setTimeout(function(){ estado.q = qEl.value; renderMateria(estado.idx); }, 120); });
   document.addEventListener('keydown', function(e){ if(e.key === '/' && document.activeElement !== qEl){ e.preventDefault(); qEl.focus(); } });

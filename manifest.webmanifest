@@ -1,0 +1,19 @@
+{
+  "name": "Prof. Eduardo — Aulas e Guias",
+  "short_name": "Aulas",
+  "description": "Aulas interativas, guias visuais, atividades e simulados de Matemática e Educação Financeira.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0C0D18",
+  "theme_color": "#382EAE",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Simulados", "url": "./simulado.html" },
+    { "name": "Revisão", "url": "./revisao.html" }
+  ]
+}

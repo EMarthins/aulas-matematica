@@ -99,12 +99,25 @@ A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `au
 2. Abra `app/catalog.js` — fonte única do catálogo, usada tanto pela página inicial quanto pelo painel do professor (para escolher qual aula virar atividade). É o array `MATERIAS`: cada matéria tem `id`, `nome`, `icon`, `lede` (frase de apresentação) e um `CATALOG` — uma lista de objetos: um por ano, dentro dele os trimestres, dentro de cada trimestre as unidades, e dentro de cada unidade os itens (aulas/guias).
 3. Para uma aula em matéria já existente: copie um bloco de unidade existente dentro do `CATALOG` daquela matéria como modelo e ajuste `titulo`, `accent` (`growth`, `decay`, `primary` ou `danger` — cores já usadas no material), `icon` (veja o objeto `ICONS` logo abaixo do `CATALOG`, no mesmo arquivo, para as opções disponíveis, ou crie uma nova entrada lá) e a lista de `itens`, apontando `arquivo` para o caminho relativo do novo `.html` (relativo à raiz do site).
 4. Para uma matéria nova: copie um bloco de matéria inteiro (de `{ id: ...` até o `}` que fecha o `CATALOG` dela) como modelo dentro do array `MATERIAS`, e ajuste `id`, `nome`, `icon` e `lede`. A aba aparece automaticamente no topo da página inicial.
-5. **Se a aula tiver um quiz pontuado (`.qz`)**, rode `node scripts/inject-progress-hook.js .` a partir da raiz do site (veja [`scripts/inject-progress-hook.js`](scripts/inject-progress-hook.js)) — isso anexa automaticamente o gancho que reporta a nota do quiz para o painel do professor quando a aula é aberta via atividade. É idempotente: pode rodar sempre que quiser, ele pula arquivos que já têm o gancho.
-   Os decks, guias e atividades de Educação Financeira (1ª e 2ª séries) são gerados por `scripts/gerador-ef/` (`lib.js` traz os componentes; `d*.js`, `i1.js`, `a*.js` são os conteúdos; `node build.js` gera as páginas). Editar o conteúdo e rodar de novo é mais rápido que mexer no HTML.
-6. **Layout legível em qualquer tela:** rode `node scripts/aplicar-layout.js .` (veja [`scripts/aplicar-layout.js`](scripts/aplicar-layout.js)). Ele adiciona o `<meta viewport>` (sem ele o celular encolhe a página) e o layout v2: nos slides, palco em tela cheia, letra que cresce com a tela (projetor Full HD ≈ 23px de base, celular 16px), barra de navegação fora do conteúdo, trilha de progresso reta no lugar das bolinhas e ajuste automático para o slide caber sem rolar; nas demais páginas, texto fluido e contêiner mais largo. É idempotente e atualiza páginas já aplicadas.
-7. **Progresso no aparelho do aluno:** rode `node scripts/aplicar-progresso.js .` (idempotente). Cada página passa a guardar, no próprio navegador, que foi aberta e a melhor nota dos quizzes/atividades; a página inicial mostra ✓ ou a nota (ex.: 4/5) ao lado de cada item e tem o filtro "Ainda não vistos". Sem login, sem internet.
-8. **Atalhos úteis:** na página inicial, `/` foca a busca (procura em todas as matérias, sem acento); nos slides, `F` liga/desliga tela cheia e `B` (ou `.`) escurece a tela; guias e atividades já saem bem na impressão (Ctrl+P).
-9. Suba os arquivos (novo `.html`, `app/catalog.js` atualizado) com o fluxo normal de `git push` (ou Add file → Upload files, se preferir pelo navegador). O site atualiza sozinho — os contadores do topo ("Unidades", "Aulas", "Guias visuais") se recalculam automaticamente a partir da matéria selecionada.
+5. Os decks, guias e atividades de Educação Financeira (1ª e 2ª séries) são gerados por `scripts/gerador-ef/` (`lib.js` traz os componentes; `d*.js`, `i*.js`, `a*.js` são os conteúdos; `node build.js` gera as páginas). Editar o conteúdo e rodar de novo é mais rápido que mexer no HTML.
+6. **Rode `node scripts/preparar.js`** (na raiz do site). Ele aplica, em ordem e de forma idempotente, tudo o que as páginas precisam e já roda os testes:
+   - `aplicar-layout.js` — layout legível em qualquer tela/projetor (letra fluida, slides em tela cheia, ajuste automático, impressão);
+   - `aplicar-fontes.js` — fontes locais (`assets/fonts.css`), sem depender do Google;
+   - `aplicar-progresso.js` — progresso no aparelho do aluno (aberta/nota), sem login;
+   - `aplicar-ferramentas.js` — menu "⋯" das aulas (mapa dos slides, notas, cronômetro e sorteio, copiar link do slide, voz alta, fonte e contraste), retomar de onde parou, glossário clicável, pesquisa de entendimento e registro de erros para a revisão;
+   - `gerar-banco.js` — extrai as questões das aulas/atividades para `app/banco.json` (alimenta Simulados, Revisão e o Banco de questões do professor);
+   - `testar.js` — testes estáticos (catálogo, scripts, fontes, banco, quizzes, modo offline).
+   Quiz pontuado (`.qz`) em página nova: rode também `node scripts/inject-progress-hook.js .` para reportar a nota ao painel do professor.
+7. **Testes no navegador:** abra `testes.html` (pelo site publicado ou por um servidor local) e clique em "Rodar testes": cada página é aberta num quadro invisível e confere erros de JavaScript, rolagem horizontal, slides que não cabem na tela e a conclusão das atividades.
+8. Suba tudo com `git push`. O site atualiza sozinho. Se mudar a lista de arquivos do modo offline ou quiser forçar a limpeza do cache dos visitantes, troque `VERSAO` em `sw.js`.
+
+## Recursos do site (resumo)
+
+**Para o aluno:** busca e filtros no catálogo (tecla `/`) · continuar de onde parou e próxima aula sugerida · progresso e conquistas (sem login) · simulados por matéria/ano/tema (`simulado.html`) · revisão espaçada dos erros (`revisao.html`) · glossário clicável · texto maior/menor, alto contraste e leitura em voz alta · funciona offline e instala como aplicativo.
+
+**Para o professor (em sala):** slides em tela cheia que se adaptam a qualquer projetor · `F` tela cheia, `B` tela preta, `M` mapa dos slides, `N` notas, `T` cronômetro e sorteio, `L` copiar link do slide · impressão dos slides como folheto.
+
+**Para o professor (plataforma, com login):** turmas com aprovação de alunos, atividades (quiz, envio, aula assistida), correção, engajamento com termômetro de entendimento e CSV · **Banco de questões e gerador de provas** (`professor/banco.html`): filtre, marque e imprima a prova com gabarito e resoluções.
 
 Não é necessário nenhum processo de build: é HTML puro, servido como está.
 

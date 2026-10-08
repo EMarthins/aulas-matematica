@@ -93,7 +93,7 @@
 /* ===== layout v2: texto que cresce com a tela e contêiner mais largo ===== */
 :root{ --fit:1; }
 /* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
-html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
 sup, sub{ font-size:.8em !important; line-height:0; }
 .app{ max-width:min(60rem, 100%) !important; }
 .sheet{ max-width:min(78rem, 100%) !important; }
@@ -135,9 +135,7 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   .hintbox{ display:none; margin-top:8px; font-size:.88rem; color:var(--ink-soft); border-left:3px solid var(--decay); padding-left:10px; }
   .hintbox.show{ display:block; }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="../../../../assets/fonts.css" rel="stylesheet">
 
 <button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
   <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -283,3 +281,4 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   }catch(e){}
 })();
 </script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>

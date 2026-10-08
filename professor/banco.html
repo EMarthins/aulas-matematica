@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banco de questões e gerador de provas — Professor</title>
+<link href="../assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../app/style.css">
+<link rel="stylesheet" href="../app/estudo.css">
+<style>
+  .q-it{ display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); align-items:flex-start; }
+  .q-it input[type=checkbox]{ margin-top:.5em; width:1.1rem; height:1.1rem; flex:none; accent-color:var(--primary); }
+  .q-it .corpo{ flex:1; min-width:0; }
+  .q-it .gab{ font-size:.82rem; color:var(--success); margin-top:4px; }
+  .q-it details summary{ cursor:pointer; font-size:.78rem; color:var(--ink-soft); margin-top:4px; }
+  .barra-fixa{ position:sticky; bottom:0; background:var(--surface); border-top:1px solid var(--line-strong); padding:10px 0; margin-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  input[type=search], input[type=text].f{ font:inherit; padding:.55em .9em; border-radius:999px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); min-width:14rem; }
+</style>
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="../index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="dashboard.html">Painel</a><a href="banco.html" style="color:var(--primary)">Banco de questões</a><span id="userNome" class="mono" style="color:var(--ink-faint);"></span><a href="#" id="logoutBtn">Sair</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:28px 20px 80px;">
+  <div class="eyebrow">Área do professor</div>
+  <h1 class="disp" style="margin:6px 0;font-size:clamp(1.6rem,3.6vw,2.3rem);">Banco de questões e gerador de provas</h1>
+  <p class="hint" style="margin:0 0 16px;">Todas as questões das aulas e atividades, com <b>gabarito e resolução</b>. Marque as que quiser e gere uma <b>prova pronta para imprimir</b> (com cabeçalho e folha de gabarito).</p>
+
+  <div class="card">
+    <div class="row" style="gap:10px;flex-wrap:wrap;align-items:center;">
+      <input type="search" id="busca" placeholder="Buscar no enunciado ou no tema…">
+      <span class="hint" id="cont"></span>
+    </div>
+    <div class="sec-label">Matéria e ano</div><div class="chips" id="fG"></div>
+    <div class="sec-label">Tema (unidade)</div><div class="chips" id="fU"></div>
+    <div class="sec-label">Tipo</div>
+    <div class="chips" id="fT"><button class="chip on" data-v="todas" type="button">Todas</button><button class="chip" data-v="enem" type="button">Estilo ENEM</button><button class="chip" data-v="quiz" type="button">Quiz das aulas</button><button class="chip" data-v="mini" type="button">Verificações rápidas</button></div>
+  </div>
+
+  <div class="card" id="lista" style="margin-top:16px;"></div>
+
+  <div class="barra-fixa">
+    <b id="selN">0 selecionadas</b>
+    <button class="btn secondary sm" id="selTodas" type="button">Marcar todas as filtradas</button>
+    <button class="btn secondary sm" id="selNenhuma" type="button">Limpar seleção</button>
+    <span style="flex:1"></span>
+    <input type="text" class="f" id="titulo" placeholder="Título da prova" value="Avaliação">
+    <button class="btn" id="gerar" type="button" disabled>Gerar prova + gabarito</button>
+  </div>
+</main>
+
+<script type="module">
+import { protegerPagina, sair } from '../app/auth.js';
+import { iniciarThemeToggle } from '../app/theme-toggle.js';
+iniciarThemeToggle('theme-pref-app');
+var $ = function(id){ return document.getElementById(id); };
+$('logoutBtn').addEventListener('click', function(e){ e.preventDefault(); sair(); });
+protegerPagina('professor', function(user, perfil){ $('userNome').textContent = perfil.nome; iniciar(); }, '../login.html');
+
+var BANCO = [], f = { g: {}, u: {}, t: 'todas', q: '' }, marcadas = {}, L = 'ABCDE';
+function norm(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+function texto(h){ return String(h || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(); }
+
+function iniciar(){
+  fetch('../app/banco.json').then(function(r){ return r.json(); }).then(function(b){
+    BANCO = b.questoes; var gs = {}, us = {};
+    BANCO.forEach(function(q){ gs[q.mn + '|' + q.a] = (gs[q.mn + '|' + q.a] || 0) + 1; });
+    Object.keys(gs).sort().forEach(function(g){ f.g[g] = true; var bt = document.createElement('button'); bt.type = 'button'; bt.className = 'chip on'; bt.innerHTML = g.replace('|', ' · ') + '<small>' + gs[g] + '</small>'; bt.addEventListener('click', function(){ f.g[g] = !f.g[g]; bt.classList.toggle('on', f.g[g]); unidades(); render(); }); $('fG').appendChild(bt); });
+    unidades(); render();
+  });
+}
+function unidades(){
+  var us = {}; BANCO.forEach(function(q){ if(f.g[q.mn + '|' + q.a]){ var k = q.mn + '|' + q.a + '|' + q.u; us[k] = (us[k] || 0) + 1; } });
+  var box = $('fU'); box.innerHTML = ''; var antes = f.u; f.u = {};
+  Object.keys(us).sort().forEach(function(k){ f.u[k] = antes[k] !== undefined ? antes[k] : true; var bt = document.createElement('button'); bt.type = 'button'; bt.className = 'chip' + (f.u[k] ? ' on' : ''); bt.innerHTML = k.split('|')[2] + '<small>' + us[k] + '</small>'; bt.addEventListener('click', function(){ f.u[k] = !f.u[k]; bt.classList.toggle('on', f.u[k]); render(); }); box.appendChild(bt); });
+}
+[].forEach.call($('fT').querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ [].forEach.call($('fT').querySelectorAll('.chip'), function(x){ x.classList.toggle('on', x === b); }); f.t = b.dataset.v; render(); }); });
+$('busca').addEventListener('input', function(){ f.q = norm(this.value); render(); });
+
+function filtradas(){ return BANCO.filter(function(q){ return f.g[q.mn + '|' + q.a] && f.u[q.mn + '|' + q.a + '|' + q.u] && (f.t === 'todas' || q.tp === f.t) && (!f.q || norm(q.q + ' ' + q.u + ' ' + q.t).indexOf(f.q) >= 0); }); }
+function render(){
+  var l = filtradas(); $('cont').textContent = l.length + ' questões'; var box = $('lista'); box.innerHTML = '';
+  if(!l.length){ box.innerHTML = '<div class="empty">Nenhuma questão com esses filtros.</div>'; atualizaSel(); return; }
+  l.slice(0, 120).forEach(function(q, i){
+    var d = document.createElement('div'); d.className = 'q-it';
+    var gab = q.o.map(function(o, k){ return o.ok ? L[k] : ''; }).join('');
+    d.innerHTML = '<input type="checkbox" aria-label="Selecionar questão"' + (marcadas[q.id] ? ' checked' : '') + '><div class="corpo"><div class="qmeta"><span>' + q.mn + ' · ' + q.a + ' · ' + q.u + '</span><span>' + ({ enem: 'estilo ENEM', quiz: 'quiz', mini: 'verificação' }[q.tp]) + '</span></div><div class="qbox">' + q.q + '</div>' +
+      q.o.map(function(o, k){ return '<div style="margin:.15em 0;' + (o.ok ? 'color:var(--success);font-weight:700;' : '') + '">' + L[k] + ') ' + o.t + '</div>'; }).join('') +
+      '<div class="gab">Gabarito: <b>' + gab + '</b> · <a href="../' + q.k + '" target="_blank" rel="noopener">abrir aula/atividade</a></div>' + (q.sol ? '<details><summary>Ver resolução</summary><div class="sol">' + q.sol + '</div></details>' : '') + '</div>';
+    d.querySelector('input').addEventListener('change', function(){ if(this.checked) marcadas[q.id] = true; else delete marcadas[q.id]; atualizaSel(); });
+    box.appendChild(d);
+  });
+  if(l.length > 120){ var m = document.createElement('div'); m.className = 'hint'; m.style.padding = '10px 0'; m.textContent = 'Mostrando 120 de ' + l.length + ' — refine os filtros para ver as demais.'; box.appendChild(m); }
+  atualizaSel();
+}
+function atualizaSel(){ var n = Object.keys(marcadas).length; $('selN').textContent = n + ' selecionada' + (n === 1 ? '' : 's'); $('gerar').disabled = !n; }
+$('selTodas').addEventListener('click', function(){ filtradas().slice(0, 120).forEach(function(q){ marcadas[q.id] = true; }); render(); });
+$('selNenhuma').addEventListener('click', function(){ marcadas = {}; render(); });
+
+$('gerar').addEventListener('click', function(){
+  var qs = BANCO.filter(function(q){ return marcadas[q.id]; }), tit = ($('titulo').value || 'Avaliação').replace(/</g, '&lt;');
+  var gab = [], html = '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>' + tit + '</title><style>body{font-family:Georgia,serif;margin:18mm 16mm;color:#111;line-height:1.45}h1{font-size:18pt;margin:0 0 4px}.cab{border:1px solid #333;padding:8px 12px;margin:8px 0 16px;display:flex;gap:18px;flex-wrap:wrap;font-size:11pt}.q{margin:0 0 14px;break-inside:avoid}.q p{margin:.3em 0}.o{margin:.1em 0 .1em 1.2em}table{border-collapse:collapse;width:100%;font-size:10pt}th,td{border:1px solid #888;padding:3px 6px;text-align:center}.pb{page-break-before:always}.sol{font-size:10pt;color:#333;margin:.3em 0 0 1.2em}@media print{button{display:none}}</style></head><body><button onclick="print()" style="margin-bottom:10px">Imprimir</button><h1>' + tit + '</h1><div class="cab"><span>Nome: ______________________________________</span><span>Turma: ________</span><span>Data: ___/___/_____</span><span>Nota: ______</span></div>';
+  qs.forEach(function(q, i){ var corr = ''; html += '<div class="q"><p><b>' + (i + 1) + '.</b></p>' + q.q + q.o.map(function(o, k){ if(o.ok) corr = L[k]; return '<div class="o">' + L[k] + ') ' + o.t + '</div>'; }).join('') + '</div>'; gab.push([i + 1, corr, q.sol]); });
+  html += '<div class="pb"></div><h1>Gabarito — ' + tit + '</h1><table><tr>' + gab.map(function(g){ return '<th>' + g[0] + '</th>'; }).join('') + '</tr><tr>' + gab.map(function(g){ return '<td>' + g[1] + '</td>'; }).join('') + '</tr></table><h2 style="font-size:13pt">Resoluções</h2>' + gab.map(function(g){ return '<div class="q"><b>' + g[0] + ') ' + g[1] + '</b>' + (g[2] ? '<div class="sol">' + g[2] + '</div>' : '') + '</div>'; }).join('') + '</body></html>';
+  var w = window.open('', '_blank'); if(!w){ alert('Libere pop-ups para gerar a prova.'); return; } w.document.write(html); w.document.close();
+});
+</script>
+</body>
+</html>

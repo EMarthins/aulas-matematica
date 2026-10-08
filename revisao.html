@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revisão — Prof. Eduardo</title>
+<meta name="description" content="Revisão espaçada: as questões que você errou voltam em 1, 3, 7, 14 e 30 dias até você dominá-las.">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<link rel="stylesheet" href="app/estudo.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="index.html">Catálogo</a><a href="revisao.html" style="color:var(--primary)">Revisão</a><a href="simulado.html">Simulados</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:28px 20px 70px;">
+  <h1 class="disp" style="margin:0 0 6px;font-size:clamp(1.6rem,3.6vw,2.3rem);">Revisão espaçada</h1>
+  <p class="hint" style="margin:0 0 18px;">As questões que você errou nas aulas, atividades e simulados voltam aqui em <b>1, 3, 7, 14 e 30 dias</b>. Acertou 5 vezes seguidas? A questão está dominada. Tudo fica salvo só neste aparelho.</p>
+
+  <section class="card" id="resumo"></section>
+
+  <section id="sessao" class="card" style="display:none;margin-top:16px;">
+    <div class="qmeta"><span id="sPos"></span><span id="sOrigem"></span></div>
+    <div class="bar" style="margin:8px 0 14px;"><span id="sBar" style="width:0%"></span></div>
+    <div class="qbox" id="sQ"></div>
+    <div id="sOpts"></div>
+    <div class="sol" id="sSol" style="display:none;"></div>
+    <div class="row" style="margin-top:14px;justify-content:flex-end;"><button class="btn" id="sProx" type="button" disabled>Próxima</button></div>
+  </section>
+
+  <section id="lista" class="card" style="display:none;margin-top:16px;"></section>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+iniciarThemeToggle('theme-pref-app');
+
+var $ = function(id){ return document.getElementById(id); };
+var INTERVALOS = [1, 3, 7, 14, 30];
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+function itens(){ try{ return JSON.parse(lsGet('rev:itens') || '[]'); }catch(e){ return []; } }
+function salvar(l){ lsSet('rev:itens', JSON.stringify(l)); }
+function embaralha(a){ a = a.slice(); for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function quando(ts){ var d = Math.ceil((ts - Date.now()) / 864e5); return d <= 0 ? 'hoje' : d === 1 ? 'amanhã' : 'em ' + d + ' dias'; }
+
+var fila = [], idx = 0, dominadas = +(lsGet('rev:dominadas') || 0);
+
+function resumo(){
+  var l = itens(), hoje = l.filter(function(x){ return x.due <= Date.now(); });
+  var h = '<div class="row between" style="align-items:center;gap:14px;"><div><div class="big">' + hoje.length + '</div><div class="hint">para revisar agora</div></div>' +
+    '<div><div class="big" style="color:var(--ink-soft)">' + l.length + '</div><div class="hint">na fila de revisão</div></div>' +
+    '<div><div class="big" style="color:var(--success)">' + dominadas + '</div><div class="hint">já dominadas</div></div>' +
+    '<div>' + (hoje.length ? '<button class="btn" id="comecar" type="button">Revisar agora</button>' : '<span class="hint">' + (l.length ? 'Nada para hoje. Próxima: ' + quando(Math.min.apply(null, l.map(function(x){ return x.due; }))) + '.' : 'Ainda não há erros guardados. Faça aulas, atividades e <a href="simulado.html">simulados</a>!') + '</span>') + '</div></div>';
+  $('resumo').innerHTML = h;
+  var b = $('comecar'); if(b) b.addEventListener('click', comecar);
+  var lista = $('lista');
+  if(l.length){
+    lista.style.display = '';
+    lista.innerHTML = '<div class="sec-label" style="margin-top:0">Fila (' + l.length + ')</div><table class="tbl"><tr><th>Questão</th><th>Origem</th><th>Erros</th><th>Próxima</th></tr>' +
+      l.slice().sort(function(a, c){ return a.due - c.due; }).map(function(x){ var tx = String(x.q).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 90); return '<tr><td>' + tx + '…</td><td><a href="' + x.k + '">' + (x.t || 'aula') + '</a></td><td>' + (x.e || 1) + '</td><td>' + quando(x.due) + '</td></tr>'; }).join('') + '</table>' +
+      '<div class="row" style="margin-top:12px;"><button class="btn secondary sm" id="limpar" type="button">Limpar fila</button></div>';
+    $('limpar').addEventListener('click', function(){ if(confirm('Apagar todas as questões da fila de revisão deste aparelho?')){ salvar([]); resumo(); } });
+  } else lista.style.display = 'none';
+}
+
+function comecar(){
+  fila = embaralha(itens().filter(function(x){ return x.due <= Date.now(); })); idx = 0;
+  $('sessao').style.display = ''; $('lista').style.display = 'none'; mostra();
+}
+function mostra(){
+  var q = fila[idx], L = 'ABCDE';
+  $('sPos').textContent = 'Questão ' + (idx + 1) + ' de ' + fila.length; $('sBar').style.width = (idx / fila.length * 100) + '%';
+  $('sOrigem').textContent = q.t || ''; $('sQ').innerHTML = q.q; $('sSol').style.display = 'none'; $('sProx').disabled = true; $('sProx').textContent = idx === fila.length - 1 ? 'Finalizar' : 'Próxima';
+  var ops = embaralha(q.o), box = $('sOpts'); box.innerHTML = '';
+  ops.forEach(function(o, k){ var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.innerHTML = '<span class="l">' + L[k] + ')</span><span>' + o.t + '</span>'; b.addEventListener('click', function(){ responde(q, ops, k); }); box.appendChild(b); });
+}
+function responde(q, ops, k){
+  if($('sProx').disabled === false) return;
+  var ok = !!ops[k].ok;
+  [].forEach.call($('sOpts').children, function(b, j){ b.disabled = true; if(ops[j].ok) b.classList.add('certa'); else if(j === k) b.classList.add('errada'); });
+  var l = itens(), it = l.filter(function(x){ return x.id === q.id; })[0];
+  if(it){
+    if(ok){ it.n = (it.n || 0) + 1; if(it.n >= INTERVALOS.length){ l.splice(l.indexOf(it), 1); dominadas++; lsSet('rev:dominadas', dominadas); } else it.due = Date.now() + INTERVALOS[it.n] * 864e5; }
+    else { it.n = 0; it.e = (it.e || 1) + 1; it.due = Date.now() + 864e5; }
+    salvar(l);
+  }
+  var s = $('sSol'); s.innerHTML = (ok ? '<b>✔ Correto!</b> ' + (it && it.n < INTERVALOS.length && l.indexOf(it) >= 0 ? 'Volta ' + quando(it.due) + '.' : 'Questão dominada! 🎉') : '<b>✘ Não foi dessa vez.</b> Ela volta amanhã.') + '<br>' + (q.sol || '') + '<div class="hint" style="margin-top:6px"><a href="' + q.k + '">Estudar: ' + (q.t || 'aula') + '</a></div>'; s.style.display = '';
+  $('sProx').disabled = false;
+}
+$('sProx').addEventListener('click', function(){ if(idx < fila.length - 1){ idx++; mostra(); } else { $('sessao').style.display = 'none'; resumo(); window.scrollTo(0, 0); } });
+resumo();
+</script>
+<script>if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }</script>
+</body>
+</html>

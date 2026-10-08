@@ -191,7 +191,7 @@ function deck(c) {
   h = h.replace('Educação Financeira · Jogos de Azar', 'Educação Financeira · ' + c.brand);
   h = h.replace('3ª Série do Ensino Médio · Trimestre 3', c.aulas + ' · ' + (c.serie || '2ª Série') + ' do Ensino Médio · Trimestre 3');
   h = h.replace('</head>', '</head>');
-  h = h.replace('<link rel="preconnect" href="https://fonts.googleapis.com">', CSS_EXTRA + '\n<link rel="preconnect" href="https://fonts.googleapis.com">');
+  h = h.replace('<link href="', () => CSS_EXTRA + '\n<link href="');
   const slides = c.slides.join('\n');
   const n = c.slides.length;
   let t = DECK_TAIL.replace(/1 \/ \d+<\/div>/, `1 / ${n}</div>`).replace('theme-pref-ef-jogos', 'theme-pref-ef2-' + c.key);
@@ -254,7 +254,7 @@ function actHead(c) {
   let h = ACT_HEAD.replace(/<title>[^<]*<\/title>/, `<title>${c.title}</title>`);
   h = h.replace('Educação Financeira · Jogos de Azar · Atividade extra', 'Educação Financeira · ' + c.brand + ' · Atividade extra');
   h = h.replace('Acertos: <span id="scoreVal">0</span>/4', c.pill || 'Acertos: <span id="scoreVal">0</span>/' + (c.questions ? c.questions.length : 0));
-  h = h.replace('<link rel="preconnect" href="https://fonts.googleapis.com">', CSS_EXTRA + ACT_CSS + '\n<link rel="preconnect" href="https://fonts.googleapis.com">');
+  h = h.replace('<link href="', () => CSS_EXTRA + ACT_CSS + '\n<link href="');
   return h;
 }
 const ACT_CSS = `<style>

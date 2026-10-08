@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulados — Prof. Eduardo</title>
+<meta name="description" content="Monte simulados com questões das aulas e atividades: por matéria, ano e tema, com correção e revisão dos erros.">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<link rel="stylesheet" href="app/estudo.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="index.html">Catálogo</a><a href="revisao.html">Revisão</a><a href="simulado.html" style="color:var(--primary)">Simulados</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:28px 20px 70px;">
+  <h1 class="disp" style="margin:0 0 6px;font-size:clamp(1.6rem,3.6vw,2.3rem);">Simulados</h1>
+  <p class="hint" style="margin:0 0 18px;">Questões das aulas e das atividades, misturadas por matéria, ano e tema. Os erros vão automaticamente para a <a href="revisao.html">Revisão</a>.</p>
+
+  <section id="cfg" class="card">
+    <div class="sec-label" style="margin-top:0">Matéria e ano</div>
+    <div class="chips" id="fGrupos"></div>
+    <div class="sec-label">Tipo de questão</div>
+    <div class="chips" id="fTipo">
+      <button class="chip on" data-v="todas" type="button">Todas</button>
+      <button class="chip" data-v="enem" type="button">Estilo ENEM</button>
+      <button class="chip" data-v="aula" type="button">Das aulas (quiz)</button>
+    </div>
+    <div class="sec-label">Quantidade</div>
+    <div class="chips" id="fN"><button class="chip" data-v="5" type="button">5</button><button class="chip on" data-v="10" type="button">10</button><button class="chip" data-v="15" type="button">15</button><button class="chip" data-v="20" type="button">20</button><button class="chip" data-v="30" type="button">30</button></div>
+    <div class="sec-label">Modo e tempo</div>
+    <div class="chips" id="fModo">
+      <button class="chip on" data-v="prova" type="button">Prova (correção só no fim)</button>
+      <button class="chip" data-v="treino" type="button">Treino (correção na hora)</button>
+    </div>
+    <div class="chips" id="fTempo">
+      <button class="chip on" data-v="0" type="button">Sem limite de tempo</button>
+      <button class="chip" data-v="2" type="button">2 min por questão</button>
+      <button class="chip" data-v="3" type="button">3 min por questão</button>
+    </div>
+    <div class="row" style="margin-top:6px;gap:14px;align-items:center;">
+      <button class="btn" id="iniciar" type="button">Começar simulado</button>
+      <span class="hint" id="disp"></span>
+    </div>
+  </section>
+
+  <section id="prova" class="card" style="display:none;">
+    <div class="qmeta"><span id="pPos"></span><span id="pTempo"></span></div>
+    <div class="bar" style="margin:8px 0 14px;"><span id="pBar" style="width:0%"></span></div>
+    <div class="qbox" id="pQ"></div>
+    <div id="pOpts"></div>
+    <div class="sol" id="pSol" style="display:none;"></div>
+    <div class="row" style="margin-top:14px;justify-content:space-between;">
+      <span class="hint" id="pUn"></span>
+      <button class="btn" id="pProx" type="button" disabled>Próxima</button>
+    </div>
+  </section>
+
+  <section id="res" style="display:none;"></section>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+iniciarThemeToggle('theme-pref-app');
+
+var $ = function(id){ return document.getElementById(id); };
+var BANCO = [], sel = { grupos: {}, tipo: 'todas', n: 10, modo: 'prova', tempo: 0 }, prova = null, timer = null;
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+function embaralha(a){ a = a.slice(); for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function tipoOk(q){ return sel.tipo === 'todas' || (sel.tipo === 'enem' ? q.tp === 'enem' : q.tp !== 'enem'); }
+function pool(){ return BANCO.filter(function(q){ return sel.grupos[q.mn + '|' + q.a] && tipoOk(q); }); }
+
+fetch('app/banco.json').then(function(r){ return r.json(); }).then(function(b){
+  BANCO = b.questoes;
+  var cont = {}; BANCO.forEach(function(q){ var g = q.mn + '|' + q.a; cont[g] = (cont[g] || 0) + 1; });
+  var box = $('fGrupos');
+  Object.keys(cont).sort().forEach(function(g, i){
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'chip on'; sel.grupos[g] = true;
+    btn.innerHTML = g.replace('|', ' · ') + '<small>' + cont[g] + '</small>';
+    btn.addEventListener('click', function(){ sel.grupos[g] = !sel.grupos[g]; btn.classList.toggle('on', sel.grupos[g]); atualiza(); });
+    box.appendChild(btn);
+  });
+  atualiza();
+}).catch(function(){ $('disp').textContent = 'Não foi possível carregar o banco de questões (abra o site pelo endereço publicado, não pelo arquivo).'; });
+
+function grupoChips(id, chave, num){ [].forEach.call($(id).querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ [].forEach.call($(id).querySelectorAll('.chip'), function(x){ x.classList.toggle('on', x === b); }); sel[chave] = num ? +b.dataset.v : b.dataset.v; atualiza(); }); }); }
+grupoChips('fTipo', 'tipo'); grupoChips('fN', 'n', true); grupoChips('fModo', 'modo'); grupoChips('fTempo', 'tempo', true);
+function atualiza(){ var n = pool().length; $('disp').textContent = n + ' questões disponíveis com esses filtros' + (n < sel.n ? ' — o simulado terá ' + n : ''); $('iniciar').disabled = n < 1; }
+
+$('iniciar').addEventListener('click', function(){
+  var qs = embaralha(pool()).slice(0, sel.n).map(function(q){ return Object.assign({}, q, { o: embaralha(q.o) }); });
+  if(!qs.length) return;
+  prova = { qs: qs, i: 0, resp: [], t0: Date.now(), tq: sel.tempo * 60, rest: 0 };
+  $('cfg').style.display = 'none'; $('res').style.display = 'none'; $('prova').style.display = ''; mostra();
+});
+
+function mostra(){
+  var q = prova.qs[prova.i], L = 'ABCDE';
+  $('pPos').textContent = 'Questão ' + (prova.i + 1) + ' de ' + prova.qs.length; $('pBar').style.width = (prova.i / prova.qs.length * 100) + '%';
+  $('pUn').textContent = q.mn + ' · ' + q.a + ' · ' + q.u; $('pQ').innerHTML = q.q; $('pSol').style.display = 'none'; $('pProx').disabled = true; $('pProx').textContent = prova.i === prova.qs.length - 1 ? 'Finalizar' : 'Próxima';
+  var op = $('pOpts'); op.innerHTML = '';
+  q.o.forEach(function(o, k){ var b = document.createElement('button'); b.type = 'button'; b.className = 'opt'; b.innerHTML = '<span class="l">' + L[k] + ')</span><span>' + o.t + '</span>'; b.addEventListener('click', function(){ escolhe(k); }); op.appendChild(b); });
+  clearInterval(timer); $('pTempo').textContent = '';
+  if(prova.tq){ prova.rest = prova.tq; timer = setInterval(function(){ prova.rest--; $('pTempo').textContent = '⏱ ' + ('0' + Math.floor(prova.rest / 60)).slice(-2) + ':' + ('0' + (prova.rest % 60)).slice(-2); if(prova.rest <= 0){ clearInterval(timer); if(prova.resp[prova.i] === undefined){ prova.resp[prova.i] = -1; if(sel.modo === 'treino') revela(); $('pProx').disabled = false; } } }, 1000); }
+}
+function escolhe(k){
+  if(prova.resp[prova.i] !== undefined && sel.modo === 'treino') return;
+  prova.resp[prova.i] = k;
+  [].forEach.call($('pOpts').children, function(b, j){ b.classList.toggle('sel', j === k); });
+  if(sel.modo === 'treino'){ revela(); }
+  $('pProx').disabled = false;
+}
+function revela(){
+  var q = prova.qs[prova.i], k = prova.resp[prova.i];
+  [].forEach.call($('pOpts').children, function(b, j){ b.disabled = true; b.classList.remove('sel'); if(q.o[j].ok) b.classList.add('certa'); else if(j === k) b.classList.add('errada'); });
+  var s = $('pSol'); s.innerHTML = (k >= 0 && q.o[k].ok ? '<b>✔ Correto!</b> ' : '<b>✘ ' + (k < 0 ? 'Tempo esgotado.' : 'Não foi essa.') + '</b> ') + (q.sol || ''); s.style.display = '';
+}
+$('pProx').addEventListener('click', function(){ if(prova.i < prova.qs.length - 1){ prova.i++; mostra(); } else fim(); });
+
+function fim(){
+  clearInterval(timer); $('prova').style.display = 'none';
+  var ac = 0, porU = {}, erros = [];
+  prova.qs.forEach(function(q, i){ var k = prova.resp[i], ok = k !== undefined && k >= 0 && q.o[k].ok; if(ok) ac++; var u = q.mn + ' · ' + q.a + ' · ' + q.u; porU[u] = porU[u] || { a: 0, t: 0 }; porU[u].t++; if(ok) porU[u].a++; else erros.push(i); });
+  // erros → revisão
+  try{
+    var lista = JSON.parse(lsGet('rev:itens') || '[]');
+    erros.forEach(function(i){ var q = prova.qs[i], id = 'b' + q.id, f = lista.filter(function(x){ return x.id === id; })[0];
+      if(f){ f.n = 0; f.due = Date.now() + 864e5; f.e = (f.e || 1) + 1; } else lista.push({ id: id, k: q.k, t: q.t, q: q.q, o: q.o, sol: q.sol, n: 0, due: Date.now() + 864e5, e: 1, a: Date.now() }); });
+    lsSet('rev:itens', JSON.stringify(lista.slice(-250)));
+    var h = JSON.parse(lsGet('sim:hist') || '[]'); h.push({ d: Date.now(), n: prova.qs.length, a: ac }); lsSet('sim:hist', JSON.stringify(h.slice(-40)));
+  }catch(e){}
+  var pct = Math.round(ac / prova.qs.length * 100), L = 'ABCDE';
+  var tempo = Math.round((Date.now() - prova.t0) / 1000);
+  var h2 = '<div class="card"><div class="row between" style="align-items:flex-end;"><div><div class="sec-label" style="margin:0">Resultado</div><div class="big">' + ac + '/' + prova.qs.length + ' <span style="font-size:1.2rem;color:var(--ink-soft)">(' + pct + '%)</span></div></div><div class="hint">Tempo total: ' + Math.floor(tempo / 60) + ' min ' + (tempo % 60) + ' s</div></div>' +
+    '<div class="bar" style="margin:12px 0;"><span style="width:' + pct + '%;background:' + (pct >= 70 ? 'var(--success)' : pct >= 50 ? 'var(--growth)' : 'var(--danger)') + '"></span></div>' +
+    '<p style="margin:0">' + (pct >= 80 ? 'Excelente! Você domina esses temas.' : pct >= 60 ? 'Bom resultado — revise os erros abaixo.' : 'Vale reforçar: refaça as aulas indicadas e use a Revisão.') + '</p></div>';
+  h2 += '<div class="card"><div class="sec-label" style="margin-top:0">Desempenho por tema</div><table class="tbl"><tr><th>Tema</th><th>Acertos</th></tr>' + Object.keys(porU).map(function(u){ var x = porU[u]; return '<tr><td>' + u + '</td><td><b>' + x.a + '/' + x.t + '</b></td></tr>'; }).join('') + '</table></div>';
+  if(erros.length){ h2 += '<div class="card"><div class="sec-label" style="margin-top:0">Questões para revisar (' + erros.length + ')</div>' + erros.map(function(i){ var q = prova.qs[i], k = prova.resp[i]; var certa = q.o.map(function(o, j){ return o.ok ? L[j] + ') ' + o.t : ''; }).join(''); return '<div class="revi"><div class="qbox">' + q.q + '</div><p style="margin:.4em 0"><span style="color:var(--danger)">Sua resposta: ' + (k >= 0 ? L[k] + ') ' + q.o[k].t : '—') + '</span><br><span style="color:var(--success)">Correta: ' + certa + '</span></p>' + (q.sol ? '<div class="sol">' + q.sol + '</div>' : '') + '<div class="hint" style="margin-top:6px"><a href="' + q.k + '">Estudar: ' + q.t + '</a></div></div>'; }).join('') + '</div>'; }
+  h2 += '<div class="row no-print" style="gap:10px;margin-top:6px;"><button class="btn" id="novo" type="button">Novo simulado</button>' + (erros.length ? '<a class="btn secondary" href="revisao.html" style="text-decoration:none;display:inline-block;">Ir para a Revisão</a>' : '') + '<button class="btn secondary" id="imp" type="button">Imprimir resultado</button></div>';
+  var r = $('res'); r.innerHTML = h2; r.style.display = '';
+  $('novo').addEventListener('click', function(){ r.style.display = 'none'; $('cfg').style.display = ''; atualiza(); window.scrollTo(0, 0); });
+  $('imp').addEventListener('click', function(){ window.print(); });
+  window.scrollTo(0, 0);
+}
+</script>
+<script>if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }</script>
+</body>
+</html>
