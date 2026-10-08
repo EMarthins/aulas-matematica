@@ -383,10 +383,286 @@ export const MATERIAS = [
         ]
       }
     ]
+  },
+  // >>> ena-profmat
+  {
+    id: 'ena-profmat',
+    nome: 'ENA · PROFMAT',
+    icon: 'sigma',
+    lede: 'Preparação para o Exame Nacional de Acesso ao PROFMAT (ENA): aulas completas em slides, guias visuais e atividades de cada tópico cobrado — da porcentagem à geometria espacial —, com as questões que já caíram em 2025 e 2026 resolvidas passo a passo.',
+    CATALOG: [
+      {
+        ano: 'Parte 1 · Aritmética e Lógica',
+        trimestres: [
+          {
+            nome: 'Capítulos 1 a 4',
+            unidades: [
+              {
+                titulo: 'Porcentagem, Razão e Proporção',
+                accent: 'growth',
+                icon: 'percent',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem: pense em fatores', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/aula-1-porcentagem.html' },
+                  { tipo:'Aula 2', titulo:'Razão, proporção e taxas de trabalho', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/aula-2-razao-proporcao-taxas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Porcentagem, Razão e Proporção', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Porcentagem e proporção no estilo ENA', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Direta, inversa ou nenhuma?', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Porcentagem e taxas: trilha de desafios', arquivo:'ena-profmat/01-porcentagem-razao-proporcao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Números Inteiros',
+                accent: 'primary',
+                icon: 'numbers',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Restos, divisibilidade, MMC e MDC', arquivo:'ena-profmat/02-numeros-inteiros/aula-1-restos-divisibilidade-mmc-mdc.html' },
+                  { tipo:'Aula 2', titulo:'Paridade, algarismos e somas de inteiros', arquivo:'ena-profmat/02-numeros-inteiros/aula-2-paridade-algarismos-somas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Números Inteiros', arquivo:'ena-profmat/02-numeros-inteiros/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Números inteiros no estilo ENA', arquivo:'ena-profmat/02-numeros-inteiros/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de resoluções erradas', arquivo:'ena-profmat/02-numeros-inteiros/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Inteiros: trilha de desafios', arquivo:'ena-profmat/02-numeros-inteiros/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Conjuntos e Contagem de Elementos',
+                accent: 'decay',
+                icon: 'venn',
+                itens: [
+                  { tipo:'Aula', titulo:'Conjuntos e contagem de elementos', arquivo:'ena-profmat/03-conjuntos-contagem/aula-conjuntos-contagem.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Conjuntos e Contagem de Elementos', arquivo:'ena-profmat/03-conjuntos-contagem/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Conjuntos no estilo ENA', arquivo:'ena-profmat/03-conjuntos-contagem/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos conjuntos', arquivo:'ena-profmat/03-conjuntos-contagem/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Contagem: trilha de desafios', arquivo:'ena-profmat/03-conjuntos-contagem/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Lógica e Demonstração',
+                accent: 'primary',
+                icon: 'logic',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Lógica: conectivos e negações', arquivo:'ena-profmat/04-logica-demonstracao/aula-1-conectivos-negacoes.html' },
+                  { tipo:'Aula 2', titulo:'Contraexemplos, eliminação e demonstração', arquivo:'ena-profmat/04-logica-demonstracao/aula-2-contraexemplos-eliminacao-demonstracao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Lógica e Demonstração', arquivo:'ena-profmat/04-logica-demonstracao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Lógica no estilo ENA', arquivo:'ena-profmat/04-logica-demonstracao/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Monte a demonstração', arquivo:'ena-profmat/04-logica-demonstracao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Lógica: trilha de desafios', arquivo:'ena-profmat/04-logica-demonstracao/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        ano: 'Parte 2 · Álgebra e Funções',
+        trimestres: [
+          {
+            nome: 'Capítulos 5 a 8',
+            unidades: [
+              {
+                titulo: 'Álgebra: Produtos Notáveis, Radicais e Módulo',
+                accent: 'primary',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Produtos notáveis e fatoração', arquivo:'ena-profmat/05-algebra/aula-1-produtos-notaveis-fatoracao.html' },
+                  { tipo:'Aula 2', titulo:'Potências, radicais, módulo e ordem', arquivo:'ena-profmat/05-algebra/aula-2-potencias-radicais-modulo-ordem.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Álgebra: Produtos Notáveis, Radicais e Módulo', arquivo:'ena-profmat/05-algebra/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Álgebra no estilo ENA', arquivo:'ena-profmat/05-algebra/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Caça-erros de álgebra', arquivo:'ena-profmat/05-algebra/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Álgebra: trilha de desafios', arquivo:'ena-profmat/05-algebra/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Equações, Inequações e Sistemas',
+                accent: 'growth',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equação do 2º grau, Girard e sinal', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/aula-1-segundo-grau-girard-sinal.html' },
+                  { tipo:'Aula 2', titulo:'Fracionárias, modulares, irracionais e sistemas', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/aula-2-fracionarias-modulares-irracionais-sistemas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Equações, Inequações e Sistemas', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Equações e inequações no estilo ENA', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual método resolve?', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Equações: trilha de desafios', arquivo:'ena-profmat/06-equacoes-inequacoes-sistemas/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Funções Afim e Quadrática',
+                accent: 'primary',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função afim e regiões do plano', arquivo:'ena-profmat/07-funcoes-afim-quadratica/aula-1-funcao-afim-regioes.html' },
+                  { tipo:'Aula 2', titulo:'Função quadrática, vértice e otimização', arquivo:'ena-profmat/07-funcoes-afim-quadratica/aula-2-funcao-quadratica-otimizacao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Funções Afim e Quadrática', arquivo:'ena-profmat/07-funcoes-afim-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Funções no estilo ENA', arquivo:'ena-profmat/07-funcoes-afim-quadratica/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: funções', arquivo:'ena-profmat/07-funcoes-afim-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Funções: trilha de desafios', arquivo:'ena-profmat/07-funcoes-afim-quadratica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Sequências: PA, PG e Somas',
+                accent: 'growth',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Progressão aritmética e de Sₙ para aₙ', arquivo:'ena-profmat/08-sequencias-pa-pg/aula-1-progressao-aritmetica.html' },
+                  { tipo:'Aula 2', titulo:'Progressão geométrica e sequências recursivas', arquivo:'ena-profmat/08-sequencias-pa-pg/aula-2-progressao-geometrica-recursivas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Sequências: PA, PG e Somas', arquivo:'ena-profmat/08-sequencias-pa-pg/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Sequências no estilo ENA', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória das fórmulas de sequências', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Sequências: trilha de desafios', arquivo:'ena-profmat/08-sequencias-pa-pg/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        ano: 'Parte 3 · Contagem e Dados',
+        trimestres: [
+          {
+            nome: 'Capítulos 9 a 11',
+            unidades: [
+              {
+                titulo: 'Análise Combinatória',
+                accent: 'primary',
+                icon: 'combo',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Princípio multiplicativo, arranjo e combinação', arquivo:'ena-profmat/09-analise-combinatoria/aula-1-principios-arranjo-permutacao-combinacao.html' },
+                  { tipo:'Aula 2', titulo:'Anagramas, mesa redonda e outros padrões', arquivo:'ena-profmat/09-analise-combinatoria/aula-2-anagramas-circular-complementar-binomio.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Análise Combinatória', arquivo:'ena-profmat/09-analise-combinatoria/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Combinatória no estilo ENA', arquivo:'ena-profmat/09-analise-combinatoria/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual técnica de contagem?', arquivo:'ena-profmat/09-analise-combinatoria/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Contagem: trilha de desafios', arquivo:'ena-profmat/09-analise-combinatoria/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Probabilidade',
+                accent: 'decay',
+                icon: 'dice',
+                itens: [
+                  { tipo:'Aula', titulo:'Probabilidade: contagem e fração', arquivo:'ena-profmat/10-probabilidade/aula-probabilidade.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Probabilidade', arquivo:'ena-profmat/10-probabilidade/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Probabilidade no estilo ENA', arquivo:'ena-profmat/10-probabilidade/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: probabilidade', arquivo:'ena-profmat/10-probabilidade/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Probabilidade: trilha de desafios', arquivo:'ena-profmat/10-probabilidade/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Estatística Descritiva',
+                accent: 'growth',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aula', titulo:'Média, mediana, moda e dispersão', arquivo:'ena-profmat/11-estatistica/aula-estatistica-descritiva.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Estatística Descritiva', arquivo:'ena-profmat/11-estatistica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Estatística no estilo ENA', arquivo:'ena-profmat/11-estatistica/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de estatística', arquivo:'ena-profmat/11-estatistica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Estatística: trilha de desafios', arquivo:'ena-profmat/11-estatistica/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        ano: 'Parte 4 · Geometria',
+        trimestres: [
+          {
+            nome: 'Capítulos 12 a 14',
+            unidades: [
+              {
+                titulo: 'Geometria Plana',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ângulos, semelhança e triângulos retângulos', arquivo:'ena-profmat/12-geometria-plana/aula-1-angulos-semelhanca-triangulos.html' },
+                  { tipo:'Aula 2', titulo:'Áreas e razões de áreas', arquivo:'ena-profmat/12-geometria-plana/aula-2-areas-razoes-de-areas.html' },
+                  { tipo:'Aula 3', titulo:'Círculo e truques para gabaritar', arquivo:'ena-profmat/12-geometria-plana/aula-3-circulo-truques.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Geometria Plana', arquivo:'ena-profmat/12-geometria-plana/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Geometria plana no estilo ENA', arquivo:'ena-profmat/12-geometria-plana/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual ferramenta resolve?', arquivo:'ena-profmat/12-geometria-plana/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Geometria plana: trilha de desafios', arquivo:'ena-profmat/12-geometria-plana/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Trigonometria',
+                accent: 'decay',
+                icon: 'wave',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Trigonometria no triângulo retângulo', arquivo:'ena-profmat/13-trigonometria/aula-1-razoes-notaveis-identidades.html' },
+                  { tipo:'Aula 2', titulo:'Triângulo qualquer, radianos e fórmulas', arquivo:'ena-profmat/13-trigonometria/aula-2-triangulo-qualquer-radianos-formulas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Trigonometria', arquivo:'ena-profmat/13-trigonometria/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Trigonometria no estilo ENA', arquivo:'ena-profmat/13-trigonometria/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória da trigonometria', arquivo:'ena-profmat/13-trigonometria/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Trigonometria: trilha de desafios', arquivo:'ena-profmat/13-trigonometria/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Geometria Espacial',
+                accent: 'success',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aula', titulo:'Volumes, poliedros e recipiente inclinado', arquivo:'ena-profmat/14-geometria-espacial/aula-volumes-poliedros.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Geometria Espacial', arquivo:'ena-profmat/14-geometria-espacial/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Geometria espacial no estilo ENA', arquivo:'ena-profmat/14-geometria-espacial/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: espacial', arquivo:'ena-profmat/14-geometria-espacial/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Espacial: trilha de desafios', arquivo:'ena-profmat/14-geometria-espacial/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        ano: 'Parte 5 · Extras e Estratégia',
+        trimestres: [
+          {
+            nome: 'Capítulos 15 e 16',
+            unidades: [
+              {
+                titulo: 'Tópicos Complementares (EXTRA)',
+                accent: 'primary',
+                icon: 'planet',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Geometria analítica, exponencial e logaritmo', arquivo:'ena-profmat/15-topicos-complementares/aula-1-analitica-exponencial-logaritmo.html' },
+                  { tipo:'Aula 2', titulo:'Polinômios, complexos, matrizes e financeira', arquivo:'ena-profmat/15-topicos-complementares/aula-2-polinomios-complexos-matrizes-financeira.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Tópicos Complementares (EXTRA)', arquivo:'ena-profmat/15-topicos-complementares/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Tópicos extras no estilo ENA', arquivo:'ena-profmat/15-topicos-complementares/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos tópicos extras', arquivo:'ena-profmat/15-topicos-complementares/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Tópicos extras: trilha de desafios', arquivo:'ena-profmat/15-topicos-complementares/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Estratégia de Prova e Folha de Fórmulas',
+                accent: 'growth',
+                icon: 'flag',
+                itens: [
+                  { tipo:'Aula', titulo:'Estratégia, tempo e plano de estudo', arquivo:'ena-profmat/16-estrategia-de-prova/aula-estrategia-de-prova.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Estratégia de Prova e Folha de Fórmulas', arquivo:'ena-profmat/16-estrategia-de-prova/infografico.html' },
+                  { tipo:'Atividade', sub:'ENA', titulo:'Simulado relâmpago no estilo ENA', arquivo:'ena-profmat/16-estrategia-de-prova/atividade-ena.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Em qual capítulo cai?', arquivo:'ena-profmat/16-estrategia-de-prova/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Trilha mista: um pouco de tudo', arquivo:'ena-profmat/16-estrategia-de-prova/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
+  // <<< ena-profmat
 ];
 
 export const ICONS = {
+  'planet': '<circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="9.5" ry="3.5" transform="rotate(-25 12 12)"/>',
+  'flag': '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
+  'cube': '<path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path d="M12 12 4 7.5M12 12l8-4.5M12 12v9"/>',
+  'bars': '<path d="M4 20V4M4 20h16"/><rect x="7" y="12" width="3" height="8"/><rect x="12" y="8" width="3" height="12"/><rect x="17" y="14" width="3" height="6"/>',
+  'pie': '<circle cx="12" cy="12" r="8.5"/><path d="M12 12V3.5M12 12l6 6"/>',
+  'combo': '<circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M8 6h8M7.3 7.8 11 16.2M16.7 7.8 13 16.2"/>',
+  'parabola': '<path d="M4 20V4M4 20h16"/><path d="M7 5C9 18 15 18 17 5"/>',
+  'algebra': '<path d="M4 7l6 10M10 7 4 17M14 10h7M14 15h7"/>',
+  'numbers': '<path d="M9 4 7 20M17 4l-2 16M4 9h16M3.5 15h16"/>',
+  'logic': '<rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M7.5 12.5l3 3 6-7"/>',
+  'venn': '<circle cx="9.5" cy="12" r="5.5"/><circle cx="14.5" cy="12" r="5.5"/>',
+  'percent': '<circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/><path d="M19 5 5 19"/>',
   'curve-up': '<path d="M4 19 C 9,17 13,11 17,6 L20,3"/><path d="M13 3h7v7" fill="none"/>',
   'curve-log': '<path d="M4 17 C 8,17 10,15 12,11 C 14,7 17,5 20,5"/>',
   'grid': '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',

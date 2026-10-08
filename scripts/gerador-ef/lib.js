@@ -169,7 +169,15 @@ const COMMON_EXTRA = `
 })();
 </script>
 `;
-const CSS_EXTRA = `<style>
+const MATH_CSS = `<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style>`;
+const CSS_EXTRA = MATH_CSS + `<style>
   .mq{ margin-top:12px; }
   .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
   .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
@@ -188,13 +196,13 @@ const CSS_EXTRA = `<style>
 function deck(c) {
   let h = DECK_HEAD;
   h = h.replace(/<title>[^<]*<\/title>/, `<title>${c.title}</title>`);
-  h = h.replace('Educação Financeira · Jogos de Azar', 'Educação Financeira · ' + c.brand);
-  h = h.replace('3ª Série do Ensino Médio · Trimestre 3', c.aulas + ' · ' + (c.serie || '2ª Série') + ' do Ensino Médio · Trimestre 3');
+  h = h.replace('Educação Financeira · Jogos de Azar', (c.area || 'Educação Financeira') + ' · ' + c.brand);
+  h = h.replace('3ª Série do Ensino Médio · Trimestre 3', c.meta || (c.aulas + ' · ' + (c.serie || '2ª Série') + ' do Ensino Médio · Trimestre 3'));
   h = h.replace('</head>', '</head>');
   h = h.replace('<link href="', () => CSS_EXTRA + '\n<link href="');
   const slides = c.slides.join('\n');
   const n = c.slides.length;
-  let t = DECK_TAIL.replace(/1 \/ \d+<\/div>/, `1 / ${n}</div>`).replace('theme-pref-ef-jogos', 'theme-pref-ef2-' + c.key);
+  let t = DECK_TAIL.replace(/1 \/ \d+<\/div>/, `1 / ${n}</div>`).replace('theme-pref-ef-jogos', 'theme-pref-' + (c.keyp || 'ef2') + '-' + c.key);
   const extra = (c.extra ? `\n<script>\n(function(){\n${c.extra}\n})();\n</script>\n` : '') + COMMON_EXTRA;
   t = t.replace('<script id="layout-v2-js">', extra + '\n<script id="layout-v2-js">');
   // pontuação máxima do quiz é informada pelo próprio slide; o JS de progresso conta os .qz
@@ -213,7 +221,7 @@ function info(c) {
       <path d="${c.curve || 'M20,160 C 120,150 200,120 280,90 C 360,60 420,40 480,24'}" fill="none" stroke="var(--${c.color || 'primary'})" stroke-width="5" stroke-linecap="round"/>
       <circle cx="480" cy="${(((c.curve || '').match(/(\d+(?:\.\d+)?)\s*$/) || [0, 24])[1])}" r="6" fill="var(--${c.color || 'primary'})"/>
     </svg>
-    <div class="eyebrow">Educação Financeira · 2ª série · ${c.aulas}</div>
+    <div class="eyebrow">${c.eyebrowTop || ("Educação Financeira · 2ª série · " + c.aulas)}</div>
     <h1>${c.h1}</h1>
     <p class="lede">${c.lede}</p>
     <div class="badges">
@@ -227,14 +235,14 @@ ${c.sections.join('\n')}
 ${(c.wide || []).join('\n')}
 
   <div class="footer">
-    <p>Educação Financeira · 2ª série do Ensino Médio · ${c.aulas} · ${c.brand}</p>
+    <p>${c.footerTop || ("Educação Financeira · 2ª série do Ensino Médio · " + c.aulas + " · " + c.brand)}</p>
     <p>${c.fontes}</p>
   </div>
 
 </div>
 
 `;
-  let t = INFO_TAIL.replace('theme-pref-ef-jogos-info', 'theme-pref-ef2-info-' + c.key);
+  let t = INFO_TAIL.replace('theme-pref-ef-jogos-info', 'theme-pref-' + (c.keyp || 'ef2') + '-info-' + c.key);
   h = h.replace(/\.masthead h1 span\{ color:var\(--danger\); \}/, `.masthead h1 span{ color:var(--${c.color || 'primary'}); }`);
   return h + body + t;
 }
@@ -252,7 +260,7 @@ ${body}
 // ---------- atividades ----------
 function actHead(c) {
   let h = ACT_HEAD.replace(/<title>[^<]*<\/title>/, `<title>${c.title}</title>`);
-  h = h.replace('Educação Financeira · Jogos de Azar · Atividade extra', 'Educação Financeira · ' + c.brand + ' · Atividade extra');
+  h = h.replace('Educação Financeira · Jogos de Azar · Atividade extra', (c.area || 'Educação Financeira') + ' · ' + c.brand + ' · Atividade extra');
   h = h.replace('Acertos: <span id="scoreVal">0</span>/4', c.pill || 'Acertos: <span id="scoreVal">0</span>/' + (c.questions ? c.questions.length : 0));
   h = h.replace('<link href="', () => CSS_EXTRA + ACT_CSS + '\n<link href="');
   return h;
@@ -271,14 +279,14 @@ const ACT_CSS = `<style>
   .hintbox{ display:none; margin-top:8px; font-size:.88rem; color:var(--ink-soft); border-left:3px solid var(--decay); padding-left:10px; }
   .hintbox.show{ display:block; }
 </style>`;
-const THEME_JS = key => `<script>
+const THEME_JS = (key, keyp) => `<script>
 (function(){
   var root = document.documentElement;
   var btn = document.getElementById('themeToggle');
   if(!btn) return;
   var sunIcon = btn.querySelector('.i-sun');
   var moonIcon = btn.querySelector('.i-moon');
-  var KEY = 'theme-pref-ef2-${key}';
+  var KEY = 'theme-pref-${keyp || "ef2"}-${key}';
   function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
   function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
   function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
@@ -327,7 +335,7 @@ function enemPage(c) {
   const body = `
 <div class="app">
   <div class="topbar">
-    <div class="brand"><span class="dot"></span> Educação Financeira · ${c.brand} · Atividade extra</div>
+    <div class="brand"><span class="dot"></span> ${c.area || "Educação Financeira"} · ${c.brand} · Atividade extra</div>
     <div class="score-pill">Acertos: <span id="scoreVal">0</span>/${qs.length}</div>
   </div>
 
@@ -347,7 +355,7 @@ ${cards}
   </div>
 </div>
 
-${THEME_JS(c.key)}
+${THEME_JS(c.key, c.keyp)}
 
 <script>
 (function(){
@@ -410,7 +418,7 @@ function trilhaPage(c) {
   const body = `
 <div class="app">
   <div class="topbar">
-    <div class="brand"><span class="dot"></span> Educação Financeira · ${c.brand} · Atividade extra</div>
+    <div class="brand"><span class="dot"></span> ${c.area || "Educação Financeira"} · ${c.brand} · Atividade extra</div>
     <div class="score-pill">Etapas: <span id="scoreVal">0</span>/${ps.length}</div>
   </div>
 
@@ -426,7 +434,7 @@ ${steps}
   </div>
 </div>
 
-${THEME_JS(c.key)}
+${THEME_JS(c.key, c.keyp)}
 
 <script>
 (function(){
@@ -478,7 +486,7 @@ function freePage(c) {
   const body = `
 <div class="app">
   <div class="topbar">
-    <div class="brand"><span class="dot"></span> Educação Financeira · ${c.brand} · Atividade extra</div>
+    <div class="brand"><span class="dot"></span> ${c.area || "Educação Financeira"} · ${c.brand} · Atividade extra</div>
     <div class="score-pill">${c.pill}</div>
   </div>
 
@@ -488,7 +496,7 @@ function freePage(c) {
 ${c.body}
 </div>
 
-${THEME_JS(c.key)}
+${THEME_JS(c.key, c.keyp)}
 
 <script>
 (function(){
@@ -502,6 +510,8 @@ ${HOOK_JS}
 }
 
 function write(rel, content) {
+  const depth = rel.split('/').length - 1;
+  if (depth !== 4) content = content.split('../../../../').join('../'.repeat(depth));
   const f = path.join(SITE, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
   fs.writeFileSync(f, content, 'utf8');

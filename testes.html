@@ -24,6 +24,7 @@ const $ = id => document.getElementById(id);
 const itens = [];
 MATERIAS.forEach(m => m.CATALOG.forEach(a => a.trimestres.forEach(t => t.unidades.forEach(u => u.itens.forEach(i => itens.push(Object.assign({ unidade: u.titulo }, i)))))));
 
+const PQ = new URLSearchParams(location.search); const QF = PQ.get('q');
 async function testa(it, w, h){
   const out = { falhas: [], avisos: [], info: [] };
   const f = document.createElement('iframe'); f.setAttribute('sandbox', 'allow-same-origin allow-scripts'); f.style.cssText = `width:${w}px;height:${h}px;border:0`;
@@ -56,6 +57,9 @@ async function testa(it, w, h){
     }
     const tr = [...d.querySelectorAll('.tr-step')];
     if(tr.length){ const src = await (await fetch(it.arquivo)).text(); const m = src.match(/var DATA = (\[.*?\]);/); if(m){ const data = JSON.parse(m[1]); for(let i = 0; i < tr.length; i++){ tr[i].querySelector('input').value = String(data[i].a).replace('.', ','); tr[i].querySelector('.chk').click(); await sleep(50); } if(!win.__rep || win.__rep[0] !== tr.length) out.falhas.push('trilha não concluiu com as respostas certas: ' + JSON.stringify(win.__rep)); else out.info.push('trilha ' + win.__rep.join('/')); } }
+    // widgets interativos: se um script falhou ao carregar, as saídas ficam vazias
+    const mortos = [...d.querySelectorAll('.wid')].filter(box => { const o = [...box.querySelectorAll('b.mono[id], .out[id], p.hint[id], div[id], p[id]')]; return o.length && o.every(e => !e.textContent.trim() && !e.children.length); });
+    if(mortos.length) out.falhas.push(mortos.length + ' widget(s) sem saída (erro de JavaScript ao carregar?)');
     if(erros.length) out.falhas.push('erros de JS: ' + erros.slice(0, 2).join(' | '));
   }catch(e){ out.falhas.push('não abriu: ' + e); }
   f.remove(); return out;
@@ -63,7 +67,7 @@ async function testa(it, w, h){
 
 $('go').addEventListener('click', async () => {
   const [w, h] = $('tam').value.split('x').map(Number), filtro = $('filtro').value;
-  const lista = itens.filter(i => !filtro || (filtro === 'aula' ? i.tipo.startsWith('Aula') : filtro === 'ativ' ? i.tipo === 'Atividade' : i.tipo === 'Guia'));
+  const lista = itens.filter(i => (!QF || i.arquivo.indexOf(QF) >= 0)).filter(i => !filtro || (filtro === 'aula' ? i.tipo.startsWith('Aula') : filtro === 'ativ' ? i.tipo === 'Atividade' : i.tipo === 'Guia'));
   const tb = document.querySelector('#tab tbody'); tb.innerHTML = ''; let f = 0, a = 0, ok = 0;
   $('go').disabled = true;
   for(let k = 0; k < lista.length; k++){
@@ -76,4 +80,5 @@ $('go').addEventListener('click', async () => {
   }
   $('prog').textContent = 'concluído'; $('go').disabled = false; window.RESULTADO = { ok, avisos: a, falhas: f };
 });
+if(PQ.get('run')) $('go').click();
 </script></body></html>

@@ -1,0 +1,270 @@
+<title>Verdadeiro ou falso: probabilidade</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 60px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula{ font-family:'JetBrains Mono','Courier New',monospace; }
+  button{ font:inherit; }
+  .app{ max-width:820px; margin:0 auto; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft); border-radius:999px; padding:.36em .9em; margin-bottom:14px; }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  h1.title{ font-size:clamp(1.7rem, 4vw, 2.6rem); font-weight:900; line-height:1.05; margin:0 0 10px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 18px; max-width:66ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 18px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; flex-wrap:wrap; gap:6px; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px; }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .qnum{ color:var(--primary); font-family:'Archivo',sans-serif; font-weight:900; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:800px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.3em 0; font-size:.92rem; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.82rem; font-variant-numeric:tabular-nums; margin-top:6px; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:6px 8px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; }
+  .score-pill{ background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); white-space:nowrap; }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  ::selection{ background:var(--primary-soft); }
+  .theme-toggle{ position:fixed; top:calc(14px + env(safe-area-inset-top, 0px)); right:calc(14px + env(safe-area-inset-right, 0px)); z-index:9999; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft); transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){ .theme-toggle{ width:40px; height:40px; } .theme-toggle svg{ width:18px; height:18px; } }
+</style>
+<style id="layout-v2">
+/* ===== layout v2: texto que cresce com a tela e contêiner mais largo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+.app{ max-width:min(60rem, 100%) !important; }
+.sheet{ max-width:min(78rem, 100%) !important; }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:11pt !important; }
+  body{ background:#fff !important; background-image:none !important; padding:0 !important; }
+  .theme-toggle{ display:none !important; }
+  .app, .sheet{ max-width:none !important; box-shadow:none !important; border-radius:0 !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .card, .qcard, .section, .tr-step, .callout{ break-inside:avoid; }
+  button.reveal, .btn, .tr-row, .hnt{ display:none !important; }
+}
+</style>
+<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style><style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style><style>
+  .tr-step{ border:1.5px solid var(--line-strong); border-radius:16px; padding:16px 18px; margin-bottom:14px; background:var(--surface); }
+  .tr-step.locked{ opacity:.45; pointer-events:none; filter:grayscale(.6); }
+  .tr-step.done{ border-color:var(--success); background:var(--success-soft); }
+  .tr-row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+  .tr-row input{ font:inherit; font-family:'JetBrains Mono',monospace; padding:.45em .7em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); width:min(14rem,100%); }
+  .btn{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.85rem; border-radius:10px; padding:.55em 1.1em; border:1.5px solid var(--primary); background:var(--primary); color:var(--primary-ink); cursor:pointer; }
+  .btn.ghost{ background:var(--surface); color:var(--primary); }
+  .btn:disabled{ opacity:.4; cursor:default; }
+  .track{ height:10px; background:var(--line); border-radius:99px; overflow:hidden; margin:6px 0 18px; }
+  .track > span{ display:block; height:100%; width:0; background:var(--primary); transition:width .4s ease; }
+  .hintbox{ display:none; margin-top:8px; font-size:.88rem; color:var(--ink-soft); border-left:3px solid var(--decay); padding-left:10px; }
+  .hintbox.show{ display:block; }
+</style>
+<link href="../../assets/fonts.css" rel="stylesheet">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> ENA · PROFMAT · Probabilidade · Atividade extra</div>
+    <div class="score-pill">Acertos: <span id="scoreVal">0</span>/6</div>
+  </div>
+
+  <div class="eyebrow decay">Atividade criativa · Capítulo 10</div>
+  <h1 class="title">Verdadeiro ou falso: <span style="color:var(--decay);">probabilidade</span></h1>
+  <p class="subtitle">Seis afirmações sobre dados, moedas e sorteios. Decida e leia a justificativa — as armadilhas do capítulo aparecem disfarçadas.</p>
+<style>
+  .bk{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+  .it{ border:1.5px solid var(--line-strong); border-radius:14px; padding:12px 14px; background:var(--surface); }
+  .it.ok{ border-color:var(--success); background:var(--success-soft); } .it.no{ border-color:var(--danger); background:var(--danger-soft); }
+  .it .cats{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .cb{ font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); padding:.35em .9em; cursor:pointer; }
+  .cb.sel{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .cb:disabled{ cursor:default; opacity:.7; }
+  .pool, .seq{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; min-height:46px; padding:10px; border:1.5px dashed var(--line-strong); border-radius:14px; }
+  .seq{ flex-direction:column; border-style:solid; }
+  .tk{ border:1.5px solid var(--line-strong); background:var(--surface); border-radius:10px; padding:.45em .8em; cursor:pointer; font-size:.92rem; color:var(--ink); text-align:left; font-family:inherit; }
+  .tk:hover{ border-color:var(--primary); } .tk.used{ opacity:.25; pointer-events:none; }
+  .tk.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .sl{ display:flex; gap:10px; align-items:center; border:1.5px solid var(--line-strong); border-radius:10px; padding:.45em .8em; background:var(--surface); font-size:.92rem; }
+  .sl.ok{ border-color:var(--success); background:var(--success-soft); } .sl.no{ border-color:var(--danger); background:var(--danger-soft); }
+  .sl b{ font-family:'JetBrains Mono',monospace; color:var(--primary); }
+  .ln{ display:block; width:100%; text-align:left; border:1.5px solid var(--line-strong); background:var(--surface); border-radius:10px; padding:.55em .8em; margin-top:6px; cursor:pointer; font:inherit; font-size:.95rem; color:var(--ink); }
+  .ln:hover{ border-color:var(--primary); } .ln.ok{ border-color:var(--success); background:var(--success-soft); } .ln.no{ border-color:var(--danger); background:var(--danger-soft); }
+  .ln:disabled{ cursor:default; }
+  .gm{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:14px; }
+  @media (max-width:560px){ .gm{ grid-template-columns:repeat(2,1fr); } }
+  .mc{ min-height:84px; border-radius:14px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; padding:8px; display:flex; align-items:center; justify-content:center; text-align:center; font-size:.9rem; line-height:1.25; color:var(--ink); }
+  .mc.back{ background:linear-gradient(135deg,var(--primary),var(--decay)); color:transparent; font-size:1.6rem; }
+  .mc.back::after{ content:'?'; color:var(--primary-ink); }
+  .mc.open{ background:var(--primary-soft); } .mc.ok{ background:var(--success-soft); border-color:var(--success); cursor:default; }
+  .row2{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+  .qs{ font-size:1.02rem; line-height:1.5; }
+</style><div class="callout"><h4>Como jogar</h4><p>Clique em <strong>Verdadeira</strong> ou <strong>Falsa</strong> e leia a explicação.</p></div><div id="box"></div><div class="card success" id="fin" style="display:none;margin-top:14px;"><h4 class="disp" style="margin:0 0 6px;">Atividade concluída!</h4><p id="finm" style="margin:0;"></p></div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ena-c10-cr';
+  function systemTheme(){ try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }catch(e){ return 'dark'; } }
+  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+  apply(getStored() || systemTheme());
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next); setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+
+  var D = [["Ao lançar dois dados, os resultados <span class=\"tex\">(1, 6)</span> e <span class=\"tex\">(6, 1)</span> contam como um único resultado.",0,"Falsa: são resultados diferentes (dados distintos). O espaço amostral tem 36 pares, não 21."],["A probabilidade de “pelo menos uma cara” em 4 lançamentos de moeda é <span class=\"tex\">1 − (1/2)<sup>4</sup></span>.",1,"Verdadeira: complementar de “nenhuma cara” (todas coroas, probabilidade <span class=\"tex\">1/16</span>)."],["Em sorteio <strong>sem reposição</strong>, o denominador não muda de uma retirada para outra.",0,"Falsa: a cada retirada sobra uma bola a menos; o denominador diminui (<span class=\"tex\">8/15 · 7/14 · 6/13</span>)."],["Se <span class=\"tex\"><i>A</i></span> e <span class=\"tex\"><i>B</i></span> são independentes, então <span class=\"tex\"><i>P</i>(<i>A</i> ∩ <i>B</i>) = <i>P</i>(<i>A</i>) · <i>P</i>(<i>B</i>)</span>.",1,"Verdadeira: é a definição de independência."],["Ao lançar dois dados, a soma 7 é a mais provável.",1,"Verdadeira: há 6 formas de obter 7 (e no máximo 5 para as outras somas)."],["Uma probabilidade pode valer 1,2 se o evento for muito provável.",0,"Falsa: toda probabilidade está entre 0 e 1."]], box = document.getElementById('box'), feitos = 0, acertos = 0;
+  D.forEach(function(a, i){
+    var d = document.createElement('div'); d.className = 'card'; d.style.marginTop = '12px';
+    d.innerHTML = '<span class="badge">Afirmação ' + (i + 1) + '</span><p class="qs" style="margin-top:10px;">' + a[0] + '</p><div class="cats row2"><button class="cb" type="button" data-v="1">Verdadeira</button><button class="cb" type="button" data-v="0">Falsa</button></div><div class="fb"></div><div class="answer"></div>';
+    d.querySelectorAll('.cb').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(d.dataset.done) return; d.dataset.done = '1'; var ok = (b.dataset.v === '1') === (a[1] === 1); if(ok) acertos++; feitos++;
+        d.querySelectorAll('.cb').forEach(function(x){ x.disabled = true; if((x.dataset.v === '1') === (a[1] === 1)) x.classList.add('sel'); });
+        var fb = d.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Não é bem assim — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        var an = d.querySelector('.answer'); an.innerHTML = '<p>' + a[2] + '</p>'; an.classList.add('open'); document.getElementById('scoreVal').textContent = acertos;
+        if(feitos === D.length){ document.getElementById('fin').style.display = 'block'; document.getElementById('finm').textContent = 'Você acertou ' + acertos + ' de ' + D.length + '. ' + "Resultados ordenados, complementar, denominador que cai e independência: as quatro ideias."; try{ window.reportarConclusao(acertos, D.length); }catch(e){} }
+      });
+    });
+    box.appendChild(d);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  window.reportarConclusao = function(score, total){
+    try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
+  };
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../app/ferramentas.js" id="ferramentas"></script>

@@ -14,7 +14,7 @@
   function jget(k, d){ try{ var v = JSON.parse(lsGet(k)); return v == null ? d : v; }catch(e){ return d; } }
   function jset(k, v){ lsSet(k, JSON.stringify(v)); }
   function el(tag, cls, html){ var e = D.createElement(tag); if(cls) e.className = cls; if(html != null) e.innerHTML = html; return e; }
-  var P = W.location.pathname, ix = P.indexOf('/aulas/'); if(ix < 0) ix = P.indexOf('/educacao-financeira/');
+  var P = W.location.pathname, ix = P.indexOf('/aulas/'); if(ix < 0) ix = P.indexOf('/educacao-financeira/'); if(ix < 0) ix = P.indexOf('/ena-profmat/');
   var KEY = ix < 0 ? null : P.slice(ix + 1);
   var slides = [].slice.call(D.querySelectorAll('.slide'));
   var isDeck = !!(D.getElementById('stage') && slides.length);

@@ -178,7 +178,7 @@ function* walk(d){ for(const n of fs.readdirSync(d)){ const p = path.join(d, n);
   if(s.isDirectory()) yield* walk(p); else if(n.endsWith('.html')) yield p; } }
 
 const cont = { meta: 0, deck: 0, lite: 0, atualizou: 0, pulou: 0 };
-for(const sub of ['aulas', 'educacao-financeira']){
+for(const sub of ['aulas', 'educacao-financeira', 'ena-profmat']){
   const base = path.join(root, sub); if(!fs.existsSync(base)) continue;
   for(const f of walk(base)){
     let html = fs.readFileSync(f, 'utf8'), mudou = false;

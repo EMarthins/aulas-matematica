@@ -1,0 +1,935 @@
+<title>Geometria plana: ângulos, semelhança e triângulos retângulos — ENA · PROFMAT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:10.5pt !important; }
+  html, body{ height:auto !important; overflow:visible !important; background:#fff !important; background-image:none !important; }
+  .app{ height:auto !important; display:block !important; padding:0 !important; }
+  .topbar, .navbar, .app > p, .theme-toggle{ display:none !important; }
+  .stage{ height:auto !important; display:block !important; border:0 !important; box-shadow:none !important; overflow:visible !important; background:#fff !important; }
+  .slides{ position:static !important; display:block !important; }
+  .slide{ position:relative !important; inset:auto !important; opacity:1 !important; transform:none !important; pointer-events:auto !important; display:block !important; overflow:visible !important; break-inside:avoid; page-break-inside:avoid; border:1px solid #ccc; border-radius:10px; margin:0 0 7mm; }
+  .slide-inner{ overflow:visible !important; max-height:none !important; padding:6mm 8mm !important; }
+  .cover-curve{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style><style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link href="../../assets/fonts.css" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> ENA · PROFMAT · Geometria Plana</div>
+    <div>Capítulo 12 · Aula 1 · Ângulos e triângulos</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,210 C 200,205 340,180 480,130 C 620,80 740,50 840,30" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">ENA · PROFMAT · Capítulo 12 · Aula 1</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Geometria plana: <span style="color:var(--primary);">ângulos, semelhança e triângulos retângulos</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">O maior bloco da prova (10 de 60 questões). Aqui o essencial: soma de ângulos, congruência e semelhança, Pitágoras, relações métricas e os triângulos notáveis 30-60-90 e 45-45-90.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">10 questões em 60</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">a² = b² + c²</span>
+            <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">razão k: lados ×k, áreas ×k²</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Três aulas de geometria plana: esta é a das ferramentas básicas.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Método geral</strong><div class="hint">figura, triângulos retângulos, semelhança, coordenadas</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Ângulos</strong><div class="hint">triângulo, polígonos, paralelas e círculo</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Congruência e semelhança</strong><div class="hint">casos, Tales, bissetriz, razões k, k², k³</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Triângulos retângulos</strong><div class="hint">Pitágoras, relações métricas, 30-60-90 e 45-45-90</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Questões que já caíram</strong><div class="hint">ENA 2025 Q21 (trapézio) e Q14 (quadrado)</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Calcular <strong>ângulos</strong> em triângulos, polígonos e circunferências.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Usar <strong>semelhança</strong> e a razão <span class="tex"><i>k</i></span> (lados <span class="tex">×<i>k</i></span>, áreas <span class="tex">×<i>k</i><sup>2</sup></span>, volumes <span class="tex">×<i>k</i><sup>3</sup></span>).</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Aplicar <strong>Pitágoras</strong>, as <strong>relações métricas</strong> do triângulo retângulo e os triângulos notáveis.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Resolver problemas com <strong>figura</strong>, <strong>semelhança</strong> ou <strong>coordenadas</strong>.</span></li></ul>
+            <div class="card primary">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--primary);">Em prova</h4>
+              <p style="font-size:.9rem;margin:0;">Faça uma figura grande, nomeie todos os dados e procure triângulos retângulos e semelhantes. Se travar, use coordenadas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">A escada e o terno 3-4-5</h2>
+          
+          <p class="lede">Uma escada de <strong>5 m</strong> está apoiada em uma parede com a base a <strong>3 m</strong> da parede. A que altura ela toca a parede?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A altura atingida na parede é:</p><button class="choice mqo" data-i="0">2 m</button><button class="choice mqo" data-i="1">4 m</button><button class="choice mqo" data-i="2">√34 m</button><button class="choice mqo" data-i="3">8 m</button><div class="fb"></div><div class="answer"><p>A escada é a hipotenusa: <span class="tex">5<sup>2</sup> = 3<sup>2</sup> + <i>h</i><sup>2</sup> ⇒ <i>h</i><sup>2</sup> = 16 ⇒ <i>h</i> = 4</span>. É o terno pitagórico <strong>3-4-5</strong>, que aparece o tempo todo em prova.</p></div></div>
+            <div class="card growth"><strong>Método geral</strong><p style="font-size:.9rem;margin-top:8px;">1) Figura grande com todos os dados. 2) Procure <strong>triângulos retângulos</strong> (Pitágoras, 3-4-5, 30-60-90). 3) Procure <strong>triângulos semelhantes</strong>. 4) Áreas por subtração. 5) Se travar: <strong>coordenadas</strong>.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · ângulos</div>
+          <h2 class="title">Ângulos em triângulos, polígonos e circunferências</h2>
+          
+          <div class="grid2">
+            <div>
+              <ul class="plain" style="font-size:.9rem;line-height:1.6;">
+                <li>Triângulo: soma dos ângulos internos <span class="tex">= 180<sup>∘</sup></span>; ângulo <strong>externo</strong> <span class="tex">=</span> soma dos dois internos não adjacentes.</li>
+                <li>Polígono de <span class="tex"><i>n</i></span> lados: soma interna <span class="tex">= (<i>n</i> − 2)·180<sup>∘</sup></span>; soma externa <span class="tex">= 360<sup>∘</sup></span>; diagonais <span class="tex">= <span class="fr"><span><i>n</i>(<i>n</i> − 3)</span><span>2</span></span></span>; regular: interno <span class="tex">= <span class="fr"><span>(<i>n</i> − 2)·180<sup>∘</sup></span><span><i>n</i></span></span></span>.</li>
+                <li>Paralelas cortadas por transversal: alternos internos iguais, correspondentes iguais, colaterais somam <span class="tex">180<sup>∘</sup></span>.</li>
+                <li>Circunferência: ângulo <strong>inscrito</strong> <span class="tex">= ½</span> do arco (ou do ângulo central); o que “enxerga” o diâmetro mede <span class="tex">90<sup>∘</sup></span>.</li>
+              </ul>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Polígono regular de n lados</b></p><label>n: <b id="g1-nv">6</b></label><input type="range" id="g1-n" min="3" max="12" step="1" value="6"><svg id="g1-s" viewBox="0 0 240 170" style="width:100%;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;"><b class="mono" id="g1-t"></b></p><p class="hint" id="g1-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · semelhança</div>
+          <h2 class="title">Congruência, semelhança e a razão k</h2>
+          
+          <div class="grid2">
+            <div>
+              <table class="tbl">
+  <tr><th>Tópico</th><th>Resumo</th></tr>
+  <tr><td style="text-align:left;">Congruência</td><td>LAL, ALA, LLL, LAAo</td></tr>
+  <tr><td style="text-align:left;">Semelhança</td><td>AA (dois ângulos), LAL (dois lados proporcionais e ângulo entre eles), LLL</td></tr>
+  <tr><td style="text-align:left;">Razão <span class="tex"><i>k</i></span></td><td>lados <span class="tex">×<i>k</i></span>, perímetros <span class="tex">×<i>k</i></span>, <strong>áreas <span class="tex">×<i>k</i><sup>2</sup></span></strong>, volumes <span class="tex">×<i>k</i><sup>3</sup></span></td></tr>
+  <tr><td style="text-align:left;">Tales</td><td>paralelas cortando transversais: segmentos proporcionais</td></tr>
+  <tr><td style="text-align:left;">Bissetriz interna</td><td><span class="tex"><span class="fr"><span>BD</span><span>DC</span></span> = <span class="fr"><span>AB</span><span>AC</span></span></span></td></tr>
+</table>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Razão de semelhança</b></p><label>k (em décimos): <b id="g2-kv">20</b></label><input type="range" id="g2-k" min="5" max="30" step="1" value="20"><svg id="g2-s" viewBox="0 0 260 170" style="width:100%;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;"><b class="mono" id="g2-t"></b></p><p class="hint" id="g2-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · Pitágoras</div>
+          <h2 class="title">O teorema e os ternos que se repetem</h2>
+          
+          <p class="lede">Em um triângulo retângulo de catetos <span class="tex"><i>b</i>, <i>c</i></span> e hipotenusa <span class="tex"><i>a</i></span>: <strong><span class="tex"><i>a</i><sup>2</sup> = <i>b</i><sup>2</sup> + <i>c</i><sup>2</sup></span></strong>. Ternos pitagóricos (e múltiplos): <span class="tex">(3,4,5)</span>, <span class="tex">(5,12,13)</span>, <span class="tex">(8,15,17)</span>, <span class="tex">(7,24,25)</span>, <span class="tex">(20,21,29)</span>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Catetos → hipotenusa</b></p><div class="row"><div><label>cateto b</label><input type="number" id="g3-b" value="6" step="1" min="1"></div><div><label>cateto c</label><input type="number" id="g3-c" value="8" step="1" min="1"></div></div><svg id="g3-s" viewBox="0 0 260 170" style="width:100%;max-width:210px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;"><b class="mono" id="g3-t"></b></p><p class="hint" id="g3-h" style="margin-top:6px;"></p></div>
+            <div class="callout success"><h4>Dica</h4><p>Se os lados estão em PA, o triângulo retângulo é <span class="tex">3<i>k</i>, 4<i>k</i>, 5<i>k</i></span>. E se as medidas já lembram um terno, evite a conta de raiz.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · relações métricas</div>
+          <h2 class="title">A altura relativa à hipotenusa</h2>
+          
+          <div class="grid2">
+            <div>
+              <svg viewBox="0 0 320 200" style="width:100%;max-width:340px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="30,170 290,170 110,50" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><line x1="110" y1="50" x2="110" y2="170" stroke="var(--decay)" stroke-width="2.5" stroke-linecap="round" /><path d="M122,170 L122,158 L110,158" fill="none" stroke="var(--ink)" stroke-width="1.5"/><circle cx="110" cy="50" r="4" fill="var(--growth)"/><text x="110" y="40" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="22" y="186" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="298" y="186" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="110" y="188" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >H</text><text x="60" y="188" fill="var(--primary)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >m</text><text x="200" y="188" fill="var(--primary)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >n</text><text x="94" y="112" fill="var(--decay)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >h</text><text x="55" y="100" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >c</text><text x="215" y="100" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >b</text><text x="160" y="205" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >a = m + n</text></svg>
+            </div>
+            <div>
+              <p class="formula"><span class="tex"><i>h</i><sup>2</sup> = <i>m</i>·<i>n</i>   <i>b</i><sup>2</sup> = <i>a</i>·<i>m</i>   <i>c</i><sup>2</sup> = <i>a</i>·<i>n</i>   <i>b</i>·<i>c</i> = <i>a</i>·<i>h</i></span></p>
+              <div class="callout success"><h4>Raios</h4><p>Circunraio <span class="tex"><i>R</i> = <span class="fr"><span><i>a</i></span><span>2</span></span></span> (a hipotenusa é diâmetro; a mediana relativa a ela mede <span class="tex"><i>a</i>/2</span>). Inraio <span class="tex"><i>r</i> = <span class="fr"><span><i>b</i> + <i>c</i> − <i>a</i></span><span>2</span></span></span>.</p></div>
+              <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Triângulo de catetos b e c</b></p><div class="row"><div><label>b</label><input type="number" id="g4-b" value="6" step="1" min="1"></div><div><label>c</label><input type="number" id="g4-c" value="8" step="1" min="1"></div></div><p class="small" style="margin:8px 0 0;"><b class="mono" id="g4-r"></b></p><p class="hint" id="g4-h" style="margin-top:6px;"></p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Triângulos notáveis</div>
+          <h2 class="title">30-60-90 e 45-45-90</h2>
+          
+          <svg viewBox="0 0 460 200" style="width:100%;max-width:480px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="30,170 203,170 203,70" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linejoin="round"/><path d="M191,170 L191,158 L203,158" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="116" y="188" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >x√3</text><text x="222" y="125" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >x</text><text x="100" y="110" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >2x</text><text x="60" y="164" fill="var(--growth)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">30°</text><text x="188" y="90" fill="var(--growth)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">60°</text><polygon points="290,170 390,170 390,70" fill="none" stroke="var(--growth)" stroke-width="2.5" stroke-linejoin="round"/><path d="M378,170 L378,158 L390,158" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="340" y="188" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >x</text><text x="408" y="125" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >x</text><text x="325" y="110" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x√2</text><text x="312" y="164" fill="var(--primary)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">45°</text><text x="380" y="88" fill="var(--primary)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">45°</text></svg>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="callout success"><h4>30-60-90</h4><p>Lados <span class="tex"><i>x</i>, <i>x</i><span class="rt">√<span class="rr">3</span></span>, 2<i>x</i></span>. O cateto oposto a <span class="tex">30<sup>∘</sup></span> é <strong>metade da hipotenusa</strong>.</p></div>
+            <div class="callout success"><h4>45-45-90</h4><p>Lados <span class="tex"><i>x</i>, <i>x</i>, <i>x</i><span class="rt">√<span class="rr">2</span></span></span>. A diagonal do quadrado de lado <span class="tex"><i>x</i></span> é <span class="tex"><i>x</i><span class="rt">√<span class="rr">2</span></span></span>.</p></div>
+          </div>
+          <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Triângulo notável</b></p><div><label>Tipo</label><select id="g5-t"><option value="0" selected>30-60-90</option><option value="1">45-45-90</option></select></div><label>x: <b id="g5-xv">4</b></label><input type="range" id="g5-x" min="1" max="12" step="1" value="4"><p class="small" style="margin:8px 0 0;"><b class="mono" id="g5-r"></b></p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Triângulo retângulo inscrito</div>
+          <h2 class="title">A hipotenusa é o diâmetro</h2>
+          
+          <div class="grid2">
+            <div><svg viewBox="0 0 300 200" style="width:100%;max-width:300px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><circle cx="120" cy="100" r="80" fill="none" stroke="var(--ink-soft)" stroke-width="2" /><line x1="40" y1="100" x2="200" y2="100" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" /><line x1="40" y1="100" x2="147" y2="25" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" /><line x1="147" y1="25" x2="200" y2="100" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" /><line x1="120" y1="100" x2="147" y2="25" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/><circle cx="120" cy="100" r="4" fill="var(--growth)"/><text x="120" y="120" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >O</text><text x="30" y="108" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="212" y="108" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="152" y="18" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="147" y="70" fill="var(--decay)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >r</text><path d="M136,25 L136,36 L147,36" fill="none" stroke="var(--ink)" stroke-width="1.5"/></svg></div>
+            <div>
+              <p class="lede">Um triângulo retângulo inscrito em uma circunferência tem a <strong>hipotenusa como diâmetro</strong> (ângulo inscrito que enxerga o diâmetro é <span class="tex">90<sup>∘</sup></span>). Logo:</p>
+              <ul class="plain" style="font-size:.92rem;line-height:1.7;"><li>circunraio <span class="tex"><i>R</i> = <i>a</i>/2</span>;</li><li>a <strong>mediana</strong> da hipotenusa mede <span class="tex"><i>a</i>/2</span> (<span class="tex">OC = <i>r</i></span>);</li><li>a altura relativa à hipotenusa é no máximo o raio.</li></ul>
+              <div class="callout success"><h4>Treino 12.3</h4><p>Catetos 6 e 8: hipotenusa <span class="tex">10</span>; altura <span class="tex"><i>h</i> = <span class="fr"><span>6·8</span><span>10</span></span> = 4,8</span>; circunraio <span class="tex">5</span>; inraio <span class="tex">(6 + 8 − 10)/2 = 2</span>.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Questão que já caiu · figura</div>
+          <h2 class="title">ENA 2025 Q21: o trapézio com ângulos retos</h2>
+          
+          <div class="grid2">
+            <div><svg viewBox="0 0 260 200" style="width:100%;max-width:280px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="210,175 40,175 40,39 142,39" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><line x1="40" y1="175" x2="142" y2="39" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/><line x1="40" y1="175" x2="176" y2="107" stroke="var(--growth)" stroke-width="2.5" stroke-linecap="round" /><circle cx="176" cy="107" r="4" fill="var(--growth)"/><text x="220" y="181" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="30" y="181" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="30" y="37" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="148" y="31" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >D</text><text x="188" y="105" fill="var(--growth)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >E</text><text x="125" y="193" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >5</text><text x="91" y="31" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >3</text><text x="26" y="107" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >4</text><path d="M51,175 L51,164 L40,164" fill="none" stroke="var(--ink)" stroke-width="1.5"/><path d="M51,39 L51,50 L40,50" fill="none" stroke="var(--ink)" stroke-width="1.5"/></svg></div>
+            <div>
+              <p class="lede">Trapézio <span class="tex">ABCD</span>: bases <span class="tex">AB = 5</span> e <span class="tex">CD = 3</span>, altura <span class="tex">BC = 4</span> (ângulos retos em <span class="tex"><i>B</i></span> e <span class="tex"><i>C</i></span>). <span class="tex"><i>E</i></span> é o pé da perpendicular de <span class="tex"><i>B</i></span> sobre <span class="tex">AD</span>. Qual a razão <span class="tex"><span class="fr"><span>BE</span><span>AD</span></span></span>? <span class="hint">(figura reconstruída a partir da resolução oficial)</span></p>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A razão BE/AD vale:</p><button class="choice mqo" data-i="0">1/2</button><button class="choice mqo" data-i="1">1</button><button class="choice mqo" data-i="2">√5/2</button><button class="choice mqo" data-i="3">2</button><div class="fb"></div><div class="answer"><p><span class="tex">BD<sup>2</sup> = BC<sup>2</sup> + CD<sup>2</sup> = 16 + 9 = 25 ⇒ BD = 5 = AB</span>: o triângulo <span class="tex">ABD</span> é <strong>isósceles</strong> e <span class="tex"><i>E</i></span> é ponto médio de <span class="tex">AD</span>. Com <span class="tex"><i>M</i></span> tal que <span class="tex">ABCM</span> é retângulo: <span class="tex">AM = 4</span>, <span class="tex">MD = 5 − 3 = 2</span>, <span class="tex">AD<sup>2</sup> = 16 + 4 = 20</span>, <span class="tex">AD = 2<span class="rt">√<span class="rr">5</span></span></span> e <span class="tex">ED = <span class="rt">√<span class="rr">5</span></span></span>. Em <span class="tex">BED</span>: <span class="tex">BE<sup>2</sup> = 25 − 5 = 20 ⇒ BE = 2<span class="rt">√<span class="rr">5</span></span></span>. Razão <span class="tex">= 1</span>. <strong>Alternativa B.</strong></p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Questão que já caiu · coordenadas</div>
+          <h2 class="title">ENA 2025 Q14: o quadrado e o ponto G</h2>
+          
+          <div class="grid2">
+            <div><svg viewBox="0 0 260 220" style="width:100%;max-width:270px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="40,190 226,190 226,4 40,4" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><line x1="40" y1="4" x2="164" y2="190" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" /><line x1="40" y1="190" x2="226" y2="66" stroke="var(--growth)" stroke-width="2.5" stroke-linecap="round" /><circle cx="125.84615384615384" cy="132.76923076923077" r="4.5" fill="var(--danger)"/><text x="30" y="204" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >A</text><text x="238" y="204" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >B</text><text x="238" y="2" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >C</text><text x="30" y="0" fill="var(--ink)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >D</text><text x="164" y="207" fill="var(--primary)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >E</text><text x="240" y="70" fill="var(--growth)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >F</text><text x="139.84615384615384" y="124.76923076923077" fill="var(--danger)" font-size="14" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >G</text></svg></div>
+            <div>
+              <p class="lede"><span class="tex">ABCD</span> é um quadrado de lado 3; <span class="tex"><i>E</i> ∈ AB</span> e <span class="tex"><i>F</i> ∈ BC</span> com <span class="tex">AE = BF = 2</span>; <span class="tex"><i>G</i></span> é a interseção de <span class="tex">DE</span> com <span class="tex">AF</span>. Qual a medida de <span class="tex">EG</span>?</p>
+              <div class="mq" data-a="4"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">EG mede:</p><button class="choice mqo" data-i="0"><span class="tex"><span class="fr"><span>2</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="1"><span class="tex"><span class="fr"><span>3</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><span class="fr"><span>5</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="3"><span class="tex"><span class="fr"><span>6</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><button class="choice mqo" data-i="4"><span class="tex"><span class="fr"><span>4</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span></button><div class="fb"></div><div class="answer"><p>Por semelhança: <span class="tex">ED = <span class="rt">√<span class="rr">9 + 4</span></span> = <span class="rt">√<span class="rr">13</span></span></span>; <span class="tex">DAE ≅ ABF</span> (LAL), então <span class="tex">∠ADE = ∠BAF</span> e <span class="tex">DAE ∼ AGE</span> (AA): <span class="tex"><span class="fr"><span>EA</span><span>EG</span></span> = <span class="fr"><span>ED</span><span>EA</span></span> ⇒ EG = <span class="fr"><span>4</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span>. <strong>Por coordenadas</strong>: <span class="tex"><i>A</i> = (0,0)</span>, <span class="tex"><i>E</i> = (2,0)</span>, <span class="tex"><i>F</i> = (3,2)</span>, <span class="tex"><i>D</i> = (0,3)</span>; <span class="tex">AF: <i>y</i> = <span class="fr"><span>2</span><span>3</span></span><i>x</i></span>; <span class="tex">DE: <i>y</i> = 3 − <span class="fr"><span>3</span><span>2</span></span><i>x</i></span> → <span class="tex"><i>G</i> = (<span class="fr"><span>18</span><span>13</span></span>, <span class="fr"><span>12</span><span>13</span></span>)</span> e <span class="tex">EG = <span class="fr"><span><span class="rt">√<span class="rr">208</span></span></span><span>13</span></span> = <span class="fr"><span>4</span><span><span class="rt">√<span class="rr">13</span></span></span></span></span> ✓. <strong>Alternativa E.</strong></p></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Cuidado</div>
+          <h2 class="title">Onde se perde ponto em geometria plana</h2>
+          
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Razão <span class="tex"><i>k</i></span> de lados × de áreas</strong><p style="font-size:.9rem;margin-top:8px;">A razão de semelhança <span class="tex"><i>k</i></span> vale para lados; <strong>áreas usam <span class="tex"><i>k</i><sup>2</sup></span></strong>, volumes <span class="tex"><i>k</i><sup>3</sup></span>.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Altura × lado inclinado</strong><p style="font-size:.9rem;margin-top:8px;">Em trapézios retângulos use a altura (lado perpendicular às bases), não o lado inclinado.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Equilátero</strong><p style="font-size:.9rem;margin-top:8px;">A altura é <span class="tex"><span class="fr"><span><i>l</i><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span>, não <span class="tex"><span class="fr"><span><i>l</i></span><span>2</span></span><span class="rt">√<span class="rr">2</span></span></span>.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Figura sem dados nomeados</strong><p style="font-size:.9rem;margin-top:8px;">Faça uma figura grande, nomeie tudo e marque ângulos retos. Na dúvida, use coordenadas.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. Um triângulo retângulo tem catetos 6 e 8. A altura relativa à hipotenusa mede:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">4</button>
+                <button class="choice qopt" data-ok="1">4,8</button>
+                <button class="choice qopt" data-ok="0">5</button>
+                <button class="choice qopt" data-ok="0">6</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. A soma dos ângulos internos de um polígono regular de 12 lados é:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">1440°</button>
+                <button class="choice qopt" data-ok="1">1800°</button>
+                <button class="choice qopt" data-ok="0">2160°</button>
+                <button class="choice qopt" data-ok="0">1620°</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. Dois triângulos semelhantes têm lados na razão 2 : 3 e o menor tem área 20. A área do maior é:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">30</button>
+                <button class="choice qopt" data-ok="0">40</button>
+                <button class="choice qopt" data-ok="1">45</button>
+                <button class="choice qopt" data-ok="0">60</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. O cateto oposto ao ângulo de 30° em um triângulo retângulo de hipotenusa 14 mede:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="1">7</button>
+                <button class="choice qopt" data-ok="0">14√3/2</button>
+                <button class="choice qopt" data-ok="0">7√3</button>
+                <button class="choice qopt" data-ok="0">14</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Ângulos</span><p style="font-size:.85rem;margin-top:8px;">Triângulo <span class="tex">180<sup>∘</sup></span>; polígono <span class="tex">(<i>n</i> − 2)·180<sup>∘</sup></span>; inscrito <span class="tex">= ½</span> do arco.</p></div>
+            <div class="card"><span class="badge">Semelhança</span><p style="font-size:.85rem;margin-top:8px;">Razão <span class="tex"><i>k</i></span>: lados <span class="tex">×<i>k</i></span>, áreas <span class="tex">×<i>k</i><sup>2</sup></span>, volumes <span class="tex">×<i>k</i><sup>3</sup></span>.</p></div>
+            <div class="card"><span class="badge">Retângulo</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>a</i><sup>2</sup> = <i>b</i><sup>2</sup> + <i>c</i><sup>2</sup></span>; <span class="tex"><i>h</i><sup>2</sup> = <i>mn</i></span>; 30-60-90: <span class="tex"><i>x</i>, <i>x</i><span class="rt">√<span class="rr">3</span></span>, 2<i>x</i></span>; 45-45-90: <span class="tex"><i>x</i>, <i>x</i>, <i>x</i><span class="rt">√<span class="rr">2</span></span></span>.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Figura, triângulos retângulos, semelhança — e coordenadas se travar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">Referências e próximos passos</h2>
+          <p class="lede">Refaça sozinho as questões que já caíram, sem olhar a resolução, e anote os erros no caderno de erros do guia.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">Guia completo ENA · PROFMAT (material de estudo), capítulos de teoria, fórmulas e questões comentadas.<br>
+              Provas ENA 2025 e ENA 2026 (Exame Nacional de Acesso ao PROFMAT) — SBM/PROFMAT. Enunciados resumidos para estudo.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 15</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ena-c12a1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+function $(i){ return document.getElementById(i); }
+function nf(v, d){ if(d == null) d = 2; return (Math.round(v * Math.pow(10, d)) / Math.pow(10, d)).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: d}); }
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for(var k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+// plano cartesiano: devolve {sx, sy, g} com conversão de coordenadas
+function plano(svg, xmin, xmax, ymin, ymax, W, H, grade){
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+  var sx = function(x){ return 30 + (x - xmin) / (xmax - xmin) * (W - 40); }, sy = function(y){ return H - 24 - (y - ymin) / (ymax - ymin) * (H - 40); };
+  for(var x = Math.ceil(xmin); x <= xmax; x++){ el('line', {x1: sx(x), y1: sy(ymin), x2: sx(x), y2: sy(ymax), stroke: 'var(--line)', 'stroke-width': x === 0 ? 0 : 1}, svg); if(grade && x !== 0 && (x % grade === 0)){ var t = el('text', {x: sx(x), y: sy(0) + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); t.textContent = x; } }
+  for(var y = Math.ceil(ymin); y <= ymax; y++){ el('line', {x1: sx(xmin), y1: sy(y), x2: sx(xmax), y2: sy(y), stroke: 'var(--line)', 'stroke-width': y === 0 ? 0 : 1}, svg); if(grade && y !== 0 && (y % grade === 0)){ var u = el('text', {x: sx(0) - 5, y: sy(y) + 4, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); u.textContent = y; } }
+  el('line', {x1: sx(xmin), y1: sy(0), x2: sx(xmax), y2: sy(0), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  el('line', {x1: sx(0), y1: sy(ymin), x2: sx(0), y2: sy(ymax), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  return {sx: sx, sy: sy};
+}
+function curva(svg, P, f, xmin, xmax, ymin, ymax, cor){
+  var pts = [], n = 160, up = false;
+  for(var i = 0; i <= n; i++){ var x = xmin + (xmax - xmin) * i / n, y = f(x); if(isFinite(y) && y >= ymin - 40 && y <= ymax + 40) pts.push(P.sx(x).toFixed(1) + ',' + P.sy(Math.max(ymin - 40, Math.min(ymax + 40, y))).toFixed(1)); }
+  el('polyline', {points: pts.join(' '), fill: 'none', stroke: cor || 'var(--primary)', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+}
+function ponto(svg, P, x, y, cor, rotulo){ el('circle', {cx: P.sx(x), cy: P.sy(y), r: 5, fill: cor || 'var(--growth)'}, svg); if(rotulo){ var t = el('text', {x: P.sx(x) + 8, y: P.sy(y) - 8, 'font-size': 12, fill: cor || 'var(--growth)', 'font-weight': 700}, svg); t.textContent = rotulo; } }
+function fmtN(v){ return (Math.round(v * 100) / 100).toLocaleString('pt-BR'); }
+function sgn(v){ return v < 0 ? '−' + fmtN(-v) : fmtN(v); }
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+function bind(ids, f){ ids.forEach(function(i){ var e = $(i); if(e) e.addEventListener('input', f); }); f(); }
+function mdc(a, b){ a = Math.abs(a); b = Math.abs(b); while(b){ var t = b; b = a % b; a = t; } return a; }
+function fatora(n){ var r = [], d = 2; while(n > 1 && d * d <= n){ var e = 0; while(n % d === 0){ n /= d; e++; } if(e) r.push([d, e]); d++; } if(n > 1) r.push([n, 1]); return r; }
+function sup(n){ return String(n).split('').map(function(c){ return '⁰¹²³⁴⁵⁶⁷⁸⁹'[+c]; }).join(''); }
+function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) : ''); }).join(' · '); }
+
+  bind(['g1-n'], function(){ var n = +$('g1-n').value; $('g1-nv').textContent = n; var svg = $('g1-s'); svg.innerHTML = ''; var pts = [], cx = 120, cy = 85, R = 70; for(var i = 0; i < n; i++){ var t = -Math.PI / 2 + 2 * Math.PI * i / n; pts.push([cx + R * Math.cos(t), cy + R * Math.sin(t)]); } el('polygon', {points: pts.map(function(p){ return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' '), fill: 'var(--primary)', 'fill-opacity': .15, stroke: 'var(--primary)', 'stroke-width': 2.5}, svg); for(var i = 0; i < n; i++) for(var j = i + 2; j < n; j++){ if(i === 0 && j === n - 1) continue; el('line', {x1: pts[i][0], y1: pts[i][1], x2: pts[j][0], y2: pts[j][1], stroke: 'var(--growth)', 'stroke-opacity': .45, 'stroke-width': 1}, svg); } $('g1-t').textContent = 'Soma interna ' + (n - 2) * 180 + '° · ângulo interno ' + nf((n - 2) * 180 / n, 3) + '° · externo ' + nf(360 / n, 3) + '° · diagonais ' + n * (n - 3) / 2; $('g1-h').textContent = 'Treino 12.7: n = 12 → interno 150°; hexágono tem 9 diagonais.'; });
+  bind(['g2-k'], function(){ var k = +$('g2-k').value / 10; $('g2-kv').textContent = nf(k, 1); var svg = $('g2-s'); svg.innerHTML = ''; var b = 60, h = 50, s = Math.min(k, 3); el('polygon', {points: '20,150 ' + (20 + b) + ',150 20,' + (150 - h), fill: 'var(--primary)', 'fill-opacity': .25, stroke: 'var(--primary)', 'stroke-width': 2}, svg); var W2 = Math.min(b * s, 200), H2 = Math.min(h * s, 130); el('polygon', {points: '100,150 ' + (100 + W2) + ',150 100,' + (150 - H2), fill: 'var(--growth)', 'fill-opacity': .22, stroke: 'var(--growth)', 'stroke-width': 2}, svg); $('g2-t').textContent = 'k = ' + nf(k, 1) + ' → lados ×' + nf(k, 1) + ' · perímetro ×' + nf(k, 1) + ' · área ×' + nf(k * k, 2) + ' · volume ×' + nf(k * k * k, 2); $('g2-h').textContent = 'Treino 12.4: k = 3/2, área menor 20 → maior ' + nf(20 * 2.25, 1) + '.'; });
+  bind(['g3-b', 'g3-c'], function(){ var b = +$('g3-b').value, c = +$('g3-c').value; if(b < 1 || c < 1) return; var a = Math.sqrt(b * b + c * c), svg = $('g3-s'); svg.innerHTML = ''; var s = 120 / Math.max(b, c), x1 = 40, y1 = 150, x2 = 40 + b * s, y2 = y1, x3 = x2, y3 = y1 - c * s; el('polygon', {points: x1 + ',' + y1 + ' ' + x2 + ',' + y2 + ' ' + x3 + ',' + y3, fill: 'var(--primary)', 'fill-opacity': .2, stroke: 'var(--primary)', 'stroke-width': 2.5}, svg); [['b = ' + b, (x1 + x2) / 2, y1 + 14], ['c = ' + c, x2 + 6, (y2 + y3) / 2], ['a = ' + nf(a, 3), (x1 + x3) / 2 - 20, (y1 + y3) / 2 - 6]].forEach(function(t){ var e = el('text', {x: t[1], y: t[2], 'font-size': 12, fill: 'var(--ink)', 'font-weight': 700}, svg); e.textContent = t[0]; }); $('g3-t').textContent = 'a = √(' + b + '² + ' + c + '²) = √' + (b * b + c * c) + ' = ' + nf(a, 4); $('g3-h').textContent = Number.isInteger(a) ? '✔ Terno pitagórico (' + b + ', ' + c + ', ' + a + ').' : 'Não é terno inteiro.'; });
+  bind(['g4-b', 'g4-c'], function(){ var b = +$('g4-b').value, c = +$('g4-c').value; if(b < 1 || c < 1) return; var a = Math.sqrt(b * b + c * c), h = b * c / a, m = c * c / a, n = b * b / a; $('g4-r').textContent = 'a = ' + nf(a, 3) + ' · h = bc/a = ' + nf(h, 3) + ' · projeções ' + nf(m, 3) + ' e ' + nf(n, 3) + ' (soma ' + nf(m + n, 3) + ') · h² = mn: ' + nf(h * h, 3) + ' = ' + nf(m * n, 3) + ' · R = a/2 = ' + nf(a / 2, 3) + ' · r = (b + c − a)/2 = ' + nf((b + c - a) / 2, 3); $('g4-h').textContent = 'Para 6 e 8: a = 10, h = 4,8, R = 5, r = 2.'; });
+  bind(['g5-t', 'g5-x'], function(){ var t = +$('g5-t').value, x = +$('g5-x').value; $('g5-xv').textContent = x; $('g5-r').textContent = t === 0 ? 'Lados: x = ' + x + ' (cateto oposto a 30°) · x√3 = ' + nf(x * Math.sqrt(3), 3) + ' · hipotenusa 2x = ' + 2 * x : 'Catetos: ' + x + ' e ' + x + ' · hipotenusa x√2 = ' + nf(x * Math.SQRT2, 3); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  // modo apresentação: F = tela cheia, B = tela preta (qualquer tecla ou clique volta)
+  var preto = null;
+  function pretoOff(){ if(preto){ preto.remove(); preto = null; } }
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if(preto){ pretoOff(); e.preventDefault(); return; }
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f'){ try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }catch(x){} }
+    else if(k === 'b' || k === '.'){ preto = document.createElement('div'); preto.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;cursor:none'; preto.addEventListener('click', pretoOff); document.body.appendChild(preto); }
+  });
+  var dica = document.querySelector('.app > p'); if(dica && dica.textContent.indexOf('tela cheia') < 0) dica.textContent = dica.textContent.replace(/[. ]+$/, '') + ' · F: tela cheia · B: tela preta.';
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../app/ferramentas.js" id="ferramentas"></script>

@@ -1,0 +1,916 @@
+<title>Lógica: conectivos e negações — ENA · PROFMAT</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:10.5pt !important; }
+  html, body{ height:auto !important; overflow:visible !important; background:#fff !important; background-image:none !important; }
+  .app{ height:auto !important; display:block !important; padding:0 !important; }
+  .topbar, .navbar, .app > p, .theme-toggle{ display:none !important; }
+  .stage{ height:auto !important; display:block !important; border:0 !important; box-shadow:none !important; overflow:visible !important; background:#fff !important; }
+  .slides{ position:static !important; display:block !important; }
+  .slide{ position:relative !important; inset:auto !important; opacity:1 !important; transform:none !important; pointer-events:auto !important; display:block !important; overflow:visible !important; break-inside:avoid; page-break-inside:avoid; border:1px solid #ccc; border-radius:10px; margin:0 0 7mm; }
+  .slide-inner{ overflow:visible !important; max-height:none !important; padding:6mm 8mm !important; }
+  .cover-curve{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style><style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link href="../../assets/fonts.css" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> ENA · PROFMAT · Lógica</div>
+    <div>Capítulo 4 · Aula 1 · Conectivos e negações</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,210 C 200,205 340,180 480,130 C 620,80 740,50 840,30" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">ENA · PROFMAT · Capítulo 4 · Aula 1</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Lógica: <span style="color:var(--primary);">conectivos e negações</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">E, ou, não, “se… então” e “se e somente se”. Como negar frases com “todo” e “existe” e por que a contrapositiva é equivalente — e a recíproca não.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">5 questões em 60</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">P ⇒ Q só falha se P é V e Q é F</span>
+            <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">¬Q ⇒ ¬P ≡ P ⇒ Q</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Poucas regras, usadas com muito cuidado.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Proposições e conectivos</strong><div class="hint">∧, ∨, ¬, ⇒, ⇔ e a tabela-verdade</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>“Se… então”</strong><div class="hint">quando é falsa? a promessa quebrada</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg><div><strong>Negações</strong><div class="hint">todo/existe, e/ou, se/então (De Morgan)</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Contrapositiva, recíproca e inversa</strong><div class="hint">qual é equivalente?</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Treino rápido</strong><div class="hint">verdadeiro ou falso?</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Montar a <strong>tabela-verdade</strong> dos conectivos e reconhecer <strong>equivalências</strong>.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Dizer quando “se P então Q” é <strong>falsa</strong>.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;"><strong>Negar</strong> frases com “todo”, “existe”, “e”, “ou” e “se… então”.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Distinguir <strong>contrapositiva</strong> (equivalente) de <strong>recíproca</strong> (não equivalente).</span></li></ul>
+            <div class="card growth">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--growth-ink);">Em prova</h4>
+              <p style="font-size:.9rem;margin:0;">Lógica no ENA é raciocínio puro: quase nenhuma conta, muita atenção ao texto. Negar corretamente é metade do trabalho.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Para início de conversa</div>
+          <h2 class="title">Como se nega “todos foram aprovados”?</h2>
+          
+          <p class="lede">Uma notícia diz: “<strong>Todos os alunos</strong> foram aprovados.” A notícia é falsa. O que isso significa?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A negação de “todos os alunos foram aprovados” é:</p><button class="choice mqo" data-i="0">Nenhum aluno foi aprovado</button><button class="choice mqo" data-i="1">Pelo menos um aluno não foi aprovado</button><button class="choice mqo" data-i="2">Todos os alunos foram reprovados</button><button class="choice mqo" data-i="3">Existe aluno aprovado</button><div class="fb"></div><div class="answer"><p>Para <strong>desmentir</strong> “todos”, basta <strong>um</strong> contra-exemplo: pelo menos um aluno não foi aprovado. “Nenhum aprovado” é bem mais forte — é o oposto extremo, não a negação.</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Negar não é “dizer o contrário”: é dizer exatamente o que torna a frase <strong>falsa</strong>. Para “todos”, basta existir uma exceção.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Teoria · conectivos</div>
+          <h2 class="title">Os cinco conectivos e a tabela-verdade</h2>
+          
+          <p class="lede">Uma <strong>proposição</strong> é uma frase que é verdadeira ou falsa. Com os conectivos, formamos outras:</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div>
+              <table class="tbl">
+  <tr><th>Símbolo</th><th>Lê-se</th><th>Verdadeira quando</th></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ∧ <i>Q</i></span></td><td>P e Q</td><td>as duas são V</td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ∨ <i>Q</i></span></td><td>P ou Q (inclusivo)</td><td>pelo menos uma é V</td></tr>
+  <tr><td style="text-align:left;"><span class="tex">¬<i>P</i></span></td><td>não P</td><td>P é F</td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ⇒ <i>Q</i></span></td><td>se P então Q</td><td>exceto P V e Q F</td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ⇔ <i>Q</i></span></td><td>P se e só se Q</td><td>têm o mesmo valor</td></tr>
+</table>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Tabela-verdade ao vivo</b></p><div class="row"><div><label>P</label><select id="l1-p"><option value="0" selected>V</option><option value="1">F</option></select></div><div><label>Q</label><select id="l1-q"><option value="0">V</option><option value="1" selected>F</option></select></div></div><div id="l1-r" style="margin-top:10px;font-size:.95rem;line-height:1.9;"></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Teoria · “se… então”</div>
+          <h2 class="title">Quando uma promessa é falsa?</h2>
+          
+          <p class="lede">“<strong>Se</strong> eu passar no exame, <strong>então</strong> comemoro.” Só se mente nessa promessa quando <strong>passei e não comemorei</strong>. Nos outros casos a promessa não foi quebrada.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>P (passou)</th><th>Q (comemorou)</th><th>P ⇒ Q</th></tr>
+  <tr><td style="text-align:left;">V</td><td>V</td><td>V</td></tr>
+  <tr><td style="text-align:left;">V</td><td>F</td><td><strong style="color:var(--danger);">F</strong></td></tr>
+  <tr><td style="text-align:left;">F</td><td>V</td><td>V</td></tr>
+  <tr><td style="text-align:left;">F</td><td>F</td><td>V</td></tr>
+</table>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quando “se chove, a rua molha” é falsa?</p><button class="choice mqo" data-i="0">Chove e a rua molha</button><button class="choice mqo" data-i="1">Não chove e a rua molha</button><button class="choice mqo" data-i="2">Chove e a rua <strong>não</strong> molha</button><button class="choice mqo" data-i="3">Não chove e a rua não molha</button><div class="fb"></div><div class="answer"><p>Só quando a premissa (<em>chove</em>) é verdadeira e a conclusão (<em>a rua molha</em>) é falsa. Se não chove, a promessa nada afirma — fica verdadeira.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Teoria · negações</div>
+          <h2 class="title">Como negar corretamente</h2>
+          
+          <div class="grid2">
+            <div>
+              <table class="tbl">
+  <tr><th>Afirmação</th><th>Negação</th></tr>
+  <tr><td style="text-align:left;">Todo A é B</td><td>Existe A que <strong>não</strong> é B</td></tr>
+  <tr><td style="text-align:left;">Existe A que é B</td><td>Nenhum A é B</td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ∧ <i>Q</i></span></td><td><span class="tex">¬<i>P</i> ∨ ¬<i>Q</i></span></td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ∨ <i>Q</i></span></td><td><span class="tex">¬<i>P</i> ∧ ¬<i>Q</i></span></td></tr>
+  <tr><td style="text-align:left;"><span class="tex"><i>P</i> ⇒ <i>Q</i></span></td><td><span class="tex"><i>P</i> ∧ ¬<i>Q</i></span></td></tr>
+</table>
+              <div class="callout success"><h4>Leis de De Morgan</h4><p><span class="tex">¬(<i>P</i> ∧ <i>Q</i>) = ¬<i>P</i> ∨ ¬<i>Q</i></span> e <span class="tex">¬(<i>P</i> ∨ <i>Q</i>) = ¬<i>P</i> ∧ ¬<i>Q</i></span>: trocar “e” por “ou” ao negar.</p></div>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Negador de frases</b></p><div><label>Frase</label><select id="l2-s"><option value="0" selected>Todos os alunos foram aprovados</option><option value="1">Existe número primo par</option><option value="2">Chove e faz frio</option><option value="3">Estudo ou trabalho</option><option value="4">Se chove, a rua molha</option><option value="5">Todo múltiplo de 4 é par</option></select></div><p class="small" style="margin:10px 0 2px;">Negação:</p><div class="out" id="l2-n" style="font-size:1.05rem;"></div><p class="hint" id="l2-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Teoria · equivalências</div>
+          <h2 class="title">Contrapositiva, recíproca e inversa</h2>
+          
+          <p class="lede">A partir de <span class="tex"><i>P</i> ⇒ <i>Q</i></span> (“se chove, a rua molha”) formamos três outras frases. <strong>Só a contrapositiva é equivalente</strong>:</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div>
+              <table class="tbl">
+  <tr><th>Frase</th><th>Texto</th><th>Equivalente?</th></tr>
+  <tr><td style="text-align:left;">Original <span class="tex"><i>P</i> ⇒ <i>Q</i></span></td><td>se chove, a rua molha</td><td>—</td></tr>
+  <tr><td style="text-align:left;">Contrapositiva <span class="tex">¬<i>Q</i> ⇒ ¬<i>P</i></span></td><td>se a rua não molha, não chove</td><td><strong style="color:var(--success);">sim</strong></td></tr>
+  <tr><td style="text-align:left;">Recíproca <span class="tex"><i>Q</i> ⇒ <i>P</i></span></td><td>se a rua molha, chove</td><td><strong style="color:var(--danger);">não</strong></td></tr>
+  <tr><td style="text-align:left;">Inversa <span class="tex">¬<i>P</i> ⇒ ¬<i>Q</i></span></td><td>se não chove, a rua não molha</td><td><strong style="color:var(--danger);">não</strong></td></tr>
+</table>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Compare duas frases</b></p><div class="row"><div><label>Frase 1</label><select id="l3-a"><option value="0" selected>P ⇒ Q</option><option value="1">¬P ∨ Q</option><option value="2">¬Q ⇒ ¬P</option><option value="3">Q ⇒ P</option><option value="4">P ∧ ¬Q</option><option value="5">¬(P ∧ Q)</option><option value="6">¬P ∨ ¬Q</option><option value="7">¬(P ∨ Q)</option><option value="8">¬P ∧ ¬Q</option><option value="9">P ⇔ Q</option></select></div><div><label>Frase 2</label><select id="l3-b"><option value="0">P ⇒ Q</option><option value="1">¬P ∨ Q</option><option value="2" selected>¬Q ⇒ ¬P</option><option value="3">Q ⇒ P</option><option value="4">P ∧ ¬Q</option><option value="5">¬(P ∧ Q)</option><option value="6">¬P ∨ ¬Q</option><option value="7">¬(P ∨ Q)</option><option value="8">¬P ∧ ¬Q</option><option value="9">P ⇔ Q</option></select></div></div><div id="l3-r" style="margin-top:8px;font-size:.9rem;"></div><p class="hint" id="l3-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Treino 4.1</div>
+          <h2 class="title">Negue e transforme</h2>
+          
+          <p class="lede">Escreva a negação de “todos os alunos foram aprovados” e a contrapositiva de “se chove, a rua molha”.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row"><span class="badge">1</span><div><strong>Negação de “todos”</strong><div class="hint">“Pelo menos um aluno <strong>não</strong> foi aprovado.” (existe um contra-exemplo)</div></div></div>
+            <div class="step-row"><span class="badge">2</span><div><strong>Contrapositiva</strong><div class="hint">Troque e negue: “se a rua <strong>não</strong> molha, então <strong>não</strong> chove.”</div></div></div>
+            <div class="step-row"><span class="badge">3</span><div><strong>Verificação</strong><div class="hint">A contrapositiva é equivalente; a recíproca (“se molha, chove”) não é — a rua pode molhar por outra causa.</div></div></div>
+          </div>
+          <div class="callout success"><h4>Resultado</h4><p>Negação e contrapositiva são duas ferramentas diferentes: uma <strong>nega</strong> a frase, a outra a <strong>reescreve</strong> de forma equivalente.</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Verdadeiro ou falso?</div>
+          <h2 class="title">Teste rápido de conceitos</h2>
+          
+          <p class="lede">Clique em cada afirmação para ver se é verdadeira e por quê.</p>
+          <div class="grid2" style="margin-top:8px;"><button class="choice vf" data-ok="0" data-why="Falso. A negação é “Existe A que não é B”. “Nenhum A é B” é muito mais forte.">A negação de “Todo A é B” é “Nenhum A é B”.</button>
+<button class="choice vf" data-ok="1" data-why="Verdadeiro. As duas só são falsas no mesmo caso: P verdadeira e Q falsa.">A contrapositiva de <span class="tex"><i>P</i> ⇒ <i>Q</i></span> é <span class="tex">¬<i>Q</i> ⇒ ¬<i>P</i></span> e é equivalente à original.</button>
+<button class="choice vf" data-ok="0" data-why="Falso. “Se chove, a rua molha” não garante “se a rua molha, chove”.">A recíproca <span class="tex"><i>Q</i> ⇒ <i>P</i></span> é sempre equivalente a <span class="tex"><i>P</i> ⇒ <i>Q</i></span>.</button>
+<button class="choice vf" data-ok="1" data-why="Verdadeiro. Se P é falsa, a implicação é verdadeira (não há promessa a cumprir)."><span class="tex"><i>P</i> ⇒ <i>Q</i></span> é falsa somente quando <span class="tex"><i>P</i></span> é verdadeira e <span class="tex"><i>Q</i></span> é falsa.</button></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Cuidado</div>
+          <h2 class="title">Onde se perde ponto em lógica</h2>
+          
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Negar “todo” com “nenhum”</strong><p style="font-size:.9rem;margin-top:8px;">A negação de “todos” é “pelo menos um não”. “Nenhum” é a negação de “existe”.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Trocar contrapositiva por recíproca</strong><p style="font-size:.9rem;margin-top:8px;">Contrapositiva: inverta <strong>e</strong> negue (<span class="tex">¬<i>Q</i> ⇒ ¬<i>P</i></span>). Só inverter (<span class="tex"><i>Q</i> ⇒ <i>P</i></span>) é a recíproca — outra frase.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> “Ou” exclusivo</strong><p style="font-size:.9rem;margin-top:8px;">Em matemática, “ou” é inclusivo: vale se pelo menos uma parte vale (inclusive as duas).</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Achar que premissa falsa “refuta”</strong><p style="font-size:.9rem;margin-top:8px;">Se <span class="tex"><i>P</i></span> é falsa, <span class="tex"><i>P</i> ⇒ <i>Q</i></span> é verdadeira. Para refutar, é preciso <span class="tex"><i>P</i></span> verdadeira e <span class="tex"><i>Q</i></span> falsa.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. A negação de “Existe número primo par” é:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">Todo número primo é par</button>
+                <button class="choice qopt" data-ok="1">Nenhum número primo é par</button>
+                <button class="choice qopt" data-ok="0">Existe primo ímpar</button>
+                <button class="choice qopt" data-ok="0">Todo primo é ímpar ou par</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. A contrapositiva de “se <span class="tex"><i>n</i></span> é múltiplo de 6, então <span class="tex"><i>n</i></span> é par” é:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">se <span class="tex"><i>n</i></span> é par, então <span class="tex"><i>n</i></span> é múltiplo de 6</button>
+                <button class="choice qopt" data-ok="1">se <span class="tex"><i>n</i></span> não é par, então <span class="tex"><i>n</i></span> não é múltiplo de 6</button>
+                <button class="choice qopt" data-ok="0">se <span class="tex"><i>n</i></span> não é múltiplo de 6, então <span class="tex"><i>n</i></span> não é par</button>
+                <button class="choice qopt" data-ok="0">se <span class="tex"><i>n</i></span> é ímpar, então <span class="tex"><i>n</i></span> é múltiplo de 6</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. A negação de “Chove <strong>e</strong> faz frio” é:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">Não chove e não faz frio</button>
+                <button class="choice qopt" data-ok="1">Não chove ou não faz frio</button>
+                <button class="choice qopt" data-ok="0">Chove ou faz frio</button>
+                <button class="choice qopt" data-ok="0">Não chove e faz frio</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. Quando <span class="tex"><i>P</i> ⇒ <i>Q</i></span> é falsa?</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="0"><span class="tex"><i>P</i></span> F e <span class="tex"><i>Q</i></span> V</button>
+                <button class="choice qopt" data-ok="0"><span class="tex"><i>P</i></span> F e <span class="tex"><i>Q</i></span> F</button>
+                <button class="choice qopt" data-ok="1"><span class="tex"><i>P</i></span> V e <span class="tex"><i>Q</i></span> F</button>
+                <button class="choice qopt" data-ok="0"><span class="tex"><i>P</i></span> V e <span class="tex"><i>Q</i></span> V</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Implicação</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>P</i> ⇒ <i>Q</i></span> só é falsa quando <span class="tex"><i>P</i></span> é V e <span class="tex"><i>Q</i></span> é F.</p></div>
+            <div class="card"><span class="badge">Negações</span><p style="font-size:.85rem;margin-top:8px;">Todo → existe não; e ↔ ou (De Morgan); <span class="tex"><i>P</i> ⇒ <i>Q</i></span> → <span class="tex"><i>P</i> ∧ ¬<i>Q</i></span>.</p></div>
+            <div class="card"><span class="badge">Equivalência</span><p style="font-size:.85rem;margin-top:8px;">Contrapositiva é equivalente; recíproca e inversa não.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Negar é dizer exatamente o que torna a frase falsa.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">Referências e próximos passos</h2>
+          <p class="lede">Refaça sozinho as questões que já caíram, sem olhar a resolução, e anote os erros no caderno de erros do guia.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">Guia completo ENA · PROFMAT (material de estudo), capítulos de teoria, fórmulas e questões comentadas.<br>
+              Provas ENA 2025 e ENA 2026 (Exame Nacional de Acesso ao PROFMAT) — SBM/PROFMAT. Enunciados resumidos para estudo.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 13</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-ena-c4a1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+function $(i){ return document.getElementById(i); }
+function nf(v, d){ if(d == null) d = 2; return (Math.round(v * Math.pow(10, d)) / Math.pow(10, d)).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: d}); }
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for(var k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+// plano cartesiano: devolve {sx, sy, g} com conversão de coordenadas
+function plano(svg, xmin, xmax, ymin, ymax, W, H, grade){
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+  var sx = function(x){ return 30 + (x - xmin) / (xmax - xmin) * (W - 40); }, sy = function(y){ return H - 24 - (y - ymin) / (ymax - ymin) * (H - 40); };
+  for(var x = Math.ceil(xmin); x <= xmax; x++){ el('line', {x1: sx(x), y1: sy(ymin), x2: sx(x), y2: sy(ymax), stroke: 'var(--line)', 'stroke-width': x === 0 ? 0 : 1}, svg); if(grade && x !== 0 && (x % grade === 0)){ var t = el('text', {x: sx(x), y: sy(0) + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); t.textContent = x; } }
+  for(var y = Math.ceil(ymin); y <= ymax; y++){ el('line', {x1: sx(xmin), y1: sy(y), x2: sx(xmax), y2: sy(y), stroke: 'var(--line)', 'stroke-width': y === 0 ? 0 : 1}, svg); if(grade && y !== 0 && (y % grade === 0)){ var u = el('text', {x: sx(0) - 5, y: sy(y) + 4, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); u.textContent = y; } }
+  el('line', {x1: sx(xmin), y1: sy(0), x2: sx(xmax), y2: sy(0), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  el('line', {x1: sx(0), y1: sy(ymin), x2: sx(0), y2: sy(ymax), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  return {sx: sx, sy: sy};
+}
+function curva(svg, P, f, xmin, xmax, ymin, ymax, cor){
+  var pts = [], n = 160, up = false;
+  for(var i = 0; i <= n; i++){ var x = xmin + (xmax - xmin) * i / n, y = f(x); if(isFinite(y) && y >= ymin - 40 && y <= ymax + 40) pts.push(P.sx(x).toFixed(1) + ',' + P.sy(Math.max(ymin - 40, Math.min(ymax + 40, y))).toFixed(1)); }
+  el('polyline', {points: pts.join(' '), fill: 'none', stroke: cor || 'var(--primary)', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+}
+function ponto(svg, P, x, y, cor, rotulo){ el('circle', {cx: P.sx(x), cy: P.sy(y), r: 5, fill: cor || 'var(--growth)'}, svg); if(rotulo){ var t = el('text', {x: P.sx(x) + 8, y: P.sy(y) - 8, 'font-size': 12, fill: cor || 'var(--growth)', 'font-weight': 700}, svg); t.textContent = rotulo; } }
+function fmtN(v){ return (Math.round(v * 100) / 100).toLocaleString('pt-BR'); }
+function sgn(v){ return v < 0 ? '−' + fmtN(-v) : fmtN(v); }
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+function bind(ids, f){ ids.forEach(function(i){ var e = $(i); if(e) e.addEventListener('input', f); }); f(); }
+function mdc(a, b){ a = Math.abs(a); b = Math.abs(b); while(b){ var t = b; b = a % b; a = t; } return a; }
+function fatora(n){ var r = [], d = 2; while(n > 1 && d * d <= n){ var e = 0; while(n % d === 0){ n /= d; e++; } if(e) r.push([d, e]); d++; } if(n > 1) r.push([n, 1]); return r; }
+function sup(n){ return String(n).split('').map(function(c){ return '⁰¹²³⁴⁵⁶⁷⁸⁹'[+c]; }).join(''); }
+function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) : ''); }).join(' · '); }
+
+  function ev(k, P, Q){ switch(k){ case 0: return !P || Q; case 1: return !P || Q; case 2: return Q || !P; case 3: return !Q || P; case 4: return P && !Q; case 5: return !(P && Q); case 6: return !P || !Q; case 7: return !(P || Q); case 8: return !P && !Q; case 9: return P === Q; } }
+  bind(['l1-p', 'l1-q'], function(){ var P = $('l1-p').value === '0', Q = $('l1-q').value === '0'; function V(b){ return '<b style="color:' + (b ? 'var(--success)' : 'var(--danger)') + ';">' + (b ? 'V' : 'F') + '</b>'; } $('l1-r').innerHTML = 'P ∧ Q = ' + V(P && Q) + '<br>P ∨ Q = ' + V(P || Q) + '<br>¬P = ' + V(!P) + '<br>P ⇒ Q = ' + V(!P || Q) + '<br>P ⇔ Q = ' + V(P === Q); });
+  var NEG = [['Pelo menos um aluno não foi aprovado.', 'Para negar “todos”, basta uma exceção.'], ['Nenhum número primo é par.', 'Negação de “existe”: nenhum. (Aqui a frase original é verdadeira: o 2.)'], ['Não chove ou não faz frio.', 'De Morgan: ¬(P ∧ Q) = ¬P ∨ ¬Q.'], ['Não estudo e não trabalho.', 'De Morgan: ¬(P ∨ Q) = ¬P ∧ ¬Q.'], ['Chove e a rua não molha.', 'A negação de P ⇒ Q é P ∧ ¬Q.'], ['Existe múltiplo de 4 que não é par.', 'Essa negação é falsa porque a frase original é verdadeira.']];
+  bind(['l2-s'], function(){ var i = +$('l2-s').value; $('l2-n').textContent = NEG[i][0]; $('l2-h').textContent = NEG[i][1]; });
+  bind(['l3-a', 'l3-b'], function(){ var A = +$('l3-a').value, B = +$('l3-b').value, rows = [[true, true], [true, false], [false, true], [false, false]], eq = true, h = '<table class="tbl" style="margin:0;"><tr><th>P</th><th>Q</th><th>Frase 1</th><th>Frase 2</th></tr>';
+    rows.forEach(function(r){ var x = ev(A, r[0], r[1]), y = ev(B, r[0], r[1]); if(x !== y) eq = false; function V(b){ return b ? 'V' : 'F'; } h += '<tr><td>' + V(r[0]) + '</td><td>' + V(r[1]) + '</td><td>' + V(x) + '</td><td style="' + (x !== y ? 'color:var(--danger);font-weight:700;' : '') + '">' + V(y) + '</td></tr>'; });
+    $('l3-r').innerHTML = h + '</table>'; $('l3-h').textContent = eq ? '✔ As duas frases têm a mesma tabela-verdade: são equivalentes.' : '✘ Tabelas diferentes: as frases não são equivalentes.'; });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  // modo apresentação: F = tela cheia, B = tela preta (qualquer tecla ou clique volta)
+  var preto = null;
+  function pretoOff(){ if(preto){ preto.remove(); preto = null; } }
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if(preto){ pretoOff(); e.preventDefault(); return; }
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f'){ try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }catch(x){} }
+    else if(k === 'b' || k === '.'){ preto = document.createElement('div'); preto.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;cursor:none'; preto.addEventListener('click', pretoOff); document.body.appendChild(preto); }
+  });
+  var dica = document.querySelector('.app > p'); if(dica && dica.textContent.indexOf('tela cheia') < 0) dica.textContent = dica.textContent.replace(/[. ]+$/, '') + ' · F: tela cheia · B: tela preta.';
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../app/ferramentas.js" id="ferramentas"></script>

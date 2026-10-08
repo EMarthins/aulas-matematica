@@ -14,7 +14,7 @@ const SCRIPT = `
 <script ${MARK}>
 (function(){
   try{
-    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) return;
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
     var key = 'prog:' + p.slice(i + 1);
     function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
     function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
@@ -36,7 +36,7 @@ function* walk(d){ for(const n of fs.readdirSync(d)){ const p = path.join(d, n);
   if(s.isDirectory()) yield* walk(p); else if(n.endsWith('.html')) yield p; } }
 
 let novos = 0, ja = 0;
-for(const sub of ['aulas', 'educacao-financeira']){
+for(const sub of ['aulas', 'educacao-financeira', 'ena-profmat']){
   const base = path.join(root, sub); if(!fs.existsSync(base)) continue;
   for(const f of walk(base)){
     const html = fs.readFileSync(f, 'utf8');
