@@ -128,6 +128,16 @@ html{ font-size:calc(var(--fit, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)
 sup, sub{ font-size:.8em !important; line-height:0; }
 .app{ max-width:min(60rem, 100%) !important; }
 .sheet{ max-width:min(78rem, 100%) !important; }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:11pt !important; }
+  body{ background:#fff !important; background-image:none !important; padding:0 !important; }
+  .theme-toggle{ display:none !important; }
+  .app, .sheet{ max-width:none !important; box-shadow:none !important; border-radius:0 !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .card, .qcard, .section, .tr-step, .callout{ break-inside:avoid; }
+  button.reveal, .btn, .tr-row, .hnt{ display:none !important; }
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -425,5 +435,26 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   window.reportarConclusao = function(score, total){
     try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:score, total:total}, '*'); }catch(e){}
   };
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
 })();
 </script>

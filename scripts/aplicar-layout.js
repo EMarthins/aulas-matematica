@@ -128,6 +128,17 @@ const JS_DECK = `
   new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
   window.addEventListener('resize', agendar);
   window.addEventListener('orientationchange', agendar);
+  // modo apresentação: F = tela cheia, B = tela preta (qualquer tecla ou clique volta)
+  var preto = null;
+  function pretoOff(){ if(preto){ preto.remove(); preto = null; } }
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if(preto){ pretoOff(); e.preventDefault(); return; }
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f'){ try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }catch(x){} }
+    else if(k === 'b' || k === '.'){ preto = document.createElement('div'); preto.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;cursor:none'; preto.addEventListener('click', pretoOff); document.body.appendChild(preto); }
+  });
+  var dica = document.querySelector('.app > p'); if(dica && dica.textContent.indexOf('tela cheia') < 0) dica.textContent = dica.textContent.replace(/[. ]+$/, '') + ' · F: tela cheia · B: tela preta.';
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
   pintar(); ajustar();
 })();
@@ -138,6 +149,16 @@ const CSS_LITE = `<style ${MARK}>
 :root{ --fit:1; }${FONT_FLUIDA}
 .app{ max-width:min(60rem, 100%) !important; }
 .sheet{ max-width:min(78rem, 100%) !important; }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:11pt !important; }
+  body{ background:#fff !important; background-image:none !important; padding:0 !important; }
+  .theme-toggle{ display:none !important; }
+  .app, .sheet{ max-width:none !important; box-shadow:none !important; border-radius:0 !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .card, .qcard, .section, .tr-step, .callout{ break-inside:avoid; }
+  button.reveal, .btn, .tr-row, .hnt{ display:none !important; }
+}
 </style>`;
 
 function* walk(d){ for(const n of fs.readdirSync(d)){ const p = path.join(d, n); const s = fs.statSync(p);
