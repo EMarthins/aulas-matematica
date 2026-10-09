@@ -6,6 +6,8 @@
 //   id, tipo: 'mc' | 'aberta' | 'vf' | 'soma' | 'assoc',
 //   materia, serie, unidade, topicos:[…], dificuldade: 1|2|3, fonte, pontos,
 //   enunciado:  HTML + $matemática$ (veja app/matematica.js),
+//   layoutAlt:  '1'|'2'|'linha' — força a disposição das alternativas desta questão
+//   pergunta:   HTML opcional exibido DEPOIS da figura (ex.: “Qual é o valor de x?”)
 //   figura:     { tipo:'svg'|'img'|'funcao'|'barras'|'tabela', … } (veja app/figuras.js)  — ou figuras:[…],
 //   alternativas: [{t, ok}]                (mc: exatamente uma ok)
 //   afirmacoes:   [{t, ok}]                (vf: qualquer nº · soma: até 7, valem 01,02,04,08,16,32,64)
@@ -54,7 +56,7 @@ export function normalizar(q) {
   o.topicos = Array.isArray(o.topicos) ? o.topicos.map(String) : String(o.topicos || '').split(',').map(s => s.trim()).filter(Boolean);
   o.dificuldade = Math.min(3, Math.max(1, +o.dificuldade || 2));
   o.pontos = +o.pontos > 0 ? +o.pontos : 1;
-  o.enunciado = limpar(o.enunciado); o.resolucao = limpar(o.resolucao);
+  o.enunciado = limpar(o.enunciado); o.resolucao = limpar(o.resolucao); if (o.pergunta) o.pergunta = limpar(o.pergunta);
   if (o.figuras && !o.figura) o.figura = null;
   if (o.tipo === 'mc') o.alternativas = (o.alternativas || []).map(a => ({ t: limpar(a.t), ok: !!a.ok }));
   if (o.tipo === 'vf' || o.tipo === 'soma') o.afirmacoes = (o.afirmacoes || []).map(a => ({ t: limpar(a.t), ok: !!a.ok }));
@@ -124,7 +126,8 @@ export function gabaritoDe(q, ordem) {
 function altClasse(textos, modo) {
   if (modo && modo !== 'auto') return 'alt-' + modo;
   const max = Math.max(...textos.map(t => t.replace(/<[^>]+>/g, '').length));
-  const tem = textos.some(t => /<figure|<svg|<img|<table/.test(t));
+  const img = textos.some(t => /<img|<svg/.test(t)), tem = textos.some(t => /<figure|<table/.test(t));
+  if (img) return 'alt-2';
   return tem || max > 40 ? 'alt-1' : max > 16 ? 'alt-2' : 'alt-linha';
 }
 
@@ -140,11 +143,12 @@ export function renderQuestao(q, o = {}) {
   let h = `<div class="q-enun">${pts}${M(q.enunciado)}</div>`;
   const figs = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
   figs.forEach(f => { h += figuraHtml(f); });
+  if (q.pergunta) h += `<div class="q-enun q-pergunta">${M(q.pergunta)}</div>`;
 
   if (q.tipo === 'mc') {
     const ord = o.ordem || q.alternativas.map((_, i) => i);
     const textos = ord.map(i => M(q.alternativas[i].t));
-    h += `<ol class="q-alts ${altClasse(textos, o.alt)}" type="a">${textos.map((t, k) => `<li class="${o.gab && q.alternativas[ord[k]].ok ? 'certa' : ''}"><b>${L[k]})</b> <span>${t}</span></li>`).join('')}</ol>`;
+    h += `<ol class="q-alts ${altClasse(textos, (!o.alt || o.alt === 'auto') && q.layoutAlt ? q.layoutAlt : o.alt)}" type="a">${textos.map((t, k) => `<li class="${o.gab && q.alternativas[ord[k]].ok ? 'certa' : ''}"><b>${L[k]})</b> <span>${t}</span></li>`).join('')}</ol>`;
   } else if (q.tipo === 'vf') {
     h += `<ul class="q-afs">${q.afirmacoes.map((a, i) => `<li><span class="par">( ${o.gab ? `<b class="r">${a.ok ? 'V' : 'F'}</b>` : '&nbsp;&nbsp;&nbsp;'} )</span><span>${M(a.t)}</span></li>`).join('')}</ul>`;
   } else if (q.tipo === 'soma') {

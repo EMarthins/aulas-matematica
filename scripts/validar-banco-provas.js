@@ -20,7 +20,7 @@ const url = f => 'file:///' + path.join(root, f).split(path.sep).join('/');
     if (ids.has(q.id)) erros.push('id repetido'); ids.add(q.id);
     const figs = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
     figs.forEach(f => { if (/fig-erro/.test(Fig.figuraHtml(f))) erros.push('figura inválida (' + f.tipo + ')'); });
-    if (!q.resolucao && q.tipo !== 'aberta') erros.push('aviso: sem resolução');
+    if (!q.resolucao && q.tipo !== 'aberta' && !/INEP/.test(q.fonte || '')) erros.push('aviso: sem resolução');
     const graves = erros.filter(e => !/^aviso/.test(e));
     if (graves.length) { ruins++; console.log('✗', rot, '—', erros.join('; ')); } else if (erros.length) console.log('•', rot, '—', erros.join('; '));
     porTipo[q.tipo] = (porTipo[q.tipo] || 0) + 1;

@@ -71,3 +71,11 @@ Aba **IA** do fazedor: o formulário (turma, matéria, conteúdo, quantidade, di
 3. As questões voltam validadas (`validar()`); as inválidas são descartadas e contadas. Entram em "Minhas questões" com origem **IA (rascunho)** — arraste para a prova depois de revisar.
 
 Nunca coloque a chave da API no navegador nem no repositório.
+
+## Provas do ENEM no banco
+
+88 questões de Matemática do **ENEM 2021 e 2025** (2º dia, caderno azul, questões 136–180 — as anuladas ficam de fora), com gabarito oficial e figuras recortadas dos cadernos do INEP. Aparecem no filtro **Turma/série = ENEM** e **Origem = ENEM 2021/2025 (INEP)**, separadas por conteúdo. Ainda sem resolução comentada.
+
+- Dados: `scripts/banco-provas/enem/dados-2021.js` e `dados-2025.js` (transcrição conferida; coordenadas dos recortes `fig`/alternativas em figura). Imagens em `app/img-questoes/`.
+- Campos novos usados por elas: `pergunta` (texto depois da figura), `layoutAlt` (força a disposição das alternativas) e imagens `src: "img:arquivo.png"` (resolvidas para `app/img-questoes/`).
+- Para acrescentar outro ano: copie o formato de um `dados-AAAA.js`, ponha o PDF do caderno e do gabarito e rode o montador (ele recorta as figuras e grava em `app/banco-provas.json`). Provas só com gabarito (sem o caderno de questões) não têm como entrar.

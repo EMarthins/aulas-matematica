@@ -2215,6 +2215,4357 @@
     0
    ],
    "resolucao": "1-b (a exponencial de base $2$ é crescente e $2^x > 0$), 2-d (logaritmo só existe para $x > 0$), 3-c ($a = -1 < 0$), 4-a (função afim com $a = 3$)."
+  },
+  {
+   "id": "enem2021-136",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Equações e sequências",
+   "topicos": [
+    "proporção áurea",
+    "equação do 2º grau",
+    "potências",
+    "sequência de Fibonacci"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um segmento de reta está dividido em duas partes na proporção áurea quando o todo está para uma das partes na mesma razão em que essa parte está para a outra. Essa constante de proporcionalidade é comumente representada pela letra grega φ, e seu valor é dado pela solução positiva da equação $φ^2 = φ + 1$.<br><span class=\"pb\"></span>Assim como a potência $φ^2$, as potências superiores de φ podem ser expressas da forma $aφ + b$, em que <i>a</i> e <i>b</i> são inteiros positivos, como apresentado no quadro.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "$φ^2$",
+     "$φ^3$",
+     "$φ^4$",
+     "$φ^5$",
+     "$φ^6$",
+     "$φ^7$"
+    ],
+    "linhas": [
+     [
+      "$φ + 1$",
+      "$2φ + 1$",
+      "$3φ + 2$",
+      "$5φ + 3$",
+      "$8φ + 5$",
+      "…"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "A potência $φ^7$, escrita na forma $aφ + b$ (<i>a</i> e <i>b</i> são inteiros positivos), é",
+   "alternativas": [
+    {
+     "t": "$5φ + 3$",
+     "ok": false
+    },
+    {
+     "t": "$7φ + 2$",
+     "ok": false
+    },
+    {
+     "t": "$9φ + 6$",
+     "ok": false
+    },
+    {
+     "t": "$11φ + 7$",
+     "ok": false
+    },
+    {
+     "t": "$13φ + 8$",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-137",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "projeção ortogonal",
+    "cubo",
+    "diagonais",
+    "vista superior"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O Atomium, representado na imagem, é um dos principais pontos turísticos de Bruxelas. Ele foi construído em 1958 para a primeira grande exposição mundial depois da Segunda Guerra Mundial, a Feira Mundial de Bruxelas.<br><span class=\"pb\"></span>Trata-se de uma estrutura metálica construída no formato de um cubo. Essa estrutura está apoiada por um dos vértices sobre uma base paralela ao plano do solo, e a diagonal do cubo, contendo esse vértice, é ortogonal ao plano da base. Centradas nos vértices desse cubo, foram construídas oito esferas metálicas, e uma outra esfera foi construída centrada no ponto de interseção das diagonais do cubo. As oito esferas sobre os vértices são interligadas segundo suas arestas, e a esfera central se conecta a elas pelas diagonais do cubo.<br><span class=\"pb\"></span>Todas essas interligações são feitas por tubos cilíndricos que possuem escadas em seu interior, permitindo o deslocamento de pessoas pela parte interna da estrutura. Na diagonal ortogonal à base, o deslocamento é feito por um elevador, que permite o deslocamento entre as esferas da base e a esfera do ponto mais alto, passando pela esfera central.<br><span class=\"pb\"></span>Considere um visitante que se deslocou pelo interior do Atomium sempre em linha reta e seguindo o menor trajeto entre dois vértices, passando por todas as arestas e todas as diagonais do cubo.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-137.png",
+    "alt": "Figura da questão 137",
+    "largura": "95%",
+    "legenda": "Disponível em: http://trupedatrip.com. Acesso em: 25 out. 2019."
+   },
+   "pergunta": "A projeção ortogonal sobre o plano do solo do trajeto percorrido por esse visitante é representada por",
+   "alternativas": [
+    {
+     "t": "<img src=\"img:enem2021-137-a.png\" alt=\"Alternativa A\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-137-b.png\" alt=\"Alternativa B\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-137-c.png\" alt=\"Alternativa C\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-137-d.png\" alt=\"Alternativa D\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-137-e.png\" alt=\"Alternativa E\" style=\"width:100%\">",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-139",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média aritmética",
+    "tabela",
+    "comparação",
+    "franquias"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma rede de hamburgueria tem três franquias em cidades distintas. Visando incluir um novo tipo de lanche no cardápio, o gerente de marketing da rede sugeriu que fossem colocados à venda cinco novos tipos de lanche, em edições especiais. Os lanches foram oferecidos pelo mesmo período de tempo em todos os franqueados. O tipo que apresentasse a maior média por franquia seria incluído definitivamente no cardápio. Terminado o período de experiência, a gerência recebeu um relatório descrevendo as quantidades vendidas, em unidade, de cada um dos cinco tipos de lanche nas três franquias.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "&nbsp;",
+     "Lanche I",
+     "Lanche II",
+     "Lanche III",
+     "Lanche IV",
+     "Lanche V"
+    ],
+    "linhas": [
+     [
+      "<b>Franquia I</b>",
+      "415",
+      "395",
+      "425",
+      "430",
+      "435"
+     ],
+     [
+      "<b>Franquia II</b>",
+      "415",
+      "445",
+      "370",
+      "370",
+      "425"
+     ],
+     [
+      "<b>Franquia III</b>",
+      "415",
+      "390",
+      "425",
+      "433",
+      "420"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "Com base nessas informações, a gerência decidiu incluir no cardápio o lanche de tipo",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": false
+    },
+    {
+     "t": "III.",
+     "ok": false
+    },
+    {
+     "t": "IV.",
+     "ok": false
+    },
+    {
+     "t": "V.",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-140",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média aritmética",
+    "intervalos",
+    "tabela",
+    "faturamento"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma grande rede de supermercados adota um sistema de avaliação dos faturamentos de suas filiais, considerando a média de faturamento mensal em milhão. A matriz da rede paga uma comissão para os representantes dos supermercados que atingirem uma média de faturamento mensal (<i>M</i>), conforme apresentado no quadro.",
+   "resolucao": "",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Comissão",
+      "Média de faturamento mensal (<i>M</i>)"
+     ],
+     "linhas": [
+      [
+       "I",
+       "$1 <= M < 2$"
+      ],
+      [
+       "II",
+       "$2 <= M < 4$"
+      ],
+      [
+       "III",
+       "$4 <= M < 5$"
+      ],
+      [
+       "IV",
+       "$5 <= M < 6$"
+      ],
+      [
+       "V",
+       "$M >= 6$"
+      ]
+     ],
+     "largura": "80%",
+     "legenda": "Um supermercado da rede obteve os faturamentos num dado ano, conforme apresentado no quadro a seguir."
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Faturamento mensal (em milhão de real)",
+      "Quantidade de meses"
+     ],
+     "linhas": [
+      [
+       "3,5",
+       "3"
+      ],
+      [
+       "2,5",
+       "2"
+      ],
+      [
+       "5",
+       "2"
+      ],
+      [
+       "3",
+       "4"
+      ],
+      [
+       "7,5",
+       "1"
+      ]
+     ],
+     "largura": "80%"
+    }
+   ],
+   "pergunta": "Nas condições apresentadas, os representantes desse supermercado avaliam que receberão, no ano seguinte, a comissão de tipo",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": true
+    },
+    {
+     "t": "III.",
+     "ok": false
+    },
+    {
+     "t": "IV.",
+     "ok": false
+    },
+    {
+     "t": "V.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-141",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Expressões algébricas",
+   "topicos": [
+    "expressão algébrica",
+    "modelagem",
+    "porcentagem",
+    "hospedagem"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Aplicativos que gerenciam serviços de hospedagem têm ganhado espaço no Brasil e no mundo por oferecer opções diferenciadas em termos de localização e valores de hospedagem. Em um desses aplicativos, o preço <i>P</i> a ser pago pela hospedagem é calculado considerando um preço por diária <i>d</i>, acrescido de uma taxa fixa de limpeza <i>L</i> e de uma taxa de serviço. Essa taxa de serviço é um valor percentual <i>s</i> calculado sobre o valor pago pelo total das diárias.<br><span class=\"pb\"></span>Nessa situação, o preço a ser pago ao aplicativo para uma hospedagem de <i>n</i> diárias pode ser obtido pela expressão",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$P = d*n + L + d*n*s$",
+     "ok": true
+    },
+    {
+     "t": "$P = d*n + L + d*s$",
+     "ok": false
+    },
+    {
+     "t": "$P = d + L + s$",
+     "ok": false
+    },
+    {
+     "t": "$P = d*n*s + L$",
+     "ok": false
+    },
+    {
+     "t": "$P = d*n + L + s$",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-142",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "probabilidade",
+    "eventos independentes",
+    "evento complementar",
+    "dados"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O organizador de uma competição de lançamento de dardos pretende tornar o campeonato mais competitivo. Pelas regras atuais da competição, numa rodada, o jogador lança 3 dardos e pontua caso acerte pelo menos um deles no alvo. O organizador considera que, em média, os jogadores têm, em cada lançamento, $ {1|2} $ de probabilidade de acertar um dardo no alvo.<br><span class=\"pb\"></span>A fim de tornar o jogo mais atrativo, planeja modificar as regras de modo que a probabilidade de um jogador pontuar em uma rodada seja igual ou superior a $ {9|10} $. Para isso, decide aumentar a quantidade de dardos a serem lançados em cada rodada.<br><span class=\"pb\"></span>Com base nos valores considerados pelo organizador da competição, a quantidade mínima de dardos que devem ser disponibilizados em uma rodada para tornar o jogo mais atrativo é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "2.",
+     "ok": false
+    },
+    {
+     "t": "4.",
+     "ok": true
+    },
+    {
+     "t": "6.",
+     "ok": false
+    },
+    {
+     "t": "9.",
+     "ok": false
+    },
+    {
+     "t": "10.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-143",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "gráfico de colunas",
+    "porcentagem",
+    "capacidade",
+    "leitura de gráfico",
+    "reservatórios"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O gráfico apresenta o nível de ocupação dos cinco reservatórios de água que abasteciam uma cidade em 2 de fevereiro de 2015.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-143.png",
+    "alt": "Figura da questão 143",
+    "largura": "94%"
+   },
+   "pergunta": "Nessa data, o reservatório com o maior volume de água era o",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": false
+    },
+    {
+     "t": "III.",
+     "ok": false
+    },
+    {
+     "t": "IV.",
+     "ok": true
+    },
+    {
+     "t": "V.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-144",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média ponderada",
+    "gráfico de colunas",
+    "frequência",
+    "idades"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa realizou uma pesquisa com alguns alunos de uma escola, coletando suas idades, e organizou esses dados no gráfico.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-144.png",
+    "alt": "Figura da questão 144",
+    "largura": "59%"
+   },
+   "pergunta": "Qual é a média das idades, em ano, desses alunos?",
+   "alternativas": [
+    {
+     "t": "9",
+     "ok": false
+    },
+    {
+     "t": "12",
+     "ok": false
+    },
+    {
+     "t": "18",
+     "ok": false
+    },
+    {
+     "t": "19",
+     "ok": true
+    },
+    {
+     "t": "27",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-145",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média",
+    "porcentagem",
+    "sistema de equações",
+    "distribuição percentual"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um estudo realizado pelo IBGE em quatro estados e no Distrito Federal, com mais de 5 mil pessoas com 10 anos ou mais, observou-se que a leitura ocupa, em média, apenas seis minutos do dia de cada pessoa. Na faixa de idade de 10 a 24 anos, a média diária é de três minutos. No entanto, no grupo de idades entre 24 e 60 anos, o tempo médio diário dedicado à leitura é de 5 minutos. Entre os mais velhos, com 60 anos ou mais, a média é de 12 minutos.<br><span class=\"pb\"></span>A quantidade de pessoas entrevistadas de cada faixa de idade seguiu a distribuição percentual descrita no quadro.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Faixa etária",
+     "Percentual de entrevistados"
+    ],
+    "linhas": [
+     [
+      "De 10 a 24 anos",
+      "$x$"
+     ],
+     [
+      "Entre 24 e 60 anos",
+      "$y$"
+     ],
+     [
+      "A partir de 60 anos",
+      "$x$"
+     ]
+    ],
+    "largura": "90%",
+    "legenda": "Disponível em: www.oglobo.globo.com. Acesso em: 16 ago. 2013 (adaptado)."
+   },
+   "pergunta": "Os valores de <i>x</i> e <i>y</i> do quadro são, respectivamente, iguais a",
+   "alternativas": [
+    {
+     "t": "10 e 80.",
+     "ok": false
+    },
+    {
+     "t": "10 e 90.",
+     "ok": false
+    },
+    {
+     "t": "20 e 60.",
+     "ok": true
+    },
+    {
+     "t": "20 e 80.",
+     "ok": false
+    },
+    {
+     "t": "25 e 50.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-146",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "desvio padrão",
+    "coeficiente de variação",
+    "média",
+    "dispersão"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um zootecnista pretende testar se uma nova ração para coelhos é mais eficiente do que a que ele vem utilizando atualmente. A ração atual proporciona uma massa média de 10 kg por coelho, com um desvio padrão de 1 kg, alimentado com essa ração durante um período de três meses.<br><span class=\"pb\"></span>O zootecnista selecionou uma amostra de coelhos e os alimentou com a nova ração pelo mesmo período de tempo. Ao final, anotou a massa de cada coelho, obtendo um desvio padrão de 1,5 kg para a distribuição das massas dos coelhos dessa amostra.<br><span class=\"pb\"></span>Para avaliar a eficiência dessa ração, ele utilizará o coeficiente de variação (<i>CV</i>) que é uma medida de dispersão definida por $CV = {s|x̄}$, em que <i>s</i> representa o desvio padrão e $x̄$, a média das massas dos coelhos que foram alimentados com uma determinada ração.<br><span class=\"pb\"></span>O zootecnista substituirá a ração que vinha utilizando pela nova, caso o coeficiente de variação da distribuição das massas dos coelhos que foram alimentados com a nova ração for menor do que o coeficiente de variação da distribuição das massas dos coelhos que foram alimentados com a ração atual.<br><span class=\"pb\"></span>A substituição da ração ocorrerá se a média da distribuição das massas dos coelhos da amostra, em quilograma, for superior a",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "5,0.",
+     "ok": false
+    },
+    {
+     "t": "9,5.",
+     "ok": false
+    },
+    {
+     "t": "10,0.",
+     "ok": false
+    },
+    {
+     "t": "10,5.",
+     "ok": false
+    },
+    {
+     "t": "15,0.",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-147",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "frequência",
+    "gráfico de colunas",
+    "cifra de César",
+    "leitura de gráfico"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "A Cifra de César é um exemplo de um método de codificação de mensagens usado por Júlio César para se comunicar com seus generais.<br><span class=\"pb\"></span>No método, cada letra era trocada por uma letra que aparecia no alfabeto um número fixo de casas adiante (ou atrás) de forma cíclica. A seguir temos um exemplo em que cada letra é substituída pela que vem três posições à frente.<table class=\"fig-tab\" style=\"font-size:.78em;margin:1.5mm auto\"><tr><th>Original</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td></tr><tr><th>Codificado</th><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td></tr></table><table class=\"fig-tab\" style=\"font-size:.78em;margin:1.5mm auto\"><tr><th>Original</th><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr><tr><th>Codificado</th><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td>A</td><td>B</td><td>C</td></tr></table>Para quebrar um código como esse, a análise de frequências das letras de um texto é uma ferramenta importante.<br><span class=\"pb\"></span>Uma análise do texto do romance <i>O guarani</i>, de José de Alencar, que é composto por 491 631 letras, gerou o seguinte gráfico de frequências:",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-147.png",
+    "alt": "Figura da questão 147",
+    "largura": "100%",
+    "legenda": "Disponível em: www.dominiopublico.gov.br. Acesso em: 7 fev. 2015."
+   },
+   "pergunta": "Após codificar esse texto com a regra do exemplo fornecido, faz-se nova análise de frequência no texto codificado.<br><span class=\"pb\"></span>As quatro letras mais frequentes, em ordem decrescente de frequência, do texto codificado são",
+   "alternativas": [
+    {
+     "t": "A, E, O e S.",
+     "ok": false
+    },
+    {
+     "t": "D, E, F e G.",
+     "ok": false
+    },
+    {
+     "t": "D, H, R e V.",
+     "ok": true
+    },
+    {
+     "t": "R, L, B e X.",
+     "ok": false
+    },
+    {
+     "t": "X, B, L e P.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-148",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "mediana",
+    "tabela",
+    "terremotos",
+    "rol"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O quadro apresenta o número de terremotos de magnitude maior ou igual a 7, na escala Richter, ocorridos em nosso planeta nos anos de 2000 a 2011.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Ano",
+     "2000",
+     "2001",
+     "2002",
+     "2003",
+     "2004",
+     "2005",
+     "2006",
+     "2007",
+     "2008",
+     "2009",
+     "2010",
+     "2011"
+    ],
+    "linhas": [
+     [
+      "<b>Terremotos</b>",
+      "15",
+      "16",
+      "13",
+      "15",
+      "16",
+      "11",
+      "11",
+      "18",
+      "12",
+      "17",
+      "24",
+      "20"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Disponível em: https://earthquake.usgs.gov/earthquakes/browse/m7-world.php. Acesso em: 13 ago. 2012 (adaptado)."
+   },
+   "pergunta": "Um pesquisador acredita que a mediana representa bem o número anual típico de terremotos em um período.<br><span class=\"pb\"></span>Segundo esse pesquisador, o número anual típico de terremotos de magnitude maior ou igual a 7 é",
+   "alternativas": [
+    {
+     "t": "11.",
+     "ok": false
+    },
+    {
+     "t": "15.",
+     "ok": false
+    },
+    {
+     "t": "15,5.",
+     "ok": true
+    },
+    {
+     "t": "15,7.",
+     "ok": false
+    },
+    {
+     "t": "17,5.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-149",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Funções",
+   "topicos": [
+    "gráfico de linhas",
+    "lucro",
+    "receita",
+    "despesa",
+    "leitura de gráfico"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "A receita <i>R</i> de uma empresa ao final de um mês é o dinheiro captado com a venda de mercadorias ou com a prestação de serviços nesse mês, e a despesa <i>D</i> é todo o dinheiro utilizado para pagamento de salários, contas de água e luz, impostos, entre outros. O lucro mensal obtido ao final do mês é a diferença entre a receita e a despesa registradas no mês. O gráfico apresenta as receitas e despesas, em milhão de real, de uma empresa ao final dos cinco primeiros meses de um dado ano.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-149.png",
+    "alt": "Figura da questão 149",
+    "largura": "90%"
+   },
+   "pergunta": "A previsão para os próximos meses é que o lucro mensal não seja inferior ao maior lucro obtido até o mês de maio.<br><span class=\"pb\"></span>Nessas condições, o lucro mensal para os próximos meses deve ser maior ou igual ao do mês de",
+   "alternativas": [
+    {
+     "t": "janeiro.",
+     "ok": false
+    },
+    {
+     "t": "fevereiro.",
+     "ok": true
+    },
+    {
+     "t": "março.",
+     "ok": false
+    },
+    {
+     "t": "abril.",
+     "ok": false
+    },
+    {
+     "t": "maio.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-150",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "aumento percentual",
+    "gráfico de linhas",
+    "vendas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "A depressão caracteriza-se por um desequilíbrio na química cerebral. Os neurônios de um deprimido não respondem bem aos estímulos dos neurotransmissores. Os remédios que combatem a depressão têm o objetivo de restabelecer a química cerebral. Com o aumento gradativo de casos de depressão, a venda desses medicamentos está em crescente evolução, conforme ilustra o gráfico.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-150.png",
+    "alt": "Figura da questão 150",
+    "largura": "96%",
+    "legenda": "Veja, 10 fev. 2010 (adaptado)."
+   },
+   "pergunta": "No período de 2005 a 2009, o aumento percentual no volume de vendas foi de",
+   "alternativas": [
+    {
+     "t": "45,4.",
+     "ok": false
+    },
+    {
+     "t": "54,5.",
+     "ok": false
+    },
+    {
+     "t": "120.",
+     "ok": true
+    },
+    {
+     "t": "220.",
+     "ok": false
+    },
+    {
+     "t": "283,2.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-151",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "histograma",
+    "frequência",
+    "distribuição",
+    "mediana",
+    "imóveis"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um casal está planejando comprar um apartamento de dois quartos num bairro de uma cidade e consultou a página de uma corretora de imóveis, encontrando 105 apartamentos de dois quartos à venda no bairro desejado. Eles usaram um aplicativo da corretora para gerar a distribuição dos preços do conjunto de imóveis selecionados.<br><span class=\"pb\"></span>O gráfico ilustra a distribuição de frequências dos preços de venda dos apartamentos dessa lista (em mil reais), no qual as faixas de preço são dadas por ]300, 400], ]400, 500], ]500, 600], ]600, 700], ]700, 800], ]800, 900], ]900, 1 000], ]1 000, 1 100], ]1 100, 1 200] e ]1 200, 1 300].<br><span class=\"pb\"></span>A mesma corretora anuncia que cerca de 50% dos apartamentos de dois quartos nesse bairro, publicados em sua página, têm preço de venda inferior a 550 mil reais. No entanto, o casal achou que essa última informação não era compatível com o gráfico obtido.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-151.png",
+    "alt": "Figura da questão 151",
+    "largura": "96%"
+   },
+   "pergunta": "Com base no gráfico obtido, o menor preço, <i>p</i> (em mil reais), para o qual pelo menos 50% dos apartamentos apresenta preço inferior a <i>p</i> é",
+   "alternativas": [
+    {
+     "t": "600.",
+     "ok": false
+    },
+    {
+     "t": "700.",
+     "ok": false
+    },
+    {
+     "t": "800.",
+     "ok": true
+    },
+    {
+     "t": "900.",
+     "ok": false
+    },
+    {
+     "t": "1 000.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-152",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Equações e funções",
+   "topicos": [
+    "operações definidas",
+    "equação do 2º grau",
+    "soma das raízes",
+    "radicais"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Para a comunicação entre dois navios é utilizado um sistema de codificação com base em valores numéricos. Para isso, são consideradas as operações triângulo ∆ e estrela ∗, definidas sobre o conjunto dos números reais por $x ∆ y = x^2 + xy - y^2$ e $x ∗ y = xy + x$.<br><span class=\"pb\"></span>O navio que deseja enviar uma mensagem deve fornecer um valor de entrada <i>b</i>, que irá gerar um valor de saída, a ser enviado ao navio receptor, dado pela soma das duas maiores soluções da equação $(a ∆ b) ∗ (b ∆ a) = 0$. Cada valor possível de entrada e saída representa uma mensagem diferente já conhecida pelos dois navios.<br><span class=\"pb\"></span>Um navio deseja enviar ao outro a mensagem “ATENÇÃO!”. Para isso, deve utilizar o valor de entrada $b = 1$.<br><span class=\"pb\"></span>Dessa forma, o valor recebido pelo navio receptor será",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$√5$",
+     "ok": false
+    },
+    {
+     "t": "$√3$",
+     "ok": false
+    },
+    {
+     "t": "$√1$",
+     "ok": false
+    },
+    {
+     "t": "$ {-1 + √5|2} $",
+     "ok": false
+    },
+    {
+     "t": "$ {3 + √5|2} $",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-153",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "escala",
+    "conversão de unidades",
+    "réplica",
+    "comprimento"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um parque temático brasileiro construiu uma réplica em miniatura do castelo de Liechtenstein. O castelo original, representado na imagem, está situado na Alemanha e foi reconstruído entre os anos de 1840 e 1842, após duas destruições causadas por guerras.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-153.jpg",
+    "alt": "Figura da questão 153",
+    "largura": "96%"
+   },
+   "pergunta": "O castelo possui uma ponte de 38,4 m de comprimento e 1,68 m de largura. O artesão que trabalhou para o parque produziu a réplica do castelo, em escala. Nessa obra, as medidas do comprimento e da largura da ponte eram, respectivamente, 160 cm e 7 cm.<br><span class=\"pb\"></span>A escala utilizada para fazer a réplica é",
+   "alternativas": [
+    {
+     "t": "1 : 576",
+     "ok": false
+    },
+    {
+     "t": "1 : 240",
+     "ok": false
+    },
+    {
+     "t": "1 : 24",
+     "ok": true
+    },
+    {
+     "t": "1 : 4,2",
+     "ok": false
+    },
+    {
+     "t": "1 : 2,4",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-154",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média",
+    "variação",
+    "projeção",
+    "razão",
+    "tabela"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "A demografia médica é o estudo da população de médicos no Brasil nos aspectos quantitativo e qualitativo, sendo um dos seus objetivos fazer projeções sobre a necessidade da formação de novos médicos. Um desses estudos gerou um conjunto de dados que aborda a evolução do número de médicos e da população brasileira por várias décadas. O quadro apresenta parte desses dados.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Ano",
+     "Médicos",
+     "População brasileira (em milhar)"
+    ],
+    "linhas": [
+     [
+      "1990",
+      "219 000",
+      "147 000"
+     ],
+     [
+      "2000",
+      "292 000",
+      "170 000"
+     ],
+     [
+      "2010",
+      "365 000",
+      "191 000"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Disponível em: www.cremesp.org.br. Acesso em: 24 jun. 2015 (adaptado)."
+   },
+   "pergunta": "Segundo uma projeção estatística, a variação do número de médicos e o da população brasileira de 2010 para 2020 será a média entre a variação de 1990 para 2000 e a de 2000 para 2010. Com o resultado dessa projeção, determina-se o número de médicos por mil habitantes no ano de 2020.<br><span class=\"pb\"></span>O número, com duas casas na parte decimal, mais próximo do número de médicos por mil habitantes no ano de 2020 seria de",
+   "alternativas": [
+    {
+     "t": "0,17.",
+     "ok": false
+    },
+    {
+     "t": "0,49.",
+     "ok": false
+    },
+    {
+     "t": "1,71.",
+     "ok": false
+    },
+    {
+     "t": "2,06.",
+     "ok": true
+    },
+    {
+     "t": "3,32.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-155",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "custo",
+    "variação percentual",
+    "receita",
+    "proporção"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um atleta produz sua própria refeição com custo fixo de R$ 10,00. Ela é composta por 400 g de frango, 600 g de batata-doce e uma hortaliça. Atualmente, os preços dos produtos para essa refeição são:",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Refeição",
+     "Frango (kg)",
+     "Batata-doce (kg)",
+     "Hortaliças (unidade)"
+    ],
+    "linhas": [
+     [
+      "Preço",
+      "R$ 12,50",
+      "R$ 5,00",
+      "R$ 2,00"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "Em relação a esses preços, haverá um aumento de 50% no preço do quilograma de batata-doce, e os outros preços não serão alterados. O atleta deseja manter o custo da refeição, a quantidade de batata-doce e a hortaliça. Portanto, terá que reduzir a quantidade de frango.<br><span class=\"pb\"></span>Qual deve ser a redução percentual da quantidade de frango para que o atleta alcance seu objetivo?",
+   "alternativas": [
+    {
+     "t": "12,5",
+     "ok": false
+    },
+    {
+     "t": "28,0",
+     "ok": false
+    },
+    {
+     "t": "30,0",
+     "ok": true
+    },
+    {
+     "t": "50,0",
+     "ok": false
+    },
+    {
+     "t": "70,0",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-156",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Trigonometria",
+   "topicos": [
+    "função seno",
+    "função cosseno",
+    "amplitude",
+    "período",
+    "gráfico",
+    "mola"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma mola é solta da posição distendida conforme a figura. A figura à direita representa o gráfico da posição <i>P</i> (em cm) da massa <i>m</i> em função do tempo <i>t</i> (em segundo) em um sistema de coordenadas cartesianas. Esse movimento periódico é descrito por uma expressão do tipo $P(t) = +-A cos(ωt)$ ou $P(t) = +-A sen(ωt)$, em que $A > 0$ é a amplitude de deslocamento máximo e ω é a frequência, que se relaciona com o período <i>T</i> pela fórmula $ω = {2π|T}$.<br><span class=\"pb\"></span>Considere a ausência de quaisquer forças dissipativas.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-156.png",
+    "alt": "Figura da questão 156",
+    "largura": "100%"
+   },
+   "pergunta": "A expressão algébrica que representa as posições <i>P</i>(<i>t</i>) da massa <i>m</i>, ao longo do tempo, no gráfico, é",
+   "alternativas": [
+    {
+     "t": "$-3 cos(2t)$",
+     "ok": true
+    },
+    {
+     "t": "$-3 sen(2t)$",
+     "ok": false
+    },
+    {
+     "t": "$3 cos(2t)$",
+     "ok": false
+    },
+    {
+     "t": "$-6 cos(2t)$",
+     "ok": false
+    },
+    {
+     "t": "$6 sen(2t)$",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-157",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Matrizes",
+   "topicos": [
+    "matriz",
+    "elementos da matriz",
+    "leitura de matriz",
+    "soma de colunas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma construtora, pretendendo investir na construção de imóveis em uma metrópole com cinco grandes regiões, fez uma pesquisa sobre a quantidade de famílias que mudaram de uma região para outra, de modo a determinar qual região foi o destino do maior fluxo de famílias, sem levar em consideração o número de famílias que deixaram a região. Os valores da pesquisa estão dispostos em uma matriz $A = [a_{ij}]$, $i, j ∈ \\{1, 2, 3, 4, 5\\}$, em que o elemento $a_{ij}$ corresponde ao total de famílias (em dezena) que se mudaram da região <i>i</i> para a região <i>j</i> durante um certo período, e o elemento $a_{ii}$ é considerado nulo, uma vez que somente são consideradas mudanças entre regiões distintas. A seguir, está apresentada a matriz com os dados da pesquisa.<div style=\"text-align:center;margin:2mm 0\"><i>A</i> = <span style=\"display:inline-block;vertical-align:middle;border-left:.35mm solid #111;border-right:.35mm solid #111;border-radius:2mm;padding:0 2.2mm\"><table style=\"border-collapse:collapse\"><tr><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">4</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">5</td></tr><tr><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">6</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">3</td></tr><tr><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">3</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td></tr><tr><td style=\"padding:.2mm 1.6mm;text-align:center\">1</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">4</td></tr><tr><td style=\"padding:.2mm 1.6mm;text-align:center\">1</td><td style=\"padding:.2mm 1.6mm;text-align:center\">2</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td><td style=\"padding:.2mm 1.6mm;text-align:center\">4</td><td style=\"padding:.2mm 1.6mm;text-align:center\">0</td></tr></table></span></div>",
+   "resolucao": "",
+   "pergunta": "Qual região foi selecionada para o investimento da construtora?",
+   "alternativas": [
+    {
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "2",
+     "ok": false
+    },
+    {
+     "t": "3",
+     "ok": false
+    },
+    {
+     "t": "4",
+     "ok": false
+    },
+    {
+     "t": "5",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-158",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "variação percentual",
+    "consumo",
+    "proporcionalidade"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Para realizar um voo entre duas cidades que distam 2 000 km uma da outra, uma companhia aérea utilizava um modelo de aeronave A, capaz de transportar até 200 passageiros. Quando uma dessas aeronaves está lotada de passageiros, o consumo de combustível é de 0,02 litro por quilômetro e por passageiro. Essa companhia resolveu trocar o modelo de aeronave A pelo modelo de aeronave B, que é capaz de transportar 10% de passageiros a mais do que o modelo A, mas consumindo 10% menos combustível por quilômetro e por passageiro.<br><span class=\"pb\"></span>A quantidade de combustível consumida pelo modelo de aeronave B, em relação à do modelo de aeronave A, em um voo lotado entre as duas cidades, é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "10% menor.",
+     "ok": false
+    },
+    {
+     "t": "1% menor.",
+     "ok": true
+    },
+    {
+     "t": "igual.",
+     "ok": false
+    },
+    {
+     "t": "1% maior.",
+     "ok": false
+    },
+    {
+     "t": "11% maior.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-159",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "grandezas inversamente proporcionais",
+    "regra de três",
+    "trabalho"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em uma corrida automobilística, os carros podem fazer paradas nos boxes para efetuar trocas de pneus. Nessas trocas, o trabalho é feito por um grupo de três pessoas em cada pneu. Considere que os grupos iniciam o trabalho no mesmo instante, trabalham à mesma velocidade e cada grupo trabalha em um único pneu. Com os quatro grupos completos, são necessários 4 segundos para que a troca seja efetuada. O tempo gasto por um grupo para trocar um pneu é inversamente proporcional ao número de pessoas trabalhando nele. Em uma dessas paradas, um dos trabalhadores passou mal, não pôde participar da troca e nem foi substituído, de forma que um dos quatro grupos de troca ficou reduzido.<br><span class=\"pb\"></span>Nessa parada específica, com um dos grupos reduzido, qual foi o tempo gasto, em segundo, para trocar os quatro pneus?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "6,0",
+     "ok": true
+    },
+    {
+     "t": "5,7",
+     "ok": false
+    },
+    {
+     "t": "5,0",
+     "ok": false
+    },
+    {
+     "t": "4,5",
+     "ok": false
+    },
+    {
+     "t": "4,4",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-160",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Sistemas e otimização",
+   "topicos": [
+    "comparação de custos",
+    "sistema",
+    "tabela",
+    "problema",
+    "minerais"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um nutricionista verificou, na dieta diária do seu cliente, a falta de 800 mg do mineral A, de 1 000 mg do mineral B e de 1 200 mg do mineral C. Por isso, recomendou a compra de suplementos alimentares que forneçam os minerais faltantes e informou que não haveria problema se consumisse mais desses minerais do que o recomendado.<br><span class=\"pb\"></span>O cliente encontrou cinco suplementos, vendidos em sachês unitários, cujos preços e as quantidades dos minerais estão apresentados a seguir:<ul><li>Suplemento I: contém 50 mg do mineral A, 100 mg do mineral B e 200 mg do mineral C e custa R$ 2,00;</li><li>Suplemento II: contém 800 mg do mineral A, 250 mg do mineral B e 200 mg do mineral C e custa R$ 3,00;</li><li>Suplemento III: contém 250 mg do mineral A, 1 000 mg do mineral B e 300 mg do mineral C e custa R$ 5,00;</li><li>Suplemento IV: contém 600 mg do mineral A, 500 mg do mineral B e 1 000 mg do mineral C e custa R$ 6,00;</li><li>Suplemento V: contém 400 mg do mineral A, 800 mg do mineral B e 1 200 mg do mineral C e custa R$ 8,00.</li></ul>O cliente decidiu comprar sachês de um único suplemento no qual gastasse menos dinheiro e ainda suprisse a falta de minerais indicada pelo nutricionista, mesmo que consumisse alguns deles além de sua necessidade.<br><span class=\"pb\"></span>Nessas condições, o cliente deverá comprar sachês do suplemento",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": false
+    },
+    {
+     "t": "III.",
+     "ok": false
+    },
+    {
+     "t": "IV.",
+     "ok": true
+    },
+    {
+     "t": "V.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-161",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Funções",
+   "topicos": [
+    "função quadrática",
+    "gráfico",
+    "arrecadação",
+    "modelagem",
+    "máximo"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O administrador de um teatro percebeu que, com o ingresso do evento a R$ 20,00, um show conseguia atrair 200 pessoas e que, a cada R$ 1,00 de redução no preço do ingresso, o número de pessoas aumentava em 40. Ele sabe que os donos do teatro só admitem trabalhar com valores inteiros para os ingressos, pela dificuldade de disponibilizar troco, e pretende convencê-los a diminuir o preço do ingresso. Assim, apresentará um gráfico da arrecadação em função do valor do desconto no preço atual do ingresso.",
+   "resolucao": "",
+   "pergunta": "O gráfico que mais se assemelha ao que deve ser elaborado pelo administrador é",
+   "alternativas": [
+    {
+     "t": "<img src=\"img:enem2021-161-a.png\" alt=\"Alternativa A\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-161-b.png\" alt=\"Alternativa B\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-161-c.png\" alt=\"Alternativa C\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-161-d.png\" alt=\"Alternativa D\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-161-e.png\" alt=\"Alternativa E\" style=\"width:100%\">",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-162",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Funções",
+   "topicos": [
+    "função definida por partes",
+    "gráfico",
+    "imposto",
+    "porcentagem"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O quadro representa a relação entre o preço de um produto (<i>R</i>) e seu respectivo imposto devido (<i>I</i>).",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Preço do produto ($R$)",
+     "Imposto devido ($I$)"
+    ],
+    "linhas": [
+     [
+      "$R <= 5 000$",
+      "isento"
+     ],
+     [
+      "$5 000 < R <= 10 000$",
+      "10% de $(R - 5 000)$"
+     ],
+     [
+      "$10 000 < R <= 15 000$",
+      "$500 + 30%$ de $(R - 10 000)$"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "pergunta": "O gráfico que melhor representa essa relação é",
+   "alternativas": [
+    {
+     "t": "<img src=\"img:enem2021-162-a.png\" alt=\"Alternativa A\" style=\"width:100%\">",
+     "ok": true
+    },
+    {
+     "t": "<img src=\"img:enem2021-162-b.png\" alt=\"Alternativa B\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-162-c.png\" alt=\"Alternativa C\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-162-d.png\" alt=\"Alternativa D\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2021-162-e.png\" alt=\"Alternativa E\" style=\"width:100%\">",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-163",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Grandezas e unidades",
+   "topicos": [
+    "unidades de medida",
+    "proporcionalidade",
+    "análise dimensional",
+    "potências"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "A relação de Newton-Laplace estabelece que o módulo volumétrico de um fluido é diretamente proporcional ao quadrado da velocidade do som (em metro por segundo) no fluido e à sua densidade (em quilograma por metro cúbico), com uma constante de proporcionalidade adimensional.<br><span class=\"pb\"></span>Nessa relação, a unidade de medida adequada para o módulo volumétrico é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "kg·m<sup>−2</sup>·s<sup>−1</sup>",
+     "ok": false
+    },
+    {
+     "t": "kg·m<sup>−1</sup>·s<sup>−2</sup>",
+     "ok": true
+    },
+    {
+     "t": "kg·m<sup>−5</sup>·s<sup>2</sup>",
+     "ok": false
+    },
+    {
+     "t": "kg<sup>−1</sup>·m<sup>1</sup>·s<sup>2</sup>",
+     "ok": false
+    },
+    {
+     "t": "kg<sup>−1</sup>·m<sup>5</sup>·s<sup>−2</sup>",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-164",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Sistemas de equações",
+   "topicos": [
+    "sistema linear",
+    "massa",
+    "problema",
+    "inequação"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa pretende viajar por uma companhia aérea que despacha gratuitamente uma mala com até 10 kg.<br><span class=\"pb\"></span>Em duas viagens que realizou, essa pessoa utilizou a mesma mala e conseguiu 10 kg com as seguintes combinações de itens:",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Viagem",
+     "Camisetas",
+     "Calças",
+     "Sapatos"
+    ],
+    "linhas": [
+     [
+      "I",
+      "12",
+      "4",
+      "3"
+     ],
+     [
+      "II",
+      "18",
+      "3",
+      "2"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "pergunta": "Para ter certeza de que sua bagagem terá massa de 10 kg, ela decide levar essa mala com duas calças, um sapato e o máximo de camisetas, admitindo que itens do mesmo tipo têm a mesma massa.<br><span class=\"pb\"></span>Qual a quantidade máxima de camisetas que essa pessoa poderá levar?",
+   "alternativas": [
+    {
+     "t": "22",
+     "ok": false
+    },
+    {
+     "t": "24",
+     "ok": true
+    },
+    {
+     "t": "26",
+     "ok": false
+    },
+    {
+     "t": "33",
+     "ok": false
+    },
+    {
+     "t": "39",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-165",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "taxa",
+    "rendimento",
+    "consumo",
+    "decimais"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um automóvel apresenta um desempenho médio de 16 km/L. Um engenheiro desenvolveu um novo motor a combustão que economiza, em relação ao consumo do motor anterior, 0,1 L de combustível a cada 20 km percorridos.<br><span class=\"pb\"></span>O valor do desempenho médio do automóvel com o novo motor, em quilômetro por litro, expresso com uma casa decimal, é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "15,9.",
+     "ok": false
+    },
+    {
+     "t": "16,1.",
+     "ok": false
+    },
+    {
+     "t": "16,4.",
+     "ok": false
+    },
+    {
+     "t": "17,4.",
+     "ok": true
+    },
+    {
+     "t": "18,0.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-166",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "área",
+    "paralelepípedo",
+    "proporcionalidade",
+    "tinta",
+    "ampliação"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O projeto de um contêiner, em forma de paralelepípedo reto retangular, previa a pintura dos dois lados (interno e externo) de cada uma das quatro paredes com tinta acrílica e a pintura do piso interno com tinta epóxi. O construtor havia pedido, a cinco fornecedores diferentes, orçamentos das tintas necessárias, mas, antes de iniciar a obra, resolveu mudar o projeto original, alterando o comprimento e a largura para o dobro do originalmente previsto, mantendo inalterada a altura. Ao pedir novos orçamentos aos fornecedores, para as novas dimensões, cada um deu uma resposta diferente sobre as novas quantidades de tinta necessárias.<br><span class=\"pb\"></span>Em relação ao previsto para o projeto original, as novas quantidades de tinta necessárias informadas pelos fornecedores foram as seguintes:<ul><li>Fornecedor I: “O dobro, tanto para as paredes quanto para o piso.”</li><li>Fornecedor II: “O dobro para as paredes e quatro vezes para o piso.”</li><li>Fornecedor III: “Quatro vezes, tanto para as paredes quanto para o piso.”</li><li>Fornecedor IV: “Quatro vezes para as paredes e o dobro para o piso.”</li><li>Fornecedor V: “Oito vezes para as paredes e quatro vezes para o piso.”</li></ul>Analisando as informações dos fornecedores, o construtor providenciará a quantidade adequada de material. Considere a porta de acesso do contêiner como parte de uma das paredes.<br><span class=\"pb\"></span>Qual dos fornecedores prestou as informações adequadas, devendo ser o escolhido pelo construtor para a aquisição do material?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "I",
+     "ok": false
+    },
+    {
+     "t": "II",
+     "ok": true
+    },
+    {
+     "t": "III",
+     "ok": false
+    },
+    {
+     "t": "IV",
+     "ok": false
+    },
+    {
+     "t": "V",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-167",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "volume",
+    "cilindro",
+    "capacidade",
+    "aproximação de pi",
+    "consumo de água"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um povoado com 100 habitantes está passando por uma situação de seca prolongada e os responsáveis pela administração pública local decidem contratar a construção de um reservatório. Ele deverá ter a forma de um cilindro circular reto, cuja base tenha 5 metros de diâmetro interno, e atender à demanda de água da população por um período de exatamente sete dias consecutivos. No oitavo dia, o reservatório vazio é completamente reabastecido por carros-pipa.<br><span class=\"pb\"></span>Considere que o consumo médio diário por habitante é de 120 litros de água. Use 3 como aproximação para π.<br><span class=\"pb\"></span>Nas condições apresentadas, o reservatório deverá ser construído com uma altura interna mínima, em metro, igual a",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "1,12.",
+     "ok": false
+    },
+    {
+     "t": "3,10.",
+     "ok": false
+    },
+    {
+     "t": "4,35.",
+     "ok": false
+    },
+    {
+     "t": "4,48.",
+     "ok": true
+    },
+    {
+     "t": "5,60.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-168",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "octaedro",
+    "planificação",
+    "faces opostas",
+    "poliedros"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Num octaedro regular, duas faces são consideradas opostas quando não têm nem arestas, nem vértices em comum. Na figura, observa-se um octaedro regular e uma de suas planificações, na qual há uma face colorida na cor cinza escuro e outras quatro faces numeradas.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-168.png",
+    "alt": "Figura da questão 168",
+    "largura": "94%"
+   },
+   "pergunta": "Qual(is) face(s) ficará(ão) oposta(s) à face de cor cinza escuro, quando o octaedro for reconstruído a partir da planificação dada?",
+   "alternativas": [
+    {
+     "t": "1, 2, 3 e 4",
+     "ok": false
+    },
+    {
+     "t": "1 e 3",
+     "ok": false
+    },
+    {
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "2",
+     "ok": false
+    },
+    {
+     "t": "4",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-169",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "triângulo equilátero",
+    "perímetro",
+    "altura",
+    "raiz de 3"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O instrumento de percussão conhecido como triângulo é composto por uma barra fina de aço, dobrada em um formato que se assemelha a um triângulo, com uma abertura e uma haste, conforme ilustra a Figura 1.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-169.png",
+    "alt": "Figura da questão 169",
+    "largura": "88%"
+   },
+   "pergunta": "Uma empresa de brindes promocionais contrata uma fundição para a produção de miniaturas desse tipo de instrumento. A fundição produz, inicialmente, peças com o formato de um triângulo equilátero de altura <i>h</i>, conforme ilustra a Figura 2. Após esse processo, cada peça é aquecida, deformando os cantos, e cortada em um dos vértices, dando origem à miniatura. Assuma que não ocorram perdas de material no processo de produção, de forma que o comprimento da barra utilizada seja igual ao perímetro do triângulo equilátero representado na Figura 2.<br><span class=\"pb\"></span>Considere 1,7 como valor aproximado para $√3$.<br><span class=\"pb\"></span>Nessas condições, o valor que mais se aproxima da medida do comprimento da barra, em centímetro, é",
+   "alternativas": [
+    {
+     "t": "9,07.",
+     "ok": false
+    },
+    {
+     "t": "13,60.",
+     "ok": false
+    },
+    {
+     "t": "20,40.",
+     "ok": false
+    },
+    {
+     "t": "27,18.",
+     "ok": true
+    },
+    {
+     "t": "36,24.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-170",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "tronco de cone",
+    "volume",
+    "capacidade",
+    "mililitro",
+    "aproximação de pi"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa comprou uma caneca para tomar sopa, conforme ilustração.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-170.png",
+    "alt": "Figura da questão 170",
+    "largura": "75%"
+   },
+   "pergunta": "Sabe-se que 1 cm³ = 1 mL e que o topo da caneca é uma circunferência de diâmetro (<i>D</i>) medindo 10 cm, e a base é um círculo de diâmetro (<i>d</i>) medindo 8 cm. Além disso, sabe-se que a altura (<i>h</i>) dessa caneca mede 12 cm (distância entre o centro das circunferências do topo e da base).<br><span class=\"pb\"></span>Utilize 3 como aproximação para π.<br><span class=\"pb\"></span>Qual é a capacidade volumétrica, em mililitro, dessa caneca?",
+   "alternativas": [
+    {
+     "t": "216",
+     "ok": false
+    },
+    {
+     "t": "408",
+     "ok": false
+    },
+    {
+     "t": "732",
+     "ok": true
+    },
+    {
+     "t": "2 196",
+     "ok": false
+    },
+    {
+     "t": "2 928",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-171",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "áreas",
+    "figuras planas",
+    "comparação",
+    "custo",
+    "aproximação"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O dono de uma loja pretende usar cartões imantados para a divulgação de sua loja. A empresa que fornecerá o serviço lhe informa que o custo de fabricação do cartão é de R$ 0,01 por centímetro quadrado e que disponibiliza modelos tendo como faces úteis para impressão:<ul><li>um triângulo equilátero de lado 12 cm;</li><li>um quadrado de lado 8 cm;</li><li>um retângulo de lados 11 cm e 8 cm;</li><li>um hexágono regular de lado 6 cm;</li><li>um círculo de diâmetro 10 cm.</li></ul>O dono da loja está disposto a pagar, no máximo, R$ 0,80 por cartão. Ele escolherá, dentro desse limite de preço, o modelo que tiver maior área de impressão.<br><span class=\"pb\"></span>Use 3 como aproximação para π e use 1,7 como aproximação para $√3$.<br><span class=\"pb\"></span>Nessas condições, o modelo que deverá ser escolhido tem como face útil para impressão um",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "triângulo.",
+     "ok": false
+    },
+    {
+     "t": "quadrado.",
+     "ok": false
+    },
+    {
+     "t": "retângulo.",
+     "ok": false
+    },
+    {
+     "t": "hexágono.",
+     "ok": false
+    },
+    {
+     "t": "círculo.",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2021-172",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "intervalo",
+    "frequência cardíaca",
+    "fórmula",
+    "tabela"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um ciclista amador de 61 anos de idade utiliza um monitor cardíaco para medir suas frequências cardíacas em quatro diferentes tipos de trechos do percurso. Os resultados das frequências cardíacas máximas alcançadas nesses trechos foram:",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Trechos do percurso",
+     "Frequências cardíacas máximas (bpm)"
+    ],
+    "linhas": [
+     [
+      "Leve no plano",
+      "90"
+     ],
+     [
+      "Forte no plano",
+      "120"
+     ],
+     [
+      "Subida moderada",
+      "130"
+     ],
+     [
+      "Subida forte",
+      "140"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "pergunta": "Sabe-se que a faixa aeróbica ideal para o ganho de condicionamento físico é entre 65% e 85% da frequência cardíaca máxima (Fc máx.), que, por sua vez, é determinada pela fórmula:<div style=\"text-align:center\">Fc máx. = 220 – idade,</div>em que a idade é dada em ano e Fc máx. é dada em bpm (batimento por minuto).<br><span class=\"pb\"></span>Os trechos do percurso nos quais esse ciclista se mantém dentro de sua faixa aeróbica ideal, para o ganho de condicionamento físico, são",
+   "alternativas": [
+    {
+     "t": "leve no plano, forte no plano, subida moderada e subida forte.",
+     "ok": false
+    },
+    {
+     "t": "leve no plano, forte no plano e subida moderada.",
+     "ok": false
+    },
+    {
+     "t": "forte no plano, subida moderada e subida forte.",
+     "ok": false
+    },
+    {
+     "t": "forte no plano e subida moderada.",
+     "ok": true
+    },
+    {
+     "t": "leve no plano e subida forte.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-173",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Inequações",
+   "topicos": [
+    "inequação",
+    "problema",
+    "receita",
+    "números inteiros"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um lava-rápido oferece dois tipos de lavagem de veículos: lavagem simples, ao preço de R$ 20,00, e lavagem completa, ao preço de R$ 35,00. Para cobrir as despesas com produtos e funcionários, e não ter prejuízos, o lava-rápido deve ter uma receita diária de, pelo menos, R$ 300,00.<br><span class=\"pb\"></span>Para não ter prejuízo, o menor número de lavagens diárias que o lava-rápido deve efetuar é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "6.",
+     "ok": false
+    },
+    {
+     "t": "8.",
+     "ok": false
+    },
+    {
+     "t": "9.",
+     "ok": true
+    },
+    {
+     "t": "15.",
+     "ok": false
+    },
+    {
+     "t": "20.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-174",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "desconto",
+    "comparação de preços",
+    "tabela",
+    "otimização de custo"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Após consulta médica, um paciente deve seguir um tratamento composto por três medicamentos: X, Y e Z. O paciente, para adquirir os três medicamentos, faz um orçamento em três farmácias diferentes, conforme o quadro.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "&nbsp;",
+     "X",
+     "Y",
+     "Z"
+    ],
+    "linhas": [
+     [
+      "<b>Farmácia 1</b>",
+      "R$ 45,00",
+      "R$ 40,00",
+      "R$ 50,00"
+     ],
+     [
+      "<b>Farmácia 2</b>",
+      "R$ 50,00",
+      "R$ 50,00",
+      "R$ 40,00"
+     ],
+     [
+      "<b>Farmácia 3</b>",
+      "R$ 65,00",
+      "R$ 45,00",
+      "R$ 35,00"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "pergunta": "Dessas farmácias, algumas oferecem descontos:<ul><li>na compra dos medicamentos X e Y na Farmácia 2, recebe-se um desconto de 20% em ambos os produtos, independentemente da compra do medicamento Z, e não há desconto para o medicamento Z;</li><li>na compra dos 3 medicamentos na Farmácia 3, recebe-se 20% de desconto no valor total da compra.</li></ul>O paciente deseja efetuar a compra de modo a minimizar sua despesa com os medicamentos.<br><span class=\"pb\"></span>De acordo com as informações fornecidas, o paciente deve comprar os medicamentos da seguinte forma:",
+   "alternativas": [
+    {
+     "t": "X, Y e Z na Farmácia 1.",
+     "ok": false
+    },
+    {
+     "t": "X e Y na Farmácia 1, e Z na Farmácia 3.",
+     "ok": false
+    },
+    {
+     "t": "X e Y na Farmácia 2, e Z na Farmácia 3.",
+     "ok": true
+    },
+    {
+     "t": "X na Farmácia 2, e Y e Z na Farmácia 3.",
+     "ok": false
+    },
+    {
+     "t": "X, Y e Z na Farmácia 3.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-175",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "prisma",
+    "figuras planas",
+    "trapézio isósceles",
+    "quadrado",
+    "estrutura"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Muitos brinquedos que frequentemente são encontrados em praças e parques públicos apresentam formatos de figuras geométricas bidimensionais e tridimensionais. Uma empresa foi contratada para desenvolver uma nova forma de brinquedo. A proposta apresentada pela empresa foi de uma estrutura formada apenas por hastes metálicas, conectadas umas às outras, como apresentado na figura. As hastes de mesma tonalidade e espessura são congruentes.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-175.png",
+    "alt": "Figura da questão 175",
+    "largura": "86%"
+   },
+   "pergunta": "Com base na proposta apresentada, quantas figuras geométricas planas de cada tipo são formadas pela união das hastes?",
+   "alternativas": [
+    {
+     "t": "12 trapézios isósceles e 12 quadrados.",
+     "ok": true
+    },
+    {
+     "t": "24 trapézios isósceles e 12 quadrados.",
+     "ok": false
+    },
+    {
+     "t": "12 paralelogramos e 12 quadrados.",
+     "ok": false
+    },
+    {
+     "t": "8 trapézios isósceles e 12 quadrados.",
+     "ok": false
+    },
+    {
+     "t": "12 trapézios escalenos e 12 retângulos.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-176",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Sistemas de numeração",
+   "topicos": [
+    "numeração romana",
+    "números",
+    "adição",
+    "subtração",
+    "datas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "O sistema de numeração romano ainda é utilizado na indicação de capítulos e volumes de livros, na designação de séculos e, em ordem cronológica, de papas e reis de mesmo nome. São utilizadas sete letras do alfabeto:<br><span class=\"pb\"></span>Quatro fundamentais: I (vale 1); X (vale 10); C (vale 100) e M (vale 1 000).<br><span class=\"pb\"></span>Três secundárias: V (vale 5); L (vale 50) e D (vale 500).<br><span class=\"pb\"></span>As regras para escrever números romanos são:<br><span class=\"pb\"></span>1. Não existe símbolo correspondente ao zero;<br><span class=\"pb\"></span>2. Os símbolos fundamentais podem ser repetidos até três vezes e seus valores são adicionados. Exemplo: XXX = 30;<br><span class=\"pb\"></span>3. Uma letra posta à esquerda de outra de maior valor indica subtração dos respectivos valores. Exemplo: IX = 10 − 1 = 9;<br><span class=\"pb\"></span>4. Uma letra posta à direita de outra de maior valor indica adição dos respectivos valores. Exemplo: XI = 10 + 1 = 11.<br><span class=\"pb\"></span>Em uma cidade europeia há uma placa indicando o ano de sua fundação: MCDLXIX.<br><span class=\"pb\"></span>Quantos anos de fundação essa cidade comemorará em 2050?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "379",
+     "ok": false
+    },
+    {
+     "t": "381",
+     "ok": false
+    },
+    {
+     "t": "579",
+     "ok": false
+    },
+    {
+     "t": "581",
+     "ok": true
+    },
+    {
+     "t": "601",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-177",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Sistemas de numeração",
+   "topicos": [
+    "base binária",
+    "adição",
+    "sistema decimal",
+    "computação"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma das bases mais utilizadas para representar um número é a base decimal. Entretanto, os computadores trabalham com números na base binária. Nessa base, qualquer número natural é representado usando apenas os algarismos 0 e 1. Por exemplo, as representações dos números 9 e 12, na base binária, são 1001 e 1100, respectivamente. A operação de adição, na base binária, segue um algoritmo similar ao utilizado na base decimal, como detalhado no quadro:",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "<b>a</b>",
+     "<b>b</b>",
+     "<b>a + b</b>"
+    ],
+    "linhas": [
+     [
+      "0",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "1"
+     ],
+     [
+      "1",
+      "0",
+      "1"
+     ],
+     [
+      "1",
+      "1",
+      "10"
+     ]
+    ],
+    "largura": "45%"
+   },
+   "pergunta": "Por exemplo, na base binária, a soma dos números 10 e 10 é 100, como apresentado:<div style=\"text-align:center;font-family:'JetBrains Mono',monospace;line-height:1.25\">&nbsp;&nbsp;10<br><span class=\"pb\"></span>+&nbsp;10<br><span class=\"pb\"></span>−−−<br><span class=\"pb\"></span>100</div>Considerando as informações do texto, o resultado da adição 9 + 12 será representado, na base binária, por",
+   "alternativas": [
+    {
+     "t": "101.",
+     "ok": false
+    },
+    {
+     "t": "1101.",
+     "ok": false
+    },
+    {
+     "t": "1111.",
+     "ok": false
+    },
+    {
+     "t": "10101.",
+     "ok": true
+    },
+    {
+     "t": "11001.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-178",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "área",
+    "hectare",
+    "conversão de unidades",
+    "problema"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma unidade de medida comum usada para expressar áreas de terrenos de grandes dimensões é o hectare, que equivale a 10 000 m². Um fazendeiro decide fazer um loteamento utilizando 3 hectares de sua fazenda, dos quais 0,9 hectare será usado para a construção de ruas e calçadas e o restante será dividido em terrenos com área de 300 m² cada um. Os 20 primeiros terrenos vendidos terão preços promocionais de R$ 20 000,00 cada, e os demais, R$ 30 000,00 cada.<br><span class=\"pb\"></span>Nas condições estabelecidas, o valor total, em real, obtido pelo fazendeiro com a venda de todos os terrenos será igual a",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "700 000.",
+     "ok": false
+    },
+    {
+     "t": "1 600 000.",
+     "ok": false
+    },
+    {
+     "t": "1 900 000.",
+     "ok": true
+    },
+    {
+     "t": "2 200 000.",
+     "ok": false
+    },
+    {
+     "t": "2 800 000.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-179",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Análise combinatória",
+   "topicos": [
+    "combinação",
+    "princípio multiplicativo",
+    "fatorial",
+    "fantasia"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa produzirá uma fantasia utilizando como materiais: 2 tipos de tecidos diferentes e 5 tipos distintos de pedras ornamentais. Essa pessoa tem à sua disposição 6 tecidos diferentes e 15 pedras ornamentais distintas.<br><span class=\"pb\"></span>A quantidade de fantasias com materiais diferentes que podem ser produzidas é representada pela expressão",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$ {6!|4!2!} · {15!|10!5!} $",
+     "ok": true
+    },
+    {
+     "t": "$ {6!|4!2!} + {15!|10!5!} $",
+     "ok": false
+    },
+    {
+     "t": "$ {6!|2!} + {15!|5!} $",
+     "ok": false
+    },
+    {
+     "t": "$ {6!|2!} · {15!|5!} $",
+     "ok": false
+    },
+    {
+     "t": "$ {21!|7!14!} $",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2021-180",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Operações e problemas",
+   "topicos": [
+    "custo",
+    "comparação",
+    "economia",
+    "problema",
+    "mil reais"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2021 (INEP)",
+   "pontos": 1,
+   "enunciado": "Os diretores de uma escola precisam construir um laboratório para uso dos alunos. Há duas possibilidades:<br><span class=\"pb\"></span>(i) um laboratório do tipo A, com capacidade para 100 usuários, a um custo de 180 mil reais e gastos de 60 mil reais por ano para manutenção;<br><span class=\"pb\"></span>(ii) um laboratório do tipo B, com capacidade para 80 usuários, a um custo de 120 mil reais e gastos com manutenção de 16 mil reais por ano.<br><span class=\"pb\"></span>Considera-se que, em qualquer caso, o laboratório implantado será utilizado na totalidade de sua capacidade.<br><span class=\"pb\"></span>A economia da escola, na utilização de um laboratório tipo B, em vez de um laboratório tipo A, num período de 4 anos, por usuário, será de",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "1,31 mil reais.",
+     "ok": false
+    },
+    {
+     "t": "1,90 mil reais.",
+     "ok": true
+    },
+    {
+     "t": "2,30 mil reais.",
+     "ok": false
+    },
+    {
+     "t": "2,36 mil reais.",
+     "ok": false
+    },
+    {
+     "t": "2,95 mil reais.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-136",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "proporcionalidade",
+    "GNV",
+    "consumo",
+    "grandezas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa pretende instalar um kit de gás natural veicular (GNV) em seu carro. Na loja que escolheu para realizar a compra e instalação desse kit, havia cinco modelos de cilindro para armazenamento do gás, cujas capacidades, em metro cúbico, eram, respectivamente: 10, 14, 17, 21 e 25. O preço do cilindro é proporcional à sua capacidade. Esse carro rodará 30 km diariamente, 7 dias por semana, e o consumo do GNV é de 1 m³ a cada 13 km rodados. A pessoa escolherá o modelo de cilindro de menor preço e que garanta apenas um abastecimento semanal.<br><span class=\"pb\"></span>Nessas condições, qual será a capacidade, em metro cúbico, do cilindro escolhido por essa pessoa?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "10",
+     "ok": false
+    },
+    {
+     "t": "14",
+     "ok": false
+    },
+    {
+     "t": "17",
+     "ok": true
+    },
+    {
+     "t": "21",
+     "ok": false
+    },
+    {
+     "t": "25",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-137",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "probabilidade",
+    "infográfico",
+    "porcentagem"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A reportagem de uma revista abordou o uso de redes sociais pelos internautas brasileiros. Alguns dos dados apurados pela reportagem estão apresentados no infográfico.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-137.png",
+    "alt": "Figura da questão 137",
+    "largura": "100%",
+    "legenda": "Disponível em: http://revistagalileu.globo.com. Acesso em: 22 out. 2015 (adaptado)."
+   },
+   "pergunta": "Segundo os dados do infográfico, ao se escolher aleatoriamente um internauta brasileiro no período ao qual se refere a reportagem, a probabilidade de ele ser um homem que acessa alguma rede social é",
+   "alternativas": [
+    {
+     "t": "$ {30|90} $",
+     "ok": false
+    },
+    {
+     "t": "$ {36|100} $",
+     "ok": true
+    },
+    {
+     "t": "$ {40|100} $",
+     "ok": false
+    },
+    {
+     "t": "$ {40|90} $",
+     "ok": false
+    },
+    {
+     "t": "$ {46|90} $",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-138",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "projeção ortogonal",
+    "eixos coordenados",
+    "cubo",
+    "posição no espaço"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um jogo de computador, um cubo se encontra inicialmente posicionado conforme indicado na figura.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-138.png",
+    "alt": "Figura da questão 138",
+    "largura": "69%"
+   },
+   "pergunta": "Cada deslocamento efetuado por esse cubo se dá sempre em uma das direções definidas pelos três eixos coordenados. Ao se movimentar a partir da posição inicial, esse cubo se aproximou 3 unidades do plano <i>yz</i>, se afastou 5 unidades do plano <i>xz</i> e se aproximou 4 unidades do plano <i>xy</i>.<br><span class=\"pb\"></span>A figura que apresenta as projeções ortogonais desse cubo sobre os três planos coordenados, após efetuar as movimentações descritas, é",
+   "alternativas": [
+    {
+     "t": "<img src=\"img:enem2025-138-a.png\" alt=\"Alternativa A\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-138-b.png\" alt=\"Alternativa B\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-138-c.png\" alt=\"Alternativa C\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-138-d.png\" alt=\"Alternativa D\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-138-e.png\" alt=\"Alternativa E\" style=\"width:100%\">",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-139",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "circunferência",
+    "comprimento",
+    "aproximação de pi",
+    "ciclovia"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "No entorno de uma lagoa circular, cujo raio mede 1 km, há uma ciclovia. Devido aos frequentes roubos de bicicleta, a prefeitura planeja alocar policiais em posições estratégicas para patrulhar essa ciclovia, de forma a torná-la totalmente protegida. Um ponto da ciclovia é considerado protegido se houver pelo menos um policial a, no máximo, 200 m de distância daquele ponto, posicionado sobre a ciclovia. A figura ilustra um ponto <i>P</i> sobre a ciclovia, que estará protegido se houver pelo menos um policial posicionado sobre a região de cor cinza escuro.<br><span class=\"pb\"></span>Desconsidere a largura da pista da ciclovia e utilize 3 como aproximação para π.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-139.png",
+    "alt": "Figura da questão 139",
+    "largura": "68%"
+   },
+   "pergunta": "Nessas condições, a quantidade mínima necessária de policiais a serem alocados ao longo dessa ciclovia para torná-la protegida é",
+   "alternativas": [
+    {
+     "t": "4.",
+     "ok": false
+    },
+    {
+     "t": "8.",
+     "ok": false
+    },
+    {
+     "t": "15.",
+     "ok": true
+    },
+    {
+     "t": "30.",
+     "ok": false
+    },
+    {
+     "t": "60.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-140",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "mistura",
+    "solução"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um laboratório, um recipiente contém 10 litros de uma solução composta apenas pelas substâncias S<sub>1</sub> e S<sub>2</sub>. Dessa solução, 99,95% é de S<sub>1</sub>. Uma quantidade de S<sub>1</sub> será retirada dessa solução, mantendo a quantidade inicial de S<sub>2</sub>, de modo que 99,90% da nova solução seja de S<sub>1</sub>.<br><span class=\"pb\"></span>Qual é a quantidade de S<sub>1</sub>, em litro, que será retirada?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "0,0050",
+     "ok": false
+    },
+    {
+     "t": "0,0100",
+     "ok": false
+    },
+    {
+     "t": "0,5000",
+     "ok": false
+    },
+    {
+     "t": "4,9775",
+     "ok": false
+    },
+    {
+     "t": "5,0000",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-141",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Operações e problemas",
+   "topicos": [
+    "problema",
+    "volume",
+    "litros",
+    "operações"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma distribuidora de combustível possui caminhões-tanque com capacidade de 30 000 litros cada. Em qualquer transporte realizado por esses caminhões, um mesmo volume de combustível é descartado, pois fica com muitas impurezas. Esse volume descartado independe da quantidade transportada.<br><span class=\"pb\"></span>Um posto de combustível encomendou 10 000 litros de gasolina dessa distribuidora, que enviou 10 200 litros, considerando o volume descartado no transporte. Mesmo assim, a quantidade de gasolina entregue ao posto foi de 9 900 litros.<br><span class=\"pb\"></span>Em um novo pedido, esse posto solicitou que fosse entregue exatamente o dobro do volume de gasolina encomendado no pedido anterior.<br><span class=\"pb\"></span>Utilizando o mesmo caminhão da entrega anterior, qual é o volume mínimo de gasolina, em litro, que a distribuidora deverá enviar para garantir a entrega da quantidade encomendada nesse novo pedido?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "20 100",
+     "ok": false
+    },
+    {
+     "t": "20 200",
+     "ok": false
+    },
+    {
+     "t": "20 300",
+     "ok": true
+    },
+    {
+     "t": "20 400",
+     "ok": false
+    },
+    {
+     "t": "20 600",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-142",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "mediana",
+    "tabela",
+    "velocidade de conexão"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma empresa de tecnologia vai padronizar a velocidade de conexão de internet que oferece a seus clientes em dez cidades. A direção da empresa decide que seu novo padrão de velocidade de referência será a mediana dos valores das velocidades de referência de conexões nessas dez cidades. Esses valores, em megabyte por segundo (MB/s), são apresentados no quadro.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Cidades",
+     "Velocidade de referência (MB/s)"
+    ],
+    "linhas": [
+     [
+      "C1",
+      "390"
+     ],
+     [
+      "C2",
+      "380"
+     ],
+     [
+      "C3",
+      "320"
+     ],
+     [
+      "C4",
+      "390"
+     ],
+     [
+      "C5",
+      "340"
+     ],
+     [
+      "C6",
+      "380"
+     ],
+     [
+      "C7",
+      "390"
+     ],
+     [
+      "C8",
+      "400"
+     ],
+     [
+      "C9",
+      "350"
+     ],
+     [
+      "C10",
+      "360"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "A velocidade de referência, em megabyte por segundo, a ser adotada por essa empresa é",
+   "alternativas": [
+    {
+     "t": "360.",
+     "ok": false
+    },
+    {
+     "t": "370.",
+     "ok": false
+    },
+    {
+     "t": "380.",
+     "ok": true
+    },
+    {
+     "t": "390.",
+     "ok": false
+    },
+    {
+     "t": "400.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-143",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "comparação",
+    "produto",
+    "sódio",
+    "tabela nutricional"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Na cantina de uma escola, há cinco alimentos vendidos em pacotes com diferentes quantidades de porções.<br><span class=\"pb\"></span>As informações nutricionais contidas nos rótulos desses produtos estão indicadas nas imagens.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-143.png",
+    "alt": "Figura da questão 143",
+    "largura": "98%"
+   },
+   "pergunta": "Uma estudante opta sempre pelo alimento com a menor quantidade total de sódio por pacote.<br><span class=\"pb\"></span>Qual desses produtos deve ser o escolhido pela estudante?",
+   "alternativas": [
+    {
+     "t": "Batata chips.",
+     "ok": true
+    },
+    {
+     "t": "Palitos salgados.",
+     "ok": false
+    },
+    {
+     "t": "Biscoito multigrãos.",
+     "ok": false
+    },
+    {
+     "t": "Biscoito de polvilho.",
+     "ok": false
+    },
+    {
+     "t": "Biscoito de água e sal.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-144",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "poliedro",
+    "prisma",
+    "tronco de pirâmide",
+    "faces congruentes"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma fábrica utilizou uma impressora 3D para produzir o protótipo de uma peça. O protótipo tem forma de um poliedro convexo, obtido pela justaposição de dois sólidos distintos, um com a forma de um prisma hexagonal regular reto e o outro com a forma de um tronco de pirâmide hexagonal reta. A base maior do tronco de pirâmide coincide com uma das bases do prisma.<br><span class=\"pb\"></span>Após a impressão do protótipo, ele foi encaminhado ao setor de customização para realização da pintura de sua superfície. O critério definido para realização da pintura considera que faces congruentes entre si devem ser pintadas com uma mesma cor, e faces não congruentes entre si devem apresentar cores distintas.<br><span class=\"pb\"></span>Qual é a quantidade de cores utilizadas para pintar o protótipo?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "9",
+     "ok": false
+    },
+    {
+     "t": "8",
+     "ok": false
+    },
+    {
+     "t": "6",
+     "ok": false
+    },
+    {
+     "t": "4",
+     "ok": true
+    },
+    {
+     "t": "3",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-145",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Funções",
+   "topicos": [
+    "gráfico",
+    "função",
+    "frequência respiratória",
+    "leitura de gráfico"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Pesquisas na área de neurobiologia confirmam que a prática meditativa é responsável por diminuir consideravelmente a frequência respiratória para praticantes avançados, que, após iniciarem a meditação, têm suas frequências respiratórias reduzidas até se estabilizarem em um nível mais baixo. O gráfico apresenta a relação da frequência respiratória, em incursões de respirações por minuto (rpm), em relação ao tempo, em minuto, de um praticante avançado, em que (f<sub>1</sub>) representa a frequência no instante t<sub>1</sub>, no qual se inicia a prática meditativa; e (f<sub>2</sub>), a frequência no instante t<sub>2</sub>, a partir do qual esta se estabiliza durante a meditação.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-145.png",
+    "alt": "Figura da questão 145",
+    "largura": "95%",
+    "legenda": "Disponível em: www.redepsi.com.br. Acesso em: 3 dez. 2018 (adaptado)."
+   },
+   "pergunta": "A partir do instante t<sub>1</sub>, em que se inicia a prática meditativa, o comportamento da frequência respiratória, em relação ao tempo,",
+   "alternativas": [
+    {
+     "t": "mantém-se constante.",
+     "ok": false
+    },
+    {
+     "t": "é diretamente proporcional ao tempo.",
+     "ok": false
+    },
+    {
+     "t": "é inversamente proporcional ao tempo.",
+     "ok": false
+    },
+    {
+     "t": "diminui até o instante t<sub>2</sub>, a partir do qual se torna constante.",
+     "ok": true
+    },
+    {
+     "t": "diminui de forma proporcional ao tempo, tanto entre t<sub>1</sub> e t<sub>2</sub> quanto após t<sub>2</sub>.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-146",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Operações e problemas",
+   "topicos": [
+    "subtração",
+    "números decimais",
+    "atletismo"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "No atletismo, um grande desafio da prova de 100 metros rasos é a sua conclusão num tempo abaixo da marca de referência dos 10,00 segundos. Vários atletas já alcançaram esse feito. Em 2009, o jamaicano Usain Bolt estabeleceu o recorde mundial masculino dessa prova, com o tempo de 9,58 segundos.<br><span class=\"pb\"></span>Qual é a diferença, em segundo, entre a marca de referência e a marca estabelecida por Usain Bolt em 2009?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "0,02",
+     "ok": false
+    },
+    {
+     "t": "0,42",
+     "ok": true
+    },
+    {
+     "t": "0,52",
+     "ok": false
+    },
+    {
+     "t": "1,02",
+     "ok": false
+    },
+    {
+     "t": "1,42",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-147",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "gráfico de setores",
+    "gráfico de colunas",
+    "porcentagem",
+    "matrículas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma escola de idiomas oferece cursos de inglês, espanhol, francês e alemão. Os gráficos apresentam a distribuição percentual das matrículas, por idioma, em 2023, e a distribuição da quantidade de matrículas, por idioma, em 2024.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-147.png",
+    "alt": "Figura da questão 147",
+    "largura": "100%"
+   },
+   "pergunta": "Para planejar as atividades de 2025, o gerente da escola estimou que o total de matrículas será o mesmo de 2024, e a distribuição percentual das matrículas, por idioma, será igual à registrada em 2023.<br><span class=\"pb\"></span>Segundo essa estimativa, o número de matrículas no curso de francês para o ano de 2025 será",
+   "alternativas": [
+    {
+     "t": "2.",
+     "ok": false
+    },
+    {
+     "t": "12.",
+     "ok": false
+    },
+    {
+     "t": "20.",
+     "ok": false
+    },
+    {
+     "t": "22.",
+     "ok": false
+    },
+    {
+     "t": "40.",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-148",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "escala",
+    "comprimento",
+    "deslocamento",
+    "razão"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "O controle remoto de um carrinho de brinquedo vem equipado com uma tela que ajusta automaticamente a escala empregada na exibição de cada deslocamento. A tela apresenta a imagem do deslocamento, a escala utilizada na geração dessa imagem e o comprimento desse deslocamento, em centímetro, em conformidade com a escala empregada. As figuras representam a tela do controle remoto exibindo os dados de cinco deslocamentos realizados por esse carrinho.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-148.png",
+    "alt": "Figura da questão 148",
+    "largura": "100%"
+   },
+   "pergunta": "A opção que indica o deslocamento de maior comprimento realizado pelo carrinho de brinquedo é",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": false
+    },
+    {
+     "t": "III.",
+     "ok": true
+    },
+    {
+     "t": "IV.",
+     "ok": false
+    },
+    {
+     "t": "V.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-149",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "poliedro",
+    "vértices",
+    "planificação",
+    "Euler"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A cúpula pentagonal giralongada é um poliedro de Johnson, cujas faces são polígonos regulares, mas que não é um poliedro de Platão, de Arquimedes, prisma ou antiprisma.<br><span class=\"pb\"></span>As figuras apresentam esse poliedro em duas posições e uma de suas planificações.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-149.png",
+    "alt": "Figura da questão 149",
+    "largura": "79%"
+   },
+   "pergunta": "Quantos vértices tem esse poliedro?",
+   "alternativas": [
+    {
+     "t": "21",
+     "ok": false
+    },
+    {
+     "t": "25",
+     "ok": true
+    },
+    {
+     "t": "55",
+     "ok": false
+    },
+    {
+     "t": "80",
+     "ok": false
+    },
+    {
+     "t": "110",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-150",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "regra de três composta",
+    "grandezas",
+    "produção"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma fábrica de tijolos ecológicos com 3 funcionários, cada um trabalhando 6 horas diárias, produz 720 unidades por dia. Para atender ao crescimento da demanda por esse tipo de tijolo, essa fábrica passou a ter 5 funcionários, cada um trabalhando 9 horas por dia, aumentando, assim, sua capacidade de produção. Todos os funcionários produzem igual quantidade de tijolos a cada hora, independentemente de trabalharem 6 ou 9 horas diárias.<br><span class=\"pb\"></span>O número de tijolos fabricados diariamente após o aumento da capacidade de produção é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "800.",
+     "ok": false
+    },
+    {
+     "t": "1 080.",
+     "ok": false
+    },
+    {
+     "t": "1 200.",
+     "ok": false
+    },
+    {
+     "t": "1 800.",
+     "ok": true
+    },
+    {
+     "t": "2 520.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-151",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Análise combinatória",
+   "topicos": [
+    "princípio multiplicativo",
+    "contagem",
+    "código"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Para acompanhar o fluxo de visitantes em seu prédio, uma empresa estabeleceu um código de identificação para a visitação. De acordo com a regra estabelecida, cada visitante será identificado com um código sequencial numérico com 7 dígitos, determinado, da esquerda para a direita, da seguinte forma:<ul><li>o primeiro dígito indica o andar ao qual o visitante se dirige, que é um número de 1 a 4;</li><li>os dois próximos dígitos correspondem ao número do setor da empresa ao qual o visitante se destina. Esse número varia de 01 a 20;</li><li>os três dígitos seguintes correspondem ao número do funcionário da empresa com quem o visitante irá se reunir. Esse número varia de 001 a 135;</li><li>o último dígito indica se o visitante chegou à empresa pela manhã, dígito 0, ou à tarde, dígito 1.</li></ul>Um visitante chegou à empresa às 10 horas da manhã para se reunir com o funcionário identificado pelo número 109, que trabalha no setor 08 da empresa, localizado no 2º andar.<br><span class=\"pb\"></span>O código de identificação desse visitante é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "0109082.",
+     "ok": false
+    },
+    {
+     "t": "0281090.",
+     "ok": false
+    },
+    {
+     "t": "1010982.",
+     "ok": false
+    },
+    {
+     "t": "2081090.",
+     "ok": true
+    },
+    {
+     "t": "2810910.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-152",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "probabilidade",
+    "permutação",
+    "desarranjo",
+    "eventos"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Quatro candidatos se apresentaram para realizar a prova de um concurso. Antes de iniciar a prova, os celulares dos quatro candidatos foram recolhidos pelo aplicador, que os guardou, cada um, dentro de um envelope preto. Ao término da prova, o aplicador devolveu os quatro envelopes com os celulares aos quatro candidatos, de maneira aleatória, já que não havia feito a identificação dos envelopes.<br><span class=\"pb\"></span>A probabilidade de que todos os candidatos tenham recebido de volta os envelopes com os seus respectivos celulares é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$ {1|2} $",
+     "ok": false
+    },
+    {
+     "t": "$ {1|10} $",
+     "ok": false
+    },
+    {
+     "t": "$ {1|16} $",
+     "ok": false
+    },
+    {
+     "t": "$ {1|24} $",
+     "ok": true
+    },
+    {
+     "t": "$ {1|256} $",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-153",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria analítica",
+   "topicos": [
+    "plano cartesiano",
+    "reta",
+    "equação da reta",
+    "mediatriz",
+    "quadrado"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um jogo digital, há três personagens: um herói e dois vilões. A programação é feita de tal forma que o herói sempre será atacado pelo vilão que estiver mais próximo dele. Uma das maneiras de “confundir” os vilões é movimentar o herói por trajetórias que o mantenha equidistante dos vilões, gerando indefinição entre eles e, com isso, não sendo atacado.<br><span class=\"pb\"></span>Para a programação de uma das etapas desse jogo, o programador considerou, no plano cartesiano, o quadrado <i>STUV</i> como a região de movimentação dos personagens, onde <i>V</i> e <i>T</i> representam as posições fixas dos vilões, e <i>S</i>, a posição inicial do herói, como apresentado na figura.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-153.png",
+    "alt": "Figura da questão 153",
+    "largura": "96%"
+   },
+   "pergunta": "Qual é a equação da trajetória em que o herói poderá se movimentar sem ser atacado?",
+   "alternativas": [
+    {
+     "t": "$y = -3x + 20$",
+     "ok": true
+    },
+    {
+     "t": "$y = -3x + 16$",
+     "ok": false
+    },
+    {
+     "t": "$y = -3x - 20$",
+     "ok": false
+    },
+    {
+     "t": "$y = 3x + 16$",
+     "ok": false
+    },
+    {
+     "t": "$y = 3x - 16$",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-154",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "gráfico de colunas",
+    "gráfico de linhas",
+    "leitura de gráfico",
+    "estoque",
+    "demanda"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma livraria comercializa livros dos seguintes gêneros literários: ficção científica, autoajuda, romance e biografia. O gráfico apresenta o estoque dos livros que essa livraria tem, por gênero literário e por nacionalidade do autor, bem como a demanda por gênero literário, obtida por meio de uma enquete feita com seus clientes habituais.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-154.png",
+    "alt": "Figura da questão 154",
+    "largura": "98%"
+   },
+   "pergunta": "O gerente da livraria fará a encomenda de novos exemplares somente do gênero cuja quantidade em estoque seja insuficiente para atender a demanda constatada pela enquete.<br><span class=\"pb\"></span>O gênero de livro do qual o gerente deverá encomendar mais exemplares é",
+   "alternativas": [
+    {
+     "t": "ficção, pois é o que apresenta maior demanda.",
+     "ok": false
+    },
+    {
+     "t": "biografia, pois é o gênero que tem a menor demanda.",
+     "ok": false
+    },
+    {
+     "t": "autoajuda, pois a quantidade em estoque é inferior à demanda.",
+     "ok": true
+    },
+    {
+     "t": "biografia, pois é o gênero que tem a menor quantidade de livros em estoque.",
+     "ok": false
+    },
+    {
+     "t": "romance, pois é o que apresenta o menor estoque de livros de autores brasileiros.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-155",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Análise combinatória",
+   "topicos": [
+    "arranjo",
+    "combinação",
+    "princípio multiplicativo",
+    "casais"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Dez casais fundaram um grupo de dança e decidiram constituir uma diretoria com três cargos: presidente, secretário e tesoureiro. Para maior representatividade, decidiu-se que no máximo uma pessoa por casal poderá ocupar um cargo nessa diretoria.<br><span class=\"pb\"></span>Quantas diretorias diferentes podem ser constituídas por esses 10 casais?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "10 × 9 × 8",
+     "ok": false
+    },
+    {
+     "t": "20 × 18 × 16",
+     "ok": true
+    },
+    {
+     "t": "20 × 19 × 18",
+     "ok": false
+    },
+    {
+     "t": "10 × 9 × 8 × 2",
+     "ok": false
+    },
+    {
+     "t": "20 × 18 × 16 × 2",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-156",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "escala",
+    "ampliação",
+    "semelhança",
+    "proporção"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um artista, que costuma fazer desenhos com areia na praia, pediu a um banhista que fizesse um pequeno desenho, que serviria de esboço para uma grande obra de arte a ser feita na areia. Esse desenho está representado na figura.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-156.png",
+    "alt": "Figura da questão 156",
+    "largura": "85%"
+   },
+   "pergunta": "Após a conclusão, a obra de arte obtida manteve as mesmas proporções do desenho feito pelo banhista, sendo que as medidas indicadas na figura foram ampliadas para 30 m.<br><span class=\"pb\"></span>Em qual escala esse desenho representa a obra de arte?",
+   "alternativas": [
+    {
+     "t": "1 : 1,5",
+     "ok": false
+    },
+    {
+     "t": "1 : 2,25",
+     "ok": false
+    },
+    {
+     "t": "1 : 10",
+     "ok": false
+    },
+    {
+     "t": "1 : 100",
+     "ok": false
+    },
+    {
+     "t": "1 : 150",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-157",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "razão",
+    "modelagem",
+    "equação",
+    "cortisol"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "O cortisol é um hormônio produzido pelas glândulas adrenais e pode ser considerado um importante marcador do estresse fisiológico. Em um estudo desenvolvido com enfermeiros, foi verificado que a concentração de cortisol salivar em um dia de trabalho, denotada por <i>T</i>, era, em média, 1,59 vezes a concentração de cortisol salivar em um dia de folga, denotada por <i>F</i>.<br><span class=\"pb\"></span><small>ROCHA, M. C. P. et al. Estresse em enfermeiros: o uso do cortisol salivar no dia de trabalho e de folga. <b>Rev. Esc. Enferm. USP</b>, n. 5, 2013 (adaptado).</small><br><span class=\"pb\"></span>Nesse estudo, a relação obtida entre <i>T</i> e <i>F</i> foi",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$T = 1,59 + F$",
+     "ok": false
+    },
+    {
+     "t": "$F = 1,59 + T$",
+     "ok": false
+    },
+    {
+     "t": "$ {T|F} = 1,59 $",
+     "ok": true
+    },
+    {
+     "t": "$ {F|T} = 1,59 $",
+     "ok": false
+    },
+    {
+     "t": "$F · T = 1,59$",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-158",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "aumento",
+    "lucro",
+    "mensalidade"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um estacionamento possui 120 vagas para veículos, e todas essas vagas estão ocupadas. Cada cliente paga uma mensalidade para utilizar uma vaga, que é calculada com base nas despesas mensais do estacionamento e no lucro pretendido. As despesas mensais do estacionamento são: R$ 14 240,00 com manutenção mais R$ 36,00 de seguro por veículo. O lucro do estacionamento é determinado pela diferença do valor arrecadado com as mensalidades pelas despesas efetuadas. A partir do mês seguinte, o valor do seguro por veículo aumentará em 20%, e as despesas com manutenção permanecerão sem alterações. Com isso, o dono do estacionamento reajustará as mensalidades para obter um lucro mensal de R$ 10 000,00. Apesar desse reajuste, todas as vagas continuarão ocupadas.<br><span class=\"pb\"></span>O valor, em real, da mensalidade reajustada será",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "185,60.",
+     "ok": false
+    },
+    {
+     "t": "226,09.",
+     "ok": false
+    },
+    {
+     "t": "245,20.",
+     "ok": true
+    },
+    {
+     "t": "268,93.",
+     "ok": false
+    },
+    {
+     "t": "285,60.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-159",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "volume",
+    "unidades de medida",
+    "capacidade",
+    "mililitro"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "O dono de uma sorveteria armazena sorvete em potes de 20 000 cm³. Ele serve o sorvete em taças, em porções de 250 mL.<br><span class=\"pb\"></span>A quantidade de taças que ele consegue servir a partir de um pote cheio de sorvete é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "5.",
+     "ok": false
+    },
+    {
+     "t": "8.",
+     "ok": false
+    },
+    {
+     "t": "50.",
+     "ok": false
+    },
+    {
+     "t": "80.",
+     "ok": true
+    },
+    {
+     "t": "800.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-160",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Trigonometria",
+   "topicos": [
+    "função tangente",
+    "gráfico",
+    "assíntotas",
+    "transformações de funções"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um recipiente tem um formato que faz com que, ao ser enchido de água com uma vazão constante, a distância <i>D</i> da lâmina de água ao tampo da mesa, em centímetro, aumente em relação ao tempo <i>T</i>, em minuto, de acordo com uma função do tipo<br><span class=\"pb\"></span>$D = k + tg[p(T + m)]$,<br><span class=\"pb\"></span>sendo os parâmetros <i>k</i>, <i>p</i> e <i>m</i> números reais, para <i>T</i> variando entre 0 e 4 minutos, conforme ilustrado na figura, na qual estão apresentadas assíntotas verticais da função tangente utilizada na definição de <i>D</i>.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-160.png",
+    "alt": "Figura da questão 160",
+    "largura": "97%"
+   },
+   "pergunta": "A expressão algébrica que representa a relação entre <i>D</i> e <i>T</i> é",
+   "layoutAlt": "1",
+   "alternativas": [
+    {
+     "t": "$D = 2,5 + tg[30(T - {5 - 2π|2})]$",
+     "ok": false
+    },
+    {
+     "t": "$D = 4 + tg[30(T + {5|2})]$",
+     "ok": false
+    },
+    {
+     "t": "$D = 4 + tg[2,5(T + {5 + 2π|2})]$",
+     "ok": false
+    },
+    {
+     "t": "$D = 30 + tg[{1|2}(T - 5)]$",
+     "ok": false
+    },
+    {
+     "t": "$D = 30 + tg[{1|2}(T - {5|2})]$",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-161",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Orientação e localização",
+   "topicos": [
+    "orientação",
+    "pontos cardeais",
+    "mapa",
+    "malha"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Os quadrados em cinza na figura representam os quarteirões do bairro onde moram João e seu amigo. O quadrado pequeno (A), pintado em preto e localizado no canto superior esquerdo de um quadrado maior, indica a casa do amigo de João. João também mora em uma casa de esquina, mas na extremidade nordeste de um quarteirão. Para chegar à casa de seu amigo, ao sair de casa, João deve caminhar pelo quarteirão onde mora na direção oeste, dobrar à direita, caminhar por três quarteirões na direção norte e dobrar à esquerda. A casa de seu amigo fica no segundo quarteirão a oeste.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-161.png",
+    "alt": "Figura da questão 161",
+    "largura": "93%"
+   },
+   "pergunta": "O quarteirão onde se encontra a casa de João é representado pelo quadrado com a letra",
+   "alternativas": [
+    {
+     "t": "P.",
+     "ok": true
+    },
+    {
+     "t": "Q.",
+     "ok": false
+    },
+    {
+     "t": "R.",
+     "ok": false
+    },
+    {
+     "t": "S.",
+     "ok": false
+    },
+    {
+     "t": "T.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-162",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "porcentagem",
+    "custo",
+    "reciclagem",
+    "otimização"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma empresa produziu, em um determinado mês, 110 toneladas de plástico a partir de derivados de petróleo e 80 toneladas a partir de plásticos reciclados. O custo para reciclar uma tonelada de plástico é de R$ 500,00, que equivale a 5% do custo para produzir a mesma quantidade de plástico a partir de derivados de petróleo. Para o mês seguinte, a meta dessa empresa é produzir a mesma quantidade de plástico que foi produzida nesse mês, mas com redução de, pelo menos, 50% no custo de produção.<br><span class=\"pb\"></span>Para que no mês seguinte a empresa atinja a meta, a quantidade mínima de toneladas de plástico que devem ser produzidas a partir de reciclagem deverá ser",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "135.",
+     "ok": false
+    },
+    {
+     "t": "140.",
+     "ok": true
+    },
+    {
+     "t": "155.",
+     "ok": false
+    },
+    {
+     "t": "160.",
+     "ok": false
+    },
+    {
+     "t": "175.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-163",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "gráfico de colunas",
+    "gráfico de setores",
+    "leitura de gráficos",
+    "modalidades esportivas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em uma escola, todos os estudantes do ensino médio praticam uma das três modalidades esportivas oferecidas como atividade física, e cada um deles pratica somente uma dessas atividades. Os gráficos trazem alguns dados relativos aos quantitativos de estudantes que praticam essas modalidades esportivas nessa escola, apesar de algumas quantidades não terem sido informadas.",
+   "resolucao": "",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2025-163-1.png",
+     "alt": "Figura da questão 163",
+     "largura": "78%"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2025-163-2.png",
+     "alt": "Figura da questão 163",
+     "largura": "78%"
+    }
+   ],
+   "pergunta": "Qual é a quantidade de estudantes no ensino médio dessa escola?",
+   "alternativas": [
+    {
+     "t": "720",
+     "ok": false
+    },
+    {
+     "t": "360",
+     "ok": true
+    },
+    {
+     "t": "320",
+     "ok": false
+    },
+    {
+     "t": "288",
+     "ok": false
+    },
+    {
+     "t": "240",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-164",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Trigonometria",
+   "topicos": [
+    "lei dos cossenos",
+    "direção",
+    "navegação",
+    "triângulo",
+    "cos 50"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "O dono de uma embarcação deve partir do ponto <i>P</i> e chegar ao ponto <i>R</i> por meio de dois deslocamentos lineares e navegando a uma velocidade constante. Essa viagem será feita durante a noite, e como ele dispõe somente de uma bússola e de um relógio, planejou sua rota da seguinte forma:<br><span class=\"pb\"></span>1º – partir do ponto <i>P</i> na direção 110 e navegar por 4 horas, alcançando um ponto <i>Q</i>;<br><span class=\"pb\"></span>2º – partir do ponto <i>Q</i> na direção 90 e navegar por 2 horas, alcançando o ponto de destino <i>R</i>.<br><span class=\"pb\"></span>No entanto, ao direcionar o barco para o primeiro deslocamento, o fez na direção 340, em vez de 110. Com isso, realizou os seguintes deslocamentos:<br><span class=\"pb\"></span>1º – partiu do ponto <i>P</i> na direção 340 e navegou por 4 horas, alcançando um ponto <i>S</i>;<br><span class=\"pb\"></span>2º – partiu do ponto <i>S</i> na direção 90 e navegou por 2 horas, alcançando o ponto <i>T</i>.<br><span class=\"pb\"></span>A figura apresenta a bússola, a rota planejada e a rota executada.",
+   "resolucao": "",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2025-164-1.png",
+     "alt": "Figura da questão 164",
+     "largura": "56%"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2025-164-2.png",
+     "alt": "Figura da questão 164",
+     "largura": "58%"
+    }
+   ],
+   "pergunta": "O dono da embarcação só percebeu o equívoco ao chegar ao ponto <i>T</i>. Com isso, agora ele precisa definir a direção e o tempo de navegação que lhe permita, partindo do ponto <i>T</i>, chegar ao ponto de destino <i>R</i> por meio de uma rota retilínea.<br><span class=\"pb\"></span>Considere 0,64 como aproximação para cos 50°.<br><span class=\"pb\"></span>A direção e o tempo aproximado de navegação que o dono da embarcação deve utilizar são, respectivamente,",
+   "alternativas": [
+    {
+     "t": "135 e 7 horas e 15 minutos.",
+     "ok": true
+    },
+    {
+     "t": "45 e 7 horas e 15 minutos.",
+     "ok": false
+    },
+    {
+     "t": "135 e 12 horas.",
+     "ok": false
+    },
+    {
+     "t": "135 e 6 horas.",
+     "ok": false
+    },
+    {
+     "t": "45 e 6 horas.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-165",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "média",
+    "mediana",
+    "moda",
+    "desvio padrão",
+    "tabela"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um estudo clínico, 55 mulheres foram distribuídas, aleatoriamente, em 5 grupos de 11 pessoas. Para testar uma nova medicação, será escolhido um grupo no qual a maioria das mulheres tenham idades entre 20 e 30 anos. Os demais grupos tomarão placebo ou medicações já existentes no mercado. O quadro, parcialmente preenchido, informa alguns dados relativos às idades das mulheres desses grupos.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Grupos",
+     "Menor idade",
+     "Maior idade",
+     "Média",
+     "Mediana",
+     "Moda",
+     "Desvio padrão"
+    ],
+    "linhas": [
+     [
+      "1",
+      "&nbsp;",
+      "&nbsp;",
+      "25",
+      "&nbsp;",
+      "&nbsp;",
+      "10"
+     ],
+     [
+      "2",
+      "&nbsp;",
+      "&nbsp;",
+      "&nbsp;",
+      "25",
+      "&nbsp;",
+      "9"
+     ],
+     [
+      "3",
+      "&nbsp;",
+      "&nbsp;",
+      "&nbsp;",
+      "&nbsp;",
+      "25",
+      "&nbsp;"
+     ],
+     [
+      "4",
+      "&nbsp;",
+      "&nbsp;",
+      "25",
+      "&nbsp;",
+      "&nbsp;",
+      "1"
+     ],
+     [
+      "5",
+      "20",
+      "35",
+      "&nbsp;",
+      "&nbsp;",
+      "&nbsp;",
+      "&nbsp;"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "Mesmo com o quadro incompleto, foi possível selecionar um desses grupos porque, apenas com os dados apresentados no quadro, foi identificado um grupo que, certamente, atendia ao critério de escolha.<br><span class=\"pb\"></span>O grupo escolhido foi o",
+   "alternativas": [
+    {
+     "t": "1.",
+     "ok": false
+    },
+    {
+     "t": "2.",
+     "ok": false
+    },
+    {
+     "t": "3.",
+     "ok": false
+    },
+    {
+     "t": "4.",
+     "ok": true
+    },
+    {
+     "t": "5.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-166",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "taxa",
+    "ritmo",
+    "pace",
+    "tempo",
+    "velocidade média"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "<i>Pace</i> é um termo usado por um corredor para denominar o seu ritmo médio em uma corrida. Representa o tempo médio, em segundo, que esse corredor leva para percorrer 1 km.<br><span class=\"pb\"></span>O esquema apresenta o tempo, em segundo, que um corredor levou para cruzar as marcas que definem os quatro primeiros trechos de 1 km, em uma corrida de 5 km, e o tempo gasto para percorrer cada trecho de 1 km.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-166.png",
+    "alt": "Figura da questão 166",
+    "largura": "100%"
+   },
+   "pergunta": "O melhor <i>pace</i> que esse corredor alcançou em corridas de 5 km foi 281 s/km.<br><span class=\"pb\"></span>Para que consiga repetir nessa corrida seu melhor <i>pace</i> em corridas de 5 km, seu tempo, no 5º trecho, deve ser quantos segundos menor do que o que ele gastou para percorrer o 4º trecho?",
+   "alternativas": [
+    {
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "2",
+     "ok": false
+    },
+    {
+     "t": "8",
+     "ok": false
+    },
+    {
+     "t": "9",
+     "ok": false
+    },
+    {
+     "t": "15",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-167",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Funções",
+   "topicos": [
+    "leitura de gráficos",
+    "rendimento",
+    "combustível",
+    "custo",
+    "velocidade"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma pessoa tem um carro bicombustível, que funciona a gás natural veicular (GNV) e a gasolina. O rendimento do carro, medido em km/m³, no caso do gás, ou medido em km/L, no caso da gasolina, depende, entre outros fatores, da velocidade, em km/h, em que o carro trafega. Essa relação está em conformidade com estes gráficos.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-167.png",
+    "alt": "Figura da questão 167",
+    "largura": "100%"
+   },
+   "pergunta": "Durante um feriado, essa pessoa realizou uma viagem de 240 km. Para obter uma estimativa de gasto de combustível, assuma que em todo o trajeto se manteve uma velocidade constante de 60 km/h. Considere que, durante metade do caminho, foi utilizado apenas GNV e, na outra metade, apenas gasolina. O que foi pago pelo metro cúbico de GNV e pelo litro de gasolina correspondeu, respectivamente, a R$ 2,00 e a R$ 3,00.<br><span class=\"pb\"></span>Qual foi a diferença, em real, entre os gastos totais com gasolina e com GNV?",
+   "alternativas": [
+    {
+     "t": "4",
+     "ok": false
+    },
+    {
+     "t": "8",
+     "ok": false
+    },
+    {
+     "t": "14",
+     "ok": false
+    },
+    {
+     "t": "21",
+     "ok": true
+    },
+    {
+     "t": "30",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-168",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Operações e problemas",
+   "topicos": [
+    "comparação de custos",
+    "tabela",
+    "problema",
+    "otimização"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em um país, a primeira etapa para obtenção da carteira de motorista é a contratação de três produtos:<ul><li>pacote com 20 aulas teóricas;</li><li>pacote com 10 aulas práticas;</li><li>aluguel do veículo para realização das aulas práticas.</li></ul>Uma pessoa que pretende obter a carteira de motorista pesquisou o valor do aluguel do veículo e os valores de cada aula teórica e de cada aula prática em três autoescolas. O quadro apresenta esses valores.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Autoescola",
+     "Valor de cada aula teórica (R$)",
+     "Valor de cada aula prática (R$)",
+     "Aluguel do veículo (R$)"
+    ],
+    "linhas": [
+     [
+      "I",
+      "10",
+      "80",
+      "400"
+     ],
+     [
+      "II",
+      "30",
+      "50",
+      "200"
+     ],
+     [
+      "III",
+      "20",
+      "40",
+      "400"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "Ela contratará os três produtos numa mesma autoescola de modo que o custo total nessa primeira etapa seja o menor possível.<br><span class=\"pb\"></span>A autoescola que será contratada é a",
+   "alternativas": [
+    {
+     "t": "I, com o custo total de R$ 1 400,00.",
+     "ok": false
+    },
+    {
+     "t": "II, com o custo total de R$ 280,00.",
+     "ok": false
+    },
+    {
+     "t": "II, com o custo total de R$ 1 300,00.",
+     "ok": false
+    },
+    {
+     "t": "III, com o custo total de R$ 460,00.",
+     "ok": false
+    },
+    {
+     "t": "III, com o custo total de R$ 1 200,00.",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-169",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Estatística",
+   "topicos": [
+    "gráfico de linhas",
+    "produtividade",
+    "produção",
+    "tabela",
+    "unidades de medida"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A produtividade de soja em uma área cultivada é a média da quantidade de sacas de 50 quilogramas que são produzidas por hectare. O quadro apresenta a área cultivada e a produtividade de soja em certa propriedade, ao longo de cinco safras, com períodos de um ano, de 2011 a 2016.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Safra",
+     "11-12",
+     "12-13",
+     "13-14",
+     "14-15",
+     "15-16"
+    ],
+    "linhas": [
+     [
+      "<b>Área cultivada (hectare)</b>",
+      "200",
+      "220",
+      "250",
+      "250",
+      "200"
+     ],
+     [
+      "<b>Produtividade (sacas de 50 kg por hectare)</b>",
+      "40",
+      "30",
+      "45",
+      "45",
+      "50"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "pergunta": "O gráfico de linhas que representa a produção de soja dessa propriedade, em tonelada, nessas cinco safras é",
+   "alternativas": [
+    {
+     "t": "<img src=\"img:enem2025-169-a.png\" alt=\"Alternativa A\" style=\"width:100%\">",
+     "ok": true
+    },
+    {
+     "t": "<img src=\"img:enem2025-169-b.png\" alt=\"Alternativa B\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-169-c.png\" alt=\"Alternativa C\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-169-d.png\" alt=\"Alternativa D\" style=\"width:100%\">",
+     "ok": false
+    },
+    {
+     "t": "<img src=\"img:enem2025-169-e.png\" alt=\"Alternativa E\" style=\"width:100%\">",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-170",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "volume",
+    "paralelepípedo",
+    "capacidade",
+    "litros",
+    "garrafas"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Uma caixa de descarga, acoplada a um vaso sanitário, tem a forma de paralelepípedo reto retângulo cujas dimensões internas da base são 2,5 dm e 1,5 dm. Nessa caixa há uma boia que interrompe o abastecimento quando a altura da coluna de água atinge 2 dm, conforme a figura.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-170.png",
+    "alt": "Figura da questão 170",
+    "largura": "95%"
+   },
+   "pergunta": "A cada acionamento da descarga, todo o volume de água contida na caixa é despejado no vaso. Para reduzir o volume de água despejado a cada acionamento, uma pessoa colocará, no interior dessa caixa, garrafas de 300 mL, cheias de areia e tampadas, de modo a ficarem submersas quando o abastecimento for interrompido.<br><span class=\"pb\"></span>Para garantir o funcionamento eficiente, o mínimo de água despejada a cada acionamento deve ser de 5 L.<br><span class=\"pb\"></span>A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um funcionamento eficiente, é igual a",
+   "alternativas": [
+    {
+     "t": "10.",
+     "ok": false
+    },
+    {
+     "t": "8.",
+     "ok": true
+    },
+    {
+     "t": "4.",
+     "ok": false
+    },
+    {
+     "t": "3.",
+     "ok": false
+    },
+    {
+     "t": "2.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-171",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "cilindro",
+    "prisma",
+    "volume",
+    "embalagem",
+    "inequação"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um confeiteiro passou a produzir tortas em formato de cilindro circular reto, com raio da base variando entre 12 cm e 16 cm e altura de 6 cm. Essas tortas deverão ser embaladas em caixas com formato de prisma reto de base quadrada, de modo que seja possível acomodar a torta em seu interior e ainda restar pelo menos 1 cm de distância entre a torta e as superfícies internas da caixa, lateral e superior. Ele dispõe, originalmente, de caixas no formato pretendido, cujas dimensões internas são 14 cm de comprimento do lado da base e 7 cm de altura, que não atendem às suas necessidades. Portanto, ele comprará novas caixas, com o mesmo formato das caixas originais, mas com comprimento do lado da base maior, que sejam adequadas para embalar todos os tipos de torta que produz.<br><span class=\"pb\"></span>A aresta da base das novas caixas deve ser, no mínimo, quantos centímetros maior do que a das caixas originais?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "4",
+     "ok": false
+    },
+    {
+     "t": "12",
+     "ok": false
+    },
+    {
+     "t": "16",
+     "ok": false
+    },
+    {
+     "t": "18",
+     "ok": false
+    },
+    {
+     "t": "20",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-172",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Logaritmos",
+   "topicos": [
+    "logaritmo",
+    "função logarítmica",
+    "função quadrática",
+    "máximo",
+    "pressão"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um empresário utiliza máquinas cuja pressão interna <i>P</i>, em atmosfera, depende do tempo contínuo de utilização <i>t</i>, em hora, e de um parâmetro positivo <i>K</i>, que define o modelo da máquina, segundo a expressão:<br><span class=\"pb\"></span>$P = 4 · log[-K · (t + 1) · (t - 19)]$<br><span class=\"pb\"></span>O fabricante dessas máquinas recomenda ao usuário que a pressão interna desse tipo de máquina não ultrapasse 10 atmosferas durante seu funcionamento.<br><span class=\"pb\"></span>O empresário pretende comprar novas máquinas desse tipo que deverão funcionar, diariamente, por um período contínuo de 10 horas. Para isso, precisa definir o modelo de máquina a ser adquirida escolhendo o maior valor possível do parâmetro <i>K</i>, atendendo à recomendação do fabricante.<br><span class=\"pb\"></span>O maior valor a ser escolhido para <i>K</i> é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$10^{0,5}$",
+     "ok": true
+    },
+    {
+     "t": "$10^{8}$",
+     "ok": false
+    },
+    {
+     "t": "$ {10^{2,5}|84} $",
+     "ok": false
+    },
+    {
+     "t": "$ {10^{2,5}|99} $",
+     "ok": false
+    },
+    {
+     "t": "$25 × 10^{-2}$",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-173",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "área",
+    "semicírculo",
+    "seção transversal",
+    "túnel",
+    "aproximação de pi"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Em uma cidade, será construído um túnel que atravessa uma montanha para facilitar o trânsito de automóveis e bicicletas. Dois projetos foram elaborados e os esquemas com as vistas frontais desses projetos são apresentados na figura.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-173.png",
+    "alt": "Figura da questão 173",
+    "largura": "92%"
+   },
+   "pergunta": "O Projeto 1 conta com dois túneis, um exclusivo para bicicletas e o outro, para automóveis. O Projeto 2 conta com um único túnel, com espaços reservados para o trânsito exclusivo de bicicletas e automóveis. Nos dois projetos, os túneis têm o formato de semicilindro reto de mesma extensão, com vias de ida e volta para os dois tipos de veículos, separados por muretas.<br><span class=\"pb\"></span>O projeto a ser aprovado será aquele que apresentar a menor área da seção transversal, pois implicará menor volume de material retirado da montanha.<br><span class=\"pb\"></span>Considere 3 como aproximação para π e desconsidere as espessuras das muretas.<br><span class=\"pb\"></span>O projeto a ser aprovado é",
+   "alternativas": [
+    {
+     "t": "o 1, pois apresenta área de seção transversal medindo 67,5 m².",
+     "ok": true
+    },
+    {
+     "t": "o 2, pois apresenta área de seção transversal medindo 121,5 m².",
+     "ok": false
+    },
+    {
+     "t": "o 1, pois apresenta área de seção transversal medindo 135 m².",
+     "ok": false
+    },
+    {
+     "t": "o 2, pois apresenta área de seção transversal medindo 243 m².",
+     "ok": false
+    },
+    {
+     "t": "qualquer um dos dois, pois apresentam áreas de suas seções transversais com medidas iguais.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-175",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Análise combinatória",
+   "topicos": [
+    "contagem",
+    "combinação",
+    "permutação",
+    "distribuição",
+    "princípio multiplicativo"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Um pai comprou oito presentes diferentes (dentre os quais, uma bicicleta e um celular) para dar a seus três filhos. Ele pretende distribuir os presentes de modo que o filho mais velho e o mais novo recebam três presentes cada um, e o do meio receba os dois presentes restantes. O mais velho ganhará, entre seus presentes, ou uma bicicleta ou um celular, mas não ambos.<br><span class=\"pb\"></span>De quantas maneiras distintas a distribuição dos presentes pode ser feita?",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "36",
+     "ok": false
+    },
+    {
+     "t": "53",
+     "ok": false
+    },
+    {
+     "t": "300",
+     "ok": true
+    },
+    {
+     "t": "360",
+     "ok": false
+    },
+    {
+     "t": "560",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-176",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "velocidade média",
+    "tempo",
+    "distância",
+    "regra de três"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A final de um campeonato de futebol foi disputada em 2 tempos regulamentares, de 45 minutos cada, sem acréscimos, com uma prorrogação de 30 minutos, também sem acréscimos. Um jogador entrou no início do segundo tempo, com um equipamento para medir a distância percorrida durante sua participação no jogo. Ao final do segundo tempo regulamentar, esse jogador havia percorrido 4,5 km. Ele manteve na prorrogação a mesma velocidade média que havia mantido no segundo tempo regulamentar.<br><span class=\"pb\"></span>A distância percorrida por esse jogador durante sua participação na partida, em quilômetro, foi",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "4,5.",
+     "ok": false
+    },
+    {
+     "t": "6,0.",
+     "ok": false
+    },
+    {
+     "t": "7,5.",
+     "ok": true
+    },
+    {
+     "t": "9,0.",
+     "ok": false
+    },
+    {
+     "t": "12,0.",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-177",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Geometria espacial",
+   "topicos": [
+    "volume",
+    "cilindro",
+    "prisma",
+    "quadrado inscrito",
+    "medalha"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A figura ilustra o projeto visual para confecção de uma medalha comemorativa, com a forma de um cilindro circular reto, de diâmetro 6 cm e espessura 3 mm.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-177.png",
+    "alt": "Figura da questão 177",
+    "largura": "98%"
+   },
+   "pergunta": "A figura <i>ABCD</i> tem a forma de um quadrado e é a base de um prisma que atravessa toda a medalha. A região da medalha externa a esse prisma será cunhada em ouro. Pretende-se cunhar 100 dessas medalhas.<br><span class=\"pb\"></span>Considere 3,1 como valor aproximado para π.<br><span class=\"pb\"></span>Qual é o volume de ouro, em centímetro cúbico, necessário para a confecção dessas medalhas?",
+   "alternativas": [
+    {
+     "t": "288",
+     "ok": false
+    },
+    {
+     "t": "297",
+     "ok": true
+    },
+    {
+     "t": "567",
+     "ok": false
+    },
+    {
+     "t": "990",
+     "ok": false
+    },
+    {
+     "t": "1 134",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-178",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "probabilidade",
+    "dados",
+    "eventos",
+    "maior valor"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Três dados cúbicos, com faces numeradas de 1 a 6, foram utilizados em um jogo. Artur escolheu dois dados, e João ficou com o terceiro. O jogo consiste em ambos lançarem seus dados, observarem os números nas faces voltadas para cima e compararem o maior número obtido por Artur com o número obtido por João. Vence o jogador que obtiver o maior número. Em caso de empate, a vitória é de João.<br><span class=\"pb\"></span>O jogador que tem a maior probabilidade de vitória é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "Artur, com probabilidade de $ {2|3} $",
+     "ok": false
+    },
+    {
+     "t": "João, com probabilidade de $ {4|9} $",
+     "ok": false
+    },
+    {
+     "t": "Artur, com probabilidade de $ {91|216} $",
+     "ok": false
+    },
+    {
+     "t": "João, com probabilidade de $ {91|216} $",
+     "ok": false
+    },
+    {
+     "t": "Artur, com probabilidade de $ {125|216} $",
+     "ok": true
+    }
+   ]
+  },
+  {
+   "id": "enem2025-179",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "unidades de medida",
+    "grandezas",
+    "razão",
+    "luminância"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "A luminância de um objeto é a grandeza que descreve a quantidade de luz produzida ou refletida por sua superfície. Ela está definida como a razão entre a intensidade luminosa, medida em candela (cd), e o quadrado da distância do objeto até o foco de luz, medida em metro (m).<br><span class=\"pb\"></span>A unidade de medida da luminância de um objeto é",
+   "resolucao": "",
+   "alternativas": [
+    {
+     "t": "$ {\"cd\"|\"m\"^2} $",
+     "ok": true
+    },
+    {
+     "t": "$ {\"m\"^2|\"cd\"} $",
+     "ok": false
+    },
+    {
+     "t": "$ {\"cd\"|\"m\"} $",
+     "ok": false
+    },
+    {
+     "t": "$ {\"m\"|\"cd\"} $",
+     "ok": false
+    },
+    {
+     "t": "$ {\"m\"|\"cd\"^2} $",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "enem2025-180",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Sequências",
+   "topicos": [
+    "progressão aritmética",
+    "sequência",
+    "termo geral",
+    "padrões"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2025 (INEP)",
+   "pontos": 1,
+   "enunciado": "Quatro amigos, cada um com 100 moedas, criaram um jogo, no qual cada um assume uma das quatro posições, 1, 2, 3 ou 4, indicadas na figura, e nela permanece até o final.",
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-180.png",
+    "alt": "Figura da questão 180",
+    "largura": "50%"
+   },
+   "pergunta": "O desenvolvimento do jogo se dá em rodadas e, em todas elas, cada jogador transfere e recebe uma quantidade de moedas, da seguinte maneira:<ul><li>o jogador na posição 1 transfere 1 moeda para o jogador na posição 2;</li><li>o jogador na posição 2 transfere 2 moedas para o jogador na posição 3;</li><li>o jogador na posição 3 transfere 3 moedas para o jogador na posição 4;</li><li>o jogador na posição 4 transfere 4 moedas para o jogador na posição 1, completando a rodada.</li></ul>Ao final da rodada <i>n</i>, qual é a expressão algébrica que representa o número de moedas do jogador na posição 1?",
+   "alternativas": [
+    {
+     "t": "$103 + 4n$",
+     "ok": false
+    },
+    {
+     "t": "$103 + 3n$",
+     "ok": false
+    },
+    {
+     "t": "$100 + 4n$",
+     "ok": false
+    },
+    {
+     "t": "$100 + 3n$",
+     "ok": true
+    },
+    {
+     "t": "$99 + 4n$",
+     "ok": false
+    }
+   ]
   }
  ]
 }

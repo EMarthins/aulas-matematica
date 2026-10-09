@@ -21,7 +21,7 @@ function toast(msg, ms = 2800) {
   t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, ms);
 }
 const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
-const ordemSerie = ['9º Ano', '1º Ano', '2º Ano', '3º Ano', 'ENA · PROFMAT'];
+const ordemSerie = ['9º Ano', '1º Ano', '2º Ano', '3º Ano', 'ENEM', 'ENA · PROFMAT'];
 const cmpSerie = (a, b) => { const i = ordemSerie.indexOf(a), j = ordemSerie.indexOf(b); return (i < 0 ? 99 : i) - (j < 0 ? 99 : j) || a.localeCompare(b, 'pt'); };
 
 /* =====================================================================
@@ -61,7 +61,8 @@ function montarBanco() {
 let AUTORAIS = [], LEGADO = [];
 async function carregar() {
   const [a, b] = await Promise.all([
-    fetch('../app/banco-provas.json').then(r => r.json()).catch(() => ({ questoes: [] })),
+    // imagens do banco: "img:arquivo.png" → app/img-questoes/ (caminho relativo a professor/)
+    fetch('../app/banco-provas.json').then(r => r.text()).then(t => JSON.parse(t.replace(/(["'])img:(enem[\w.-]+)/g, '$1../app/img-questoes/$2'))).catch(() => ({ questoes: [] })),
     fetch('../app/banco.json').then(r => r.json()).catch(() => ({ questoes: [] }))
   ]);
   AUTORAIS = (a.questoes || []).map(q => Object.assign(indexar(q), { origem: 'banco' }));

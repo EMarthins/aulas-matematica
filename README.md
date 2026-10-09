@@ -118,7 +118,7 @@ A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `au
 
 **Para o professor (em sala):** slides em tela cheia que se adaptam a qualquer projetor · `F` tela cheia, `B` tela preta, `M` mapa dos slides, `N` notas, `T` cronômetro e sorteio, `L` copiar link do slide · impressão dos slides como folheto.
 
-**Para o professor (plataforma, com login):** turmas com aprovação de alunos, atividades (quiz, envio, aula assistida), correção, engajamento com termômetro de entendimento e CSV · **Fazedor de prova** (`professor/prova.html`): arraste questões de um banco com filtros (turma, conteúdo, tipo, dificuldade, palavra-chave) para folhas A4 em 1 ou 2 colunas, com cabeçalho pré-preenchível, versões A/B/C/D, gabarito e PDF — questões de múltipla escolha, abertas, V/F, somatória e associação, com figuras, gráficos e demonstrações; pronto para geração por IA (veja `docs/fazedor-de-prova.md`) · **Banco de questões em lista** (`professor/banco.html`).
+**Para o professor (plataforma, com login):** turmas com aprovação de alunos, atividades (quiz, envio, aula assistida), correção, engajamento com termômetro de entendimento e CSV · **Fazedor de prova** (`professor/prova.html`): arraste questões de um banco com filtros (turma, conteúdo, tipo, dificuldade, palavra-chave) para folhas A4 em 1 ou 2 colunas, com cabeçalho pré-preenchível, versões A/B/C/D, gabarito e PDF — questões de múltipla escolha, abertas, V/F, somatória e associação, com figuras, gráficos e demonstrações; pronto para geração por IA (veja `docs/fazedor-de-prova.md`); já inclui 88 questões do ENEM 2021 e 2025 com gabarito · **Banco de questões em lista** (`professor/banco.html`).
 
 Não é necessário nenhum processo de build: é HTML puro, servido como está.
 

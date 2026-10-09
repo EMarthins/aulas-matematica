@@ -108,12 +108,16 @@ body.pv{margin:0;height:100vh;display:flex;flex-direction:column;overflow:hidden
 .fig-erro{color:#b00;font:600 9pt Archivo,Arial,sans-serif;border:1px dashed #b00;padding:2mm}
 .q-alts{list-style:none;margin:1.6mm 0 0;padding:0}
 .q-alts li{margin:.5mm 0;display:flex;gap:.45em;align-items:baseline}
+.q-alts li:has(img){align-items:center;margin:1mm 0}
 .q-alts li b{font-family:Archivo,Arial,sans-serif;font-size:.9em;flex:none}
 .q-alts li>span{min-width:0}
 .q-alts.alt-2{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}
 .q-alts.alt-linha{display:flex;flex-wrap:wrap;column-gap:5mm}
 .q-alts.alt-linha li{margin-right:2mm}
 .q-alts.alt-1{display:block}
+.q-alts li img{max-width:100%;height:auto;display:block}
+.q-pergunta{margin-top:1.4mm}
+.pb{display:block;height:.45em}
 .q-alts li.certa,.q-afs li.certa{background:#e6e6e6;border-radius:1mm;font-weight:600}
 .q-afs{list-style:none;margin:1.6mm 0 0;padding:0}
 .q-afs li{display:flex;gap:.55em;align-items:baseline;margin:.8mm 0}
