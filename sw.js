@@ -2,9 +2,9 @@
    - arquivos do próprio site: "stale-while-revalidate" (responde do cache e atualiza em segundo plano)
    - Firebase e outros domínios: passam direto pela rede (login e plataforma exigem internet)
    Troque VERSAO para forçar a limpeza do cache antigo. */
-var VERSAO = 'v1';
+var VERSAO = 'v2';
 var CACHE = 'aulas-' + VERSAO;
-var BASE = ['./', 'index.html', 'simulado.html', 'revisao.html', 'app/style.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/banco.json', 'app/theme-toggle.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
+var BASE = ['./', 'index.html', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/banco.json', 'app/theme-toggle.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
 
 self.addEventListener('install', function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){ return Promise.all(BASE.map(function(u){ return c.add(u).catch(function(){}); })); }).then(function(){ return self.skipWaiting(); }));
