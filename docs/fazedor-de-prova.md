@@ -81,7 +81,7 @@ Nunca coloque a chave da API no navegador nem no repositório.
 
 ## Provas do ENEM no banco
 
-**Todas as questões** dos cadernos do ENEM 2021 e 2025 enviados (2º dia e 1º dia, sem a Redação): Linguagens (inclusive as de Inglês e Espanhol), Ciências Humanas, Ciências da Natureza e Matemática — 370 questões, com o **gabarito oficial** e as **anuladas marcadas** (2021: 138; 2025: 123, 132 e 174). Não entraram 2022, 2023 e 2024, porque só chegaram os gabaritos (sem o caderno de questões).
+**Todas as questões** dos cadernos do ENEM 2018 (2º dia), 2020, 2021, 2022, 2023, 2024 e 2025 (1º e 2º dias, sem a Redação): Linguagens (com Inglês e Espanhol), Ciências Humanas, Ciências da Natureza e Matemática — 1.200 questões. 2021 e 2025 têm **gabarito oficial** e anuladas marcadas (2021: 138; 2025: 123, 132 e 174). **2018, 2020, 2022, 2023 e 2024 entram sem gabarito** (campo `semGabarito`, aparece como "—") até os gabaritos oficiais serem cadastrados em `imagens-AAAA.json` (campo `gab`) e `montar-imagens.js` ser rodado de novo. Quase todas entram como imagem recortada do caderno (`app/img-questoes/`); só a Matemática de 2021/2025 está em texto. Disciplina e tópico vêm de `scripts/banco-provas/enem/rotulos-AAAA.js`; `preparar-staging.js` copia os recortes gerados para `imagens-AAAA.json`.
 
 - **Matemática (2021 e 2025):** transcritas em texto (reflowáveis, com alternativas que embaralham), exceto as anuladas.
 - **Demais áreas:** entram como **imagem** recortada do caderno (`soImagem`), com o gabarito oficial; o texto de busca vem do próprio PDF (2025) ou de OCR (2021). Os textos de apoio compartilhados (ex.: 2025, questões 6 a 10) aparecem uma vez só quando as questões são seguidas na prova.

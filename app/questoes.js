@@ -76,7 +76,7 @@ export function validar(q) {
     const a = q.alternativas || [];
     if (a.length < 2) e.push('múltipla escolha precisa de ao menos 2 alternativas');
     if (a.length > 10) e.push('máximo de 10 alternativas');
-    if (a.filter(x => x.ok).length !== 1 && !q.anulada) e.push('marque exatamente 1 alternativa correta');
+    if (a.filter(x => x.ok).length !== 1 && !q.anulada && !q.semGabarito) e.push('marque exatamente 1 alternativa correta');
     if (a.some(x => !String(x.t).trim())) e.push('alternativa vazia');
   } else if (q.tipo === 'vf' || q.tipo === 'soma') {
     const a = q.afirmacoes || [];
@@ -107,6 +107,7 @@ export function embaralhar(arr, rand) { const a = arr.slice(); for (let i = a.le
 /** { curto, longo } do gabarito. `ordem` = permutação das alternativas (mc) usada na impressão. */
 export function gabaritoDe(q, ordem) {
   if (q.anulada) return { curto: 'Anulada', longo: 'Questão anulada pelo INEP' };
+  if (q.semGabarito) return { curto: '—', longo: 'Gabarito ainda não cadastrado' };
   if (q.soImagem) { const k = q.alternativas.findIndex(a => a.ok); return { curto: k < 0 ? '—' : 'ABCDE'[k], longo: '' }; }
   if (q.tipo === 'mc') {
     const ord = ordem || q.alternativas.map((_, i) => i);
