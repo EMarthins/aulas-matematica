@@ -237,3 +237,8 @@ footer .mono{ font-size:.74rem; }
 }
 @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 @media print{ .topbar,.theme-toggle,.tools,.filtros{ display:none; } .mod:not([open]) .mod-body{ display:block; } }
+
+/* módulos "em breve" */
+.mod.vazia{ opacity:.6; }
+.mod.vazia .vz{ display:flex; align-items:center; gap:14px; padding:14px 16px; }
+.mod.vazia .m-ic{ filter:grayscale(.6); }

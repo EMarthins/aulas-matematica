@@ -703,6 +703,8 @@ export const MATERIAS = [
   // <<< ena-profmat
 ];
 
+import { completar } from './catalog-extra.js';
+
 export const ICONS = {
   'planet': '<circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="9.5" ry="3.5" transform="rotate(-25 12 12)"/>',
   'flag': '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
@@ -754,3 +756,5 @@ export function listarAulasParaSelecao(){
   });
   return lista;
 }
+
+completar(MATERIAS);

@@ -89,7 +89,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   function visto(item){ var p = prog(item.arquivo); return !!(p && p.v); }
 
   // anos em ordem crescente (9º → 2º → 3º; Parte 1 → 5)
-  function ordemAno(a){ var n = /(\d+)/.exec(a.ano); return n ? (+n[1] === 9 ? 0 : +n[1]) : 99; }
+  function ordemAno(a){ var n = /(\d+)/.exec(a.ano); return n ? (/Parte/.test(a.ano) || +n[1] >= 6 ? +n[1] : +n[1] + 10) : 99; }
   MATERIAS.forEach(function(m){ m.CATALOG.sort(function(a, b){ return ordemAno(a) - ordemAno(b); }); });
 
   var estado = { q: '', tipo: 'todos', idx: 0, ano: 0 };
@@ -99,13 +99,13 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
   // ---- contagens ----
   function contaUnidade(u){
-    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: u.itens.length };
+    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: u.itens.length, mod: u.itens.length ? 1 : 0 };
     u.itens.forEach(function(i){ var t = tipoDe(i); if(t === 'aula') c.aulas++; else if(t === 'guia') c.guias++; else c.ativ++; if(visto(i)) c.vistos++; });
     return c;
   }
   function contaAno(a){
     var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: 0, mods: 0 };
-    a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ var k = contaUnidade(u); c.aulas += k.aulas; c.guias += k.guias; c.ativ += k.ativ; c.vistos += k.vistos; c.total += k.total; c.mods++; }); });
+    a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ var k = contaUnidade(u); c.aulas += k.aulas; c.guias += k.guias; c.ativ += k.ativ; c.vistos += k.vistos; c.total += k.total; c.mods += k.mod; }); });
     return c;
   }
   function contaMateria(m){
@@ -162,7 +162,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       b.setAttribute('aria-controls', 'painel');
       b.style.setProperty('--accent', 'var(--' + ACENTOS[i % ACENTOS.length] + ')');
       b.style.setProperty('--accent-soft', 'var(--' + ACENTOS[i % ACENTOS.length] + '-soft)');
-      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
+      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + (c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') : 'Em breve') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
       b.addEventListener('click', function(){ if(estado.q){ limpaBusca(); } escolheMateria(i); });
       subjectsRoot.appendChild(b);
     });
@@ -194,6 +194,13 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     g.appendChild(l); return g;
   }
   function modulo(m, a, tri, u, num, o){
+    if(!u.itens.length){
+      if(estado.tipo !== 'todos' || norm(estado.q.trim())) return null;
+      var v = el('div', 'mod vazia');
+      v.style.setProperty('--accent', 'var(--' + u.accent + ')'); v.style.setProperty('--accent-soft', 'var(--' + u.accent + '-soft)');
+      v.innerHTML = '<div class="vz"><span class="m-ic">' + svgIcon(u.icon) + '</span><span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + '</span><b>' + esc(u.titulo) + '</b><small>Em breve</small></span></div>';
+      return v;
+    }
     var visiveis = u.itens.filter(function(i){ return passa(i, u); });
     if(!visiveis.length) return null;
     var c = contaUnidade(u), k = chave(m, a, u);
@@ -228,7 +235,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     painel.style.setProperty('--accent-soft', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + '-soft)');
 
     var topo = el('div', 'p-head');
-    topo.appendChild(el('p', 'p-lede', esc(m.lede)));
+    topo.appendChild(el('p', 'p-lede', esc(m.lede) + (m.emBreve ? ' <b>Conteúdo em preparação.</b>' : '')));
     if(m.destaque){ var da = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); da.href = m.destaque.url; topo.appendChild(da); }
     painel.appendChild(topo);
 
@@ -236,7 +243,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var tabs = el('div', 'years'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Ano / parte');
     m.CATALOG.forEach(function(an, i){
       var c = contaAno(an), on = i === estado.ano;
-      var b = el('button', 'year' + (on ? ' active' : ''), '<b>' + esc(an.ano) + '</b><small>' + c.vistos + '/' + c.total + '</small>');
+      var b = el('button', 'year' + (on ? ' active' : ''), '<b>' + esc(an.ano) + '</b><small>' + (c.total ? c.vistos + '/' + c.total : 'em breve') + '</small>');
       b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
       b.addEventListener('click', function(){ escolheAno(i); });
       tabs.appendChild(b);
@@ -261,7 +268,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var lista = el('div', 'mods'), n = 0, exibidos = 0, sug = sugerida(estado.idx);
     var multi = a.trimestres.length > 1, forca = estado.tipo !== 'todos';
     a.trimestres.forEach(function(tri){
-      var visTri = tri.unidades.filter(function(u){ return u.itens.some(function(i){ return passa(i, u); }); });
+      var visTri = tri.unidades.filter(function(u){ return u.itens.length ? u.itens.some(function(i){ return passa(i, u); }) : (estado.tipo === 'todos' && !norm(estado.q.trim())); });
       if(!visTri.length) return;
       if(multi) lista.appendChild(el('h3', 'tri-tit', esc(tri.nome)));
       tri.unidades.forEach(function(u, ui){
