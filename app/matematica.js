@@ -1,5 +1,5 @@
 // ============================================================
-// Mini-linguagem de matemática para o banco de questões e o fazedor de prova.
+// Mini-linguagem de matemática para o banco de questões e o Proveiro.
 // Mesma sintaxe usada pelo gerador de aulas (scripts/gerador-ena/kit.js):
 //
 //   $ ... $            tudo entre cifrões vira matemática formatada
@@ -64,7 +64,7 @@ export function mat(html) {
     .replace(/\$([^$]+?)\$/g, (_, e) => expr(e));
 }
 
-/** CSS mínimo da matemática (frações, raízes, expoentes) — o fazedor de prova já o inclui em prova.css. */
+/** CSS mínimo da matemática (frações, raízes, expoentes) — o Proveiro já o inclui em prova.css. */
 export const MATH_CSS = `
 .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.15;margin:0 .12em;font-size:.92em}
 .fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 .2em .06em}

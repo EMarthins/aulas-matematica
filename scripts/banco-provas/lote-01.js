@@ -1,4 +1,4 @@
-// Lote 01 do banco autoral do fazedor de prova: questões ORIGINAIS de 9º Ano e 1º Ano (Matemática).
+// Lote 01 do banco autoral do Proveiro: questões ORIGINAIS de 9º Ano e 1º Ano (Matemática).
 // Idempotente: remove as questões bp9-* / bp1-* de app/banco-provas.json e grava de novo.
 //   node scripts/banco-provas/lote-01.js
 const fs = require('fs'), path = require('path');

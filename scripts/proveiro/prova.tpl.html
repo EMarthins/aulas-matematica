@@ -206,40 +206,7 @@
 
 <datalist id="dl-series"></datalist><datalist id="dl-materias"></datalist><datalist id="dl-unidades"></datalist>
 
-<!-- visualizar questão -->
-<dialog class="pv-dlg" id="dlgVer">
-  <div class="dlg-h"><h3 id="verTit">Questão</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
-  <div class="dlg-b"><div class="pre" id="verCorpo" style="background:#fff;color:#111;border-radius:10px;padding:16px;font-family:'Source Serif 4',Georgia,serif;font-size:11.5pt;line-height:1.4"></div><div id="verMeta" class="pv-nota"></div></div>
-  <div class="dlg-f"><button class="btn secondary" id="verDup" type="button">Duplicar e editar</button><button class="btn secondary" id="verEd" type="button" hidden>Editar</button><button class="btn secondary" id="verDel" type="button" hidden>Excluir</button><button class="btn" id="verAdd" type="button">Adicionar à prova</button></div>
-</dialog>
-
-<!-- editor de questão -->
-<dialog class="pv-dlg" id="dlgEd">
-  <div class="dlg-h"><h3 id="edTit">Nova questão</h3><button class="pv-link" data-fechar type="button">Cancelar ✕</button></div>
-  <div class="dlg-b"><div class="ed">
-    <form id="edForm" onsubmit="return false"></form>
-    <div><div class="pv-lb">Como vai aparecer no papel</div><div class="pre" id="edPre"></div><ul class="ed-erros" id="edErros"></ul></div>
-  </div></div>
-  <div class="dlg-f"><span class="pv-nota" style="margin:0 auto 0 0">Salva no seu navegador (“Minhas questões”). Use ⋯ → Exportar para guardar um arquivo.</span><button class="btn secondary" data-fechar type="button">Cancelar</button><button class="btn" id="edSalvar" type="button">Salvar questão</button></div>
-</dialog>
-
-<!-- abrir / importar -->
-<dialog class="pv-dlg" id="dlgAbrir" style="width:min(720px,94vw)">
-  <div class="dlg-h"><h3>Minhas provas</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
-  <div class="dlg-b"><div id="salvas"></div>
-    <div class="pv-box" style="margin-top:14px"><h3>Importar arquivo</h3><p class="pv-nota" style="margin:0 0 8px">Aceita uma prova (.json exportada daqui) ou um pacote de questões no formato do banco.</p><input type="file" id="arqImp" accept=".json,application/json"></div>
-  </div>
-</dialog>
-
-<!-- minhas questões: importar/exportar -->
-<dialog class="pv-dlg" id="dlgMais" style="width:min(520px,94vw)">
-  <div class="dlg-h"><h3>Minhas questões</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
-  <div class="dlg-b">
-    <p class="pv-nota" style="margin-top:0">As questões que você cria (ou a IA cria) ficam neste navegador. Exporte para guardar ou levar a outro computador; importe um pacote <code>.json</code> do banco para somá-las.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0"><button class="btn secondary" id="bExpQ" type="button">Exportar minhas questões</button><label class="btn secondary" style="cursor:pointer">Importar pacote <input type="file" id="arqQ" accept=".json,application/json" hidden></label><button class="btn danger" id="bLimpaQ" type="button">Apagar todas</button></div>
-    <div id="maisInfo" class="pv-nota"></div>
-  </div>
-</dialog>
+<!--DIALOGOS-->
 
 <div id="medidor"></div>
 <script type="module" src="../app/prova-app.js"></script>

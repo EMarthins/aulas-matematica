@@ -1,16 +1,23 @@
-# Fazedor de prova
+# Proveiro (fazedor de prova)
 
-Página: `professor/prova.html` (menu **Painel → Fazedor de prova**). Funciona sem login (o banco é público no site); se o professor estiver logado, o campo *Professor(a)* já vem preenchido.
+Página: `professor/prova.html` (menu **Painel → Proveiro**). Funciona sem login (o banco é público no site); se o professor estiver logado, o campo *Professor(a)* já vem preenchido.
 
 ## Como usar
 
-1. **Banco** (esquerda): busque por palavra-chave e filtre por *turma/série*, *matéria*, *conteúdo*, *tipo*, *dificuldade* e *origem*. Os filtros são "em cascata": cada lista mostra só o que existe com as outras escolhas e quantas questões há.
-2. **Arraste** o cartão para a folha (ou clique em *+ Adicionar*). Dentro da folha, arraste as questões para reordenar, ou use ↑ ↓ ✕ ao passar o mouse.
-3. **Cabeçalho** (direita → *Cabeçalho*): três modelos (caixas — baseado no modelo enviado —, linhas e compacto), título, subtítulo, logo, instruções, e **pré-preenchimento** de escola, professor, turma, data e trimestre. Campo vazio = o aluno preenche. *Usar como padrão* grava os dados para as próximas provas. Clicar no cabeçalho da folha leva ao campo correspondente.
-4. **Prova**: lista e pontuação (dividir igualmente em N pontos), **versões A/B/C/D** (embaralha ordem e/ou alternativas; cada versão tem o seu gabarito) e **gabarito do professor** anexado ao final (com ou sem resolução).
-5. **Layout**: 1 ou 2 colunas, tamanho da letra, margens, espaço entre questões, estilo da numeração, disposição das alternativas, linha entre colunas, rodapé.
-6. **Imprimir / salvar PDF**: abre o diálogo do navegador; escolha *Salvar como PDF*, papel **A4**, margens **Nenhuma**, e desmarque "Cabeçalhos e rodapés". Cada folha da tela é exatamente uma página A4. Para entregar aos alunos, imprima só as páginas da prova (as de gabarito têm a faixa *SOMENTE PROFESSOR*).
-7. **Salvar / Abrir**: provas e "Minhas questões" ficam no navegador (localStorage). *Abrir / importar → Exportar* gera um `.json` para guardar ou levar a outro computador.
+A tela tem três colunas: **filtros → lista de questões → folha A4**.
+
+1. **Filtros** (esquerda): busca por palavra-chave e listas de *turma/série*, *matéria*, *conteúdo*, *tipo*, *dificuldade* e *origem*. Cada lista mostra quantas questões existem com os outros filtros ativos; clique numa opção para filtrar (clique de novo para soltar). Clique no título da lista para **compactar/abrir**, e arraste a alça **⠿** para **mudar a ordem** das listas — o Proveiro lembra a sua arrumação. O botão do funil (na lista) esconde a coluna de filtros.
+2. **Lista de questões** (meio): cartões grandes com o enunciado legível, miniatura da figura, tipo, turma, dificuldade e gabarito. *Compacta/Ampla* muda a densidade; **Ver completa ▾** abre a questão inteira no próprio cartão. **Arraste** o cartão para a folha ou clique em **+ Adicionar**.
+3. **Folha** (direita): a prova em páginas A4 de verdade. Arraste as questões para reordenar, ou use ↑ ↓ ✕ ao passar o mouse. Clique no cabeçalho para editar o campo.
+4. **☰ (canto superior direito)** abre a gaveta de configurações, com três listas que também compactam e mudam de lugar:
+   - **Cabeçalho**: três modelos (caixas — baseado no modelo enviado —, linhas e compacto), título, subtítulo, logo, instruções e **pré-preenchimento** de escola, professor, turma, data e trimestre. Campo vazio = o aluno preenche. *Usar como padrão* grava os dados para as próximas provas.
+   - **Prova**: questões da prova (arraste para reordenar, edite os pontos), dividir pontos, **versões A/B/C/D** (embaralha ordem e/ou alternativas; cada versão tem o seu gabarito) e **gabarito do professor** anexado ao final (com ou sem resolução).
+   - **Layout**: 1 ou 2 colunas, tamanho da letra, margens, espaço entre questões, numeração, disposição das alternativas, linha entre colunas, rodapé.
+5. **Assistente (bolinha de chat, canto inferior direito)**: escreva em uma frase, por exemplo *“5 questões de função quadrática, 1º ano”*, *“questões do ENEM de geometria espacial”*, *“dividir os pontos em 10”*, *“2 colunas com gabarito”*, *“versão B”*. Sem IA ligada, ele **procura no banco** (aplica os filtros e oferece “Adicionar N à prova”); com a IA ligada (veja abaixo), frases como *“crie 4 questões de porcentagem”* geram questões novas como rascunhos.
+6. **PDF / Imprimir**: abre o diálogo do navegador; escolha *Salvar como PDF*, papel **A4**, margens **Nenhuma**, e desmarque “Cabeçalhos e rodapés”. Cada folha da tela é exatamente uma página A4. Para entregar aos alunos, imprima só as páginas da prova (as de gabarito têm a faixa *SOMENTE PROFESSOR*).
+7. **Nova / Abrir / Salvar**: provas e “Minhas questões” ficam no navegador (localStorage). *Abrir → Exportar* gera um `.json` para guardar ou levar a outro computador.
+
+Em telas pequenas, o botão **Banco / Folha** no topo alterna entre a lista e a folha, e os filtros abrem como gaveta.
 
 `professor/prova.html?exemplo=1` abre uma prova de demonstração (`&cols=1`, `&gab=1` opcionais).
 
@@ -64,10 +71,10 @@ Qualquer campo de texto aceita `$ … $`: `{a|b}` fração · `√{x}`, `√[3]{
 
 ## IA (preparada, não configurada)
 
-Aba **IA** do fazedor: o formulário (turma, matéria, conteúdo, quantidade, dificuldade, tipos, instruções) e o pedido já funcionam — *Ver o pedido enviado* mostra exatamente o que seria mandado. Falta só ligar um servidor:
+O **assistente** (bolinha de chat): o chat já entende turma, conteúdo, tipo, dificuldade e quantidade, e o ⚙ do chat → *Ver o pedido que seria enviado* mostra exatamente o que seria mandado. Falta só ligar um servidor:
 
 1. Crie uma função/servidor seu (Firebase Cloud Function, Cloudflare Worker…) que receba `POST` JSON `{ modelo, sistema, prompt, esquema }`, chame a API da IA **com a chave guardada no servidor** e devolva `{ "questoes": [ … ] }` (ou `{ "texto": "<resposta bruta da IA>" }`, que o app extrai).
-2. Em `app/ia-prova.js` ponha `habilitado: true`, `endpoint` e `modelo` (ou preencha em *IA → Configuração (avançado)*, que grava no navegador).
+2. Em `app/ia-prova.js` ponha `habilitado: true`, `endpoint` e `modelo` (ou preencha em ⚙ no chat do assistente, que grava no navegador).
 3. As questões voltam validadas (`validar()`); as inválidas são descartadas e contadas. Entram em "Minhas questões" com origem **IA (rascunho)** — arraste para a prova depois de revisar.
 
 Nunca coloque a chave da API no navegador nem no repositório.

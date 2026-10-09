@@ -1,4 +1,4 @@
-// Valida app/banco-provas.json (banco autoral do fazedor de prova) e confere se as figuras compilam.
+// Valida app/banco-provas.json (banco autoral do Proveiro) e confere se as figuras compilam.
 //   node scripts/validar-banco-provas.js            → valida app/banco-provas.json
 //   node scripts/validar-banco-provas.js outro.json → valida outro pacote de questões
 const fs = require('fs'), path = require('path');

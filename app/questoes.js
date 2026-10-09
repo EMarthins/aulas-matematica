@@ -1,6 +1,6 @@
 // ============================================================
 // Esquema do banco de questões (v2) + renderização para papel.
-// Usado pelo fazedor de prova (professor/prova.html) e pelo validador (scripts/validar-banco-provas.js).
+// Usado pelo Proveiro (professor/prova.html) e pelo validador (scripts/validar-banco-provas.js).
 //
 // {
 //   id, tipo: 'mc' | 'aberta' | 'vf' | 'soma' | 'assoc',

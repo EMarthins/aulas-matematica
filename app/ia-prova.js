@@ -5,7 +5,7 @@
 //   1. Suba um endpoint seu (Firebase Cloud Function, Cloudflare Worker, etc.) que receba
 //      POST JSON  { modelo, sistema, prompt, esquema }  e devolva JSON  { questoes:[…] }
 //      (ou o texto bruto da IA em  { texto:'…' }). A CHAVE DA API FICA NO SERVIDOR — nunca aqui.
-//   2. Preencha IA_CONFIG abaixo (habilitado:true, endpoint, modelo) — ou use a aba "IA" do fazedor de prova
+//   2. Preencha IA_CONFIG abaixo (habilitado:true, endpoint, modelo) — ou use o Proveiro
 //      (guarda endpoint/modelo no navegador do professor).
 //   3. Pronto: o botão "Gerar com IA" passa a funcionar; as questões voltam validadas e entram no banco
 //      como "rascunhos da IA" (arrastáveis para a prova), sempre com revisão do professor.

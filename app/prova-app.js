@@ -1,5 +1,5 @@
 // ============================================================
-// Fazedor de prova — lógica da página professor/prova.html
+// Proveiro — lógica da página professor/prova.html
 //   banco (filtros) → arrastar → folhas A4 paginadas → imprimir / salvar PDF
 // ============================================================
 import { mat } from './matematica.js';
@@ -71,25 +71,73 @@ async function carregar() {
 }
 const getQ = id => POR_ID[id] || (E.snap[id] ? indexar(E.snap[id]) : null);
 
+/* ---------- listas que compactam e mudam de lugar ---------- */
+/** Seções (.sec) com alça ⠿ para arrastar, cabeçalho que abre/fecha e estado lembrado em localStorage. */
+function secoesMoveis(box, chave, padraoFechadas = []) {
+  const k = 'prova:ui:' + chave;
+  const ui = LS.ler(k, null) || { ordem: [], fechadas: null };
+  if (!ui.fechadas) ui.fechadas = Object.fromEntries(padraoFechadas.map(id => [id, 1]));
+  const secs = () => [...box.querySelectorAll(':scope > .sec')];
+  const salvar = () => { ui.ordem = secs().map(s => s.dataset.id); LS.gravar(k, ui); };
+  const mapa = Object.fromEntries(secs().map(s => [s.dataset.id, s]));
+  ui.ordem.filter(id => mapa[id]).concat(Object.keys(mapa).filter(id => !ui.ordem.includes(id))).forEach(id => box.appendChild(mapa[id]));
+  secs().forEach(s => s.classList.toggle('fechada', !!ui.fechadas[s.dataset.id]));
+  const marcar = (s, fechada) => { s.classList.toggle('fechada', fechada); ui.fechadas[s.dataset.id] = fechada ? 1 : 0; salvar(); };
+  box.addEventListener('click', e => {
+    const h = e.target.closest('.sec-h'); if (!h || e.target.closest('.grip')) return;
+    const s = h.parentElement; marcar(s, !s.classList.contains('fechada'));
+  });
+  let origem = null;
+  box.addEventListener('mousedown', e => { secs().forEach(s => { s.draggable = false; }); const g = e.target.closest('.grip'); if (g) g.closest('.sec').draggable = true; });
+  box.addEventListener('dragstart', e => {
+    const s = e.target.closest && e.target.closest('.sec'); if (!s || !s.draggable || s.parentElement !== box) return;
+    origem = s; s.classList.add('arrastando'); e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', 'sec:' + s.dataset.id);
+  });
+  const limpar = () => secs().forEach(s => s.classList.remove('drop-antes', 'drop-depois', 'arrastando'));
+  box.addEventListener('dragover', e => {
+    if (!origem) return; e.preventDefault();
+    const alvo = e.target.closest('.sec'); secs().forEach(s => s.classList.remove('drop-antes', 'drop-depois'));
+    if (alvo && alvo !== origem && alvo.parentElement === box) { const r = alvo.getBoundingClientRect(); alvo.classList.add(e.clientY > r.top + r.height / 2 ? 'drop-depois' : 'drop-antes'); }
+  });
+  box.addEventListener('drop', e => {
+    if (!origem) return; e.preventDefault();
+    const alvo = e.target.closest('.sec');
+    if (alvo && alvo !== origem && alvo.parentElement === box) { const r = alvo.getBoundingClientRect(); if (e.clientY > r.top + r.height / 2) alvo.after(origem); else alvo.before(origem); salvar(); }
+    origem = null; limpar();
+  });
+  box.addEventListener('dragend', () => { origem = null; limpar(); secs().forEach(s => { s.draggable = false; }); });
+  return {
+    abrir(id) { const s = mapa[id]; if (s) { marcar(s, false); s.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } },
+    fecharTodas() { secs().forEach(s => { s.classList.add('fechada'); ui.fechadas[s.dataset.id] = 1; }); salvar(); }
+  };
+}
+
 /* ---------- filtros ---------- */
 const F = { q: '', serie: '', materia: '', unidade: '', tipo: '', dif: '', fonte: '' };
 const CAMPOS = { serie: q => q.serie, materia: q => q.materia, unidade: q => q.unidade, tipo: q => q.tipo, dif: q => String(q.dificuldade), fonte: q => q.fonte };
-const SEL = { serie: 'fSerie', materia: 'fMateria', unidade: 'fUnidade', tipo: 'fTipo', dif: 'fDif', fonte: 'fFonte' };
-const TODOS = { serie: 'Todas as turmas', materia: 'Todas as matérias', unidade: 'Todos os conteúdos', tipo: 'Todos os tipos', dif: 'Qualquer', fonte: 'Todas as origens' };
+const TITULOS = { serie: 'Turma / série', materia: 'Matéria', unidade: 'Conteúdo', tipo: 'Tipo de questão', dif: 'Dificuldade', fonte: 'Origem' };
 const rotulo = { tipo: v => TIPOS[v] ? TIPOS[v].nome : v, dif: v => ({ 1: 'Fácil', 2: 'Média', 3: 'Difícil' }[v] || v) };
+const rot = (k, v) => rotulo[k] ? rotulo[k](v) : v;
 const passa = (q, ignorar) => {
   if (F.q) { const ts = norm(F.q).split(/\s+/).filter(Boolean); if (!ts.every(t => q._busca.includes(t))) return false; }
   for (const k in CAMPOS) if (k !== ignorar && F[k] && CAMPOS[k](q) !== F[k]) return false;
   return true;
 };
-function atualizarSelects() {
+let filtrosUI = null;
+function montarFiltros() {
+  const box = $('secFiltros');
+  box.innerHTML = Object.keys(CAMPOS).map(k => `<section class="sec" data-id="${k}"><header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>${TITULOS[k]}</b><span class="sec-s"></span><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header><div class="sec-b"><div class="f-opts"></div></div></section>`).join('');
+  filtrosUI = secoesMoveis(box, 'filtros', ['materia', 'tipo', 'dif', 'fonte']);
+}
+function atualizarListas() {
   Object.keys(CAMPOS).forEach(k => {
+    const sec = document.querySelector(`#secFiltros .sec[data-id="${k}"]`); if (!sec) return;
     const cont = {}; BANCO.forEach(q => { if (passa(q, k)) { const v = CAMPOS[k](q); if (v) cont[v] = (cont[v] || 0) + 1; } });
     let chaves = Object.keys(cont);
     chaves = k === 'serie' ? chaves.sort(cmpSerie) : k === 'dif' ? chaves.sort() : chaves.sort((a, b) => a.localeCompare(b, 'pt'));
     if (F[k] && !cont[F[k]]) chaves.unshift(F[k]);
-    const el = $(SEL[k]);
-    el.innerHTML = `<option value="">${TODOS[k]}</option>` + chaves.map(v => `<option value="${esc(v)}"${F[k] === v ? ' selected' : ''}>${esc(rotulo[k] ? rotulo[k](v) : v)} (${cont[v] || 0})</option>`).join('');
+    sec.querySelector('.f-opts').innerHTML = chaves.map(v => `<button type="button" class="opt${F[k] === v ? ' on' : ''}${cont[v] ? '' : ' zero'}" data-v="${esc(v)}"><span>${esc(rot(k, v))}</span><small>${cont[v] || 0}</small></button>`).join('') || '<div class="vazio" style="padding:8px">—</div>';
+    const s = sec.querySelector('.sec-s'); s.textContent = F[k] ? rot(k, F[k]) : chaves.length + (chaves.length === 1 ? ' opção' : ' opções'); s.classList.toggle('ativo', !!F[k]);
   });
   const uniq = f => [...new Set(BANCO.map(f).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
   $('dl-series').innerHTML = uniq(q => q.serie).sort(cmpSerie).map(v => `<option value="${esc(v)}">`).join('');
@@ -98,25 +146,34 @@ function atualizarSelects() {
 }
 
 let mostrados = 40, filtradas = [];
+function resumoFiltros() {
+  const p = []; if (F.q) p.push('“' + F.q + '”');
+  Object.keys(CAMPOS).forEach(k => { if (F[k]) p.push(rot(k, F[k])); });
+  return p.join(' · ');
+}
 function renderBanco(reset) {
   if (reset) mostrados = 40;
-  atualizarSelects();
+  atualizarListas();
   filtradas = BANCO.filter(q => passa(q));
   $('cont').textContent = filtradas.length + (filtradas.length === 1 ? ' questão' : ' questões');
+  const ativos = Object.keys(CAMPOS).filter(k => F[k]).length + (F.q ? 1 : 0);
+  $('fResumo').textContent = resumoFiltros() || 'sem filtros'; $('fBadge').hidden = !ativos; $('fBadge').textContent = ativos;
   const box = $('lista');
-  if (!filtradas.length) { box.innerHTML = '<div class="vazio">Nenhuma questão com esses filtros.<br>Tente outra palavra-chave ou limpe os filtros.</div>'; return; }
+  if (!filtradas.length) { box.innerHTML = '<div class="vazio">Nenhuma questão com esses filtros.<br>Tente outra palavra-chave ou <button class="lnk" data-a="limpar" type="button">limpe os filtros</button>.</div>'; return; }
   const ids = new Set(E.itens.map(i => i.id));
   box.innerHTML = filtradas.slice(0, mostrados).map(q => cartao(q, ids.has(q.id))).join('') +
-    (filtradas.length > mostrados ? `<button class="btn secondary" id="maisQ" type="button" style="width:100%;margin-top:4px">Mostrar mais (${filtradas.length - mostrados})</button>` : '');
+    (filtradas.length > mostrados ? `<button class="tb" id="maisQ" type="button" style="width:100%;justify-content:center">Mostrar mais (${filtradas.length - mostrados})</button>` : '');
 }
 function cartao(q, naProva) {
-  const fig = [].concat(q.figura || [], q.figuras || []).filter(Boolean).length;
+  const figs = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
+  const img = figs.find(f => f.tipo === 'img' && f.src);
   const nomeOrig = q.origem === 'minha' ? 'Minha' : q.origem === 'ia' ? 'IA' : '';
   return `<div class="qc${naProva ? ' na-prova' : ''}" draggable="true" data-id="${esc(q.id)}">
-    <div class="top">${naProva ? '<span class="tag ok">✓ na prova</span>' : ''}<span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${fig ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif" title="Dificuldade">${[1, 2, 3].map(n => `<i class="${n <= q.dificuldade ? 'on' : ''}"></i>`).join('')}</span></div>
-    <div class="un">${esc(q.materia)} · ${esc(q.unidade)}</div>
-    <div class="tx">${esc(textoPlano(q, 220))}</div>
-    <div class="ac"><button class="add" data-a="add" type="button">+ Adicionar</button><button data-a="ver" type="button">Ver</button></div>
+    <div class="top">${naProva ? '<span class="tag ok">✓ na prova</span>' : ''}<span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${figs.length ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif" title="Dificuldade">${[1, 2, 3].map(n => `<i class="${n <= q.dificuldade ? 'on' : ''}"></i>`).join('')}</span></div>
+    <div class="un">${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}</div>
+    <div class="corpo"><div class="tx">${esc(textoPlano(q, 520))}</div>${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
+    <div class="ac"><button class="add" data-a="add" type="button">+ Adicionar</button><button data-a="ver" type="button">Ver completa ▾</button><span class="gab-m">Gabarito ${esc(gabaritoDe(q).curto.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 18))}</span></div>
+    <div class="full"></div>
   </div>`;
 }
 function marcarNaProva() {
@@ -310,7 +367,7 @@ function mudou(soLayout) {
   if (!soLayout) { renderLista(); marcarNaProva(); }
   atualizarResumo(); repaginar(); salvarRascunho();
 }
-function atualizarResumo() { $('rQ').textContent = E.itens.length; $('rP').textContent = fmtPt(somaPontos()); }
+function atualizarResumo() { const n = E.itens.length, p = fmtPt(somaPontos()); $('rQ').textContent = n; $('rP').textContent = p; $('rtQ').textContent = n; $('rtP').textContent = p; $('provaSub').textContent = n + (n === 1 ? ' questão' : ' questões') + ' · ' + p + ' pts'; }
 
 function renderLista() {
   const ul = $('plista'); $('plVazio').style.display = E.itens.length ? 'none' : 'block';
@@ -385,10 +442,7 @@ function iniciarDnD() {
 /* =====================================================================
    Painéis laterais
    ===================================================================== */
-function abrirAba(p) {
-  document.querySelectorAll('#abas button').forEach(b => b.classList.toggle('on', b.dataset.p === p));
-  document.querySelectorAll('.pv-pn').forEach(s => s.classList.toggle('on', s.id === 'pn-' + p));
-}
+function abrirAba(p) { abrirGaveta(p); }
 function seg(id, fn) { $(id).addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; fn(b.dataset.v); }); }
 function marcarSeg(id, v) { document.querySelectorAll('#' + id + ' button').forEach(b => b.classList.toggle('on', b.dataset.v === String(v))); }
 
@@ -407,7 +461,6 @@ function sincronizarForm() {
 }
 function marcarModelo() { document.querySelectorAll('#pn-cab [data-m]').forEach(b => b.classList.toggle('on', b.dataset.m === E.cab.modelo)); }
 function iniciarPaineis() {
-  $('abas').addEventListener('click', e => { const b = e.target.closest('button'); if (b) abrirAba(b.dataset.p); });
   Object.entries(CAMPOS_TXT).forEach(([id, k]) => $(id).addEventListener('input', e => { E.cab[k] = e.target.value; mudou(true); }));
   $('c-totalNota').addEventListener('change', e => { E.cab.totalNota = e.target.checked; mudou(true); });
   $('pn-cab').addEventListener('click', e => { const b = e.target.closest('[data-m]'); if (b) { E.cab.modelo = b.dataset.m; marcarModelo(); mudou(true); } });
@@ -682,31 +735,131 @@ function importarQuestoes(j) {
 }
 
 /* =====================================================================
-   IA (preparada, não configurada)
+   Assistente (IA preparada, não configurada)
    ===================================================================== */
-function iaPedido() {
-  return { serie: $('ia-serie').value.trim(), materia: $('ia-mat').value.trim(), conteudo: $('ia-cont').value.trim(), quantidade: +$('ia-qtd').value || 5, dificuldade: +$('ia-dif').value, instrucoes: $('ia-instr').value.trim(), tipos: [...document.querySelectorAll('#ia-tipos input:checked')].map(i => i.value) };
+/* ---------- assistente (bolinha de chat) ---------- */
+const CHAT_KEY = 'prova:chat';
+let chat = LS.ler(CHAT_KEY, []), ultimoPedido = null;
+const SUGESTOES = ['5 questões de função quadrática, 1º ano', 'probabilidade, nível médio, 4 questões', 'questões do ENEM de geometria espacial', 'dividir os pontos em 10', '2 colunas com gabarito'];
+const PARADAS = new Set('a o as os um uma uns umas de da do das dos e em no na nos nas com para por sobre que me quero preciso gostaria queria quer montar monte fazer faca fazer crie criar gere gerar elabore busque buscar procure procurar ache achar traga coloque colocar adicione adicionar questao questoes exercicio exercicios prova provas avaliacao teste lista itens item ano anos serie series turma nivel dificuldade dificil dificeis facil faceis medio medios media medias simples basico basica alguma algumas algum alguns mais apenas somente so tipo tipos multipla escolha alternativa alternativas aberta abertas discursiva verdadeiro falso soma somatoria associacao colunas coluna ate pelo menos'.split(' '));
+
+function chatSalvar() { LS.gravar(CHAT_KEY, chat.slice(-40)); }
+function msg(papel, html, acoes) { chat.push({ p: papel, h: html, a: acoes || [] }); chatSalvar(); desenharChat(); }
+function desenharChat(pensando) {
+  const box = $('iaMsgs');
+  box.innerHTML = chat.map((m, i) => `<div class="m ${m.p}">${m.h}${m.a && m.a.length ? `<div class="acoes">${m.a.map((a, j) => `<button type="button" data-i="${i}" data-j="${j}">${esc(a.t)}</button>`).join('')}</div>` : ''}</div>`).join('') + (pensando ? '<div class="m bot pensando">Pensando…</div>' : '');
+  box.scrollTop = box.scrollHeight;
 }
 function iaStatus() {
-  const on = IA.iaConfigurada(); $('iaStatus').classList.toggle('on', on);
-  $('iaTxt').textContent = on ? 'IA configurada — pronta para gerar' : 'IA ainda não configurada';
+  const on = IA.iaConfigurada();
+  $('iaStatus').textContent = on ? 'IA conectada · posso criar questões novas' : 'IA ainda não configurada · busco no banco por você';
+  $('iaFab').classList.toggle('on', on); $('iaPonto').title = on ? 'IA conectada' : 'IA ainda não configurada';
   const c = IA.lerConfig(); $('ia-on').checked = !!c.habilitado; $('ia-end').value = c.endpoint || ''; $('ia-mod').value = c.modelo || '';
 }
+function iaAbrir(abrir) {
+  const ch = $('iaChat'); ch.hidden = !abrir; $('iaFab').setAttribute('aria-expanded', abrir);
+  if (abrir) {
+    if (!chat.length) msg('bot', 'Oi! Sou o assistente do <b>Proveiro</b>. Diga o que você precisa, em uma frase: o conteúdo, a turma, o tipo e quantas questões. Eu filtro o banco e adiciono à prova para você' + (IA.iaConfigurada() ? ', ou crio questões novas.' : '. (A criação de questões novas por IA ainda não está ligada.)'));
+    desenharChat(); setTimeout(() => $('iaTxt').focus(), 50);
+  }
+}
+
+/** Entende uma frase livre: quantidade, série, tipo, dificuldade, conteúdo e palavras-chave. */
+function interpretar(txt) {
+  const t = norm(txt), r = { qtd: 5, serie: '', tipo: '', dif: 0, unidade: '', q: '', gerar: /\b(cri[ae]|ger[ae]|elabor[ae]|invent[ae]|nova|novas|inedit)/.test(t) };
+  const t2 = t.replace(/\d+\s*[ºo°]?\s*(ano|serie)s?/g, ' ').replace(/\d+([.,]\d+)?\s*(pontos?|pts|colunas?)/g, ' ');
+  const mq = /(\d{1,2})\s*(questoes|questao|exercicios|exercicio|itens|perguntas)/.exec(t2);
+  if (mq) r.qtd = Math.min(40, Math.max(1, +mq[1]));
+  else { const m2 = /\b(\d{1,2})\b/.exec(t2); if (m2) r.qtd = Math.min(40, Math.max(1, +m2[1])); }
+  const series = [...new Set(BANCO.map(q => q.serie))];
+  if (/\benem\b/.test(t) && series.includes('ENEM')) r.serie = 'ENEM';
+  else if (/\b(ena|profmat)\b/.test(t)) r.serie = series.find(s => /PROFMAT/.test(s)) || '';
+  else { const ms = /\b(\d)\s*[ºo°]?\s*(ano|serie)/.exec(t); if (ms && series.includes(ms[1] + 'º Ano')) r.serie = ms[1] + 'º Ano'; }
+  if (/multipl|alternativ/.test(t)) r.tipo = 'mc'; else if (/abert|discursiv|dissertativ|demonstr/.test(t)) r.tipo = 'aberta'; else if (/verdadeir|falso|\bvf\b|v\/f/.test(t)) r.tipo = 'vf'; else if (/somator|\bsoma\b/.test(t)) r.tipo = 'soma'; else if (/associa|relacione/.test(t)) r.tipo = 'assoc';
+  if (/facil|faceis|simples|basic/.test(t)) r.dif = 1; else if (/medi[oa]s?\b|intermedi/.test(t)) r.dif = 2; else if (/dificil|dificeis|desafi|avancad/.test(t)) r.dif = 3;
+  // conteúdo: unidade cujo(s) termo(s) aparecem inteiros na frase
+  let melhor = 0;
+  [...new Set(BANCO.map(q => q.unidade))].forEach(u => {
+    const toks = norm(u).split(/[^a-z0-9]+/).filter(w => w.length > 2 && !PARADAS.has(w));
+    if (toks.length && toks.every(w => t.includes(w)) && toks.length > melhor) { melhor = toks.length; r.unidade = u; }
+  });
+  const usados = new Set(r.unidade ? norm(r.unidade).split(/[^a-z0-9]+/) : []);
+  r.q = t.split(/[^a-z0-9]+/).filter(w => w.length > 2 && !/^\d+$/.test(w) && !PARADAS.has(w) && !usados.has(w) && !/^(enem|ena|profmat)$/.test(w)).join(' ');
+  return r;
+}
+function aplicarPedido(r, relaxar) {
+  Object.keys(F).forEach(k => { F[k] = ''; });
+  if (r.serie) F.serie = r.serie; if (r.tipo) F.tipo = r.tipo; if (r.dif && relaxar < 1) F.dif = String(r.dif);
+  if (r.unidade && relaxar < 2) F.unidade = r.unidade; else if (r.q) F.q = r.q;
+  if (r.unidade && relaxar < 2 && r.q) F.q = r.q;
+  $('busca').value = F.q;
+}
+function amostra(lista, n) { return embaralhar(lista, Math.random).slice(0, n); }
+
+/** Comandos rápidos sobre a prova (sem IA). Devolve a resposta ou null. */
+function comandoRapido(txt) {
+  const t = norm(txt);
+  if (/\b(limpar|esvaziar|remover todas|apagar todas)\b.*\b(prova|questoes)\b|\bnova prova\b/.test(t) && /limpar|esvaziar|remover|apagar/.test(t)) { E.itens = []; mudou(); return 'Pronto, a prova está vazia de novo.'; }
+  const mc = /\b([12])\s*coluna/.exec(t); if (mc) { E.layout.colunas = +mc[1]; sincronizarForm(); mudou(true); return `Ok, a prova agora está em <b>${mc[1]} coluna${mc[1] === '2' ? 's' : ''}</b>.`; }
+  const mp = /(?:dividi\w*|distribu\w*|total\w*|valer\w*|vale)\D{0,20}?(\d+(?:[.,]\d+)?)\s*(?:pontos?|pts)?/.exec(t);
+  if (mp && /(pontos?|dividi|distribu|nota)/.test(t) && E.itens.length) { const alvo = parseFloat(mp[1].replace(',', '.')); $('alvoPts').value = alvo; $('bDividir').click(); return `Dividi <b>${fmtPt(alvo)} pontos</b> igualmente entre as ${E.itens.length} questões.`; }
+  if (/sem gabarito/.test(t)) { E.gab.anexar = false; sincronizarForm(); mudou(true); return 'Tirei as páginas de gabarito.'; }
+  if (/gabarito/.test(t) && /(anex|inclu|colo|com|quero|adicion|gere|ponha)/.test(t)) { E.gab.anexar = true; sincronizarForm(); mudou(true); return 'Anexei as <b>páginas de gabarito</b> ao final (só para o professor).'; }
+  const mv = /\bversao\s*([abcd])\b/.exec(t); if (mv) { E.versao = mv[1].toUpperCase(); if (E.versao !== 'A') { E.embOrdem = true; E.embAlt = true; } sincronizarForm(); mudou(true); return `Versão <b>${E.versao}</b> ativada${E.versao !== 'A' ? ' (ordem e alternativas embaralhadas)' : ''}.`; }
+  if (/\b(imprim|baixar pdf|gerar pdf|salvar.*pdf)/.test(t)) { setTimeout(() => $('bImprimir').click(), 100); return 'Abrindo a impressão — escolha “Salvar como PDF”.'; }
+  return null;
+}
+
+async function iaEnviar(txt) {
+  txt = txt.trim(); if (!txt) return;
+  msg('eu', esc(txt));
+  const cmd = comandoRapido(txt); if (cmd) { msg('bot', cmd); return; }
+  const r = interpretar(txt); ultimoPedido = r;
+  if (r.gerar && IA.iaConfigurada()) {
+    desenharChat(true);
+    try {
+      const ped = { serie: r.serie, materia: 'Matemática', conteudo: r.unidade || r.q || txt, quantidade: r.qtd, dificuldade: r.dif || 2, instrucoes: txt, tipos: r.tipo ? [r.tipo] : ['mc'] };
+      ultimoPedido = ped;
+      const res = await IA.gerarQuestoes(ped), minhas = getMinhas(); res.questoes.forEach(q => { q.origem = 'ia'; minhas.unshift(q); });
+      LS.gravar('prova:minhas', minhas); montarBanco(); Object.keys(F).forEach(k => { F[k] = ''; }); F.fonte = 'IA (rascunho)'; renderBanco(true);
+      msg('bot', `Criei <b>${res.questoes.length}</b> questão(ões) como <b>rascunhos da IA</b> — revise antes de usar.${res.descartadas.length ? ` (${res.descartadas.length} descartada(s) por incompletas.)` : ''}`, res.questoes.length ? [{ t: `Adicionar ${res.questoes.length} à prova`, id: 'add', ids: res.questoes.map(q => q.id) }, { t: 'Ver na lista', id: 'ver' }] : []);
+    } catch (e) { msg('bot', 'Não consegui gerar agora: ' + esc(e.message)); }
+    return;
+  }
+  // busca no banco (relaxa os filtros aos poucos se nada for encontrado)
+  let achou = [], usados = 0;
+  for (let rel = 0; rel < 3; rel++) { aplicarPedido(r, rel); achou = BANCO.filter(q => passa(q)); usados = rel; if (achou.length) break; }
+  renderBanco(true);
+  const livres = achou.filter(q => !E.itens.some(i => i.id === q.id));
+  const n = Math.min(r.qtd, livres.length), ids = amostra(livres, n).map(q => q.id);
+  const filtros = resumoFiltros();
+  if (!achou.length) { msg('bot', 'Não encontrei nada no banco com isso. Tente outras palavras (ex.: “juros”, “triângulo”, “probabilidade”) ou crie a sua em <b>+ Nova</b>.' + (r.gerar ? ' A criação por IA ainda não está ligada (⚙ acima).' : '')); return; }
+  msg('bot', `${r.gerar && !IA.iaConfigurada() ? 'A criação por IA ainda não está ligada, então procurei no banco. ' : ''}Encontrei <b>${achou.length}</b> questão(ões)${filtros ? ' com <i>' + esc(filtros) + '</i>' : ''}${usados ? ' (afrouxei alguns filtros para achar resultados)' : ''}. ${n ? `Posso adicionar <b>${n}</b> à prova.` : 'Todas já estão na prova.'}`,
+    (n ? [{ t: `Adicionar ${n} à prova`, id: 'add', ids }] : []).concat([{ t: 'Ver na lista', id: 'ver' }]));
+}
+function iaAcao(i, j) {
+  const a = chat[i] && chat[i].a && chat[i].a[j]; if (!a) return;
+  if (a.id === 'add') { let n = 0; a.ids.forEach(id => { if (!E.itens.some(x => x.id === id)) { addItem(id); n++; } }); msg('bot', `Pronto: <b>${n}</b> questão(ões) na prova. Quer dividir os pontos? É só dizer “dividir em 10”.`); setVista('folha'); }
+  else if (a.id === 'ver') { setVista('banco'); $('lista').scrollTop = 0; iaAbrir(false); }
+}
 function iniciarIA() {
-  $('ia-tipos').innerHTML = Object.keys(TIPOS).map(k => `<label class="pv-chk"><input type="checkbox" value="${k}"${k === 'mc' ? ' checked' : ''}> ${TIPOS[k].nome}</label>`).join('');
   iaStatus();
   const cfg = () => { IA.salvarConfig({ habilitado: $('ia-on').checked, endpoint: $('ia-end').value.trim(), modelo: $('ia-mod').value.trim() }); iaStatus(); };
   ['ia-on', 'ia-end', 'ia-mod'].forEach(id => $(id).addEventListener('change', cfg));
-  $('bPrompt').addEventListener('click', () => { const p = $('promptView'); p.hidden = false; p.textContent = IA.SISTEMA + '\n\n— — —\n\n' + IA.montarPrompt(iaPedido()); });
-  $('bIA').addEventListener('click', async () => {
-    if (!IA.iaConfigurada()) { toast('A IA ainda não está configurada — o formulário e o pedido já estão prontos (veja “Ver o pedido enviado”).', 5200); document.querySelector('#pn-ia details').open = true; return; }
-    const b = $('bIA'); b.disabled = true; b.textContent = 'Gerando…';
-    try {
-      const r = await IA.gerarQuestoes(iaPedido()), minhas = getMinhas(); r.questoes.forEach(q => { q.origem = 'ia'; minhas.unshift(q); });
-      LS.gravar('prova:minhas', minhas); montarBanco(); F.fonte = 'IA (rascunho)'; renderBanco(true);
-      toast(`${r.questoes.length} questão(ões) criada(s) pela IA — revise antes de usar.${r.descartadas.length ? ` ${r.descartadas.length} descartada(s) por inválidas.` : ''}`, 5000);
-    } catch (e) { toast(e.message, 6000); } finally { b.disabled = false; b.textContent = 'Gerar com IA'; }
+  $('iaFab').addEventListener('click', () => iaAbrir($('iaChat').hidden));
+  $('iaMin').addEventListener('click', () => iaAbrir(false));
+  $('iaCfgBtn').addEventListener('click', () => { $('iaCfg').hidden = !$('iaCfg').hidden; });
+  $('bPrompt').addEventListener('click', () => {
+    const p = $('promptView'), ped = ultimoPedido && ultimoPedido.quantidade ? ultimoPedido : { serie: ultimoPedido && ultimoPedido.serie, conteudo: ultimoPedido && (ultimoPedido.unidade || ultimoPedido.q), quantidade: ultimoPedido ? ultimoPedido.qtd : 5, dificuldade: ultimoPedido && ultimoPedido.dif || 2, tipos: ultimoPedido && ultimoPedido.tipo ? [ultimoPedido.tipo] : ['mc'], materia: 'Matemática' };
+    p.hidden = false; p.textContent = IA.SISTEMA + '\n\n— — —\n\n' + IA.montarPrompt(ped);
   });
+  $('iaSug').innerHTML = SUGESTOES.map(s => `<button type="button">${esc(s)}</button>`).join('');
+  $('iaSug').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { iaEnviar(b.textContent); } });
+  $('iaMsgs').addEventListener('click', e => { const b = e.target.closest('button[data-i]'); if (b) iaAcao(+b.dataset.i, +b.dataset.j); });
+  const tx = $('iaTxt');
+  tx.addEventListener('input', () => { tx.style.height = 'auto'; tx.style.height = Math.min(tx.scrollHeight, 104) + 'px'; });
+  tx.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('iaForm').requestSubmit(); } });
+  $('iaForm').addEventListener('submit', e => { e.preventDefault(); const v = tx.value; tx.value = ''; tx.style.height = 'auto'; iaEnviar(v); });
 }
 
 /* =====================================================================
@@ -715,20 +868,80 @@ function iniciarIA() {
 function iniciarBanco() {
   const refresh = () => renderBanco(true);
   $('busca').addEventListener('input', debounce(e => { F.q = e.target.value; refresh(); }, 120));
-  Object.keys(SEL).forEach(k => $(SEL[k]).addEventListener('change', e => { F[k] = e.target.value; if (k === 'serie' || k === 'materia') { /* conteúdo continua se existir */ } refresh(); }));
-  $('bLimpar').addEventListener('click', () => { Object.keys(F).forEach(k => { F[k] = ''; }); $('busca').value = ''; refresh(); });
+  $('secFiltros').addEventListener('click', e => {
+    const o = e.target.closest('.opt'); if (!o) return;
+    const k = o.closest('.sec').dataset.id, v = o.dataset.v; F[k] = F[k] === v ? '' : v; refresh();
+  });
+  const limparFiltros = () => { Object.keys(F).forEach(k => { F[k] = ''; }); $('busca').value = ''; refresh(); };
+  $('bLimpar').addEventListener('click', limparFiltros);
+  $('bRecolher').addEventListener('click', () => filtrosUI.fecharTodas());
   $('bNovaQ').addEventListener('click', () => abrirEditor(null, true));
+
+  // mostrar/esconder a coluna de filtros
+  const estreito = () => window.matchMedia('(max-width:1100px)').matches;
+  if (LS.ler('prova:ui:semfiltros', false) && !estreito()) document.body.classList.add('sem-filtros');
+  $('bFiltros').addEventListener('click', () => {
+    if (estreito()) document.body.classList.toggle('filtros-abertos');
+    else { const off = document.body.classList.toggle('sem-filtros'); LS.gravar('prova:ui:semfiltros', off); }
+    setTimeout(aplicarZoom, 60);
+  });
+  // densidade da lista
+  const dens = LS.ler('prova:ui:dens', 'ampla');
+  const aplicaDens = v => { $('colBanco').classList.toggle('dens-compacta', v === 'compacta'); marcarSeg('segDens', v); };
+  aplicaDens(dens);
+  seg('segDens', v => { aplicaDens(v); LS.gravar('prova:ui:dens', v); });
+  // alternar banco / folha em telas menores
+  seg('segVista', v => setVista(v));
+
   $('lista').addEventListener('click', e => {
     if (e.target.id === 'maisQ') { mostrados += 40; renderBanco(); return; }
+    const lim = e.target.closest('[data-a="limpar"]'); if (lim) { limparFiltros(); return; }
     const c = e.target.closest('.qc'), b = e.target.closest('button[data-a]'); if (!c || !b) return;
-    if (b.dataset.a === 'add') addItem(c.dataset.id); else abrirVer(c.dataset.id);
+    const a = b.dataset.a;
+    if (a === 'add') addItem(c.dataset.id);
+    else if (a === 'modal') abrirVer(c.dataset.id);
+    else if (a === 'ver') {
+      const abre = !c.classList.contains('aberta'); c.classList.toggle('aberta', abre); b.textContent = abre ? 'Recolher ▴' : 'Ver completa ▾';
+      const full = c.querySelector('.full');
+      if (abre && !full.innerHTML) {
+        const q = getQ(c.dataset.id), g = gabaritoDe(q);
+        full.innerHTML = renderQuestao(q, { num: 1, gab: true, res: true }) + `<div style="margin-top:8px;display:flex;gap:10px;align-items:center;font:700 .74rem Archivo,Arial,sans-serif;color:#555"><span>Gabarito: ${g.curto}</span><button class="lnk" data-a="modal" type="button" style="margin-left:auto">Editar / duplicar…</button></div>`;
+      }
+    }
   });
-  $('lista').addEventListener('dblclick', e => { const c = e.target.closest('.qc'); if (c && !e.target.closest('button')) addItem(c.dataset.id); });
+  $('lista').addEventListener('dblclick', e => { const c = e.target.closest('.qc'); if (c && !e.target.closest('button') && !e.target.closest('.full')) addItem(c.dataset.id); });
   document.querySelectorAll('[data-fechar]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
   $('verAdd').addEventListener('click', () => { addItem(verId); $('dlgVer').close(); });
   $('verDup').addEventListener('click', () => { const q = Object.assign({}, getQ(verId)); delete q._busca; q.id = uid(); q.fonte = 'Minha (cópia)'; q.legado = false; $('dlgVer').close(); abrirEditor(q, true); });
   $('verEd').addEventListener('click', () => { const q = Object.assign({}, getQ(verId)); delete q._busca; $('dlgVer').close(); abrirEditor(q, false); });
   $('verDel').addEventListener('click', () => { if (!confirm('Excluir esta questão do seu banco?')) return; LS.gravar('prova:minhas', getMinhas().filter(q => q.id !== verId)); E.itens = E.itens.filter(i => i.id !== verId); $('dlgVer').close(); montarBanco(); renderBanco(true); mudou(); });
+}
+
+function setVista(v) {
+  document.body.dataset.vista = v; marcarSeg('segVista', v);
+  if (v === 'folha') setTimeout(aplicarZoom, 40);
+}
+
+/* ---------- gaveta de configurações (☰) ---------- */
+let gavetaUI = null;
+function abrirGaveta(id) {
+  $('drawer').classList.add('on'); $('drawer').setAttribute('aria-hidden', 'false'); $('drawerBd').hidden = false; $('bMenu').setAttribute('aria-expanded', 'true');
+  if (id && gavetaUI) gavetaUI.abrir(id);
+}
+function fecharGaveta() {
+  $('drawer').classList.remove('on'); $('drawer').setAttribute('aria-hidden', 'true'); $('drawerBd').hidden = true; $('bMenu').setAttribute('aria-expanded', 'false');
+}
+function iniciarGaveta() {
+  gavetaUI = secoesMoveis($('secConfig'), 'config', ['prova', 'layout']);
+  $('bMenu').addEventListener('click', () => { $('drawer').classList.contains('on') ? fecharGaveta() : abrirGaveta(); });
+  $('bFechaDrawer').addEventListener('click', fecharGaveta);
+  $('drawerBd').addEventListener('click', fecharGaveta);
+  $('resTop').addEventListener('click', () => abrirGaveta('prova'));
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if ($('drawer').classList.contains('on')) fecharGaveta(); else if (!$('iaChat').hidden) iaAbrir(false);
+  });
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(debounce(aplicarZoom, 80)).observe($('stage'));
 }
 
 function provaExemplo() {
@@ -739,7 +952,7 @@ function provaExemplo() {
 }
 
 async function iniciar() {
-  iniciarBanco(); iniciarPaineis(); iniciarEditor(); iniciarArquivos(); iniciarDnD(); iniciarIA();
+  montarFiltros(); iniciarBanco(); iniciarGaveta(); iniciarPaineis(); iniciarEditor(); iniciarArquivos(); iniciarDnD(); iniciarIA();
   await carregar();
   const url = new URLSearchParams(location.search);
   const r = url.get('exemplo') ? null : LS.ler('prova:rascunho', null);
