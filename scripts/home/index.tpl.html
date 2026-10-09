@@ -22,19 +22,19 @@
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="Início"><span class="dot"></span><span>Prof. Eduardo</span></a>
-    <span class="sp"></span>
-    <a href="login.html" class="login-link">Entrar</a>
+    <label class="search" aria-label="Buscar aulas, guias e atividades">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Buscar em todas as matérias…" autocomplete="off">
+      <kbd aria-hidden="true">/</kbd>
+    </label>
+    <a href="login.html" class="login-link">Entrar <span class="hide-sm">· aluno / professor</span></a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
     <h1 class="title" id="saudacao">O que vamos estudar hoje?</h1>
-    <label class="search" aria-label="Buscar aulas, guias e atividades">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Buscar uma aula, um tema, uma atividade…" autocomplete="off">
-      <kbd aria-hidden="true">/</kbd>
-    </label>
+    <p class="lede">Escolha a matéria, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
     <div class="continuar" id="continuar"></div>
   </div>
 </section>
@@ -44,12 +44,12 @@
 
   <section class="panel" id="painel" tabindex="-1" aria-live="polite"></section>
 
-  <nav class="tools" aria-label="Ferramentas de estudo">
-    <a class="tool" href="simulado.html">Simulados</a>
-    <a class="tool" href="revisao.html">Revisão <i class="n" id="revN" hidden></i></a>
-    <button class="tool" type="button" id="btnConq">Conquistas</button>
-    <button class="tool" type="button" id="btnInstalar" hidden>Instalar app</button>
-  </nav>
+  <section class="tools" aria-label="Ferramentas de estudo">
+    <a class="tool" href="simulado.html"><span class="ic" aria-hidden="true">📝</span><span><b>Simulados</b><small>Treine com questões das aulas</small></span></a>
+    <a class="tool" href="revisao.html"><span class="ic" aria-hidden="true">🔁</span><span><b>Revisão <i class="n" id="revN" hidden></i></b><small>Repetição espaçada dos seus erros</small></span></a>
+    <button class="tool" type="button" id="btnConq"><span class="ic" aria-hidden="true">🏆</span><span><b>Conquistas</b><small>Seu progresso e sequência de dias</small></span></button>
+    <button class="tool" type="button" id="btnInstalar" hidden><span class="ic" aria-hidden="true">⬇</span><span><b>Instalar app</b><small>Use offline, como aplicativo</small></span></button>
+  </section>
 </main>
 
 <!--KEEPHTML-->
@@ -150,7 +150,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       b.setAttribute('aria-controls', 'painel');
       b.style.setProperty('--accent', 'var(--' + ACENTOS[i % ACENTOS.length] + ')');
       b.style.setProperty('--accent-soft', 'var(--' + ACENTOS[i % ACENTOS.length] + '-soft)');
-      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' + (c.vistos ? barra(c.vistos, c.total) : '');
+      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
       b.addEventListener('click', function(){ if(estado.q){ limpaBusca(); } escolheMateria(i); });
       subjectsRoot.appendChild(b);
     });
@@ -170,13 +170,13 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var a = el('a', 'item'), p = prog(item.arquivo), marca = '';
     a.href = item.arquivo;
     if(p && p.v){ a.classList.add('done'); marca = '<span class="prog" title="visto neste aparelho' + (p.t ? ' · melhor nota ' + p.s + '/' + p.t : '') + '">' + (p.t ? p.s + '/' + p.t : '✓') + '</span>'; }
-    a.innerHTML = '<span class="txt">' + item.titulo + '</span>' + (rotulo && rotulo !== 'Atividade' ? '<span class="badge">' + esc(rotulo) + '</span>' : '') + marca + '<span class="arrow">' + ARROW + '</span>';
+    a.innerHTML = '<span class="badge">' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + '<span class="arrow">' + ARROW + '</span>';
     return a;
   }
   function grupo(titulo, itens, rotuloFn){
     if(!itens.length) return null;
     var g = el('div', 'grupo');
-    g.appendChild(el('div', 'g-tit', titulo));
+    g.appendChild(el('div', 'g-tit', titulo + ' <span>' + itens.length + '</span>'));
     var l = el('div', 'item-list');
     itens.forEach(function(i){ l.appendChild(itemLink(i, rotuloFn(i))); });
     g.appendChild(l); return g;
@@ -192,13 +192,16 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var feito = c.vistos === c.total && c.total > 0;
     var s = el('summary', null,
       '<span class="m-ic">' + svgIcon(u.icon) + '</span>' +
-      '<span class="m-tx"><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + '</small></span>' +
-      '<span class="m-pr">' + (feito ? '<em>✓ concluído</em>' : (c.vistos ? '<span>' + c.vistos + '/' + c.total + '</span>' : '')) + '</span>' +
+      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + '</small></span>' +
+      '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
       '<span class="chev">' + CHEV + '</span>');
     d.appendChild(s);
     var body = el('div', 'mod-body');
     var aulas = visiveis.filter(function(i){ return tipoDe(i) === 'aula'; }), guias = visiveis.filter(function(i){ return tipoDe(i) === 'guia'; }), ativ = visiveis.filter(function(i){ return tipoDe(i) === 'atividade'; });
     [grupo('Aulas', aulas, function(i){ return i.tipo; }), grupo('Guia visual', guias, function(i){ return i.tipo; }), grupo('Atividades', ativ, function(i){ return i.sub || 'Atividade'; })].forEach(function(g){ if(g) body.appendChild(g); });
+    var rv = u.revisado || m.revisado || '2026-09-22';
+    var meses = (Date.now() - new Date(rv + 'T00:00:00').getTime()) / 2592e6;
+    body.appendChild(el('div', 'rev-flag' + (meses > 6 ? ' velho' : ''), 'conteúdo revisado em ' + new Date(rv + 'T00:00:00').toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }) + (meses > 6 ? ' · precisa de revisão' : '')));
     d.appendChild(body);
     d.addEventListener('toggle', function(){ if(!o.forcaAberto) lembrar(k, d.open); });
     return d;
@@ -213,14 +216,15 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     painel.style.setProperty('--accent-soft', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + '-soft)');
 
     var topo = el('div', 'p-head');
-        if(m.destaque){ var da = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); da.href = m.destaque.url; topo.appendChild(da); }
+    topo.appendChild(el('p', 'p-lede', esc(m.lede)));
+    if(m.destaque){ var da = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); da.href = m.destaque.url; topo.appendChild(da); }
     painel.appendChild(topo);
 
     // abas de ano / parte
     var tabs = el('div', 'years'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Ano / parte');
     m.CATALOG.forEach(function(an, i){
       var c = contaAno(an), on = i === estado.ano;
-      var b = el('button', 'year' + (on ? ' active' : ''), esc(an.ano));
+      var b = el('button', 'year' + (on ? ' active' : ''), '<b>' + esc(an.ano) + '</b><small>' + c.vistos + '/' + c.total + '</small>');
       b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
       b.addEventListener('click', function(){ escolheAno(i); });
       tabs.appendChild(b);
@@ -229,11 +233,16 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
     // barra de filtros
     var f = el('div', 'filtros');
-    [['todos', 'Tudo'], ['aula', 'Aulas'], ['atividade', 'Atividades'], ['pend', 'Não vistos']].forEach(function(t){
+    [['todos', 'Tudo'], ['aula', 'Aulas'], ['guia', 'Guias'], ['atividade', 'Atividades'], ['pend', 'Ainda não vistos']].forEach(function(t){
       var b = el('button', 'fchip' + (estado.tipo === t[0] ? ' on' : ''), t[1]); b.type = 'button';
       b.addEventListener('click', function(){ estado.tipo = (estado.tipo === t[0] && t[0] !== 'todos') ? 'todos' : t[0]; renderPainel(); });
       f.appendChild(b);
     });
+    f.appendChild(el('span', 'sp'));
+    var ex = el('button', 'lnk', 'Expandir tudo'), re = el('button', 'lnk', 'Recolher tudo'); ex.type = re.type = 'button';
+    ex.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = true; }); });
+    re.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = false; }); });
+    f.appendChild(ex); f.appendChild(re);
     painel.appendChild(f);
 
     // módulos
@@ -252,6 +261,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       var v = el('div', 'vazio', 'Nada encontrado com esse filtro.'); var lb = el('button', 'fchip', 'Limpar filtro'); lb.type = 'button';
       lb.addEventListener('click', function(){ estado.tipo = 'todos'; renderPainel(); }); v.appendChild(lb); lista.appendChild(v);
     }
+    var tri0 = a.trimestres[0];
+    if(!multi && tri0) lista.insertAdjacentHTML('afterbegin', '<p class="tri-sub">' + esc(tri0.nome) + ' · ' + plural(contaAno(a).mods, 'módulo', 'módulos') + ' · ' + resumo(contaAno(a)) + '</p>');
     painel.appendChild(lista);
   }
 

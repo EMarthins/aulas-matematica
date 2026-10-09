@@ -2,7 +2,7 @@
    - arquivos do próprio site: "stale-while-revalidate" (responde do cache e atualiza em segundo plano)
    - Firebase e outros domínios: passam direto pela rede (login e plataforma exigem internet)
    Troque VERSAO para forçar a limpeza do cache antigo. */
-var VERSAO = 'v3';
+var VERSAO = 'v2';
 var CACHE = 'aulas-' + VERSAO;
 var BASE = ['./', 'index.html', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/banco.json', 'app/theme-toggle.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
 
