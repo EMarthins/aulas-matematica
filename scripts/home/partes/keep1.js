@@ -51,7 +51,7 @@
   function marcadores(){
     var due = jl('rev:itens', []).filter(function(x){ return x.due <= Date.now(); }).length, n = document.getElementById('revN');
     n.hidden = !due; n.textContent = due;
-    var r = renderConquistas(); document.getElementById('btnConq').textContent = '🏆 Conquistas ' + r.feitas + '/' + r.total + (r.seq > 1 ? ' · 🔥 ' + r.seq + ' dias' : '');
+    var r = renderConquistas(); document.getElementById('btnConq').textContent = 'Conquistas ' + r.feitas + '/' + r.total + (r.seq > 1 ? ' · ' + r.seq + ' dias seguidos' : '');
   }
   document.getElementById('btnConq').addEventListener('click', function(){ renderConquistas(); document.getElementById('mConq').classList.add('on'); });
   document.getElementById('fecharConq').addEventListener('click', function(){ document.getElementById('mConq').classList.remove('on'); });

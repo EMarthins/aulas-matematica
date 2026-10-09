@@ -169,10 +169,9 @@ function cartao(q, naProva) {
   const img = figs.find(f => f.tipo === 'img' && f.src);
   const nomeOrig = q.origem === 'minha' ? 'Minha' : q.origem === 'ia' ? 'IA' : '';
   return `<div class="qc${naProva ? ' na-prova' : ''}" draggable="true" data-id="${esc(q.id)}">
-    <div class="top">${naProva ? '<span class="tag ok">✓ na prova</span>' : ''}<span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${figs.length ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif" title="Dificuldade">${[1, 2, 3].map(n => `<i class="${n <= q.dificuldade ? 'on' : ''}"></i>`).join('')}</span></div>
-    <div class="un">${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}</div>
+    <div class="un">${naProva ? '<span class="tag ok">✓ na prova</span>' : ''}<span>${esc(TIPOS[q.tipo].nome)} · ${esc(q.serie)} · ${esc(q.unidade)}${nomeOrig ? ' · ' + nomeOrig : ''}</span><span class="dif" title="Dificuldade">${[1, 2, 3].map(n => `<i class="${n <= q.dificuldade ? 'on' : ''}"></i>`).join('')}</span></div>
     <div class="corpo"><div class="tx">${esc(textoPlano(q, 520))}</div>${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
-    <div class="ac"><button class="add" data-a="add" type="button">+ Adicionar</button><button data-a="ver" type="button">Ver completa ▾</button><span class="gab-m">Gabarito ${esc(gabaritoDe(q).curto.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 18))}</span></div>
+    <div class="ac"><button class="add" data-a="add" type="button">+ Adicionar</button><button data-a="ver" type="button">Ver completa ▾</button></div>
     <div class="full"></div>
   </div>`;
 }
@@ -180,7 +179,7 @@ function marcarNaProva() {
   const ids = new Set(E.itens.map(i => i.id));
   document.querySelectorAll('#lista .qc').forEach(c => {
     const on = ids.has(c.dataset.id); c.classList.toggle('na-prova', on);
-    const o = c.querySelector('.tag.ok'); if (on && !o) c.querySelector('.top').insertAdjacentHTML('afterbegin', '<span class="tag ok">✓ na prova</span>'); else if (!on && o) o.remove();
+    const o = c.querySelector('.tag.ok'); if (on && !o) c.querySelector('.un').insertAdjacentHTML('afterbegin', '<span class="tag ok">✓ na prova</span>'); else if (!on && o) o.remove();
   });
 }
 
@@ -876,6 +875,11 @@ function iniciarBanco() {
   $('bLimpar').addEventListener('click', limparFiltros);
   $('bRecolher').addEventListener('click', () => filtrosUI.fecharTodas());
   $('bNovaQ').addEventListener('click', () => abrirEditor(null, true));
+  // menu Arquivo
+  const fechaArq = () => { $('popArq').hidden = true; $('bArquivo').setAttribute('aria-expanded', 'false'); };
+  $('bArquivo').addEventListener('click', e => { e.stopPropagation(); const abre = $('popArq').hidden; $('popArq').hidden = !abre; $('bArquivo').setAttribute('aria-expanded', abre); });
+  $('popArq').addEventListener('click', fechaArq);
+  document.addEventListener('click', e => { if (!e.target.closest('.arq')) fechaArq(); });
 
   // mostrar/esconder a coluna de filtros
   const estreito = () => window.matchMedia('(max-width:1100px)').matches;

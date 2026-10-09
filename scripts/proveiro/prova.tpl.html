@@ -21,9 +21,14 @@
   <button class="resumo-top" id="resTop" type="button" title="Ver e organizar as questões da prova"><b id="rtQ">0</b> questões · <b id="rtP">0</b> pts</button>
   <span class="sp"></span>
   <div class="seg vista" id="segVista" role="tablist" aria-label="Alternar entre banco e folha"><button type="button" data-v="banco" class="on">Banco</button><button type="button" data-v="folha">Folha</button></div>
-  <button class="tb" id="bNova" type="button" title="Começar uma prova nova">Nova</button>
-  <button class="tb" id="bAbrir" type="button" title="Abrir, importar ou exportar provas">Abrir</button>
-  <button class="tb" id="bSalvar" type="button" title="Salvar neste navegador">Salvar</button>
+  <div class="arq">
+    <button class="tb" id="bArquivo" type="button" aria-haspopup="true" aria-expanded="false">Arquivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+    <div class="pop" id="popArq" hidden>
+      <button id="bNova" type="button">Nova prova</button>
+      <button id="bAbrir" type="button">Abrir ou importar…</button>
+      <button id="bSalvar" type="button">Salvar neste navegador</button>
+    </div>
+  </div>
   <button class="tb prim" id="bImprimir" type="button" title="Imprimir ou salvar em PDF (A4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg><span>PDF / Imprimir</span></button>
   <button class="tb menu" id="bMenu" type="button" aria-label="Configurações da prova" aria-expanded="false" aria-controls="drawer" title="Cabeçalho, prova e layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
 </header>
@@ -34,10 +39,9 @@
   <aside class="pv-filtros" id="colFiltros" aria-label="Filtros do banco">
     <div class="f-head">
       <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="busca" type="search" placeholder="Palavra-chave: juros, parábola…" autocomplete="off"></label>
-      <div class="f-ac"><button class="lnk" id="bLimpar" type="button">Limpar filtros</button><button class="lnk" id="bRecolher" type="button" title="Fechar todas as listas">Recolher listas</button></div>
+      <div class="f-ac"><button class="lnk" id="bLimpar" type="button">Limpar filtros</button><button class="lnk" id="bRecolher" type="button" hidden>Recolher listas</button></div>
     </div>
     <div class="f-sec" id="secFiltros"></div>
-    <p class="f-dica">Arraste ⠿ para mudar a ordem das listas.</p>
   </aside>
 
   <!-- ===== LISTA DE QUESTÕES ===== -->
@@ -46,7 +50,7 @@
       <button class="icon" id="bFiltros" type="button" aria-label="Mostrar ou esconder filtros" title="Mostrar/esconder filtros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg><i id="fBadge" hidden></i></button>
       <div class="b-tit"><b id="cont">…</b><small id="fResumo"></small></div>
       <span class="sp"></span>
-      <div class="seg dens" id="segDens" title="Densidade da lista"><button type="button" data-v="compacta">Compacta</button><button type="button" data-v="ampla" class="on">Ampla</button></div>
+      <div class="seg dens" id="segDens" hidden><button type="button" data-v="compacta">Compacta</button><button type="button" data-v="ampla" class="on">Ampla</button></div>
       <button class="tb sm" id="bNovaQ" type="button">+ Nova</button>
       <button class="icon" id="bMais" type="button" aria-label="Minhas questões: importar e exportar" title="Minhas questões">⋯</button>
     </div>
@@ -65,7 +69,7 @@
       </select>
     </div>
     <div class="pv-stage" id="stage">
-      <div class="pv-dica" id="dica">Arraste questões da lista para a folha — ou clique em <b>Adicionar</b>. Arraste as questões dentro da prova para reordenar. Clique no cabeçalho para editá-lo.</div>
+      <div class="pv-dica" id="dica">Arraste uma questão da lista para cá, ou clique em Adicionar.</div>
       <div id="paginas"></div>
     </div>
   </main>
@@ -79,7 +83,7 @@
 
     <!-- Cabeçalho -->
     <section class="sec" data-id="cab" id="pn-cab">
-      <header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>Cabeçalho</b><span class="sec-s">escola, professor, data…</span><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header>
+      <header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>Cabeçalho</b><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header>
       <div class="sec-b">
         <div class="pv-campo"><label>Modelo</label>
           <div class="pv-modelos" id="modelos">
@@ -156,7 +160,7 @@
 
     <!-- Layout -->
     <section class="sec" data-id="layout" id="pn-layout">
-      <header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>Layout</b><span class="sec-s">colunas, letra, margens</span><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header>
+      <header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>Layout</b><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header>
       <div class="sec-b">
         <div class="pv-campo"><label>Colunas</label><div class="seg" id="segCols2"><button type="button" data-v="1">1 coluna</button><button type="button" data-v="2" class="on">2 colunas</button></div>
           <p class="pv-nota">2 colunas rendem melhor em provas longas; 1 coluna é melhor para questões grandes, gráficos e demonstrações.</p></div>

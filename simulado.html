@@ -25,8 +25,9 @@
   <p class="hint" style="margin:0 0 18px;">Questões das aulas e das atividades, misturadas por matéria, ano e tema. Os erros vão automaticamente para a <a href="revisao.html">Revisão</a>.</p>
 
   <section id="cfg" class="card">
-    <div class="sec-label" style="margin-top:0">Matéria e ano</div>
-    <div class="chips" id="fGrupos"></div>
+    <details class="drop" id="dGrupos"><summary><span>Matérias e anos</span><em id="gResumo">todos</em></summary>
+      <div class="chips" id="fGrupos"></div>
+    </details>
     <div class="sec-label">Tipo de questão</div>
     <div class="chips" id="fTipo">
       <button class="chip on" data-v="todas" type="button">Todas</button>
@@ -93,7 +94,7 @@ fetch('app/banco.json').then(function(r){ return r.json(); }).then(function(b){
 
 function grupoChips(id, chave, num){ [].forEach.call($(id).querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ [].forEach.call($(id).querySelectorAll('.chip'), function(x){ x.classList.toggle('on', x === b); }); sel[chave] = num ? +b.dataset.v : b.dataset.v; atualiza(); }); }); }
 grupoChips('fTipo', 'tipo'); grupoChips('fN', 'n', true); grupoChips('fModo', 'modo'); grupoChips('fTempo', 'tempo', true);
-function atualiza(){ var n = pool().length; $('disp').textContent = n + ' questões disponíveis com esses filtros' + (n < sel.n ? ' — o simulado terá ' + n : ''); $('iniciar').disabled = n < 1; }
+function atualiza(){ try{ var tot = document.querySelectorAll('#fGrupos .chip').length, on = document.querySelectorAll('#fGrupos .chip.on').length; $('gResumo').textContent = on === tot ? 'todos' : on + ' de ' + tot; }catch(e){} var n = pool().length; $('disp').textContent = n + ' questões disponíveis com esses filtros' + (n < sel.n ? ' — o simulado terá ' + n : ''); $('iniciar').disabled = n < 1; }
 
 $('iniciar').addEventListener('click', function(){
   var qs = embaralha(pool()).slice(0, sel.n).map(function(q){ return Object.assign({}, q, { o: embaralha(q.o) }); });
