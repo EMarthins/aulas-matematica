@@ -1,0 +1,2220 @@
+{
+ "versao": 2,
+ "gerado": "2026-10-09",
+ "nota": "Banco autoral do fazedor de prova. Veja docs/fazedor-de-prova.md para o esquema.",
+ "questoes": [
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-pit-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Teorema de Pitágoras",
+   "topicos": [
+    "pitágoras",
+    "triângulo retângulo",
+    "hipotenusa"
+   ],
+   "enunciado": "Na figura, o triângulo é retângulo. O valor de $x$, em centímetros, é:",
+   "figura": {
+    "tipo": "svg",
+    "largura": "68%",
+    "svg": "<svg viewBox='-14 0 234 150' xmlns='http://www.w3.org/2000/svg' font-family='Archivo,Arial,sans-serif' font-size='17'><polygon points='30,125 160,125 30,35' fill='none' stroke='#111' stroke-width='2' stroke-linejoin='round'/><path d='M30 113h12v12' fill='none' stroke='#111' stroke-width='1.5'/><text x='95' y='144' text-anchor='middle'>8 cm</text><text x='22' y='85' text-anchor='end'>6 cm</text><text x='112' y='70' font-style='italic'>x</text></svg>"
+   },
+   "alternativas": [
+    {
+     "t": "7 cm",
+     "ok": false
+    },
+    {
+     "t": "10 cm",
+     "ok": true
+    },
+    {
+     "t": "12 cm",
+     "ok": false
+    },
+    {
+     "t": "14 cm",
+     "ok": false
+    },
+    {
+     "t": "28 cm",
+     "ok": false
+    }
+   ],
+   "resolucao": "Pelo Teorema de Pitágoras: $x^2 = 6^2 + 8^2 = 36 + 64 = 100$. Logo $x = √{100} = 10$ cm."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-eq2-01",
+   "tipo": "aberta",
+   "serie": "9º Ano",
+   "unidade": "Equações do 2º grau",
+   "topicos": [
+    "bhaskara",
+    "discriminante",
+    "raízes"
+   ],
+   "enunciado": "Resolva a equação $x^2 - 5x + 6 = 0$ usando a fórmula de Bhaskara, mostrando todos os passos.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 6
+   },
+   "gabarito": "$x = 2$ ou $x = 3$",
+   "resolucao": "$Δ = (-5)^2 - 4·1·6 = 25 - 24 = 1$. Então $x = {5 +- √1|2} = {5 +- 1|2}$, ou seja, $x = 3$ ou $x = 2$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-pot-01",
+   "tipo": "vf",
+   "serie": "9º Ano",
+   "unidade": "Potenciação e radiciação",
+   "topicos": [
+    "potência",
+    "raiz quadrada",
+    "propriedades"
+   ],
+   "enunciado": "Julgue cada afirmação como verdadeira (V) ou falsa (F):",
+   "afirmacoes": [
+    {
+     "t": "$√{16} = 4$",
+     "ok": true
+    },
+    {
+     "t": "$(a + b)^2 = a^2 + b^2$, quaisquer que sejam $a$ e $b$ reais.",
+     "ok": false
+    },
+    {
+     "t": "$2^3 · 2^2 = 2^5$",
+     "ok": true
+    },
+    {
+     "t": "$5^0 = 0$",
+     "ok": false
+    },
+    {
+     "t": "$√{9 + 16} = 3 + 4$",
+     "ok": false
+    }
+   ],
+   "resolucao": "V; F (o certo é $a^2 + 2ab + b^2$); V (soma dos expoentes); F ($5^0 = 1$); F ($√{25} = 5$, e não $7$)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-geo-01",
+   "tipo": "soma",
+   "serie": "9º Ano",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "triângulo",
+    "quadrado",
+    "círculo",
+    "ângulos"
+   ],
+   "enunciado": "Assinale as afirmações corretas e escreva, no quadro, a soma dos números correspondentes.",
+   "afirmacoes": [
+    {
+     "t": "A soma dos ângulos internos de qualquer triângulo é $180°$.",
+     "ok": true
+    },
+    {
+     "t": "Todo quadrado é um losango.",
+     "ok": true
+    },
+    {
+     "t": "Um triângulo pode ter dois ângulos retos.",
+     "ok": false
+    },
+    {
+     "t": "A diagonal de um quadrado de lado $1$ mede $√2$.",
+     "ok": true
+    },
+    {
+     "t": "A área de um círculo de raio $r$ é $2πr$.",
+     "ok": false
+    }
+   ],
+   "resolucao": "Corretas: 01, 02 e 08 (04 é falsa — dois ângulos retos já somam $180°$ e não sobraria nada para o terceiro; 16 é falsa — a área é $πr^2$). Soma: $1 + 2 + 8 = 11$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-fq-01",
+   "tipo": "soma",
+   "serie": "1º Ano",
+   "unidade": "Função quadrática",
+   "topicos": [
+    "parábola",
+    "vértice",
+    "raízes",
+    "gráfico"
+   ],
+   "enunciado": "O gráfico abaixo representa a função $f(x) = x^2 - 4x + 3$. Assinale o que for correto e some os números correspondentes.",
+   "figura": {
+    "tipo": "funcao",
+    "fs": [
+     {
+      "e": "x^2-4x+3",
+      "rotulo": "f"
+     }
+    ],
+    "x": [
+     -1,
+     5
+    ],
+    "y": [
+     -2,
+     5
+    ],
+    "pontos": [
+     {
+      "x": 1,
+      "y": 0,
+      "rotulo": "1"
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "rotulo": "3"
+     },
+     {
+      "x": 2,
+      "y": -1,
+      "rotulo": "V"
+     },
+     {
+      "x": 0,
+      "y": 3,
+      "rotulo": "3"
+     }
+    ],
+    "largura": "62%"
+   },
+   "afirmacoes": [
+    {
+     "t": "As raízes de $f$ são $1$ e $3$.",
+     "ok": true
+    },
+    {
+     "t": "O vértice da parábola é o ponto $(2, -1)$.",
+     "ok": true
+    },
+    {
+     "t": "$f(0) = 3$.",
+     "ok": true
+    },
+    {
+     "t": "A parábola tem concavidade voltada para baixo.",
+     "ok": false
+    },
+    {
+     "t": "$f(x) < 0$ para $x < 1$ ou $x > 3$.",
+     "ok": false
+    }
+   ],
+   "resolucao": "Raízes: $x^2 - 4x + 3 = 0 ⇒ x = 1$ ou $x = 3$ (01). Vértice: $x_v = {4|2} = 2$ e $y_v = 4 - 8 + 3 = -1$ (02). $f(0) = 3$ (04). Como $a = 1 > 0$, a concavidade é para cima (08 falsa). $f < 0$ somente entre as raízes (16 falsa). Soma: $1 + 2 + 4 = 7$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-fa-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função afim",
+   "topicos": [
+    "função afim",
+    "gráfico",
+    "coeficiente angular"
+   ],
+   "enunciado": "O gráfico da função afim $f(x) = ax + b$ está representado abaixo. O valor de $f(5)$ é:",
+   "figura": {
+    "tipo": "funcao",
+    "fs": [
+     {
+      "e": "2x-1",
+      "rotulo": "f"
+     }
+    ],
+    "x": [
+     -2,
+     3
+    ],
+    "y": [
+     -5,
+     5
+    ],
+    "pontos": [
+     {
+      "x": 0,
+      "y": -1,
+      "rotulo": "(0, −1)"
+     },
+     {
+      "x": 1,
+      "y": 1,
+      "rotulo": "(1, 1)"
+     }
+    ],
+    "largura": "58%"
+   },
+   "alternativas": [
+    {
+     "t": "7",
+     "ok": false
+    },
+    {
+     "t": "8",
+     "ok": false
+    },
+    {
+     "t": "9",
+     "ok": true
+    },
+    {
+     "t": "10",
+     "ok": false
+    },
+    {
+     "t": "11",
+     "ok": false
+    }
+   ],
+   "resolucao": "Pelos pontos $(0, -1)$ e $(1, 1)$: $b = -1$ e $a = {1 - (-1)|1 - 0} = 2$. Então $f(x) = 2x - 1$ e $f(5) = 2·5 - 1 = 9$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 3,
+   "pontos": 2,
+   "id": "bp-dem-01",
+   "tipo": "aberta",
+   "serie": "1º Ano",
+   "unidade": "Lógica e demonstração",
+   "topicos": [
+    "demonstração",
+    "números ímpares",
+    "múltiplos"
+   ],
+   "enunciado": "Demonstre que a soma de dois números ímpares consecutivos é sempre um múltiplo de $4$.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 7
+   },
+   "gabarito": "Soma $= 4(k + 1)$, múltiplo de $4$.",
+   "resolucao": "Seja $2k + 1$ um ímpar qualquer, com $k$ inteiro. O ímpar seguinte é $2k + 3$. Somando: $(2k + 1) + (2k + 3) = 4k + 4 = 4(k + 1)$. Como $k + 1$ é inteiro, a soma é múltiplo de $4$. ∎"
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-ass-01",
+   "tipo": "assoc",
+   "serie": "1º Ano",
+   "unidade": "Funções",
+   "topicos": [
+    "tipos de função",
+    "afim",
+    "quadrática",
+    "modular"
+   ],
+   "enunciado": "Associe cada função da coluna A ao seu tipo, na coluna B, escrevendo a letra correspondente.",
+   "colunaA": [
+    "$f(x) = 2x + 1$",
+    "$g(x) = x^2 - 4$",
+    "$h(x) = 3$",
+    "$k(x) = |x|$"
+   ],
+   "colunaB": [
+    "função constante",
+    "função modular",
+    "função afim",
+    "função quadrática"
+   ],
+   "pares": [
+    2,
+    3,
+    0,
+    1
+   ],
+   "resolucao": "1-c (afim, grau 1), 2-d (quadrática, grau 2), 3-a (constante), 4-b (modular)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-fa-02",
+   "tipo": "aberta",
+   "serie": "1º Ano",
+   "unidade": "Função afim",
+   "topicos": [
+    "gráfico",
+    "reta",
+    "interseção com os eixos"
+   ],
+   "enunciado": "Esboce, no plano cartesiano abaixo, o gráfico da função $f(x) = 2x - 2$, indicando os pontos em que a reta corta os eixos.",
+   "resposta": {
+    "modo": "quadriculado",
+    "altura": 70
+   },
+   "gabarito": "Reta por $(0, -2)$ e $(1, 0)$.",
+   "resolucao": "Eixo $y$: $f(0) = -2$, ponto $(0, -2)$. Eixo $x$: $2x - 2 = 0 ⇒ x = 1$, ponto $(1, 0)$. Basta ligar os dois pontos."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-est-01",
+   "tipo": "mc",
+   "serie": "2º Ano",
+   "unidade": "Estatística",
+   "topicos": [
+    "média aritmética",
+    "gráfico de barras",
+    "leitura de gráficos"
+   ],
+   "enunciado": "O gráfico mostra as vendas mensais de uma loja. A média mensal de vendas, de janeiro a abril, foi de:",
+   "figura": {
+    "tipo": "barras",
+    "titulo": "Vendas por mês",
+    "rotulos": [
+     "Jan",
+     "Fev",
+     "Mar",
+     "Abr"
+    ],
+    "valores": [
+     20,
+     30,
+     25,
+     35
+    ],
+    "unidade": "mil unidades",
+    "largura": "66%"
+   },
+   "alternativas": [
+    {
+     "t": "25 mil",
+     "ok": false
+    },
+    {
+     "t": "26 mil",
+     "ok": false
+    },
+    {
+     "t": "27,5 mil",
+     "ok": true
+    },
+    {
+     "t": "28 mil",
+     "ok": false
+    },
+    {
+     "t": "30 mil",
+     "ok": false
+    }
+   ],
+   "resolucao": "$(20 + 30 + 25 + 35) / 4 = 110 / 4 = 27,5$ mil unidades."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1.5,
+   "id": "bp-est-02",
+   "tipo": "aberta",
+   "serie": "2º Ano",
+   "unidade": "Estatística",
+   "topicos": [
+    "média",
+    "mediana",
+    "moda",
+    "tabela"
+   ],
+   "enunciado": "A tabela mostra as notas de cinco alunos em uma prova. Calcule a média, a mediana e a moda dessas notas.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Aluno",
+     "A",
+     "B",
+     "C",
+     "D",
+     "E"
+    ],
+    "linhas": [
+     [
+      "Nota",
+      "5",
+      "7",
+      "7",
+      "8",
+      "10"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "resposta": {
+    "modo": "linhas",
+    "n": 5
+   },
+   "gabarito": "Média $7,4$ · mediana $7$ · moda $7$",
+   "resolucao": "Média: $(5 + 7 + 7 + 8 + 10) / 5 = 37 / 5 = 7,4$. Mediana (valor central, com as notas em ordem): $7$. Moda (mais frequente): $7$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-prob-01",
+   "tipo": "mc",
+   "serie": "2º Ano",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "dado",
+    "espaço amostral",
+    "múltiplos"
+   ],
+   "enunciado": "Ao lançar um dado comum de seis faces, a probabilidade de obter um múltiplo de $3$ é:",
+   "alternativas": [
+    {
+     "t": "${1|6}$",
+     "ok": false
+    },
+    {
+     "t": "${1|3}$",
+     "ok": true
+    },
+    {
+     "t": "${1|2}$",
+     "ok": false
+    },
+    {
+     "t": "${2|3}$",
+     "ok": false
+    },
+    {
+     "t": "${5|6}$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Múltiplos de $3$ entre $1$ e $6$: $3$ e $6$ (2 casos favoráveis em 6): $P = {2|6} = {1|3}$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-comb-01",
+   "tipo": "mc",
+   "serie": "2º Ano",
+   "unidade": "Análise combinatória",
+   "topicos": [
+    "princípio multiplicativo",
+    "arranjo"
+   ],
+   "enunciado": "Com os algarismos $1, 2, 3, 4$ e $5$, quantos números de três algarismos distintos podem ser formados?",
+   "alternativas": [
+    {
+     "t": "15",
+     "ok": false
+    },
+    {
+     "t": "20",
+     "ok": false
+    },
+    {
+     "t": "60",
+     "ok": true
+    },
+    {
+     "t": "120",
+     "ok": false
+    },
+    {
+     "t": "125",
+     "ok": false
+    }
+   ],
+   "resolucao": "Princípio multiplicativo: $5 · 4 · 3 = 60$ (cada posição tem uma opção a menos)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-trig-01",
+   "tipo": "mc",
+   "serie": "3º Ano",
+   "unidade": "Trigonometria",
+   "topicos": [
+    "ângulos notáveis",
+    "seno",
+    "cosseno"
+   ],
+   "enunciado": "O valor de $sen 30° + cos 60°$ é:",
+   "alternativas": [
+    {
+     "t": "$0$",
+     "ok": false
+    },
+    {
+     "t": "${1|2}$",
+     "ok": false
+    },
+    {
+     "t": "$1$",
+     "ok": true
+    },
+    {
+     "t": "$√3$",
+     "ok": false
+    },
+    {
+     "t": "${3|2}$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$sen 30° = {1|2}$ e $cos 60° = {1|2}$. Logo a soma é $1$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-rad-01",
+   "tipo": "mc",
+   "serie": "3º Ano",
+   "unidade": "Radicais",
+   "topicos": [
+    "radical",
+    "simplificação",
+    "soma de radicais"
+   ],
+   "enunciado": "O valor de $√{50} + √{18}$ é:",
+   "alternativas": [
+    {
+     "t": "$8√2$",
+     "ok": true
+    },
+    {
+     "t": "$√{68}$",
+     "ok": false
+    },
+    {
+     "t": "$15√2$",
+     "ok": false
+    },
+    {
+     "t": "$2√{17}$",
+     "ok": false
+    },
+    {
+     "t": "$34$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$√{50} = √{25·2} = 5√2$ e $√{18} = √{9·2} = 3√2$. Somando os radicais semelhantes: $5√2 + 3√2 = 8√2$."
+  },
+  {
+   "materia": "Educação Financeira",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp-ef-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Juros simples",
+   "topicos": [
+    "juros",
+    "taxa",
+    "capital"
+   ],
+   "enunciado": "Uma pessoa aplicou R$ 1.000,00 a juros simples, à taxa de $2%$ ao mês. Após $3$ meses, o juro obtido foi de:",
+   "alternativas": [
+    {
+     "t": "R$ 20,00",
+     "ok": false
+    },
+    {
+     "t": "R$ 30,00",
+     "ok": false
+    },
+    {
+     "t": "R$ 60,00",
+     "ok": true
+    },
+    {
+     "t": "R$ 61,21",
+     "ok": false
+    },
+    {
+     "t": "R$ 120,00",
+     "ok": false
+    }
+   ],
+   "resolucao": "$J = C · i · t = 1000 · 0,02 · 3 = 60$ reais."
+  },
+  {
+   "materia": "Educação Financeira",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp-ef-02",
+   "tipo": "vf",
+   "serie": "2º Ano",
+   "unidade": "Juros compostos",
+   "topicos": [
+    "juros compostos",
+    "montante"
+   ],
+   "enunciado": "Sobre juros compostos, julgue as afirmações em verdadeiras (V) ou falsas (F):",
+   "afirmacoes": [
+    {
+     "t": "Os juros de cada período incidem sobre o montante do período anterior.",
+     "ok": true
+    },
+    {
+     "t": "Juros simples e compostos rendem o mesmo valor em qualquer prazo.",
+     "ok": false
+    },
+    {
+     "t": "Em apenas $1$ período, juros simples e compostos dão o mesmo montante.",
+     "ok": true
+    },
+    {
+     "t": "O montante composto é dado por $M = C(1 + i)^n$.",
+     "ok": true
+    }
+   ],
+   "resolucao": "V; F (a partir do 2º período o composto rende mais); V (com $n = 1$, $(1 + i)^1 = 1 + i$); V."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-reais-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Números reais",
+   "topicos": [
+    "irracional",
+    "racional",
+    "raiz"
+   ],
+   "enunciado": "Qual dos números abaixo é irracional?",
+   "alternativas": [
+    {
+     "t": "$0,25$",
+     "ok": false
+    },
+    {
+     "t": "$√{16}$",
+     "ok": false
+    },
+    {
+     "t": "${22|7}$",
+     "ok": false
+    },
+    {
+     "t": "$√5$",
+     "ok": true
+    },
+    {
+     "t": "$3,666…$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$0,25 = {1|4}$, $√{16} = 4$, ${22|7}$ e $3,666… = {11|3}$ são racionais (razão de inteiros). Já $√5$ não é raiz exata e tem infinitas casas decimais sem período: é irracional."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-notcien-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Notação científica",
+   "topicos": [
+    "potência de 10",
+    "notação científica"
+   ],
+   "enunciado": "O número $0,000045$, escrito em notação científica, é:",
+   "alternativas": [
+    {
+     "t": "$4,5 · 10^{-5}$",
+     "ok": true
+    },
+    {
+     "t": "$4,5 · 10^{5}$",
+     "ok": false
+    },
+    {
+     "t": "$4,5 · 10^{-4}$",
+     "ok": false
+    },
+    {
+     "t": "$4,5 · 10^{4}$",
+     "ok": false
+    },
+    {
+     "t": "$45 · 10^{-5}$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Deslocando a vírgula 5 casas para a direita obtemos $4,5$; logo $0,000045 = 4,5 · 10^{-5}$. (A última opção vale $4,5 · 10^{-4}$.)"
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-pot-02",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Potenciação e radiciação",
+   "topicos": [
+    "propriedades das potências"
+   ],
+   "enunciado": "O valor de $(2^3)^2 ÷ 2^4$ é:",
+   "alternativas": [
+    {
+     "t": "$2$",
+     "ok": false
+    },
+    {
+     "t": "$4$",
+     "ok": true
+    },
+    {
+     "t": "$8$",
+     "ok": false
+    },
+    {
+     "t": "$16$",
+     "ok": false
+    },
+    {
+     "t": "$32$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$(2^3)^2 = 2^6$ e $2^6 ÷ 2^4 = 2^{6-4} = 2^2 = 4$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-rad-01",
+   "tipo": "vf",
+   "serie": "9º Ano",
+   "unidade": "Potenciação e radiciação",
+   "topicos": [
+    "raiz quadrada",
+    "raiz cúbica",
+    "propriedades"
+   ],
+   "enunciado": "Julgue as afirmações em verdadeiras (V) ou falsas (F):",
+   "afirmacoes": [
+    {
+     "t": "$√{49} = 7$",
+     "ok": true
+    },
+    {
+     "t": "$√{a^2} = a$, para qualquer $a$ real.",
+     "ok": false
+    },
+    {
+     "t": "$∛{-8} = -2$",
+     "ok": true
+    },
+    {
+     "t": "$√2 · √8 = 4$",
+     "ok": true
+    },
+    {
+     "t": "$√{4 + 9} = 2 + 3$",
+     "ok": false
+    }
+   ],
+   "resolucao": "V; F ($√{a^2} = |a|$; por exemplo, $a = -3$ dá $3$); V ($(-2)^3 = -8$); V ($√{2·8} = √{16} = 4$); F ($√{13} ≠ 5$)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-pn-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Produtos notáveis e fatoração",
+   "topicos": [
+    "quadrado da soma",
+    "quadrado da diferença"
+   ],
+   "enunciado": "A expressão $(x + 3)^2 - (x - 3)^2$ é equivalente a:",
+   "alternativas": [
+    {
+     "t": "$0$",
+     "ok": false
+    },
+    {
+     "t": "$12x$",
+     "ok": true
+    },
+    {
+     "t": "$18$",
+     "ok": false
+    },
+    {
+     "t": "$2x^2 + 18$",
+     "ok": false
+    },
+    {
+     "t": "$6x$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$(x+3)^2 = x^2 + 6x + 9$ e $(x-3)^2 = x^2 - 6x + 9$. Subtraindo: $12x$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-pn-02",
+   "tipo": "assoc",
+   "serie": "9º Ano",
+   "unidade": "Produtos notáveis e fatoração",
+   "topicos": [
+    "produtos notáveis",
+    "desenvolvimento"
+   ],
+   "enunciado": "Associe cada expressão da coluna A ao seu desenvolvimento, na coluna B.",
+   "colunaA": [
+    "$(a + b)^2$",
+    "$(a - b)^2$",
+    "$(a + b)(a - b)$",
+    "$(a + b)^3$"
+   ],
+   "colunaB": [
+    "$a^2 - b^2$",
+    "$a^2 + 2ab + b^2$",
+    "$a^2 - 2ab + b^2$",
+    "$a^3 + 3a^2b + 3ab^2 + b^3$"
+   ],
+   "pares": [
+    1,
+    2,
+    0,
+    3
+   ],
+   "resolucao": "1-b (quadrado da soma), 2-c (quadrado da diferença), 3-a (produto da soma pela diferença), 4-d (cubo da soma)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1.5,
+   "id": "bp9-fat-01",
+   "tipo": "aberta",
+   "serie": "9º Ano",
+   "unidade": "Produtos notáveis e fatoração",
+   "topicos": [
+    "fatoração",
+    "evidência",
+    "diferença de quadrados"
+   ],
+   "enunciado": "Fatore completamente a expressão $x^3 - 4x$ e, em seguida, use a forma fatorada para resolver a equação $x^3 - 4x = 0$.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 5
+   },
+   "gabarito": "$x(x - 2)(x + 2)$; $x = 0$, $x = 2$ ou $x = -2$",
+   "resolucao": "Evidência: $x^3 - 4x = x(x^2 - 4)$. Diferença de quadrados: $x^2 - 4 = (x-2)(x+2)$. Logo $x(x-2)(x+2) = 0$, e um produto é zero quando algum fator é zero: $x = 0$, $x = 2$ ou $x = -2$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-eq2-02",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Equações do 2º grau",
+   "topicos": [
+    "soma das raízes",
+    "relações de Girard"
+   ],
+   "enunciado": "A soma das raízes da equação $x^2 - 7x + 10 = 0$ é:",
+   "alternativas": [
+    {
+     "t": "$2$",
+     "ok": false
+    },
+    {
+     "t": "$5$",
+     "ok": false
+    },
+    {
+     "t": "$7$",
+     "ok": true
+    },
+    {
+     "t": "$10$",
+     "ok": false
+    },
+    {
+     "t": "$-7$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Para $ax^2 + bx + c = 0$, a soma das raízes é $-{b|a} = {7|1} = 7$. Conferindo: as raízes são $2$ e $5$ (soma $7$, produto $10$)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 2,
+   "id": "bp9-eq2-03",
+   "tipo": "aberta",
+   "serie": "9º Ano",
+   "unidade": "Equações do 2º grau",
+   "topicos": [
+    "problema",
+    "área do retângulo",
+    "bhaskara"
+   ],
+   "enunciado": "A área de um retângulo é $48$ cm<sup>2</sup> e o seu comprimento excede a largura em $2$ cm. Determine as dimensões do retângulo, mostrando a equação montada e sua resolução.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 7
+   },
+   "gabarito": "Largura $6$ cm e comprimento $8$ cm",
+   "resolucao": "Largura $x$; comprimento $x + 2$. Então $x(x + 2) = 48 ⇒ x^2 + 2x - 48 = 0$. $Δ = 4 + 192 = 196$, $x = {-2 +- 14|2}$, ou seja, $x = 6$ ou $x = -8$. Como a largura é positiva, $x = 6$ cm e o comprimento é $8$ cm."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-pit-02",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Teorema de Pitágoras",
+   "topicos": [
+    "aplicação",
+    "escada",
+    "problema"
+   ],
+   "enunciado": "Uma escada de $10$ m de comprimento está apoiada em uma parede vertical, com o pé a $6$ m da parede, como na figura. A altura $h$ que a escada alcança na parede é:",
+   "figura": {
+    "tipo": "svg",
+    "svg": "<svg viewBox='0 0 230 160' xmlns='http://www.w3.org/2000/svg' font-family='Archivo,Arial,sans-serif' font-size='17'><line x1='40' y1='18' x2='40' y2='130' stroke='#111' stroke-width='5'/><line x1='40' y1='130' x2='215' y2='130' stroke='#111' stroke-width='2'/><line x1='112' y1='130' x2='40' y2='34' stroke='#111' stroke-width='3' stroke-linecap='round'/><path d='M52 130v-12h-12' fill='none' stroke='#111' stroke-width='1.5'/><text x='92' y='70' font-style='italic'>10 m</text><text x='76' y='148' text-anchor='middle'>6 m</text><text x='30' y='86' text-anchor='end' font-style='italic'>h</text></svg>",
+    "largura": "68%"
+   },
+   "alternativas": [
+    {
+     "t": "$4$ m",
+     "ok": false
+    },
+    {
+     "t": "$6$ m",
+     "ok": false
+    },
+    {
+     "t": "$8$ m",
+     "ok": true
+    },
+    {
+     "t": "$12$ m",
+     "ok": false
+    },
+    {
+     "t": "$16$ m",
+     "ok": false
+    }
+   ],
+   "resolucao": "Triângulo retângulo com hipotenusa $10$ e um cateto $6$: $h^2 + 6^2 = 10^2 ⇒ h^2 = 100 - 36 = 64 ⇒ h = 8$ m."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-sem-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Semelhança e proporção",
+   "topicos": [
+    "semelhança",
+    "sombra",
+    "regra de três"
+   ],
+   "enunciado": "No mesmo instante, um poste de $4$ m projeta uma sombra de $3$ m e uma árvore projeta uma sombra de $12$ m. A altura da árvore é:",
+   "alternativas": [
+    {
+     "t": "$9$ m",
+     "ok": false
+    },
+    {
+     "t": "$12$ m",
+     "ok": false
+    },
+    {
+     "t": "$14$ m",
+     "ok": false
+    },
+    {
+     "t": "$16$ m",
+     "ok": true
+    },
+    {
+     "t": "$18$ m",
+     "ok": false
+    }
+   ],
+   "resolucao": "Os raios solares formam triângulos semelhantes: ${h|12} = {4|3}$, logo $h = {4·12|3} = 16$ m."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-trig-02",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Razões trigonométricas",
+   "topicos": [
+    "seno",
+    "triângulo retângulo",
+    "30 graus"
+   ],
+   "enunciado": "No triângulo retângulo da figura, a hipotenusa mede $10$ e um dos ângulos agudos mede $30°$. O comprimento $x$ do cateto oposto a esse ângulo é:",
+   "figura": {
+    "tipo": "svg",
+    "svg": "<svg viewBox='0 0 220 150' xmlns='http://www.w3.org/2000/svg' font-family='Archivo,Arial,sans-serif' font-size='17'><polygon points='25,125 155,125 155,50' fill='none' stroke='#111' stroke-width='2' stroke-linejoin='round'/><path d='M143 125v-12h12' fill='none' stroke='#111' stroke-width='1.5'/><text x='80' y='80'>10</text><text x='52' y='120'>30°</text><text x='166' y='92' font-style='italic'>x</text></svg>",
+    "largura": "68%"
+   },
+   "alternativas": [
+    {
+     "t": "$5$",
+     "ok": true
+    },
+    {
+     "t": "$5√3$",
+     "ok": false
+    },
+    {
+     "t": "$5√2$",
+     "ok": false
+    },
+    {
+     "t": "$10$",
+     "ok": false
+    },
+    {
+     "t": "$10√3$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$sen 30° = {x|10}$ e $sen 30° = {1|2}$, logo $x = 5$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-ang-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Circunferência e ângulos",
+   "topicos": [
+    "ângulo inscrito",
+    "ângulo central"
+   ],
+   "enunciado": "Na circunferência de centro $O$ da figura, o ângulo central $AÔB$ mede $80°$. O ângulo inscrito $AĈB$, que subtende o mesmo arco $AB$, mede:",
+   "figura": {
+    "tipo": "svg",
+    "svg": "<svg viewBox='0 0 220 170' xmlns='http://www.w3.org/2000/svg' font-family='Archivo,Arial,sans-serif' font-size='17'><circle cx='110' cy='85' r='60' fill='none' stroke='#111' stroke-width='2'/><g stroke='#111' stroke-width='1.6'><line x1='110' y1='85' x2='71.4' y2='131.0'/><line x1='110' y1='85' x2='148.6' y2='131.0'/><line x1='110.0' y1='25.0' x2='71.4' y2='131.0'/><line x1='110.0' y1='25.0' x2='148.6' y2='131.0'/></g><circle cx='110' cy='85' r='2.5' fill='#111'/><text x='115' y='81' font-style='italic'>O</text><text x='57.400000000000006' y='145' font-style='italic'>A</text><text x='154.6' y='145' font-style='italic'>B</text><text x='106' y='19' font-style='italic'>C</text><text x='110' y='115' text-anchor='middle'>80°</text></svg>",
+    "largura": "68%"
+   },
+   "alternativas": [
+    {
+     "t": "$20°$",
+     "ok": false
+    },
+    {
+     "t": "$40°$",
+     "ok": true
+    },
+    {
+     "t": "$80°$",
+     "ok": false
+    },
+    {
+     "t": "$100°$",
+     "ok": false
+    },
+    {
+     "t": "$160°$",
+     "ok": false
+    }
+   ],
+   "resolucao": "O ângulo inscrito mede a metade do ângulo central correspondente ao mesmo arco: $80° ÷ 2 = 40°$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-prob-02",
+   "tipo": "soma",
+   "serie": "9º Ano",
+   "unidade": "Probabilidade",
+   "topicos": [
+    "urna",
+    "eventos",
+    "espaço amostral"
+   ],
+   "enunciado": "Uma urna contém $3$ bolas vermelhas, $2$ azuis e $5$ verdes, todas idênticas, exceto pela cor. Retira-se uma bola ao acaso. Some os números das afirmações corretas.",
+   "afirmacoes": [
+    {
+     "t": "A probabilidade de sair bola vermelha é ${3|10}$.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de sair bola azul é ${2|5}$.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de sair bola verde é ${1|2}$.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de sair bola amarela é $0$.",
+     "ok": true
+    },
+    {
+     "t": "A soma das probabilidades de sair vermelha, azul e verde é $1$.",
+     "ok": true
+    }
+   ],
+   "resolucao": "Há $10$ bolas. Vermelha: ${3|10}$ (01 ✓). Azul: ${2|10} = {1|5}$, e não ${2|5}$ (02 ✗). Verde: ${5|10} = {1|2}$ (04 ✓). Amarela: nenhum caso favorável, $0$ (08 ✓). ${3|10} + {2|10} + {5|10} = 1$ (16 ✓). Soma: $1 + 4 + 8 + 16 = 29$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-est-03",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Estatística",
+   "topicos": [
+    "mediana",
+    "moda",
+    "rol"
+   ],
+   "enunciado": "A mediana do conjunto de dados $3, 7, 5, 9, 12, 7$ é:",
+   "alternativas": [
+    {
+     "t": "$5$",
+     "ok": false
+    },
+    {
+     "t": "$6$",
+     "ok": false
+    },
+    {
+     "t": "$7$",
+     "ok": true
+    },
+    {
+     "t": "$8$",
+     "ok": false
+    },
+    {
+     "t": "$9$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Em ordem crescente: $3, 5, 7, 7, 9, 12$. Como há $6$ valores, a mediana é a média dos dois centrais: ${7 + 7|2} = 7$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-porc-01",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Porcentagem",
+   "topicos": [
+    "aumento",
+    "desconto",
+    "fator de multiplicação"
+   ],
+   "enunciado": "Um produto custava R$ 200,00. Teve um aumento de $20%$ e, depois, um desconto de $20%$ sobre o novo preço. O preço final é:",
+   "alternativas": [
+    {
+     "t": "R$ 200,00",
+     "ok": false
+    },
+    {
+     "t": "R$ 192,00",
+     "ok": true
+    },
+    {
+     "t": "R$ 208,00",
+     "ok": false
+    },
+    {
+     "t": "R$ 180,00",
+     "ok": false
+    },
+    {
+     "t": "R$ 240,00",
+     "ok": false
+    }
+   ],
+   "resolucao": "Aumento de $20%$: $200 · 1,2 = 240$. Desconto de $20%$: $240 · 0,8 = 192$. Aumentar e descontar o mesmo percentual não devolve o preço original."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp9-prop-01",
+   "tipo": "vf",
+   "serie": "9º Ano",
+   "unidade": "Razão e proporção",
+   "topicos": [
+    "proporcionalidade inversa",
+    "escala",
+    "porcentagem"
+   ],
+   "enunciado": "Julgue as afirmações em verdadeiras (V) ou falsas (F):",
+   "afirmacoes": [
+    {
+     "t": "Se $3$ operários fazem uma obra em $12$ dias, $6$ operários, no mesmo ritmo, fazem a mesma obra em $6$ dias.",
+     "ok": true
+    },
+    {
+     "t": "Em grandezas inversamente proporcionais, a razão entre seus valores é constante.",
+     "ok": false
+    },
+    {
+     "t": "Em um mapa na escala $1 : 50 000$, $2$ cm representam $1$ km no terreno.",
+     "ok": true
+    },
+    {
+     "t": "$10%$ de $10%$ é igual a $20%$.",
+     "ok": false
+    }
+   ],
+   "resolucao": "V (dobrando os operários, o tempo cai pela metade). F (em grandezas inversamente proporcionais é o <b>produto</b> que é constante). V ($2 · 50 000 = 100 000 cm = 1 km$). F ($0,1 · 0,1 = 0,01 = 1%$)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-fa-03",
+   "tipo": "mc",
+   "serie": "9º Ano",
+   "unidade": "Função afim",
+   "topicos": [
+    "f(x)",
+    "valor numérico"
+   ],
+   "enunciado": "Sendo $f(x) = 3x - 2$, o valor de $f(4) - f(1)$ é:",
+   "alternativas": [
+    {
+     "t": "$3$",
+     "ok": false
+    },
+    {
+     "t": "$6$",
+     "ok": false
+    },
+    {
+     "t": "$9$",
+     "ok": true
+    },
+    {
+     "t": "$10$",
+     "ok": false
+    },
+    {
+     "t": "$12$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$f(4) = 12 - 2 = 10$ e $f(1) = 3 - 2 = 1$. Logo $f(4) - f(1) = 9$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp9-vol-01",
+   "tipo": "aberta",
+   "serie": "9º Ano",
+   "unidade": "Volumes",
+   "topicos": [
+    "paralelepípedo",
+    "litros",
+    "unidades de medida"
+   ],
+   "enunciado": "Uma caixa-d’água tem a forma de um paralelepípedo com $2$ m de comprimento, $1,5$ m de largura e $1$ m de altura. Calcule sua capacidade em litros ($1 \"m\"^3 = 1000$ litros).",
+   "resposta": {
+    "modo": "linhas",
+    "n": 4
+   },
+   "gabarito": "$3 \"m\"^3 = 3000$ litros",
+   "resolucao": "$V = 2 · 1,5 · 1 = 3 \"m\"^3$. Como $1 \"m\"^3 = 1000$ L, a capacidade é $3000$ litros."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-conj-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Conjuntos",
+   "topicos": [
+    "união",
+    "interseção",
+    "número de elementos"
+   ],
+   "enunciado": "Dados $A = \\{1, 2, 3, 4\\}$ e $B = \\{3, 4, 5\\}$, o número de elementos de $A ∪ B$ é:",
+   "alternativas": [
+    {
+     "t": "$3$",
+     "ok": false
+    },
+    {
+     "t": "$4$",
+     "ok": false
+    },
+    {
+     "t": "$5$",
+     "ok": true
+    },
+    {
+     "t": "$6$",
+     "ok": false
+    },
+    {
+     "t": "$7$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$A ∪ B = \\{1, 2, 3, 4, 5\\}$, com $5$ elementos. (Ou: $n(A) + n(B) - n(A ∩ B) = 4 + 3 - 2 = 5$.)"
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-conj-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Conjuntos",
+   "topicos": [
+    "diagrama de Venn",
+    "problema",
+    "inclusão e exclusão"
+   ],
+   "enunciado": "Em uma turma de $40$ alunos, $25$ gostam de Matemática, $18$ gostam de Português e $8$ gostam das duas disciplinas. Quantos alunos não gostam de nenhuma delas?",
+   "alternativas": [
+    {
+     "t": "$3$",
+     "ok": false
+    },
+    {
+     "t": "$5$",
+     "ok": true
+    },
+    {
+     "t": "$7$",
+     "ok": false
+    },
+    {
+     "t": "$8$",
+     "ok": false
+    },
+    {
+     "t": "$10$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Pelo menos uma: $25 + 18 - 8 = 35$ alunos. Nenhuma: $40 - 35 = 5$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-int-01",
+   "tipo": "vf",
+   "serie": "1º Ano",
+   "unidade": "Conjuntos numéricos e intervalos",
+   "topicos": [
+    "intervalos",
+    "ℕ ℤ ℚ ℝ",
+    "união",
+    "interseção"
+   ],
+   "enunciado": "Julgue as afirmações em verdadeiras (V) ou falsas (F):",
+   "afirmacoes": [
+    {
+     "t": "$[1, 4] ∩ (2, 6) = (2, 4]$",
+     "ok": true
+    },
+    {
+     "t": "$√2 ∈ ℚ$",
+     "ok": false
+    },
+    {
+     "t": "$-3 ∈ ℕ$",
+     "ok": false
+    },
+    {
+     "t": "$ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ$",
+     "ok": true
+    },
+    {
+     "t": "$(1, 3) ∪ [3, 5] = (1, 5]$",
+     "ok": true
+    }
+   ],
+   "resolucao": "V (parte comum: de $2$, aberto, a $4$, fechado). F ($√2$ é irracional). F ($-3$ é inteiro negativo, não natural). V (cada conjunto está contido no seguinte). V (o $3$ é completado pelo segundo intervalo)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-dom-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Funções",
+   "topicos": [
+    "domínio",
+    "raiz quadrada"
+   ],
+   "enunciado": "O domínio da função real $f(x) = √{x - 3}$ é o conjunto dos números reais tais que:",
+   "alternativas": [
+    {
+     "t": "$x > 3$",
+     "ok": false
+    },
+    {
+     "t": "$x >= 3$",
+     "ok": true
+    },
+    {
+     "t": "$x <= 3$",
+     "ok": false
+    },
+    {
+     "t": "$x != 3$",
+     "ok": false
+    },
+    {
+     "t": "$x$ qualquer",
+     "ok": false
+    }
+   ],
+   "resolucao": "A raiz quadrada exige radicando não negativo: $x - 3 >= 0 ⇒ x >= 3$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-fa-04",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função afim",
+   "topicos": [
+    "lei da função",
+    "coeficiente angular",
+    "reta por dois pontos"
+   ],
+   "enunciado": "O gráfico de uma função afim $f$ passa pelos pontos $(1, 3)$ e $(3, 7)$. O valor de $f(10)$ é:",
+   "alternativas": [
+    {
+     "t": "$19$",
+     "ok": false
+    },
+    {
+     "t": "$20$",
+     "ok": false
+    },
+    {
+     "t": "$21$",
+     "ok": true
+    },
+    {
+     "t": "$22$",
+     "ok": false
+    },
+    {
+     "t": "$23$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Coeficiente angular: $a = {7 - 3|3 - 1} = 2$. De $f(1) = 3$: $2 + b = 3 ⇒ b = 1$, logo $f(x) = 2x + 1$ e $f(10) = 21$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 2,
+   "id": "bp1-fa-05",
+   "tipo": "aberta",
+   "serie": "1º Ano",
+   "unidade": "Função afim",
+   "topicos": [
+    "problema",
+    "lei da função",
+    "táxi"
+   ],
+   "enunciado": "Uma corrida de táxi custa R$ 5,00 de bandeirada mais R$ 2,50 por quilômetro rodado. Seja $x$ a distância percorrida, em km.\n(a) Escreva a lei da função $f$ que dá o preço da corrida.\n(b) Calcule o preço de uma corrida de $12$ km.\n(c) Quantos quilômetros se pode percorrer com R$ 40,00?",
+   "resposta": {
+    "modo": "linhas",
+    "n": 7
+   },
+   "gabarito": "(a) $f(x) = 5 + 2,5x$; (b) R$ 35,00; (c) $14$ km",
+   "resolucao": "(a) $f(x) = 5 + 2,5x$. (b) $f(12) = 5 + 30 = 35$, ou seja, R$ 35,00. (c) $5 + 2,5x = 40 ⇒ 2,5x = 35 ⇒ x = 14$ km."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-fq-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função quadrática",
+   "topicos": [
+    "vértice",
+    "xv",
+    "yv"
+   ],
+   "enunciado": "O vértice da parábola que representa a função $f(x) = x^2 - 6x + 5$ é o ponto:",
+   "alternativas": [
+    {
+     "t": "$(3, -4)$",
+     "ok": true
+    },
+    {
+     "t": "$(-3, -4)$",
+     "ok": false
+    },
+    {
+     "t": "$(3, 4)$",
+     "ok": false
+    },
+    {
+     "t": "$(6, 5)$",
+     "ok": false
+    },
+    {
+     "t": "$(-3, 32)$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$x_v = -{b|2a} = {6|2} = 3$ e $y_v = f(3) = 9 - 18 + 5 = -4$. Vértice: $(3, -4)$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-fq-03",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função quadrática",
+   "topicos": [
+    "otimização",
+    "valor máximo",
+    "altura"
+   ],
+   "enunciado": "Uma bola é lançada para cima e sua altura, em metros, após $t$ segundos, é dada por $h(t) = -t^2 + 6t$. A altura máxima atingida pela bola é:",
+   "alternativas": [
+    {
+     "t": "$3$ m",
+     "ok": false
+    },
+    {
+     "t": "$6$ m",
+     "ok": false
+    },
+    {
+     "t": "$9$ m",
+     "ok": true
+    },
+    {
+     "t": "$12$ m",
+     "ok": false
+    },
+    {
+     "t": "$18$ m",
+     "ok": false
+    }
+   ],
+   "resolucao": "Como $a = -1 < 0$, o máximo ocorre no vértice: $t_v = -{6|-2} = 3$ s e $h(3) = -9 + 18 = 9$ m."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-fq-04",
+   "tipo": "soma",
+   "serie": "1º Ano",
+   "unidade": "Função quadrática",
+   "topicos": [
+    "gráfico",
+    "raízes",
+    "vértice",
+    "concavidade"
+   ],
+   "enunciado": "O gráfico abaixo representa a função $f(x) = -x^2 + 4x - 3$. Some os números das afirmações corretas.",
+   "figura": {
+    "tipo": "funcao",
+    "fs": [
+     {
+      "e": "-x^2+4x-3",
+      "rotulo": "f"
+     }
+    ],
+    "x": [
+     -1,
+     5
+    ],
+    "y": [
+     -5,
+     2
+    ],
+    "pontos": [
+     {
+      "x": 1,
+      "y": 0,
+      "rotulo": "1"
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "rotulo": "3"
+     },
+     {
+      "x": 2,
+      "y": 1,
+      "rotulo": "V"
+     }
+    ],
+    "largura": "62%"
+   },
+   "afirmacoes": [
+    {
+     "t": "As raízes de $f$ são $1$ e $3$.",
+     "ok": true
+    },
+    {
+     "t": "O vértice da parábola é o ponto $(2, 1)$.",
+     "ok": true
+    },
+    {
+     "t": "A concavidade da parábola é voltada para baixo.",
+     "ok": true
+    },
+    {
+     "t": "$f(0) = 3$.",
+     "ok": false
+    },
+    {
+     "t": "O valor máximo de $f$ é $1$.",
+     "ok": true
+    }
+   ],
+   "resolucao": "Raízes: $-x^2 + 4x - 3 = 0 ⇒ x = 1$ ou $x = 3$ (01 ✓). Vértice: $x_v = 2$ e $y_v = -4 + 8 - 3 = 1$ (02 ✓). $a = -1 < 0$: concavidade para baixo (04 ✓). $f(0) = -3$, e não $3$ (08 ✗). Valor máximo $y_v = 1$ (16 ✓). Soma: $1 + 2 + 4 + 16 = 23$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-mod-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função modular",
+   "topicos": [
+    "módulo",
+    "conjunto imagem",
+    "gráfico"
+   ],
+   "enunciado": "A figura mostra o gráfico da função $f(x) = |x - 2|$. O conjunto imagem de $f$ é:",
+   "figura": {
+    "tipo": "funcao",
+    "fs": [
+     {
+      "e": "abs(x-2)",
+      "rotulo": "f"
+     }
+    ],
+    "x": [
+     -3,
+     7
+    ],
+    "y": [
+     -1,
+     6
+    ],
+    "pontos": [
+     {
+      "x": 2,
+      "y": 0,
+      "rotulo": "(2, 0)"
+     }
+    ],
+    "largura": "60%"
+   },
+   "alternativas": [
+    {
+     "t": "$[0, +∞)$",
+     "ok": true
+    },
+    {
+     "t": "ℝ",
+     "ok": false
+    },
+    {
+     "t": "$[2, +∞)$",
+     "ok": false
+    },
+    {
+     "t": "$(-∞, 0]$",
+     "ok": false
+    },
+    {
+     "t": "$(0, +∞)$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Um módulo nunca é negativo e assume o valor $0$ em $x = 2$; para $x$ grande, cresce sem limite. Imagem: $[0, +∞)$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-exp-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função exponencial",
+   "topicos": [
+    "equação exponencial",
+    "potências de 2"
+   ],
+   "enunciado": "Se $2^{x+1} = 32$, então o valor de $x$ é:",
+   "alternativas": [
+    {
+     "t": "$3$",
+     "ok": false
+    },
+    {
+     "t": "$4$",
+     "ok": true
+    },
+    {
+     "t": "$5$",
+     "ok": false
+    },
+    {
+     "t": "$6$",
+     "ok": false
+    },
+    {
+     "t": "$16$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$32 = 2^5$, então $x + 1 = 5$ e $x = 4$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-exp-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Função exponencial",
+   "topicos": [
+    "crescimento",
+    "bactérias",
+    "modelagem"
+   ],
+   "enunciado": "Uma população de bactérias dobra a cada hora. Se havia $500$ bactérias inicialmente, o número delas após $4$ horas é:",
+   "alternativas": [
+    {
+     "t": "$2000$",
+     "ok": false
+    },
+    {
+     "t": "$4000$",
+     "ok": false
+    },
+    {
+     "t": "$8000$",
+     "ok": true
+    },
+    {
+     "t": "$10 000$",
+     "ok": false
+    },
+    {
+     "t": "$16 000$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$N(t) = 500 · 2^t$. Para $t = 4$: $500 · 16 = 8000$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-log-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Logaritmos",
+   "topicos": [
+    "definição",
+    "log base 2"
+   ],
+   "enunciado": "O valor de $log_{2} 32$ é:",
+   "alternativas": [
+    {
+     "t": "$4$",
+     "ok": false
+    },
+    {
+     "t": "$5$",
+     "ok": true
+    },
+    {
+     "t": "$6$",
+     "ok": false
+    },
+    {
+     "t": "$16$",
+     "ok": false
+    },
+    {
+     "t": "$30$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$log_{2} 32 = x ⇔ 2^x = 32$. Como $32 = 2^5$, $x = 5$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-log-02",
+   "tipo": "aberta",
+   "serie": "1º Ano",
+   "unidade": "Logaritmos",
+   "topicos": [
+    "equação logarítmica",
+    "condição de existência"
+   ],
+   "enunciado": "Resolva a equação $log_{3}(x + 1) = 2$, indicando a condição de existência.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 4
+   },
+   "gabarito": "$x = 8$",
+   "resolucao": "Condição de existência: $x + 1 > 0$, isto é, $x > -1$. Pela definição, $x + 1 = 3^2 = 9$, logo $x = 8$, que satisfaz a condição."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-pa-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Progressão aritmética",
+   "topicos": [
+    "termo geral",
+    "razão"
+   ],
+   "enunciado": "Em uma progressão aritmética de primeiro termo $3$ e razão $4$, o décimo termo é:",
+   "alternativas": [
+    {
+     "t": "$31$",
+     "ok": false
+    },
+    {
+     "t": "$36$",
+     "ok": false
+    },
+    {
+     "t": "$39$",
+     "ok": true
+    },
+    {
+     "t": "$40$",
+     "ok": false
+    },
+    {
+     "t": "$43$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$a_{10} = a_1 + 9r = 3 + 9 · 4 = 39$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-pa-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Progressão aritmética",
+   "topicos": [
+    "soma dos termos",
+    "Gauss"
+   ],
+   "enunciado": "A soma $1 + 2 + 3 + … + 100$ é igual a:",
+   "alternativas": [
+    {
+     "t": "$4950$",
+     "ok": false
+    },
+    {
+     "t": "$5000$",
+     "ok": false
+    },
+    {
+     "t": "$5050$",
+     "ok": true
+    },
+    {
+     "t": "$5100$",
+     "ok": false
+    },
+    {
+     "t": "$10 100$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$S_n = {n(a_1 + a_n)|2} = {100 · 101|2} = 5050$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp1-pg-01",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Progressão geométrica",
+   "topicos": [
+    "termo geral",
+    "razão"
+   ],
+   "enunciado": "O quinto termo da progressão geométrica $(2, 6, 18, …)$ é:",
+   "alternativas": [
+    {
+     "t": "$54$",
+     "ok": false
+    },
+    {
+     "t": "$108$",
+     "ok": false
+    },
+    {
+     "t": "$162$",
+     "ok": true
+    },
+    {
+     "t": "$486$",
+     "ok": false
+    },
+    {
+     "t": "$324$",
+     "ok": false
+    }
+   ],
+   "resolucao": "Razão $q = 3$. $a_5 = a_1 · q^4 = 2 · 81 = 162$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 3,
+   "pontos": 2,
+   "id": "bp1-dem-02",
+   "tipo": "aberta",
+   "serie": "1º Ano",
+   "unidade": "Progressão aritmética",
+   "topicos": [
+    "demonstração",
+    "números ímpares",
+    "soma"
+   ],
+   "enunciado": "Demonstre que a soma dos $n$ primeiros números ímpares positivos é igual a $n^2$, isto é, $1 + 3 + 5 + … + (2n - 1) = n^2$.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 8
+   },
+   "gabarito": "$S_n = n^2$",
+   "resolucao": "Os ímpares $1, 3, 5, …, 2n - 1$ formam uma PA de primeiro termo $1$, razão $2$ e $n$ termos, com último termo $a_n = 2n - 1$. Pela soma da PA: $S_n = {n(1 + 2n - 1)|2} = {n · 2n|2} = n^2$. ∎"
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-trig-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Trigonometria",
+   "topicos": [
+    "relação fundamental",
+    "seno",
+    "cosseno"
+   ],
+   "enunciado": "Se $sen x = {3|5}$ e $x$ é um ângulo agudo, então $cos x$ vale:",
+   "alternativas": [
+    {
+     "t": "${3|5}$",
+     "ok": false
+    },
+    {
+     "t": "${4|5}$",
+     "ok": true
+    },
+    {
+     "t": "${5|4}$",
+     "ok": false
+    },
+    {
+     "t": "${5|3}$",
+     "ok": false
+    },
+    {
+     "t": "${1|5}$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$sen^2 x + cos^2 x = 1 ⇒ cos^2 x = 1 - {9|25} = {16|25}$. Como $x$ é agudo, $cos x > 0$ e $cos x = {4|5}$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-geo-02",
+   "tipo": "mc",
+   "serie": "1º Ano",
+   "unidade": "Geometria plana",
+   "topicos": [
+    "área",
+    "triângulo equilátero"
+   ],
+   "enunciado": "A área de um triângulo equilátero de lado $6$ é:",
+   "alternativas": [
+    {
+     "t": "$9√3$",
+     "ok": true
+    },
+    {
+     "t": "$18√3$",
+     "ok": false
+    },
+    {
+     "t": "$36$",
+     "ok": false
+    },
+    {
+     "t": "$6√3$",
+     "ok": false
+    },
+    {
+     "t": "$9$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$A = {l^2 √3|4} = {36√3|4} = 9√3$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp1-fun-02",
+   "tipo": "assoc",
+   "serie": "1º Ano",
+   "unidade": "Funções",
+   "topicos": [
+    "tipos de função",
+    "exponencial",
+    "logarítmica",
+    "quadrática",
+    "afim"
+   ],
+   "enunciado": "Associe cada função da coluna A à sua característica, na coluna B.",
+   "colunaA": [
+    "$f(x) = 2^x$",
+    "$f(x) = log_{2} x$",
+    "$f(x) = -x^2 + 1$",
+    "$f(x) = 3x + 1$"
+   ],
+   "colunaB": [
+    "reta de coeficiente angular $3$",
+    "crescente e sempre positiva",
+    "parábola com concavidade voltada para baixo",
+    "crescente e definida apenas para $x > 0$"
+   ],
+   "pares": [
+    1,
+    3,
+    2,
+    0
+   ],
+   "resolucao": "1-b (a exponencial de base $2$ é crescente e $2^x > 0$), 2-d (logaritmo só existe para $x > 0$), 3-c ($a = -1 < 0$), 4-a (função afim com $a = 3$)."
+  }
+ ]
+}

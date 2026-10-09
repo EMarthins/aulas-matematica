@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fazedor de prova — Professor</title>
+<link href="../assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../app/style.css">
+<link rel="stylesheet" href="../app/prova.css">
+</head>
+<body class="pv">
+
+<div class="pv-bar">
+  <a class="brand" href="../index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="dashboard.html">Painel</a><a href="banco.html">Banco (lista)</a></nav>
+  <input class="nome" id="nomeProva" value="Avaliação" aria-label="Nome da prova" title="Nome da prova (só para você achar depois)">
+  <span class="sp"></span>
+  <button class="btn secondary" id="bNova" type="button">Nova prova</button>
+  <button class="btn secondary" id="bAbrir" type="button">Abrir / importar</button>
+  <button class="btn secondary" id="bSalvar" type="button">Salvar</button>
+  <button class="btn" id="bImprimir" type="button">Imprimir / salvar PDF</button>
+</div>
+
+<div class="pv-app">
+
+  <!-- ===== BANCO ===== -->
+  <aside class="pv-col pv-banco" aria-label="Banco de questões">
+    <div class="pv-head">
+      <h2>Banco de questões
+        <span style="display:flex;gap:10px">
+          <button class="pv-link" id="bNovaQ" type="button">+ Nova questão</button>
+          <button class="pv-link" id="bMais" type="button" title="Importar / exportar minhas questões">⋯</button>
+        </span>
+      </h2>
+      <input class="pv-in" id="busca" type="search" placeholder="Buscar palavra-chave: pitágoras, juros, parábola…" autocomplete="off">
+      <div class="pv-filtros">
+        <label>Turma / série<select class="pv-sel" id="fSerie"></select></label>
+        <label>Matéria<select class="pv-sel" id="fMateria"></select></label>
+        <label class="full">Conteúdo<select class="pv-sel" id="fUnidade"></select></label>
+        <label>Tipo<select class="pv-sel" id="fTipo"></select></label>
+        <label>Dificuldade<select class="pv-sel" id="fDif"></select></label>
+        <label class="full">Origem<select class="pv-sel" id="fFonte"></select></label>
+      </div>
+      <div class="pv-cont"><span id="cont">…</span><button class="pv-link" id="bLimpar" type="button">Limpar filtros</button></div>
+    </div>
+    <div class="pv-scroll" id="lista"></div>
+  </aside>
+
+  <!-- ===== PALCO (folhas A4) ===== -->
+  <main class="pv-palco">
+    <div class="pv-tools">
+      <span>Colunas</span>
+      <span class="seg" id="segCols"><button type="button" data-v="1">1</button><button type="button" data-v="2" class="on">2</button></span>
+      <span id="infoPag"></span>
+      <span class="sp"></span>
+      <span>Zoom</span>
+      <select class="pv-sel" id="zoom" style="width:auto">
+        <option value="auto">Ajustar</option><option value="0.5">50%</option><option value="0.7">70%</option><option value="0.85">85%</option><option value="1">100%</option><option value="1.2">120%</option>
+      </select>
+    </div>
+    <div class="pv-stage" id="stage">
+      <div class="pv-dica" id="dica">Arraste questões do banco para a folha — ou clique em <b>Adicionar</b>. Arraste as questões dentro da prova para reordenar. Clique no cabeçalho para editá-lo.</div>
+      <div id="paginas"></div>
+    </div>
+  </main>
+
+  <!-- ===== LATERAL ===== -->
+  <aside class="pv-col pv-lat" aria-label="Configurações da prova">
+    <div class="pv-abas" id="abas">
+      <button type="button" data-p="cab" class="on">Cabeçalho</button>
+      <button type="button" data-p="prova">Prova</button>
+      <button type="button" data-p="layout">Layout</button>
+      <button type="button" data-p="ia">IA</button>
+    </div>
+    <div class="pv-scroll">
+
+      <!-- Cabeçalho -->
+      <section class="pv-pn on" id="pn-cab">
+        <div class="pv-campo"><label>Modelo do cabeçalho</label>
+          <div class="pv-modelos" id="modelos">
+            <button type="button" data-m="caixas"><svg viewBox="0 0 90 30"><rect x="1.5" y="1.5" width="87" height="27" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15h80M40 4v11M58 4v11M50 15v11" stroke="currentColor" stroke-width="1"/></svg>Caixas</button>
+            <button type="button" data-m="linhas"><svg viewBox="0 0 90 30"><path d="M2 3h86M2 27h86" stroke="currentColor" stroke-width="2"/><path d="M5 12h50M62 12h24M5 21h38M50 21h36" stroke="currentColor" stroke-width="1.2"/></svg>Linhas</button>
+            <button type="button" data-m="compacto"><svg viewBox="0 0 90 30"><rect x="1.5" y="8" width="87" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 17h30M42 17h18M66 17h18" stroke="currentColor" stroke-width="1.2"/></svg>Compacto</button>
+          </div>
+          <div class="pv-chips"><button type="button" data-m="nenhum">Sem cabeçalho</button></div>
+        </div>
+        <div class="pv-campo"><label for="c-titulo">Título</label><input class="pv-in" id="c-titulo" placeholder="Avaliação de Matemática"></div>
+        <div class="pv-campo"><label for="c-subtitulo">Subtítulo / conteúdo</label><input class="pv-in" id="c-subtitulo" placeholder="Ex.: Funções e geometria plana"></div>
+        <div class="pv-box">
+          <h3>Pré-preenchimento</h3>
+          <div class="pv-campo"><label for="c-escola">Escola</label><input class="pv-in" id="c-escola"></div>
+          <div class="pv-campo"><label for="c-professor">Professor(a)</label><input class="pv-in" id="c-professor"></div>
+          <div class="pv-linha">
+            <div class="pv-campo"><label for="c-turma">Turma</label><input class="pv-in" id="c-turma" placeholder="Ex.: 2º A"></div>
+            <div class="pv-campo"><label for="c-data">Data</label><input class="pv-in" id="c-data" type="date"></div>
+          </div>
+          <div class="pv-campo"><label for="c-trimestre">Trimestre / bimestre</label><input class="pv-in" id="c-trimestre" placeholder="Ex.: 2º">
+            <div class="pv-chips" id="chipsTri"><button type="button">1º trimestre</button><button type="button">2º trimestre</button><button type="button">3º trimestre</button><button type="button">1º bimestre</button><button type="button">2º bimestre</button></div>
+          </div>
+          <div class="pv-campo"><label for="c-disciplina">Disciplina</label><input class="pv-in" id="c-disciplina" placeholder="Matemática"></div>
+          <p class="pv-nota">Deixe um campo vazio para o aluno preencher à mão. Nome, nº e nota sempre saem em branco.</p>
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+            <button class="btn secondary" id="bPadrao" type="button" style="padding:.4em .8em;font-size:.78rem">Usar como padrão das próximas provas</button>
+            <button class="pv-link" id="bPadraoLimpar" type="button">Esquecer padrão</button>
+          </div>
+        </div>
+        <div class="pv-campo"><label>Campos visíveis</label>
+          <div id="vis" style="display:grid;grid-template-columns:1fr 1fr;gap:0 10px"></div>
+          <label class="pv-chk"><input type="checkbox" id="c-totalNota"> Mostrar “/ total” no campo Nota</label>
+        </div>
+        <div class="pv-campo"><label>Logo da escola</label>
+          <input type="file" id="c-logo" accept="image/*" style="font-size:.8rem">
+          <button class="pv-link" id="bLogoX" type="button" style="margin-top:4px">Remover logo</button>
+        </div>
+        <div class="pv-campo"><label for="c-instr">Instruções para o aluno</label><textarea class="pv-ta" id="c-instr" placeholder="Ex.: Leia com atenção. Use caneta azul ou preta. Não é permitido o uso de calculadora."></textarea></div>
+      </section>
+
+      <!-- Prova -->
+      <section class="pv-pn" id="pn-prova">
+        <div class="resumo"><div>Questões<b id="rQ">0</b></div><div>Pontos<b id="rP">0</b></div><div>Páginas<b id="rPg">1</b></div></div>
+        <ul class="pl" id="plista"></ul>
+        <div id="plVazio" class="vazio">Nenhuma questão ainda. Arraste do banco para a folha.</div>
+        <div class="pv-box">
+          <h3>Pontuação</h3>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span style="font-size:.82rem">Dividir igualmente em</span>
+            <input class="pv-in" id="alvoPts" type="number" min="1" step="0.5" value="10" style="width:5rem">
+            <button class="btn secondary" id="bDividir" type="button" style="padding:.4em .8em;font-size:.78rem">Aplicar</button>
+          </div>
+          <label class="pv-chk"><input type="checkbox" id="l-pontos"> Mostrar o valor em cada questão</label>
+        </div>
+        <div class="pv-box">
+          <h3>Versões (evita cola)</h3>
+          <div class="seg" id="segVer"><button type="button" data-v="A" class="on">A</button><button type="button" data-v="B">B</button><button type="button" data-v="C">C</button><button type="button" data-v="D">D</button></div>
+          <label class="pv-chk"><input type="checkbox" id="v-ordem"> Embaralhar a ordem das questões (versões B, C, D)</label>
+          <label class="pv-chk"><input type="checkbox" id="v-alt"> Embaralhar as alternativas (versões B, C, D)</label>
+          <p class="pv-nota">A versão A é a ordem que você montou. Cada versão tem o seu próprio gabarito.</p>
+        </div>
+        <div class="pv-box">
+          <h3>Gabarito do professor</h3>
+          <label class="pv-chk"><input type="checkbox" id="g-anexar"> Anexar páginas de gabarito ao final</label>
+          <label class="pv-chk"><input type="checkbox" id="g-res"> Incluir resolução passo a passo</label>
+          <p class="pv-nota">Imprima só as páginas da prova para os alunos (ou use “Páginas” no diálogo de impressão).</p>
+        </div>
+        <button class="btn danger" id="bLimparProva" type="button" style="padding:.4em .9em;font-size:.8rem">Remover todas as questões</button>
+      </section>
+
+      <!-- Layout -->
+      <section class="pv-pn" id="pn-layout">
+        <div class="pv-campo"><label>Colunas</label><div class="seg" id="segCols2"><button type="button" data-v="1">1 coluna</button><button type="button" data-v="2" class="on">2 colunas</button></div>
+          <p class="pv-nota">2 colunas rendem melhor em provas longas; 1 coluna é melhor para questões grandes, gráficos e demonstrações.</p></div>
+        <div class="pv-linha">
+          <div class="pv-campo"><label for="l-fonte">Tamanho da letra</label><select class="pv-sel" id="l-fonte"><option value="9.5">9,5 pt</option><option value="10">10 pt</option><option value="10.5">10,5 pt</option><option value="11">11 pt</option><option value="12">12 pt</option><option value="13">13 pt (grande)</option></select></div>
+          <div class="pv-campo"><label for="l-margem">Margens</label><select class="pv-sel" id="l-margem"><option value="10">Estreitas</option><option value="12">Normais</option><option value="15">Largas</option><option value="18">Bem largas</option></select></div>
+        </div>
+        <div class="pv-linha">
+          <div class="pv-campo"><label for="l-gapq">Espaço entre questões</label><select class="pv-sel" id="l-gapq"><option value="2.5">Pequeno</option><option value="5">Médio</option><option value="8">Grande</option><option value="12">Para resolver no papel</option></select></div>
+          <div class="pv-campo"><label for="l-num">Numeração</label><select class="pv-sel" id="l-num"><option value="ponto">1.</option><option value="questao">Questão 1</option></select></div>
+        </div>
+        <div class="pv-campo"><label for="l-alt">Alternativas</label><select class="pv-sel" id="l-alt"><option value="auto">Automático (decide pelo tamanho)</option><option value="1">Uma por linha</option><option value="2">Em duas colunas</option><option value="linha">Todas na mesma linha</option></select></div>
+        <label class="pv-chk"><input type="checkbox" id="l-sep"> Linha separando as colunas</label>
+        <label class="pv-chk"><input type="checkbox" id="l-rodape"> Rodapé com nome da prova e nº da página</label>
+      </section>
+
+      <!-- IA -->
+      <section class="pv-pn" id="pn-ia">
+        <div class="ia-status" id="iaStatus"><i></i><span id="iaTxt">IA ainda não configurada</span></div>
+        <p class="pv-nota" style="margin:0 0 12px">Aqui você descreve a prova e a IA cria as questões. Elas entram no banco como <b>rascunhos da IA</b> — você revisa e arrasta para a prova. O formulário e o pedido já estão prontos; falta só ligar o endpoint (veja <code>docs/fazedor-de-prova.md</code>).</p>
+        <div class="pv-linha">
+          <div class="pv-campo"><label for="ia-serie">Turma / série</label><input class="pv-in" id="ia-serie" list="dl-series" placeholder="1º Ano"></div>
+          <div class="pv-campo"><label for="ia-mat">Matéria</label><input class="pv-in" id="ia-mat" list="dl-materias" value="Matemática"></div>
+        </div>
+        <div class="pv-campo"><label for="ia-cont">Conteúdo</label><input class="pv-in" id="ia-cont" list="dl-unidades" placeholder="Ex.: Função quadrática"></div>
+        <div class="pv-linha">
+          <div class="pv-campo"><label for="ia-qtd">Quantidade</label><input class="pv-in" id="ia-qtd" type="number" min="1" max="20" value="5"></div>
+          <div class="pv-campo"><label for="ia-dif">Dificuldade</label><select class="pv-sel" id="ia-dif"><option value="1">Fácil</option><option value="2" selected>Média</option><option value="3">Difícil</option></select></div>
+        </div>
+        <div class="pv-campo"><label>Tipos de questão</label><div id="ia-tipos"></div></div>
+        <div class="pv-campo"><label for="ia-instr">Instruções extras</label><textarea class="pv-ta" id="ia-instr" placeholder="Ex.: contextualizadas com o dia a dia, no estilo ENEM; com gráfico em pelo menos uma."></textarea></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" id="bIA" type="button">Gerar com IA</button>
+          <button class="btn secondary" id="bPrompt" type="button">Ver o pedido enviado</button>
+        </div>
+        <pre class="prompt" id="promptView" hidden></pre>
+        <details class="pv-box" style="margin-top:14px"><summary style="cursor:pointer;font-weight:800;font-size:.84rem">Configuração (avançado)</summary>
+          <label class="pv-chk"><input type="checkbox" id="ia-on"> Habilitar geração por IA</label>
+          <div class="pv-campo"><label for="ia-end">Endereço do servidor (endpoint)</label><input class="pv-in" id="ia-end" placeholder="https://…/gerarQuestoes"></div>
+          <div class="pv-campo"><label for="ia-mod">Modelo</label><input class="pv-in" id="ia-mod" placeholder="claude-sonnet-5-5"></div>
+          <p class="pv-nota">A chave da API <b>nunca</b> fica no navegador: ela vive no seu servidor/função, que recebe o pedido e devolve as questões em JSON.</p>
+        </details>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<datalist id="dl-series"></datalist><datalist id="dl-materias"></datalist><datalist id="dl-unidades"></datalist>
+
+<!-- visualizar questão -->
+<dialog class="pv-dlg" id="dlgVer">
+  <div class="dlg-h"><h3 id="verTit">Questão</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
+  <div class="dlg-b"><div class="pre" id="verCorpo" style="background:#fff;color:#111;border-radius:10px;padding:16px;font-family:'Source Serif 4',Georgia,serif;font-size:11.5pt;line-height:1.4"></div><div id="verMeta" class="pv-nota"></div></div>
+  <div class="dlg-f"><button class="btn secondary" id="verDup" type="button">Duplicar e editar</button><button class="btn secondary" id="verEd" type="button" hidden>Editar</button><button class="btn secondary" id="verDel" type="button" hidden>Excluir</button><button class="btn" id="verAdd" type="button">Adicionar à prova</button></div>
+</dialog>
+
+<!-- editor de questão -->
+<dialog class="pv-dlg" id="dlgEd">
+  <div class="dlg-h"><h3 id="edTit">Nova questão</h3><button class="pv-link" data-fechar type="button">Cancelar ✕</button></div>
+  <div class="dlg-b"><div class="ed">
+    <form id="edForm" onsubmit="return false"></form>
+    <div><div class="pv-lb">Como vai aparecer no papel</div><div class="pre" id="edPre"></div><ul class="ed-erros" id="edErros"></ul></div>
+  </div></div>
+  <div class="dlg-f"><span class="pv-nota" style="margin:0 auto 0 0">Salva no seu navegador (“Minhas questões”). Use ⋯ → Exportar para guardar um arquivo.</span><button class="btn secondary" data-fechar type="button">Cancelar</button><button class="btn" id="edSalvar" type="button">Salvar questão</button></div>
+</dialog>
+
+<!-- abrir / importar -->
+<dialog class="pv-dlg" id="dlgAbrir" style="width:min(720px,94vw)">
+  <div class="dlg-h"><h3>Minhas provas</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
+  <div class="dlg-b"><div id="salvas"></div>
+    <div class="pv-box" style="margin-top:14px"><h3>Importar arquivo</h3><p class="pv-nota" style="margin:0 0 8px">Aceita uma prova (.json exportada daqui) ou um pacote de questões no formato do banco.</p><input type="file" id="arqImp" accept=".json,application/json"></div>
+  </div>
+</dialog>
+
+<!-- minhas questões: importar/exportar -->
+<dialog class="pv-dlg" id="dlgMais" style="width:min(520px,94vw)">
+  <div class="dlg-h"><h3>Minhas questões</h3><button class="pv-link" data-fechar type="button">Fechar ✕</button></div>
+  <div class="dlg-b">
+    <p class="pv-nota" style="margin-top:0">As questões que você cria (ou a IA cria) ficam neste navegador. Exporte para guardar ou levar a outro computador; importe um pacote <code>.json</code> do banco para somá-las.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0"><button class="btn secondary" id="bExpQ" type="button">Exportar minhas questões</button><label class="btn secondary" style="cursor:pointer">Importar pacote <input type="file" id="arqQ" accept=".json,application/json" hidden></label><button class="btn danger" id="bLimpaQ" type="button">Apagar todas</button></div>
+    <div id="maisInfo" class="pv-nota"></div>
+  </div>
+</dialog>
+
+<div id="medidor"></div>
+<script type="module" src="../app/prova-app.js"></script>
+</body>
+</html>
