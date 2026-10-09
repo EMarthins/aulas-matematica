@@ -207,9 +207,9 @@ function ordenados() {
   if (E.versao !== 'A') {
     const r = rng('v' + E.versao + E.id);
     if (E.embOrdem) arr = embaralhar(arr, r);
-    arr.forEach(x => { if (E.embAlt && x.q.tipo === 'mc') x.ordem = embaralhar(x.q.alternativas.map((_, k) => k), r); });
+    arr.forEach(x => { if (E.embAlt && x.q.tipo === 'mc' && !x.q.soImagem) x.ordem = embaralhar(x.q.alternativas.map((_, k) => k), r); });
   }
-  arr.forEach((x, n) => { x.num = n + 1; });
+  arr.forEach((x, n) => { x.num = n + 1; x.omitirBase = !!(x.q.base && n > 0 && arr[n - 1].q.base && arr[n - 1].q.base.id === x.q.base.id); });
   return arr;
 }
 
@@ -288,7 +288,7 @@ async function medir(htmls, larguraMm) {
 }
 function qwHtml(x) {
   const L = E.layout;
-  return `<div class="qw" data-i="${x.i}" draggable="true"><div class="q-ferr"><button type="button" data-a="up" title="Subir">↑</button><button type="button" data-a="down" title="Descer">↓</button><button type="button" data-a="ver" title="Ver / gabarito">ⓘ</button><button type="button" data-a="rem" class="x" title="Remover da prova">✕</button></div>${renderQuestao(x.q, { num: x.num, pontos: L.pontos, valor: x.it.pontos, alt: L.alt, ordem: x.ordem, estilo: L.num })}</div>`;
+  return `<div class="qw" data-i="${x.i}" draggable="true"><div class="q-ferr"><button type="button" data-a="up" title="Subir">↑</button><button type="button" data-a="down" title="Descer">↓</button><button type="button" data-a="ver" title="Ver / gabarito">ⓘ</button><button type="button" data-a="rem" class="x" title="Remover da prova">✕</button></div>${renderQuestao(x.q, { num: x.num, pontos: L.pontos, valor: x.it.pontos, alt: L.alt, ordem: x.ordem, omitirBase: x.omitirBase, estilo: L.num })}</div>`;
 }
 function blocosGabarito(lista) {
   const blocos = [];

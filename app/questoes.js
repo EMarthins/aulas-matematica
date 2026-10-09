@@ -56,6 +56,7 @@ export function normalizar(q) {
   o.topicos = Array.isArray(o.topicos) ? o.topicos.map(String) : String(o.topicos || '').split(',').map(s => s.trim()).filter(Boolean);
   o.dificuldade = Math.min(3, Math.max(1, +o.dificuldade || 2));
   o.pontos = +o.pontos > 0 ? +o.pontos : 1;
+  o.imagens = Array.isArray(o.imagens) ? o.imagens.map(String) : [];
   o.enunciado = limpar(o.enunciado); o.resolucao = limpar(o.resolucao); if (o.pergunta) o.pergunta = limpar(o.pergunta);
   if (o.figuras && !o.figura) o.figura = null;
   if (o.tipo === 'mc') o.alternativas = (o.alternativas || []).map(a => ({ t: limpar(a.t), ok: !!a.ok }));
@@ -68,13 +69,14 @@ export function normalizar(q) {
 /** Lista de problemas encontrados (vazia = questão válida). */
 export function validar(q) {
   const e = [];
-  if (!q.enunciado || !String(q.enunciado).replace(/<[^>]+>/g, '').trim()) e.push('enunciado vazio');
+  if (q.soImagem) { if (!(q.imagens || []).length) e.push('questão em imagem sem arquivo de imagem'); }
+  else if (!q.enunciado || !String(q.enunciado).replace(/<[^>]+>/g, '').trim()) e.push('enunciado vazio');
   if (!q.materia) e.push('matéria vazia'); if (!q.serie) e.push('série/turma vazia'); if (!q.unidade) e.push('conteúdo (unidade) vazio');
   if (q.tipo === 'mc') {
     const a = q.alternativas || [];
     if (a.length < 2) e.push('múltipla escolha precisa de ao menos 2 alternativas');
     if (a.length > 10) e.push('máximo de 10 alternativas');
-    if (a.filter(x => x.ok).length !== 1) e.push('marque exatamente 1 alternativa correta');
+    if (a.filter(x => x.ok).length !== 1 && !q.anulada) e.push('marque exatamente 1 alternativa correta');
     if (a.some(x => !String(x.t).trim())) e.push('alternativa vazia');
   } else if (q.tipo === 'vf' || q.tipo === 'soma') {
     const a = q.afirmacoes || [];
@@ -90,7 +92,7 @@ export function validar(q) {
 }
 
 export function textoPlano(q, max) {
-  const t = mat(q.enunciado || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#36;/g, '$').replace(/\s+/g, ' ').trim();
+  const t = (q.soImagem ? String(q.busca || '') : mat(q.enunciado || '')).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#36;/g, '$').replace(/\s+/g, ' ').trim();
   return max && t.length > max ? t.slice(0, max - 1) + '…' : t;
 }
 
@@ -104,6 +106,8 @@ export function embaralhar(arr, rand) { const a = arr.slice(); for (let i = a.le
 // ---------- gabarito ----------
 /** { curto, longo } do gabarito. `ordem` = permutação das alternativas (mc) usada na impressão. */
 export function gabaritoDe(q, ordem) {
+  if (q.anulada) return { curto: 'Anulada', longo: 'Questão anulada pelo INEP' };
+  if (q.soImagem) { const k = q.alternativas.findIndex(a => a.ok); return { curto: k < 0 ? '—' : 'ABCDE'[k], longo: '' }; }
   if (q.tipo === 'mc') {
     const ord = ordem || q.alternativas.map((_, i) => i);
     const k = ord.findIndex(i => q.alternativas[i].ok);
@@ -138,6 +142,12 @@ export function renderQuestao(q, o = {}) {
   const num = o.num != null ? o.num : '';
   const rot = o.estilo === 'questao' ? `Questão ${num}` : `${num}.`;
   const pts = o.pontos && o.valor ? `<span class="q-pts">(${fmtPt(o.valor)} ${o.valor === 1 ? 'ponto' : 'pontos'})</span> ` : '';
+  if (q.soImagem) {
+    const w = v => (v ? `width:${v}mm;max-width:100%;` : 'max-width:100%;');
+    const base = q.base && !o.omitirBase ? `<img class="q-img q-base" src="${esc(q.base.src)}" alt="Texto de apoio" style="${w(q.base.larguraMm)}">` : '';
+    const g = gabaritoDe(q);
+    return `<article class="q q-mc q-imgq" data-id="${esc(q.id)}"><div class="q-n">${rot}</div><div class="q-corpo">${pts ? `<div class="q-pts">${pts}</div>` : ''}${base}${(q.imagens || []).map(src => `<img class="q-img" src="${esc(src)}" alt="Questão" style="${w(q.larguraMm)}max-height:250mm;height:auto;object-fit:contain">`).join('')}${o.gab ? `<div class="q-gabimg">Gabarito: <b>${g.curto}</b>${q.anulada ? ' (questão anulada)' : ''}</div>` : ''}</div></article>`;
+  }
   const legado = q.legado;
   const M = s => legado ? String(s || '') : mat(s || '');
   let h = `<div class="q-enun">${pts}${M(q.enunciado)}</div>`;

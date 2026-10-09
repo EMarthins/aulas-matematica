@@ -81,8 +81,11 @@ Nunca coloque a chave da API no navegador nem no repositório.
 
 ## Provas do ENEM no banco
 
-88 questões de Matemática do **ENEM 2021 e 2025** (2º dia, caderno azul, questões 136–180 — as anuladas ficam de fora), com gabarito oficial e figuras recortadas dos cadernos do INEP. Aparecem no filtro **Turma/série = ENEM** e **Origem = ENEM 2021/2025 (INEP)**, separadas por conteúdo. Ainda sem resolução comentada.
+**Todas as questões** dos cadernos do ENEM 2021 e 2025 enviados (2º dia e 1º dia, sem a Redação): Linguagens (inclusive as de Inglês e Espanhol), Ciências Humanas, Ciências da Natureza e Matemática — 370 questões, com o **gabarito oficial** e as **anuladas marcadas** (2021: 138; 2025: 123, 132 e 174). Não entraram 2022, 2023 e 2024, porque só chegaram os gabaritos (sem o caderno de questões).
 
-- Dados: `scripts/banco-provas/enem/dados-2021.js` e `dados-2025.js` (transcrição conferida; coordenadas dos recortes `fig`/alternativas em figura). Imagens em `app/img-questoes/`.
-- Campos novos usados por elas: `pergunta` (texto depois da figura), `layoutAlt` (força a disposição das alternativas) e imagens `src: "img:arquivo.png"` (resolvidas para `app/img-questoes/`).
-- Para acrescentar outro ano: copie o formato de um `dados-AAAA.js`, ponha o PDF do caderno e do gabarito e rode o montador (ele recorta as figuras e grava em `app/banco-provas.json`). Provas só com gabarito (sem o caderno de questões) não têm como entrar.
+- **Matemática (2021 e 2025):** transcritas em texto (reflowáveis, com alternativas que embaralham), exceto as anuladas.
+- **Demais áreas:** entram como **imagem** recortada do caderno (`soImagem`), com o gabarito oficial; o texto de busca vem do próprio PDF (2025) ou de OCR (2021). Os textos de apoio compartilhados (ex.: 2025, questões 6 a 10) aparecem uma vez só quando as questões são seguidas na prova.
+- Filtros: **Turma/série = ENEM**, **Matéria** = Linguagens / Ciências Humanas / Ciências da Natureza / Matemática, **Conteúdo** = “Disciplina · tópico” (ex.: “Física · Eletricidade”), **Origem** = ENEM 2021 / 2025 (INEP).
+- Dados: `scripts/banco-provas/enem/dados-2021.js`, `dados-2025.js` (matemática em texto), `imagens-2021.json`, `imagens-2025.json` (recortes), `rotulos.js` (disciplina e tópico) e `montar-imagens.js`. Imagens em `app/img-questoes/`.
+- Campos usados: `pergunta`, `layoutAlt`, `soImagem` + `imagens`, `base` (texto de apoio compartilhado), `anulada`, `busca` e imagens `img:arquivo` (resolvidas para `app/img-questoes/`).
+- Questões em imagem são do tamanho do caderno (≈ meia página): em 2 colunas as de largura total encolhem; use **1 coluna** para elas.
