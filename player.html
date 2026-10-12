@@ -55,7 +55,7 @@
 
 <script type="module">
 import { protegerPagina } from './app/auth.js';
-import { buscarSubmissao, salvarSubmissao } from './app/data.js';
+import { buscarSubmissao, salvarSubmissao, buscarAtividade, listarMinhasMatriculas } from './app/data.js';
 import { iniciarThemeToggle } from './app/theme-toggle.js';
 
 iniciarThemeToggle('theme-pref-app');
@@ -66,11 +66,31 @@ var activityId = params.get('activity');
 var lessonPath = params.get('lesson');
 var titulo = params.get('titulo') || 'Atividade';
 var tipo = params.get('tipo') || 'leitura';
+var classId = params.get('class') || '';
 
 document.getElementById('tituloAtividade').textContent = titulo;
 document.getElementById('lessonFrame').src = lessonPath;
 
 var studentUid = null;
+
+// As regras do banco só aceitam gravar a submissão de quem está aprovado na turma da atividade,
+// então toda gravação leva o id da turma (vem no link; se faltar, descobre pela matrícula).
+var classePronta = null;
+function garanteClasse(){
+  if(classId) return Promise.resolve(classId);
+  if(!classePronta) classePronta = (async function(){
+    var atv = await buscarAtividade(teacherUid, activityId);
+    var mats = await listarMinhasMatriculas(studentUid);
+    var ok = mats.filter(function(m){ return m.teacherUid === teacherUid && m.status === 'approved' && atv && (atv.classIds || []).indexOf(m.classId) !== -1; })[0];
+    classId = ok ? ok.classId : '';
+    return classId;
+  })();
+  return classePronta;
+}
+async function salvar(dados){
+  var c = await garanteClasse();
+  return salvarSubmissao(teacherUid, activityId, studentUid, c ? Object.assign({ classId: c }, dados) : dados);
+}
 
 protegerPagina('aluno', async function(user){
   studentUid = user.uid;
@@ -78,7 +98,7 @@ protegerPagina('aluno', async function(user){
   // Marca "abriu a aula" na primeira vez, sem sobrescrever se já estiver em andamento/concluída.
   var atual = await buscarSubmissao(teacherUid, activityId, studentUid);
   if(!atual){
-    await salvarSubmissao(teacherUid, activityId, studentUid, { status: 'em-andamento', firstOpenedAt: new Date().toISOString() });
+    await salvar({ status: 'em-andamento', firstOpenedAt: new Date().toISOString() });
   }
   atualizarStatusLine(atual);
 
@@ -101,11 +121,11 @@ function atualizarStatusLine(sub){
 window.addEventListener('message', async function(e){
   if(!e.data || e.data.type !== 'lesson-progress' || !studentUid) return;
   if(e.data.event === 'feedback' && ['sim', 'meio', 'nao'].indexOf(e.data.value) >= 0){
-    await salvarSubmissao(teacherUid, activityId, studentUid, { entendimento: e.data.value });
+    await salvar({ entendimento: e.data.value });
     return;
   }
   if(e.data.event === 'quiz-completed'){
-    await salvarSubmissao(teacherUid, activityId, studentUid, {
+    await salvar({
       status: 'concluido', score: e.data.score, total: e.data.total, submittedAt: new Date().toISOString()
     });
     atualizarStatusLine({ status: 'concluido' });
@@ -127,7 +147,7 @@ document.getElementById('enviarBtn').addEventListener('click', async function(){
 
   this.disabled = true;
   try{
-    await salvarSubmissao(teacherUid, activityId, studentUid, dados);
+    await salvar(dados);
     alertBox.innerHTML = '<div class="alert success">Enviado! Seu(sua) professor(a) vai corrigir em breve.</div>';
     atualizarStatusLine({ status: 'em-analise' });
   }catch(err){
@@ -138,7 +158,7 @@ document.getElementById('enviarBtn').addEventListener('click', async function(){
 
 // ---------- Marcar aula assistida como concluída ----------
 document.getElementById('marcarConcluidoBtn').addEventListener('click', async function(){
-  await salvarSubmissao(teacherUid, activityId, studentUid, { status: 'concluido', submittedAt: new Date().toISOString() });
+  await salvar({ status: 'concluido', submittedAt: new Date().toISOString() });
   document.getElementById('leituraStatus').textContent = 'Concluída ✔';
   atualizarStatusLine({ status: 'concluido' });
 });

@@ -154,7 +154,7 @@ function linkAbrir(a){
   var link = document.createElement('a');
   link.className = 'btn sm';
   link.href = '../player.html?teacher='+encodeURIComponent(a.teacherUid)+'&activity='+encodeURIComponent(a.id)+
-    '&lesson='+encodeURIComponent(a.lessonPath)+'&titulo='+encodeURIComponent(a.titulo)+'&tipo='+encodeURIComponent(a.tipo);
+    '&class='+encodeURIComponent(a.classId || '')+'&lesson='+encodeURIComponent(a.lessonPath)+'&titulo='+encodeURIComponent(a.titulo)+'&tipo='+encodeURIComponent(a.tipo);
   link.textContent = 'Abrir';
   return link;
 }

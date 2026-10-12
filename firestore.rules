@@ -3,84 +3,105 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // --- Regras para consultas "collectionGroup" (buscam em TODAS as
-    // subcoleções "classes"/"students" de qualquer professor, não só de
-    // um caminho específico). O Firestore exige essa sintaxe recursiva
-    // à parte — a regra aninhada normal abaixo NÃO cobre esse tipo de
-    // consulta, mesmo liberando o mesmo caminho. ---
-
-    // Usada para o aluno localizar uma turma pelo código de convite,
-    // antes de estar matriculado nela.
-    match /{path=**}/classes/{classId} {
-      allow read: if request.auth != null;
+    // ---------- Funções auxiliares ----------
+    function logado() {
+      return request.auth != null;
+    }
+    function dono(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    // O aluno está APROVADO nessa turma? (lê a matrícula dele em teachers/{prof}/classes/{turma}/students/{uid})
+    function aprovado(teacherUid, classId, uid) {
+      let p = /databases/$(database)/documents/teachers/$(teacherUid)/classes/$(classId)/students/$(uid);
+      return exists(p) && get(p).data.status == 'approved';
+    }
+    // A atividade foi atribuída a essa turma?
+    function atividadeDaTurma(teacherUid, activityId, classId) {
+      return get(/databases/$(database)/documents/teachers/$(teacherUid)/activities/$(activityId)).data.classIds.hasAny([classId]);
+    }
+    // Campos que o ALUNO pode gravar na própria submissão (correção e feedback são só do professor).
+    function camposDoAluno() {
+      return ['status', 'score', 'total', 'submittedAt', 'firstOpenedAt', 'entendimento',
+              'resposta', 'linkArquivo', 'updatedAt', 'classId'];
+    }
+    function statusDoAluno(s) {
+      return s in ['em-andamento', 'concluido', 'em-analise'];
     }
 
-    // Usada para o aluno listar todas as turmas em que já está
-    // matriculado (de qualquer professor), a partir do seu próprio uid.
+    // --- Consultas "collectionGroup" (buscam em TODAS as subcoleções com esse nome, de qualquer
+    // professor). O Firestore exige esta sintaxe recursiva à parte: a regra aninhada normal
+    // abaixo NÃO cobre esse tipo de consulta. ---
+
+    // Aluno localiza uma turma pelo código de convite, antes de estar matriculado.
+    match /{path=**}/classes/{classId} {
+      allow read: if logado();
+    }
+
+    // Aluno lista as turmas em que já tem matrícula (a partir do próprio uid).
     match /{path=**}/students/{studentUid} {
-      allow read: if request.auth != null && request.auth.uid == studentUid;
+      allow read: if dono(studentUid);
     }
 
     // --- Perfil do usuário (professor ou aluno) ---
     match /users/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+      allow read: if dono(uid);
+      // O papel só pode ser escolhido no cadastro e não muda depois.
+      allow create: if dono(uid) && request.resource.data.role in ['aluno', 'professor'];
+      allow update: if dono(uid) && request.resource.data.role == resource.data.role;
     }
 
     match /teachers/{teacherUid} {
-      allow read, write: if request.auth != null && request.auth.uid == teacherUid;
+      allow read, write: if dono(teacherUid);
 
       // --- Turmas ---
       match /classes/{classId} {
-        // Leitura liberada a qualquer usuário autenticado: é assim que um
-        // aluno consegue localizar uma turma pelo código de convite antes
-        // de estar matriculado. Nada sensível fica aqui (só nome/código).
-        allow read: if request.auth != null;
-        allow write: if request.auth != null && request.auth.uid == teacherUid;
+        // Leitura liberada a qualquer usuário autenticado: é assim que o aluno acha a turma pelo
+        // código antes de se matricular. Só há nome e código aqui, nada sensível.
+        allow read: if logado();
+        allow write: if dono(teacherUid);
 
         // --- Matrículas (aprovação de alunos) ---
         match /students/{studentUid} {
-          allow read: if request.auth != null &&
-            (request.auth.uid == teacherUid || request.auth.uid == studentUid);
+          allow read: if dono(teacherUid) || dono(studentUid);
 
-          // O próprio aluno só pode CRIAR a própria solicitação, sempre como 'pending'.
-          allow create: if request.auth != null && request.auth.uid == studentUid &&
+          // O aluno só pode CRIAR a própria solicitação, sempre 'pending' e só com estes campos.
+          allow create: if dono(studentUid) &&
             request.resource.data.uid == studentUid &&
-            request.resource.data.status == 'pending';
+            request.resource.data.status == 'pending' &&
+            request.resource.data.keys().hasOnly(['uid', 'nome', 'email', 'status', 'requestedAt']);
 
-          // Só o professor aprova/rejeita (muda o status).
-          allow update, delete: if request.auth != null && request.auth.uid == teacherUid;
+          // Só o professor aprova/rejeita (muda o status) ou remove.
+          allow update, delete: if dono(teacherUid);
         }
       }
 
       // --- Atividades ---
       match /activities/{activityId} {
-        // Definição da atividade não é sensível (espelha uma aula pública);
-        // liberar leitura a qualquer autenticado simplifica bastante as regras.
-        allow read: if request.auth != null;
-        allow write: if request.auth != null && request.auth.uid == teacherUid;
+        // A definição da atividade espelha uma aula pública; leitura a qualquer autenticado.
+        allow read: if logado();
+        allow write: if dono(teacherUid);
 
         // --- Submissões / notas ---
         match /submissions/{studentUid} {
-          allow read: if request.auth != null &&
-            (request.auth.uid == teacherUid || request.auth.uid == studentUid);
+          allow read: if dono(teacherUid) || dono(studentUid);
 
-          // Professor pode escrever qualquer campo (correção).
-          allow write: if request.auth != null && request.auth.uid == teacherUid;
+          // O professor escreve qualquer campo (correção).
+          allow write: if dono(teacherUid);
 
-          // Aluno cria/atualiza só a própria submissão. A nota automática do quiz (score/total,
-          // status 'concluido') e a pesquisa de entendimento são gravadas pelo próprio aluno; ele nunca
-          // escreve campos de correção (feedback, gradedAt) nem status 'corrigido', e não altera uma
-          // submissão que o professor já corrigiu.
-          allow create: if request.auth != null && request.auth.uid == studentUid &&
-            request.resource.data.status != 'corrigido' &&
-            !('feedback' in request.resource.data) &&
-            !('gradedAt' in request.resource.data);
+          // O aluno só cria a PRÓPRIA submissão se estiver aprovado numa turma que recebeu esta
+          // atividade (o id da turma vai no campo classId), com status válido e só campos permitidos.
+          allow create: if dono(studentUid) &&
+            request.resource.data.keys().hasOnly(camposDoAluno()) &&
+            statusDoAluno(request.resource.data.status) &&
+            request.resource.data.classId is string &&
+            aprovado(teacherUid, request.resource.data.classId, studentUid) &&
+            atividadeDaTurma(teacherUid, activityId, request.resource.data.classId);
 
-          allow update: if request.auth != null && request.auth.uid == studentUid &&
+          // Atualização: só a própria, só campos permitidos, e nunca depois de corrigida pelo professor.
+          allow update: if dono(studentUid) &&
             resource.data.status != 'corrigido' &&
-            request.resource.data.status != 'corrigido' &&
-            !request.resource.data.diff(resource.data).affectedKeys()
-              .hasAny(['feedback', 'gradedAt']);
+            statusDoAluno(request.resource.data.status) &&
+            request.resource.data.diff(resource.data).affectedKeys().hasOnly(camposDoAluno());
         }
       }
     }

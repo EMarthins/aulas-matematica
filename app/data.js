@@ -143,6 +143,12 @@ export async function listarHistoricoDoAluno(studentUid){
   return historico;
 }
 
+// Definição de uma atividade (o aluno usa para descobrir a que turma ela pertence).
+export async function buscarAtividade(teacherUid, activityId){
+  var snap = await getDoc(doc(db, "teachers", teacherUid, "activities", activityId));
+  return snap.exists() ? Object.assign({ id: snap.id }, snap.data()) : null;
+}
+
 // ---------- Submissões ----------
 
 export async function buscarSubmissao(teacherUid, activityId, studentUid){
