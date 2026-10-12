@@ -174,6 +174,50 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Classifique os números', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Números reais na reta: trilha de desafios', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Problemas com Função Afim',
+                accent: 'primary',
+                icon: 'briefcase',
+                itens: [
+                  { tipo:'Aula 36', titulo:'Modelar e comparar', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/aula-1-modelando-e-comparando.html' },
+                  { tipo:'Aula 37', titulo:'Problemas com gráficos', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/aula-2-problemas-com-graficos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Problemas com Função Afim', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Problemas com função afim no estilo ENEM', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de problemas', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Problemas com função afim: trilha de desafios', arquivo:'aulas/1-ano/1-tri/problemas-com-funcao-afim/atividade-pratica.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Função Quadrática: Definição',
+                accent: 'primary',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aula 38', titulo:'Definição e coeficientes', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/aula-1-definicao-e-coeficientes.html' },
+                  { tipo:'Aula 39', titulo:'Problemas do 2º grau', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/aula-2-problemas-do-2-grau.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Quadrática: Definição', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Função quadrática no estilo ENEM', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique as funções', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Função quadrática: trilha de desafios', arquivo:'aulas/1-ano/2-tri/funcao-quadratica-definicao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Gráfico da Função Quadrática',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aula 40', titulo:'A parábola', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/aula-1-a-parabola.html' },
+                  { tipo:'Aula 41', titulo:'A parábola em situações', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/aula-2-parabola-em-situacoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Gráfico da Função Quadrática', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'A parábola no estilo ENEM', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória: lei e parábola', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'A parábola: trilha de desafios', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/atividade-pratica.html' }
+                ]
               }
             ]
           }
