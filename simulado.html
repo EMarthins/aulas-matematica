@@ -24,32 +24,61 @@
 
 <main class="wrap" style="padding:28px 20px 70px;">
   <h1 class="disp" style="margin:0 0 6px;font-size:clamp(1.6rem,3.6vw,2.3rem);">Simulados</h1>
-  <p class="hint" style="margin:0 0 18px;">Questões das aulas e das atividades, misturadas por matéria, ano e tema. Os erros vão automaticamente para a <a href="revisao.html">Revisão</a>.</p>
+  <p class="hint" style="margin:0 0 18px;">Escolha os temas, ajuste as opções e comece. Seu progresso e os erros ficam guardados neste aparelho.</p>
 
-  <section id="cfg" class="card">
-    <div class="sec-label" style="margin-top:0">Matéria e ano</div>
-    <div class="chips" id="fGrupos"></div>
-    <div class="sec-label">Tipo de questão</div>
-    <div class="chips" id="fTipo">
-      <button class="chip on" data-v="todas" type="button">Todas</button>
-      <button class="chip" data-v="enem" type="button">Estilo ENEM</button>
-      <button class="chip" data-v="aula" type="button">Das aulas (quiz)</button>
+  <section id="cfg">
+    <div class="sim-atalhos" id="atalhos" role="group" aria-label="Atalhos">
+      <span class="sim-atalhos-t">Atalhos</span>
+      <button type="button" class="atalho" data-a="rapido"><b>Treino rápido</b><small>10 questões · correção na hora</small></button>
+      <button type="button" class="atalho" data-a="prova"><b>Prova completa</b><small>20 questões · correção no fim · 3 min cada</small></button>
+      <button type="button" class="atalho" data-a="enem"><b>Estilo ENEM</b><small>15 questões · só no estilo ENEM</small></button>
     </div>
-    <div class="sec-label">Quantidade</div>
-    <div class="chips" id="fN"><button class="chip" data-v="5" type="button">5</button><button class="chip on" data-v="10" type="button">10</button><button class="chip" data-v="15" type="button">15</button><button class="chip" data-v="20" type="button">20</button><button class="chip" data-v="30" type="button">30</button></div>
-    <div class="sec-label">Modo e tempo</div>
-    <div class="chips" id="fModo">
-      <button class="chip on" data-v="prova" type="button">Prova (correção só no fim)</button>
-      <button class="chip" data-v="treino" type="button">Treino (correção na hora)</button>
-    </div>
-    <div class="chips" id="fTempo">
-      <button class="chip on" data-v="0" type="button">Sem limite de tempo</button>
-      <button class="chip" data-v="2" type="button">2 min por questão</button>
-      <button class="chip" data-v="3" type="button">3 min por questão</button>
-    </div>
-    <div class="row" style="margin-top:6px;gap:14px;align-items:center;">
-      <button class="btn" id="iniciar" type="button">Começar simulado</button>
-      <span class="hint" id="disp"></span>
+
+    <div class="sim-grid">
+      <div class="sim-col">
+        <section class="card sim-step" aria-labelledby="h1s">
+          <h2 id="h1s"><span class="n">1</span>O que você quer treinar?</h2>
+          <p class="hint">Marque os temas. Dá para escolher uma matéria inteira ou só alguns anos.</p>
+          <div class="subj-grid" id="fGrupos"></div>
+        </section>
+
+        <section class="card sim-step" aria-labelledby="h2s">
+          <h2 id="h2s"><span class="n">2</span>Como será o simulado?</h2>
+          <div class="opt-row"><div class="opt-t">Tipo de questão</div>
+            <div class="seg" id="fTipo" role="group" aria-label="Tipo de questão">
+              <button class="on" data-v="todas" type="button">Todas</button>
+              <button data-v="enem" type="button">Estilo ENEM</button>
+              <button data-v="aula" type="button">Das aulas</button>
+            </div>
+          </div>
+          <div class="opt-row"><div class="opt-t">Quantidade</div>
+            <div class="seg" id="fN" role="group" aria-label="Quantidade de questões">
+              <button data-v="5" type="button">5</button><button class="on" data-v="10" type="button">10</button><button data-v="15" type="button">15</button><button data-v="20" type="button">20</button><button data-v="30" type="button">30</button>
+            </div>
+          </div>
+          <div class="opt-row"><div class="opt-t">Correção</div>
+            <div class="modo" id="fModo" role="group" aria-label="Quando mostrar a correção">
+              <button class="on" data-v="prova" type="button"><b>Só no final</b><small>Como numa prova: você vê o gabarito ao terminar.</small></button>
+              <button data-v="treino" type="button"><b>Na hora</b><small>Treino: você vê se acertou depois de cada questão.</small></button>
+            </div>
+          </div>
+          <div class="opt-row"><div class="opt-t">Tempo</div>
+            <div class="seg" id="fTempo" role="group" aria-label="Tempo por questão">
+              <button class="on" data-v="0" type="button">Sem limite</button>
+              <button data-v="2" type="button">2 min por questão</button>
+              <button data-v="3" type="button">3 min por questão</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="card sim-resumo" aria-live="polite">
+        <h3>Seu simulado</h3>
+        <dl id="resumo"></dl>
+        <p class="hint" id="disp"></p>
+        <button class="btn" id="iniciar" type="button">Começar simulado</button>
+        <p class="hint sim-nota">Os erros vão para a <a href="revisao.html">Revisão</a> automaticamente.</p>
+      </aside>
     </div>
   </section>
 
@@ -79,23 +108,87 @@ function lsSet(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
 function embaralha(a){ a = a.slice(); for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 function tipoOk(q){ return sel.tipo === 'todas' || (sel.tipo === 'enem' ? q.tp === 'enem' : q.tp !== 'enem'); }
 function pool(){ return BANCO.filter(function(q){ return sel.grupos[q.mn + '|' + q.a] && tipoOk(q); }); }
+function plural(n, s, p){ return n + ' ' + (n === 1 ? s : p); }
 
-fetch('app/banco.json').then(function(r){ return r.json(); }).then(function(b){
-  BANCO = b.questoes;
-  var cont = {}; BANCO.forEach(function(q){ var g = q.mn + '|' + q.a; cont[g] = (cont[g] || 0) + 1; });
-  var box = $('fGrupos');
-  Object.keys(cont).sort().forEach(function(g, i){
-    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'chip on'; sel.grupos[g] = true;
-    btn.innerHTML = g.replace('|', ' · ') + '<small>' + cont[g] + '</small>';
-    btn.addEventListener('click', function(){ sel.grupos[g] = !sel.grupos[g]; btn.classList.toggle('on', sel.grupos[g]); atualiza(); });
-    box.appendChild(btn);
+// ---- 1. temas: um cartão por matéria, com os anos/partes dentro ----
+var MATS = [], ACENTOS = ['primary', 'growth', 'decay', 'success'];
+function montaTemas(){
+  var por = {}; BANCO.forEach(function(q){ var m = por[q.mn] = por[q.mn] || { nome: q.mn, anos: {} }; m.anos[q.a] = (m.anos[q.a] || 0) + 1; });
+  MATS = Object.keys(por).map(function(n){ var m = por[n]; return { nome: n, grupos: Object.keys(m.anos).sort().map(function(a){ return { key: n + '|' + a, rotulo: a, n: m.anos[a] }; }) }; });
+  var box = $('fGrupos'); box.innerHTML = '';
+  MATS.forEach(function(m, i){
+    var card = document.createElement('div'); card.className = 'subj'; card.style.setProperty('--acc', 'var(--' + ACENTOS[i % 4] + ')'); card.style.setProperty('--acc-soft', 'var(--' + ACENTOS[i % 4] + '-soft)');
+    var total = m.grupos.reduce(function(s, g){ return s + g.n; }, 0);
+    var head = document.createElement('label'); head.className = 'subj-h';
+    head.innerHTML = '<input type="checkbox" data-m="' + i + '"><span class="subj-nome">' + m.nome + '</span><small>' + plural(total, 'questão', 'questões') + '</small>';
+    card.appendChild(head);
+    var ul = document.createElement('div'); ul.className = 'subj-l';
+    m.grupos.forEach(function(g, k){
+      var l = document.createElement('label'); l.className = 'subj-i';
+      l.innerHTML = '<input type="checkbox" data-g="' + i + ':' + k + '"><span>' + g.rotulo + '</span><small>' + g.n + '</small>';
+      ul.appendChild(l);
+    });
+    card.appendChild(ul); box.appendChild(card);
+  });
+  box.addEventListener('change', function(e){
+    var t = e.target; if(t.dataset.m != null){ MATS[+t.dataset.m].grupos.forEach(function(g){ sel.grupos[g.key] = t.checked; }); }
+    else if(t.dataset.g){ var p = t.dataset.g.split(':'); sel.grupos[MATS[+p[0]].grupos[+p[1]].key] = t.checked; }
+    pinta(); salva();
+  });
+}
+
+// ---- controles (segmentados) ----
+function ligaSeg(id, chave, num){ [].forEach.call($(id).querySelectorAll('button'), function(b){ b.addEventListener('click', function(){ sel[chave] = num ? +b.dataset.v : b.dataset.v; pinta(); salva(); }); }); }
+ligaSeg('fTipo', 'tipo'); ligaSeg('fN', 'n', true); ligaSeg('fModo', 'modo'); ligaSeg('fTempo', 'tempo', true);
+
+var ATALHOS = {
+  rapido: { tipo: 'todas', n: 10, modo: 'treino', tempo: 0 },
+  prova: { tipo: 'todas', n: 20, modo: 'prova', tempo: 3 },
+  enem: { tipo: 'enem', n: 15, modo: 'prova', tempo: 0 }
+};
+[].forEach.call($('atalhos').querySelectorAll('.atalho'), function(b){ b.addEventListener('click', function(){ Object.assign(sel, ATALHOS[b.dataset.a]); sel.atalho = b.dataset.a; pinta(); salva(); }); });
+
+function salva(){ lsSet('sim:cfg', JSON.stringify({ g: Object.keys(sel.grupos).filter(function(k){ return sel.grupos[k]; }), tipo: sel.tipo, n: sel.n, modo: sel.modo, tempo: sel.tempo })); }
+
+// ---- desenha o estado atual ----
+function pinta(){
+  function seg(id, valor){ [].forEach.call($(id).querySelectorAll('button'), function(b){ var on = b.dataset.v === String(valor); b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); }); }
+  seg('fTipo', sel.tipo); seg('fN', sel.n); seg('fModo', sel.modo); seg('fTempo', sel.tempo);
+  [].forEach.call($('atalhos').querySelectorAll('.atalho'), function(b){ var a = ATALHOS[b.dataset.a]; b.classList.toggle('on', a.tipo === sel.tipo && a.n === sel.n && a.modo === sel.modo && a.tempo === sel.tempo); });
+  MATS.forEach(function(m, i){
+    var marcados = m.grupos.filter(function(g){ return sel.grupos[g.key]; }).length, h = $('fGrupos').querySelector('[data-m="' + i + '"]');
+    h.checked = marcados === m.grupos.length; h.indeterminate = marcados > 0 && marcados < m.grupos.length;
+    m.grupos.forEach(function(g, k){ $('fGrupos').querySelector('[data-g="' + i + ':' + k + '"]').checked = !!sel.grupos[g.key]; });
+    h.closest('.subj').classList.toggle('on', marcados > 0);
   });
   atualiza();
-}).catch(function(){ $('disp').textContent = 'Não foi possível carregar o banco de questões (abra o site pelo endereço publicado, não pelo arquivo).'; });
+}
+function atualiza(){
+  var n = pool().length, usa = Math.min(n, sel.n), temas = Object.keys(sel.grupos).filter(function(k){ return sel.grupos[k]; }).length;
+  var tempo = sel.tempo ? usa * sel.tempo + ' min no total (' + sel.tempo + ' min por questão)' : 'sem limite';
+  $('resumo').innerHTML =
+    '<div><dt>Questões</dt><dd>' + (n ? usa : '—') + '</dd></div>' +
+    '<div><dt>Temas</dt><dd>' + (temas ? plural(temas, 'tema', 'temas') : 'nenhum') + '</dd></div>' +
+    '<div><dt>Tipo</dt><dd>' + { todas: 'todas', enem: 'estilo ENEM', aula: 'das aulas' }[sel.tipo] + '</dd></div>' +
+    '<div><dt>Correção</dt><dd>' + (sel.modo === 'prova' ? 'só no final' : 'na hora') + '</dd></div>' +
+    '<div><dt>Tempo</dt><dd>' + tempo + '</dd></div>';
+  $('disp').textContent = !temas ? 'Marque ao menos um tema para começar.' : !n ? 'Não há questões desse tipo nos temas escolhidos.' : n < sel.n ? 'Só há ' + plural(n, 'questão disponível', 'questões disponíveis') + ' — o simulado terá ' + n + '.' : plural(n, 'questão disponível', 'questões disponíveis') + ' nesses temas.';
+  $('iniciar').disabled = n < 1;
+}
 
-function grupoChips(id, chave, num){ [].forEach.call($(id).querySelectorAll('.chip'), function(b){ b.addEventListener('click', function(){ [].forEach.call($(id).querySelectorAll('.chip'), function(x){ x.classList.toggle('on', x === b); }); sel[chave] = num ? +b.dataset.v : b.dataset.v; atualiza(); }); }); }
-grupoChips('fTipo', 'tipo'); grupoChips('fN', 'n', true); grupoChips('fModo', 'modo'); grupoChips('fTempo', 'tempo', true);
-function atualiza(){ var n = pool().length; $('disp').textContent = n + ' questões disponíveis com esses filtros' + (n < sel.n ? ' — o simulado terá ' + n : ''); $('iniciar').disabled = n < 1; }
+fetch('app/banco.json').then(function(r){ return r.json(); }).then(function(b){
+  BANCO = b.questoes; montaTemas();
+  var salvo = null; try{ salvo = JSON.parse(lsGet('sim:cfg') || 'null'); }catch(e){}
+  var existentes = {}; MATS.forEach(function(m){ m.grupos.forEach(function(g){ existentes[g.key] = 1; }); });
+  var marcados = salvo && salvo.g ? salvo.g.filter(function(k){ return existentes[k]; }) : [];
+  if(!marcados.length){ // sem escolha guardada: começa pela matéria que o aluno usou por último
+    var pref = lsGet('materia-pref'), alvo = MATS.filter(function(m){ return pref && m.nome.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z]+/g, '-').indexOf(pref.split('-')[0]) === 0; })[0] || MATS[0];
+    marcados = alvo.grupos.map(function(g){ return g.key; });
+  }
+  marcados.forEach(function(k){ sel.grupos[k] = true; });
+  if(salvo){ ['tipo', 'n', 'modo', 'tempo'].forEach(function(c){ if(salvo[c] != null) sel[c] = salvo[c]; }); }
+  pinta();
+}).catch(function(){ $('disp').textContent = 'Não foi possível carregar o banco de questões (abra o site pelo endereço publicado, não pelo arquivo).'; });
 
 $('iniciar').addEventListener('click', function(){
   var qs = embaralha(pool()).slice(0, sel.n).map(function(q){ return Object.assign({}, q, { o: embaralha(q.o) }); });
