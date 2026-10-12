@@ -148,3 +148,6 @@ html.sb-on .topbar, html.sb-on .theme-toggle{ display:none !important; }
 /* ícones soltos (busca, recolher): mesmo traço dos demais */
 .sb-search > svg, .sb-collapse svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 @media (min-width:901px){ html.sb-collapsed .sb-subj.open > .sb-years{ display:none; } }
+
+/* na abertura da home a barra existe, mas fica escondida */
+html:not(.sb-on) .sb, html:not(.sb-on) .sb-mob, html:not(.sb-on) .sb-scrim{ display:none !important; }

@@ -11,7 +11,7 @@
 <link href="assets/fonts.css" rel="stylesheet">
 <link rel="stylesheet" href="app/home.css">
 <link rel="stylesheet" href="app/sidebar.css">
-<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+<script>try{var h=location.hash;if((/^#[a-z]/.test(h)&&h!=='#conquistas')||/[?&]q=/.test(location.search))document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 
@@ -21,17 +21,37 @@
 
 <a class="skip" href="#painel">Ir para o conteúdo</a>
 
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="Início"><span class="dot"></span><span>Prof. Eduardo</span></a>
+    <label class="search" aria-label="Buscar aulas, guias e atividades">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Buscar em todas as matérias…" autocomplete="off">
+      <kbd aria-hidden="true">/</kbd>
+    </label>
+    <a href="login.html" class="login-link">Entrar <span class="hide-sm">· aluno / professor</span></a>
+  </div>
+</header>
+
 <section class="hero">
   <div class="wrap">
     <h1 class="title" id="saudacao">O que vamos estudar hoje?</h1>
-    <p class="lede">Escolha a matéria no menu, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
+    <p class="lede">Escolha a matéria, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
     <div class="continuar" id="continuar"></div>
   </div>
 </section>
 
 <main class="wrap" id="main">
+  <nav class="subjects" id="subjects" role="tablist" aria-label="Matérias"></nav>
+
   <section class="panel" id="painel" tabindex="-1" aria-live="polite"></section>
 
+  <section class="tools" aria-label="Ferramentas de estudo">
+    <a class="tool" href="simulado.html"><span class="ic" aria-hidden="true">📝</span><span><b>Simulados</b><small>Treine com questões das aulas</small></span></a>
+    <a class="tool" href="revisao.html"><span class="ic" aria-hidden="true">🔁</span><span><b>Revisão <i class="n" id="revN" hidden></i></b><small>Repetição espaçada dos seus erros</small></span></a>
+    <button class="tool" type="button" id="btnConq"><span class="ic" aria-hidden="true">🏆</span><span><b>Conquistas</b><small>Seu progresso e sequência de dias</small></span></button>
+    <button class="tool" type="button" id="btnInstalar" hidden><span class="ic" aria-hidden="true">⬇</span><span><b>Instalar app</b><small>Use offline, como aplicativo</small></span></button>
+  </section>
 </main>
 
 <!--KEEPHTML-->
@@ -63,9 +83,11 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   function ordemAno(a){ var n = /(\d+)/.exec(a.ano); return n ? (/Parte/.test(a.ano) || +n[1] >= 6 ? +n[1] : +n[1] + 10) : 99; }
   MATERIAS.forEach(function(m){ m.CATALOG.sort(function(a, b){ return ordemAno(a) - ordemAno(b); }); });
 
-  var estado = { q: '', tipo: 'todos', idx: 0, ano: 0 };
+  var estado = { q: '', tipo: 'todos', idx: 0, ano: 0, modo: 'inicio' }; // 'inicio' = abertura do site · 'materia' = matéria aberta (barra lateral)
   var painel = document.getElementById('painel');
-  var qEl = document.getElementById('sb-q') || document.createElement('input'); // a busca fica na barra lateral
+  var subjectsRoot = document.getElementById('subjects');
+  var qTopo = document.getElementById('q'), qLado = document.getElementById('sb-q') || document.createElement('input'); // busca do cabeçalho (abertura) e da barra lateral (matéria aberta)
+  var qEl = qTopo;
 
   // ---- contagens ----
   function contaUnidade(u){
@@ -106,10 +128,11 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var a = parseInt(h[1], 10);
     return { idx: i, ano: isNaN(a) ? null : Math.max(0, Math.min(MATERIAS[i].CATALOG.length - 1, a)) };
   }
-  function gravarHash(){ try{ history.replaceState(null, '', location.pathname + location.search + '#' + MATERIAS[estado.idx].id + '/' + estado.ano); }catch(e){} window.dispatchEvent(new Event('sb:sync')); }
+  function aplicaModo(){ document.documentElement.classList.toggle('sb-on', estado.modo === 'materia'); window.dispatchEvent(new Event('sb:sync')); }
+  function gravarHash(){ if(estado.modo === 'materia'){ try{ history.replaceState(null, '', location.pathname + location.search + '#' + MATERIAS[estado.idx].id + '/' + estado.ano); }catch(e){} } aplicaModo(); }
   function anoSalvo(i){ var v = jl('home:ano:' + MATERIAS[i].id, null); return v == null ? null : Math.max(0, Math.min(MATERIAS[i].CATALOG.length - 1, v)); }
   function escolheMateria(i, ano){
-    estado.idx = i;
+    estado.idx = i; estado.modo = 'materia';
     estado.ano = ano != null ? ano : (anoSalvo(i) != null ? anoSalvo(i) : anoInicial(i));
     try{ localStorage.setItem('materia-pref', MATERIAS[i].id); }catch(e){}
     gravarHash(); renderTudo();
@@ -120,6 +143,22 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var m = MATERIAS[i];
     for(var a = 0; a < m.CATALOG.length; a++){ var c = contaAno(m.CATALOG[a]); if(c.vistos < c.total) return a; }
     return 0;
+  }
+
+  // ---- barra de matérias (abas grandes) ----
+  function renderMaterias(){
+    subjectsRoot.innerHTML = '';
+    MATERIAS.forEach(function(m, i){
+      var c = contaMateria(m), on = i === estado.idx;
+      var b = el('button', 'subject' + (on ? ' active' : ''));
+      b.type = 'button'; b.id = 'tab-m' + i; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+      b.setAttribute('aria-controls', 'painel');
+      b.style.setProperty('--accent', 'var(--' + ACENTOS[i % ACENTOS.length] + ')');
+      b.style.setProperty('--accent-soft', 'var(--' + ACENTOS[i % ACENTOS.length] + '-soft)');
+      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + (c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') : 'Em breve') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
+      b.addEventListener('click', function(){ if(estado.q){ limpaBusca(); } escolheMateria(i); });
+      subjectsRoot.appendChild(b);
+    });
   }
 
   // ---- filtros ----
@@ -188,8 +227,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     painel.style.setProperty('--accent', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + ')');
     painel.style.setProperty('--accent-soft', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + '-soft)');
 
-    var topo = el('div', 'p-head'), cMat = contaMateria(m);
-    topo.appendChild(el('h2', 'p-titulo', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span>' + (cMat.total ? '<small>' + cMat.vistos + ' de ' + cMat.total + ' vistos</small>' : '<small>em breve</small>')));
+    var inicio = estado.modo === 'inicio', topo = el('div', 'p-head'), cMat = contaMateria(m);
+    if(!inicio) topo.appendChild(el('h2', 'p-titulo', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span>' + (cMat.total ? '<small>' + cMat.vistos + ' de ' + cMat.total + ' vistos</small>' : '<small>em breve</small>')));
     var destaque = null;
     if(m.destaque){ destaque = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); destaque.href = m.destaque.url; }
 
@@ -202,7 +241,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       b.addEventListener('click', function(){ escolheAno(i); });
       tabs.appendChild(b);
     });
-    var tabsEl = tabs; teclasAbas(tabs);
+    var tabsEl = tabs; teclasAbas(tabs); teclasAbas(subjectsRoot);
 
     // filtros: um botão de três pontinhos com menu
     var f = el('div', 'filtros');
@@ -233,12 +272,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       else fecha();
     });
     mais.appendChild(bt); mais.appendChild(menu); f.appendChild(mais);
-    topo.appendChild(f);
-    painel.appendChild(topo);
-    if(destaque) painel.appendChild(destaque);
-
-    // abas de ano / parte (logo abaixo do título)
-    painel.appendChild(tabsEl);
+    if(inicio){ if(destaque) painel.appendChild(destaque); painel.appendChild(tabsEl); painel.appendChild(f); }
+    else { topo.appendChild(f); painel.appendChild(topo); if(destaque) painel.appendChild(destaque); painel.appendChild(tabsEl); }
 
     // módulos
     var lista = el('div', 'mods'), n = 0, exibidos = 0, sug = sugerida(estado.idx);
@@ -280,10 +315,12 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     if(!total){ var v = el('div', 'vazio', 'Nada encontrado para “' + esc(estado.q.trim()) + '”. Tente outra palavra (ex.: “juros”, “função”, “triângulo”).'); painel.appendChild(v); }
     else painel.appendChild(lista);
   }
-  function limpaBusca(){ estado.q = ''; qEl.value = ''; renderTudo(); }
+  function limpaBusca(){ estado.q = ''; qTopo.value = ''; qLado.value = ''; renderTudo(); }
 
   function renderTudo(){
     var buscando = !!norm(estado.q.trim());
+    subjectsRoot.classList.toggle('dim', buscando);
+    renderMaterias();
     if(buscando) renderBusca(); else renderPainel();
     renderContinuar(); marcadores();
   }
@@ -303,12 +340,18 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
   // busca
   var qTimer = null;
-  qEl.addEventListener('input', function(){ clearTimeout(qTimer); qTimer = setTimeout(function(){ estado.q = qEl.value; renderTudo(); }, 140); });
+  [qTopo, qLado].forEach(function(c){ c.addEventListener('input', function(){ qEl = c; (c === qTopo ? qLado : qTopo).value = c.value; clearTimeout(qTimer); qTimer = setTimeout(function(){ estado.q = c.value; renderTudo(); }, 140); }); });
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && document.activeElement === qEl){ limpaBusca(); qEl.blur(); }
+    if(e.key === '/' && estado.modo === 'inicio' && document.activeElement !== qTopo && !/INPUT|TEXTAREA|SELECT/.test((document.activeElement || {}).tagName || '')){ e.preventDefault(); qTopo.focus(); }
+    if(e.key === 'Escape' && (document.activeElement === qTopo || document.activeElement === qLado)){ limpaBusca(); document.activeElement.blur(); }
   });
   window.addEventListener('pageshow', function(e){ if(e.persisted) renderTudo(); });
-  window.addEventListener('hashchange', function(){ var h = lerHash(); if(h && (h.idx !== estado.idx || (h.ano != null && h.ano !== estado.ano))){ estado.idx = h.idx; estado.ano = h.ano != null ? h.ano : anoInicial(h.idx); renderTudo(); } });
+  window.addEventListener('hashchange', function(){
+    var h = lerHash();
+    if(h){ var mudou = estado.modo !== 'materia' || h.idx !== estado.idx || (h.ano != null && h.ano !== estado.ano); estado.modo = 'materia'; estado.idx = h.idx; estado.ano = h.ano != null ? h.ano : anoInicial(h.idx); if(mudou) renderTudo(); else aplicaModo(); }
+    else if(location.hash === '#conquistas'){ abreConq(); }
+    else if(estado.modo !== 'inicio'){ estado.modo = 'inicio'; renderTudo(); aplicaModo(); }
+  });
 
   // saudação conforme o horário
   var hr = new Date().getHours();
@@ -321,9 +364,10 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   estado.idx = idx0;
   estado.ano = ini && ini.ano != null ? ini.ano : (anoSalvo(idx0) != null ? anoSalvo(idx0) : anoInicial(idx0));
   var pq = new URLSearchParams(location.search).get('q');
-  if(pq){ qEl.value = pq; estado.q = pq; }
+  estado.modo = (ini || pq) ? 'materia' : 'inicio';
+  if(pq){ qTopo.value = qLado.value = pq; estado.q = pq; qEl = qLado; }
   gravarHash(); renderTudo();
-  if(location.hash === '#conquistas'){ gravarHash(); abreConq(); }
+  if(location.hash === '#conquistas') abreConq();
 
   var d = new Date(LAST_UPDATED + 'T00:00:00');
   document.getElementById('updated').textContent = 'Atualizado em ' + d.toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' });

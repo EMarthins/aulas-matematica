@@ -140,7 +140,7 @@ function montar() {
 
 // ---------- comportamento ----------
 function iniciar() {
-  root.classList.add('sb-on');
+  if (!NA_HOME) root.classList.add('sb-on'); // na home quem liga é a própria página (só com matéria aberta)
   const { aside, mob, scrim } = montar();
   const $ = (s, r) => (r || aside).querySelector(s);
   const todos = (s, r) => [].slice.call((r || aside).querySelectorAll(s));
@@ -214,6 +214,7 @@ function iniciar() {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const t = (document.activeElement || {}).tagName || '';
     if (/INPUT|TEXTAREA|SELECT/.test(t) || (document.activeElement && document.activeElement.isContentEditable)) return;
+    if (!root.classList.contains('sb-on')) return;
     if (e.key === '/') { e.preventDefault(); if (celular()) abre(true); else if (root.classList.contains('sb-collapsed')) colapsa(false); setTimeout(() => q.focus(), 60); }
     else if (e.key === '[' && !celular()) { colapsa(!root.classList.contains('sb-collapsed')); }
     else if (e.key === 'Escape' && root.classList.contains('sb-open')) abre(false);
