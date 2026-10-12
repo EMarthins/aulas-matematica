@@ -238,6 +238,7 @@ sup, sub{ font-size:.8em !important; line-height:0; }
 
 <script>
 (function(){
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   var PAIRS = [["<span class=\"tex\">|<i>A</i> ∪ <i>B</i>|</span>","<span class=\"tex\">|<i>A</i>| + |<i>B</i>| − |<i>A</i> ∩ <i>B</i>|</span>"],["Subconjuntos de um conjunto de <span class=\"tex\"><i>n</i></span> elementos","<span class=\"tex\">2<sup><i>n</i></sup></span>"],["Número de termos de uma lista","<span class=\"tex\">(<i>b</i> − <i>a</i>)/<i>r</i> + 1</span>"],["Inteiros em <span class=\"tex\">[<i>a</i>, <i>b</i>]</span>","<span class=\"tex\"><i>b</i> − <i>a</i> + 1</span>"],["Inteiros em <span class=\"tex\">(<i>a</i>, <i>b</i>)</span>","<span class=\"tex\"><i>b</i> − <i>a</i> − 1</span>"],["Múltiplos de 10 e 15 ao mesmo tempo","Múltiplos de 30"],["<span class=\"tex\"><i>A</i> ∖ <i>B</i></span>","Elementos de <span class=\"tex\"><i>A</i></span> que não estão em <span class=\"tex\"><i>B</i></span>"],["Nenhum dos dois","Total − <span class=\"tex\">|<i>A</i> ∪ <i>B</i>|</span>"]], gm = document.getElementById('gm'), mv = 0, er = 0, found = 0, first = null, lock = false;
   function build(){

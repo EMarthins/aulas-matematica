@@ -238,6 +238,7 @@ sup, sub{ font-size:.8em !important; line-height:0; }
 
 <script>
 (function(){
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   var PAIRS = [["LAL","Dois lados e o ângulo entre eles"],["ALA","Dois ângulos e o lado entre eles"],["LLL","Os três lados"],["AA","Caso de semelhança: dois ângulos iguais"],["Baricentro","Divide a mediana em <span class=\"tex\">2 : 1</span>"],["Tales","Paralela a um lado: segmentos proporcionais"],["Base média","Metade do lado e paralela a ele"],["Razão <span class=\"tex\"><i>k</i></span> de semelhança","Áreas na razão <span class=\"tex\"><i>k</i><sup>2</sup></span>"]], gm = document.getElementById('gm'), mv = 0, er = 0, found = 0, first = null, lock = false;
   function build(){

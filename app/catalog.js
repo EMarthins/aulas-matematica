@@ -14,6 +14,69 @@ export const MATERIAS = [
     icon: 'sigma',
     lede: 'Material interativo de Matemática para o 9º ano do Ensino Fundamental e para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
     CATALOG: [
+      // >>> mat-1ano
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Notação Científica',
+                accent: 'primary',
+                icon: 'numbers',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Escrever e converter números', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/aula-1-escrever-numeros.html' },
+                  { tipo:'Aulas 2–3', titulo:'Operações e comparações', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/aula-2-operacoes-e-comparacoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Notação Científica', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Notação científica no estilo ENEM', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Está em notação científica?', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Notação científica: trilha de desafios', arquivo:'aulas/1-ano/1-tri/notacao-cientifica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Sistema Internacional e Unidades',
+                accent: 'growth',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aulas 4–5', titulo:'SI e grandezas derivadas', arquivo:'aulas/1-ano/1-tri/sistema-internacional/aula-1-si-e-grandezas-derivadas.html' },
+                  { tipo:'Aulas 6–7', titulo:'Múltiplos e submúltiplos', arquivo:'aulas/1-ano/1-tri/sistema-internacional/aula-2-multiplos-e-submultiplos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Sistema Internacional e Unidades', arquivo:'aulas/1-ano/1-tri/sistema-internacional/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Unidades de medida no estilo ENEM', arquivo:'aulas/1-ano/1-tri/sistema-internacional/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual é o fator de conversão?', arquivo:'aulas/1-ano/1-tri/sistema-internacional/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Unidades de medida: trilha de desafios', arquivo:'aulas/1-ano/1-tri/sistema-internacional/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Algarismos Significativos',
+                accent: 'decay',
+                icon: 'numbers',
+                itens: [
+                  { tipo:'Aulas 8–9', titulo:'Algarismos significativos e duvidosos', arquivo:'aulas/1-ano/1-tri/algarismos-significativos/aula-algarismos-significativos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Algarismos Significativos', arquivo:'aulas/1-ano/1-tri/algarismos-significativos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Algarismos significativos no estilo ENEM', arquivo:'aulas/1-ano/1-tri/algarismos-significativos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive da precisão', arquivo:'aulas/1-ano/1-tri/algarismos-significativos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Algarismos significativos: trilha de desafios', arquivo:'aulas/1-ano/1-tri/algarismos-significativos/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Razões entre Grandezas',
+                accent: 'success',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 10–11', titulo:'Energia, densidade e IMC', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/aula-1-energia-densidade-imc.html' },
+                  { tipo:'Aulas 12–13', titulo:'Densidade demográfica e velocidade média', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/aula-2-densidade-demografica-e-velocidade.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Razões entre Grandezas', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Razões entre grandezas no estilo ENEM', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória das razões e unidades', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Razões entre grandezas: trilha de desafios', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/atividade-pratica.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // <<< mat-1ano
       {
         ano: '3° Ano',
         trimestres: [

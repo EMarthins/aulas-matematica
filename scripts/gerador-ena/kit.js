@@ -138,6 +138,7 @@ function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(M
 // ------------------------------------------------------------------
 // 5) Modelos de atividade criativa  (freePage: {pill, body, script})
 // ------------------------------------------------------------------
+const SHUF = 'function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }\n';
 const CRIA_CSS = `<style>
   .bk{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
   .it{ border:1.5px solid var(--line-strong); border-radius:14px; padding:12px 14px; background:var(--surface); }
@@ -205,7 +206,7 @@ function cOrdenar({ problemas, intro, final }) { // problemas: [{titulo, enuncia
   return {
     pill: `Problemas: <span id="scoreVal">0</span>/${problemas.length}`,
     body: CRIA_CSS + `<div class="callout"><h4>Como jogar</h4><p>${intro}</p></div><div id="box"></div>${FIM('fin', '')}`,
-    script: String.raw`
+    script: SHUF + String.raw`
   var D = ${data}, box = document.getElementById('box'), feitos = 0, perfeitos = 0;
   D.forEach(function(pr, k){
     var card = document.createElement('div'); card.className = 'card'; card.style.marginTop = '14px';
@@ -288,7 +289,7 @@ function cMemoria({ pares, intro, final }) {
   return {
     pill: `Pares: <span id="scoreVal">0</span>/${pares.length}`,
     body: CRIA_CSS + `<div class="callout"><h4>Como jogar</h4><p>${intro}</p></div><div class="gm" id="gm"></div><div class="row2"><span class="badge">Jogadas: <b id="mv">0</b></span><span class="badge">Erros: <b id="er">0</b></span><button class="btn ghost" id="rs" type="button">Embaralhar de novo</button></div>${FIM('fin', '')}`,
-    script: String.raw`
+    script: SHUF + String.raw`
   var PAIRS = ${data}, gm = document.getElementById('gm'), mv = 0, er = 0, found = 0, first = null, lock = false;
   function build(){
     gm.innerHTML = ''; mv = 0; er = 0; found = 0; first = null; lock = false;

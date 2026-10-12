@@ -60,6 +60,8 @@ async function testa(it, w, h){
     // widgets interativos: se um script falhou ao carregar, as saídas ficam vazias
     const mortos = [...d.querySelectorAll('.wid')].filter(box => { const o = [...box.querySelectorAll('b.mono[id], .out[id], p.hint[id], div[id], p[id]')]; return o.length && o.every(e => !e.textContent.trim() && !e.children.length); });
     if(mortos.length) out.falhas.push(mortos.length + ' widget(s) sem saída (erro de JavaScript ao carregar?)');
+    // atividade criativa: se o script quebrou ao montar o jogo, não sobram botões/cartões na tela
+    if(/atividade-criativa/.test(it.arquivo)){ const n = d.querySelectorAll('.cb, .tk, .ln, .mc, .it, .opt, button.choice').length; if(n < 3) out.falhas.push('atividade criativa sem conteúdo (erro de JavaScript ao carregar?)'); }
     if(erros.length) out.falhas.push('erros de JS: ' + erros.slice(0, 2).join(' | '));
   }catch(e){ out.falhas.push('não abriu: ' + e); }
   f.remove(); return out;

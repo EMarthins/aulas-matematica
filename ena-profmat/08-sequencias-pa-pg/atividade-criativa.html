@@ -238,6 +238,7 @@ sup, sub{ font-size:.8em !important; line-height:0; }
 
 <script>
 (function(){
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   var PAIRS = [["Termo geral da PA","<span class=\"tex\"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> + (<i>n</i> − 1)<i>r</i></span>"],["Soma dos termos da PA","<span class=\"tex\"><i>S</i><sub><i>n</i></sub> = <i>n</i>(<i>a</i><sub>1</sub> + <i>a</i><sub><i>n</i></sub>)/2</span>"],["Termo geral da PG","<span class=\"tex\"><i>a</i><sub><i>n</i></sub> = <i>a</i><sub>1</sub> <i>q</i><sup><i>n</i>−1</sup></span>"],["Soma de <span class=\"tex\"><i>n</i></span> termos da PG (<span class=\"tex\"><i>q</i> ≠ 1</span>)","<span class=\"tex\"><i>a</i><sub>1</sub>(<i>q</i><sup><i>n</i></sup> − 1)/(<i>q</i> − 1)</span>"],["Soma infinita (<span class=\"tex\">∣<i>q</i>∣ &lt; 1</span>)","<span class=\"tex\"><i>a</i><sub>1</sub>/(1 − <i>q</i>)</span>"],["<span class=\"tex\">1 + 2 + ⋯ + <i>n</i></span>","<span class=\"tex\"><i>n</i>(<i>n</i> + 1)/2</span>"],["Soma dos <span class=\"tex\"><i>n</i></span> primeiros ímpares","<span class=\"tex\"><i>n</i><sup>2</sup></span>"],["Termo a partir da soma","<span class=\"tex\"><i>a</i><sub><i>n</i></sub> = <i>S</i><sub><i>n</i></sub> − <i>S</i><sub><i>n</i>−1</sub></span>"]], gm = document.getElementById('gm'), mv = 0, er = 0, found = 0, first = null, lock = false;
   function build(){
