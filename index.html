@@ -235,9 +235,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     painel.style.setProperty('--accent-soft', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + '-soft)');
 
     var topo = el('div', 'p-head');
-    topo.appendChild(el('p', 'p-lede', esc(m.lede) + (m.emBreve ? ' <b>Conteúdo em preparação.</b>' : '')));
     if(m.destaque){ var da = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); da.href = m.destaque.url; topo.appendChild(da); }
-    painel.appendChild(topo);
+    if(topo.childNodes.length) painel.appendChild(topo);
 
     // abas de ano / parte
     var tabs = el('div', 'years'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Ano / parte');
@@ -250,18 +249,35 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     });
     painel.appendChild(tabs); teclasAbas(tabs); teclasAbas(subjectsRoot);
 
-    // barra de filtros
+    // filtros: um botão de três pontinhos com menu
     var f = el('div', 'filtros');
-    [['todos', 'Tudo'], ['aula', 'Aulas'], ['guia', 'Guias'], ['atividade', 'Atividades'], ['pend', 'Ainda não vistos']].forEach(function(t){
-      var b = el('button', 'fchip' + (estado.tipo === t[0] ? ' on' : ''), t[1]); b.type = 'button';
-      b.addEventListener('click', function(){ estado.tipo = (estado.tipo === t[0] && t[0] !== 'todos') ? 'todos' : t[0]; renderPainel(); });
-      f.appendChild(b);
+    var ROT = { todos: 'Tudo', aula: 'Aulas', guia: 'Guias', atividade: 'Atividades', pend: 'Ainda não vistos' };
+    if(estado.tipo !== 'todos'){
+      var ativo = el('button', 'fchip on', ROT[estado.tipo] + ' ✕'); ativo.type = 'button'; ativo.title = 'Limpar filtro';
+      ativo.addEventListener('click', function(){ estado.tipo = 'todos'; renderPainel(); }); f.appendChild(ativo);
+    }
+    var mais = el('div', 'mais');
+    var bt = el('button', 'mais-bt', '<span aria-hidden="true">⋯</span>'); bt.type = 'button'; bt.setAttribute('aria-label', 'Filtrar e organizar módulos'); bt.setAttribute('aria-haspopup', 'menu'); bt.setAttribute('aria-expanded', 'false');
+    var menu = el('div', 'mais-menu'); menu.setAttribute('role', 'menu'); menu.hidden = true;
+    Object.keys(ROT).forEach(function(k){
+      var b = el('button', 'mi' + (estado.tipo === k ? ' on' : ''), ROT[k]); b.type = 'button'; b.setAttribute('role', 'menuitemradio'); b.setAttribute('aria-checked', estado.tipo === k);
+      b.addEventListener('click', function(){ estado.tipo = k; renderPainel(); });
+      menu.appendChild(b);
     });
-    f.appendChild(el('span', 'sp'));
-    var ex = el('button', 'lnk', 'Expandir tudo'), re = el('button', 'lnk', 'Recolher tudo'); ex.type = re.type = 'button';
-    ex.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = true; }); });
-    re.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = false; }); });
-    f.appendChild(ex); f.appendChild(re);
+    menu.appendChild(el('hr', 'mi-sep'));
+    var ex = el('button', 'mi', 'Expandir tudo'), re = el('button', 'mi', 'Recolher tudo'); ex.type = re.type = 'button'; ex.setAttribute('role', 'menuitem'); re.setAttribute('role', 'menuitem');
+    ex.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = true; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
+    re.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = false; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
+    menu.appendChild(ex); menu.appendChild(re);
+    function fecha(){ menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', fora); document.removeEventListener('keydown', esc27); }
+    function fora(e){ if(!mais.contains(e.target)) fecha(); }
+    function esc27(e){ if(e.key === 'Escape'){ fecha(); bt.focus(); } }
+    bt.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(menu.hidden){ menu.hidden = false; bt.setAttribute('aria-expanded', 'true'); document.addEventListener('click', fora); document.addEventListener('keydown', esc27); }
+      else fecha();
+    });
+    mais.appendChild(bt); mais.appendChild(menu); f.appendChild(mais);
     painel.appendChild(f);
 
     // módulos
@@ -280,8 +296,6 @@ import { MATERIAS, ICONS } from './app/catalog.js';
       var v = el('div', 'vazio', 'Nada encontrado com esse filtro.'); var lb = el('button', 'fchip', 'Limpar filtro'); lb.type = 'button';
       lb.addEventListener('click', function(){ estado.tipo = 'todos'; renderPainel(); }); v.appendChild(lb); lista.appendChild(v);
     }
-    var tri0 = a.trimestres[0];
-    if(!multi && tri0) lista.insertAdjacentHTML('afterbegin', '<p class="tri-sub">' + esc(tri0.nome) + ' · ' + plural(contaAno(a).mods, 'módulo', 'módulos') + ' · ' + resumo(contaAno(a)) + '</p>');
     painel.appendChild(lista);
   }
 
