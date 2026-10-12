@@ -36,6 +36,8 @@
   .cta-final h2{ font-size:1.5rem; font-weight:900; margin:0 0 10px; }
   .cta-final p{ color:var(--ink-soft); margin:0 0 22px; }
 </style>
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 
@@ -172,5 +174,6 @@
   import { iniciarThemeToggle } from './app/theme-toggle.js';
   iniciarThemeToggle('theme-pref-app');
 </script>
+<script type="module" src="app/sidebar.js"></script>
 </body>
 </html>

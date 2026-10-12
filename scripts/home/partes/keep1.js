@@ -49,15 +49,10 @@
     return { feitas: L.filter(function(x){ return x[3] >= x[4]; }).length, total: L.length, seq: seq };
   }
   function marcadores(){
-    var due = jl('rev:itens', []).filter(function(x){ return x.due <= Date.now(); }).length, n = document.getElementById('revN');
-    n.hidden = !due; n.textContent = due;
-    var r = renderConquistas(); document.getElementById('btnConq').textContent = '🏆 Conquistas ' + r.feitas + '/' + r.total + (r.seq > 1 ? ' · 🔥 ' + r.seq + ' dias' : '');
+    window.dispatchEvent(new Event('sb:sync'));
   }
-  document.getElementById('btnConq').addEventListener('click', function(){ renderConquistas(); document.getElementById('mConq').classList.add('on'); });
+  function abreConq(){ renderConquistas(); document.getElementById('mConq').classList.add('on'); }
+  window.addEventListener('sb:conquistas', abreConq);
   document.getElementById('fecharConq').addEventListener('click', function(){ document.getElementById('mConq').classList.remove('on'); });
   document.getElementById('mConq').addEventListener('click', function(e){ if(e.target === this) this.classList.remove('on'); });
-  // instalar como app
-  var evInst = null;
-  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); evInst = e; document.getElementById('btnInstalar').hidden = false; });
-  document.getElementById('btnInstalar').addEventListener('click', function(){ if(evInst){ evInst.prompt(); evInst = null; this.hidden = true; } });
   if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }

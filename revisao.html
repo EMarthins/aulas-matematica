@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="app/style.css">
 <link rel="stylesheet" href="app/estudo.css">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 <button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
@@ -99,5 +101,6 @@ $('sProx').addEventListener('click', function(){ if(idx < fila.length - 1){ idx+
 resumo();
 </script>
 <script>if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }</script>
+<script type="module" src="app/sidebar.js"></script>
 </body>
 </html>

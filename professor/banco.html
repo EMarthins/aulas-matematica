@@ -16,6 +16,8 @@
   .barra-fixa{ position:sticky; bottom:0; background:var(--surface); border-top:1px solid var(--line-strong); padding:10px 0; margin-top:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
   input[type=search], input[type=text].f{ font:inherit; padding:.55em .9em; border-radius:999px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); min-width:14rem; }
 </style>
+<link rel="stylesheet" href="../app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 <button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
@@ -111,5 +113,6 @@ $('gerar').addEventListener('click', function(){
   var w = window.open('', '_blank'); if(!w){ alert('Libere pop-ups para gerar a prova.'); return; } w.document.write(html); w.document.close();
 });
 </script>
+<script type="module" src="../app/sidebar.js"></script>
 </body>
 </html>

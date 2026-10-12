@@ -8,6 +8,7 @@ const passos = [
   ['fontes locais', 'scripts/aplicar-fontes.js'],
   ['progresso no aparelho do aluno', 'scripts/aplicar-progresso.js'],
   ['ferramentas (mapa, notas, glossário…)', 'scripts/aplicar-ferramentas.js'],
+  ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],
   ['testes estáticos', 'scripts/testar.js']

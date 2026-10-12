@@ -16,6 +16,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { auth, db } from "./firebase-init.js";
 
+// Guarda nome e papel do usuário neste aparelho para a barra lateral (app/sidebar.js) montar o menu sem carregar o Firebase.
+export function lembrarUsuario(perfil){
+  try{
+    if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role }));
+    else localStorage.removeItem("sb:user");
+  }catch(e){}
+}
+
 // role: 'professor' | 'aluno'
 export async function cadastrar(nome, email, senha, role){
   const cred = await createUserWithEmailAndPassword(auth, email, senha);
@@ -40,6 +48,7 @@ export async function entrar(email, senha){
 }
 
 export function sair(){
+  lembrarUsuario(null);
   return signOut(auth);
 }
 
@@ -48,12 +57,17 @@ export function recuperarSenha(email){
 }
 
 export function aoMudarAuth(callback){
-  return onAuthStateChanged(auth, callback);
+  return onAuthStateChanged(auth, (user) => {
+    if(!user) lembrarUsuario(null);
+    callback(user);
+  });
 }
 
 export async function buscarPerfil(uid){
   const snap = await getDoc(doc(db, "users", uid));
-  return snap.exists() ? snap.data() : null;
+  const perfil = snap.exists() ? snap.data() : null;
+  if(perfil && auth.currentUser && auth.currentUser.uid === uid) lembrarUsuario(perfil);
+  return perfil;
 }
 
 // Redireciona para a página certa se o usuário não estiver logado

@@ -21,6 +21,8 @@
   .grade-input{ width:70px !important; display:inline-block; }
   .engagement-table{ overflow-x:auto; }
 </style>
+<link rel="stylesheet" href="../app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 
@@ -506,5 +508,6 @@ document.getElementById('exportCsvBtn').addEventListener('click', function(){
 // popular checkboxes de turma sempre que a aba de atividades é usada
 document.querySelector('[data-panel="atividades"]').addEventListener('click', popularCheckboxesTurmas);
 </script>
+<script type="module" src="../app/sidebar.js"></script>
 </body>
 </html>
