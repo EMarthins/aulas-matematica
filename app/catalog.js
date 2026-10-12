@@ -218,6 +218,58 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Memória: lei e parábola', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'A parábola: trilha de desafios', arquivo:'aulas/1-ano/2-tri/grafico-da-funcao-quadratica/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Zeros da Função Quadrática',
+                accent: 'decay',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aulas 42–43', titulo:'Zeros e discriminante', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/aula-1-zeros-e-discriminante.html' },
+                  { tipo:'Aulas 44–45', titulo:'Soma e produto', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/aula-2-soma-e-produto.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Zeros da Função Quadrática', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Zeros da função quadrática no estilo ENEM', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique pelo discriminante', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Zeros da função quadrática: trilha de desafios', arquivo:'aulas/1-ano/2-tri/zeros-da-funcao-quadratica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Vértice, Máximo, Mínimo e Imagem',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 46–47', titulo:'Vértice da parábola', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/aula-1-vertice-da-parabola.html' },
+                  { tipo:'Aulas 48–50', titulo:'Máximo, mínimo e imagem', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/aula-2-maximo-minimo-e-imagem.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Vértice, Máximo, Mínimo e Imagem', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Vértice, máximo e imagem no estilo ENEM', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: vértice e imagem', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Vértice, máximo e imagem: trilha de desafios', arquivo:'aulas/1-ano/2-tri/vertice-maximo-minimo-e-imagem/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Crescimento e Sinal da Quadrática',
+                accent: 'growth',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aulas 51–52', titulo:'Crescimento e decrescimento', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/aula-1-crescimento-e-decrescimento.html' },
+                  { tipo:'Aulas 53–54', titulo:'Sinal e gráficos de situações', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/aula-2-sinal-e-graficos-de-situacoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Crescimento e Sinal da Quadrática', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Crescimento e sinal da quadrática no estilo ENEM', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive da parábola', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Crescimento e sinal da quadrática: trilha de desafios', arquivo:'aulas/1-ano/2-tri/crescimento-e-sinal-da-quadratica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Problemas com Funções do 2º Grau',
+                accent: 'primary',
+                icon: 'briefcase',
+                itens: [
+                  { tipo:'Aula 55', titulo:'O kit de ferramentas', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/aula-1-kit-de-ferramentas.html' },
+                  { tipo:'Aula 56', titulo:'Problemas variados', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/aula-2-problemas-variados.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Problemas com Funções do 2º Grau', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Problemas do 2º grau no estilo ENEM', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a solução', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Problemas do 2º grau: trilha de desafios', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/atividade-pratica.html' }
+                ]
               }
             ]
           }
