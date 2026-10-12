@@ -270,6 +270,57 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a solução', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Problemas do 2º grau: trilha de desafios', arquivo:'aulas/1-ano/2-tri/problemas-com-funcoes-do-2-grau/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Polinômios e Fatoração',
+                accent: 'primary',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aula 57', titulo:'Polinômios e raízes', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/aula-1-polinomios-e-raizes.html' },
+                  { tipo:'Aula 58', titulo:'Decomposição em fatores', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/aula-2-decomposicao-em-fatores.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Polinômios e Fatoração', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Polinômios e fatoração no estilo ENEM', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória: polinômio e forma fatorada', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Polinômios e fatoração: trilha de desafios', arquivo:'aulas/1-ano/2-tri/polinomios-e-fatoracao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Semelhança de Figuras e Triângulos',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aulas 59–60', titulo:'Figuras semelhantes', arquivo:'aulas/1-ano/2-tri/semelhanca/aula-1-figuras-semelhantes.html' },
+                  { tipo:'Aulas 61–62', titulo:'Semelhança de triângulos', arquivo:'aulas/1-ano/2-tri/semelhanca/aula-2-semelhanca-de-triangulos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Semelhança de Figuras e Triângulos', arquivo:'aulas/1-ano/2-tri/semelhanca/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Semelhança no estilo ENEM', arquivo:'aulas/1-ano/2-tri/semelhanca/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'São semelhantes?', arquivo:'aulas/1-ano/2-tri/semelhanca/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Semelhança: trilha de desafios', arquivo:'aulas/1-ano/2-tri/semelhanca/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Congruência de Triângulos',
+                accent: 'growth',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aulas 63–64', titulo:'Casos LLL e LAL', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/aula-1-casos-lll-e-lal.html' },
+                  { tipo:'Aulas 65–66', titulo:'Casos ALA e LAAo', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/aula-2-casos-ala-e-laao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Congruência de Triângulos', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Congruência de triângulos no estilo ENEM', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: congruência', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Congruência de triângulos: trilha de desafios', arquivo:'aulas/1-ano/2-tri/congruencia-de-triangulos/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Teorema Fundamental da Semelhança',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 67', titulo:'Teorema Fundamental da Semelhança', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/aula-teorema-fundamental-da-semelhanca.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Teorema Fundamental da Semelhança', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Teorema Fundamental da Semelhança no estilo ENEM', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'O que a razão multiplica?', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Teorema Fundamental: trilha de desafios', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/atividade-pratica.html' }
+                ]
               }
             ]
           }
