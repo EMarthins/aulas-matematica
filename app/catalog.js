@@ -110,6 +110,70 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de gráficos', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Gráficos de funções: trilha de desafios', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Função Afim: Lei de Formação',
+                accent: 'primary',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aulas 21–22', titulo:'Lei por dois pontos', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/aula-1-lei-por-dois-pontos.html' },
+                  { tipo:'Aula 23', titulo:'Função linear', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/aula-2-funcao-linear.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Afim: Lei de Formação', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Função afim no estilo ENEM', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique as funções', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Função afim: trilha de desafios', arquivo:'aulas/1-ano/1-tri/funcao-afim-lei-de-formacao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Gráfico e Zero da Função Afim',
+                accent: 'growth',
+                icon: 'curve-up',
+                itens: [
+                  { tipo:'Aula 24', titulo:'Gráfico da função afim', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/aula-1-grafico-da-funcao-afim.html' },
+                  { tipo:'Aulas 25–26', titulo:'Zero da função afim', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/aula-2-zero-da-funcao-afim.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Gráfico e Zero da Função Afim', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Gráfico e zero da função afim no estilo ENEM', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória: função e zero', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Gráfico e zero da função afim: trilha de desafios', arquivo:'aulas/1-ano/1-tri/grafico-e-zero-da-funcao-afim/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Taxa de Variação e Coeficientes',
+                accent: 'decay',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 27–28', titulo:'Taxa de variação', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/aula-1-taxa-de-variacao.html' },
+                  { tipo:'Aulas 29–31', titulo:'Sinais dos coeficientes', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/aula-2-sinais-dos-coeficientes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Taxa de Variação e Coeficientes', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Taxa de variação e coeficientes no estilo ENEM', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: coeficientes e retas', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Taxa de variação e coeficientes: trilha de desafios', arquivo:'aulas/1-ano/1-tri/taxa-de-variacao-e-coeficientes/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Crescimento e Sinal da Função Afim',
+                accent: 'growth',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aulas 32 e 34', titulo:'Crescente e decrescente', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/aula-1-crescente-e-decrescente.html' },
+                  { tipo:'Aula 35', titulo:'Estudo do sinal', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/aula-2-estudo-do-sinal.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Crescimento e Sinal da Função Afim', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Crescimento e sinal da função afim no estilo ENEM', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a solução', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Crescimento e sinal da função afim: trilha de desafios', arquivo:'aulas/1-ano/1-tri/crescimento-e-sinal-da-funcao-afim/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Números Reais na Reta Numérica',
+                accent: 'primary',
+                icon: 'numbers',
+                itens: [
+                  { tipo:'Aula 33', titulo:'Números reais na reta numérica', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/aula-numeros-reais-na-reta.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Números Reais na Reta Numérica', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Números reais na reta no estilo ENEM', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique os números', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Números reais na reta: trilha de desafios', arquivo:'aulas/1-ano/1-tri/numeros-reais-na-reta/atividade-pratica.html' }
+                ]
               }
             ]
           }
