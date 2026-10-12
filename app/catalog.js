@@ -706,6 +706,7 @@ export const MATERIAS = [
 import { completar } from './catalog-extra.js';
 
 export const ICONS = {
+  'gift': '<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M12 8v13M5 12.5V20h14v-7.5M12 8c-1.5-3.8-5.5-3.2-4.6-.8.6 1.4 2.9.8 4.6.8ZM12 8c1.5-3.8 5.5-3.2 4.6-.8-.6 1.4-2.9.8-4.6.8Z"/>',
   'planet': '<circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="9.5" ry="3.5" transform="rotate(-25 12 12)"/>',
   'flag': '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
   'cube': '<path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z"/><path d="M12 12 4 7.5M12 12l8-4.5M12 12v9"/>',

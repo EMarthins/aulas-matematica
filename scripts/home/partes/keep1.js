@@ -1,5 +1,5 @@
   // ---- "continuar de onde parou" e "próxima sugerida" ----
-  function achaItem(arq){ var r = null; MATERIAS.forEach(function(m, mi){ m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(i.arquivo === arq) r = { item: i, unidade: u, ano: a.ano, mi: mi }; }); }); }); }); }); return r; }
+  function achaItem(arq){ var r = null; MATERIAS.forEach(function(m, mi){ if(m.id === 'gratis') return; m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(i.arquivo === arq) r = { item: i, unidade: u, ano: a.ano, mi: mi }; }); }); }); }); }); return r; }
   function sugerida(idx){
     var m = MATERIAS[idx]; var achado = null;
     m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(!achado && i.tipo.indexOf('Aula') === 0){ var p = prog(i.arquivo); if(!(p && p.v)) achado = { item: i, unidade: u, ano: a.ano }; } }); }); }); });
@@ -25,7 +25,7 @@
   }
   function coletaProgresso(){
     var vistos = 0, aulas = 0, ativ = 0, perfeitas = 0;
-    MATERIAS.forEach(function(m){ m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ var p = prog(i.arquivo); if(!(p && p.v)) return; vistos++; if(i.tipo.indexOf('Aula') === 0) aulas++; if(i.tipo === 'Atividade' && p.t){ ativ++; if(p.s === p.t) perfeitas++; } }); }); }); }); });
+    MATERIAS.forEach(function(m){ if(m.id === 'gratis') return; m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ var p = prog(i.arquivo); if(!(p && p.v)) return; vistos++; if(i.tipo.indexOf('Aula') === 0) aulas++; if(i.tipo === 'Atividade' && p.t){ ativ++; if(p.s === p.t) perfeitas++; } }); }); }); }); });
     return { vistos: vistos, aulas: aulas, ativ: ativ, perfeitas: perfeitas };
   }
   function renderConquistas(){

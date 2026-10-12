@@ -37,6 +37,10 @@
   <div class="wrap">
     <h1 class="title" id="saudacao">O que vamos estudar hoje?</h1>
     <p class="lede">Escolha a matéria, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
+    <div class="aviso-gratis" id="avisoGratis" hidden>
+      <span><b>Versão gratuita:</b> <span class="n">0</span> aulas liberadas (1 por ano e trimestre). <a href="#gratis" class="ac-ver">Ver as aulas grátis</a></span>
+      <span class="aviso-ac"><a class="ac-cria btn-p" href="login.html?modo=cadastrar">Criar conta grátis</a><a class="ac-entra" href="login.html">Entrar</a></span>
+    </div>
     <div class="continuar" id="continuar"></div>
   </div>
 </section>
@@ -59,6 +63,7 @@
 <script type="module" src="app/sidebar.js"></script>
 <script type="module">
 import { MATERIAS, ICONS } from './app/catalog.js';
+import { aulasGratis, logado, linkLogin } from './app/acesso.js';
 (function(){
   var LAST_UPDATED = '2026-10-09'; // atualize ao publicar conteúdo novo
   var ACENTOS = ['primary', 'growth', 'decay', 'success'];
@@ -82,6 +87,26 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   // anos em ordem crescente (9º → 2º → 3º; Parte 1 → 5)
   function ordemAno(a){ var n = /(\d+)/.exec(a.ano); return n ? (/Parte/.test(a.ano) || +n[1] >= 6 ? +n[1] : +n[1] + 10) : 99; }
   MATERIAS.forEach(function(m){ m.CATALOG.sort(function(a, b){ return ordemAno(a) - ordemAno(b); }); });
+
+  // ---- acesso: sem conta só abre 1 aula por ano e trimestre (a regra está em app/acesso.js) ----
+  var LOGADO = logado();
+  var LISTA_GRATIS = aulasGratis(MATERIAS), GRATIS = {};
+  LISTA_GRATIS.forEach(function(g){ GRATIS[g.item.arquivo] = 1; });
+  var ACENTO_DE = {}; MATERIAS.forEach(function(m, i){ ACENTO_DE[m.id] = i; }); // cor de cada matéria = a mesma da barra lateral
+  function acento(i){ var k = ACENTO_DE[MATERIAS[i].id]; return ACENTOS[(k == null ? 3 : k) % ACENTOS.length]; }
+  function bloqueado(item){ return !LOGADO && !GRATIS[item.arquivo]; }
+  if(!LOGADO){
+    // aba "Aulas grátis": a amostra liberada, agrupada por matéria · ano · trimestre
+    var unGratis = LISTA_GRATIS.map(function(g){ return { titulo: g.materia.nome + ' · ' + g.ano + ' · ' + g.trimestre, accent: g.unidade.accent || 'primary', icon: g.unidade.icon || 'grid', itens: [g.item] }; });
+    MATERIAS.unshift({ id: 'gratis', nome: 'Aulas grátis', icon: 'gift', lede: 'Uma aula por ano e trimestre, liberada para todos. Crie sua conta para abrir o resto.', CATALOG: [{ ano: 'Amostra', trimestres: [{ nome: 'Uma aula por ano e trimestre', unidades: unGratis }] }] });
+  }
+  var LOGIN_VOLTA = function(arq, cadastrar){ return linkLogin('', arq, cadastrar); };
+  function abreAcesso(arq, titulo){
+    document.getElementById('acTitulo').textContent = titulo ? '“' + titulo + '” é para quem tem conta' : 'Esta aula é para quem tem conta';
+    document.getElementById('acCriar').href = LOGIN_VOLTA(arq, true);
+    document.getElementById('acEntrar').href = LOGIN_VOLTA(arq, false);
+    document.getElementById('mAcesso').classList.add('on');
+  }
 
   var estado = { q: '', tipo: 'todos', idx: 0, ano: 0, modo: 'inicio' }; // 'inicio' = abertura do site · 'materia' = matéria aberta (barra lateral)
   var painel = document.getElementById('painel');
@@ -150,12 +175,12 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     subjectsRoot.innerHTML = '';
     MATERIAS.forEach(function(m, i){
       var c = contaMateria(m), on = i === estado.idx;
-      var b = el('button', 'subject' + (on ? ' active' : ''));
+      var b = el('button', 'subject' + (on ? ' active' : '') + (m.id === 'gratis' ? ' gratis' : ''));
       b.type = 'button'; b.id = 'tab-m' + i; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
       b.setAttribute('aria-controls', 'painel');
-      b.style.setProperty('--accent', 'var(--' + ACENTOS[i % ACENTOS.length] + ')');
-      b.style.setProperty('--accent-soft', 'var(--' + ACENTOS[i % ACENTOS.length] + '-soft)');
-      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + (c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') : 'Em breve') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
+      b.style.setProperty('--accent', 'var(--' + acento(i) + ')');
+      b.style.setProperty('--accent-soft', 'var(--' + acento(i) + '-soft)');
+      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + (m.id === 'gratis' ? plural(c.aulas, 'aula liberada', 'aulas liberadas') : c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') : 'Em breve') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
       b.addEventListener('click', function(){ if(estado.q){ limpaBusca(); } escolheMateria(i); });
       subjectsRoot.appendChild(b);
     });
@@ -172,10 +197,12 @@ import { MATERIAS, ICONS } from './app/catalog.js';
 
   // ---- módulo (unidade) ----
   function itemLink(item, rotulo){
-    var a = el('a', 'item'), p = prog(item.arquivo), marca = '';
+    var a = el('a', 'item'), p = prog(item.arquivo), marca = '', sel = '';
     a.href = item.arquivo;
+    if(bloqueado(item)){ a.classList.add('bloq'); a.dataset.arq = item.arquivo; sel = '<span class="lock" title="Entre com sua conta para liberar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>'; }
+    else if(!LOGADO && GRATIS[item.arquivo]) sel = '<span class="gratis">Grátis</span>';
     if(p && p.v){ a.classList.add('done'); marca = '<span class="prog" title="visto neste aparelho' + (p.t ? ' · melhor nota ' + p.s + '/' + p.t : '') + '">' + (p.t ? p.s + '/' + p.t : '✓') + '</span>'; }
-    a.innerHTML = '<span class="badge">' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + '<span class="arrow">' + ARROW + '</span>';
+    a.innerHTML = '<span class="badge">' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + sel + '<span class="arrow">' + ARROW + '</span>';
     return a;
   }
   function grupo(titulo, itens, rotuloFn){
@@ -224,8 +251,8 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     var m = MATERIAS[estado.idx], a = m.CATALOG[estado.ano];
     painel.innerHTML = '';
     painel.setAttribute('role', 'tabpanel'); painel.setAttribute('aria-labelledby', 'tab-m' + estado.idx);
-    painel.style.setProperty('--accent', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + ')');
-    painel.style.setProperty('--accent-soft', 'var(--' + ACENTOS[estado.idx % ACENTOS.length] + '-soft)');
+    painel.style.setProperty('--accent', 'var(--' + acento(estado.idx) + ')');
+    painel.style.setProperty('--accent-soft', 'var(--' + acento(estado.idx) + '-soft)');
 
     var inicio = estado.modo === 'inicio', topo = el('div', 'p-head'), cMat = contaMateria(m);
     if(!inicio) topo.appendChild(el('h2', 'p-titulo', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span>' + (cMat.total ? '<small>' + cMat.vistos + ' de ' + cMat.total + ' vistos</small>' : '<small>em breve</small>')));
@@ -300,6 +327,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     painel.style.setProperty('--accent', 'var(--primary)'); painel.style.setProperty('--accent-soft', 'var(--primary-soft)');
     var lista = el('div', 'mods'), total = 0, mods = 0;
     MATERIAS.forEach(function(m){
+      if(m.id === 'gratis') return;
       m.CATALOG.forEach(function(a){
         var n = 0, blocos = [];
         a.trimestres.forEach(function(tri){ tri.unidades.forEach(function(u){
@@ -346,6 +374,21 @@ import { MATERIAS, ICONS } from './app/catalog.js';
     if(e.key === 'Escape' && (document.activeElement === qTopo || document.activeElement === qLado)){ limpaBusca(); document.activeElement.blur(); }
   });
   window.addEventListener('pageshow', function(e){ if(e.persisted) renderTudo(); });
+  // aulas bloqueadas: um clique abre o aviso "entre para liberar" em vez de abrir a aula
+  painel.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a.item.bloq') : null;
+    if(a){ e.preventDefault(); abreAcesso(a.dataset.arq, (a.querySelector('.txt') || {}).textContent); }
+  });
+  var mAc = document.getElementById('mAcesso');
+  document.getElementById('acFechar').addEventListener('click', function(){ mAc.classList.remove('on'); });
+  mAc.addEventListener('click', function(e){ if(e.target === mAc) mAc.classList.remove('on'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') mAc.classList.remove('on'); });
+  if(!LOGADO){
+    var av = document.getElementById('avisoGratis'); av.hidden = false;
+    av.querySelector('.n').textContent = LISTA_GRATIS.length;
+    av.querySelector('.ac-cria').href = LOGIN_VOLTA('', true); av.querySelector('.ac-entra').href = LOGIN_VOLTA('', false);
+    av.querySelector('.ac-ver').addEventListener('click', function(e){ e.preventDefault(); location.hash = 'gratis'; });
+  }
   window.addEventListener('hashchange', function(){
     var h = lerHash();
     if(h){ var mudou = estado.modo !== 'materia' || h.idx !== estado.idx || (h.ano != null && h.ano !== estado.ano); estado.modo = 'materia'; estado.idx = h.idx; estado.ano = h.ano != null ? h.ano : anoInicial(h.idx); if(mudou) renderTudo(); else aplicaModo(); }
@@ -358,7 +401,7 @@ import { MATERIAS, ICONS } from './app/catalog.js';
   document.getElementById('saudacao').textContent = (hr < 5 ? 'Boa madrugada!' : hr < 12 ? 'Bom dia!' : hr < 18 ? 'Boa tarde!' : 'Boa noite!') + ' O que vamos estudar hoje?';
 
   // matéria inicial: link direto → última usada → primeira
-  var ini = lerHash(), idx0 = 0;
+  var ini = lerHash(), idx0 = MATERIAS.findIndex(function(m){ return m.id !== 'gratis'; });
   if(ini){ idx0 = ini.idx; }
   else { try{ var sm = localStorage.getItem('materia-pref'); var f = MATERIAS.findIndex(function(m){ return m.id === sm; }); if(f >= 0) idx0 = f; }catch(e){} }
   estado.idx = idx0;

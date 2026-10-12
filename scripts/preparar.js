@@ -7,6 +7,7 @@ const passos = [
   ['layout legível em qualquer tela', 'scripts/aplicar-layout.js'],
   ['fontes locais', 'scripts/aplicar-fontes.js'],
   ['progresso no aparelho do aluno', 'scripts/aplicar-progresso.js'],
+  ['trava de acesso (aulas grátis x conta)', 'scripts/aplicar-acesso.js'],
   ['ferramentas (mapa, notas, glossário…)', 'scripts/aplicar-ferramentas.js'],
   ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],

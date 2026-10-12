@@ -151,7 +151,19 @@
     alertBox.innerHTML = '<div class="alert error">'+msg+'</div>';
   }
 
+  // "voltar": caminho de uma aula (a partir da raiz do site) para onde ir depois de entrar. Só aceita páginas .html do próprio site.
+  var voltar = (function(){
+    var v = params.get('voltar') || '';
+    return /^[A-Za-z0-9_\-\/.%]+\.html$/.test(v) && v.indexOf('..') < 0 && v.charAt(0) !== '/' ? v : '';
+  })();
+  if(voltar){
+    var nota = document.createElement('div');
+    nota.className = 'alert success';
+    nota.textContent = 'Crie sua conta grátis ou entre para liberar esta aula e todas as outras. Depois de entrar, você volta para ela.';
+    alertBox.parentNode.insertBefore(nota, alertBox);
+  }
   function destinoPara(perfilRole){
+    if(voltar) return voltar;
     return perfilRole === 'professor' ? 'professor/dashboard.html' : 'aluno/dashboard.html';
   }
 

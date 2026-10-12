@@ -38,7 +38,8 @@ const I = {
   sair: '<path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M15 8l4 4-4 4M19 12H9"/>',
   chev: '<path d="m9 6 6 6-6 6"/>',
   recolher: '<path d="m11 7-5 5 5 5M18 7l-5 5 5 5"/>',
-  menu: '<path d="M4 7h16M4 12h16M4 17h16"/>'
+  menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  gift: '<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M12 8v13M5 12.5V20h14v-7.5M12 8c-1.5-3.8-5.5-3.2-4.6-.8.6 1.4 2.9.8 4.6.8ZM12 8c1.5-3.8 5.5-3.2 4.6-.8-.6 1.4-2.9.8-4.6.8Z"/>'
 };
 const svg = n => '<svg viewBox="0 0 24 24" aria-hidden="true">' + (I[n] || n) + '</svg>';
 
@@ -97,6 +98,7 @@ function montar() {
   nav += itemLink('revisao.html', url('revisao.html'), 'rev', 'Revisão');
   nav += '<a class="sb-item" href="' + url('index.html') + '#conquistas" data-conq title="Conquistas"><span class="sb-ic">' + svg('conq') + '</span><span class="sb-lbl">Conquistas</span><span class="sb-extra"></span></a>';
   if (ehAluno) nav += itemLink('aluno/dashboard.html', url('aluno/dashboard.html'), 'turmas', 'Minhas turmas');
+  if (!user) nav += '<a class="sb-item" data-gratis href="' + url('index.html') + '#gratis' + '" title="Aulas grátis"><span class="sb-ic">' + svg('gift') + '</span><span class="sb-lbl">Aulas grátis</span><span class="sb-extra"></span></a>';
   nav += '<div class="sb-sec">Matérias</div>' + ativas.map(([m, i]) => subj(m, i)).join('');
   if (breve.length) nav += '<details class="sb-soon"><summary><span>Em breve</span><span class="sb-chev">' + svg(I.chev) + '</span></summary>' + breve.map(([m, i]) => soonItem(m, i)).join('') + '</details>';
   if (ehProf) {
@@ -178,6 +180,7 @@ function iniciar() {
       });
       if (ehAtual && el.parentElement.matches('details')) el.parentElement.open = true;
     });
+    const gr = $('[data-gratis]'); if (gr) { const on = NA_HOME && location.hash.indexOf('#gratis') === 0; gr.classList.toggle('on', on); if (on) gr.setAttribute('aria-current', 'page'); else gr.removeAttribute('aria-current'); }
     // etiquetas: revisão pendente e sequência de dias
     const rev = revisaoPendente(), r = $('[href$="revisao.html"] .sb-extra');
     if (r) r.innerHTML = rev ? '<span class="sb-badge" title="Itens para revisar hoje">' + rev + '</span>' : '';

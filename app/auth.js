@@ -28,6 +28,7 @@ export function lembrarUsuario(perfil){
 export async function cadastrar(nome, email, senha, role){
   const cred = await createUserWithEmailAndPassword(auth, email, senha);
   await updateProfile(cred.user, { displayName: nome });
+  lembrarUsuario({ nome, role }); // a barra lateral e a trava das aulas leem isto
 
   await setDoc(doc(db, "users", cred.user.uid), {
     nome, email, role, createdAt: serverTimestamp()

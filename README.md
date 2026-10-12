@@ -176,3 +176,11 @@ scripts/inject-progress-hook.js → anexa às aulas o gancho que reporta progres
 - **Aprovação de aluno:** quando um aluno entra numa turma pelo código, cria-se uma matrícula com status `pending`; só depois que o professor aprova no painel é que o aluno passa a ver as atividades daquela turma.
 - **Atividades ficam em cima do catálogo já existente:** o professor escolhe uma aula/quiz do `app/catalog.js` ao criar uma atividade — nenhum conteúdo é duplicado.
 - **`player.html` é a ponte:** ele abre a aula real dentro de um `<iframe>`. Cada aula tem um pequeno script (injetado por `scripts/inject-progress-hook.js`) que avisa o `player.html`, via `postMessage`, quando foi aberta e quando um quiz foi concluído (com a nota) — sem precisar carregar o Firebase dentro de cada aula. Por isso as aulas continuam funcionando normalmente se abertas fora da plataforma (direto pelo catálogo, ou offline).
+
+## Acesso gratuito x conta
+
+Sem conta, o site libera **uma aula por matéria, ano e trimestre** (11 aulas hoje); guias, atividades e todo o resto pedem conta. Quem não entrou vê a aba **Aulas grátis**, um aviso na abertura e um cadeado nos itens bloqueados; ao abrir uma aula bloqueada (pelo link direto também) aparece "Criar conta grátis / Entrar" e, depois de entrar, volta para a aula.
+
+- A regra de quais aulas são grátis está em `app/acesso.js` (função `aulasGratis`). Depois de mudá-la (ou de criar páginas novas) rode `node scripts/aplicar-acesso.js .` — o `node scripts/preparar.js` já faz isso.
+- A trava é um bloco inline no `<head>` de cada página bloqueada (entre `<!--acesso:inicio-->` e `<!--acesso:fim-->`). Ela confere `localStorage['sb:user']`, que o login grava (`app/auth.js`).
+- **Limite honesto:** o site é estático (GitHub Pages), então é uma trava no navegador. Ela barra o uso normal, mas quem sabe mexer no navegador ou abrir o arquivo da aula consegue contornar. Proteção de verdade exigiria servir as aulas por um backend (ex.: Firebase Functions/Storage com regras).
