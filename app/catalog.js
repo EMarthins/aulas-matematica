@@ -391,6 +391,45 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: gráficos', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Gráficos: setores, linhas e pictogramas: trilha de desafios', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Histograma de Frequência',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aula 87', titulo:'O histograma', arquivo:'aulas/1-ano/3-tri/histograma/aula-1-o-histograma.html' },
+                  { tipo:'Aula 88', titulo:'Lendo histogramas', arquivo:'aulas/1-ano/3-tri/histograma/aula-2-lendo-histogramas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Histograma de Frequência', arquivo:'aulas/1-ano/3-tri/histograma/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Histograma no estilo ENEM', arquivo:'aulas/1-ano/3-tri/histograma/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Histograma ou gráfico de barras?', arquivo:'aulas/1-ano/3-tri/histograma/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Histograma: trilha de desafios', arquivo:'aulas/1-ano/3-tri/histograma/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Média, Moda e Mediana',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 89–90', titulo:'Média, moda e mediana', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/aula-1-media-moda-e-mediana.html' },
+                  { tipo:'Aula 91', titulo:'Medidas em tabelas de frequência', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/aula-2-medidas-em-tabelas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Média, Moda e Mediana', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Média, moda e mediana no estilo ENEM', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive das medidas', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Média, moda e mediana: trilha de desafios', arquivo:'aulas/1-ano/3-tri/media-moda-e-mediana/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Tendência Central em Classes',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aula 92', titulo:'Medidas em classes', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/aula-1-medidas-em-classes.html' },
+                  { tipo:'Aula 93', titulo:'Valores discrepantes e escolha da medida', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/aula-2-valores-discrepantes-e-escolha.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Tendência Central em Classes', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Tendência central em classes no estilo ENEM', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual medida usar?', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Tendência central em classes: trilha de desafios', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/atividade-pratica.html' }
+                ]
               }
             ]
           }
