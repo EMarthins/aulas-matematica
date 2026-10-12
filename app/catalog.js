@@ -349,6 +349,50 @@ export const MATERIAS = [
                 ]
               }
             ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Estatística: Conceitos e Variáveis',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 77–78', titulo:'Estatística e pesquisa estatística', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/aula-1-conceito-e-pesquisa.html' },
+                  { tipo:'Aulas 79–80', titulo:'População, amostra e variáveis', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/aula-2-populacao-amostra-e-variaveis.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Estatística: Conceitos e Variáveis', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Estatística: conceitos e variáveis no estilo ENEM', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique as variáveis', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Estatística: conceitos e variáveis: trilha de desafios', arquivo:'aulas/1-ano/3-tri/estatistica-conceitos-e-variaveis/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Distribuição de Frequência',
+                accent: 'growth',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aula 81', titulo:'Tabela de frequências', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/aula-1-tabela-de-frequencias.html' },
+                  { tipo:'Aula 82', titulo:'Dados agrupados em classes', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/aula-2-dados-em-classes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Distribuição de Frequência', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Distribuição de frequência no estilo ENEM', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a construção', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Distribuição de frequência: trilha de desafios', arquivo:'aulas/1-ano/3-tri/distribuicao-de-frequencia/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Gráficos: Setores, Linhas e Pictogramas',
+                accent: 'primary',
+                icon: 'pie',
+                itens: [
+                  { tipo:'Aula 84', titulo:'Gráfico de setores', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/aula-1-grafico-de-setores.html' },
+                  { tipo:'Aulas 85–86', titulo:'Gráficos de linhas e pictogramas', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/aula-2-linhas-e-pictogramas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Gráficos: Setores, Linhas e Pictogramas', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Gráficos de setores, linhas e pictogramas no estilo ENEM', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: gráficos', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Gráficos: setores, linhas e pictogramas: trilha de desafios', arquivo:'aulas/1-ano/3-tri/graficos-setores-linhas-pictogramas/atividade-pratica.html' }
+                ]
+              }
+            ]
           }
         ]
       },
