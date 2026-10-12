@@ -478,6 +478,63 @@ export const MATERIAS = [
       {
         ano: '3° Ano',
         trimestres: [
+          // >>> mat-3ano-1tri
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Equação Exponencial',
+                accent: 'primary',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equação exponencial: mesma base', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/aula-1-mesma-base.html' },
+                  { tipo:'Aulas 2–3', titulo:'Equação exponencial: substituição e aplicações', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/aula-2-substituicao-e-aplicacoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Equação Exponencial', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Equação exponencial no estilo ENEM', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual é o método?', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Equação exponencial: trilha de desafios', arquivo:'aulas/3-ano/1-tri/equacao-exponencial/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Função Exponencial',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 4–5', titulo:'Função exponencial: lei de formação', arquivo:'aulas/3-ano/1-tri/funcao-exponencial/aula-1-lei-de-formacao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Exponencial', arquivo:'aulas/3-ano/1-tri/funcao-exponencial/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Função exponencial no estilo ENEM', arquivo:'aulas/3-ano/1-tri/funcao-exponencial/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'É função exponencial?', arquivo:'aulas/3-ano/1-tri/funcao-exponencial/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Função exponencial: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-exponencial/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Gráfico da Função Exponencial',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 6–7', titulo:'Exponencial crescente: gráfico', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/aula-1-exponencial-crescente.html' },
+                  { tipo:'Aulas 8–9', titulo:'Exponencial decrescente: gráfico', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/aula-2-exponencial-decrescente.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Gráfico da Função Exponencial', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Gráfico da exponencial no estilo ENEM', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: gráficos exponenciais', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Gráfico da exponencial: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-grafico/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Função Exponencial: Problemas',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 10–11', titulo:'Problemas com função exponencial', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/aula-1-problemas-com-exponencial.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Exponencial: Problemas', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Problemas com exponencial no estilo ENEM', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Problemas com exponencial: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/atividade-pratica.html' }
+                ]
+              }
+            ]
+          },
+          // <<< mat-3ano-1tri
           {
             nome: '3° Trimestre',
             unidades: [

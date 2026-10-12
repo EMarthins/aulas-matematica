@@ -4,8 +4,9 @@
 const E = require('../gerador-ena/kit.js');
 const { L, T } = E;
 
-const BASE = { area: 'Matemática · 1ª Série', keyp: 'm1' };
-const SERIE = 'Matemática · 1ª série do Ensino Médio';
+const ANO = process.env.SERIE_EM || '1';   // '1' ou '3': usado também pelo gerador-3ano
+const BASE = { area: 'Matemática · ' + ANO + 'ª Série', keyp: 'm' + ANO };
+const SERIE = 'Matemática · ' + ANO + 'ª série do Ensino Médio';
 // os <li> dos slides viram flex: cada pedaço de texto/matemática viraria uma coluna — embrulhamos o conteúdo num <span>
 const embrulhaLi = h => h.replace(/<li>(?!\s*<svg)([\s\S]*?)<\/li>/g, (m, i) => `<li>${L.ic('check', '', 18)}<span>${i}</span></li>`);
 const deck = c => embrulhaLi(T(L.deck({ ...BASE, ...c })));
@@ -23,11 +24,11 @@ const W = a => L.wideSec(a[0], a[1], a[2], a[4], a[3] || 'primary');
 /** Guia visual (infográfico) da unidade. */
 function guia(c) {
   return { out: c.dir + 'infografico.html', html: info({
-    title: 'Guia visual — ' + c.brand + ' (1ª série)', brand: c.brand, key: c.key + '-g', aulas: c.cap, color: c.color || 'primary',
+    title: 'Guia visual — ' + c.brand + ' (' + ANO + 'ª série)', brand: c.brand, key: c.key + '-g', aulas: c.cap, color: c.color || 'primary',
     eyebrowTop: SERIE + ' · ' + c.cap, footerTop: SERIE + ' · ' + c.cap + ' · ' + c.brand,
     h1: c.h1, lede: c.lede, badges: c.badges, curve: c.curve || 'M20,160 C 120,150 200,120 280,90 C 360,60 420,40 480,24',
     sections: c.sections.map(S), wide: (c.wide || []).map(W),
-    fontes: c.fontes || 'Aulas de Matemática da 1ª série (2026), reescritas e organizadas em guia visual. Exercícios originais.'
+    fontes: c.fontes || 'Aulas de Matemática da ' + ANO + 'ª série (2026), reescritas e organizadas em guia visual. Exercícios originais.'
   }) };
 }
 /** Atividade 1: questões de múltipla escolha no estilo ENEM/SAEB (originais). */
@@ -54,7 +55,7 @@ function atvCria(c) {
     eyebrow: 'Atividade criativa · ' + c.cap, h1: c.h1, subtitle: c.subtitle, pill: t.pill, body: t.body, script: t.script
   }) };
 }
-const FONTE = ['Aulas de Matemática da 1ª série do Ensino Médio (2026) — organizadas, reescritas e ampliadas para estudo.',
+const FONTE = ['Aulas de Matemática da ' + ANO + 'ª série do Ensino Médio (2026) — organizadas, reescritas e ampliadas para estudo.',
   'Exercícios e problemas originais (estilo ENEM/SAEB); questões de provas oficiais só quando citadas.'];
 const fechamento = (cards, msg, refs = FONTE) => E.sintese(cards, msg) + E.refsSlide(refs, 'Para continuar', 'Referências e próximos passos', 'Refaça sozinho as questões, sem olhar a resolução, e anote os erros no caderno.');
 
