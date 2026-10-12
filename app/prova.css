@@ -3,7 +3,7 @@
    Proveiro — interface (professor/prova.html)
    A folha A4 e a matemática ficam em app/prova-folha.css
    ============================================================ */
-body.pv{margin:0;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:var(--bg);--topo:54px}
+body.pv{font-family:'Nunito','Segoe UI',system-ui,sans-serif;margin:0;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:var(--bg);--topo:54px}
 .sp{flex:1}
 button{font:inherit;color:inherit}
 .icon{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--ink-soft);cursor:pointer;position:relative;padding:0;font-weight:800}
@@ -37,7 +37,7 @@ button{font:inherit;color:inherit}
 .pv-top{height:var(--topo);flex:none;display:flex;align-items:center;gap:6px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--surface);position:relative;z-index:30}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
 .logo svg{width:28px;height:28px}
-.logo b{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.08rem;letter-spacing:-.02em}
+.logo b{font-family:'Nunito',sans-serif;font-weight:900;font-size:1.08rem;letter-spacing:-.02em}
 .pv-top .div{width:1px;height:22px;background:var(--line);margin:0 10px 0 8px}
 .nome-w{position:relative;display:flex;align-items:center}
 .pv-top .nome{font:inherit;font-weight:700;font-size:.92rem;border:1.5px solid transparent;border-radius:9px;padding:.4em 2em .4em .6em;background:transparent;color:var(--ink);width:min(18rem,26vw);text-overflow:ellipsis}
@@ -149,7 +149,7 @@ button{font:inherit;color:inherit}
 .drawer.on{transform:none}
 .d-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
 .d-body{flex:1;overflow:auto;padding:12px 12px 90px}
-.d-head b{font-family:'Archivo',sans-serif;font-size:1rem}
+.d-head b{font-family:'Nunito',sans-serif;font-size:1rem}
 .d-tabs{display:flex;gap:2px;padding:0 14px;background:var(--surface);border-bottom:1px solid var(--line)}
 .d-tabs button{border:0;background:none;padding:.65em .9em;font-weight:700;font-size:.84rem;color:var(--ink-faint);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
 .d-tabs button:hover{color:var(--ink)}
@@ -159,7 +159,7 @@ button{font:inherit;color:inherit}
 .drawer .sec-h{display:none}
 .drawer .sec-b{display:block;border:0;padding:4px 2px}
 .pv-grupo{margin:18px 0 12px;padding-top:14px;border-top:1px solid var(--line)}
-.pv-grupo h3{margin:0 0 10px;font-size:.84rem;font-family:'Archivo',sans-serif}
+.pv-grupo h3{margin:0 0 10px;font-size:.84rem;font-family:'Nunito',sans-serif}
 #chipsTri{display:none}
 .pv-grupo:focus-within #chipsTri{display:flex}
 details.mais-op{border-top:1px solid var(--line);margin-top:14px;padding-top:10px}
@@ -180,7 +180,7 @@ details.mais-op[open] > summary{margin-bottom:10px}
 .ia-chat{position:fixed;right:20px;bottom:90px;width:min(380px,calc(100vw - 24px));height:min(580px,calc(100dvh - 120px));z-index:61;background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;box-shadow:0 28px 60px -20px var(--shadow);display:flex;flex-direction:column;overflow:hidden}
 .ia-chat[hidden]{display:none}
 .ia-h{display:flex;align-items:center;gap:8px;padding:12px 14px;background:var(--primary);color:var(--primary-ink)}
-.ia-h b{display:block;font-family:'Archivo',sans-serif;font-size:.98rem}
+.ia-h b{display:block;font-family:'Nunito',sans-serif;font-size:.98rem}
 .ia-h small{display:block;font-size:.68rem;opacity:.85}
 .ia-h .icon{background:transparent;border-color:color-mix(in srgb,var(--primary-ink) 35%,transparent);color:var(--primary-ink);width:30px;height:30px}
 .ia-cfg{padding:12px 14px;border-bottom:1px solid var(--line);background:var(--surface-2);max-height:55%;overflow:auto}
@@ -290,3 +290,8 @@ dialog.pv-dlg::backdrop{background:rgb(10 10 30 / .55)}
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#14162B;color:#fff;padding:.6em 1.1em;border-radius:999px;font-size:.84rem;font-weight:600;z-index:99;box-shadow:0 8px 28px rgb(0 0 0 / .35);max-width:90vw}
 #medidor{position:absolute;left:-99999px;top:0;visibility:hidden;font-family:'Source Serif 4',Georgia,serif;font-size:var(--fs,11pt);line-height:1.38;color:#111;pointer-events:none}
 
+
+/* fonte arredondada na interface (a folha da prova mantém Source Serif / Archivo) */
+body.pv :is(h1,h2,h3,h4,.disp,b,strong):not(.folha *){font-family:inherit}
+body.pv :is(h1,h2,h3,h4,.disp):not(.folha *){font-family:'Nunito','Segoe UI',system-ui,sans-serif}
+body.pv :is(input,select,textarea,button,label,summary,dialog,.pop,.fpop):not(.folha *){font-family:'Nunito','Segoe UI',system-ui,sans-serif}
