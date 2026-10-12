@@ -430,6 +430,45 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Qual medida usar?', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Tendência central em classes: trilha de desafios', arquivo:'aulas/1-ano/3-tri/tendencia-central-em-classes/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Medidas de Dispersão',
+                accent: 'growth',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aula 94', titulo:'Amplitude e desvio médio', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/aula-1-amplitude-e-desvio-medio.html' },
+                  { tipo:'Aula 95', titulo:'Variância e desvio padrão', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/aula-2-variancia-e-desvio-padrao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Medidas de Dispersão', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Medidas de dispersão no estilo ENEM', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: dispersão', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Medidas de dispersão: trilha de desafios', arquivo:'aulas/1-ano/3-tri/medidas-de-dispersao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Quartis e Box-plot',
+                accent: 'primary',
+                icon: 'candles',
+                itens: [
+                  { tipo:'Aula 96', titulo:'Quartis', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/aula-1-quartis.html' },
+                  { tipo:'Aula 97', titulo:'Box-plot', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/aula-2-box-plot.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Quartis e Box-plot', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Quartis e box-plot no estilo ENEM', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a construção', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Quartis e box-plot: trilha de desafios', arquivo:'aulas/1-ano/3-tri/quartis-e-box-plot/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Ramos e Folhas e Escolha de Gráficos',
+                accent: 'primary',
+                icon: 'candles',
+                itens: [
+                  { tipo:'Aula 99', titulo:'Diagrama de ramos e folhas', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/aula-1-ramos-e-folhas.html' },
+                  { tipo:'Aulas 98 e 100', titulo:'Conversão e escolha de gráficos', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/aula-2-conversao-e-escolha-de-graficos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Ramos e Folhas e Escolha de Gráficos', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Ramos e folhas e escolha de gráficos no estilo ENEM', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual gráfico usar?', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Ramos e folhas e escolha de gráficos: trilha de desafios', arquivo:'aulas/1-ano/3-tri/ramos-e-folhas-e-escolha-de-graficos/atividade-pratica.html' }
+                ]
               }
             ]
           }

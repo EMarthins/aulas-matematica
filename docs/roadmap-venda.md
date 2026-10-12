@@ -4,7 +4,7 @@ Atualizado em 2026-10-12. Marque ☑ quando concluir. Itens com 👤 dependem de
 
 ## 👤 O que só você pode fazer (cobrar no começo de cada conversa)
 
-- [ ] **Direitos de uso do conteúdo.** (a) Banco do ENEM: as questões são recortes das provas do INEP; os textos de apoio (poemas, reportagens, imagens) têm donos — consultar um advogado antes de vender isso como parte do produto. (b) Aulas/slides: confirmar a autoria das que vieram de pptx de terceiros (ex.: "Recomposição" do 9º ano) e se podem ser revendidas.
+- [ ] **Direitos de uso do conteúdo.** (a) Banco do ENEM: as questões são recortes das provas do INEP; os textos de apoio (poemas, reportagens, imagens) têm donos — consultar um advogado antes de vender isso como parte do produto. (b) Aulas/slides: confirmar a autoria das que vieram de pptx de terceiros (ex.: "Recomposição" do 9º ano) e se podem ser revendidas. As aulas da **Matemática 1ª série (1° Ano)** foram reescritas, com problemas originais “no estilo ENEM”, a partir dos slides da SEED-PR (Khan Academy e livros didáticos como referência): o texto e as questões do site são próprios, mas confirme se a organização do conteúdo e o uso do material de origem na venda dependem de autorização.
 - [ ] **CNPJ/MEI** e emissão de nota fiscal.
 - [ ] **Nome "Proveiro":** consultar o INPI e registrar o domínio próprio (ex.: proveiro.com.br).
 - [ ] **Advogado revisar** `termos.html` (termos, privacidade, LGPD com dados de menores): preencher razão social, CNPJ, e-mail do encarregado (DPO).
