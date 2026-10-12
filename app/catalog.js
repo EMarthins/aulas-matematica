@@ -321,6 +321,32 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'O que a razão multiplica?', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Teorema Fundamental: trilha de desafios', arquivo:'aulas/1-ano/2-tri/teorema-fundamental-da-semelhanca/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Pitágoras e Relações Métricas',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 68', titulo:'Teorema de Pitágoras', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/aula-1-teorema-de-pitagoras.html' },
+                  { tipo:'Aulas 69–70', titulo:'Relações métricas', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/aula-2-relacoes-metricas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Pitágoras e Relações Métricas', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Pitágoras e relações métricas no estilo ENEM', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a solução', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Pitágoras e relações métricas: trilha de desafios', arquivo:'aulas/1-ano/2-tri/pitagoras-e-relacoes-metricas/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Razões Trigonométricas',
+                accent: 'primary',
+                icon: 'wave',
+                itens: [
+                  { tipo:'Aulas 71–72', titulo:'O seno', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/aula-1-o-seno.html' },
+                  { tipo:'Aulas 74–76', titulo:'Cosseno, tangente e problemas', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/aula-2-cosseno-e-tangente.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Razões Trigonométricas', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Razões trigonométricas no estilo ENEM', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual razão usar?', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Razões trigonométricas: trilha de desafios', arquivo:'aulas/1-ano/2-tri/razoes-trigonometricas/atividade-pratica.html' }
+                ]
               }
             ]
           }
