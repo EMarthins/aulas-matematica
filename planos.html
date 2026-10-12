@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planos — Proveiro e aulas para professores</title>
+<meta name="description" content="Comece grátis: aulas, simulados e o Proveiro (fazedor de prova). O plano Pro tira os limites de provas, questões e turmas.">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .pl-head{ text-align:center; margin-bottom:28px; }
+  .pl-head h1{ font-size:clamp(1.7rem,4.2vw,2.6rem); font-weight:900; margin:6px 0 10px; line-height:1.1; }
+  .pl-head .lede{ max-width:56ch; margin:0 auto 18px; color:var(--ink-soft); }
+  .seg-preco{ display:inline-flex; gap:2px; padding:3px; background:var(--surface-2); border-radius:12px; }
+  .seg-preco button{ border:0; background:transparent; font:inherit; font-weight:700; font-size:.86rem; padding:.5em 1.1em; border-radius:9px; color:var(--ink-soft); cursor:pointer; }
+  .seg-preco button.on{ background:var(--surface); color:var(--primary); box-shadow:0 1px 3px var(--shadow-soft); }
+  .seg-preco small{ color:var(--success); font-weight:800; margin-left:.3em; }
+  .planos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr)); gap:16px; align-items:stretch; }
+  .plano{ position:relative; background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:24px 22px; display:flex; flex-direction:column; }
+  .plano.destaque{ border:2px solid var(--primary); box-shadow:0 22px 44px -28px var(--shadow); }
+  .plano .selo{ position:absolute; top:-12px; left:22px; background:var(--primary); color:var(--primary-ink); font-family:'JetBrains Mono',monospace; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:.3em .8em; border-radius:99px; }
+  .plano h2{ margin:0; font-size:1.1rem; font-weight:900; }
+  .plano .preco{ margin:10px 0 2px; display:flex; align-items:baseline; gap:6px; }
+  .plano .preco b{ font-family:'Archivo',sans-serif; font-size:2rem; font-weight:900; }
+  .plano .preco small{ color:var(--ink-faint); }
+  .plano .sub{ margin:0 0 16px; color:var(--ink-soft); font-size:.88rem; }
+  .pl-btn{ display:block; text-align:center; text-decoration:none; font-weight:800; font-size:.9rem; padding:.75em 1em; border-radius:12px; background:var(--primary); color:var(--primary-ink); margin-bottom:18px; }
+  .pl-btn.sec{ background:transparent; color:var(--ink); border:1.5px solid var(--line-strong); }
+  .pl-btn:hover{ filter:brightness(1.08); }
+  .plano ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.88rem; }
+  .plano li{ padding-left:1.5em; position:relative; line-height:1.4; }
+  .plano li::before{ content:"\2713"; position:absolute; left:0; color:var(--success); font-weight:900; }
+  .plano li.nao{ color:var(--ink-faint); } .plano li.nao::before{ content:"\00b7"; color:var(--ink-faint); }
+  .plano li.breve{ color:var(--ink-soft); } .plano li.breve::before{ content:"\2022"; color:var(--ink-faint); }
+  .assinar, .faq{ max-width:44rem; margin:44px auto 0; }
+  .assinar h2, .faq h2{ font-size:1.3rem; font-weight:900; margin:0 0 12px; }
+  .assinar ol{ padding-left:1.3em; color:var(--ink-soft); line-height:1.7; }
+  .contato{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  .contato .pl-btn{ margin:0; display:inline-block; padding:.7em 1.3em; }
+  .contato .vazio{ color:var(--ink-faint); font-size:.88rem; }
+  .pix-box{ margin-top:12px; padding:.8em 1em; border:1.5px dashed var(--line-strong); border-radius:12px; font-size:.88rem; width:100%; }
+  .faq details{ border-top:1px solid var(--line); padding:.8em 0; } .faq details:last-child{ border-bottom:1px solid var(--line); }
+  .faq summary{ cursor:pointer; font-weight:700; } .faq p{ color:var(--ink-soft); margin:.5em 0 0; font-size:.92rem; line-height:1.6; }
+</style>
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="index.html">Catálogo</a><a href="login.html">Entrar</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:34px 20px 80px;max-width:68rem;">
+  <header class="pl-head">
+    <div class="eyebrow">Planos</div>
+    <h1 class="disp">Comece grátis. Assine quando precisar de mais.</h1>
+    <p class="lede">Aulas, simulados e o Proveiro (fazedor de prova) com a sua conta gratuita. O plano Pro tira os limites de provas, questões e turmas.</p>
+    <div class="seg-preco" role="group" aria-label="Periodicidade"><button type="button" class="on" data-p="mensal">Mensal</button><button type="button" data-p="anual">Anual</button></div>
+  </header>
+
+  <section class="planos" aria-label="Planos">
+    <article class="plano">
+      <h2>Gratuito</h2>
+      <div class="preco"><b>R$ 0</b></div>
+      <p class="sub">Para conhecer e usar no dia a dia.</p>
+      <a class="pl-btn sec" id="btnGratis" href="login.html?modo=cadastrar&amp;papel=professor">Criar conta grátis</a>
+      <ul>
+        <li>Todas as aulas, guias e atividades do site</li>
+        <li>Simulados e revisão dos erros</li>
+        <li>Proveiro: banco com <b>1.800+ questões</b> (ENEM e autorais), filtros, folha A4 e PDF</li>
+        <li>Turmas: <b id="limTurmas">2</b> · alunos e atividades ilimitados</li>
+        <li><b id="limProvas">3</b> provas e <b id="limQuestoes">40</b> questões próprias guardadas na nuvem</li>
+        <li class="nao">Acima disso, ficam só neste navegador</li>
+      </ul>
+    </article>
+
+    <article class="plano destaque">
+      <span class="selo">Mais escolhido</span>
+      <h2>Pro</h2>
+      <div class="preco"><b id="precoPro">R$ 29</b><small id="precoPeriodo">/mês</small></div>
+      <p class="sub" id="subPro">Para quem usa toda semana.</p>
+      <a class="pl-btn" id="btnPro" href="#assinar">Quero o Pro</a>
+      <ul>
+        <li>Tudo do plano Gratuito</li>
+        <li><b>Provas e questões próprias ilimitadas</b> na nuvem, em qualquer computador</li>
+        <li><b>Turmas ilimitadas</b></li>
+        <li>Suporte direto com o autor</li>
+        <li class="breve">Em breve: exportar prova em Word</li>
+        <li class="breve">Em breve: relatórios da turma e notas em CSV</li>
+      </ul>
+    </article>
+
+    <article class="plano">
+      <h2>Escola</h2>
+      <div class="preco"><b>Sob consulta</b></div>
+      <p class="sub">Para coordenações e redes de ensino.</p>
+      <a class="pl-btn sec" id="btnEscola" href="#assinar">Falar com a gente</a>
+      <ul>
+        <li>Vários professores com uma cobrança só</li>
+        <li>Conta de coordenação</li>
+        <li>Implantação e treinamento</li>
+        <li class="breve">Em preparação</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="assinar" id="assinar" aria-live="polite">
+    <h2 class="disp">Como assinar</h2>
+    <ol>
+      <li><b>Crie sua conta de professor</b> (grátis) e teste o Proveiro.</li>
+      <li><b>Fale com a gente</b> pelos botões abaixo. Você tem <span id="diasTeste">14</span> dias de teste do Pro, sem compromisso.</li>
+      <li>Para continuar, o pagamento é feito por <b>Pix</b> (cartão em breve) e o seu plano é liberado no mesmo dia.</li>
+    </ol>
+    <div class="contato" id="contato"></div>
+  </section>
+
+  <section class="faq" aria-label="Perguntas frequentes">
+    <h2 class="disp">Perguntas frequentes</h2>
+    <details><summary>Meus alunos precisam pagar?</summary><p>Não. Alunos usam as aulas, os simulados e as atividades com a conta gratuita. O plano é do professor.</p></details>
+    <details><summary>O que acontece se eu parar de pagar?</summary><p>Nada é apagado. Suas provas e questões continuam no seu navegador; só deixam de ser sincronizadas na nuvem acima dos limites do plano gratuito.</p></details>
+    <details><summary>Minhas provas ficam salvas se eu trocar de computador?</summary><p>Sim, se você entrar com a sua conta de professor: o Proveiro guarda suas provas e questões na nuvem (dentro dos limites do plano).</p></details>
+    <details><summary>Posso usar sem internet?</summary><p>Sim. O site funciona offline depois da primeira visita; o que você fizer sem conexão é enviado para a nuvem quando a internet voltar.</p></details>
+    <details><summary>E os meus dados e os dos alunos?</summary><p>Você pode baixar ou excluir seus dados quando quiser, em <a href="conta.html">Minha conta</a>. Veja os <a href="termos.html">termos e a política de privacidade</a>.</p></details>
+  </section>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { PLANOS } from './app/planos.js';
+import { VENDA } from './app/config-venda.js';
+iniciarThemeToggle('theme-pref-app');
+var $ = function(id){ return document.getElementById(id); };
+$('limTurmas').textContent = PLANOS.free.turmas; $('limProvas').textContent = PLANOS.free.provasNuvem; $('limQuestoes').textContent = PLANOS.free.questoesProprias; $('diasTeste').textContent = VENDA.diasDeTeste;
+function reais(n){ return 'R$ ' + String(n).replace('.', ','); }
+var periodo = 'mensal';
+function pinta(){
+  var anual = periodo === 'anual';
+  $('precoPro').textContent = reais(anual ? VENDA.precoAnual : VENDA.precoMensal);
+  $('precoPeriodo').textContent = anual ? '/ano' : '/mês';
+  $('subPro').textContent = anual ? 'Equivale a ' + reais(Math.round(VENDA.precoAnual / 12 * 100) / 100) + ' por mês.' : 'Para quem usa toda semana.';
+  document.querySelectorAll('.seg-preco button').forEach(function(b){ b.classList.toggle('on', b.dataset.p === periodo); });
+  contato();
+}
+document.querySelectorAll('.seg-preco button').forEach(function(b){ b.addEventListener('click', function(){ periodo = b.dataset.p; pinta(); }); });
+function contato(){
+  var box = $('contato'), msg = 'Olá! Quero testar o plano Pro do ' + VENDA.nomeProduto + ' (' + periodo + ').';
+  var html = '', tem = false;
+  if(VENDA.whatsapp){ tem = true; html += '<a class="pl-btn" target="_blank" rel="noopener" href="https://wa.me/' + encodeURIComponent(VENDA.whatsapp) + '?text=' + encodeURIComponent(msg) + '">Falar no WhatsApp</a>'; }
+  if(VENDA.email){ tem = true; html += '<a class="pl-btn sec" href="mailto:' + encodeURIComponent(VENDA.email).replace('%40', '@') + '?subject=' + encodeURIComponent('Plano Pro — ' + VENDA.nomeProduto) + '&body=' + encodeURIComponent(msg) + '">Enviar e-mail</a>'; }
+  if(!tem) html = '<span class="vazio">Em breve: as assinaturas abrem em instantes. Crie sua conta gratuita enquanto isso.</span>';
+  if(VENDA.pix && tem) html += '<div class="pix-box">Pagamento por Pix, depois do contato: <b>' + String(VENDA.pix).replace(/[<>&]/g, '') + '</b></div>';
+  box.innerHTML = html;
+}
+pinta();
+</script>
+<script type="module" src="app/sidebar.js"></script>
+</body>
+</html>

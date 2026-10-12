@@ -39,6 +39,8 @@ const I = {
   chev: '<path d="m9 6 6 6-6 6"/>',
   recolher: '<path d="m11 7-5 5 5 5M18 7l-5 5 5 5"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  tag: '<path d="M3.5 12.5V5A1.5 1.5 0 0 1 5 3.5h7.5l8 8a1.5 1.5 0 0 1 0 2.1l-6.4 6.4a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/>',
+  user: '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>',
   gift: '<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M12 8v13M5 12.5V20h14v-7.5M12 8c-1.5-3.8-5.5-3.2-4.6-.8.6 1.4 2.9.8 4.6.8ZM12 8c1.5-3.8 5.5-3.2 4.6-.8-.6 1.4-2.9.8-4.6.8Z"/>'
 };
 const svg = n => '<svg viewBox="0 0 24 24" aria-hidden="true">' + (I[n] || n) + '</svg>';
@@ -119,7 +121,9 @@ function montar() {
   }
   foot += '<button type="button" class="sb-item" data-tema title="Alternar tema"><span class="sb-ic"></span><span class="sb-lbl">Tema</span></button>';
   foot += '<button type="button" class="sb-item" data-instalar hidden title="Instalar como aplicativo"><span class="sb-ic">' + svg('down') + '</span><span class="sb-lbl">Instalar app</span></button>';
-  if (!ehProf) foot += itemLink('para-professores.html', url('para-professores.html'), 'prof', 'Para professores');
+  if (user) foot += itemLink('conta.html', url('conta.html'), 'user', 'Minha conta e dados');
+  if (ehProf) foot += itemLink('planos.html', url('planos.html'), 'tag', 'Planos');
+  else foot += itemLink('para-professores.html', url('para-professores.html'), 'prof', 'Para professores') + itemLink('planos.html', url('planos.html'), 'tag', 'Planos');
   foot += '<div class="sb-mini"><a href="' + url('termos.html') + '">Termos e privacidade</a></div>';
 
   const aside = document.createElement('aside');

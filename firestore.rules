@@ -10,6 +10,15 @@ service cloud.firestore {
     function dono(uid) {
       return request.auth != null && request.auth.uid == uid;
     }
+    // Administrador do serviço: quem tem um documento em admins/{uid} (criado À MÃO no console do Firebase).
+    // Serve para conceder o plano Pro a quem pagou (admin.html). Ninguém cria isso pelo site.
+    function admin() {
+      return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    // Campos do plano: só o administrador muda (o professor NUNCA muda o próprio plano).
+    function camposDoPlano() {
+      return ['plano', 'planoAte', 'planoNota'];
+    }
     // O aluno está APROVADO nessa turma? (lê a matrícula dele em teachers/{prof}/classes/{turma}/students/{uid})
     function aprovado(teacherUid, classId, uid) {
       let p = /databases/$(database)/documents/teachers/$(teacherUid)/classes/$(classId)/students/$(uid);
@@ -44,14 +53,31 @@ service cloud.firestore {
 
     // --- Perfil do usuário (professor ou aluno) ---
     match /users/{uid} {
-      allow read: if dono(uid);
+      allow read: if dono(uid) || admin();
+      allow delete: if dono(uid); // o usuário pode excluir a própria conta (conta.html)
       // O papel só pode ser escolhido no cadastro e não muda depois.
       allow create: if dono(uid) && request.resource.data.role in ['aluno', 'professor'];
       allow update: if dono(uid) && request.resource.data.role == resource.data.role;
     }
 
     match /teachers/{teacherUid} {
-      allow read, write: if dono(teacherUid);
+      allow read: if dono(teacherUid) || admin();
+      // Todo professor nasce no plano gratuito; só o administrador muda plano/planoAte/planoNota.
+      allow create: if dono(teacherUid) && request.resource.data.plano == 'free' && !('planoAte' in request.resource.data);
+      allow update: if (dono(teacherUid) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(camposDoPlano())) ||
+                       (admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(camposDoPlano()));
+      allow delete: if dono(teacherUid);
+
+      // --- Provas, questões próprias e configurações do Proveiro (salvas na nuvem) ---
+      match /provas/{provaId} {
+        allow read, write: if dono(teacherUid);
+      }
+      match /questoes/{questaoId} {
+        allow read, write: if dono(teacherUid);
+      }
+      match /config/{docId} {
+        allow read, write: if dono(teacherUid);
+      }
 
       // --- Turmas ---
       match /classes/{classId} {
@@ -72,6 +98,8 @@ service cloud.firestore {
 
           // Só o professor aprova/rejeita (muda o status) ou remove.
           allow update, delete: if dono(teacherUid);
+          // O aluno pode remover a PRÓPRIA matrícula (sair da turma / excluir a conta).
+          allow delete: if dono(studentUid);
         }
       }
 
@@ -96,6 +124,9 @@ service cloud.firestore {
             request.resource.data.classId is string &&
             aprovado(teacherUid, request.resource.data.classId, studentUid) &&
             atividadeDaTurma(teacherUid, activityId, request.resource.data.classId);
+
+          // Excluir a conta: o aluno pode apagar a PRÓPRIA submissão.
+          allow delete: if dono(studentUid);
 
           // Atualização: só a própria, só campos permitidos, e nunca depois de corrigida pelo professor.
           allow update: if dono(studentUid) &&

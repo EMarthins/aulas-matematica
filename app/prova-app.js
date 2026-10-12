@@ -6,6 +6,8 @@ import { mat } from './matematica.js';
 import { figuraHtml } from './figuras.js';
 import { TIPOS, SOMA_VALORES, normalizar, validar, renderQuestao, renderResolucao, gabaritoDe, textoPlano, uid, fmtPt, rng, embaralhar } from './questoes.js';
 import * as IA from './ia-prova.js';
+import { criarSincronizador } from './nuvem.js';
+import { PLANOS, planoVigente } from './planos.js';
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -13,7 +15,9 @@ const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ
 const MM = 96 / 25.4;
 const LS = {
   ler(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (_) { return d; } },
-  gravar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (_) { return false; } }
+  // gravar() avisa a nuvem quando muda algo que ela guarda; bruto() grava sem avisar (usado pela própria sincronização)
+  gravar(k, v) { const ok = LS.bruto(k, v); if (ok && NUVEM_CHAVES.has(k)) nuvemAlterou(); return ok; },
+  bruto(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (_) { return false; } }
 };
 let toastT;
 function toast(msg, ms = 2800) {
@@ -671,7 +675,7 @@ function iniciarEditor() {
     const q = construirDoEditor(), erros = validar(q);
     if (erros.length) { previaEditor(); return toast('Falta: ' + erros[0] + '.', 4000); }
     const minhas = getMinhas(), i = minhas.findIndex(x => x.id === q.id);
-    q.origem = 'minha'; if (i >= 0) minhas[i] = q; else minhas.unshift(q);
+    q.origem = 'minha'; q._t = new Date().toISOString(); if (i >= 0) minhas[i] = q; else minhas.unshift(q);
     if (!LS.gravar('prova:minhas', minhas)) return toast('Não deu para salvar (armazenamento cheio?). Reduza as imagens ou exporte e apague questões antigas.', 5000);
     $('dlgEd').close(); montarBanco(); if (E.itens.some(it => it.id === q.id)) { E.snap[q.id] = q; mudou(); } F.q = ''; $('busca').value = ''; renderBanco(true); toast('Questão salva em “Minhas questões”.');
   });
@@ -698,7 +702,7 @@ const slug = s => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || '
 function salvarProva() {
   const todas = LS.ler('prova:salvas', {}); const s = paraSalvar(); s.atualizado = new Date().toISOString(); todas[E.id] = s;
   if (!LS.gravar('prova:salvas', todas)) return toast('Não deu para salvar: armazenamento cheio. Exporte a prova (Abrir → Exportar) e apague as antigas.', 5000);
-  toast('Prova salva neste navegador.');
+  toast(sincronizador ? 'Prova salva — enviando para a nuvem.' : 'Prova salva neste navegador.');
 }
 function carregarProva(s) {
   const novo = novoEstado(); E = Object.assign(novo, s); E.cab = Object.assign({}, PADRAO_CAB, s.cab, { mostrar: Object.assign({}, PADRAO_CAB.mostrar, (s.cab || {}).mostrar || {}) });
@@ -717,7 +721,7 @@ function iniciarArquivos() {
   $('salvas').addEventListener('click', e => {
     const t = e.target.closest('button'); if (!t) return; const todas = LS.ler('prova:salvas', {});
     if (t.dataset.ab) { carregarProva(todas[t.dataset.ab]); $('dlgAbrir').close(); }
-    else if (t.dataset.dup) { const c = JSON.parse(JSON.stringify(todas[t.dataset.dup])); c.id = uid(); c.nome += ' (cópia)'; todas[c.id] = c; LS.gravar('prova:salvas', todas); listarSalvas(); }
+    else if (t.dataset.dup) { const c = JSON.parse(JSON.stringify(todas[t.dataset.dup])); c.id = uid(); c.nome += ' (cópia)'; c.atualizado = new Date().toISOString(); todas[c.id] = c; LS.gravar('prova:salvas', todas); listarSalvas(); }
     else if (t.dataset.exp) { const s = todas[t.dataset.exp]; baixar(slug(s.nome) + '.prova.json', s); }
     else if (t.dataset.del && confirm('Excluir esta prova salva?')) { delete todas[t.dataset.del]; LS.gravar('prova:salvas', todas); listarSalvas(); }
   });
@@ -874,6 +878,77 @@ function iniciarIA() {
 }
 
 /* =====================================================================
+   Nuvem: provas e questões próprias sincronizadas com a conta do professor (app/nuvem.js)
+   ===================================================================== */
+const NUVEM_CHAVES = new Set(['prova:salvas', 'prova:minhas', 'prova:perfil']);
+let sincronizador = null, PLANO = PLANOS.free, nuvemEstado = { estado: 'sem-login' };
+const localNuvem = {
+  ler(col) {
+    if (col === 'provas') return LS.ler('prova:salvas', {});
+    if (col === 'questoes') { const m = {}; getMinhas().forEach(q => { if (q && q.id) m[q.id] = q; }); return m; }
+    const p = LS.ler('prova:perfil', null); return p && Object.keys(p).length ? { proveiro: Object.assign({ id: 'proveiro' }, p) } : {};
+  },
+  gravar(col, v) {
+    if (col === 'provas') LS.bruto('prova:salvas', v);
+    else if (col === 'questoes') {
+      const atual = getMinhas(), novas = [];
+      atual.forEach(q => { if (v[q.id]) novas.push(v[q.id]); });
+      Object.keys(v).forEach(id => { if (!atual.some(q => q.id === id)) novas.push(v[id]); });
+      LS.bruto('prova:minhas', novas);
+    } else if (v.proveiro) { const p = Object.assign({}, v.proveiro); delete p.id; LS.bruto('prova:perfil', p); }
+  },
+  lerMeta: () => LS.ler('prova:nuvem:meta', {}),
+  gravarMeta: m => LS.bruto('prova:nuvem:meta', m)
+};
+function nuvemAlterou() { if (sincronizador) sincronizador.alterou(); }
+function pararNuvem() { if (sincronizador) { sincronizador.parar(); sincronizador = null; } }
+function pintaNuvem(e) {
+  nuvemEstado = Object.assign({}, nuvemEstado, e);
+  const b = $('nuvem'); if (!b) return;
+  const bloq = e.bloqueados ? Object.values(e.bloqueados).reduce((a, n) => a + n, 0) : 0;
+  const T = {
+    'sem-login': ['', 'Só neste navegador', 'Entre com sua conta de professor para guardar suas provas e questões na nuvem e usar em qualquer computador.'],
+    'aluno': ['', 'Conta de aluno', 'A nuvem do Proveiro é para contas de professor.'],
+    'sincronizando': ['sync', 'Sincronizando…', 'Enviando e trazendo suas provas e questões.'],
+    'ok': [bloq ? 'aviso' : 'ok', bloq ? bloq + ' só neste navegador' : 'Salvo na nuvem', bloq ? 'Plano gratuito: ' + PLANO.provasNuvem + ' provas e ' + PLANO.questoesProprias + ' questões próprias na nuvem. O resto fica só neste navegador. Clique para ver os planos.' : 'Suas provas e questões estão guardadas na sua conta.'],
+    'parcial': ['aviso', 'Parte não subiu', 'Alguns itens não foram para a nuvem (grandes demais?): ' + ((e.resumo && e.resumo.falhas || []).map(f => f.col + ':' + f.erro).slice(0, 3).join('; ')) + '. Clique para tentar de novo.'],
+    'offline': ['aviso', 'Sem conexão', 'Sem internet: o que você fizer fica neste navegador e sobe depois.'],
+    'erro': ['erro', 'Erro ao sincronizar', 'Não deu para falar com a nuvem. Clique para tentar de novo.'],
+    'pausado': ['aviso', 'Nuvem pausada', 'Este navegador tem dados de outra conta; a sincronização ficou pausada.']
+  }[e.estado] || ['', '', ''];
+  b.className = 'nuvem ' + T[0]; b.querySelector('span').textContent = T[1]; b.title = T[2];
+}
+async function iniciarNuvem(uid) {
+  try {
+    pararNuvem();
+    // dados de outra conta neste navegador: não misturar sem perguntar
+    const dono = LS.ler('prova:nuvem:uid', null);
+    if (dono && dono !== uid) {
+      const temDados = Object.keys(localNuvem.ler('provas')).length || Object.keys(localNuvem.ler('questoes')).length;
+      if (temDados && !confirm('Este navegador tem provas e questões guardadas de OUTRA conta. Enviar também para a nuvem desta conta?')) { pintaNuvem({ estado: 'pausado' }); return; }
+      LS.bruto('prova:nuvem:meta', {});
+    }
+    LS.bruto('prova:nuvem:uid', uid);
+    const mod = await import('./nuvem-firestore.js');
+    try { PLANO = planoVigente(await mod.lerProfessor(uid)); } catch (_) { PLANO = PLANOS.free; }
+    sincronizador = criarSincronizador({
+      local: localNuvem, remoto: mod.remotoFirestore(uid),
+      limites: () => ({ provas: PLANO.provasNuvem, questoes: PLANO.questoesProprias }),
+      aoEstado: pintaNuvem,
+      aoAtualizarLocal: () => { montarBanco(); renderBanco(); }
+    });
+    sincronizador.agora();
+  } catch (e) { pintaNuvem({ estado: (typeof navigator !== 'undefined' && navigator.onLine === false) ? 'offline' : 'erro' }); }
+}
+function cliqueNuvem() {
+  const e = nuvemEstado.estado;
+  if (e === 'sem-login') { location.href = '../login.html?voltar=' + encodeURIComponent('professor/prova.html'); return; }
+  const bloq = nuvemEstado.bloqueados ? Object.values(nuvemEstado.bloqueados).reduce((a, n) => a + n, 0) : 0;
+  if (e === 'ok' && bloq) { location.href = '../planos.html'; return; }
+  if (sincronizador) { sincronizador.agora(); toast('Sincronizando com a nuvem…'); }
+}
+
+/* =====================================================================
    Inicialização
    ===================================================================== */
 function iniciarBanco() {
@@ -990,9 +1065,12 @@ async function iniciar() {
   const p = new URLSearchParams(location.search);
   if (p.get('q')) { $('busca').value = p.get('q'); F.q = p.get('q'); renderBanco(true); }
   // pré-preenche o nome do professor a partir da conta (se estiver logado) — opcional, nunca bloqueia
+  pintaNuvem({ estado: 'sem-login' });
+  $('nuvem').addEventListener('click', cliqueNuvem);
   import('./auth.js').then(m => m.aoMudarAuth(async u => {
-    if (!u) return; const perfil = await m.buscarPerfil(u.uid);
-    if (perfil && perfil.role === 'professor') { PROF_NOME = perfil.nome || ''; if (!E.cab.professor && PROF_NOME) { E.cab.professor = PROF_NOME; $('c-professor').value = PROF_NOME; mudou(true); } }
+    if (!u) { pararNuvem(); pintaNuvem({ estado: 'sem-login' }); return; } const perfil = await m.buscarPerfil(u.uid);
+    if (perfil && perfil.role === 'professor') { PROF_NOME = perfil.nome || ''; if (!E.cab.professor && PROF_NOME) { E.cab.professor = PROF_NOME; $('c-professor').value = PROF_NOME; mudou(true); } iniciarNuvem(u.uid); }
+    else pintaNuvem({ estado: 'aluno' });
   })).catch(() => { /* sem rede / sem Firebase: segue sem login */ });
 }
 iniciar();

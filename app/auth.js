@@ -9,7 +9,10 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
+  deleteUser
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import {
   doc, setDoc, getDoc, serverTimestamp
@@ -36,7 +39,7 @@ export async function cadastrar(nome, email, senha, role){
 
   if(role === "professor"){
     await setDoc(doc(db, "teachers", cred.user.uid), {
-      nome, plano: "free", createdAt: serverTimestamp()
+      nome, email, plano: "free", createdAt: serverTimestamp()
     });
   }
 
@@ -51,6 +54,17 @@ export async function entrar(email, senha){
 export function sair(){
   lembrarUsuario(null);
   return signOut(auth);
+}
+
+// Confirma a senha do usuário logado (necessário para excluir a conta).
+export async function reautenticar(senha){
+  const u = auth.currentUser;
+  if(!u || !u.email) throw new Error("Sem usuário logado.");
+  await reauthenticateWithCredential(u, EmailAuthProvider.credential(u.email, senha));
+}
+
+export async function excluirUsuarioAuth(){
+  await deleteUser(auth.currentUser);
 }
 
 export function recuperarSenha(email){
@@ -111,6 +125,7 @@ export function mensagemErroAuth(err){
     "auth/wrong-password": "Senha incorreta.",
     "auth/user-not-found": "Não encontramos uma conta com esse e-mail.",
     "auth/invalid-credential": "E-mail ou senha incorretos.",
+    "auth/requires-recent-login": "Por segurança, saia, entre de novo e tente outra vez.",
     "auth/too-many-requests": "Muitas tentativas. Aguarde um pouco e tente de novo."
   };
   return mapa[codigo] || "Não foi possível completar a ação. Tente novamente.";

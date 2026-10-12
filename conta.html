@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minha conta — Prof. Eduardo</title>
+<meta name="robots" content="noindex">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .cc{ max-width:40rem; margin:0 auto; }
+  .cc .card + .card{ margin-top:16px; }
+  .cc dl{ display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:8px 0 0; font-size:.92rem; }
+  .cc dt{ color:var(--ink-faint); font-weight:700; } .cc dd{ margin:0; }
+  .cc .perigo{ border-color:color-mix(in srgb,var(--danger) 45%,var(--line)); }
+  .cc .perigo h2{ color:var(--danger); }
+  .cc input{ max-width:20rem; }
+</style>
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="index.html">Catálogo</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:34px 20px 80px;">
+  <div class="cc">
+    <div class="eyebrow">Minha conta</div>
+    <h1 class="title">Seus dados, sob seu controle</h1>
+    <p class="lede">Aqui você vê o que guardamos, baixa uma cópia e, se quiser, exclui a conta com tudo que é dela.</p>
+
+    <div class="card" id="cardConta">
+      <h2>Conta</h2>
+      <dl id="dados"><dt>Carregando…</dt><dd></dd></dl>
+      <p class="hint" style="margin-top:12px;"><a href="planos.html" id="linkPlanos" hidden>Ver planos</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Baixar meus dados</h2>
+      <p class="sub">Um arquivo JSON com seu perfil e tudo o que você criou ou enviou aqui.</p>
+      <button type="button" class="btn" id="bBaixar">Baixar meus dados</button>
+      <div id="msgBaixar" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="card perigo">
+      <h2>Excluir minha conta</h2>
+      <p class="sub">Apaga seu login e <b>todos os seus dados</b> deste serviço: perfil, <span id="oQue">matrículas e envios</span>. Não dá para desfazer. Antes, baixe uma cópia acima.</p>
+      <label for="senhaEx">Digite sua senha para confirmar</label>
+      <input type="password" id="senhaEx" autocomplete="current-password">
+      <label class="pv-chk" style="display:flex;gap:8px;align-items:center;margin:12px 0;font-size:.9rem;"><input type="checkbox" id="okEx" style="width:auto;"> Entendi que isso é definitivo.</label>
+      <button type="button" class="btn danger" id="bExcluir" disabled>Excluir minha conta e meus dados</button>
+      <div id="msgExcluir" style="margin-top:12px;"></div>
+    </div>
+
+    <p class="hint" style="margin-top:18px;">Dúvidas sobre privacidade? Veja os <a href="termos.html">termos e a política de privacidade</a>.</p>
+  </div>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { aoMudarAuth, buscarPerfil, mensagemErroAuth } from './app/auth.js';
+import { coletarDados, excluirConta } from './app/conta.js';
+import { lerProfessor } from './app/nuvem-firestore.js';
+import { planoVigente, fmtData } from './app/planos.js';
+import { escapeHtml } from './app/util.js';
+iniciarThemeToggle('theme-pref-app');
+var $ = function(id){ return document.getElementById(id); };
+var usuario = null, perfil = null;
+
+aoMudarAuth(async function(u){
+  if(!u){ location.href = 'login.html?voltar=conta.html'; return; }
+  usuario = u; perfil = await buscarPerfil(u.uid) || {};
+  var linhas = [['Nome', perfil.nome || u.displayName || '—'], ['E-mail', u.email || '—'], ['Tipo de conta', perfil.role === 'professor' ? 'Professor(a)' : 'Aluno(a)']];
+  if(perfil.role === 'professor'){
+    var p = planoVigente(await lerProfessor(u.uid).catch(function(){ return null; }));
+    linhas.push(['Plano', p.nome]); $('linkPlanos').hidden = false;
+    $('oQue').textContent = 'turmas, atividades, provas, questões próprias e configurações';
+  }
+  $('dados').innerHTML = linhas.map(function(l){ return '<dt>' + escapeHtml(l[0]) + '</dt><dd>' + escapeHtml(String(l[1])) + '</dd>'; }).join('');
+});
+
+$('bBaixar').addEventListener('click', async function(){
+  var box = $('msgBaixar'); box.innerHTML = ''; this.disabled = true;
+  try{
+    var dados = await coletarDados(usuario.uid, perfil.role, perfil);
+    var blob = new Blob([JSON.stringify(dados, null, 2)], { type: 'application/json' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'meus-dados.json'; document.body.appendChild(a); a.click(); a.remove();
+    box.innerHTML = '<div class="alert success">Pronto! O arquivo foi baixado.</div>';
+  }catch(e){ box.innerHTML = '<div class="alert error">Não foi possível reunir seus dados agora. Tente de novo.</div>'; }
+  this.disabled = false;
+});
+
+function liberaExcluir(){ $('bExcluir').disabled = !($('okEx').checked && $('senhaEx').value.length >= 6); }
+$('okEx').addEventListener('change', liberaExcluir); $('senhaEx').addEventListener('input', liberaExcluir);
+$('bExcluir').addEventListener('click', async function(){
+  var box = $('msgExcluir'); box.innerHTML = ''; this.disabled = true;
+  try{
+    await excluirConta(usuario.uid, perfil.role, $('senhaEx').value, function(t){ box.innerHTML = '<div class="alert success">' + escapeHtml(t) + '</div>'; });
+    box.innerHTML = '<div class="alert success">Conta excluída. Obrigado por ter usado o site.</div>';
+    setTimeout(function(){ location.href = 'index.html'; }, 2500);
+  }catch(e){
+    box.innerHTML = '<div class="alert error">' + (e && e.code ? mensagemErroAuth(e) : 'Não foi possível excluir tudo agora. Tente de novo; se persistir, fale com o suporte.') + '</div>';
+    this.disabled = false;
+  }
+});
+</script>
+<script type="module" src="app/sidebar.js"></script>
+</body>
+</html>

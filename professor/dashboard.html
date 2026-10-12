@@ -49,6 +49,11 @@
   <h1 class="title">Turmas, atividades e correção</h1>
   <p class="lede">Crie turmas, aprove alunos, atribua aulas/quizzes como atividades e acompanhe o engajamento — tudo num só lugar.</p>
 
+  <div class="card" id="planoCard" style="display:none;gap:12px 18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:16px;">
+    <div><b id="planoNome">Plano Gratuito</b><div class="hint" id="planoInfo" style="margin:2px 0 0;"></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;"><a class="btn sm" id="planoBtn" href="../planos.html">Ver planos</a><a class="btn sm secondary" href="../conta.html">Minha conta e dados</a></div>
+  </div>
+
   <div class="tabs" id="mainTabs">
     <button type="button" class="active" data-panel="turmas">Turmas</button>
     <button type="button" data-panel="atividades">Atividades</button>
@@ -164,22 +169,42 @@ import {
 import { listarAulasParaSelecao } from '../app/catalog.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml, linkSeguro } from '../app/util.js';
+import { PLANOS, planoVigente, fmtData } from '../app/planos.js';
+import { lerProfessor } from '../app/nuvem-firestore.js';
 
 iniciarThemeToggle('theme-pref-app');
 
 var uid = null;
 var turmasCache = [];
 var atividadesCache = [];
+var PLANO = PLANOS.free;
 
 document.getElementById('logoutBtn').addEventListener('click', function(e){ e.preventDefault(); sair(); });
 
 protegerPagina('professor', function(user, perfil){
   uid = user.uid;
   document.getElementById('userNome').textContent = perfil.nome;
+  mostrarPlano(uid);
   popularAulas();
   carregarTurmas();
   carregarAtividades();
 }, '../login.html');
+
+// ---------- Plano ----------
+async function mostrarPlano(id){
+  var doc = null; try{ doc = await lerProfessor(id); }catch(e){}
+  PLANO = planoVigente(doc);
+  var card = document.getElementById('planoCard'); card.style.display = 'flex';
+  document.getElementById('planoNome').textContent = 'Plano ' + PLANO.nome;
+  var info = document.getElementById('planoInfo'), btn = document.getElementById('planoBtn');
+  if(PLANO.id === 'free'){
+    info.textContent = 'Até ' + PLANO.turmas + ' turmas, ' + PLANO.provasNuvem + ' provas e ' + PLANO.questoesProprias + ' questões próprias na nuvem. Alunos e atividades ilimitados.';
+    btn.textContent = 'Conhecer o Pro';
+  }else{
+    info.textContent = 'Tudo liberado' + (doc && doc.planoAte ? ' até ' + fmtData(doc.planoAte) : '') + '.';
+    btn.textContent = 'Meu plano';
+  }
+}
 
 // ---------- Tabs ----------
 document.getElementById('mainTabs').querySelectorAll('button').forEach(function(btn){
@@ -216,6 +241,10 @@ document.getElementById('formTurma').addEventListener('submit', async function(e
   if(!nome) return;
   var alertBox = document.getElementById('turmaAlert');
   alertBox.innerHTML = '';
+  if(turmasCache.length >= PLANO.turmas){
+    alertBox.innerHTML = '<div class="alert error">O plano gratuito permite até ' + PLANO.turmas + ' turmas. <a href="../planos.html" style="color:inherit;font-weight:800;">Conheça o plano Pro</a> para criar quantas quiser.</div>';
+    return;
+  }
   try{
     var res = await criarTurma(uid, nome, ano);
     alertBox.innerHTML = '<div class="alert success">Turma criada! Código de convite: <span class="code-pill">'+res.joinCode+'</span> — compartilhe esse código junto do link do site com seus alunos.</div>';

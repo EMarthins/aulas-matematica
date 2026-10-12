@@ -295,3 +295,17 @@ dialog.pv-dlg::backdrop{background:rgb(10 10 30 / .55)}
 body.pv :is(h1,h2,h3,h4,.disp,b,strong):not(.folha *){font-family:inherit}
 body.pv :is(h1,h2,h3,h4,.disp):not(.folha *){font-family:'Nunito','Segoe UI',system-ui,sans-serif}
 body.pv :is(input,select,textarea,button,label,summary,dialog,.pop,.fpop):not(.folha *){font-family:'Nunito','Segoe UI',system-ui,sans-serif}
+
+/* estado da nuvem (barra superior) */
+.nuvem{display:inline-flex;align-items:center;gap:7px;margin-left:6px;border:0;background:transparent;border-radius:999px;padding:.32em .75em;font:inherit;font-size:.74rem;font-weight:700;color:var(--ink-faint);cursor:pointer;white-space:nowrap}
+.nuvem i{width:8px;height:8px;border-radius:50%;background:var(--line-strong)}
+.nuvem:hover{background:var(--surface-2);color:var(--ink)}
+.nuvem.ok i{background:var(--success)}
+.nuvem.ok{color:var(--ink-soft)}
+.nuvem.sync i{background:var(--primary);animation:pulsa 1s ease-in-out infinite}
+.nuvem.aviso{color:var(--growth-ink,var(--growth));background:var(--growth-soft)}
+.nuvem.aviso i{background:var(--growth)}
+.nuvem.erro{color:var(--danger);background:var(--danger-soft)}
+.nuvem.erro i{background:var(--danger)}
+@keyframes pulsa{50%{opacity:.35}}
+@media (max-width:900px){ .nuvem span{display:none} .nuvem{padding:.5em} }

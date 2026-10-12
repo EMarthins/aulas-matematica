@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Administração — Prof. Eduardo</title>
+<meta name="robots" content="noindex">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .ad{ max-width:60rem; margin:0 auto; }
+  .ad table{ width:100%; border-collapse:collapse; font-size:.86rem; }
+  .ad th, .ad td{ text-align:left; padding:.55em .6em; border-bottom:1px solid var(--line); vertical-align:middle; }
+  .ad th{ font-family:'JetBrains Mono',monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-faint); }
+  .ad .pill{ display:inline-block; padding:.15em .6em; border-radius:99px; font-size:.72rem; font-weight:800; background:var(--surface-2); color:var(--ink-soft); }
+  .ad .pill.pro{ background:var(--success-soft); color:var(--success); }
+  .ad .pill.venc{ background:var(--growth-soft); color:var(--growth-ink,var(--growth)); }
+  .ad .acoes{ display:flex; gap:6px; flex-wrap:wrap; }
+  .ad input[type=search], .ad input[type=date]{ max-width:16rem; }
+  .ad .barra{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:14px; }
+</style>
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+</head>
+<body>
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> Prof. Eduardo</a>
+  <nav><a href="index.html">Catálogo</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:34px 20px 80px;">
+  <div class="ad">
+    <div class="eyebrow">Administração</div>
+    <h1 class="title">Planos dos professores</h1>
+    <p class="lede">Libere o plano <b>Pro</b> de quem pagou (pré-venda por Pix). Só quem tem um documento em <code>admins/&lt;seu uid&gt;</code> no Firebase enxerga esta página.</p>
+    <div id="aviso"></div>
+    <div class="card" id="painel" hidden>
+      <div class="barra">
+        <input type="search" id="busca" placeholder="Buscar por nome ou e-mail…">
+        <span class="hint" id="contagem"></span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>Professor</th><th>Plano</th><th>Liberar Pro por</th></tr></thead>
+          <tbody id="linhas"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { aoMudarAuth } from './app/auth.js';
+import { db } from './app/firebase-init.js';
+import { collection, getDocs, doc, updateDoc, deleteField, Timestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+import { planoVigente, fmtData } from './app/planos.js';
+import { escapeHtml } from './app/util.js';
+iniciarThemeToggle('theme-pref-app');
+var $ = function(id){ return document.getElementById(id); };
+var profs = [];
+
+aoMudarAuth(async function(u){
+  if(!u){ location.href = 'login.html?voltar=admin.html'; return; }
+  try{
+    var ts = await getDocs(collection(db, 'teachers'));
+    var emails = {}; try{ (await getDocs(collection(db, 'users'))).docs.forEach(function(d){ emails[d.id] = d.data().email; }); }catch(e){}
+    profs = ts.docs.map(function(d){ var x = d.data(); return { uid: d.id, nome: x.nome || '(sem nome)', email: x.email || emails[d.id] || '', plano: x.plano || 'free', planoAte: x.planoAte || null, nota: x.planoNota || '', criado: x.createdAt }; })
+      .sort(function(a, b){ return a.nome.localeCompare(b.nome, 'pt'); });
+    $('painel').hidden = false; desenha();
+  }catch(e){
+    $('aviso').innerHTML = '<div class="alert error">Você não tem acesso a esta página. Para virar administrador, crie no Firestore o documento <code>admins/' + escapeHtml(u.uid) + '</code> (qualquer campo) e publique as regras de <code>firestore.rules</code>.</div>';
+  }
+});
+
+function desenha(){
+  var q = $('busca').value.trim().toLowerCase();
+  var lista = profs.filter(function(p){ return !q || (p.nome + ' ' + p.email).toLowerCase().indexOf(q) >= 0; });
+  $('contagem').textContent = lista.length + ' de ' + profs.length + ' professores';
+  $('linhas').innerHTML = lista.map(function(p){
+    var v = planoVigente({ plano: p.plano, planoAte: p.planoAte }), pro = v.id !== 'free', venc = !pro && p.plano !== 'free';
+    var pill = pro ? '<span class="pill pro">' + v.nome + ' até ' + fmtData(p.planoAte) + '</span>' : venc ? '<span class="pill venc">Pro vencido em ' + fmtData(p.planoAte) + '</span>' : '<span class="pill">Gratuito</span>';
+    return '<tr data-u="' + escapeHtml(p.uid) + '"><td><b>' + escapeHtml(p.nome) + '</b><div class="hint" style="margin:0">' + escapeHtml(p.email) + '</div></td><td>' + pill + (p.nota ? '<div class="hint" style="margin:2px 0 0">' + escapeHtml(p.nota) + '</div>' : '') + '</td>' +
+      '<td><div class="acoes"><button class="btn sm" data-d="30">30 dias</button><button class="btn sm" data-d="90">90 dias</button><button class="btn sm" data-d="365">1 ano</button><input type="date" class="data" aria-label="Até a data"><button class="btn sm secondary" data-a="data">Até a data</button><button class="btn sm danger" data-a="free">Voltar ao gratuito</button></div></td></tr>';
+  }).join('') || '<tr><td colspan="3" class="hint">Nenhum professor encontrado.</td></tr>';
+}
+$('busca').addEventListener('input', desenha);
+
+$('linhas').addEventListener('click', async function(e){
+  var b = e.target.closest('button'); if(!b) return;
+  var tr = b.closest('tr'), uid = tr.dataset.u, p = profs.filter(function(x){ return x.uid === uid; })[0];
+  var dados = null;
+  if(b.dataset.d){
+    var base = new Date(); var atual = planoVigente({ plano: p.plano, planoAte: p.planoAte });
+    if(atual.id !== 'free'){ var fim = p.planoAte.toDate ? p.planoAte.toDate() : new Date(p.planoAte.seconds * 1000); if(fim > base) base = fim; } // renova a partir do vencimento
+    base.setDate(base.getDate() + (+b.dataset.d));
+    dados = { plano: 'pro', planoAte: Timestamp.fromDate(base) };
+  }else if(b.dataset.a === 'data'){
+    var v = tr.querySelector('.data').value; if(!v){ alert('Escolha a data.'); return; }
+    dados = { plano: 'pro', planoAte: Timestamp.fromDate(new Date(v + 'T23:59:59')) };
+  }else if(b.dataset.a === 'free'){
+    if(!confirm('Voltar ' + p.nome + ' para o plano gratuito?')) return;
+    dados = { plano: 'free', planoAte: deleteField() };
+  }
+  if(!dados) return;
+  b.disabled = true;
+  try{
+    await updateDoc(doc(db, 'teachers', uid), dados);
+    p.plano = dados.plano; p.planoAte = dados.plano === 'free' ? null : dados.planoAte;
+    desenha();
+  }catch(err){ alert('Não foi possível atualizar (você é administrador? as regras foram publicadas?).'); b.disabled = false; }
+});
+</script>
+<script type="module" src="app/sidebar.js"></script>
+</body>
+</html>
