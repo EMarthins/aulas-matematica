@@ -71,6 +71,45 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Memória das razões e unidades', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Razões entre grandezas: trilha de desafios', arquivo:'aulas/1-ano/1-tri/razoes-entre-grandezas/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Armazenamento de Dados',
+                accent: 'growth',
+                icon: 'grid',
+                itens: [
+                  { tipo:'Aula 14', titulo:'Bit, byte e seus múltiplos', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/aula-1-bit-byte-e-multiplos.html' },
+                  { tipo:'Aula 15', titulo:'Nuvem e taxa de transferência', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/aula-2-nuvem-e-taxa-de-transferencia.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Armazenamento de Dados', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Armazenamento de dados no estilo ENEM', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a solução', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Armazenamento de dados: trilha de desafios', arquivo:'aulas/1-ano/1-tri/armazenamento-de-dados/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Funções: Definição, Domínio e Imagem',
+                accent: 'primary',
+                icon: 'curve-up',
+                itens: [
+                  { tipo:'Aula 16', titulo:'Definição de função', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/aula-1-definicao-de-funcao.html' },
+                  { tipo:'Aula 17', titulo:'Domínio e imagem', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/aula-2-dominio-e-imagem.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Funções: Definição, Domínio e Imagem', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Funções no estilo ENEM', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: funções', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Funções: trilha de desafios', arquivo:'aulas/1-ano/1-tri/funcoes-definicao-dominio-imagem/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Gráfico de uma Função',
+                accent: 'growth',
+                icon: 'curve-log',
+                itens: [
+                  { tipo:'Aula 18', titulo:'Do texto ao gráfico', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/aula-1-do-texto-ao-grafico.html' },
+                  { tipo:'Aulas 19–20', titulo:'Domínio, imagem e crescimento no gráfico', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/aula-2-dominio-imagem-e-crescimento-no-grafico.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Gráfico de uma Função', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Gráficos de funções no estilo ENEM', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive de gráficos', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Gráficos de funções: trilha de desafios', arquivo:'aulas/1-ano/1-tri/grafico-de-uma-funcao/atividade-pratica.html' }
+                ]
               }
             ]
           }

@@ -1,0 +1,971 @@
+<title>Do texto ao gráfico — Matemática 1ª série</title>
+<meta charset="utf-8">
+<!--acesso:inicio-->
+<script>(function(){
+  try{ if(localStorage.getItem('sb:user')) return; }catch(e){}
+  var R = '../../../../', p = location.pathname, i = -1, k = ['/aulas/', '/educacao-financeira/', '/ena-profmat/'];
+  for(var j = 0; j < k.length && i < 0; j++) i = p.indexOf(k[j]);
+  var q = 'voltar=' + encodeURIComponent(i < 0 ? '' : p.slice(i + 1));
+  document.documentElement.className += ' sem-acesso';
+  var st = document.createElement('style');
+  st.textContent = 'html.sem-acesso{overflow:hidden}html.sem-acesso body>*:not(#parede){display:none!important}#parede{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:20px;background:#0C0D18;color:#EEEFFC;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}#parede .c{max-width:30rem;text-align:center;background:#15172A;border:1px solid #3B3E68;border-radius:20px;padding:28px 24px;box-shadow:0 30px 70px -24px #000}#parede h1{margin:.2em 0 .3em;font-size:1.35rem}#parede p{margin:0 0 1.1em;color:#AEB1D6;font-size:.95rem}#parede a{display:block;text-decoration:none;font-weight:800;border-radius:12px;padding:.8em 1em;margin-top:8px}#parede .p{background:#9089F5;color:#12102B}#parede .s{border:1.5px solid #3B3E68;color:#EEEFFC}#parede .l{color:#9089F5;font-weight:700;margin-top:12px;font-size:.88rem}';
+  document.head.appendChild(st);
+  function mostra(){
+    if(document.getElementById('parede')) return;
+    var w = document.createElement('div'); w.id = 'parede';
+    w.innerHTML = '<div class="c"><div style="font-size:2rem">&#128274;</div><h1>Esta aula é para quem tem conta</h1><p>Sem conta você acessa 1 aula por ano e trimestre. Crie sua conta grátis (ou entre) para liberar todas as aulas, guias e atividades.</p><a class="p" target="_top" href="' + R + 'login.html?modo=cadastrar&' + q + '">Criar conta grátis</a><a class="s" target="_top" href="' + R + 'login.html?' + q + '">Já tenho conta · Entrar</a><a class="l" target="_top" href="' + R + 'index.html#gratis">Ver as aulas grátis</a></div>';
+    document.body.appendChild(w);
+  }
+  if(document.body) mostra(); else document.addEventListener('DOMContentLoaded', mostra);
+})();</script>
+<!--acesso:fim-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root{
+    --bg:#F4F5FB; --surface:#FFFFFF; --surface-2:#ECEEFA;
+    --ink:#14162B; --ink-soft:#54577A; --ink-faint:#8688AB;
+    --line:#D8DAF0; --line-strong:#BEC1E8;
+    --primary:#382EAE; --primary-ink:#FFFFFF; --primary-soft:#E7E4FB;
+    --growth:#D9531A; --growth-soft:#FBE5D8; --growth-ink:#7A2E0C;
+    --decay:#0B7C82; --decay-soft:#D9F1EF; --decay-ink:#0A4B4F;
+    --success:#1C8A52; --success-soft:#DCF3E6;
+    --danger:#C23B3B; --danger-soft:#FBE1E1;
+    --shadow:rgba(24,26,60,.14); --shadow-soft:rgba(24,26,60,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+      --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+      --line:#2B2D4D; --line-strong:#3B3E68;
+      --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+      --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+      --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+      --success:#4ADE80; --success-soft:#123522;
+      --danger:#FF7A7A; --danger-soft:#3A1717;
+      --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C0D18; --surface:#15172A; --surface-2:#1C1E38;
+    --ink:#EEEFFC; --ink-soft:#AEB1D6; --ink-faint:#7B7EA3;
+    --line:#2B2D4D; --line-strong:#3B3E68;
+    --primary:#9089F5; --primary-ink:#12102B; --primary-soft:#26224F;
+    --growth:#FF8E56; --growth-soft:#3A2416; --growth-ink:#FFD3B4;
+    --decay:#44D8CF; --decay-soft:#0F3634; --decay-ink:#AEF0EA;
+    --success:#4ADE80; --success-soft:#123522;
+    --danger:#FF7A7A; --danger-soft:#3A1717;
+    --shadow:rgba(0,0,0,.55); --shadow-soft:rgba(0,0,0,.35);
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ color-scheme:light dark; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif; -webkit-font-smoothing:antialiased;
+    padding:20px 16px 28px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px; background-position:center top;
+  }
+  h1,h2,h3,.disp{ font-family:'Archivo','Arial Narrow',sans-serif; letter-spacing:-.01em; }
+  .mono, .formula, .tag{ font-family:'JetBrains Mono','Courier New',monospace; }
+  a{ color:var(--primary); }
+  button{ font:inherit; }
+  .app{ max-width:1180px; margin:0 auto; }
+  .stage{
+    position:relative; background:var(--surface); border:1px solid var(--line);
+    border-radius:22px; box-shadow:0 30px 60px -20px var(--shadow), 0 2px 0 var(--shadow-soft);
+    overflow:hidden; height:min(78vh, 760px); min-height:520px;
+  }
+  .slides{ position:absolute; inset:0; }
+  .slide{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    opacity:0; transform:translateX(26px); pointer-events:none;
+    transition:opacity .38s ease, transform .38s ease; overflow:hidden;
+  }
+  .slide.active{ opacity:1; transform:translateX(0); pointer-events:auto; }
+  @media (prefers-reduced-motion: reduce){ .slide{ transition:opacity .01s linear; transform:none; } }
+  .slide-inner{ flex:1; min-height:0; overflow-y:auto; padding:clamp(20px,3.6vw,44px) clamp(20px,4.4vw,56px) 18px; }
+  .slide-inner::-webkit-scrollbar{ width:9px; }
+  .slide-inner::-webkit-scrollbar-thumb{ background:var(--line-strong); border-radius:9px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5em; font-size:.72rem; font-weight:700;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--primary); background:var(--primary-soft);
+    border-radius:999px; padding:.36em .9em; margin-bottom:14px;
+  }
+  .eyebrow.growth{ color:var(--growth-ink); background:var(--growth-soft); }
+  .eyebrow.decay{ color:var(--decay-ink); background:var(--decay-soft); }
+  .eyebrow.danger{ color:var(--danger); background:var(--danger-soft); }
+  .eyebrow.success{ color:var(--success); background:var(--success-soft); }
+  .slide h2.title{ font-size:clamp(1.5rem, 3.1vw, 2.35rem); font-weight:800; line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .subtitle{ font-family:'Source Serif 4', serif; font-style:italic; color:var(--ink-soft); font-size:clamp(.95rem,1.5vw,1.12rem); margin:0 0 20px; max-width:62ch; }
+  p{ line-height:1.58; color:var(--ink); }
+  .lede{ color:var(--ink-soft); max-width:64ch; }
+  .navbar{ position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; gap:14px; padding:8px 18px 12px; background:linear-gradient(180deg, transparent, var(--surface) 32%); }
+  .navbtn{ flex:0 0 auto; width:40px; height:40px; border-radius:50%; border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .1s, border-color .15s; }
+  .navbtn:hover{ background:var(--surface-2); border-color:var(--primary); }
+  .navbtn:active{ transform:scale(.94); }
+  .navbtn:disabled{ opacity:.3; cursor:default; }
+  .navbtn:focus-visible, button:focus-visible, .choice:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; }
+  .rail{ flex:1; min-width:0; height:44px; cursor:pointer; }
+  .rail svg{ width:100%; height:100%; display:block; overflow:visible; }
+  .rail-count{ flex:0 0 auto; font-size:.74rem; color:var(--ink-faint); white-space:nowrap; padding-right:2px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding:2px 4px 12px; font-size:.76rem; color:var(--ink-faint); letter-spacing:.03em; }
+  .topbar .brand{ display:flex; align-items:center; gap:8px; font-weight:700; color:var(--ink-soft); }
+  .topbar .dot{ width:7px; height:7px; border-radius:50%; background:var(--primary); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:760px){ .grid2{ grid-template-columns:1fr; } .grid3{ grid-template-columns:1fr; } .grid4{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:700px){ .cover-curve{ display:none; } .topbar{ font-size:.65rem; flex-direction:column; align-items:flex-start; gap:2px; } }
+  .card{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:18px 20px; }
+  .card.growth{ background:var(--growth-soft); border-color:color-mix(in srgb, var(--growth) 30%, var(--line)); }
+  .card.decay{ background:var(--decay-soft); border-color:color-mix(in srgb, var(--decay) 30%, var(--line)); }
+  .card.danger{ background:var(--danger-soft); border-color:color-mix(in srgb, var(--danger) 30%, var(--line)); }
+  .card.success{ background:var(--success-soft); border-color:color-mix(in srgb, var(--success) 30%, var(--line)); }
+  .callout{ border-left:4px solid var(--primary); background:var(--primary-soft); border-radius:0 14px 14px 0; padding:14px 18px; margin:14px 0; }
+  .callout h4{ margin:0 0 4px; font-size:.95rem; font-family:'Archivo',sans-serif; font-weight:800; }
+  .callout p{ margin:0; font-size:.95rem; }
+  .callout.danger{ border-left-color:var(--danger); background:var(--danger-soft); }
+  .callout.success{ border-left-color:var(--success); background:var(--success-soft); }
+  .formula{ font-size:1.18rem; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:14px 18px; display:inline-flex; align-items:center; gap:.35em; box-shadow:0 2px 0 var(--shadow-soft); }
+  .formula.big{ font-size:clamp(1.2rem,2.2vw,1.7rem); padding:18px 24px; }
+  sup{ font-size:.62em; } sub{ font-size:.62em; }
+  .arrow{ color:var(--ink-faint); margin:0 .3em; }
+  table.tbl{ border-collapse:collapse; width:100%; font-family:'JetBrains Mono',monospace; font-size:.86rem; font-variant-numeric:tabular-nums; }
+  table.tbl th, table.tbl td{ border-bottom:1px solid var(--line); padding:7px 10px; text-align:center; }
+  table.tbl th{ color:var(--ink-soft); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; }
+  .badge{ display:inline-flex; align-items:center; gap:.4em; font-family:'JetBrains Mono',monospace; font-size:.72rem; font-weight:700; background:var(--surface); border:1px solid var(--line-strong); border-radius:8px; padding:.3em .6em; color:var(--ink-soft); }
+  .icon{ width:30px; height:30px; flex:0 0 auto; color:var(--primary); }
+  .icon.growth{ color:var(--growth); } .icon.decay{ color:var(--decay); }
+  .icon.danger{ color:var(--danger); } .icon.success{ color:var(--success); }
+  button.reveal{ margin-top:10px; border:1.5px solid var(--primary); background:var(--surface); color:var(--primary); font-family:'Archivo',sans-serif; font-weight:700; font-size:.82rem; border-radius:10px; padding:.55em 1.1em; cursor:pointer; display:inline-flex; align-items:center; gap:.5em; }
+  button.reveal:hover{ background:var(--primary-soft); }
+  .answer{ margin-top:10px; max-height:0; overflow:hidden; opacity:0; transition:max-height .35s ease, opacity .3s ease, margin .3s ease; background:var(--success-soft); border:1px solid color-mix(in srgb, var(--success) 40%, var(--line)); border-radius:12px; padding:0 16px; }
+  .answer.open{ max-height:600px; opacity:1; padding:12px 16px; margin-top:10px; }
+  .answer p{ margin:.25em 0; font-size:.92rem; }
+  .choice{ display:block; width:100%; text-align:left; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:12px; padding:.7em 1em; margin-bottom:8px; cursor:pointer; font-size:.95rem; color:var(--ink); transition:border-color .15s, background .15s; }
+  .choice:hover{ border-color:var(--primary); }
+  .choice.correct{ border-color:var(--success); background:var(--success-soft); }
+  .choice.wrong{ border-color:var(--danger); background:var(--danger-soft); }
+  .choice:disabled{ cursor:default; }
+  .fb{ font-size:.85rem; margin-top:8px; font-weight:700; }
+  .fb.ok{ color:var(--success); } .fb.no{ color:var(--danger); }
+  .score-pill{ position:absolute; top:16px; right:18px; background:var(--surface); border:1.5px solid var(--line-strong); border-radius:999px; padding:.4em 1em; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:.82rem; box-shadow:0 4px 10px var(--shadow-soft); }
+  .hairline{ height:1px; background:var(--line); margin:16px 0; }
+  ul.plain{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  ul.plain li{ display:flex; gap:.65em; align-items:flex-start; }
+  ul.plain li svg{ flex:0 0 auto; margin-top:.2em; color:var(--primary); }
+  ul.plain li svg.warn{ color:var(--danger); }
+  .hint{ font-size:.78rem; color:var(--ink-faint); font-style:italic; }
+  .stat{ text-align:center; background:var(--danger-soft); border-radius:14px; padding:14px 8px; }
+  .stat .num{ display:block; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.35rem; color:var(--danger); line-height:1.08; }
+  .stat .lbl{ font-size:.72rem; color:var(--ink-soft); margin-top:5px; display:block; line-height:1.32; }
+  .step-row{ display:flex; gap:14px; align-items:flex-start; padding:12px 16px; border:1px solid var(--line); border-radius:14px; }
+  ::selection{ background:var(--primary-soft); }
+
+  /* ============ THEME TOGGLE (claro/escuro) ============ */
+  .theme-toggle{
+    position:fixed;
+    top:calc(14px + env(safe-area-inset-top, 0px));
+    right:calc(14px + env(safe-area-inset-right, 0px));
+    z-index:9999;
+    width:44px;
+    height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    color:var(--ink);
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px var(--shadow), 0 1px 0 var(--shadow-soft);
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .theme-toggle:hover{ transform:scale(1.07); }
+  .theme-toggle:active{ transform:scale(.92); }
+  .theme-toggle svg{ width:20px; height:20px; }
+  .theme-toggle svg[hidden]{ display:none; }
+  @media (max-width:640px){
+    .theme-toggle{ width:40px; height:40px; }
+    .theme-toggle svg{ width:18px; height:18px; }
+  }
+</style>
+<style id="layout-v2">
+/* ===== layout v2 (slides): tela cheia, texto grande, nada por cima do conteúdo ===== */
+:root{ --fit:1; }
+/* fonte base fluida: ~16px em celular, ~19px em notebook, ~23px em projetor Full HD, ~29px em 2K */
+html{ font-size:calc(var(--fit, 1) * var(--zoom, 1) * clamp(16px, calc(8px + .5vw + .55vh), 40px)); }
+sup, sub{ font-size:.8em !important; line-height:0; }
+html, body{ height:100%; }
+body{ margin:0 !important; padding:0 !important; overflow:hidden; }
+.app{ max-width:none !important; width:100%; height:100vh; height:100dvh; margin:0 !important;
+  padding:clamp(6px,1vw,18px) clamp(8px,1.6vw,34px) clamp(6px,.8vw,14px);
+  display:flex; flex-direction:column; }
+.topbar{ flex:none; padding:.1rem 3.6rem .55rem .25rem !important; font-size:.82rem !important; }
+.stage{ flex:1 1 0; min-height:0 !important; height:auto !important; display:flex; flex-direction:column;
+  border-radius:clamp(12px,1.2vw,26px) !important; }
+.slides{ position:relative !important; inset:auto !important; flex:1 1 0; min-height:0; }
+.slide-inner{ padding:clamp(14px,2.2vw,3rem) clamp(16px,3.2vw,4.5rem) 1.1rem !important; }
+
+/* barra de navegação: agora FORA do conteúdo (antes ficava sobreposta e cobria o texto) */
+.navbar{ position:static !important; flex:none; padding:.55rem 1.1rem !important; gap:.9rem !important;
+  background:var(--surface) !important; border-top:1px solid var(--line); }
+.navbtn{ width:2.5rem !important; height:2.5rem !important; }
+.navbtn svg{ width:1.1rem; height:1.1rem; }
+.rail{ height:auto !important; min-height:2rem; display:flex; align-items:center; }
+.rail > svg{ display:none !important; }
+.rail-count{ font-size:.9rem !important; }
+.seg-track{ display:flex; gap:.2rem; width:100%; align-items:center; }
+.seg{ flex:1 1 0; min-width:5px; height:2rem; padding:0; border:0; background:transparent; cursor:pointer; position:relative; }
+.seg::before{ content:''; position:absolute; left:0; right:0; top:50%; height:.4rem; margin-top:-.2rem; border-radius:999px;
+  background:var(--line-strong); transition:background .2s, height .2s, margin .2s, opacity .2s; }
+.seg.done::before{ background:var(--primary); opacity:.5; }
+.seg.now::before{ background:var(--primary); opacity:1; height:.7rem; margin-top:-.35rem; }
+.seg:hover::before{ background:var(--primary); opacity:1; }
+.seg:focus-visible{ outline:2px solid var(--primary); outline-offset:2px; border-radius:6px; }
+.app > p{ flex:none; font-size:.8rem !important; margin:.45rem 0 0 !important; }
+
+/* componentes: espaçamentos em rem para acompanhar o tamanho do texto */
+.card{ padding:1.1rem 1.3rem !important; }
+.callout{ padding:.9rem 1.2rem !important; margin:.9rem 0 !important; }
+.formula{ padding:.8rem 1.1rem !important; }
+.formula.big{ padding:1.1rem 1.5rem !important; }
+.choice{ padding:.65rem 1rem !important; margin-bottom:.5rem !important; }
+.grid2{ gap:1.6rem !important; } .grid3{ gap:1.1rem !important; }
+.slide-inner{ overflow-x:hidden; }
+/* figuras (círculo trigonométrico, gráficos): não podem ficar mais altas que o espaço do slide */
+.slide-inner svg:not(.cover-curve){ max-height:min(26rem, 52vh); max-height:min(26rem, 52dvh); }
+/* telas largas: listas de perguntas/cartões ocupam 3 colunas em vez de empilhar e rolar */
+@media (min-width:900px){ .grid2{ grid-template-columns:repeat(auto-fit, minmax(min(21rem,100%), 1fr)); } }
+ul.plain{ gap:.7rem !important; }
+.icon{ width:1.9rem !important; height:1.9rem !important; }
+table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
+.cover-curve{ opacity:.4 !important; }
+
+@media (max-width:640px){ .app{ padding:6px 6px 4px; } .stage{ border-radius:14px !important; } .navbar{ padding:.4rem .6rem !important; gap:.5rem !important; } }
+@media (max-height:800px){ .app > p{ display:none; } .slide-inner{ padding-top:1rem !important; padding-bottom:.6rem !important; } .navbar{ padding:.35rem 1rem !important; } .topbar{ padding-bottom:.3rem !important; } }
+@media (max-height:520px){ .app > p{ display:none; } .topbar{ display:none; } }
+@media print{
+  :root:root:root{ --bg:#fff; --surface:#fff; --surface-2:#f4f5fb; --ink:#111; --ink-soft:#444; --ink-faint:#666; --line:#ddd; --line-strong:#bbb; --primary:#382EAE; --primary-soft:#e7e4fb; --growth:#D9531A; --growth-soft:#fbe5d8; --decay:#0B7C82; --decay-soft:#d9f1ef; --success:#1C8A52; --success-soft:#dcf3e6; --danger:#C23B3B; --danger-soft:#fbe1e1; --shadow:transparent; --shadow-soft:transparent; }
+  html{ font-size:10.5pt !important; }
+  html, body{ height:auto !important; overflow:visible !important; background:#fff !important; background-image:none !important; }
+  .app{ height:auto !important; display:block !important; padding:0 !important; }
+  .topbar, .navbar, .app > p, .theme-toggle{ display:none !important; }
+  .stage{ height:auto !important; display:block !important; border:0 !important; box-shadow:none !important; overflow:visible !important; background:#fff !important; }
+  .slides{ position:static !important; display:block !important; }
+  .slide{ position:relative !important; inset:auto !important; opacity:1 !important; transform:none !important; pointer-events:auto !important; display:block !important; overflow:visible !important; break-inside:avoid; page-break-inside:avoid; border:1px solid #ccc; border-radius:10px; margin:0 0 7mm; }
+  .slide-inner{ overflow:visible !important; max-height:none !important; padding:6mm 8mm !important; }
+  .cover-curve{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+<style>
+  .fr{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; line-height:1.15; margin:0 .12em; font-size:.92em; }
+  .fr > span:first-child{ border-bottom:1.5px solid currentColor; padding:0 .2em .06em; }
+  .fr > span:last-child{ padding:.06em .2em 0; }
+  .rt{ white-space:nowrap; } .rt .rr{ border-top:1.5px solid currentColor; padding:0 .12em; margin-left:.02em; }
+  sup.sq{ font-size:.7em; }
+  .tex{ font-family:'Source Serif 4',serif; font-style:italic; }
+</style><style>
+  .mq{ margin-top:12px; }
+  .wid{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .wid label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); margin:8px 0 2px; font-family:'Archivo',sans-serif; }
+  .wid input[type=range]{ width:100%; accent-color:var(--primary); }
+  .wid input[type=number], .wid select{ font:inherit; font-size:.95rem; width:100%; padding:.4em .6em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .wid .out{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.2rem; color:var(--primary); }
+  .wid .row{ display:flex; gap:12px; flex-wrap:wrap; } .wid .row > div{ flex:1 1 130px; }
+  .bar{ height:14px; border-radius:99px; background:var(--line); overflow:hidden; display:flex; }
+  .bar > span{ display:block; height:100%; transition:width .3s ease; }
+  .chip{ display:inline-flex; align-items:center; gap:.4em; padding:.35em .8em; border-radius:99px; border:1.5px solid var(--line-strong); background:var(--surface); cursor:pointer; font-weight:700; font-size:.82rem; color:var(--ink); }
+  .chip.on{ background:var(--primary); color:var(--primary-ink); border-color:var(--primary); }
+  .small{ font-size:.82rem; }
+</style>
+<link href="../../../../assets/fonts.css" rel="stylesheet">
+
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span> Matemática · 1ª Série · Gráfico de uma Função</div>
+    <div>Aula 18 · Do texto ao gráfico</div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="slides" id="slides">
+
+
+      <!-- CAPA -->
+      <section class="slide active">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
+          <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
+            <line x1="40" y1="220" x2="860" y2="220" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="40" y1="220" x2="40" y2="20" stroke="var(--line-strong)" stroke-width="2"/>
+            <path d="M40,210 C 200,205 340,180 480,130 C 620,80 740,50 840,30" fill="none" stroke="var(--primary)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
+          </svg>
+          <div class="eyebrow">Matemática · 1ª série · Aula 18</div>
+          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Do texto ao gráfico: <span style="color:var(--primary);">como uma história vira curva</span></h1>
+          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Sobe, desce, fica parado, sobe mais rápido… Quem lê uma situação em palavras consegue desenhar (ou reconhecer) o gráfico certo.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+            <span class="badge">crescente</span>
+            <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">decrescente</span>
+            <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">constante</span>
+          </div>
+          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Roteiro</div>
+          <h2 class="title">A trilha de hoje</h2>
+          <p class="lede">Palavras que viram traços.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Vocabulário</strong><div class="hint">crescente, decrescente, constante e mais rápido</div></div></div>
+            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Valor inicial</strong><div class="hint">onde o gráfico encontra o eixo y</div></div></div>
+            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Fixo + variável</strong><div class="hint">a reta que começa acima de zero</div></div></div>
+            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Quedas que desaceleram</strong><div class="hint">meia-vida e curva decrescente</div></div></div>
+            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">eliminar gráficos por pistas do texto</div></div></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Traduzir expressões como “aumenta”, “permanece” e “diminui” em <strong>trechos do gráfico</strong>.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Identificar o <strong>valor inicial</strong> e a <strong>taxa</strong> (inclinação) de uma situação.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Reconhecer o gráfico de <strong>fixo + variável</strong> e o de <strong>meia-vida</strong>.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span style="font-size:.9rem;">Usar a técnica da <strong>eliminação</strong>: uma pista do texto descarta alternativas.</span></li></ul>
+            <div class="card primary">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--primary);">Dica</h4>
+              <p style="font-size:.9rem;margin:0;">Leia o texto em pedaços. A cada pedaço, pergunte: o gráfico <strong>sobe, desce ou fica parado</strong>? E em seguida: <strong>começa onde</strong>?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Para início de conversa</div>
+          <h2 class="title">A história da piscina</h2>
+          
+          <p class="lede">Uma piscina vazia é <strong>enchida</strong> com uma mangueira; depois a torneira é <strong>fechada</strong> e o nível fica estável por um tempo; por fim, a piscina é <strong>esvaziada</strong>. Qual gráfico de <strong>nível da água × tempo</strong> conta essa história?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha o gráfico:</p><button class="choice mqo" data-i="0"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,18.3 46,18.3 82,56 118,56" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="1"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,56 46,43.4 82,30.9 118,18.3" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="2"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,56 46,30.9 82,30.9 118,56" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="3"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,30.9 46,56 82,56 118,30.9" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><div class="fb"></div><div class="answer"><p>Enche (sobe), torneira fechada (<strong>horizontal</strong>), esvazia (desce). Só o terceiro gráfico faz as três coisas, nessa ordem, começando do zero.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Cada verbo vira um trecho: <strong>aumenta</strong> = sobe · <strong>diminui</strong> = desce · <strong>permanece</strong> = horizontal.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · vocabulário</div>
+          <h2 class="title">O que cada palavra faz com a curva</h2>
+          
+          <div class="grid2">
+            <div>
+              <ul class="plain" style="font-size:.95rem;line-height:1.7;">
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Crescente</strong>: ao andar para a direita, o gráfico <strong>sobe</strong> (<span class="tex"><i>x</i></span> aumenta, <span class="tex"><i>y</i></span> aumenta).</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Decrescente</strong>: ao andar para a direita, o gráfico <strong>desce</strong>.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Constante</strong>: o gráfico é um segmento <strong>horizontal</strong>.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Mais rápido</strong> = mais <strong>inclinado</strong>; mais devagar = menos inclinado.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Valor inicial</strong> é onde o gráfico toca o eixo <span class="tex"><i>y</i></span> (quando <span class="tex"><i>x</i> = 0</span>).</span></li>
+              </ul>
+            </div>
+            <svg viewBox="0 0 320 190" style="width:100%;max-width:360px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="164" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="81.3" y1="164" x2="81.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="81.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="126.7" y1="164" x2="126.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="126.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="172" y1="164" x2="172" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="172" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text><line x1="217.3" y1="164" x2="217.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="217.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">8</text><line x1="262.7" y1="164" x2="262.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="262.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">10</text><line x1="308" y1="164" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">12</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="126" x2="308" y2="126" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="130" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">2</text><line x1="36" y1="88" x2="308" y2="88" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="50" x2="308" y2="50" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="54" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">6</text><line x1="36" y1="12" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="164" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="306" y="158" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,145 104,50 172,50 262.7,126 308,126" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="145" r="5" fill="var(--primary)"/><circle cx="70" cy="97.5" r="4.5" fill="var(--decay)"/><text x="78" y="111.5" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">sobe</text><circle cx="138" cy="50" r="4.5" fill="var(--decay)"/><text x="138" y="40" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">constante</text><circle cx="217.3" cy="88" r="4.5" fill="var(--decay)"/><text x="225.3" y="84" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">desce</text></svg>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Explore · fixo + variável</div>
+          <h2 class="title">Uma conta com parte fixa e parte por minuto</h2>
+          
+          <div class="grid2">
+            <div>
+              <ul class="plain" style="font-size:.95rem;line-height:1.7;">
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Uma companhia cobra um <strong>valor fixo</strong> <span class="tex"><i>F</i></span> e mais <span class="tex"><i>p</i></span> reais por minuto: <span class="tex"><i>y</i> = <i>F</i> + <i>p</i> · <i>x</i></span>.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>O gráfico é uma <strong>reta</strong> que <strong>começa em <span class="tex">(0, <i>F</i>)</span></strong> — acima da origem.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A <strong>inclinação</strong> da reta é o preço por minuto <span class="tex"><i>p</i></span>: quanto maior, mais íngreme.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Sem parte fixa (<span class="tex"><i>F</i> = 0</span>), a reta sai da origem.</span></li>
+              </ul>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Fixo + variável</b></p><div class="row"><div><label>Valor fixo F (reais)</label><input type="number" id="t1-f" value="4" step="any" ></div><div><label>Preço por min p</label><input type="number" id="t1-p" value="0.2" step="any" ></div></div><div><label>Minutos usados</label><input type="number" id="t1-x" value="15" step="any" ></div><svg id="t1-s" viewBox="0 0 360 210" style="width:100%;max-width:380px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Valor cobrado: <b class="mono" id="t1-r"></b></p><p class="hint" id="t1-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Exemplo resolvido</div>
+          <h2 class="title">Qual gráfico descreve a conta?</h2>
+          
+          <p class="lede">Uma companhia telefônica cobra <strong>4 reais fixos</strong> mais <strong>0,20 real por minuto</strong>. Como é o gráfico do valor <span class="tex"><i>y</i></span> em função dos minutos <span class="tex"><i>x</i></span>?</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row"><span class="badge">1</span><div><strong>Descubra onde o gráfico começa</strong><div class="hint">Com <span class="tex"><i>x</i> = 0</span> já se paga o valor fixo: o gráfico parte do ponto <span class="tex">(0, 4)</span>.</div></div></div>
+            <div class="step-row"><span class="badge">2</span><div><strong>Ache a inclinação</strong><div class="hint">A cada minuto, o valor sobe 0,20; a cada 5 minutos, sobe 1 real.</div></div></div>
+            <div class="step-row"><span class="badge">3</span><div><strong>Marque outros pontos</strong><div class="hint"><span class="tex"><i>x</i> = 5 → <i>y</i> = 5</span> · <span class="tex"><i>x</i> = 10 → <i>y</i> = 6</span> · <span class="tex"><i>x</i> = 20 → <i>y</i> = 8</span>.</div></div></div>
+          </div>
+          <div class="callout success"><h4>Resultado</h4><p>Reta crescente, <strong>começando em (0, 4)</strong> e subindo 1 real a cada 5 minutos.</p></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Figura</div>
+          <h2 class="title">O gráfico da conta de telefone</h2>
+          
+          <div class="grid2">
+            <svg viewBox="0 0 320 190" style="width:100%;max-width:380px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="164" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="104" y1="164" x2="104" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="104" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">5</text><line x1="172" y1="164" x2="172" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="172" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">10</text><line x1="240" y1="164" x2="240" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="240" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">15</text><line x1="308" y1="164" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">20</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="133.6" x2="308" y2="133.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="137.6" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">2</text><line x1="36" y1="103.2" x2="308" y2="103.2" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="107.2" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="72.8" x2="308" y2="72.8" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="76.8" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">6</text><line x1="36" y1="42.4" x2="308" y2="42.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="46.4" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="12" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">10</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="164" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="306" y="158" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,103.2 308,42.4" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="103.2" r="5" fill="var(--primary)"/><circle cx="308" cy="42.4" r="5" fill="var(--primary)"/><circle cx="36" cy="103.2" r="4.5" fill="var(--decay)"/><text x="46" y="95.2" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">(0, 4)</text><circle cx="172" cy="72.8" r="4.5" fill="var(--decay)"/><text x="180" y="90.8" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">(10, 6)</text><circle cx="308" cy="42.4" r="4.5" fill="var(--decay)"/><text x="300" y="34.4" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">(20, 8)</text></svg>
+            <div>
+              <div class="callout success"><h4>Pistas para eliminar</h4><p>Não pode ser uma curva (a taxa é constante); não pode sair da origem (há valor fixo); não pode ser decrescente (o preço só aumenta).</p></div>
+              <div class="callout success"><h4>Conferência</h4><p>Em 10 minutos: <span class="tex">4 + 0,20 · 10 = 6</span> reais. O ponto <span class="tex">(10, 6)</span> está na reta.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Teoria · quedas que desaceleram</div>
+          <h2 class="title">Meia-vida: cai pela metade, mas nunca chega a zero</h2>
+          
+          <div class="grid2">
+            <div>
+              <ul class="plain" style="font-size:.95rem;line-height:1.7;">
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Um medicamento cuja concentração <strong>cai pela metade a cada intervalo fixo</strong> (a <em>meia-vida</em>) tem gráfico <strong>decrescente e curvo</strong>.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A queda é <strong>rápida</strong> no início e <strong>cada vez mais lenta</strong>: 10 → 5 → 2,5 → 1,25…</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>A curva se aproxima do eixo <span class="tex"><i>x</i></span> <strong>sem tocá-lo</strong>.</span></li>
+                <li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Não é reta: a cada hora cai uma <strong>fração</strong>, não um valor fixo.</span></li>
+              </ul>
+            </div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Meia-vida</b></p><div class="row"><div><label>Concentração inicial</label><input type="number" id="m1-c" value="10" step="any" ></div><div><label>Meia-vida (h)</label><input type="number" id="m1-t" value="1" step="any" ></div></div><div><label>Horas decorridas</label><input type="number" id="m1-x" value="3" step="any" ></div><svg id="m1-s" viewBox="0 0 360 210" style="width:100%;max-width:380px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Concentração: <b class="mono" id="m1-r"></b></p><p class="hint" id="m1-h" style="margin-top:6px;"></p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Praticando</div>
+          <h2 class="title">Dose de remédio</h2>
+          
+          <p class="lede">Uma dose de 80 mg é ministrada e a concentração no sangue cai pela metade a cada 2 horas. Depois de 6 horas, a concentração é de:</p>
+          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">0 mg</button><button class="choice mqo" data-i="1">10 mg</button><button class="choice mqo" data-i="2">20 mg</button><button class="choice mqo" data-i="3">26,7 mg</button><button class="choice mqo" data-i="4">40 mg</button><div class="fb"></div><div class="answer"><p>6 horas são 3 meias-vidas: <span class="tex">80 → 40 → 20 → 10</span>. Concentração: <strong>10 mg</strong> (alternativa B). Não é <span class="tex">80 − 3 · 20</span>: a queda é por <strong>metade</strong>, não por valor fixo.</p></div></div>
+          
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Praticando</div>
+          <h2 class="title">O carro que freia</h2>
+          
+          <p class="lede">Um carro anda com velocidade constante e depois freia de modo uniforme até parar. Qual gráfico de velocidade × tempo representa a situação?</p>
+          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,24.6 64,24.6 118,56" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="1"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,56 64,24.6 118,24.6" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="2"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,24.6 64,56 118,56" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="3"><svg viewBox="0 0 130 66" style="width:100%;max-width:130px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="10" y1="56" x2="10" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="28" y1="56" x2="28" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="46" y1="56" x2="46" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="64" y1="56" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="82" y1="56" x2="82" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="100" y1="56" x2="100" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="118" y1="56" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="49.7" x2="118" y2="49.7" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="43.4" x2="118" y2="43.4" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="37.1" x2="118" y2="37.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="30.9" x2="118" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="24.6" x2="118" y2="24.6" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="18.3" x2="118" y2="18.3" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="12" x2="118" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="10" y1="56" x2="118" y2="56" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="10" y1="56" x2="10" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="10,56 64,56 118,24.6" fill="none" stroke="var(--primary)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg></button><div class="fb"></div><div class="answer"><p>“Velocidade constante” = trecho horizontal e “freia de modo uniforme até parar” = reta descendo até o zero. Só o primeiro faz isso, nessa ordem.</p></div></div>
+          
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Estilo ENEM</div>
+          <h2 class="title">Aluguel de bicicleta</h2>
+          
+          <p class="lede">Uma empresa aluga bicicletas cobrando 6 reais fixos mais 2 reais por hora de uso. Qual gráfico mostra o valor cobrado (eixo vertical) em função das horas (eixo horizontal)?</p>
+          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><svg viewBox="0 0 104 50" style="width:100%;max-width:104px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="24" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="50" y1="24" x2="50" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="50" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1</text><line x1="64" y1="24" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="64" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="78" y1="24" x2="78" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="78" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="92" y1="24" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="92" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="21" x2="92" y2="21" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="25" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="18" x2="92" y2="18" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="22" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="15" x2="92" y2="15" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="19" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">12</text><line x1="36" y1="12" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">16</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="24" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="90" y="18" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,24 92,18" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="1"><svg viewBox="0 0 104 50" style="width:100%;max-width:104px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="24" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="50" y1="24" x2="50" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="50" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1</text><line x1="64" y1="24" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="64" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="78" y1="24" x2="78" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="78" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="92" y1="24" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="92" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="21" x2="92" y2="21" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="25" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="18" x2="92" y2="18" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="22" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="15" x2="92" y2="15" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="19" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">12</text><line x1="36" y1="12" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">16</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="24" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="90" y="18" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,19.5 92,13.5" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="2"><svg viewBox="0 0 104 50" style="width:100%;max-width:104px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="24" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="50" y1="24" x2="50" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="50" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1</text><line x1="64" y1="24" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="64" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="78" y1="24" x2="78" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="78" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="92" y1="24" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="92" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="21" x2="92" y2="21" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="25" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="18" x2="92" y2="18" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="22" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="15" x2="92" y2="15" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="19" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">12</text><line x1="36" y1="12" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">16</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="24" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="90" y="18" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,19.5 92,19.5" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="3"><svg viewBox="0 0 104 50" style="width:100%;max-width:104px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="24" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="50" y1="24" x2="50" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="50" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1</text><line x1="64" y1="24" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="64" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="78" y1="24" x2="78" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="78" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="92" y1="24" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="92" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="21" x2="92" y2="21" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="25" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="18" x2="92" y2="18" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="22" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="15" x2="92" y2="15" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="19" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">12</text><line x1="36" y1="12" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">16</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="24" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="90" y="18" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,22.5 64,13.5" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></button><button class="choice mqo" data-i="4"><svg viewBox="0 0 104 50" style="width:100%;max-width:104px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="24" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="50" y1="24" x2="50" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="50" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1</text><line x1="64" y1="24" x2="64" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="64" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="78" y1="24" x2="78" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="78" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="92" y1="24" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="92" y="38" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="21" x2="92" y2="21" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="25" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">4</text><line x1="36" y1="18" x2="92" y2="18" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="22" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">8</text><line x1="36" y1="15" x2="92" y2="15" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="19" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">12</text><line x1="36" y1="12" x2="92" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">16</text><line x1="36" y1="24" x2="92" y2="24" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="24" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="90" y="18" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,13.5 92,19.5" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></button><div class="fb"></div><div class="answer"><p>O gráfico começa em <span class="tex">(0, 6)</span> (valor fixo) e sobe 2 a cada hora: em 4 horas chega a <span class="tex">6 + 8 = 14</span>. O primeiro sai da origem; o terceiro é constante; o quarto sobe depressa demais; o quinto desce. <strong>Alternativa B.</strong></p></div></div>
+          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow danger">Cuidados</div>
+          <h2 class="title">Onde o texto engana na hora de desenhar</h2>
+          
+          <div class="grid2" style="margin-top:8px;">
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Esquecer o valor fixo</strong><p style="font-size:.9rem;margin-top:8px;">Se há taxa fixa, o gráfico <strong>não passa pela origem</strong>: começa em <span class="tex">(0, <i>F</i>)</span>.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Chamar de crescente o trecho horizontal</strong><p style="font-size:.9rem;margin-top:8px;">Horizontal é <strong>constante</strong>: <span class="tex"><i>y</i></span> não muda enquanto <span class="tex"><i>x</i></span> aumenta.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Desenhar reta onde há meia-vida</strong><p style="font-size:.9rem;margin-top:8px;">Quedas por fração dão curva: rápidas no início, lentas depois.</p></div>
+            <div class="card danger"><strong><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg> Trocar os eixos</strong><p style="font-size:.9rem;margin-top:8px;">Em “nível da água × tempo”, o tempo fica no eixo horizontal.</p></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner" style="position:relative;">
+          <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
+          <div class="eyebrow">Desafio final</div>
+          <h2 class="title">Quiz interativo</h2>
+          <div class="grid2" style="margin-top:8px;">
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">1. Um trecho horizontal do gráfico indica que a função é:</p>
+              <div class="qz" data-q="1">
+                <button class="choice qopt" data-ok="0">crescente</button>
+                <button class="choice qopt" data-ok="0">decrescente</button>
+                <button class="choice qopt" data-ok="1">constante</button>
+                <button class="choice qopt" data-ok="0">negativa</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">2. Plano com taxa fixa de 10 reais mais 3 reais por GB. O gráfico começa em:</p>
+              <div class="qz" data-q="2">
+                <button class="choice qopt" data-ok="0">(0, 0)</button>
+                <button class="choice qopt" data-ok="1">(0, 10)</button>
+                <button class="choice qopt" data-ok="0">(10, 0)</button>
+                <button class="choice qopt" data-ok="0">(3, 10)</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">3. A concentração de um remédio cai pela metade a cada hora. O gráfico é:</p>
+              <div class="qz" data-q="3">
+                <button class="choice qopt" data-ok="0">uma reta decrescente</button>
+                <button class="choice qopt" data-ok="1">uma curva decrescente que se aproxima do eixo x</button>
+                <button class="choice qopt" data-ok="0">uma reta horizontal</button>
+                <button class="choice qopt" data-ok="0">uma curva crescente</button>
+              </div>
+            </div>
+            <div>
+              <p style="font-weight:700;font-size:.9rem;">4. Mais rápido, em um gráfico de crescimento, significa:</p>
+              <div class="qz" data-q="4">
+                <button class="choice qopt" data-ok="1">mais inclinado</button>
+                <button class="choice qopt" data-ok="0">mais curvo para baixo</button>
+                <button class="choice qopt" data-ok="0">mais próximo do eixo x</button>
+                <button class="choice qopt" data-ok="0">horizontal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">A ideia central</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Vocabulário</span><p style="font-size:.85rem;margin-top:8px;">Sobe = crescente · desce = decrescente · horizontal = constante.</p></div>
+            <div class="card"><span class="badge">Valor inicial</span><p style="font-size:.85rem;margin-top:8px;">Fixo + variável: reta que começa em (0, F).</p></div>
+            <div class="card"><span class="badge">Eliminação</span><p style="font-size:.85rem;margin-top:8px;">Cada pista do texto descarta alternativas: ponto de partida, tendência e rapidez.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Leia o texto em pedaços e traduza cada pedaço em um trecho do gráfico.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Para continuar</div>
+          <h2 class="title">Referências e próximos passos</h2>
+          <p class="lede">Refaça sozinho as questões, sem olhar a resolução, e anote os erros no caderno.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">Aulas de Matemática da 1ª série do Ensino Médio (2026) — organizadas, reescritas e ampliadas para estudo.<br>
+              Exercícios e problemas originais (estilo ENEM/SAEB); questões de provas oficiais só quando citadas.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="navbar">
+      <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rail" id="rail"></div>
+      <div class="rail-count" id="railCount">1 / 15</div>
+      <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.72rem;color:var(--ink-faint);margin-top:12px;">Use as setas do teclado (← →) ou clique na trilha para navegar.</p>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  if(!btn) return;
+  var sunIcon = btn.querySelector('.i-sun');
+  var moonIcon = btn.querySelector('.i-moon');
+  var KEY = 'theme-pref-m1-m1u07a1';
+
+  function systemTheme(){
+    try{
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }catch(e){ return 'dark'; }
+  }
+  function getStored(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function setStored(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    var isDark = theme === 'dark';
+    if(isDark){ sunIcon.removeAttribute("hidden"); moonIcon.setAttribute("hidden",""); }
+    else{ sunIcon.setAttribute("hidden",""); moonIcon.removeAttribute("hidden"); }
+    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
+    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
+  }
+
+  apply(getStored() || systemTheme());
+
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    var next = current === 'dark' ? 'light' : 'dark';
+    apply(next);
+    setStored(next);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var N = slides.length; var idx = 0;
+  var railSvgNS = 'http://www.w3.org/2000/svg';
+  var rail = document.getElementById('rail');
+  var railCount = document.getElementById('railCount');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var VBW = 1000, VBH = 60, MARGIN = 26;
+  var markers = [];
+
+  function buildRail(){
+    rail.innerHTML = '';
+    var svg = document.createElementNS(railSvgNS,'svg');
+    svg.setAttribute('viewBox','0 0 '+VBW+' '+VBH);
+    svg.setAttribute('preserveAspectRatio','none');
+    var pts = [];
+    for(var i=0;i<N;i++){
+      var t = N>1 ? i/(N-1) : 0;
+      var x = MARGIN + (VBW-2*MARGIN)*t;
+      var y = 50 - 38*Math.pow(t,1.7);
+      pts.push([x,y]);
+    }
+    var d = 'M'+pts[0][0]+','+pts[0][1];
+    for(var i=1;i<pts.length;i++){ d += ' L'+pts[i][0]+','+pts[i][1]; }
+    var path = document.createElementNS(railSvgNS,'path');
+    path.setAttribute('d',d); path.setAttribute('fill','none');
+    path.setAttribute('stroke','var(--line-strong)'); path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+    markers = [];
+    pts.forEach(function(p,i){
+      var c = document.createElementNS(railSvgNS,'circle');
+      c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+      c.setAttribute('stroke','var(--primary)'); c.setAttribute('stroke-width','1.6');
+      c.style.cursor='pointer';
+      c.addEventListener('click', (function(ii){ return function(){ goTo(ii); }; })(i));
+      svg.appendChild(c); markers.push(c);
+    });
+    rail.appendChild(svg);
+  }
+  function updateRail(){
+    markers.forEach(function(c,i){
+      c.setAttribute('r', i===idx? 7:5);
+      c.setAttribute('fill', i<=idx ? 'var(--primary)' : 'var(--surface)');
+    });
+  }
+  window.goTo = function(i){ if(i>=0 && i<N) render(i); };
+  window.next = function(){ if(idx<N-1) render(idx+1); };
+  window.prev = function(){ if(idx>0) render(idx-1); };
+  function render(newIdx){
+    slides[idx].classList.remove('active');
+    idx = newIdx;
+    slides[idx].classList.add('active');
+    var inner = slides[idx].querySelector('.slide-inner');
+    if(inner) inner.scrollTop = 0;
+    railCount.textContent = (idx+1)+' / '+N;
+    prevBtn.disabled = idx===0; nextBtn.disabled = idx===N-1;
+    updateRail();
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'){ next(); } else if(e.key==='ArrowLeft'){ prev(); }
+  });
+  (function(){
+    var stage = document.getElementById('stage'); var sx=null;
+    stage.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    stage.addEventListener('touchend', function(e){
+      if(sx===null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      if(Math.abs(dx) > 50){ dx<0 ? next() : prev(); }
+      sx=null;
+    }, {passive:true});
+  })();
+  buildRail(); render(0);
+
+  window.toggleAnswer = function(btn){
+    var ans = btn.nextElementSibling; if(!ans) return;
+    var open = ans.classList.toggle('open');
+    btn.innerHTML = open ? 'Ocultar <span aria-hidden="true">↑</span>' : btn.textContent.replace('Ocultar','Ver').replace(/^\s*/,'') + ' <span aria-hidden="true">↴</span>';
+  };
+
+  document.querySelectorAll('.vf').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(btn.dataset.done) return; btn.dataset.done='1';
+      var ok = btn.dataset.ok==='1';
+      btn.classList.add(ok?'correct':'wrong');
+      var note = document.createElement('div');
+      note.className='fb ' + (ok?'ok':'no');
+      note.style.marginTop='4px';
+      note.textContent = (ok? '✔ Verdadeira — ':'✘ Falsa — ') + btn.dataset.why;
+      btn.appendChild(document.createElement('br'));
+      btn.appendChild(note);
+    });
+  });
+
+  (function(){
+    var fb = document.getElementById('probFb'); var steps = document.getElementById('probSteps');
+    document.querySelectorAll('.pquiz').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(document.getElementById('probQuiz').dataset.done) return;
+        document.getElementById('probQuiz').dataset.done='1';
+        var ok = btn.dataset.ok==='1';
+        document.querySelectorAll('.pquiz').forEach(function(b){ if(b.dataset.ok==='1') b.classList.add('correct'); });
+        if(!ok) btn.classList.add('wrong');
+        fb.textContent = ok ? '✔ Isso mesmo! Confira o cálculo:' : '✘ Quase! A alternativa certa é a C. Veja o cálculo:';
+        fb.className = 'fb ' + (ok?'ok':'no');
+        steps.classList.add('open');
+      });
+    });
+  })();
+
+  (function(){
+    var scoreEl = document.getElementById('scoreVal'); var score = 0;
+    document.querySelectorAll('.qz').forEach(function(group){
+      group.querySelectorAll('.qopt').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          if(group.dataset.done) return; group.dataset.done='1';
+          var ok = btn.dataset.ok==='1';
+          group.querySelectorAll('.qopt').forEach(function(b){ b.disabled = true; if(b.dataset.ok==='1') b.classList.add('correct'); });
+          if(!ok) btn.classList.add('wrong');
+          if(ok){ score++; scoreEl.textContent = score; }
+        });
+      });
+    });
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  // LESSON-PROGRESS-HOOK — reporta progresso ao player.html quando embutido num <iframe>
+  // autenticado; fora dele (aberto direto) isso é um no-op inofensivo.
+  try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
+  var qzGroups = document.querySelectorAll('.qz');
+  if(qzGroups.length){
+    var respondidos = 0, acertos = 0;
+    document.addEventListener('click', function(e){
+      var btn = e.target.closest ? e.target.closest('.qopt') : null;
+      if(!btn) return;
+      var group = btn.closest('.qz');
+      if(!group || group.dataset.lpCounted) return;
+      group.dataset.lpCounted = '1';
+      respondidos++;
+      if(btn.dataset.ok === '1') acertos++;
+      if(respondidos === qzGroups.length){
+        try{ window.parent.postMessage({type:'lesson-progress', event:'quiz-completed', score:acertos, total:qzGroups.length}, '*'); }catch(e){}
+      }
+    }, true);
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+
+function $(i){ return document.getElementById(i); }
+function nf(v, d){ if(d == null) d = 2; return (Math.round(v * Math.pow(10, d)) / Math.pow(10, d)).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: d}); }
+var NS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for(var k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+// plano cartesiano: devolve {sx, sy, g} com conversão de coordenadas
+function plano(svg, xmin, xmax, ymin, ymax, W, H, grade){
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+  var sx = function(x){ return 30 + (x - xmin) / (xmax - xmin) * (W - 40); }, sy = function(y){ return H - 24 - (y - ymin) / (ymax - ymin) * (H - 40); };
+  for(var x = Math.ceil(xmin); x <= xmax; x++){ el('line', {x1: sx(x), y1: sy(ymin), x2: sx(x), y2: sy(ymax), stroke: 'var(--line)', 'stroke-width': x === 0 ? 0 : 1}, svg); if(grade && x !== 0 && (x % grade === 0)){ var t = el('text', {x: sx(x), y: sy(0) + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); t.textContent = x; } }
+  for(var y = Math.ceil(ymin); y <= ymax; y++){ el('line', {x1: sx(xmin), y1: sy(y), x2: sx(xmax), y2: sy(y), stroke: 'var(--line)', 'stroke-width': y === 0 ? 0 : 1}, svg); if(grade && y !== 0 && (y % grade === 0)){ var u = el('text', {x: sx(0) - 5, y: sy(y) + 4, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink-faint)'}, svg); u.textContent = y; } }
+  el('line', {x1: sx(xmin), y1: sy(0), x2: sx(xmax), y2: sy(0), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  el('line', {x1: sx(0), y1: sy(ymin), x2: sx(0), y2: sy(ymax), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+  return {sx: sx, sy: sy};
+}
+function curva(svg, P, f, xmin, xmax, ymin, ymax, cor){
+  var pts = [], n = 160, up = false;
+  for(var i = 0; i <= n; i++){ var x = xmin + (xmax - xmin) * i / n, y = f(x); if(isFinite(y) && y >= ymin - 40 && y <= ymax + 40) pts.push(P.sx(x).toFixed(1) + ',' + P.sy(Math.max(ymin - 40, Math.min(ymax + 40, y))).toFixed(1)); }
+  el('polyline', {points: pts.join(' '), fill: 'none', stroke: cor || 'var(--primary)', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg);
+}
+function ponto(svg, P, x, y, cor, rotulo){ el('circle', {cx: P.sx(x), cy: P.sy(y), r: 5, fill: cor || 'var(--growth)'}, svg); if(rotulo){ var t = el('text', {x: P.sx(x) + 8, y: P.sy(y) - 8, 'font-size': 12, fill: cor || 'var(--growth)', 'font-weight': 700}, svg); t.textContent = rotulo; } }
+function fmtN(v){ return (Math.round(v * 100) / 100).toLocaleString('pt-BR'); }
+function sgn(v){ return v < 0 ? '−' + fmtN(-v) : fmtN(v); }
+function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+function bind(ids, f){ ids.forEach(function(i){ var e = $(i); if(e) e.addEventListener('input', f); }); f(); }
+function mdc(a, b){ a = Math.abs(a); b = Math.abs(b); while(b){ var t = b; b = a % b; a = t; } return a; }
+function fatora(n){ var r = [], d = 2; while(n > 1 && d * d <= n){ var e = 0; while(n % d === 0){ n /= d; e++; } if(e) r.push([d, e]); d++; } if(n > 1) r.push([n, 1]); return r; }
+function sup(n){ return String(n).split('').map(function(c){ return '⁰¹²³⁴⁵⁶⁷⁸⁹'[+c]; }).join(''); }
+function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) : ''); }).join(' · '); }
+
+  function pt(v, d){ return v.toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: d == null ? 3 : d}); }
+  function plano2(svg, xmin, xmax, ymin, ymax, W, H, px, py){
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.innerHTML = '';
+    var L = 38, R = 12, T = 12, B = 26;
+    var sx = function(x){ return L + (x - xmin) / (xmax - xmin) * (W - L - R); }, sy = function(y){ return H - B - (y - ymin) / (ymax - ymin) * (H - T - B); };
+    var x0 = (xmin <= 0 && xmax >= 0) ? 0 : xmin, y0 = (ymin <= 0 && ymax >= 0) ? 0 : ymin, i, v, t;
+    var ax = Math.ceil(xmin / px - 1e-9), nx = Math.floor(xmax / px + 1e-9);
+    for(i = ax; i <= nx; i++){ v = i * px; el('line', {x1: sx(v), y1: sy(ymin), x2: sx(v), y2: sy(ymax), stroke: 'var(--line)', 'stroke-width': 1}, svg); if(Math.abs(v - x0) > 1e-9){ t = el('text', {x: sx(v), y: sy(y0) + 14, 'text-anchor': 'middle', 'font-size': 10, fill: 'var(--ink-faint)'}, svg); t.textContent = pt(v, 2); } }
+    var ay = Math.ceil(ymin / py - 1e-9), ny = Math.floor(ymax / py + 1e-9);
+    for(i = ay; i <= ny; i++){ v = i * py; el('line', {x1: sx(xmin), y1: sy(v), x2: sx(xmax), y2: sy(v), stroke: 'var(--line)', 'stroke-width': 1}, svg); if(Math.abs(v - y0) > 1e-9){ t = el('text', {x: sx(x0) - 5, y: sy(v) + 4, 'text-anchor': 'end', 'font-size': 10, fill: 'var(--ink-faint)'}, svg); t.textContent = pt(v, 2); } }
+    el('line', {x1: sx(xmin), y1: sy(y0), x2: sx(xmax), y2: sy(y0), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+    el('line', {x1: sx(x0), y1: sy(ymin), x2: sx(x0), y2: sy(ymax), stroke: 'var(--ink-soft)', 'stroke-width': 1.6}, svg);
+    return {sx: sx, sy: sy};
+  }
+  function linha(svg, P, pts, cor){ el('polyline', {points: pts.map(function(q){ return P.sx(q[0]).toFixed(1) + ',' + P.sy(q[1]).toFixed(1); }).join(' '), fill: 'none', stroke: cor || 'var(--primary)', 'stroke-width': 3, 'stroke-linejoin': 'round', 'stroke-linecap': 'round'}, svg); }
+  function bola(svg, P, x, y, aberta, cor){ el('circle', {cx: P.sx(x), cy: P.sy(y), r: 5, fill: aberta ? 'var(--surface)' : (cor || 'var(--decay)'), stroke: cor || 'var(--decay)', 'stroke-width': 2.4}, svg); }
+
+  bind(['t1-f', 't1-p', 't1-x'], function(){ var F = +$('t1-f').value, q = +$('t1-p').value, x = +$('t1-x').value;
+    if(![F, q, x].every(isFinite) || F < 0 || q < 0 || x < 0){ $('t1-r').textContent = '—'; return; }
+    var X = 20, y1 = F + q * X, ym = Math.max(10, Math.ceil(Math.max(y1, F + q * x) * 1.1 / 5) * 5), P = plano2($('t1-s'), 0, X, 0, ym, 360, 210, 5, ym <= 20 ? 5 : ym <= 50 ? 10 : 20);
+    linha($('t1-s'), P, [[0, F], [X, y1]], 'var(--primary)'); bola($('t1-s'), P, 0, F, false, 'var(--primary)');
+    if(x <= X) bola($('t1-s'), P, x, F + q * x, false, 'var(--decay)');
+    $('t1-r').textContent = 'reais ' + pt(F + q * x, 2) + ' (fixo ' + pt(F) + ' + ' + pt(q) + ' × ' + pt(x) + ')';
+    $('t1-h').textContent = 'O gráfico parte de (0; ' + pt(F) + '). Cada minuto a mais acrescenta ' + pt(q) + '.'; });
+  bind(['m1-c', 'm1-t', 'm1-x'], function(){ var c = +$('m1-c').value, T = +$('m1-t').value, x = +$('m1-x').value;
+    if(![c, T, x].every(isFinite) || c <= 0 || T <= 0 || x < 0){ $('m1-r').textContent = '—'; return; }
+    var X = Math.max(6 * T, x), P = plano2($('m1-s'), 0, X, 0, c * 1.1, 360, 210, Math.max(T, X / 6), c / 2);
+    var pts = []; for(var i = 0; i <= 60; i++){ var t = X * i / 60; pts.push([t, c / Math.pow(2, t / T)]); }
+    linha($('m1-s'), P, pts, 'var(--primary)'); for(var k = 0; k * T <= X; k++) bola($('m1-s'), P, k * T, c / Math.pow(2, k), false, 'var(--growth)');
+    bola($('m1-s'), P, x, c / Math.pow(2, x / T), false, 'var(--decay)');
+    $('m1-r').textContent = pt(c / Math.pow(2, x / T), 3) + ' (' + pt(x / T, 2) + ' meias-vidas)';
+    $('m1-h').textContent = 'A cada ' + pt(T) + ' h a concentração cai à metade: ' + pt(c) + ' → ' + pt(c / 2) + ' → ' + pt(c / 4) + '… e nunca chega a zero.'; });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.mq').forEach(function(box){
+    var a = parseInt(box.dataset.a, 10);
+    box.querySelectorAll('.mqo').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(box.dataset.done) return; box.dataset.done = '1';
+        var ok = parseInt(b.dataset.i, 10) === a;
+        box.querySelectorAll('.mqo').forEach(function(x){ x.disabled = true; if(parseInt(x.dataset.i,10) === a) x.classList.add('correct'); });
+        if(!ok) b.classList.add('wrong');
+        var fb = box.querySelector('.fb'); fb.textContent = ok ? '✔ Isso mesmo!' : '✘ Quase — veja o porquê:'; fb.className = 'fb ' + (ok ? 'ok' : 'no');
+        box.querySelector('.answer').classList.add('open');
+      });
+    });
+  });
+})();
+</script>
+
+<script id="layout-v2-js">
+(function(){
+  var root = document.documentElement;
+  var rail = document.getElementById('rail'), railCount = document.getElementById('railCount');
+  var slides = document.querySelectorAll('.slide');
+  if(!rail || !railCount || !slides.length) return;
+
+  // larguras máximas em px dentro dos slides viram rem, para crescerem junto com o texto
+  document.querySelectorAll('.slide-inner [style]').forEach(function(el){
+    var mw = el.style.maxWidth;
+    if(mw && /px$/.test(mw)) el.style.maxWidth = (parseFloat(mw) / 16) + 'rem';
+  });
+
+  // trilha de progresso reta (substitui as bolinhas em curva exponencial)
+  var segs = [], track = document.createElement('div');
+  track.className = 'seg-track';
+  for(var i = 0; i < slides.length; i++){
+    (function(i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', 'Ir para o slide ' + (i + 1)); b.title = 'Slide ' + (i + 1);
+      b.addEventListener('click', function(){ if(window.goTo) window.goTo(i); });
+      track.appendChild(b); segs.push(b);
+    })(i);
+  }
+  rail.appendChild(track);
+  function atual(){ var m = railCount.textContent.match(/(\d+)\s*\/\s*(\d+)/); return m ? (+m[1] - 1) : 0; }
+  function pintar(){
+    var c = atual();
+    segs.forEach(function(b, i){
+      b.classList.toggle('done', i < c); b.classList.toggle('now', i === c);
+      if(i === c) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+    });
+  }
+
+  // ajuste automático: reduz o texto só o necessário para o slide caber sem rolar
+  function ajustar(){
+    var inner = document.querySelector('.slide.active .slide-inner');
+    if(!inner) return;
+    root.style.setProperty('--fit', '1');
+    var base = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var minimo = Math.max(0.6, Math.min(1, 14 / base)), f = 1, n = 0;
+    while(inner.scrollHeight > inner.clientHeight + 2 && f > minimo && n < 14){
+      f = Math.max(minimo, f * 0.95); root.style.setProperty('--fit', f.toFixed(3)); n++;
+    }
+  }
+  var agendado = false;
+  function agendar(){ if(agendado) return; agendado = true; requestAnimationFrame(function(){ agendado = false; ajustar(); }); }
+
+  new MutationObserver(function(){ pintar(); ajustar(); }).observe(railCount, { childList: true, characterData: true, subtree: true });
+  window.addEventListener('resize', agendar);
+  window.addEventListener('orientationchange', agendar);
+  // modo apresentação: F = tela cheia, B = tela preta (qualquer tecla ou clique volta)
+  var preto = null;
+  function pretoOff(){ if(preto){ preto.remove(); preto = null; } }
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
+    if(preto){ pretoOff(); e.preventDefault(); return; }
+    var k = (e.key || '').toLowerCase();
+    if(k === 'f'){ try{ if(document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }catch(x){} }
+    else if(k === 'b' || k === '.'){ preto = document.createElement('div'); preto.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;cursor:none'; preto.addEventListener('click', pretoOff); document.body.appendChild(preto); }
+  });
+  var dica = document.querySelector('.app > p'); if(dica && dica.textContent.indexOf('tela cheia') < 0) dica.textContent = dica.textContent.replace(/[. ]+$/, '') + ' · F: tela cheia · B: tela preta.';
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(agendar);
+  pintar(); ajustar();
+})();
+</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>
