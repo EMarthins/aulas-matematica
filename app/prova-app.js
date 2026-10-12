@@ -129,21 +129,27 @@ const passa = (q, ignorar) => {
   for (const k in CAMPOS) if (k !== ignorar && F[k] && CAMPOS[k](q) !== F[k]) return false;
   return true;
 };
-let filtrosUI = null;
+const CURTO = { serie: 'Série', materia: 'Matéria', unidade: 'Conteúdo', tipo: 'Tipo', dif: 'Nível', fonte: 'Origem' };
+const CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
 function montarFiltros() {
-  const box = $('secFiltros');
-  box.innerHTML = Object.keys(CAMPOS).map(k => `<section class="sec" data-id="${k}"><header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>${TITULOS[k]}</b><span class="sec-s"></span><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header><div class="sec-b"><div class="f-opts"></div></div></section>`).join('');
-  filtrosUI = secoesMoveis(box, 'filtros', ['materia', 'tipo', 'dif', 'fonte']);
+  $('secFiltros').innerHTML = Object.keys(CAMPOS).map(k => `<div class="fdd" data-id="${k}"><button type="button" class="fbtn" aria-haspopup="listbox" aria-expanded="false"><span class="fl">${CURTO[k]}</span>${CHEV}</button><div class="fpop" hidden><input class="fq" type="search" placeholder="Procurar em ${esc(TITULOS[k]).toLowerCase()}…" aria-label="Procurar em ${esc(TITULOS[k])}" autocomplete="off"><div class="f-opts" role="listbox"></div></div></div>`).join('');
+}
+function fecharPopFiltros() {
+  document.querySelectorAll('#secFiltros .fpop').forEach(p => { p.hidden = true; });
+  document.querySelectorAll('#secFiltros .fbtn').forEach(b => b.setAttribute('aria-expanded', 'false'));
 }
 function atualizarListas() {
   Object.keys(CAMPOS).forEach(k => {
-    const sec = document.querySelector(`#secFiltros .sec[data-id="${k}"]`); if (!sec) return;
+    const dd = document.querySelector(`#secFiltros .fdd[data-id="${k}"]`); if (!dd) return;
     const cont = {}; BANCO.forEach(q => { if (passa(q, k)) { const v = CAMPOS[k](q); if (v) cont[v] = (cont[v] || 0) + 1; } });
     let chaves = Object.keys(cont);
     chaves = k === 'serie' ? chaves.sort(cmpSerie) : k === 'dif' ? chaves.sort() : chaves.sort((a, b) => a.localeCompare(b, 'pt'));
     if (F[k] && !cont[F[k]]) chaves.unshift(F[k]);
-    sec.querySelector('.f-opts').innerHTML = chaves.map(v => `<button type="button" class="opt${F[k] === v ? ' on' : ''}${cont[v] ? '' : ' zero'}" data-v="${esc(v)}"><span>${esc(rot(k, v))}</span><small>${cont[v] || 0}</small></button>`).join('') || '<div class="vazio" style="padding:8px">—</div>';
-    const s = sec.querySelector('.sec-s'); s.textContent = F[k] ? rot(k, F[k]) : chaves.length + (chaves.length === 1 ? ' opção' : ' opções'); s.classList.toggle('ativo', !!F[k]);
+    dd.querySelector('.f-opts').innerHTML = chaves.map(v => `<button type="button" class="opt${F[k] === v ? ' on' : ''}${cont[v] ? '' : ' zero'}" data-v="${esc(v)}" role="option"><span>${esc(rot(k, v))}</span><small>${cont[v] || 0}</small></button>`).join('') || '<div class="vazio" style="padding:8px">Nada por aqui.</div>';
+    const fq = dd.querySelector('.fq'); fq.value = ''; fq.hidden = chaves.length <= 8;
+    const btn = dd.querySelector('.fbtn'); btn.classList.toggle('ativo', !!F[k]);
+    dd.querySelector('.fl').textContent = F[k] ? rot(k, F[k]) : CURTO[k];
+    btn.title = F[k] ? TITULOS[k] + ': ' + rot(k, F[k]) : 'Filtrar por ' + TITULOS[k].toLowerCase();
   });
   const uniq = f => [...new Set(BANCO.map(f).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt'));
   $('dl-series').innerHTML = uniq(q => q.serie).sort(cmpSerie).map(v => `<option value="${esc(v)}">`).join('');
@@ -163,8 +169,7 @@ function renderBanco(reset) {
   filtradas = BANCO.filter(q => passa(q));
   $('cont').textContent = filtradas.length + (filtradas.length === 1 ? ' questão' : ' questões');
   const ativos = Object.keys(CAMPOS).filter(k => F[k]).length + (F.q ? 1 : 0);
-  $('fResumo').textContent = ''; $('fBadge').hidden = !ativos; $('fBadge').textContent = ativos;
-  $('chipsAtivos').innerHTML = (F.q ? `<button type="button" class="chip-f" data-f="q">“${esc(F.q)}” <i>✕</i></button>` : '') + Object.keys(CAMPOS).filter(k => F[k]).map(k => `<button type="button" class="chip-f" data-f="${k}" title="${esc(TITULOS[k])}">${esc(rot(k, F[k]))} <i>✕</i></button>`).join('');
+  $('bLimpar').hidden = !ativos;
   const box = $('lista');
   if (!filtradas.length) { box.innerHTML = '<div class="vazio">Nenhuma questão com esses filtros.<br>Tente outra palavra-chave ou <button class="lnk" data-a="limpar" type="button">limpe os filtros</button>.</div>'; return; }
   const ids = new Set(E.itens.map(i => i.id));
@@ -174,13 +179,11 @@ function renderBanco(reset) {
 function cartao(q, naProva) {
   const figs = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
   const img = figs.find(f => f.tipo === 'img' && f.src);
-  const nomeOrig = q.origem === 'minha' ? 'Minha' : q.origem === 'ia' ? 'IA' : '';
   const dif = Math.max(1, Math.min(3, +q.dificuldade || 1));
   return `<div class="qc${naProva ? ' na-prova' : ''}" draggable="true" data-id="${esc(q.id)}">
-    <div class="top"><span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${figs.length ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif d${dif}" title="Dificuldade"><i></i><i></i><i></i><em>${rotulo.dif(dif)}</em></span></div>
-    <div class="un">${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}</div>
+    <div class="meta"><span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="mt" title="${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}">${esc(q.serie)} · ${esc(q.unidade)}</span><span class="dif d${dif}" title="Dificuldade: ${rotulo.dif(dif)}"><i></i><i></i><i></i></span></div>
     <div class="corpo"><div class="tx">${esc(textoPlano(q, 520))}</div>${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
-    <div class="ac"><button class="add${naProva ? ' on' : ''}" data-a="add" type="button">${naProva ? '✓ Na prova' : '+ Adicionar'}</button><button class="ver" data-a="ver" type="button">Ver completa ▾</button><span class="gab-m">Gabarito ${esc(gabaritoDe(q).curto.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 18))}</span></div>
+    <div class="ac"><button class="add${naProva ? ' on' : ''}" data-a="add" type="button">${naProva ? '✓ Na prova' : '+ Adicionar'}</button><button class="ver" data-a="ver" type="button">Ver completa ▾</button></div>
     <div class="full"></div>
   </div>`;
 }
@@ -876,23 +879,28 @@ function iniciarIA() {
 function iniciarBanco() {
   const refresh = () => renderBanco(true);
   $('busca').addEventListener('input', debounce(e => { F.q = e.target.value; refresh(); }, 120));
+  // listas suspensas dos filtros: abrem como popup logo abaixo do botão
   $('secFiltros').addEventListener('click', e => {
-    const o = e.target.closest('.opt'); if (!o) return;
-    const k = o.closest('.sec').dataset.id, v = o.dataset.v; F[k] = F[k] === v ? '' : v; refresh();
+    const o = e.target.closest('.opt');
+    if (o) { const k = o.closest('.fdd').dataset.id, v = o.dataset.v; F[k] = F[k] === v ? '' : v; fecharPopFiltros(); refresh(); return; }
+    const b = e.target.closest('.fbtn'); if (!b) return;
+    const pop = b.closest('.fdd').querySelector('.fpop'), abrir = pop.hidden;
+    fecharPopFiltros();
+    if (abrir) {
+      pop.hidden = false; b.setAttribute('aria-expanded', 'true'); pop.classList.remove('dir-r');
+      if (pop.getBoundingClientRect().right > window.innerWidth - 8) pop.classList.add('dir-r');
+      const fq = pop.querySelector('.fq'); if (!fq.hidden) fq.focus();
+    }
   });
+  $('secFiltros').addEventListener('input', e => {
+    const fq = e.target.closest('.fq'); if (!fq) return; const t = norm(fq.value);
+    fq.parentElement.querySelectorAll('.opt').forEach(o => { o.hidden = !!t && !norm(o.textContent).includes(t); });
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('#secFiltros')) fecharPopFiltros(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharPopFiltros(); });
   const limparFiltros = () => { Object.keys(F).forEach(k => { F[k] = ''; }); $('busca').value = ''; refresh(); };
   $('bLimpar').addEventListener('click', limparFiltros);
-  $('bRecolher').addEventListener('click', () => filtrosUI.fecharTodas());
   $('bNovaQ').addEventListener('click', () => abrirEditor(null, true));
-  // chips dos filtros ativos: um clique remove aquele filtro
-  $('chipsAtivos').addEventListener('click', e => {
-    const c = e.target.closest('.chip-f'); if (!c) return;
-    if (c.dataset.f === 'q') { F.q = ''; $('busca').value = ''; } else F[c.dataset.f] = '';
-    refresh();
-  });
-  // guia "como montar" (some para sempre depois de dispensada)
-  if (LS.ler('prova:ui:guia-ok', false)) $('guia').hidden = true;
-  $('guiaOk').addEventListener('click', () => { $('guia').hidden = true; LS.gravar('prova:ui:guia-ok', true); });
   // menu "⋯" da barra superior
   const pop = $('popTop'), bm = $('bMaisTop');
   const fechaPop = () => { pop.hidden = true; bm.setAttribute('aria-expanded', 'false'); };
@@ -901,14 +909,6 @@ function iniciarBanco() {
   document.addEventListener('click', e => { if (!pop.hidden && !e.target.closest('.mais-w')) fechaPop(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pop.hidden) fechaPop(); });
 
-  // mostrar/esconder a coluna de filtros
-  const estreito = () => window.matchMedia('(max-width:1100px)').matches;
-  if (LS.ler('prova:ui:semfiltros', false) && !estreito()) document.body.classList.add('sem-filtros');
-  $('bFiltros').addEventListener('click', () => {
-    if (estreito()) document.body.classList.toggle('filtros-abertos');
-    else { const off = document.body.classList.toggle('sem-filtros'); LS.gravar('prova:ui:semfiltros', off); }
-    setTimeout(aplicarZoom, 60);
-  });
   // densidade da lista
   const dens = LS.ler('prova:ui:dens', 'ampla');
   const aplicaDens = v => { $('colBanco').classList.toggle('dens-compacta', v === 'compacta'); marcarSeg('segDens', v); };
@@ -947,22 +947,21 @@ function setVista(v) {
 }
 
 /* ---------- gaveta de configurações (☰) ---------- */
-let gavetaUI = null;
+function mostrarAba(id) {
+  $('secConfig').querySelectorAll(':scope > .sec').forEach(s => s.classList.toggle('aba', s.dataset.id === id));
+  document.querySelectorAll('#dTabs button').forEach(b => { const on = b.dataset.t === id; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+  LS.gravar('prova:ui:aba', id);
+}
 function abrirGaveta(id) {
   $('drawer').classList.add('on'); $('drawer').setAttribute('aria-hidden', 'false'); $('drawerBd').hidden = false; $('bMenu').setAttribute('aria-expanded', 'true');
-  if (id && gavetaUI) gavetaUI.abrir(id);
+  if (id) mostrarAba(id);
 }
 function fecharGaveta() {
   $('drawer').classList.remove('on'); $('drawer').setAttribute('aria-hidden', 'true'); $('drawerBd').hidden = true; $('bMenu').setAttribute('aria-expanded', 'false');
 }
 function iniciarGaveta() {
-  gavetaUI = secoesMoveis($('secConfig'), 'config', ['prova', 'layout']);
-  // nos ajustes, abrir uma seção fecha as outras (menos rolagem)
-  $('secConfig').addEventListener('click', e => {
-    const h = e.target.closest('.sec-h'); if (!h || e.target.closest('.grip')) return;
-    const s = h.parentElement; if (s.classList.contains('fechada')) return;
-    $('secConfig').querySelectorAll(':scope > .sec').forEach(o => { if (o !== s) o.classList.add('fechada'); });
-  });
+  $('dTabs').addEventListener('click', e => { const b = e.target.closest('button[data-t]'); if (b) mostrarAba(b.dataset.t); });
+  mostrarAba(LS.ler('prova:ui:aba', 'cab'));
   $('bMenu').addEventListener('click', () => { $('drawer').classList.contains('on') ? fecharGaveta() : abrirGaveta(); });
   $('bFechaDrawer').addEventListener('click', fecharGaveta);
   $('drawerBd').addEventListener('click', fecharGaveta);

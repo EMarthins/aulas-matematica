@@ -22,17 +22,16 @@
     <input class="nome" id="nomeProva" value="Avaliação" aria-label="Nome da prova">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
   </label>
-  <button class="resumo-top" id="resTop" type="button" title="Ver e organizar as questões da prova"><b id="rtQ">0</b> questões · <b id="rtP">0</b> pts</button>
   <span class="sp"></span>
-  <div class="seg vista" id="segVista" role="tablist" aria-label="Alternar entre banco e folha"><button type="button" data-v="banco" class="on">Banco</button><button type="button" data-v="folha">Folha</button></div>
-  <button class="tb ghost" id="bSalvar" type="button" title="Salvar neste navegador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg><span>Salvar</span></button>
+  <div class="seg vista" id="segVista" role="tablist" aria-label="Alternar entre banco e folha"><button type="button" data-v="banco" class="on">Questões</button><button type="button" data-v="folha">Prova</button></div>
   <button class="tb ghost" id="bMenu" type="button" aria-expanded="false" aria-controls="drawer" title="Cabeçalho, pontuação, versões e layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ajustes</span></button>
   <button class="tb prim" id="bImprimir" type="button" title="Imprimir ou salvar em PDF (A4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><path d="M6 14h12v7H6z"/></svg><span>Imprimir / PDF</span></button>
   <div class="mais-w">
     <button class="icon" id="bMaisTop" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Mais opções" title="Mais opções"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></button>
     <div class="pop" id="popTop" role="menu" hidden>
-      <button id="bNova" type="button" role="menuitem" title="Começar uma prova nova">Nova prova</button>
+      <button id="bSalvar" type="button" role="menuitem" title="Salvar neste navegador">Salvar prova</button>
       <button id="bAbrir" type="button" role="menuitem" title="Abrir, importar ou exportar provas">Abrir, importar ou exportar…</button>
+      <button id="bNova" type="button" role="menuitem" title="Começar uma prova nova">Nova prova</button>
       <hr>
       <a href="../index.html" role="menuitem">Voltar ao site</a>
     </div>
@@ -41,30 +40,19 @@
 
 <div class="pv-app" id="app">
 
-  <!-- ===== FILTROS (listas que compactam e mudam de lugar) ===== -->
-  <aside class="pv-filtros" id="colFiltros" aria-label="Filtros do banco">
-    <div class="f-head">
-      <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="busca" type="search" placeholder="Palavra-chave: juros, parábola…" autocomplete="off"></label>
-      <div class="f-ac"><button class="lnk" id="bLimpar" type="button">Limpar filtros</button><button class="lnk" id="bRecolher" type="button" title="Fechar todas as listas">Recolher listas</button></div>
-    </div>
-    <div class="f-sec" id="secFiltros"></div>
-    <p class="f-dica">Arraste ⠿ para mudar a ordem das listas.</p>
-  </aside>
-
   <!-- ===== LISTA DE QUESTÕES ===== -->
   <section class="pv-banco" id="colBanco" aria-label="Questões do banco">
-    <div class="b-head">
-      <button class="icon" id="bFiltros" type="button" aria-label="Mostrar ou esconder filtros" title="Mostrar/esconder filtros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg><i id="fBadge" hidden></i></button>
-      <div class="b-tit"><b id="cont">…</b><small id="fResumo"></small></div>
+    <div class="b-top">
+      <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="busca" type="search" placeholder="Buscar questões: juros, parábola…" autocomplete="off"></label>
+      <button class="icon" id="bNovaQ" type="button" aria-label="Criar uma questão" title="Criar uma questão"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      <button class="icon" id="bMais" type="button" aria-label="Minhas questões: importar e exportar" title="Minhas questões"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></button>
+    </div>
+    <div class="b-filtros" id="secFiltros" aria-label="Filtros"></div>
+    <div class="b-sub">
+      <b id="cont">…</b>
+      <button class="lnk" id="bLimpar" type="button" hidden>Limpar filtros</button>
       <span class="sp"></span>
       <div class="seg dens" id="segDens" title="Densidade da lista"><button type="button" data-v="compacta">Compacta</button><button type="button" data-v="ampla" class="on">Ampla</button></div>
-      <button class="tb sm" id="bNovaQ" type="button">+ Nova</button>
-      <button class="icon" id="bMais" type="button" aria-label="Minhas questões: importar e exportar" title="Minhas questões">⋯</button>
-    </div>
-    <div class="b-chips" id="chipsAtivos" aria-label="Filtros ativos"></div>
-    <div class="b-guia" id="guia">
-      <ol><li><b>Filtre</b> por turma, conteúdo ou palavra-chave.</li><li>Clique em <b>+ Adicionar</b> (ou arraste a questão para a folha).</li><li>Em <b>Ajustes</b>, preencha o cabeçalho; depois <b>Imprimir / PDF</b>.</li></ol>
-      <button class="icon sm" id="guiaOk" type="button" aria-label="Dispensar a dica" title="Entendi, esconder">✕</button>
     </div>
     <div class="b-lista" id="lista"></div>
   </section>
@@ -72,6 +60,7 @@
   <!-- ===== PALCO (folhas A4) ===== -->
   <main class="pv-palco" id="colFolha">
     <div class="pv-tools">
+      <button class="resumo-top" id="resTop" type="button" title="Ver e organizar as questões da prova"><b id="rtQ">0</b> questões · <b id="rtP">0</b> pts</button>
       <span class="seg" id="segCols" title="Colunas da prova"><button type="button" data-v="1">1 coluna</button><button type="button" data-v="2" class="on">2 colunas</button></span>
       <span id="infoPag"></span>
       <span class="sp"></span>
@@ -91,10 +80,11 @@
 <div class="drawer-bd" id="drawerBd" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Ajustes da prova" aria-hidden="true">
   <div class="d-head"><b>Ajustes da prova</b><button class="icon" id="bFechaDrawer" type="button" aria-label="Fechar">✕</button></div>
+  <div class="d-tabs" id="dTabs" role="tablist" aria-label="Seções dos ajustes"><button type="button" role="tab" data-t="cab" class="on">Cabeçalho</button><button type="button" role="tab" data-t="prova">Prova</button><button type="button" role="tab" data-t="layout">Layout</button></div>
   <div class="d-body" id="secConfig">
 
     <!-- Cabeçalho -->
-    <section class="sec" data-id="cab" id="pn-cab">
+    <section class="sec aba" data-id="cab" id="pn-cab">
       <header class="sec-h"><span class="grip" title="Arraste para mudar a ordem">⠿</span><b>Cabeçalho</b><span class="sec-s">escola, professor, data…</span><button class="chev" type="button" aria-label="Abrir ou fechar"></button></header>
       <div class="sec-b">
         <div class="pv-campo"><label>Modelo</label>
@@ -107,33 +97,37 @@
         </div>
         <div class="pv-campo"><label for="c-titulo">Título</label><input class="pv-in" id="c-titulo" placeholder="Avaliação de Matemática"></div>
         <div class="pv-campo"><label for="c-subtitulo">Subtítulo / conteúdo</label><input class="pv-in" id="c-subtitulo" placeholder="Ex.: Funções e geometria plana"></div>
-        <div class="pv-box">
-          <h3>Pré-preenchimento</h3>
+        <div class="pv-grupo">
+          <h3>Dados da prova</h3>
           <div class="pv-campo"><label for="c-escola">Escola</label><input class="pv-in" id="c-escola"></div>
           <div class="pv-campo"><label for="c-professor">Professor(a)</label><input class="pv-in" id="c-professor"></div>
           <div class="pv-linha">
             <div class="pv-campo"><label for="c-turma">Turma</label><input class="pv-in" id="c-turma" placeholder="Ex.: 2º A"></div>
             <div class="pv-campo"><label for="c-data">Data</label><input class="pv-in" id="c-data" type="date"></div>
           </div>
-          <div class="pv-campo"><label for="c-trimestre">Trimestre / bimestre</label><input class="pv-in" id="c-trimestre" placeholder="Ex.: 2º">
-            <div class="pv-chips" id="chipsTri"><button type="button">1º trimestre</button><button type="button">2º trimestre</button><button type="button">3º trimestre</button><button type="button">1º bimestre</button><button type="button">2º bimestre</button></div>
+          <div class="pv-linha">
+            <div class="pv-campo"><label for="c-trimestre">Trimestre / bimestre</label><input class="pv-in" id="c-trimestre" placeholder="Ex.: 2º"></div>
+            <div class="pv-campo"><label for="c-disciplina">Disciplina</label><input class="pv-in" id="c-disciplina" placeholder="Matemática"></div>
           </div>
-          <div class="pv-campo"><label for="c-disciplina">Disciplina</label><input class="pv-in" id="c-disciplina" placeholder="Matemática"></div>
+          <div class="pv-chips" id="chipsTri"><button type="button">1º trimestre</button><button type="button">2º trimestre</button><button type="button">3º trimestre</button><button type="button">1º bimestre</button><button type="button">2º bimestre</button></div>
           <p class="pv-nota">Deixe um campo vazio para o aluno preencher à mão. Nome, nº e nota sempre saem em branco.</p>
-          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center">
+        </div>
+        <details class="mais-op">
+          <summary>Mais opções do cabeçalho</summary>
+          <div class="pv-campo"><label>Campos visíveis</label>
+            <div id="vis" style="display:grid;grid-template-columns:1fr 1fr;gap:0 10px"></div>
+            <label class="pv-chk"><input type="checkbox" id="c-totalNota"> Mostrar “/ total” no campo Nota</label>
+          </div>
+          <div class="pv-campo"><label>Logo da escola</label>
+            <input type="file" id="c-logo" accept="image/*" style="font-size:.8rem">
+            <button class="lnk" id="bLogoX" type="button" style="margin-top:4px">Remover logo</button>
+          </div>
+          <div class="pv-campo"><label for="c-instr">Instruções para o aluno</label><textarea class="pv-ta" id="c-instr" placeholder="Ex.: Leia com atenção. Use caneta azul ou preta."></textarea></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
             <button class="tb sm" id="bPadrao" type="button">Usar como padrão das próximas provas</button>
             <button class="lnk" id="bPadraoLimpar" type="button">Esquecer padrão</button>
           </div>
-        </div>
-        <div class="pv-campo"><label>Campos visíveis</label>
-          <div id="vis" style="display:grid;grid-template-columns:1fr 1fr;gap:0 10px"></div>
-          <label class="pv-chk"><input type="checkbox" id="c-totalNota"> Mostrar “/ total” no campo Nota</label>
-        </div>
-        <div class="pv-campo"><label>Logo da escola</label>
-          <input type="file" id="c-logo" accept="image/*" style="font-size:.8rem">
-          <button class="lnk" id="bLogoX" type="button" style="margin-top:4px">Remover logo</button>
-        </div>
-        <div class="pv-campo"><label for="c-instr">Instruções para o aluno</label><textarea class="pv-ta" id="c-instr" placeholder="Ex.: Leia com atenção. Use caneta azul ou preta."></textarea></div>
+        </details>
       </div>
     </section>
 
