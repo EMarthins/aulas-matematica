@@ -14,18 +14,29 @@
 
 <header class="pv-top">
   <a class="logo" href="../index.html" title="Voltar ao site">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--primary)"/><path d="M9 22V10h7a4 4 0 0 1 0 8h-7" fill="none" stroke="var(--primary-ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 21.5l2 2 4-5" fill="none" stroke="var(--growth)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--primary)"/><path d="M9 22V10h7a4 4 0 0 1 0 8h-7" fill="none" stroke="var(--primary-ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 21.5l2 2 4-5" fill="none" stroke="var(--growth)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <b>Proveiro</b>
   </a>
-  <input class="nome" id="nomeProva" value="Avaliação" aria-label="Nome da prova" title="Nome da prova (só para você achar depois)">
+  <span class="div" aria-hidden="true"></span>
+  <label class="nome-w" title="Nome da prova (só para você achar depois)">
+    <input class="nome" id="nomeProva" value="Avaliação" aria-label="Nome da prova">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>
+  </label>
   <button class="resumo-top" id="resTop" type="button" title="Ver e organizar as questões da prova"><b id="rtQ">0</b> questões · <b id="rtP">0</b> pts</button>
   <span class="sp"></span>
   <div class="seg vista" id="segVista" role="tablist" aria-label="Alternar entre banco e folha"><button type="button" data-v="banco" class="on">Banco</button><button type="button" data-v="folha">Folha</button></div>
-  <button class="tb" id="bNova" type="button" title="Começar uma prova nova">Nova</button>
-  <button class="tb" id="bAbrir" type="button" title="Abrir, importar ou exportar provas">Abrir</button>
-  <button class="tb" id="bSalvar" type="button" title="Salvar neste navegador">Salvar</button>
-  <button class="tb prim" id="bImprimir" type="button" title="Imprimir ou salvar em PDF (A4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg><span>PDF / Imprimir</span></button>
-  <button class="tb menu" id="bMenu" type="button" aria-label="Configurações da prova" aria-expanded="false" aria-controls="drawer" title="Cabeçalho, prova e layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <button class="tb ghost" id="bSalvar" type="button" title="Salvar neste navegador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg><span>Salvar</span></button>
+  <button class="tb ghost" id="bMenu" type="button" aria-expanded="false" aria-controls="drawer" title="Cabeçalho, pontuação, versões e layout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ajustes</span></button>
+  <button class="tb prim" id="bImprimir" type="button" title="Imprimir ou salvar em PDF (A4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><path d="M6 14h12v7H6z"/></svg><span>Imprimir / PDF</span></button>
+  <div class="mais-w">
+    <button class="icon" id="bMaisTop" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Mais opções" title="Mais opções"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></button>
+    <div class="pop" id="popTop" role="menu" hidden>
+      <button id="bNova" type="button" role="menuitem" title="Começar uma prova nova">Nova prova</button>
+      <button id="bAbrir" type="button" role="menuitem" title="Abrir, importar ou exportar provas">Abrir, importar ou exportar…</button>
+      <hr>
+      <a href="../index.html" role="menuitem">Voltar ao site</a>
+    </div>
+  </div>
 </header>
 
 <div class="pv-app" id="app">
@@ -50,6 +61,11 @@
       <button class="tb sm" id="bNovaQ" type="button">+ Nova</button>
       <button class="icon" id="bMais" type="button" aria-label="Minhas questões: importar e exportar" title="Minhas questões">⋯</button>
     </div>
+    <div class="b-chips" id="chipsAtivos" aria-label="Filtros ativos"></div>
+    <div class="b-guia" id="guia">
+      <ol><li><b>Filtre</b> por turma, conteúdo ou palavra-chave.</li><li>Clique em <b>+ Adicionar</b> (ou arraste a questão para a folha).</li><li>Em <b>Ajustes</b>, preencha o cabeçalho; depois <b>Imprimir / PDF</b>.</li></ol>
+      <button class="icon sm" id="guiaOk" type="button" aria-label="Dispensar a dica" title="Entendi, esconder">✕</button>
+    </div>
     <div class="b-lista" id="lista"></div>
   </section>
 
@@ -65,7 +81,7 @@
       </select>
     </div>
     <div class="pv-stage" id="stage">
-      <div class="pv-dica" id="dica">Arraste questões da lista para a folha — ou clique em <b>Adicionar</b>. Arraste as questões dentro da prova para reordenar. Clique no cabeçalho para editá-lo.</div>
+      <div class="pv-dica" id="dica">A prova está vazia. Arraste questões da lista para a folha ou clique em <b>+ Adicionar</b>. Depois, arraste dentro da folha para reordenar e clique no cabeçalho para editá-lo.</div>
       <div id="paginas"></div>
     </div>
   </main>
@@ -73,8 +89,8 @@
 
 <!-- ===== GAVETA DE CONFIGURAÇÕES (☰) ===== -->
 <div class="drawer-bd" id="drawerBd" hidden></div>
-<aside class="drawer" id="drawer" aria-label="Configurações da prova" aria-hidden="true">
-  <div class="d-head"><b>Configurações da prova</b><button class="icon" id="bFechaDrawer" type="button" aria-label="Fechar">✕</button></div>
+<aside class="drawer" id="drawer" aria-label="Ajustes da prova" aria-hidden="true">
+  <div class="d-head"><b>Ajustes da prova</b><button class="icon" id="bFechaDrawer" type="button" aria-label="Fechar">✕</button></div>
   <div class="d-body" id="secConfig">
 
     <!-- Cabeçalho -->

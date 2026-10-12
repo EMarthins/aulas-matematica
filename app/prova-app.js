@@ -56,6 +56,12 @@ function indexar(q) {
 function montarBanco() {
   const minhas = getMinhas().map(q => Object.assign(indexar(q), { origem: q.origem === 'ia' ? 'ia' : 'minha' }));
   BANCO = minhas.concat(AUTORAIS, LEGADO);
+  // nomes que só diferem em maiúsculas/acentos (ex.: "Análise Combinatória" e "Análise combinatória") viram um só nos filtros
+  ['unidade', 'materia', 'serie'].forEach(campo => {
+    const cont = {}; BANCO.forEach(q => { const v = q[campo]; if (!v) return; const k = norm(v); (cont[k] = cont[k] || {})[v] = (cont[k][v] || 0) + 1; });
+    const canon = {}; Object.keys(cont).forEach(k => { canon[k] = Object.keys(cont[k]).sort((a, b) => cont[k][b] - cont[k][a])[0]; });
+    BANCO.forEach(q => { if (q[campo]) q[campo] = canon[norm(q[campo])]; });
+  });
   POR_ID = {}; BANCO.forEach(q => { POR_ID[q.id] = q; });
 }
 let AUTORAIS = [], LEGADO = [];
@@ -157,7 +163,8 @@ function renderBanco(reset) {
   filtradas = BANCO.filter(q => passa(q));
   $('cont').textContent = filtradas.length + (filtradas.length === 1 ? ' questão' : ' questões');
   const ativos = Object.keys(CAMPOS).filter(k => F[k]).length + (F.q ? 1 : 0);
-  $('fResumo').textContent = resumoFiltros() || 'sem filtros'; $('fBadge').hidden = !ativos; $('fBadge').textContent = ativos;
+  $('fResumo').textContent = ''; $('fBadge').hidden = !ativos; $('fBadge').textContent = ativos;
+  $('chipsAtivos').innerHTML = (F.q ? `<button type="button" class="chip-f" data-f="q">“${esc(F.q)}” <i>✕</i></button>` : '') + Object.keys(CAMPOS).filter(k => F[k]).map(k => `<button type="button" class="chip-f" data-f="${k}" title="${esc(TITULOS[k])}">${esc(rot(k, F[k]))} <i>✕</i></button>`).join('');
   const box = $('lista');
   if (!filtradas.length) { box.innerHTML = '<div class="vazio">Nenhuma questão com esses filtros.<br>Tente outra palavra-chave ou <button class="lnk" data-a="limpar" type="button">limpe os filtros</button>.</div>'; return; }
   const ids = new Set(E.itens.map(i => i.id));
@@ -168,11 +175,12 @@ function cartao(q, naProva) {
   const figs = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
   const img = figs.find(f => f.tipo === 'img' && f.src);
   const nomeOrig = q.origem === 'minha' ? 'Minha' : q.origem === 'ia' ? 'IA' : '';
+  const dif = Math.max(1, Math.min(3, +q.dificuldade || 1));
   return `<div class="qc${naProva ? ' na-prova' : ''}" draggable="true" data-id="${esc(q.id)}">
-    <div class="top">${naProva ? '<span class="tag ok">✓ na prova</span>' : ''}<span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${figs.length ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif" title="Dificuldade">${[1, 2, 3].map(n => `<i class="${n <= q.dificuldade ? 'on' : ''}"></i>`).join('')}</span></div>
+    <div class="top"><span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="tag">${esc(q.serie)}</span>${figs.length ? '<span class="tag fig">com figura</span>' : ''}${nomeOrig ? `<span class="tag">${nomeOrig}</span>` : ''}<span class="dif d${dif}" title="Dificuldade"><i></i><i></i><i></i><em>${rotulo.dif(dif)}</em></span></div>
     <div class="un">${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}</div>
     <div class="corpo"><div class="tx">${esc(textoPlano(q, 520))}</div>${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
-    <div class="ac"><button class="add" data-a="add" type="button">+ Adicionar</button><button data-a="ver" type="button">Ver completa ▾</button><span class="gab-m">Gabarito ${esc(gabaritoDe(q).curto.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 18))}</span></div>
+    <div class="ac"><button class="add${naProva ? ' on' : ''}" data-a="add" type="button">${naProva ? '✓ Na prova' : '+ Adicionar'}</button><button class="ver" data-a="ver" type="button">Ver completa ▾</button><span class="gab-m">Gabarito ${esc(gabaritoDe(q).curto.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').slice(0, 18))}</span></div>
     <div class="full"></div>
   </div>`;
 }
@@ -180,7 +188,7 @@ function marcarNaProva() {
   const ids = new Set(E.itens.map(i => i.id));
   document.querySelectorAll('#lista .qc').forEach(c => {
     const on = ids.has(c.dataset.id); c.classList.toggle('na-prova', on);
-    const o = c.querySelector('.tag.ok'); if (on && !o) c.querySelector('.top').insertAdjacentHTML('afterbegin', '<span class="tag ok">✓ na prova</span>'); else if (!on && o) o.remove();
+    const b = c.querySelector('.ac .add'); if (b) { b.classList.toggle('on', on); b.textContent = on ? '✓ Na prova' : '+ Adicionar'; }
   });
 }
 
@@ -367,7 +375,7 @@ function mudou(soLayout) {
   if (!soLayout) { renderLista(); marcarNaProva(); }
   atualizarResumo(); repaginar(); salvarRascunho();
 }
-function atualizarResumo() { const n = E.itens.length, p = fmtPt(somaPontos()); $('rQ').textContent = n; $('rP').textContent = p; $('rtQ').textContent = n; $('rtP').textContent = p; $('provaSub').textContent = n + (n === 1 ? ' questão' : ' questões') + ' · ' + p + ' pts'; }
+function atualizarResumo() { const n = E.itens.length, p = fmtPt(somaPontos()); $('rQ').textContent = n; $('rP').textContent = p; $('rtQ').textContent = n; $('rtP').textContent = p; $('provaSub').textContent = n + (n === 1 ? ' questão' : ' questões') + ' · ' + p + ' pts'; $('dica').hidden = n > 0; }
 
 function renderLista() {
   const ul = $('plista'); $('plVazio').style.display = E.itens.length ? 'none' : 'block';
@@ -876,6 +884,22 @@ function iniciarBanco() {
   $('bLimpar').addEventListener('click', limparFiltros);
   $('bRecolher').addEventListener('click', () => filtrosUI.fecharTodas());
   $('bNovaQ').addEventListener('click', () => abrirEditor(null, true));
+  // chips dos filtros ativos: um clique remove aquele filtro
+  $('chipsAtivos').addEventListener('click', e => {
+    const c = e.target.closest('.chip-f'); if (!c) return;
+    if (c.dataset.f === 'q') { F.q = ''; $('busca').value = ''; } else F[c.dataset.f] = '';
+    refresh();
+  });
+  // guia "como montar" (some para sempre depois de dispensada)
+  if (LS.ler('prova:ui:guia-ok', false)) $('guia').hidden = true;
+  $('guiaOk').addEventListener('click', () => { $('guia').hidden = true; LS.gravar('prova:ui:guia-ok', true); });
+  // menu "⋯" da barra superior
+  const pop = $('popTop'), bm = $('bMaisTop');
+  const fechaPop = () => { pop.hidden = true; bm.setAttribute('aria-expanded', 'false'); };
+  bm.addEventListener('click', e => { e.stopPropagation(); const abre = pop.hidden; pop.hidden = !abre; bm.setAttribute('aria-expanded', abre); });
+  pop.addEventListener('click', fechaPop);
+  document.addEventListener('click', e => { if (!pop.hidden && !e.target.closest('.mais-w')) fechaPop(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pop.hidden) fechaPop(); });
 
   // mostrar/esconder a coluna de filtros
   const estreito = () => window.matchMedia('(max-width:1100px)').matches;
@@ -933,6 +957,12 @@ function fecharGaveta() {
 }
 function iniciarGaveta() {
   gavetaUI = secoesMoveis($('secConfig'), 'config', ['prova', 'layout']);
+  // nos ajustes, abrir uma seção fecha as outras (menos rolagem)
+  $('secConfig').addEventListener('click', e => {
+    const h = e.target.closest('.sec-h'); if (!h || e.target.closest('.grip')) return;
+    const s = h.parentElement; if (s.classList.contains('fechada')) return;
+    $('secConfig').querySelectorAll(':scope > .sec').forEach(o => { if (o !== s) o.classList.add('fechada'); });
+  });
   $('bMenu').addEventListener('click', () => { $('drawer').classList.contains('on') ? fecharGaveta() : abrirGaveta(); });
   $('bFechaDrawer').addEventListener('click', fecharGaveta);
   $('drawerBd').addEventListener('click', fecharGaveta);
