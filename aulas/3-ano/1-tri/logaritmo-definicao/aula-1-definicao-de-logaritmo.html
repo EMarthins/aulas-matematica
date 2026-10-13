@@ -1,5 +1,24 @@
 <title>Logaritmo: definição — Matemática 3ª série</title>
 <meta charset="utf-8">
+<!--acesso:inicio-->
+<script>(function(){
+  try{ if(localStorage.getItem('sb:user')) return; }catch(e){}
+  var R = '../../../../', p = location.pathname, i = -1, k = ['/aulas/', '/educacao-financeira/', '/ena-profmat/'];
+  for(var j = 0; j < k.length && i < 0; j++) i = p.indexOf(k[j]);
+  var q = 'voltar=' + encodeURIComponent(i < 0 ? '' : p.slice(i + 1));
+  document.documentElement.className += ' sem-acesso';
+  var st = document.createElement('style');
+  st.textContent = 'html.sem-acesso{overflow:hidden}html.sem-acesso body>*:not(#parede){display:none!important}#parede{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:20px;background:#0C0D18;color:#EEEFFC;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}#parede .c{max-width:30rem;text-align:center;background:#15172A;border:1px solid #3B3E68;border-radius:20px;padding:28px 24px;box-shadow:0 30px 70px -24px #000}#parede h1{margin:.2em 0 .3em;font-size:1.35rem}#parede p{margin:0 0 1.1em;color:#AEB1D6;font-size:.95rem}#parede a{display:block;text-decoration:none;font-weight:800;border-radius:12px;padding:.8em 1em;margin-top:8px}#parede .p{background:#9089F5;color:#12102B}#parede .s{border:1.5px solid #3B3E68;color:#EEEFFC}#parede .l{color:#9089F5;font-weight:700;margin-top:12px;font-size:.88rem}';
+  document.head.appendChild(st);
+  function mostra(){
+    if(document.getElementById('parede')) return;
+    var w = document.createElement('div'); w.id = 'parede';
+    w.innerHTML = '<div class="c"><div style="font-size:2rem">&#128274;</div><h1>Esta aula é para quem tem conta</h1><p>Sem conta você acessa 1 aula por ano e trimestre. Crie sua conta grátis (ou entre) para liberar todas as aulas, guias e atividades.</p><a class="p" target="_top" href="' + R + 'login.html?modo=cadastrar&' + q + '">Criar conta grátis</a><a class="s" target="_top" href="' + R + 'login.html?' + q + '">Já tenho conta · Entrar</a><a class="l" target="_top" href="' + R + 'index.html#gratis">Ver as aulas grátis</a></div>';
+    document.body.appendChild(w);
+  }
+  if(document.body) mostra(); else document.addEventListener('DOMContentLoaded', mostra);
+})();</script>
+<!--acesso:fim-->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
   :root{
@@ -938,3 +957,25 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
   pintar(); ajustar();
 })();
 </script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>

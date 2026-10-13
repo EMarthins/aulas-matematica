@@ -531,6 +531,104 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Problemas com exponencial: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-exponencial-problemas/atividade-pratica.html' }
                 ]
+              },
+              {
+                titulo: 'Logaritmo: Definição',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aula 12', titulo:'Definição de logaritmo', arquivo:'aulas/3-ano/1-tri/logaritmo-definicao/aula-1-definicao-de-logaritmo.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Logaritmo: Definição', arquivo:'aulas/3-ano/1-tri/logaritmo-definicao/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Definição de logaritmo no estilo ENEM', arquivo:'aulas/3-ano/1-tri/logaritmo-definicao/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos logaritmos', arquivo:'aulas/3-ano/1-tri/logaritmo-definicao/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Definição de logaritmo: trilha de desafios', arquivo:'aulas/3-ano/1-tri/logaritmo-definicao/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmo: Consequências da Definição',
+                accent: 'growth',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 13–14', titulo:'Consequências da definição', arquivo:'aulas/3-ano/1-tri/logaritmo-consequencias/aula-1-consequencias-da-definicao.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Logaritmo: Consequências da Definição', arquivo:'aulas/3-ano/1-tri/logaritmo-consequencias/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Consequências da definição no estilo ENEM', arquivo:'aulas/3-ano/1-tri/logaritmo-consequencias/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive: onde está o erro?', arquivo:'aulas/3-ano/1-tri/logaritmo-consequencias/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Consequências da definição: trilha de desafios', arquivo:'aulas/3-ano/1-tri/logaritmo-consequencias/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmo de Base 10',
+                accent: 'decay',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 15–16', titulo:'Logaritmo decimal', arquivo:'aulas/3-ano/1-tri/logaritmo-base-10/aula-1-logaritmo-decimal.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Logaritmo de Base 10', arquivo:'aulas/3-ano/1-tri/logaritmo-base-10/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Logaritmo decimal no estilo ENEM', arquivo:'aulas/3-ano/1-tri/logaritmo-base-10/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Em que faixa está o logaritmo?', arquivo:'aulas/3-ano/1-tri/logaritmo-base-10/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Logaritmo decimal: trilha de desafios', arquivo:'aulas/3-ano/1-tri/logaritmo-base-10/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmo: Condição de Existência',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 17–18', titulo:'Condição de existência do logaritmo', arquivo:'aulas/3-ano/1-tri/logaritmo-condicao-existencia/aula-1-condicao-de-existencia.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Logaritmo: Condição de Existência', arquivo:'aulas/3-ano/1-tri/logaritmo-condicao-existencia/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Condição de existência no estilo ENEM', arquivo:'aulas/3-ano/1-tri/logaritmo-condicao-existencia/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: existência', arquivo:'aulas/3-ano/1-tri/logaritmo-condicao-existencia/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Condição de existência: trilha de desafios', arquivo:'aulas/3-ano/1-tri/logaritmo-condicao-existencia/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades Operatórias do Logaritmo',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 19–21', titulo:'Produto, quociente e potência', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/aula-1-produto-quociente-potencia.html' },
+                  { tipo:'Aulas 22–23', titulo:'Mudança de base', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/aula-2-mudanca-de-base.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Propriedades Operatórias do Logaritmo', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Propriedades dos logaritmos no estilo ENEM', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Propriedades dos logaritmos: trilha de desafios', arquivo:'aulas/3-ano/1-tri/logaritmo-propriedades/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Equação Logarítmica',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aula 24', titulo:'Equação logarítmica', arquivo:'aulas/3-ano/1-tri/equacao-logaritmica/aula-1-equacao-logaritmica.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Equação Logarítmica', arquivo:'aulas/3-ano/1-tri/equacao-logaritmica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Equação logarítmica no estilo ENEM', arquivo:'aulas/3-ano/1-tri/equacao-logaritmica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive: onde está o erro?', arquivo:'aulas/3-ano/1-tri/equacao-logaritmica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Equação logarítmica: trilha de desafios', arquivo:'aulas/3-ano/1-tri/equacao-logaritmica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Função Logarítmica',
+                accent: 'growth',
+                icon: 'wave',
+                itens: [
+                  { tipo:'Aulas 25–26', titulo:'Função logarítmica: definição e escalas', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/aula-1-definicao-e-escalas.html' },
+                  { tipo:'Aulas 27–30', titulo:'Função logarítmica: gráficos crescente e decrescente', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/aula-2-graficos-crescente-e-decrescente.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Logarítmica', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Função logarítmica no estilo ENEM', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique a função', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Função logarítmica: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Função Logarítmica: Problemas',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 31–32', titulo:'Problemas com logaritmos', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/aula-1-problemas-com-logaritmos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Logarítmica: Problemas', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Problemas com logaritmos no estilo ENEM', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória: problema e resposta', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Problemas com logaritmos: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/atividade-pratica.html' }
+                ]
               }
             ]
           },

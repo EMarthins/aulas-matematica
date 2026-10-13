@@ -346,3 +346,25 @@ sup, sub{ font-size:.8em !important; line-height:0; }
   try{ window.parent.postMessage({type:'lesson-progress', event:'opened'}, '*'); }catch(e){}
 })();
 </script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>
