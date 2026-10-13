@@ -891,6 +891,182 @@ export const MATERIAS = [
       {
         ano: '2° Ano',
         trimestres: [
+          // >>> mat-2ano-1tri
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Função Quadrática e seu Gráfico',
+                accent: 'primary',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 1–2', titulo:'Função quadrática e seu gráfico', arquivo:'aulas/2-ano/1-tri/funcao-quadratica/aula-1-funcao-quadratica-e-grafico.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Função Quadrática e seu Gráfico', arquivo:'aulas/2-ano/1-tri/funcao-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Função quadrática no estilo ENEM', arquivo:'aulas/2-ano/1-tri/funcao-quadratica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'É função quadrática?', arquivo:'aulas/2-ano/1-tri/funcao-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Função quadrática: trilha de desafios', arquivo:'aulas/2-ano/1-tri/funcao-quadratica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Zeros, Soma e Produto',
+                accent: 'decay',
+                icon: 'algebra',
+                itens: [
+                  { tipo:'Aulas 3–4', titulo:'Zeros e discriminante', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/aula-1-zeros-e-discriminante.html' },
+                  { tipo:'Aulas 5–6', titulo:'Soma e produto das raízes', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/aula-2-soma-e-produto.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Zeros, Soma e Produto', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Zeros da função quadrática no estilo ENEM', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Classifique pelo discriminante', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Zeros da função quadrática: trilha de desafios', arquivo:'aulas/2-ano/1-tri/zeros-soma-produto/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Vértice da Parábola',
+                accent: 'primary',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 7–8', titulo:'Vértice e eixo de simetria', arquivo:'aulas/2-ano/1-tri/vertice-da-parabola/aula-1-vertice-e-eixo-de-simetria.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Vértice da Parábola', arquivo:'aulas/2-ano/1-tri/vertice-da-parabola/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Vértice da parábola no estilo ENEM', arquivo:'aulas/2-ano/1-tri/vertice-da-parabola/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos vértices', arquivo:'aulas/2-ano/1-tri/vertice-da-parabola/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Vértice da parábola: trilha de desafios', arquivo:'aulas/2-ano/1-tri/vertice-da-parabola/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Máximo, Mínimo e Imagem',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 9–11', titulo:'Valor máximo e mínimo e imagem da função quadrática', arquivo:'aulas/2-ano/1-tri/maximo-minimo-e-imagem/aula-1-maximos-minimos-e-imagem.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Máximo, Mínimo e Imagem', arquivo:'aulas/2-ano/1-tri/maximo-minimo-e-imagem/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Máximo, mínimo e imagem no estilo ENEM', arquivo:'aulas/2-ano/1-tri/maximo-minimo-e-imagem/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: extremos e imagem', arquivo:'aulas/2-ano/1-tri/maximo-minimo-e-imagem/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Máximo, mínimo e imagem: trilha de desafios', arquivo:'aulas/2-ano/1-tri/maximo-minimo-e-imagem/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Sinais e Gráficos de Situações',
+                accent: 'primary',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 12–13', titulo:'Estudo dos sinais e gráficos de situações', arquivo:'aulas/2-ano/1-tri/sinais-e-graficos/aula-1-sinais-e-graficos-de-situacoes.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Sinais e Gráficos de Situações', arquivo:'aulas/2-ano/1-tri/sinais-e-graficos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Sinais da função quadrática no estilo ENEM', arquivo:'aulas/2-ano/1-tri/sinais-e-graficos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'O sinal da função', arquivo:'aulas/2-ano/1-tri/sinais-e-graficos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Sinais da função quadrática: trilha de desafios', arquivo:'aulas/2-ano/1-tri/sinais-e-graficos/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Problemas com Função Quadrática',
+                accent: 'growth',
+                icon: 'parabola',
+                itens: [
+                  { tipo:'Aulas 14–15', titulo:'Problemas que envolvem funções do 2º grau', arquivo:'aulas/2-ano/1-tri/problemas-funcao-quadratica/aula-1-problemas-com-funcao-quadratica.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Problemas com Função Quadrática', arquivo:'aulas/2-ano/1-tri/problemas-funcao-quadratica/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Problemas com função quadrática no estilo ENEM', arquivo:'aulas/2-ano/1-tri/problemas-funcao-quadratica/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/2-ano/1-tri/problemas-funcao-quadratica/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Problemas com função quadrática: trilha de desafios', arquivo:'aulas/2-ano/1-tri/problemas-funcao-quadratica/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'População e Amostra',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 16–17', titulo:'População, amostra e pesquisa estatística', arquivo:'aulas/2-ano/1-tri/populacao-e-amostra/aula-1-populacao-e-amostra.html' },
+                  { tipo:'Guia', titulo:'Guia visual — População e Amostra', arquivo:'aulas/2-ano/1-tri/populacao-e-amostra/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'População e amostra no estilo ENEM', arquivo:'aulas/2-ano/1-tri/populacao-e-amostra/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Todo, parte, parâmetro e estatística', arquivo:'aulas/2-ano/1-tri/populacao-e-amostra/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'População e amostra: trilha de desafios', arquivo:'aulas/2-ano/1-tri/populacao-e-amostra/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Tipos de Amostra',
+                accent: 'growth',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 18–19', titulo:'Tipos de amostra e paradoxo do aniversário', arquivo:'aulas/2-ano/1-tri/tipos-de-amostra/aula-1-tipos-de-amostra.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Tipos de Amostra', arquivo:'aulas/2-ano/1-tri/tipos-de-amostra/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Tipos de amostra no estilo ENEM', arquivo:'aulas/2-ano/1-tri/tipos-de-amostra/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual técnica de amostragem?', arquivo:'aulas/2-ano/1-tri/tipos-de-amostra/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Tipos de amostra: trilha de desafios', arquivo:'aulas/2-ano/1-tri/tipos-de-amostra/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Interpretação de Tabelas e Gráficos',
+                accent: 'growth',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aula 20', titulo:'Leitura crítica de tabelas e gráficos', arquivo:'aulas/2-ano/1-tri/tabelas-e-graficos/aula-1-leitura-critica-de-tabelas-e-graficos.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Interpretação de Tabelas e Gráficos', arquivo:'aulas/2-ano/1-tri/tabelas-e-graficos/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Tabelas e gráficos no estilo ENEM', arquivo:'aulas/2-ano/1-tri/tabelas-e-graficos/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: leitura crítica', arquivo:'aulas/2-ano/1-tri/tabelas-e-graficos/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Tabelas e gráficos: trilha de desafios', arquivo:'aulas/2-ano/1-tri/tabelas-e-graficos/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Sequências Numéricas',
+                accent: 'primary',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aulas 21–22', titulo:'Sequências numéricas: padrões e termo geral', arquivo:'aulas/2-ano/1-tri/sequencias-numericas/aula-1-padroes-e-termo-geral.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Sequências Numéricas', arquivo:'aulas/2-ano/1-tri/sequencias-numericas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Sequências numéricas no estilo ENEM', arquivo:'aulas/2-ano/1-tri/sequencias-numericas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Como a sequência cresce?', arquivo:'aulas/2-ano/1-tri/sequencias-numericas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Sequências numéricas: trilha de desafios', arquivo:'aulas/2-ano/1-tri/sequencias-numericas/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão Aritmética: Termo Geral',
+                accent: 'primary',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aulas 23–25', titulo:'Progressão aritmética: termo geral', arquivo:'aulas/2-ano/1-tri/pa-termo-geral/aula-1-termo-geral-da-pa.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Aritmética: Termo Geral', arquivo:'aulas/2-ano/1-tri/pa-termo-geral/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'PA: termo geral no estilo ENEM', arquivo:'aulas/2-ano/1-tri/pa-termo-geral/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/2-ano/1-tri/pa-termo-geral/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'PA: termo geral — trilha de desafios', arquivo:'aulas/2-ano/1-tri/pa-termo-geral/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão Aritmética: Soma',
+                accent: 'growth',
+                icon: 'stairs',
+                itens: [
+                  { tipo:'Aulas 26–27', titulo:'Soma dos termos de uma PA', arquivo:'aulas/2-ano/1-tri/pa-soma/aula-1-soma-dos-termos-da-pa.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Aritmética: Soma', arquivo:'aulas/2-ano/1-tri/pa-soma/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Soma da PA no estilo ENEM', arquivo:'aulas/2-ano/1-tri/pa-soma/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória das somas', arquivo:'aulas/2-ano/1-tri/pa-soma/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Soma da PA: trilha de desafios', arquivo:'aulas/2-ano/1-tri/pa-soma/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão Geométrica: Termo Geral',
+                accent: 'primary',
+                icon: 'candles',
+                itens: [
+                  { tipo:'Aulas 28–30', titulo:'Progressão geométrica: termo geral', arquivo:'aulas/2-ano/1-tri/pg-termo-geral/aula-1-termo-geral-da-pg.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Geométrica: Termo Geral', arquivo:'aulas/2-ano/1-tri/pg-termo-geral/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'PG: termo geral no estilo ENEM', arquivo:'aulas/2-ano/1-tri/pg-termo-geral/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual o tipo da PG?', arquivo:'aulas/2-ano/1-tri/pg-termo-geral/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'PG: termo geral — trilha de desafios', arquivo:'aulas/2-ano/1-tri/pg-termo-geral/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão Geométrica: Soma',
+                accent: 'growth',
+                icon: 'candles',
+                itens: [
+                  { tipo:'Aulas 31–32', titulo:'Soma dos termos de uma PG finita', arquivo:'aulas/2-ano/1-tri/pg-soma/aula-1-soma-da-pg-finita.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Progressão Geométrica: Soma', arquivo:'aulas/2-ano/1-tri/pg-soma/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Soma da PG finita no estilo ENEM', arquivo:'aulas/2-ano/1-tri/pg-soma/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive: onde está o erro?', arquivo:'aulas/2-ano/1-tri/pg-soma/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Soma da PG finita: trilha de desafios', arquivo:'aulas/2-ano/1-tri/pg-soma/atividade-pratica.html' }
+                ]
+              }
+            ]
+          },
+          // <<< mat-2ano-1tri
           {
             nome: '3° Trimestre',
             unidades: [
