@@ -633,6 +633,178 @@ export const MATERIAS = [
             ]
           },
           // <<< mat-3ano-1tri
+          // >>> mat-3ano-2tri
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Perímetro de Figuras Planas',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aulas 33–34', titulo:'Perímetro de figuras planas: resolução de problemas', arquivo:'aulas/3-ano/2-tri/perimetro-figuras-planas/aula-1-perimetro-de-figuras-planas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Perímetro de Figuras Planas', arquivo:'aulas/3-ano/2-tri/perimetro-figuras-planas/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Perímetro de figuras planas no estilo ENEM', arquivo:'aulas/3-ano/2-tri/perimetro-figuras-planas/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Qual fórmula usar?', arquivo:'aulas/3-ano/2-tri/perimetro-figuras-planas/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Perímetro de figuras planas: trilha de desafios', arquivo:'aulas/3-ano/2-tri/perimetro-figuras-planas/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Poliedros',
+                accent: 'primary',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aulas 35–36', titulo:'Poliedros: elementos e regulares', arquivo:'aulas/3-ano/2-tri/poliedros/aula-1-elementos-e-regulares.html' },
+                  { tipo:'Aulas 37–38', titulo:'Poliedros de Platão e relação de Euler', arquivo:'aulas/3-ano/2-tri/poliedros/aula-2-platao-e-euler.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Poliedros', arquivo:'aulas/3-ano/2-tri/poliedros/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Poliedros no estilo ENEM', arquivo:'aulas/3-ano/2-tri/poliedros/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos poliedros', arquivo:'aulas/3-ano/2-tri/poliedros/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Poliedros: trilha de desafios', arquivo:'aulas/3-ano/2-tri/poliedros/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Prisma: Características e Área',
+                accent: 'primary',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aula 39', titulo:'Prisma: características e planificações', arquivo:'aulas/3-ano/2-tri/prisma-area/aula-1-caracteristicas-e-planificacoes.html' },
+                  { tipo:'Aulas 40–41', titulo:'Prisma: área da superfície', arquivo:'aulas/3-ano/2-tri/prisma-area/aula-2-area-da-superficie.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Prisma: Características e Área', arquivo:'aulas/3-ano/2-tri/prisma-area/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Prisma: características e área no estilo ENEM', arquivo:'aulas/3-ano/2-tri/prisma-area/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Que sólido tem esta planificação?', arquivo:'aulas/3-ano/2-tri/prisma-area/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Prisma: trilha de desafios', arquivo:'aulas/3-ano/2-tri/prisma-area/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Prisma: Volume',
+                accent: 'growth',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aulas 42–43', titulo:'Volume do prisma', arquivo:'aulas/3-ano/2-tri/prisma-volume/aula-1-volume-do-prisma.html' },
+                  { tipo:'Aula 44', titulo:'Prisma: área total e volume em problemas', arquivo:'aulas/3-ano/2-tri/prisma-volume/aula-2-area-total-e-volume.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Prisma: Volume', arquivo:'aulas/3-ano/2-tri/prisma-volume/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Volume do prisma no estilo ENEM', arquivo:'aulas/3-ano/2-tri/prisma-volume/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive: onde está o erro?', arquivo:'aulas/3-ano/2-tri/prisma-volume/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Volume do prisma: trilha de desafios', arquivo:'aulas/3-ano/2-tri/prisma-volume/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Pirâmide: Características e Área',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 45', titulo:'Pirâmide: características e planificações', arquivo:'aulas/3-ano/2-tri/piramide-area/aula-1-caracteristicas-da-piramide.html' },
+                  { tipo:'Aulas 46–47', titulo:'Pirâmide: área da superfície', arquivo:'aulas/3-ano/2-tri/piramide-area/aula-2-area-da-piramide.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Pirâmide: Características e Área', arquivo:'aulas/3-ano/2-tri/piramide-area/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Pirâmide: características e área no estilo ENEM', arquivo:'aulas/3-ano/2-tri/piramide-area/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Ordene a resolução', arquivo:'aulas/3-ano/2-tri/piramide-area/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Pirâmide: trilha de desafios', arquivo:'aulas/3-ano/2-tri/piramide-area/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Pirâmide: Volume',
+                accent: 'growth',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aulas 48–49', titulo:'Volume da pirâmide', arquivo:'aulas/3-ano/2-tri/piramide-volume/aula-1-volume-da-piramide.html' },
+                  { tipo:'Aula 50', titulo:'Pirâmide: área total e volume em problemas', arquivo:'aulas/3-ano/2-tri/piramide-volume/aula-2-problemas-de-area-e-volume.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Pirâmide: Volume', arquivo:'aulas/3-ano/2-tri/piramide-volume/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Volume da pirâmide no estilo ENEM', arquivo:'aulas/3-ano/2-tri/piramide-volume/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: pirâmides', arquivo:'aulas/3-ano/2-tri/piramide-volume/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Volume da pirâmide: trilha de desafios', arquivo:'aulas/3-ano/2-tri/piramide-volume/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Cilindro: Características e Área',
+                accent: 'primary',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aula 51', titulo:'Cilindro: características e planificação', arquivo:'aulas/3-ano/2-tri/cilindro-area/aula-1-caracteristicas-do-cilindro.html' },
+                  { tipo:'Aulas 52–53', titulo:'Cilindro: área da superfície', arquivo:'aulas/3-ano/2-tri/cilindro-area/aula-2-area-do-cilindro.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Cilindro: Características e Área', arquivo:'aulas/3-ano/2-tri/cilindro-area/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Cilindro: características e área no estilo ENEM', arquivo:'aulas/3-ano/2-tri/cilindro-area/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Que fórmula do cilindro?', arquivo:'aulas/3-ano/2-tri/cilindro-area/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Cilindro: trilha de desafios', arquivo:'aulas/3-ano/2-tri/cilindro-area/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Cilindro: Volume',
+                accent: 'growth',
+                icon: 'cube',
+                itens: [
+                  { tipo:'Aulas 54–55', titulo:'Volume do cilindro', arquivo:'aulas/3-ano/2-tri/cilindro-volume/aula-1-volume-do-cilindro.html' },
+                  { tipo:'Aula 56', titulo:'Cilindro: área total e volume em problemas', arquivo:'aulas/3-ano/2-tri/cilindro-volume/aula-2-problemas-de-area-e-volume.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Cilindro: Volume', arquivo:'aulas/3-ano/2-tri/cilindro-volume/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Volume do cilindro no estilo ENEM', arquivo:'aulas/3-ano/2-tri/cilindro-volume/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória dos volumes', arquivo:'aulas/3-ano/2-tri/cilindro-volume/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Volume do cilindro: trilha de desafios', arquivo:'aulas/3-ano/2-tri/cilindro-volume/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Cone: Características e Área',
+                accent: 'primary',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aula 57', titulo:'Cone: características e planificação', arquivo:'aulas/3-ano/2-tri/cone-area/aula-1-caracteristicas-do-cone.html' },
+                  { tipo:'Aulas 58–59', titulo:'Cone: área da superfície', arquivo:'aulas/3-ano/2-tri/cone-area/aula-2-area-do-cone.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Cone: Características e Área', arquivo:'aulas/3-ano/2-tri/cone-area/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Cone: características e área no estilo ENEM', arquivo:'aulas/3-ano/2-tri/cone-area/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Que sólido é?', arquivo:'aulas/3-ano/2-tri/cone-area/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Cone: trilha de desafios', arquivo:'aulas/3-ano/2-tri/cone-area/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Cone: Volume',
+                accent: 'growth',
+                icon: 'triangle',
+                itens: [
+                  { tipo:'Aulas 60–61', titulo:'Volume do cone', arquivo:'aulas/3-ano/2-tri/cone-volume/aula-1-volume-do-cone.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Cone: Volume', arquivo:'aulas/3-ano/2-tri/cone-volume/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Volume do cone no estilo ENEM', arquivo:'aulas/3-ano/2-tri/cone-volume/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Detetive: onde está o erro?', arquivo:'aulas/3-ano/2-tri/cone-volume/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Volume do cone: trilha de desafios', arquivo:'aulas/3-ano/2-tri/cone-volume/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Esfera: Área e Volume',
+                accent: 'primary',
+                icon: 'sigma',
+                itens: [
+                  { tipo:'Aulas 62–63', titulo:'Esfera: área e volume', arquivo:'aulas/3-ano/2-tri/esfera/aula-1-area-e-volume-da-esfera.html' },
+                  { tipo:'Aula 64', titulo:'Esfera: situações-problema', arquivo:'aulas/3-ano/2-tri/esfera/aula-2-situacoes-problema.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Esfera: Área e Volume', arquivo:'aulas/3-ano/2-tri/esfera/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Esfera no estilo ENEM', arquivo:'aulas/3-ano/2-tri/esfera/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Verdadeiro ou falso: esfera', arquivo:'aulas/3-ano/2-tri/esfera/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Esfera: trilha de desafios', arquivo:'aulas/3-ano/2-tri/esfera/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Porcentagem em Área e Perímetro',
+                accent: 'primary',
+                icon: 'bars',
+                itens: [
+                  { tipo:'Aulas 65–66', titulo:'Porcentagem em área, perímetro e volume de prismas', arquivo:'aulas/3-ano/2-tri/porcentagem-area-perimetro/aula-1-porcentagem-em-prismas.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Porcentagem em Área e Perímetro', arquivo:'aulas/3-ano/2-tri/porcentagem-area-perimetro/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Porcentagem em prismas no estilo ENEM', arquivo:'aulas/3-ano/2-tri/porcentagem-area-perimetro/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Aumenta, diminui ou não muda?', arquivo:'aulas/3-ano/2-tri/porcentagem-area-perimetro/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Porcentagem em prismas: trilha de desafios', arquivo:'aulas/3-ano/2-tri/porcentagem-area-perimetro/atividade-pratica.html' }
+                ]
+              },
+              {
+                titulo: 'Relação entre Área e Perímetro',
+                accent: 'primary',
+                icon: 'grid',
+                itens: [
+                  { tipo:'Aulas 67–68', titulo:'Relação entre as grandezas de área e de perímetro', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/aula-1-razao-de-semelhanca.html' },
+                  { tipo:'Guia', titulo:'Guia visual — Relação entre Área e Perímetro', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/infografico.html' },
+                  { tipo:'Atividade', sub:'ENEM', titulo:'Área e perímetro no estilo ENEM', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/atividade-enem.html' },
+                  { tipo:'Atividade', sub:'Criativa', titulo:'Memória da razão de semelhança', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/atividade-criativa.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Área e perímetro: trilha de desafios', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/atividade-pratica.html' }
+                ]
+              }
+            ]
+          },
+          // <<< mat-3ano-2tri
           {
             nome: '3° Trimestre',
             unidades: [

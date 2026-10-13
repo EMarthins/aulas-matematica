@@ -1,4 +1,4 @@
-// Integra a Matemática · 3ª série (1° trimestre) ao app/catalog.js (idempotente):  node scripts/gerador-3ano/catalogo.js
+// Integra a Matemática · 3ª série (1° e 2° trimestres) ao app/catalog.js (idempotente):  node scripts/gerador-3ano/catalogo.js
 const fs = require('fs'), path = require('path');
 const f = path.join(__dirname, '../../app/catalog.js');
 let s = fs.readFileSync(f, 'utf8'); const crlf = s.includes('\r\n'); s = s.replace(/\r\n/g, '\n');
@@ -19,21 +19,29 @@ ${[
   ].join(',\n')}
                 ]
               }`; };
-const bloco = `          // >>> mat-3ano-1tri
+const nomes = { 1: '1° Trimestre', 2: '2° Trimestre' };
+const bloco = tri => `          // >>> mat-3ano-${tri}tri
           {
-            nome: '1° Trimestre',
+            nome: '${nomes[tri]}',
             unidades: [
-${unidades.filter(u => u.tri === 1).map(unit).join(',\n')}
+${unidades.filter(u => u.tri === tri).map(unit).join(',\n')}
             ]
           },
-          // <<< mat-3ano-1tri
+          // <<< mat-3ano-${tri}tri
 `;
-const re = /          \/\/ >>> mat-3ano-1tri\n[\s\S]*?          \/\/ <<< mat-3ano-1tri\n/;
-if (re.test(s)) s = s.replace(re, () => bloco);
-else {
-  const i = s.indexOf("ano: '3° Ano'"), j = s.indexOf('        trimestres: [\n', i);
-  if (i < 0 || j < 0) throw new Error('bloco do 3° Ano da matemática não encontrado');
-  const k = j + '        trimestres: [\n'.length; s = s.slice(0, k) + bloco + s.slice(k);
+const marca = tri => new RegExp('          // >>> mat-3ano-' + tri + 'tri\\n[\\s\\S]*?          // <<< mat-3ano-' + tri + 'tri\\n');
+const inicio = '        trimestres: [\n';
+for (const tri of [1, 2]) {
+  if (!unidades.some(u => u.tri === tri)) continue;
+  if (marca(tri).test(s)) { s = s.replace(marca(tri), () => bloco(tri)); continue; }
+  let k;
+  if (tri > 1 && marca(tri - 1).test(s)) { const m = s.match(marca(tri - 1)); k = m.index + m[0].length; }
+  else {
+    const a = s.indexOf("ano: '3° Ano'"), j = s.indexOf(inicio, a);
+    if (a < 0 || j < 0) throw new Error('bloco do 3° Ano da matemática não encontrado');
+    k = j + inicio.length;
+  }
+  s = s.slice(0, k) + bloco(tri) + s.slice(k);
 }
 fs.writeFileSync(f, crlf ? s.replace(/\n/g, '\r\n') : s);
-console.log('catálogo da Matemática 3° Ano (1° tri) atualizado:', unidades.length, 'unidades,', unidades.reduce((t, u) => t + u.aulas.length, 0), 'decks.');
+console.log('catálogo da Matemática 3° Ano atualizado:', unidades.length, 'unidades,', unidades.reduce((t, u) => t + u.aulas.length, 0), 'decks.');
