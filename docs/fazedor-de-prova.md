@@ -1,12 +1,12 @@
-# Proveiro (fazedor de prova)
+# EduMath Provas (fazedor de prova)
 
-Página: `professor/prova.html` (menu **Painel → Proveiro**). Funciona sem login (o banco é público no site); se o professor estiver logado, o campo *Professor(a)* já vem preenchido.
+Página: `professor/prova.html` (menu **Painel → EduMath Provas**). Funciona sem login (o banco é público no site); se o professor estiver logado, o campo *Professor(a)* já vem preenchido.
 
 ## Como usar
 
 A tela tem três colunas: **filtros → lista de questões → folha A4**.
 
-1. **Filtros** (esquerda): busca por palavra-chave e listas de *turma/série*, *matéria*, *conteúdo*, *tipo*, *dificuldade* e *origem*. Cada lista mostra quantas questões existem com os outros filtros ativos; clique numa opção para filtrar (clique de novo para soltar). Clique no título da lista para **compactar/abrir**, e arraste a alça **⠿** para **mudar a ordem** das listas — o Proveiro lembra a sua arrumação. O botão do funil (na lista) esconde a coluna de filtros.
+1. **Filtros** (esquerda): busca por palavra-chave e listas de *turma/série*, *matéria*, *conteúdo*, *tipo*, *dificuldade* e *origem*. Cada lista mostra quantas questões existem com os outros filtros ativos; clique numa opção para filtrar (clique de novo para soltar). Clique no título da lista para **compactar/abrir**, e arraste a alça **⠿** para **mudar a ordem** das listas — o EduMath Provas lembra a sua arrumação. O botão do funil (na lista) esconde a coluna de filtros.
 2. **Lista de questões** (meio): cartões grandes com o enunciado legível, miniatura da figura, tipo, turma, dificuldade e gabarito. *Compacta/Ampla* muda a densidade; **Ver completa ▾** abre a questão inteira no próprio cartão. **Arraste** o cartão para a folha ou clique em **+ Adicionar**.
 3. **Folha** (direita): a prova em páginas A4 de verdade. Arraste as questões para reordenar, ou use ↑ ↓ ✕ ao passar o mouse. Clique no cabeçalho para editar o campo.
 4. **☰ (canto superior direito)** abre a gaveta de configurações, com três listas que também compactam e mudam de lugar:

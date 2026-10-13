@@ -774,7 +774,7 @@ function iaStatus() {
 function iaAbrir(abrir) {
   const ch = $('iaChat'); ch.hidden = !abrir; $('iaFab').setAttribute('aria-expanded', abrir);
   if (abrir) {
-    if (!chat.length) msg('bot', 'Oi! Sou o assistente do <b>Proveiro</b>. Diga o que você precisa, em uma frase: o conteúdo, a turma, o tipo e quantas questões. Eu filtro o banco e adiciono à prova para você' + (IA.iaConfigurada() ? ', ou crio questões novas.' : '. (A criação de questões novas por IA ainda não está ligada.)'));
+    if (!chat.length) msg('bot', 'Oi! Sou o assistente do <b>EduMath Provas</b>. Diga o que você precisa, em uma frase: o conteúdo, a turma, o tipo e quantas questões. Eu filtro o banco e adiciono à prova para você' + (IA.iaConfigurada() ? ', ou crio questões novas.' : '. (A criação de questões novas por IA ainda não está ligada.)'));
     desenharChat(); setTimeout(() => $('iaTxt').focus(), 50);
   }
 }
@@ -908,7 +908,7 @@ function pintaNuvem(e) {
   const bloq = e.bloqueados ? Object.values(e.bloqueados).reduce((a, n) => a + n, 0) : 0;
   const T = {
     'sem-login': ['', 'Só neste navegador', 'Entre com sua conta de professor para guardar suas provas e questões na nuvem e usar em qualquer computador.'],
-    'aluno': ['', 'Conta de aluno', 'A nuvem do Proveiro é para contas de professor.'],
+    'aluno': ['', 'Conta de aluno', 'A nuvem do EduMath Provas é para contas de professor.'],
     'sincronizando': ['sync', 'Sincronizando…', 'Enviando e trazendo suas provas e questões.'],
     'ok': [bloq ? 'aviso' : 'ok', bloq ? bloq + ' só neste navegador' : 'Salvo na nuvem', bloq ? 'Plano gratuito: ' + PLANO.provasNuvem + ' provas e ' + PLANO.questoesProprias + ' questões próprias na nuvem. O resto fica só neste navegador. Clique para ver os planos.' : 'Suas provas e questões estão guardadas na sua conta.'],
     'parcial': ['aviso', 'Parte não subiu', 'Alguns itens não foram para a nuvem (grandes demais?): ' + ((e.resumo && e.resumo.falhas || []).map(f => f.col + ':' + f.erro).slice(0, 3).join('; ')) + '. Clique para tentar de novo.'],

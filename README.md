@@ -1,4 +1,4 @@
-# Prof. Eduardo — Aulas e Guias
+# EduMath — Aulas e Guias
 
 Site com as aulas interativas e os guias visuais (infográficos) de Matemática (9º ano do Ensino Fundamental e 1ª, 2ª e 3ª séries do Ensino Médio) e Educação Financeira (1ª, 2ª e 3ª séries do Ensino Médio), além da aba **ENA · PROFMAT** (preparação para o Exame Nacional de Acesso ao PROFMAT: 20 unidades, 36 aulas em slides, 20 guias visuais e 60 atividades, mais a “Trilha de estudo guiada” pelo edital em `ena-profmat/trilha-de-estudo.html`). A página inicial tem abas para alternar entre as matérias. Todas as páginas têm um botão de alternância de tema claro/escuro (canto superior direito) para ficarem legíveis em projetores de sala iluminada.
 
@@ -122,7 +122,7 @@ A estrutura segue `<materia>/<ano>/<trimestre>/<unidade>/<arquivo>.html` — `au
 
 **Para o professor (em sala):** slides em tela cheia que se adaptam a qualquer projetor · `F` tela cheia, `B` tela preta, `M` mapa dos slides, `N` notas, `T` cronômetro e sorteio, `L` copiar link do slide · impressão dos slides como folheto.
 
-**Para o professor (plataforma, com login):** turmas com aprovação de alunos, atividades (quiz, envio, aula assistida), correção, engajamento com termômetro de entendimento e CSV · **Proveiro** (`professor/prova.html`, o fazedor de prova): arraste questões de um banco com filtros (turma, conteúdo, tipo, dificuldade, palavra-chave) para folhas A4 em 1 ou 2 colunas, com cabeçalho pré-preenchível, versões A/B/C/D, gabarito e PDF — questões de múltipla escolha, abertas, V/F, somatória e associação, com figuras, gráficos e demonstrações; pronto para geração por IA (veja `docs/fazedor-de-prova.md`); já inclui as questões do ENEM de 2018 (2º dia), 2020 a 2025 (1.200, todas com gabarito oficial do INEP) · **Banco de questões em lista** (`professor/banco.html`).
+**Para o professor (plataforma, com login):** turmas com aprovação de alunos, atividades (quiz, envio, aula assistida), correção, engajamento com termômetro de entendimento e CSV · **EduMath Provas** (`professor/prova.html`, o fazedor de prova): arraste questões de um banco com filtros (turma, conteúdo, tipo, dificuldade, palavra-chave) para folhas A4 em 1 ou 2 colunas, com cabeçalho pré-preenchível, versões A/B/C/D, gabarito e PDF — questões de múltipla escolha, abertas, V/F, somatória e associação, com figuras, gráficos e demonstrações; pronto para geração por IA (veja `docs/fazedor-de-prova.md`); já inclui as questões do ENEM de 2018 (2º dia), 2020 a 2025 (1.200, todas com gabarito oficial do INEP) · **Banco de questões em lista** (`professor/banco.html`).
 
 Não é necessário nenhum processo de build: é HTML puro, servido como está.
 

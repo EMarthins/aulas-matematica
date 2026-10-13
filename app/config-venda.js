@@ -3,7 +3,7 @@
 // Enquanto o contato estiver vazio, a página de planos mostra "em breve" no lugar do botão de assinar.
 // ============================================================
 export const VENDA = {
-  nomeProduto: 'Proveiro',
+  nomeProduto: 'EduMath',
   // Contato para assinar (pré-venda manual). Preencha pelo menos um.
   whatsapp: '',        // só números com DDI+DDD, ex.: '5511999999999'
   email: '',           // ex.: 'contato@seudominio.com.br'

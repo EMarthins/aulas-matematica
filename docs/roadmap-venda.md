@@ -1,4 +1,4 @@
-# Roadmap para vender o site (Proveiro + plataforma + aulas)
+# Roadmap para vender o site (EduMath: provas + plataforma + aulas)
 
 Atualizado em 2026-10-12. Marque ☑ quando concluir. Itens com 👤 dependem de **você** (conta, dinheiro, documento ou decisão); itens com 🤖 o Claude consegue fazer.
 
@@ -6,12 +6,12 @@ Atualizado em 2026-10-12. Marque ☑ quando concluir. Itens com 👤 dependem de
 
 - [ ] **Direitos de uso do conteúdo.** (a) Banco do ENEM: as questões são recortes das provas do INEP; os textos de apoio (poemas, reportagens, imagens) têm donos — consultar um advogado antes de vender isso como parte do produto. (b) Aulas/slides: confirmar a autoria das que vieram de pptx de terceiros (ex.: "Recomposição" do 9º ano) e se podem ser revendidas. As aulas da **Matemática 1ª série (1° Ano)** foram reescritas, com problemas originais “no estilo ENEM”, a partir dos slides da SEED-PR (Khan Academy e livros didáticos como referência); o mesmo vale para a **Matemática 3ª série (1° e 2° trimestres)** e a **2ª série (1° trimestre)**, reescritas a partir das aulas do RCO/SEED-PR: o texto e as questões do site são próprios, mas confirme se a organização do conteúdo e o uso do material de origem na venda dependem de autorização.
 - [ ] **CNPJ/MEI** e emissão de nota fiscal.
-- [ ] **Nome "Proveiro":** consultar o INPI e registrar o domínio próprio (ex.: proveiro.com.br).
+- [ ] **Nome "EduMath" (escolhido em 2026-10-13; a ferramenta de provas virou "EduMath Provas"):** registrar **edumath.com.br** no Registro.br (estava livre em 2026-10-13; edumath.com e edumath.app já têm dono) e consultar o INPI (classes 41, 9 e 42) antes de investir na marca. O nome antigo "Proveiro" foi abandonado: proveiro.com.br pertence a terceiro desde jan/2026.
 - [ ] **Advogado revisar** `termos.html` (termos, privacidade, LGPD com dados de menores): preencher razão social, CNPJ, e-mail do encarregado (DPO).
 - [ ] **Meio de cobrança:** abrir conta no Mercado Pago/Asaas/Stripe (ou Kiwify/Hotmart) e me passar as chaves quando for automatizar. Até lá, pré-venda manual por Pix.
 - [ ] **Preencher `app/config-venda.js`:** WhatsApp, e-mail, chave Pix, preços.
 - [ ] **Criar o seu administrador:** no console do Firebase, Firestore → coleção `admins` → documento com o UID da sua conta de professor (campo qualquer, ex.: `ok: true`). Isso libera a página `admin.html` (conceder plano Pro a quem pagou).
-- [x] **Regras do Firestore publicadas** em 2026-10-12 (versão com admins, plano protegido, nuvem do Proveiro e exclusão de conta). Republicar sempre que `firestore.rules` mudar.
+- [x] **Regras do Firestore publicadas** em 2026-10-12 (versão com admins, plano protegido, nuvem do EduMath Provas e exclusão de conta). Republicar sempre que `firestore.rules` mudar.
 - [ ] **Testar com contas reais** (o Claude não cria contas): roteiro em `docs/teste-contas.md`.
 - [ ] **Decidir preços e o que o plano gratuito inclui** (hoje: 3 provas na nuvem, 40 questões próprias, 2 turmas).
 - [ ] **Canal de suporte** (WhatsApp/e-mail) e quem responde.
@@ -36,7 +36,7 @@ Ver o fim deste arquivo (seção "Feito").
 
 ## Feito
 
-- [x] Provas e questões próprias do Proveiro **sincronizadas na nuvem** (app/nuvem.js; offline-first; testes em scripts/testar-nuvem.js).
+- [x] Provas e questões próprias do EduMath Provas **sincronizadas na nuvem** (app/nuvem.js; offline-first; testes em scripts/testar-nuvem.js).
 - [x] **Planos:** campo plano/planoAte protegido nas regras (só admin muda); limites do gratuito em app/planos.js (3 provas, 40 questões, 2 turmas); cartão do plano no painel do professor.
 - [x] **admin.html:** conceder/retirar o Pro por 30/90/365 dias ou até uma data (pré-venda manual). Falta você criar o documento admins/<seu uid>.
 - [x] **planos.html** (preços, comparação, como assinar, FAQ) + dados comerciais em app/config-venda.js (preencher).

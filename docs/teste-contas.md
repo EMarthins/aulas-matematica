@@ -6,7 +6,7 @@ O Claude não cria contas nem digita senhas, então estes testes (que usam o Fir
 1. Console do Firebase → Firestore → **Regras** → cole `firestore.rules` → **Publicar**.
 2. Crie sua conta de professor no site (`login.html`). No Firestore, coleção **`admins`** → documento com ID = o UID dessa conta (Authentication → copie o UID) → campo qualquer (`ok: true`).
 
-## 1. Nuvem do Proveiro (professor)
+## 1. Nuvem do EduMath Provas (professor)
 - [ ] Entre como professor e abra `professor/prova.html`. O selo no topo muda para **"Salvo na nuvem"**.
 - [ ] Monte uma prova, abra o menu **⋯ → Salvar prova**. No Firestore deve aparecer `teachers/<uid>/provas/<id>`.
 - [ ] Crie uma questão própria (**+**). Deve aparecer em `teachers/<uid>/questoes/<id>`.
@@ -17,7 +17,7 @@ O Claude não cria contas nem digita senhas, então estes testes (que usam o Fir
 
 ## 2. Planos (admin.html)
 - [ ] Abra `admin.html` logada: a lista de professores aparece. Clique **30 dias** na conta de teste.
-- [ ] Na conta de teste: o painel do professor mostra **Plano Pro**; o Proveiro deixa subir mais de 3 provas.
+- [ ] Na conta de teste: o painel do professor mostra **Plano Pro**; o EduMath Provas deixa subir mais de 3 provas.
 - [ ] **Voltar ao gratuito** funciona.
 - [ ] Como professor comum (sem `admins`), `admin.html` mostra "Você não tem acesso".
 - [ ] Como professor comum, tente mudar o próprio plano (console do navegador → `updateDoc(teachers/<uid>, {plano:'pro'})`): deve ser **negado**.
