@@ -196,7 +196,7 @@ protegerPagina('professor', function(user, perfil){
 // ---------- Plano ----------
 async function mostrarPlano(id){
   var doc = null; try{ doc = await lerProfessor(id); }catch(e){}
-  aplicarStatus(doc);
+  if(aplicarStatus(doc)) return; // não aprovado: só o aviso, sem cartão de plano
   PLANO = planoVigente(doc);
   var card = document.getElementById('planoCard'); card.style.display = 'flex';
   document.getElementById('planoNome').textContent = 'Plano ' + PLANO.nome;
@@ -214,7 +214,7 @@ async function mostrarPlano(id){
 // Todo professor novo nasce 'pending' e só o administrador aprova (admin.html). Cadastros antigos (sem status) valem como aprovados.
 function aplicarStatus(doc){
   var st = (doc && doc.status) || 'approved';
-  if(st === 'approved') return;
+  if(st === 'approved') return false;
   var msg = {
     pending: ['Cadastro em análise', 'Recebemos o seu cadastro de professor(a). Assim que ele for aprovado você poderá criar turmas, atribuir atividades e corrigir. A aprovação costuma ser rápida.'],
     rejected: ['Cadastro não aprovado', 'Seu cadastro de professor(a) não foi aprovado. Se isso foi um engano, fale com a gente.'],
@@ -229,6 +229,7 @@ function aplicarStatus(doc){
   document.getElementById('btnReverificar').addEventListener('click', function(){ location.reload(); });
   document.getElementById('mainTabs').style.display = 'none';
   document.querySelectorAll('.panel').forEach(function(p){ p.style.display = 'none'; });
+  return true;
 }
 
 // ---------- Tabs ----------

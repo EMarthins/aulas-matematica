@@ -16,3 +16,6 @@ Exclusivo da conta **eduardosiqueirar7@gmail.com** (administrador master). Link:
 
 ## Para funcionar (uma vez, ao mudar as regras)
 Publicar `firestore.rules` no console do Firebase (Firestore → Regras → colar → Publicar). O próprio painel tem o botão "Copiar regras" e o aviso com o passo a passo quando falta.
+
+## Verificação feita em 2026-10-14 (com a conta master, dados reais)
+Painel carregou (professores, alunos, turmas); escrita real de anotação, plano Pro/Gratuito e status; professor sem `status` (antigo) cria turma; professor suspenso recebe `permission-denied` ao criar turma e vê a tela "Acesso suspenso"; reativado voltou a criar. Contas de teste restauradas.

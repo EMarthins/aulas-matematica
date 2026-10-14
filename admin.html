@@ -467,7 +467,7 @@ function desenhaProf(){
   $('tbProf').innerHTML = lista.map(function(p){
     var acoes = '';
     if(p.status === 'pending') acoes += '<button class="btn sm" data-a="aprovar" data-u="' + h(p.uid) + '">Aprovar</button><button class="btn sm secondary" data-a="recusar" data-u="' + h(p.uid) + '">Recusar</button>';
-    else if(p.status === 'approved') acoes += '<button class="btn sm secondary" data-a="abrir" data-u="' + h(p.uid) + '">Plano e detalhes</button>';
+    else if(p.status === 'approved') acoes += (p.legado ? '<button class="btn sm" data-a="aprovar" data-u="' + h(p.uid) + '" title="Cadastro antigo, liberado automaticamente. Clique para registrar a sua aprovação.">Confirmar</button>' : '') + '<button class="btn sm secondary" data-a="abrir" data-u="' + h(p.uid) + '">Plano e detalhes</button>';
     else acoes += '<button class="btn sm" data-a="aprovar" data-u="' + h(p.uid) + '">Reativar</button><button class="btn sm secondary" data-a="abrir" data-u="' + h(p.uid) + '">Detalhes</button>';
     return '<tr class="lin" data-a="abrir" data-u="' + h(p.uid) + '"><td><div class="nome">' + h(p.nome) + '</div><div class="peq">' + h(p.email) + '</div><div class="peq">cadastro em ' + dd(p.criado) + '</div></td>' +
       '<td>' + pillStatus(p) + (p.statusNota ? '<div class="peq">' + h(p.statusNota) + '</div>' : '') + '</td><td>' + pillPlano(p) + (p.planoNota ? '<div class="peq">' + h(p.planoNota) + '</div>' : '') + '</td>' +
