@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home — EduMath</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#382EAE">
+<meta name="description" content="Tudo do EduMath em um só lugar: busque aulas, abra simulados, revise seus erros e continue de onde parou.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23382EAE'/%3E%3Cpath d='M22 72 C40 70 52 54 62 38 C68 28 74 22 80 18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/home.css">
+<link rel="stylesheet" href="app/hub.css">
+</head>
+<body class="hb">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<a class="skip" href="#hbBusca">Ir para a busca</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="home.html" aria-label="EduMath — Home"><span class="dot"></span><span>EduMath</span></a>
+    <nav class="hb-nav" aria-label="Atalhos">
+      <a href="home.html" aria-current="page">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="simulado.html">Simulados</a>
+      <a href="revisao.html">Revisão</a>
+    </nav>
+    <span class="hb-sp"></span>
+    <a href="login.html" class="login-link" id="hbEntrar">Entrar <span class="hide-sm">· aluno / professor</span></a>
+    <a href="conta.html" class="hb-user" id="hbUser" hidden><span class="hb-av" id="hbAv">?</span><span class="hb-un" id="hbUn"></span></a>
+  </div>
+</header>
+
+<section class="hb-hero" aria-labelledby="hbTitulo">
+  <div class="wrap">
+    <p class="hb-hi" id="hbOi">Olá!</p>
+    <h1 id="hbTitulo">O que você quer <span class="hb-grad">estudar hoje</span>?</h1>
+    <form class="hb-search" id="hbForm" role="search" autocomplete="off">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="hbBusca" type="search" placeholder="Busque uma aula ou assunto…" aria-label="Buscar aulas, guias e atividades" aria-autocomplete="list" aria-controls="hbSug" aria-expanded="false" autocomplete="off" spellcheck="false">
+      <kbd aria-hidden="true">/</kbd>
+      <button type="submit" class="hb-go">Buscar</button>
+      <div class="hb-sug" id="hbSug" role="listbox" hidden></div>
+    </form>
+    <div class="hb-chips" id="hbChips" aria-label="Sugestões de busca"><span>Experimente:</span></div>
+    <div class="hb-stats" id="hbStats"></div>
+  </div>
+</section>
+
+<main class="wrap hb-main" id="main">
+  <section class="hb-cont" id="hbCont" aria-label="Continuar estudando" hidden></section>
+
+  <section class="hb-sec" aria-labelledby="hbFerr">
+    <div class="hb-h"><h2 id="hbFerr">Tudo o que você pode fazer</h2><p>Escolha por onde começar.</p></div>
+    <div class="hb-cards" id="hbCards"></div>
+  </section>
+
+  <section class="hb-sec" aria-labelledby="hbMat">
+    <div class="hb-h"><h2 id="hbMat">Matérias</h2><a class="hb-all" href="catalogo.html">Abrir o catálogo completo →</a></div>
+    <div class="hb-mats" id="hbMats"></div>
+    <details class="hb-soon" id="hbSoon" hidden><summary><span>Em breve</span> <b id="hbSoonN"></b></summary><div id="hbSoonL"></div></details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>EduMath — aulas interativas, simulados e ferramentas para professores. <a href="termos.html" style="color:inherit;">Termos e privacidade</a> · <a href="para-professores.html" style="color:inherit;">Para professores</a> · <a href="planos.html" style="color:inherit;">Planos</a></span>
+    <span class="mono" id="hbDev"></span>
+  </div>
+</footer>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { MATERIAS, ICONS } from './app/catalog.js';
+import { aulasGratis, logado } from './app/acesso.js';
+
+iniciarThemeToggle('theme-pref-hub');
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const jl = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
+const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const plural = (n, s, p) => n + ' ' + (n === 1 ? s : p);
+const ACENTOS = ['primary', 'growth', 'decay', 'success'];
+const tipoDe = i => i.tipo === 'Atividade' ? 'atividade' : i.tipo === 'Guia' ? 'guia' : 'aula';
+const prog = arq => { try { return JSON.parse(localStorage.getItem('prog:' + arq) || 'null'); } catch (e) { return null; } };
+const visto = i => { const p = prog(i.arquivo); return !!(p && p.v); };
+const svg = d => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>';
+
+// ---------- quem está aqui ----------
+const user = jl('sb:user', null), LOGADO = logado();
+const ehProf = !!user && user.role === 'professor', ehAluno = !!user && user.role === 'aluno', ehAdmin = !!user && jl('sb:admin', 0) === 1;
+const hr = new Date().getHours();
+const oi = hr < 5 ? 'Boa madrugada' : hr < 12 ? 'Bom dia' : hr < 18 ? 'Boa tarde' : 'Boa noite';
+const primeiro = user && user.nome ? String(user.nome).trim().split(/\s+/)[0] : '';
+$('hbOi').textContent = oi + (primeiro ? ', ' + primeiro : '') + '!';
+if (user) {
+  $('hbEntrar').hidden = true; $('hbUser').hidden = false;
+  $('hbAv').textContent = (user.nome || '?').trim().charAt(0).toUpperCase(); $('hbUn').textContent = primeiro || 'Minha conta';
+  $('hbUser').href = ehProf ? 'professor/dashboard.html' : 'aluno/dashboard.html';
+}
+
+// ---------- catálogo em números ----------
+const lista = [];            // todos os itens, para a busca
+const mats = MATERIAS.filter(m => m.id !== 'gratis').map((m, i) => {
+  const c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: 0, mods: 0, i };
+  (m.CATALOG || []).forEach(a => a.trimestres.forEach(t => t.unidades.forEach(u => {
+    if (u.itens.length) c.mods++;
+    u.itens.forEach(it => {
+      const k = tipoDe(it); if (k === 'aula') c.aulas++; else if (k === 'guia') c.guias++; else c.ativ++;
+      c.total++; if (visto(it)) c.vistos++;
+      lista.push({ it, m, a: a.ano, t: t.nome, u: u.titulo, tipo: k, h: norm(it.titulo + ' ' + (it.sub || '') + ' ' + u.titulo + ' ' + m.nome + ' ' + a.ano + ' ' + (k === 'aula' ? 'aula' : k === 'guia' ? 'guia visual' : 'atividade exercicio')) });
+    });
+  })));
+  return { m, c };
+});
+const T = mats.reduce((s, x) => { s.aulas += x.c.aulas; s.ativ += x.c.ativ; s.guias += x.c.guias; s.vistos += x.c.vistos; s.total += x.c.total; return s; }, { aulas: 0, ativ: 0, guias: 0, vistos: 0, total: 0 });
+const fmt = n => n.toLocaleString('pt-BR');
+const comConteudo = mats.filter(x => x.c.total);
+$('hbStats').innerHTML = [
+  [fmt(T.aulas), 'aulas interativas'], [fmt(T.ativ), 'atividades'], [fmt(T.guias), 'guias visuais'], [comConteudo.length, 'matérias com conteúdo']
+].map(x => '<span><b>' + x[0] + '</b> ' + x[1] + '</span>').join('');
+
+// ---------- sugestões de busca ----------
+const SUGS = ['funções', 'juros', 'porcentagem', 'geometria', 'probabilidade', 'equações', 'ENEM'];
+SUGS.forEach(s => { const a = document.createElement('a'); a.href = 'catalogo.html?q=' + encodeURIComponent(s); a.textContent = s; $('hbChips').appendChild(a); });
+
+// ---------- busca grande com resultados ao vivo ----------
+const LISTA_GRATIS = aulasGratis(MATERIAS), GRATIS = {}; LISTA_GRATIS.forEach(g => { GRATIS[g.item.arquivo] = 1; });
+const bloqueado = it => !LOGADO && !GRATIS[it.arquivo];
+const inp = $('hbBusca'), sug = $('hbSug'), form = $('hbForm');
+let achados = [], ativo = -1;
+function busca(q) {
+  const ts = norm(q).split(/\s+/).filter(Boolean); if (!ts.length) return [];
+  const r = [];
+  for (const x of lista) {
+    if (!ts.every(t => x.h.indexOf(t) >= 0)) continue;
+    const tt = norm(x.it.titulo); let p = 0;
+    if (tt.indexOf(ts.join(' ')) === 0) p += 4; else if (tt.indexOf(ts[0]) === 0) p += 3; else if (tt.indexOf(ts[0]) > 0) p += 2;
+    if (x.tipo === 'aula') p += 1;
+    r.push([p, x]);
+  }
+  r.sort((a, b) => b[0] - a[0]);
+  return r.map(a => a[1]);
+}
+function fecha() { sug.hidden = true; inp.setAttribute('aria-expanded', 'false'); ativo = -1; }
+function pinta() {
+  const q = inp.value.trim();
+  if (!q) { fecha(); return; }
+  achados = busca(q);
+  const topo = achados.slice(0, 7);
+  let h = '';
+  if (!achados.length) h = '<div class="hb-sug-vazio">Nada encontrado para “' + esc(q) + '”. Tente outra palavra (ex.: “juros”, “função”, “triângulo”).</div>';
+  topo.forEach((x, i) => {
+    const bl = bloqueado(x.it);
+    const href = bl ? 'catalogo.html?q=' + encodeURIComponent(x.it.titulo.replace(/<[^>]*>/g, '')) : x.it.arquivo;
+    h += '<a role="option" id="hbS' + i + '" class="hb-s" href="' + esc(href) + '" style="--accent:var(--' + ACENTOS[x.m.id === 'matematica' ? 0 : x.m.id === 'educacao-financeira' ? 1 : x.m.id === 'ena-profmat' ? 2 : 3] + ')">' +
+      '<span class="hb-s-t">' + esc(x.tipo === 'atividade' ? 'Atividade' : x.tipo === 'guia' ? 'Guia' : 'Aula') + '</span>' +
+      '<span class="hb-s-x"><b>' + x.it.titulo + '</b><small>' + esc(x.m.nome + ' · ' + x.a + ' · ' + x.t + ' · ' + x.u) + '</small></span>' +
+      (bl ? '<span class="hb-s-l" title="Entre com sua conta para abrir">🔒</span>' : '<span class="hb-s-a">→</span>') + '</a>';
+  });
+  if (achados.length) h += '<a class="hb-s-todos" role="option" id="hbSN" href="catalogo.html?q=' + encodeURIComponent(q) + '">Ver ' + plural(achados.length, 'resultado', 'resultados') + ' no catálogo →</a>';
+  sug.innerHTML = h; sug.hidden = false; inp.setAttribute('aria-expanded', 'true'); ativo = -1;
+}
+function marca(i) {
+  const itens = [].slice.call(sug.querySelectorAll('a[role=option]'));
+  itens.forEach((a, k) => a.classList.toggle('on', k === i));
+  ativo = i; if (itens[i]) { inp.setAttribute('aria-activedescendant', itens[i].id); itens[i].scrollIntoView({ block: 'nearest' }); } else inp.removeAttribute('aria-activedescendant');
+}
+inp.addEventListener('input', pinta);
+inp.addEventListener('focus', () => { if (inp.value.trim()) pinta(); });
+inp.addEventListener('keydown', e => {
+  const n = sug.querySelectorAll('a[role=option]').length;
+  if (e.key === 'ArrowDown' && n) { e.preventDefault(); marca((ativo + 1) % n); }
+  else if (e.key === 'ArrowUp' && n) { e.preventDefault(); marca((ativo - 1 + n) % n); }
+  else if (e.key === 'Escape') { if (!sug.hidden) { fecha(); } else { inp.value = ''; } }
+});
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const a = sug.querySelectorAll('a[role=option]')[ativo];
+  if (a) { location.href = a.getAttribute('href'); return; }
+  const q = inp.value.trim(); if (q) location.href = 'catalogo.html?q=' + encodeURIComponent(q); else inp.focus();
+});
+document.addEventListener('click', e => { if (!form.contains(e.target)) fecha(); });
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !e.ctrlKey && !e.metaKey && !/INPUT|TEXTAREA|SELECT/.test((document.activeElement || {}).tagName || '')) { e.preventDefault(); inp.focus(); inp.select(); }
+});
+window.addEventListener('pageshow', e => { if (e.persisted) fecha(); });
+
+// ---------- continuar de onde parou + próxima sugerida ----------
+function acha(arq) { return lista.find(x => x.it.arquivo === arq); }
+(function continuar() {
+  const box = $('hbCont'); let h = '';
+  const u = jl('prog:ultimo', null);
+  const ult = u && u.a ? acha(u.a) : null;
+  if (ult) h += '<a class="hb-cc" href="' + esc(u.a + (u.s > 0 ? '#s=' + (u.s + 1) : '')) + '"><span class="hb-cc-k">▶ Continuar de onde parou</span><b>' + ult.it.titulo + '</b><small>' + (u.s > 0 ? 'slide ' + (u.s + 1) + ' · ' : '') + esc(ult.m.nome + ' · ' + ult.a + ' · ' + ult.u) + '</small></a>';
+  // próxima aula não vista da matéria usada por último (ou da primeira com conteúdo)
+  const pref = (() => { try { return localStorage.getItem('materia-pref'); } catch (e) { return null; } })();
+  const alvo = comConteudo.find(x => x.m.id === pref) || comConteudo[0];
+  const prox = alvo && lista.find(x => x.m === alvo.m && x.tipo === 'aula' && !visto(x.it) && !bloqueado(x.it));
+  if (prox && (!ult || prox.it.arquivo !== (u && u.a))) h += '<a class="hb-cc alt" href="' + esc(prox.it.arquivo) + '"><span class="hb-cc-k">★ Próxima aula sugerida</span><b>' + prox.it.titulo + '</b><small>' + esc(prox.m.nome + ' · ' + prox.a + ' · ' + prox.u) + '</small></a>';
+  if (!LOGADO) h += '<a class="hb-cc gratis" href="catalogo.html#gratis"><span class="hb-cc-k">🎁 Sem conta</span><b>' + plural(LISTA_GRATIS.length, 'aula liberada', 'aulas liberadas') + '</b><small>1 por ano e trimestre — crie sua conta para abrir tudo</small></a>';
+  if (h) { box.innerHTML = h; box.hidden = false; }
+})();
+
+// ---------- cartões de ferramentas ----------
+const IC = {
+  cat: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/>',
+  sim: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/>',
+  rev: '<path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/>',
+  conq: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5a3 3 0 0 1-3 3M12 13v4M8.5 20h7M10 17h4"/>',
+  gift: '<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M12 8v13M5 12.5V20h14v-7.5M12 8c-1.5-3.8-5.5-3.2-4.6-.8.6 1.4 2.9.8 4.6.8ZM12 8c1.5-3.8 5.5-3.2 4.6-.8-.6 1.4-2.9.8-4.6.8Z"/>',
+  turmas: '<circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5a3 3 0 0 1 0 6M17.5 14.5A5.5 5.5 0 0 1 21 20"/>',
+  painel: '<rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11"/>',
+  prova: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+  banco: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  adm: '<path d="M12 3 5 6v5c0 4.4 2.9 8.3 7 10 4.1-1.7 7-5.6 7-10V6z"/><path d="m9 12 2 2 4-4"/>',
+  user: '<circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>',
+  prof: '<path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4zM5 16a4 4 0 0 1 4-4h10"/>',
+  tag: '<path d="M3.5 12.5V5A1.5 1.5 0 0 1 5 3.5h7.5l8 8a1.5 1.5 0 0 1 0 2.1l-6.4 6.4a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.2"/>',
+  down: '<path d="M12 4v11M7.5 11 12 15.5 16.5 11M5 20h14"/>'
+};
+function sequencia() {
+  const dias = jl('prog:dias', []); if (!dias.length) return 0;
+  const set = {}; dias.forEach(d => { set[d] = 1; });
+  const f = x => x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2);
+  let n = 0; const d = new Date(); if (!set[f(d)]) d.setDate(d.getDate() - 1);
+  while (set[f(d)]) { n++; d.setDate(d.getDate() - 1); }
+  return n;
+}
+const rev = jl('rev:itens', []).filter(x => x.due <= Date.now()).length, seq = sequencia();
+const C = [];  // [acento, ícone, título, descrição, href, etiqueta, destaque]
+C.push(['primary', 'cat', 'Catálogo de aulas', 'Todas as matérias, organizadas por ano e trimestre.', 'catalogo.html', '', true]);
+C.push(['decay', 'sim', 'Simulados', 'Treine com questões das aulas e veja seu desempenho.', 'simulado.html', '']);
+C.push(['growth', 'rev', 'Revisão', 'Repetição espaçada dos erros que você cometeu.', 'revisao.html', rev ? rev + ' hoje' : '']);
+C.push(['success', 'conq', 'Conquistas', 'Seu progresso e sua sequência de dias de estudo.', 'catalogo.html#conquistas', seq > 1 ? '🔥 ' + seq + ' dias' : '']);
+if (!LOGADO) C.push(['decay', 'gift', 'Aulas grátis', 'Uma aula por ano e trimestre, sem precisar de conta.', 'catalogo.html#gratis', plural(LISTA_GRATIS.length, 'aula', 'aulas')]);
+if (ehAluno) C.push(['primary', 'turmas', 'Minhas turmas', 'Atividades da sua turma e entrada por código.', 'aluno/dashboard.html', '']);
+if (ehProf) {
+  C.push(['primary', 'painel', 'Painel e turmas', 'Turmas, alunos, atividades e correções.', 'professor/dashboard.html', '']);
+  C.push(['growth', 'prova', 'EduMath Provas', 'Monte provas prontas para imprimir ou baixar em Word.', 'professor/prova.html', '']);
+  C.push(['decay', 'banco', 'Banco de questões', 'Milhares de questões por tema, com filtros.', 'professor/banco.html', '']);
+}
+if (ehAdmin) C.push(['danger', 'adm', 'Administração', 'Professores, planos, alunos, turmas e relatos.', 'admin.html', '']);
+if (!ehProf) C.push(['growth', 'prof', 'Para professores', 'Monte provas, crie turmas e acompanhe seus alunos.', 'para-professores.html', LOGADO ? '' : 'novo']);
+C.push(['primary', 'tag', 'Planos', 'Gratuito e Pro — veja o que cada um inclui.', 'planos.html', '']);
+if (LOGADO) C.push(['decay', 'user', 'Minha conta e dados', 'Seus dados, privacidade e exclusão da conta.', 'conta.html', '']);
+else C.push(['primary', 'user', 'Entrar ou criar conta', 'Libere todas as aulas e salve seu progresso.', 'login.html', '']);
+$('hbCards').innerHTML = C.map(c =>
+  '<a class="hb-card' + (c[6] ? ' big' : '') + '" href="' + c[4] + '" style="--accent:var(--' + c[0] + ');--accent-soft:var(--' + c[0] + '-soft)">' +
+  '<span class="hb-ic">' + svg(IC[c[1]]) + '</span><span class="hb-tx"><b>' + esc(c[2]) + (c[5] ? ' <i class="hb-tag">' + esc(c[5]) + '</i>' : '') + '</b><small>' + esc(c[3]) + '</small></span><span class="hb-ar" aria-hidden="true">→</span></a>').join('');
+
+// instalar como app (aparece quando o navegador oferece)
+let evInst = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); evInst = e;
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'hb-card';
+  b.style.cssText = '--accent:var(--success);--accent-soft:var(--success-soft);text-align:left;font:inherit;cursor:pointer';
+  b.innerHTML = '<span class="hb-ic">' + svg(IC.down) + '</span><span class="hb-tx"><b>Instalar o app</b><small>Use offline, como aplicativo.</small></span><span class="hb-ar" aria-hidden="true">→</span>';
+  b.addEventListener('click', () => { if (evInst) { evInst.prompt(); evInst = null; b.remove(); } });
+  $('hbCards').appendChild(b);
+});
+
+// ---------- matérias ----------
+const acentoDe = m => ACENTOS[Math.max(0, MATERIAS.filter(x => x.id !== 'gratis').indexOf(m)) % ACENTOS.length];
+$('hbMats').innerHTML = comConteudo.map(({ m, c }) => {
+  const ac = acentoDe(m), pc = c.total ? Math.round(c.vistos / c.total * 100) : 0;
+  return '<a class="hb-mat" href="catalogo.html#' + m.id + '" style="--accent:var(--' + ac + ');--accent-soft:var(--' + ac + '-soft)">' +
+    '<span class="hb-ic">' + svg(ICONS[m.icon] || ICONS.grid) + '</span><span class="hb-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' +
+    '<span class="hb-pc">' + pc + '%</span><span class="bar-prog" role="img" aria-label="' + c.vistos + ' de ' + c.total + ' vistos"><i style="width:' + pc + '%"></i></span></a>';
+}).join('');
+const breve = mats.filter(x => !x.c.total);
+if (breve.length) { $('hbSoonN').textContent = breve.length; $('hbSoonL').innerHTML = breve.map(x => '<span>' + esc(x.m.nome) + '</span>').join(''); $('hbSoon').hidden = false; }
+$('hbDev').textContent = LOGADO ? '' : 'Sem conta: ' + plural(LISTA_GRATIS.length, 'aula liberada', 'aulas liberadas');
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

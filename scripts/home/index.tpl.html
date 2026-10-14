@@ -11,7 +11,7 @@
 <link href="assets/fonts.css" rel="stylesheet">
 <link rel="stylesheet" href="app/home.css">
 <link rel="stylesheet" href="app/sidebar.css">
-<script>try{var h=location.hash;if((/^#[a-z]/.test(h)&&h!=='#conquistas')||/[?&]q=/.test(location.search))document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 
 <header class="topbar">
   <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Início"><span class="dot"></span><span>EduMath</span></a>
+    <a class="brand" href="home.html" aria-label="Home"><span class="dot"></span><span>EduMath</span></a>
     <label class="search" aria-label="Buscar aulas, guias e atividades">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" type="search" placeholder="Buscar em todas as matérias…" autocomplete="off">
@@ -33,10 +33,15 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero hero-cat">
   <div class="wrap">
-    <h1 class="title" id="saudacao">O que vamos estudar hoje?</h1>
-    <p class="lede">Escolha a matéria, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
+    <nav class="crumbs" aria-label="Você está em">
+      <a class="btn-home" href="home.html" title="Voltar para a Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+      <span class="sep" aria-hidden="true">/</span>
+      <span class="crumb">Catálogo de aulas</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <h1 class="crumb-cur" id="crumbMat">Matérias</h1>
+    </nav>
     <div class="aviso-gratis" id="avisoGratis" hidden>
       <span><b>Versão gratuita:</b> <span class="n">0</span> aulas liberadas (1 por ano e trimestre). <a href="#gratis" class="ac-ver">Ver as aulas grátis</a></span>
       <span class="aviso-ac"><a class="ac-cria btn-p" href="login.html?modo=cadastrar">Criar conta grátis</a><a class="ac-entra" href="login.html">Entrar</a></span>
@@ -246,6 +251,34 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     return d;
   }
 
+  // ---- trimestre = dropdown (abre/fecha e lembra a escolha) ----
+  function contaTri(tri){
+    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: 0, mods: 0 };
+    tri.unidades.forEach(function(u){ var k = contaUnidade(u); c.aulas += k.aulas; c.guias += k.guias; c.ativ += k.ativ; c.vistos += k.vistos; c.total += k.total; c.mods += k.mod; });
+    return c;
+  }
+  // trimestre que abre sozinho: o da aula sugerida; senão o primeiro que ainda tem coisa por ver
+  function triPadrao(a, sug){
+    if(sug){ for(var i = 0; i < a.trimestres.length; i++){ if(a.trimestres[i].unidades.indexOf(sug.unidade) >= 0) return i; } }
+    for(var j = 0; j < a.trimestres.length; j++){ var c = contaTri(a.trimestres[j]); if(c.total && c.vistos < c.total) return j; }
+    return 0;
+  }
+  function blocoTri(m, a, tri, ti, grade, forca, padrao){
+    var c = contaTri(tri), k = 'tri|' + m.id + '|' + a.ano + '|' + tri.nome;
+    var d = el('details', 'tri'); d.dataset.k = k;
+    d.open = !!(forca || (abertos[k] != null ? abertos[k] === 1 : ti === padrao));
+    var feito = c.total > 0 && c.vistos === c.total;
+    var s = el('summary', null,
+      '<span class="t-n">' + ((/(\d+)/.exec(tri.nome) || [0, ti + 1])[1]) + 'º</span>' +
+      '<span class="t-tx"><b>' + esc(tri.nome) + (feito ? ' <em>concluído ✓</em>' : '') + '</b><small>' + (c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + resumo(c) : 'Em breve') + '</small></span>' +
+      '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
+      '<span class="chev">' + CHEV + '</span>');
+    d.appendChild(s);
+    var body = el('div', 'tri-body'); body.appendChild(grade); d.appendChild(body);
+    s.addEventListener('click', function(){ setTimeout(function(){ if(!forca) lembrar(k, d.open); }, 0); }); // só o que a pessoa abre/fecha é lembrado
+    return d;
+  }
+
   // ---- painel da matéria ----
   function renderPainel(){
     var m = MATERIAS[estado.idx], a = m.CATALOG[estado.ano];
@@ -287,8 +320,8 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     });
     menu.appendChild(el('hr', 'mi-sep'));
     var ex = el('button', 'mi', 'Expandir tudo'), re = el('button', 'mi', 'Recolher tudo'); ex.type = re.type = 'button'; ex.setAttribute('role', 'menuitem'); re.setAttribute('role', 'menuitem');
-    ex.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = true; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
-    re.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = false; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
+    ex.addEventListener('click', function(){ painel.querySelectorAll('details.tri, details.mod').forEach(function(d){ d.open = true; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
+    re.addEventListener('click', function(){ painel.querySelectorAll('details.tri, details.mod').forEach(function(d){ d.open = false; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
     menu.appendChild(ex); menu.appendChild(re);
     function fecha(){ menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', fora); document.removeEventListener('keydown', esc27); }
     function fora(e){ if(!mais.contains(e.target)) fecha(); }
@@ -303,16 +336,19 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     else { topo.appendChild(f); painel.appendChild(topo); if(destaque) painel.appendChild(destaque); painel.appendChild(tabsEl); }
 
     // módulos
-    var lista = el('div', 'mods'), n = 0, exibidos = 0, sug = sugerida(estado.idx);
+    var lista = el('div', 'tris'), n = 0, exibidos = 0, sug = sugerida(estado.idx);
     var multi = a.trimestres.length > 1, forca = estado.tipo !== 'todos';
-    a.trimestres.forEach(function(tri){
+    var padrao = triPadrao(a, sug);
+    a.trimestres.forEach(function(tri, ti){
       var visTri = tri.unidades.filter(function(u){ return u.itens.length ? u.itens.some(function(i){ return passa(i, u); }) : (estado.tipo === 'todos' && !norm(estado.q.trim())); });
       if(!visTri.length) return;
-      if(multi) lista.appendChild(el('h3', 'tri-tit', esc(tri.nome)));
-      tri.unidades.forEach(function(u, ui){
+      var grade = el('div', 'mods'), qtd = 0;
+      tri.unidades.forEach(function(u){
         var d = modulo(m, a, tri, u, ++n, { forcaAberto: forca, sugerido: sug && sug.unidade === u ? u : null });
-        if(d){ lista.appendChild(d); exibidos++; }
+        if(d){ grade.appendChild(d); qtd++; exibidos++; }
       });
+      if(!qtd) return;
+      if(multi) lista.appendChild(blocoTri(m, a, tri, ti, grade, forca, padrao)); else lista.appendChild(grade);
     });
     if(!exibidos){
       var v = el('div', 'vazio', 'Nada encontrado com esse filtro.'); var lb = el('button', 'fchip', 'Limpar filtro'); lb.type = 'button';
@@ -329,11 +365,14 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     MATERIAS.forEach(function(m){
       if(m.id === 'gratis') return;
       m.CATALOG.forEach(function(a){
-        var n = 0, blocos = [];
-        a.trimestres.forEach(function(tri){ tri.unidades.forEach(function(u){
-          n++; var d = modulo(m, a, tri, u, n, { forcaAberto: true }); if(d){ blocos.push(d); mods++; total += u.itens.filter(function(i){ return passa(i, u); }).length; }
-        }); });
-        if(blocos.length){ lista.appendChild(el('h3', 'tri-tit', esc(m.nome) + ' · ' + esc(a.ano))); blocos.forEach(function(b){ lista.appendChild(b); }); }
+        var n = 0;
+        a.trimestres.forEach(function(tri){
+          var blocos = [];
+          tri.unidades.forEach(function(u){
+            n++; var d = modulo(m, a, tri, u, n, { forcaAberto: true }); if(d){ blocos.push(d); mods++; total += u.itens.filter(function(i){ return passa(i, u); }).length; }
+          });
+          if(blocos.length){ lista.appendChild(el('h3', 'tri-tit', esc(m.nome) + ' · ' + esc(a.ano) + (a.trimestres.length > 1 ? ' · ' + esc(tri.nome) : ''))); blocos.forEach(function(b){ lista.appendChild(b); }); }
+        });
       });
     });
     var head = el('div', 'p-head');
@@ -350,6 +389,8 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     subjectsRoot.classList.toggle('dim', buscando);
     renderMaterias();
     if(buscando) renderBusca(); else renderPainel();
+    document.getElementById('crumbMat').textContent = buscando ? 'Busca' : MATERIAS[estado.idx].nome;
+    document.title = (buscando ? 'Busca' : MATERIAS[estado.idx].nome) + ' — Catálogo de aulas — EduMath';
     renderContinuar(); marcadores();
   }
 
@@ -393,12 +434,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var h = lerHash();
     if(h){ var mudou = estado.modo !== 'materia' || h.idx !== estado.idx || (h.ano != null && h.ano !== estado.ano); estado.modo = 'materia'; estado.idx = h.idx; estado.ano = h.ano != null ? h.ano : anoInicial(h.idx); if(mudou) renderTudo(); else aplicaModo(); }
     else if(location.hash === '#conquistas'){ abreConq(); }
-    else if(estado.modo !== 'inicio'){ estado.modo = 'inicio'; renderTudo(); aplicaModo(); }
   });
-
-  // saudação conforme o horário
-  var hr = new Date().getHours();
-  document.getElementById('saudacao').textContent = (hr < 5 ? 'Boa madrugada!' : hr < 12 ? 'Bom dia!' : hr < 18 ? 'Boa tarde!' : 'Boa noite!') + ' O que vamos estudar hoje?';
 
   // matéria inicial: link direto → última usada → primeira
   var ini = lerHash(), idx0 = MATERIAS.findIndex(function(m){ return m.id !== 'gratis'; });
@@ -407,7 +443,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
   estado.idx = idx0;
   estado.ano = ini && ini.ano != null ? ini.ano : (anoSalvo(idx0) != null ? anoSalvo(idx0) : anoInicial(idx0));
   var pq = new URLSearchParams(location.search).get('q');
-  estado.modo = (ini || pq) ? 'materia' : 'inicio';
+  estado.modo = 'materia';
   if(pq){ qTopo.value = qLado.value = pq; estado.q = pq; qEl = qLado; }
   gravarHash(); renderTudo();
   if(location.hash === '#conquistas') abreConq();

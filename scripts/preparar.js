@@ -11,6 +11,7 @@ const passos = [
   ['ferramentas (mapa, notas, glossário…)', 'scripts/aplicar-ferramentas.js'],
   ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
   ['página inicial (números reais)', 'scripts/landing/montar.js'],
+  ['Home (hub depois do login)', 'scripts/hub/montar.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],
   ['sincronização com a nuvem', 'scripts/testar-nuvem.js'],

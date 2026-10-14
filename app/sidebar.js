@@ -98,6 +98,7 @@ function montar() {
   NAV.forEach((m, i) => { (m.emBreve ? breve : ativas).push([m, i]); });
 
   let nav = '';
+  nav += itemLink('home.html', url('home.html'), 'home', 'Home');
   nav += itemLink('simulado.html', url('simulado.html'), 'sim', 'Simulados');
   nav += itemLink('revisao.html', url('revisao.html'), 'rev', 'Revisão');
   nav += '<a class="sb-item" href="' + url('catalogo.html') + '#conquistas" data-conq title="Conquistas"><span class="sb-ic">' + svg('conq') + '</span><span class="sb-lbl">Conquistas</span><span class="sb-extra"></span></a>';
@@ -132,7 +133,7 @@ function montar() {
   const aside = document.createElement('aside');
   aside.className = 'sb'; aside.id = 'sb'; aside.setAttribute('aria-label', 'Navegação principal');
   aside.innerHTML =
-    '<div class="sb-top"><a class="sb-brand" href="' + url('index.html') + '" aria-label="Início"><span class="dot"></span><span class="sb-lbl">EduMath</span></a>' +
+    '<div class="sb-top"><a class="sb-brand" href="' + url('home.html') + '" aria-label="Home"><span class="dot"></span><span class="sb-lbl">EduMath</span></a>' +
     '<button type="button" class="sb-collapse" aria-label="Recolher menu" title="Recolher menu ( [ )">' + svg('recolher') + '</button></div>' +
     '<label class="sb-search" aria-label="Buscar aulas, guias e atividades">' + svg('search') + '<input id="sb-q" type="search" placeholder="Buscar em tudo…" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>' +
     '<button type="button" class="sb-search-ic" aria-label="Buscar" title="Buscar">' + svg('search') + '</button>' +
@@ -140,7 +141,7 @@ function montar() {
 
   const mob = document.createElement('div');
   mob.className = 'sb-mob';
-  mob.innerHTML = '<button type="button" class="sb-menu" aria-label="Abrir menu" aria-controls="sb" aria-expanded="false">' + svg('menu') + '</button><a class="sb-brand" href="' + url('index.html') + '"><span class="dot"></span><span class="sb-lbl">EduMath</span></a>';
+  mob.innerHTML = '<button type="button" class="sb-menu" aria-label="Abrir menu" aria-controls="sb" aria-expanded="false">' + svg('menu') + '</button><a class="sb-brand" href="' + url('home.html') + '" aria-label="Home"><span class="dot"></span><span class="sb-lbl">EduMath</span></a>';
   const scrim = document.createElement('div'); scrim.className = 'sb-scrim';
 
   document.body.prepend(scrim); document.body.prepend(aside); document.body.prepend(mob);

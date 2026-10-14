@@ -23,14 +23,14 @@
 <link rel="stylesheet" href="app/style.css">
 <link rel="stylesheet" href="app/landing.css">
 <script>
-/* Porta de entrada: quem já tem conta (ou abre um link antigo do catálogo, ex.: /#matematica/3 ou /?q=juros) vai direto ao catálogo. */
+/* Porta de entrada: quem já tem conta (ou abre um link antigo do catálogo, ex.: /#matematica/3 ou /?q=juros) vai direto ao catálogo (links antigos) ou à Home (quem tem conta). */
 (function(){
   try{
     var q = location.search, h = location.hash.slice(1);
     var secoes = ['topo','materias','como-funciona','recursos','professores','planos','faq','comecar'];
     var legado = (h && secoes.indexOf(h) < 0) || /[?&]q=/.test(q);
     var logado = !!localStorage.getItem('sb:user') && !/[?&]landing=1/.test(q);
-    if(legado || logado) location.replace('catalogo.html' + (legado ? q + location.hash : ''));
+    if(legado) location.replace('catalogo.html' + q + location.hash); else if(logado) location.replace('home.html');
   }catch(e){}
 })();
 </script>

@@ -7,6 +7,8 @@
   if(window.__ferramentas) return; window.__ferramentas = true;
   var D = document, W = window, R = D.documentElement;
   var SRC = (D.currentScript && D.currentScript.src) || '';
+  var RAIZ = SRC ? SRC.replace(/app\/ferramentas\.js.*$/, '') : '';
+  var EMBUTIDA = false; try{ EMBUTIDA = W.parent !== W; }catch(e){ EMBUTIDA = true; }
 
   // ---------- util ----------
   function lsGet(k){ try{ return W.localStorage.getItem(k); }catch(e){ return null; } }
@@ -35,6 +37,9 @@
   '.ft-dock{position:fixed;top:calc(64px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));z-index:9998;font-family:Archivo,Arial,sans-serif}' +
   '.ft-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong,#bbb);background:var(--surface,#fff);color:var(--ink,#111);cursor:pointer;font-size:1.3rem;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -10px var(--shadow,rgba(0,0,0,.3))}' +
   '.ft-btn:hover{transform:scale(1.07)}' +
+  '.ft-home{position:absolute;top:0;right:52px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong,#bbb);background:var(--surface,#fff);color:var(--ink,#111);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -10px var(--shadow,rgba(0,0,0,.4));text-decoration:none;transition:transform .15s}' +
+  '.ft-home:hover{transform:scale(1.07);border-color:var(--primary,#382EAE);color:var(--primary,#382EAE)}' +
+  '.ft-home svg{width:21px;height:21px}' +
   '.ft-panel{position:absolute;top:52px;right:0;width:min(17rem,calc(100vw - 28px));background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line-strong,#bbb);border-radius:16px;padding:8px;box-shadow:0 24px 50px -18px var(--shadow,rgba(0,0,0,.4));display:none}' +
   '.ft-panel.on{display:block}' +
   '.ft-panel button{display:flex;align-items:center;gap:.6em;width:100%;text-align:left;font:inherit;font-size:.82rem;font-weight:700;border:0;background:transparent;color:inherit;border-radius:10px;padding:.55em .7em;cursor:pointer}' +
@@ -170,6 +175,14 @@
   if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
   acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
   acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('⚑ Reportar um erro', '', reportarErro);
+  if(RAIZ && !EMBUTIDA){
+    var casa = el('a', 'ft-home', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>');
+    casa.href = RAIZ + 'home.html'; casa.title = 'Home — voltar ao início do EduMath'; casa.setAttribute('aria-label', 'Home: voltar ao início do EduMath');
+    dock.appendChild(casa);
+    panel.insertBefore(el('hr'), panel.firstChild);
+    var cat = el('button', null, '☰ Catálogo de aulas'); cat.type = 'button'; cat.addEventListener('click', function(){ W.location.href = RAIZ + 'catalogo.html'; }); panel.insertBefore(cat, panel.firstChild);
+    var hm = el('button', null, '⌂ Home'); hm.type = 'button'; hm.addEventListener('click', function(){ W.location.href = RAIZ + 'home.html'; }); panel.insertBefore(hm, panel.firstChild);
+  }
   dock.appendChild(btn); dock.appendChild(panel);
   btn.addEventListener('click', function(e){ e.stopPropagation(); panel.classList.toggle('on'); });
   D.addEventListener('click', function(e){ if(!dock.contains(e.target)) panel.classList.remove('on'); });

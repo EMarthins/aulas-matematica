@@ -2,7 +2,7 @@
    - arquivos do próprio site: "stale-while-revalidate" (responde do cache e atualiza em segundo plano)
    - Firebase e outros domínios: passam direto pela rede (login e plataforma exigem internet)
    Troque VERSAO para forçar a limpeza do cache antigo. */
-var VERSAO = 'v24';
+var VERSAO = 'v25';
 var CACHE = 'aulas-' + VERSAO;
 /* Hospedagens que tiram o ".html" do endereço (ex.: Cloudflare Pages: /planos.html -> /planos) respondem com redirecionamento;
    o navegador recusa abrir, numa navegação, uma resposta marcada como "redirecionada". Refazemos a resposta sem a marca. */
@@ -10,7 +10,7 @@ function limpa(res){
   if(!res || !res.redirected) return Promise.resolve(res);
   return res.blob().then(function(b){ return new Response(b, { status: res.status, statusText: res.statusText, headers: res.headers }); });
 }
-var BASE = ['./', 'index.html', 'catalogo.html', 'app/landing.css', 'app/landing.js', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/banco.json', 'app/theme-toggle.js', 'app/sidebar.js', 'app/acesso.js', 'app/planos.js', 'app/nuvem.js', 'planos.html', 'app/sidebar.css', 'app/nav-data.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
+var BASE = ['./', 'index.html', 'home.html', 'catalogo.html', 'app/hub.css', 'app/landing.css', 'app/landing.js', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/banco.json', 'app/theme-toggle.js', 'app/sidebar.js', 'app/acesso.js', 'app/planos.js', 'app/nuvem.js', 'planos.html', 'app/sidebar.css', 'app/nav-data.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
 
 self.addEventListener('install', function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){ return Promise.all(BASE.map(function(u){ return fetch(u).then(limpa).then(function(r){ if(r && r.status === 200) return c.put(u, r); }).catch(function(){}); })); }).then(function(){ return self.skipWaiting(); }));
