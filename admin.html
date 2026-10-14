@@ -675,7 +675,7 @@ async function copiarRegras(){
 function mostrarAvisoRegras(forcar){
   var faltas = Object.keys(S.falta || {});
   if(!faltas.length && !forcar){ if(!$('avisoRegras')) return; $('avisoRegras').remove(); return; }
-  var html = '<div class="alert error" id="avisoRegras" style="margin-bottom:14px"><b>Falta publicar as regras novas do Firebase' + (faltas.length ? ' (sem acesso a: ' + faltas.join(', ') + ')' : '') + '.</b><div style="margin:6px 0 10px">Passo a passo (1 minuto): <b>1)</b> clique em “Copiar regras” · <b>2)</b> abra o console do Firebase (botão ao lado) → Firestore Database → <b>Regras</b> · <b>3)</b> apague o texto atual, cole o novo e clique em <b>Publicar</b> · <b>4)</b> volte aqui e clique em “Atualizar”.</div><div class="linha" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" type="button" id="btnCopiarRegras">Copiar regras</button><a class="btn sm secondary" target="_blank" rel="noopener" href="https://console.firebase.google.com/project/estude-app-marth/firestore/databases/-default-/rules">Abrir regras no Firebase</a></div></div>';
+  var html = '<div class="alert error" id="avisoRegras" style="margin-bottom:14px"><b>' + (faltas.length ? 'Falta publicar as regras novas do Firebase (sem acesso a: ' + faltas.join(', ') + ').' : 'O Firebase ainda não liberou o painel para a sua conta: as regras novas precisam ser publicadas.') + '</b><div style="margin:6px 0 10px">Passo a passo (1 minuto): <b>1)</b> clique em “Copiar regras” · <b>2)</b> abra o console do Firebase (botão ao lado) → Firestore Database → <b>Regras</b> · <b>3)</b> apague o texto atual, cole o novo e clique em <b>Publicar</b> · <b>4)</b> volte aqui e clique em “Atualizar”.</div><div class="linha" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" type="button" id="btnCopiarRegras">Copiar regras</button><a class="btn sm secondary" target="_blank" rel="noopener" href="https://console.firebase.google.com/project/estude-app-marth/firestore/databases/-default-/rules">Abrir regras no Firebase</a></div></div>';
   var el = $('avisoRegras'); if(el) el.outerHTML = html; else $('aviso').insertAdjacentHTML('afterbegin', html);
   $('btnCopiarRegras').addEventListener('click', copiarRegras);
 }
@@ -701,7 +701,11 @@ async function carregar(manual){
     var h0 = (location.hash || '').slice(1); if(!manual && ['prof', 'alu', 'tur', 'resumo'].indexOf(h0) >= 0) irPara(h0);
     if(manual) toast('Dados atualizados.');
   }catch(e){
-    if(e.sem){ var u = ADM; mostrarSemAcesso(u); }
+    if(e.sem){
+      // Conta certa, mas o servidor ainda recusa: as regras antigas continuam publicadas.
+      if(ADM.uid === MASTER_UID){ $('app').hidden = true; $('aviso').innerHTML = ''; mostrarAvisoRegras(true); }
+      else mostrarSemAcesso(ADM);
+    }
     else { console.error(e); $('aviso').innerHTML = '<div class="alert error">Não foi possível carregar os dados. Verifique a conexão e clique em Atualizar.</div>'; }
   }finally{ btn.disabled = false; btn.textContent = '↻ Atualizar'; }
 }
