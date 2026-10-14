@@ -97,3 +97,5 @@ Ver o fim deste arquivo (seção "Feito").
 - **Painel de administração completo** (2026-10-14): admin.html com Resumo, Professores (aprovar/recusar/suspender, plano Pro/Gratuito/Escola), Alunos (perfil, turmas, acessos, atividades) e Turmas; professor novo nasce "aguardando aprovação". Guia: docs/admin-painel.md.
 
 - **Reportar erro** (aulas/guias/atividades + questões do EduMath Provas), **aba Relatos** no admin, **prova de exemplo sem cadastro** e **códigos de convite protegidos** (joinCodes) — feitos em 2026-10-14; exigem publicar as regras novas do Firestore. Ver docs/admin-painel.md.
+
+- **Regras publicadas e verificadas em 2026-10-14 (15h15):** relatos de erro, códigos de convite protegidos e conversão aluno→professor valendo. Reportar erro e codes: ver docs/admin-painel.md.
