@@ -6,4 +6,4 @@
 - **Quem vê o quê:** quem já tem conta (`localStorage sb:user`) ou abre um link antigo do catálogo (`/#matematica/3`, `/?q=juros`) é levado direto ao `catalogo.html`; para ver a página inicial logado, use `/?landing=1`. O app instalado (PWA) abre no catálogo.
 - **Links:** tudo que apontava para o catálogo (aulas, guias, atividades, barra lateral, páginas do site) agora aponta para `catalogo.html`; a marca "EduMath" leva à página inicial.
 - **Honestidade do texto:** não há depoimentos inventados; quando o piloto gerar depoimentos reais, acrescentar uma seção. A Matemática cobre hoje do 9º ao 3º ano do EM (6º ao 8º ainda não existem).
-- **Pendente:** imagem de compartilhamento (`assets/og-edumath.jpg`) para a pré-visualização em WhatsApp/redes.
+- **Imagem de compartilhamento** (pré-visualização do link no WhatsApp/redes): `assets/og-edumath.png` (1200×630), gerada de `scripts/landing/og.html` com o Chrome sem janela: `chrome --headless=new --window-size=1200,630 --screenshot=assets/og-edumath.png file:///…/scripts/landing/og.html`. Redes sociais guardam a imagem em cache; para forçar atualização, usar o depurador de compartilhamento de cada rede.
