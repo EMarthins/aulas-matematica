@@ -738,6 +738,17 @@ function iniciarArquivos() {
     clearTimeout(0); await paginar(); const antes = document.title; document.title = E.nome;
     window.print(); setTimeout(() => { document.title = antes; }, 800);
   });
+  $('bWord').addEventListener('click', async () => {
+    if (!E.itens.length) return toast('Adicione ao menos uma questão antes de exportar.');
+    const b = $('bWord'); b.disabled = true; toast('Gerando o arquivo Word…', 8000);
+    try {
+      const { baixarDocx } = await import('./docx.js');
+      const lista = ordenados().map(x => ({ q: x.q, num: x.num, ordem: x.ordem, omitirBase: x.omitirBase, valor: x.it.pontos }));
+      const nome = (E.nome || 'prova').replace(/[\/:*?"<>|]+/g, ' ').trim() || 'prova';
+      await baixarDocx({ nome: E.nome, versao: E.versao, cab: E.cab, layout: E.layout, gab: E.gab, lista, total: somaPontos() }, nome + (E.versao !== 'A' ? ' - versão ' + E.versao : '') + '.docx');
+      toast('Arquivo Word baixado. Abra no Word para editar.');
+    } catch (e) { console.error(e); toast('Não foi possível gerar o Word: ' + e.message, 5200); } finally { b.disabled = false; }
+  });
   window.addEventListener('beforeprint', () => { $('paginas').style.zoom = 1; });
   window.addEventListener('afterprint', aplicarZoom);
 }

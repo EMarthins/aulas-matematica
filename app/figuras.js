@@ -145,7 +145,7 @@ function barras(f) {
     o += `<text x="${x + w / 2}" y="${H - 10}" text-anchor="middle" ${TXT}>${esc(rot[i] ?? '')}</text>`;
   });
   o += `<line x1="${ml}" y1="${mt + ph}" x2="${ml + pw}" y2="${mt + ph}" stroke="#111" stroke-width="1.2"/><line x1="${ml}" y1="${mt}" x2="${ml}" y2="${mt + ph}" stroke="#111" stroke-width="1.2"/>`;
-  if (f.unidade) o += `<text x="2" y="${mt - 4}" ${TXT} font-size="9">${esc(f.unidade)}</text>`;
+  if (f.unidade) o += `<text x="2" y="${mt - 4}" ${TXT.replace('font-size="11"', 'font-size="9"')}>${esc(f.unidade)}</text>`;
   return wrapSvg(W, H, o, f.largura);
 }
 

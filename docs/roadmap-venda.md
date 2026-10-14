@@ -22,7 +22,7 @@ Decisão: **parar de adicionar aulas** (já são 490+ páginas); o que falta é 
 - [ ] 👤 Se usar Firebase Blaze: ligar alerta de orçamento.
 
 ### Fase 2 — Produto pronto para o professor (🤖)
-- [ ] 🤖 **Exportar prova em Word (.docx)** com fórmulas corretas (maior lacuna do produto).
+- [x] 🤖 **Exportar prova em Word (.docx)** com equações nativas do Word — feito em 2026-10-14 (app/docx.js, botão "Word" no EduMath Provas; testado abrindo no Word de verdade). Pendente: conferir com professores reais em Word de Mac e no Google Docs/LibreOffice.
 - [ ] 🤖 Testes de **sincronização** (2 aparelhos, internet caindo) e **backup** das provas na nuvem.
 - [ ] 🤖 Teste em **celular** (aparelhos simples) e desempenho.
 - [ ] 🤖 Botão **"Reportar erro"** em aulas e questões + registro de correções.
@@ -75,7 +75,7 @@ Ver o fim deste arquivo (seção "Feito").
 ## 🤖 Depois (precisa de decisões/contas acima)
 
 - [ ] Cobrança automática (Functions + webhook do meio de pagamento) e planos validados no servidor.
-- [ ] Exportar a prova em Word (.docx) com matemática correta (OMML) — exige biblioteca e testes no Word.
+- [x] Exportar a prova em Word (.docx) com matemática correta (OMML) — feito (ver Fase 2).
 - [ ] Contas de escola (coordenação + vários professores, cobrança única).
 - [ ] Relatórios da turma (onde mais erram) e exportar notas em CSV.
 - [ ] Integração com Google Classroom.
@@ -92,4 +92,4 @@ Ver o fim deste arquivo (seção "Feito").
 - [x] **termos.html** reescrito (venda, LGPD, menores, direitos, planos) — falta revisão do advogado e dados da empresa.
 - [x] Aulas grátis x conta (trava no navegador) e página para professores atualizada.
 - [x] Roteiro de teste com contas reais: docs/teste-contas.md.
-- Não feito de propósito: exportar Word (a matemática da prova usa CSS que o Word não entende; fazer certo exige gerar .docx com fórmulas e testar no Word).
+- Exportar Word: feito em 2026-10-14 com gerador próprio (app/docx.js, sem bibliotecas, funciona offline); frações e raízes viram equações do Word (OMML), figuras SVG viram PNG, imagens do ENEM são embutidas; conferido no Word por scripts/testar-docx.js + automação (docs/fazedor-de-prova.md).

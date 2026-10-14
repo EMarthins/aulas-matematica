@@ -128,7 +128,7 @@ export function gabaritoDe(q, ordem) {
 }
 
 // ---------- HTML da questão no papel ----------
-function altClasse(textos, modo) {
+export function altClasse(textos, modo) {
   if (modo && modo !== 'auto') return 'alt-' + modo;
   const max = Math.max(...textos.map(t => t.replace(/<[^>]+>/g, '').length));
   const img = textos.some(t => /<img|<svg/.test(t)), tem = textos.some(t => /<figure|<table/.test(t));

@@ -89,3 +89,15 @@ Nunca coloque a chave da API no navegador nem no repositório.
 - Dados: `scripts/banco-provas/enem/dados-2021.js`, `dados-2025.js` (matemática em texto), `imagens-2021.json`, `imagens-2025.json` (recortes), `rotulos.js` (disciplina e tópico) e `montar-imagens.js`. Imagens em `app/img-questoes/`.
 - Campos usados: `pergunta`, `layoutAlt`, `soImagem` + `imagens`, `base` (texto de apoio compartilhado), `anulada`, `busca` e imagens `img:arquivo` (resolvidas para `app/img-questoes/`).
 - Questões em imagem são do tamanho do caderno (≈ meia página): em 2 colunas as de largura total encolhem; use **1 coluna** para elas.
+
+
+## Exportar para Word (.docx)
+
+Botão **Word** na barra do EduMath Provas (ao lado de "Imprimir / PDF"). Gera um arquivo editável com o mesmo conteúdo e configuração da prova: cabeçalho (modelos caixas/linhas/compacto/nenhum, logo, instruções, versão), colunas (1 a 3, com separador), fonte, margens, estilo de numeração ("1." ou "Questão 1"), pontuação, alternativas (1 por linha, 2 colunas ou na mesma linha), V/F, somatória, associação, espaço de resposta (linhas, em branco, quadriculado), rodapé "Página X de Y" e gabarito/resoluções anexados.
+
+- **Código:** `app/docx.js` (sem bibliotecas; monta o pacote OOXML + zip; roda no navegador e no Node). O botão chama `baixarDocx()`.
+- **Matemática:** frações e raízes viram **equações do Word** (OMML); expoentes/índices simples viram texto sobrescrito/subscrito; o restante é texto formatado (fonte Cambria).
+- **Figuras:** gráficos/barras/SVG viram PNG (canvas), tabelas viram tabelas do Word, imagens (ENEM etc.) são embutidas (JPEG/PNG/GIF; webp é convertido).
+- **Teste:** `node scripts/testar-docx.js saida.docx [colunas] [--gab]` monta uma prova de amostra e confere o XML; variações por variável de ambiente (`CAB`, `LAYOUT`, `VERSAO`). Para ver como o Word abre (PDF/PNG por página), usar automação COM do Word (exemplos em scratchpad: word-check.ps1, word-png.ps1).
+- **Armadilhas já resolvidas:** o Word **funde tabelas coladas** (há um parágrafo mínimo entre elas); parágrafos iguais com borda inferior perdem as linhas (as linhas de resposta são uma tabela de linhas); atributo repetido em SVG (corrigido em figuras.js) quebrava a rasterização; `NUMPAGES` no rodapé só atualiza quando o Word pagina.
+- **Limites:** layout em colunas depende da paginação do Word (pode diferir um pouco do PDF/impressão do site); equações em linha mostram frações menores que as do papel; não testado ainda em Word de Mac, Google Docs ou LibreOffice.

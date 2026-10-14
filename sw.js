@@ -2,7 +2,7 @@
    - arquivos do próprio site: "stale-while-revalidate" (responde do cache e atualiza em segundo plano)
    - Firebase e outros domínios: passam direto pela rede (login e plataforma exigem internet)
    Troque VERSAO para forçar a limpeza do cache antigo. */
-var VERSAO = 'v18';
+var VERSAO = 'v19';
 var CACHE = 'aulas-' + VERSAO;
 /* Hospedagens que tiram o ".html" do endereço (ex.: Cloudflare Pages: /planos.html -> /planos) respondem com redirecionamento;
    o navegador recusa abrir, numa navegação, uma resposta marcada como "redirecionada". Refazemos a resposta sem a marca. */
