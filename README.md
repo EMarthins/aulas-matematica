@@ -20,7 +20,8 @@ Qualquer atualização futura (novo arquivo, edição) segue o mesmo caminho: **
 ## Estrutura do repositório
 
 ```
-index.html                          → página inicial (catálogo das aulas)
+index.html                          → página inicial (apresentação, gerada por scripts/landing/montar.js a partir de scripts/landing/index.tpl.html + app/landing.css/js)
+catalogo.html                       → catálogo das aulas (gerado por scripts/home/montar.js)
 aulas/
   9-ano/
     2-tri/
@@ -162,7 +163,7 @@ app/
   firebase-init.js           → inicialização do Firebase, reaproveitada por todas as páginas
   auth.js                    → cadastro/login/logout, proteção de página por papel (aluno/professor)
   data.js                    → leitura/escrita no Firestore (turmas, matrículas, atividades, submissões)
-  catalog.js                 → catálogo de aulas (fonte única, usado pelo index.html e pelo painel do professor)
+  catalog.js                 → catálogo de aulas (fonte única, usado pelo catalogo.html e pelo painel do professor)
   util.js                    → escape de HTML e validação de links (segurança contra XSS)
   style.css, theme-toggle.js → visual e tema claro/escuro compartilhados pelas páginas da plataforma
 firestore.rules              → regras de segurança do banco (publique no console do Firebase)

@@ -13,7 +13,7 @@
   function mostra(){
     if(document.getElementById('parede')) return;
     var w = document.createElement('div'); w.id = 'parede';
-    w.innerHTML = '<div class="c"><div style="font-size:2rem">&#128274;</div><h1>Esta aula é para quem tem conta</h1><p>Sem conta você acessa 1 aula por ano e trimestre. Crie sua conta grátis (ou entre) para liberar todas as aulas, guias e atividades.</p><a class="p" target="_top" href="' + R + 'login.html?modo=cadastrar&' + q + '">Criar conta grátis</a><a class="s" target="_top" href="' + R + 'login.html?' + q + '">Já tenho conta · Entrar</a><a class="l" target="_top" href="' + R + 'index.html#gratis">Ver as aulas grátis</a></div>';
+    w.innerHTML = '<div class="c"><div style="font-size:2rem">&#128274;</div><h1>Esta aula é para quem tem conta</h1><p>Sem conta você acessa 1 aula por ano e trimestre. Crie sua conta grátis (ou entre) para liberar todas as aulas, guias e atividades.</p><a class="p" target="_top" href="' + R + 'login.html?modo=cadastrar&' + q + '">Criar conta grátis</a><a class="s" target="_top" href="' + R + 'login.html?' + q + '">Já tenho conta · Entrar</a><a class="l" target="_top" href="' + R + 'catalogo.html#gratis">Ver as aulas grátis</a></div>';
     document.body.appendChild(w);
   }
   if(document.body) mostra(); else document.addEventListener('DOMContentLoaded', mostra);

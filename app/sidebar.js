@@ -13,7 +13,7 @@ const url = p => ROOT.href + p;
 
 let rel = decodeURIComponent(location.pathname.slice(ROOT.pathname.length));
 if (!rel || rel.endsWith('/')) rel += 'index.html';
-const NA_HOME = rel === 'index.html';
+const NA_HOME = rel === 'catalogo.html';
 
 const jl = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } };
 const sl = (k, v) => { try { localStorage.setItem(k, typeof v === 'string' ? v : JSON.stringify(v)); } catch (e) {} };
@@ -82,15 +82,15 @@ function subj(m, i) {
   const c = contaMat(m), ac = ACENTOS[i % ACENTOS.length];
   const anos = m.anos.map((a, k) => {
     const x = contaAno(a);
-    return '<a class="sb-year' + (x.total ? '' : ' soon') + '" data-ano="' + k + '" href="' + url('index.html') + '#' + m.id + '/' + k + '"><span>' + esc(a.ano) + '</span><small>' + (x.total ? x.vistos + '/' + x.total : 'em breve') + '</small></a>';
+    return '<a class="sb-year' + (x.total ? '' : ' soon') + '" data-ano="' + k + '" href="' + url('catalogo.html') + '#' + m.id + '/' + k + '"><span>' + esc(a.ano) + '</span><small>' + (x.total ? x.vistos + '/' + x.total : 'em breve') + '</small></a>';
   }).join('');
   return '<div class="sb-subj" data-id="' + m.id + '" style="--acc:var(--' + ac + ');--acc-soft:var(--' + ac + '-soft)">' +
-    '<a class="sb-item sb-s" href="' + url('index.html') + '#' + m.id + '" title="' + esc(m.nome) + '"><span class="sb-ic">' + svg(m.icon) + '</span><span class="sb-lbl">' + esc(m.nome) + '</span><span class="sb-pc"></span>' +
+    '<a class="sb-item sb-s" href="' + url('catalogo.html') + '#' + m.id + '" title="' + esc(m.nome) + '"><span class="sb-ic">' + svg(m.icon) + '</span><span class="sb-lbl">' + esc(m.nome) + '</span><span class="sb-pc"></span>' +
     '<span class="sb-chev">' + svg(I.chev) + '</span></a><div class="sb-years">' + anos + '</div></div>';
 }
 function soonItem(m, i) {
   const ac = ACENTOS[i % ACENTOS.length];
-  return '<div class="sb-subj" data-id="' + m.id + '" style="--acc:var(--' + ac + ');--acc-soft:var(--' + ac + '-soft)"><a class="sb-item sb-s" href="' + url('index.html') + '#' + m.id + '" title="' + esc(m.nome) + ' (em breve)"><span class="sb-ic">' + svg(m.icon) + '</span><span class="sb-lbl">' + esc(m.nome) + '</span></a></div>';
+  return '<div class="sb-subj" data-id="' + m.id + '" style="--acc:var(--' + ac + ');--acc-soft:var(--' + ac + '-soft)"><a class="sb-item sb-s" href="' + url('catalogo.html') + '#' + m.id + '" title="' + esc(m.nome) + ' (em breve)"><span class="sb-ic">' + svg(m.icon) + '</span><span class="sb-lbl">' + esc(m.nome) + '</span></a></div>';
 }
 
 function montar() {
@@ -100,9 +100,9 @@ function montar() {
   let nav = '';
   nav += itemLink('simulado.html', url('simulado.html'), 'sim', 'Simulados');
   nav += itemLink('revisao.html', url('revisao.html'), 'rev', 'Revisão');
-  nav += '<a class="sb-item" href="' + url('index.html') + '#conquistas" data-conq title="Conquistas"><span class="sb-ic">' + svg('conq') + '</span><span class="sb-lbl">Conquistas</span><span class="sb-extra"></span></a>';
+  nav += '<a class="sb-item" href="' + url('catalogo.html') + '#conquistas" data-conq title="Conquistas"><span class="sb-ic">' + svg('conq') + '</span><span class="sb-lbl">Conquistas</span><span class="sb-extra"></span></a>';
   if (ehAluno) nav += itemLink('aluno/dashboard.html', url('aluno/dashboard.html'), 'turmas', 'Minhas turmas');
-  if (!user) nav += '<a class="sb-item" data-gratis href="' + url('index.html') + '#gratis' + '" title="Aulas grátis"><span class="sb-ic">' + svg('gift') + '</span><span class="sb-lbl">Aulas grátis</span><span class="sb-extra"></span></a>';
+  if (!user) nav += '<a class="sb-item" data-gratis href="' + url('catalogo.html') + '#gratis' + '" title="Aulas grátis"><span class="sb-ic">' + svg('gift') + '</span><span class="sb-lbl">Aulas grátis</span><span class="sb-extra"></span></a>';
   nav += '<div class="sb-sec">Matérias</div>' + ativas.map(([m, i]) => subj(m, i)).join('');
   if (breve.length) nav += '<details class="sb-soon"><summary><span>Em breve</span><span class="sb-chev">' + svg(I.chev) + '</span></summary>' + breve.map(([m, i]) => soonItem(m, i)).join('') + '</details>';
   if (ehProf) {
@@ -216,7 +216,7 @@ function iniciar() {
   // busca: na home filtra na hora (a home escuta #sb-q); nas outras páginas vai para a home com ?q=
   const q = $('#sb-q');
   q.addEventListener('keydown', e => {
-    if (e.key === 'Enter') { if (!NA_HOME && q.value.trim()) location.href = url('index.html') + '?q=' + encodeURIComponent(q.value.trim()); else if (celular()) abre(false); }
+    if (e.key === 'Enter') { if (!NA_HOME && q.value.trim()) location.href = url('catalogo.html') + '?q=' + encodeURIComponent(q.value.trim()); else if (celular()) abre(false); }
     if (e.key === 'Escape') { if (q.value) { q.value = ''; q.dispatchEvent(new Event('input', { bubbles: true })); } q.blur(); }
   });
   $('.sb-search-ic').addEventListener('click', () => { colapsa(false); setTimeout(() => q.focus(), 60); });

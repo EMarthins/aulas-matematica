@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EduMath — Matemática que faz sentido, do 9º ano ao ENEM</title>
+<meta name="description" content="Aulas interativas com simuladores, atividades no estilo ENEM, simulados e o EduMath Provas: a ferramenta que monta a prova do professor em minutos. Comece grátis.">
+<link rel="canonical" href="https://edumath.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EduMath">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="EduMath — Matemática que faz sentido, do 9º ano ao ENEM">
+<meta property="og:description" content="{{N_AULAS}} aulas interativas, {{N_ATIV}} atividades, {{N_QUESTOES}} questões e uma ferramenta que monta a prova do professor em minutos. Comece grátis.">
+<meta property="og:url" content="https://edumath.com.br/">
+<meta property="og:image" content="https://edumath.com.br/assets/og-edumath.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0b1c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<link rel="stylesheet" href="app/landing.css">
+<script>
+/* Porta de entrada: quem já tem conta (ou abre um link antigo do catálogo, ex.: /#matematica/3 ou /?q=juros) vai direto ao catálogo. */
+(function(){
+  try{
+    var q = location.search, h = location.hash.slice(1);
+    var secoes = ['topo','materias','como-funciona','recursos','professores','planos','faq','comecar'];
+    var legado = (h && secoes.indexOf(h) < 0) || /[?&]q=/.test(q);
+    var logado = !!localStorage.getItem('sb:user') && !/[?&]landing=1/.test(q);
+    if(legado || logado) location.replace('catalogo.html' + (legado ? q + location.hash : ''));
+  }catch(e){}
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"EduMath","url":"https://edumath.com.br/","description":"Aulas interativas de Matemática, atividades no estilo ENEM e ferramentas para professores.","inLanguage":"pt-BR"}</script>
+</head>
+<body class="lp">
+<a class="lp-skip" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ====================== HERÓI ====================== -->
+<header class="lp-hero" id="topo">
+  <div class="lp-nav" id="nav">
+    <div class="lp-wrap lp-nav-in">
+      <a class="lp-brand" href="index.html" aria-label="EduMath — início"><span class="dot"></span><span>EduMath</span></a>
+      <nav class="lp-links" id="links" aria-label="Principal">
+        <a href="catalogo.html">Aulas</a>
+        <a href="#materias">Matérias</a>
+        <a href="#professores">Para professores</a>
+        <a href="professor/prova.html?exemplo=1">EduMath Provas</a>
+        <a href="#planos">Planos</a>
+        <span class="lp-links-cta">
+          <a class="lp-btn ghost" href="login.html">Entrar</a>
+          <a class="lp-btn primary" href="login.html?modo=cadastrar">Começar grátis</a>
+        </span>
+      </nav>
+      <div class="lp-nav-r">
+        <button type="button" id="themeToggle" class="lp-icon" aria-label="Mudar tema">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </button>
+        <button type="button" id="menuBtn" class="lp-icon lp-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lp-sym" aria-hidden="true"><span style="--x:6%;--y:22%;--d:0s;--s:2.4rem">π</span><span style="--x:46%;--y:12%;--d:-2s;--s:1.7rem">∑</span><span style="--x:90%;--y:30%;--d:-4s;--s:2.6rem">√</span><span style="--x:12%;--y:78%;--d:-1s;--s:2rem">∫</span><span style="--x:52%;--y:84%;--d:-3s;--s:1.6rem">%</span><span style="--x:84%;--y:80%;--d:-5s;--s:2.2rem">x²</span></div>
+
+  <div class="lp-wrap lp-hero-in" id="conteudo">
+    <div class="lp-hero-txt">
+      <a class="lp-pill" href="professor/prova.html?exemplo=1"><span class="new">Novo</span> Exporte suas provas em Word, com equações editáveis <span aria-hidden="true">→</span></a>
+      <h1>Matemática que <span class="grad">faz sentido</span>, do 9º ano ao ENEM.</h1>
+      <p class="lp-lead">Aulas interativas com simuladores, atividades no estilo ENEM e uma ferramenta que monta a prova do professor em minutos. Comece grátis, sem cartão.</p>
+      <div class="lp-cta">
+        <a class="lp-btn primary big" href="catalogo.html#gratis">Explorar aulas grátis <span aria-hidden="true">→</span></a>
+        <a class="lp-btn ghost big" href="#professores">Sou professor(a)</a>
+      </div>
+      <ul class="lp-checks">
+        <li>Grátis para começar</li><li>Funciona no celular, até offline</li><li>Sem anúncios</li>
+      </ul>
+      <a class="lp-resume" id="retomar" href="catalogo.html" hidden><span class="k">Continuar de onde parou</span><b id="retomarTit"></b><span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="lp-vis" aria-hidden="true">
+      <div class="v-card v-lesson">
+        <div class="v-bar"><i></i><i></i><i></i><span>Aula 1 · Função quadrática</span></div>
+        <div class="v-body">
+          <div class="v-eq"><small>Mexa em <b>a</b> e veja o gráfico mudar</small><b>y = ax² + bx + c</b>
+            <div class="v-slider"><span>a</span><div class="trk"><i class="knob"></i></div></div>
+          </div>
+          <svg viewBox="0 0 320 220" class="v-graph" role="img">
+            <defs><linearGradient id="gv" x1="0" x2="1"><stop offset="0" stop-color="#a99dff"/><stop offset="1" stop-color="#44d8cf"/></linearGradient></defs>
+            <g stroke="rgba(255,255,255,.12)" stroke-width="1"><path d="M0 40H320M0 90H320M0 140H320M0 190H320M40 0V220M110 0V220M180 0V220M250 0V220"/></g>
+            <g stroke="rgba(255,255,255,.4)" stroke-width="1.4"><path d="M0 150H320M160 0V220"/></g>
+            <path fill="none" stroke="url(#gv)" stroke-width="4" stroke-linecap="round" d="M50 30 Q160 270 270 30">
+              <animate attributeName="d" dur="6s" repeatCount="indefinite" values="M50 30 Q160 270 270 30;M50 76 Q160 224 270 76;M50 30 Q160 270 270 30" keyTimes="0;.5;1" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+            </path>
+            <circle cx="160" cy="150" r="6" fill="#ffb184"/><circle cx="160" cy="150" r="6" fill="none" stroke="#ffb184" class="pulse"/>
+            <text x="172" y="172" fill="#ffd3b4" font-size="13" font-family="JetBrains Mono,monospace">vértice</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="v-card v-quiz">
+        <small>Quiz rápido</small>
+        <b>Qual é o vértice de y = x² − 4x + 3?</b>
+        <ul><li>(1, 0)</li><li class="ok"><span>(2, −1)</span><em>✓</em></li><li>(3, 0)</li></ul>
+        <p>Certo! V = (−b/2a, −Δ/4a)</p>
+      </div>
+
+      <div class="v-card v-doc">
+        <div class="paper">
+          <div class="p-h"><b>AVALIAÇÃO DE MATEMÁTICA</b><i></i><i class="s"></i></div>
+          <div class="p-q"><b>1.</b><span>Se sen x = <span class="fr"><i>3</i><i>5</i></span>, então cos x vale:</span></div>
+          <div class="p-a"><span>a) <span class="fr"><i>3</i><i>5</i></span></span><span>b) <span class="fr"><i>4</i><i>5</i></span></span><span>c) <span class="fr"><i>5</i><i>4</i></span></span></div>
+          <div class="p-l"></div><div class="p-l w"></div><div class="p-l s"></div>
+        </div>
+        <span class="badge-w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l2.2 12L12 8l5.8 10L20 6"/></svg>.docx</span>
+      </div>
+
+      <div class="v-card v-ring"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="5"/><circle cx="22" cy="22" r="17" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round" stroke-dasharray="107" stroke-dashoffset="9" transform="rotate(-90 22 22)"/></svg><div><b>92%</b><small>de acertos</small></div></div>
+      <div class="v-chip c1">7 dias seguidos</div>
+      <div class="v-chip c2">Revisão dos erros</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ====================== NÚMEROS ====================== -->
+<section class="lp-wrap lp-statswrap" aria-label="O EduMath em números">
+  <div class="lp-stats">
+    <div class="st"><b data-n="{{N_AULAS_RAW}}">{{N_AULAS}}</b><span>aulas interativas</span></div>
+    <div class="st"><b data-n="{{N_GUIAS_RAW}}">{{N_GUIAS}}</b><span>guias visuais</span></div>
+    <div class="st"><b data-n="{{N_ATIV_RAW}}">{{N_ATIV}}</b><span>atividades e trilhas</span></div>
+    <div class="st"><b data-n="{{N_QUESTOES_RAW}}">{{N_QUESTOES}}</b><span>questões no banco</span></div>
+    <div class="st"><b>R$ 0</b><span>para começar</span></div>
+  </div>
+</section>
+
+<!-- ====================== MATÉRIAS ====================== -->
+<section class="lp-sec" id="materias">
+  <div class="lp-wrap">
+    <div class="lp-head"><span class="eyebrow">O que você encontra</span><h2>Trilhas completas, do básico ao avançado</h2><p>Cada módulo tem aulas em slides, um guia visual para revisar e atividades para praticar. Comece pela primeira aula de cada trimestre, que é grátis.</p></div>
+    <div class="lp-grid3">
+      <a class="lp-card sub" href="catalogo.html#matematica" style="--acc:var(--primary);--acc2:var(--primary-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-6 8 6 8H6l5-8Z"/></svg></span>
+        <h3>Matemática</h3><p class="tag">9º ano ao 3º ano do Ensino Médio</p>
+        <p>Funções, geometria, estatística, trigonometria, sequências, probabilidade e muito mais, com simuladores e questões no estilo ENEM.</p>
+        <span class="meta"><b>{{N_AULAS_MAT}}</b> aulas · {{N_MODS_MAT}} módulos</span><span class="go">Ver trilha →</span>
+      </a>
+      <a class="lp-card sub" href="catalogo.html#educacao-financeira" style="--acc:var(--growth);--acc2:var(--growth-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.4-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5.2 1.4 5.2 4.1 0 1.2-1.1 2-2.7 2-1.2 0-2.3-.5-2.8-1.4M12 6.5V8m0 8v1.5"/></svg></span>
+        <h3>Educação Financeira</h3><p class="tag">1º ao 3º ano do Ensino Médio</p>
+        <p>Consumo consciente, juros, financiamento, investimentos e empreendedorismo, ligados ao dia a dia dos jovens.</p>
+        <span class="meta"><b>{{N_AULAS_EF}}</b> aulas · {{N_MODS_EF}} módulos</span><span class="go">Ver trilha →</span>
+      </a>
+      <a class="lp-card sub" href="catalogo.html#ena-profmat" style="--acc:var(--decay);--acc2:var(--decay-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11.5V16c0 1.4 2.2 3 5 3s5-1.6 5-3v-4.5"/></svg></span>
+        <h3>ENA · PROFMAT</h3><p class="tag">Preparação para o mestrado profissional</p>
+        <p>Aritmética, álgebra, funções, contagem, geometria e estratégia de prova para o Exame Nacional de Acesso.</p>
+        <span class="meta"><b>{{N_AULAS_ENA}}</b> aulas · {{N_MODS_ENA}} módulos</span><span class="go">Ver trilha →</span>
+      </a>
+    </div>
+    <div class="lp-grid2">
+      <a class="lp-card wide" href="simulado.html"><span class="ic sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/></svg></span><div><h3>Simulados</h3><p>Monte um simulado por tema e veja onde você está acertando e errando.</p></div><span class="go">Abrir →</span></a>
+      <a class="lp-card wide" href="revisao.html"><span class="ic sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/></svg></span><div><h3>Revisão dos erros</h3><p>As questões que você errou voltam na hora certa, para fixar de vez.</p></div><span class="go">Abrir →</span></a>
+    </div>
+    <p class="lp-soon"><b>Chegando:</b> <span>Língua Portuguesa</span><span>Língua Inglesa</span><span>Ciências</span><span>História</span><span>Geografia</span><span>Física</span><span>Química</span><span>Biologia</span></p>
+  </div>
+</section>
+
+<!-- ====================== COMO FUNCIONA ====================== -->
+<section class="lp-sec lp-alt" id="como-funciona">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Como funciona</span><h2>Três passos para estudar de verdade</h2></div>
+    <ol class="lp-steps">
+      <li><span class="n">1</span><h3>Escolha a aula</h3><p>Navegue por ano, trimestre e módulo. A primeira aula de cada trimestre é grátis, sem precisar de conta.</p></li>
+      <li><span class="n">2</span><h3>Aprenda interagindo</h3><p>Slides com gráficos que você mexe, simuladores e quizzes com retorno imediato. Nada de decorar sem entender.</p></li>
+      <li><span class="n">3</span><h3>Pratique e acompanhe</h3><p>Atividades no estilo ENEM, trilhas de prática e revisão dos erros. Seu progresso fica salvo e vira conquistas.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ====================== RECURSOS ====================== -->
+<section class="lp-sec" id="recursos">
+  <div class="lp-wrap">
+    <div class="lp-head"><span class="eyebrow">Feito para a sala de aula</span><h2>Tudo o que ajuda a aprender, no mesmo lugar</h2></div>
+    <div class="lp-feats">
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V10M12 20V4M18 20v-7"/></svg></span><h3>Simuladores</h3><p>Mude os valores e veja gráficos, figuras e resultados reagirem na hora.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>Estilo ENEM</h3><p>Questões contextualizadas, com alternativas, gabarito e resolução passo a passo.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5"/><path d="M12 8v4l3 2"/></svg></span><h3>Revisão espaçada</h3><p>Os erros voltam em intervalos certos, que é o que ajuda a memória a durar.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>No celular, até offline</h3><p>Instale como aplicativo e estude sem internet depois da primeira visita.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h9"/></svg></span><h3>Acessível</h3><p>Alto contraste, texto maior, leitura em voz alta e navegação pelo teclado.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5a3 3 0 0 1-3 3M12 13v4M8 20h8"/></svg></span><h3>Progresso e conquistas</h3><p>Sequência de dias, notas dos quizzes e o ponto onde você parou, sempre à mão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROFESSORES ====================== -->
+<section class="lp-sec" id="professores">
+  <div class="lp-wrap">
+    <div class="lp-prof">
+      <div class="pf-txt">
+        <span class="eyebrow">Para professores</span>
+        <h2>Monte provas em minutos. Acompanhe a turma sem planilha.</h2>
+        <p class="lead">O <b>EduMath Provas</b> junta um banco de {{N_QUESTOES}} questões, a folha A4 pronta e a exportação para Word. E as turmas organizam alunos, atividades e correção.</p>
+        <ul class="pf-list">
+          <li><b>Banco com filtros</b> por série, conteúdo, tipo e nível, com ENEM e questões autorais.</li>
+          <li><b>Arraste e solte</b>, 1 a 3 colunas, versões A/B e gabarito para o professor.</li>
+          <li><b>Word editável</b> (com equações de verdade) e PDF, no mesmo clique.</li>
+          <li><b>Turmas com código de convite</b>: o aluno entra, você aprova, atribui atividades e corrige.</li>
+        </ul>
+        <div class="lp-cta">
+          <a class="lp-btn primary big" href="professor/prova.html?exemplo=1">Ver uma prova pronta (sem cadastro)</a>
+          <a class="lp-btn ghost big" href="para-professores.html">Conhecer a plataforma</a>
+        </div>
+      </div>
+      <div class="pf-vis" aria-hidden="true">
+        <div class="paper big">
+          <div class="p-h"><b>AVALIAÇÃO DE MATEMÁTICA</b><small>2º trimestre</small>
+            <div class="p-box"><span>NOME</span><span>TURMA</span><span>DATA</span></div>
+          </div>
+          <div class="cols">
+            <div>
+              <div class="p-q"><b>1.</b><span>O valor de <span class="rt">√<i>50</i></span> + <span class="rt">√<i>18</i></span> é:</span></div>
+              <div class="p-a"><span>a) 8<span class="rt">√<i>2</i></span></span><span>b) 34</span></div>
+              <div class="p-q"><b>2.</b><span>A média mensal de vendas foi de:</span></div>
+              <svg viewBox="0 0 120 60" class="p-bar"><path d="M10 52H112M10 52V6" stroke="#222" stroke-width="1.2" fill="none"/><rect x="18" y="34" width="14" height="18" fill="#bbb" stroke="#222"/><rect x="40" y="18" width="14" height="34" fill="#bbb" stroke="#222"/><rect x="62" y="28" width="14" height="24" fill="#bbb" stroke="#222"/><rect x="84" y="10" width="14" height="42" fill="#bbb" stroke="#222"/></svg>
+            </div>
+            <div>
+              <div class="p-q"><b>3.</b><span>Resolva <i>x</i>² − 5<i>x</i> + 6 = 0:</span></div>
+              <div class="p-l"></div><div class="p-l w"></div><div class="p-l"></div>
+              <div class="p-q"><b>4.</b><span>Julgue (V ou F):</span></div>
+              <div class="p-l w"></div><div class="p-l s"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tag-gab">Gabarito do professor</span>
+        <span class="badge-w big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l2.2 12L12 8l5.8 10L20 6"/></svg>Word · PDF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TURMAS ====================== -->
+<section class="lp-sec lp-alt">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Turmas e atividades</span><h2>Do convite à nota, tudo em um painel</h2></div>
+    <ol class="lp-steps tight">
+      <li><span class="n">1</span><h3>Crie a turma</h3><p>Receba um código de convite para compartilhar com os alunos.</p></li>
+      <li><span class="n">2</span><h3>Aprove quem entra</h3><p>O aluno pede entrada com o código e você confirma com um clique.</p></li>
+      <li><span class="n">3</span><h3>Atribua e corrija</h3><p>Escolha uma aula ou quiz do catálogo, acompanhe o engajamento e dê o retorno.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ====================== PLANOS ====================== -->
+<section class="lp-sec" id="planos">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Planos</span><h2>Comece grátis. Assine só quando precisar de mais.</h2><p>Alunos estudam de graça. Professores usam o plano gratuito e passam para o Pro quando a rotina pedir.</p></div>
+    <div class="lp-plans">
+      <div class="pl"><h3>Aluno</h3><div class="pr">R$ 0<small>sempre</small></div><p>Para estudar sem pagar nada.</p>
+        <ul><li>Todas as aulas, guias e atividades</li><li>Simulados e revisão dos erros</li><li>Progresso e conquistas</li></ul>
+        <a class="lp-btn ghost" href="login.html?modo=cadastrar">Criar conta grátis</a></div>
+      <div class="pl"><h3>Professor Gratuito</h3><div class="pr">R$ 0<small>sempre</small></div><p>Para conhecer e usar no dia a dia.</p>
+        <ul><li>EduMath Provas com 2.800+ questões</li><li>Exporta em Word e PDF</li><li>2 turmas · alunos ilimitados</li><li>3 provas e 40 questões próprias na nuvem</li></ul>
+        <a class="lp-btn ghost" href="login.html?modo=cadastrar&amp;papel=professor">Criar conta de professor</a></div>
+    <div class="pl hot"><span class="flag">Mais escolhido</span><h3>Professor Pro</h3><div class="pr">R$ {{PRECO_MES}}<small>/mês · ou R$ {{PRECO_ANO}}/ano</small></div><p>Para quem usa toda semana.</p>
+        <ul><li>Tudo do plano gratuito</li><li>Provas e questões próprias ilimitadas na nuvem</li><li>Turmas ilimitadas</li><li>Suporte direto com o autor</li></ul>
+        <a class="lp-btn primary" href="planos.html">Quero o Pro</a></div>
+      </div>
+    <p class="lp-note">Escola ou rede de ensino? <a href="planos.html">Fale com a gente</a> sobre o plano para coordenações.</p>
+  </div>
+</section>
+
+<!-- ====================== FAQ ====================== -->
+<section class="lp-sec lp-alt" id="faq">
+  <div class="lp-wrap narrow">
+    <div class="lp-head center"><span class="eyebrow">Perguntas frequentes</span><h2>Tire suas dúvidas</h2></div>
+    <div class="lp-faq">
+      <details><summary>É realmente grátis?</summary><p>Sim. Alunos usam todas as aulas, guias e atividades com uma conta gratuita (e sem conta você acessa a primeira aula de cada trimestre). Professores têm um plano gratuito com limites e podem assinar o Pro quando quiserem.</p></details>
+      <details><summary>Preciso instalar alguma coisa?</summary><p>Não. Funciona no navegador do celular ou do computador. Se quiser, instale como aplicativo e estude offline depois da primeira visita.</p></details>
+      <details><summary>Para quais séries e matérias?</summary><p>Hoje: Matemática do 9º ano ao 3º ano do Ensino Médio, Educação Financeira e preparação para o ENA/PROFMAT. As outras matérias e anos estão em preparação.</p></details>
+      <details><summary>Como o aluno entra na turma do professor?</summary><p>O professor cria a turma e compartilha um código. O aluno cria a conta, digita o código e o professor aprova a entrada.</p></details>
+      <details><summary>Preciso de aprovação para ser professor?</summary><p>Sim. O cadastro de professor passa por uma aprovação rápida antes de liberar turmas e atividades. O EduMath Provas pode ser testado sem cadastro.</p></details>
+      <details><summary>Posso levar as provas para o Word?</summary><p>Pode. O EduMath Provas exporta um arquivo .docx editável, com as equações como equações do Word, além do PDF para imprimir.</p></details>
+      <details><summary>E os dados dos alunos?</summary><p>Usamos só o necessário (nome, e-mail e progresso) e você pode baixar ou excluir seus dados na página da conta. Veja os <a href="termos.html">termos e a política de privacidade</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CHAMADA FINAL ====================== -->
+<section class="lp-sec" id="comecar">
+  <div class="lp-wrap">
+    <div class="lp-final">
+      <h2>Pronto para estudar (ou ensinar) com mais clareza?</h2>
+      <p>Crie sua conta grátis em um minuto ou comece pela primeira aula agora mesmo.</p>
+      <div class="lp-cta center">
+        <a class="lp-btn primary big" href="login.html?modo=cadastrar">Criar conta grátis</a>
+        <a class="lp-btn ghost big" href="catalogo.html#gratis">Ver aulas grátis</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap lp-foot-in">
+    <div class="fb"><a class="lp-brand" href="index.html"><span class="dot"></span><span>EduMath</span></a><p>Matemática que faz sentido, do 9º ano ao ENEM.</p></div>
+    <div><h4>Aprender</h4><a href="catalogo.html">Catálogo de aulas</a><a href="catalogo.html#gratis">Aulas grátis</a><a href="simulado.html">Simulados</a><a href="revisao.html">Revisão dos erros</a></div>
+    <div><h4>Professores</h4><a href="para-professores.html">Para professores</a><a href="professor/prova.html?exemplo=1">EduMath Provas</a><a href="planos.html">Planos</a><a href="professor/dashboard.html">Painel do professor</a></div>
+    <div><h4>Conta</h4><a href="login.html">Entrar</a><a href="login.html?modo=cadastrar">Criar conta grátis</a><a href="conta.html">Minha conta e dados</a><a href="termos.html">Termos e privacidade</a></div>
+  </div>
+  <div class="lp-wrap lp-copy">© {{ANO}} EduMath · edumath.com.br</div>
+</footer>
+
+<script type="module" src="app/landing.js"></script>
+</body>
+</html>

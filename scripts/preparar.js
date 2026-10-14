@@ -10,6 +10,7 @@ const passos = [
   ['trava de acesso (aulas grátis x conta)', 'scripts/aplicar-acesso.js'],
   ['ferramentas (mapa, notas, glossário…)', 'scripts/aplicar-ferramentas.js'],
   ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
+  ['página inicial (números reais)', 'scripts/landing/montar.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],
   ['sincronização com a nuvem', 'scripts/testar-nuvem.js'],

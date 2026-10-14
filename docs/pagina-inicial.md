@@ -1,0 +1,9 @@
+# Página inicial (index.html) e catálogo (catalogo.html)
+
+- **index.html** é a porta de entrada: herói com visual animado, números reais, matérias, como funciona, recursos, área do professor (EduMath Provas + turmas), planos, perguntas frequentes e rodapé. Tema claro/escuro (o herói e o painel de professores são sempre escuros), responsiva, respeita "reduzir movimento".
+- **catalogo.html** é o catálogo de aulas de antes (painel de estudo com busca, matérias, módulos, progresso).
+- **Como é gerada:** `node scripts/landing/montar.js` (roda no `node scripts/preparar.js`) lê o modelo `scripts/landing/index.tpl.html` e preenche os números do catálogo (aulas, guias, atividades por matéria), do banco de questões e os preços de `app/config-venda.js`. Estilo em `app/landing.css`, interações em `app/landing.js`. **Não edite index.html à mão**: edite o modelo e gere de novo.
+- **Quem vê o quê:** quem já tem conta (`localStorage sb:user`) ou abre um link antigo do catálogo (`/#matematica/3`, `/?q=juros`) é levado direto ao `catalogo.html`; para ver a página inicial logado, use `/?landing=1`. O app instalado (PWA) abre no catálogo.
+- **Links:** tudo que apontava para o catálogo (aulas, guias, atividades, barra lateral, páginas do site) agora aponta para `catalogo.html`; a marca "EduMath" leva à página inicial.
+- **Honestidade do texto:** não há depoimentos inventados; quando o piloto gerar depoimentos reais, acrescentar uma seção. A Matemática cobre hoje do 9º ao 3º ano do EM (6º ao 8º ainda não existem).
+- **Pendente:** imagem de compartilhamento (`assets/og-edumath.jpg`) para a pré-visualização em WhatsApp/redes.

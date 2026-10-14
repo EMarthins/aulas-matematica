@@ -123,7 +123,7 @@
 
 <header class="topbar"><div class="wrap row between">
   <a class="brand" href="index.html"><span class="dot"></span> EduMath</a>
-  <nav><a href="index.html">Catálogo</a></nav>
+  <nav><a href="catalogo.html">Catálogo</a></nav>
 </div></header>
 
 <main class="wrap" style="padding:34px 20px 80px;">
@@ -796,7 +796,7 @@ function mostrarSemAcesso(u){
   $('app').hidden = true;
   $('aviso').innerHTML = '<div class="box" style="max-width:40rem"><h2>Acesso restrito</h2><p class="sub">Este painel é exclusivo da conta de administrador (<b>' + h(MASTER_EMAIL) + '</b>).</p>' +
     '<p>Você está conectado como <b>' + h(u.email || 'conta sem e-mail') + '</b>. Para acessar, saia e entre com a conta de administrador.</p>' +
-    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn sm" type="button" id="btnTrocar">Sair e trocar de conta</button><a class="btn sm secondary" href="index.html">Voltar ao catálogo</a><a class="btn sm secondary" href="admin.html?demo=1">Ver o painel com dados de exemplo</a></div></div>';
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn sm" type="button" id="btnTrocar">Sair e trocar de conta</button><a class="btn sm secondary" href="catalogo.html">Voltar ao catálogo</a><a class="btn sm secondary" href="admin.html?demo=1">Ver o painel com dados de exemplo</a></div></div>';
   $('btnTrocar').addEventListener('click', async function(){ var au = await import('./app/auth.js'); await au.sair(); location.href = 'login.html?voltar=admin.html'; });
 }
 

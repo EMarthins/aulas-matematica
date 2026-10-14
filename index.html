@@ -3,534 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>EduMath — Aulas e Guias</title>
+<title>EduMath — Matemática que faz sentido, do 9º ano ao ENEM</title>
+<meta name="description" content="Aulas interativas com simuladores, atividades no estilo ENEM, simulados e o EduMath Provas: a ferramenta que monta a prova do professor em minutos. Comece grátis.">
+<link rel="canonical" href="https://edumath.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EduMath">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="EduMath — Matemática que faz sentido, do 9º ano ao ENEM">
+<meta property="og:description" content="192 aulas interativas, 381 atividades, 2.875 questões e uma ferramenta que monta a prova do professor em minutos. Comece grátis.">
+<meta property="og:url" content="https://edumath.com.br/">
+<meta property="og:image" content="https://edumath.com.br/assets/og-edumath.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0b1c">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#382EAE">
-<meta name="description" content="Aulas interativas, guias visuais e atividades de Matemática, Educação Financeira e preparação para o ENA/PROFMAT.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23382EAE'/%3E%3Cpath d='M22 72 C40 70 52 54 62 38 C68 28 74 22 80 18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link href="assets/fonts.css" rel="stylesheet">
-<link rel="stylesheet" href="app/home.css">
-<link rel="stylesheet" href="app/sidebar.css">
-<script>try{var h=location.hash;if((/^#[a-z]/.test(h)&&h!=='#conquistas')||/[?&]q=/.test(location.search))document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+<link rel="stylesheet" href="app/style.css">
+<link rel="stylesheet" href="app/landing.css">
+<script>
+/* Porta de entrada: quem já tem conta (ou abre um link antigo do catálogo, ex.: /#matematica/3 ou /?q=juros) vai direto ao catálogo. */
+(function(){
+  try{
+    var q = location.search, h = location.hash.slice(1);
+    var secoes = ['topo','materias','como-funciona','recursos','professores','planos','faq','comecar'];
+    var legado = (h && secoes.indexOf(h) < 0) || /[?&]q=/.test(q);
+    var logado = !!localStorage.getItem('sb:user') && !/[?&]landing=1/.test(q);
+    if(legado || logado) location.replace('catalogo.html' + (legado ? q + location.hash : ''));
+  }catch(e){}
+})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"EduMath","url":"https://edumath.com.br/","description":"Aulas interativas de Matemática, atividades no estilo ENEM e ferramentas para professores.","inLanguage":"pt-BR"}</script>
 </head>
-<body>
+<body class="lp">
+<a class="lp-skip" href="#conteudo">Ir para o conteúdo</a>
 
-<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro (ideal para projetor)" title="Alternar tema claro/escuro">
-  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-</button>
+<!-- ====================== HERÓI ====================== -->
+<header class="lp-hero" id="topo">
+  <div class="lp-nav" id="nav">
+    <div class="lp-wrap lp-nav-in">
+      <a class="lp-brand" href="index.html" aria-label="EduMath — início"><span class="dot"></span><span>EduMath</span></a>
+      <nav class="lp-links" id="links" aria-label="Principal">
+        <a href="catalogo.html">Aulas</a>
+        <a href="#materias">Matérias</a>
+        <a href="#professores">Para professores</a>
+        <a href="professor/prova.html?exemplo=1">EduMath Provas</a>
+        <a href="#planos">Planos</a>
+        <span class="lp-links-cta">
+          <a class="lp-btn ghost" href="login.html">Entrar</a>
+          <a class="lp-btn primary" href="login.html?modo=cadastrar">Começar grátis</a>
+        </span>
+      </nav>
+      <div class="lp-nav-r">
+        <button type="button" id="themeToggle" class="lp-icon" aria-label="Mudar tema">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        </button>
+        <button type="button" id="menuBtn" class="lp-icon lp-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-<a class="skip" href="#painel">Ir para o conteúdo</a>
+  <div class="lp-sym" aria-hidden="true"><span style="--x:6%;--y:22%;--d:0s;--s:2.4rem">π</span><span style="--x:46%;--y:12%;--d:-2s;--s:1.7rem">∑</span><span style="--x:90%;--y:30%;--d:-4s;--s:2.6rem">√</span><span style="--x:12%;--y:78%;--d:-1s;--s:2rem">∫</span><span style="--x:52%;--y:84%;--d:-3s;--s:1.6rem">%</span><span style="--x:84%;--y:80%;--d:-5s;--s:2.2rem">x²</span></div>
 
-<header class="topbar">
-  <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Início"><span class="dot"></span><span>EduMath</span></a>
-    <label class="search" aria-label="Buscar aulas, guias e atividades">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Buscar em todas as matérias…" autocomplete="off">
-      <kbd aria-hidden="true">/</kbd>
-    </label>
-    <a href="login.html" class="login-link">Entrar <span class="hide-sm">· aluno / professor</span></a>
+  <div class="lp-wrap lp-hero-in" id="conteudo">
+    <div class="lp-hero-txt">
+      <a class="lp-pill" href="professor/prova.html?exemplo=1"><span class="new">Novo</span> Exporte suas provas em Word, com equações editáveis <span aria-hidden="true">→</span></a>
+      <h1>Matemática que <span class="grad">faz sentido</span>, do 9º ano ao ENEM.</h1>
+      <p class="lp-lead">Aulas interativas com simuladores, atividades no estilo ENEM e uma ferramenta que monta a prova do professor em minutos. Comece grátis, sem cartão.</p>
+      <div class="lp-cta">
+        <a class="lp-btn primary big" href="catalogo.html#gratis">Explorar aulas grátis <span aria-hidden="true">→</span></a>
+        <a class="lp-btn ghost big" href="#professores">Sou professor(a)</a>
+      </div>
+      <ul class="lp-checks">
+        <li>Grátis para começar</li><li>Funciona no celular, até offline</li><li>Sem anúncios</li>
+      </ul>
+      <a class="lp-resume" id="retomar" href="catalogo.html" hidden><span class="k">Continuar de onde parou</span><b id="retomarTit"></b><span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="lp-vis" aria-hidden="true">
+      <div class="v-card v-lesson">
+        <div class="v-bar"><i></i><i></i><i></i><span>Aula 1 · Função quadrática</span></div>
+        <div class="v-body">
+          <div class="v-eq"><small>Mexa em <b>a</b> e veja o gráfico mudar</small><b>y = ax² + bx + c</b>
+            <div class="v-slider"><span>a</span><div class="trk"><i class="knob"></i></div></div>
+          </div>
+          <svg viewBox="0 0 320 220" class="v-graph" role="img">
+            <defs><linearGradient id="gv" x1="0" x2="1"><stop offset="0" stop-color="#a99dff"/><stop offset="1" stop-color="#44d8cf"/></linearGradient></defs>
+            <g stroke="rgba(255,255,255,.12)" stroke-width="1"><path d="M0 40H320M0 90H320M0 140H320M0 190H320M40 0V220M110 0V220M180 0V220M250 0V220"/></g>
+            <g stroke="rgba(255,255,255,.4)" stroke-width="1.4"><path d="M0 150H320M160 0V220"/></g>
+            <path fill="none" stroke="url(#gv)" stroke-width="4" stroke-linecap="round" d="M50 30 Q160 270 270 30">
+              <animate attributeName="d" dur="6s" repeatCount="indefinite" values="M50 30 Q160 270 270 30;M50 76 Q160 224 270 76;M50 30 Q160 270 270 30" keyTimes="0;.5;1" calcMode="spline" keySplines=".4 0 .2 1;.4 0 .2 1"/>
+            </path>
+            <circle cx="160" cy="150" r="6" fill="#ffb184"/><circle cx="160" cy="150" r="6" fill="none" stroke="#ffb184" class="pulse"/>
+            <text x="172" y="172" fill="#ffd3b4" font-size="13" font-family="JetBrains Mono,monospace">vértice</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="v-card v-quiz">
+        <small>Quiz rápido</small>
+        <b>Qual é o vértice de y = x² − 4x + 3?</b>
+        <ul><li>(1, 0)</li><li class="ok"><span>(2, −1)</span><em>✓</em></li><li>(3, 0)</li></ul>
+        <p>Certo! V = (−b/2a, −Δ/4a)</p>
+      </div>
+
+      <div class="v-card v-doc">
+        <div class="paper">
+          <div class="p-h"><b>AVALIAÇÃO DE MATEMÁTICA</b><i></i><i class="s"></i></div>
+          <div class="p-q"><b>1.</b><span>Se sen x = <span class="fr"><i>3</i><i>5</i></span>, então cos x vale:</span></div>
+          <div class="p-a"><span>a) <span class="fr"><i>3</i><i>5</i></span></span><span>b) <span class="fr"><i>4</i><i>5</i></span></span><span>c) <span class="fr"><i>5</i><i>4</i></span></span></div>
+          <div class="p-l"></div><div class="p-l w"></div><div class="p-l s"></div>
+        </div>
+        <span class="badge-w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l2.2 12L12 8l5.8 10L20 6"/></svg>.docx</span>
+      </div>
+
+      <div class="v-card v-ring"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="17" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="5"/><circle cx="22" cy="22" r="17" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round" stroke-dasharray="107" stroke-dashoffset="9" transform="rotate(-90 22 22)"/></svg><div><b>92%</b><small>de acertos</small></div></div>
+      <div class="v-chip c1">7 dias seguidos</div>
+      <div class="v-chip c2">Revisão dos erros</div>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <h1 class="title" id="saudacao">O que vamos estudar hoje?</h1>
-    <p class="lede">Escolha a matéria, abra o módulo e comece. Seu progresso fica salvo neste aparelho.</p>
-    <div class="aviso-gratis" id="avisoGratis" hidden>
-      <span><b>Versão gratuita:</b> <span class="n">0</span> aulas liberadas (1 por ano e trimestre). <a href="#gratis" class="ac-ver">Ver as aulas grátis</a></span>
-      <span class="aviso-ac"><a class="ac-cria btn-p" href="login.html?modo=cadastrar">Criar conta grátis</a><a class="ac-entra" href="login.html">Entrar</a></span>
-    </div>
-    <div class="continuar" id="continuar"></div>
+<main>
+<!-- ====================== NÚMEROS ====================== -->
+<section class="lp-wrap lp-statswrap" aria-label="O EduMath em números">
+  <div class="lp-stats">
+    <div class="st"><b data-n="192">192</b><span>aulas interativas</span></div>
+    <div class="st"><b data-n="113">113</b><span>guias visuais</span></div>
+    <div class="st"><b data-n="381">381</b><span>atividades e trilhas</span></div>
+    <div class="st"><b data-n="2875">2.875</b><span>questões no banco</span></div>
+    <div class="st"><b>R$ 0</b><span>para começar</span></div>
   </div>
 </section>
 
-<main class="wrap" id="main">
-  <nav class="subjects" id="subjects" role="tablist" aria-label="Matérias"></nav>
+<!-- ====================== MATÉRIAS ====================== -->
+<section class="lp-sec" id="materias">
+  <div class="lp-wrap">
+    <div class="lp-head"><span class="eyebrow">O que você encontra</span><h2>Trilhas completas, do básico ao avançado</h2><p>Cada módulo tem aulas em slides, um guia visual para revisar e atividades para praticar. Comece pela primeira aula de cada trimestre, que é grátis.</p></div>
+    <div class="lp-grid3">
+      <a class="lp-card sub" href="catalogo.html#matematica" style="--acc:var(--primary);--acc2:var(--primary-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-6 8 6 8H6l5-8Z"/></svg></span>
+        <h3>Matemática</h3><p class="tag">9º ano ao 3º ano do Ensino Médio</p>
+        <p>Funções, geometria, estatística, trigonometria, sequências, probabilidade e muito mais, com simuladores e questões no estilo ENEM.</p>
+        <span class="meta"><b>139</b> aulas · 82 módulos</span><span class="go">Ver trilha →</span>
+      </a>
+      <a class="lp-card sub" href="catalogo.html#educacao-financeira" style="--acc:var(--growth);--acc2:var(--growth-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.4-.8-1.4-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.7 5.2 1.4 5.2 4.1 0 1.2-1.1 2-2.7 2-1.2 0-2.3-.5-2.8-1.4M12 6.5V8m0 8v1.5"/></svg></span>
+        <h3>Educação Financeira</h3><p class="tag">1º ao 3º ano do Ensino Médio</p>
+        <p>Consumo consciente, juros, financiamento, investimentos e empreendedorismo, ligados ao dia a dia dos jovens.</p>
+        <span class="meta"><b>17</b> aulas · 11 módulos</span><span class="go">Ver trilha →</span>
+      </a>
+      <a class="lp-card sub" href="catalogo.html#ena-profmat" style="--acc:var(--decay);--acc2:var(--decay-soft)">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11.5V16c0 1.4 2.2 3 5 3s5-1.6 5-3v-4.5"/></svg></span>
+        <h3>ENA · PROFMAT</h3><p class="tag">Preparação para o mestrado profissional</p>
+        <p>Aritmética, álgebra, funções, contagem, geometria e estratégia de prova para o Exame Nacional de Acesso.</p>
+        <span class="meta"><b>36</b> aulas · 20 módulos</span><span class="go">Ver trilha →</span>
+      </a>
+    </div>
+    <div class="lp-grid2">
+      <a class="lp-card wide" href="simulado.html"><span class="ic sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/></svg></span><div><h3>Simulados</h3><p>Monte um simulado por tema e veja onde você está acertando e errando.</p></div><span class="go">Abrir →</span></a>
+      <a class="lp-card wide" href="revisao.html"><span class="ic sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/></svg></span><div><h3>Revisão dos erros</h3><p>As questões que você errou voltam na hora certa, para fixar de vez.</p></div><span class="go">Abrir →</span></a>
+    </div>
+    <p class="lp-soon"><b>Chegando:</b> <span>Língua Portuguesa</span><span>Língua Inglesa</span><span>Ciências</span><span>História</span><span>Geografia</span><span>Física</span><span>Química</span><span>Biologia</span></p>
+  </div>
+</section>
 
-  <section class="panel" id="painel" tabindex="-1" aria-live="polite"></section>
+<!-- ====================== COMO FUNCIONA ====================== -->
+<section class="lp-sec lp-alt" id="como-funciona">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Como funciona</span><h2>Três passos para estudar de verdade</h2></div>
+    <ol class="lp-steps">
+      <li><span class="n">1</span><h3>Escolha a aula</h3><p>Navegue por ano, trimestre e módulo. A primeira aula de cada trimestre é grátis, sem precisar de conta.</p></li>
+      <li><span class="n">2</span><h3>Aprenda interagindo</h3><p>Slides com gráficos que você mexe, simuladores e quizzes com retorno imediato. Nada de decorar sem entender.</p></li>
+      <li><span class="n">3</span><h3>Pratique e acompanhe</h3><p>Atividades no estilo ENEM, trilhas de prática e revisão dos erros. Seu progresso fica salvo e vira conquistas.</p></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="tools" aria-label="Ferramentas de estudo">
-    <a class="tool" href="simulado.html"><span class="ic" aria-hidden="true">📝</span><span><b>Simulados</b><small>Treine com questões das aulas</small></span></a>
-    <a class="tool" href="revisao.html"><span class="ic" aria-hidden="true">🔁</span><span><b>Revisão <i class="n" id="revN" hidden></i></b><small>Repetição espaçada dos seus erros</small></span></a>
-    <button class="tool" type="button" id="btnConq"><span class="ic" aria-hidden="true">🏆</span><span><b>Conquistas</b><small>Seu progresso e sequência de dias</small></span></button>
-    <button class="tool" type="button" id="btnInstalar" hidden><span class="ic" aria-hidden="true">⬇</span><span><b>Instalar app</b><small>Use offline, como aplicativo</small></span></button>
-  </section>
+<!-- ====================== RECURSOS ====================== -->
+<section class="lp-sec" id="recursos">
+  <div class="lp-wrap">
+    <div class="lp-head"><span class="eyebrow">Feito para a sala de aula</span><h2>Tudo o que ajuda a aprender, no mesmo lugar</h2></div>
+    <div class="lp-feats">
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V10M12 20V4M18 20v-7"/></svg></span><h3>Simuladores</h3><p>Mude os valores e veja gráficos, figuras e resultados reagirem na hora.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>Estilo ENEM</h3><p>Questões contextualizadas, com alternativas, gabarito e resolução passo a passo.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5"/><path d="M12 8v4l3 2"/></svg></span><h3>Revisão espaçada</h3><p>Os erros voltam em intervalos certos, que é o que ajuda a memória a durar.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>No celular, até offline</h3><p>Instale como aplicativo e estude sem internet depois da primeira visita.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h9"/></svg></span><h3>Acessível</h3><p>Alto contraste, texto maior, leitura em voz alta e navegação pelo teclado.</p></div>
+      <div class="ft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5a3 3 0 0 1-3 3M12 13v4M8 20h8"/></svg></span><h3>Progresso e conquistas</h3><p>Sequência de dias, notas dos quizzes e o ponto onde você parou, sempre à mão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PROFESSORES ====================== -->
+<section class="lp-sec" id="professores">
+  <div class="lp-wrap">
+    <div class="lp-prof">
+      <div class="pf-txt">
+        <span class="eyebrow">Para professores</span>
+        <h2>Monte provas em minutos. Acompanhe a turma sem planilha.</h2>
+        <p class="lead">O <b>EduMath Provas</b> junta um banco de 2.875 questões, a folha A4 pronta e a exportação para Word. E as turmas organizam alunos, atividades e correção.</p>
+        <ul class="pf-list">
+          <li><b>Banco com filtros</b> por série, conteúdo, tipo e nível, com ENEM e questões autorais.</li>
+          <li><b>Arraste e solte</b>, 1 a 3 colunas, versões A/B e gabarito para o professor.</li>
+          <li><b>Word editável</b> (com equações de verdade) e PDF, no mesmo clique.</li>
+          <li><b>Turmas com código de convite</b>: o aluno entra, você aprova, atribui atividades e corrige.</li>
+        </ul>
+        <div class="lp-cta">
+          <a class="lp-btn primary big" href="professor/prova.html?exemplo=1">Ver uma prova pronta (sem cadastro)</a>
+          <a class="lp-btn ghost big" href="para-professores.html">Conhecer a plataforma</a>
+        </div>
+      </div>
+      <div class="pf-vis" aria-hidden="true">
+        <div class="paper big">
+          <div class="p-h"><b>AVALIAÇÃO DE MATEMÁTICA</b><small>2º trimestre</small>
+            <div class="p-box"><span>NOME</span><span>TURMA</span><span>DATA</span></div>
+          </div>
+          <div class="cols">
+            <div>
+              <div class="p-q"><b>1.</b><span>O valor de <span class="rt">√<i>50</i></span> + <span class="rt">√<i>18</i></span> é:</span></div>
+              <div class="p-a"><span>a) 8<span class="rt">√<i>2</i></span></span><span>b) 34</span></div>
+              <div class="p-q"><b>2.</b><span>A média mensal de vendas foi de:</span></div>
+              <svg viewBox="0 0 120 60" class="p-bar"><path d="M10 52H112M10 52V6" stroke="#222" stroke-width="1.2" fill="none"/><rect x="18" y="34" width="14" height="18" fill="#bbb" stroke="#222"/><rect x="40" y="18" width="14" height="34" fill="#bbb" stroke="#222"/><rect x="62" y="28" width="14" height="24" fill="#bbb" stroke="#222"/><rect x="84" y="10" width="14" height="42" fill="#bbb" stroke="#222"/></svg>
+            </div>
+            <div>
+              <div class="p-q"><b>3.</b><span>Resolva <i>x</i>² − 5<i>x</i> + 6 = 0:</span></div>
+              <div class="p-l"></div><div class="p-l w"></div><div class="p-l"></div>
+              <div class="p-q"><b>4.</b><span>Julgue (V ou F):</span></div>
+              <div class="p-l w"></div><div class="p-l s"></div>
+            </div>
+          </div>
+        </div>
+        <span class="tag-gab">Gabarito do professor</span>
+        <span class="badge-w big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l2.2 12L12 8l5.8 10L20 6"/></svg>Word · PDF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TURMAS ====================== -->
+<section class="lp-sec lp-alt">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Turmas e atividades</span><h2>Do convite à nota, tudo em um painel</h2></div>
+    <ol class="lp-steps tight">
+      <li><span class="n">1</span><h3>Crie a turma</h3><p>Receba um código de convite para compartilhar com os alunos.</p></li>
+      <li><span class="n">2</span><h3>Aprove quem entra</h3><p>O aluno pede entrada com o código e você confirma com um clique.</p></li>
+      <li><span class="n">3</span><h3>Atribua e corrija</h3><p>Escolha uma aula ou quiz do catálogo, acompanhe o engajamento e dê o retorno.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ====================== PLANOS ====================== -->
+<section class="lp-sec" id="planos">
+  <div class="lp-wrap">
+    <div class="lp-head center"><span class="eyebrow">Planos</span><h2>Comece grátis. Assine só quando precisar de mais.</h2><p>Alunos estudam de graça. Professores usam o plano gratuito e passam para o Pro quando a rotina pedir.</p></div>
+    <div class="lp-plans">
+      <div class="pl"><h3>Aluno</h3><div class="pr">R$ 0<small>sempre</small></div><p>Para estudar sem pagar nada.</p>
+        <ul><li>Todas as aulas, guias e atividades</li><li>Simulados e revisão dos erros</li><li>Progresso e conquistas</li></ul>
+        <a class="lp-btn ghost" href="login.html?modo=cadastrar">Criar conta grátis</a></div>
+      <div class="pl"><h3>Professor Gratuito</h3><div class="pr">R$ 0<small>sempre</small></div><p>Para conhecer e usar no dia a dia.</p>
+        <ul><li>EduMath Provas com 2.800+ questões</li><li>Exporta em Word e PDF</li><li>2 turmas · alunos ilimitados</li><li>3 provas e 40 questões próprias na nuvem</li></ul>
+        <a class="lp-btn ghost" href="login.html?modo=cadastrar&amp;papel=professor">Criar conta de professor</a></div>
+    <div class="pl hot"><span class="flag">Mais escolhido</span><h3>Professor Pro</h3><div class="pr">R$ 29<small>/mês · ou R$ 290/ano</small></div><p>Para quem usa toda semana.</p>
+        <ul><li>Tudo do plano gratuito</li><li>Provas e questões próprias ilimitadas na nuvem</li><li>Turmas ilimitadas</li><li>Suporte direto com o autor</li></ul>
+        <a class="lp-btn primary" href="planos.html">Quero o Pro</a></div>
+      </div>
+    <p class="lp-note">Escola ou rede de ensino? <a href="planos.html">Fale com a gente</a> sobre o plano para coordenações.</p>
+  </div>
+</section>
+
+<!-- ====================== FAQ ====================== -->
+<section class="lp-sec lp-alt" id="faq">
+  <div class="lp-wrap narrow">
+    <div class="lp-head center"><span class="eyebrow">Perguntas frequentes</span><h2>Tire suas dúvidas</h2></div>
+    <div class="lp-faq">
+      <details><summary>É realmente grátis?</summary><p>Sim. Alunos usam todas as aulas, guias e atividades com uma conta gratuita (e sem conta você acessa a primeira aula de cada trimestre). Professores têm um plano gratuito com limites e podem assinar o Pro quando quiserem.</p></details>
+      <details><summary>Preciso instalar alguma coisa?</summary><p>Não. Funciona no navegador do celular ou do computador. Se quiser, instale como aplicativo e estude offline depois da primeira visita.</p></details>
+      <details><summary>Para quais séries e matérias?</summary><p>Hoje: Matemática do 9º ano ao 3º ano do Ensino Médio, Educação Financeira e preparação para o ENA/PROFMAT. As outras matérias e anos estão em preparação.</p></details>
+      <details><summary>Como o aluno entra na turma do professor?</summary><p>O professor cria a turma e compartilha um código. O aluno cria a conta, digita o código e o professor aprova a entrada.</p></details>
+      <details><summary>Preciso de aprovação para ser professor?</summary><p>Sim. O cadastro de professor passa por uma aprovação rápida antes de liberar turmas e atividades. O EduMath Provas pode ser testado sem cadastro.</p></details>
+      <details><summary>Posso levar as provas para o Word?</summary><p>Pode. O EduMath Provas exporta um arquivo .docx editável, com as equações como equações do Word, além do PDF para imprimir.</p></details>
+      <details><summary>E os dados dos alunos?</summary><p>Usamos só o necessário (nome, e-mail e progresso) e você pode baixar ou excluir seus dados na página da conta. Veja os <a href="termos.html">termos e a política de privacidade</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CHAMADA FINAL ====================== -->
+<section class="lp-sec" id="comecar">
+  <div class="lp-wrap">
+    <div class="lp-final">
+      <h2>Pronto para estudar (ou ensinar) com mais clareza?</h2>
+      <p>Crie sua conta grátis em um minuto ou comece pela primeira aula agora mesmo.</p>
+      <div class="lp-cta center">
+        <a class="lp-btn primary big" href="login.html?modo=cadastrar">Criar conta grátis</a>
+        <a class="lp-btn ghost big" href="catalogo.html#gratis">Ver aulas grátis</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
-<div class="modal" id="mConq" role="dialog" aria-label="Conquistas"><div class="box">
-  <div class="row between"><h2 class="disp">Suas conquistas</h2><button type="button" class="fchip" id="fecharConq">Fechar ✕</button></div>
-  <p class="lede" style="font-size:.9rem;margin:0;">Calculadas a partir do que você já fez <b>neste aparelho</b>: aulas abertas, atividades, revisão e simulados.</p>
-  <div class="conqs" id="conqs"></div>
-</div></div>
-
-<div class="modal" id="mAcesso" role="dialog" aria-label="Entre para liberar"><div class="box" style="max-width:30rem;text-align:center">
-  <div style="font-size:2.2rem" aria-hidden="true">&#128274;</div>
-  <h2 class="disp" id="acTitulo">Esta aula é para quem tem conta</h2>
-  <p class="lede" style="margin:.4em auto 1.1em;font-size:.95rem">Sem conta você abre 1 aula por ano e trimestre. Crie sua conta grátis (ou entre) e libere todas as aulas, guias e atividades.</p>
-  <a class="btn-p" id="acCriar" href="login.html?modo=cadastrar">Criar conta grátis</a>
-  <a class="btn-s" id="acEntrar" href="login.html">Já tenho conta · Entrar</a>
-  <button type="button" class="lnk" id="acFechar" style="margin-top:10px">Agora não</button>
-</div></div>
-
-<footer>
-  <div class="wrap">
-    <span>Feito para uso em sala — funciona offline, sem instalação. <a href="termos.html" style="color:inherit;">Termos e privacidade</a> · <a href="para-professores.html" style="color:inherit;">Para professores</a> · <a href="professor/prova.html" style="color:inherit;">EduMath Provas</a></span>
-    <span class="mono" id="updated"></span>
+<footer class="lp-foot">
+  <div class="lp-wrap lp-foot-in">
+    <div class="fb"><a class="lp-brand" href="index.html"><span class="dot"></span><span>EduMath</span></a><p>Matemática que faz sentido, do 9º ano ao ENEM.</p></div>
+    <div><h4>Aprender</h4><a href="catalogo.html">Catálogo de aulas</a><a href="catalogo.html#gratis">Aulas grátis</a><a href="simulado.html">Simulados</a><a href="revisao.html">Revisão dos erros</a></div>
+    <div><h4>Professores</h4><a href="para-professores.html">Para professores</a><a href="professor/prova.html?exemplo=1">EduMath Provas</a><a href="planos.html">Planos</a><a href="professor/dashboard.html">Painel do professor</a></div>
+    <div><h4>Conta</h4><a href="login.html">Entrar</a><a href="login.html?modo=cadastrar">Criar conta grátis</a><a href="conta.html">Minha conta e dados</a><a href="termos.html">Termos e privacidade</a></div>
   </div>
+  <div class="lp-wrap lp-copy">© 2026 EduMath · edumath.com.br</div>
 </footer>
 
-<script type="module" src="app/sidebar.js"></script>
-<script type="module">
-import { MATERIAS, ICONS } from './app/catalog.js';
-import { aulasGratis, logado, linkLogin } from './app/acesso.js';
-(function(){
-  var LAST_UPDATED = '2026-10-09'; // atualize ao publicar conteúdo novo
-  var ACENTOS = ['primary', 'growth', 'decay', 'success'];
-
-  function svgIcon(name){
-    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || ICONS['grid']) + '</svg>';
-  }
-  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
-  var CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
-  function el(tag, cls, html){ var e = document.createElement(tag); if(cls) e.className = cls; if(html !== undefined) e.innerHTML = html; return e; }
-  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function jl(k, d){ try{ var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; }catch(e){ return d; } }
-  function js(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
-
-  // ---- progresso local (gravado pelas próprias páginas, sem login) ----
-  function prog(arq){ try{ return JSON.parse(localStorage.getItem('prog:' + arq) || 'null'); }catch(e){ return null; } }
-  function norm(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
-  function tipoDe(item){ return item.tipo === 'Atividade' ? 'atividade' : item.tipo === 'Guia' ? 'guia' : 'aula'; }
-  function visto(item){ var p = prog(item.arquivo); return !!(p && p.v); }
-
-  // anos em ordem crescente (9º → 2º → 3º; Parte 1 → 5)
-  function ordemAno(a){ var n = /(\d+)/.exec(a.ano); return n ? (/Parte/.test(a.ano) || +n[1] >= 6 ? +n[1] : +n[1] + 10) : 99; }
-  MATERIAS.forEach(function(m){ m.CATALOG.sort(function(a, b){ return ordemAno(a) - ordemAno(b); }); });
-
-  // ---- acesso: sem conta só abre 1 aula por ano e trimestre (a regra está em app/acesso.js) ----
-  var LOGADO = logado();
-  var LISTA_GRATIS = aulasGratis(MATERIAS), GRATIS = {};
-  LISTA_GRATIS.forEach(function(g){ GRATIS[g.item.arquivo] = 1; });
-  var ACENTO_DE = {}; MATERIAS.forEach(function(m, i){ ACENTO_DE[m.id] = i; }); // cor de cada matéria = a mesma da barra lateral
-  function acento(i){ var k = ACENTO_DE[MATERIAS[i].id]; return ACENTOS[(k == null ? 3 : k) % ACENTOS.length]; }
-  function bloqueado(item){ return !LOGADO && !GRATIS[item.arquivo]; }
-  if(!LOGADO){
-    // aba "Aulas grátis": a amostra liberada, agrupada por matéria · ano · trimestre
-    var unGratis = LISTA_GRATIS.map(function(g){ return { titulo: g.materia.nome + ' · ' + g.ano + ' · ' + g.trimestre, accent: g.unidade.accent || 'primary', icon: g.unidade.icon || 'grid', itens: [g.item] }; });
-    MATERIAS.unshift({ id: 'gratis', nome: 'Aulas grátis', icon: 'gift', lede: 'Uma aula por ano e trimestre, liberada para todos. Crie sua conta para abrir o resto.', CATALOG: [{ ano: 'Amostra', trimestres: [{ nome: 'Uma aula por ano e trimestre', unidades: unGratis }] }] });
-  }
-  var LOGIN_VOLTA = function(arq, cadastrar){ return linkLogin('', arq, cadastrar); };
-  function abreAcesso(arq, titulo){
-    document.getElementById('acTitulo').textContent = titulo ? '“' + titulo + '” é para quem tem conta' : 'Esta aula é para quem tem conta';
-    document.getElementById('acCriar').href = LOGIN_VOLTA(arq, true);
-    document.getElementById('acEntrar').href = LOGIN_VOLTA(arq, false);
-    document.getElementById('mAcesso').classList.add('on');
-  }
-
-  var estado = { q: '', tipo: 'todos', idx: 0, ano: 0, modo: 'inicio' }; // 'inicio' = abertura do site · 'materia' = matéria aberta (barra lateral)
-  var painel = document.getElementById('painel');
-  var subjectsRoot = document.getElementById('subjects');
-  var qTopo = document.getElementById('q'), qLado = document.getElementById('sb-q') || document.createElement('input'); // busca do cabeçalho (abertura) e da barra lateral (matéria aberta)
-  var qEl = qTopo;
-
-  // ---- contagens ----
-  function contaUnidade(u){
-    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: u.itens.length, mod: u.itens.length ? 1 : 0 };
-    u.itens.forEach(function(i){ var t = tipoDe(i); if(t === 'aula') c.aulas++; else if(t === 'guia') c.guias++; else c.ativ++; if(visto(i)) c.vistos++; });
-    return c;
-  }
-  function contaAno(a){
-    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: 0, mods: 0 };
-    a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ var k = contaUnidade(u); c.aulas += k.aulas; c.guias += k.guias; c.ativ += k.ativ; c.vistos += k.vistos; c.total += k.total; c.mods += k.mod; }); });
-    return c;
-  }
-  function contaMateria(m){
-    var c = { aulas: 0, guias: 0, ativ: 0, vistos: 0, total: 0, mods: 0 };
-    m.CATALOG.forEach(function(a){ var k = contaAno(a); for(var x in c) c[x] += k[x]; });
-    return c;
-  }
-  function plural(n, s, p){ return n + ' ' + (n === 1 ? s : p); }
-  function resumo(c){
-    var p = [];
-    if(c.aulas) p.push(plural(c.aulas, 'aula', 'aulas'));
-    if(c.guias) p.push(plural(c.guias, 'guia', 'guias'));
-    if(c.ativ) p.push(plural(c.ativ, 'atividade', 'atividades'));
-    return p.join(' · ');
-  }
-  function barra(v, t){ return '<span class="bar-prog" role="img" aria-label="' + v + ' de ' + t + ' vistos"><i style="width:' + (t ? Math.round(v / t * 100) : 0) + '%"></i></span>'; }
-
-  // ---- estado dos módulos abertos (lembrado entre visitas) ----
-  var abertos = jl('home:abertos', {});
-  function chave(m, a, u){ return m.id + '|' + a.ano + '|' + u.titulo; }
-  function lembrar(k, on){ if(on) abertos[k] = 1; else abertos[k] = 0; js('home:abertos', abertos); }
-
-  // ---- seleção de matéria / ano e link direto (#matematica/1) ----
-  function lerHash(){
-    var h = location.hash.replace('#', '').split('/');
-    var i = MATERIAS.findIndex(function(m){ return m.id === h[0]; });
-    if(i < 0) return null;
-    var a = parseInt(h[1], 10);
-    return { idx: i, ano: isNaN(a) ? null : Math.max(0, Math.min(MATERIAS[i].CATALOG.length - 1, a)) };
-  }
-  function aplicaModo(){ document.documentElement.classList.toggle('sb-on', estado.modo === 'materia'); window.dispatchEvent(new Event('sb:sync')); }
-  function gravarHash(){ if(estado.modo === 'materia'){ try{ history.replaceState(null, '', location.pathname + location.search + '#' + MATERIAS[estado.idx].id + '/' + estado.ano); }catch(e){} } aplicaModo(); }
-  function anoSalvo(i){ var v = jl('home:ano:' + MATERIAS[i].id, null); return v == null ? null : Math.max(0, Math.min(MATERIAS[i].CATALOG.length - 1, v)); }
-  function escolheMateria(i, ano){
-    estado.idx = i; estado.modo = 'materia';
-    estado.ano = ano != null ? ano : (anoSalvo(i) != null ? anoSalvo(i) : anoInicial(i));
-    try{ localStorage.setItem('materia-pref', MATERIAS[i].id); }catch(e){}
-    gravarHash(); renderTudo();
-  }
-  function escolheAno(a){ estado.ano = a; js('home:ano:' + MATERIAS[estado.idx].id, a); gravarHash(); renderTudo(); }
-  // ano inicial: o primeiro que ainda tem aula não vista
-  function anoInicial(i){
-    var m = MATERIAS[i];
-    for(var a = 0; a < m.CATALOG.length; a++){ var c = contaAno(m.CATALOG[a]); if(c.vistos < c.total) return a; }
-    return 0;
-  }
-
-  // ---- barra de matérias (abas grandes) ----
-  function renderMaterias(){
-    subjectsRoot.innerHTML = '';
-    MATERIAS.forEach(function(m, i){
-      var c = contaMateria(m), on = i === estado.idx;
-      var b = el('button', 'subject' + (on ? ' active' : '') + (m.id === 'gratis' ? ' gratis' : ''));
-      b.type = 'button'; b.id = 'tab-m' + i; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
-      b.setAttribute('aria-controls', 'painel');
-      b.style.setProperty('--accent', 'var(--' + acento(i) + ')');
-      b.style.setProperty('--accent-soft', 'var(--' + acento(i) + '-soft)');
-      b.innerHTML = '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="s-tx"><b>' + esc(m.nome) + '</b><small>' + (m.id === 'gratis' ? plural(c.aulas, 'aula liberada', 'aulas liberadas') : c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') : 'Em breve') + '</small></span>' + barra(c.vistos, c.total) + '<span class="s-pc">' + (c.total ? Math.round(c.vistos / c.total * 100) : 0) + '%</span>';
-      b.addEventListener('click', function(){ if(estado.q){ limpaBusca(); } escolheMateria(i); });
-      subjectsRoot.appendChild(b);
-    });
-  }
-
-  // ---- filtros ----
-  function passa(item, unidade){
-    var busca = norm(estado.q.trim());
-    if(estado.tipo === 'pend'){ if(visto(item)) return false; }
-    else if(estado.tipo !== 'todos' && estado.tipo !== tipoDe(item)) return false;
-    if(busca && norm(item.titulo + ' ' + (item.sub || '') + ' ' + item.tipo + ' ' + unidade.titulo).indexOf(busca) < 0) return false;
-    return true;
-  }
-
-  // ---- módulo (unidade) ----
-  function itemLink(item, rotulo){
-    var a = el('a', 'item'), p = prog(item.arquivo), marca = '', sel = '';
-    a.href = item.arquivo;
-    if(bloqueado(item)){ a.classList.add('bloq'); a.dataset.arq = item.arquivo; sel = '<span class="lock" title="Entre com sua conta para liberar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>'; }
-    else if(!LOGADO && GRATIS[item.arquivo]) sel = '<span class="gratis">Grátis</span>';
-    if(p && p.v){ a.classList.add('done'); marca = '<span class="prog" title="visto neste aparelho' + (p.t ? ' · melhor nota ' + p.s + '/' + p.t : '') + '">' + (p.t ? p.s + '/' + p.t : '✓') + '</span>'; }
-    a.innerHTML = '<span class="badge">' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + sel + '<span class="arrow">' + ARROW + '</span>';
-    return a;
-  }
-  function grupo(titulo, itens, rotuloFn){
-    if(!itens.length) return null;
-    var g = el('div', 'grupo');
-    g.appendChild(el('div', 'g-tit', titulo + ' <span>' + itens.length + '</span>'));
-    var l = el('div', 'item-list');
-    itens.forEach(function(i){ l.appendChild(itemLink(i, rotuloFn(i))); });
-    g.appendChild(l); return g;
-  }
-  function modulo(m, a, tri, u, num, o){
-    if(!u.itens.length){
-      if(estado.tipo !== 'todos' || norm(estado.q.trim())) return null;
-      var v = el('div', 'mod vazia');
-      v.style.setProperty('--accent', 'var(--' + u.accent + ')'); v.style.setProperty('--accent-soft', 'var(--' + u.accent + '-soft)');
-      v.innerHTML = '<div class="vz"><span class="m-ic">' + svgIcon(u.icon) + '</span><span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + '</span><b>' + esc(u.titulo) + '</b><small>Em breve</small></span></div>';
-      return v;
-    }
-    var visiveis = u.itens.filter(function(i){ return passa(i, u); });
-    if(!visiveis.length) return null;
-    var c = contaUnidade(u), k = chave(m, a, u);
-    var d = el('details', 'mod'); d.dataset.k = k;
-    d.style.setProperty('--accent', 'var(--' + u.accent + ')'); d.style.setProperty('--accent-soft', 'var(--' + u.accent + '-soft)');
-    var aberto = o.forcaAberto || abertos[k] === 1 || (abertos[k] == null && o.sugerido === u);
-    d.open = !!aberto;
-    var feito = c.vistos === c.total && c.total > 0;
-    var s = el('summary', null,
-      '<span class="m-ic">' + svgIcon(u.icon) + '</span>' +
-      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + '</small></span>' +
-      '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
-      '<span class="chev">' + CHEV + '</span>');
-    d.appendChild(s);
-    var body = el('div', 'mod-body');
-    var aulas = visiveis.filter(function(i){ return tipoDe(i) === 'aula'; }), guias = visiveis.filter(function(i){ return tipoDe(i) === 'guia'; }), ativ = visiveis.filter(function(i){ return tipoDe(i) === 'atividade'; });
-    [grupo('Aulas', aulas, function(i){ return i.tipo; }), grupo('Guia visual', guias, function(i){ return i.tipo; }), grupo('Atividades', ativ, function(i){ return i.sub || 'Atividade'; })].forEach(function(g){ if(g) body.appendChild(g); });
-    var rv = u.revisado || m.revisado || '2026-09-22';
-    var meses = (Date.now() - new Date(rv + 'T00:00:00').getTime()) / 2592e6;
-    body.appendChild(el('div', 'rev-flag' + (meses > 6 ? ' velho' : ''), 'conteúdo revisado em ' + new Date(rv + 'T00:00:00').toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }) + (meses > 6 ? ' · precisa de revisão' : '')));
-    d.appendChild(body);
-    d.addEventListener('toggle', function(){ if(!o.forcaAberto) lembrar(k, d.open); });
-    return d;
-  }
-
-  // ---- painel da matéria ----
-  function renderPainel(){
-    var m = MATERIAS[estado.idx], a = m.CATALOG[estado.ano];
-    painel.innerHTML = '';
-    painel.setAttribute('role', 'tabpanel'); painel.setAttribute('aria-labelledby', 'tab-m' + estado.idx);
-    painel.style.setProperty('--accent', 'var(--' + acento(estado.idx) + ')');
-    painel.style.setProperty('--accent-soft', 'var(--' + acento(estado.idx) + '-soft)');
-
-    var inicio = estado.modo === 'inicio', topo = el('div', 'p-head'), cMat = contaMateria(m);
-    if(!inicio) topo.appendChild(el('h2', 'p-titulo', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span>' + (cMat.total ? '<small>' + cMat.vistos + ' de ' + cMat.total + ' vistos</small>' : '<small>em breve</small>')));
-    var destaque = null;
-    if(m.destaque){ destaque = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); destaque.href = m.destaque.url; }
-
-    // abas de ano / parte
-    var tabs = el('div', 'years'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Ano / parte');
-    m.CATALOG.forEach(function(an, i){
-      var c = contaAno(an), on = i === estado.ano;
-      var b = el('button', 'year' + (on ? ' active' : ''), '<b>' + esc(an.ano) + '</b><small>' + (c.total ? c.vistos + '/' + c.total : 'em breve') + '</small>');
-      b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
-      b.addEventListener('click', function(){ escolheAno(i); });
-      tabs.appendChild(b);
-    });
-    var tabsEl = tabs; teclasAbas(tabs); teclasAbas(subjectsRoot);
-
-    // filtros: um botão de três pontinhos com menu
-    var f = el('div', 'filtros');
-    var ROT = { todos: 'Tudo', aula: 'Aulas', guia: 'Guias', atividade: 'Atividades', pend: 'Ainda não vistos' };
-    if(estado.tipo !== 'todos'){
-      var ativo = el('button', 'fchip on', ROT[estado.tipo] + ' ✕'); ativo.type = 'button'; ativo.title = 'Limpar filtro';
-      ativo.addEventListener('click', function(){ estado.tipo = 'todos'; renderPainel(); }); f.appendChild(ativo);
-    }
-    var mais = el('div', 'mais');
-    var bt = el('button', 'mais-bt', '<span aria-hidden="true">⋯</span>'); bt.type = 'button'; bt.setAttribute('aria-label', 'Filtrar e organizar módulos'); bt.setAttribute('aria-haspopup', 'menu'); bt.setAttribute('aria-expanded', 'false');
-    var menu = el('div', 'mais-menu'); menu.setAttribute('role', 'menu'); menu.hidden = true;
-    Object.keys(ROT).forEach(function(k){
-      var b = el('button', 'mi' + (estado.tipo === k ? ' on' : ''), ROT[k]); b.type = 'button'; b.setAttribute('role', 'menuitemradio'); b.setAttribute('aria-checked', estado.tipo === k);
-      b.addEventListener('click', function(){ estado.tipo = k; renderPainel(); });
-      menu.appendChild(b);
-    });
-    menu.appendChild(el('hr', 'mi-sep'));
-    var ex = el('button', 'mi', 'Expandir tudo'), re = el('button', 'mi', 'Recolher tudo'); ex.type = re.type = 'button'; ex.setAttribute('role', 'menuitem'); re.setAttribute('role', 'menuitem');
-    ex.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = true; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
-    re.addEventListener('click', function(){ painel.querySelectorAll('details.mod').forEach(function(d){ d.open = false; }); menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); });
-    menu.appendChild(ex); menu.appendChild(re);
-    function fecha(){ menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', fora); document.removeEventListener('keydown', esc27); }
-    function fora(e){ if(!mais.contains(e.target)) fecha(); }
-    function esc27(e){ if(e.key === 'Escape'){ fecha(); bt.focus(); } }
-    bt.addEventListener('click', function(e){
-      e.stopPropagation();
-      if(menu.hidden){ menu.hidden = false; bt.setAttribute('aria-expanded', 'true'); document.addEventListener('click', fora); document.addEventListener('keydown', esc27); }
-      else fecha();
-    });
-    mais.appendChild(bt); mais.appendChild(menu); f.appendChild(mais);
-    if(inicio){ if(destaque) painel.appendChild(destaque); painel.appendChild(tabsEl); painel.appendChild(f); }
-    else { topo.appendChild(f); painel.appendChild(topo); if(destaque) painel.appendChild(destaque); painel.appendChild(tabsEl); }
-
-    // módulos
-    var lista = el('div', 'mods'), n = 0, exibidos = 0, sug = sugerida(estado.idx);
-    var multi = a.trimestres.length > 1, forca = estado.tipo !== 'todos';
-    a.trimestres.forEach(function(tri){
-      var visTri = tri.unidades.filter(function(u){ return u.itens.length ? u.itens.some(function(i){ return passa(i, u); }) : (estado.tipo === 'todos' && !norm(estado.q.trim())); });
-      if(!visTri.length) return;
-      if(multi) lista.appendChild(el('h3', 'tri-tit', esc(tri.nome)));
-      tri.unidades.forEach(function(u, ui){
-        var d = modulo(m, a, tri, u, ++n, { forcaAberto: forca, sugerido: sug && sug.unidade === u ? u : null });
-        if(d){ lista.appendChild(d); exibidos++; }
-      });
-    });
-    if(!exibidos){
-      var v = el('div', 'vazio', 'Nada encontrado com esse filtro.'); var lb = el('button', 'fchip', 'Limpar filtro'); lb.type = 'button';
-      lb.addEventListener('click', function(){ estado.tipo = 'todos'; renderPainel(); }); v.appendChild(lb); lista.appendChild(v);
-    }
-    painel.appendChild(lista);
-  }
-
-  // ---- busca (todas as matérias) ----
-  function renderBusca(){
-    painel.innerHTML = ''; painel.removeAttribute('aria-labelledby');
-    painel.style.setProperty('--accent', 'var(--primary)'); painel.style.setProperty('--accent-soft', 'var(--primary-soft)');
-    var lista = el('div', 'mods'), total = 0, mods = 0;
-    MATERIAS.forEach(function(m){
-      if(m.id === 'gratis') return;
-      m.CATALOG.forEach(function(a){
-        var n = 0, blocos = [];
-        a.trimestres.forEach(function(tri){ tri.unidades.forEach(function(u){
-          n++; var d = modulo(m, a, tri, u, n, { forcaAberto: true }); if(d){ blocos.push(d); mods++; total += u.itens.filter(function(i){ return passa(i, u); }).length; }
-        }); });
-        if(blocos.length){ lista.appendChild(el('h3', 'tri-tit', esc(m.nome) + ' · ' + esc(a.ano))); blocos.forEach(function(b){ lista.appendChild(b); }); }
-      });
-    });
-    var head = el('div', 'p-head');
-    head.appendChild(el('p', 'p-lede', total ? '<b>' + plural(total, 'resultado', 'resultados') + '</b> para “' + esc(estado.q.trim()) + '” em ' + plural(mods, 'módulo', 'módulos') + '.' : ''));
-    var lim = el('button', 'lnk', 'Limpar busca ✕'); lim.type = 'button'; lim.addEventListener('click', limpaBusca); head.appendChild(lim);
-    painel.appendChild(head);
-    if(!total){ var v = el('div', 'vazio', 'Nada encontrado para “' + esc(estado.q.trim()) + '”. Tente outra palavra (ex.: “juros”, “função”, “triângulo”).'); painel.appendChild(v); }
-    else painel.appendChild(lista);
-  }
-  function limpaBusca(){ estado.q = ''; qTopo.value = ''; qLado.value = ''; renderTudo(); }
-
-  function renderTudo(){
-    var buscando = !!norm(estado.q.trim());
-    subjectsRoot.classList.toggle('dim', buscando);
-    renderMaterias();
-    if(buscando) renderBusca(); else renderPainel();
-    renderContinuar(); marcadores();
-  }
-
-  // acessibilidade: setas esquerda/direita nas abas
-  function teclasAbas(box){
-    if(box.dataset.k) return; box.dataset.k = 1;
-    box.addEventListener('keydown', function(e){
-      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      var tabs = [].slice.call(box.querySelectorAll('[role=tab]')), i = tabs.indexOf(document.activeElement); if(i < 0) return;
-      var j = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length; tabs[j].focus(); tabs[j].click(); e.preventDefault();
-      setTimeout(function(){ var t = box.querySelectorAll('[role=tab]')[j]; if(t) t.focus(); }, 0);
-    });
-  }
-
-  // ---- "continuar de onde parou" e "próxima sugerida" ----
-  function achaItem(arq){ var r = null; MATERIAS.forEach(function(m, mi){ if(m.id === 'gratis') return; m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(i.arquivo === arq) r = { item: i, unidade: u, ano: a.ano, mi: mi }; }); }); }); }); }); return r; }
-  function sugerida(idx){
-    var m = MATERIAS[idx]; var achado = null;
-    m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ if(!achado && i.tipo.indexOf('Aula') === 0){ var p = prog(i.arquivo); if(!(p && p.v)) achado = { item: i, unidade: u, ano: a.ano }; } }); }); }); });
-    return achado;
-  }
-  function renderContinuar(){
-    var box = document.getElementById('continuar'); box.innerHTML = '';
-    var u = null; try{ u = JSON.parse(localStorage.getItem('prog:ultimo') || 'null'); }catch(e){}
-    if(u && u.a && achaItem(u.a)){ var a = document.createElement('a'); a.className = 'cont-card'; a.href = u.a + (u.s > 0 ? '#s=' + (u.s + 1) : '');
-      a.innerHTML = '<small>▶ Continuar de onde parou</small><b>' + achaItem(u.a).item.titulo + '</b><span>' + (u.s > 0 ? 'slide ' + (u.s + 1) + ' · ' : '') + achaItem(u.a).unidade.titulo + '</span>'; box.appendChild(a); }
-    var s = sugerida(estado.idx);
-    if(s){ var b = document.createElement('a'); b.className = 'cont-card'; b.href = s.item.arquivo; b.innerHTML = '<small>★ Próxima aula sugerida</small><b>' + s.item.titulo + '</b><span>' + s.ano + ' · ' + s.unidade.titulo + '</span>'; box.appendChild(b); }
-  }
-
-  // ---- revisão pendente, sequência de dias e conquistas ----
-  function jl(k, d){ try{ var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; }catch(e){ return d; } }
-  function sequencia(){
-    var dias = jl('prog:dias', []); if(!dias.length) return 0; var set = {}; dias.forEach(function(d){ set[d] = 1; });
-    var n = 0, d = new Date(); function f(x){ return x.getFullYear() + '-' + ('0' + (x.getMonth() + 1)).slice(-2) + '-' + ('0' + x.getDate()).slice(-2); }
-    if(!set[f(d)]) d.setDate(d.getDate() - 1);
-    while(set[f(d)]){ n++; d.setDate(d.getDate() - 1); }
-    return n;
-  }
-  function coletaProgresso(){
-    var vistos = 0, aulas = 0, ativ = 0, perfeitas = 0;
-    MATERIAS.forEach(function(m){ if(m.id === 'gratis') return; m.CATALOG.forEach(function(a){ a.trimestres.forEach(function(t){ t.unidades.forEach(function(u){ u.itens.forEach(function(i){ var p = prog(i.arquivo); if(!(p && p.v)) return; vistos++; if(i.tipo.indexOf('Aula') === 0) aulas++; if(i.tipo === 'Atividade' && p.t){ ativ++; if(p.s === p.t) perfeitas++; } }); }); }); }); });
-    return { vistos: vistos, aulas: aulas, ativ: ativ, perfeitas: perfeitas };
-  }
-  function renderConquistas(){
-    var c = coletaProgresso(), seq = sequencia(), dom = +(localStorage.getItem('rev:dominadas') || 0), sims = jl('sim:hist', []), bom = sims.some(function(s){ return s.a / s.n >= .8; });
-    var L = [
-      ['🌱', 'Primeiro passo', 'Abra sua primeira aula', Math.min(1, c.aulas), 1],
-      ['📚', 'Estudante dedicado', 'Abra 10 aulas', Math.min(10, c.aulas), 10],
-      ['🏫', 'Maratonista', 'Abra 25 aulas', Math.min(25, c.aulas), 25],
-      ['🎯', 'Mão na massa', 'Conclua 10 atividades', Math.min(10, c.ativ), 10],
-      ['💯', 'Nota máxima', 'Gabarite uma atividade', Math.min(1, c.perfeitas), 1],
-      ['🏅', 'Colecionador de 10', 'Gabarite 10 atividades', Math.min(10, c.perfeitas), 10],
-      ['🔥', '3 dias seguidos', 'Estude 3 dias seguidos', Math.min(3, seq), 3],
-      ['⚡', 'Semana de fogo', 'Estude 7 dias seguidos', Math.min(7, seq), 7],
-      ['🔁', 'Persistente', 'Domine 1 questão na Revisão', Math.min(1, dom), 1],
-      ['🧠', 'Memória de elefante', 'Domine 10 questões', Math.min(10, dom), 10],
-      ['📝', 'Simulado feito', 'Termine um simulado', Math.min(1, sims.length), 1],
-      ['🏆', 'Mandou bem', 'Tire 80% ou mais em um simulado', bom ? 1 : 0, 1]
-    ];
-    var box = document.getElementById('conqs'); box.innerHTML = '';
-    L.forEach(function(x){ var ok = x[3] >= x[4]; var d = document.createElement('div'); d.className = 'conq' + (ok ? ' on' : ''); d.innerHTML = '<div class="ic">' + x[0] + '</div><b>' + x[1] + '</b><span>' + x[2] + '</span><i><u style="width:' + Math.round(x[3] / x[4] * 100) + '%"></u></i><span style="font-size:.7rem">' + x[3] + '/' + x[4] + (ok ? ' ✔' : '') + '</span>'; box.appendChild(d); });
-    return { feitas: L.filter(function(x){ return x[3] >= x[4]; }).length, total: L.length, seq: seq };
-  }
-  function marcadores(){
-    var due = jl('rev:itens', []).filter(function(x){ return x.due <= Date.now(); }).length, n = document.getElementById('revN');
-    n.hidden = !due; n.textContent = due;
-    var r = renderConquistas(); document.getElementById('btnConq').textContent = '🏆 Conquistas ' + r.feitas + '/' + r.total + (r.seq > 1 ? ' · 🔥 ' + r.seq + ' dias' : '');
-    window.dispatchEvent(new Event('sb:sync'));
-  }
-  function abreConq(){ renderConquistas(); document.getElementById('mConq').classList.add('on'); }
-  window.addEventListener('sb:conquistas', abreConq);
-  document.getElementById('btnConq').addEventListener('click', abreConq);
-  document.getElementById('fecharConq').addEventListener('click', function(){ document.getElementById('mConq').classList.remove('on'); });
-  document.getElementById('mConq').addEventListener('click', function(e){ if(e.target === this) this.classList.remove('on'); });
-  // instalar como app
-  var evInst = null;
-  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); evInst = e; document.getElementById('btnInstalar').hidden = false; });
-  document.getElementById('btnInstalar').addEventListener('click', function(){ if(evInst){ evInst.prompt(); evInst = null; this.hidden = true; } });
-  if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
-
-  // busca
-  var qTimer = null;
-  [qTopo, qLado].forEach(function(c){ c.addEventListener('input', function(){ qEl = c; (c === qTopo ? qLado : qTopo).value = c.value; clearTimeout(qTimer); qTimer = setTimeout(function(){ estado.q = c.value; renderTudo(); }, 140); }); });
-  document.addEventListener('keydown', function(e){
-    if(e.key === '/' && estado.modo === 'inicio' && document.activeElement !== qTopo && !/INPUT|TEXTAREA|SELECT/.test((document.activeElement || {}).tagName || '')){ e.preventDefault(); qTopo.focus(); }
-    if(e.key === 'Escape' && (document.activeElement === qTopo || document.activeElement === qLado)){ limpaBusca(); document.activeElement.blur(); }
-  });
-  window.addEventListener('pageshow', function(e){ if(e.persisted) renderTudo(); });
-  // aulas bloqueadas: um clique abre o aviso "entre para liberar" em vez de abrir a aula
-  painel.addEventListener('click', function(e){
-    var a = e.target.closest ? e.target.closest('a.item.bloq') : null;
-    if(a){ e.preventDefault(); abreAcesso(a.dataset.arq, (a.querySelector('.txt') || {}).textContent); }
-  });
-  var mAc = document.getElementById('mAcesso');
-  document.getElementById('acFechar').addEventListener('click', function(){ mAc.classList.remove('on'); });
-  mAc.addEventListener('click', function(e){ if(e.target === mAc) mAc.classList.remove('on'); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') mAc.classList.remove('on'); });
-  if(!LOGADO){
-    var av = document.getElementById('avisoGratis'); av.hidden = false;
-    av.querySelector('.n').textContent = LISTA_GRATIS.length;
-    av.querySelector('.ac-cria').href = LOGIN_VOLTA('', true); av.querySelector('.ac-entra').href = LOGIN_VOLTA('', false);
-    av.querySelector('.ac-ver').addEventListener('click', function(e){ e.preventDefault(); location.hash = 'gratis'; });
-  }
-  window.addEventListener('hashchange', function(){
-    var h = lerHash();
-    if(h){ var mudou = estado.modo !== 'materia' || h.idx !== estado.idx || (h.ano != null && h.ano !== estado.ano); estado.modo = 'materia'; estado.idx = h.idx; estado.ano = h.ano != null ? h.ano : anoInicial(h.idx); if(mudou) renderTudo(); else aplicaModo(); }
-    else if(location.hash === '#conquistas'){ abreConq(); }
-    else if(estado.modo !== 'inicio'){ estado.modo = 'inicio'; renderTudo(); aplicaModo(); }
-  });
-
-  // saudação conforme o horário
-  var hr = new Date().getHours();
-  document.getElementById('saudacao').textContent = (hr < 5 ? 'Boa madrugada!' : hr < 12 ? 'Bom dia!' : hr < 18 ? 'Boa tarde!' : 'Boa noite!') + ' O que vamos estudar hoje?';
-
-  // matéria inicial: link direto → última usada → primeira
-  var ini = lerHash(), idx0 = MATERIAS.findIndex(function(m){ return m.id !== 'gratis'; });
-  if(ini){ idx0 = ini.idx; }
-  else { try{ var sm = localStorage.getItem('materia-pref'); var f = MATERIAS.findIndex(function(m){ return m.id === sm; }); if(f >= 0) idx0 = f; }catch(e){} }
-  estado.idx = idx0;
-  estado.ano = ini && ini.ano != null ? ini.ano : (anoSalvo(idx0) != null ? anoSalvo(idx0) : anoInicial(idx0));
-  var pq = new URLSearchParams(location.search).get('q');
-  estado.modo = (ini || pq) ? 'materia' : 'inicio';
-  if(pq){ qTopo.value = qLado.value = pq; estado.q = pq; qEl = qLado; }
-  gravarHash(); renderTudo();
-  if(location.hash === '#conquistas') abreConq();
-
-  var d = new Date(LAST_UPDATED + 'T00:00:00');
-  document.getElementById('updated').textContent = 'Atualizado em ' + d.toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' });
-
-  // ============ THEME TOGGLE ============
-  var root = document.documentElement;
-  var btn = document.getElementById('themeToggle');
-  var sunIcon = btn.querySelector('.i-sun');
-  var moonIcon = btn.querySelector('.i-moon');
-  var KEY = 'theme-pref-hub';
-
-  function systemTheme(){
-    try{ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-    catch(e){ return 'dark'; }
-  }
-  function getStored(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
-  function setStored(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
-  function apply(theme){
-    root.setAttribute('data-theme', theme);
-    var isDark = theme === 'dark';
-    if(isDark){ sunIcon.removeAttribute('hidden'); moonIcon.setAttribute('hidden',''); }
-    else{ sunIcon.setAttribute('hidden',''); moonIcon.removeAttribute('hidden'); }
-    btn.setAttribute('aria-label', isDark ? 'Mudar para modo claro (ideal para projetor)' : 'Mudar para modo escuro');
-    btn.title = isDark ? 'Modo claro — ideal para sala iluminada / projetor' : 'Modo escuro';
-  }
-  apply(getStored() || systemTheme());
-  btn.addEventListener('click', function(){
-    var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    var next = current === 'dark' ? 'light' : 'dark';
-    apply(next);
-    setStored(next);
-  });
-})();
-</script>
+<script type="module" src="app/landing.js"></script>
 </body>
 </html>
-
