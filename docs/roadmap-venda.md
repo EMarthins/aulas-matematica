@@ -59,7 +59,7 @@ A lista detalhada abaixo é a original (itens soltos); o plano acima é a ordem 
 - [ ] **Meio de cobrança:** abrir conta no Mercado Pago/Asaas/Stripe (ou Kiwify/Hotmart) e me passar as chaves quando for automatizar. Até lá, pré-venda manual por Pix.
 - [ ] **Preencher `app/config-venda.js`:** WhatsApp, e-mail, chave Pix, preços.
 - [x] **Administrador:** fixado em 2026-10-14 na conta eduardosiqueirar7@gmail.com (UID e e-mail nas regras; não usa mais a coleção `admins`). Ver docs/admin-painel.md.
-- [ ] **Publicar as regras novas do Firestore** (admin master + aprovação de professores + leitura do painel admin). Última versão publicada: 2026-10-12. Republicar sempre que `firestore.rules` mudar (o admin.html tem o botão "Copiar regras").
+- [x] **Regras do Firestore publicadas** em 2026-10-14 (admin master por UID, aprovação de professores, painel admin, conversão aluno→professor; publicadas com autorização do usuário). Republicar sempre que `firestore.rules` mudar (o admin.html tem o botão "Copiar regras").
 - [ ] **Testar com contas reais** (o Claude não cria contas): roteiro em `docs/teste-contas.md`.
 - [ ] **Decidir preços e o que o plano gratuito inclui** (hoje: 3 provas na nuvem, 40 questões próprias, 2 turmas).
 - [ ] **Canal de suporte** (WhatsApp/e-mail) e quem responde.

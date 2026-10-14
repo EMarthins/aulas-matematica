@@ -19,3 +19,6 @@ Publicar `firestore.rules` no console do Firebase (Firestore → Regras → cola
 
 ## Verificação feita em 2026-10-14 (com a conta master, dados reais)
 Painel carregou (professores, alunos, turmas); escrita real de anotação, plano Pro/Gratuito e status; professor sem `status` (antigo) cria turma; professor suspenso recebe `permission-denied` ao criar turma e vê a tela "Acesso suspenso"; reativado voltou a criar. Contas de teste restauradas.
+
+## Regras publicadas (2026-10-14, versão das 14h57)
+Incluem a conversão aluno→professor. Primeira conversão: João Antônio Micena Machado Júnior (jammjunior7@gmail.com) → professor aprovado, Pro até 14/10/2027, anotação "cortesia de 1 ano". Observação: para publicar pelo Chrome, o editor das regras é CodeMirror 6; o texto foi inserido por `document.querySelector('.cm-content').cmView.view.dispatch(...)` e conferido por soma de verificação contra firestore.rules.
