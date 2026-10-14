@@ -291,6 +291,16 @@ async function apiFirebase(){
       });
       if('status' in dados){ o.statusEm = F.serverTimestamp(); o.statusPor = ADM.uid; }
       await F.updateDoc(F.doc(db, 'teachers', uid), o);
+    },
+    // Converte uma conta de aluno em professor(a) já aprovado(a): troca o papel em users e cria teachers/{uid}.
+    async tornarProfessor(uid, d){
+      var b = F.writeBatch(db);
+      b.update(F.doc(db, 'users', uid), { role: 'professor' });
+      var t = { nome: d.nome, email: d.email, plano: d.plano, status: 'approved', statusEm: F.serverTimestamp(), statusPor: ADM.uid, statusNota: 'Convertido de aluno pelo administrador' };
+      if(d.plano !== 'free') t.planoAte = F.Timestamp.fromDate(d.planoAte);
+      if(d.planoNota) t.planoNota = d.planoNota;
+      b.set(F.doc(db, 'teachers', uid), t);
+      await b.commit();
     }
   };
 }
@@ -326,6 +336,7 @@ function apiDemo(){
   var dados = { u: users.concat(alunos), t: teachers, c: turmas, m: mats, a: ativs, s: subs, falta: {} };
   return {
     async carregar(){ await new Promise(function(r){ setTimeout(r, 350); }); return JSON.parse(JSON.stringify(dados), function(k, v){ return typeof v === 'string' && /^\d{4}-\d\d-\d\dT/.test(v) ? new Date(v) : v; }); },
+    async tornarProfessor(uid, d){ await new Promise(function(r){ setTimeout(r, 250); }); var u = dados.u.find(function(x){ return x.uid === uid; }); u.role = 'professor'; dados.t.push({ uid: uid, nome: d.nome, email: d.email, plano: d.plano, planoAte: d.plano === 'free' ? null : d.planoAte, planoNota: d.planoNota || '', status: 'approved', statusEm: new Date(), statusNota: 'Convertido de aluno pelo administrador', criado: u.criado }); },
     async salvarProf(uid, o){ await new Promise(function(r){ setTimeout(r, 250); }); var t = dados.t.find(function(x){ return x.uid === uid; }); Object.keys(o).forEach(function(k){ t[k] = o[k]; }); if('status' in o) t.statusEm = new Date(); }
   };
 }
@@ -561,6 +572,7 @@ function dlgAluno(uid){
   var subs = a.subs.slice().sort(function(x, y){ return (y.em || 0) - (x.em || 0); }).map(function(s){ return '<tr><td>' + h(s.titulo) + '</td><td>' + (NOMEST[s.status] || h(s.status)) + '</td><td>' + (s.nota != null ? s.nota + (s.total ? '/' + s.total : '') : '—') + '</td><td>' + dd(s.em) + '</td></tr>'; }).join('');
   abrirDlg('<div class="dl-top"><div><h2>' + h(a.nome) + '</h2><div class="hint" style="margin:2px 0 0">' + h(a.email) + '</div></div><button class="x" type="button" data-a="fechar" aria-label="Fechar">✕</button></div>' +
     '<div class="sec"><h3>Conta</h3><dl class="kv"><dt>Cadastrado em</dt><dd>' + dt(a.criado) + '</dd><dt>Último acesso</dt><dd>' + (a.acesso ? dt(a.acesso) + ' (' + rel(a.acesso) + ')' : 'sem registro') + '</dd><dt>Total de acessos</dt><dd>' + (a.acessos || '—') + '</dd><dt>Atividades feitas</dt><dd>' + a.nFeitas + (a.nAtrib ? ' de ' + a.nAtrib + ' atribuídas' : '') + '</dd><dt>Identificador</dt><dd><code class="uid">' + h(a.uid) + '</code></dd></dl></div>' +
+    '<div class="sec"><h3>Tipo de conta</h3><div class="linha"><span class="pill info">Aluno(a)</span><button class="btn sm" type="button" data-a="virarProf" data-u="' + h(uid) + '">Tornar professor(a)…</button></div><div class="hint">Passa esta conta para professor(a), já aprovada, e você escolhe o plano. As matrículas em turmas ficam guardadas, mas deixam de aparecer no painel de aluno.</div></div>' +
     '<div class="sec"><h3>Turmas</h3>' + (mats ? '<table class="mini"><thead><tr><th>Turma</th><th>Professor(a)</th><th>Situação</th><th>Pedido em</th></tr></thead><tbody>' + mats + '</tbody></table>' : '<div class="vazio">Ainda não entrou em nenhuma turma.</div>') + '</div>' +
     '<div class="sec"><h3>Atividades</h3>' + (subs ? '<table class="mini"><thead><tr><th>Atividade</th><th>Situação</th><th>Nota</th><th>Data</th></tr></thead><tbody>' + subs + '</tbody></table>' : '<div class="vazio">Nenhuma atividade registrada.</div>') + '</div>');
 }
@@ -613,6 +625,32 @@ async function salvarPlano(uid){
   }
   if(ok) dlgProf(uid);
 }
+function escolherPlanoProf(a){
+  return new Promise(function(ok){
+    var d = document.createElement('dialog'); d.style.width = 'min(28rem, calc(100vw - 24px))';
+    d.innerHTML = '<div class="dl"><h2 style="font-size:1.1rem">Tornar ' + h(a.nome) + ' professor(a)</h2><p style="margin:8px 0 14px;color:var(--ink-soft)">A conta passa a ser de professor(a), já aprovada. Escolha o plano:</p>' +
+      '<div style="display:grid;gap:8px">' + [['pro365', 'Pro por 1 ano', true], ['pro90', 'Pro por 90 dias'], ['pro30', 'Pro por 30 dias'], ['free', 'Plano gratuito']].map(function(o){ return '<label style="display:flex;gap:10px;align-items:center;padding:.6em .8em;border:1px solid var(--line-strong);border-radius:10px;cursor:pointer;font-weight:700"><input type="radio" name="pl" value="' + o[0] + '"' + (o[2] ? ' checked' : '') + ' style="width:auto"> ' + o[1] + '</label>'; }).join('') + '</div>' +
+      '<input type="text" id="notaVirar" class="larga" style="width:100%;margin-top:12px" placeholder="Anotação (ex.: cortesia, parceria)"><div class="linha" style="justify-content:flex-end;margin-top:16px"><button class="btn sm secondary" data-r="0" type="button">Cancelar</button><button class="btn sm" data-r="1" type="button">Converter em professor(a)</button></div></div>';
+    document.body.appendChild(d);
+    d.addEventListener('click', function(e){ var b = e.target.closest('button'); if(!b) return; var v = (d.querySelector('input[name=pl]:checked') || {}).value, nota = d.querySelector('#notaVirar').value.trim(); d.close(); d.remove(); ok(b.dataset.r === '1' ? { v: v, nota: nota } : null); });
+    d.addEventListener('cancel', function(){ d.remove(); ok(null); });
+    d.showModal();
+  });
+}
+async function virarProf(uid){
+  var a = V.alunos.find(function(x){ return x.uid === uid; }); if(!a || ocupado) return;
+  var esc = await escolherPlanoProf(a); if(!esc) return;
+  var dias = { pro365: 365, pro90: 90, pro30: 30 }[esc.v], plano = esc.v === 'free' ? 'free' : 'pro';
+  var ate = dias ? new Date(Date.now() + dias * DIA) : null;
+  ocupado = true;
+  try{
+    await API.tornarProfessor(uid, { nome: a.nome, email: a.email, plano: plano, planoAte: ate, planoNota: esc.nota || null });
+    fecharDlg(); await carregar(true);
+    toast(a.nome + ' agora é professor(a)' + (ate ? ' com Pro até ' + ate.toLocaleDateString('pt-BR') : '') + '. ✓');
+    irPara('prof'); dlgProf(uid);
+  }catch(e){ console.error(e); toast('Não foi possível converter. As regras novas do Firebase estão publicadas?'); mostrarAvisoRegras(true); }
+  finally{ ocupado = false; }
+}
 function somarDias(n){
   var p = V.profs.find(function(x){ return x.uid === ($('dlg').querySelector('[data-a="salvarPlano"]') || {}).dataset.u; });
   var base = new Date(); var atual = $('dataPlano').value ? new Date($('dataPlano').value + 'T23:59:59') : null;
@@ -654,6 +692,7 @@ document.addEventListener('click', function(e){
   else if(a === 'status') mudarStatus(u, el.dataset.s);
   else if(a === 'salvarNotaStatus'){ var p = V.profs.find(function(x){ return x.uid === u; }); salvarProf(u, { status: p.status === 'approved' && p.legado ? 'approved' : p.status, statusNota: $('notaStatus').value.trim() }, 'Anotação salva.').then(function(ok){ if(ok) dlgProf(u); }); }
   else if(a === 'salvarPlano') salvarPlano(u);
+  else if(a === 'virarProf') virarProf(u);
   else if(a === 'somar') somarDias(+el.dataset.d);
   else if(a === 'renovar'){ var q = V.profs.find(function(x){ return x.uid === u; }); var base = q.planoAte > new Date() ? q.planoAte : new Date(); salvarProf(u, { plano: q.plano, planoAte: new Date(base.getTime() + 30 * DIA), planoNota: q.planoNota || null }, 'Plano renovado por mais 30 dias. ✓'); }
 });

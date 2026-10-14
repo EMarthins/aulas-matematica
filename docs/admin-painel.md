@@ -5,7 +5,7 @@ Exclusivo da conta **eduardosiqueirar7@gmail.com** (administrador master). Link:
 ## O que faz
 - **Resumo:** números (professores, Pro ativos, alunos, turmas), "precisa da sua atenção" (professores aguardando aprovação, Pro vencendo, turmas com alunos pendentes há +7 dias), últimos acessos, cadastros da semana, turmas mais ativas.
 - **Professores:** aprovar / recusar / suspender / reativar; trocar o plano **Gratuito ⇄ Pro ⇄ Escola** com validade (+30 dias, +90 dias, +1 ano ou data; renovar soma ao vencimento atual) e anotação do pagamento; uso (turmas, alunos, atividades); último acesso. Filtros e busca; exportar CSV.
-- **Alunos:** perfil, turmas (e se a matrícula está aprovada/pendente), último acesso e nº de acessos, atividades feitas e notas. Filtros: acessaram em 7 dias, sem acesso há +30 dias, matrícula pendente, sem turma.
+- **Alunos:** botão **Tornar professor(a)…** no perfil (converte a conta para professor já aprovado e deixa escolher o plano: Pro 1 ano/90/30 dias ou gratuito; exige as regras que liberam o admin a mudar só o campo role e criar o perfil de professor); perfil, turmas (e se a matrícula está aprovada/pendente), último acesso e nº de acessos, atividades feitas e notas. Filtros: acessaram em 7 dias, sem acesso há +30 dias, matrícula pendente, sem turma.
 - **Turmas:** professor, código, alunos aprovados/pendentes, atividades, criação e último acesso de aluno; lista de alunos da turma.
 
 ## Como funciona por trás

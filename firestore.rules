@@ -73,15 +73,18 @@ service cloud.firestore {
       allow delete: if dono(uid); // o usuário pode excluir a própria conta (conta.html)
       // O papel só pode ser escolhido no cadastro e não muda depois.
       allow create: if dono(uid) && request.resource.data.role in ['aluno', 'professor'];
-      allow update: if dono(uid) && request.resource.data.role == resource.data.role;
+      // O usuário não muda o próprio papel; só o administrador converte aluno ⇄ professor (admin.html), e SÓ o campo role.
+      allow update: if (dono(uid) && request.resource.data.role == resource.data.role) ||
+                       (admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role']));
     }
 
     match /teachers/{teacherUid} {
       allow read: if dono(teacherUid) || admin();
       // Todo professor nasce no plano gratuito e AGUARDANDO APROVAÇÃO; só o administrador muda plano e status.
-      allow create: if dono(teacherUid) && request.resource.data.plano == 'free' && request.resource.data.status == 'pending' &&
+      // O administrador pode criar o perfil de professor de uma conta (ao converter um aluno em professor).
+      allow create: if admin() || (dono(teacherUid) && request.resource.data.plano == 'free' && request.resource.data.status == 'pending' &&
                        !('planoAte' in request.resource.data) && !('planoNota' in request.resource.data) &&
-                       !('statusEm' in request.resource.data) && !('statusPor' in request.resource.data) && !('statusNota' in request.resource.data);
+                       !('statusEm' in request.resource.data) && !('statusPor' in request.resource.data) && !('statusNota' in request.resource.data));
       allow update: if (dono(teacherUid) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(camposDoAdmin())) ||
                        (admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(camposDoAdmin()));
       allow delete: if dono(teacherUid);
