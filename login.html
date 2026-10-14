@@ -48,6 +48,7 @@
             <button type="button" class="active" data-role="aluno">Aluno(a)</button>
             <button type="button" data-role="professor">Professor(a)</button>
           </div>
+          <div class="hint" id="avisoProf" hidden style="margin:-4px 0 12px;">Cadastros de professor(a) passam por uma aprovação rápida antes de liberar turmas e atividades.</div>
 
           <label for="nome">Nome completo</label>
           <input type="text" id="nome" autocomplete="name">
@@ -111,6 +112,12 @@
   if(role === 'professor'){
     rolePick.querySelectorAll('button').forEach(function(b){ b.classList.toggle('active', b.dataset.role === 'professor'); });
   }
+
+  // Aviso de aprovação aparece só quando "Professor(a)" está selecionado.
+  var avisoProf = document.getElementById('avisoProf');
+  function atualizaAvisoProf(){ var a = rolePick.querySelector('button.active'); avisoProf.hidden = !(a && a.dataset.role === 'professor'); }
+  rolePick.addEventListener('click', function(){ setTimeout(atualizaAvisoProf, 0); });
+  atualizaAvisoProf();
 
   modeTabs.querySelectorAll('button').forEach(function(btn){
     btn.addEventListener('click', function(){

@@ -15,7 +15,7 @@ import {
   deleteUser
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 import {
-  doc, setDoc, getDoc, serverTimestamp
+  doc, setDoc, getDoc, updateDoc, increment, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { auth, db } from "./firebase-init.js";
 
@@ -23,7 +23,7 @@ import { auth, db } from "./firebase-init.js";
 export function lembrarUsuario(perfil){
   try{
     if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role }));
-    else localStorage.removeItem("sb:user");
+    else { localStorage.removeItem("sb:user"); localStorage.removeItem("sb:admin"); }
   }catch(e){}
 }
 
@@ -34,12 +34,14 @@ export async function cadastrar(nome, email, senha, role){
   lembrarUsuario({ nome, role }); // a barra lateral e a trava das aulas leem isto
 
   await setDoc(doc(db, "users", cred.user.uid), {
-    nome, email, role, createdAt: serverTimestamp()
+    nome, email, role, createdAt: serverTimestamp(), ultimoAcesso: serverTimestamp(), acessos: 1
   });
+  try{ sessionStorage.setItem("acesso:" + cred.user.uid, "1"); }catch(e){}
 
   if(role === "professor"){
+    // Todo professor nasce no plano gratuito e AGUARDANDO APROVAÇÃO (o administrador aprova em admin.html).
     await setDoc(doc(db, "teachers", cred.user.uid), {
-      nome, email, plano: "free", createdAt: serverTimestamp()
+      nome, email, plano: "free", status: "pending", createdAt: serverTimestamp()
     });
   }
 
@@ -48,7 +50,19 @@ export async function cadastrar(nome, email, senha, role){
 
 export async function entrar(email, senha){
   const cred = await signInWithEmailAndPassword(auth, email, senha);
+  registrarAcesso(cred.user.uid, true);
   return cred.user;
+}
+
+// Registra o acesso (para o painel de administração): no máximo uma vez por sessão do navegador, ou a cada login.
+// Falhas são ignoradas de propósito (não podem atrapalhar o uso); sem registro, o acesso fica "sem registro" no painel.
+export async function registrarAcesso(uid, forcar){
+  try{
+    const k = "acesso:" + uid;
+    if(!forcar && sessionStorage.getItem(k)) return;
+    await updateDoc(doc(db, "users", uid), { ultimoAcesso: serverTimestamp(), acessos: increment(1) });
+    sessionStorage.setItem(k, "1");
+  }catch(e){}
 }
 
 export function sair(){
@@ -74,6 +88,7 @@ export function recuperarSenha(email){
 export function aoMudarAuth(callback){
   return onAuthStateChanged(auth, (user) => {
     if(!user) lembrarUsuario(null);
+    else registrarAcesso(user.uid);
     callback(user);
   });
 }

@@ -49,6 +49,8 @@
   <h1 class="title">Turmas, atividades e correção</h1>
   <p class="lede">Crie turmas, aprove alunos, atribua aulas/quizzes como atividades e acompanhe o engajamento — tudo num só lugar.</p>
 
+  <div id="statusProf"></div>
+
   <div class="card" id="planoCard" style="display:none;gap:12px 18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:16px;">
     <div><b id="planoNome">Plano Gratuito</b><div class="hint" id="planoInfo" style="margin:2px 0 0;"></div></div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;"><a class="btn sm" id="planoBtn" href="../planos.html">Ver planos</a><a class="btn sm secondary" href="../conta.html">Minha conta e dados</a></div>
@@ -171,6 +173,7 @@ import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml, linkSeguro } from '../app/util.js';
 import { PLANOS, planoVigente, fmtData } from '../app/planos.js';
 import { lerProfessor } from '../app/nuvem-firestore.js';
+import { VENDA } from '../app/config-venda.js';
 
 iniciarThemeToggle('theme-pref-app');
 
@@ -193,6 +196,7 @@ protegerPagina('professor', function(user, perfil){
 // ---------- Plano ----------
 async function mostrarPlano(id){
   var doc = null; try{ doc = await lerProfessor(id); }catch(e){}
+  aplicarStatus(doc);
   PLANO = planoVigente(doc);
   var card = document.getElementById('planoCard'); card.style.display = 'flex';
   document.getElementById('planoNome').textContent = 'Plano ' + PLANO.nome;
@@ -204,6 +208,27 @@ async function mostrarPlano(id){
     info.textContent = 'Tudo liberado' + (doc && doc.planoAte ? ' até ' + fmtData(doc.planoAte) : '') + '.';
     btn.textContent = 'Meu plano';
   }
+}
+
+// ---------- Aprovação do cadastro ----------
+// Todo professor novo nasce 'pending' e só o administrador aprova (admin.html). Cadastros antigos (sem status) valem como aprovados.
+function aplicarStatus(doc){
+  var st = (doc && doc.status) || 'approved';
+  if(st === 'approved') return;
+  var msg = {
+    pending: ['Cadastro em análise', 'Recebemos o seu cadastro de professor(a). Assim que ele for aprovado você poderá criar turmas, atribuir atividades e corrigir. A aprovação costuma ser rápida.'],
+    rejected: ['Cadastro não aprovado', 'Seu cadastro de professor(a) não foi aprovado. Se isso foi um engano, fale com a gente.'],
+    suspended: ['Acesso suspenso', 'O seu acesso de professor(a) está suspenso. Fale com a gente para entender o motivo e regularizar.']
+  }[st] || ['Acesso em análise', 'Seu acesso de professor(a) ainda não está liberado.'];
+  var contato = '';
+  if(VENDA.whatsapp) contato += '<a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/' + String(VENDA.whatsapp).replace(/D/g, '') + '">Falar no WhatsApp</a> ';
+  if(VENDA.email) contato += '<a class="btn sm secondary" href="mailto:' + escapeHtml(VENDA.email) + '">Enviar e-mail</a> ';
+  document.getElementById('statusProf').innerHTML = '<div class="card" style="margin-bottom:16px;"><h2>' + msg[0] + '</h2><p class="sub" style="margin-bottom:12px;">' + msg[1] + '</p>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">' + contato + '<button type="button" class="btn sm secondary" id="btnReverificar">Já fui aprovado(a)? Verificar de novo</button><a class="btn sm secondary" href="prova.html">Abrir o EduMath Provas</a></div>' +
+    '<p class="hint" style="margin-top:12px;">Enquanto isso, as aulas e o EduMath Provas (sem login, neste navegador) continuam disponíveis.</p></div>';
+  document.getElementById('btnReverificar').addEventListener('click', function(){ location.reload(); });
+  document.getElementById('mainTabs').style.display = 'none';
+  document.querySelectorAll('.panel').forEach(function(p){ p.style.display = 'none'; });
 }
 
 // ---------- Tabs ----------

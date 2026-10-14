@@ -10,14 +10,22 @@ service cloud.firestore {
     function dono(uid) {
       return request.auth != null && request.auth.uid == uid;
     }
-    // Administrador do serviço: quem tem um documento em admins/{uid} (criado À MÃO no console do Firebase).
-    // Serve para conceder o plano Pro a quem pagou (admin.html). Ninguém cria isso pelo site.
+    // ADMINISTRADOR MASTER do serviço: UMA única conta, fixada pelo identificador (UID) E pelo e-mail.
+    // Só ela acessa admin.html e altera planos/status de professores. Ninguém vira administrador pelo site nem criando documentos.
+    // (Se essa conta for excluída e recriada, o UID muda: atualize o valor abaixo e publique as regras de novo.)
     function admin() {
-      return request.auth != null && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return request.auth != null &&
+             request.auth.uid == 'DsCd807M1CQbr5LIhKx84PQ2AzZ2' &&
+             request.auth.token.email == 'eduardosiqueirar7@gmail.com';
     }
-    // Campos do plano: só o administrador muda (o professor NUNCA muda o próprio plano).
-    function camposDoPlano() {
-      return ['plano', 'planoAte', 'planoNota'];
+    // Campos de plano e de aprovação: só o administrador muda (o professor NUNCA muda o próprio plano nem o próprio status).
+    function camposDoAdmin() {
+      return ['plano', 'planoAte', 'planoNota', 'status', 'statusEm', 'statusPor', 'statusNota'];
+    }
+    // Professor APROVADO? Quem se cadastra nasce 'pending' e só o administrador aprova (admin.html).
+    // Professores antigos (sem o campo status) contam como aprovados.
+    function profAprovado(teacherUid) {
+      return get(/databases/$(database)/documents/teachers/$(teacherUid)).data.get('status', 'approved') == 'approved';
     }
     // O aluno está APROVADO nessa turma? (lê a matrícula dele em teachers/{prof}/classes/{turma}/students/{uid})
     function aprovado(teacherUid, classId, uid) {
@@ -46,9 +54,17 @@ service cloud.firestore {
       allow read: if logado();
     }
 
-    // Aluno lista as turmas em que já tem matrícula (a partir do próprio uid).
+    // Aluno lista as turmas em que já tem matrícula (a partir do próprio uid). O administrador vê todas (admin.html).
     match /{path=**}/students/{studentUid} {
-      allow read: if dono(studentUid);
+      allow read: if dono(studentUid) || admin();
+    }
+
+    // Só o administrador lista atividades e submissões de todos os professores (painel admin.html).
+    match /{path=**}/activities/{activityId} {
+      allow read: if admin();
+    }
+    match /{path=**}/submissions/{studentUid} {
+      allow read: if admin();
     }
 
     // --- Perfil do usuário (professor ou aluno) ---
@@ -62,10 +78,12 @@ service cloud.firestore {
 
     match /teachers/{teacherUid} {
       allow read: if dono(teacherUid) || admin();
-      // Todo professor nasce no plano gratuito; só o administrador muda plano/planoAte/planoNota.
-      allow create: if dono(teacherUid) && request.resource.data.plano == 'free' && !('planoAte' in request.resource.data);
-      allow update: if (dono(teacherUid) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(camposDoPlano())) ||
-                       (admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(camposDoPlano()));
+      // Todo professor nasce no plano gratuito e AGUARDANDO APROVAÇÃO; só o administrador muda plano e status.
+      allow create: if dono(teacherUid) && request.resource.data.plano == 'free' && request.resource.data.status == 'pending' &&
+                       !('planoAte' in request.resource.data) && !('planoNota' in request.resource.data) &&
+                       !('statusEm' in request.resource.data) && !('statusPor' in request.resource.data) && !('statusNota' in request.resource.data);
+      allow update: if (dono(teacherUid) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(camposDoAdmin())) ||
+                       (admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(camposDoAdmin()));
       allow delete: if dono(teacherUid);
 
       // --- Provas, questões próprias e configurações do Proveiro (salvas na nuvem) ---
@@ -84,7 +102,9 @@ service cloud.firestore {
         // Leitura liberada a qualquer usuário autenticado: é assim que o aluno acha a turma pelo
         // código antes de se matricular. Só há nome e código aqui, nada sensível.
         allow read: if logado();
-        allow write: if dono(teacherUid);
+        // Criar/alterar turma exige professor aprovado; apagar (ex.: excluir a conta) o dono sempre pode.
+        allow create, update: if dono(teacherUid) && profAprovado(teacherUid);
+        allow delete: if dono(teacherUid);
 
         // --- Matrículas (aprovação de alunos) ---
         match /students/{studentUid} {
@@ -107,7 +127,8 @@ service cloud.firestore {
       match /activities/{activityId} {
         // A definição da atividade espelha uma aula pública; leitura a qualquer autenticado.
         allow read: if logado();
-        allow write: if dono(teacherUid);
+        allow create, update: if dono(teacherUid) && profAprovado(teacherUid);
+        allow delete: if dono(teacherUid);
 
         // --- Submissões / notas ---
         match /submissions/{studentUid} {

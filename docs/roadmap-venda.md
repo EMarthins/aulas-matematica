@@ -58,8 +58,8 @@ A lista detalhada abaixo é a original (itens soltos); o plano acima é a ordem 
 - [ ] **Advogado revisar** `termos.html` (termos, privacidade, LGPD com dados de menores): preencher razão social, CNPJ, e-mail do encarregado (DPO).
 - [ ] **Meio de cobrança:** abrir conta no Mercado Pago/Asaas/Stripe (ou Kiwify/Hotmart) e me passar as chaves quando for automatizar. Até lá, pré-venda manual por Pix.
 - [ ] **Preencher `app/config-venda.js`:** WhatsApp, e-mail, chave Pix, preços.
-- [ ] **Criar o seu administrador:** no console do Firebase, Firestore → coleção `admins` → documento com o UID da sua conta de professor (campo qualquer, ex.: `ok: true`). Isso libera a página `admin.html` (conceder plano Pro a quem pagou).
-- [x] **Regras do Firestore publicadas** em 2026-10-12 (versão com admins, plano protegido, nuvem do EduMath Provas e exclusão de conta). Republicar sempre que `firestore.rules` mudar.
+- [x] **Administrador:** fixado em 2026-10-14 na conta eduardosiqueirar7@gmail.com (UID e e-mail nas regras; não usa mais a coleção `admins`). Ver docs/admin-painel.md.
+- [ ] **Publicar as regras novas do Firestore** (admin master + aprovação de professores + leitura do painel admin). Última versão publicada: 2026-10-12. Republicar sempre que `firestore.rules` mudar (o admin.html tem o botão "Copiar regras").
 - [ ] **Testar com contas reais** (o Claude não cria contas): roteiro em `docs/teste-contas.md`.
 - [ ] **Decidir preços e o que o plano gratuito inclui** (hoje: 3 provas na nuvem, 40 questões próprias, 2 turmas).
 - [ ] **Canal de suporte** (WhatsApp/e-mail) e quem responde.
@@ -86,10 +86,12 @@ Ver o fim deste arquivo (seção "Feito").
 
 - [x] Provas e questões próprias do EduMath Provas **sincronizadas na nuvem** (app/nuvem.js; offline-first; testes em scripts/testar-nuvem.js).
 - [x] **Planos:** campo plano/planoAte protegido nas regras (só admin muda); limites do gratuito em app/planos.js (3 provas, 40 questões, 2 turmas); cartão do plano no painel do professor.
-- [x] **admin.html:** conceder/retirar o Pro por 30/90/365 dias ou até uma data (pré-venda manual). Falta você criar o documento admins/<seu uid>.
+- [x] **admin.html (antigo, só planos):** conceder/retirar o Pro por 30/90/365 dias ou até uma data (pré-venda manual). Falta você criar o documento admins/<seu uid>.
 - [x] **planos.html** (preços, comparação, como assinar, FAQ) + dados comerciais em app/config-venda.js (preencher).
 - [x] **conta.html (LGPD):** baixar meus dados (JSON) e excluir a conta com tudo.
 - [x] **termos.html** reescrito (venda, LGPD, menores, direitos, planos) — falta revisão do advogado e dados da empresa.
 - [x] Aulas grátis x conta (trava no navegador) e página para professores atualizada.
 - [x] Roteiro de teste com contas reais: docs/teste-contas.md.
 - Exportar Word: feito em 2026-10-14 com gerador próprio (app/docx.js, sem bibliotecas, funciona offline); frações e raízes viram equações do Word (OMML), figuras SVG viram PNG, imagens do ENEM são embutidas; conferido no Word por scripts/testar-docx.js + automação (docs/fazedor-de-prova.md).
+
+- **Painel de administração completo** (2026-10-14): admin.html com Resumo, Professores (aprovar/recusar/suspender, plano Pro/Gratuito/Escola), Alunos (perfil, turmas, acessos, atividades) e Turmas; professor novo nasce "aguardando aprovação". Guia: docs/admin-painel.md.
