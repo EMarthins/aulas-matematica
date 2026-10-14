@@ -236,13 +236,14 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var feito = c.vistos === c.total && c.total > 0;
     var s = el('summary', null,
       '<span class="m-ic">' + svgIcon(u.icon) + '</span>' +
-      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + '</small></span>' +
+      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + (u.pendente ? ' · atividades em breve' : '') + '</small></span>' +
       '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
       '<span class="chev">' + CHEV + '</span>');
     d.appendChild(s);
     var body = el('div', 'mod-body');
     var aulas = visiveis.filter(function(i){ return tipoDe(i) === 'aula'; }), guias = visiveis.filter(function(i){ return tipoDe(i) === 'guia'; }), ativ = visiveis.filter(function(i){ return tipoDe(i) === 'atividade'; });
     [grupo('Aulas', aulas, function(i){ return i.tipo; }), grupo('Guia visual', guias, function(i){ return i.tipo; }), grupo('Atividades', ativ, function(i){ return i.sub || 'Atividade'; })].forEach(function(g){ if(g) body.appendChild(g); });
+    if(u.pendente && estado.tipo !== 'aula' && !norm(estado.q.trim())) body.appendChild(el('div', 'grupo em-breve', '<div class="g-tit">Guia visual e atividades <span>em breve</span></div><div class="eb-box"><span class="eb-ic" aria-hidden="true">⏳</span><span>As atividades (ENEM, criativa e prática) e o guia visual deste módulo ainda estão sendo preparados. <b>Por enquanto, estude pelas aulas acima.</b></span></div>'));
     var rv = u.revisado || m.revisado || '2026-09-22';
     var meses = (Date.now() - new Date(rv + 'T00:00:00').getTime()) / 2592e6;
     body.appendChild(el('div', 'rev-flag' + (meses > 6 ? ' velho' : ''), 'conteúdo revisado em ' + new Date(rv + 'T00:00:00').toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }) + (meses > 6 ? ' · precisa de revisão' : '')));

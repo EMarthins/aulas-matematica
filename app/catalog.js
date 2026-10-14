@@ -1067,6 +1067,233 @@ export const MATERIAS = [
             ]
           },
           // <<< mat-2ano-1tri
+          // >>> mat-2ano-2tri
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Trigonometria: introdução',
+                accent: 'primary',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 33', titulo:'Ângulos do triângulo e teorema de Pitágoras', arquivo:'aulas/2-ano/2-tri/trigonometria-introducao/aula-1-angulos-do-triangulo-e-pitagoras.html' },
+                  { tipo:'Aula 34', titulo:'Seno, cosseno e tangente: ângulos notáveis', arquivo:'aulas/2-ano/2-tri/trigonometria-introducao/aula-2-razoes-trigonometricas.html' }
+                ]
+              },
+              {
+                titulo: 'Lei dos senos',
+                accent: 'growth',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 35', titulo:'Lei dos senos: lados, ângulos e raio circunscrito', arquivo:'aulas/2-ano/2-tri/lei-dos-senos/aula-1-lei-dos-senos.html' },
+                  { tipo:'Aula 36', titulo:'Lei dos senos: rampa, torres e rio', arquivo:'aulas/2-ano/2-tri/lei-dos-senos/aula-2-lei-dos-senos-aplicacoes.html' }
+                ]
+              },
+              {
+                titulo: 'Lei dos cossenos',
+                accent: 'decay',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 37', titulo:'Lei dos cossenos: terceiro lado e ângulos', arquivo:'aulas/2-ano/2-tri/lei-dos-cossenos/aula-1-lei-dos-cossenos.html' },
+                  { tipo:'Aula 38', titulo:'Lei dos cossenos: lago, navios e terreno', arquivo:'aulas/2-ano/2-tri/lei-dos-cossenos/aula-2-lei-dos-cossenos-aplicacoes.html' }
+                ]
+              },
+              {
+                titulo: 'Arcos, graus e radianos',
+                accent: 'success',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 39', titulo:'Arcos de circunferência: graus, radianos e comprimento', arquivo:'aulas/2-ano/2-tri/arcos-graus-radianos/aula-1-arcos-comprimento.html' },
+                  { tipo:'Aula 40', titulo:'Conversões entre graus e radianos', arquivo:'aulas/2-ano/2-tri/arcos-graus-radianos/aula-2-conversoes-e-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Circunferência trigonométrica e arcos côngruos',
+                accent: 'primary',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 41', titulo:'Circunferência trigonométrica e arcos côngruos', arquivo:'aulas/2-ano/2-tri/arcos-congruos/aula-1-circunferencia-trigonometrica.html' },
+                  { tipo:'Aula 42', titulo:'Arcos côngruos: giros, roletas e manobras', arquivo:'aulas/2-ano/2-tri/arcos-congruos/aula-2-arcos-congruos-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Seno e cosseno de um arco',
+                accent: 'growth',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 43', titulo:'Seno de um arco: redução ao 1º quadrante', arquivo:'aulas/2-ano/2-tri/seno-e-cosseno-de-um-arco/aula-1-seno-de-um-arco.html' },
+                  { tipo:'Aula 44', titulo:'Cosseno de um arco e relação fundamental', arquivo:'aulas/2-ano/2-tri/seno-e-cosseno-de-um-arco/aula-2-cosseno-de-um-arco.html' }
+                ]
+              },
+              {
+                titulo: 'Tangente de um arco',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 45', titulo:'Tangente de um arco: eixo das tangentes e sinais', arquivo:'aulas/2-ano/2-tri/tangente-de-um-arco/aula-1-tangente-de-um-arco.html' }
+                ]
+              },
+              {
+                titulo: 'Função seno: gráfico, centro e amplitude',
+                accent: 'primary',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 46', titulo:'A função seno: senóide, domínio, imagem e período', arquivo:'aulas/2-ano/2-tri/funcao-seno/aula-1-funcao-seno.html' },
+                  { tipo:'Aula 47', titulo:'Parâmetros a e b: centro e amplitude', arquivo:'aulas/2-ano/2-tri/funcao-seno/aula-2-parametros-a-e-b.html' }
+                ]
+              },
+              {
+                titulo: 'Função seno: período, deslocamento e problemas',
+                accent: 'growth',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 48', titulo:'Parâmetros c e d: período e deslocamento', arquivo:'aulas/2-ano/2-tri/funcao-seno-periodo-e-problemas/aula-1-parametros-c-e-d.html' },
+                  { tipo:'Aula 49', titulo:'Função seno: roda-gigante, luz e energia', arquivo:'aulas/2-ano/2-tri/funcao-seno-periodo-e-problemas/aula-2-funcao-seno-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Função cosseno: gráfico e parâmetros',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 50', titulo:'A função cosseno: cossenóide, domínio, imagem e período', arquivo:'aulas/2-ano/2-tri/funcao-cosseno/aula-1-funcao-cosseno.html' },
+                  { tipo:'Aula 51', titulo:'Parâmetros da função cosseno', arquivo:'aulas/2-ano/2-tri/funcao-cosseno/aula-2-parametros-da-cossenoide.html' }
+                ]
+              },
+              {
+                titulo: 'Funções seno e cosseno: modelagem e problemas',
+                accent: 'success',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 52', titulo:'Modelando fenômenos com o cosseno', arquivo:'aulas/2-ano/2-tri/funcoes-trigonometricas-problemas/aula-1-modelando-com-o-cosseno.html' },
+                  { tipo:'Aula 53', titulo:'Máximos e mínimos: marés, coração e luz', arquivo:'aulas/2-ano/2-tri/funcoes-trigonometricas-problemas/aula-2-maximos-e-minimos-do-cosseno.html' },
+                  { tipo:'Aula 54', titulo:'Problemas de seno e cosseno', arquivo:'aulas/2-ano/2-tri/funcoes-trigonometricas-problemas/aula-3-problemas-de-seno-e-cosseno.html' }
+                ]
+              },
+              {
+                titulo: 'Área de polígonos: unidades e fórmulas',
+                accent: 'primary',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 55', titulo:'Área e unidades de área', arquivo:'aulas/2-ano/2-tri/area-de-poligonos/aula-1-area-e-unidades.html' },
+                  { tipo:'Aula 56', titulo:'Áreas de triângulos e quadriláteros', arquivo:'aulas/2-ano/2-tri/area-de-poligonos/aula-2-areas-de-triangulos-e-quadrilateros.html' }
+                ]
+              },
+              {
+                titulo: 'Áreas irregulares e problemas',
+                accent: 'growth',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 57', titulo:'Áreas de polígonos irregulares: decompor, subtrair e contar', arquivo:'aulas/2-ano/2-tri/areas-irregulares-e-problemas/aula-1-poligonos-irregulares.html' },
+                  { tipo:'Aula 58', titulo:'Problemas de área: tangram, molduras e terrenos', arquivo:'aulas/2-ano/2-tri/areas-irregulares-e-problemas/aula-2-problemas-de-area.html' }
+                ]
+              },
+              {
+                titulo: 'Área do círculo e de suas partes',
+                accent: 'decay',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 59', titulo:'Círculo, circunferência e coroa circular', arquivo:'aulas/2-ano/2-tri/area-do-circulo-e-partes/aula-1-circulo-e-coroa.html' },
+                  { tipo:'Aula 60', titulo:'Setor e segmento circular', arquivo:'aulas/2-ano/2-tri/area-do-circulo-e-partes/aula-2-setor-e-segmento.html' }
+                ]
+              },
+              {
+                titulo: 'Problemas de área com círculos e figuras compostas',
+                accent: 'success',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 61', titulo:'Problemas com círculos: coroa e corda tangente', arquivo:'aulas/2-ano/2-tri/problemas-de-area-com-circulos/aula-1-coroa-e-corda-tangente.html' },
+                  { tipo:'Aula 62', titulo:'Figuras compostas: dividir para conquistar', arquivo:'aulas/2-ano/2-tri/problemas-de-area-com-circulos/aula-2-figuras-compostas.html' },
+                  { tipo:'Aula 63', titulo:'Problemas de área no estilo ENEM', arquivo:'aulas/2-ano/2-tri/problemas-de-area-com-circulos/aula-3-problemas-estilo-enem.html' }
+                ]
+              },
+              {
+                titulo: 'Polígonos regulares: elementos e área',
+                accent: 'primary',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 64', titulo:'Polígonos regulares: elementos e relações métricas', arquivo:'aulas/2-ano/2-tri/poligonos-regulares/aula-1-elementos-e-relacoes.html' },
+                  { tipo:'Aula 65', titulo:'Área de um polígono regular', arquivo:'aulas/2-ano/2-tri/poligonos-regulares/aula-2-area-do-poligono-regular.html' }
+                ]
+              },
+              {
+                titulo: 'Variação do perímetro e da área',
+                accent: 'growth',
+                icon: 'bars',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 66', titulo:'Perímetro e área: variação linear e quadrática', arquivo:'aulas/2-ano/2-tri/variacao-do-perimetro-e-da-area/aula-1-linear-e-quadratica.html' },
+                  { tipo:'Aula 67', titulo:'Campos, plantas e escalas', arquivo:'aulas/2-ano/2-tri/variacao-do-perimetro-e-da-area/aula-2-campos-plantas-e-escalas.html' }
+                ]
+              },
+              {
+                titulo: 'Ladrilhamento do plano',
+                accent: 'decay',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 68', titulo:'Ladrilhamento do plano: mosaicos e a regra dos 360°', arquivo:'aulas/2-ano/2-tri/ladrilhamento-do-plano/aula-1-ladrilhamento.html' }
+                ]
+              },
+              {
+                titulo: 'Retomada: equação do 2º grau e raízes da função',
+                accent: 'primary',
+                icon: 'parabola',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula R9', titulo:'Retomada: equação do 2º grau', arquivo:'aulas/2-ano/2-tri/retomada-equacao-do-2-grau/aula-1-retomada-equacao-do-2-grau.html' },
+                  { tipo:'Aula R10', titulo:'Retomada: raízes, vértice e simetria da parábola', arquivo:'aulas/2-ano/2-tri/retomada-equacao-do-2-grau/aula-2-retomada-raizes-e-vertice.html' }
+                ]
+              },
+              {
+                titulo: 'Retomada: comportamento de funções e sistemas lineares',
+                accent: 'growth',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula R11', titulo:'Retomada: comportamento de funções reais', arquivo:'aulas/2-ano/2-tri/retomada-funcoes-e-sistemas/aula-1-retomada-comportamento-de-funcoes.html' },
+                  { tipo:'Aula R12', titulo:'Retomada: sistema linear e matrizes', arquivo:'aulas/2-ano/2-tri/retomada-funcoes-e-sistemas/aula-2-retomada-sistema-linear.html' }
+                ]
+              },
+              {
+                titulo: 'Retomada: progressão aritmética',
+                accent: 'decay',
+                icon: 'stairs',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula R13', titulo:'Retomada: termo geral da progressão aritmética', arquivo:'aulas/2-ano/2-tri/retomada-progressao-aritmetica/aula-1-retomada-termo-geral-da-pa.html' },
+                  { tipo:'Aula R14', titulo:'Retomada: soma dos termos de uma PA', arquivo:'aulas/2-ano/2-tri/retomada-progressao-aritmetica/aula-2-retomada-soma-da-pa.html' }
+                ]
+              },
+              {
+                titulo: 'Retomada: progressão geométrica',
+                accent: 'success',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula R15', titulo:'Retomada: PA e PG; termo geral da PG', arquivo:'aulas/2-ano/2-tri/retomada-progressao-geometrica/aula-1-retomada-pa-e-pg.html' },
+                  { tipo:'Aula R16', titulo:'Retomada: soma dos termos de uma PG', arquivo:'aulas/2-ano/2-tri/retomada-progressao-geometrica/aula-2-retomada-soma-da-pg.html' }
+                ]
+              }
+            ]
+          },
+          // <<< mat-2ano-2tri
           {
             nome: '3° Trimestre',
             unidades: [

@@ -331,3 +331,8 @@ html.sb-on .subjects, html.sb-on .tools{ display:none; }
   .p-titulo small{ display:none; }
   .p-nome{ overflow:visible; text-overflow:clip; }
 }
+
+/* módulo só com aulas: guia e atividades "em breve" */
+.grupo.em-breve .g-tit span{ background:var(--growth-soft); color:var(--growth); }
+.eb-box{ display:flex; gap:10px; align-items:flex-start; border:1.5px dashed var(--line-strong); border-radius:11px; padding:10px 12px; background:var(--surface-2); font-size:.84rem; color:var(--ink-soft); line-height:1.45; }
+.eb-ic{ flex:none; font-size:1.1rem; }
