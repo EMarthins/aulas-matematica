@@ -6,6 +6,8 @@ Cada aula/guia continua sendo um arquivo HTML autocontido que funciona 100% offl
 
 ## Como publicar isso no GitHub Pages
 
+> **Hospedagem atual (2026-10-13):** o site também é publicado pelo **Cloudflare Pages** (projeto `edumath`, https://edumath.pages.dev, domínio edumath.com.br), direto do mesmo repositório: cada `git push` na branch `master` atualiza os dois (GitHub Pages e Cloudflare). O Cloudflare tira o `.html` do endereço (/planos.html → /planos); o `sw.js` já trata esse redirecionamento. Domínios do login autorizados no Firebase: edumath.com.br, www.edumath.com.br, emarthins.github.io (e localhost).
+
 Você não precisa usar terminal nem `git` — dá pra fazer tudo pelo site do GitHub.
 
 1. **Crie o repositório.** Em [github.com/new](https://github.com/new), dê um nome (ex.: `aulas-matematica`), deixe como **Public** (necessário para o GitHub Pages gratuito) e clique em **Create repository**. Não marque a opção de adicionar README — já tem um aqui.

@@ -7,15 +7,15 @@ Atualizado em 2026-10-13. Marque ☑ quando concluir. Itens com 👤 dependem de
 Decisão: **parar de adicionar aulas** (já são 490+ páginas); o que falta é ferramenta, confiabilidade, parte legal e primeiros clientes.
 
 ### Fase 0 — Esta semana (proteger o investimento)
-- [ ] 👤 Registrar **edumath.com.br** (Registro.br, ~R$ 40/ano, pode ser no CPF).
+- [x] 👤 Registrar **edumath.com.br** (feito em 2026-10-13, no CPF; vence 13/10/2027).
 - [ ] 👤 Pesquisar "EduMath" no **INPI** (classes 41, 9, 42), no Google e no Instagram. Plano B de domínio: edumath-app.com.br / edumathbr.com.br.
 - [ ] 👤 **Advogado de direito autoral** (1 consulta): aulas derivadas da SEED-PR/RCO, licença Khan Academy (uso comercial proibido), textos de apoio do ENEM; e, se for servidor estadual, o que o estatuto diz sobre atividade empresarial e material produzido na função.
 - [ ] 👤 Decidir **o que fica grátis e o que é pago** (sugestão: aulas = isca grátis; EduMath Provas + turmas = pago).
 - [ ] 👤 Conferir se o repositório `EMarthins/aulas-matematica` é público (GitHub → Settings).
 
 ### Fase 1 — Hospedagem e proteção do conteúdo (🤖 faço; 👤 cria as contas)
-- [ ] 👤 Criar conta na **Cloudflare** (grátis) e apontar o domínio.
-- [ ] 🤖 Migrar o site para **Cloudflare Pages** com repositório **privado** (sair do GitHub Pages antes da 1ª cobrança: os termos dele não permitem site comercial/SaaS).
+- [x] 👤 Conta na **Cloudflare** criada; domínio adicionado (plano Free) e servidores DNS trocados no Registro.br (2026-10-13; a delegação de domínio novo leva ~2 h).
+- [~] 🤖 **Cloudflare Pages no ar** em https://edumath.pages.dev (projeto `edumath`, deploy automático a cada push na branch master, sem build). Falta: ligar o domínio edumath.com.br ao projeto (só possível depois que o DNS ficar ativo no Cloudflare) e tornar o repositório privado. Migrar o site para **Cloudflare Pages** com repositório **privado** (sair do GitHub Pages antes da 1ª cobrança: os termos dele não permitem site comercial/SaaS).
 - [ ] 🤖 Mover as imagens do ENEM (143 MB) para **Cloudflare R2**.
 - [ ] 🤖 Trava real do conteúdo pago (Cloudflare Worker ou Firebase Functions checando o plano do login), em vez da trava no navegador.
 - [ ] 🤖 **Sentry** (erros) e **Cloudflare Web Analytics** (visitas).
