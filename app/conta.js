@@ -51,6 +51,7 @@ export async function excluirConta(uid, role, senha, aoProgresso) {
     for (const t of await lerDocs('teachers', uid, 'classes')) {
       for (const m of await lerDocs('teachers', uid, 'classes', t.id, 'students')) await deleteDoc(doc(db, 'teachers', uid, 'classes', t.id, 'students', m.id));
       await deleteDoc(doc(db, 'teachers', uid, 'classes', t.id));
+      if (t.joinCode) { try { await deleteDoc(doc(db, 'joinCodes', t.joinCode)); } catch (_) { /* já não existe */ } }
     }
     p('Apagando atividades e envios…');
     for (const a of await lerDocs('teachers', uid, 'activities')) {

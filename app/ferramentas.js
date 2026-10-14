@@ -143,6 +143,15 @@
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(ok, function(){ W.prompt('Copie o link:', url); }); } else W.prompt('Copie o link:', url);
   }
 
+  // reportar erro: abre a janelinha de app/reportar.js (carregada só quando alguém clica)
+  function reportarErro(){
+    var go = function(){ W.EduReportar.abrir({ tipo: 'aula', alvo: KEY || P, titulo: pageTitle + (isDeck ? ' — slide ' + (atual() + 1) + ' de ' + total() : ''), slide: isDeck ? atual() + 1 : 0 }); };
+    if(W.EduReportar){ go(); return; }
+    var base = SRC || (D.getElementById('ferramentas') || {}).src || '';
+    var s = D.createElement('script'); s.src = base.replace(/ferramentas.js.*$/, 'reportar.js'); s.onload = go; s.onerror = function(){ aviso('Não foi possível abrir o formulário agora.'); };
+    (D.head || R).appendChild(s);
+  }
+
   // leitura em voz alta
   var falando = false;
   function textoParaLer(){ var base = isDeck ? D.querySelector('.slide.active .slide-inner') : (D.querySelector('.app') || D.querySelector('.sheet') || D.body); if(!base) return ''; var c = base.cloneNode(true); [].forEach.call(c.querySelectorAll('script,style,svg,button.reveal,.ft-tip,input,textarea,select'), function(n){ n.remove(); }); return c.textContent.replace(/\s+/g, ' ').trim(); }
@@ -160,7 +169,7 @@
 
   if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
   acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
-  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); });
+  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('⚑ Reportar um erro', '', reportarErro);
   dock.appendChild(btn); dock.appendChild(panel);
   btn.addEventListener('click', function(e){ e.stopPropagation(); panel.classList.toggle('on'); });
   D.addEventListener('click', function(e){ if(!dock.contains(e.target)) panel.classList.remove('on'); });

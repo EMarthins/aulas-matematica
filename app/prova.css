@@ -309,3 +309,10 @@ body.pv :is(input,select,textarea,button,label,summary,dialog,.pop,.fpop):not(.f
 .nuvem.erro i{background:var(--danger)}
 @keyframes pulsa{50%{opacity:.35}}
 @media (max-width:900px){ .nuvem span{display:none} .nuvem{padding:.5em} }
+
+/* aviso da prova de exemplo (flutuante: não mexe no layout) */
+.pv-aviso{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;width:min(40rem,calc(100vw - 24px));display:flex;gap:12px;align-items:flex-start;background:var(--surface);color:var(--ink);border:1px solid var(--primary);border-radius:14px;padding:12px 14px;font-size:.86rem;line-height:1.45;box-shadow:0 18px 50px -14px rgb(0 0 0 / .5)}
+.pv-aviso[hidden]{display:none}
+.pv-aviso a{color:var(--primary);font-weight:800}
+.pv-aviso button{flex:none;border:0;background:transparent;color:var(--ink-faint);font-size:1.1rem;cursor:pointer;line-height:1}
+@media print{.pv-aviso{display:none!important}}

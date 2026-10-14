@@ -733,6 +733,12 @@ function iniciarArquivos() {
   $('bExpQ').addEventListener('click', () => { const m = getMinhas(); if (!m.length) return toast('Você ainda não tem questões próprias.'); baixar('minhas-questoes.json', { versao: 2, questoes: m }); });
   $('arqQ').addEventListener('change', async e => { const f = e.target.files[0]; if (!f) return; try { importarQuestoes(JSON.parse(await f.text())); $('dlgMais').close(); } catch (_) { toast('Esse arquivo não é um JSON válido.'); } e.target.value = ''; });
   $('bLimpaQ').addEventListener('click', () => { if (confirm('Apagar TODAS as suas questões deste navegador? (exporte antes, se quiser guardar)')) { LS.gravar('prova:minhas', []); montarBanco(); renderBanco(true); $('dlgMais').close(); toast('Questões apagadas.'); } });
+  $('bannerFechar').addEventListener('click', () => { $('bannerExemplo').hidden = true; });
+  $('bExemplo').addEventListener('click', async () => {
+    if (E.itens.length && !confirm('A prova atual será substituída pela prova de exemplo. Continuar?')) return;
+    E = novoEstado(); provaExemplo(); sincronizarForm(); renderBanco(true); mudou(); await paginar();
+    $('bannerExemplo').hidden = false; if (window.matchMedia('(max-width: 900px)').matches) setVista('folha');
+  });
   $('bImprimir').addEventListener('click', async () => {
     if (!E.itens.length) return toast('Adicione ao menos uma questão antes de imprimir.');
     clearTimeout(0); await paginar(); const antes = document.title; document.title = E.nome;
@@ -1022,6 +1028,12 @@ function iniciarBanco() {
   $('lista').addEventListener('dblclick', e => { const c = e.target.closest('.qc'); if (c && !e.target.closest('button') && !e.target.closest('.full')) addItem(c.dataset.id); });
   document.querySelectorAll('[data-fechar]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
   $('verAdd').addEventListener('click', () => { addItem(verId); $('dlgVer').close(); });
+  $('verRep').addEventListener('click', () => {
+    const q = getQ(verId); if (!q) return;
+    const abrir = () => window.EduReportar.abrir({ tipo: 'questao', alvo: q.id + (q.arquivo ? ' · ' + q.arquivo : ''), titulo: 'Questão ' + q.id + ' · ' + TIPOS[q.tipo].nome + ' · ' + q.unidade });
+    if (window.EduReportar) return abrir();
+    const s = document.createElement('script'); s.src = '../app/reportar.js'; s.onload = abrir; s.onerror = () => toast('Não foi possível abrir o formulário agora.'); document.head.appendChild(s);
+  });
   $('verDup').addEventListener('click', () => { const q = Object.assign({}, getQ(verId)); delete q._busca; q.id = uid(); q.fonte = 'Minha (cópia)'; q.legado = false; $('dlgVer').close(); abrirEditor(q, true); });
   $('verEd').addEventListener('click', () => { const q = Object.assign({}, getQ(verId)); delete q._busca; $('dlgVer').close(); abrirEditor(q, false); });
   $('verDel').addEventListener('click', () => { if (!confirm('Excluir esta questão do seu banco?')) return; LS.gravar('prova:minhas', getMinhas().filter(q => q.id !== verId)); E.itens = E.itens.filter(i => i.id !== verId); $('dlgVer').close(); montarBanco(); renderBanco(true); mudou(); });
@@ -1061,8 +1073,17 @@ function iniciarGaveta() {
 
 function provaExemplo() {
   Object.assign(E.cab, { escola: "Colégio Exemplo", professor: PROF_NOME || "Prof. Eduardo", turma: "2º A", trimestre: "2º trimestre", subtitulo: "Funções, geometria e estatística", instrucoes: "Leia com atenção. Use caneta azul ou preta. Não é permitido o uso de calculadora." });
-  AUTORAIS.slice(0, 12).forEach(q => { E.itens.push({ id: q.id, pontos: q.pontos || 1 }); E.snap[q.id] = q; });
-  E.nome = "Prova de exemplo"; E.gab.anexar = !!new URLSearchParams(location.search).get("gab");
+  // Seleção variada para mostrar o que o EduMath Provas faz: frações e raízes, gráficos, tabelas, figuras, V/F, somatória, associação e questão aberta.
+  const ehMc = q => q.tipo === 'mc' && !q.soImagem;
+  const pega = (f, n) => AUTORAIS.filter(f).slice(0, n);
+  const sel = [].concat(
+    pega(q => ehMc(q) && /\{[^}]*\|[^}]*\}/.test(q.enunciado || ''), 2), pega(q => ehMc(q) && /√/.test(q.enunciado || ''), 1),
+    pega(q => ehMc(q) && q.figura && q.figura.tipo === 'funcao', 1), pega(q => ehMc(q) && q.figura && q.figura.tipo === 'barras', 1),
+    pega(q => ehMc(q) && q.figura && q.figura.tipo === 'tabela', 1), pega(q => ehMc(q) && q.figura && q.figura.tipo === 'svg', 1),
+    pega(q => q.tipo === 'vf', 1), pega(q => q.tipo === 'soma', 1), pega(q => q.tipo === 'assoc', 1), pega(q => q.tipo === 'aberta', 1));
+  const vistos = new Set(), lista = sel.filter(q => !vistos.has(q.id) && vistos.add(q.id));
+  (lista.length >= 6 ? lista : AUTORAIS.slice(0, 12)).forEach(q => { E.itens.push({ id: q.id, pontos: q.tipo === 'aberta' ? 2 : (q.pontos || 1) }); E.snap[q.id] = q; });
+  E.nome = "Prova de exemplo"; E.gab.anexar = new URLSearchParams(location.search).get("gab") !== "0"; // o exemplo já mostra o gabarito do professor
   const c = +new URLSearchParams(location.search).get("cols"); if (c === 1 || c === 2) E.layout.colunas = c;
 }
 
@@ -1071,7 +1092,7 @@ async function iniciar() {
   await carregar();
   const url = new URLSearchParams(location.search);
   const r = url.get('exemplo') ? null : LS.ler('prova:rascunho', null);
-  if (url.get('exemplo')) { E = novoEstado(); provaExemplo(); } else if (r && r.itens) { try { carregarProva(r); } catch (_) { E = novoEstado(); } } else E = novoEstado();
+  if (url.get('exemplo')) { E = novoEstado(); provaExemplo(); $('bannerExemplo').hidden = false; } else if (r && r.itens) { try { carregarProva(r); } catch (_) { E = novoEstado(); } } else E = novoEstado();
   sincronizarForm(); renderBanco(true); renderLista(); atualizarResumo(); await paginar();
   const p = new URLSearchParams(location.search);
   if (p.get('q')) { $('busca').value = p.get('q'); F.q = p.get('q'); renderBanco(true); }

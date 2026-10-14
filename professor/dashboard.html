@@ -164,7 +164,7 @@
 <script type="module">
 import { protegerPagina, sair } from '../app/auth.js';
 import {
-  criarTurma, listarTurmas, listarMatriculas, definirStatusMatricula,
+  criarTurma, listarTurmas, garantirCodigos, listarMatriculas, definirStatusMatricula,
   criarAtividade, listarAtividades, excluirAtividade,
   listarSubmissoes, corrigirSubmissao
 } from '../app/data.js';
@@ -283,6 +283,7 @@ document.getElementById('formTurma').addEventListener('submit', async function(e
 
 async function carregarTurmas(){
   turmasCache = await listarTurmas(uid);
+  if(!window.__codigosOk){ window.__codigosOk = true; garantirCodigos(uid, turmasCache); } // migra turmas antigas para o registro protegido de códigos
   var root = document.getElementById('turmasList');
   root.innerHTML = '';
   if(turmasCache.length === 0){

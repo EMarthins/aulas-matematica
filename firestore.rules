@@ -49,9 +49,10 @@ service cloud.firestore {
     // professor). O Firestore exige esta sintaxe recursiva à parte: a regra aninhada normal
     // abaixo NÃO cobre esse tipo de consulta. ---
 
-    // Aluno localiza uma turma pelo código de convite, antes de estar matriculado.
+    // Listar turmas de TODOS os professores: só o administrador (admin.html). Aluno e professor não enumeram turmas;
+    // o aluno entra com o código via joinCodes/{código} (abaixo), que só se lê um por vez.
     match /{path=**}/classes/{classId} {
-      allow read: if logado();
+      allow read: if admin();
     }
 
     // Aluno lista as turmas em que já tem matrícula (a partir do próprio uid). O administrador vê todas (admin.html).
@@ -65,6 +66,36 @@ service cloud.firestore {
     }
     match /{path=**}/submissions/{studentUid} {
       allow read: if admin();
+    }
+
+    // --- Códigos de convite: joinCodes/{CÓDIGO} -> {teacherUid, classId, nome, ano} ---
+    // Qualquer usuário logado lê UM código (get), mas ninguém lista a coleção (só o administrador). Só o professor
+    // aprovado dono da turma (ou o administrador) cria; o código precisa ser o da própria turma.
+    match /joinCodes/{codigo} {
+      allow get: if logado();
+      allow list: if admin();
+      allow create: if admin() || (
+        dono(request.resource.data.teacherUid) &&
+        request.resource.data.keys().hasOnly(['teacherUid', 'classId', 'nome', 'ano', 'createdAt']) &&
+        profAprovado(request.resource.data.teacherUid) &&
+        get(/databases/$(database)/documents/teachers/$(request.resource.data.teacherUid)/classes/$(request.resource.data.classId)).data.joinCode == codigo);
+      allow update: if false;
+      allow delete: if admin() || dono(resource.data.teacherUid);
+    }
+
+    // --- Relatos de erro (botão "Reportar erro" das aulas e do EduMath Provas) ---
+    // Qualquer pessoa pode ENVIAR (sem login, pela API REST), só com estes campos e tamanhos; só o administrador lê e gerencia.
+    match /reports/{relatoId} {
+      allow create: if request.resource.data.keys().hasOnly(['tipo', 'categoria', 'alvo', 'titulo', 'mensagem', 'contato', 'pagina', 'quando', 'status', 'app']) &&
+                       request.resource.data.keys().hasAll(['tipo', 'mensagem', 'quando', 'status']) &&
+                       request.resource.data.tipo in ['aula', 'questao', 'site'] &&
+                       request.resource.data.status == 'novo' &&
+                       request.resource.data.quando is timestamp &&
+                       request.resource.data.mensagem is string && request.resource.data.mensagem.size() >= 5 && request.resource.data.mensagem.size() <= 2000 &&
+                       request.resource.data.get('categoria', '').size() <= 120 && request.resource.data.get('alvo', '').size() <= 300 &&
+                       request.resource.data.get('titulo', '').size() <= 200 && request.resource.data.get('pagina', '').size() <= 300 &&
+                       request.resource.data.get('contato', '').size() <= 120 && request.resource.data.get('app', '').size() <= 120;
+      allow read, update, delete: if admin();
     }
 
     // --- Perfil do usuário (professor ou aluno) ---
@@ -102,9 +133,11 @@ service cloud.firestore {
 
       // --- Turmas ---
       match /classes/{classId} {
-        // Leitura liberada a qualquer usuário autenticado: é assim que o aluno acha a turma pelo
-        // código antes de se matricular. Só há nome e código aqui, nada sensível.
-        allow read: if logado();
+        // Quem lê uma turma: o professor dono, o administrador e o aluno que tem matrícula nela (qualquer status).
+        // Ninguém lista turmas alheias: o aluno encontra a turma pelo código em joinCodes/{código}.
+        allow get: if dono(teacherUid) || admin() ||
+                      (logado() && exists(/databases/$(database)/documents/teachers/$(teacherUid)/classes/$(classId)/students/$(request.auth.uid)));
+        allow list: if dono(teacherUid) || admin();
         // Criar/alterar turma exige professor aprovado; apagar (ex.: excluir a conta) o dono sempre pode.
         allow create, update: if dono(teacherUid) && profAprovado(teacherUid);
         allow delete: if dono(teacherUid);

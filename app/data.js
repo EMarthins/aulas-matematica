@@ -11,12 +11,42 @@ import { gerarCodigoTurma } from "./auth.js";
 
 // ---------- Turmas ----------
 
+// O código de convite fica em DOIS lugares: no documento da turma (só o professor lê) e em joinCodes/{CÓDIGO}
+// (qualquer usuário logado lê UM código por vez, mas ninguém consegue listar todos). Assim o aluno entra com o
+// código sem poder enumerar as turmas dos professores.
+function dadosDoCodigo(teacherUid, classId, nome, ano){
+  return { teacherUid: teacherUid, classId: classId, nome: nome, ano: ano || "", createdAt: serverTimestamp() };
+}
+
 export async function criarTurma(teacherUid, nome, ano){
   var joinCode = gerarCodigoTurma();
   var ref = await addDoc(collection(db, "teachers", teacherUid, "classes"), {
     nome: nome, ano: ano || "", joinCode: joinCode, createdAt: serverTimestamp()
   });
+  // Publica o código; se já existir (colisão), sorteia outro. Falhas não impedem a criação da turma:
+  // garantirCodigos() refaz o registro na próxima vez que o professor abrir o painel.
+  for(var i = 0; i < 4; i++){
+    try{
+      await setDoc(doc(db, "joinCodes", joinCode), dadosDoCodigo(teacherUid, ref.id, nome, ano));
+      break;
+    }catch(e){
+      joinCode = gerarCodigoTurma();
+      try{ await updateDoc(ref, { joinCode: joinCode }); }catch(e2){ break; }
+    }
+  }
   return { id: ref.id, joinCode: joinCode };
+}
+
+// Conferência/migração: garante que toda turma tenha o seu registro em joinCodes (turmas antigas não tinham).
+export async function garantirCodigos(teacherUid, turmas){
+  for(var i = 0; i < turmas.length; i++){
+    var t = turmas[i];
+    if(!t.joinCode) continue;
+    try{
+      var s = await getDoc(doc(db, "joinCodes", t.joinCode));
+      if(!s.exists()) await setDoc(doc(db, "joinCodes", t.joinCode), dadosDoCodigo(teacherUid, t.id, t.nome, t.ano));
+    }catch(e){ /* regras ainda não publicadas ou sem permissão: tenta de novo na próxima abertura */ }
+  }
 }
 
 export async function listarTurmas(teacherUid){
@@ -25,7 +55,9 @@ export async function listarTurmas(teacherUid){
 }
 
 export async function excluirTurma(teacherUid, classId){
+  var turma = null; try{ turma = await buscarTurma(teacherUid, classId); }catch(e){}
   await deleteDoc(doc(db, "teachers", teacherUid, "classes", classId));
+  if(turma && turma.joinCode){ try{ await deleteDoc(doc(db, "joinCodes", turma.joinCode)); }catch(e){} }
 }
 
 export async function buscarTurma(teacherUid, classId){
@@ -37,11 +69,18 @@ export async function buscarTurma(teacherUid, classId){
 
 // Retorna { teacherUid, classId, classNome } ou null se o código não existir.
 export async function buscarTurmaPorCodigo(joinCode){
-  var snap = await getDocs(query(collectionGroup(db, "classes"), where("joinCode", "==", joinCode.toUpperCase())));
-  if(snap.empty) return null;
-  var d = snap.docs[0];
-  var teacherUid = d.ref.parent.parent.id;
-  return { teacherUid: teacherUid, classId: d.id, classNome: d.data().nome };
+  var codigo = String(joinCode || "").trim().toUpperCase();
+  if(!codigo) return null;
+  try{
+    var s = await getDoc(doc(db, "joinCodes", codigo));
+    if(s.exists()){ var x = s.data(); return { teacherUid: x.teacherUid, classId: x.classId, classNome: x.nome }; }
+  }catch(e){}
+  // Compatibilidade enquanto as regras antigas estiverem publicadas (as novas negam esta consulta de propósito).
+  try{
+    var snap = await getDocs(query(collectionGroup(db, "classes"), where("joinCode", "==", codigo)));
+    if(!snap.empty){ var d = snap.docs[0]; return { teacherUid: d.ref.parent.parent.id, classId: d.id, classNome: d.data().nome }; }
+  }catch(e){}
+  return null;
 }
 
 export async function solicitarMatricula(teacherUid, classId, studentUid, nome, email){

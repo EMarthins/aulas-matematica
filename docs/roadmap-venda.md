@@ -95,3 +95,5 @@ Ver o fim deste arquivo (seção "Feito").
 - Exportar Word: feito em 2026-10-14 com gerador próprio (app/docx.js, sem bibliotecas, funciona offline); frações e raízes viram equações do Word (OMML), figuras SVG viram PNG, imagens do ENEM são embutidas; conferido no Word por scripts/testar-docx.js + automação (docs/fazedor-de-prova.md).
 
 - **Painel de administração completo** (2026-10-14): admin.html com Resumo, Professores (aprovar/recusar/suspender, plano Pro/Gratuito/Escola), Alunos (perfil, turmas, acessos, atividades) e Turmas; professor novo nasce "aguardando aprovação". Guia: docs/admin-painel.md.
+
+- **Reportar erro** (aulas/guias/atividades + questões do EduMath Provas), **aba Relatos** no admin, **prova de exemplo sem cadastro** e **códigos de convite protegidos** (joinCodes) — feitos em 2026-10-14; exigem publicar as regras novas do Firestore. Ver docs/admin-painel.md.

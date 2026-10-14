@@ -144,6 +144,7 @@
         <button type="button" role="tab" data-tab="prof">Professores <span class="n" id="nProf"></span></button>
         <button type="button" role="tab" data-tab="alu">Alunos <span class="n" id="nAlu"></span></button>
         <button type="button" role="tab" data-tab="tur">Turmas <span class="n" id="nTur"></span></button>
+        <button type="button" role="tab" data-tab="rel">Relatos de erro <span class="n" id="nRel"></span></button>
       </div>
 
       <section class="ad-tab on" id="tab-resumo"></section>
@@ -185,6 +186,15 @@
         <div class="chips" id="fTur"></div>
         <div class="conta" id="cTur"></div>
         <div class="tbl"><table><thead><tr><th>Turma</th><th>Professor</th><th>Alunos</th><th>Atividades</th><th>Criada em</th><th>Último acesso de aluno</th></tr></thead><tbody id="tbTur"></tbody></table></div>
+      </section>
+      <section class="ad-tab" id="tab-rel">
+        <div class="barra">
+          <input type="search" id="bRel" placeholder="Buscar nos relatos…" aria-label="Buscar relato">
+          <button class="btn sm secondary" type="button" data-csv="rel">⬇ Exportar CSV</button>
+        </div>
+        <div class="chips" id="fRel"></div>
+        <div class="conta" id="cRel"></div>
+        <div class="tbl"><table><thead><tr><th>Quando</th><th>Onde</th><th>Relato</th><th>Contato</th><th>Ações</th></tr></thead><tbody id="tbRel"></tbody></table></div>
       </section>
     </div>
   </div>
@@ -250,7 +260,7 @@ function perguntar(titulo, texto, rotulo, perigo){
 // ============================================================
 // Dados: Firebase (real) ou demonstração (?demo=1)
 // ============================================================
-var S = { u: [], t: [], c: [], m: [], a: [], s: [], falta: {}, carregadoEm: null };
+var S = { u: [], t: [], c: [], m: [], a: [], s: [], r: [], falta: {}, carregadoEm: null };
 var ADM = { uid: null };
 var API = null;
 
@@ -264,14 +274,28 @@ async function apiFirebase(){
       var r = await Promise.all([
         tentar(F.collection(db, 'users')), tentar(F.collection(db, 'teachers')),
         tentar(F.collectionGroup(db, 'classes')), tentar(F.collectionGroup(db, 'students')),
-        tentar(F.collectionGroup(db, 'activities')), tentar(F.collectionGroup(db, 'submissions'))
+        tentar(F.collectionGroup(db, 'activities')), tentar(F.collectionGroup(db, 'submissions')),
+        tentar(F.collection(db, 'reports')), tentar(F.collection(db, 'joinCodes'))
       ]);
       if(r[0].erro || r[1].erro){ var e = new Error('sem-acesso'); e.sem = true; e.causa = r[0].erro || r[1].erro; throw e; }
       var pai = function(d, n){ var p = d.ref; for(var i = 0; i < n; i++) p = p.parent; return p.id; };
       var falta = {};
-      ['classes', 'matrículas', 'atividades', 'submissões'].forEach(function(n, i){ if(r[i + 2].erro) falta[n] = true; });
+      ['classes', 'matrículas', 'atividades', 'submissões', 'relatos'].forEach(function(n, i){ if(r[i + 2].erro) falta[n] = true; });
       var L = function(x){ return x.docs || []; };
+      // Conferência dos códigos de convite: toda turma precisa ter o seu registro em joinCodes (turmas antigas não tinham).
+      var criados = 0;
+      if(!r[2].erro && !r[7].erro){
+        var existentes = {}; L(r[7]).forEach(function(d){ existentes[d.id] = 1; });
+        for(var k = 0; k < L(r[2]).length; k++){
+          var cd = L(r[2])[k], cx = cd.data();
+          if(cx.joinCode && !existentes[cx.joinCode]){
+            try{ await F.setDoc(F.doc(db, 'joinCodes', cx.joinCode), { teacherUid: pai(cd, 2), classId: cd.id, nome: cx.nome || '', ano: cx.ano || '', createdAt: F.serverTimestamp() }); criados++; }catch(e){ /* tenta de novo na próxima atualização */ }
+          }
+        }
+      }
       return {
+        codigosCriados: criados,
+        r: L(r[6]).map(function(d){ var x = d.data(); return { id: d.id, tipo: x.tipo || '', categoria: x.categoria || '', alvo: x.alvo || '', titulo: x.titulo || '', mensagem: x.mensagem || '', contato: x.contato || '', pagina: x.pagina || '', quando: ts(x.quando), status: x.status || 'novo' }; }),
         u: L(r[0]).map(function(d){ var x = d.data(); return { uid: d.id, nome: x.nome || '(sem nome)', email: x.email || '', role: x.role || 'aluno', criado: ts(x.createdAt), acesso: ts(x.ultimoAcesso), acessos: x.acessos || 0 }; }),
         t: L(r[1]).map(function(d){ var x = d.data(); return { uid: d.id, nome: x.nome || '', email: x.email || '', plano: x.plano || 'free', planoAte: ts(x.planoAte), planoNota: x.planoNota || '', status: x.status || '', statusEm: ts(x.statusEm), statusNota: x.statusNota || '', criado: ts(x.createdAt) }; }),
         c: L(r[2]).map(function(d){ var x = d.data(); return { id: d.id, prof: pai(d, 2), nome: x.nome || '(sem nome)', ano: x.ano || '', codigo: x.joinCode || '', criada: ts(x.createdAt) }; }),
@@ -281,6 +305,8 @@ async function apiFirebase(){
         falta: falta
       };
     },
+    async atualizarRelato(id, status){ await F.updateDoc(F.doc(db, 'reports', id), { status: status }); },
+    async excluirRelato(id){ await F.deleteDoc(F.doc(db, 'reports', id)); },
     async salvarProf(uid, dados){
       var o = {};
       Object.keys(dados).forEach(function(k){
@@ -333,9 +359,16 @@ function apiDemo(){
     .map(function(a, i){ return { id: a[0], prof: a[1], titulo: a[2], tipo: i % 2 ? 'quiz' : 'leitura', turmas: a[3], criada: d(20 - i * 3), prazo: null }; });
   var subs = [];
   alunos.forEach(function(al, i){ ativs.forEach(function(a, k){ var mt = mats.find(function(m){ return m.uid === al.uid && a.turmas.indexOf(m.turma) >= 0 && m.status === 'approved'; }); if(mt && (i + k) % 3 !== 0) subs.push({ prof: a.prof, ativ: a.id, uid: al.uid, turma: mt.turma, status: (i + k) % 4 === 0 ? 'em-andamento' : 'concluido', nota: 3 + (i + k) % 3, total: 5, em: d(((i * 2 + k) % 15) + 0.5) }); }); });
-  var dados = { u: users.concat(alunos), t: teachers, c: turmas, m: mats, a: ativs, s: subs, falta: {} };
+  var relatos = [
+    { id: 'r1', tipo: 'aula', categoria: 'Resposta ou gabarito errado', alvo: 'aulas/2-ano/1-tri/funcao-quadratica/aula-1-funcao-quadratica-e-grafico.html', titulo: 'Função quadrática e gráfico — slide 7 de 17', mensagem: 'No slide 7 o vértice está como (2, −1), mas pela fórmula deveria ser outro valor… conferir o sinal do termo b.', contato: 'prof.maria@escola.exemplo', pagina: 'https://edumath.com.br/aulas/2-ano/1-tri/funcao-quadratica/aula-1-funcao-quadratica-e-grafico#s=7', quando: d(0, 3), status: 'novo' },
+    { id: 'r2', tipo: 'questao', categoria: 'Gabarito errado', alvo: 'enem2022-22', titulo: 'Questão enem2022-22 · Múltipla escolha · Geometria', mensagem: 'O gabarito diz B, mas a resolução leva à alternativa C.', contato: '', pagina: 'https://edumath.com.br/professor/prova', quando: d(1), status: 'novo' },
+    { id: 'r3', tipo: 'aula', categoria: 'Erro de digitação ou texto confuso', alvo: 'aulas/9-ano/pitagoras/aula-1.html', titulo: 'Teorema de Pitágoras — slide 2 de 12', mensagem: 'Está escrito "hipotenusa ao quadrado é igual a soma dos catetos" (faltou "dos quadrados").', contato: '', pagina: 'https://edumath.com.br/aulas/9-ano/pitagoras/aula-1', quando: d(6), status: 'resolvido' }
+  ];
+  var dados = { u: users.concat(alunos), t: teachers, c: turmas, m: mats, a: ativs, s: subs, r: relatos, falta: {}, codigosCriados: 0 };
   return {
     async carregar(){ await new Promise(function(r){ setTimeout(r, 350); }); return JSON.parse(JSON.stringify(dados), function(k, v){ return typeof v === 'string' && /^\d{4}-\d\d-\d\dT/.test(v) ? new Date(v) : v; }); },
+    async atualizarRelato(id, status){ await new Promise(function(r){ setTimeout(r, 150); }); dados.r.find(function(x){ return x.id === id; }).status = status; },
+    async excluirRelato(id){ await new Promise(function(r){ setTimeout(r, 150); }); dados.r = dados.r.filter(function(x){ return x.id !== id; }); },
     async tornarProfessor(uid, d){ await new Promise(function(r){ setTimeout(r, 250); }); var u = dados.u.find(function(x){ return x.uid === uid; }); u.role = 'professor'; dados.t.push({ uid: uid, nome: d.nome, email: d.email, plano: d.plano, planoAte: d.plano === 'free' ? null : d.planoAte, planoNota: d.planoNota || '', status: 'approved', statusEm: new Date(), statusNota: 'Convertido de aluno pelo administrador', criado: u.criado }); },
     async salvarProf(uid, o){ await new Promise(function(r){ setTimeout(r, 250); }); var t = dados.t.find(function(x){ return x.uid === uid; }); Object.keys(o).forEach(function(k){ t[k] = o[k]; }); if('status' in o) t.statusEm = new Date(); }
   };
@@ -391,7 +424,8 @@ function calcular(){
     return { chave: c.prof + '/' + c.id, id: c.id, nome: c.nome, ano: c.ano, codigo: c.codigo, criada: c.criada, profUid: c.prof, prof: p ? (p.nome || (uPor[c.prof] || {}).nome) : '(professor removido)',
       nAprov: aprov.length, nPend: pend.length, nRec: rec.length, nAtiv: (ativsPorTurma[c.prof + '/' + c.id] || []).length, alunos: alunosU, acesso: maxData(alunosU.filter(function(a){ return a.status === 'approved'; }).map(function(a){ return a.acesso; })), pendMaisAntiga: pend.length ? Math.min.apply(null, pend.map(function(m){ return m.pedido ? m.pedido.getTime() : Date.now(); })) : null };
   });
-  V = { profs: profs, alunos: alunos, turmas: turmas, uPor: uPor };
+  var relatos = (S.r || []).slice().sort(function(x, y){ return (y.quando || 0) - (x.quando || 0); });
+  V = { profs: profs, alunos: alunos, turmas: turmas, relatos: relatos, uPor: uPor };
 }
 
 // ============================================================
@@ -413,11 +447,13 @@ function resumo(){
   var pro = P.filter(function(p){ return p.proAtivo; });
   var vencendo = pro.filter(function(p){ return (p.planoAte - Date.now()) / DIA <= 7; });
   var alu7 = A.filter(function(a){ return a.acesso && Date.now() - a.acesso < 7 * DIA; });
+  var relNovos = V.relatos.filter(function(x){ return x.status === 'novo'; });
   var matPend = T.reduce(function(s, t){ return s + t.nPend; }, 0);
   var h1 = '<div class="stats">' +
     '<button class="stat' + (pend.length ? ' alerta' : '') + '" data-ir="prof" data-filtro="pending"><div class="k">Professores</div><div class="v">' + P.length + '</div><div class="s">' + (pend.length ? '<b>' + plural(pend.length, 'aguardando aprovação', 'aguardando aprovação') + '</b> — clique para revisar' : 'nenhum aguardando aprovação') + '</div></button>' +
     '<button class="stat" data-ir="prof" data-filtro="pro"><div class="k">Plano Pro ativo</div><div class="v">' + pro.length + '</div><div class="s">' + (vencendo.length ? '<b>' + plural(vencendo.length, 'vence', 'vencem') + ' em até 7 dias</b>' : 'de ' + P.length + ' professores') + '</div></button>' +
     '<button class="stat" data-ir="alu"><div class="k">Alunos</div><div class="v">' + A.length + '</div><div class="s"><b>' + alu7.length + '</b> acessaram nos últimos 7 dias</div></button>' +
+    '<button class="stat' + (relNovos.length ? ' alerta' : '') + '" data-ir="rel" data-filtro="novos"><div class="k">Relatos de erro</div><div class="v">' + relNovos.length + '</div><div class="s">' + (relNovos.length ? '<b>novos</b> — clique para ver' : 'nenhum relato novo') + '</div></button>' +
     '<button class="stat" data-ir="tur" data-filtro="pend"><div class="k">Turmas</div><div class="v">' + T.length + '</div><div class="s">' + (matPend ? '<b>' + plural(matPend, 'matrícula pendente', 'matrículas pendentes') + '</b> (com os professores)' : 'sem matrículas pendentes') + '</div></button></div>';
 
   var atencao = '';
@@ -427,6 +463,9 @@ function resumo(){
   vencendo.sort(function(a, b){ return a.planoAte - b.planoAte; }).forEach(function(p){
     var dias = Math.max(Math.ceil((p.planoAte - Date.now()) / DIA), 0);
     atencao += '<li><div class="quem"><b>' + h(p.nome) + '</b><small>Pro vence ' + (dias === 0 ? 'hoje' : 'em ' + plural(dias, 'dia', 'dias')) + ' (' + fmtData(p.planoAte) + ')</small></div><div style="display:flex;gap:6px"><button class="btn sm" data-a="renovar" data-u="' + h(p.uid) + '">Renovar +30 dias</button><button class="btn sm secondary" data-a="abrir" data-u="' + h(p.uid) + '">Plano…</button></div></li>';
+  });
+  relNovos.slice(0, 3).forEach(function(x){
+    atencao += '<li><div class="quem"><b>Relato: ' + h(x.titulo || x.alvo) + '</b><small>' + h(x.categoria) + ' · ' + rel(x.quando) + '</small></div><button class="btn sm secondary" data-ir="rel" data-filtro="novos">Ver relatos</button></li>';
   });
   T.filter(function(t){ return t.nPend && t.pendMaisAntiga && Date.now() - t.pendMaisAntiga > 7 * DIA; }).forEach(function(t){
     atencao += '<li><div class="quem"><b>' + h(t.nome) + ' · ' + h(t.prof) + '</b><small>' + plural(t.nPend, 'aluno esperando', 'alunos esperando') + ' aprovação há mais de 7 dias</small></div><button class="btn sm secondary" data-a="turma" data-k="' + h(t.chave) + '">Ver turma</button></li>';
@@ -448,7 +487,7 @@ function resumo(){
 // ============================================================
 // Professores
 // ============================================================
-var F = { prof: 'todos', alu: 'todos', tur: 'todas' };
+var F = { prof: 'todos', alu: 'todos', tur: 'todas', rel: 'novos' };
 function chips(el, grupos, atual, contar){
   el.innerHTML = grupos.map(function(g){ return '<button type="button" class="chip' + (g[0] === atual ? ' on' : '') + '" data-f="' + g[0] + '">' + g[1] + '<span class="c">' + contar(g[0]) + '</span></button>'; }).join('');
 }
@@ -528,6 +567,36 @@ function desenhaTur(){
       '<td class="num"><b>' + t.nAprov + '</b> aprovados' + (t.nPend ? '<div class="peq"><b style="color:var(--growth-ink,var(--growth))">' + t.nPend + ' pendentes</b></div>' : '') + '</td><td class="num">' + t.nAtiv + '</td><td class="num">' + dd(t.criada) + '</td><td class="num">' + relHtml(t.acesso) + '</td></tr>';
   }).join('') || '<tr><td colspan="6" class="vazio" style="padding:1.4em">Nenhuma turma com esse filtro.</td></tr>';
   $('nTur').textContent = V.turmas.length;
+}
+
+// ============================================================
+// Relatos de erro
+// ============================================================
+var FREL = { novos: function(x){ return x.status === 'novo'; }, resolvidos: function(x){ return x.status === 'resolvido'; }, todos: function(){ return true; } };
+function desenhaRel(){
+  var q = norm($('bRel').value);
+  var base = V.relatos.filter(function(x){ return !q || norm(x.titulo + ' ' + x.alvo + ' ' + x.mensagem + ' ' + x.categoria + ' ' + x.contato).indexOf(q) >= 0; });
+  chips($('fRel'), [['novos', 'Novos'], ['resolvidos', 'Resolvidos'], ['todos', 'Todos']], F.rel, function(k){ return base.filter(FREL[k]).length; });
+  var lista = base.filter(FREL[F.rel]);
+  $('cRel').textContent = lista.length + ' de ' + V.relatos.length + ' relatos';
+  $('tbRel').innerHTML = lista.map(function(x){
+    var onde = x.pagina ? '<a href="' + h(x.pagina) + '" target="_blank" rel="noopener">' + h(x.titulo || x.alvo) + '</a>' : h(x.titulo || x.alvo);
+    return '<tr><td class="num">' + relHtml(x.quando) + '<div class="peq">' + dt(x.quando) + '</div></td><td><div class="nome">' + onde + '</div><div class="peq">' + (x.tipo === 'questao' ? 'Questão' : x.tipo === 'aula' ? 'Aula/atividade' : 'Site') + ' · ' + h(x.alvo) + '</div></td>' +
+      '<td><span class="pill aviso">' + h(x.categoria) + '</span><div style="margin-top:6px;white-space:pre-wrap">' + h(x.mensagem) + '</div></td><td>' + (x.contato ? h(x.contato) : '<span class="peq">não informado</span>') + '</td>' +
+      '<td><div class="acoes">' + (x.status === 'novo' ? '<button class="btn sm" data-a="resolver" data-id="' + h(x.id) + '">Marcar como resolvido</button>' : '<button class="btn sm secondary" data-a="reabrir" data-id="' + h(x.id) + '">Reabrir</button>') + '<button class="btn sm secondary" data-a="excluirRel" data-id="' + h(x.id) + '">Excluir</button></div></td></tr>';
+  }).join('') || '<tr><td colspan="5" class="vazio" style="padding:1.4em">Nenhum relato com esse filtro.</td></tr>';
+  var n = V.relatos.filter(FREL.novos).length; $('nRel').textContent = n ? n + ' novos' : V.relatos.length; $('nRel').classList.toggle('alerta', !!n);
+}
+async function mudarRelato(id, acao){
+  if(ocupado) return;
+  if(acao === 'excluir' && !(await perguntar('Excluir este relato?', 'O relato some do painel. Não dá para desfazer.', 'Excluir', true))) return;
+  ocupado = true;
+  try{
+    if(acao === 'excluir'){ await API.excluirRelato(id); S.r = S.r.filter(function(x){ return x.id !== id; }); }
+    else{ var st = acao === 'resolver' ? 'resolvido' : 'novo'; await API.atualizarRelato(id, st); S.r.find(function(x){ return x.id === id; }).status = st; }
+    calcular(); desenhaTudo(); toast(acao === 'excluir' ? 'Relato excluído.' : acao === 'resolver' ? 'Marcado como resolvido. ✓' : 'Relato reaberto.');
+  }catch(e){ console.error(e); toast('Não foi possível atualizar. As regras novas do Firebase estão publicadas?'); mostrarAvisoRegras(true); }
+  finally{ ocupado = false; }
 }
 
 // ============================================================
@@ -662,15 +731,16 @@ function somarDias(n){
 // ============================================================
 // Eventos e montagem
 // ============================================================
-function desenhaTudo(){ resumo(); desenhaProf(); desenhaAlu(); desenhaTur(); }
+function desenhaTudo(){ resumo(); desenhaProf(); desenhaAlu(); desenhaTur(); desenhaRel(); }
 function irPara(aba, filtro){
   document.querySelectorAll('#abas button').forEach(function(b){ b.classList.toggle('on', b.dataset.tab === aba); });
   document.querySelectorAll('.ad-tab').forEach(function(s){ s.classList.toggle('on', s.id === 'tab-' + aba); });
-  if(filtro){ F[aba === 'prof' ? 'prof' : aba === 'alu' ? 'alu' : 'tur'] = filtro; desenhaTudo(); }
+  if(filtro){ F[aba] = filtro; desenhaTudo(); }
   try{ history.replaceState(null, '', '#' + aba); }catch(e){}
 }
 $('abas').addEventListener('click', function(e){ var b = e.target.closest('button'); if(b) irPara(b.dataset.tab); });
-['fProf', 'fAlu', 'fTur'].forEach(function(id){ $(id).addEventListener('click', function(e){ var b = e.target.closest('[data-f]'); if(!b) return; F[id === 'fProf' ? 'prof' : id === 'fAlu' ? 'alu' : 'tur'] = b.dataset.f; desenhaTudo(); }); });
+['fProf', 'fAlu', 'fTur', 'fRel'].forEach(function(id){ $(id).addEventListener('click', function(e){ var b = e.target.closest('[data-f]'); if(!b) return; F[id === 'fProf' ? 'prof' : id === 'fAlu' ? 'alu' : id === 'fTur' ? 'tur' : 'rel'] = b.dataset.f; desenhaTudo(); }); });
+$('bRel').addEventListener('input', desenhaRel);
 ['bProf', 'oProf'].forEach(function(id){ $(id).addEventListener('input', desenhaProf); });
 ['bAlu', 'oAlu'].forEach(function(id){ $(id).addEventListener('input', desenhaAlu); });
 ['bTur', 'oTur'].forEach(function(id){ $(id).addEventListener('input', desenhaTur); });
@@ -678,7 +748,7 @@ $('btnAtualizar').addEventListener('click', function(){ carregar(true); });
 
 document.addEventListener('click', function(e){
   var el = e.target.closest('[data-a],[data-ir],[data-csv],[data-p]'); if(!el) return;
-  if(el.dataset.ir){ var m = { pending: 'pending', pro: 'pro', pend: 'pend' }; irPara(el.dataset.ir, el.dataset.filtro ? m[el.dataset.filtro] : (el.dataset.ir === 'tur' ? 'todas' : 'todos')); return; }
+  if(el.dataset.ir){ var m = { pending: 'pending', pro: 'pro', pend: 'pend', novos: 'novos' }; irPara(el.dataset.ir, el.dataset.filtro ? m[el.dataset.filtro] : (el.dataset.ir === 'tur' ? 'todas' : el.dataset.ir === 'rel' ? 'novos' : 'todos')); return; }
   if(el.dataset.csv){ exportar(el.dataset.csv); return; }
   if(el.dataset.p){ PLANOSEL.plano = el.dataset.p; if(PLANOSEL.plano !== 'free' && !$('dataPlano').value) somarDias(30); marcarSegPlano(); return; }
   var a = el.dataset.a, u = el.dataset.u;
@@ -693,6 +763,9 @@ document.addEventListener('click', function(e){
   else if(a === 'salvarNotaStatus'){ var p = V.profs.find(function(x){ return x.uid === u; }); salvarProf(u, { status: p.status === 'approved' && p.legado ? 'approved' : p.status, statusNota: $('notaStatus').value.trim() }, 'Anotação salva.').then(function(ok){ if(ok) dlgProf(u); }); }
   else if(a === 'salvarPlano') salvarPlano(u);
   else if(a === 'virarProf') virarProf(u);
+  else if(a === 'resolver') mudarRelato(el.dataset.id, 'resolver');
+  else if(a === 'reabrir') mudarRelato(el.dataset.id, 'reabrir');
+  else if(a === 'excluirRel') mudarRelato(el.dataset.id, 'excluir');
   else if(a === 'somar') somarDias(+el.dataset.d);
   else if(a === 'renovar'){ var q = V.profs.find(function(x){ return x.uid === u; }); var base = q.planoAte > new Date() ? q.planoAte : new Date(); salvarProf(u, { plano: q.plano, planoAte: new Date(base.getTime() + 30 * DIA), planoNota: q.planoNota || null }, 'Plano renovado por mais 30 dias. ✓'); }
 });
@@ -703,6 +776,7 @@ function exportar(tipo){
   if(tipo === 'prof') baixarCsv('professores-' + hoje + '.csv', [['Nome', 'E-mail', 'Status', 'Plano', 'Válido até', 'Anotação do plano', 'Cadastro', 'Último acesso', 'Acessos', 'Turmas', 'Alunos aprovados', 'Atividades']].concat(V.profs.map(function(p){ return [p.nome, p.email, { pending: 'Aguardando', approved: 'Aprovado', rejected: 'Recusado', suspended: 'Suspenso' }[p.status], p.proAtivo ? p.plano : p.vencido ? 'Pro vencido' : 'Gratuito', p.planoAte ? dd(p.planoAte) : '', p.planoNota, dd(p.criado), p.acesso ? dt(p.acesso) : '', p.acessos, p.nTurmas, p.nAlunos, p.nAtiv]; })));
   if(tipo === 'alu') baixarCsv('alunos-' + hoje + '.csv', [['Nome', 'E-mail', 'Turmas', 'Cadastro', 'Último acesso', 'Acessos', 'Atividades feitas', 'Atividades atribuídas']].concat(V.alunos.map(function(a){ return [a.nome, a.email, a.mats.map(function(m){ return m.turma + ' (' + m.prof + (m.status !== 'approved' ? ', ' + m.status : '') + ')'; }).join(' | '), dd(a.criado), a.acesso ? dt(a.acesso) : '', a.acessos, a.nFeitas, a.nAtrib]; })));
   if(tipo === 'tur') baixarCsv('turmas-' + hoje + '.csv', [['Turma', 'Ano/série', 'Código', 'Professor', 'Alunos aprovados', 'Alunos pendentes', 'Atividades', 'Criada em', 'Último acesso de aluno']].concat(V.turmas.map(function(t){ return [t.nome, t.ano, t.codigo, t.prof, t.nAprov, t.nPend, t.nAtiv, dd(t.criada), t.acesso ? dt(t.acesso) : '']; })));
+  if(tipo === 'rel') baixarCsv('relatos-' + hoje + '.csv', [['Quando', 'Tipo', 'Onde', 'Alvo', 'Categoria', 'Relato', 'Contato', 'Página', 'Status']].concat(V.relatos.map(function(x){ return [dt(x.quando), x.tipo, x.titulo, x.alvo, x.categoria, x.mensagem, x.contato, x.pagina, x.status]; })));
   toast('Arquivo baixado.');
 }
 
@@ -737,7 +811,8 @@ async function carregar(manual){
     $('app').hidden = false; desenhaTudo(); mostrarAvisoRegras(false);
     $('atualizado').textContent = 'Atualizado às ' + S.carregadoEm.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     try{ localStorage.setItem('sb:admin', '1'); }catch(e){}
-    var h0 = (location.hash || '').slice(1); if(!manual && ['prof', 'alu', 'tur', 'resumo'].indexOf(h0) >= 0) irPara(h0);
+    var h0 = (location.hash || '').slice(1); if(!manual && ['prof', 'alu', 'tur', 'rel', 'resumo'].indexOf(h0) >= 0) irPara(h0);
+    if(r.codigosCriados) toast(plural(r.codigosCriados, 'código de convite protegido', 'códigos de convite protegidos') + '. ✓');
     if(manual) toast('Dados atualizados.');
   }catch(e){
     if(e.sem){
