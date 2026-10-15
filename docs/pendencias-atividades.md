@@ -4,7 +4,21 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 22 módulos (44 aulas) aguardando atividades.**
+**Total: 30 módulos (69 aulas) aguardando atividades.**
+
+### Matemática · 9° Ano · 1° Trimestre (6 módulos)
+
+- [ ] **Operações com números inteiros** — 3 aulas (`aulas/9-ano/1-tri/operacoes-com-inteiros/`)
+- [ ] **Números racionais: representações e frações** — 3 aulas (`aulas/9-ano/1-tri/numeros-racionais/`)
+- [ ] **Frações equivalentes** — 3 aulas (`aulas/9-ano/1-tri/fracoes-equivalentes/`)
+- [ ] **Operações com números racionais** — 4 aulas (`aulas/9-ano/1-tri/operacoes-com-racionais/`)
+- [ ] **Porcentagem** — 3 aulas (`aulas/9-ano/1-tri/porcentagem/`)
+- [ ] **Grandezas proporcionais** — 4 aulas (`aulas/9-ano/1-tri/grandezas-proporcionais/`)
+
+### Matemática · 9° Ano · 2° Trimestre (2 módulos)
+
+- [ ] **Polígonos** — 2 aulas (`aulas/9-ano/2-tri/poligonos/`)
+- [ ] **Triângulos: existência e classificação** — 3 aulas (`aulas/9-ano/2-tri/triangulos-existencia-classificacao/`)
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 

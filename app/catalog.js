@@ -1349,36 +1349,112 @@ export const MATERIAS = [
           }
         ]
       },
+      // >>> mat-9ano
       {
         ano: '9° Ano',
         trimestres: [
           {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Operações com números inteiros',
+                accent: 'primary',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Números inteiros: soma e subtração', arquivo:'aulas/9-ano/1-tri/operacoes-com-inteiros/aula-1-inteiros-soma-e-subtracao.html' },
+                  { tipo:'Aula 2', titulo:'Multiplicação, divisão e potenciação com inteiros', arquivo:'aulas/9-ano/1-tri/operacoes-com-inteiros/aula-2-inteiros-multiplicacao-divisao-potencia.html' },
+                  { tipo:'Aula 3', titulo:'Resolução de problemas com números inteiros', arquivo:'aulas/9-ano/1-tri/operacoes-com-inteiros/aula-3-problemas-com-inteiros.html' }
+                ]
+              },
+              {
+                titulo: 'Números racionais: representações e frações',
+                accent: 'growth',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Representações de um número racional', arquivo:'aulas/9-ano/1-tri/numeros-racionais/aula-1-representacoes-de-um-racional.html' },
+                  { tipo:'Aula 2', titulo:'Fração como parte do todo, razão e número misto', arquivo:'aulas/9-ano/1-tri/numeros-racionais/aula-2-fracao-parte-razao-misto.html' },
+                  { tipo:'Aula 3', titulo:'Fração de uma quantidade e comparação de frações', arquivo:'aulas/9-ano/1-tri/numeros-racionais/aula-3-fracao-de-quantidade-e-comparacao.html' }
+                ]
+              },
+              {
+                titulo: 'Frações equivalentes',
+                accent: 'growth',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Frações equivalentes e simplificação', arquivo:'aulas/9-ano/1-tri/fracoes-equivalentes/aula-1-equivalencia-e-simplificacao.html' },
+                  { tipo:'Aula 2', titulo:'Frações com o mesmo denominador e o mínimo múltiplo comum', arquivo:'aulas/9-ano/1-tri/fracoes-equivalentes/aula-2-mesmo-denominador-e-mmc.html' },
+                  { tipo:'Aula 3', titulo:'Frações equivalentes em problemas e na reta numérica', arquivo:'aulas/9-ano/1-tri/fracoes-equivalentes/aula-3-equivalencia-em-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Operações com números racionais',
+                accent: 'primary',
+                icon: 'sigma',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Adição e subtração de números racionais', arquivo:'aulas/9-ano/1-tri/operacoes-com-racionais/aula-1-adicao-e-subtracao-de-racionais.html' },
+                  { tipo:'Aula 2', titulo:'Multiplicação e divisão de números racionais', arquivo:'aulas/9-ano/1-tri/operacoes-com-racionais/aula-2-multiplicacao-e-divisao-de-racionais.html' },
+                  { tipo:'Aula 3', titulo:'Resolução de problemas com números racionais I', arquivo:'aulas/9-ano/1-tri/operacoes-com-racionais/aula-3-problemas-com-racionais-i.html' },
+                  { tipo:'Aula 4', titulo:'Resolução de problemas com números racionais II', arquivo:'aulas/9-ano/1-tri/operacoes-com-racionais/aula-4-problemas-com-racionais-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Porcentagem',
+                accent: 'decay',
+                icon: 'percent',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem e suas representações', arquivo:'aulas/9-ano/1-tri/porcentagem/aula-1-porcentagem-e-suas-representacoes.html' },
+                  { tipo:'Aula 2', titulo:'Aumentos e descontos percentuais', arquivo:'aulas/9-ano/1-tri/porcentagem/aula-2-aumentos-e-descontos.html' },
+                  { tipo:'Aula 3', titulo:'Problemas de porcentagem', arquivo:'aulas/9-ano/1-tri/porcentagem/aula-3-problemas-de-porcentagem.html' }
+                ]
+              },
+              {
+                titulo: 'Grandezas proporcionais',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Grandezas diretamente proporcionais I', arquivo:'aulas/9-ano/1-tri/grandezas-proporcionais/aula-1-grandezas-diretamente-proporcionais-i.html' },
+                  { tipo:'Aula 2', titulo:'Grandezas diretamente proporcionais II', arquivo:'aulas/9-ano/1-tri/grandezas-proporcionais/aula-2-grandezas-diretamente-proporcionais-ii.html' },
+                  { tipo:'Aula 3', titulo:'Grandezas inversamente proporcionais I', arquivo:'aulas/9-ano/1-tri/grandezas-proporcionais/aula-3-grandezas-inversamente-proporcionais-i.html' },
+                  { tipo:'Aula 4', titulo:'Grandezas inversamente proporcionais II', arquivo:'aulas/9-ano/1-tri/grandezas-proporcionais/aula-4-grandezas-inversamente-proporcionais-ii.html' }
+                ]
+              }
+            ]
+          },
+          {
             nome: '2° Trimestre',
             unidades: [
               {
-                titulo: 'Recomposição Matemática',
+                titulo: 'Polígonos',
                 accent: 'primary',
                 icon: 'polygon',
+                pendente: true,
                 itens: [
-                  { tipo:'Aulas 21–22', titulo:'Polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-1-poligonos.html' },
-                  { tipo:'Aulas 23–27', titulo:'Triângulos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-2-triangulos.html' },
-                  { tipo:'Aulas 28–29', titulo:'Quadriláteros', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-3-quadrilateros.html' },
-                  { tipo:'Aulas 30–34', titulo:'Propriedades dos polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-4-propriedades-poligonos.html' },
-                  { tipo:'Aulas 35–38', titulo:'Circunferência e o número π', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-5-circunferencia.html' },
-                  { tipo:'Aulas 39–42', titulo:'Ângulos na circunferência e problemas', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-6-angulos-problemas.html' },
-                  { tipo:'Guia', titulo:'Guia — Recomposição Matemática', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/infografico.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Polígonos (aulas 21–22)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-1-poligonos-atividade-pratica.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Triângulos (aulas 23–27)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-2-triangulos-atividade-pratica.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Quadriláteros (aulas 28–29)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-3-quadrilateros-atividade-pratica.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Propriedades dos polígonos (aulas 30–34)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-4-propriedades-poligonos-atividade-pratica.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Circunferência (aulas 35–38)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-5-circunferencia-atividade-pratica.html' },
-                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Ângulos e problemas (aulas 39–42)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-6-angulos-problemas-atividade-pratica.html' }
+                  { tipo:'Aula 1', titulo:'O que são polígonos?', arquivo:'aulas/9-ano/2-tri/poligonos/aula-1-o-que-sao-poligonos.html' },
+                  { tipo:'Aula 2', titulo:'Polígonos regulares e não regulares', arquivo:'aulas/9-ano/2-tri/poligonos/aula-2-poligonos-regulares-e-nao-regulares.html' }
+                ]
+              },
+              {
+                titulo: 'Triângulos: existência e classificação',
+                accent: 'growth',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Condição de existência de um triângulo', arquivo:'aulas/9-ano/2-tri/triangulos-existencia-classificacao/aula-1-condicao-de-existencia-de-um-triangulo.html' },
+                  { tipo:'Aula 2', titulo:'Classificação dos triângulos quanto aos lados', arquivo:'aulas/9-ano/2-tri/triangulos-existencia-classificacao/aula-2-triangulos-quanto-aos-lados.html' },
+                  { tipo:'Aula 3', titulo:'Classificação dos triângulos quanto aos ângulos', arquivo:'aulas/9-ano/2-tri/triangulos-existencia-classificacao/aula-3-triangulos-quanto-aos-angulos.html' }
                 ]
               }
             ]
           }
         ]
       }
+      // <<< mat-9ano
     ]
   },
   {
