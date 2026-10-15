@@ -286,6 +286,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     for(var j = 0; j < a.trimestres.length; j++){ var c = contaTri(a.trimestres[j]); if(c.total && c.vistos < c.total) return j; }
     return 0;
   }
+  function slugT(x){ return String(x).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[°º]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function blocoTri(m, a, tri, ti, grade, forca, padrao){
     var c = contaTri(tri), k = 'tri|' + m.id + '|' + a.ano + '|' + tri.nome;
     var d = el('details', 'tri'); d.dataset.k = k;
@@ -297,7 +298,10 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
       '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
       '<span class="chev">' + CHEV + '</span>');
     d.appendChild(s);
-    var body = el('div', 'tri-body'); body.appendChild(grade); d.appendChild(body);
+    var body = el('div', 'tri-body');
+    // atalho para a trilha de estudo deste trimestre (roteiro em módulos + registro de onde cada turma parou)
+    if(c.total){ var tid = m.id + ':' + slugT(a.ano) + ':' + slugT(tri.nome); body.appendChild(el('div', 'tri-acoes', '<a href="trilhas.html#prontas/' + encodeURIComponent(tid) + '">Ver como trilha de estudo</a><span>Roteiro em módulos; o EduMath lembra onde cada turma parou.</span>')); }
+    body.appendChild(grade); d.appendChild(body);
     s.addEventListener('click', function(){ setTimeout(function(){ if(!forca) lembrar(k, d.open); }, 0); }); // só o que a pessoa abre/fecha é lembrado
     return d;
   }

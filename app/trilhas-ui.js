@@ -100,6 +100,8 @@ function viewTurma(id) {
 /* ---------------- trilhas prontas ---------------- */
 const filtroP = { materia: '', ano: '' };
 function viewProntas(abrirId) {
+  const alvo = abrirId ? trilhaPorId(abrirId) : null;
+  if (alvo) { filtroP.materia = alvo.materia; if (filtroP.ano && filtroP.ano !== alvo.ano) filtroP.ano = ''; }
   if (!filtroP.materia) filtroP.materia = materiaPref();
   if (!MATERIAS_TRILHA.some(m => m.id === filtroP.materia)) filtroP.materia = MATERIAS_TRILHA[0] ? MATERIAS_TRILHA[0].id : '';
   const da = TRILHAS.filter(t => t.materia === filtroP.materia);
@@ -172,7 +174,7 @@ let sinc = null;
 const salvou = () => { if (sinc) sinc.alterou(); };
 function pintaNuvem(e) {
   const el = document.getElementById('tlNuvem'); if (!el) return;
-  const T = { sincronizando: ['sync', 'Sincronizando…'], ok: ['ok', 'Salvo na nuvem'], parcial: ['aviso', 'Parte não subiu'], offline: ['aviso', 'Sem conexão — fica neste navegador'], erro: ['erro', 'Erro ao sincronizar'] }[e.estado];
+  const T = { sincronizando: ['sync', 'Sincronizando…'], ok: ['ok', 'Salvo na nuvem'], parcial: ['aviso', 'Parte não subiu'], offline: ['aviso', 'Sem conexão — fica neste navegador'], erro: ['aviso', 'Só neste navegador (sem nuvem agora)'] }[e.estado];
   if (!T) { el.hidden = true; return; }
   el.hidden = false; el.className = 'tl-nuvem ' + T[0]; el.textContent = '☁ ' + T[1];
 }
