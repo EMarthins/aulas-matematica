@@ -82,6 +82,7 @@ import {
 } from '../app/data.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml } from '../app/util.js';
+import { trilhaPorId } from '../app/trilhas.js';
 
 iniciarThemeToggle('theme-pref-app');
 
@@ -147,6 +148,15 @@ async function carregarTurmas(){
     row.appendChild(el('span', null, escapeHtml(turma ? turma.nome : 'Turma')));
     row.appendChild(el('span','badge '+m.status, m.status === 'pending' ? 'aguardando aprovação' : (m.status === 'approved' ? 'aprovado' : 'rejeitado')));
     root.appendChild(row);
+    // trilha da turma: o roteiro de estudo e a aula em que a turma está agora
+    if(m.status === 'approved' && turma && turma.trilha && trilhaPorId(turma.trilha)){
+      var tr = trilhaPorId(turma.trilha), at = turma.trilhaAtual || null;
+      var info = el('div','meta');
+      info.style.cssText = 'margin:-4px 0 12px;padding:10px 12px;border-radius:12px;background:var(--primary-soft);';
+      info.innerHTML = '<strong>Trilha da turma:</strong> ' + escapeHtml(tr.titulo) + ' · <a href="../trilhas.html#roteiro/' + encodeURIComponent(tr.id) + '">ver roteiro</a>' +
+        (at && at.arquivo ? '<br>A turma está em: <a href="../' + escapeHtml(at.arquivo) + '">Módulo ' + String(at.modulo).padStart(2,'0') + ' · ' + escapeHtml(at.titulo) + '</a>' + (at.pct != null ? ' · ' + at.pct + '% da trilha' : '') : '');
+      root.appendChild(info);
+    }
   }
 }
 

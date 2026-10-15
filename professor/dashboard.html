@@ -164,11 +164,12 @@
 <script type="module">
 import { protegerPagina, sair } from '../app/auth.js';
 import {
-  criarTurma, listarTurmas, garantirCodigos, listarMatriculas, definirStatusMatricula,
+  criarTurma, listarTurmas, garantirCodigos, listarMatriculas, definirStatusMatricula, definirTrilhaTurma,
   criarAtividade, listarAtividades, excluirAtividade,
   listarSubmissoes, corrigirSubmissao
 } from '../app/data.js';
 import { listarAulasParaSelecao } from '../app/catalog.js';
+import { TRILHAS, Trilhas, trilhaPorId } from '../app/trilhas.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml, linkSeguro } from '../app/util.js';
 import { PLANOS, planoVigente, fmtData } from '../app/planos.js';
@@ -302,6 +303,32 @@ async function carregarTurmas(){
     codeRow.appendChild(el('span', null, 'Código de convite: '));
     codeRow.appendChild(el('span','code-pill', turma.joinCode));
     card.appendChild(codeRow);
+
+    // trilha da turma: o professor escolhe o roteiro; os alunos aprovados veem a trilha e a aula em que a turma está
+    (function(turma){
+      var trRow = el('div','code-row'); trRow.style.flexWrap = 'wrap'; trRow.style.gap = '8px';
+      trRow.appendChild(el('span', null, 'Trilha de estudo: '));
+      var sel = document.createElement('select'); sel.style.maxWidth = '280px';
+      sel.innerHTML = '<option value="">— nenhuma —</option>' + TRILHAS.map(function(t){ return '<option value="' + escapeHtml(t.id) + '"' + (t.id === turma.trilha ? ' selected' : '') + '>' + escapeHtml(t.titulo) + '</option>'; }).join('');
+      var abre = el('a','btn sm secondary','Abrir trilha'); abre.hidden = !turma.trilha;
+      function ligar(){
+        if(!sel.value){ abre.hidden = true; return null; }
+        var t = Trilhas.vincular(turma.id, turma.nome, sel.value); abre.href = '../trilhas.html#turma/' + t.id; abre.hidden = false; return t;
+      }
+      var loc = ligar();
+      // publica a aula em que a turma está (só quando muda)
+      if(loc){
+        var r = Trilhas.resumo(loc), p = r.proxima, atual = p ? { arquivo: p.aula.arquivo, titulo: p.aula.titulo, modulo: p.modulo.n, slide: (p.pos && !loc.feitas[p.aula.arquivo]) ? p.pos.s + 1 : 0, pct: r.pct } : null;
+        var antes = turma.trilhaAtual || null;
+        if(atual && (!antes || antes.arquivo !== atual.arquivo || antes.slide !== atual.slide || antes.pct !== atual.pct)){ definirTrilhaTurma(uid, turma.id, { trilhaAtual: atual }).catch(function(){}); }
+      }
+      sel.addEventListener('change', async function(){
+        try{ await definirTrilhaTurma(uid, turma.id, { trilha: sel.value, trilhaAtual: null }); turma.trilha = sel.value; ligar(); }
+        catch(e){ alert('Não foi possível salvar a trilha agora. Tente de novo.'); }
+      });
+      trRow.appendChild(sel); trRow.appendChild(abre);
+      card.appendChild(trRow);
+    })(turma);
 
     card.appendChild(el('div', null, '<strong style="font-size:.82rem;">Pendentes ('+pendentes.length+')</strong>'));
     var pendWrap = el('div', null);

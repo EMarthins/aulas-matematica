@@ -13,3 +13,8 @@ Ferramenta do professor (e do aluno): **roteiros prontos por matéria · ano · 
 - **Home em grupos**: Continuar (inclui até 3 turmas das trilhas) → **Estudar e praticar** → **Para dar aula** (só professor; visitante vê "Para professores") → Matérias; conta/planos/administração viraram links discretos no fim.
 - **Catálogo**: as aulas de cada módulo aparecem como "Aula 1, Aula 2…" em ordem (sem os números do RCO).
 - **Matéria principal do professor**: escolhida no cadastro (`login.html`) e editável em **Minha conta** (`users/{uid}.materia`; também em `sb:user.materia`); a Home, o catálogo e as trilhas mostram essa matéria primeiro.
+
+## Painel ↔ trilha, anotações e registro (15/10/2026)
+- **Turma do Painel com trilha**: em `professor/dashboard.html` cada turma tem o seletor **Trilha de estudo** (+ "Abrir trilha"). Grava `trilha` no documento da turma (`teachers/{uid}/classes/{id}`, via `definirTrilhaTurma`) e liga uma turma local (`classId`) para registrar onde ela parou; a aula em que a turma está (`trilhaAtual`: arquivo, título, módulo, slide, %) é republicada quando muda. Sem mudança de regras (o dono já pode alterar a turma).
+- **Aluno** (`aluno/dashboard.html`): na turma aprovada aparece "Trilha da turma", o link **ver roteiro** (`trilhas.html#roteiro/<id>`, ✓ pelas aulas que ele já abriu neste aparelho) e "A turma está em: Módulo NN · aula".
+- **Anotações por aula e turma** (✎ ao lado de cada aula, guardadas na turma e sincronizadas) e **Registro de aulas** (botão no resumo): texto com aulas concluídas e data, onde parou e anotações, para copiar ou imprimir (`Trilhas.registro`).

@@ -114,3 +114,11 @@
 .tl-nuvem.aviso{ color:var(--growth-ink); background:var(--growth-soft); }
 .tl-nuvem.erro{ color:#fff; background:#c0392b; }
 .tl-nuvem[hidden]{ display:none; }
+
+/* anotações por aula, registro e selo da turma do Painel */
+.tl-notab{ flex:none; width:30px; height:30px; border-radius:9px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink-faint); cursor:pointer; font-size:.95rem; line-height:1; }
+.tl-notab:hover{ border-color:var(--primary); color:var(--primary); } .tl-notab.on{ background:var(--primary-soft); border-color:var(--primary); color:var(--primary); }
+.tl-nota-li{ list-style:none; margin:0 0 6px 32px; } .tl-nota-li[hidden]{ display:none; }
+.tl-nota-ta{ width:100%; font:500 .86rem/1.4 'Archivo',sans-serif; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:10px; padding:.5em .7em; resize:vertical; }
+.tl-nota-ta:focus{ outline:2px solid var(--primary); outline-offset:1px; }
+.tl-vinc{ margin:-6px 0 14px; font-size:.84rem; color:var(--decay-ink); background:var(--decay-soft); border-radius:10px; padding:.5em .9em; }

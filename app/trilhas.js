@@ -100,6 +100,35 @@ export const Trilhas = {
     if (quer) t.feitas[arquivo] = agora(); else delete t.feitas[arquivo];
     t.atualizado = agora(); gravar(o);
   },
+  /** Liga uma turma do Painel (classId) a uma trilha: reaproveita a turma local já ligada ou cria uma. */
+  vincular(classId, nome, trilha) {
+    const o = ler(); let t = Object.values(o.turmas).find(x => x.classId === classId);
+    if (!t) { const id = novoId(); t = o.turmas[id] = { id, nome: String(nome || 'Turma').trim() || 'Turma', trilha: trilha || '', criada: agora(), atualizado: agora(), ultima: '', pos: {}, feitas: {}, notas: {}, classId, roteiro: roteiroDe(trilhaPorId(trilha)) }; }
+    else if (trilha && t.trilha !== trilha) { t.trilha = trilha; t.roteiro = roteiroDe(trilhaPorId(trilha)); t.atualizado = agora(); }
+    gravar(o); return t;
+  },
+  porClasse(classId) { return Object.values(ler().turmas).find(x => x.classId === classId) || null; },
+  /** Anotação do professor sobre uma aula naquela turma (ex.: "faltou o exemplo 3", "revisar na terça"). */
+  anotar(id, arquivo, texto) { const o = ler(), t = o.turmas[id]; if (!t) return; t.notas = t.notas || {}; if (String(texto).trim()) t.notas[arquivo] = String(texto); else delete t.notas[arquivo]; t.atualizado = agora(); gravar(o); },
+  /** Registro de aulas da turma em texto (aulas dadas com data, onde parou e anotações), para copiar ou imprimir. */
+  registro(turma) {
+    const tr = trilhaPorId(turma.trilha); if (!tr) return '';
+    const dt = t => new Date(t).toLocaleDateString('pt-BR');
+    const L = ['Registro de aulas — ' + turma.nome, tr.titulo, 'Emitido em ' + dt(agora()), ''];
+    tr.modulos.forEach(m => {
+      const linhas = [];
+      m.aulas.forEach(a => {
+        const feita = turma.feitas[a.arquivo], pos = turma.pos[a.arquivo], nota = (turma.notas || {})[a.arquivo];
+        if (!feita && !pos && !nota) return;
+        linhas.push('  ' + (feita ? '[x] ' : '[ ] ') + a.rotulo + ' · ' + a.titulo + (feita ? ' — concluída em ' + dt(feita) : pos ? ' — parou no slide ' + (pos.s + 1) + (pos.n ? ' de ' + pos.n : '') + ' (' + dt(pos.t) + ')' : ''));
+        if (nota) linhas.push('      Anotação: ' + String(nota).replace(/\n/g, ' '));
+      });
+      if (linhas.length) { L.push('Módulo ' + String(m.n).padStart(2, '0') + ' · ' + m.titulo); L.push(...linhas); L.push(''); }
+    });
+    const r = this.resumo(turma); L.push('Progresso: ' + r.feitas + ' de ' + r.total + ' aulas (' + r.pct + '%)');
+    if (r.proxima) L.push('Próxima aula: Módulo ' + String(r.proxima.modulo.n).padStart(2, '0') + ' · ' + r.proxima.aula.titulo);
+    return L.join('\n');
+  },
   /** Zera a posição guardada de uma aula (recomeça do slide 1). */
   zerarPosicao(id, arquivo) { const o = ler(), t = o.turmas[id]; if (!t) return; delete t.pos[arquivo]; gravar(o); },
   /** Resumo da turma na sua trilha: progresso, onde parou e qual é a próxima aula. */

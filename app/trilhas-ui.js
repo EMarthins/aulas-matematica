@@ -28,19 +28,22 @@ function quando(t) {
 function barra(pct) { return '<span class="tl-bar" role="progressbar" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100"><i style="width:' + pct + '%"></i></span>'; }
 
 /* ---------------- roteiros ---------------- */
-function listaModulos(tr, turma) {
+const vistoLocal = arq => { try { const p = JSON.parse(localStorage.getItem('prog:' + arq) || 'null'); return !!(p && p.v); } catch (e) { return false; } };
+function listaModulos(tr, turma, aluno) {
   return '<ol class="tl-mods">' + tr.modulos.map(m => {
     const feitasM = turma ? m.aulas.filter(a => turma.feitas[a.arquivo]).length : 0;
     const completo = turma && feitasM === m.aulas.length;
     const aulas = m.aulas.map(a => {
-      const feita = turma && turma.feitas[a.arquivo], pos = turma && turma.pos[a.arquivo];
+      const feita = aluno ? vistoLocal(a.arquivo) : turma && turma.feitas[a.arquivo], pos = turma && turma.pos[a.arquivo];
       const parou = pos && !feita && pos.s > 0;
       const href = turma ? Trilhas.href(a.arquivo, turma.id, 0) : a.arquivo;
       const estado = feita ? '<span class="tl-st ok" title="Concluída">' + ICO.ok + '</span>' : parou ? '<span class="tl-st par" title="Parou aqui">' + ICO.play + '</span>' : '<span class="tl-st"></span>';
-      const nota = parou ? '<small class="tl-pos">parou no slide ' + (pos.s + 1) + (pos.n ? ' de ' + pos.n : '') + ' · ' + quando(pos.t) + '</small>' : '';
-      const acao = turma ? '<button type="button" class="tl-chk' + (feita ? ' on' : '') + '" data-feita="' + esc(a.arquivo) + '" title="' + (feita ? 'Desmarcar como concluída' : 'Marcar como concluída') + '" aria-pressed="' + (!!feita) + '">' + ICO.ok + '</button>' : '';
+      const notaPos = parou ? '<small class="tl-pos">parou no slide ' + (pos.s + 1) + (pos.n ? ' de ' + pos.n : '') + ' · ' + quando(pos.t) + '</small>' : '';
+      const nota = turma && turma.notas && turma.notas[a.arquivo] ? turma.notas[a.arquivo] : '';
+      const acao = turma ? '<button type="button" class="tl-notab' + (nota ? ' on' : '') + '" data-nota="' + esc(a.arquivo) + '" title="Anotação desta aula">✎</button><button type="button" class="tl-chk' + (feita ? ' on' : '') + '" data-feita="' + esc(a.arquivo) + '" title="' + (feita ? 'Desmarcar como concluída' : 'Marcar como concluída') + '" aria-pressed="' + (!!feita) + '">' + ICO.ok + '</button>' : '';
+      const notaLi = turma ? '<li class="tl-nota-li" data-nl="' + esc(a.arquivo) + '"' + (nota ? '' : ' hidden') + '><textarea class="tl-nota-ta" data-nota-ta="' + esc(a.arquivo) + '" rows="2" placeholder="Anotação desta aula para esta turma (ex.: faltou o exemplo 3; revisar na terça)">' + esc(nota) + '</textarea></li>' : '';
       return '<li class="tl-aula' + (feita ? ' feita' : '') + (parou ? ' parou' : '') + '">' + estado +
-        '<a class="tl-al" href="' + esc(href) + '"><span class="tl-rot">' + esc(a.rotulo) + '</span><b>' + esc(a.titulo) + '</b>' + nota + '</a>' + acao + '</li>';
+        '<a class="tl-al" href="' + esc(href) + '"><span class="tl-rot">' + esc(a.rotulo) + '</span><b>' + esc(a.titulo) + '</b>' + notaPos + '</a>' + acao + '</li>' + notaLi;
     }).join('');
     const extras = []
       .concat(m.guias.map(g => '<a class="tl-ex" href="' + esc(g.arquivo) + '">Guia visual</a>'))
@@ -82,6 +85,11 @@ function viewTurmas() {
   }
   return '<div class="tl-grid">' + ts.map(cartaoTurma).join('') + novo + '</div>';
 }
+function viewRoteiro(id) {
+  const tr = trilhaPorId(decodeURIComponent(id)); if (!tr) return '<p class="tl-vazio-s">Trilha não encontrada.</p>';
+  const total = tr.totalAulas, vistas = tr.modulos.reduce((c, m) => c + m.aulas.filter(a => vistoLocal(a.arquivo)).length, 0), pct = total ? Math.round(vistas / total * 100) : 0;
+  return '<a class="tl-volta" href="javascript:history.back()">' + ICO.voltar + 'Voltar</a><header class="tl-th" style="grid-template-columns:1fr"><div><label class="tl-lb">Trilha</label><h2 style="margin:0;font:900 1.4rem Archivo,sans-serif">' + esc(tr.titulo) + '</h2></div></header><div class="tl-resumo">' + barra(pct) + '<span><b>' + pct + '%</b> · ' + vistas + ' de ' + total + ' aulas que você já abriu</span></div>' + listaModulos(tr, null, true);
+}
 function viewTurma(id) {
   const t = Trilhas.turma(id); if (!t) { location.hash = '#turmas'; return ''; }
   const r = Trilhas.resumo(t), tr = r.trilha;
@@ -92,7 +100,8 @@ function viewTurma(id) {
     '<header class="tl-th"><div><label class="tl-lb">Nome da ' + rotuloTurma + '</label><input class="tl-nome" id="tlNome" value="' + esc(t.nome) + '" maxlength="60"></div>' +
     '<div><label class="tl-lb">Trilha</label><select class="tl-sel" id="tlTrilha"><option value="">— escolha —</option>' + opts + '</select></div>' +
     '<button type="button" class="tl-btn danger" data-excluir title="Excluir esta ' + rotuloTurma + '">' + ICO.lixo + '</button></header>' +
-    (tr ? '<div class="tl-resumo">' + barra(r.pct) + '<span><b>' + r.pct + '%</b> · ' + r.feitas + ' de ' + r.total + ' aulas</span>' +
+    (t.classId ? '<p class="tl-vinc">Ligada à turma do Painel · os alunos aprovados veem esta trilha e a aula em que a turma está.</p>' : '') +
+    (tr ? '<div class="tl-resumo">' + barra(r.pct) + '<button type="button" class="tl-btn" data-registro>Registro de aulas</button>' + '<span><b>' + r.pct + '%</b> · ' + r.feitas + ' de ' + r.total + ' aulas</span>' +
       (prox && href ? '<a class="tl-btn p" href="' + esc(href) + '">' + ICO.play + (r.feitas || (prox.pos && prox.pos.s > 0) ? 'Continuar' : 'Começar') + ': ' + esc(prox.aula.titulo) + '</a>' : '') + '</div>' + listaModulos(tr, t)
       : '<p class="tl-vazio-s">Escolha uma trilha acima para ver o roteiro.</p>');
 }
@@ -146,13 +155,24 @@ function dialogoNova(trilhaId) {
   setTimeout(() => nome.focus(), 50);
 }
 
+/* ---------------- registro de aulas da turma ---------------- */
+function dialogoRegistro(id) {
+  const t = Trilhas.turma(id); if (!t) return;
+  const d = document.getElementById('tlDlg'), txt = Trilhas.registro(t);
+  d.innerHTML = '<form method="dialog" class="tl-dlg-f"><h2>Registro de aulas</h2><p class="tl-vazio-s" style="margin:0">Aulas dadas, onde parou e suas anotações — copie para o diário ou imprima.</p><textarea class="tl-nota-ta" id="dgReg" rows="14" readonly style="font-family:JetBrains Mono,monospace;font-size:.8rem"></textarea><div class="tl-dlg-b"><button type="button" class="tl-btn" data-fechar>Fechar</button><button type="button" class="tl-btn" data-copiar>Copiar</button><button type="button" class="tl-btn p" data-imprimir>Imprimir</button></div></form>';
+  d.querySelector('#dgReg').value = txt; d.showModal();
+  d.querySelector('[data-fechar]').addEventListener('click', () => d.close());
+  d.querySelector('[data-copiar]').addEventListener('click', async e => { try { await navigator.clipboard.writeText(txt); e.target.textContent = 'Copiado ✓'; } catch (_) { d.querySelector('#dgReg').select(); document.execCommand('copy'); e.target.textContent = 'Copiado ✓'; } });
+  d.querySelector('[data-imprimir]').addEventListener('click', () => { const w = window.open('', '_blank'); if (!w) return; w.document.write('<pre style="font:13px/1.5 Georgia,serif;white-space:pre-wrap;margin:24px">' + esc(txt) + '</pre>'); w.document.close(); w.focus(); w.print(); });
+}
+
 /* ---------------- roteamento ---------------- */
 function rota() { const h = location.hash.replace(/^#/, '').split('/'); return { v: h[0] || 'turmas', a: h[1] || '' }; }
 function render() {
   Trilhas.atualizarRoteiros();
   const r = rota();
   document.querySelectorAll('.tl-tab').forEach(b => b.classList.toggle('on', (b.dataset.v === 'turmas' && (r.v === 'turmas' || r.v === 'turma')) || b.dataset.v === r.v));
-  $app.innerHTML = r.v === 'turma' ? viewTurma(r.a) : r.v === 'prontas' ? viewProntas(r.a ? decodeURIComponent(r.a) : '') : viewTurmas();
+  $app.innerHTML = r.v === 'roteiro' ? viewRoteiro(r.a) : r.v === 'turma' ? viewTurma(r.a) : r.v === 'prontas' ? viewProntas(r.a ? decodeURIComponent(r.a) : '') : viewTurmas();
   if (r.v === 'prontas' && r.a) { const el = $app.querySelector('.tl-pronta.aberta'); if (el) el.scrollIntoView({ block: 'nearest' }); }
 }
 $app.addEventListener('click', e => {
@@ -162,13 +182,16 @@ $app.addEventListener('click', e => {
   if (t.dataset.ver) { const aberta = rota().a === t.dataset.ver; location.hash = aberta ? '#prontas' : '#prontas/' + encodeURIComponent(t.dataset.ver); return; }
   if (t.dataset.mat) { filtroP.materia = t.dataset.mat; filtroP.ano = ''; return render(); }
   if (t.hasAttribute('data-ano')) { filtroP.ano = t.dataset.ano; return render(); }
+  if (t.dataset.nota) { const li = $app.querySelector('[data-nl="' + CSS.escape(t.dataset.nota) + '"]'); if (li) { li.hidden = !li.hidden; if (!li.hidden) li.querySelector('textarea').focus(); } return; }
+  if (t.hasAttribute('data-registro')) return dialogoRegistro(rota().a);
   if (t.dataset.feita) { const id = rota().a; Trilhas.alternarFeita(id, t.dataset.feita); salvou(); return render(); }
   if (t.hasAttribute('data-excluir')) { const id = rota().a, tt = Trilhas.turma(id); if (tt && confirm('Excluir "' + tt.nome + '"? O registro de onde ela parou será apagado.')) { Trilhas.remover(id); salvou(); location.hash = '#turmas'; } return; }
 });
 $app.addEventListener('change', e => {
   if (e.target.id === 'tlTrilha') { Trilhas.trocarTrilha(rota().a, e.target.value); salvou(); render(); }
 });
-$app.addEventListener('input', e => { if (e.target.id === 'tlNome') { Trilhas.renomear(rota().a, e.target.value); salvou(); } });
+$app.addEventListener('input', e => { if (e.target.dataset && e.target.dataset.notaTa) { Trilhas.anotar(rota().a, e.target.dataset.notaTa, e.target.value); salvou(); const b = $app.querySelector('[data-nota="' + CSS.escape(e.target.dataset.notaTa) + '"]'); if (b) b.classList.toggle('on', !!e.target.value.trim()); return; }
+  if (e.target.id === 'tlNome') { Trilhas.renomear(rota().a, e.target.value); salvou(); } });
 /* ---------------- nuvem (só professor logado; o resto continua local) ---------------- */
 let sinc = null;
 const salvou = () => { if (sinc) sinc.alterou(); };

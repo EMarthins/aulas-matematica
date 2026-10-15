@@ -49,6 +49,11 @@ export async function garantirCodigos(teacherUid, turmas){
   }
 }
 
+// Trilha da turma (id da trilha) e a aula em que ela está (aparece para os alunos aprovados). Só o professor dono altera.
+export async function definirTrilhaTurma(teacherUid, classId, dados){
+  await updateDoc(doc(db, "teachers", teacherUid, "classes", classId), dados);
+}
+
 export async function listarTurmas(teacherUid){
   var snap = await getDocs(query(collection(db, "teachers", teacherUid, "classes"), orderBy("createdAt", "desc")));
   return snap.docs.map(function(d){ return Object.assign({ id: d.id }, d.data()); });
