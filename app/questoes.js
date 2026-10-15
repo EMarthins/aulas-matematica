@@ -78,6 +78,7 @@ export function validar(q) {
     if (a.length > 10) e.push('máximo de 10 alternativas');
     if (a.filter(x => x.ok).length !== 1 && !q.anulada && !q.semGabarito) e.push('marque exatamente 1 alternativa correta');
     if (a.some(x => !String(x.t).trim())) e.push('alternativa vazia');
+  } else if (q.soImagem) { /* questão só em imagem (vf, soma, aberta): não há texto a validar */
   } else if (q.tipo === 'vf' || q.tipo === 'soma') {
     const a = q.afirmacoes || [];
     if (a.length < 2) e.push('precisa de ao menos 2 afirmações');
@@ -108,6 +109,7 @@ export function embaralhar(arr, rand) { const a = arr.slice(); for (let i = a.le
 export function gabaritoDe(q, ordem) {
   if (q.anulada) return { curto: 'Anulada', longo: 'Questão anulada pelo INEP' };
   if (q.semGabarito) return { curto: '—', longo: 'Gabarito ainda não cadastrado' };
+  if (q.soImagem && q.tipo !== 'mc') return { curto: q.gabarito ? String(q.gabarito) : (q.resolucaoImg ? 'ver resolução' : '—'), longo: '' };
   if (q.soImagem) { const k = q.alternativas.findIndex(a => a.ok); return { curto: k < 0 ? '—' : 'ABCDE'[k], longo: '' }; }
   if (q.tipo === 'mc') {
     const ord = ordem || q.alternativas.map((_, i) => i);
@@ -139,6 +141,19 @@ export function altClasse(textos, modo) {
 /**
  * o = { num, pontos:bool, valor:number, alt:'auto'|'1'|'2'|'linha', ordem:[…], gab:bool, res:bool, estilo:'ponto'|'questao' }
  */
+function resImg(q) { // resolução que veio como imagem (listas do CD)
+  const r = q.resolucaoImg; if (!r || !r.src) return '';
+  return `<img class="q-img q-resimg" src="${esc(r.src)}" alt="Resolução" style="${r.larguraMm ? 'width:' + r.larguraMm + 'mm;' : ''}max-width:100%;height:auto">`;
+}
+function respostaImg(q, o) { // espaço de resposta das questões em imagem que não são de múltipla escolha
+  if (q.tipo === 'soma') return `<div class="soma-box"><span>Soma:</span><i class="cxs"></i><i class="cxs"></i></div>`;
+  if (q.tipo !== 'aberta') return '';
+  const r = q.resposta || { modo: 'branco', altura: 40 };
+  if (r.modo === 'linhas') return `<div class="linhas" style="--n:${+r.n || 4}"></div>`;
+  if (r.modo === 'quadriculado') return `<div class="quadric" style="height:${+r.altura || 60}mm"></div>`;
+  if (r.modo === 'nenhum') return '';
+  return `<div class="espaco" style="height:${+r.altura || 40}mm"></div>`;
+}
 export function renderQuestao(q, o = {}) {
   const num = o.num != null ? o.num : '';
   const rot = o.estilo === 'questao' ? `Questão ${num}` : `${num}.`;
@@ -147,7 +162,7 @@ export function renderQuestao(q, o = {}) {
     const w = v => (v ? `width:${v}mm;max-width:100%;` : 'max-width:100%;');
     const base = q.base && !o.omitirBase ? `<img class="q-img q-base" src="${esc(q.base.src)}" alt="Texto de apoio" style="${w(q.base.larguraMm)}">` : '';
     const g = gabaritoDe(q);
-    return `<article class="q q-mc q-imgq" data-id="${esc(q.id)}"><div class="q-n">${rot}</div><div class="q-corpo">${pts ? `<div class="q-pts">${pts}</div>` : ''}${base}${(q.imagens || []).map(src => `<img class="q-img" src="${esc(src)}" alt="Questão" style="${w(q.larguraMm)}max-height:250mm;height:auto;object-fit:contain">`).join('')}${o.gab ? `<div class="q-gabimg">Gabarito: <b>${g.curto}</b>${q.anulada ? ' (questão anulada)' : ''}</div>` : ''}</div></article>`;
+    return `<article class="q q-mc q-imgq" data-id="${esc(q.id)}"><div class="q-n">${rot}</div><div class="q-corpo">${pts ? `<div class="q-pts">${pts}</div>` : ''}${base}${(q.imagens || []).map(src => `<img class="q-img" src="${esc(src)}" alt="Questão" style="${w(q.larguraMm)}max-height:250mm;height:auto;object-fit:contain">`).join('')}${respostaImg(q, o)}${o.gab ? `<div class="q-gabimg">Gabarito: <b>${g.curto}</b>${q.anulada ? ' (questão anulada)' : ''}</div>` : ''}</div></article>`;
   }
   const legado = q.legado;
   const M = s => legado ? String(s || '') : mat(s || '');
@@ -175,6 +190,7 @@ export function renderQuestao(q, o = {}) {
     else if (r.modo === 'quadriculado') h += `<div class="quadric" style="height:${+r.altura || 60}mm"></div>`;
   }
   if (o.gab && o.res && q.resolucao) h += `<div class="q-res"><b>Resolução:</b> ${M(q.resolucao)}</div>`;
+  if (o.gab && o.res && q.resolucaoImg) h += `<div class="q-res"><b>Resolução:</b><br>${resImg(q)}</div>`;
   return `<article class="q q-${q.tipo}" data-id="${esc(q.id)}"><div class="q-n">${rot}</div><div class="q-corpo">${h}</div></article>`;
 }
 
@@ -182,5 +198,5 @@ export function renderQuestao(q, o = {}) {
 export function renderResolucao(q, o = {}) {
   const M = s => q.legado ? String(s || '') : mat(s || '');
   const g = gabaritoDe(q, o.ordem);
-  return `<div class="gab-it"><div class="gab-n">${o.num}.</div><div><div class="gab-r"><b>${g.curto === 'ver resolução' ? '' : 'Gabarito: '}</b>${g.curto === 'ver resolução' ? '' : g.curto}</div>${g.longo && q.tipo === 'mc' ? `<div class="gab-l">${g.longo}</div>` : ''}${q.resolucao ? `<div class="gab-s">${M(q.resolucao)}</div>` : ''}</div></div>`;
+  return `<div class="gab-it"><div class="gab-n">${o.num}.</div><div><div class="gab-r"><b>${g.curto === 'ver resolução' ? '' : 'Gabarito: '}</b>${g.curto === 'ver resolução' ? '' : g.curto}</div>${g.longo && q.tipo === 'mc' ? `<div class="gab-l">${g.longo}</div>` : ''}${q.resolucao ? `<div class="gab-s">${M(q.resolucao)}</div>` : ''}${q.resolucaoImg ? `<div class="gab-s">${resImg(q)}</div>` : ''}</div></div>`;
 }

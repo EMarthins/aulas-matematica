@@ -21,7 +21,7 @@ function bemFormado(nome, xml) {
 (async () => {
   const saida = process.argv[2] || path.join(root, 'teste-prova.docx'), colunas = +process.argv[3] || 2, gab = process.argv.includes('--gab');
   const D = await import(url('app/docx.js')), Q = await import(url('app/questoes.js'));
-  const prop = JSON.parse(fs.readFileSync(path.join(root, 'app/banco-provas.json'), 'utf8').replace(/(["'])img:(enem[\w.-]+)/g, '$1../app/img-questoes/$2')); // mesma regra do prova-app.js
+  const prop = JSON.parse(fs.readFileSync(path.join(root, 'app/banco-provas.json'), 'utf8').replace(/(["'])img:((?:enem|cdb)[\w.-]+)/g, '$1../app/img-questoes/$2')); // mesma regra do prova-app.js
   const leg = JSON.parse(fs.readFileSync(path.join(root, 'app/banco.json'), 'utf8'));
   const proprias = (Array.isArray(prop) ? prop : prop.questoes).map(Q.normalizar), legado = leg.questoes.map(Q.normalizar);
   const tem = (q, re) => re.test(JSON.stringify([q.enunciado, q.alternativas, q.afirmacoes]));
@@ -35,7 +35,7 @@ function bemFormado(nome, xml) {
     pega(proprias, q => q.figura && q.figura.tipo === 'tabela', 1),
     pega(proprias, q => q.figura && q.figura.tipo === 'img', 2),
     pega(proprias, q => q.figura && q.figura.tipo === 'svg', 1),
-    pega(proprias, q => q.soImagem, 2),
+    pega(proprias, q => q.soImagem && q.tipo === 'mc', 2), pega(proprias, q => q.soImagem && q.tipo === 'soma', 1), pega(proprias, q => q.soImagem && q.tipo === 'vf', 1), pega(proprias, q => q.soImagem && q.tipo === 'aberta' && q.resolucaoImg, 2),
     pega(proprias, q => q.tipo === 'vf', 1), pega(proprias, q => q.tipo === 'soma', 1), pega(proprias, q => q.tipo === 'assoc', 1), pega(proprias, q => q.tipo === 'aberta', 2),
     pega(legado, q => /class="fr"/.test(q.enunciado) , 2), pega(legado, q => /<svg/.test(q.enunciado), 1), pega(proprias, q => q.tipo === 'mc' && q.alternativas.some(a => /fr/.test(mat(a.t))) , 1)
   );

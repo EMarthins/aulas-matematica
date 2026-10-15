@@ -377,6 +377,8 @@ async function questao(x, L, ctx) {
       const xml = await ctx.img(imgs[k][0], imgs[k][1] ? { v: imgs[k][1], u: 'mm' } : null, 'Questão', ctx.cw);
       blocos.push(par(xml || run('[imagem da questão não pôde ser carregada]', { i: true }), { keepNext: k < imgs.length - 1 }));
     }
+    if (q.tipo === 'soma') blocos.push(par(run('Soma: ', { font: F_UI, b: true, sz: Math.round(hp * .9) }) + run('[    ] [    ]', { font: F_UI, sz: Math.round(hp * .9) }), { left: esq, jc: 'right', before: tw(2), keepNext: false }));
+    else if (q.tipo === 'aberta' && !(q.resposta && q.resposta.modo === 'nenhum')) blocos.push(par('', { left: esq, line: tw(+(q.resposta && q.resposta.altura) || 40), rule: 'exact' }));
     return fechaQuestao(blocos, L);
   }
 
@@ -553,6 +555,7 @@ async function gabaritoBlocos(M, ctx) {
       partes.push(par(pre + runsXml(itc), { left: tw(8), hanging: tw(8), before: tw(2.4), keepNext: true }));
       if (g.longo && q.tipo === 'mc') { const p = parse(g.longo); partes.push(...await blk(p.c, Object.assign({}, ctx, { svgs: p.svgs, cw: /<img|<svg/i.test(g.longo) ? 45 : ctx.cw }), { left: tw(8), keepNext: !!q.resolucao })); }
       if (q.resolucao) { const p = parse(Mf(q.resolucao)); partes.push(...await blk(p.c, Object.assign({}, ctx, { svgs: p.svgs }), { left: tw(8), prefix: run('Resolução: ', { font: F_UI, b: true, sz: Math.round(hp * .9) }), hanging: 0 })); }
+      if (q.resolucaoImg && q.resolucaoImg.src) { const xml = await ctx.img(q.resolucaoImg.src, q.resolucaoImg.larguraMm ? { v: q.resolucaoImg.larguraMm, u: 'mm' } : null, 'Resolução', ctx.cw); if (xml) partes.push(par(xml, { left: tw(8), keepNext: false })); }
       out.push(...partes);
     }
   }

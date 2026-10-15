@@ -316,3 +316,8 @@ body.pv :is(input,select,textarea,button,label,summary,dialog,.pop,.fpop):not(.f
 .pv-aviso a{color:var(--primary);font-weight:800}
 .pv-aviso button{flex:none;border:0;background:transparent;color:var(--ink-faint);font-size:1.1rem;cursor:pointer;line-height:1}
 @media print{.pv-aviso{display:none!important}}
+
+/* questões em imagem sem texto confiável (ex.: banco de vestibulares): mostra o recorte no cartão */
+.qc .imgp{flex:1;min-width:0}
+.qc .imgp img{display:block;max-width:100%;max-height:210px;object-fit:contain;object-position:left top;background:#fff;border-radius:8px;padding:4px 6px}
+.dens-compacta .qc .imgp img{max-height:84px}

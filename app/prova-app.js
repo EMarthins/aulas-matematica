@@ -72,7 +72,7 @@ let AUTORAIS = [], LEGADO = [];
 async function carregar() {
   const [a, b] = await Promise.all([
     // imagens do banco: "img:arquivo.png" → app/img-questoes/ (caminho relativo a professor/)
-    fetch('../app/banco-provas.json').then(r => r.text()).then(t => JSON.parse(t.replace(/(["'])img:(enem[\w.-]+)/g, '$1../app/img-questoes/$2'))).catch(() => ({ questoes: [] })),
+    fetch('../app/banco-provas.json').then(r => r.text()).then(t => JSON.parse(t.replace(/(["'])img:((?:enem|cdb)[\w.-]+)/g, '$1../app/img-questoes/$2'))).catch(() => ({ questoes: [] })),
     fetch('../app/banco.json').then(r => r.json()).catch(() => ({ questoes: [] }))
   ]);
   AUTORAIS = (a.questoes || []).map(q => Object.assign(indexar(q), { origem: 'banco' }));
@@ -186,7 +186,7 @@ function cartao(q, naProva) {
   const dif = Math.max(1, Math.min(3, +q.dificuldade || 1));
   return `<div class="qc${naProva ? ' na-prova' : ''}" draggable="true" data-id="${esc(q.id)}">
     <div class="meta"><span class="tag tp">${esc(TIPOS[q.tipo].curto)}</span><span class="mt" title="${esc(q.materia)} · ${esc(q.unidade)}${q.fonte ? ' · ' + esc(q.fonte) : ''}">${esc(q.serie)} · ${esc(q.unidade)}</span><span class="dif d${dif}" title="Dificuldade: ${rotulo.dif(dif)}"><i></i><i></i><i></i></span></div>
-    <div class="corpo"><div class="tx">${esc(textoPlano(q, 520))}</div>${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
+    <div class="corpo">${q.imgPrevia && (q.imagens || [])[0] ? `<div class="tx imgp"><img src="${esc(q.imagens[0])}" alt="Questão" loading="lazy"></div>` : `<div class="tx">${esc(textoPlano(q, 520))}</div>`}${img ? `<div class="th" style="background-image:url('${esc(img.src)}')"></div>` : ''}</div>
     <div class="ac"><button class="add${naProva ? ' on' : ''}" data-a="add" type="button">${naProva ? '✓ Na prova' : '+ Adicionar'}</button><button class="ver" data-a="ver" type="button">Ver completa ▾</button></div>
     <div class="full"></div>
   </div>`;
