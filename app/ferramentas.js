@@ -96,7 +96,13 @@
   '.ft-poll button:hover{border-color:var(--primary,#382EAE)}' +
   'html.ft-hc:root:root{--bg:#fff;--surface:#fff;--surface-2:#f0f0f0;--ink:#000;--ink-soft:#111;--ink-faint:#222;--line:#000;--line-strong:#000;--primary:#1a0f8a;--primary-soft:#e4e1ff;--growth:#8a2e00;--decay:#00545a;--success:#0b5a2e;--danger:#9b0000}' +
   'html.ft-hc[data-theme="dark"]:root:root{--bg:#000;--surface:#000;--surface-2:#141414;--ink:#fff;--ink-soft:#f2f2f2;--ink-faint:#ddd;--line:#fff;--line-strong:#fff;--primary:#b9b3ff;--primary-soft:#1d1a52;--growth:#ffb08a;--decay:#7ff3ea;--success:#7dffb0;--danger:#ff9a9a}' +
-  '@media print{.ft-dock,.ft-overlay,.ft-float,.ft-toast,.ft-poll,.ft-tip{display:none!important}}';
+  '.ft-next{position:fixed;left:calc(14px + env(safe-area-inset-left,0px));bottom:clamp(76px,10vh,120px);z-index:9995;max-width:min(360px,calc(100vw - 28px));font-family:Archivo,Arial,sans-serif;background:var(--surface,#fff);color:var(--ink,#111);border:1.5px solid var(--primary,#382EAE);border-radius:16px;padding:12px 14px;box-shadow:0 10px 30px rgba(8,6,40,.25)}' +
+  '.ft-next small{display:block;font-weight:800;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--primary,#382EAE)}' +
+  '.ft-next b{display:block;font-size:.92rem;line-height:1.3;margin:2px 0 8px}' +
+  '.ft-next a{display:inline-block;font-weight:800;font-size:.82rem;text-decoration:none;border-radius:99px;padding:.45em 1em;margin-right:6px}' +
+  '.ft-next a.p{background:var(--primary,#382EAE);color:var(--primary-ink,#fff)}' +
+  '.ft-next a.s{border:1.5px solid var(--line-strong,#bbb);color:var(--ink,#111)}' +
+  '@media print{.ft-dock,.ft-overlay,.ft-float,.ft-toast,.ft-poll,.ft-tip,.ft-next{display:none!important}}';
   var st = el('style'); st.id = 'ft-css'; st.textContent = css; D.head ? D.head.appendChild(st) : D.documentElement.appendChild(st);
 
   // ---------- acessibilidade: zoom e contraste (aplicados já) ----------
@@ -234,10 +240,21 @@
     [].forEach.call(box.querySelectorAll('button'), function(b){ b.addEventListener('click', function(){ lsSet('ft:fb:' + KEY, b.dataset.v); box.remove(); aviso('Obrigado! Isso ajuda o(a) professor(a) a planejar a próxima aula.'); try{ W.parent.postMessage({ type: 'lesson-progress', event: 'feedback', value: b.dataset.v }, '*'); }catch(e){} }); });
     (D.body || R).appendChild(box);
   }
+  // trilhas: no último slide, oferece a próxima aula do roteiro da turma
+  function pollTrilha(i){
+    if(!TURMA || !isDeck) return;
+    var box = D.getElementById('ft-next'); if(i !== total() - 1){ box && box.remove(); return; } if(box) return;
+    var nx = null, o = jget('trilhas:v1', null), t = o && o.turmas && o.turmas[TURMA];
+    if(t && t.roteiro){ for(var j = 0; j < t.roteiro.length; j++){ if(t.roteiro[j].a === KEY){ nx = t.roteiro[j + 1] || null; break; } } }
+    box = el('div', 'ft-next'); box.id = 'ft-next';
+    var volta = '<a class="s" href="' + RAIZ + 'trilhas.html#turma/' + TURMA + '">Voltar à trilha</a>';
+    box.innerHTML = '<small>✓ Aula concluída · ' + (TURMA_NOME || 'turma').replace(/</g, '&lt;') + '</small>' + (nx ? '<b>Próxima: ' + String(nx.t).replace(/</g, '&lt;') + '</b><a class="p" href="' + RAIZ + nx.a + '#t=' + TURMA + '">Próxima aula ▶</a>' : '<b>Fim da trilha desta turma 🎉</b>') + volta;
+    (D.body || R).appendChild(box);
+  }
   function observa(){
     var rc = D.getElementById('railCount'); if(!rc) return;
-    new MutationObserver(function(){ var i = atual(); if(KEY){ var u = jget('prog:ultimo', {}); if(u.a === KEY){ u.s = i; jset('prog:ultimo', u); } lsSet(SK, i); trilhaPos(i, total()); } pollFim(i); if(notas.classList.contains('on')) notasLer(); if(falando) pararVoz(); }).observe(rc, { childList: true, characterData: true, subtree: true });
-    pollFim(atual());
+    new MutationObserver(function(){ var i = atual(); if(KEY){ var u = jget('prog:ultimo', {}); if(u.a === KEY){ u.s = i; jset('prog:ultimo', u); } lsSet(SK, i); trilhaPos(i, total()); } pollFim(i); pollTrilha(i); if(notas.classList.contains('on')) notasLer(); if(falando) pararVoz(); }).observe(rc, { childList: true, characterData: true, subtree: true });
+    pollFim(atual()); pollTrilha(atual());
   }
   function retomar(){
     if(!isDeck) return;

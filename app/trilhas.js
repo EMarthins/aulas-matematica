@@ -27,9 +27,9 @@ function construir() {
     for (const a of m.CATALOG) {
       for (const t of a.trimestres) {
         const modulos = [];
-        let n = 0;
-        for (const u of t.unidades) {
-          if (!u.itens || !u.itens.length) continue;
+        // o número do módulo é a posição da unidade no trimestre (igual ao catálogo e ao topo das aulas)
+        t.unidades.forEach((u, ui) => {
+          if (!u.itens || !u.itens.length) return;
           const aulas = [], guias = [], ativ = [];
           for (const it of u.itens) {
             const tp = tipoDe(it);
@@ -37,9 +37,9 @@ function construir() {
             else if (tp === 'guia') guias.push({ arquivo: it.arquivo, titulo: it.titulo });
             else ativ.push({ arquivo: it.arquivo, titulo: it.titulo, sub: it.sub || '' });
           }
-          if (!aulas.length) continue;
-          modulos.push({ n: ++n, titulo: u.titulo, accent: u.accent || 'primary', icon: u.icon || 'numbers', pendente: !!u.pendente, aulas, guias, atividades: ativ });
-        }
+          if (!aulas.length) return;
+          modulos.push({ n: ui + 1, titulo: u.titulo, accent: u.accent || 'primary', icon: u.icon || 'numbers', pendente: !!u.pendente, aulas, guias, atividades: ativ });
+        });
         if (!modulos.length) continue;
         const total = modulos.reduce((c, x) => c + x.aulas.length, 0);
         out.push({
@@ -63,6 +63,8 @@ const ls = {
 };
 function ler() { try { const o = JSON.parse(ls.get(KEY) || 'null'); if (o && o.v === 1) return o; } catch (e) { /* recomeça */ } return { v: 1, perfil: {}, turmas: {} }; }
 function gravar(o) { return ls.set(KEY, JSON.stringify(o)); }
+/** Lista plana (na ordem sugerida) das aulas da trilha: guardada na turma para as aulas saberem qual é a próxima. */
+const roteiroDe = tr => { const r = []; if (tr) tr.modulos.forEach(m => m.aulas.forEach(a => r.push({ a: a.arquivo, t: a.titulo, m: m.n }))); return r; };
 const novoId = () => 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 const agora = () => Date.now();
 
@@ -74,11 +76,17 @@ export const Trilhas = {
   turma(id) { return ler().turmas[id] || null; },
   criar(nome, trilha) {
     const o = ler(), id = novoId();
-    o.turmas[id] = { id, nome: String(nome || 'Minha turma').trim() || 'Minha turma', trilha: trilha || '', criada: agora(), atualizado: agora(), ultima: '', pos: {}, feitas: {} };
+    o.turmas[id] = { id, nome: String(nome || 'Minha turma').trim() || 'Minha turma', trilha: trilha || '', criada: agora(), atualizado: agora(), ultima: '', pos: {}, feitas: {}, roteiro: roteiroDe(trilhaPorId(trilha)) };
     gravar(o); return o.turmas[id];
   },
   renomear(id, nome) { const o = ler(), t = o.turmas[id]; if (!t) return; t.nome = String(nome).trim() || t.nome; t.atualizado = agora(); gravar(o); },
-  trocarTrilha(id, trilha) { const o = ler(), t = o.turmas[id]; if (!t) return; t.trilha = trilha; t.atualizado = agora(); gravar(o); },
+  trocarTrilha(id, trilha) { const o = ler(), t = o.turmas[id]; if (!t) return; t.trilha = trilha; t.roteiro = roteiroDe(trilhaPorId(trilha)); t.atualizado = agora(); gravar(o); },
+  /** Turmas antigas (ou com a trilha reorganizada no catálogo) ganham/atualizam o roteiro; devolve true se mudou algo. */
+  atualizarRoteiros() {
+    const o = ler(); let mudou = false;
+    Object.values(o.turmas).forEach(t => { const r = roteiroDe(trilhaPorId(t.trilha)); if (JSON.stringify(r) !== JSON.stringify(t.roteiro || [])) { t.roteiro = r; mudou = true; } });
+    if (mudou) gravar(o); return mudou;
+  },
   remover(id) { const o = ler(); delete o.turmas[id]; gravar(o); },
   marcarPosicao(id, arquivo, s, n) {
     const o = ler(), t = o.turmas[id]; if (!t) return;

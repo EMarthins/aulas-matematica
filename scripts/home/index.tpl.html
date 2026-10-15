@@ -342,6 +342,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var multi = a.trimestres.length > 1, forca = estado.tipo !== 'todos';
     var padrao = triPadrao(a, sug);
     a.trimestres.forEach(function(tri, ti){
+      n = 0; // módulos enumerados por trimestre (cada trimestre é uma trilha: Módulo 01, 02…)
       var visTri = tri.unidades.filter(function(u){ return u.itens.length ? u.itens.some(function(i){ return passa(i, u); }) : (estado.tipo === 'todos' && !norm(estado.q.trim())); });
       if(!visTri.length) return;
       var grade = el('div', 'mods'), qtd = 0;

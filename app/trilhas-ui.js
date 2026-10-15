@@ -147,6 +147,7 @@ function dialogoNova(trilhaId) {
 /* ---------------- roteamento ---------------- */
 function rota() { const h = location.hash.replace(/^#/, '').split('/'); return { v: h[0] || 'turmas', a: h[1] || '' }; }
 function render() {
+  Trilhas.atualizarRoteiros();
   const r = rota();
   document.querySelectorAll('.tl-tab').forEach(b => b.classList.toggle('on', (b.dataset.v === 'turmas' && (r.v === 'turmas' || r.v === 'turma')) || b.dataset.v === r.v));
   $app.innerHTML = r.v === 'turma' ? viewTurma(r.a) : r.v === 'prontas' ? viewProntas(r.a ? decodeURIComponent(r.a) : '') : viewTurmas();
