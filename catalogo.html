@@ -88,9 +88,10 @@
 
 <script type="module" src="app/sidebar.js"></script>
 <script type="module">
-import { MATERIAS, ICONS } from './app/catalog.js';
+import { MATERIAS as TODAS_MATERIAS, ICONS } from './app/catalog.js';
 import { aulasGratis, logado, linkLogin } from './app/acesso.js';
 (function(){
+  var MATERIAS = TODAS_MATERIAS.filter(function(m){ return !m.oculta; }); // matérias escondidas (ENA) não aparecem
   var LAST_UPDATED = '2026-10-09'; // atualize ao publicar conteúdo novo
   var ACENTOS = ['primary', 'growth', 'decay', 'success'];
 

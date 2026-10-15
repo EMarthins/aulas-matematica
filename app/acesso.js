@@ -12,7 +12,7 @@ export const tipoDe = item => item.tipo === 'Atividade' ? 'atividade' : item.tip
 export function aulasGratis(MATERIAS) {
   const lista = [];
   MATERIAS.forEach(m => {
-    if (m.id === 'gratis') return;
+    if (m.id === 'gratis' || m.oculta) return;
     m.CATALOG.forEach(a => a.trimestres.forEach(t => {
       for (const u of t.unidades) {
         const item = u.itens.find(i => tipoDe(i) === 'aula');

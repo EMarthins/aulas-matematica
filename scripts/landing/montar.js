@@ -10,6 +10,7 @@ const fmt = n => n.toLocaleString('pt-BR');
   const tipo = i => i.tipo === 'Atividade' ? 'atividade' : i.tipo === 'Guia' ? 'guia' : 'aula';
   const tot = { aula: 0, guia: 0, atividade: 0 }, por = {};
   for (const m of cat.MATERIAS) {
+    if (m.oculta) continue; // ENA escondida
     const c = { aula: 0, mod: 0 };
     for (const a of (m.CATALOG || [])) for (const t of a.trimestres) for (const u of t.unidades) {
       if (u.itens.length) c.mod++;
@@ -23,7 +24,6 @@ const fmt = n => n.toLocaleString('pt-BR');
     N_AULAS: fmt(tot.aula), N_AULAS_RAW: tot.aula, N_GUIAS: fmt(tot.guia), N_GUIAS_RAW: tot.guia, N_ATIV: fmt(tot.atividade), N_ATIV_RAW: tot.atividade,
     N_QUESTOES: fmt(questoes), N_QUESTOES_RAW: questoes,
     N_AULAS_MAT: por.matematica.aula, N_MODS_MAT: por.matematica.mod, N_AULAS_EF: por['educacao-financeira'].aula, N_MODS_EF: por['educacao-financeira'].mod,
-    N_AULAS_ENA: por['ena-profmat'].aula, N_MODS_ENA: por['ena-profmat'].mod,
     PRECO_MES: venda.VENDA.precoMensal, PRECO_ANO: venda.VENDA.precoAnual, ANO: new Date().getFullYear()
   };
   let html = fs.readFileSync(path.join(__dirname, 'index.tpl.html'), 'utf8');

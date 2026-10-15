@@ -12,7 +12,7 @@ const hash = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 
 async function main(){
   const cat = await import('file:///' + path.join(root, 'app/catalog.js').split(path.sep).join('/'));
   const info = {};
-  for(const mat of cat.MATERIAS) for(const a of mat.CATALOG) for(const t of a.trimestres) for(const u of t.unidades) for(const it of u.itens){
+  for(const mat of cat.MATERIAS.filter(m => !m.oculta)) for(const a of mat.CATALOG) for(const t of a.trimestres) for(const u of t.unidades) for(const it of u.itens){
     info[it.arquivo] = { m: mat.id, mn: mat.nome, a: a.ano, tri: t.nome, u: u.titulo, titulo: it.titulo, tipo: it.tipo, sub: it.sub || '' };
   }
   const out = []; const vistos = new Set();

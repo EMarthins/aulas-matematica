@@ -1578,6 +1578,7 @@ export const MATERIAS = [
   // >>> ena-profmat
   {
     id: 'ena-profmat',
+    oculta: true, // escondida do site (catálogo, Home, barra lateral, simulados e landing); os arquivos ficam em ena-profmat/
     nome: 'ENA · PROFMAT',
     icon: 'sigma',
     destaque: { titulo: 'Trilha de estudo guiada pelo edital', texto: '14 itens do edital, 9 fases e calendário automático. Comece por aqui.', url: 'ena-profmat/trilha-de-estudo.html' },
@@ -1931,6 +1932,7 @@ export const ICONS = {
 export function listarAulasParaSelecao(){
   var lista = [];
   MATERIAS.forEach(function(materia){
+    if(materia.oculta) return;
     materia.CATALOG.forEach(function(anoBlock){
       anoBlock.trimestres.forEach(function(tri){
         tri.unidades.forEach(function(unidade){

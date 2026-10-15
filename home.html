@@ -76,7 +76,8 @@
 
 <script type="module">
 import { iniciarThemeToggle } from './app/theme-toggle.js';
-import { MATERIAS, ICONS } from './app/catalog.js';
+import { MATERIAS as TODAS_MATERIAS, ICONS } from './app/catalog.js';
+const MATERIAS = TODAS_MATERIAS.filter(m => !m.oculta); // matérias escondidas (ENA) não aparecem
 import { aulasGratis, logado } from './app/acesso.js';
 
 iniciarThemeToggle('theme-pref-hub');
