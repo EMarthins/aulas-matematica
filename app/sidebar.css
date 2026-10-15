@@ -3,7 +3,7 @@
    Usa os mesmos tokens de cor das páginas (--bg, --surface, --ink, --primary…).
    Estados no <html>: .sb-on (página com barra), .sb-collapsed (só ícones), .sb-open (gaveta aberta no celular).
    ============================================================ */
-html.sb-on{ --sb-w:clamp(248px, 15.5rem, 320px); }
+html.sb-on{ --sb-w:68px; }
 html.sb-on.sb-collapsed{ --sb-w:68px; }
 html.sb-on body{ padding-left:var(--sb-w); transition:padding-left .2s ease; }
 html.sb-on .topbar, html.sb-on .theme-toggle{ display:none !important; }
@@ -121,33 +121,37 @@ html.sb-on .topbar, html.sb-on .theme-toggle{ display:none !important; }
 
 /* modo "só ícones" (desktop) */
 @media (min-width:901px){
-  html.sb-collapsed .sb-top{ flex-direction:column; padding:12px 0 6px; gap:6px; }
-  html.sb-collapsed .sb-brand{ flex:none; justify-content:center; }
-  html.sb-collapsed .sb-brand .dot{ margin:0; }
-  html.sb-collapsed .sb-brand .sb-lbl{ display:none; }
-  html.sb-collapsed .sb-collapse svg{ transform:rotate(180deg); }
-  html.sb-collapsed .sb-search{ margin:4px 10px; }
-  html.sb-collapsed .sb-search input, html.sb-collapsed .sb-search kbd, html.sb-collapsed .sb-search > svg{ display:none; }
-  html.sb-collapsed .sb-search-ic{ display:grid; place-items:center; width:100%; height:38px; border:0; border-radius:10px; background:transparent; color:var(--ink-faint); cursor:pointer; }
-  html.sb-collapsed .sb-search-ic:hover{ background:var(--surface-2); color:var(--ink); }
-  html.sb-collapsed .sb-search-ic svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; }
-  html.sb-collapsed .sb-lbl, html.sb-collapsed .sb-pc, html.sb-collapsed .sb-chev, html.sb-collapsed .sb-years, html.sb-collapsed .sb-badge,
-  html.sb-collapsed .sb-name, html.sb-collapsed .sb-mini, html.sb-collapsed .sb-cta .sb-lbl, html.sb-collapsed .sb-soon > summary span{ display:none; }
-  html.sb-collapsed .sb-sec{ height:1px; padding:0; margin:12px 14px; background:var(--line); font-size:0; }
-  html.sb-collapsed .sb-item{ justify-content:center; padding:.45em 0; }
-  html.sb-collapsed .sb-soon > summary{ justify-content:center; padding:10px 0; }
-  html.sb-collapsed .sb-soon:not([open]) > .sb-item{ display:none; }
-  html.sb-collapsed .sb-user{ justify-content:center; padding:6px 0; }
-  html.sb-collapsed .sb-user a.sb-who{ flex:none; }
-  html.sb-collapsed .sb-out{ display:none; }
-  html.sb-collapsed .sb-cta{ padding:.5em 0; }
+  /* a barra é só apoio: um trilho de ícones que abre por cima do conteúdo e fecha sozinha */
+  html.sb-peek .sb{ width:268px; box-shadow:0 0 0 1px var(--line), 18px 0 50px rgba(8,9,24,.28); }
+  .sb-collapse{ display:none; }
+  html.sb-on .sb{ overflow:hidden; }
+  html.sb-on:not(.sb-peek) .sb-top{ flex-direction:column; padding:12px 0 6px; gap:6px; }
+  html.sb-on:not(.sb-peek) .sb-brand{ flex:none; justify-content:center; }
+  html.sb-on:not(.sb-peek) .sb-brand .dot{ margin:0; }
+  html.sb-on:not(.sb-peek) .sb-brand .sb-lbl{ display:none; }
+  html.sb-on:not(.sb-peek) .sb-collapse svg{ transform:rotate(180deg); }
+  html.sb-on:not(.sb-peek) .sb-search{ margin:4px 10px; }
+  html.sb-on:not(.sb-peek) .sb-search input, html.sb-on:not(.sb-peek) .sb-search kbd, html.sb-on:not(.sb-peek) .sb-search > svg{ display:none; }
+  html.sb-on:not(.sb-peek) .sb-search-ic{ display:grid; place-items:center; width:100%; height:38px; border:0; border-radius:10px; background:transparent; color:var(--ink-faint); cursor:pointer; }
+  html.sb-on:not(.sb-peek) .sb-search-ic:hover{ background:var(--surface-2); color:var(--ink); }
+  html.sb-on:not(.sb-peek) .sb-search-ic svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; }
+  html.sb-on:not(.sb-peek) .sb-lbl, html.sb-on:not(.sb-peek) .sb-pc, html.sb-on:not(.sb-peek) .sb-chev, html.sb-on:not(.sb-peek) .sb-years, html.sb-on:not(.sb-peek) .sb-badge,
+  html.sb-on:not(.sb-peek) .sb-name, html.sb-on:not(.sb-peek) .sb-mini, html.sb-on:not(.sb-peek) .sb-cta .sb-lbl, html.sb-on:not(.sb-peek) .sb-soon > summary span{ display:none; }
+  html.sb-on:not(.sb-peek) .sb-sec{ height:1px; padding:0; margin:12px 14px; background:var(--line); font-size:0; }
+  html.sb-on:not(.sb-peek) .sb-item{ justify-content:center; padding:.45em 0; }
+  html.sb-on:not(.sb-peek) .sb-soon > summary{ justify-content:center; padding:10px 0; }
+  html.sb-on:not(.sb-peek) .sb-soon:not([open]) > .sb-item{ display:none; }
+  html.sb-on:not(.sb-peek) .sb-user{ justify-content:center; padding:6px 0; }
+  html.sb-on:not(.sb-peek) .sb-user a.sb-who{ flex:none; }
+  html.sb-on:not(.sb-peek) .sb-out{ display:none; }
+  html.sb-on:not(.sb-peek) .sb-cta{ padding:.5em 0; }
 }
 @media (prefers-reduced-motion: reduce){ .sb, html.sb-on body{ transition:none !important; } }
 @media print{ .sb, .sb-mob, .sb-scrim{ display:none !important; } html.sb-on body{ padding:0 !important; } }
 
 /* ícones soltos (busca, recolher): mesmo traço dos demais */
 .sb-search > svg, .sb-collapse svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-@media (min-width:901px){ html.sb-collapsed .sb-subj.open > .sb-years{ display:none; } }
+
 
 /* na abertura da home a barra existe, mas fica escondida */
 html:not(.sb-on) .sb, html:not(.sb-on) .sb-mob, html:not(.sb-on) .sb-scrim{ display:none !important; }

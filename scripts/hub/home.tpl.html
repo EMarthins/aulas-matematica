@@ -26,6 +26,7 @@
     <nav class="hb-nav" aria-label="Atalhos">
       <a href="home.html" aria-current="page">Home</a>
       <a href="catalogo.html">Catálogo</a>
+      <a href="trilhas.html">Trilhas</a>
       <a href="simulado.html">Simulados</a>
       <a href="revisao.html">Revisão</a>
     </nav>
@@ -54,9 +55,14 @@
 <main class="wrap hb-main" id="main">
   <section class="hb-cont" id="hbCont" aria-label="Continuar estudando" hidden></section>
 
-  <section class="hb-sec" aria-labelledby="hbFerr">
-    <div class="hb-h"><h2 id="hbFerr">Tudo o que você pode fazer</h2><p>Escolha por onde começar.</p></div>
+  <section class="hb-sec" aria-labelledby="hbEst">
+    <div class="hb-h"><h2 id="hbEst">Estudar e praticar</h2><p>Aulas, trilhas e treino.</p></div>
     <div class="hb-cards" id="hbCards"></div>
+  </section>
+
+  <section class="hb-sec" id="hbEnsSec" aria-labelledby="hbEns" hidden>
+    <div class="hb-h"><h2 id="hbEns">Para dar aula</h2><p>Ferramentas do professor.</p></div>
+    <div class="hb-cards" id="hbCardsProf"></div>
   </section>
 
   <section class="hb-sec" aria-labelledby="hbMat">
@@ -64,6 +70,7 @@
     <div class="hb-mats" id="hbMats"></div>
     <details class="hb-soon" id="hbSoon" hidden><summary><span>Em breve</span> <b id="hbSoonN"></b></summary><div id="hbSoonL"></div></details>
   </section>
+  <nav class="hb-conta" id="hbConta" aria-label="Conta e planos"></nav>
 </main>
 
 <footer>
@@ -78,6 +85,7 @@ import { iniciarThemeToggle } from './app/theme-toggle.js';
 import { MATERIAS as TODAS_MATERIAS, ICONS } from './app/catalog.js';
 const MATERIAS = TODAS_MATERIAS.filter(m => !m.oculta); // matérias escondidas (ENA) não aparecem
 import { aulasGratis, logado } from './app/acesso.js';
+import { Trilhas } from './app/trilhas.js';
 
 iniciarThemeToggle('theme-pref-hub');
 const $ = id => document.getElementById(id);
@@ -199,16 +207,25 @@ function acha(arq) { return lista.find(x => x.it.arquivo === arq); }
   const ult = u && u.a ? acha(u.a) : null;
   if (ult) h += '<a class="hb-cc" href="' + esc(u.a + (u.s > 0 ? '#s=' + (u.s + 1) : '')) + '"><span class="hb-cc-k">▶ Continuar de onde parou</span><b>' + ult.it.titulo + '</b><small>' + (u.s > 0 ? 'slide ' + (u.s + 1) + ' · ' : '') + esc(ult.m.nome + ' · ' + ult.a + ' · ' + ult.u) + '</small></a>';
   // próxima aula não vista da matéria usada por último (ou da primeira com conteúdo)
-  const pref = (() => { try { return localStorage.getItem('materia-pref'); } catch (e) { return null; } })();
+  const pref = (user && user.materia && user.materia !== 'varias' && user.materia) || (() => { try { return localStorage.getItem('materia-pref'); } catch (e) { return null; } })();
   const alvo = comConteudo.find(x => x.m.id === pref) || comConteudo[0];
   const prox = alvo && lista.find(x => x.m === alvo.m && x.tipo === 'aula' && !visto(x.it) && !bloqueado(x.it));
   if (prox && (!ult || prox.it.arquivo !== (u && u.a))) h += '<a class="hb-cc alt" href="' + esc(prox.it.arquivo) + '"><span class="hb-cc-k">★ Próxima aula sugerida</span><b>' + prox.it.titulo + '</b><small>' + esc(prox.m.nome + ' · ' + prox.a + ' · ' + prox.u) + '</small></a>';
   if (!LOGADO) h += '<a class="hb-cc gratis" href="catalogo.html#gratis"><span class="hb-cc-k">🎁 Sem conta</span><b>' + plural(LISTA_GRATIS.length, 'aula liberada', 'aulas liberadas') + '</b><small>1 por ano e trimestre — crie sua conta para abrir tudo</small></a>';
+  // turmas das trilhas: onde cada uma parou (até 3, as mais recentes)
+  try {
+    Trilhas.turmas().slice(0, 3).forEach(t => {
+      const r = Trilhas.resumo(t); if (!r.trilha || !r.proxima) return;
+      const p = r.proxima, parou = p.pos && p.pos.s > 0 && !t.feitas[p.aula.arquivo];
+      h += '<a class="hb-cc turma" href="' + esc(Trilhas.href(p.aula.arquivo, t.id, parou ? p.pos.s : 0)) + '"><span class="hb-cc-k">▶ Turma ' + esc(t.nome) + '</span><b>' + esc(p.aula.titulo) + '</b><small>' + (parou ? 'parou no slide ' + (p.pos.s + 1) + ' · ' : (r.feitas ? 'próxima aula · ' : 'começar · ')) + 'Módulo ' + String(p.modulo.n).padStart(2, '0') + ' · ' + r.pct + '% da trilha</small></a>';
+    });
+  } catch (e) { /* sem trilhas */ }
   if (h) { box.innerHTML = h; box.hidden = false; }
 })();
 
 // ---------- cartões de ferramentas ----------
 const IC = {
+  trilha: '<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3.5 3.5 0 0 0 0-7h-5a3.5 3.5 0 0 1 0-7H16"/>',
   cat: '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/>',
   sim: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/>',
   rev: '<path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/>',
@@ -233,41 +250,48 @@ function sequencia() {
   return n;
 }
 const rev = jl('rev:itens', []).filter(x => x.due <= Date.now()).length, seq = sequencia();
-const C = [];  // [acento, ícone, título, descrição, href, etiqueta, destaque]
-C.push(['primary', 'cat', 'Catálogo de aulas', 'Todas as matérias, organizadas por ano e trimestre.', 'catalogo.html', '', true]);
-C.push(['decay', 'sim', 'Simulados', 'Treine com questões das aulas e veja seu desempenho.', 'simulado.html', '']);
-C.push(['growth', 'rev', 'Revisão', 'Repetição espaçada dos erros que você cometeu.', 'revisao.html', rev ? rev + ' hoje' : '']);
-C.push(['success', 'conq', 'Conquistas', 'Seu progresso e sua sequência de dias de estudo.', 'catalogo.html#conquistas', seq > 1 ? '🔥 ' + seq + ' dias' : '']);
-if (!LOGADO) C.push(['decay', 'gift', 'Aulas grátis', 'Uma aula por ano e trimestre, sem precisar de conta.', 'catalogo.html#gratis', plural(LISTA_GRATIS.length, 'aula', 'aulas')]);
-if (ehAluno) C.push(['primary', 'turmas', 'Minhas turmas', 'Atividades da sua turma e entrada por código.', 'aluno/dashboard.html', '']);
+// [acento, ícone, título, descrição, href, etiqueta, destaque]
+const nTurmas = Trilhas.turmas().length;
+const E = [], P = [], K = []; // estudar · professor · conta (links discretos)
+E.push(['primary', 'cat', 'Catálogo de aulas', 'Todas as matérias, organizadas por ano e trimestre.', 'catalogo.html', '', true]);
+E.push(['decay', 'trilha', 'Trilhas de estudo', 'Roteiros por turma e trimestre; lembra onde parou.', 'trilhas.html', nTurmas ? plural(nTurmas, 'turma', 'turmas') : 'novo']);
+E.push(['growth', 'sim', 'Simulados', 'Treine com questões das aulas e veja seu desempenho.', 'simulado.html', '']);
+E.push(['success', 'rev', 'Revisão', 'Repetição espaçada dos erros que você cometeu.', 'revisao.html', rev ? rev + ' hoje' : '']);
+E.push(['primary', 'conq', 'Conquistas', 'Seu progresso e sua sequência de dias de estudo.', 'catalogo.html#conquistas', seq > 1 ? '🔥 ' + seq + ' dias' : '']);
+if (!LOGADO) E.push(['decay', 'gift', 'Aulas grátis', 'Uma aula por ano e trimestre, sem precisar de conta.', 'catalogo.html#gratis', plural(LISTA_GRATIS.length, 'aula', 'aulas')]);
+if (ehAluno) E.push(['primary', 'turmas', 'Minhas turmas', 'Atividades da sua turma e entrada por código.', 'aluno/dashboard.html', '']);
 if (ehProf) {
-  C.push(['primary', 'painel', 'Painel e turmas', 'Turmas, alunos, atividades e correções.', 'professor/dashboard.html', '']);
-  C.push(['growth', 'prova', 'EduMath Provas', 'Monte provas prontas para imprimir ou baixar em Word.', 'professor/prova.html', '']);
-  C.push(['decay', 'banco', 'Banco de questões', 'Milhares de questões por tema, com filtros.', 'professor/banco.html', '']);
+  P.push(['primary', 'painel', 'Painel e turmas', 'Turmas, alunos, atividades e correções.', 'professor/dashboard.html', '']);
+  P.push(['growth', 'prova', 'EduMath Provas', 'Monte provas prontas para imprimir ou baixar em Word.', 'professor/prova.html', '']);
+  P.push(['decay', 'banco', 'Banco de questões', 'Milhares de questões por tema, com filtros.', 'professor/banco.html', '']);
+} else if (!ehAluno) {
+  P.push(['growth', 'prof', 'Para professores', 'Monte provas, crie turmas e acompanhe seus alunos.', 'para-professores.html', LOGADO ? '' : 'novo']);
 }
-if (ehAdmin) C.push(['danger', 'adm', 'Administração', 'Professores, planos, alunos, turmas e relatos.', 'admin.html', '']);
-if (!ehProf) C.push(['growth', 'prof', 'Para professores', 'Monte provas, crie turmas e acompanhe seus alunos.', 'para-professores.html', LOGADO ? '' : 'novo']);
-C.push(['primary', 'tag', 'Planos', 'Gratuito e Pro — veja o que cada um inclui.', 'planos.html', '']);
-if (LOGADO) C.push(['decay', 'user', 'Minha conta e dados', 'Seus dados, privacidade e exclusão da conta.', 'conta.html', '']);
-else C.push(['primary', 'user', 'Entrar ou criar conta', 'Libere todas as aulas e salve seu progresso.', 'login.html', '']);
-$('hbCards').innerHTML = C.map(c =>
+if (ehAdmin) K.push(['adm', 'Administração', 'admin.html']);
+K.push(['tag', 'Planos', 'planos.html']);
+if (LOGADO) K.push(['user', 'Minha conta e dados', 'conta.html']); else K.push(['user', 'Entrar ou criar conta', 'login.html']);
+const cartao = c =>
   '<a class="hb-card' + (c[6] ? ' big' : '') + '" href="' + c[4] + '" style="--accent:var(--' + c[0] + ');--accent-soft:var(--' + c[0] + '-soft)">' +
-  '<span class="hb-ic">' + svg(IC[c[1]]) + '</span><span class="hb-tx"><b>' + esc(c[2]) + (c[5] ? ' <i class="hb-tag">' + esc(c[5]) + '</i>' : '') + '</b><small>' + esc(c[3]) + '</small></span><span class="hb-ar" aria-hidden="true">→</span></a>').join('');
+  '<span class="hb-ic">' + svg(IC[c[1]]) + '</span><span class="hb-tx"><b>' + esc(c[2]) + (c[5] ? ' <i class="hb-tag">' + esc(c[5]) + '</i>' : '') + '</b><small>' + esc(c[3]) + '</small></span><span class="hb-ar" aria-hidden="true">→</span></a>';
+$('hbCards').innerHTML = E.map(cartao).join('');
+if (P.length) { $('hbCardsProf').innerHTML = P.map(cartao).join(''); $('hbEnsSec').hidden = false; }
+$('hbConta').innerHTML = K.map(k => '<a href="' + k[2] + '">' + svg(IC[k[0]]) + esc(k[1]) + '</a>').join('');
 
 // instalar como app (aparece quando o navegador oferece)
 let evInst = null;
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault(); evInst = e;
-  const b = document.createElement('button'); b.type = 'button'; b.className = 'hb-card';
-  b.style.cssText = '--accent:var(--success);--accent-soft:var(--success-soft);text-align:left;font:inherit;cursor:pointer';
-  b.innerHTML = '<span class="hb-ic">' + svg(IC.down) + '</span><span class="hb-tx"><b>Instalar o app</b><small>Use offline, como aplicativo.</small></span><span class="hb-ar" aria-hidden="true">→</span>';
+  const b = document.createElement('button'); b.type = 'button';
+  b.innerHTML = svg(IC.down) + 'Instalar o app';
   b.addEventListener('click', () => { if (evInst) { evInst.prompt(); evInst = null; b.remove(); } });
-  $('hbCards').appendChild(b);
+  $('hbConta').appendChild(b);
 });
 
 // ---------- matérias ----------
 const acentoDe = m => ACENTOS[Math.max(0, MATERIAS.filter(x => x.id !== 'gratis').indexOf(m)) % ACENTOS.length];
-$('hbMats').innerHTML = comConteudo.map(({ m, c }) => {
+const prefMat = user && user.materia;
+const ordemMats = comConteudo.slice().sort((a, b) => (b.m.id === prefMat) - (a.m.id === prefMat));
+$('hbMats').innerHTML = ordemMats.map(({ m, c }) => {
   const ac = acentoDe(m), pc = c.total ? Math.round(c.vistos / c.total * 100) : 0;
   return '<a class="hb-mat" href="catalogo.html#' + m.id + '" style="--accent:var(--' + ac + ');--accent-soft:var(--' + ac + '-soft)">' +
     '<span class="hb-ic">' + svg(ICONS[m.icon] || ICONS.grid) + '</span><span class="hb-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' +

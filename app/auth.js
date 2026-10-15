@@ -22,20 +22,21 @@ import { auth, db } from "./firebase-init.js";
 // Guarda nome e papel do usuário neste aparelho para a barra lateral (app/sidebar.js) montar o menu sem carregar o Firebase.
 export function lembrarUsuario(perfil){
   try{
-    if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role }));
+    if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role, materia: perfil.materia || "" }));
     else { localStorage.removeItem("sb:user"); localStorage.removeItem("sb:admin"); }
   }catch(e){}
 }
 
 // role: 'professor' | 'aluno'
-export async function cadastrar(nome, email, senha, role){
+export async function cadastrar(nome, email, senha, role, materia){
   const cred = await createUserWithEmailAndPassword(auth, email, senha);
   await updateProfile(cred.user, { displayName: nome });
-  lembrarUsuario({ nome, role }); // a barra lateral e a trava das aulas leem isto
+  var materiaPrincipal = role === "professor" ? String(materia || "") : "";
+  lembrarUsuario({ nome, role, materia: materiaPrincipal }); // a barra lateral e a trava das aulas leem isto
 
-  await setDoc(doc(db, "users", cred.user.uid), {
+  await setDoc(doc(db, "users", cred.user.uid), Object.assign({
     nome, email, role, createdAt: serverTimestamp(), ultimoAcesso: serverTimestamp(), acessos: 1
-  });
+  }, materiaPrincipal ? { materia: materiaPrincipal } : {}));
   try{ sessionStorage.setItem("acesso:" + cred.user.uid, "1"); }catch(e){}
 
   if(role === "professor"){
@@ -62,6 +63,16 @@ export async function registrarAcesso(uid, forcar){
     if(!forcar && sessionStorage.getItem(k)) return;
     await updateDoc(doc(db, "users", uid), { ultimoAcesso: serverTimestamp(), acessos: increment(1) });
     sessionStorage.setItem(k, "1");
+  }catch(e){}
+}
+
+// Matéria principal do professor (mudou de turmas? é só trocar). Guarda no perfil e neste aparelho.
+export async function definirMateria(uid, materia){
+  await updateDoc(doc(db, "users", uid), { materia: materia || "" });
+  try{
+    var u = JSON.parse(localStorage.getItem("sb:user") || "null");
+    if(u){ u.materia = materia || ""; localStorage.setItem("sb:user", JSON.stringify(u)); }
+    if(materia && materia !== "varias") localStorage.setItem("materia-pref", materia);
   }catch(e){}
 }
 

@@ -12,6 +12,7 @@ const passos = [
   ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
   ['página inicial (números reais)', 'scripts/landing/montar.js'],
   ['Home (hub depois do login)', 'scripts/hub/montar.js'],
+  ['Trilhas de estudo por turma', 'scripts/trilhas/montar.js'],
   ['pendências de guia e atividades', 'scripts/pendencias-atividades.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],

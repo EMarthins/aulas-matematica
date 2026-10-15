@@ -43,6 +43,14 @@
       <p class="hint" style="margin-top:12px;"><a href="planos.html" id="linkPlanos" hidden>Ver planos</a></p>
     </div>
 
+    <div class="card" id="cardMateria" hidden>
+      <h2>Minha matéria</h2>
+      <p class="sub">A matéria em que você mais atua. As trilhas, a Home e o catálogo mostram essa matéria primeiro. Mudou de turmas? Troque aqui quando quiser.</p>
+      <select id="selMateria" style="max-width:340px;"></select>
+      <button type="button" class="btn" id="bMateria" style="margin-left:8px;">Salvar</button>
+      <div id="msgMateria" style="margin-top:12px;"></div>
+    </div>
+
     <div class="card">
       <h2>Baixar meus dados</h2>
       <p class="sub">Um arquivo JSON com seu perfil e tudo o que você criou ou enviou aqui.</p>
@@ -66,7 +74,8 @@
 
 <script type="module">
 import { iniciarThemeToggle } from './app/theme-toggle.js';
-import { aoMudarAuth, buscarPerfil, mensagemErroAuth } from './app/auth.js';
+import { aoMudarAuth, buscarPerfil, mensagemErroAuth, definirMateria } from './app/auth.js';
+import { optionsMateria } from './app/materias-lista.js';
 import { coletarDados, excluirConta } from './app/conta.js';
 import { lerProfessor } from './app/nuvem-firestore.js';
 import { planoVigente, fmtData } from './app/planos.js';
@@ -83,8 +92,16 @@ aoMudarAuth(async function(u){
     var p = planoVigente(await lerProfessor(u.uid).catch(function(){ return null; }));
     linhas.push(['Plano', p.nome]); $('linkPlanos').hidden = false;
     $('oQue').textContent = 'turmas, atividades, provas, questões próprias e configurações';
+    $('cardMateria').hidden = false; $('selMateria').innerHTML = optionsMateria(perfil.materia || '');
   }
   $('dados').innerHTML = linhas.map(function(l){ return '<dt>' + escapeHtml(l[0]) + '</dt><dd>' + escapeHtml(String(l[1])) + '</dd>'; }).join('');
+});
+
+$('bMateria').addEventListener('click', async function(){
+  var box = $('msgMateria'); box.innerHTML = ''; this.disabled = true;
+  try{ await definirMateria(usuario.uid, $('selMateria').value); perfil.materia = $('selMateria').value; box.innerHTML = '<div class="alert success">Pronto! Sua matéria principal foi atualizada.</div>'; }
+  catch(e){ box.innerHTML = '<div class="alert error">Não foi possível salvar agora. Tente de novo.</div>'; }
+  this.disabled = false;
 });
 
 $('bBaixar').addEventListener('click', async function(){

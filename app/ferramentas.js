@@ -22,6 +22,27 @@
   var isDeck = !!(D.getElementById('stage') && slides.length);
   var emPlayer = false; try{ emPlayer = W.parent !== W; }catch(e){ emPlayer = true; }
   var pageTitle = (D.title || '').trim();
+  // ---------- trilhas: a aula aberta no contexto de uma turma (#t=<id>) lembra onde essa turma parou ----------
+  var TURMA = '', TURMA_NOME = '';
+  (function(){
+    if(!KEY) return;
+    try{
+      var m = W.location.hash.match(/(?:^#|&)t=([A-Za-z0-9]+)/), id = m ? m[1] : (W.sessionStorage.getItem('trilha:turma:' + KEY) || '');
+      var o = JSON.parse(W.localStorage.getItem('trilhas:v1') || 'null');
+      if(id && o && o.turmas && o.turmas[id]){ TURMA = id; TURMA_NOME = o.turmas[id].nome || ''; W.sessionStorage.setItem('trilha:turma:' + KEY, id); }
+    }catch(e){}
+  })();
+  var SK = TURMA ? 'ft:slide:' + TURMA + ':' + KEY : 'ft:slide:' + KEY;
+  function trilhaPos(i, n){
+    if(!TURMA) return;
+    try{
+      var o = jget('trilhas:v1', null); if(!o || !o.turmas || !o.turmas[TURMA]) return;
+      var t = o.turmas[TURMA]; t.pos = t.pos || {}; t.feitas = t.feitas || {};
+      t.pos[KEY] = { s: i, n: n, t: Date.now() }; t.ultima = KEY; t.atualizado = Date.now();
+      if(n && i >= n - 1 && !t.feitas[KEY]) t.feitas[KEY] = Date.now();
+      jset('trilhas:v1', o);
+    }catch(e){}
+  }
 
   // ---------- registros: último acesso e dias de estudo ----------
   if(KEY){
@@ -215,14 +236,16 @@
   }
   function observa(){
     var rc = D.getElementById('railCount'); if(!rc) return;
-    new MutationObserver(function(){ var i = atual(); if(KEY){ var u = jget('prog:ultimo', {}); if(u.a === KEY){ u.s = i; jset('prog:ultimo', u); } lsSet('ft:slide:' + KEY, i); } pollFim(i); if(notas.classList.contains('on')) notasLer(); if(falando) pararVoz(); }).observe(rc, { childList: true, characterData: true, subtree: true });
+    new MutationObserver(function(){ var i = atual(); if(KEY){ var u = jget('prog:ultimo', {}); if(u.a === KEY){ u.s = i; jset('prog:ultimo', u); } lsSet(SK, i); trilhaPos(i, total()); } pollFim(i); if(notas.classList.contains('on')) notasLer(); if(falando) pararVoz(); }).observe(rc, { childList: true, characterData: true, subtree: true });
     pollFim(atual());
   }
   function retomar(){
     if(!isDeck) return;
     var m = W.location.hash.match(/s=(\d+)/); var alvo = m ? Math.min(total(), Math.max(1, +m[1])) - 1 : -1;
     if(alvo > 0){ ir(alvo); return; }
-    var salvo = parseInt(lsGet('ft:slide:' + KEY), 10); if(salvo > 0 && salvo < total() - 0 && !emPlayer){ ir(salvo); aviso('Retomando do slide ' + (salvo + 1), 'Começar do início', function(){ ir(0); }); }
+    var salvo = parseInt(lsGet(SK), 10);
+    if(TURMA){ try{ var op = jget('trilhas:v1', null), pp = op && op.turmas[TURMA].pos[KEY]; if(pp) salvo = pp.s; }catch(e){} }
+    if(salvo > 0 && salvo < total() - 0 && !emPlayer){ ir(salvo); aviso('Retomando do slide ' + (salvo + 1) + (TURMA_NOME ? ' · turma ' + TURMA_NOME : ''), 'Começar do início', function(){ ir(0); }); }
   }
 
   // ---------- glossário ----------

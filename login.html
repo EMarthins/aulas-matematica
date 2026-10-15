@@ -49,6 +49,11 @@
             <button type="button" data-role="professor">Professor(a)</button>
           </div>
           <div class="hint" id="avisoProf" hidden style="margin:-4px 0 12px;">Cadastros de professor(a) passam por uma aprovação rápida antes de liberar turmas e atividades.</div>
+          <div id="materiaWrap" hidden>
+            <label for="materia">Matéria em que você mais atua</label>
+            <select id="materia"></select>
+            <p class="hint" style="margin:6px 0 12px;">Usamos isso para mostrar primeiro as trilhas e aulas da sua matéria. Dá para mudar depois em <b>Minha conta</b>.</p>
+          </div>
 
           <label for="nome">Nome completo</label>
           <input type="text" id="nome" autocomplete="name">
@@ -83,6 +88,7 @@
 <script type="module">
   import { cadastrar, entrar, mensagemErroAuth, aoMudarAuth, buscarPerfil, recuperarSenha } from './app/auth.js';
   import { iniciarThemeToggle } from './app/theme-toggle.js';
+  import { optionsMateria } from './app/materias-lista.js';
   import { escapeHtml } from './app/util.js';
   iniciarThemeToggle('theme-pref-app');
 
@@ -115,7 +121,9 @@
 
   // Aviso de aprovação aparece só quando "Professor(a)" está selecionado.
   var avisoProf = document.getElementById('avisoProf');
-  function atualizaAvisoProf(){ var a = rolePick.querySelector('button.active'); avisoProf.hidden = !(a && a.dataset.role === 'professor'); }
+  var materiaWrap = document.getElementById('materiaWrap'), materiaSel = document.getElementById('materia');
+  materiaSel.innerHTML = optionsMateria('matematica');
+  function atualizaAvisoProf(){ var a = rolePick.querySelector('button.active'); var prof = !!(a && a.dataset.role === 'professor'); avisoProf.hidden = !prof; materiaWrap.hidden = !prof; }
   rolePick.addEventListener('click', function(){ setTimeout(atualizaAvisoProf, 0); });
   atualizaAvisoProf();
 
@@ -185,7 +193,7 @@
       if(mode === 'cadastrar'){
         var nome = document.getElementById('nome').value.trim();
         if(!nome){ mostrarErro('Digite seu nome.'); submitBtn.disabled = false; return; }
-        var user = await cadastrar(nome, email, senha, role);
+        var user = await cadastrar(nome, email, senha, role, role === 'professor' ? materiaSel.value : '');
         window.location.href = destinoPara(role);
       } else {
         var user = await entrar(email, senha);

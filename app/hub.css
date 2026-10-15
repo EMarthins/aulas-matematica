@@ -121,3 +121,12 @@
   .hb-user{ padding:.25em; }
 }
 @media print{ .hb-hero, .hb-nav{ display:none; } }
+
+/* ---- Home por grupos: estudar · dar aula · conta ---- */
+.hb-cc.turma{ background:linear-gradient(135deg, var(--decay-soft), var(--surface)); border-color:color-mix(in srgb, var(--decay) 45%, var(--line)); }
+.hb-cc.turma .hb-cc-k{ color:var(--decay); }
+.hb-conta{ display:flex; flex-wrap:wrap; gap:8px 6px; justify-content:center; margin:34px 0 0; padding-top:20px; border-top:1px solid var(--line); }
+.hb-conta a,.hb-conta button{ display:inline-flex; align-items:center; gap:.5em; font:700 .82rem 'Archivo',sans-serif; color:var(--ink-soft); text-decoration:none; background:transparent; border:0; border-radius:999px; padding:.5em 1em; cursor:pointer; }
+.hb-conta a:hover,.hb-conta button:hover{ color:var(--primary); background:var(--primary-soft); }
+.hb-conta svg{ width:16px; height:16px; }
+#hbEnsSec .hb-h h2::before{ content:"PROFESSOR"; display:inline-block; vertical-align:middle; margin-right:.7em; font:800 .62rem 'JetBrains Mono',monospace; letter-spacing:.1em; color:var(--growth-ink); background:var(--growth-soft); border-radius:6px; padding:.35em .7em; }

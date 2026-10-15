@@ -22,6 +22,8 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 // ---------- ícones ----------
 const I = {
   home: '<path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/>',
+  catalogo: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+  trilha: '<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6.5a3.5 3.5 0 0 0 0-7h-5a3.5 3.5 0 0 1 0-7H16"/>',
   sim: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 14l2 2 4-4"/>',
   rev: '<path d="M4 12a8 8 0 0 1 13.5-5.8L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.5 5.8L4 15.5M4 20v-4.5h4.5"/>',
   conq: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5a3 3 0 0 1-3 3M12 13v4M8.5 20h7M10 17h4"/>',
@@ -99,13 +101,13 @@ function montar() {
 
   let nav = '';
   nav += itemLink('home.html', url('home.html'), 'home', 'Home');
+  nav += itemLink('catalogo.html', url('catalogo.html'), 'catalogo', 'Catálogo de aulas');
+  nav += itemLink('trilhas.html', url('trilhas.html'), 'trilha', 'Trilhas de estudo');
   nav += itemLink('simulado.html', url('simulado.html'), 'sim', 'Simulados');
   nav += itemLink('revisao.html', url('revisao.html'), 'rev', 'Revisão');
   nav += '<a class="sb-item" href="' + url('catalogo.html') + '#conquistas" data-conq title="Conquistas"><span class="sb-ic">' + svg('conq') + '</span><span class="sb-lbl">Conquistas</span><span class="sb-extra"></span></a>';
   if (ehAluno) nav += itemLink('aluno/dashboard.html', url('aluno/dashboard.html'), 'turmas', 'Minhas turmas');
   if (!user) nav += '<a class="sb-item" data-gratis href="' + url('catalogo.html') + '#gratis' + '" title="Aulas grátis"><span class="sb-ic">' + svg('gift') + '</span><span class="sb-lbl">Aulas grátis</span><span class="sb-extra"></span></a>';
-  nav += '<div class="sb-sec">Matérias</div>' + ativas.map(([m, i]) => subj(m, i)).join('');
-  if (breve.length) nav += '<details class="sb-soon"><summary><span>Em breve</span><span class="sb-chev">' + svg(I.chev) + '</span></summary>' + breve.map(([m, i]) => soonItem(m, i)).join('') + '</details>';
   if (ehProf) {
     nav += '<div class="sb-sec">Professor</div>' +
       itemLink('professor/dashboard.html', url('professor/dashboard.html'), 'painel', 'Painel e turmas') +
@@ -156,9 +158,16 @@ function iniciar() {
   const todos = (s, r) => [].slice.call((r || aside).querySelectorAll(s));
 
   // recolher / expandir (desktop)
-  const colapsa = on => { root.classList.toggle('sb-collapsed', on); sl('sb:colapsada', on ? '1' : '0'); };
-  if (localStorage.getItem('sb:colapsada') === '1') root.classList.add('sb-collapsed');
-  $('.sb-collapse').addEventListener('click', () => colapsa(!root.classList.contains('sb-collapsed')));
+  // a barra é só apoio: no desktop é um trilho de ícones; ao passar o mouse (ou focar) abre por cima do conteúdo e fecha sozinha
+  let tAbre = null, tFecha = null;
+  const peek = on => { root.classList.toggle('sb-peek', !!on && !matchMedia('(max-width:900px)').matches); };
+  const colapsa = on => peek(!on);
+  aside.addEventListener('mouseenter', () => { clearTimeout(tFecha); tAbre = setTimeout(() => peek(true), 140); });
+  aside.addEventListener('mouseleave', () => { clearTimeout(tAbre); tFecha = setTimeout(() => { const ae = document.activeElement; if (!(ae && ae.id === 'sb-q')) peek(false); }, 380); });
+  aside.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) peek(true); });
+  aside.addEventListener('focusout', e => { if (!aside.contains(e.relatedTarget)) peek(false); });
+  document.addEventListener('click', e => { if (!aside.contains(e.target)) peek(false); });
+  aside.addEventListener('click', e => { if (e.target.closest('a[href]') && !e.target.closest('.sb-s')) peek(false); });
 
   // gaveta (celular)
   const abre = on => { root.classList.toggle('sb-open', on); mob.querySelector('.sb-menu').setAttribute('aria-expanded', on); };
@@ -198,7 +207,6 @@ function iniciar() {
   // clique na matéria: abre/fecha os anos (e vai para ela, se ainda não está aberta)
   todos('.sb-s').forEach(a => a.addEventListener('click', e => {
     const el = a.closest('.sb-subj'), id = el.dataset.id, tem = !!$('.sb-years', el);
-    if (root.classList.contains('sb-collapsed') && !celular()) { colapsa(false); }
     if (tem && el.classList.contains('open') && NA_HOME && hashAtual().id === id) { e.preventDefault(); abertaManual = '__nenhuma__'; atualiza(); return; }
     abertaManual = id;
     sl('materia-pref', id);
@@ -226,8 +234,9 @@ function iniciar() {
     const t = (document.activeElement || {}).tagName || '';
     if (/INPUT|TEXTAREA|SELECT/.test(t) || (document.activeElement && document.activeElement.isContentEditable)) return;
     if (!root.classList.contains('sb-on')) return;
-    if (e.key === '/') { e.preventDefault(); if (celular()) abre(true); else if (root.classList.contains('sb-collapsed')) colapsa(false); setTimeout(() => q.focus(), 60); }
-    else if (e.key === '[' && !celular()) { colapsa(!root.classList.contains('sb-collapsed')); }
+    if (e.key === '/') { e.preventDefault(); if (celular()) abre(true); else peek(true); setTimeout(() => q.focus(), 60); }
+    else if (e.key === '[' && !celular()) { peek(!root.classList.contains('sb-peek')); }
+    else if (e.key === 'Escape' && root.classList.contains('sb-peek')) peek(false);
     else if (e.key === 'Escape' && root.classList.contains('sb-open')) abre(false);
   });
 

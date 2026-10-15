@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trilhas de estudo — EduMath</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#382EAE">
+<meta name="description" content="Roteiros prontos por turma e trimestre, com módulos na ordem sugerida. O EduMath lembra em que aula e em que slide cada turma parou.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23382EAE'/%3E%3Cpath d='M22 72 C40 70 52 54 62 38 C68 28 74 22 80 18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/home.css">
+<link rel="stylesheet" href="app/hub.css">
+<link rel="stylesheet" href="app/trilhas.css">
+</head>
+<body class="hb tl">
+
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar para modo claro" title="Alternar tema claro/escuro">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+
+<a class="skip" href="#tlApp">Ir para o conteúdo</a>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="home.html" aria-label="EduMath — Home"><span class="dot"></span><span>EduMath</span></a>
+    <nav class="hb-nav" aria-label="Atalhos">
+      <a href="home.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="trilhas.html" aria-current="page">Trilhas</a>
+      <a href="simulado.html">Simulados</a>
+      <a href="revisao.html">Revisão</a>
+    </nav>
+    <span class="hb-sp"></span>
+    <a href="login.html" class="login-link" id="hbEntrar">Entrar <span class="hide-sm">· aluno / professor</span></a>
+    <a href="conta.html" class="hb-user" id="hbUser" hidden><span class="hb-av" id="hbAv">?</span><span class="hb-un" id="hbUn"></span></a>
+  </div>
+</header>
+
+<section class="tl-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Você está em">
+      <a class="btn-home" href="home.html" title="Voltar para a Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>Home</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <h1 class="crumb-cur">Trilhas de estudo</h1>
+    </nav>
+    <p class="tl-lede">Roteiros prontos por matéria, ano e trimestre — módulos enumerados na ordem sugerida. Crie uma <b>turma</b>, escolha a trilha e o EduMath guarda <b>onde ela parou</b> (aula e slide), para você retomar sem se perder.</p>
+    <div class="tl-tabs" role="tablist" aria-label="Seções das trilhas">
+      <button type="button" class="tl-tab on" data-v="turmas" role="tab">Minhas turmas</button>
+      <button type="button" class="tl-tab" data-v="prontas" role="tab">Trilhas prontas</button>
+    </div>
+  </div>
+</section>
+
+<main class="wrap tl-main" id="main">
+  <div id="tlApp" aria-live="polite"></div>
+</main>
+
+<dialog id="tlDlg" class="tl-dlg"></dialog>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+iniciarThemeToggle('theme-pref-hub');
+try {
+  const user = JSON.parse(localStorage.getItem('sb:user') || 'null');
+  if (user) {
+    const $ = id => document.getElementById(id);
+    $('hbEntrar').hidden = true; $('hbUser').hidden = false;
+    $('hbAv').textContent = (user.nome || '?').trim().charAt(0).toUpperCase();
+    $('hbUn').textContent = ((user.nome || '').trim().split(/\s+/)[0]) || 'Minha conta';
+    $('hbUser').href = user.role === 'professor' ? 'professor/dashboard.html' : 'aluno/dashboard.html';
+  }
+} catch (e) {}
+</script>
+<script type="module" src="app/trilhas-ui.js"></script>
+<script>if('serviceWorker' in navigator && location.protocol !== 'file:'){ navigator.serviceWorker.register('sw.js').catch(function(){}); }</script>
+</body>
+</html>
