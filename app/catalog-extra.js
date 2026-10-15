@@ -28,6 +28,7 @@ const MAT = {
   '6° Ano': ['Números naturais e operações', 'Frações e números decimais', 'Geometria plana', 'Medidas e grandezas', 'Estatística e probabilidade'],
   '7° Ano': ['Números inteiros e racionais', 'Razão, proporção e porcentagem', 'Equações do 1º grau', 'Ângulos e triângulos', 'Estatística e probabilidade'],
   '8° Ano': ['Potências e raízes', 'Álgebra e produtos notáveis', 'Equações e sistemas', 'Áreas e volumes', 'Probabilidade e estatística'],
+  '9° Ano': ['Números reais e radicais', 'Equações do 2º grau', 'Funções e proporcionalidade', 'Semelhança e relações métricas', 'Estatística e probabilidade'],
   '1° Ano': ['Conjuntos e funções', 'Função afim e quadrática', 'Exponencial e logaritmo', 'Trigonometria no triângulo retângulo']
 };
 const EF = {

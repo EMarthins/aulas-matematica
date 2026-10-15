@@ -1349,7 +1349,15 @@ export const MATERIAS = [
           }
         ]
       },
-      // >>> mat-9ano
+    ]
+  },
+  // >>> recomp-mat
+  {
+    id: 'recomposicao-matematica',
+    nome: 'Recomposição Matemática',
+    icon: 'stairs',
+    lede: 'Aulas de Recomposição de Aprendizagem em Matemática para o 9º ano — 1º, 2º e 3º trimestres, uma aula por aula do plano, com slides navegáveis, exemplos resolvidos, atividades e quiz.',
+    CATALOG: [
       {
         ano: '9° Ano',
         trimestres: [
@@ -1449,14 +1457,107 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Classificação dos triângulos quanto aos lados', arquivo:'aulas/9-ano/2-tri/triangulos-existencia-classificacao/aula-2-triangulos-quanto-aos-lados.html' },
                   { tipo:'Aula 3', titulo:'Classificação dos triângulos quanto aos ângulos', arquivo:'aulas/9-ano/2-tri/triangulos-existencia-classificacao/aula-3-triangulos-quanto-aos-angulos.html' }
                 ]
+              },
+              {
+                titulo: 'Propriedades dos triângulos',
+                accent: 'growth',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Soma dos ângulos internos e ângulo externo', arquivo:'aulas/9-ano/2-tri/propriedades-dos-triangulos/aula-1-soma-dos-angulos-e-angulo-externo.html' },
+                  { tipo:'Aula 2', titulo:'Relações entre lados e ângulos e segmentos notáveis', arquivo:'aulas/9-ano/2-tri/propriedades-dos-triangulos/aula-2-lados-angulos-e-segmentos-notaveis.html' }
+                ]
+              },
+              {
+                titulo: 'Quadriláteros',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Classificação dos quadriláteros', arquivo:'aulas/9-ano/2-tri/quadrilateros/aula-1-classificacao-dos-quadrilateros.html' },
+                  { tipo:'Aula 2', titulo:'Propriedades dos quadriláteros', arquivo:'aulas/9-ano/2-tri/quadrilateros/aula-2-propriedades-dos-quadrilateros.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades dos polígonos',
+                accent: 'primary',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Soma dos ângulos internos de um polígono', arquivo:'aulas/9-ano/2-tri/propriedades-dos-poligonos/aula-1-soma-dos-angulos-internos.html' },
+                  { tipo:'Aula 2', titulo:'Ângulos externos dos polígonos', arquivo:'aulas/9-ano/2-tri/propriedades-dos-poligonos/aula-2-angulos-externos-dos-poligonos.html' },
+                  { tipo:'Aula 3', titulo:'Diagonais de um polígono', arquivo:'aulas/9-ano/2-tri/propriedades-dos-poligonos/aula-3-diagonais-de-um-poligono.html' },
+                  { tipo:'Aula 4', titulo:'Triângulos em foco I: decomposição de figuras', arquivo:'aulas/9-ano/2-tri/propriedades-dos-poligonos/aula-4-triangulos-em-foco-decomposicao.html' },
+                  { tipo:'Aula 5', titulo:'Triângulos em foco II: problemas com polígonos', arquivo:'aulas/9-ano/2-tri/propriedades-dos-poligonos/aula-5-triangulos-em-foco-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Círculo e circunferência',
+                accent: 'decay',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Círculo e circunferência', arquivo:'aulas/9-ano/2-tri/circulo-e-circunferencia/aula-1-circulo-e-circunferencia.html' },
+                  { tipo:'Aula 2', titulo:'Elementos da circunferência', arquivo:'aulas/9-ano/2-tri/circulo-e-circunferencia/aula-2-elementos-da-circunferencia.html' },
+                  { tipo:'Aula 3', titulo:'Circunferência e o número pi', arquivo:'aulas/9-ano/2-tri/circulo-e-circunferencia/aula-3-circunferencia-e-o-numero-pi.html' },
+                  { tipo:'Aula 4', titulo:'Comprimento da circunferência e perímetro do círculo', arquivo:'aulas/9-ano/2-tri/circulo-e-circunferencia/aula-4-comprimento-da-circunferencia.html' }
+                ]
+              },
+              {
+                titulo: 'Ângulos na circunferência e problemas',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ângulo central e ângulo inscrito I', arquivo:'aulas/9-ano/2-tri/angulos-na-circunferencia/aula-1-angulo-central-e-inscrito-i.html' },
+                  { tipo:'Aula 2', titulo:'Ângulo central e ângulo inscrito II', arquivo:'aulas/9-ano/2-tri/angulos-na-circunferencia/aula-2-angulo-central-e-inscrito-ii.html' },
+                  { tipo:'Aula 3', titulo:'Problemas que envolvem círculo e circunferência I', arquivo:'aulas/9-ano/2-tri/angulos-na-circunferencia/aula-3-problemas-com-circulo-i.html' },
+                  { tipo:'Aula 4', titulo:'Problemas que envolvem círculo e circunferência II', arquivo:'aulas/9-ano/2-tri/angulos-na-circunferencia/aula-4-problemas-com-circulo-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Recomposição Matemática · versão compacta',
+                accent: 'primary',
+                icon: 'polygon',
+                itens: [
+                  { tipo:'Aulas 21–22', titulo:'Polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-1-poligonos.html' },
+                  { tipo:'Aulas 23–27', titulo:'Triângulos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-2-triangulos.html' },
+                  { tipo:'Aulas 28–29', titulo:'Quadriláteros', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-3-quadrilateros.html' },
+                  { tipo:'Aulas 30–34', titulo:'Propriedades dos polígonos', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-4-propriedades-poligonos.html' },
+                  { tipo:'Aulas 35–38', titulo:'Circunferência e o número π', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-5-circunferencia.html' },
+                  { tipo:'Aulas 39–42', titulo:'Ângulos na circunferência e problemas', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-6-angulos-problemas.html' },
+                  { tipo:'Guia', titulo:'Guia — Recomposição Matemática', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/infografico.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Polígonos (aulas 21–22)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-1-poligonos-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Triângulos (aulas 23–27)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-2-triangulos-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Quadriláteros (aulas 28–29)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-3-quadrilateros-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Propriedades dos polígonos (aulas 30–34)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-4-propriedades-poligonos-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Circunferência (aulas 35–38)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-5-circunferencia-atividade-pratica.html' },
+                  { tipo:'Atividade', sub:'Prática', titulo:'Exercícios e problemas · Ângulos e problemas (aulas 39–42)', arquivo:'aulas/9-ano/2-tri/recomposicao-matematica/aula-6-angulos-problemas-atividade-pratica.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Comprimento e perímetro',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Unidades de medida de comprimento', arquivo:'aulas/9-ano/3-tri/comprimento-e-perimetro/aula-1-unidades-de-comprimento.html' },
+                  { tipo:'Aula 2', titulo:'Perímetro de figuras planas I', arquivo:'aulas/9-ano/3-tri/comprimento-e-perimetro/aula-2-perimetro-de-figuras-planas-i.html' },
+                  { tipo:'Aula 3', titulo:'Perímetro de figuras planas II', arquivo:'aulas/9-ano/3-tri/comprimento-e-perimetro/aula-3-perimetro-de-figuras-planas-ii.html' }
+                ]
               }
             ]
           }
         ]
       }
-      // <<< mat-9ano
     ]
   },
+  // <<< recomp-mat
   {
     id: 'educacao-financeira',
     nome: 'Educação Financeira',

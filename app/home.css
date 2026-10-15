@@ -215,6 +215,29 @@ footer .mono{ font-size:.74rem; }
 .p-titulo .s-ic{ width:40px; height:40px; border-radius:11px; flex:none; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; }
 .p-titulo .s-ic svg{ width:21px; height:21px; }
 .p-titulo small{ font-family:'JetBrains Mono',monospace; font-size:.68rem; font-weight:600; color:var(--ink-faint); letter-spacing:.02em; margin-left:.2em; white-space:nowrap; }
+
+/* troca rápida de matéria (título do painel da matéria) */
+.troca{ position:relative; min-width:0; }
+.p-troca{ display:flex; align-items:center; gap:12px; max-width:100%; padding:4px 10px 4px 4px; border:1px solid transparent; border-radius:14px; background:transparent; color:inherit; font:inherit; cursor:pointer; text-align:left; }
+.p-troca:hover,.p-troca[aria-expanded="true"]{ background:var(--surface); border-color:var(--line-strong); }
+.p-troca:focus-visible,.tm:focus-visible{ outline:2px solid var(--accent, var(--primary)); outline-offset:2px; }
+.p-troca .s-ic{ width:40px; height:40px; border-radius:11px; flex:none; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; }
+.p-troca .s-ic svg{ width:21px; height:21px; }
+.p-troca .p-nome{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.p-troca .chev{ flex:none; font-size:.8rem; color:var(--ink-faint); transition:transform .15s; }
+.p-troca[aria-expanded="true"] .chev{ transform:rotate(180deg); }
+.troca-menu{ position:absolute; left:0; top:calc(100% + 6px); z-index:30; width:min(520px, 86vw); max-height:min(70vh, 520px); overflow:auto; padding:8px; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:4px; border:1px solid var(--line-strong); border-radius:14px; background:var(--surface); box-shadow:0 14px 40px rgba(0,0,0,.4); }
+.troca-menu[hidden]{ display:none; }
+.tm{ display:flex; align-items:center; gap:10px; width:100%; padding:8px 10px; border:1px solid transparent; border-radius:10px; background:transparent; color:var(--ink); font:inherit; cursor:pointer; text-align:left; }
+.tm:hover{ background:var(--bg-soft, rgba(127,127,127,.12)); }
+.tm.on{ background:var(--accent-soft); border-color:var(--accent); }
+.tm.vz{ opacity:.6; }
+.tm .s-ic{ width:30px; height:30px; border-radius:9px; flex:none; background:var(--accent-soft); color:var(--accent); display:flex; align-items:center; justify-content:center; }
+.tm .s-ic svg{ width:16px; height:16px; }
+.tm-tx{ display:flex; flex-direction:column; min-width:0; }
+.tm-tx b{ font-size:.92rem; line-height:1.2; }
+.tm-tx small{ font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--ink-faint); white-space:nowrap; }
+@media (max-width:560px){ .troca-menu{ grid-template-columns:1fr; } }
 .p-nome{ overflow:hidden; text-overflow:ellipsis; }
 .p-head .filtros{ margin:0; flex:none; }
 .destaque{ margin-bottom:14px; }

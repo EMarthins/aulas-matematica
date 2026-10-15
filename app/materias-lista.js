@@ -1,6 +1,7 @@
 // Matérias que o professor pode escolher como "principal" (cadastro e Minha conta). Os ids são os do catálogo (app/catalog.js).
 export const MATERIAS_ATUACAO = [
   { id: 'matematica', nome: 'Matemática' },
+  { id: 'recomposicao-matematica', nome: 'Recomposição Matemática' },
   { id: 'educacao-financeira', nome: 'Educação Financeira' },
   { id: 'portugues', nome: 'Língua Portuguesa' },
   { id: 'ingles', nome: 'Língua Inglesa' },

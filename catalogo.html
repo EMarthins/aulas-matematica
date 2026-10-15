@@ -306,6 +306,38 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     return d;
   }
 
+  // ---- título da matéria com troca rápida de matéria (menu com todas as matérias) ----
+  function tituloTroca(m, cMat){
+    var h = el('h2', 'p-titulo'), wrap = el('div', 'troca');
+    var bt = el('button', 'p-troca', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span><span class="chev" aria-hidden="true">▾</span>');
+    bt.type = 'button'; bt.setAttribute('aria-haspopup', 'listbox'); bt.setAttribute('aria-expanded', 'false'); bt.title = 'Trocar de matéria';
+    var menu = el('div', 'troca-menu'); menu.setAttribute('role', 'listbox'); menu.setAttribute('aria-label', 'Matérias'); menu.hidden = true;
+    MATERIAS.forEach(function(x, i){
+      var c = contaMateria(x), on = i === estado.idx;
+      var b = el('button', 'tm' + (on ? ' on' : '') + (c.total ? '' : ' vz'), '<span class="s-ic">' + svgIcon(x.icon) + '</span><span class="tm-tx"><b>' + esc(x.nome) + '</b><small>' + (x.id === 'gratis' ? plural(c.aulas, 'aula', 'aulas') : c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + c.vistos + '/' + c.total + ' vistos' : 'em breve') + '</small></span>');
+      b.type = 'button'; b.setAttribute('role', 'option'); b.setAttribute('aria-selected', on);
+      b.style.setProperty('--accent', 'var(--' + acento(i) + ')'); b.style.setProperty('--accent-soft', 'var(--' + acento(i) + '-soft)');
+      b.addEventListener('click', function(){ fecha(); if(estado.q) limpaBusca(); escolheMateria(i); });
+      menu.appendChild(b);
+    });
+    function fecha(){ menu.hidden = true; bt.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', fora); document.removeEventListener('keydown', tecla); }
+    function fora(e){ if(!wrap.contains(e.target)) fecha(); }
+    function tecla(e){
+      if(e.key === 'Escape'){ fecha(); bt.focus(); return; }
+      if(e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      var itens = [].slice.call(menu.querySelectorAll('.tm')), k = itens.indexOf(document.activeElement);
+      k = e.key === 'ArrowDown' ? (k + 1) % itens.length : (k - 1 + itens.length) % itens.length; itens[k].focus(); e.preventDefault();
+    }
+    bt.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(menu.hidden){ menu.hidden = false; bt.setAttribute('aria-expanded', 'true'); document.addEventListener('click', fora); document.addEventListener('keydown', tecla); var on = menu.querySelector('.tm.on'); if(on) on.focus(); }
+      else fecha();
+    });
+    wrap.appendChild(bt); wrap.appendChild(menu); h.appendChild(wrap);
+    h.appendChild(el('small', null, cMat.total ? cMat.vistos + ' de ' + cMat.total + ' vistos' : 'em breve'));
+    return h;
+  }
+
   // ---- painel da matéria ----
   function renderPainel(){
     var m = MATERIAS[estado.idx], a = m.CATALOG[estado.ano];
@@ -315,7 +347,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     painel.style.setProperty('--accent-soft', 'var(--' + acento(estado.idx) + '-soft)');
 
     var inicio = estado.modo === 'inicio', topo = el('div', 'p-head'), cMat = contaMateria(m);
-    if(!inicio) topo.appendChild(el('h2', 'p-titulo', '<span class="s-ic">' + svgIcon(m.icon) + '</span><span class="p-nome">' + esc(m.nome) + '</span>' + (cMat.total ? '<small>' + cMat.vistos + ' de ' + cMat.total + ' vistos</small>' : '<small>em breve</small>')));
+    if(!inicio) topo.appendChild(tituloTroca(m, cMat));
     var destaque = null;
     if(m.destaque){ destaque = el('a', 'destaque', '<small>★ Comece por aqui</small><b>' + esc(m.destaque.titulo) + '</b><span>' + esc(m.destaque.texto) + '</span>'); destaque.href = m.destaque.url; }
 
