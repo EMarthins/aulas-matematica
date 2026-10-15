@@ -321,3 +321,9 @@ body.pv :is(input,select,textarea,button,label,summary,dialog,.pop,.fpop):not(.f
 .qc .imgp{flex:1;min-width:0}
 .qc .imgp img{display:block;max-width:100%;max-height:210px;object-fit:contain;object-position:left top;background:#fff;border-radius:8px;padding:4px 6px}
 .dens-compacta .qc .imgp img{max-height:84px}
+
+/* imprimir só a folha de respostas */
+@media print{
+  body.so-fr .folha:not(.fr-f),body.so-fr .folha.fr-prof{display:none!important}
+  body.so-fr .folha.fr-f.ultima{break-after:auto!important;page-break-after:auto!important}
+}

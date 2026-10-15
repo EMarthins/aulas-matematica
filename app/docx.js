@@ -13,6 +13,7 @@
 import { mat } from './matematica.js';
 import { figuraHtml } from './figuras.js';
 import { gabaritoDe, SOMA_VALORES, fmtPt, altClasse } from './questoes.js';
+import { modeloLinha, legenda } from './folha-respostas.js';
 
 const TW = 56.6929, tw = mm => Math.round(mm * TW), EMU = 36000;
 const F_TXT = 'Cambria', F_UI = 'Arial', F_MAT = 'Cambria';
@@ -126,6 +127,7 @@ const rPr = st => {
   if (st.sz) x += `<w:sz w:val="${st.sz}"/><w:szCs w:val="${st.sz}"/>`;
   if (st.u) x += '<w:u w:val="single"/>';
   if (st.bdr) x += '<w:bdr w:val="single" w:sz="8" w:space="2" w:color="111111"/>';
+  if (st.shd) x += `<w:shd w:val="clear" w:color="auto" w:fill="${st.shd}"/>`;
   if (st.va) x += `<w:vertAlign w:val="${st.va}"/>`;
   return x ? `<w:rPr>${x}</w:rPr>` : '';
 };
@@ -525,6 +527,61 @@ async function cabecalho(M, ctx) {
   return out;
 }
 
+// ---------- folha de respostas do aluno (e a preenchida, só professor) ----------
+function folhaRespostasBlocos(M, preench) {
+  const W = tw(210 - 2 * M.layout.margem), out = [], fr = M.fr || {}, c = M.cab || {};
+  const linhas = M.lista.map(modeloLinha), n = linhas.length;
+  const nc = fr.cols === '1' ? 1 : fr.cols === '2' ? 2 : (n > 22 ? 2 : 1);
+  const sz = 19, ST = { font: F_UI, sz }, STB = { font: F_UI, sz, b: true };
+  const sem = (a, b) => a ? par(a, b) : '';
+  if (preench) out.push(par(run(' SOMENTE PROFESSOR ', { font: F_UI, b: true, sz: 14, color: 'FFFFFF' }), { left: W - tw(34), shd: '111111', after: tw(2) }));
+  const ver = M.versao && M.versao !== 'A' ? tabRun + run(' Versão ' + M.versao + ' ', { font: F_UI, b: true, sz: 28, bdr: true }) : '';
+  out.push(par(run('Folha de respostas' + (preench ? ' — gabarito' : ''), { font: F_UI, b: true, caps: true, sz: 30 }) + ver, { keepNext: true, tabs: [{ v: 'right', p: W }], after: tw(.8) }));
+  out.push(par(run(M.nome + (c.subtitulo ? ' · ' + c.subtitulo : ''), { font: F_UI, b: true, sz: 19, color: '444444' }), { keepNext: true, pbdr: `<w:pBdr>${bd('bottom', 12)}</w:pBdr>`, after: tw(2.4) }));
+  // campos Nome / Nº / Turma / Data
+  const campos = [['Nome', '', .55], ['Nº', '', .09], ['Turma', c.turma || '', .16], ['Data', c.data || '', .2]];
+  let t = `<w:tbl><w:tblPr><w:tblW w:w="${W}" w:type="dxa"/><w:tblBorders>${bd('top', 8)}${bd('left', 8)}${bd('bottom', 8)}${bd('right', 8)}${bd('insideH', 0)}${bd('insideV', 8)}</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="28" w:type="dxa"/><w:left w:w="85" w:type="dxa"/><w:bottom w:w="28" w:type="dxa"/><w:right w:w="85" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${campos.map(k => `<w:gridCol w:w="${Math.round(W * k[2])}"/>`).join('')}</w:tblGrid><w:tr><w:trPr><w:cantSplit/></w:trPr>`;
+  campos.forEach(k => { t += `<w:tc><w:tcPr><w:tcW w:w="${Math.round(W * k[2])}" w:type="dxa"/></w:tcPr>${par(run(k[0], { font: F_UI, b: true, caps: true, sz: 14 }), { keepNext: true })}${par(run(k[1], STB), { before: tw(1), line: tw(5.5), rule: 'atLeast' })}</w:tc>`; });
+  out.push(t + '</w:tr></w:tbl>');
+  const instr = fr.instr != null ? fr.instr : '';
+  if (instr) out.push(par(run(instr, { font: F_UI, i: true, sz: 17 }), { before: tw(2.5), pbdr: `<w:pBdr>${bd('top', 4)}${bd('left', 4)}${bd('bottom', 4)}${bd('right', 4)}</w:pBdr>`, left: 57, right: 57 }));
+  const leg = legenda(linhas).map(s => s.replace(/<[^>]+>/g, '')).join(' · ');
+  if (leg) out.push(par(run(leg, { font: F_UI, sz: 15, color: '333333' }), { before: tw(1.8), after: tw(3) }));
+  else out.push(par('', { after: tw(3) }));
+  // linhas: uma por questão; com 2 colunas as questões descem na 1ª e continuam na 2ª
+  const per = Math.ceil(n / nc), gapW = tw(8), grp = Math.floor((W - gapW * (nc - 1)) / nc), numW = tw(9);
+  const grade = []; for (let g = 0; g < nc; g++) { if (g) grade.push(gapW); grade.push(numW, grp - numW); }
+  const celula = l => {
+    if (!l) return par('');
+    const d = preench, L = 'ABCDEFGHIJ';
+    if (l.tipo === 'mc') {
+      let r = ''; for (let i = 0; i < l.n; i++) r += run('( ', ST) + (d && l.marc === i ? run(L[i], { font: F_UI, sz, b: true, color: 'FFFFFF', shd: '111111' }) : run(L[i], ST)) + run(' )   ', ST);
+      return par(r);
+    }
+    if (l.tipo === 'vf' || l.tipo === 'assoc') {
+      let r = ''; for (let i = 0; i < l.n; i++) r += run((i + 1) + ' ', { font: F_UI, sz: 15, color: '666666' }) + run('[ ', ST) + (d && l.vals[i] ? run(l.vals[i], STB) : run('   ', ST)) + run(' ]    ', ST);
+      return par(r);
+    }
+    if (l.tipo === 'soma') { const v = d ? l.val.padStart(2, '0') : ''; return par(run('Soma  ', STB) + run('[ ', ST) + run(v[0] || '   ', STB) + run(' ]  [ ', ST) + run(v[1] || '   ', STB) + run(' ]', ST)); }
+    return par(run(d ? l.val : '', ST), { pbdr: `<w:pBdr>${bd('bottom', 6)}</w:pBdr>`, line: tw(6.4), rule: 'atLeast' });
+  };
+  let tb = `<w:tbl><w:tblPr><w:tblW w:w="${grade.reduce((a, b) => a + b, 0)}" w:type="dxa"/><w:tblBorders>${bd('top', 0)}${bd('left', 0)}${bd('bottom', 0)}${bd('right', 0)}${bd('insideH', 0)}${bd('insideV', 0)}</w:tblBorders><w:tblLayout w:type="fixed"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="40" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="40" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${grade.map(w => `<w:gridCol w:w="${w}"/>`).join('')}</w:tblGrid>`;
+  const borda = '<w:tcBorders><w:bottom w:val="single" w:sz="2" w:space="0" w:color="BBBBBB"/></w:tcBorders>';
+  for (let r = 0; r < per; r++) {
+    tb += `<w:tr><w:trPr><w:cantSplit/><w:trHeight w:val="${tw(9)}" w:hRule="atLeast"/></w:trPr>`;
+    for (let g = 0; g < nc; g++) {
+      const l = linhas[g * per + r];
+      if (g) tb += `<w:tc><w:tcPr><w:tcW w:w="${gapW}" w:type="dxa"/></w:tcPr>${par('')}</w:tc>`;
+      tb += `<w:tc><w:tcPr><w:tcW w:w="${numW}" w:type="dxa"/>${l ? borda : ''}<w:vAlign w:val="center"/></w:tcPr>${par(l ? run(String(l.num).padStart(2, '0'), { font: F_UI, b: true, sz: 21 }) : '', { jc: 'right' })}</w:tc>`;
+      tb += `<w:tc><w:tcPr><w:tcW w:w="${grp - numW}" w:type="dxa"/>${l ? borda : ''}<w:vAlign w:val="center"/></w:tcPr>${celula(l)}</w:tc>`;
+    }
+    tb += '</w:tr>';
+  }
+  out.push(tb + '</w:tbl>');
+  void sem;
+  return out;
+}
+
 // ---------- gabarito ----------
 async function gabaritoBlocos(M, ctx) {
   const hp = ctx.hp, W = tw(210 - 2 * M.layout.margem), out = [];
@@ -589,10 +646,13 @@ export async function gerarDocx(M, io) {
   else corpo.push(...blocosCab);
   corpo.push(...blocosQ);
   let final;
-  if (comGab) {
-    const g = await gabaritoBlocos(M, Object.assign({}, ctx, { cw: larg, svgs: [] }));
+  const comFr = !!(M.fr && M.fr.anexar && M.lista.length);
+  const apos = []; // o que vem depois da prova, cada parte em página própria: folha de respostas, folha preenchida, gabarito
+  if (comFr) { apos.push(folhaRespostasBlocos(M, false)); if (M.fr.prof) apos.push(folhaRespostasBlocos(M, true)); }
+  if (comGab) apos.push(await gabaritoBlocos(M, Object.assign({}, ctx, { cw: larg, svgs: [] })));
+  if (apos.length) {
     corpo.push(par('', { line: 20, rule: 'exact', keepLines: false, sect: sectXml(M, N, blocosCab.length && N > 1 ? 'continuous' : null, rod) }));
-    corpo.push(...g);
+    apos.forEach((b, i) => { corpo.push(...b); if (i < apos.length - 1) corpo.push(par('', { line: 20, rule: 'exact', keepLines: false, sect: sectXml(M, 1, 'nextPage', rod) })); });
     final = sectXml(M, 1, 'nextPage', rod);
   } else final = sectXml(M, N, blocosCab.length && N > 1 ? 'continuous' : null, rod);
   if (corpo[corpo.length - 1].startsWith('<w:tbl>')) corpo.push(par('', { keepLines: false }));

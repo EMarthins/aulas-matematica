@@ -45,7 +45,7 @@ function bemFormado(nome, xml) {
     nome: 'Avaliação de teste', versao: 'A', total: lista.length,
     cab: { modelo: 'caixas', titulo: 'Avaliação de Matemática', subtitulo: '2º trimestre', disciplina: 'Matemática', escola: 'Colégio Exemplo', professor: 'Profa. Exemplo', turma: '2º A', trimestre: '2º trimestre', data: '', logo: '', instrucoes: 'Leia com atenção. Use caneta azul ou preta.\nNão é permitido o uso de calculadora.', totalNota: true, mostrar: { nome: true, num: true, turma: true, data: true, escola: true, professor: true, nota: true, trimestre: true } },
     layout: { colunas, fonte: 11, margem: 12, gapq: 5, gap: 8, num: 'ponto', alt: 'auto', sep: true, rodape: true, pontos: true },
-    gab: { anexar: gab, res: true }, lista
+    gab: { anexar: gab, res: true }, fr: process.env.FR ? { anexar: true, prof: true, cols: process.env.FR === '2' ? '2' : 'auto', instr: 'Passe a limpo aqui as suas respostas, com caneta azul ou preta.' } : undefined, lista
   };
   if (process.env.CAB) Object.assign(modelo.cab, JSON.parse(process.env.CAB));
   if (process.env.LAYOUT) Object.assign(modelo.layout, JSON.parse(process.env.LAYOUT));

@@ -104,3 +104,16 @@ Botão **Word** na barra do EduMath Provas (ao lado de "Imprimir / PDF"). Gera u
 
 ## Prova de exemplo e demonstração (sem cadastro)
 `professor/prova.html?exemplo=1` (e o item "Carregar prova de exemplo" do menu ⋯) carrega uma prova pronta de 11 questões variadas (frações e raízes, gráfico, barras/tabela, figura, V/F, somatória, associação, aberta), cabeçalho preenchido, 2 colunas e gabarito anexado, com um aviso flutuante convidando a criar a conta. Funciona sem login (tudo no navegador) e já exporta Word/PDF. Links: página "Para professores" ("Ver uma prova pronta") e "Planos". Não existe uma conta de demonstração compartilhada de propósito: uma senha pública seria alterada/abusada por qualquer um; se quiser uma conta real de demo, crie-a e use o painel de admin para aprovar e dar Pro.
+
+## Folha de respostas do aluno (cartão-resposta)
+
+Em **☰ → Prova → Folha de respostas do aluno**:
+
+- **Anexar a folha de respostas depois da prova (página separada)**: entra logo após as páginas da prova e antes do gabarito do professor; também sai no **PDF/imprimir** e no **Word**.
+- **Uma linha por questão**, no formato do tipo: múltipla escolha = bolinhas A–E (com a quantidade certa de alternativas); V/F e associação = um quadrinho por afirmação/item (o aluno escreve V, F ou a letra); somatória = dois quadrinhos para a soma; aberta = linha para a resposta rápida. A legenda no topo só cita os tipos que existem na prova.
+- **Colunas**: automático (1 coluna até 22 questões, 2 acima), 1 ou 2. O texto das **instruções** é editável; Turma e Data vêm do cabeçalho da prova.
+- **Incluir também a folha preenchida (só professor)**: página com a faixa SOMENTE PROFESSOR e as respostas certas marcadas (vale para a versão A/B/C/D ativa).
+- **Imprimir só a folha de respostas**: botão no mesmo bloco (liga o anexo, se preciso, e imprime só essas páginas).
+- Pelo chat: “anexar folha de respostas”, “sem folha de respostas”.
+
+Código: `app/folha-respostas.js` (modelo da linha + HTML; sem DOM, roda também no Node), CSS `.fr-*` em `app/prova-folha.css`, paginação em `prova-app.js` (`folhaFr`), Word em `app/docx.js` (`folhaRespostasBlocos`). Teste no Word: `FR=1 node scripts/testar-docx.js saida.docx 2 --gab`.

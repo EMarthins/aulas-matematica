@@ -166,6 +166,15 @@
           <label class="pv-chk"><input type="checkbox" id="g-res"> Incluir resolução passo a passo</label>
           <p class="pv-nota">Imprima só as páginas da prova para os alunos (ou use “Páginas” no diálogo de impressão).</p>
         </div>
+        <div class="pv-box">
+          <h3>Folha de respostas do aluno</h3>
+          <label class="pv-chk"><input type="checkbox" id="fr-anexar"> Anexar a folha de respostas depois da prova (página separada)</label>
+          <div class="pv-campo"><label for="fr-cols">Colunas da folha</label><select class="pv-sel" id="fr-cols"><option value="auto">Automático</option><option value="1">1 coluna</option><option value="2">2 colunas</option></select></div>
+          <div class="pv-campo"><label for="fr-instr">Instruções na folha</label><textarea class="pv-ta" id="fr-instr" rows="2"></textarea></div>
+          <label class="pv-chk"><input type="checkbox" id="fr-prof"> Incluir também a folha preenchida (gabarito, só professor)</label>
+          <button class="tb sm" id="bImprimirFr" type="button">Imprimir só a folha de respostas</button>
+          <p class="pv-nota">Uma linha por questão: bolinhas nas de múltipla escolha, quadrinhos para V/F e associação, caixas para a somatória e linha de resposta nas abertas.</p>
+        </div>
         <button class="tb sm danger" id="bLimparProva" type="button">Remover todas as questões</button>
       </div>
     </section>

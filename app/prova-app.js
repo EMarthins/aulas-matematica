@@ -4,6 +4,7 @@
 // ============================================================
 import { mat } from './matematica.js';
 import { figuraHtml } from './figuras.js';
+import { modeloLinha, linhaHtml, cabecalhoHtml, INSTR_PADRAO } from './folha-respostas.js';
 import { TIPOS, SOMA_VALORES, normalizar, validar, renderQuestao, renderResolucao, gabaritoDe, textoPlano, uid, fmtPt, rng, embaralhar } from './questoes.js';
 import * as IA from './ia-prova.js';
 import { criarSincronizador } from './nuvem.js';
@@ -41,7 +42,7 @@ function novoEstado() {
     id: uid(), nome: 'Avaliação',
     cab: Object.assign({}, PADRAO_CAB, perfil, { mostrar: Object.assign({}, PADRAO_CAB.mostrar, perfil.mostrar || {}), data: '' }),
     layout: { colunas: 2, fonte: 11, margem: 12, gapq: 5, gap: 8, num: 'ponto', alt: 'auto', sep: true, rodape: true, pontos: true },
-    itens: [], gab: { anexar: false, res: true }, versao: 'A', embOrdem: false, embAlt: false, snap: {}
+    itens: [], gab: { anexar: false, res: true }, fr: { anexar: false, prof: false, cols: 'auto', instr: INSTR_PADRAO }, versao: 'A', embOrdem: false, embAlt: false, snap: {}
   };
 }
 let E = novoEstado();
@@ -344,7 +345,20 @@ async function paginar() {
     if (tok !== tokenLayout) return;
     gPages = distribuir(gh, 1, H, H);
   }
-  const total = pages.length + gPages.length; totalPaginas = total;
+  // 3) folha de respostas do aluno (e, opcionalmente, a preenchida para o professor)
+  let fPages = [], fProf = [], fRows = [], fRowsP = [], fCab = '', fColsN = 1, fColW = larg;
+  if (E.fr.anexar && lista.length) {
+    const linhas = lista.map(modeloLinha);
+    fColsN = E.fr.cols === '1' ? 1 : E.fr.cols === '2' ? 2 : (lista.length > 22 ? 2 : 1);
+    fColW = (larg - (fColsN - 1) * gap) / fColsN;
+    fCab = cabecalhoHtml({ nome: E.nome, versao: E.versao, subtitulo: E.cab.subtitulo, turma: E.cab.turma, data: E.cab.data, instr: E.fr.instr }, linhas);
+    fRows = linhas.map(l => linhaHtml(l, false)); fRowsP = linhas.map(l => linhaHtml(l, true));
+    const hc = await medir([fCab], larg), hr = await medir(fRows, fColW);
+    if (tok !== tokenLayout) return;
+    fPages = distribuir(hr, fColsN, H - hc[0], H);
+    if (E.fr.prof) fProf = distribuir(hr, fColsN, H - hc[0], H);
+  }
+  const total = pages.length + fPages.length + fProf.length + gPages.length; totalPaginas = total;
   const styleFolha = `padding:${m}mm;--m:${m}mm;--fs:${L.fonte}pt;--gap:${gap}mm;--gapq:${L.gapq}mm`;
   const rod = (txt, n) => L.rodape ? `<div class="rodape" style="bottom:${Math.max(3.2, m * .38)}mm"><span>${esc(txt)}</span><span>Página ${n} de ${total}</span></div>` : '';
   let out = '';
@@ -352,11 +366,18 @@ async function paginar() {
     const vazio = !lista.length && pi === 0 ? '<div class="vazia">Arraste questões do banco para cá<br><small>ou clique em “+ Adicionar” no cartão da questão</small></div>' : '';
     out += `<section class="folha${L.sep && N > 1 ? ' sep' : ''}" style="${styleFolha}">${pi === 0 ? cab : ''}<div class="cols">${pg.cols.map(c => `<div class="col" style="width:${colW}mm">${c.map(i => qhtml[i]).join('')}</div>`).join('')}</div>${vazio}${rod(E.nome + (E.versao !== 'A' ? ' · Versão ' + E.versao : ''), pi + 1)}</section>`;
   });
+  const folhaFr = (pg, pi, prof) => {
+    const rows = prof ? fRowsP : fRows, base = pages.length + (prof ? fPages.length : 0) + pi + 1;
+    const cab = pi === 0 ? (prof ? fCab.replace('Folha de respostas', 'Folha de respostas — gabarito') : fCab) : '';
+    return `<section class="folha fr-f${prof ? ' fr-prof' : ''}" style="${styleFolha};--fs:10pt">${prof ? '<div class="selo-prof">SOMENTE PROFESSOR</div>' : ''}${cab}<div class="cols">${pg.cols.map(c => `<div class="col" style="width:${fColW}mm">${c.map(i => rows[i]).join('')}</div>`).join('')}</div>${rod((prof ? 'Folha preenchida — ' : 'Folha de respostas — ') + E.nome + (E.versao !== 'A' ? ' · Versão ' + E.versao : ''), base)}</section>`;
+  };
+  fPages.forEach((pg, pi) => { out += folhaFr(pg, pi, false); });
+  fProf.forEach((pg, pi) => { out += folhaFr(pg, pi, true); });
   gPages.forEach((pg, pi) => {
-    out += `<section class="folha gab-f" style="${styleFolha};--fs:10.5pt"><div class="selo-prof">SOMENTE PROFESSOR</div><div class="cols"><div class="col" style="width:${larg}mm">${pg.cols[0].map(i => gHtml[i]).join('')}</div></div>${rod('Gabarito — ' + E.nome, pages.length + pi + 1)}</section>`;
+    out += `<section class="folha gab-f" style="${styleFolha};--fs:10.5pt"><div class="selo-prof">SOMENTE PROFESSOR</div><div class="cols"><div class="col" style="width:${larg}mm">${pg.cols[0].map(i => gHtml[i]).join('')}</div></div>${rod('Gabarito — ' + E.nome, pages.length + fPages.length + fProf.length + pi + 1)}</section>`;
   });
   $('paginas').innerHTML = out;
-  $('infoPag').textContent = `${total} página${total === 1 ? '' : 's'} A4` + (gPages.length ? ` (${gPages.length} de gabarito)` : '');
+  $('infoPag').textContent = `${total} página${total === 1 ? '' : 's'} A4` + (fPages.length ? ` (${fPages.length} de folha de respostas)` : '') + (gPages.length ? ` (${gPages.length} de gabarito)` : '');
   $('rPg').textContent = total;
   aplicarZoom();
   if (avisosProva.length) toast(`A questão ${lista[avisosProva[0]].num} é maior que a coluna — use 1 coluna ou reduza a figura.`, 4200);
@@ -471,6 +492,7 @@ function sincronizarForm() {
   $('l-sep').checked = L.sep; $('l-rodape').checked = L.rodape; $('l-pontos').checked = L.pontos;
   marcarSeg('segVer', E.versao); $('v-ordem').checked = E.embOrdem; $('v-alt').checked = E.embAlt;
   $('g-anexar').checked = E.gab.anexar; $('g-res').checked = E.gab.res;
+  $('fr-anexar').checked = E.fr.anexar; $('fr-prof').checked = E.fr.prof; $('fr-cols').value = E.fr.cols; $('fr-instr').value = E.fr.instr;
   $('nomeProva').value = E.nome;
   $('vis').innerHTML = Object.keys(CEL).map(k => `<label class="pv-chk"><input type="checkbox" data-k="${k}"${c.mostrar[k] ? ' checked' : ''}> ${CEL[k][0].replace(':', '')}</label>`).join('');
 }
@@ -498,6 +520,19 @@ function iniciarPaineis() {
   $('v-alt').addEventListener('change', e => { E.embAlt = e.target.checked; mudou(true); });
   $('g-anexar').addEventListener('change', e => { E.gab.anexar = e.target.checked; mudou(true); });
   $('g-res').addEventListener('change', e => { E.gab.res = e.target.checked; mudou(true); });
+  $('fr-anexar').addEventListener('change', e => { E.fr.anexar = e.target.checked; mudou(true); });
+  $('fr-prof').addEventListener('change', e => { E.fr.prof = e.target.checked; if (e.target.checked && !E.fr.anexar) { E.fr.anexar = true; $('fr-anexar').checked = true; } mudou(true); });
+  $('fr-cols').addEventListener('change', e => { E.fr.cols = e.target.value; mudou(true); });
+  $('fr-instr').addEventListener('input', e => { E.fr.instr = e.target.value; mudou(true); });
+  $('bImprimirFr').addEventListener('click', async () => {
+    if (!E.itens.length) return toast('Adicione ao menos uma questão antes de imprimir a folha de respostas.');
+    if (!E.fr.anexar) { E.fr.anexar = true; $('fr-anexar').checked = true; mudou(true); }
+    await paginar();
+    const fr = [...document.querySelectorAll('#paginas .folha.fr-f:not(.fr-prof)')]; if (!fr.length) return;
+    fr.forEach(f => f.classList.remove('ultima')); fr[fr.length - 1].classList.add('ultima');
+    document.body.classList.add('so-fr'); const antes = document.title; document.title = 'Folha de respostas - ' + E.nome;
+    window.print(); setTimeout(() => { document.body.classList.remove('so-fr'); document.title = antes; }, 800);
+  });
   $('nomeProva').addEventListener('input', e => { E.nome = e.target.value || 'Avaliação'; mudou(true); });
 
   // lista da prova
@@ -706,7 +741,7 @@ function salvarProva() {
 }
 function carregarProva(s) {
   const novo = novoEstado(); E = Object.assign(novo, s); E.cab = Object.assign({}, PADRAO_CAB, s.cab, { mostrar: Object.assign({}, PADRAO_CAB.mostrar, (s.cab || {}).mostrar || {}) });
-  E.layout = Object.assign(novo.layout, s.layout || {}); E.gab = Object.assign(novo.gab, s.gab || {}); E.snap = s.snap || {};
+  E.layout = Object.assign(novo.layout, s.layout || {}); E.gab = Object.assign(novo.gab, s.gab || {}); E.fr = Object.assign(novo.fr, s.fr || {}); E.snap = s.snap || {};
   Object.keys(E.snap).forEach(id => { if (!POR_ID[id]) POR_ID[id] = indexar(E.snap[id]); });
   sincronizarForm(); mudou();
 }
@@ -751,7 +786,7 @@ function iniciarArquivos() {
       const { baixarDocx } = await import('./docx.js');
       const lista = ordenados().map(x => ({ q: x.q, num: x.num, ordem: x.ordem, omitirBase: x.omitirBase, valor: x.it.pontos }));
       const nome = (E.nome || 'prova').replace(/[\/:*?"<>|]+/g, ' ').trim() || 'prova';
-      await baixarDocx({ nome: E.nome, versao: E.versao, cab: E.cab, layout: E.layout, gab: E.gab, lista, total: somaPontos() }, nome + (E.versao !== 'A' ? ' - versão ' + E.versao : '') + '.docx');
+      await baixarDocx({ nome: E.nome, versao: E.versao, cab: E.cab, layout: E.layout, gab: E.gab, fr: E.fr, lista, total: somaPontos() }, nome + (E.versao !== 'A' ? ' - versão ' + E.versao : '') + '.docx');
       toast('Arquivo Word baixado. Abra no Word para editar.');
     } catch (e) { console.error(e); toast('Não foi possível gerar o Word: ' + e.message, 5200); } finally { b.disabled = false; }
   });
@@ -835,6 +870,7 @@ function comandoRapido(txt) {
   const mc = /\b([12])\s*coluna/.exec(t); if (mc) { E.layout.colunas = +mc[1]; sincronizarForm(); mudou(true); return `Ok, a prova agora está em <b>${mc[1]} coluna${mc[1] === '2' ? 's' : ''}</b>.`; }
   const mp = /(?:dividi\w*|distribu\w*|total\w*|valer\w*|vale)\D{0,20}?(\d+(?:[.,]\d+)?)\s*(?:pontos?|pts)?/.exec(t);
   if (mp && /(pontos?|dividi|distribu|nota)/.test(t) && E.itens.length) { const alvo = parseFloat(mp[1].replace(',', '.')); $('alvoPts').value = alvo; $('bDividir').click(); return `Dividi <b>${fmtPt(alvo)} pontos</b> igualmente entre as ${E.itens.length} questões.`; }
+  if (/(folha|cartao)( de)? respostas?|cartao.resposta|gabarito do aluno/.test(t)) { E.fr.anexar = !/(sem|tire|tirar|remov|nao)/.test(t); sincronizarForm(); mudou(true); return E.fr.anexar ? 'Anexei a <b>folha de respostas</b> do aluno depois da prova (página separada).' : 'Tirei a folha de respostas.'; }
   if (/sem gabarito/.test(t)) { E.gab.anexar = false; sincronizarForm(); mudou(true); return 'Tirei as páginas de gabarito.'; }
   if (/gabarito/.test(t) && /(anex|inclu|colo|com|quero|adicion|gere|ponha)/.test(t)) { E.gab.anexar = true; sincronizarForm(); mudou(true); return 'Anexei as <b>páginas de gabarito</b> ao final (só para o professor).'; }
   const mv = /\bversao\s*([abcd])\b/.exec(t); if (mv) { E.versao = mv[1].toUpperCase(); if (E.versao !== 'A') { E.embOrdem = true; E.embAlt = true; } sincronizarForm(); mudou(true); return `Versão <b>${E.versao}</b> ativada${E.versao !== 'A' ? ' (ordem e alternativas embaralhadas)' : ''}.`; }
