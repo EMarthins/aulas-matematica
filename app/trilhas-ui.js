@@ -1,5 +1,6 @@
 // Tela de Trilhas (trilhas.html): minhas turmas (onde cada turma parou, próxima aula, roteiro em módulos) e trilhas prontas por matéria/ano/trimestre.
 import { TRILHAS, MATERIAS_TRILHA, trilhaPorId, Trilhas } from './trilhas.js';
+import { iniciarSyncTrilhas } from './trilhas-nuvem.js';
 
 const $app = document.getElementById('tlApp');
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -138,7 +139,7 @@ function dialogoNova(trilhaId) {
     let id;
     if (idEx) { Trilhas.trocarTrilha(idEx, tr); id = idEx; }
     else id = Trilhas.criar(nome.value || 'Minha turma', tr).id;
-    d.close(); location.hash = '#turma/' + id; render();
+    d.close(); salvou(); location.hash = '#turma/' + id; render();
   });
   setTimeout(() => nome.focus(), 50);
 }
@@ -158,13 +159,24 @@ $app.addEventListener('click', e => {
   if (t.dataset.ver) { const aberta = rota().a === t.dataset.ver; location.hash = aberta ? '#prontas' : '#prontas/' + encodeURIComponent(t.dataset.ver); return; }
   if (t.dataset.mat) { filtroP.materia = t.dataset.mat; filtroP.ano = ''; return render(); }
   if (t.hasAttribute('data-ano')) { filtroP.ano = t.dataset.ano; return render(); }
-  if (t.dataset.feita) { const id = rota().a; Trilhas.alternarFeita(id, t.dataset.feita); return render(); }
-  if (t.hasAttribute('data-excluir')) { const id = rota().a, tt = Trilhas.turma(id); if (tt && confirm('Excluir "' + tt.nome + '"? O registro de onde ela parou será apagado.')) { Trilhas.remover(id); location.hash = '#turmas'; } return; }
+  if (t.dataset.feita) { const id = rota().a; Trilhas.alternarFeita(id, t.dataset.feita); salvou(); return render(); }
+  if (t.hasAttribute('data-excluir')) { const id = rota().a, tt = Trilhas.turma(id); if (tt && confirm('Excluir "' + tt.nome + '"? O registro de onde ela parou será apagado.')) { Trilhas.remover(id); salvou(); location.hash = '#turmas'; } return; }
 });
 $app.addEventListener('change', e => {
-  if (e.target.id === 'tlTrilha') { Trilhas.trocarTrilha(rota().a, e.target.value); render(); }
+  if (e.target.id === 'tlTrilha') { Trilhas.trocarTrilha(rota().a, e.target.value); salvou(); render(); }
 });
-$app.addEventListener('input', e => { if (e.target.id === 'tlNome') Trilhas.renomear(rota().a, e.target.value); });
+$app.addEventListener('input', e => { if (e.target.id === 'tlNome') { Trilhas.renomear(rota().a, e.target.value); salvou(); } });
+/* ---------------- nuvem (só professor logado; o resto continua local) ---------------- */
+let sinc = null;
+const salvou = () => { if (sinc) sinc.alterou(); };
+function pintaNuvem(e) {
+  const el = document.getElementById('tlNuvem'); if (!el) return;
+  const T = { sincronizando: ['sync', 'Sincronizando…'], ok: ['ok', 'Salvo na nuvem'], parcial: ['aviso', 'Parte não subiu'], offline: ['aviso', 'Sem conexão — fica neste navegador'], erro: ['erro', 'Erro ao sincronizar'] }[e.estado];
+  if (!T) { el.hidden = true; return; }
+  el.hidden = false; el.className = 'tl-nuvem ' + T[0]; el.textContent = '☁ ' + T[1];
+}
+iniciarSyncTrilhas({ aoAtualizar: render, aoEstado: pintaNuvem }).then(s => { sinc = s; });
+
 document.querySelectorAll('.tl-tab').forEach(b => b.addEventListener('click', () => { location.hash = '#' + b.dataset.v; }));
 window.addEventListener('hashchange', render);
 window.addEventListener('storage', render);

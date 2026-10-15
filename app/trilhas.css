@@ -107,3 +107,10 @@
   .tl-exs,.tl-pend{ margin-left:0; }
   .tl-main{ padding:18px 14px 70px; }
 }
+
+/* estado da sincronização (professor logado) */
+.tl-nuvem{ margin-left:auto; align-self:center; font:700 .76rem 'Archivo',sans-serif; color:var(--ink-faint); padding:.3em .8em; border-radius:99px; background:var(--surface-2); }
+.tl-nuvem.ok{ color:var(--decay-ink); background:var(--decay-soft); }
+.tl-nuvem.aviso{ color:var(--growth-ink); background:var(--growth-soft); }
+.tl-nuvem.erro{ color:#fff; background:#c0392b; }
+.tl-nuvem[hidden]{ display:none; }

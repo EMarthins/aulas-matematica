@@ -55,6 +55,13 @@ const path = require('path');
   { const r = novoRemoto(), l = novoLocal({ provas: { a: P('a', '1') } }); r.quebra = true; let erro = null; try { await N.sincronizar(l, r, {}); } catch (e) { erro = e; }
     ok(erro && l.dados.provas.a, '9: offline lança erro e mantém os dados locais'); }
 
+  // 11. trilhas (só a coleção "trilhas"): a turma sobe, vai para outro aparelho e a mais recente vence
+  { const r = novoRemoto(); r.db.trilhas = {}; const l1 = novoLocal({ trilhas: { t1: { id: 't1', nome: '2º A', trilha: 'x', atualizado: 1000, pos: { 'a.html': { s: 4, n: 19, t: 1000 } }, feitas: {} } } }), l2 = novoLocal();
+    await N.sincronizar(l1, r, {}, ['trilhas']); ok(!!r.db.trilhas.t1 && !r.db.provas.t1, '11: a turma sobe só na coleção trilhas');
+    await N.sincronizar(l2, r, {}, ['trilhas']); ok(l2.dados.trilhas.t1 && l2.dados.trilhas.t1.pos['a.html'].s === 4, '11: outro aparelho recebe onde a turma parou');
+    l2.dados.trilhas.t1.pos['a.html'] = { s: 9, n: 19, t: 2000 }; l2.dados.trilhas.t1.atualizado = 2000;
+    await N.sincronizar(l2, r, {}, ['trilhas']); await N.sincronizar(l1, r, {}, ['trilhas']); ok(l1.dados.trilhas.t1.pos['a.html'].s === 9, '11: o avanço mais recente chega ao primeiro aparelho'); }
+
   // 10. impressão digital estável
   ok(N.ser({ b: 1, a: [1, { d: 1, c: 2 }] }) === N.ser({ a: [1, { c: 2, d: 1 }], b: 1 }), '10: texto estável independe da ordem das chaves');
 

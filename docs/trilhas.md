@@ -1,0 +1,15 @@
+# Trilhas de estudo por turma (trilhas.html)
+
+Ferramenta do professor (e do aluno): **roteiros prontos por matéria · ano · trimestre**, com **módulos enumerados na ordem sugerida** do catálogo, e o registro de **onde cada turma parou** (aula + slide).
+
+- **Aba Minhas turmas**: cartões das turmas (nome, trilha, % concluído, "Parou em / Próxima aula", botão **Continuar**) e o roteiro completo da turma (módulos → aulas, guia visual e atividades; ✓ marca aula concluída; "parou no slide N"). Uma turma aqui é um *caderno de bordo*; não é a turma com alunos do Painel (essa continua em `professor/dashboard.html`).
+- **Aba Trilhas prontas**: filtro por matéria (a do perfil do professor vem primeiro) e ano; "Ver roteiro" e **Usar numa turma** (cria ou troca a trilha de uma turma existente).
+- **Como lembra o slide**: o roteiro abre cada aula com `#t=<id da turma>`; `app/ferramentas.js` (já carregado em todas as aulas) guarda o slide em `trilhas:v1` e marca a aula como concluída ao chegar ao último slide. A mesma aula aberta fora da trilha continua usando o registro geral (`ft:slide:`). Sem trilha/turma nada muda.
+- **Dados**: `localStorage 'trilhas:v1'` = `{ v:1, perfil:{materia}, turmas:{ id:{ id, nome, trilha, criada, atualizado, ultima, pos:{arquivo:{s,n,t}}, feitas:{arquivo:t} } } }`. Código em `app/trilhas.js` (monta as trilhas a partir de `app/catalog.js`, sem matérias ocultas; **"Aula 1, 2…" é a posição dentro do módulo, não o número do RCO**), tela em `app/trilhas-ui.js`, estilo `app/trilhas.css`, página gerada por `node scripts/trilhas/montar.js` (modelo `scripts/trilhas/trilhas.tpl.html`, entra no `preparar.js`).
+- **Nuvem (professor logado)**: `app/trilhas-nuvem.js` sincroniza as turmas em `teachers/{uid}/trilhas/{turma}` com o mesmo motor do EduMath Provas (`app/nuvem.js`, coleção `trilhas`, mais recente vence). **Publicar a regra nova** em `firestore.rules` (`match /trilhas/{docId}` dentro de `teachers`) com `firebase deploy --only firestore:rules`. Sem login ou sem rede, tudo fica no navegador.
+
+## Navegação (mudanças de 15/10/2026)
+- **Todas as páginas fora das aulas** (Home, Trilhas, Catálogo, Simulados, Revisão, painéis) usam o mesmo casco: **barra lateral em trilho de ícones** (68 px) que **abre por cima do conteúdo ao passar o mouse/focar e fecha sozinha** (Esc, clique fora ou sair com o mouse); no celular continua a gaveta. Sem a árvore de matérias/anos (o catálogo tem as próprias abas). Itens: Home, Catálogo, Trilhas, Simulados, Revisão, Conquistas, Professor (Painel, EduMath Provas, Banco) e, no rodapé, tema/conta/planos.
+- **Home em grupos**: Continuar (inclui até 3 turmas das trilhas) → **Estudar e praticar** → **Para dar aula** (só professor; visitante vê "Para professores") → Matérias; conta/planos/administração viraram links discretos no fim.
+- **Catálogo**: as aulas de cada módulo aparecem como "Aula 1, Aula 2…" em ordem (sem os números do RCO).
+- **Matéria principal do professor**: escolhida no cadastro (`login.html`) e editável em **Minha conta** (`users/{uid}.materia`; também em `sb:user.materia`); a Home, o catálogo e as trilhas mostram essa matéria primeiro.

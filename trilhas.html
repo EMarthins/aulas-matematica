@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="app/home.css">
 <link rel="stylesheet" href="app/hub.css">
 <link rel="stylesheet" href="app/trilhas.css">
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on')}catch(e){}</script>
 </head>
 <body class="hb tl">
 
@@ -49,6 +51,7 @@
     <div class="tl-tabs" role="tablist" aria-label="Seções das trilhas">
       <button type="button" class="tl-tab on" data-v="turmas" role="tab">Minhas turmas</button>
       <button type="button" class="tl-tab" data-v="prontas" role="tab">Trilhas prontas</button>
+      <span class="tl-nuvem" id="tlNuvem" hidden></span>
     </div>
   </div>
 </section>
@@ -59,6 +62,7 @@
 
 <dialog id="tlDlg" class="tl-dlg"></dialog>
 
+<script type="module" src="app/sidebar.js"></script>
 <script type="module">
 import { iniciarThemeToggle } from './app/theme-toggle.js';
 iniciarThemeToggle('theme-pref-hub');

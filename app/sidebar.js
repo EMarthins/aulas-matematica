@@ -234,6 +234,7 @@ function iniciar() {
     const t = (document.activeElement || {}).tagName || '';
     if (/INPUT|TEXTAREA|SELECT/.test(t) || (document.activeElement && document.activeElement.isContentEditable)) return;
     if (!root.classList.contains('sb-on')) return;
+    if (e.key === '/' && document.getElementById('hbBusca')) return; // a Home tem a própria busca grande
     if (e.key === '/') { e.preventDefault(); if (celular()) abre(true); else peek(true); setTimeout(() => q.focus(), 60); }
     else if (e.key === '[' && !celular()) { peek(!root.classList.contains('sb-peek')); }
     else if (e.key === 'Escape' && root.classList.contains('sb-peek')) peek(false);

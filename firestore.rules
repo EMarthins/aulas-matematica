@@ -130,6 +130,10 @@ service cloud.firestore {
       match /config/{docId} {
         allow read, write: if dono(teacherUid);
       }
+      // Trilhas de estudo: uma turma por documento (onde parou, aulas concluídas), só do professor dono.
+      match /trilhas/{docId} {
+        allow read, write: if dono(teacherUid);
+      }
 
       // --- Turmas ---
       match /classes/{classId} {

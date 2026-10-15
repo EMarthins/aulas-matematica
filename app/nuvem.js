@@ -69,9 +69,9 @@ export const COLECOES = ['provas', 'questoes', 'config'];
  * remoto: { listar(col) → [{ id, t, json }], gravar(col, id, { id, t, json }), apagar(col, id) }
  * limites: { provas, questoes, config } (Infinity = sem limite)
  */
-export async function sincronizar(local, remoto, limites = {}) {
+export async function sincronizar(local, remoto, limites = {}, colecoes = COLECOES) {
   const meta = local.lerMeta() || {}, meta2 = {}, resumo = { enviadas: 0, trazidas: 0, apagadasNuvem: 0, bloqueados: {}, falhas: [] };
-  for (const col of COLECOES) {
+  for (const col of colecoes) {
     const L = local.ler(col) || {};
     const lista = await remoto.listar(col), R = {};
     lista.forEach(d => { if (d && d.json) R[d.id] = d; });
@@ -95,7 +95,7 @@ export async function sincronizar(local, remoto, limites = {}) {
 }
 
 /** Controla quando sincronizar (ao entrar, ao alterar, ao voltar a ficar online) e avisa a tela do estado. */
-export function criarSincronizador({ local, remoto, limites, aoEstado, aoAtualizarLocal, atraso = 1500 }) {
+export function criarSincronizador({ local, remoto, limites, colecoes, aoEstado, aoAtualizarLocal, atraso = 1500 }) {
   let timer = null, rodando = false, pendente = false, ativo = true;
   const estado = (e, extra) => { try { aoEstado && aoEstado(Object.assign({ estado: e }, extra || {})); } catch (_) { /* tela */ } };
   async function rodar() {
@@ -103,7 +103,7 @@ export function criarSincronizador({ local, remoto, limites, aoEstado, aoAtualiz
     if (rodando) { pendente = true; return; }
     rodando = true; estado('sincronizando');
     try {
-      const r = await sincronizar(local, remoto, typeof limites === 'function' ? limites() : limites);
+      const r = await sincronizar(local, remoto, typeof limites === 'function' ? limites() : (limites || {}), colecoes || COLECOES);
       estado(r.falhas.length ? 'parcial' : 'ok', { resumo: r, bloqueados: r.bloqueados, quando: new Date().toISOString() });
       if (r.trazidas && aoAtualizarLocal) aoAtualizarLocal(r);
     } catch (e) {
