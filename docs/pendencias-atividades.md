@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 36 módulos (89 aulas) aguardando atividades.**
+**Total: 41 módulos (106 aulas) aguardando atividades.**
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 
@@ -50,6 +50,11 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Círculo e circunferência** — 4 aulas (`aulas/9-ano/2-tri/circulo-e-circunferencia/`)
 - [ ] **Ângulos na circunferência e problemas** — 4 aulas (`aulas/9-ano/2-tri/angulos-na-circunferencia/`)
 
-### Recomposição Matemática · 9° Ano · 3° Trimestre (1 módulos)
+### Recomposição Matemática · 9° Ano · 3° Trimestre (6 módulos)
 
 - [ ] **Comprimento e perímetro** — 3 aulas (`aulas/9-ano/3-tri/comprimento-e-perimetro/`)
+- [ ] **Área de figuras planas** — 3 aulas (`aulas/9-ano/3-tri/area-de-figuras-planas/`)
+- [ ] **Área do círculo** — 2 aulas (`aulas/9-ano/3-tri/area-do-circulo/`)
+- [ ] **Volumes** — 5 aulas (`aulas/9-ano/3-tri/volumes/`)
+- [ ] **Expressões algébricas** — 3 aulas (`aulas/9-ano/3-tri/expressoes-algebricas/`)
+- [ ] **Sequências e padrões** — 4 aulas (`aulas/9-ano/3-tri/sequencias-e-padroes/`)

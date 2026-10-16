@@ -1550,6 +1550,63 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Perímetro de figuras planas I', arquivo:'aulas/9-ano/3-tri/comprimento-e-perimetro/aula-2-perimetro-de-figuras-planas-i.html' },
                   { tipo:'Aula 3', titulo:'Perímetro de figuras planas II', arquivo:'aulas/9-ano/3-tri/comprimento-e-perimetro/aula-3-perimetro-de-figuras-planas-ii.html' }
                 ]
+              },
+              {
+                titulo: 'Área de figuras planas',
+                accent: 'growth',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Área de figuras planas I: o conceito e o retângulo', arquivo:'aulas/9-ano/3-tri/area-de-figuras-planas/aula-1-area-de-figuras-planas-i.html' },
+                  { tipo:'Aula 2', titulo:'Área de figuras planas II: triângulo, paralelogramo, trapézio e losango', arquivo:'aulas/9-ano/3-tri/area-de-figuras-planas/aula-2-area-de-figuras-planas-ii.html' },
+                  { tipo:'Aula 3', titulo:'Área de figuras planas III: figuras compostas e problemas', arquivo:'aulas/9-ano/3-tri/area-de-figuras-planas/aula-3-area-de-figuras-planas-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Área do círculo',
+                accent: 'decay',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Área do círculo I', arquivo:'aulas/9-ano/3-tri/area-do-circulo/aula-1-area-do-circulo-i.html' },
+                  { tipo:'Aula 2', titulo:'Área do círculo II: coroa, setor e figuras compostas', arquivo:'aulas/9-ano/3-tri/area-do-circulo/aula-2-area-do-circulo-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Volumes',
+                accent: 'primary',
+                icon: 'cube',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Cálculo do volume do cubo', arquivo:'aulas/9-ano/3-tri/volumes/aula-1-volume-do-cubo.html' },
+                  { tipo:'Aula 2', titulo:'Cálculo do volume do bloco retangular', arquivo:'aulas/9-ano/3-tri/volumes/aula-2-volume-do-bloco-retangular.html' },
+                  { tipo:'Aula 3', titulo:'Volume de prismas', arquivo:'aulas/9-ano/3-tri/volumes/aula-3-volume-de-prismas.html' },
+                  { tipo:'Aula 4', titulo:'Volume do cilindro I', arquivo:'aulas/9-ano/3-tri/volumes/aula-4-volume-do-cilindro-i.html' },
+                  { tipo:'Aula 5', titulo:'Volume do cilindro II', arquivo:'aulas/9-ano/3-tri/volumes/aula-5-volume-do-cilindro-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Expressões algébricas',
+                accent: 'growth',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Cálculo do valor numérico de expressões algébricas I', arquivo:'aulas/9-ano/3-tri/expressoes-algebricas/aula-1-valor-numerico-i.html' },
+                  { tipo:'Aula 2', titulo:'Cálculo do valor numérico de expressões algébricas II', arquivo:'aulas/9-ano/3-tri/expressoes-algebricas/aula-2-valor-numerico-ii.html' },
+                  { tipo:'Aula 3', titulo:'Resolução de problemas com expressões algébricas', arquivo:'aulas/9-ano/3-tri/expressoes-algebricas/aula-3-problemas-com-expressoes-algebricas.html' }
+                ]
+              },
+              {
+                titulo: 'Sequências e padrões',
+                accent: 'decay',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Descobrindo padrões em sequências figuradas', arquivo:'aulas/9-ano/3-tri/sequencias-e-padroes/aula-1-padroes-em-sequencias-figuradas.html' },
+                  { tipo:'Aula 2', titulo:'Descobrindo padrões em sequências numéricas', arquivo:'aulas/9-ano/3-tri/sequencias-e-padroes/aula-2-padroes-em-sequencias-numericas.html' },
+                  { tipo:'Aula 3', titulo:'Representação algébrica de sequências', arquivo:'aulas/9-ano/3-tri/sequencias-e-padroes/aula-3-representacao-algebrica-de-sequencias.html' },
+                  { tipo:'Aula 4', titulo:'Expressões algébricas em sequências numéricas', arquivo:'aulas/9-ano/3-tri/sequencias-e-padroes/aula-4-expressoes-algebricas-em-sequencias.html' }
+                ]
               }
             ]
           }
