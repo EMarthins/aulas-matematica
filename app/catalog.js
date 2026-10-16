@@ -14,6 +14,31 @@ export const MATERIAS = [
     icon: 'sigma',
     lede: 'Material interativo de Matemática para o 9º ano do Ensino Fundamental e para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
     CATALOG: [
+      // >>> mat-6ano
+      {
+        ano: '6° Ano',
+        preencher: true,
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Sistema de numeração decimal',
+                accent: 'primary',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Características do sistema de numeração decimal I', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-1-caracteristicas-do-sistema-de-numeracao-decimal-i.html' },
+                  { tipo:'Aula 2', titulo:'Características do sistema de numeração decimal II', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-2-caracteristicas-do-sistema-de-numeracao-decimal-ii.html' },
+                  { tipo:'Aula 3', titulo:'Sistema de numeração decimal: ordens e classes I', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-3-sistema-de-numeracao-decimal-ordens-e-classes-i.html' },
+                  { tipo:'Aula 4', titulo:'Sistema de numeração decimal: ordens e classes II', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-4-sistema-de-numeracao-decimal-ordens-e-classes-ii.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // <<< mat-6ano
       // >>> mat-1ano
       {
         ano: '1° Ano',
@@ -2393,35 +2418,6 @@ export const MATERIAS = [
     ]
   },
   // <<< ena-profmat
-  // >>> novas-portugues
-  {
-    id: 'portugues',
-    nome: 'Língua Portuguesa',
-    icon: 'dots',
-    lede: 'Leitura, gramática, produção de texto e literatura, do 6º ano ao 3º ano do Ensino Médio.',
-    CATALOG: [
-      {
-        ano: '6° Ano',
-        trimestres: [
-          {
-            nome: '1° Trimestre',
-            unidades: [
-              {
-                titulo: 'Leitura e interpretação',
-                accent: 'primary',
-                icon: 'dots',
-                pendente: true,
-                itens: [
-                  { tipo:'Aula 1', titulo:'Ler para compreender: ideia central e informações explícitas', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-1-ler-para-compreender.html' }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  // <<< novas-portugues
   // >>> novas-ingles
   {
     id: 'ingles',
@@ -2741,6 +2737,46 @@ export const MATERIAS = [
     ]
   },
   // <<< novas-sociologia
+  // >>> padrao-portugues
+  {
+    id: 'portugues',
+    nome: 'Língua Portuguesa',
+    icon: 'dots',
+    lede: 'Leitura, gramática, produção de texto e literatura, do 6º ano ao 3º ano do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Leitura e interpretação',
+                accent: 'primary',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ler para compreender: ideia central e informações explícitas', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-1-ler-para-compreender-ideia-central-e-informacoes-explicitas.html' },
+                  { tipo:'Aula 2', titulo:'Informações implícitas e inferências', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-2-informacoes-implicitas-e-inferencias.html' },
+                  { tipo:'Aula 3', titulo:'Gêneros textuais: bilhete, aviso e notícia', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-3-generos-textuais-bilhete-aviso-e-noticia.html' }
+                ]
+              },
+              {
+                titulo: 'Literatura',
+                accent: 'decay',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'A narrativa: narrador, personagens, tempo e espaço', arquivo:'aulas/portugues/6-ano/1-tri/literatura/aula-1-a-narrativa-narrador-personagens-tempo-e-espaco.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< padrao-portugues
 ];
 
 import { completar } from './catalog-extra.js';

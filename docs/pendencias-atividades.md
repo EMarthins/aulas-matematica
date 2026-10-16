@@ -4,7 +4,11 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 77 módulos (188 aulas) aguardando atividades.**
+**Total: 79 módulos (195 aulas) aguardando atividades.**
+
+### Matemática · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Sistema de numeração decimal** — 4 aulas (`aulas/6-ano/1-tri/sistema-de-numeracao-decimal/`)
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 
@@ -89,10 +93,6 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Expressões algébricas** — 3 aulas (`aulas/9-ano/3-tri/expressoes-algebricas/`)
 - [ ] **Sequências e padrões** — 4 aulas (`aulas/9-ano/3-tri/sequencias-e-padroes/`)
 
-### Língua Portuguesa · 6° Ano · 1° Trimestre (1 módulos)
-
-- [ ] **Leitura e interpretação** — 1 aula (`aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/`)
-
 ### Língua Inglesa · 6° Ano · 1° Trimestre (1 módulos)
 
 - [ ] **Vocabulário e comunicação** — 1 aula (`aulas/ingles/6-ano/1-tri/vocabulario-e-comunicacao/`)
@@ -136,3 +136,8 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 ### Sociologia · 1° Ano · 1° Trimestre (1 módulos)
 
 - [ ] **Cultura e sociedade** — 1 aula (`aulas/sociologia/1-ano/1-tri/cultura-e-sociedade/`)
+
+### Língua Portuguesa · 6° Ano · 1° Trimestre (2 módulos)
+
+- [ ] **Leitura e interpretação** — 3 aulas (`aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/`)
+- [ ] **Literatura** — 1 aula (`aulas/portugues/6-ano/1-tri/literatura/`)

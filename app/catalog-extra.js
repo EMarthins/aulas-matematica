@@ -61,6 +61,8 @@ export function completar(MATERIAS) {
   const garante = (m, ano, titulos) => { if (titulos && !m.CATALOG.some(a => a.ano === ano)) m.CATALOG.push(anoVazio(ano, titulos)); };
   // matérias já existentes: anos que faltam
   TODOS.forEach(ano => { garante(porId.matematica, ano, MAT[ano] || ['Módulo 1', 'Módulo 2', 'Módulo 3']); garante(porId['educacao-financeira'], ano, EF[ano] || ['Módulo 1']); });
+  // anos de Matemática/Ed. Financeira que já ganharam módulos reais (preencher:true): completa os que faltam como "em breve"
+  [[porId.matematica, MAT], [porId['educacao-financeira'], EF]].forEach(([m, ref]) => m.CATALOG.filter(an => an.preencher).forEach(an => completaExistente({ CATALOG: [an] }, { anos: [an.ano], temas: ref[an.ano] || ['Módulo 1', 'Módulo 2', 'Módulo 3'] })));
   // matérias novas
   NOVAS.forEach(n => {
     if (porId[n.id]) { completaExistente(porId[n.id], n); return; }
