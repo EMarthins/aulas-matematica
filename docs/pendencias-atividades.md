@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 66 módulos (151 aulas) aguardando atividades.**
+**Total: 77 módulos (188 aulas) aguardando atividades.**
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 
@@ -46,6 +46,20 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Função composta e função inversa** — 3 aulas (`aulas/2-ano/3-tri/funcao-composta-e-inversa/`)
 - [ ] **Função inversa: problemas** — 2 aulas (`aulas/2-ano/3-tri/funcao-inversa-problemas/`)
 - [ ] **Retomada: Teorema de Pitágoras** — 1 aula (`aulas/2-ano/3-tri/retomada-teorema-de-pitagoras/`)
+
+### Matemática · 3° Ano · 3° Trimestre (11 módulos)
+
+- [ ] **Sequências numéricas** — 4 aulas (`aulas/3-ano/3-tri/sequencias-numericas/`)
+- [ ] **Progressão aritmética: termo geral** — 3 aulas (`aulas/3-ano/3-tri/pa-termo-geral/`)
+- [ ] **Progressão aritmética: soma dos termos** — 3 aulas (`aulas/3-ano/3-tri/pa-soma-dos-termos/`)
+- [ ] **Progressão geométrica: termo geral** — 3 aulas (`aulas/3-ano/3-tri/pg-termo-geral/`)
+- [ ] **Progressão geométrica: soma dos termos** — 3 aulas (`aulas/3-ano/3-tri/pg-soma-dos-termos/`)
+- [ ] **Triângulo retângulo: relações métricas e seno** — 3 aulas (`aulas/3-ano/3-tri/triangulo-retangulo-metricas-e-seno/`)
+- [ ] **Triângulo retângulo: cosseno e tangente** — 4 aulas (`aulas/3-ano/3-tri/triangulo-retangulo-cosseno-e-tangente/`)
+- [ ] **Relação fundamental e arcos da circunferência** — 2 aulas (`aulas/3-ano/3-tri/relacao-fundamental-e-arcos/`)
+- [ ] **Circunferência trigonométrica** — 4 aulas (`aulas/3-ano/3-tri/circunferencia-trigonometrica/`)
+- [ ] **Funções trigonométricas** — 3 aulas (`aulas/3-ano/3-tri/funcoes-trigonometricas/`)
+- [ ] **Retomadas do trimestre** — 5 aulas (`aulas/3-ano/3-tri/retomadas-do-trimestre/`)
 
 ### Recomposição Matemática · 9° Ano · 1° Trimestre (6 módulos)
 

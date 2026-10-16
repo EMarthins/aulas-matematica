@@ -808,6 +808,133 @@ export const MATERIAS = [
           {
             nome: '3° Trimestre',
             unidades: [
+              // >>> mat-3ano-3tri
+              {
+                titulo: 'Sequências numéricas',
+                accent: 'growth',
+                icon: 'stairs',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Sequências numéricas I: padrões e a ideia de função', arquivo:'aulas/3-ano/3-tri/sequencias-numericas/aula-1-sequencias-numericas-i.html' },
+                  { tipo:'Aula 2', titulo:'Sequências numéricas II: lei de formação e termo geral', arquivo:'aulas/3-ano/3-tri/sequencias-numericas/aula-2-sequencias-numericas-ii.html' },
+                  { tipo:'Aula 3', titulo:'Sequências numéricas III: recorrência', arquivo:'aulas/3-ano/3-tri/sequencias-numericas/aula-3-sequencias-numericas-iii.html' },
+                  { tipo:'Aula 4', titulo:'Sequências numéricas IV: classificação e problemas', arquivo:'aulas/3-ano/3-tri/sequencias-numericas/aula-4-sequencias-numericas-iv.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão aritmética: termo geral',
+                accent: 'primary',
+                icon: 'stairs',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Progressão aritmética: termo geral I', arquivo:'aulas/3-ano/3-tri/pa-termo-geral/aula-1-progressao-aritmetica-termo-geral-i.html' },
+                  { tipo:'Aula 2', titulo:'Progressão aritmética: termo geral II', arquivo:'aulas/3-ano/3-tri/pa-termo-geral/aula-2-progressao-aritmetica-termo-geral-ii.html' },
+                  { tipo:'Aula 3', titulo:'Progressão aritmética: termo geral III', arquivo:'aulas/3-ano/3-tri/pa-termo-geral/aula-3-progressao-aritmetica-termo-geral-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão aritmética: soma dos termos',
+                accent: 'primary',
+                icon: 'stairs',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Progressão aritmética: soma dos termos I', arquivo:'aulas/3-ano/3-tri/pa-soma-dos-termos/aula-1-progressao-aritmetica-soma-dos-termos-i.html' },
+                  { tipo:'Aula 2', titulo:'Progressão aritmética: soma dos termos II', arquivo:'aulas/3-ano/3-tri/pa-soma-dos-termos/aula-2-progressao-aritmetica-soma-dos-termos-ii.html' },
+                  { tipo:'Aula 3', titulo:'Progressão aritmética: soma dos termos III', arquivo:'aulas/3-ano/3-tri/pa-soma-dos-termos/aula-3-progressao-aritmetica-soma-dos-termos-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão geométrica: termo geral',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Progressão geométrica: termo geral I', arquivo:'aulas/3-ano/3-tri/pg-termo-geral/aula-1-progressao-geometrica-termo-geral-i.html' },
+                  { tipo:'Aula 2', titulo:'Progressão geométrica: termo geral II', arquivo:'aulas/3-ano/3-tri/pg-termo-geral/aula-2-progressao-geometrica-termo-geral-ii.html' },
+                  { tipo:'Aula 3', titulo:'Progressão geométrica: termo geral III', arquivo:'aulas/3-ano/3-tri/pg-termo-geral/aula-3-progressao-geometrica-termo-geral-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Progressão geométrica: soma dos termos',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Progressão geométrica: soma dos termos de uma PG finita I', arquivo:'aulas/3-ano/3-tri/pg-soma-dos-termos/aula-1-progressao-geometrica-soma-dos-termos-i.html' },
+                  { tipo:'Aula 2', titulo:'Progressão geométrica: soma dos termos de uma PG finita II', arquivo:'aulas/3-ano/3-tri/pg-soma-dos-termos/aula-2-progressao-geometrica-soma-dos-termos-ii.html' },
+                  { tipo:'Aula 3', titulo:'Progressão geométrica: soma dos termos III (soma infinita)', arquivo:'aulas/3-ano/3-tri/pg-soma-dos-termos/aula-3-progressao-geometrica-soma-dos-termos-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Triângulo retângulo: relações métricas e seno',
+                accent: 'decay',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Relações métricas no triângulo retângulo', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-metricas-e-seno/aula-1-relacoes-metricas-no-triangulo-retangulo.html' },
+                  { tipo:'Aula 2', titulo:'Razões trigonométricas no triângulo retângulo: seno I', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-metricas-e-seno/aula-2-razoes-trigonometricas-seno-i.html' },
+                  { tipo:'Aula 3', titulo:'Razões trigonométricas no triângulo retângulo: seno II', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-metricas-e-seno/aula-3-razoes-trigonometricas-seno-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Triângulo retângulo: cosseno e tangente',
+                accent: 'decay',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Razões trigonométricas no triângulo retângulo: cosseno I', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-cosseno-e-tangente/aula-1-razoes-trigonometricas-cosseno-i.html' },
+                  { tipo:'Aula 2', titulo:'Razões trigonométricas no triângulo retângulo: cosseno II', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-cosseno-e-tangente/aula-2-razoes-trigonometricas-cosseno-ii.html' },
+                  { tipo:'Aula 3', titulo:'Razões trigonométricas no triângulo retângulo: tangente I', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-cosseno-e-tangente/aula-3-razoes-trigonometricas-tangente-i.html' },
+                  { tipo:'Aula 4', titulo:'Razões trigonométricas no triângulo retângulo: tangente II', arquivo:'aulas/3-ano/3-tri/triangulo-retangulo-cosseno-e-tangente/aula-4-razoes-trigonometricas-tangente-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Relação fundamental e arcos da circunferência',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Relação fundamental da trigonometria', arquivo:'aulas/3-ano/3-tri/relacao-fundamental-e-arcos/aula-1-relacao-fundamental-da-trigonometria.html' },
+                  { tipo:'Aula 2', titulo:'Razões trigonométricas na circunferência: arcos I', arquivo:'aulas/3-ano/3-tri/relacao-fundamental-e-arcos/aula-2-razoes-trigonometricas-na-circunferencia-arcos-i.html' }
+                ]
+              },
+              {
+                titulo: 'Circunferência trigonométrica',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Circunferência trigonométrica: arcos côngruos', arquivo:'aulas/3-ano/3-tri/circunferencia-trigonometrica/aula-1-circunferencia-trigonometrica-arcos-congruos.html' },
+                  { tipo:'Aula 2', titulo:'Circunferência trigonométrica: seno de um arco', arquivo:'aulas/3-ano/3-tri/circunferencia-trigonometrica/aula-2-circunferencia-trigonometrica-seno-de-um-arco.html' },
+                  { tipo:'Aula 3', titulo:'Circunferência trigonométrica: cosseno de um arco', arquivo:'aulas/3-ano/3-tri/circunferencia-trigonometrica/aula-3-circunferencia-trigonometrica-cosseno-de-um-arco.html' },
+                  { tipo:'Aula 4', titulo:'Circunferência trigonométrica: seno e cosseno de um arco — redução ao 1º quadrante', arquivo:'aulas/3-ano/3-tri/circunferencia-trigonometrica/aula-4-circunferencia-trigonometrica-reducao-ao-primeiro-quadrante.html' }
+                ]
+              },
+              {
+                titulo: 'Funções trigonométricas',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Funções trigonométricas: função seno', arquivo:'aulas/3-ano/3-tri/funcoes-trigonometricas/aula-1-funcoes-trigonometricas-funcao-seno.html' },
+                  { tipo:'Aula 2', titulo:'Funções trigonométricas: função cosseno', arquivo:'aulas/3-ano/3-tri/funcoes-trigonometricas/aula-2-funcoes-trigonometricas-funcao-cosseno.html' },
+                  { tipo:'Aula 3', titulo:'Funções trigonométricas: função tangente', arquivo:'aulas/3-ano/3-tri/funcoes-trigonometricas/aula-3-funcoes-trigonometricas-funcao-tangente.html' }
+                ]
+              },
+              {
+                titulo: 'Retomadas do trimestre',
+                accent: 'success',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada: porcentagem envolvendo área de figuras planas', arquivo:'aulas/3-ano/3-tri/retomadas-do-trimestre/aula-1-retomada-porcentagem-e-area-de-figuras-planas.html' },
+                  { tipo:'Aula 2', titulo:'Retomada: variação proporcional entre grandezas', arquivo:'aulas/3-ano/3-tri/retomadas-do-trimestre/aula-2-retomada-variacao-proporcional-entre-grandezas.html' },
+                  { tipo:'Aula 3', titulo:'Retomada: volume de um sólido geométrico', arquivo:'aulas/3-ano/3-tri/retomadas-do-trimestre/aula-3-retomada-volume-de-um-solido-geometrico.html' },
+                  { tipo:'Aula 4', titulo:'Retomada: relação entre vértices, faces e arestas de um poliedro', arquivo:'aulas/3-ano/3-tri/retomadas-do-trimestre/aula-4-retomada-relacao-entre-vertices-faces-e-arestas.html' },
+                  { tipo:'Aula 5', titulo:'Retomada: elementos de um poliedro, hexágono regular e perímetro de região composta', arquivo:'aulas/3-ano/3-tri/retomadas-do-trimestre/aula-5-retomada-elementos-do-poliedro-e-perimetros.html' }
+                ]
+              },
+              // <<< mat-3ano-3tri
               {
                 titulo: 'Sequências Numéricas',
                 accent: 'primary',
