@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 13 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Resolvendo problemas: <span style="color:var(--primary);">do texto à função afim</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Aluguel de carros, desvalorização de equipamentos e salários com comissão têm algo em comum: um valor fixo e uma parte que muda de forma constante. Traduzir isso em y = ax + b resolve o problema.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Resolvendo problemas: <span style="color:var(--primary);">do texto à função afim</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Aluguel de carros, desvalorização de equipamentos e salários com comissão têm algo em comum: um valor fixo e uma parte que muda de forma constante. Traduzir isso em y = ax + b resolve o problema.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Qual é mais barata?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">fixo + variável</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">comparar duas opções</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">interpretar o resultado</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="40" y="110" width="140" height="40" rx="10" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><path d="M62 110 L84 78 L150 78 L170 110 Z" fill="var(--surface)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="148" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><rect x="100" y="62" width="40" height="14" rx="3" fill="var(--growth)" /><text x="120" y="73" font-size="10" fill="var(--surface)" text-anchor="middle" font-weight="700">TÁXI</text><rect x="200" y="40" width="100" height="70" rx="8" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="250" y="66" font-size="15" fill="var(--primary)" text-anchor="middle" font-weight="700">P = 5 + 3x</text><text x="250" y="92" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">fixo + por km</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do enunciado à resposta em quatro passos.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Identificar variáveis</strong><div class="hint">o que é x e o que é y</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Fixo e variável</strong><div class="hint">b e a no texto</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Montar a lei</strong><div class="hint">y = ax + b</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Comparar opções</strong><div class="hint">igualar duas funções</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Conferir e responder</strong><div class="hint">unidades e sentido</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Duas locadoras, qual escolher?</h2>
+          
+          
+          <p class="lede">A locadora <strong>X</strong> cobra 100 reais de diária fixa mais 1,30 real por km. A locadora <strong>Y</strong> cobra 70 reais fixos mais 1,50 real por km. Qual é mais barata? <strong>Depende da distância</strong>: Y começa mais barata, mas cresce mais depressa.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Para rodar 100 km em um dia, a locadora Y cobra:</p><button class="choice mqo" data-i="0">170 reais</button><button class="choice mqo" data-i="1">200 reais</button><button class="choice mqo" data-i="2">220 reais</button><button class="choice mqo" data-i="3">230 reais</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>g</i>(<i>x</i>) = 1,5<i>x</i> + 70</span>; <span class="tex"><i>g</i>(100) = 150 + 70 = 220</span> reais. Já a locadora X cobra <span class="tex">1,3 · 100 + 100 = 230</span>: em 100 km, Y é mais barata.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Duas funções afins se <strong>igualam</strong> em um único ponto (se tiverem taxas diferentes). Antes dele uma é melhor; depois, a outra.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Duas locadoras, qual escolher?</h2>
-          
-          <p class="lede">A locadora <strong>X</strong> cobra 100 reais de diária fixa mais 1,30 real por km. A locadora <strong>Y</strong> cobra 70 reais fixos mais 1,50 real por km. Qual é mais barata? <strong>Depende da distância</strong>: Y começa mais barata, mas cresce mais depressa.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Para rodar 100 km em um dia, a locadora Y cobra:</p><button class="choice mqo" data-i="0">170 reais</button><button class="choice mqo" data-i="1">200 reais</button><button class="choice mqo" data-i="2">220 reais</button><button class="choice mqo" data-i="3">230 reais</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>g</i>(<i>x</i>) = 1,5<i>x</i> + 70</span>; <span class="tex"><i>g</i>(100) = 150 + 70 = 220</span> reais. Já a locadora X cobra <span class="tex">1,3 · 100 + 100 = 230</span>: em 100 km, Y é mais barata.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Duas funções afins se <strong>igualam</strong> em um único ponto (se tiverem taxas diferentes). Antes dele uma é melhor; depois, a outra.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -386,87 +380,92 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Onde as locadoras se igualam</h2>
           
+          
           <p class="lede">X: <span class="tex"><i>f</i>(<i>x</i>) = 1,30<i>x</i> + 100</span> e Y: <span class="tex"><i>g</i>(<i>x</i>) = 1,50<i>x</i> + 70</span> (<span class="tex"><i>x</i></span> em km). Para que distância os valores são iguais?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Iguale as funções</strong><div class="hint"><span class="tex">1,30<i>x</i> + 100 = 1,50<i>x</i> + 70</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Isole x</strong><div class="hint"><span class="tex">100 − 70 = 1,50<i>x</i> − 1,30<i>x</i></span> ⇒ <span class="tex">30 = 0,20<i>x</i></span> ⇒ <span class="tex"><i>x</i> = 150</span> km.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Calcule o valor comum</strong><div class="hint"><span class="tex"><i>f</i>(150) = 195 + 100 = 295</span> reais.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Em <strong>150 km</strong> as duas cobram <strong>295 reais</strong>. Abaixo disso, Y é mais barata; acima, X.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Iguale as funções</strong><div class="hint"><span class="tex">1,30<i>x</i> + 100 = 1,50<i>x</i> + 70</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Isole x</strong><div class="hint"><span class="tex">100 − 70 = 1,50<i>x</i> − 1,30<i>x</i></span> ⇒ <span class="tex">30 = 0,20<i>x</i></span> ⇒ <span class="tex"><i>x</i> = 150</span> km.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Calcule o valor comum</strong><div class="hint"><span class="tex"><i>f</i>(150) = 195 + 100 = 295</span> reais.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Em <strong>150 km</strong> as duas cobram <strong>295 reais</strong>. Abaixo disso, Y é mais barata; acima, X.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Desvalorização linear</h2>
           
+          
           <p class="lede">Um equipamento custava 90 000 reais novo e, com 4 anos de uso, vale 66 000. A desvalorização é linear. Qual o valor com 7 anos?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Variáveis</strong><div class="hint"><span class="tex"><i>x</i></span> = anos de uso; <span class="tex"><i>V</i></span> = valor. Valor inicial: <span class="tex"><i>b</i> = 90 000</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Taxa</strong><div class="hint"><span class="tex"><i>a</i> = <span class="fr"><span>66 000 − 90 000</span><span>4 − 0</span></span> = −6 000</span> por ano (negativa: perde valor).</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Lei e resposta</strong><div class="hint"><span class="tex"><i>V</i>(<i>x</i>) = −6 000<i>x</i> + 90 000</span> e <span class="tex"><i>V</i>(7) = −42 000 + 90 000 = 48 000</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Com 7 anos vale <strong>48 000 reais</strong>. O zero da função (<span class="tex"><i>x</i> = 15</span>) é quando o valor chega a zero.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Variáveis</strong><div class="hint"><span class="tex"><i>x</i></span> = anos de uso; <span class="tex"><i>V</i></span> = valor. Valor inicial: <span class="tex"><i>b</i> = 90 000</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Taxa</strong><div class="hint"><span class="tex"><i>a</i> = <span class="fr"><span>66 000 − 90 000</span><span>4 − 0</span></span> = −6 000</span> por ano (negativa: perde valor).</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Lei e resposta</strong><div class="hint"><span class="tex"><i>V</i>(<i>x</i>) = −6 000<i>x</i> + 90 000</span> e <span class="tex"><i>V</i>(7) = −42 000 + 90 000 = 48 000</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Com 7 anos vale <strong>48 000 reais</strong>. O zero da função (<span class="tex"><i>x</i> = 15</span>) é quando o valor chega a zero.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Salário com comissão e a unidade certa</h2>
           
+          
           <p class="lede">Um vendedor recebe 400 reais fixos mais 0,60 real por <strong>m²</strong> de tecido vendido. Ele vendeu 500 m de tecido de 1,40 m de largura. Qual o salário?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Calcule a área em m²</strong><div class="hint"><span class="tex"><i>A</i> = 500 · 1,40 = 700</span> m².</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Monte a lei</strong><div class="hint"><span class="tex"><i>S</i> = 0,60 · <i>A</i> + 400</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Substitua</strong><div class="hint"><span class="tex"><i>S</i> = 0,60 · 700 + 400 = 420 + 400 = 820</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Salário de <strong>820 reais</strong>. Armadilha: usar 500 (metros) no lugar de 700 (m²) daria 700.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Calcule a área em m²</strong><div class="hint"><span class="tex"><i>A</i> = 500 · 1,40 = 700</span> m².</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Monte a lei</strong><div class="hint"><span class="tex"><i>S</i> = 0,60 · <i>A</i> + 400</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Substitua</strong><div class="hint"><span class="tex"><i>S</i> = 0,60 · 700 + 400 = 420 + 400 = 820</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Salário de <strong>820 reais</strong>. Armadilha: usar 500 (metros) no lugar de 700 (m²) daria 700.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Dois táxis</h2>
-          
-          <p class="lede">O táxi A cobra 5 reais fixos mais 2,50 por km; o táxi B, 8 reais fixos mais 2 por km. Para qual distância os dois cobram o mesmo valor?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">3 km</button><button class="choice mqo" data-i="1">5 km</button><button class="choice mqo" data-i="2">6 km</button><button class="choice mqo" data-i="3">8 km</button><button class="choice mqo" data-i="4">12 km</button><div class="fb"></div><div class="answer"><p><span class="tex">5 + 2,5<i>x</i> = 8 + 2<i>x</i></span> ⇒ <span class="tex">0,5<i>x</i> = 3</span> ⇒ <span class="tex"><i>x</i> = 6</span> km. (Valor: <span class="tex">5 + 15 = 20</span> reais.) Acima de 6 km, B é mais barato. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. O táxi A cobra 5 reais fixos mais 2,50 por km; o táxi B, 8 reais fixos mais 2 por km. Para qual distância os dois cobram o mesmo valor?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>3 km</li><li>5 km</li><li>6 km</li><li>8 km</li><li>12 km</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Com <span class="tex"><i>V</i>(<i>x</i>) = 90 000 − 6 000<i>x</i></span> (reais, <span class="tex"><i>x</i></span> em anos), o valor do equipamento chega a zero após:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>10 anos</li><li>12 anos</li><li>15 anos</li><li>18 anos</li><li>20 anos</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Equipamento que perde valor</h2>
-          
-          <p class="lede">Com <span class="tex"><i>V</i>(<i>x</i>) = 90 000 − 6 000<i>x</i></span> (reais, <span class="tex"><i>x</i></span> em anos), o valor do equipamento chega a zero após:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">10 anos</button><button class="choice mqo" data-i="1">12 anos</button><button class="choice mqo" data-i="2">15 anos</button><button class="choice mqo" data-i="3">18 anos</button><button class="choice mqo" data-i="4">20 anos</button><div class="fb"></div><div class="answer"><p><span class="tex">90 000 − 6 000<i>x</i> = 0</span> ⇒ <span class="tex"><i>x</i> = 15</span> anos. <strong>Alternativa C.</strong> (É o zero da função.)</p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Duas máquinas</h2>
-          
-          <p class="lede">Um fabricante tem duas máquinas. A máquina A custa 800 reais por mês fixos mais 2 reais por peça; a máquina B, 500 reais fixos mais 5 reais por peça. A partir de quantas peças por mês a máquina A passa a ser <strong>mais barata</strong> que a B?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">mais de 50</button><button class="choice mqo" data-i="1">mais de 100</button><button class="choice mqo" data-i="2">mais de 150</button><button class="choice mqo" data-i="3">mais de 200</button><button class="choice mqo" data-i="4">mais de 300</button><div class="fb"></div><div class="answer"><p>Igualdade: <span class="tex">800 + 2<i>x</i> = 500 + 5<i>x</i></span> ⇒ <span class="tex">300 = 3<i>x</i></span> ⇒ <span class="tex"><i>x</i> = 100</span>. A tem fixo maior e taxa menor: é mais barata <strong>acima</strong> de 100 peças. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um fabricante tem duas máquinas. A máquina A custa 800 reais por mês fixos mais 2 reais por peça; a máquina B, 500 reais fixos mais 5 reais por peça. A partir de quantas peças por mês a máquina A passa a ser <strong>mais barata</strong> que a B?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>mais de 50</li><li>mais de 100</li><li>mais de 150</li><li>mais de 200</li><li>mais de 300</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">5 + 2,5<i>x</i> = 8 + 2<i>x</i></span> ⇒ <span class="tex">0,5<i>x</i> = 3</span> ⇒ <span class="tex"><i>x</i> = 6</span> km. (Valor: <span class="tex">5 + 15 = 20</span> reais.) Acima de 6 km, B é mais barato.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">90 000 − 6 000<i>x</i> = 0</span> ⇒ <span class="tex"><i>x</i> = 15</span> anos. (É o zero da função.)</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Igualdade: <span class="tex">800 + 2<i>x</i> = 500 + 5<i>x</i></span> ⇒ <span class="tex">300 = 3<i>x</i></span> ⇒ <span class="tex"><i>x</i> = 100</span>. A tem fixo maior e taxa menor: é mais barata <strong>acima</strong> de 100 peças.</p></div></div>
         </div>
       </section>
 
@@ -485,12 +484,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Modelagem</span><p style="font-size:.85rem;margin-top:8px;">Fixo é b; o que muda por unidade é a.</p></div>
+            <div class="card"><span class="badge">Comparação</span><p style="font-size:.85rem;margin-top:8px;">Iguale as leis e ache x; confira antes e depois.</p></div>
+            <div class="card"><span class="badge">Conferência</span><p style="font-size:.85rem;margin-top:8px;">Unidades certas e sentido do resultado.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Problema de função afim: variáveis, lei, conta e interpretação.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Qual é mais barata?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Fixo de 30 reais e 45 reais por hora. Para 3 horas o total é:</p>
@@ -532,23 +548,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Modelagem</span><p style="font-size:.85rem;margin-top:8px;">Fixo é b; o que muda por unidade é a.</p></div>
-            <div class="card"><span class="badge">Comparação</span><p style="font-size:.85rem;margin-top:8px;">Iguale as leis e ache x; confira antes e depois.</p></div>
-            <div class="card"><span class="badge">Conferência</span><p style="font-size:.85rem;margin-top:8px;">Unidades certas e sentido do resultado.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Problema de função afim: variáveis, lei, conta e interpretação.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -568,7 +583,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 15</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -943,3 +958,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

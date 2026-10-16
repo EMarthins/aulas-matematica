@@ -265,6 +265,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -279,54 +281,51 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <line x1="90" y1="190" x2="690" y2="40" stroke="var(--primary)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3 · Parte 1 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2.2rem,6.2vw,4.2rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:14ch;">Progressão <span style="color:var(--primary);">aritmética</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Do cometa Halley aos lotes de um condomínio: como uma soma constante gera uma fórmula que prevê qualquer termo de uma sequência.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Progressão <span style="color:var(--primary);">aritmética</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Do cometa Halley aos lotes de um condomínio: como uma soma constante gera uma fórmula que prevê qualquer termo de uma sequência.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 73–75</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">a<sub>n</sub> = a<sub>1</sub> + (n − 1)·r</span>
             <span class="badge">H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da definição à fórmula que resolve qualquer termo — mesmo que ele esteja na posição 785.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="18" r="2"/><circle cx="10" cy="13" r="2"/><circle cx="15" cy="9" r="2"/><circle cx="20" cy="6" r="2"/><path d="M7 16.5 8.5 15M11.5 11.5 13 10M16.5 7.5 18 6.5"/></svg>
-              <div><strong>O que é uma P.A.</strong><div class="hint">sequências com uma razão constante entre termos</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
-              <div><strong>Classificação</strong><div class="hint">crescente, decrescente ou constante</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">03</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 21h12M8 21c0-4 1-7 4-9m4 9c0-4-1-7-4-9M12 3v6"/></svg>
-              <div><strong>Fórmula do termo geral</strong><div class="hint">a<sub>n</sub> = a<sub>1</sub> + (n − 1)·r</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">04</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
-              <div><strong>No ENEM é assim</strong><div class="hint">duas questões reais resolvidas passo a passo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Situações-problema</strong><div class="hint">peregrino, postes, e mais</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="30" y="150" width="52" height="20" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="56" y="142" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">3</text><rect x="82" y="122" width="52" height="48" rx="2" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="108" y="114" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">7</text><rect x="134" y="94" width="52" height="76" rx="2" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="160" y="86" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">11</text><rect x="186" y="66" width="52" height="104" rx="2" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="212" y="58" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">15</text><rect x="238" y="38" width="52" height="132" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="264" y="30" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">19</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">cada degrau: + 4</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Quando o cometa Halley passou pela 1ª vez?</h2>
+          
+          <div class="grid2">
+            <div>
+              <p>O cometa Halley é periódico: ele passa perto da Terra a cada <strong>76 anos</strong>, em média. Sua última aparição foi em <strong>1986</strong>, e a NASA prevê a próxima para <strong>2061</strong>.</p>
+              <p class="hint">Supondo um período de exatamente 76 anos, em que ano d.C. ele foi avistado pela primeira vez?</p>
+            </div>
+            <div>
+              <div class="callout">
+                <h4>Um jeito cansativo</h4>
+                <p>Dá pra subtrair 76 repetidas vezes: 1986, 1910, 1834, 1758... até chegar ao ano 1. Funciona, mas é lento.</p>
+              </div>
+              <button class="reveal" onclick="toggleAnswer(this)">Existe um jeito mais rápido?</button>
+              <div class="answer">
+                <p>Sim — essa sequência de anos é uma <strong>progressão aritmética</strong> de razão −76. Hoje vamos aprender uma fórmula que calcula qualquer termo dela sem precisar subtrair um por um.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -350,31 +349,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO: COMETA HALLEY -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Quando o cometa Halley passou pela 1ª vez?</h2>
-          <div class="grid2">
-            <div>
-              <p>O cometa Halley é periódico: ele passa perto da Terra a cada <strong>76 anos</strong>, em média. Sua última aparição foi em <strong>1986</strong>, e a NASA prevê a próxima para <strong>2061</strong>.</p>
-              <p class="hint">Supondo um período de exatamente 76 anos, em que ano d.C. ele foi avistado pela primeira vez?</p>
-            </div>
-            <div>
-              <div class="callout">
-                <h4>Um jeito cansativo</h4>
-                <p>Dá pra subtrair 76 repetidas vezes: 1986, 1910, 1834, 1758... até chegar ao ano 1. Funciona, mas é lento.</p>
-              </div>
-              <button class="reveal" onclick="toggleAnswer(this)">Existe um jeito mais rápido?</button>
-              <div class="answer">
-                <p>Sim — essa sequência de anos é uma <strong>progressão aritmética</strong> de razão −76. Hoje vamos aprender uma fórmula que calcula qualquer termo dela sem precisar subtrair um por um.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: DEFINIÇÃO E CLASSIFICAÇÃO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 73 · Teoria</div>
@@ -403,7 +377,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · Em duplas</div>
@@ -419,7 +392,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: FÓRMULA DO TERMO GERAL -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 73 · Teoria</div>
@@ -446,7 +418,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · No caderno</div>
@@ -468,7 +439,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 ENEM 1 (choice quiz) -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2023 — Questão 139</div>
@@ -488,7 +458,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 TEORIA: PA COMO FUNÇÃO AFIM -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 75 · Teoria</div>
@@ -502,7 +471,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 ENEM 2 (full worked) -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resolvendo · ENEM 2024 — Questão 136</div>
@@ -520,7 +488,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ATIVIDADE 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro, em duplas</div>
@@ -541,7 +508,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ATIVIDADE 4 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · No quadro, oral</div>
@@ -557,7 +523,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ENEM 3 (choice quiz - triângulo mágico) -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2024 — Questão 146</div>
@@ -580,7 +545,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 SÍNTESE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -597,12 +561,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. Em (3, 7, 11, 15, ...), a razão é:</p>
@@ -644,7 +607,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ENCERRAMENTO -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -956,3 +935,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

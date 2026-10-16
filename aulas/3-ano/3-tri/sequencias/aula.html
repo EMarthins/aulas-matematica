@@ -265,6 +265,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -278,59 +280,52 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3</div>
-          <h1 class="disp" style="font-size:clamp(2.2rem,6vw,4rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:15ch;">Sequências numéricas: <span style="color:var(--primary);">o padrão por trás dos números</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Da casca do abacaxi à razão áurea do ENEM: como transformar um padrão em uma fórmula que prevê qualquer termo, sem contar um por um.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Sequências numéricas: <span style="color:var(--primary);">o padrão por trás dos números</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Da casca do abacaxi à razão áurea do ENEM: como transformar um padrão em uma fórmula que prevê qualquer termo, sem contar um por um.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 69–72</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">a<sub>n</sub> = f(n)</span>
             <span class="badge">H2 · H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">Seis paradas até o termo geral</h2>
-          <p class="lede">Do reconhecimento de um padrão até resolver questões reais do ENEM e da Prova Brasil.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
-              <div><strong>O que é uma sequência numérica</strong><div class="hint">lista ordenada de números, notação a<sub>n</sub></div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 8l4 6 6-10"/></svg>
-              <div><strong>Da lista à fórmula</strong><div class="hint">lei do termo geral e método das diferenças constantes</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">03</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 4v16M4 8h16"/></svg>
-              <div><strong>Padrões figurais</strong><div class="hint">canudos e pontos em questões da Prova Brasil</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">04</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3"/></svg>
-              <div><strong>ENEM: a razão áurea (φ)</strong><div class="hint">potências, recorrência e Fibonacci escondido</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 12 4l8 16H4Z"/></svg>
-              <div><strong>Padrões quadráticos e exponenciais</strong><div class="hint">números pentagonais e crescimento por dobras</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">06</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>
-              <div><strong>Aplicações reais</strong><div class="hint">do mosaico de blocos ao anfiteatro</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="30" y="150" width="52" height="20" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="56" y="142" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">3</text><rect x="82" y="122" width="52" height="48" rx="2" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="108" y="114" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">7</text><rect x="134" y="94" width="52" height="76" rx="2" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="160" y="86" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">11</text><rect x="186" y="66" width="52" height="104" rx="2" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="212" y="58" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">15</text><rect x="238" y="38" width="52" height="132" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="264" y="30" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">19</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">cada degrau: + 4</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O que a casca do abacaxi, o girassol e os anéis da árvore têm em comum?</h2>
+          
+          <div class="grid2">
+            <div>
+              <p><strong>Dendrocronologia</strong> é o ramo da ciência que estuda a datação dos anéis de crescimento das plantas. Por meio dos padrões dos anéis, conseguimos determinar a idade das árvores e analisar outras características.</p>
+              <p>Já a casca de um abacaxi não organiza suas escamas de forma aleatória: há uma ordem clara em como cada camada cresce e se sobrepõe — um padrão que se repete e se transforma segundo uma regra.</p>
+            </div>
+            <div>
+              <div class="callout">
+                <h4>No centro do girassol</h4>
+                <p>As sementes crescem em espirais intercaladas — algumas no sentido horário, outras no anti-horário. Contando as espirais de cada sentido, os dois números quase sempre são termos consecutivos da sequência de Fibonacci, brotando em ângulos de aproximadamente 137,5° (o Ângulo de Ouro).</p>
+              </div>
+              <button class="reveal" onclick="toggleAnswer(this)">Qual é a conexão matemática?</button>
+              <div class="answer">
+                <p>Em todos os casos, a natureza segue um <strong>padrão que se repete e se transforma de acordo com uma regra</strong> — exatamente o que chamamos de <strong>sequência numérica</strong>.</p>
+                <p class="hint">Quando enxergamos essa regra oculta, ganhamos a capacidade de prever exatamente a próxima etapa, sem precisar construí-la ou contá-la uma por uma.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -353,32 +348,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O que a casca do abacaxi, o girassol e os anéis da árvore têm em comum?</h2>
-          <div class="grid2">
-            <div>
-              <p><strong>Dendrocronologia</strong> é o ramo da ciência que estuda a datação dos anéis de crescimento das plantas. Por meio dos padrões dos anéis, conseguimos determinar a idade das árvores e analisar outras características.</p>
-              <p>Já a casca de um abacaxi não organiza suas escamas de forma aleatória: há uma ordem clara em como cada camada cresce e se sobrepõe — um padrão que se repete e se transforma segundo uma regra.</p>
-            </div>
-            <div>
-              <div class="callout">
-                <h4>No centro do girassol</h4>
-                <p>As sementes crescem em espirais intercaladas — algumas no sentido horário, outras no anti-horário. Contando as espirais de cada sentido, os dois números quase sempre são termos consecutivos da sequência de Fibonacci, brotando em ângulos de aproximadamente 137,5° (o Ângulo de Ouro).</p>
-              </div>
-              <button class="reveal" onclick="toggleAnswer(this)">Qual é a conexão matemática?</button>
-              <div class="answer">
-                <p>Em todos os casos, a natureza segue um <strong>padrão que se repete e se transforma de acordo com uma regra</strong> — exatamente o que chamamos de <strong>sequência numérica</strong>.</p>
-                <p class="hint">Quando enxergamos essa regra oculta, ganhamos a capacidade de prever exatamente a próxima etapa, sem precisar construí-la ou contá-la uma por uma.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: O QUE É UMA SEQUÊNCIA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 71 · Teoria</div>
@@ -408,7 +377,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro, oral</div>
@@ -425,7 +393,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: TERMO GERAL + MÉTODO DAS DIFERENÇAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aulas 71 e 72 · Teoria</div>
@@ -451,7 +418,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · Qual é a regra?</div>
@@ -474,7 +440,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 CANUDOS (ENEM) -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No ENEM é assim</div>
@@ -504,7 +469,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 PROVA BRASIL: PONTOS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · Como na Prova Brasil</div>
@@ -532,7 +496,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 ENEM 2021 Q136 ENUNCIADO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 5 · No ENEM é assim (ENEM 2021 · Questão 136 · Prova Azul)</div>
@@ -556,7 +519,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ENEM 2021 RESOLVENDO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">ENEM 2021 · Resolvendo</div>
@@ -585,7 +547,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ENEM 2023 Q176 ENUNCIADO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">ENEM 2023 · Questão 176 · Prova Azul</div>
@@ -603,7 +564,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ENEM 2023 RESOLVENDO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">ENEM 2023 · Resolvendo</div>
@@ -625,7 +585,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 TEORIA: EXPONENCIAL -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aulas 70 e 72 · Teoria</div>
@@ -648,7 +607,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 ENEM 2024 Q142 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 6 · No ENEM é assim (ENEM 2024 · Questão 142 · Prova Azul)</div>
@@ -673,7 +631,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ATIVIDADE PRÁTICA: APLICAÇÕES REAIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 7 · Aplicações reais</div>
@@ -704,7 +661,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 SÍNTESE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -721,12 +677,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 18 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. Qual é o próximo termo de (2, 5, 8, 11, …)?</p>
@@ -777,7 +732,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 19 ENCERRAMENTO -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -1091,3 +1062,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

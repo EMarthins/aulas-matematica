@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Módulo 11 · Aula 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Retomada: <span style="color:var(--success);">volume</span> de sólidos geométricos</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Prismas, cilindros, pirâmides, cones e esferas têm fórmulas de volume. Revemos todas e resolvemos problemas de capacidade e de composição de sólidos.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Retomada: <span style="color:var(--success);">volume</span> de sólidos geométricos</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Prismas, cilindros, pirâmides, cones e esferas têm fórmulas de volume. Revemos todas e resolvemos problemas de capacidade e de composição de sólidos.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Um cone e um cilindro têm a mesma base e a mesma altura. O cone ocupa exatamente <strong>um terço</strong> do volume do cilindro: três cones cheios de água enchem o cilindro.</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">prisma e cilindro</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">pirâmide e cone</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">esfera</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M80 80 L80 150 L200 150 L200 80 Z" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 80 L120 50 L240 50 L200 80 Z" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 80 L240 50 L240 120 L200 150 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="140" y="166" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">comprimento</text><text x="246" y="100" font-size="12" fill="var(--ink)" text-anchor="start" font-weight="700">altura</text><text x="150" y="44" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">largura</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">volume = c · l · h</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Fórmulas e aplicações.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Prismas e cilindros</strong><div class="hint">A_b · h</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Pirâmides e cones</strong><div class="hint">A_b · h ÷ 3</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Esfera</strong><div class="hint">4πr³ ÷ 3</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg><div><strong>Capacidade</strong><div class="hint">litros</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Compostos</strong><div class="hint">somar e subtrair</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O copo e o cone</h2>
+          
+          
+          <p class="lede">Um cone e um cilindro têm a mesma base e a mesma altura. O cone ocupa exatamente <strong>um terço</strong> do volume do cilindro: três cones cheios de água enchem o cilindro.</p>
+          <div class="grid2" style="margin-top:6px;">
+            
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O volume de uma pirâmide de base <span class="tex"><i>A</i><sub><i>b</i></sub></span> e altura <span class="tex"><i>h</i></span> é:</p><button class="choice mqo" data-i="0"><span class="tex"><i>A</i><sub><i>b</i></sub> · <i>h</i></span></button><button class="choice mqo" data-i="1"><span class="tex"><span class="fr"><span><i>A</i><sub><i>b</i></sub> · <i>h</i></span><span>3</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><span class="fr"><span><i>A</i><sub><i>b</i></sub> · <i>h</i></span><span>2</span></span></span></button><button class="choice mqo" data-i="3"><span class="tex">3 <i>A</i><sub><i>b</i></sub> <i>h</i></span></button><div class="fb"></div><div class="answer"><p>Um terço do prisma. <strong>Alternativa B.</strong></p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O copo e o cone</h2>
-          
-          <p class="lede">Um cone e um cilindro têm a mesma base e a mesma altura. O cone ocupa exatamente <strong>um terço</strong> do volume do cilindro: três cones cheios de água enchem o cilindro.</p>
-          <div class="grid2" style="margin-top:6px;">
-            
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O volume de uma pirâmide de base <span class="tex"><i>A</i><sub><i>b</i></sub></span> e altura <span class="tex"><i>h</i></span> é:</p><button class="choice mqo" data-i="0"><span class="tex"><i>A</i><sub><i>b</i></sub> · <i>h</i></span></button><button class="choice mqo" data-i="1"><span class="tex"><span class="fr"><span><i>A</i><sub><i>b</i></sub> · <i>h</i></span><span>3</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><span class="fr"><span><i>A</i><sub><i>b</i></sub> · <i>h</i></span><span>2</span></span></span></button><button class="choice mqo" data-i="3"><span class="tex">3 <i>A</i><sub><i>b</i></sub> <i>h</i></span></button><div class="fb"></div><div class="answer"><p>Um terço do prisma. <strong>Alternativa B.</strong></p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Teoria · fórmulas</div>
@@ -385,18 +379,20 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Cilindro e cone</h2>
           
+          
           <p class="lede">Um cone tem raio <span class="tex">3</span> cm e altura <span class="tex">10</span> cm. Calcule o volume (<span class="tex">π = 3,14</span>).</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Base</strong><div class="hint"><span class="tex">π · 9 = 28,26</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Volume</strong><div class="hint"><span class="tex"><span class="fr"><span>28,26 · 10</span><span>3</span></span> = 94,2</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> ≈ 94,2</span> cm³.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Base</strong><div class="hint"><span class="tex">π · 9 = 28,26</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Volume</strong><div class="hint"><span class="tex"><span class="fr"><span>28,26 · 10</span><span>3</span></span> = 94,2</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> ≈ 94,2</span> cm³.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -408,7 +404,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Volume de blocos e cilindros</b></p><div class="row"><div><label>Sólido</label><select id="rv21f"><option value="0" selected>Bloco retangular</option><option value="1">Cilindro</option></select></div><div><label>Comprimento ou raio</label><input type="number" id="rv21a" value="4" step="1" min="1" max="9"></div><div><label>Largura</label><input type="number" id="rv21b" value="3" step="1" min="1" max="9"></div><div><label>Altura</label><input type="number" id="rv21c" value="2" step="1" min="1" max="9"></div></div><svg id="rv21s" viewBox="0 0 360 200" style="width:100%;max-width:360px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;"><b class="mono" id="rv21t"></b></p><p class="hint" id="rv21h" style="margin-top:6px;"></p></div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -422,66 +417,64 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Esfera</h2>
           
+          
           <p class="lede">Calcule o volume de uma esfera de raio <span class="tex">6</span> cm em função de <span class="tex">π</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex"><span class="fr"><span>4π <i>r</i>³</span><span>3</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Calcule</strong><div class="hint"><span class="tex"><span class="fr"><span>4π · 216</span><span>3</span></span> = 288π</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> = 288π</span> cm³.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex"><span class="fr"><span>4π <i>r</i>³</span><span>3</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Calcule</strong><div class="hint"><span class="tex"><span class="fr"><span>4π · 216</span><span>3</span></span> = 288π</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> = 288π</span> cm³.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Pirâmide</h2>
-          
-          <p class="lede">Base de <span class="tex">12</span> cm² e altura <span class="tex">5</span> cm: o volume da pirâmide é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">20</span> cm³</button><button class="choice mqo" data-i="1"><span class="tex">30</span> cm³</button><button class="choice mqo" data-i="2"><span class="tex">60</span> cm³</button><button class="choice mqo" data-i="3"><span class="tex">17</span> cm³</button><div class="fb"></div><div class="answer"><p><span class="tex"><span class="fr"><span>12 · 5</span><span>3</span></span> = 20</span>. <strong>Alternativa A.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Base de <span class="tex">12</span> cm² e altura <span class="tex">5</span> cm: o volume da pirâmide é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">20</span> cm³</li><li><span class="tex">30</span> cm³</li><li><span class="tex">60</span> cm³</li><li><span class="tex">17</span> cm³</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Cilindro de <span class="tex"><i>r</i> = 5</span> e <span class="tex"><i>h</i> = 10</span> (<span class="tex">π = 3</span>): volume:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">250</span></li><li><span class="tex">500</span></li><li><span class="tex">750</span></li><li><span class="tex">1 500</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Cilindro</h2>
-          
-          <p class="lede">Cilindro de <span class="tex"><i>r</i> = 5</span> e <span class="tex"><i>h</i> = 10</span> (<span class="tex">π = 3</span>): volume:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">250</span></button><button class="choice mqo" data-i="1"><span class="tex">500</span></button><button class="choice mqo" data-i="2"><span class="tex">750</span></button><button class="choice mqo" data-i="3"><span class="tex">1 500</span></button><div class="fb"></div><div class="answer"><p><span class="tex">3 · 25 · 10 = 750</span>. <strong>Alternativa C.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Capacidade</h2>
-          
-          <p class="lede">Um reservatório de <span class="tex">2</span> m³ comporta quantos litros?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">20</span> L</button><button class="choice mqo" data-i="1"><span class="tex">200</span> L</button><button class="choice mqo" data-i="2"><span class="tex">2 000</span> L</button><button class="choice mqo" data-i="3"><span class="tex">20 000</span> L</button><div class="fb"></div><div class="answer"><p><span class="tex">1</span> m³ <span class="tex">= 1000</span> L. <strong>Alternativa C.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um reservatório de <span class="tex">2</span> m³ comporta quantos litros?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">20</span> L</li><li><span class="tex">200</span> L</li><li><span class="tex">2 000</span> L</li><li><span class="tex">20 000</span> L</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo SAEB</div>
+          <div class="eyebrow primary">Prática independente · Estilo SAEB</div>
           <h2 class="title">O silo</h2>
-          
-          <p class="lede">Um silo tem a forma de um cilindro de <span class="tex">4</span> m de diâmetro e <span class="tex">6</span> m de altura. Com <span class="tex">π = 3</span>, o volume é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">24</span> m³</button><button class="choice mqo" data-i="1"><span class="tex">48</span> m³</button><button class="choice mqo" data-i="2"><span class="tex">72</span> m³</button><button class="choice mqo" data-i="3"><span class="tex">144</span> m³</button><button class="choice mqo" data-i="4"><span class="tex">288</span> m³</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>r</i> = 2</span>: <span class="tex">3 · 4 · 6 = 72</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do SAEB/ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do SAEB/ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Um silo tem a forma de um cilindro de <span class="tex">4</span> m de diâmetro e <span class="tex">6</span> m de altura. Com <span class="tex">π = 3</span>, o volume é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">24</span> m³</li><li><span class="tex">48</span> m³</li><li><span class="tex">72</span> m³</li><li><span class="tex">144</span> m³</li><li><span class="tex">288</span> m³</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><span class="fr"><span>12 · 5</span><span>3</span></span> = 20</span>.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">3 · 25 · 10 = 750</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">1</span> m³ <span class="tex">= 1000</span> L.</p></div>
+<div class="card success"><strong>4. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>r</i> = 2</span>: <span class="tex">3 · 4 · 6 = 72</span>.</p></div></div>
         </div>
       </section>
 
@@ -500,12 +493,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Prisma e cilindro</span><p style="font-size:.85rem;margin-top:8px;">A_b · h.</p></div>
+            <div class="card"><span class="badge">Pirâmide e cone</span><p style="font-size:.85rem;margin-top:8px;">A_b · h ÷ 3.</p></div>
+            <div class="card"><span class="badge">Esfera</span><p style="font-size:.85rem;margin-top:8px;">4πr³ ÷ 3.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Na próxima retomada: relações entre vértices, faces e arestas de um poliedro.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Um cone e um cilindro têm a mesma base e a mesma altura. O cone ocupa exatamente <strong>um terço</strong> do volume do cilindro: três cones cheios de água enchem o cilindro.</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Volume do cone:</p>
@@ -547,23 +557,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Prisma e cilindro</span><p style="font-size:.85rem;margin-top:8px;">A_b · h.</p></div>
-            <div class="card"><span class="badge">Pirâmide e cone</span><p style="font-size:.85rem;margin-top:8px;">A_b · h ÷ 3.</p></div>
-            <div class="card"><span class="badge">Esfera</span><p style="font-size:.85rem;margin-top:8px;">4πr³ ÷ 3.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Na próxima retomada: relações entre vértices, faces e arestas de um poliedro.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -583,7 +592,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -948,3 +957,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

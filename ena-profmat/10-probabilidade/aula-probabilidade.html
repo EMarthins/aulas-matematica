@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,31 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">ENA · PROFMAT · Capítulo 10</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Probabilidade: <span style="color:var(--decay);">contagem + fração</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Casos favoráveis sobre casos possíveis, complementar, união, condicional, independência e sorteios com e sem reposição. A conta é curta; o cuidado é com o denominador.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Probabilidade: <span style="color:var(--decay);">contagem + fração</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Casos favoráveis sobre casos possíveis, complementar, união, condicional, independência e sorteios com e sem reposição. A conta é curta; o cuidado é com o denominador.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Ao lançar <strong>dois dados</strong> justos, há <span class="tex">6 · 6 = 36</span> resultados possíveis (lembre: (1, 6) e (6, 1) são diferentes). Qual a probabilidade de a <strong>soma</strong> ser 7?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">3 questões em 60</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">P = favoráveis / possíveis</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">Sem reposição: o denominador cai</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="50" y="50" width="80" height="80" rx="14" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/><circle cx="70" cy="70" r="7" fill="var(--primary)" /><circle cx="110" cy="110" r="7" fill="var(--primary)" /><circle cx="90" cy="90" r="7" fill="var(--primary)" /><rect x="170" y="60" width="80" height="80" rx="14" fill="var(--surface)" stroke="var(--decay)" stroke-width="2"/><circle cx="190" cy="80" r="7" fill="var(--decay)" /><circle cx="230" cy="80" r="7" fill="var(--decay)" /><circle cx="190" cy="120" r="7" fill="var(--decay)" /><circle cx="230" cy="120" r="7" fill="var(--decay)" /><circle cx="190" cy="100" r="7" fill="var(--decay)" /><circle cx="230" cy="100" r="7" fill="var(--decay)" /><text x="160" y="180" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">quais resultados são possíveis?</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">A mesma receita para todo problema de probabilidade.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Definição e regras</strong><div class="hint">equiprováveis, complementar, união</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg><div><strong>Dois dados</strong><div class="hint">a tabela das somas (ENA 2025 Q25)</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15c.6.7 1.7 1 3 1s2.7-.6 2.7-1.7c0-1-1-1.4-3-1.8s-3-.9-3-1.9C8.7 9.6 10.2 9 12 9s2.4.3 3 1"/></svg><div><strong>“Pelo menos um”</strong><div class="hint">complementar e moedas</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Condicional e independentes</strong><div class="hint">P(A|B) e P(A)·P(B)</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Com e sem reposição</strong><div class="hint">pedras de 1 a 15 (ENA 2026 Q6)</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>O cubo</strong><div class="hint">três faces que se encontram (ENA 2026 Q26)</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Soma 7 em dois dados</h2>
+          
+          
+          <p class="lede">Ao lançar <strong>dois dados</strong> justos, há <span class="tex">6 · 6 = 36</span> resultados possíveis (lembre: (1, 6) e (6, 1) são diferentes). Qual a probabilidade de a <strong>soma</strong> ser 7?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Probabilidade de soma 7:</p><button class="choice mqo" data-i="0">1/12</button><button class="choice mqo" data-i="1">1/9</button><button class="choice mqo" data-i="2">1/6</button><button class="choice mqo" data-i="3">1/4</button><div class="fb"></div><div class="answer"><p>Pares com soma 7: <span class="tex">(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)</span> → 6 casos em 36: <span class="tex"><span class="fr"><span>6</span><span>36</span></span> = <span class="fr"><span>1</span><span>6</span></span></span>.</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Probabilidade é <strong>contar</strong> os casos favoráveis e os possíveis (com a <strong>mesma</strong> lista de resultados) e dividir.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -353,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Para início de conversa</div>
-          <h2 class="title">Soma 7 em dois dados</h2>
-          
-          <p class="lede">Ao lançar <strong>dois dados</strong> justos, há <span class="tex">6 · 6 = 36</span> resultados possíveis (lembre: (1, 6) e (6, 1) são diferentes). Qual a probabilidade de a <strong>soma</strong> ser 7?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Probabilidade de soma 7:</p><button class="choice mqo" data-i="0">1/12</button><button class="choice mqo" data-i="1">1/9</button><button class="choice mqo" data-i="2">1/6</button><button class="choice mqo" data-i="3">1/4</button><div class="fb"></div><div class="answer"><p>Pares com soma 7: <span class="tex">(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)</span> → 6 casos em 36: <span class="tex"><span class="fr"><span>6</span><span>36</span></span> = <span class="fr"><span>1</span><span>6</span></span></span>.</p></div></div>
-            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Probabilidade é <strong>contar</strong> os casos favoráveis e os possíveis (com a <strong>mesma</strong> lista de resultados) e dividir.</p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · definição</div>
@@ -385,19 +378,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2025 · Q25</div>
-          <h2 class="title">Dois dados e a soma 7</h2>
-          
-          <p class="lede">Lançando dois dados, qual a probabilidade de a soma dos resultados ser <strong>7</strong>?</p>
-          <div class="mq" data-a="4"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1/12</button><button class="choice mqo" data-i="1">1/9</button><button class="choice mqo" data-i="2">1/8</button><button class="choice mqo" data-i="3">1/7</button><button class="choice mqo" data-i="4">1/6</button><div class="fb"></div><div class="answer"><p>Pares: <span class="tex">(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)</span> → 6 de 36 → <span class="tex"><span class="fr"><span>1</span><span>6</span></span></span>. <strong>Alternativa E.</strong> A soma 7 é a mais provável: tem 6 formas.</p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · complementar</div>
@@ -410,7 +390,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -428,7 +407,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · sorteios</div>
@@ -441,45 +419,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q6</div>
-          <h2 class="title">Três pedras ímpares</h2>
-          
-          <p class="lede">De uma caixa com pedras numeradas de 1 a 15, retiram-se 3 pedras ao acaso, uma após a outra, <strong>sem devolver</strong>. Qual a probabilidade de os três números serem ímpares?</p>
-          <div class="mq" data-a="4"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1/8</button><button class="choice mqo" data-i="1">7/65</button><button class="choice mqo" data-i="2">1/9</button><button class="choice mqo" data-i="3">2/15</button><button class="choice mqo" data-i="4">8/65</button><div class="fb"></div><div class="answer"><p>Há 8 ímpares e 7 pares: <span class="tex"><span class="fr"><span>8</span><span>15</span></span> · <span class="fr"><span>7</span><span>14</span></span> · <span class="fr"><span>6</span><span>13</span></span> = <span class="fr"><span>336</span><span>2730</span></span> = <span class="fr"><span>8</span><span>65</span></span></span>. <strong>Alternativa E.</strong> (Com reposição seria <span class="tex">(8/15)<sup>3</sup></span>, bem diferente.)</p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Geometria + probabilidade</div>
-          <h2 class="title">As três faces do cubo (ENA 2026 Q26)</h2>
-          
-          <p class="lede">Um cubo tem <strong>6 faces</strong>, <strong>8 vértices</strong> e <strong>12 arestas</strong>; em cada vértice <strong>concorrem 3 faces</strong>. Escolhendo 3 faces ao acaso, qual a chance de <strong>não</strong> se encontrarem em um único ponto?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="callout success"><h4>Contagem</h4><p>Total de ternas de faces: <span class="tex"><i>C</i>(6, 3) = 20</span>. Ternas que se encontram em um ponto: uma por vértice → <strong>8</strong>. <span class="tex"><i>P</i>(não se encontram) = 1 − <span class="fr"><span>8</span><span>20</span></span> = <span class="fr"><span>12</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>.</p></div>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Probabilidade de as três faces escolhidas não concorrerem em um vértice:</p><button class="choice mqo" data-i="0">2/5</button><button class="choice mqo" data-i="1">1/2</button><button class="choice mqo" data-i="2">3/5</button><button class="choice mqo" data-i="3">7/10</button><div class="fb"></div><div class="answer"><p>Das 20 ternas, 8 concorrem em um vértice e 12 não: <span class="tex"><span class="fr"><span>12</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>. Use sempre a mesma lista (ternas não ordenadas) no numerador e no denominador.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q26</div>
-          <h2 class="title">Faces de um cubo que não se intersectam num ponto</h2>
-          
-          <p class="lede">Escolhem-se aleatoriamente 3 faces de um cubo. Qual a probabilidade de essas três faces <strong>não</strong> se intersectarem em um único ponto?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">2/5</button><button class="choice mqo" data-i="1">1/2</button><button class="choice mqo" data-i="2">3/5</button><button class="choice mqo" data-i="3">7/10</button><button class="choice mqo" data-i="4">4/5</button><div class="fb"></div><div class="answer"><p>Total: <span class="tex"><i>C</i>(6, 3) = 20</span>. Desfavoráveis: uma terna por vértice → 8. <span class="tex">1 − <span class="fr"><span>8</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -496,7 +435,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Treinos 10.3 e 10.6</div>
@@ -510,6 +448,65 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <div class="step-row"><span class="badge">4</span><div><strong>Probabilidade</strong><div class="hint"><span class="tex"><span class="fr"><span>12</span><span>24</span></span> = <span class="fr"><span>1</span><span>2</span></span></span></div></div></div>
           </div>
           <div class="callout success"><h4>Resultado</h4><p>Urna: <strong>5/14</strong>. Fila: <strong>1/2</strong>.</p></div>
+        </div>
+      </section>
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Dois dados e a soma 7</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <p class="lede">Lançando dois dados, qual a probabilidade de a soma dos resultados ser <strong>7</strong>?</p>
+          <div class="mq" data-a="4"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1/12</button><button class="choice mqo" data-i="1">1/9</button><button class="choice mqo" data-i="2">1/8</button><button class="choice mqo" data-i="3">1/7</button><button class="choice mqo" data-i="4">1/6</button><div class="fb"></div><div class="answer"><p>Pares: <span class="tex">(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)</span> → 6 de 36 → <span class="tex"><span class="fr"><span>1</span><span>6</span></span></span>. <strong>Alternativa E.</strong> A soma 7 é a mais provável: tem 6 formas.</p></div></div>
+          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Três pedras ímpares</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. De uma caixa com pedras numeradas de 1 a 15, retiram-se 3 pedras ao acaso, uma após a outra, <strong>sem devolver</strong>. Qual a probabilidade de os três números serem ímpares?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>1/8</li><li>7/65</li><li>1/9</li><li>2/15</li><li>8/65</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">As três faces do cubo (ENA 2026 Q26)</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid2" style="margin-top:6px;">
+            <div class="callout success"><h4>Contagem</h4><p>Total de ternas de faces: <span class="tex"><i>C</i>(6, 3) = 20</span>. Ternas que se encontram em um ponto: uma por vértice → <strong>8</strong>. <span class="tex"><i>P</i>(não se encontram) = 1 − <span class="fr"><span>8</span><span>20</span></span> = <span class="fr"><span>12</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>.</p></div>
+            
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Um cubo tem <strong>6 faces</strong>, <strong>8 vértices</strong> e <strong>12 arestas</strong>; em cada vértice <strong>concorrem 3 faces</strong>. Escolhendo 3 faces ao acaso, qual a chance de <strong>não</strong> se encontrarem em um único ponto? Probabilidade de as três faces escolhidas não concorrerem em um vértice:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>2/5</li><li>1/2</li><li>3/5</li><li>7/10</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Faces de um cubo que não se intersectam num ponto</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Escolhem-se aleatoriamente 3 faces de um cubo. Qual a probabilidade de essas três faces <strong>não</strong> se intersectarem em um único ponto?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>2/5</li><li>1/2</li><li>3/5</li><li>7/10</li><li>4/5</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa E</strong><p style="font-size:.86rem;margin-top:6px;">Há 8 ímpares e 7 pares: <span class="tex"><span class="fr"><span>8</span><span>15</span></span> · <span class="fr"><span>7</span><span>14</span></span> · <span class="fr"><span>6</span><span>13</span></span> = <span class="fr"><span>336</span><span>2730</span></span> = <span class="fr"><span>8</span><span>65</span></span></span>. (Com reposição seria <span class="tex">(8/15)<sup>3</sup></span>, bem diferente.)</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Das 20 ternas, 8 concorrem em um vértice e 12 não: <span class="tex"><span class="fr"><span>12</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>. Use sempre a mesma lista (ternas não ordenadas) no numerador e no denominador.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Total: <span class="tex"><i>C</i>(6, 3) = 20</span>. Desfavoráveis: uma terna por vértice → 8. <span class="tex">1 − <span class="fr"><span>8</span><span>20</span></span> = <span class="fr"><span>3</span><span>5</span></span></span>.</p></div></div>
         </div>
       </section>
 
@@ -528,12 +525,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>P</i> = </span> favoráveis / possíveis, contando a <strong>mesma</strong> lista; <span class="tex">0 ≤ <i>P</i> ≤ 1</span>.</p></div>
+            <div class="card"><span class="badge">Regras</span><p style="font-size:.85rem;margin-top:8px;">Complementar <span class="tex">1 − <i>P</i></span>; união <span class="tex"><i>P</i>(<i>A</i>) + <i>P</i>(<i>B</i>) − <i>P</i>(<i>A</i>∩<i>B</i>)</span>; independentes <span class="tex"><i>P</i>(<i>A</i>)<i>P</i>(<i>B</i>)</span>.</p></div>
+            <div class="card"><span class="badge">Sorteios</span><p style="font-size:.85rem;margin-top:8px;">Sem reposição o denominador cai; use combinação ou produto sequencial.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Conte, divida e simplifique no meio do caminho.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Ao lançar <strong>dois dados</strong> justos, há <span class="tex">6 · 6 = 36</span> resultados possíveis (lembre: (1, 6) e (6, 1) são diferentes). Qual a probabilidade de a <strong>soma</strong> ser 7?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Em 3 lançamentos de uma moeda, a probabilidade de <strong>exatamente 2 caras</strong> é:</p>
@@ -575,23 +589,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>P</i> = </span> favoráveis / possíveis, contando a <strong>mesma</strong> lista; <span class="tex">0 ≤ <i>P</i> ≤ 1</span>.</p></div>
-            <div class="card"><span class="badge">Regras</span><p style="font-size:.85rem;margin-top:8px;">Complementar <span class="tex">1 − <i>P</i></span>; união <span class="tex"><i>P</i>(<i>A</i>) + <i>P</i>(<i>B</i>) − <i>P</i>(<i>A</i>∩<i>B</i>)</span>; independentes <span class="tex"><i>P</i>(<i>A</i>)<i>P</i>(<i>B</i>)</span>.</p></div>
-            <div class="card"><span class="badge">Sorteios</span><p style="font-size:.85rem;margin-top:8px;">Sem reposição o denominador cai; use combinação ou produto sequencial.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Conte, divida e simplifique no meio do caminho.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -611,7 +624,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 19</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -962,3 +975,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

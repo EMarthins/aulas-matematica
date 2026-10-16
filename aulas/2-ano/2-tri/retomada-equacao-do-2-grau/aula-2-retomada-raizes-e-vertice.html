@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Retomada R10</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Retomada: <span style="color:var(--primary);">raízes, vértice e simetria da parábola</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">A parábola tem um eixo de simetria vertical que funciona como espelho: as raízes ficam à mesma distância do vértice. Isso dá atalhos para achar alturas mínimas, máximas e zeros.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Retomada: <span style="color:var(--primary);">raízes, vértice e simetria da parábola</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">A parábola tem um eixo de simetria vertical que funciona como espelho: as raízes ficam à mesma distância do vértice. Isso dá atalhos para achar alturas mínimas, máximas e zeros.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Um fio elétrico entre dois postes de mesma altura forma uma curva em formato de parábola. Pela <strong>simetria</strong>, o ponto mais baixo do fio fica no <strong>meio</strong> entre os postes.</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">raízes: f(x) = 0</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">vértice: −b ÷ 2a</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">eixo de simetria</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M40 160 Q150 -10 260 120" fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/><circle cx="40" cy="160" r="9" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><rect x="262" y="70" width="5" height="100" rx="0" fill="var(--ink-faint)" /><rect x="250" y="66" width="26" height="6" rx="0" fill="var(--decay)" /><path d="M252 72 L260 92 L270 92 L276 72" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">trajetória em parábola</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Dos quatro pontos principais ao problema.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Concavidade</strong><div class="hint">sinal de a</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Raízes</strong><div class="hint">onde corta o eixo x</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Corte em y</strong><div class="hint">o ponto (0, c)</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Vértice e eixo</strong><div class="hint">x_v = (x' + x'') ÷ 2</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Aplicação</strong><div class="hint">o fio entre dois postes</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O espelho da parábola</h2>
+          
+          
+          <p class="lede">Um fio elétrico entre dois postes de mesma altura forma uma curva em formato de parábola. Pela <strong>simetria</strong>, o ponto mais baixo do fio fica no <strong>meio</strong> entre os postes.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Explore a parábola</b></p><div class="row"><div><label>a</label><input type="number" id="r10-a" value="1" step="any" ></div><div><label>b</label><input type="number" id="r10-b" value="-4" step="any" ></div><div><label>c</label><input type="number" id="r10-c" value="-5" step="any" ></div></div><svg id="r10-s" viewBox="0 0 360 220" style="width:100%;max-width:340px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Raízes: <b class="mono" id="r10-r"></b></p><p class="small" style="margin:8px 0 0;">Vértice: <b class="mono" id="r10-v"></b></p><p class="hint" id="r10-h" style="margin-top:6px;"></p></div>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Se as raízes de uma parábola são <span class="tex">0</span> e <span class="tex">10</span>, o eixo de simetria é a reta:</p><button class="choice mqo" data-i="0"><span class="tex"><i>x</i> = 0</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>x</i> = 5</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>x</i> = 10</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>x</i> = 20</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sub><i>v</i></sub> = (0 + 10) ÷ 2 = 5</span>.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O espelho da parábola</h2>
-          
-          <p class="lede">Um fio elétrico entre dois postes de mesma altura forma uma curva em formato de parábola. Pela <strong>simetria</strong>, o ponto mais baixo do fio fica no <strong>meio</strong> entre os postes.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Explore a parábola</b></p><div class="row"><div><label>a</label><input type="number" id="r10-a" value="1" step="any" ></div><div><label>b</label><input type="number" id="r10-b" value="-4" step="any" ></div><div><label>c</label><input type="number" id="r10-c" value="-5" step="any" ></div></div><svg id="r10-s" viewBox="0 0 360 220" style="width:100%;max-width:340px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Raízes: <b class="mono" id="r10-r"></b></p><p class="small" style="margin:8px 0 0;">Vértice: <b class="mono" id="r10-v"></b></p><p class="hint" id="r10-h" style="margin-top:6px;"></p></div>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Se as raízes de uma parábola são <span class="tex">0</span> e <span class="tex">10</span>, o eixo de simetria é a reta:</p><button class="choice mqo" data-i="0"><span class="tex"><i>x</i> = 0</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>x</i> = 5</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>x</i> = 10</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>x</i> = 20</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sub><i>v</i></sub> = (0 + 10) ÷ 2 = 5</span>.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -387,111 +381,118 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">O fio entre os postes</h2>
           
+          
           <p class="lede">Dois postes de <span class="tex">8</span> m de altura distam <span class="tex">10</span> m. O fio é modelado por <span class="tex"><i>y</i> = 0,04<i>x</i><sup>2</sup> − 0,4<i>x</i></span>, com <span class="tex"><i>A</i></span> na origem. Qual a menor distância do fio ao solo?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Raízes</strong><div class="hint"><span class="tex">0,04<i>x</i>(<i>x</i> − 10) = 0</span>: <span class="tex"><i>x</i> = 0</span> e <span class="tex"><i>x</i> = 10</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = 5</span>; <span class="tex"><i>y</i><sub><i>v</i></sub> = 0,04 · 25 − 0,4 · 5 = 1 − 2 = −1</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Altura</strong><div class="hint">O fio desce <span class="tex">1</span> m abaixo do topo: <span class="tex">8 − 1 = 7</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A menor distância do fio ao solo é <span class="tex">7</span> m.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Raízes</strong><div class="hint"><span class="tex">0,04<i>x</i>(<i>x</i> − 10) = 0</span>: <span class="tex"><i>x</i> = 0</span> e <span class="tex"><i>x</i> = 10</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = 5</span>; <span class="tex"><i>y</i><sub><i>v</i></sub> = 0,04 · 25 − 0,4 · 5 = 1 − 2 = −1</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Altura</strong><div class="hint">O fio desce <span class="tex">1</span> m abaixo do topo: <span class="tex">8 − 1 = 7</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A menor distância do fio ao solo é <span class="tex">7</span> m.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Raiz que falta</h2>
           
+          
           <p class="lede">O vértice de uma parábola é <span class="tex">(5, −4)</span> e uma raiz é <span class="tex">7</span>. Qual a outra?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Reflexão</strong><div class="hint"><span class="tex"><i>x</i>'' = 2 · 5 − 7 = 3</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>As raízes são <span class="tex">3</span> e <span class="tex">7</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Reflexão</strong><div class="hint"><span class="tex"><i>x</i>'' = 2 · 5 − 7 = 3</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>As raízes são <span class="tex">3</span> e <span class="tex">7</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Do gráfico à lei</h2>
           
+          
           <p class="lede">Uma parábola passa por <span class="tex">(0, 0)</span> e <span class="tex">(4, 0)</span> com concavidade para cima. Onde está o vértice e quanto vale <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i></span> nele?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Eixo</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = (0 + 4) ÷ 2 = 2</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>f</i>(2) = 4 − 8 = −4</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Vértice em <span class="tex">(2, −4)</span> (valor mínimo <span class="tex">−4</span>).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Eixo</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = (0 + 4) ÷ 2 = 2</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>f</i>(2) = 4 − 8 = −4</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Vértice em <span class="tex">(2, −4)</span> (valor mínimo <span class="tex">−4</span>).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow success">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Altura máxima</h2>
           
+          
           <p class="lede">A altura de um aviãozinho é <span class="tex"><i>h</i>(<i>x</i>) = −<span class="fr"><span>2</span><span>3</span></span><i>x</i><sup>2</sup> + 8<i>x</i> + 8</span> (metros). Qual a altura máxima?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>−8</span><span>2 · (−<span class="fr"><span>2</span><span>3</span></span>)</span></span> = <span class="fr"><span>−8</span><span>−<span class="fr"><span>4</span><span>3</span></span></span></span> = 6</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Altura</strong><div class="hint"><span class="tex"><i>h</i>(6) = −<span class="fr"><span>2</span><span>3</span></span> · 36 + 48 + 8 = −24 + 56 = 32</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A altura máxima é <span class="tex">32</span> m.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>−8</span><span>2 · (−<span class="fr"><span>2</span><span>3</span></span>)</span></span> = <span class="fr"><span>−8</span><span>−<span class="fr"><span>4</span><span>3</span></span></span></span> = 6</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Altura</strong><div class="hint"><span class="tex"><i>h</i>(6) = −<span class="fr"><span>2</span><span>3</span></span> · 36 + 48 + 8 = −24 + 56 = 32</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A altura máxima é <span class="tex">32</span> m.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Eixo de simetria</h2>
-          
-          <p class="lede">As raízes de uma função quadrática são <span class="tex">−2</span> e <span class="tex">6</span>. O eixo de simetria é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><i>x</i> = 1</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>x</i> = 2</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>x</i> = 4</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>x</i> = 8</span></button><div class="fb"></div><div class="answer"><p><span class="tex">(−2 + 6) ÷ 2 = 2</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. As raízes de uma função quadrática são <span class="tex">−2</span> e <span class="tex">6</span>. O eixo de simetria é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"><i>x</i> = 1</span></li><li><span class="tex"><i>x</i> = 2</span></li><li><span class="tex"><i>x</i> = 4</span></li><li><span class="tex"><i>x</i> = 8</span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. O vértice de <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 6<i>x</i> + 5</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">(3, −4)</span></li><li><span class="tex">(−3, 4)</span></li><li><span class="tex">(6, 5)</span></li><li><span class="tex">(3, 4)</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Vértice</h2>
-          
-          <p class="lede">O vértice de <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 6<i>x</i> + 5</span> é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">(3, −4)</span></button><button class="choice mqo" data-i="1"><span class="tex">(−3, 4)</span></button><button class="choice mqo" data-i="2"><span class="tex">(6, 5)</span></button><button class="choice mqo" data-i="3"><span class="tex">(3, 4)</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sub><i>v</i></sub> = 3</span>; <span class="tex"><i>f</i>(3) = 9 − 18 + 5 = −4</span>. <strong>Alternativa A.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">A outra raiz</h2>
-          
-          <p class="lede">O vértice de uma parábola é <span class="tex">(3, −1)</span> e uma raiz é <span class="tex">4</span>. A outra raiz é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">2</span></button><button class="choice mqo" data-i="2"><span class="tex">3</span></button><button class="choice mqo" data-i="3"><span class="tex">5</span></button><div class="fb"></div><div class="answer"><p><span class="tex">2 · 3 − 4 = 2</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. O vértice de uma parábola é <span class="tex">(3, −1)</span> e uma raiz é <span class="tex">4</span>. A outra raiz é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">1</span></li><li><span class="tex">2</span></li><li><span class="tex">3</span></li><li><span class="tex">5</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Fio de alta tensão</h2>
-          
-          <p class="lede">Dois postes de <span class="tex">6</span> m de altura distam <span class="tex">8</span> m e o fio entre eles segue <span class="tex"><i>y</i> = 0,02<i>x</i><sup>2</sup> − 0,16<i>x</i></span> (com <span class="tex"><i>A</i></span> na origem). A menor distância do fio ao solo é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">5,36</span> m</button><button class="choice mqo" data-i="1"><span class="tex">5,68</span> m</button><button class="choice mqo" data-i="2"><span class="tex">5,84</span> m</button><button class="choice mqo" data-i="3"><span class="tex">5,98</span> m</button><button class="choice mqo" data-i="4"><span class="tex">5,99</span> m</button><div class="fb"></div><div class="answer"><p>Vértice em <span class="tex"><i>x</i> = 4</span>: <span class="tex"><i>y</i> = 0,32 − 0,64 = −0,32</span>; distância <span class="tex">6 − 0,32 = 5,68</span> m. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Dois postes de <span class="tex">6</span> m de altura distam <span class="tex">8</span> m e o fio entre eles segue <span class="tex"><i>y</i> = 0,02<i>x</i><sup>2</sup> − 0,16<i>x</i></span> (com <span class="tex"><i>A</i></span> na origem). A menor distância do fio ao solo é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">5,36</span> m</li><li><span class="tex">5,68</span> m</li><li><span class="tex">5,84</span> m</li><li><span class="tex">5,98</span> m</li><li><span class="tex">5,99</span> m</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">(−2 + 6) ÷ 2 = 2</span>.</p></div>
+<div class="card success"><strong>2. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = 3</span>; <span class="tex"><i>f</i>(3) = 9 − 18 + 5 = −4</span>.</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">2 · 3 − 4 = 2</span>.</p></div>
+<div class="card success"><strong>4. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Vértice em <span class="tex"><i>x</i> = 4</span>: <span class="tex"><i>y</i> = 0,32 − 0,64 = −0,32</span>; distância <span class="tex">6 − 0,32 = 5,68</span> m.</p></div></div>
         </div>
       </section>
 
@@ -510,12 +511,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Vértice</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>−<i>b</i></span><span>2<i>a</i></span></span></span> e <span class="tex"><i>y</i><sub><i>v</i></sub> = <span class="fr"><span>−Δ</span><span>4<i>a</i></span></span></span>.</p></div>
+            <div class="card"><span class="badge">Simetria</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span><i>x</i>' + <i>x</i>''</span><span>2</span></span></span>; reflexão: <span class="tex"><i>x</i>'' = 2<i>x</i><sub><i>v</i></sub> − <i>x</i>'</span>.</p></div>
+            <div class="card"><span class="badge">Problemas</span><p style="font-size:.85rem;margin-top:8px;">Achar o extremo da função e interpretar no contexto.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Raízes e vértice resolvem a maior parte dos problemas de parábola. Próxima retomada: comportamento de funções e sistemas lineares.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Um fio elétrico entre dois postes de mesma altura forma uma curva em formato de parábola. Pela <strong>simetria</strong>, o ponto mais baixo do fio fica no <strong>meio</strong> entre os postes.</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O vértice de <span class="tex"><i>y</i> = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> tem abscissa:</p>
@@ -557,23 +575,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Vértice</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>−<i>b</i></span><span>2<i>a</i></span></span></span> e <span class="tex"><i>y</i><sub><i>v</i></sub> = <span class="fr"><span>−Δ</span><span>4<i>a</i></span></span></span>.</p></div>
-            <div class="card"><span class="badge">Simetria</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span><i>x</i>' + <i>x</i>''</span><span>2</span></span></span>; reflexão: <span class="tex"><i>x</i>'' = 2<i>x</i><sub><i>v</i></sub> − <i>x</i>'</span>.</p></div>
-            <div class="card"><span class="badge">Problemas</span><p style="font-size:.85rem;margin-top:8px;">Achar o extremo da função e interpretar no contexto.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Raízes e vértice resolvem a maior parte dos problemas de parábola. Próxima retomada: comportamento de funções e sistemas lineares.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -593,7 +610,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -946,3 +963,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

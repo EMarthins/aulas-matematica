@@ -293,6 +293,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -302,31 +304,19 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="80" r="8" fill="var(--danger)"/>
           </svg>
           <div class="eyebrow">Educação Financeira · 1ª série · Trimestre 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Cartão de crédito, <span style="color:var(--danger);">nome limpo</span> e score</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Por que limite não é renda, como uma fatura paga pela metade vira bola de neve e como o SPC e o Serasa medem se você é bom pagador.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Cartão de crédito, <span style="color:var(--danger);">nome limpo</span> e score</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Por que limite não é renda, como uma fatura paga pela metade vira bola de neve e como o SPC e o Serasa medem se você é bom pagador.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 39, 43</span>
             <span class="badge" style="color:var(--danger);background:var(--danger-soft);border-color:transparent;">Pagar o mínimo custa caro</span>
             <span class="badge" style="color:var(--primary);background:var(--primary-soft);border-color:transparent;">Score de 0 a 1.000</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do "tenho limite" ao score de crédito.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15c.6.7 1.7 1 3 1s2.7-.6 2.7-1.7c0-1-1-1.4-3-1.8s-3-.9-3-1.9C8.7 9.6 10.2 9 12 9s2.4.3 3 1"/></svg><div><strong>Como funciona o cartão</strong><div class="hint">compra agora, fatura depois — e parcelar não barateia</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Limite não é renda</strong><div class="hint">o que você realmente pode gastar</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5 10 12l4-4 6 9"/><path d="M15 17h5v-5"/></svg><div><strong>A fatura paga pela metade</strong><div class="hint">saldo + juros + fatura do mês = nova fatura</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>ENEM 2013 PPL</strong><div class="hint">pagando só o mínimo: quanto se deve em 3 meses?</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>Regras atuais do cartão</strong><div class="hint">o teto de 100% para os juros do rotativo</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c3 .2 5 2.2 5 5.8"/></svg><div><strong>CPF, SPC e Serasa</strong><div class="hint">quem é "negativado" e por quê</div></div></div>
-            <div class="step-row"><span class="badge">07</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>O score de crédito</strong><div class="hint">o que sobe, o que desce e como interpretar</div></div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="132" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="60" y="138" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="94" cy="124" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="94" y="130" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="128" cy="116" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="128" y="122" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><rect x="170" y="60" width="120" height="64" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="230" cy="92" r="16" fill="var(--surface)" stroke="var(--success)" stroke-width="2"/><text x="230" y="98" font-size="16" fill="var(--success)" text-anchor="middle" font-weight="700">50</text><rect x="176" y="118" width="120" height="16" rx="6" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -347,25 +337,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow danger">Parte 1 · para início de conversa</div>
-          <h2 class="title">"Tenho limite. Então posso comprar?"</h2>
-          
-          <div class="grid2">
-            <div>
-              <p class="lede">É o que pensa Ana: ela recebe <strong>R$ 2.500</strong> por mês, mas seu cartão tem limite de <strong>R$ 4.000</strong>. Qual é a chance de ela gastar mais do que pode, já que o limite é alto?</p>
-              <div class="stat" style="background:var(--danger-soft);"><span class="num" style="color:var(--danger);">R$ 4.000</span><span class="lbl">limite do cartão da Ana (maior que a renda de R$ 2.500)</span></div>
-            </div>
-            <div>
-              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Ana gastou R$ 3.200 no cartão. Isso significa que:</p><button class="choice mqo" data-i="0">Ela tem R$ 3.200 a mais para gastar</button><button class="choice mqo" data-i="1">Ela assumiu o compromisso de pagar R$ 3.200 (mais que a renda do mês) na fatura</button><button class="choice mqo" data-i="2">O banco pagou a conta sem custo</button><button class="choice mqo" data-i="3">Ela ganhou R$ 3.200 de desconto</button><div class="fb"></div><div class="answer"><p>No crédito a compra é só <strong>adiada</strong>: vira dívida na fatura. R$ 3.200 é mais que a renda mensal dela.</p></div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Parte 1 · teoria</div>
@@ -381,7 +352,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           <div class="callout"><h4>Parcelar não é pagar menos</h4><p>Um tênis de <strong>R$ 300</strong> parcelado em 3 vezes continua custando R$ 300: o pagamento só foi <strong>distribuído no tempo</strong>. Se houver juros, custa mais.</p></div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -403,7 +373,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Parte 1 · e se eu não pagar tudo?</div>
@@ -424,31 +393,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">ENEM 2013 PPL · questão 171</div>
-          <h2 class="title">Pagando só o mínimo, quanto se deve em 3 meses?</h2>
-          
-          <p class="lede">Um consumidor tem fatura de <strong>R$ 1.000</strong> em 01/03/2012. Ele paga sempre apenas o <strong>mínimo de 20% da fatura</strong>; o saldo restante recebe <strong>10% de juros</strong> ao mês. Qual será a dívida em <strong>01/05/2012</strong>?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div><div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alternativas</p><button class="choice mqo" data-i="0">R$ 600,00</button><button class="choice mqo" data-i="1">R$ 640,00</button><button class="choice mqo" data-i="2">R$ 722,50</button><button class="choice mqo" data-i="3">R$ 774,40</button><button class="choice mqo" data-i="4">R$ 874,22</button><div class="fb"></div><div class="answer"><p><strong>R$ 774,40</strong> (alternativa D). As outras vêm de erros clássicos: ignorar os juros (A e B) ou usar 15% de mínimo (E).</p></div></div></div>
-            <div><table class="tbl">
-  <tr><th>data</th><th>fatura</th><th>paga (20%)</th><th>saldo</th></tr>
-  <tr><td style="text-align:left;">01/03</td><td>R$ 1.000</td><td>R$ 200</td><td>R$ 800</td></tr>
-  <tr><td style="text-align:left;">01/04</td><td>800 × 1,1 = R$ 880</td><td>R$ 176</td><td>R$ 704</td></tr>
-  <tr><td style="text-align:left;">01/05</td><td>704 × 1,1 = <b>R$ 774,40</b></td><td>—</td><td>—</td></tr>
-</table></div>
-          </div>
-          <div class="grid2" style="margin-top:8px;">
-            <div class="callout danger"><h4>Quem paga só o mínimo...</h4><p>Em dois meses pagou R$ 376 e <strong>ainda deve R$ 774,40</strong> — mais do que 3/4 da fatura original.</p></div>
-            <button class="reveal" onclick="toggleAnswer(this)">Por que as outras estão erradas?</button>
-<div class="answer"><p><b>R$ 600:</b> três pagamentos de R$ 200, sem juros. <b>R$ 640:</b> 1.000 − 200 − 160, sem juros. <b>R$ 722,50:</b> valor abaixo do correto. <b>R$ 874,22:</b> usou mínimo de 15%.</p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Parte 1 · atualidades</div>
@@ -462,23 +406,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           <div class="callout danger"><h4>Mas a ideia continua atual</h4><p>Não pagar a fatura integralmente significa usar uma modalidade de crédito de <strong>altíssimo custo</strong>.</p></div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow danger">Parte 1 · atividade</div>
-          <h2 class="title">Usar com responsabilidade: João, Maria e Pedro</h2>
-          
-          <p class="lede">Todos recebem <strong>R$ 2.500</strong>. Veja as três situações e responda:</p>
-          <div class="grid3">
-            <div class="card success"><span class="badge">Situação A · João</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 650</strong>. Já separou o dinheiro para pagar <strong>integralmente</strong>.</p></div>
-            <div class="card danger"><span class="badge">Situação B · Maria</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 2.400</strong>. Pretende pagar <strong>só o mínimo</strong> e continuar usando o cartão.</p></div>
-            <div class="card growth"><span class="badge">Situação C · Pedro</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 1.200</strong>. Vê que não pagará tudo: <strong>para de comprar</strong> e busca alternativa de crédito mais barata.</p></div>
-          </div>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual situação apresenta o MAIOR risco de endividamento?</p><button class="choice mqo" data-i="0">A (João)</button><button class="choice mqo" data-i="1">B (Maria)</button><button class="choice mqo" data-i="2">C (Pedro)</button><button class="choice mqo" data-i="3">Nenhuma</button><div class="fb"></div><div class="answer"><p><strong>Maria</strong>: a fatura quase consome a renda, ela paga só o mínimo e ainda continua gastando. João planejou; Pedro reagiu a tempo. <em>Maria deveria parar de usar o cartão e reorganizar o orçamento antes de continuar.</em></p></div></div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -505,23 +432,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">Parte 2 · teoria</div>
-          <h2 class="title">SPC, Serasa e o "nome sujo"</h2>
-          
-          <p class="lede">Pelo número do CPF, órgãos como o <strong>SPC</strong> e o <strong>Serasa</strong> montam listas de quem tem <strong>dívidas em atraso</strong> com bancos e empresas. Estar nessa lista é estar com o CPF <strong>negativado</strong>.</p>
-          <div class="grid3" style="margin-top:8px;">
-            <div class="card"><strong>Termos do dia a dia</strong><p style="font-size:.88rem;margin-top:8px;">"Ter o nome sujo", "estar no SPC", "ser negativado" e, antigamente, "ser seprocado".</p></div>
-            <div class="card danger"><strong>Riscos de emprestar o cartão</strong><p style="font-size:.88rem;margin-top:8px;">Se um amigo "sujo" usa seu cartão e não paga, <strong>a dívida é sua</strong> — e quem fica negativado é você.</p></div>
-            <div class="card primary"><strong>Score de crédito</strong><p style="font-size:.88rem;margin-top:8px;">Pontuação que mede o quanto alguém é <strong>bom ou mau pagador</strong>. O que mais pesa: pagar em dia.</p></div>
-          </div>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Seu amigo está com o nome sujo e pede seu cartão para comprar uma geladeira. O que você faz?</p><button class="choice mqo" data-i="0">Empresto: amigo é amigo</button><button class="choice mqo" data-i="1">Não empresto: se ele não pagar, a dívida e o risco de negativação são meus</button><button class="choice mqo" data-i="2">Empresto metade</button><button class="choice mqo" data-i="3">Empresto e peço o cartão dele em troca</button><div class="fb"></div><div class="answer"><p>Não empreste o cartão: <strong>a responsabilidade pela fatura é sua</strong>. Ajude de outras formas (orçamento, renegociação).</p></div></div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Parte 2 · score de crédito</div>
@@ -543,7 +453,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Parte 2 · atividade</div>
@@ -564,14 +473,84 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">ENEM · gráfico cartesiano (H20)</div>
-          <h2 class="title">O saldo devedor de quem fica 6 meses sem pagar</h2>
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">"Tenho limite. Então posso comprar?"</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
           
-          <p class="lede">Um trabalhador demitido não paga as faturas do cartão por 6 meses, com juros e encargos incidindo. O gráfico mostra a evolução do saldo devedor: <strong>R$ 500</strong> no mês 0, ≈ <strong>R$ 560</strong> no mês 1, ≈ <strong>R$ 630</strong> no mês 2...</p>
+          <div class="grid2">
+            <div>
+              <p class="lede">É o que pensa Ana: ela recebe <strong>R$ 2.500</strong> por mês, mas seu cartão tem limite de <strong>R$ 4.000</strong>. Qual é a chance de ela gastar mais do que pode, já que o limite é alto?</p>
+              <div class="stat" style="background:var(--danger-soft);"><span class="num" style="color:var(--danger);">R$ 4.000</span><span class="lbl">limite do cartão da Ana (maior que a renda de R$ 2.500)</span></div>
+            </div>
+            <div>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Ana gastou R$ 3.200 no cartão. Isso significa que:</p><button class="choice mqo" data-i="0">Ela tem R$ 3.200 a mais para gastar</button><button class="choice mqo" data-i="1">Ela assumiu o compromisso de pagar R$ 3.200 (mais que a renda do mês) na fatura</button><button class="choice mqo" data-i="2">O banco pagou a conta sem custo</button><button class="choice mqo" data-i="3">Ela ganhou R$ 3.200 de desconto</button><div class="fb"></div><div class="answer"><p>No crédito a compra é só <strong>adiada</strong>: vira dívida na fatura. R$ 3.200 é mais que a renda mensal dela.</p></div></div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente · ENEM 2013 PPL · questão 171</div>
+          <h2 class="title">Pagando só o mínimo, quanto se deve em 3 meses?</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid2" style="margin-top:6px;">
+            <div></div>
+            <div><table class="tbl">
+  <tr><th>data</th><th>fatura</th><th>paga (20%)</th><th>saldo</th></tr>
+  <tr><td style="text-align:left;">01/03</td><td>R$ 1.000</td><td>R$ 200</td><td>R$ 800</td></tr>
+  <tr><td style="text-align:left;">01/04</td><td>800 × 1,1 = R$ 880</td><td>R$ 176</td><td>R$ 704</td></tr>
+  <tr><td style="text-align:left;">01/05</td><td>704 × 1,1 = <b>R$ 774,40</b></td><td>—</td><td>—</td></tr>
+</table></div>
+          </div>
           <div class="grid2" style="margin-top:8px;">
+            <div class="callout danger"><h4>Quem paga só o mínimo...</h4><p>Em dois meses pagou R$ 376 e <strong>ainda deve R$ 774,40</strong> — mais do que 3/4 da fatura original.</p></div>
+            <button class="reveal" onclick="toggleAnswer(this)">Por que as outras estão erradas?</button>
+<div class="answer"><p><b>R$ 600:</b> três pagamentos de R$ 200, sem juros. <b>R$ 640:</b> 1.000 − 200 − 160, sem juros. <b>R$ 722,50:</b> valor abaixo do correto. <b>R$ 874,22:</b> usou mínimo de 15%.</p></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um consumidor tem fatura de <strong>R$ 1.000</strong> em 01/03/2012. Ele paga sempre apenas o <strong>mínimo de 20% da fatura</strong>; o saldo restante recebe <strong>10% de juros</strong> ao mês. Qual será a dívida em <strong>01/05/2012</strong>? Alternativas</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R$ 600,00</li><li>R$ 640,00</li><li>R$ 722,50</li><li>R$ 774,40</li><li>R$ 874,22</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Usar com responsabilidade: João, Maria e Pedro</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid3">
+            <div class="card success"><span class="badge">Situação A · João</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 650</strong>. Já separou o dinheiro para pagar <strong>integralmente</strong>.</p></div>
+            <div class="card danger"><span class="badge">Situação B · Maria</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 2.400</strong>. Pretende pagar <strong>só o mínimo</strong> e continuar usando o cartão.</p></div>
+            <div class="card growth"><span class="badge">Situação C · Pedro</span><p style="font-size:.88rem;margin-top:8px;">Fatura de <strong>R$ 1.200</strong>. Vê que não pagará tudo: <strong>para de comprar</strong> e busca alternativa de crédito mais barata.</p></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Todos recebem <strong>R$ 2.500</strong>. Veja as três situações e responda: Qual situação apresenta o MAIOR risco de endividamento?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>A (João)</li><li>B (Maria)</li><li>C (Pedro)</li><li>Nenhuma</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">SPC, Serasa e o "nome sujo"</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid3" style="margin-top:8px;">
+            <div class="card"><strong>Termos do dia a dia</strong><p style="font-size:.88rem;margin-top:8px;">"Ter o nome sujo", "estar no SPC", "ser negativado" e, antigamente, "ser seprocado".</p></div>
+            <div class="card danger"><strong>Riscos de emprestar o cartão</strong><p style="font-size:.88rem;margin-top:8px;">Se um amigo "sujo" usa seu cartão e não paga, <strong>a dívida é sua</strong> — e quem fica negativado é você.</p></div>
+            <div class="card primary"><strong>Score de crédito</strong><p style="font-size:.88rem;margin-top:8px;">Pontuação que mede o quanto alguém é <strong>bom ou mau pagador</strong>. O que mais pesa: pagar em dia.</p></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Pelo número do CPF, órgãos como o <strong>SPC</strong> e o <strong>Serasa</strong> montam listas de quem tem <strong>dívidas em atraso</strong> com bancos e empresas. Estar nessa lista é estar com o CPF <strong>negativado</strong>. Seu amigo está com o nome sujo e pede seu cartão para comprar uma geladeira. O que você faz?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>Empresto: amigo é amigo</li><li>Não empresto: se ele não pagar, a dívida e o risco de negativação são meus</li><li>Empresto metade</li><li>Empresto e peço o cartão dele em troca</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente · ENEM · gráfico cartesiano (H20)</div>
+          <h2 class="title">O saldo devedor de quem fica 6 meses sem pagar</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid2" style="margin-top:8px;">
             <div class="wid" style="padding:8px;"><svg id="gr-svg" viewBox="0 0 400 220" style="width:100%;height:auto;display:block;"></svg></div>
             <div>
               <table class="tbl">
@@ -580,9 +559,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
   <tr><td style="text-align:left;">1</td><td>R$ 560</td><td>R$ 60</td><td>12,0%</td></tr>
   <tr><td style="text-align:left;">2</td><td>R$ 630</td><td>R$ 70</td><td>12,5%</td></tr>
 </table>
-              <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Saldo inicial, tipo de acréscimo e taxa são:</p><button class="choice mqo" data-i="0">R$ 500; constante e inferior a 10% a.m.</button><button class="choice mqo" data-i="1">R$ 560; variável e inferior a 10%</button><button class="choice mqo" data-i="2">R$ 500; variável e superior a 10% a.m.</button><button class="choice mqo" data-i="3">R$ 560; constante e superior a 10%</button><button class="choice mqo" data-i="4">R$ 500; variável e inferior a 10%</button><div class="fb"></div><div class="answer"><p><strong>R$ 500; variável e superior a 10% ao mês</strong> (alternativa C): o aumento em reais cresce (60, 70, 80...) e a taxa passa de 10% — é juro composto.</p></div></div>
+              
             </div>
-          </div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Um trabalhador demitido não paga as faturas do cartão por 6 meses, com juros e encargos incidindo. O gráfico mostra a evolução do saldo devedor: <strong>R$ 500</strong> no mês 0, ≈ <strong>R$ 560</strong> no mês 1, ≈ <strong>R$ 630</strong> no mês 2... Saldo inicial, tipo de acréscimo e taxa são:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R$ 500; constante e inferior a 10% a.m.</li><li>R$ 560; variável e inferior a 10%</li><li>R$ 500; variável e superior a 10% a.m.</li><li>R$ 560; constante e superior a 10%</li><li>R$ 500; variável e inferior a 10%</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;"><strong>R$ 774,40</strong> (alternativa D). As outras vêm de erros clássicos: ignorar os juros (A e B) ou usar 15% de mínimo (E).</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><strong>Maria</strong>: a fatura quase consome a renda, ela paga só o mínimo e ainda continua gastando. João planejou; Pedro reagiu a tempo. <em>Maria deveria parar de usar o cartão e reorganizar o orçamento antes de continuar.</em></p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Não empreste o cartão: <strong>a responsabilidade pela fatura é sua</strong>. Ajude de outras formas (orçamento, renegociação).</p></div>
+<div class="card success"><strong>4. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><strong>R$ 500; variável e superior a 10% ao mês</strong> (alternativa C): o aumento em reais cresce (60, 70, 80...) e a taxa passa de 10% — é juro composto.</p></div></div>
         </div>
       </section>
 
@@ -590,7 +582,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <h2 class="title">Três ideias para levar</h2>
           
           <div class="grid3" style="margin-top:10px;">
             <div class="card"><span class="badge">Cartão</span><p style="font-size:.85rem;margin-top:8px;">Compra agora, paga depois. Limite não é renda; parcelar não barateia; pagar o mínimo gera bola de neve.</p></div>
@@ -604,12 +596,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O limite do cartão de crédito representa:</p>
@@ -660,6 +651,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -681,7 +688,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 18</div>
+      <div class="rail-count" id="railCount">1 / 19</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1018,3 +1025,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

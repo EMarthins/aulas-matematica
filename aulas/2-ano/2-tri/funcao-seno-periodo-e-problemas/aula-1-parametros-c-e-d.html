@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 09 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Parâmetros c e d: <span style="color:var(--primary);">período e deslocamento da senóide</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">No rádio AM, a onda varia de altura (amplitude); no FM, varia a frequência, isto é, o período. Em y = a + b · sen(cx + d), o parâmetro c controla o período e d desloca a onda para a esquerda ou para a direita.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Parâmetros c e d: <span style="color:var(--primary);">período e deslocamento da senóide</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">No rádio AM, a onda varia de altura (amplitude); no FM, varia a frequência, isto é, o período. Em y = a + b · sen(cx + d), o parâmetro c controla o período e d desloca a onda para a esquerda ou para a direita.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">período = 2π ÷ |c|</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">deslocamento = −d ÷ c</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">a, b, c, d</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1.5" stroke-linecap="round"/><path d="M20 96 C50 20 80 20 110 96 C140 172 170 172 200 96 C230 20 260 20 290 96" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 60 C50 -4 80 -4 110 60 C140 124 170 124 200 60 C230 -4 260 -4 290 60" fill="none" stroke="var(--decay)" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">ondas que se repetem</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">De c e d ao gráfico completo.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Relembrar a e b</strong><div class="hint">centro e amplitude</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Parâmetro c</strong><div class="hint">quanto maior, menor o período</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Parâmetro d</strong><div class="hint">início do período deslocado</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Montar o gráfico</strong><div class="hint">os quatro parâmetros juntos</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Ler o gráfico</strong><div class="hint">descobrir a, b, c e d</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">AM e FM: amplitude e frequência</h2>
+          
+          
+          <p class="lede">No rádio <strong>AM</strong>, a mensagem altera a <strong>amplitude</strong> da onda (parâmetro <span class="tex"><i>b</i></span>). No <strong>FM</strong>, altera a <strong>frequência</strong>: a onda fica mais “apertada” ou mais “esticada”, isto é, muda o <strong>período</strong> (parâmetro <span class="tex"><i>c</i></span>).</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 330 150" style="width:100%;max-width:330px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="34" y1="124" x2="34" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="105" y1="124" x2="105" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="105" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π/2</text><line x1="176" y1="124" x2="176" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="176" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π</text><line x1="247" y1="124" x2="247" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="247" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π/2</text><line x1="318" y1="124" x2="318" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="318" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2π</text><line x1="34" y1="108" x2="318" y2="108" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="112" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−1</text><line x1="34" y1="68" x2="318" y2="68" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="34" y1="28" x2="318" y2="28" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="32" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">1</text><line x1="34" y1="68" x2="318" y2="68" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="34" y1="124" x2="34" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="34,68 35.4,65.5 36.8,63 38.3,60.5 39.7,58.1 41.1,55.6 42.5,53.3 43.9,51 45.4,48.7 46.8,46.6 48.2,44.5 49.6,42.5 51,40.6 52.5,38.8 53.9,37.2 55.3,35.6 56.7,34.2 58.1,32.9 59.6,31.8 61,30.8 62.4,30 63.8,29.3 65.2,28.7 66.7,28.3 68.1,28.1 69.5,28 70.9,28.1 72.3,28.3 73.8,28.7 75.2,29.3 76.6,30 78,30.8 79.4,31.8 80.9,32.9 82.3,34.2 83.7,35.6 85.1,37.2 86.5,38.8 88,40.6 89.4,42.5 90.8,44.5 92.2,46.6 93.6,48.7 95.1,51 96.5,53.3 97.9,55.6 99.3,58.1 100.7,60.5 102.2,63 103.6,65.5 105,68 106.4,70.5 107.8,73 109.3,75.5 110.7,77.9 112.1,80.4 113.5,82.7 114.9,85 116.4,87.3 117.8,89.4 119.2,91.5 120.6,93.5 122,95.4 123.5,97.2 124.9,98.8 126.3,100.4 127.7,101.8 129.1,103.1 130.6,104.2 132,105.2 133.4,106 134.8,106.7 136.2,107.3 137.7,107.7 139.1,107.9 140.5,108 141.9,107.9 143.3,107.7 144.8,107.3 146.2,106.7 147.6,106 149,105.2 150.4,104.2 151.9,103.1 153.3,101.8 154.7,100.4 156.1,98.8 157.5,97.2 159,95.4 160.4,93.5 161.8,91.5 163.2,89.4 164.6,87.3 166.1,85 167.5,82.7 168.9,80.4 170.3,77.9 171.7,75.5 173.2,73 174.6,70.5 176,68 177.4,65.5 178.8,63 180.3,60.5 181.7,58.1 183.1,55.6 184.5,53.3 185.9,51 187.4,48.7 188.8,46.6 190.2,44.5 191.6,42.5 193,40.6 194.5,38.8 195.9,37.2 197.3,35.6 198.7,34.2 200.1,32.9 201.6,31.8 203,30.8 204.4,30 205.8,29.3 207.2,28.7 208.7,28.3 210.1,28.1 211.5,28 212.9,28.1 214.3,28.3 215.8,28.7 217.2,29.3 218.6,30 220,30.8 221.4,31.8 222.9,32.9 224.3,34.2 225.7,35.6 227.1,37.2 228.5,38.8 230,40.6 231.4,42.5 232.8,44.5 234.2,46.6 235.6,48.7 237.1,51 238.5,53.3 239.9,55.6 241.3,58.1 242.7,60.5 244.2,63 245.6,65.5 247,68 248.4,70.5 249.8,73 251.3,75.5 252.7,77.9 254.1,80.4 255.5,82.7 256.9,85 258.4,87.3 259.8,89.4 261.2,91.5 262.6,93.5 264,95.4 265.5,97.2 266.9,98.8 268.3,100.4 269.7,101.8 271.1,103.1 272.6,104.2 274,105.2 275.4,106 276.8,106.7 278.2,107.3 279.7,107.7 281.1,107.9 282.5,108 283.9,107.9 285.3,107.7 286.8,107.3 288.2,106.7 289.6,106 291,105.2 292.4,104.2 293.9,103.1 295.3,101.8 296.7,100.4 298.1,98.8 299.5,97.2 301,95.4 302.4,93.5 303.8,91.5 305.2,89.4 306.6,87.3 308.1,85 309.5,82.7 310.9,80.4 312.3,77.9 313.7,75.5 315.2,73 316.6,70.5 318,68" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O gráfico mostra <span class="tex"><i>y</i> = sen (2<i>x</i>)</span>: em <span class="tex">[0, 2π]</span> ele faz <strong>duas</strong> ondas completas. Seu período é:</p><button class="choice mqo" data-i="0"><span class="tex">4π</span></button><button class="choice mqo" data-i="1"><span class="tex">2π</span></button><button class="choice mqo" data-i="2"><span class="tex">π</span></button><button class="choice mqo" data-i="3"><span class="tex">π ÷ 2</span></button><div class="fb"></div><div class="answer"><p>Duas ondas em <span class="tex">2π</span>: cada uma tem comprimento <span class="tex">π</span>. É a fórmula <span class="tex">2π ÷ <i>c</i> = 2π ÷ 2 = π</span>.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">AM e FM: amplitude e frequência</h2>
-          
-          <p class="lede">No rádio <strong>AM</strong>, a mensagem altera a <strong>amplitude</strong> da onda (parâmetro <span class="tex"><i>b</i></span>). No <strong>FM</strong>, altera a <strong>frequência</strong>: a onda fica mais “apertada” ou mais “esticada”, isto é, muda o <strong>período</strong> (parâmetro <span class="tex"><i>c</i></span>).</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 330 150" style="width:100%;max-width:330px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="34" y1="124" x2="34" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="105" y1="124" x2="105" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="105" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π/2</text><line x1="176" y1="124" x2="176" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="176" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π</text><line x1="247" y1="124" x2="247" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="247" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π/2</text><line x1="318" y1="124" x2="318" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="318" y="82" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2π</text><line x1="34" y1="108" x2="318" y2="108" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="112" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−1</text><line x1="34" y1="68" x2="318" y2="68" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="34" y1="28" x2="318" y2="28" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="32" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">1</text><line x1="34" y1="68" x2="318" y2="68" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="34" y1="124" x2="34" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="34,68 35.4,65.5 36.8,63 38.3,60.5 39.7,58.1 41.1,55.6 42.5,53.3 43.9,51 45.4,48.7 46.8,46.6 48.2,44.5 49.6,42.5 51,40.6 52.5,38.8 53.9,37.2 55.3,35.6 56.7,34.2 58.1,32.9 59.6,31.8 61,30.8 62.4,30 63.8,29.3 65.2,28.7 66.7,28.3 68.1,28.1 69.5,28 70.9,28.1 72.3,28.3 73.8,28.7 75.2,29.3 76.6,30 78,30.8 79.4,31.8 80.9,32.9 82.3,34.2 83.7,35.6 85.1,37.2 86.5,38.8 88,40.6 89.4,42.5 90.8,44.5 92.2,46.6 93.6,48.7 95.1,51 96.5,53.3 97.9,55.6 99.3,58.1 100.7,60.5 102.2,63 103.6,65.5 105,68 106.4,70.5 107.8,73 109.3,75.5 110.7,77.9 112.1,80.4 113.5,82.7 114.9,85 116.4,87.3 117.8,89.4 119.2,91.5 120.6,93.5 122,95.4 123.5,97.2 124.9,98.8 126.3,100.4 127.7,101.8 129.1,103.1 130.6,104.2 132,105.2 133.4,106 134.8,106.7 136.2,107.3 137.7,107.7 139.1,107.9 140.5,108 141.9,107.9 143.3,107.7 144.8,107.3 146.2,106.7 147.6,106 149,105.2 150.4,104.2 151.9,103.1 153.3,101.8 154.7,100.4 156.1,98.8 157.5,97.2 159,95.4 160.4,93.5 161.8,91.5 163.2,89.4 164.6,87.3 166.1,85 167.5,82.7 168.9,80.4 170.3,77.9 171.7,75.5 173.2,73 174.6,70.5 176,68 177.4,65.5 178.8,63 180.3,60.5 181.7,58.1 183.1,55.6 184.5,53.3 185.9,51 187.4,48.7 188.8,46.6 190.2,44.5 191.6,42.5 193,40.6 194.5,38.8 195.9,37.2 197.3,35.6 198.7,34.2 200.1,32.9 201.6,31.8 203,30.8 204.4,30 205.8,29.3 207.2,28.7 208.7,28.3 210.1,28.1 211.5,28 212.9,28.1 214.3,28.3 215.8,28.7 217.2,29.3 218.6,30 220,30.8 221.4,31.8 222.9,32.9 224.3,34.2 225.7,35.6 227.1,37.2 228.5,38.8 230,40.6 231.4,42.5 232.8,44.5 234.2,46.6 235.6,48.7 237.1,51 238.5,53.3 239.9,55.6 241.3,58.1 242.7,60.5 244.2,63 245.6,65.5 247,68 248.4,70.5 249.8,73 251.3,75.5 252.7,77.9 254.1,80.4 255.5,82.7 256.9,85 258.4,87.3 259.8,89.4 261.2,91.5 262.6,93.5 264,95.4 265.5,97.2 266.9,98.8 268.3,100.4 269.7,101.8 271.1,103.1 272.6,104.2 274,105.2 275.4,106 276.8,106.7 278.2,107.3 279.7,107.7 281.1,107.9 282.5,108 283.9,107.9 285.3,107.7 286.8,107.3 288.2,106.7 289.6,106 291,105.2 292.4,104.2 293.9,103.1 295.3,101.8 296.7,100.4 298.1,98.8 299.5,97.2 301,95.4 302.4,93.5 303.8,91.5 305.2,89.4 306.6,87.3 308.1,85 309.5,82.7 310.9,80.4 312.3,77.9 313.7,75.5 315.2,73 316.6,70.5 318,68" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O gráfico mostra <span class="tex"><i>y</i> = sen (2<i>x</i>)</span>: em <span class="tex">[0, 2π]</span> ele faz <strong>duas</strong> ondas completas. Seu período é:</p><button class="choice mqo" data-i="0"><span class="tex">4π</span></button><button class="choice mqo" data-i="1"><span class="tex">2π</span></button><button class="choice mqo" data-i="2"><span class="tex">π</span></button><button class="choice mqo" data-i="3"><span class="tex">π ÷ 2</span></button><div class="fb"></div><div class="answer"><p>Duas ondas em <span class="tex">2π</span>: cada uma tem comprimento <span class="tex">π</span>. É a fórmula <span class="tex">2π ÷ <i>c</i> = 2π ÷ 2 = π</span>.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -386,7 +380,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · parâmetro d</div>
@@ -406,112 +399,119 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Período de uma função</h2>
           
+          
           <p class="lede">Qual o período de <span class="tex"><i>f</i>(<i>x</i>) = 3 · sen (4<i>x</i>)</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Parâmetros</strong><div class="hint"><span class="tex"><i>a</i> = 0</span>, <span class="tex"><i>b</i> = 3</span>, <span class="tex"><i>c</i> = 4</span> e <span class="tex"><i>d</i> = 0</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>p</i> = <span class="fr"><span>2π</span><span>4</span></span> = <span class="fr"><span>π</span><span>2</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O período é <span class="tex"> <span class="fr"><span>π</span><span>2</span></span></span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Parâmetros</strong><div class="hint"><span class="tex"><i>a</i> = 0</span>, <span class="tex"><i>b</i> = 3</span>, <span class="tex"><i>c</i> = 4</span> e <span class="tex"><i>d</i> = 0</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>p</i> = <span class="fr"><span>2π</span><span>4</span></span> = <span class="fr"><span>π</span><span>2</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O período é <span class="tex"> <span class="fr"><span>π</span><span>2</span></span></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Com c fracionário</h2>
           
+          
           <p class="lede">Determine o período e a imagem de <span class="tex"><i>y</i> = 2 · sen (<span class="fr"><span><i>x</i></span><span>4</span></span>)</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Parâmetro c</strong><div class="hint"><span class="tex"><i>c</i> = <span class="fr"><span>1</span><span>4</span></span></span> ⇒ período <span class="tex"><i>p</i> = 2π ÷ <span class="fr"><span>1</span><span>4</span></span> = 8π</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>a</i> = 0</span> e <span class="tex">|<i>b</i>| = 2</span>: <span class="tex">[−2, 2]</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Período <span class="tex">8π</span> e imagem <span class="tex">[−2, 2]</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Parâmetro c</strong><div class="hint"><span class="tex"><i>c</i> = <span class="fr"><span>1</span><span>4</span></span></span> ⇒ período <span class="tex"><i>p</i> = 2π ÷ <span class="fr"><span>1</span><span>4</span></span> = 8π</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>a</i> = 0</span> e <span class="tex">|<i>b</i>| = 2</span>: <span class="tex">[−2, 2]</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Período <span class="tex">8π</span> e imagem <span class="tex">[−2, 2]</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Deslocamento</h2>
           
+          
           <p class="lede">Onde começa um período de <span class="tex"><i>y</i> = sen (<i>x</i> + <span class="fr"><span>π</span><span>3</span></span>)</span> e qual é o período?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Resolver cx + d = 0</strong><div class="hint"><span class="tex"><i>x</i> + <span class="fr"><span>π</span><span>3</span></span> = 0</span> ⇒ <span class="tex"><i>x</i> = −<span class="fr"><span>π</span><span>3</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>c</i> = 1</span> ⇒ <span class="tex">2π</span>: o período vai de <span class="tex">−<span class="fr"><span>π</span><span>3</span></span></span> a <span class="tex"> <span class="fr"><span>5π</span><span>3</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O período começa em <span class="tex">−<span class="fr"><span>π</span><span>3</span></span></span> (gráfico deslocado para a esquerda) e vale <span class="tex">2π</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Resolver cx + d = 0</strong><div class="hint"><span class="tex"><i>x</i> + <span class="fr"><span>π</span><span>3</span></span> = 0</span> ⇒ <span class="tex"><i>x</i> = −<span class="fr"><span>π</span><span>3</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>c</i> = 1</span> ⇒ <span class="tex">2π</span>: o período vai de <span class="tex">−<span class="fr"><span>π</span><span>3</span></span></span> a <span class="tex"> <span class="fr"><span>5π</span><span>3</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O período começa em <span class="tex">−<span class="fr"><span>π</span><span>3</span></span></span> (gráfico deslocado para a esquerda) e vale <span class="tex">2π</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Lei completa</h2>
           
+          
           <p class="lede">Dê o período, o início do período e a imagem de <span class="tex"><i>y</i> = 1 + 2 · sen (2<i>x</i> − <span class="fr"><span>π</span><span>2</span></span>)</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>p</i> = 2π ÷ 2 = π</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Início</strong><div class="hint"><span class="tex">2<i>x</i> − <span class="fr"><span>π</span><span>2</span></span> = 0</span> ⇒ <span class="tex"><i>x</i> = <span class="fr"><span>π</span><span>4</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>a</i> = 1</span>, <span class="tex">|<i>b</i>| = 2</span>: <span class="tex">[−1, 3]</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Período <span class="tex">π</span>, início em <span class="tex"> <span class="fr"><span>π</span><span>4</span></span></span> e imagem <span class="tex">[−1, 3]</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>p</i> = 2π ÷ 2 = π</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Início</strong><div class="hint"><span class="tex">2<i>x</i> − <span class="fr"><span>π</span><span>2</span></span> = 0</span> ⇒ <span class="tex"><i>x</i> = <span class="fr"><span>π</span><span>4</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>a</i> = 1</span>, <span class="tex">|<i>b</i>| = 2</span>: <span class="tex">[−1, 3]</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Período <span class="tex">π</span>, início em <span class="tex"> <span class="fr"><span>π</span><span>4</span></span></span> e imagem <span class="tex">[−1, 3]</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Período</h2>
-          
-          <p class="lede">O período de <span class="tex"><i>y</i> = sen (3<i>x</i>)</span> é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"> <span class="fr"><span>π</span><span>3</span></span></span></button><button class="choice mqo" data-i="1"><span class="tex"> <span class="fr"><span>2π</span><span>3</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex">π</span></button><button class="choice mqo" data-i="3"><span class="tex">6π</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>p</i> = 2π ÷ 3 = <span class="fr"><span>2π</span><span>3</span></span></span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. O período de <span class="tex"><i>y</i> = sen (3<i>x</i>)</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"> <span class="fr"><span>π</span><span>3</span></span></span></li><li><span class="tex"> <span class="fr"><span>2π</span><span>3</span></span></span></li><li><span class="tex">π</span></li><li><span class="tex">6π</span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Em <span class="tex">[0, 2π]</span>, o gráfico de <span class="tex"><i>y</i> = sen (4<i>x</i>)</span> completa quantas ondas?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">1</span></li><li><span class="tex">2</span></li><li><span class="tex">4</span></li><li><span class="tex">8</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Mais períodos</h2>
-          
-          <p class="lede">Em <span class="tex">[0, 2π]</span>, o gráfico de <span class="tex"><i>y</i> = sen (4<i>x</i>)</span> completa quantas ondas?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">2</span></button><button class="choice mqo" data-i="2"><span class="tex">4</span></button><button class="choice mqo" data-i="3"><span class="tex">8</span></button><div class="fb"></div><div class="answer"><p>Período <span class="tex">2π ÷ 4 = π ÷ 2</span>, então cabem <span class="tex">4</span> ondas em <span class="tex">2π</span>. <strong>Alternativa C.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Início do período</h2>
-          
-          <p class="lede">O período de <span class="tex"><i>y</i> = sen (2<i>x</i> − π)</span> começa em:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><i>x</i> = 0</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>x</i> = <span class="fr"><span>π</span><span>2</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><i>x</i> = π</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>x</i> = 2π</span></button><div class="fb"></div><div class="answer"><p><span class="tex">2<i>x</i> − π = 0</span> ⇒ <span class="tex"><i>x</i> = π ÷ 2</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. O período de <span class="tex"><i>y</i> = sen (2<i>x</i> − π)</span> começa em:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"><i>x</i> = 0</span></li><li><span class="tex"><i>x</i> = <span class="fr"><span>π</span><span>2</span></span></span></li><li><span class="tex"><i>x</i> = π</span></li><li><span class="tex"><i>x</i> = 2π</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Frequência</h2>
-          
-          <p class="lede">Um sinal é dado por <span class="tex"><i>y</i> = 5 · sen (6π<i>t</i>)</span>, com <span class="tex"><i>t</i></span> em segundos. O período do sinal, em segundos, é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"> <span class="fr"><span>1</span><span>6</span></span></span></button><button class="choice mqo" data-i="1"><span class="tex"> <span class="fr"><span>1</span><span>3</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"> <span class="fr"><span>1</span><span>2</span></span></span></button><button class="choice mqo" data-i="3"><span class="tex">1</span></button><button class="choice mqo" data-i="4"><span class="tex">2</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>p</i> = 2π ÷ 6π = 1 ÷ 3</span> s. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Um sinal é dado por <span class="tex"><i>y</i> = 5 · sen (6π<i>t</i>)</span>, com <span class="tex"><i>t</i></span> em segundos. O período do sinal, em segundos, é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"> <span class="fr"><span>1</span><span>6</span></span></span></li><li><span class="tex"> <span class="fr"><span>1</span><span>3</span></span></span></li><li><span class="tex"> <span class="fr"><span>1</span><span>2</span></span></span></li><li><span class="tex">1</span></li><li><span class="tex">2</span></li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>p</i> = 2π ÷ 3 = <span class="fr"><span>2π</span><span>3</span></span></span>.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Período <span class="tex">2π ÷ 4 = π ÷ 2</span>, então cabem <span class="tex">4</span> ondas em <span class="tex">2π</span>.</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">2<i>x</i> − π = 0</span> ⇒ <span class="tex"><i>x</i> = π ÷ 2</span>.</p></div>
+<div class="card success"><strong>4. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>p</i> = 2π ÷ 6π = 1 ÷ 3</span> s.</p></div></div>
         </div>
       </section>
 
@@ -530,12 +530,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Período</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>p</i> = <span class="fr"><span>2π</span><span>|<i>c</i>|</span></span></span>.</p></div>
+            <div class="card"><span class="badge">Deslocamento</span><p style="font-size:.85rem;margin-top:8px;">O período começa em <span class="tex"><i>x</i> = −<i>d</i> ÷ <i>c</i></span>.</p></div>
+            <div class="card"><span class="badge">Função completa</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>a</i></span>: centro; <span class="tex"><i>b</i></span>: amplitude; <span class="tex"><i>c</i></span>: período; <span class="tex"><i>d</i></span>: deslocamento.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Já conhecemos todos os parâmetros. Próxima aula: aplicá-los em problemas de roda-gigante, luz solar e potência.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O período de <span class="tex"><i>y</i> = sen (<i>x</i> ÷ 2)</span> é:</p>
@@ -577,23 +593,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Período</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>p</i> = <span class="fr"><span>2π</span><span>|<i>c</i>|</span></span></span>.</p></div>
-            <div class="card"><span class="badge">Deslocamento</span><p style="font-size:.85rem;margin-top:8px;">O período começa em <span class="tex"><i>x</i> = −<i>d</i> ÷ <i>c</i></span>.</p></div>
-            <div class="card"><span class="badge">Função completa</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>a</i></span>: centro; <span class="tex"><i>b</i></span>: amplitude; <span class="tex"><i>c</i></span>: período; <span class="tex"><i>d</i></span>: deslocamento.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Já conhecemos todos os parâmetros. Próxima aula: aplicá-los em problemas de roda-gigante, luz solar e potência.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -613,7 +628,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1044,3 +1059,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

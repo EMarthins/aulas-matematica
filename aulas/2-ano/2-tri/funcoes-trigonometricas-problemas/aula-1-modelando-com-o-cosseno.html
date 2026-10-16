@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 11 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Modelando com o cosseno: <span style="color:var(--primary);">pêndulo, pressão e batimentos</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">O pêndulo de um relógio antigo balança sempre no mesmo ritmo: o ângulo que ele faz com a vertical em função do tempo é uma cossenóide. Aprender a ler seus coeficientes é aprender a modelar o mundo.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Modelando com o cosseno: <span style="color:var(--primary);">pêndulo, pressão e batimentos</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">O pêndulo de um relógio antigo balança sempre no mesmo ritmo: o ângulo que ele faz com a vertical em função do tempo é uma cossenóide. Aprender a ler seus coeficientes é aprender a modelar o mundo.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">P(t) = A + B · cos(kt)</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">centro, amplitude, período</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">seno ≡ cosseno</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1.5" stroke-linecap="round"/><path d="M20 96 C50 20 80 20 110 96 C140 172 170 172 200 96 C230 20 260 20 290 96" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 60 C50 -4 80 -4 110 60 C140 124 170 124 200 60 C230 -4 260 -4 290 60" fill="none" stroke="var(--decay)" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">ondas que se repetem</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do gráfico ao modelo.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Ler o gráfico</strong><div class="hint">extremos, centro e período</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>A, B e k</strong><div class="hint">o que cada constante controla</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Seno ou cosseno</strong><div class="hint">a mesma curva, deslocada π/2</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Unidades</strong><div class="hint">batimentos por minuto e segundos</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Montar a lei</strong><div class="hint">com máximo, mínimo e frequência</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O pêndulo do relógio</h2>
+          
+          
+          <p class="lede">Um pêndulo oscila entre <span class="tex">+30°</span> e <span class="tex">−30°</span> em relação à vertical e leva <span class="tex">3</span> s para ir e voltar ao ponto de partida. Quando ele parte do extremo, a cossenóide é o modelo natural: <strong>amplitude <span class="tex">30°</span></strong>, <strong>período <span class="tex">3</span> s</strong>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 360 170" style="width:100%;max-width:360px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="144" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="114" y1="144" x2="114" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="114" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1.5</text><line x1="192" y1="144" x2="192" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="192" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="270" y1="144" x2="270" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="270" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4.5</text><line x1="348" y1="144" x2="348" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="348" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text><line x1="36" y1="133" x2="348" y2="133" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="137" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−30</text><line x1="36" y1="78" x2="348" y2="78" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="23" x2="348" y2="23" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="27" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">30</text><line x1="36" y1="78" x2="348" y2="78" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="144" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="346" y="72" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,23 38.6,23.3 41.2,24.2 43.8,25.7 46.4,27.8 49,30.4 51.6,33.5 54.2,37.1 56.8,41.2 59.4,45.7 62,50.5 64.6,55.6 67.2,61 69.8,66.6 72.4,72.3 75,78 77.6,83.7 80.2,89.4 82.8,95 85.4,100.4 88,105.5 90.6,110.3 93.2,114.8 95.8,118.9 98.4,122.5 101,125.6 103.6,128.2 106.2,130.3 108.8,131.8 111.4,132.7 114,133 116.6,132.7 119.2,131.8 121.8,130.3 124.4,128.2 127,125.6 129.6,122.5 132.2,118.9 134.8,114.8 137.4,110.3 140,105.5 142.6,100.4 145.2,95 147.8,89.4 150.4,83.7 153,78 155.6,72.3 158.2,66.6 160.8,61 163.4,55.6 166,50.5 168.6,45.7 171.2,41.2 173.8,37.1 176.4,33.5 179,30.4 181.6,27.8 184.2,25.7 186.8,24.2 189.4,23.3 192,23 194.6,23.3 197.2,24.2 199.8,25.7 202.4,27.8 205,30.4 207.6,33.5 210.2,37.1 212.8,41.2 215.4,45.7 218,50.5 220.6,55.6 223.2,61 225.8,66.6 228.4,72.3 231,78 233.6,83.7 236.2,89.4 238.8,95 241.4,100.4 244,105.5 246.6,110.3 249.2,114.8 251.8,118.9 254.4,122.5 257,125.6 259.6,128.2 262.2,130.3 264.8,131.8 267.4,132.7 270,133 272.6,132.7 275.2,131.8 277.8,130.3 280.4,128.2 283,125.6 285.6,122.5 288.2,118.9 290.8,114.8 293.4,110.3 296,105.5 298.6,100.4 301.2,95 303.8,89.4 306.4,83.7 309,78 311.6,72.3 314.2,66.6 316.8,61 319.4,55.6 322,50.5 324.6,45.7 327.2,41.2 329.8,37.1 332.4,33.5 335,30.4 337.6,27.8 340.2,25.7 342.8,24.2 345.4,23.3 348,23" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Se o ângulo do pêndulo é <span class="tex">θ(<i>t</i>) = 30 · cos (<span class="fr"><span>2π<i>t</i></span><span>3</span></span>)</span>, qual é <span class="tex">θ(0)</span>?</p><button class="choice mqo" data-i="0"><span class="tex">0°</span></button><button class="choice mqo" data-i="1"><span class="tex">15°</span></button><button class="choice mqo" data-i="2"><span class="tex">30°</span></button><button class="choice mqo" data-i="3"><span class="tex">−30°</span></button><div class="fb"></div><div class="answer"><p><span class="tex">cos 0 = 1</span>: <span class="tex">θ(0) = 30°</span>. O pêndulo parte do extremo direito.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O pêndulo do relógio</h2>
-          
-          <p class="lede">Um pêndulo oscila entre <span class="tex">+30°</span> e <span class="tex">−30°</span> em relação à vertical e leva <span class="tex">3</span> s para ir e voltar ao ponto de partida. Quando ele parte do extremo, a cossenóide é o modelo natural: <strong>amplitude <span class="tex">30°</span></strong>, <strong>período <span class="tex">3</span> s</strong>.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 360 170" style="width:100%;max-width:360px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="144" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="114" y1="144" x2="114" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="114" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">1.5</text><line x1="192" y1="144" x2="192" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="192" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><line x1="270" y1="144" x2="270" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="270" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4.5</text><line x1="348" y1="144" x2="348" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="348" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text><line x1="36" y1="133" x2="348" y2="133" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="137" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−30</text><line x1="36" y1="78" x2="348" y2="78" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="23" x2="348" y2="23" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="27" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">30</text><line x1="36" y1="78" x2="348" y2="78" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="144" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="346" y="72" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,23 38.6,23.3 41.2,24.2 43.8,25.7 46.4,27.8 49,30.4 51.6,33.5 54.2,37.1 56.8,41.2 59.4,45.7 62,50.5 64.6,55.6 67.2,61 69.8,66.6 72.4,72.3 75,78 77.6,83.7 80.2,89.4 82.8,95 85.4,100.4 88,105.5 90.6,110.3 93.2,114.8 95.8,118.9 98.4,122.5 101,125.6 103.6,128.2 106.2,130.3 108.8,131.8 111.4,132.7 114,133 116.6,132.7 119.2,131.8 121.8,130.3 124.4,128.2 127,125.6 129.6,122.5 132.2,118.9 134.8,114.8 137.4,110.3 140,105.5 142.6,100.4 145.2,95 147.8,89.4 150.4,83.7 153,78 155.6,72.3 158.2,66.6 160.8,61 163.4,55.6 166,50.5 168.6,45.7 171.2,41.2 173.8,37.1 176.4,33.5 179,30.4 181.6,27.8 184.2,25.7 186.8,24.2 189.4,23.3 192,23 194.6,23.3 197.2,24.2 199.8,25.7 202.4,27.8 205,30.4 207.6,33.5 210.2,37.1 212.8,41.2 215.4,45.7 218,50.5 220.6,55.6 223.2,61 225.8,66.6 228.4,72.3 231,78 233.6,83.7 236.2,89.4 238.8,95 241.4,100.4 244,105.5 246.6,110.3 249.2,114.8 251.8,118.9 254.4,122.5 257,125.6 259.6,128.2 262.2,130.3 264.8,131.8 267.4,132.7 270,133 272.6,132.7 275.2,131.8 277.8,130.3 280.4,128.2 283,125.6 285.6,122.5 288.2,118.9 290.8,114.8 293.4,110.3 296,105.5 298.6,100.4 301.2,95 303.8,89.4 306.4,83.7 309,78 311.6,72.3 314.2,66.6 316.8,61 319.4,55.6 322,50.5 324.6,45.7 327.2,41.2 329.8,37.1 332.4,33.5 335,30.4 337.6,27.8 340.2,25.7 342.8,24.2 345.4,23.3 348,23" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Se o ângulo do pêndulo é <span class="tex">θ(<i>t</i>) = 30 · cos (<span class="fr"><span>2π<i>t</i></span><span>3</span></span>)</span>, qual é <span class="tex">θ(0)</span>?</p><button class="choice mqo" data-i="0"><span class="tex">0°</span></button><button class="choice mqo" data-i="1"><span class="tex">15°</span></button><button class="choice mqo" data-i="2"><span class="tex">30°</span></button><button class="choice mqo" data-i="3"><span class="tex">−30°</span></button><div class="fb"></div><div class="answer"><p><span class="tex">cos 0 = 1</span>: <span class="tex">θ(0) = 30°</span>. O pêndulo parte do extremo direito.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -387,7 +381,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resumo visual</div>
@@ -405,101 +398,109 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Pressão arterial</h2>
           
+          
           <p class="lede">A pressão arterial de uma pessoa segue <span class="tex"><i>P</i>(<i>t</i>) = <i>A</i> + <i>B</i> · cos (<i>kt</i>)</span>, com <span class="tex"><i>t</i></span> em segundos. Pressão mínima <span class="tex">70</span>, máxima <span class="tex">110</span> e <span class="tex">75</span> batimentos por minuto. Determine <span class="tex"><i>A</i></span>, <span class="tex"><i>B</i></span> e <span class="tex"><i>k</i></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Centro</strong><div class="hint"><span class="tex"><i>A</i> = (110 + 70) ÷ 2 = 90</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Amplitude</strong><div class="hint"><span class="tex"><i>B</i> = 110 − 90 = 20</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Período</strong><div class="hint"><span class="tex">75</span> batimentos em <span class="tex">60</span> s ⇒ <span class="tex"><i>T</i> = 60 ÷ 75 = 0,8</span> s.</div></div></div>
-            <div class="step-row"><span class="badge">4</span><div><strong>Parâmetro k</strong><div class="hint"><span class="tex"><i>k</i> = 2π ÷ 0,8 = <span class="fr"><span>5π</span><span>2</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>P</i>(<i>t</i>) = 90 + 20 · cos (<span class="fr"><span>5π<i>t</i></span><span>2</span></span>)</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Centro</strong><div class="hint"><span class="tex"><i>A</i> = (110 + 70) ÷ 2 = 90</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Amplitude</strong><div class="hint"><span class="tex"><i>B</i> = 110 − 90 = 20</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Período</strong><div class="hint"><span class="tex">75</span> batimentos em <span class="tex">60</span> s ⇒ <span class="tex"><i>T</i> = 60 ÷ 75 = 0,8</span> s.</div></div></div>
+            <div class="step-row rv"><span class="badge">4</span><div><strong>Parâmetro k</strong><div class="hint"><span class="tex"><i>k</i> = 2π ÷ 0,8 = <span class="fr"><span>5π</span><span>2</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>P</i>(<i>t</i>) = 90 + 20 · cos (<span class="fr"><span>5π<i>t</i></span><span>2</span></span>)</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Escolher o modelo</h2>
           
+          
           <p class="lede">Um fenômeno parte do máximo <span class="tex">8</span>, desce até o mínimo <span class="tex">2</span> e volta em <span class="tex">5</span> s. Escreva uma função cosseno para ele.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Centro e amplitude</strong><div class="hint"><span class="tex"><i>A</i> = (8 + 2) ÷ 2 = 5</span>; <span class="tex"><i>B</i> = 8 − 5 = 3</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>T</i> = 5</span> ⇒ <span class="tex"><i>k</i> = <span class="fr"><span>2π</span><span>5</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>y</i>(<i>t</i>) = 5 + 3 · cos (<span class="fr"><span>2π<i>t</i></span><span>5</span></span>)</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Centro e amplitude</strong><div class="hint"><span class="tex"><i>A</i> = (8 + 2) ÷ 2 = 5</span>; <span class="tex"><i>B</i> = 8 − 5 = 3</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Período</strong><div class="hint"><span class="tex"><i>T</i> = 5</span> ⇒ <span class="tex"><i>k</i> = <span class="fr"><span>2π</span><span>5</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>y</i>(<i>t</i>) = 5 + 3 · cos (<span class="fr"><span>2π<i>t</i></span><span>5</span></span>)</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Do seno ao cosseno</h2>
           
+          
           <p class="lede">Escreva <span class="tex"><i>y</i> = 3 · sen (<i>x</i> + <span class="fr"><span>π</span><span>2</span></span>)</span> usando só cosseno.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Identidade</strong><div class="hint"><span class="tex">sen (<i>x</i> + <span class="fr"><span>π</span><span>2</span></span>) = cos <i>x</i></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Substituir</strong><div class="hint"><span class="tex"><i>y</i> = 3 · cos <i>x</i></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>y</i> = 3 · cos <i>x</i></span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Identidade</strong><div class="hint"><span class="tex">sen (<i>x</i> + <span class="fr"><span>π</span><span>2</span></span>) = cos <i>x</i></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Substituir</strong><div class="hint"><span class="tex"><i>y</i> = 3 · cos <i>x</i></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>y</i> = 3 · cos <i>x</i></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Ritmo do pêndulo</h2>
           
+          
           <p class="lede">Com <span class="tex">θ(<i>t</i>) = 30 · cos (<span class="fr"><span>2π<i>t</i></span><span>3</span></span>)</span>, em que instantes (de <span class="tex">0</span> a <span class="tex">3</span> s) o pêndulo passa pela vertical (<span class="tex">θ = 0</span>)?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Equação</strong><div class="hint"><span class="tex">cos (<span class="fr"><span>2π<i>t</i></span><span>3</span></span>) = 0</span> ⇒ <span class="tex"> <span class="fr"><span>2π<i>t</i></span><span>3</span></span> = <span class="fr"><span>π</span><span>2</span></span></span> ou <span class="tex"> <span class="fr"><span>3π</span><span>2</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex"><i>t</i> = 0,75</span> s ou <span class="tex"><i>t</i> = 2,25</span> s.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Passa pela vertical em <span class="tex"><i>t</i> = 0,75</span> s e <span class="tex"><i>t</i> = 2,25</span> s.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Equação</strong><div class="hint"><span class="tex">cos (<span class="fr"><span>2π<i>t</i></span><span>3</span></span>) = 0</span> ⇒ <span class="tex"> <span class="fr"><span>2π<i>t</i></span><span>3</span></span> = <span class="fr"><span>π</span><span>2</span></span></span> ou <span class="tex"> <span class="fr"><span>3π</span><span>2</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex"><i>t</i> = 0,75</span> s ou <span class="tex"><i>t</i> = 2,25</span> s.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Passa pela vertical em <span class="tex"><i>t</i> = 0,75</span> s e <span class="tex"><i>t</i> = 2,25</span> s.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Período</h2>
-          
-          <p class="lede">A função <span class="tex"><i>f</i>(<i>x</i>) = 2 − 3 · cos (<span class="fr"><span><i>x</i></span><span>5</span></span>)</span> tem período:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">2π</span></button><button class="choice mqo" data-i="1"><span class="tex">5π</span></button><button class="choice mqo" data-i="2"><span class="tex">10π</span></button><button class="choice mqo" data-i="3"><span class="tex"> <span class="fr"><span>2π</span><span>5</span></span></span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>c</i> = <span class="fr"><span>1</span><span>5</span></span></span> ⇒ <span class="tex"><i>p</i> = 2π ÷ <span class="fr"><span>1</span><span>5</span></span> = 10π</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. A função <span class="tex"><i>f</i>(<i>x</i>) = 2 − 3 · cos (<span class="fr"><span><i>x</i></span><span>5</span></span>)</span> tem período:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">2π</span></li><li><span class="tex">5π</span></li><li><span class="tex">10π</span></li><li><span class="tex"> <span class="fr"><span>2π</span><span>5</span></span></span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. O gráfico de <span class="tex"><i>f</i>(<i>x</i>) = <i>a</i> + <i>b</i> · cos <i>x</i></span>, com <span class="tex"><i>b</i> &gt; 0</span>, tem máximo <span class="tex">5</span> e mínimo <span class="tex">1</span>. Os valores de <span class="tex"><i>a</i></span> e <span class="tex"><i>b</i></span> são:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"><i>a</i> = 2</span> e <span class="tex"><i>b</i> = 3</span></li><li><span class="tex"><i>a</i> = 3</span> e <span class="tex"><i>b</i> = 2</span></li><li><span class="tex"><i>a</i> = 1</span> e <span class="tex"><i>b</i> = 4</span></li><li><span class="tex"><i>a</i> = 4</span> e <span class="tex"><i>b</i> = 1</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Máximo e mínimo</h2>
-          
-          <p class="lede">O gráfico de <span class="tex"><i>f</i>(<i>x</i>) = <i>a</i> + <i>b</i> · cos <i>x</i></span>, com <span class="tex"><i>b</i> &gt; 0</span>, tem máximo <span class="tex">5</span> e mínimo <span class="tex">1</span>. Os valores de <span class="tex"><i>a</i></span> e <span class="tex"><i>b</i></span> são:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><i>a</i> = 2</span> e <span class="tex"><i>b</i> = 3</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>a</i> = 3</span> e <span class="tex"><i>b</i> = 2</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>a</i> = 1</span> e <span class="tex"><i>b</i> = 4</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>a</i> = 4</span> e <span class="tex"><i>b</i> = 1</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>a</i> = (5 + 1) ÷ 2 = 3</span> e <span class="tex"><i>b</i> = 5 − 3 = 2</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Batimentos</h2>
-          
-          <p class="lede">Um modelo da pressão é <span class="tex"><i>P</i>(<i>t</i>) = 80 + 40 · cos (<i>kt</i>)</span>, com <span class="tex"><i>t</i></span> em segundos. Se a pessoa tem <span class="tex">60</span> batimentos por minuto, o valor de <span class="tex"><i>k</i></span> é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"> <span class="fr"><span>π</span><span>2</span></span></span></button><button class="choice mqo" data-i="1"><span class="tex">π</span></button><button class="choice mqo" data-i="2"><span class="tex">2π</span></button><button class="choice mqo" data-i="3"><span class="tex">3π</span></button><button class="choice mqo" data-i="4"><span class="tex">60π</span></button><div class="fb"></div><div class="answer"><p><span class="tex">60</span> batimentos por minuto = <span class="tex">1</span> por segundo: período <span class="tex">1</span> s e <span class="tex"><i>k</i> = 2π ÷ 1 = 2π</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um modelo da pressão é <span class="tex"><i>P</i>(<i>t</i>) = 80 + 40 · cos (<i>kt</i>)</span>, com <span class="tex"><i>t</i></span> em segundos. Se a pessoa tem <span class="tex">60</span> batimentos por minuto, o valor de <span class="tex"><i>k</i></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"> <span class="fr"><span>π</span><span>2</span></span></span></li><li><span class="tex">π</span></li><li><span class="tex">2π</span></li><li><span class="tex">3π</span></li><li><span class="tex">60π</span></li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>c</i> = <span class="fr"><span>1</span><span>5</span></span></span> ⇒ <span class="tex"><i>p</i> = 2π ÷ <span class="fr"><span>1</span><span>5</span></span> = 10π</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>a</i> = (5 + 1) ÷ 2 = 3</span> e <span class="tex"><i>b</i> = 5 − 3 = 2</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">60</span> batimentos por minuto = <span class="tex">1</span> por segundo: período <span class="tex">1</span> s e <span class="tex"><i>k</i> = 2π ÷ 1 = 2π</span>.</p></div></div>
         </div>
       </section>
 
@@ -518,12 +519,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Receita</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>A</i> = <span class="fr"><span><i>m</i>á<i>x</i> + <i>m</i>í<i>n</i></span><span>2</span></span></span>, <span class="tex"><i>B</i> = <span class="fr"><span><i>m</i>á<i>x</i> − <i>m</i>í<i>n</i></span><span>2</span></span></span>, <span class="tex"><i>k</i> = <span class="fr"><span>2π</span><span><i>T</i></span></span></span>.</p></div>
+            <div class="card"><span class="badge">Unidades</span><p style="font-size:.85rem;margin-top:8px;">Converta batimentos por minuto em período em segundos: <span class="tex"><i>T</i> = 60 ÷ <i>f</i></span>.</p></div>
+            <div class="card"><span class="badge">Seno ou cosseno</span><p style="font-size:.85rem;margin-top:8px;">A mesma curva, deslocada em <span class="tex">π ÷ 2</span>.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Montar o modelo a partir dos dados é a habilidade-chave. Próxima aula: máximos e mínimos em marés, batimentos e luz.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Em <span class="tex"><i>P</i>(<i>t</i>) = <i>A</i> + <i>B</i> · cos (<i>kt</i>)</span>, o centro da onda é:</p>
@@ -565,23 +582,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Receita</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>A</i> = <span class="fr"><span><i>m</i>á<i>x</i> + <i>m</i>í<i>n</i></span><span>2</span></span></span>, <span class="tex"><i>B</i> = <span class="fr"><span><i>m</i>á<i>x</i> − <i>m</i>í<i>n</i></span><span>2</span></span></span>, <span class="tex"><i>k</i> = <span class="fr"><span>2π</span><span><i>T</i></span></span></span>.</p></div>
-            <div class="card"><span class="badge">Unidades</span><p style="font-size:.85rem;margin-top:8px;">Converta batimentos por minuto em período em segundos: <span class="tex"><i>T</i> = 60 ÷ <i>f</i></span>.</p></div>
-            <div class="card"><span class="badge">Seno ou cosseno</span><p style="font-size:.85rem;margin-top:8px;">A mesma curva, deslocada em <span class="tex">π ÷ 2</span>.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Montar o modelo a partir dos dados é a habilidade-chave. Próxima aula: máximos e mínimos em marés, batimentos e luz.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -601,7 +617,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1031,3 +1047,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

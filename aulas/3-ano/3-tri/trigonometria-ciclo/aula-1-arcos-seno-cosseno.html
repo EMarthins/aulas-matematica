@@ -268,6 +268,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-10px;bottom:0px;width:min(56%,520px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -282,55 +284,50 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <text x="524" y="112" font-family="JetBrains Mono" font-size="16" fill="var(--ink-faint)">θ</text>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3 · Parte 1 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2rem,5.2vw,3.6rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:17ch;">O <span style="color:var(--primary);">ciclo trigonométrico</span>: arcos, seno e cosseno</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Da medida de um arco em graus e radianos até localizar seno e cosseno como coordenadas de um ponto que gira ao redor da circunferência.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">O <span style="color:var(--primary);">ciclo trigonométrico</span>: arcos, seno e cosseno</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Da medida de um arco em graus e radianos até localizar seno e cosseno como coordenadas de um ponto que gira ao redor da circunferência.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 93–96</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">sen θ = y</span>
             <span class="badge" style="color:var(--decay-ink);background:var(--decay-soft);border-color:transparent;">cos θ = x</span>
             <span class="badge">H20 · H6</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da régua até o ciclo completo: arcos, o círculo trigonométrico e as duas primeiras coordenadas do movimento circular.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l6 3"/></svg>
-              <div><strong>Arcos de uma circunferência</strong><div class="hint">medir em graus ou em radianos</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M4 4l4 4M16 16l4 4"/></svg>
-              <div><strong>Comprimento de arco e circunferência</strong><div class="hint">C = 2πr e s = α·r</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">03</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M4 12h16M12 4v16"/></svg>
-              <div><strong>Circunferência trigonométrica e arcos côngruos</strong><div class="hint">quadrantes e infinitas voltas com a mesma extremidade</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">04</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-16 12-16 16 0"/></svg>
-              <div><strong>Seno de um arco</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">a coordenada y de um ponto no ciclo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">05</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c4-14 16-14 16 0"/></svg>
-              <div><strong>Cosseno de um arco e sinais por quadrante</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">a coordenada x — e quando cada um é + ou −</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1.5" stroke-linecap="round"/><path d="M20 96 C50 20 80 20 110 96 C140 172 170 172 200 96 C230 20 260 20 290 96" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 60 C50 -4 80 -4 110 60 C140 124 170 124 200 60 C230 -4 260 -4 290 60" fill="none" stroke="var(--decay)" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">ondas que se repetem</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O tempo não para</h2>
+          
+          <div class="grid2">
+            <div class="card">
+              <strong>Antes dos relógios</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Há mais de 5 000 anos, observava-se a própria sombra sob o sol para estimar as horas. Depois, uma simples vareta fincada no chão deu origem ao <strong>gnômon</strong>, o primeiro relógio de sol grego — a sombra girava e o dia se repetia, sempre no mesmo ciclo.</p>
+            </div>
+            <div class="card decay">
+              <strong style="color:var(--decay-ink);">Fenômenos que se repetem</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Dias e noites, marés, batimentos cardíacos: tudo o que se repete em ciclos é um <strong>fenômeno periódico</strong>. A ferramenta matemática certa para estudar isso é a trigonometria — não mais só no triângulo, mas numa circunferência inteira.</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Por que sair do triângulo?</h4>
+            <p>As razões trigonométricas na circunferência permitem calcular <strong>qualquer ângulo</strong>, inclusive maiores que 90° — algo que o triângulo retângulo sozinho não permite.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -355,29 +352,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O tempo não para</h2>
-          <div class="grid2">
-            <div class="card">
-              <strong>Antes dos relógios</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Há mais de 5 000 anos, observava-se a própria sombra sob o sol para estimar as horas. Depois, uma simples vareta fincada no chão deu origem ao <strong>gnômon</strong>, o primeiro relógio de sol grego — a sombra girava e o dia se repetia, sempre no mesmo ciclo.</p>
-            </div>
-            <div class="card decay">
-              <strong style="color:var(--decay-ink);">Fenômenos que se repetem</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Dias e noites, marés, batimentos cardíacos: tudo o que se repete em ciclos é um <strong>fenômeno periódico</strong>. A ferramenta matemática certa para estudar isso é a trigonometria — não mais só no triângulo, mas numa circunferência inteira.</p>
-            </div>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            <h4>Por que sair do triângulo?</h4>
-            <p>As razões trigonométricas na circunferência permitem calcular <strong>qualquer ângulo</strong>, inclusive maiores que 90° — algo que o triângulo retângulo sozinho não permite.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: ARCOS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 93 · Teoria</div>
@@ -404,7 +378,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 TEORIA: GRAU E RADIANO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 93 · Teoria</div>
@@ -424,7 +397,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro, oral</div>
@@ -440,7 +412,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 TEORIA: COMPRIMENTO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 93 · Teoria</div>
@@ -462,7 +433,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 ENEM: COMPRIMENTO DE ARCO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2019 PPL — Questão 180</div>
@@ -485,7 +455,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 TEORIA: CICLO TRIGONOMÉTRICO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 94 · Teoria</div>
@@ -510,7 +479,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 TEORIA: ARCOS CÔNGRUOS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 94 · Teoria</div>
@@ -530,7 +498,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · No quadro</div>
@@ -550,7 +517,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ENEM: ROSA DOS VENTOS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2018 — Questão 171</div>
@@ -575,7 +541,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 TEORIA: SENO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 95 · Teoria</div>
@@ -603,7 +568,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 TEORIA: COSSENO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 96 · Teoria</div>
@@ -636,7 +600,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 ATIVIDADE 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro, oral</div>
@@ -653,7 +616,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 SÍNTESE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -675,12 +637,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Um arco mede 1 radiano quando seu comprimento é igual a:</p>
@@ -722,7 +683,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 18 ENCERRAMENTO -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -1021,3 +998,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

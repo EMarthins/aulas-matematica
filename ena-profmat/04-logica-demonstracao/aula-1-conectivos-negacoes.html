@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">ENA · PROFMAT · Capítulo 4 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Lógica: <span style="color:var(--primary);">conectivos e negações</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">E, ou, não, “se… então” e “se e somente se”. Como negar frases com “todo” e “existe” e por que a contrapositiva é equivalente — e a recíproca não.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Lógica: <span style="color:var(--primary);">conectivos e negações</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">E, ou, não, “se… então” e “se e somente se”. Como negar frases com “todo” e “existe” e por que a contrapositiva é equivalente — e a recíproca não.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Uma notícia diz: “<strong>Todos os alunos</strong> foram aprovados.” A notícia é falsa. O que isso significa?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">5 questões em 60</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">P ⇒ Q só falha se P é V e Q é F</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">¬Q ⇒ ¬P ≡ P ⇒ Q</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="20" y="14" width="280" height="170" rx="10" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="125" cy="100" r="62" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><circle cx="195" cy="100" r="62" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="90" y="104" font-size="18" fill="var(--primary)" text-anchor="middle" font-weight="700">A</text><text x="230" y="104" font-size="18" fill="var(--growth)" text-anchor="middle" font-weight="700">B</text><text x="160" y="104" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="700">A∩B</text><text x="160" y="178" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">conjuntos e relações</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Poucas regras, usadas com muito cuidado.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Proposições e conectivos</strong><div class="hint">∧, ∨, ¬, ⇒, ⇔ e a tabela-verdade</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>“Se… então”</strong><div class="hint">quando é falsa? a promessa quebrada</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg><div><strong>Negações</strong><div class="hint">todo/existe, e/ou, se/então (De Morgan)</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Contrapositiva, recíproca e inversa</strong><div class="hint">qual é equivalente?</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Treino rápido</strong><div class="hint">verdadeiro ou falso?</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Como se nega “todos foram aprovados”?</h2>
+          
+          
+          <p class="lede">Uma notícia diz: “<strong>Todos os alunos</strong> foram aprovados.” A notícia é falsa. O que isso significa?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A negação de “todos os alunos foram aprovados” é:</p><button class="choice mqo" data-i="0">Nenhum aluno foi aprovado</button><button class="choice mqo" data-i="1">Pelo menos um aluno não foi aprovado</button><button class="choice mqo" data-i="2">Todos os alunos foram reprovados</button><button class="choice mqo" data-i="3">Existe aluno aprovado</button><div class="fb"></div><div class="answer"><p>Para <strong>desmentir</strong> “todos”, basta <strong>um</strong> contra-exemplo: pelo menos um aluno não foi aprovado. “Nenhum aprovado” é bem mais forte — é o oposto extremo, não a negação.</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Negar não é “dizer o contrário”: é dizer exatamente o que torna a frase <strong>falsa</strong>. Para “todos”, basta existir uma exceção.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Para início de conversa</div>
-          <h2 class="title">Como se nega “todos foram aprovados”?</h2>
-          
-          <p class="lede">Uma notícia diz: “<strong>Todos os alunos</strong> foram aprovados.” A notícia é falsa. O que isso significa?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A negação de “todos os alunos foram aprovados” é:</p><button class="choice mqo" data-i="0">Nenhum aluno foi aprovado</button><button class="choice mqo" data-i="1">Pelo menos um aluno não foi aprovado</button><button class="choice mqo" data-i="2">Todos os alunos foram reprovados</button><button class="choice mqo" data-i="3">Existe aluno aprovado</button><div class="fb"></div><div class="answer"><p>Para <strong>desmentir</strong> “todos”, basta <strong>um</strong> contra-exemplo: pelo menos um aluno não foi aprovado. “Nenhum aprovado” é bem mais forte — é o oposto extremo, não a negação.</p></div></div>
-            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Negar não é “dizer o contrário”: é dizer exatamente o que torna a frase <strong>falsa</strong>. Para “todos”, basta existir uma exceção.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -389,27 +383,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Teoria · “se… então”</div>
-          <h2 class="title">Quando uma promessa é falsa?</h2>
-          
-          <p class="lede">“<strong>Se</strong> eu passar no exame, <strong>então</strong> comemoro.” Só se mente nessa promessa quando <strong>passei e não comemorei</strong>. Nos outros casos a promessa não foi quebrada.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <table class="tbl">
-  <tr><th>P (passou)</th><th>Q (comemorou)</th><th>P ⇒ Q</th></tr>
-  <tr><td style="text-align:left;">V</td><td>V</td><td>V</td></tr>
-  <tr><td style="text-align:left;">V</td><td>F</td><td><strong style="color:var(--danger);">F</strong></td></tr>
-  <tr><td style="text-align:left;">F</td><td>V</td><td>V</td></tr>
-  <tr><td style="text-align:left;">F</td><td>F</td><td>V</td></tr>
-</table>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quando “se chove, a rua molha” é falsa?</p><button class="choice mqo" data-i="0">Chove e a rua molha</button><button class="choice mqo" data-i="1">Não chove e a rua molha</button><button class="choice mqo" data-i="2">Chove e a rua <strong>não</strong> molha</button><button class="choice mqo" data-i="3">Não chove e a rua não molha</button><div class="fb"></div><div class="answer"><p>Só quando a premissa (<em>chove</em>) é verdadeira e a conclusão (<em>a rua molha</em>) é falsa. Se não chove, a promessa nada afirma — fica verdadeira.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Teoria · negações</div>
@@ -432,7 +405,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Teoria · equivalências</div>
@@ -454,7 +426,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Treino 4.1</div>
@@ -470,7 +441,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Verdadeiro ou falso?</div>
@@ -481,6 +451,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 <button class="choice vf" data-ok="1" data-why="Verdadeiro. As duas só são falsas no mesmo caso: P verdadeira e Q falsa.">A contrapositiva de <span class="tex"><i>P</i> ⇒ <i>Q</i></span> é <span class="tex">¬<i>Q</i> ⇒ ¬<i>P</i></span> e é equivalente à original.</button>
 <button class="choice vf" data-ok="0" data-why="Falso. “Se chove, a rua molha” não garante “se a rua molha, chove”.">A recíproca <span class="tex"><i>Q</i> ⇒ <i>P</i></span> é sempre equivalente a <span class="tex"><i>P</i> ⇒ <i>Q</i></span>.</button>
 <button class="choice vf" data-ok="1" data-why="Verdadeiro. Se P é falsa, a implicação é verdadeira (não há promessa a cumprir)."><span class="tex"><i>P</i> ⇒ <i>Q</i></span> é falsa somente quando <span class="tex"><i>P</i></span> é verdadeira e <span class="tex"><i>Q</i></span> é falsa.</button></div>
+        </div>
+      </section>
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Quando uma promessa é falsa?</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <p class="lede">“<strong>Se</strong> eu passar no exame, <strong>então</strong> comemoro.” Só se mente nessa promessa quando <strong>passei e não comemorei</strong>. Nos outros casos a promessa não foi quebrada.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>P (passou)</th><th>Q (comemorou)</th><th>P ⇒ Q</th></tr>
+  <tr><td style="text-align:left;">V</td><td>V</td><td>V</td></tr>
+  <tr><td style="text-align:left;">V</td><td>F</td><td><strong style="color:var(--danger);">F</strong></td></tr>
+  <tr><td style="text-align:left;">F</td><td>V</td><td>V</td></tr>
+  <tr><td style="text-align:left;">F</td><td>F</td><td>V</td></tr>
+</table>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quando “se chove, a rua molha” é falsa?</p><button class="choice mqo" data-i="0">Chove e a rua molha</button><button class="choice mqo" data-i="1">Não chove e a rua molha</button><button class="choice mqo" data-i="2">Chove e a rua <strong>não</strong> molha</button><button class="choice mqo" data-i="3">Não chove e a rua não molha</button><div class="fb"></div><div class="answer"><p>Só quando a premissa (<em>chove</em>) é verdadeira e a conclusão (<em>a rua molha</em>) é falsa. Se não chove, a promessa nada afirma — fica verdadeira.</p></div></div>
+          </div>
+        
         </div>
       </section>
 
@@ -499,12 +491,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Implicação</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>P</i> ⇒ <i>Q</i></span> só é falsa quando <span class="tex"><i>P</i></span> é V e <span class="tex"><i>Q</i></span> é F.</p></div>
+            <div class="card"><span class="badge">Negações</span><p style="font-size:.85rem;margin-top:8px;">Todo → existe não; e ↔ ou (De Morgan); <span class="tex"><i>P</i> ⇒ <i>Q</i></span> → <span class="tex"><i>P</i> ∧ ¬<i>Q</i></span>.</p></div>
+            <div class="card"><span class="badge">Equivalência</span><p style="font-size:.85rem;margin-top:8px;">Contrapositiva é equivalente; recíproca e inversa não.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Negar é dizer exatamente o que torna a frase falsa.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Uma notícia diz: “<strong>Todos os alunos</strong> foram aprovados.” A notícia é falsa. O que isso significa?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. A negação de “Existe número primo par” é:</p>
@@ -546,23 +555,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Implicação</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>P</i> ⇒ <i>Q</i></span> só é falsa quando <span class="tex"><i>P</i></span> é V e <span class="tex"><i>Q</i></span> é F.</p></div>
-            <div class="card"><span class="badge">Negações</span><p style="font-size:.85rem;margin-top:8px;">Todo → existe não; e ↔ ou (De Morgan); <span class="tex"><i>P</i> ⇒ <i>Q</i></span> → <span class="tex"><i>P</i> ∧ ¬<i>Q</i></span>.</p></div>
-            <div class="card"><span class="badge">Equivalência</span><p style="font-size:.85rem;margin-top:8px;">Contrapositiva é equivalente; recíproca e inversa não.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Negar é dizer exatamente o que torna a frase falsa.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -582,7 +590,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 13</div>
+      <div class="rail-count" id="railCount">1 / 14</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -933,3 +941,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

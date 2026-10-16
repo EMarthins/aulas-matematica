@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 08 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">A função seno: <span style="color:var(--primary);">a onda que se repete</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">O pêndulo vai e volta no mesmo tempo, o coração bate em ritmo, a maré sobe e desce. Fenômenos periódicos como esses são modelados pela função seno, cujo gráfico é a senóide.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">A função seno: <span style="color:var(--primary);">a onda que se repete</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">O pêndulo vai e volta no mesmo tempo, o coração bate em ritmo, a maré sobe e desce. Fenômenos periódicos como esses são modelados pela função seno, cujo gráfico é a senóide.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">y = sen x</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">período 2π</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">imagem [−1, 1]</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1.5" stroke-linecap="round"/><path d="M20 96 C50 20 80 20 110 96 C140 172 170 172 200 96 C230 20 260 20 290 96" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 60 C50 -4 80 -4 110 60 C140 124 170 124 200 60 C230 -4 260 -4 290 60" fill="none" stroke="var(--decay)" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">ondas que se repetem</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da circunferência trigonométrica ao gráfico.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Funções periódicas</strong><div class="hint">repetem-se a cada período</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>A função seno</strong><div class="hint">domínio real, arcos em radianos</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>O gráfico</strong><div class="hint">cinco pontos formam uma onda</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Propriedades</strong><div class="hint">domínio, imagem, período</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Máximos e mínimos</strong><div class="hint">com os limites −1 ≤ sen x ≤ 1</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O pêndulo e o movimento periódico</h2>
+          
+          
+          <p class="lede">Um pêndulo gasta o <strong>mesmo tempo</strong> em cada ida e volta: seu movimento é <strong>periódico</strong>. O eletrocardiograma e o ponteiro do relógio também. Uma função é periódica quando se repete a cada intervalo fixo, o <strong>período</strong>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 360 170" style="width:100%;max-width:360px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="34" y1="144" x2="34" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="73.3" y1="144" x2="73.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="73.3" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π/2</text><line x1="112.5" y1="144" x2="112.5" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="112.5" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π</text><line x1="151.8" y1="144" x2="151.8" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="151.8" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π/2</text><line x1="191" y1="144" x2="191" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="191" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2π</text><line x1="230.3" y1="144" x2="230.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="230.3" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">5π/2</text><line x1="269.5" y1="144" x2="269.5" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="269.5" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π</text><line x1="308.8" y1="144" x2="308.8" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308.8" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">7π/2</text><line x1="348" y1="144" x2="348" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="348" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4π</text><line x1="34" y1="125.1" x2="348" y2="125.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="129.1" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−1</text><line x1="34" y1="78" x2="348" y2="78" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="34" y1="30.9" x2="348" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="34.9" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">1</text><line x1="34" y1="78" x2="348" y2="78" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="34" y1="144" x2="34" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="34,78 35.6,75 37.1,72.1 38.7,69.2 40.3,66.3 41.9,63.4 43.4,60.6 45,57.9 46.6,55.3 48.1,52.7 49.7,50.3 51.3,48 52.8,45.7 54.4,43.6 56,41.7 57.5,39.9 59.1,38.2 60.7,36.7 62.3,35.3 63.8,34.2 65.4,33.2 67,32.3 68.5,31.7 70.1,31.2 71.7,31 73.3,30.9 74.8,31 76.4,31.2 78,31.7 79.5,32.3 81.1,33.2 82.7,34.2 84.2,35.3 85.8,36.7 87.4,38.2 88.9,39.9 90.5,41.7 92.1,43.6 93.7,45.7 95.2,48 96.8,50.3 98.4,52.7 99.9,55.3 101.5,57.9 103.1,60.6 104.7,63.4 106.2,66.3 107.8,69.2 109.4,72.1 110.9,75 112.5,78 114.1,81 115.6,83.9 117.2,86.8 118.8,89.7 120.4,92.6 121.9,95.4 123.5,98.1 125.1,100.7 126.6,103.3 128.2,105.7 129.8,108 131.3,110.3 132.9,112.4 134.5,114.3 136.1,116.1 137.6,117.8 139.2,119.3 140.8,120.7 142.3,121.8 143.9,122.8 145.5,123.7 147,124.3 148.6,124.8 150.2,125 151.8,125.1 153.3,125 154.9,124.8 156.5,124.3 158,123.7 159.6,122.8 161.2,121.8 162.7,120.7 164.3,119.3 165.9,117.8 167.4,116.1 169,114.3 170.6,112.4 172.2,110.3 173.7,108 175.3,105.7 176.9,103.3 178.4,100.7 180,98.1 181.6,95.4 183.2,92.6 184.7,89.7 186.3,86.8 187.9,83.9 189.4,81 191,78 192.6,75 194.1,72.1 195.7,69.2 197.3,66.3 198.8,63.4 200.4,60.6 202,57.9 203.6,55.3 205.1,52.7 206.7,50.3 208.3,48 209.8,45.7 211.4,43.6 213,41.7 214.6,39.9 216.1,38.2 217.7,36.7 219.3,35.3 220.8,34.2 222.4,33.2 224,32.3 225.5,31.7 227.1,31.2 228.7,31 230.2,30.9 231.8,31 233.4,31.2 235,31.7 236.5,32.3 238.1,33.2 239.7,34.2 241.2,35.3 242.8,36.7 244.4,38.2 246,39.9 247.5,41.7 249.1,43.6 250.7,45.7 252.2,48 253.8,50.3 255.4,52.7 256.9,55.3 258.5,57.9 260.1,60.6 261.6,63.4 263.2,66.3 264.8,69.2 266.4,72.1 267.9,75 269.5,78 271.1,81 272.6,83.9 274.2,86.8 275.8,89.7 277.4,92.6 278.9,95.4 280.5,98.1 282.1,100.7 283.6,103.3 285.2,105.7 286.8,108 288.3,110.3 289.9,112.4 291.5,114.3 293,116.1 294.6,117.8 296.2,119.3 297.8,120.7 299.3,121.8 300.9,122.8 302.5,123.7 304,124.3 305.6,124.8 307.2,125 308.7,125.1 310.3,125 311.9,124.8 313.5,124.3 315,123.7 316.6,122.8 318.2,121.8 319.7,120.7 321.3,119.3 322.9,117.8 324.4,116.1 326,114.3 327.6,112.4 329.2,110.3 330.7,108 332.3,105.7 333.9,103.3 335.4,100.7 337,98.1 338.6,95.4 340.1,92.6 341.7,89.7 343.3,86.8 344.9,83.9 346.4,81 348,78" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="73.3" cy="30.9" r="4.5" fill="var(--decay)"/><circle cx="230.3" cy="30.9" r="4.5" fill="var(--decay)"/></svg>
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">No gráfico, o valor máximo se repete em <span class="tex">π ÷ 2</span> e em <span class="tex">5π ÷ 2</span>. A distância entre eles é o:</p><button class="choice mqo" data-i="0">período, <span class="tex">2π</span></button><button class="choice mqo" data-i="1">domínio</button><button class="choice mqo" data-i="2">zero da função</button><button class="choice mqo" data-i="3">amplitude</button><div class="fb"></div><div class="answer"><p><span class="tex">5π ÷ 2 − π ÷ 2 = 2π</span>: é o <strong>período</strong>, o menor intervalo em que o gráfico se repete.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O pêndulo e o movimento periódico</h2>
-          
-          <p class="lede">Um pêndulo gasta o <strong>mesmo tempo</strong> em cada ida e volta: seu movimento é <strong>periódico</strong>. O eletrocardiograma e o ponteiro do relógio também. Uma função é periódica quando se repete a cada intervalo fixo, o <strong>período</strong>.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 360 170" style="width:100%;max-width:360px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="34" y1="144" x2="34" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="73.3" y1="144" x2="73.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="73.3" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π/2</text><line x1="112.5" y1="144" x2="112.5" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="112.5" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">π</text><line x1="151.8" y1="144" x2="151.8" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="151.8" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π/2</text><line x1="191" y1="144" x2="191" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="191" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2π</text><line x1="230.3" y1="144" x2="230.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="230.3" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">5π/2</text><line x1="269.5" y1="144" x2="269.5" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="269.5" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3π</text><line x1="308.8" y1="144" x2="308.8" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308.8" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">7π/2</text><line x1="348" y1="144" x2="348" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="348" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4π</text><line x1="34" y1="125.1" x2="348" y2="125.1" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="129.1" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">−1</text><line x1="34" y1="78" x2="348" y2="78" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="34" y1="30.9" x2="348" y2="30.9" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="29" y="34.9" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">1</text><line x1="34" y1="78" x2="348" y2="78" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="34" y1="144" x2="34" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><polyline points="34,78 35.6,75 37.1,72.1 38.7,69.2 40.3,66.3 41.9,63.4 43.4,60.6 45,57.9 46.6,55.3 48.1,52.7 49.7,50.3 51.3,48 52.8,45.7 54.4,43.6 56,41.7 57.5,39.9 59.1,38.2 60.7,36.7 62.3,35.3 63.8,34.2 65.4,33.2 67,32.3 68.5,31.7 70.1,31.2 71.7,31 73.3,30.9 74.8,31 76.4,31.2 78,31.7 79.5,32.3 81.1,33.2 82.7,34.2 84.2,35.3 85.8,36.7 87.4,38.2 88.9,39.9 90.5,41.7 92.1,43.6 93.7,45.7 95.2,48 96.8,50.3 98.4,52.7 99.9,55.3 101.5,57.9 103.1,60.6 104.7,63.4 106.2,66.3 107.8,69.2 109.4,72.1 110.9,75 112.5,78 114.1,81 115.6,83.9 117.2,86.8 118.8,89.7 120.4,92.6 121.9,95.4 123.5,98.1 125.1,100.7 126.6,103.3 128.2,105.7 129.8,108 131.3,110.3 132.9,112.4 134.5,114.3 136.1,116.1 137.6,117.8 139.2,119.3 140.8,120.7 142.3,121.8 143.9,122.8 145.5,123.7 147,124.3 148.6,124.8 150.2,125 151.8,125.1 153.3,125 154.9,124.8 156.5,124.3 158,123.7 159.6,122.8 161.2,121.8 162.7,120.7 164.3,119.3 165.9,117.8 167.4,116.1 169,114.3 170.6,112.4 172.2,110.3 173.7,108 175.3,105.7 176.9,103.3 178.4,100.7 180,98.1 181.6,95.4 183.2,92.6 184.7,89.7 186.3,86.8 187.9,83.9 189.4,81 191,78 192.6,75 194.1,72.1 195.7,69.2 197.3,66.3 198.8,63.4 200.4,60.6 202,57.9 203.6,55.3 205.1,52.7 206.7,50.3 208.3,48 209.8,45.7 211.4,43.6 213,41.7 214.6,39.9 216.1,38.2 217.7,36.7 219.3,35.3 220.8,34.2 222.4,33.2 224,32.3 225.5,31.7 227.1,31.2 228.7,31 230.2,30.9 231.8,31 233.4,31.2 235,31.7 236.5,32.3 238.1,33.2 239.7,34.2 241.2,35.3 242.8,36.7 244.4,38.2 246,39.9 247.5,41.7 249.1,43.6 250.7,45.7 252.2,48 253.8,50.3 255.4,52.7 256.9,55.3 258.5,57.9 260.1,60.6 261.6,63.4 263.2,66.3 264.8,69.2 266.4,72.1 267.9,75 269.5,78 271.1,81 272.6,83.9 274.2,86.8 275.8,89.7 277.4,92.6 278.9,95.4 280.5,98.1 282.1,100.7 283.6,103.3 285.2,105.7 286.8,108 288.3,110.3 289.9,112.4 291.5,114.3 293,116.1 294.6,117.8 296.2,119.3 297.8,120.7 299.3,121.8 300.9,122.8 302.5,123.7 304,124.3 305.6,124.8 307.2,125 308.7,125.1 310.3,125 311.9,124.8 313.5,124.3 315,123.7 316.6,122.8 318.2,121.8 319.7,120.7 321.3,119.3 322.9,117.8 324.4,116.1 326,114.3 327.6,112.4 329.2,110.3 330.7,108 332.3,105.7 333.9,103.3 335.4,100.7 337,98.1 338.6,95.4 340.1,92.6 341.7,89.7 343.3,86.8 344.9,83.9 346.4,81 348,78" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="73.3" cy="30.9" r="4.5" fill="var(--decay)"/><circle cx="230.3" cy="30.9" r="4.5" fill="var(--decay)"/></svg>
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">No gráfico, o valor máximo se repete em <span class="tex">π ÷ 2</span> e em <span class="tex">5π ÷ 2</span>. A distância entre eles é o:</p><button class="choice mqo" data-i="0">período, <span class="tex">2π</span></button><button class="choice mqo" data-i="1">domínio</button><button class="choice mqo" data-i="2">zero da função</button><button class="choice mqo" data-i="3">amplitude</button><div class="fb"></div><div class="answer"><p><span class="tex">5π ÷ 2 − π ÷ 2 = 2π</span>: é o <strong>período</strong>, o menor intervalo em que o gráfico se repete.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -387,7 +381,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resumo visual</div>
@@ -405,113 +398,120 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Máximo e mínimo de 6 sen x</h2>
           
+          
           <p class="lede">Quais os valores máximo e mínimo de <span class="tex"><i>y</i> = 6 · sen <i>x</i></span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Limites do seno</strong><div class="hint"><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Multiplicar por 6</strong><div class="hint"><span class="tex">−6 ≤ 6 · sen <i>x</i> ≤ 6</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Mínimo <span class="tex">−6</span> e máximo <span class="tex">6</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Limites do seno</strong><div class="hint"><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Multiplicar por 6</strong><div class="hint"><span class="tex">−6 ≤ 6 · sen <i>x</i> ≤ 6</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Mínimo <span class="tex">−6</span> e máximo <span class="tex">6</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Com número negativo</h2>
           
+          
           <p class="lede">Determine o mínimo e o máximo de <span class="tex"><i>y</i> = 4 − 3 · sen <i>x</i></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Seno</strong><div class="hint"><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Multiplicar por −3 (inverte)</strong><div class="hint"><span class="tex">3 ≥ −3 · sen <i>x</i> ≥ −3</span>, isto é, <span class="tex">−3 ≤ −3 · sen <i>x</i> ≤ 3</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Somar 4</strong><div class="hint"><span class="tex">1 ≤ 4 − 3 · sen <i>x</i> ≤ 7</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Mínimo <span class="tex">1</span> e máximo <span class="tex">7</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Seno</strong><div class="hint"><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Multiplicar por −3 (inverte)</strong><div class="hint"><span class="tex">3 ≥ −3 · sen <i>x</i> ≥ −3</span>, isto é, <span class="tex">−3 ≤ −3 · sen <i>x</i> ≤ 3</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Somar 4</strong><div class="hint"><span class="tex">1 ≤ 4 − 3 · sen <i>x</i> ≤ 7</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Mínimo <span class="tex">1</span> e máximo <span class="tex">7</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">O seno no denominador</h2>
           
+          
           <p class="lede">Determine o máximo e o mínimo de <span class="tex"><i>y</i> = <span class="fr"><span>2</span><span>3 + sen <i>x</i></span></span></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Denominador</strong><div class="hint"><span class="tex">3 + sen <i>x</i></span> varia de <span class="tex">2</span> a <span class="tex">4</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Inverso</strong><div class="hint">Quanto menor o denominador, maior a fração.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Valores</strong><div class="hint">Máximo: <span class="tex"> <span class="fr"><span>2</span><span>2</span></span> = 1</span>; mínimo: <span class="tex"><span class="fr"><span>2</span><span>4</span></span> = <span class="fr"><span>1</span><span>2</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Máximo <span class="tex">1</span> e mínimo <span class="tex"> <span class="fr"><span>1</span><span>2</span></span></span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Denominador</strong><div class="hint"><span class="tex">3 + sen <i>x</i></span> varia de <span class="tex">2</span> a <span class="tex">4</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Inverso</strong><div class="hint">Quanto menor o denominador, maior a fração.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Valores</strong><div class="hint">Máximo: <span class="tex"> <span class="fr"><span>2</span><span>2</span></span> = 1</span>; mínimo: <span class="tex"><span class="fr"><span>2</span><span>4</span></span> = <span class="fr"><span>1</span><span>2</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Máximo <span class="tex">1</span> e mínimo <span class="tex"> <span class="fr"><span>1</span><span>2</span></span></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Existência da equação</h2>
           
+          
           <p class="lede">Para quais valores de <span class="tex"><i>m</i></span> existe <span class="tex"><i>x</i></span> real com <span class="tex">sen <i>x</i> = 3<i>m</i> − 1</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Condição</strong><div class="hint">O seno só assume valores de <span class="tex">−1</span> a <span class="tex">1</span>: <span class="tex">−1 ≤ 3<i>m</i> − 1 ≤ 1</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex">0 ≤ 3<i>m</i> ≤ 2</span> ⇒ <span class="tex">0 ≤ <i>m</i> ≤ <span class="fr"><span>2</span><span>3</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex">0 ≤ <i>m</i> ≤ <span class="fr"><span>2</span><span>3</span></span></span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Condição</strong><div class="hint">O seno só assume valores de <span class="tex">−1</span> a <span class="tex">1</span>: <span class="tex">−1 ≤ 3<i>m</i> − 1 ≤ 1</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex">0 ≤ 3<i>m</i> ≤ 2</span> ⇒ <span class="tex">0 ≤ <i>m</i> ≤ <span class="fr"><span>2</span><span>3</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex">0 ≤ <i>m</i> ≤ <span class="fr"><span>2</span><span>3</span></span></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Imagem</h2>
-          
-          <p class="lede">O conjunto imagem de <span class="tex"><i>y</i> = sen <i>x</i></span> é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">ℝ</span></button><button class="choice mqo" data-i="1"><span class="tex">[0, 1]</span></button><button class="choice mqo" data-i="2"><span class="tex">[−1, 1]</span></button><button class="choice mqo" data-i="3"><span class="tex">[−π, π]</span></button><div class="fb"></div><div class="answer"><p>O seno nunca sai de <span class="tex">−1</span> a <span class="tex">1</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. O conjunto imagem de <span class="tex"><i>y</i> = sen <i>x</i></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">ℝ</span></li><li><span class="tex">[0, 1]</span></li><li><span class="tex">[−1, 1]</span></li><li><span class="tex">[−π, π]</span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. O período de <span class="tex"><i>y</i> = sen <i>x</i></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">π ÷ 2</span></li><li><span class="tex">π</span></li><li><span class="tex">2π</span></li><li><span class="tex">4π</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Período</h2>
-          
-          <p class="lede">O período de <span class="tex"><i>y</i> = sen <i>x</i></span> é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">π ÷ 2</span></button><button class="choice mqo" data-i="1"><span class="tex">π</span></button><button class="choice mqo" data-i="2"><span class="tex">2π</span></button><button class="choice mqo" data-i="3"><span class="tex">4π</span></button><div class="fb"></div><div class="answer"><p>O gráfico se repete a cada volta completa, <span class="tex">2π</span>. <strong>Alternativa C.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Valor numérico</h2>
-          
-          <p class="lede">O valor de <span class="tex">sen <span class="fr"><span>7π</span><span>2</span></span></span> é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">0</span></button><button class="choice mqo" data-i="2"><span class="tex">−1</span></button><button class="choice mqo" data-i="3"><span class="tex">−<span class="fr"><span>1</span><span>2</span></span></span></button><div class="fb"></div><div class="answer"><p><span class="tex"> <span class="fr"><span>7π</span><span>2</span></span> = <span class="fr"><span>3π</span><span>2</span></span> + 2π</span>: côngruo a <span class="tex"> <span class="fr"><span>3π</span><span>2</span></span></span> (<span class="tex">270°</span>), onde <span class="tex">sen = −1</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. O valor de <span class="tex">sen <span class="fr"><span>7π</span><span>2</span></span></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">1</span></li><li><span class="tex">0</span></li><li><span class="tex">−1</span></li><li><span class="tex">−<span class="fr"><span>1</span><span>2</span></span></span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Maré</h2>
-          
-          <p class="lede">A altura da maré em um porto, em metros, é modelada por <span class="tex"><i>h</i> = 3 + 2 · sen <i>x</i></span>, com <span class="tex"><i>x</i></span> em radianos. Os valores máximo e mínimo dessa altura são, respectivamente:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">5</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">5</span> e <span class="tex">−1</span></button><button class="choice mqo" data-i="2"><span class="tex">3</span> e <span class="tex">2</span></button><button class="choice mqo" data-i="3"><span class="tex">2</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="4"><span class="tex">6</span> e <span class="tex">0</span></button><div class="fb"></div><div class="answer"><p><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span> ⇒ <span class="tex">1 ≤ 3 + 2 sen <i>x</i> ≤ 5</span>. <strong>Alternativa A.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. A altura da maré em um porto, em metros, é modelada por <span class="tex"><i>h</i> = 3 + 2 · sen <i>x</i></span>, com <span class="tex"><i>x</i></span> em radianos. Os valores máximo e mínimo dessa altura são, respectivamente:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">5</span> e <span class="tex">1</span></li><li><span class="tex">5</span> e <span class="tex">−1</span></li><li><span class="tex">3</span> e <span class="tex">2</span></li><li><span class="tex">2</span> e <span class="tex">1</span></li><li><span class="tex">6</span> e <span class="tex">0</span></li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">O seno nunca sai de <span class="tex">−1</span> a <span class="tex">1</span>.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">O gráfico se repete a cada volta completa, <span class="tex">2π</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"> <span class="fr"><span>7π</span><span>2</span></span> = <span class="fr"><span>3π</span><span>2</span></span> + 2π</span>: côngruo a <span class="tex"> <span class="fr"><span>3π</span><span>2</span></span></span> (<span class="tex">270°</span>), onde <span class="tex">sen = −1</span>.</p></div>
+<div class="card success"><strong>4. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span> ⇒ <span class="tex">1 ≤ 3 + 2 sen <i>x</i> ≤ 5</span>.</p></div></div>
         </div>
       </section>
 
@@ -530,12 +530,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Função</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>f</i>(<i>x</i>) = sen <i>x</i></span>: domínio <span class="tex">ℝ</span>, imagem <span class="tex">[−1, 1]</span>, período <span class="tex">2π</span>.</p></div>
+            <div class="card"><span class="badge">Gráfico</span><p style="font-size:.85rem;margin-top:8px;">Senóide pelos pontos <span class="tex">0</span>, <span class="tex">π ÷ 2</span>, <span class="tex">π</span>, <span class="tex">3π ÷ 2</span> e <span class="tex">2π</span>.</p></div>
+            <div class="card"><span class="badge">Extremos</span><p style="font-size:.85rem;margin-top:8px;">Combine <span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span> com as operações da expressão.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">A senóide básica está pronta. Próxima aula: o que acontece com o gráfico quando mudamos <span class="tex"><i>a</i></span> e <span class="tex"><i>b</i></span> em <span class="tex"><i>y</i> = <i>a</i> + <i>b</i> · sen <i>x</i></span>.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O domínio da função seno é:</p>
@@ -577,23 +593,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Função</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>f</i>(<i>x</i>) = sen <i>x</i></span>: domínio <span class="tex">ℝ</span>, imagem <span class="tex">[−1, 1]</span>, período <span class="tex">2π</span>.</p></div>
-            <div class="card"><span class="badge">Gráfico</span><p style="font-size:.85rem;margin-top:8px;">Senóide pelos pontos <span class="tex">0</span>, <span class="tex">π ÷ 2</span>, <span class="tex">π</span>, <span class="tex">3π ÷ 2</span> e <span class="tex">2π</span>.</p></div>
-            <div class="card"><span class="badge">Extremos</span><p style="font-size:.85rem;margin-top:8px;">Combine <span class="tex">−1 ≤ sen <i>x</i> ≤ 1</span> com as operações da expressão.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">A senóide básica está pronta. Próxima aula: o que acontece com o gráfico quando mudamos <span class="tex"><i>a</i></span> e <span class="tex"><i>b</i></span> em <span class="tex"><i>y</i> = <i>a</i> + <i>b</i> · sen <i>x</i></span>.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -613,7 +628,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1042,3 +1057,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

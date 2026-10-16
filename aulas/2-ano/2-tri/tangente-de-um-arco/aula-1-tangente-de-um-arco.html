@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 07 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">A tangente de um arco: <span style="color:var(--primary);">a inclinação do raio</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Quando uma estrada sobe uma montanha, medimos a inclinação pela razão entre o quanto sobe e o quanto avança na horizontal. Essa razão é a tangente, e a circunferência trigonométrica a mostra como um segmento sobre uma reta.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">A tangente de um arco: <span style="color:var(--primary);">a inclinação do raio</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Quando uma estrada sobe uma montanha, medimos a inclinação pela razão entre o quanto sobe e o quanto avança na horizontal. Essa razão é a tangente, e a circunferência trigonométrica a mostra como um segmento sobre uma reta.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">tg α = sen α ÷ cos α</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">reta tangente em A</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">90° não tem tangente</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1.5" stroke-linecap="round"/><path d="M20 96 C50 20 80 20 110 96 C140 172 170 172 200 96 C230 20 260 20 290 96" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 60 C50 -4 80 -4 110 60 C140 124 170 124 200 60 C230 -4 260 -4 290 60" fill="none" stroke="var(--decay)" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">ondas que se repetem</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da inclinação ao eixo das tangentes.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Inclinação</strong><div class="hint">subir ÷ avançar</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>O eixo das tangentes</strong><div class="hint">a reta tangente por A</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Sinais</strong><div class="hint">positiva em I e III, negativa em II e IV</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>tg = sen ÷ cos</strong><div class="hint">por semelhança de triângulos</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">rampas e ladeiras</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Qual rampa é mais inclinada?</h2>
+          
+          
+          <p class="lede">Uma rampa sobe <span class="tex">1</span> metro a cada <span class="tex">2</span> metros percorridos na horizontal; outra sobe <span class="tex">2</span> metros a cada <span class="tex">2</span> metros. A inclinação depende da <strong>razão entre o que sobe e o que avança</strong>. Existe uma forma de ligar essa razão ao <strong>ângulo</strong> da rampa: a tangente.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 260 150" style="width:100%;max-width:260px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="208,36 52,114 208,114" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><path d="M197,114 L197,103 L208,103" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="86" y="107" fill="var(--growth)" font-size="17" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >α</text><text x="216" y="79" fill="var(--decay)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">1 m</text><text x="130" y="131" fill="var(--success)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2 m</text><text x="120" y="67" fill="var(--primary)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end"></text></svg>
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">As razões “sobe ÷ avança” das duas rampas são:</p><button class="choice mqo" data-i="0"><span class="tex">0,5</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">2</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="2"><span class="tex">1</span> e <span class="tex">2</span></button><button class="choice mqo" data-i="3">as duas iguais a <span class="tex">1</span></button><div class="fb"></div><div class="answer"><p><span class="tex">1 ÷ 2 = 0,5</span> e <span class="tex">2 ÷ 2 = 1</span>. A segunda é mais inclinada: sua razão (tangente) é maior.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Qual rampa é mais inclinada?</h2>
-          
-          <p class="lede">Uma rampa sobe <span class="tex">1</span> metro a cada <span class="tex">2</span> metros percorridos na horizontal; outra sobe <span class="tex">2</span> metros a cada <span class="tex">2</span> metros. A inclinação depende da <strong>razão entre o que sobe e o que avança</strong>. Existe uma forma de ligar essa razão ao <strong>ângulo</strong> da rampa: a tangente.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 260 150" style="width:100%;max-width:260px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="208,36 52,114 208,114" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><path d="M197,114 L197,103 L208,103" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="86" y="107" fill="var(--growth)" font-size="17" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >α</text><text x="216" y="79" fill="var(--decay)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">1 m</text><text x="130" y="131" fill="var(--success)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2 m</text><text x="120" y="67" fill="var(--primary)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end"></text></svg>
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">As razões “sobe ÷ avança” das duas rampas são:</p><button class="choice mqo" data-i="0"><span class="tex">0,5</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="1"><span class="tex">2</span> e <span class="tex">1</span></button><button class="choice mqo" data-i="2"><span class="tex">1</span> e <span class="tex">2</span></button><button class="choice mqo" data-i="3">as duas iguais a <span class="tex">1</span></button><div class="fb"></div><div class="answer"><p><span class="tex">1 ÷ 2 = 0,5</span> e <span class="tex">2 ÷ 2 = 1</span>. A segunda é mais inclinada: sua razão (tangente) é maior.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · tangente na circunferência</div>
@@ -385,7 +379,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -408,112 +401,119 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Tangentes por redução</h2>
           
+          
           <p class="lede">Calcule <span class="tex">tg 150°</span>, <span class="tex">tg 225°</span> e <span class="tex">tg 300°</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>150°</strong><div class="hint">2º quadrante: <span class="tex">tg 150° = −tg 30° = −<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>3</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>225°</strong><div class="hint">3º quadrante: <span class="tex">tg 225° = tg 45° = 1</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>300°</strong><div class="hint">4º quadrante: <span class="tex">tg 300° = −tg 60° = −<span class="rt">√<span class="rr">3</span></span></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex">−<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>3</span></span></span>, <span class="tex">1</span> e <span class="tex">−<span class="rt">√<span class="rr">3</span></span></span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>150°</strong><div class="hint">2º quadrante: <span class="tex">tg 150° = −tg 30° = −<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>3</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>225°</strong><div class="hint">3º quadrante: <span class="tex">tg 225° = tg 45° = 1</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>300°</strong><div class="hint">4º quadrante: <span class="tex">tg 300° = −tg 60° = −<span class="rt">√<span class="rr">3</span></span></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex">−<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>3</span></span></span>, <span class="tex">1</span> e <span class="tex">−<span class="rt">√<span class="rr">3</span></span></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Tangente a partir de seno e cosseno</h2>
           
+          
           <p class="lede">Se <span class="tex">sen α = <span class="fr"><span>3</span><span>5</span></span></span> e <span class="tex">cos α = −<span class="fr"><span>4</span><span>5</span></span></span>, qual o valor de <span class="tex">tg α</span> e em que quadrante está <span class="tex">α</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Quociente</strong><div class="hint"><span class="tex">tg α = <span class="fr"><span>3</span><span>5</span></span> ÷ (−<span class="fr"><span>4</span><span>5</span></span>) = −<span class="fr"><span>3</span><span>4</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Quadrante</strong><div class="hint">Seno positivo e cosseno negativo: 2º quadrante, onde a tangente é negativa ✓.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex">tg α = −<span class="fr"><span>3</span><span>4</span></span> = −0,75</span>, no 2º quadrante.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Quociente</strong><div class="hint"><span class="tex">tg α = <span class="fr"><span>3</span><span>5</span></span> ÷ (−<span class="fr"><span>4</span><span>5</span></span>) = −<span class="fr"><span>3</span><span>4</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Quadrante</strong><div class="hint">Seno positivo e cosseno negativo: 2º quadrante, onde a tangente é negativa ✓.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex">tg α = −<span class="fr"><span>3</span><span>4</span></span> = −0,75</span>, no 2º quadrante.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Onde a tangente não existe</h2>
           
+          
           <p class="lede">Para quais arcos de <span class="tex">0°</span> a <span class="tex">360°</span> a tangente não é definida?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Condição</strong><div class="hint"><span class="tex">tg α = <span class="fr"><span>sen α</span><span>cos α</span></span></span> exige <span class="tex">cos α ≠ 0</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Cosseno zero</strong><div class="hint"><span class="tex">cos α = 0</span> em <span class="tex">90°</span> e <span class="tex">270°</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A tangente não existe em <span class="tex">90°</span> e <span class="tex">270°</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Condição</strong><div class="hint"><span class="tex">tg α = <span class="fr"><span>sen α</span><span>cos α</span></span></span> exige <span class="tex">cos α ≠ 0</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Cosseno zero</strong><div class="hint"><span class="tex">cos α = 0</span> em <span class="tex">90°</span> e <span class="tex">270°</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A tangente não existe em <span class="tex">90°</span> e <span class="tex">270°</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">A rampa de acesso</h2>
           
+          
           <p class="lede">Uma rampa de acessibilidade deve ter inclinação de <span class="tex">10°</span> e vencer um desnível de <span class="tex">1,2</span> m. Qual o comprimento horizontal necessário? (use <span class="tex">tg 10° ≈ 0,18</span>)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Razão</strong><div class="hint">Desnível é o cateto oposto; o comprimento horizontal <span class="tex"><i>x</i></span> é o adjacente: <span class="tex">tg 10° = <span class="fr"><span>1,2</span><span><i>x</i></span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"><i>x</i> = 1,2 ÷ 0,18 ≈ 6,7</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>São necessários cerca de <span class="tex">6,7</span> m na horizontal.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Razão</strong><div class="hint">Desnível é o cateto oposto; o comprimento horizontal <span class="tex"><i>x</i></span> é o adjacente: <span class="tex">tg 10° = <span class="fr"><span>1,2</span><span><i>x</i></span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"><i>x</i> = 1,2 ÷ 0,18 ≈ 6,7</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>São necessários cerca de <span class="tex">6,7</span> m na horizontal.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Sinal da tangente</h2>
-          
-          <p class="lede">A tangente de <span class="tex">200°</span> é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">positiva</button><button class="choice mqo" data-i="1">negativa</button><button class="choice mqo" data-i="2">zero</button><button class="choice mqo" data-i="3">não existe</button><div class="fb"></div><div class="answer"><p><span class="tex">200°</span> está no 3º quadrante, onde seno e cosseno são negativos: o quociente é positivo. <strong>Alternativa A.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. A tangente de <span class="tex">200°</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>positiva</li><li>negativa</li><li>zero</li><li>não existe</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. O valor de <span class="tex">tg 135°</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">−<span class="rt">√<span class="rr">3</span></span></span></li><li><span class="tex">−1</span></li><li><span class="tex">1</span></li><li><span class="tex"><span class="rt">√<span class="rr">3</span></span></span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Valor notável</h2>
-          
-          <p class="lede">O valor de <span class="tex">tg 135°</span> é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">−<span class="rt">√<span class="rr">3</span></span></span></button><button class="choice mqo" data-i="1"><span class="tex">−1</span></button><button class="choice mqo" data-i="2"><span class="tex">1</span></button><button class="choice mqo" data-i="3"><span class="tex"><span class="rt">√<span class="rr">3</span></span></span></button><div class="fb"></div><div class="answer"><p><span class="tex">180° − 135° = 45°</span>; no 2º quadrante a tangente é negativa: <span class="tex">tg 135° = −tg 45° = −1</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Tangente indefinida</h2>
-          
-          <p class="lede">Qual destes arcos <strong>não</strong> tem tangente definida?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">60°</span></button><button class="choice mqo" data-i="1"><span class="tex">120°</span></button><button class="choice mqo" data-i="2"><span class="tex">270°</span></button><button class="choice mqo" data-i="3"><span class="tex">315°</span></button><div class="fb"></div><div class="answer"><p>Em <span class="tex">270°</span> o cosseno é <span class="tex">0</span> e <span class="tex">tg = sen ÷ cos</span> fica indefinida. <strong>Alternativa C.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Qual destes arcos <strong>não</strong> tem tangente definida?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">60°</span></li><li><span class="tex">120°</span></li><li><span class="tex">270°</span></li><li><span class="tex">315°</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Ladeira</h2>
-          
-          <p class="lede">Uma ladeira tem inclinação de 20% (sobe <span class="tex">20</span> cm a cada <span class="tex">100</span> cm percorridos na horizontal). Para vencer uma altura de <span class="tex">1,2</span> m, o deslocamento horizontal necessário é de:</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">2,4</span> m</button><button class="choice mqo" data-i="1"><span class="tex">4,0</span> m</button><button class="choice mqo" data-i="2"><span class="tex">5,0</span> m</button><button class="choice mqo" data-i="3"><span class="tex">6,0</span> m</button><button class="choice mqo" data-i="4"><span class="tex">24</span> m</button><div class="fb"></div><div class="answer"><p>A tangente do ângulo é <span class="tex">20 ÷ 100 = 0,2</span>; <span class="tex"><i>x</i> = 1,2 ÷ 0,2 = 6</span> m. <strong>Alternativa D.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Uma ladeira tem inclinação de 20% (sobe <span class="tex">20</span> cm a cada <span class="tex">100</span> cm percorridos na horizontal). Para vencer uma altura de <span class="tex">1,2</span> m, o deslocamento horizontal necessário é de:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">2,4</span> m</li><li><span class="tex">4,0</span> m</li><li><span class="tex">5,0</span> m</li><li><span class="tex">6,0</span> m</li><li><span class="tex">24</span> m</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">200°</span> está no 3º quadrante, onde seno e cosseno são negativos: o quociente é positivo.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">180° − 135° = 45°</span>; no 2º quadrante a tangente é negativa: <span class="tex">tg 135° = −tg 45° = −1</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Em <span class="tex">270°</span> o cosseno é <span class="tex">0</span> e <span class="tex">tg = sen ÷ cos</span> fica indefinida.</p></div>
+<div class="card success"><strong>4. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;">A tangente do ângulo é <span class="tex">20 ÷ 100 = 0,2</span>; <span class="tex"><i>x</i> = 1,2 ÷ 0,2 = 6</span> m.</p></div></div>
         </div>
       </section>
 
@@ -532,12 +532,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">tg α</span> é a ordenada do ponto <span class="tex"><i>T</i></span> na reta tangente por <span class="tex"><i>A</i></span>; <span class="tex">tg α = <span class="fr"><span>sen α</span><span>cos α</span></span></span>.</p></div>
+            <div class="card"><span class="badge">Sinais</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">+</span> no 1º e 3º quadrantes; <span class="tex">−</span> no 2º e 4º.</p></div>
+            <div class="card"><span class="badge">Limites</span><p style="font-size:.85rem;margin-top:8px;">Não existe em <span class="tex">90°</span> e <span class="tex">270°</span>; pode assumir qualquer valor real.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com seno, cosseno e tangente da circunferência, passamos aos gráficos. Próxima aula: a função seno.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. <span class="tex">tg α</span> é igual a:</p>
@@ -579,23 +595,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">tg α</span> é a ordenada do ponto <span class="tex"><i>T</i></span> na reta tangente por <span class="tex"><i>A</i></span>; <span class="tex">tg α = <span class="fr"><span>sen α</span><span>cos α</span></span></span>.</p></div>
-            <div class="card"><span class="badge">Sinais</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">+</span> no 1º e 3º quadrantes; <span class="tex">−</span> no 2º e 4º.</p></div>
-            <div class="card"><span class="badge">Limites</span><p style="font-size:.85rem;margin-top:8px;">Não existe em <span class="tex">90°</span> e <span class="tex">270°</span>; pode assumir qualquer valor real.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com seno, cosseno e tangente da circunferência, passamos aos gráficos. Próxima aula: a função seno.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -615,7 +630,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1047,3 +1062,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

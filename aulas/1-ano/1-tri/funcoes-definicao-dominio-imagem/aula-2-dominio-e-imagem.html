@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,29 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--growth)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 06 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Domínio e imagem: <span style="color:var(--growth);">que valores fazem sentido?</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Não dá para comprar 2,5 pasteis nem dividir por zero. Descobrir o domínio é separar os valores que a regra aceita dos que ela recusa.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Domínio e imagem: <span style="color:var(--growth);">que valores fazem sentido?</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Não dá para comprar 2,5 pasteis nem dividir por zero. Descobrir o domínio é separar os valores que a regra aceita dos que ela recusa.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Uma lanchonete vende pastel a 6 reais cada. O valor total é <span class="tex"><i>y</i> = 6<i>x</i></span>, em que <span class="tex"><i>x</i></span> é a quantidade. Faz sentido comprar 1, 2 ou 3 pastéis. Mas 2,5 pastéis? Ou −1?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">denominador ≠ 0</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">radicando ≥ 0</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">contexto</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="160" cy="92" r="70" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="160" cy="92" r="4" fill="var(--ink)" /><line x1="160" y1="92" x2="160" y2="46" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/><line x1="160" y1="92" x2="196" y2="108" stroke="var(--decay)" stroke-width="4" stroke-linecap="round"/><text x="160" y="41" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">12</text><text x="216" y="97" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">3</text><text x="160" y="153" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">6</text><text x="104" y="97.00000000000001" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">9</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Quem pode entrar e o que pode sair.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Domínio no contexto</strong><div class="hint">quantidades que fazem sentido</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Domínio de uma lei</strong><div class="hint">denominador diferente de zero e radicando não negativo</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Imagem</strong><div class="hint">os valores que realmente saem</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Problemas</strong><div class="hint">palitos, ingressos e restrições</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Quantos pastéis posso comprar?</h2>
+          
+          
+          <p class="lede">Uma lanchonete vende pastel a 6 reais cada. O valor total é <span class="tex"><i>y</i> = 6<i>x</i></span>, em que <span class="tex"><i>x</i></span> é a quantidade. Faz sentido comprar 1, 2 ou 3 pastéis. Mas 2,5 pastéis? Ou −1?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quais valores de <span class="tex"><i>x</i></span> fazem sentido nesse contexto?</p><button class="choice mqo" data-i="0">qualquer número real</button><button class="choice mqo" data-i="1">inteiros não negativos: 0, 1, 2, 3…</button><button class="choice mqo" data-i="2">só números negativos</button><button class="choice mqo" data-i="3">frações como 2,5</button><div class="fb"></div><div class="answer"><p>Quantidade de unidades inteiras e não negativas: <span class="tex"><i>D</i> = {0, 1, 2, 3, ...}</span>. A <strong>imagem</strong> são os valores totais possíveis: 0, 6, 12, 18…</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">O <strong>domínio</strong> são os valores de <span class="tex"><i>x</i></span> permitidos pela situação (ou pela matemática). A <strong>imagem</strong> são os <span class="tex"><i>y</i></span> que sobram dessa escolha.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -350,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Para início de conversa</div>
-          <h2 class="title">Quantos pastéis posso comprar?</h2>
-          
-          <p class="lede">Uma lanchonete vende pastel a 6 reais cada. O valor total é <span class="tex"><i>y</i> = 6<i>x</i></span>, em que <span class="tex"><i>x</i></span> é a quantidade. Faz sentido comprar 1, 2 ou 3 pastéis. Mas 2,5 pastéis? Ou −1?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quais valores de <span class="tex"><i>x</i></span> fazem sentido nesse contexto?</p><button class="choice mqo" data-i="0">qualquer número real</button><button class="choice mqo" data-i="1">inteiros não negativos: 0, 1, 2, 3…</button><button class="choice mqo" data-i="2">só números negativos</button><button class="choice mqo" data-i="3">frações como 2,5</button><div class="fb"></div><div class="answer"><p>Quantidade de unidades inteiras e não negativas: <span class="tex"><i>D</i> = {0, 1, 2, 3, ...}</span>. A <strong>imagem</strong> são os valores totais possíveis: 0, 6, 12, 18…</p></div></div>
-            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">O <strong>domínio</strong> são os valores de <span class="tex"><i>x</i></span> permitidos pela situação (ou pela matemática). A <strong>imagem</strong> são os <span class="tex"><i>y</i></span> que sobram dessa escolha.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -386,71 +381,73 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Duas restrições ao mesmo tempo</h2>
           
+          
           <p class="lede">Determine o domínio de <span class="tex"><i>g</i>(<i>x</i>) = <span class="fr"><span><span class="rt">√<span class="rr">2<i>x</i> − 6</span></span></span><span><i>x</i> − 5</span></span></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Raiz no numerador</strong><div class="hint">Radicando não negativo: <span class="tex">2<i>x</i> − 6 ≥ 0</span>, ou seja, <span class="tex"><i>x</i> ≥ 3</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Fração</strong><div class="hint">Denominador diferente de zero: <span class="tex"><i>x</i> − 5 ≠ 0</span>, ou seja, <span class="tex"><i>x</i> ≠ 5</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Interseção</strong><div class="hint">Os dois ao mesmo tempo: <span class="tex"><i>x</i> ≥ 3</span> e <span class="tex"><i>x</i> ≠ 5</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>D</i>(<i>g</i>) = {<i>x</i> ∈ ℝ | <i>x</i> ≥ 3 e <i>x</i> ≠ 5}</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Raiz no numerador</strong><div class="hint">Radicando não negativo: <span class="tex">2<i>x</i> − 6 ≥ 0</span>, ou seja, <span class="tex"><i>x</i> ≥ 3</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Fração</strong><div class="hint">Denominador diferente de zero: <span class="tex"><i>x</i> − 5 ≠ 0</span>, ou seja, <span class="tex"><i>x</i> ≠ 5</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Interseção</strong><div class="hint">Os dois ao mesmo tempo: <span class="tex"><i>x</i> ≥ 3</span> e <span class="tex"><i>x</i> ≠ 5</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>D</i>(<i>g</i>) = {<i>x</i> ∈ ℝ | <i>x</i> ≥ 3 e <i>x</i> ≠ 5}</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Ingressos de um cinema</h2>
           
+          
           <p class="lede">Um cinema com <strong>80 lugares</strong> vende ingressos a <strong>12 reais</strong>. A arrecadação é <span class="tex"><i>V</i> = 12<i>n</i></span>, com <span class="tex"><i>n</i></span> ingressos vendidos. Qual o domínio, e qual a arrecadação com 45 ingressos?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Domínio pelo contexto</strong><div class="hint"><span class="tex"><i>n</i></span> é quantidade inteira entre 0 e a lotação: <span class="tex"><i>D</i> = {0, 1, 2, ..., 80}</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>V</i></span> vai de 0 a <span class="tex">12 · 80 = 960</span>, de 12 em 12: <span class="tex"><i>Im</i> = {0, 12, 24, ..., 960}</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Valor com 45 ingressos</strong><div class="hint"><span class="tex"><i>V</i>(45) = 12 · 45 = 540</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Arrecadação de <strong>540 reais</strong>. Note que 45,5 ingressos não está no domínio.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Domínio pelo contexto</strong><div class="hint"><span class="tex"><i>n</i></span> é quantidade inteira entre 0 e a lotação: <span class="tex"><i>D</i> = {0, 1, 2, ..., 80}</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>V</i></span> vai de 0 a <span class="tex">12 · 80 = 960</span>, de 12 em 12: <span class="tex"><i>Im</i> = {0, 12, 24, ..., 960}</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Valor com 45 ingressos</strong><div class="hint"><span class="tex"><i>V</i>(45) = 12 · 45 = 540</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Arrecadação de <strong>540 reais</strong>. Note que 45,5 ingressos não está no domínio.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Fração</h2>
-          
-          <p class="lede">O domínio de <span class="tex"><i>f</i>(<i>x</i>) = <span class="fr"><span>5</span><span><i>x</i> + 2</span></span></span> é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">ℝ − {2}</button><button class="choice mqo" data-i="1">ℝ − {−2}</button><button class="choice mqo" data-i="2">ℝ</button><button class="choice mqo" data-i="3">ℝ − {5}</button><button class="choice mqo" data-i="4">x ≥ −2</button><div class="fb"></div><div class="answer"><p>Denominador diferente de zero: <span class="tex"><i>x</i> + 2 ≠ 0</span>, logo <span class="tex"><i>x</i> ≠ −2</span>. <span class="tex"><i>D</i> = ℝ − {−2}</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. O domínio de <span class="tex"><i>f</i>(<i>x</i>) = <span class="fr"><span>5</span><span><i>x</i> + 2</span></span></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>ℝ − {2}</li><li>ℝ − {−2}</li><li>ℝ</li><li>ℝ − {5}</li><li>x ≥ −2</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. O domínio de <span class="tex"><i>f</i>(<i>x</i>) = <span class="rt">√<span class="rr"><i>x</i> − 7</span></span></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>x > 7</li><li>x ≥ 7</li><li>x ≤ 7</li><li>x ≠ 7</li><li>ℝ</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Raiz quadrada</h2>
-          
-          <p class="lede">O domínio de <span class="tex"><i>f</i>(<i>x</i>) = <span class="rt">√<span class="rr"><i>x</i> − 7</span></span></span> é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">x > 7</button><button class="choice mqo" data-i="1">x ≥ 7</button><button class="choice mqo" data-i="2">x ≤ 7</button><button class="choice mqo" data-i="3">x ≠ 7</button><button class="choice mqo" data-i="4">ℝ</button><div class="fb"></div><div class="answer"><p>Radicando não negativo: <span class="tex"><i>x</i> − 7 ≥ 0</span>, então <span class="tex"><i>x</i> ≥ 7</span> (o 7 entra: <span class="tex"><span class="rt">√<span class="rr">0</span></span> = 0</span>). <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Quadrados de palitos</h2>
-          
-          <p class="lede">Com palitos formam-se quadrados enfileirados, um ao lado do outro: 1 quadrado usa 4 palitos, 2 quadrados usam 7, 3 quadrados usam 10. Mantido o padrão, quantos palitos são necessários para 15 quadrados?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">45</button><button class="choice mqo" data-i="1">46</button><button class="choice mqo" data-i="2">48</button><button class="choice mqo" data-i="3">60</button><button class="choice mqo" data-i="4">61</button><div class="fb"></div><div class="answer"><p>A cada quadrado novo entram 3 palitos. Lei: <span class="tex"><i>y</i> = 3<i>x</i> + 1</span> (<span class="tex"><i>x</i></span> = número de quadrados). Para <span class="tex"><i>x</i> = 15</span>: <span class="tex"><i>y</i> = 45 + 1 = 46</span>. O domínio é formado pelos inteiros positivos. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Com palitos formam-se quadrados enfileirados, um ao lado do outro: 1 quadrado usa 4 palitos, 2 quadrados usam 7, 3 quadrados usam 10. Mantido o padrão, quantos palitos são necessários para 15 quadrados?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>45</li><li>46</li><li>48</li><li>60</li><li>61</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Denominador diferente de zero: <span class="tex"><i>x</i> + 2 ≠ 0</span>, logo <span class="tex"><i>x</i> ≠ −2</span>. <span class="tex"><i>D</i> = ℝ − {−2}</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Radicando não negativo: <span class="tex"><i>x</i> − 7 ≥ 0</span>, então <span class="tex"><i>x</i> ≥ 7</span> (o 7 entra: <span class="tex"><span class="rt">√<span class="rr">0</span></span> = 0</span>).</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">A cada quadrado novo entram 3 palitos. Lei: <span class="tex"><i>y</i> = 3<i>x</i> + 1</span> (<span class="tex"><i>x</i></span> = número de quadrados). Para <span class="tex"><i>x</i> = 15</span>: <span class="tex"><i>y</i> = 45 + 1 = 46</span>. O domínio é formado pelos inteiros positivos.</p></div></div>
         </div>
       </section>
 
@@ -469,12 +466,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Domínio</span><p style="font-size:.85rem;margin-top:8px;">Valores de x permitidos pelo contexto ou pela conta.</p></div>
+            <div class="card"><span class="badge">Restrições</span><p style="font-size:.85rem;margin-top:8px;">Denominador ≠ 0; radicando ≥ 0; raiz no denominador &gt; 0.</p></div>
+            <div class="card"><span class="badge">Imagem</span><p style="font-size:.85rem;margin-top:8px;">Valores de y obtidos ao percorrer o domínio.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Antes de calcular, pergunte quais valores de x quebram a conta.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Uma lanchonete vende pastel a 6 reais cada. O valor total é <span class="tex"><i>y</i> = 6<i>x</i></span>, em que <span class="tex"><i>x</i></span> é a quantidade. Faz sentido comprar 1, 2 ou 3 pastéis. Mas 2,5 pastéis? Ou −1?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O domínio de <span class="tex">1 ÷ (<i>x</i> − 4)</span> é:</p>
@@ -516,23 +530,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Domínio</span><p style="font-size:.85rem;margin-top:8px;">Valores de x permitidos pelo contexto ou pela conta.</p></div>
-            <div class="card"><span class="badge">Restrições</span><p style="font-size:.85rem;margin-top:8px;">Denominador ≠ 0; radicando ≥ 0; raiz no denominador &gt; 0.</p></div>
-            <div class="card"><span class="badge">Imagem</span><p style="font-size:.85rem;margin-top:8px;">Valores de y obtidos ao percorrer o domínio.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Antes de calcular, pergunte quais valores de x quebram a conta.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -552,7 +565,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 13</div>
+      <div class="rail-count" id="railCount">1 / 14</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -903,3 +916,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

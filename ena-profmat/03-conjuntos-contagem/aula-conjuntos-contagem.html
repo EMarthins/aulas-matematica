@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,31 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">ENA · PROFMAT · Capítulo 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Conjuntos e <span style="color:var(--decay);">contagem de elementos</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Notação, união e interseção, inclusão–exclusão, quantos termos tem uma lista e quantos subconjuntos existem. A conta é curta; o perigo está nas extremidades.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Conjuntos e <span style="color:var(--decay);">contagem de elementos</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Notação, união e interseção, inclusão–exclusão, quantos termos tem uma lista e quantos subconjuntos existem. A conta é curta; o perigo está nas extremidades.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Numa pesquisa com <strong>100 pessoas</strong>, 60 gostam de futebol, 50 gostam de vôlei e 20 não gostam de nenhum dos dois. Quantas gostam dos <strong>dois</strong>?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">3 questões em 60</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">|A∪B| = |A| + |B| − |A∩B|</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">2ⁿ subconjuntos</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="20" y="14" width="280" height="170" rx="10" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="125" cy="100" r="62" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><circle cx="195" cy="100" r="62" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="90" y="104" font-size="18" fill="var(--primary)" text-anchor="middle" font-weight="700">A</text><text x="230" y="104" font-size="18" fill="var(--growth)" text-anchor="middle" font-weight="700">B</text><text x="160" y="104" font-size="14" fill="var(--ink)" text-anchor="middle" font-weight="700">A∩B</text><text x="160" y="178" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">conjuntos e relações</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Sempre o mesmo caminho: descrever o conjunto, contar com cuidado e usar inclusão–exclusão.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg><div><strong>Notação e operações</strong><div class="hint">∈, ⊂, ∪, ∩, ∖ e a notação de conjunto</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Inclusão–exclusão</strong><div class="hint">dois e três conjuntos, “nenhum dos dois”</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Contar elementos de uma lista</strong><div class="hint">número de termos, múltiplos entre m e n</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg><div><strong>Armadilha das extremidades</strong><div class="hint">≤ × <, primeiro e último múltiplo</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Subconjuntos</strong><div class="hint">2ⁿ, próprios, com k elementos</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Questões que já caíram</strong><div class="hint">ENA 2026 Q19 · ENA 2025 Q9 e Q30</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Quantos alunos gostam dos dois?</h2>
+          
+          
+          <p class="lede">Numa pesquisa com <strong>100 pessoas</strong>, 60 gostam de futebol, 50 gostam de vôlei e 20 não gostam de nenhum dos dois. Quantas gostam dos <strong>dois</strong>?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quantas gostam de futebol e de vôlei?</p><button class="choice mqo" data-i="0">10</button><button class="choice mqo" data-i="1">20</button><button class="choice mqo" data-i="2">30</button><button class="choice mqo" data-i="3">40</button><div class="fb"></div><div class="answer"><p>Gostam de pelo menos um: <span class="tex">100 − 20 = 80</span>. Pela inclusão–exclusão: <span class="tex">60 + 50 − <i>x</i> = 80 ⇒ <i>x</i> = 30</span>. A soma <span class="tex">60 + 50 = 110</span> conta duas vezes quem gosta dos dois.</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Somar <span class="tex">|<i>A</i>| + |<i>B</i>|</span> conta <strong>duas vezes</strong> quem está nos dois conjuntos. A inclusão–exclusão corrige isso subtraindo a interseção.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Para início de conversa</div>
-          <h2 class="title">Quantos alunos gostam dos dois?</h2>
-          
-          <p class="lede">Numa pesquisa com <strong>100 pessoas</strong>, 60 gostam de futebol, 50 gostam de vôlei e 20 não gostam de nenhum dos dois. Quantas gostam dos <strong>dois</strong>?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Quantas gostam de futebol e de vôlei?</p><button class="choice mqo" data-i="0">10</button><button class="choice mqo" data-i="1">20</button><button class="choice mqo" data-i="2">30</button><button class="choice mqo" data-i="3">40</button><div class="fb"></div><div class="answer"><p>Gostam de pelo menos um: <span class="tex">100 − 20 = 80</span>. Pela inclusão–exclusão: <span class="tex">60 + 50 − <i>x</i> = 80 ⇒ <i>x</i> = 30</span>. A soma <span class="tex">60 + 50 = 110</span> conta duas vezes quem gosta dos dois.</p></div></div>
-            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Somar <span class="tex">|<i>A</i>| + |<i>B</i>|</span> conta <strong>duas vezes</strong> quem está nos dois conjuntos. A inclusão–exclusão corrige isso subtraindo a interseção.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -394,7 +387,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · inclusão–exclusão</div>
@@ -408,7 +400,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -432,7 +423,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · múltiplos comuns</div>
@@ -445,7 +435,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -460,31 +449,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q19</div>
-          <h2 class="title">Múltiplos de 10 ou de 15</h2>
-          
-          <p class="lede"><span class="tex"><i>X</i> = {<i>n</i> ∈ <i>Z</i> ∣ 30 ≤ <i>n</i> ≤ 2025}</span>, <span class="tex"><i>A</i> = {<i>n</i> ∈ <i>X</i> ∣ <i>n</i></span> múltiplo de <span class="tex">10}</span> e <span class="tex"><i>B</i> = {<i>n</i> ∈ <i>X</i> ∣ <i>n</i></span> divisível por <span class="tex">15}</span>. Quantos elementos tem <span class="tex"><i>A</i> ∪ <i>B</i></span>?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">201</button><button class="choice mqo" data-i="1">234</button><button class="choice mqo" data-i="2">267</button><button class="choice mqo" data-i="3">300</button><button class="choice mqo" data-i="4">334</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>A</i> = {30, …, 2020}</span>: 200 elementos. <span class="tex"><i>B</i> = {30, 45, …, 2025} = {2·15, …, 135·15}</span>: 134 elementos. <span class="tex"><i>A</i> ∩ <i>B</i></span> = múltiplos de 30 de 30 a 2010: 67. <span class="tex">|<i>A</i> ∪ <i>B</i>| = 200 + 134 − 67 = 267</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2025 · Q9</div>
-          <h2 class="title">Quais afirmações estão corretas?</h2>
-          
-          <p class="lede"><span class="tex"><i>X</i> = {<i>x</i> ∈ <i>N</i> ∣ 33 ≤ <i>x</i> ≤ 999}</span>, <span class="tex"><i>A</i></span> = elementos divisíveis por 8 e <span class="tex"><i>B</i></span> = divisíveis por 10. Afirmações: <strong>I)</strong> <span class="tex">|<i>A</i>| = 120</span>; <strong>II)</strong> <span class="tex">|<i>A</i> ∪ <i>B</i>| = 216</span>; <strong>III)</strong> <span class="tex">|<i>A</i> ∩ <i>B</i>| = 24</span>. Quais estão corretas?</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">I, apenas</button><button class="choice mqo" data-i="1">II, apenas</button><button class="choice mqo" data-i="2">I e II, apenas</button><button class="choice mqo" data-i="3">I e III, apenas</button><button class="choice mqo" data-i="4">I, II e III</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>A</i> = {40, …, 992} = {5·8, …, 124·8}</span>: 120 ✓. <span class="tex"><i>B</i> = {40, …, 990} = {4·10, …, 99·10}</span>: 96. <span class="tex"><i>A</i> ∩ <i>B</i></span> (múltiplos de 40): 40, …, 960 → 24 ✓. <span class="tex">|<i>A</i> ∪ <i>B</i>| = 120 + 96 − 24 = 192 ≠ 216</span> ✗. <strong>Alternativa D — I e III.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -507,19 +471,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2025 · Q30</div>
-          <h2 class="title">Subconjuntos listados sem repetição</h2>
-          
-          <p class="lede">Um aluno listou corretamente, sem repetição, <strong>198 subconjuntos</strong> de um conjunto com <span class="tex"><i>n</i></span> elementos distintos (até certo momento). Qual o menor valor possível de <span class="tex"><i>n</i></span>?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">7</button><button class="choice mqo" data-i="1">8</button><button class="choice mqo" data-i="2">9</button><button class="choice mqo" data-i="3">10</button><button class="choice mqo" data-i="4">12</button><div class="fb"></div><div class="answer"><p>O total de subconjuntos é <span class="tex">2<sup><i>n</i></sup> ≥ 198</span>. Como <span class="tex">2<sup>7</sup> = 128 &lt; 198 ≤ 256 = 2<sup>8</sup></span>, o menor é <span class="tex"><i>n</i> = 8</span>. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Treino 3.2</div>
@@ -535,12 +486,75 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Múltiplos de 10 ou de 15</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <p class="lede"><span class="tex"><i>X</i> = {<i>n</i> ∈ <i>Z</i> ∣ 30 ≤ <i>n</i> ≤ 2025}</span>, <span class="tex"><i>A</i> = {<i>n</i> ∈ <i>X</i> ∣ <i>n</i></span> múltiplo de <span class="tex">10}</span> e <span class="tex"><i>B</i> = {<i>n</i> ∈ <i>X</i> ∣ <i>n</i></span> divisível por <span class="tex">15}</span>. Quantos elementos tem <span class="tex"><i>A</i> ∪ <i>B</i></span>?</p>
+          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">201</button><button class="choice mqo" data-i="1">234</button><button class="choice mqo" data-i="2">267</button><button class="choice mqo" data-i="3">300</button><button class="choice mqo" data-i="4">334</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>A</i> = {30, …, 2020}</span>: 200 elementos. <span class="tex"><i>B</i> = {30, 45, …, 2025} = {2·15, …, 135·15}</span>: 134 elementos. <span class="tex"><i>A</i> ∩ <i>B</i></span> = múltiplos de 30 de 30 a 2010: 67. <span class="tex">|<i>A</i> ∪ <i>B</i>| = 200 + 134 − 67 = 267</span>. <strong>Alternativa C.</strong></p></div></div>
+          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Quais afirmações estão corretas?</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. <span class="tex"><i>X</i> = {<i>x</i> ∈ <i>N</i> ∣ 33 ≤ <i>x</i> ≤ 999}</span>, <span class="tex"><i>A</i></span> = elementos divisíveis por 8 e <span class="tex"><i>B</i></span> = divisíveis por 10. Afirmações: <strong>I)</strong> <span class="tex">|<i>A</i>| = 120</span>; <strong>II)</strong> <span class="tex">|<i>A</i> ∪ <i>B</i>| = 216</span>; <strong>III)</strong> <span class="tex">|<i>A</i> ∩ <i>B</i>| = 24</span>. Quais estão corretas?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>I, apenas</li><li>II, apenas</li><li>I e II, apenas</li><li>I e III, apenas</li><li>I, II e III</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Subconjuntos listados sem repetição</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Um aluno listou corretamente, sem repetição, <strong>198 subconjuntos</strong> de um conjunto com <span class="tex"><i>n</i></span> elementos distintos (até certo momento). Qual o menor valor possível de <span class="tex"><i>n</i></span>?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>7</li><li>8</li><li>9</li><li>10</li><li>12</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>A</i> = {40, …, 992} = {5·8, …, 124·8}</span>: 120 ✓. <span class="tex"><i>B</i> = {40, …, 990} = {4·10, …, 99·10}</span>: 96. <span class="tex"><i>A</i> ∩ <i>B</i></span> (múltiplos de 40): 40, …, 960 → 24 ✓. <span class="tex">|<i>A</i> ∪ <i>B</i>| = 120 + 96 − 24 = 192 ≠ 216</span> ✗. <strong>Alternativa D — I e III.</strong></p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">O total de subconjuntos é <span class="tex">2<sup><i>n</i></sup> ≥ 198</span>. Como <span class="tex">2<sup>7</sup> = 128 &lt; 198 ≤ 256 = 2<sup>8</sup></span>, o menor é <span class="tex"><i>n</i> = 8</span>.</p></div></div>
+        </div>
+      </section>
+
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Inclusão–exclusão</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">|<i>A</i> ∪ <i>B</i>| = |<i>A</i>| + |<i>B</i>| − |<i>A</i> ∩ <i>B</i>|</span>; “nenhum” = total − união.</p></div>
+            <div class="card"><span class="badge">Contar termos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(<i>b</i> − <i>a</i>)/<i>r</i> + 1</span>; em múltiplos, ache o primeiro e o último dentro do intervalo.</p></div>
+            <div class="card"><span class="badge">Subconjuntos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">2<sup><i>n</i></sup></span> no total; <span class="tex"><i>C</i>(<i>n</i>, <i>k</i>)</span> com exatamente <span class="tex"><i>k</i></span> elementos.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Em conjuntos, o perigo está nas pontas: confira o primeiro e o último termo.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Numa pesquisa com <strong>100 pessoas</strong>, 60 gostam de futebol, 50 gostam de vôlei e 20 não gostam de nenhum dos dois. Quantas gostam dos <strong>dois</strong>?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Numa turma de 40 alunos, 25 gostam de Matemática, 18 de Física e 6 de nenhuma das duas. Quantos gostam das duas?</p>
@@ -582,23 +596,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Inclusão–exclusão</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">|<i>A</i> ∪ <i>B</i>| = |<i>A</i>| + |<i>B</i>| − |<i>A</i> ∩ <i>B</i>|</span>; “nenhum” = total − união.</p></div>
-            <div class="card"><span class="badge">Contar termos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(<i>b</i> − <i>a</i>)/<i>r</i> + 1</span>; em múltiplos, ache o primeiro e o último dentro do intervalo.</p></div>
-            <div class="card"><span class="badge">Subconjuntos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">2<sup><i>n</i></sup></span> no total; <span class="tex"><i>C</i>(<i>n</i>, <i>k</i>)</span> com exatamente <span class="tex"><i>k</i></span> elementos.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Em conjuntos, o perigo está nas pontas: confira o primeiro e o último termo.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -618,7 +631,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -973,3 +986,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

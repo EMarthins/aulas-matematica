@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Módulo 02 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Poliedros: <span style="color:var(--primary);">vértices, arestas e faces</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">“Poli” é muitos e “edro” é face: poliedro é o sólido limitado por polígonos. Contar seus elementos e reconhecer os cinco regulares abre a porta para áreas e volumes.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Poliedros: <span style="color:var(--primary);">vértices, arestas e faces</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">“Poli” é muitos e “edro” é face: poliedro é o sólido limitado por polígonos. Contar seus elementos e reconhecer os cinco regulares abre a porta para áreas e volumes.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> E poliedro ?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">V · A · F</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">convexo ou não</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">5 regulares</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M80 80 L80 150 L200 150 L200 80 Z" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 80 L120 50 L240 50 L200 80 Z" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 80 L240 50 L240 120 L200 150 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="140" y="166" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">comprimento</text><text x="246" y="100" font-size="12" fill="var(--ink)" text-anchor="start" font-weight="700">altura</text><text x="150" y="44" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">largura</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">volume = c · l · h</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do sólido aos elementos.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Poliedro</strong><div class="hint">sólido limitado por polígonos</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Elementos</strong><div class="hint">vértices, arestas e faces</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Nomes</strong><div class="hint">tetraedro, hexaedro, octaedro…</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Convexos</strong><div class="hint">sem reentrâncias</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Regulares</strong><div class="hint">os cinco poliedros regulares</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Poli… de muitos!</h2>
+          
+          
+          <p class="lede"><em>Polissílabas</em> têm muitas sílabas; <em>polifonia</em>, muitos sons; <em>polinômio</em>, muitos termos. E <strong>poliedro</strong>? Muitas <strong>faces</strong>: é o sólido geométrico cuja superfície é formada só por <strong>polígonos</strong>, e cada lado de um polígono é lado de exatamente <strong>outro</strong> polígono.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="card primary"><strong>Elementos de um poliedro</strong><ul style="font-size:.92rem;margin-top:8px;line-height:1.6;padding-left:18px;"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Faces:</strong> polígonos que formam o sólido.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Arestas:</strong> encontro de duas faces (lado dos polígonos).</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Vértices:</strong> pontos onde as arestas se encontram.</span></li></ul></div>
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Um cubo tem quantas faces, arestas e vértices?</p><button class="choice mqo" data-i="0">6, 12 e 8</button><button class="choice mqo" data-i="1">8, 12 e 6</button><button class="choice mqo" data-i="2">6, 8 e 12</button><button class="choice mqo" data-i="3">12, 6 e 8</button><div class="fb"></div><div class="answer"><p>Faces: 6 quadrados. Arestas: 12. Vértices: 8. (Lembre: <span class="tex"><i>F</i> = 6</span>, <span class="tex"><i>A</i> = 12</span>, <span class="tex"><i>V</i> = 8</span>.)</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Poli… de muitos!</h2>
-          
-          <p class="lede"><em>Polissílabas</em> têm muitas sílabas; <em>polifonia</em>, muitos sons; <em>polinômio</em>, muitos termos. E <strong>poliedro</strong>? Muitas <strong>faces</strong>: é o sólido geométrico cuja superfície é formada só por <strong>polígonos</strong>, e cada lado de um polígono é lado de exatamente <strong>outro</strong> polígono.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="card primary"><strong>Elementos de um poliedro</strong><ul style="font-size:.92rem;margin-top:8px;line-height:1.6;padding-left:18px;"><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Faces:</strong> polígonos que formam o sólido.</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Arestas:</strong> encontro de duas faces (lado dos polígonos).</span></li><li><svg class="" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Vértices:</strong> pontos onde as arestas se encontram.</span></li></ul></div>
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Um cubo tem quantas faces, arestas e vértices?</p><button class="choice mqo" data-i="0">6, 12 e 8</button><button class="choice mqo" data-i="1">8, 12 e 6</button><button class="choice mqo" data-i="2">6, 8 e 12</button><button class="choice mqo" data-i="3">12, 6 e 8</button><div class="fb"></div><div class="answer"><p>Faces: 6 quadrados. Arestas: 12. Vértices: 8. (Lembre: <span class="tex"><i>F</i> = 6</span>, <span class="tex"><i>A</i> = 12</span>, <span class="tex"><i>V</i> = 8</span>.)</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -397,7 +391,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resumo visual</div>
@@ -419,7 +412,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · poliedros regulares</div>
@@ -439,99 +431,107 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Contando elementos</h2>
           
+          
           <p class="lede">Determine <span class="tex"><i>V</i></span>, <span class="tex"><i>F</i></span> e <span class="tex"><i>A</i></span> de um prisma pentagonal e de uma pirâmide hexagonal.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Prisma pentagonal</strong><div class="hint">Faces: 2 pentágonos + 5 retângulos ⇒ <span class="tex"><i>F</i> = 7</span>. Vértices: <span class="tex">5 + 5 = 10</span>. Arestas: <span class="tex">5 + 5 + 5 = 15</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Pirâmide hexagonal</strong><div class="hint">Faces: 1 hexágono + 6 triângulos ⇒ <span class="tex"><i>F</i> = 7</span>. Vértices: <span class="tex">6 + 1 = 7</span>. Arestas: <span class="tex">6 + 6 = 12</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Prisma: <span class="tex"><i>V</i> = 10</span>, <span class="tex"><i>F</i> = 7</span>, <span class="tex"><i>A</i> = 15</span>. Pirâmide: <span class="tex"><i>V</i> = 7</span>, <span class="tex"><i>F</i> = 7</span>, <span class="tex"><i>A</i> = 12</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Prisma pentagonal</strong><div class="hint">Faces: 2 pentágonos + 5 retângulos ⇒ <span class="tex"><i>F</i> = 7</span>. Vértices: <span class="tex">5 + 5 = 10</span>. Arestas: <span class="tex">5 + 5 + 5 = 15</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Pirâmide hexagonal</strong><div class="hint">Faces: 1 hexágono + 6 triângulos ⇒ <span class="tex"><i>F</i> = 7</span>. Vértices: <span class="tex">6 + 1 = 7</span>. Arestas: <span class="tex">6 + 6 = 12</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Prisma: <span class="tex"><i>V</i> = 10</span>, <span class="tex"><i>F</i> = 7</span>, <span class="tex"><i>A</i> = 15</span>. Pirâmide: <span class="tex"><i>V</i> = 7</span>, <span class="tex"><i>F</i> = 7</span>, <span class="tex"><i>A</i> = 12</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Arestas pelas faces</h2>
+          
           
           <p class="lede">Um poliedro tem 8 faces triangulares. Quantas arestas ele tem?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Soma dos lados</strong><div class="hint"><span class="tex">8 · 3 = 24</span> lados no total.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Cada aresta conta duas vezes</strong><div class="hint">Dois lados de faces formam uma aresta: <span class="tex"><i>A</i> = 24 ÷ 2 = 12</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>A</i> = 12</span> arestas (é o octaedro).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Soma dos lados</strong><div class="hint"><span class="tex">8 · 3 = 24</span> lados no total.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Cada aresta conta duas vezes</strong><div class="hint">Dois lados de faces formam uma aresta: <span class="tex"><i>A</i> = 24 ÷ 2 = 12</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>A</i> = 12</span> arestas (é o octaedro).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Convexo ou não convexo?</h2>
           
+          
           <p class="lede">Um poliedro tem uma “reentrância” (como um prisma com um buraco em forma de cunha). Ele é convexo?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Teste da reta</strong><div class="hint">Uma reta passando pela reentrância corta o sólido em <strong>mais de dois pontos</strong>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Conclusão</strong><div class="hint">Existe reta que corta o poliedro em mais de 2 pontos.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O poliedro é <strong>não convexo</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Teste da reta</strong><div class="hint">Uma reta passando pela reentrância corta o sólido em <strong>mais de dois pontos</strong>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Conclusão</strong><div class="hint">Existe reta que corta o poliedro em mais de 2 pontos.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O poliedro é <strong>não convexo</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Nome pelo número de faces</h2>
           
+          
           <p class="lede">Qual o nome de um poliedro com 7 faces? E de um com 12 faces?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>7 faces</strong><div class="hint">heptaedro.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>12 faces</strong><div class="hint">dodecaedro.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Heptaedro e dodecaedro. O nome depende só do número de faces, não da forma delas.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>7 faces</strong><div class="hint">heptaedro.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>12 faces</strong><div class="hint">dodecaedro.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Heptaedro e dodecaedro. O nome depende só do número de faces, não da forma delas.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Elementos</h2>
-          
-          <p class="lede">Um prisma pentagonal tem quantas arestas?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">10</button><button class="choice mqo" data-i="1">12</button><button class="choice mqo" data-i="2">15</button><button class="choice mqo" data-i="3">17</button><button class="choice mqo" data-i="4">20</button><div class="fb"></div><div class="answer"><p><span class="tex">5</span> da base superior <span class="tex">+ 5</span> da base inferior <span class="tex">+ 5</span> laterais <span class="tex">= 15</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um prisma pentagonal tem quantas arestas?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>10</li><li>12</li><li>15</li><li>17</li><li>20</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Um poliedro tem 8 faces triangulares. O número de arestas é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>6</li><li>12</li><li>16</li><li>24</li><li>8</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Arestas pelas faces</h2>
-          
-          <p class="lede">Um poliedro tem 8 faces triangulares. O número de arestas é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">6</button><button class="choice mqo" data-i="1">12</button><button class="choice mqo" data-i="2">16</button><button class="choice mqo" data-i="3">24</button><button class="choice mqo" data-i="4">8</button><div class="fb"></div><div class="answer"><p><span class="tex">8 · 3 ÷ 2 = 12</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Poliedro de faces triangulares</h2>
-          
-          <p class="lede">Um poliedro convexo tem 8 faces, todas triangulares (como o octaedro). O número de vértices é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">6</button><button class="choice mqo" data-i="1">4</button><button class="choice mqo" data-i="2">5</button><button class="choice mqo" data-i="3">8</button><button class="choice mqo" data-i="4">12</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>A</i> = 8 · 3 ÷ 2 = 12</span>; Euler: <span class="tex"><i>V</i> = <i>A</i> − <i>F</i> + 2 = 12 − 8 + 2 = 6</span>. <strong>Alternativa A.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um poliedro convexo tem 8 faces, todas triangulares (como o octaedro). O número de vértices é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>6</li><li>4</li><li>5</li><li>8</li><li>12</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">5</span> da base superior <span class="tex">+ 5</span> da base inferior <span class="tex">+ 5</span> laterais <span class="tex">= 15</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">8 · 3 ÷ 2 = 12</span>.</p></div>
+<div class="card success"><strong>3. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>A</i> = 8 · 3 ÷ 2 = 12</span>; Euler: <span class="tex"><i>V</i> = <i>A</i> − <i>F</i> + 2 = 12 − 8 + 2 = 6</span>.</p></div></div>
         </div>
       </section>
 
@@ -550,12 +550,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Elementos</span><p style="font-size:.85rem;margin-top:8px;">Vértices, arestas e faces.</p></div>
+            <div class="card"><span class="badge">Convexo</span><p style="font-size:.85rem;margin-top:8px;">Reta corta em no máximo 2 pontos.</p></div>
+            <div class="card"><span class="badge">Regulares</span><p style="font-size:.85rem;margin-top:8px;">Só cinco: 4, 6, 8, 12 e 20 faces.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Conte com método: faces primeiro, arestas pela divisão por 2.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: E poliedro ?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O número de vértices de um cubo é:</p>
@@ -597,23 +614,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Elementos</span><p style="font-size:.85rem;margin-top:8px;">Vértices, arestas e faces.</p></div>
-            <div class="card"><span class="badge">Convexo</span><p style="font-size:.85rem;margin-top:8px;">Reta corta em no máximo 2 pontos.</p></div>
-            <div class="card"><span class="badge">Regulares</span><p style="font-size:.85rem;margin-top:8px;">Só cinco: 4, 6, 8, 12 e 20 faces.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Conte com método: faces primeiro, arestas pela divisão por 2.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -633,7 +649,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -983,3 +999,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

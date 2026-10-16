@@ -269,6 +269,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg class="cover-curve" viewBox="0 0 900 260" style="position:absolute;right:-40px;bottom:10px;width:min(70%,620px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true">
@@ -285,59 +287,57 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <text x="480" y="60" class="mono" font-size="13" fill="var(--ink-faint)">×q</text>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3 · Parte 1 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2.4rem,6.6vw,4.6rem);font-weight:900;line-height:.96;margin:0 0 10px;max-width:13ch;">Progressão <span style="color:var(--primary);">geométrica</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:48ch;">De bactérias que se multiplicam a dívidas que triplicam: a razão constante que rege o termo geral da PG.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Progressão <span style="color:var(--primary);">geométrica</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">De bactérias que se multiplicam a dívidas que triplicam: a razão constante que rege o termo geral da PG.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 79–81</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">a<sub>n</sub> = a<sub>1</sub> · q<sup>n−1</sup></span>
             <span class="badge">H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Seis paradas — da definição ao desafio final — para dominar o termo geral da PG.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="18" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="4" r="2.2"/><path d="M6.6 16.4 10.4 13.6M13.6 10.4 17.4 5.6"/></svg>
-              <div><strong>Definição e razão</strong><div class="hint">o quociente constante que define a PG</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M4 20V9l4-3 4 3v11M12 20v-6l4-3 4 3v6"/></svg>
-              <div><strong>Classificação</strong><div class="hint">crescente, decrescente, constante e alternante</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c4 0 5-11 9-11s6 9 9 9"/></svg>
-              <div><strong>Fórmula do termo geral</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">a<sub>n</sub> = a<sub>1</sub> · q<sup>n−1</sup>, deduzida do zero</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">04</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9 9.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .8-3 1.9 1 1.8 3 1.8 3-.8 3-1.8"/></svg>
-              <div><strong>Aplicações</strong><div class="hint">juros compostos, população, substâncias</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 12 4l8 16H4Z"/><path d="M9 20v-6h6v6"/></svg>
-              <div><strong>No ENEM é assim</strong><div class="hint">três questões reais, resolvidas passo a passo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">06</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8M12 17v4M6 3h12l-1 8a5 5 0 0 1-10 0L6 3Z"/></svg>
-              <div><strong>Desafio final</strong><div class="hint">quiz rápido pra fechar com chave de ouro</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="30" y="150" width="52" height="20" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="56" y="142" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">3</text><rect x="82" y="122" width="52" height="48" rx="2" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="108" y="114" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">7</text><rect x="134" y="94" width="52" height="76" rx="2" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="160" y="86" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">11</text><rect x="186" y="66" width="52" height="104" rx="2" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="212" y="58" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">15</text><rect x="238" y="38" width="52" height="132" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="264" y="30" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">19</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">cada degrau: + 4</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A bactéria que se multiplica</h2>
+          
+          <div class="grid2">
+            <div>
+              <p>Em um experimento, observou-se o comportamento de replicação de certa bactéria a cada hora:</p>
+              <table class="tbl">
+                <tr><th>hora</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                <tr><th>bactérias</th><td>2</td><td>4</td><td>8</td><td>16</td></tr>
+              </table>
+              <p class="hint" style="margin-top:8px;">A partir do 2º termo, dividindo qualquer termo pelo seu antecedente, obtemos sempre o mesmo quociente: 4÷2=2, 8÷4=2, 16÷8=2…</p>
+            </div>
+            <div>
+              <div class="callout">
+                <h4>Pergunta</h4>
+                <p>Qual a razão dessa sequência? Como você a classificaria?</p>
+              </div>
+              <button class="reveal" onclick="toggleAnswer(this)">Ver o raciocínio<span aria-hidden="true">↴</span></button>
+              <div class="answer">
+                <p>Esse quociente constante é a <strong>razão da progressão geométrica</strong>, indicada pela letra <strong>q</strong>. Aqui, q = 2.</p>
+                <p>Como q &gt; 1 e todos os termos são positivos, é uma <strong>PG crescente</strong>.</p>
+                <p class="hint">Assim como na PA a diferença entre termos é constante, na PG é o <strong>quociente</strong> que se repete. Vamos formalizar essa ideia.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -362,37 +362,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO: BACTÉRIAS -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">A bactéria que se multiplica</h2>
-          <div class="grid2">
-            <div>
-              <p>Em um experimento, observou-se o comportamento de replicação de certa bactéria a cada hora:</p>
-              <table class="tbl">
-                <tr><th>hora</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-                <tr><th>bactérias</th><td>2</td><td>4</td><td>8</td><td>16</td></tr>
-              </table>
-              <p class="hint" style="margin-top:8px;">A partir do 2º termo, dividindo qualquer termo pelo seu antecedente, obtemos sempre o mesmo quociente: 4÷2=2, 8÷4=2, 16÷8=2…</p>
-            </div>
-            <div>
-              <div class="callout">
-                <h4>Pergunta</h4>
-                <p>Qual a razão dessa sequência? Como você a classificaria?</p>
-              </div>
-              <button class="reveal" onclick="toggleAnswer(this)">Ver o raciocínio<span aria-hidden="true">↴</span></button>
-              <div class="answer">
-                <p>Esse quociente constante é a <strong>razão da progressão geométrica</strong>, indicada pela letra <strong>q</strong>. Aqui, q = 2.</p>
-                <p>Como q &gt; 1 e todos os termos são positivos, é uma <strong>PG crescente</strong>.</p>
-                <p class="hint">Assim como na PA a diferença entre termos é constante, na PG é o <strong>quociente</strong> que se repete. Vamos formalizar essa ideia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: DEFINIÇÃO E RAZÃO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 79 · Teoria</div>
@@ -415,7 +384,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 TEORIA + ATIVIDADE: CLASSIFICAÇÃO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 79 · Teoria</div>
@@ -431,7 +399,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: FÓRMULA DO TERMO GERAL -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 79 · Teoria</div>
@@ -458,11 +425,12 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 EXEMPLO: JUROS COMPOSTOS -->
+      
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Exemplo prático</div>
           <h2 class="title">Juros compostos são uma PG</h2>
+          
           <p class="lede">Certo investimento rende 2% ao mês. Qual a quantia obtida em 6 meses por um capital de R$ 12.000,00?</p>
           <div class="card growth" style="margin-top:10px;">
             <p style="margin:0 0 6px;">A cada mês, o capital é multiplicado por 1,02 (100% + 2%). Isso é uma PG com a<sub>1</sub> = 12.000·1,02 = 12.240, razão q = 1,02.</p>
@@ -473,10 +441,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
               <p><strong>a<sub>6</sub> = R$ 13.513,94</strong></p>
             </div>
           </div>
+        
         </div>
       </section>
 
-      <!-- 8 ATIVIDADE 1 -->
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · Pratique</div>
@@ -502,7 +471,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 ENEM 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · No ENEM é assim (ENEM 2021 PPL, Q162)</div>
@@ -525,7 +493,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 APLICAÇÕES: POPULAÇÃO E SUBSTÂNCIA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 80 · Aplicações</div>
@@ -555,7 +522,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ENEM 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No ENEM é assim (ENEM 2023, Q169)</div>
@@ -578,7 +544,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ENEM 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · No ENEM é assim (ENEM 2020, Q155)</div>
@@ -600,7 +565,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ATIVIDADE PRATIQUE MAIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 5 · Pratique mais</div>
@@ -642,7 +606,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 SÍNTESE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -673,12 +636,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. Numa PG, a razão q é obtida por:</p>
@@ -720,7 +682,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ENCERRAMENTO -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -1109,3 +1087,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

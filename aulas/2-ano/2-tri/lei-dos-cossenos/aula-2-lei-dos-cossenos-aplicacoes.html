@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 03 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Lei dos cossenos na prática: <span style="color:var(--primary);">lagos, navios e terrenos</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Há mais de 2 200 anos, Eratóstenes mediu o raio da Terra e Hiparco, a distância até a Lua, com triângulos. Hoje usamos as mesmas ideias para medir lagos, rotas e terrenos que não dá para atravessar.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Lei dos cossenos na prática: <span style="color:var(--primary);">lagos, navios e terrenos</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Há mais de 2 200 anos, Eratóstenes mediu o raio da Terra e Hiparco, a distância até a Lua, com triângulos. Hoje usamos as mesmas ideias para medir lagos, rotas e terrenos que não dá para atravessar.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Depois de 2 horas, qual a distância entre eles?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">LAL ou LLL</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">topografia</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">navegação</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="220" y="26" width="30" height="142" rx="3" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><path d="M214 26 L235 6 L256 26 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="132" r="8" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><line x1="60" y1="140" x2="60" y2="168" stroke="var(--growth)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="40" stroke="var(--decay)" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="132" stroke="var(--ink-soft)" stroke-width="1.5" stroke-linecap="round"/><path d="M96 132 A36 36 0 0 0 91 113" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="112" y="126" font-size="14" fill="var(--primary)" text-anchor="start" font-weight="700">θ</text><text x="258" y="100" font-size="14" fill="var(--ink)" text-anchor="start" font-weight="700">h</text><text x="140" y="152" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">d</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Qual lei usar, e como conferir.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Identificar os dados</strong><div class="hint">o que se tem e o que se pede</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Escolher a lei</strong><div class="hint">senos ou cossenos</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Calcular</strong><div class="hint">lado ou ângulo</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Resolver o triângulo</strong><div class="hint">combinando as duas leis</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Aplicações</strong><div class="hint">lago, rota de navios, terreno</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Dois navios saem do mesmo porto</h2>
+          
+          
+          <p class="lede">Dois navios deixam o mesmo porto em rotas que formam <span class="tex">50°</span>. O primeiro navega a <span class="tex">20</span> km/h e o segundo a <span class="tex">30</span> km/h. Depois de <span class="tex">2</span> horas, qual a distância entre eles? Os caminhos percorridos são <strong>dois lados</strong> e o ângulo entre eles é conhecido.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 300 150" style="width:100%;max-width:300px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="194.5,34 102.7,116 197.3,116" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><text x="201.7" y="25.8" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >P</text><text x="89" y="127" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >N1</text><text x="208.8" y="130.7" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >N2</text><text x="143.3" y="132.3" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">d</text><text x="182.1" y="60.9" fill="var(--growth)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text></svg>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Os lados do triângulo, depois de 2 h, valem:</p><button class="choice mqo" data-i="0">20 e 30</button><button class="choice mqo" data-i="1">40 e 60</button><button class="choice mqo" data-i="2">10 e 15</button><button class="choice mqo" data-i="3">50 e 50</button><div class="fb"></div><div class="answer"><p>Distância = velocidade × tempo: <span class="tex">20 · 2 = 40</span> km e <span class="tex">30 · 2 = 60</span> km.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Dois navios saem do mesmo porto</h2>
-          
-          <p class="lede">Dois navios deixam o mesmo porto em rotas que formam <span class="tex">50°</span>. O primeiro navega a <span class="tex">20</span> km/h e o segundo a <span class="tex">30</span> km/h. Depois de <span class="tex">2</span> horas, qual a distância entre eles? Os caminhos percorridos são <strong>dois lados</strong> e o ângulo entre eles é conhecido.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 300 150" style="width:100%;max-width:300px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="194.5,34 102.7,116 197.3,116" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><text x="201.7" y="25.8" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >P</text><text x="89" y="127" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >N1</text><text x="208.8" y="130.7" fill="var(--ink)" font-size="15" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >N2</text><text x="143.3" y="132.3" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">d</text><text x="182.1" y="60.9" fill="var(--growth)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text></svg>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Os lados do triângulo, depois de 2 h, valem:</p><button class="choice mqo" data-i="0">20 e 30</button><button class="choice mqo" data-i="1">40 e 60</button><button class="choice mqo" data-i="2">10 e 15</button><button class="choice mqo" data-i="3">50 e 50</button><div class="fb"></div><div class="answer"><p>Distância = velocidade × tempo: <span class="tex">20 · 2 = 40</span> km e <span class="tex">30 · 2 = 60</span> km.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -388,115 +382,122 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Medir um lago</h2>
           
+          
           <p class="lede">Para medir um lago, um técnico mede, a partir de um ponto <span class="tex"><i>T</i></span> na margem, <span class="tex">TA = 40</span> m e <span class="tex">TB = 25</span> m até dois pontos opostos do lago, e o ângulo <span class="tex">∠ATB = 120°</span>. Qual a distância <span class="tex">AB</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex">AB<sup>2</sup> = 40<sup>2</sup> + 25<sup>2</sup> − 2 · 40 · 25 · cos 120°</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex">AB<sup>2</sup> = 1600 + 625 − 2000 · (−0,5) = 2225 + 1000 = 3225</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Raiz</strong><div class="hint"><span class="tex">AB = <span class="rt">√<span class="rr">3225</span></span> ≈ 56,8</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O lago tem cerca de <span class="tex">56,8</span> m de uma margem à outra.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex">AB<sup>2</sup> = 40<sup>2</sup> + 25<sup>2</sup> − 2 · 40 · 25 · cos 120°</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex">AB<sup>2</sup> = 1600 + 625 − 2000 · (−0,5) = 2225 + 1000 = 3225</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Raiz</strong><div class="hint"><span class="tex">AB = <span class="rt">√<span class="rr">3225</span></span> ≈ 56,8</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O lago tem cerca de <span class="tex">56,8</span> m de uma margem à outra.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">A distância entre os navios</h2>
           
+          
           <p class="lede">Com os dados do início (<span class="tex">40</span> km, <span class="tex">60</span> km e <span class="tex">50°</span>), calcule a distância entre os navios. (use <span class="tex">cos 50° ≈ 0,64</span>)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex"><i>d</i><sup>2</sup> = 40<sup>2</sup> + 60<sup>2</sup> − 2 · 40 · 60 · cos 50°</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex"><i>d</i><sup>2</sup> = 1600 + 3600 − 4800 · 0,64 = 5200 − 3072 = 2128</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Raiz</strong><div class="hint"><span class="tex"><i>d</i> = <span class="rt">√<span class="rr">2128</span></span> ≈ 46,1</span> km.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Os navios estão a cerca de <span class="tex">46</span> km um do outro.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Fórmula</strong><div class="hint"><span class="tex"><i>d</i><sup>2</sup> = 40<sup>2</sup> + 60<sup>2</sup> − 2 · 40 · 60 · cos 50°</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex"><i>d</i><sup>2</sup> = 1600 + 3600 − 4800 · 0,64 = 5200 − 3072 = 2128</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Raiz</strong><div class="hint"><span class="tex"><i>d</i> = <span class="rt">√<span class="rr">2128</span></span> ≈ 46,1</span> km.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Os navios estão a cerca de <span class="tex">46</span> km um do outro.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Resolvendo o triângulo completo</h2>
           
+          
           <p class="lede">Em um triângulo, dois lados medem <span class="tex">5</span> e <span class="tex">8</span> e formam <span class="tex">60°</span>. Calcule o terceiro lado e o ângulo oposto ao lado <span class="tex">5</span>. (use <span class="tex">sen 60° ≈ 0,87</span>)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Lei dos cossenos</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> = 25 + 64 − 2 · 5 · 8 · 0,5 = 49</span> ⇒ <span class="tex"><i>x</i> = 7</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Lei dos senos</strong><div class="hint">O ângulo <span class="tex"><i>A</i></span> oposto a <span class="tex">5</span>: <span class="tex"> <span class="fr"><span>5</span><span>sen <i>A</i></span></span> = <span class="fr"><span>7</span><span>sen 60°</span></span></span> ⇒ <span class="tex">sen <i>A</i> = 5 · 0,87 ÷ 7 ≈ 0,62</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Ângulo</strong><div class="hint"><span class="tex"><i>A</i> ≈ 38,2°</span> (o outro ângulo, <span class="tex">180° − 60° − 38,2° = 81,8°</span>).</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Terceiro lado <span class="tex">7</span>; ângulos de <span class="tex">60°</span>, <span class="tex">≈ 38,2°</span> e <span class="tex">≈ 81,8°</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Lei dos cossenos</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> = 25 + 64 − 2 · 5 · 8 · 0,5 = 49</span> ⇒ <span class="tex"><i>x</i> = 7</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Lei dos senos</strong><div class="hint">O ângulo <span class="tex"><i>A</i></span> oposto a <span class="tex">5</span>: <span class="tex"> <span class="fr"><span>5</span><span>sen <i>A</i></span></span> = <span class="fr"><span>7</span><span>sen 60°</span></span></span> ⇒ <span class="tex">sen <i>A</i> = 5 · 0,87 ÷ 7 ≈ 0,62</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Ângulo</strong><div class="hint"><span class="tex"><i>A</i> ≈ 38,2°</span> (o outro ângulo, <span class="tex">180° − 60° − 38,2° = 81,8°</span>).</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Terceiro lado <span class="tex">7</span>; ângulos de <span class="tex">60°</span>, <span class="tex">≈ 38,2°</span> e <span class="tex">≈ 81,8°</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">O ângulo de um terreno</h2>
           
+          
           <p class="lede">Um terreno triangular tem lados de <span class="tex">20</span> m, <span class="tex">30</span> m e <span class="tex">40</span> m. Qual o maior ângulo do terreno? (com a calculadora, <span class="tex">cos<sup>−1</sup>(−0,25) ≈ 104,5°</span>)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Maior ângulo</strong><div class="hint">É oposto ao maior lado (<span class="tex">40</span>): <span class="tex">cos θ = <span class="fr"><span>20<sup>2</sup> + 30<sup>2</sup> − 40<sup>2</sup></span><span>2 · 20 · 30</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex">cos θ = <span class="fr"><span>400 + 900 − 1600</span><span>1200</span></span> = <span class="fr"><span>−300</span><span>1200</span></span> = −0,25</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Ângulo</strong><div class="hint"><span class="tex">θ ≈ 104,5°</span> (obtuso, como o cosseno negativo indicava).</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O maior ângulo do terreno mede cerca de <span class="tex">104,5°</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Maior ângulo</strong><div class="hint">É oposto ao maior lado (<span class="tex">40</span>): <span class="tex">cos θ = <span class="fr"><span>20<sup>2</sup> + 30<sup>2</sup> − 40<sup>2</sup></span><span>2 · 20 · 30</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Conta</strong><div class="hint"><span class="tex">cos θ = <span class="fr"><span>400 + 900 − 1600</span><span>1200</span></span> = <span class="fr"><span>−300</span><span>1200</span></span> = −0,25</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Ângulo</strong><div class="hint"><span class="tex">θ ≈ 104,5°</span> (obtuso, como o cosseno negativo indicava).</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O maior ângulo do terreno mede cerca de <span class="tex">104,5°</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Lago</h2>
-          
-          <p class="lede">De um ponto <span class="tex"><i>T</i></span>, <span class="tex">TA = 30</span> m e <span class="tex">TB = 20</span> m, com <span class="tex">∠ATB = 60°</span>. A distância <span class="tex">AB</span> é, aproximadamente:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">10</span> m</button><button class="choice mqo" data-i="1"><span class="tex">22,4</span> m</button><button class="choice mqo" data-i="2"><span class="tex">26,5</span> m</button><button class="choice mqo" data-i="3"><span class="tex">50</span> m</button><div class="fb"></div><div class="answer"><p><span class="tex">AB<sup>2</sup> = 900 + 400 − 2 · 30 · 20 · 0,5 = 700</span> ⇒ <span class="tex">AB = 10<span class="rt">√<span class="rr">7</span></span> ≈ 26,5</span> m. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. De um ponto <span class="tex"><i>T</i></span>, <span class="tex">TA = 30</span> m e <span class="tex">TB = 20</span> m, com <span class="tex">∠ATB = 60°</span>. A distância <span class="tex">AB</span> é, aproximadamente:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">10</span> m</li><li><span class="tex">22,4</span> m</li><li><span class="tex">26,5</span> m</li><li><span class="tex">50</span> m</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Dois barcos partem do mesmo ponto em rotas perpendiculares e percorrem <span class="tex">30</span> km e <span class="tex">40</span> km. A distância entre eles é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">35</span> km</li><li><span class="tex">50</span> km</li><li><span class="tex">60</span> km</li><li><span class="tex">70</span> km</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Navios em rotas perpendiculares</h2>
-          
-          <p class="lede">Dois barcos partem do mesmo ponto em rotas perpendiculares e percorrem <span class="tex">30</span> km e <span class="tex">40</span> km. A distância entre eles é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">35</span> km</button><button class="choice mqo" data-i="1"><span class="tex">50</span> km</button><button class="choice mqo" data-i="2"><span class="tex">60</span> km</button><button class="choice mqo" data-i="3"><span class="tex">70</span> km</button><div class="fb"></div><div class="answer"><p>Com <span class="tex">90°</span> a lei dos cossenos vira Pitágoras: <span class="tex">30<sup>2</sup> + 40<sup>2</sup> = 2500</span> ⇒ <span class="tex">50</span> km. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Ângulo do triângulo 5, 7, 8</h2>
-          
-          <p class="lede">Em um triângulo de lados <span class="tex">5</span>, <span class="tex">7</span> e <span class="tex">8</span>, o ângulo oposto ao lado <span class="tex">7</span> mede:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">30°</span></button><button class="choice mqo" data-i="1"><span class="tex">45°</span></button><button class="choice mqo" data-i="2"><span class="tex">60°</span></button><button class="choice mqo" data-i="3"><span class="tex">90°</span></button><div class="fb"></div><div class="answer"><p><span class="tex">cos θ = <span class="fr"><span>25 + 64 − 49</span><span>80</span></span> = <span class="fr"><span>40</span><span>80</span></span> = 0,5</span> ⇒ <span class="tex">θ = 60°</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Em um triângulo de lados <span class="tex">5</span>, <span class="tex">7</span> e <span class="tex">8</span>, o ângulo oposto ao lado <span class="tex">7</span> mede:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">30°</span></li><li><span class="tex">45°</span></li><li><span class="tex">60°</span></li><li><span class="tex">90°</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Campo triangular</h2>
-          
-          <p class="lede">Um campo triangular tem dois lados de <span class="tex">60</span> m e <span class="tex">80</span> m que formam um ângulo de <span class="tex">120°</span>. Para cercá-lo, o terceiro lado, em metros, é de aproximadamente: (use <span class="tex"><span class="rt">√<span class="rr">37</span></span> ≈ 6,08</span>)</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">≈ 72</span></button><button class="choice mqo" data-i="1"><span class="tex">≈ 100</span></button><button class="choice mqo" data-i="2"><span class="tex">≈ 104</span></button><button class="choice mqo" data-i="3"><span class="tex">≈ 122</span></button><button class="choice mqo" data-i="4"><span class="tex">≈ 140</span></button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sup>2</sup> = 3600 + 6400 + 4800 = 14800</span> ⇒ <span class="tex"><i>x</i> = 20<span class="rt">√<span class="rr">37</span></span> ≈ 121,6</span> m. <strong>Alternativa D.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Um campo triangular tem dois lados de <span class="tex">60</span> m e <span class="tex">80</span> m que formam um ângulo de <span class="tex">120°</span>. Para cercá-lo, o terceiro lado, em metros, é de aproximadamente: (use <span class="tex"><span class="rt">√<span class="rr">37</span></span> ≈ 6,08</span>)</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">≈ 72</span></li><li><span class="tex">≈ 100</span></li><li><span class="tex">≈ 104</span></li><li><span class="tex">≈ 122</span></li><li><span class="tex">≈ 140</span></li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">AB<sup>2</sup> = 900 + 400 − 2 · 30 · 20 · 0,5 = 700</span> ⇒ <span class="tex">AB = 10<span class="rt">√<span class="rr">7</span></span> ≈ 26,5</span> m.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Com <span class="tex">90°</span> a lei dos cossenos vira Pitágoras: <span class="tex">30<sup>2</sup> + 40<sup>2</sup> = 2500</span> ⇒ <span class="tex">50</span> km.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">cos θ = <span class="fr"><span>25 + 64 − 49</span><span>80</span></span> = <span class="fr"><span>40</span><span>80</span></span> = 0,5</span> ⇒ <span class="tex">θ = 60°</span>.</p></div>
+<div class="card success"><strong>4. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>x</i><sup>2</sup> = 3600 + 6400 + 4800 = 14800</span> ⇒ <span class="tex"><i>x</i> = 20<span class="rt">√<span class="rr">37</span></span> ≈ 121,6</span> m.</p></div></div>
         </div>
       </section>
 
@@ -515,12 +516,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Escolha da lei</span><p style="font-size:.85rem;margin-top:8px;">Par lado — ângulo oposto: senos. Dois lados e ângulo entre eles, ou três lados: cossenos.</p></div>
+            <div class="card"><span class="badge">Triângulo completo</span><p style="font-size:.85rem;margin-top:8px;">Cossenos para um lado e senos para os ângulos restantes.</p></div>
+            <div class="card"><span class="badge">Conferência</span><p style="font-size:.85rem;margin-top:8px;">O maior lado fica oposto ao maior ângulo; o cosseno de um obtuso é negativo.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com as duas leis, qualquer triângulo pode ser calculado. Próximo assunto: a circunferência trigonométrica e seus arcos.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Depois de 2 horas, qual a distância entre eles?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Dois lados de <span class="tex">30</span> e <span class="tex">40</span> com ângulo reto entre eles: o terceiro lado é:</p>
@@ -562,23 +580,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Escolha da lei</span><p style="font-size:.85rem;margin-top:8px;">Par lado — ângulo oposto: senos. Dois lados e ângulo entre eles, ou três lados: cossenos.</p></div>
-            <div class="card"><span class="badge">Triângulo completo</span><p style="font-size:.85rem;margin-top:8px;">Cossenos para um lado e senos para os ângulos restantes.</p></div>
-            <div class="card"><span class="badge">Conferência</span><p style="font-size:.85rem;margin-top:8px;">O maior lado fica oposto ao maior ângulo; o cosseno de um obtuso é negativo.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com as duas leis, qualquer triângulo pode ser calculado. Próximo assunto: a circunferência trigonométrica e seus arcos.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -598,7 +615,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1001,3 +1018,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

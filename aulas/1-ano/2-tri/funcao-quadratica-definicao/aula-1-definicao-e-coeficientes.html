@@ -281,6 +281,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -290,30 +292,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 01 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Função quadrática: <span style="color:var(--primary);">a lei dos saltos, jatos e lucros</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">O salto de um skatista, a água de uma fonte, o lucro de uma loja: situações em que a variação não é constante, mas descrita por uma expressão com x² — a função polinomial do 2º grau.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Função quadrática: <span style="color:var(--primary);">a lei dos saltos, jatos e lucros</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">O salto de um skatista, a água de uma fonte, o lucro de uma loja: situações em que a variação não é constante, mas descrita por uma expressão com x² — a função polinomial do 2º grau.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">f(x) = ax² + bx + c</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">a ≠ 0</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">3 coeficientes</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M40 160 Q150 -10 260 120" fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/><circle cx="40" cy="160" r="9" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><rect x="262" y="70" width="5" height="100" rx="0" fill="var(--ink-faint)" /><rect x="250" y="66" width="26" height="6" rx="0" fill="var(--decay)" /><path d="M252 72 L260 92 L270 92 L276 72" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">trajetória em parábola</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da definição ao uso.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Definição</strong><div class="hint">f(x) = ax² + bx + c com a ≠ 0</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Coeficientes</strong><div class="hint">a, b e c e o papel de cada um</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Valor numérico</strong><div class="hint">calcular f(x) para um x dado</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Descobrir a lei</strong><div class="hint">três informações dão a, b e c</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">lançamentos e expressões</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O salto do skatista</h2>
+          
+          
+          <p class="lede">Durante um salto, o skatista sobe, atinge um ponto mais alto e desce. O caminho no ar é uma curva chamada <strong>parábola</strong> e a altura em função do tempo é descrita por uma <strong>função quadrática</strong>. Diferente da função afim, aqui a altura não sobe a um ritmo constante: sobe cada vez mais devagar até parar e depois desce.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A altura (em metros) de um salto é <span class="tex"><i>h</i>(<i>t</i>) = 30<i>t</i> − 5<i>t</i><sup>2</sup></span>. Depois de 2 segundos, a altura é:</p><button class="choice mqo" data-i="0">20 m</button><button class="choice mqo" data-i="1">40 m</button><button class="choice mqo" data-i="2">50 m</button><button class="choice mqo" data-i="3">60 m</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>h</i>(2) = 30 · 2 − 5 · 2<sup>2</sup> = 60 − 20 = 40</span> m. Note que o quadrado é calculado <strong>antes</strong> da multiplicação por 5.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Quando a lei tem <span class="tex"><i>x</i><sup>2</sup></span> como maior potência, o gráfico é uma <strong>parábola</strong>, não uma reta.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -332,21 +341,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O salto do skatista</h2>
-          
-          <p class="lede">Durante um salto, o skatista sobe, atinge um ponto mais alto e desce. O caminho no ar é uma curva chamada <strong>parábola</strong> e a altura em função do tempo é descrita por uma <strong>função quadrática</strong>. Diferente da função afim, aqui a altura não sobe a um ritmo constante: sobe cada vez mais devagar até parar e depois desce.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A altura (em metros) de um salto é <span class="tex"><i>h</i>(<i>t</i>) = 30<i>t</i> − 5<i>t</i><sup>2</sup></span>. Depois de 2 segundos, a altura é:</p><button class="choice mqo" data-i="0">20 m</button><button class="choice mqo" data-i="1">40 m</button><button class="choice mqo" data-i="2">50 m</button><button class="choice mqo" data-i="3">60 m</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>h</i>(2) = 30 · 2 − 5 · 2<sup>2</sup> = 60 − 20 = 40</span> m. Note que o quadrado é calculado <strong>antes</strong> da multiplicação por 5.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Quando a lei tem <span class="tex"><i>x</i><sup>2</sup></span> como maior potência, o gráfico é uma <strong>parábola</strong>, não uma reta.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -368,19 +362,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Valor numérico</h2>
           
+          
           <p class="lede">Dada <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 5<i>x</i> + 4</span>, calcule <span class="tex"><i>f</i>(0)</span>, <span class="tex"><i>f</i>(−4)</span> e <span class="tex"><i>f</i>(1/2)</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>f(0)</strong><div class="hint"><span class="tex">0<sup>2</sup> − 5 · 0 + 4 = 4</span> (é o termo <span class="tex"><i>c</i></span>).</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>f(−4)</strong><div class="hint"><span class="tex">(−4)<sup>2</sup> − 5 · (−4) + 4 = 16 + 20 + 4 = 40</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>f(1/2)</strong><div class="hint"><span class="tex">(1/2)<sup>2</sup> − 5 · (1/2) + 4 = 0,25 − 2,5 + 4 = 1,75</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>f</i>(0) = 4</span>, <span class="tex"><i>f</i>(−4) = 40</span> e <span class="tex"><i>f</i>(1/2) = 1,75</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>f(0)</strong><div class="hint"><span class="tex">0<sup>2</sup> − 5 · 0 + 4 = 4</span> (é o termo <span class="tex"><i>c</i></span>).</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>f(−4)</strong><div class="hint"><span class="tex">(−4)<sup>2</sup> − 5 · (−4) + 4 = 16 + 20 + 4 = 40</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>f(1/2)</strong><div class="hint"><span class="tex">(1/2)<sup>2</sup> − 5 · (1/2) + 4 = 0,25 − 2,5 + 4 = 1,75</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>f</i>(0) = 4</span>, <span class="tex"><i>f</i>(−4) = 40</span> e <span class="tex"><i>f</i>(1/2) = 1,75</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -403,55 +399,54 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Descobrindo a função</h2>
           
+          
           <p class="lede">Uma função quadrática <span class="tex"><i>f</i></span> é tal que <span class="tex"><i>f</i>(0) = 3</span>, <span class="tex"><i>f</i>(1) = 0</span> e <span class="tex"><i>f</i>(−1) = 8</span>. Determine <span class="tex"><i>f</i></span> e calcule <span class="tex"><i>f</i>(2)</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Valor de c</strong><div class="hint"><span class="tex"><i>f</i>(0) = <i>c</i> = 3</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Sistema para a e b</strong><div class="hint"><span class="tex"><i>f</i>(1) = <i>a</i> + <i>b</i> + 3 = 0</span> ⇒ <span class="tex"><i>a</i> + <i>b</i> = −3</span>; <span class="tex"><i>f</i>(−1) = <i>a</i> − <i>b</i> + 3 = 8</span> ⇒ <span class="tex"><i>a</i> − <i>b</i> = 5</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Resolva</strong><div class="hint">Somando: <span class="tex">2<i>a</i> = 2</span> ⇒ <span class="tex"><i>a</i> = 1</span>; então <span class="tex"><i>b</i> = −4</span>. <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> e <span class="tex"><i>f</i>(2) = 4 − 8 + 3 = −1</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> e <span class="tex"><i>f</i>(2) = −1</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Valor de c</strong><div class="hint"><span class="tex"><i>f</i>(0) = <i>c</i> = 3</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Sistema para a e b</strong><div class="hint"><span class="tex"><i>f</i>(1) = <i>a</i> + <i>b</i> + 3 = 0</span> ⇒ <span class="tex"><i>a</i> + <i>b</i> = −3</span>; <span class="tex"><i>f</i>(−1) = <i>a</i> − <i>b</i> + 3 = 8</span> ⇒ <span class="tex"><i>a</i> − <i>b</i> = 5</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Resolva</strong><div class="hint">Somando: <span class="tex">2<i>a</i> = 2</span> ⇒ <span class="tex"><i>a</i> = 1</span>; então <span class="tex"><i>b</i> = −4</span>. <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> e <span class="tex"><i>f</i>(2) = 4 − 8 + 3 = −1</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> e <span class="tex"><i>f</i>(2) = −1</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Os coeficientes</h2>
-          
-          <p class="lede">Na função <span class="tex"><i>f</i>(<i>x</i>) = −3<i>x</i><sup>2</sup> + 5<i>x</i> − 7</span>, a soma <span class="tex"><i>a</i> + <i>b</i> + <i>c</i></span> vale:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">−15</button><button class="choice mqo" data-i="1">−5</button><button class="choice mqo" data-i="2">5</button><button class="choice mqo" data-i="3">7</button><button class="choice mqo" data-i="4">15</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>a</i> = −3</span>, <span class="tex"><i>b</i> = 5</span>, <span class="tex"><i>c</i> = −7</span>: <span class="tex">−3 + 5 − 7 = −5</span>. (Também é <span class="tex"><i>f</i>(1)</span>.) <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Na função <span class="tex"><i>f</i>(<i>x</i>) = −3<i>x</i><sup>2</sup> + 5<i>x</i> − 7</span>, a soma <span class="tex"><i>a</i> + <i>b</i> + <i>c</i></span> vale:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>−15</li><li>−5</li><li>5</li><li>7</li><li>15</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Se <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 5<i>x</i> + 4</span>, então <span class="tex"><i>f</i>(−4)</span> vale:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>−32</li><li>−8</li><li>8</li><li>40</li><li>44</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">f(−4)</h2>
-          
-          <p class="lede">Se <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 5<i>x</i> + 4</span>, então <span class="tex"><i>f</i>(−4)</span> vale:</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">−32</button><button class="choice mqo" data-i="1">−8</button><button class="choice mqo" data-i="2">8</button><button class="choice mqo" data-i="3">40</button><button class="choice mqo" data-i="4">44</button><div class="fb"></div><div class="answer"><p><span class="tex">(−4)<sup>2</sup> − 5(−4) + 4 = 16 + 20 + 4 = 40</span>. <strong>Alternativa D.</strong> Erro comum: escrever <span class="tex">−4<sup>2</sup> = −16</span>.</p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Quem é quadrática?</h2>
-          
-          <p class="lede">Qual das expressões define uma <strong>função quadrática</strong>?</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">f(x) = 5x − 3</button><button class="choice mqo" data-i="1">f(x) = x³ + x</button><button class="choice mqo" data-i="2">f(x) = (x + 1)² − x²</button><button class="choice mqo" data-i="3">f(x) = x(x − 3)</button><button class="choice mqo" data-i="4">f(x) = 7</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i>(<i>x</i> − 3) = <i>x</i><sup>2</sup> − 3<i>x</i></span>: tem <span class="tex"><i>a</i> = 1 ≠ 0</span>. Em <span class="tex">(<i>x</i>+1)<sup>2</sup> − <i>x</i><sup>2</sup> = 2<i>x</i> + 1</span> os <span class="tex"><i>x</i><sup>2</sup></span> se cancelam: é afim. <span class="tex"><i>x</i><sup>3</sup> + <i>x</i></span> é do 3º grau. <strong>Alternativa D.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Qual das expressões define uma <strong>função quadrática</strong>?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>f(x) = 5x − 3</li><li>f(x) = x³ + x</li><li>f(x) = (x + 1)² − x²</li><li>f(x) = x(x − 3)</li><li>f(x) = 7</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>a</i> = −3</span>, <span class="tex"><i>b</i> = 5</span>, <span class="tex"><i>c</i> = −7</span>: <span class="tex">−3 + 5 − 7 = −5</span>. (Também é <span class="tex"><i>f</i>(1)</span>.)</p></div>
+<div class="card success"><strong>2. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">(−4)<sup>2</sup> − 5(−4) + 4 = 16 + 20 + 4 = 40</span>. Erro comum: escrever <span class="tex">−4<sup>2</sup> = −16</span>.</p></div>
+<div class="card success"><strong>3. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>x</i>(<i>x</i> − 3) = <i>x</i><sup>2</sup> − 3<i>x</i></span>: tem <span class="tex"><i>a</i> = 1 ≠ 0</span>. Em <span class="tex">(<i>x</i>+1)<sup>2</sup> − <i>x</i><sup>2</sup> = 2<i>x</i> + 1</span> os <span class="tex"><i>x</i><sup>2</sup></span> se cancelam: é afim. <span class="tex"><i>x</i><sup>3</sup> + <i>x</i></span> é do 3º grau.</p></div></div>
         </div>
       </section>
 
@@ -470,12 +465,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;">f(x) = ax² + bx + c com a ≠ 0.</p></div>
+            <div class="card"><span class="badge">Valor numérico</span><p style="font-size:.85rem;margin-top:8px;">Substitua com parênteses; eleve ao quadrado primeiro.</p></div>
+            <div class="card"><span class="badge">Lei por pontos</span><p style="font-size:.85rem;margin-top:8px;">Três valores dão um sistema para a, b e c.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Parábola à vista: preste atenção ao x² e ao sinal dos coeficientes.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Em <span class="tex"><i>y</i> = −3<i>x</i><sup>2</sup> + 5</span>, os coeficientes <span class="tex"><i>a</i></span>, <span class="tex"><i>b</i></span> e <span class="tex"><i>c</i></span> são:</p>
@@ -517,23 +528,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Definição</span><p style="font-size:.85rem;margin-top:8px;">f(x) = ax² + bx + c com a ≠ 0.</p></div>
-            <div class="card"><span class="badge">Valor numérico</span><p style="font-size:.85rem;margin-top:8px;">Substitua com parênteses; eleve ao quadrado primeiro.</p></div>
-            <div class="card"><span class="badge">Lei por pontos</span><p style="font-size:.85rem;margin-top:8px;">Três valores dão um sistema para a, b e c.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Parábola à vista: preste atenção ao x² e ao sinal dos coeficientes.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -553,7 +563,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 15</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -911,3 +921,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 05 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Crescimento e decrescimento da parábola: <span style="color:var(--primary);">o vértice divide a curva</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Um drone sobe até um ponto máximo e depois desce. Uma fábrica tem um custo que cai e depois sobe. Em ambos, o vértice é o divisor de águas entre crescer e decrescer.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Crescimento e decrescimento da parábola: <span style="color:var(--primary);">o vértice divide a curva</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Um drone sobe até um ponto máximo e depois desce. Uma fábrica tem um custo que cai e depois sobe. Em ambos, o vértice é o divisor de águas entre crescer e decrescer.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">antes do vértice</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">depois do vértice</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">intervalos em x</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M40 160 Q150 -10 260 120" fill="none" stroke="var(--primary)" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"/><circle cx="40" cy="160" r="9" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><rect x="262" y="70" width="5" height="100" rx="0" fill="var(--ink-faint)" /><rect x="250" y="66" width="26" height="6" rx="0" fill="var(--decay)" /><path d="M252 72 L260 92 L270 92 L276 72" fill="none" stroke="var(--danger)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">trajetória em parábola</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Quando a parábola sobe e quando desce.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Dois comportamentos</strong><div class="hint">a curva muda de direção no vértice</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Efeito da concavidade</strong><div class="hint">a > 0 e a < 0</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Intervalos</strong><div class="hint">escritos com xᵥ</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Em contexto</strong><div class="hint">drone, custo e lucro</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">identificar o intervalo certo</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Subindo, parando, descendo</h2>
+          
+          
+          <p class="lede">Um drone de entrega descreve a trajetória <span class="tex"><i>h</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 11</span> (altura em metros, tempo em segundos). Nos primeiros instantes ele <strong>sobe</strong>; em certo momento atinge o ponto mais alto e passa a <strong>descer</strong>. Esse instante é o <span class="tex"><i>t</i><sub><i>v</i></sub> = −<i>b</i> ÷ 2<i>a</i> = 5</span> s.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em <span class="tex"><i>t</i> = 2</span> s, o drone está:</p><button class="choice mqo" data-i="0">subindo</button><button class="choice mqo" data-i="1">descendo</button><button class="choice mqo" data-i="2">parado</button><button class="choice mqo" data-i="3">no solo</button><div class="fb"></div><div class="answer"><p>Como <span class="tex"><i>t</i> = 2 &lt; <i>t</i><sub><i>v</i></sub> = 5</span> e <span class="tex"><i>a</i> &lt; 0</span>, a função ainda é <strong>crescente</strong>: o drone está subindo.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Em <span class="tex"><i>y</i> = <i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i></span>, o vértice <span class="tex"><i>x</i><sub><i>v</i></sub> = −<i>b</i> ÷ 2<i>a</i></span> separa o trecho em que a função <strong>cresce</strong> do trecho em que <strong>decresce</strong>.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Subindo, parando, descendo</h2>
-          
-          <p class="lede">Um drone de entrega descreve a trajetória <span class="tex"><i>h</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 11</span> (altura em metros, tempo em segundos). Nos primeiros instantes ele <strong>sobe</strong>; em certo momento atinge o ponto mais alto e passa a <strong>descer</strong>. Esse instante é o <span class="tex"><i>t</i><sub><i>v</i></sub> = −<i>b</i> ÷ 2<i>a</i> = 5</span> s.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em <span class="tex"><i>t</i> = 2</span> s, o drone está:</p><button class="choice mqo" data-i="0">subindo</button><button class="choice mqo" data-i="1">descendo</button><button class="choice mqo" data-i="2">parado</button><button class="choice mqo" data-i="3">no solo</button><div class="fb"></div><div class="answer"><p>Como <span class="tex"><i>t</i> = 2 &lt; <i>t</i><sub><i>v</i></sub> = 5</span> e <span class="tex"><i>a</i> &lt; 0</span>, a função ainda é <strong>crescente</strong>: o drone está subindo.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Em <span class="tex"><i>y</i> = <i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i></span>, o vértice <span class="tex"><i>x</i><sub><i>v</i></sub> = −<i>b</i> ÷ 2<i>a</i></span> separa o trecho em que a função <strong>cresce</strong> do trecho em que <strong>decresce</strong>.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -390,87 +384,92 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">O drone sobe e desce</h2>
           
+          
           <p class="lede">A altura de um drone é <span class="tex"><i>h</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 11</span>, para <span class="tex">0 ≤ <i>t</i> ≤ 11</span> (segundos). Em que intervalos ele sobe e desce, e qual a altura máxima?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>t</i><sub><i>v</i></sub> = −<span class="fr"><span>10</span><span>2 · (−1)</span></span> = 5</span> e <span class="tex"><i>h</i>(5) = −25 + 50 + 11 = 36</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Sinal de a</strong><div class="hint"><span class="tex"><i>a</i> = −1 &lt; 0</span>: sobe até o vértice e desce depois.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Intervalos no domínio</strong><div class="hint">Sobe em <span class="tex">[0, 5]</span> e desce em <span class="tex">[5, 11]</span> (toca o solo em <span class="tex"><i>t</i> = 11</span>: <span class="tex"><i>h</i>(11) = 0</span>).</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O drone sobe de <span class="tex">0</span> a <span class="tex">5</span> s, desce de <span class="tex">5</span> a <span class="tex">11</span> s e atinge no máximo <strong>36 m</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>t</i><sub><i>v</i></sub> = −<span class="fr"><span>10</span><span>2 · (−1)</span></span> = 5</span> e <span class="tex"><i>h</i>(5) = −25 + 50 + 11 = 36</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Sinal de a</strong><div class="hint"><span class="tex"><i>a</i> = −1 &lt; 0</span>: sobe até o vértice e desce depois.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Intervalos no domínio</strong><div class="hint">Sobe em <span class="tex">[0, 5]</span> e desce em <span class="tex">[5, 11]</span> (toca o solo em <span class="tex"><i>t</i> = 11</span>: <span class="tex"><i>h</i>(11) = 0</span>).</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O drone sobe de <span class="tex">0</span> a <span class="tex">5</span> s, desce de <span class="tex">5</span> a <span class="tex">11</span> s e atinge no máximo <strong>36 m</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">O custo que cai e sobe</h2>
           
+          
           <p class="lede">O custo de produção é <span class="tex"><i>C</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 10<i>x</i> + 40</span> (milhares de reais), com <span class="tex"><i>x</i></span> milhares de unidades. Para que valores de <span class="tex"><i>x</i></span> o custo diminui e qual o menor custo?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>10</span><span>2</span></span> = 5</span> e <span class="tex"><i>C</i>(5) = 25 − 50 + 40 = 15</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Sinal de a</strong><div class="hint"><span class="tex"><i>a</i> = 1 &gt; 0</span>: o custo diminui até <span class="tex"><i>x</i> = 5</span> e depois aumenta.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Interprete</strong><div class="hint">Menor custo: <strong>15 mil reais</strong>, com 5 mil unidades.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O custo cai em <span class="tex">[0, 5]</span>, sobe depois de <span class="tex">5</span>; o mínimo é <span class="tex">15</span> (mil reais).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>10</span><span>2</span></span> = 5</span> e <span class="tex"><i>C</i>(5) = 25 − 50 + 40 = 15</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Sinal de a</strong><div class="hint"><span class="tex"><i>a</i> = 1 &gt; 0</span>: o custo diminui até <span class="tex"><i>x</i> = 5</span> e depois aumenta.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Interprete</strong><div class="hint">Menor custo: <strong>15 mil reais</strong>, com 5 mil unidades.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O custo cai em <span class="tex">[0, 5]</span>, sobe depois de <span class="tex">5</span>; o mínimo é <span class="tex">15</span> (mil reais).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Intervalo de decrescimento</h2>
           
+          
           <p class="lede">Em que intervalo <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 4<i>x</i> + 3</span> é decrescente?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>4</span><span>2</span></span> = 2</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Concavidade</strong><div class="hint"><span class="tex"><i>a</i> = 1 &gt; 0</span>: ∪.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Antes do vértice</strong><div class="hint">A parábola desce até <span class="tex"><i>x</i> = 2</span> e sobe depois.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Decrescente em <span class="tex">]−∞, 2]</span>; crescente em <span class="tex">[2, +∞[</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Vértice</strong><div class="hint"><span class="tex"><i>x</i><sub><i>v</i></sub> = <span class="fr"><span>4</span><span>2</span></span> = 2</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Concavidade</strong><div class="hint"><span class="tex"><i>a</i> = 1 &gt; 0</span>: ∪.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Antes do vértice</strong><div class="hint">A parábola desce até <span class="tex"><i>x</i> = 2</span> e sobe depois.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Decrescente em <span class="tex">]−∞, 2]</span>; crescente em <span class="tex">[2, +∞[</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Intervalo decrescente</h2>
-          
-          <p class="lede">A função <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 6<i>x</i> + 5</span> é decrescente em:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">[3, +∞[</button><button class="choice mqo" data-i="1">]−∞, 3]</button><button class="choice mqo" data-i="2">[1, 5]</button><button class="choice mqo" data-i="3">]−∞, 5]</button><button class="choice mqo" data-i="4">[−3, +∞[</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sub><i>v</i></sub> = 3</span> e <span class="tex"><i>a</i> &gt; 0</span>: decresce até o vértice: <span class="tex">]−∞, 3]</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. A função <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 6<i>x</i> + 5</span> é decrescente em:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>[3, +∞[</li><li>]−∞, 3]</li><li>[1, 5]</li><li>]−∞, 5]</li><li>[−3, +∞[</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Para <span class="tex"><i>h</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 11</span>, com <span class="tex">0 ≤ <i>t</i> ≤ 11</span>, o drone atinge a altura máxima no instante:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>2,5 s</li><li>5 s</li><li>10 s</li><li>11 s</li><li>36 s</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Altura máxima do drone</h2>
-          
-          <p class="lede">Para <span class="tex"><i>h</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 11</span>, com <span class="tex">0 ≤ <i>t</i> ≤ 11</span>, o drone atinge a altura máxima no instante:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">2,5 s</button><button class="choice mqo" data-i="1">5 s</button><button class="choice mqo" data-i="2">10 s</button><button class="choice mqo" data-i="3">11 s</button><button class="choice mqo" data-i="4">36 s</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>t</i><sub><i>v</i></sub> = −10 ÷ (−2) = 5</span> s. (A altura máxima é <span class="tex">36</span> m; o número 36 não é um instante.) <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Custo mínimo</h2>
-          
-          <p class="lede">O custo de uma empresa é <span class="tex"><i>C</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 10<i>x</i> + 40</span> (mil reais), com <span class="tex"><i>x</i></span> mil unidades. O menor custo possível, em mil reais, é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">5</button><button class="choice mqo" data-i="1">10</button><button class="choice mqo" data-i="2">15</button><button class="choice mqo" data-i="3">25</button><button class="choice mqo" data-i="4">40</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>x</i><sub><i>v</i></sub> = 5</span>; <span class="tex"><i>C</i>(5) = 25 − 50 + 40 = 15</span>. Como <span class="tex"><i>a</i> &gt; 0</span>, é mínimo. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. O custo de uma empresa é <span class="tex"><i>C</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 10<i>x</i> + 40</span> (mil reais), com <span class="tex"><i>x</i></span> mil unidades. O menor custo possível, em mil reais, é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>5</li><li>10</li><li>15</li><li>25</li><li>40</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = 3</span> e <span class="tex"><i>a</i> &gt; 0</span>: decresce até o vértice: <span class="tex">]−∞, 3]</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>t</i><sub><i>v</i></sub> = −10 ÷ (−2) = 5</span> s. (A altura máxima é <span class="tex">36</span> m; o número 36 não é um instante.)</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>x</i><sub><i>v</i></sub> = 5</span>; <span class="tex"><i>C</i>(5) = 25 − 50 + 40 = 15</span>. Como <span class="tex"><i>a</i> &gt; 0</span>, é mínimo.</p></div></div>
         </div>
       </section>
 
@@ -489,12 +488,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Divisor de águas</span><p style="font-size:.85rem;margin-top:8px;">O vértice xᵥ = −b/2a separa subida e descida.</p></div>
+            <div class="card"><span class="badge">Concavidade</span><p style="font-size:.85rem;margin-top:8px;">a > 0: decresce, depois cresce. a < 0: cresce, depois decresce.</p></div>
+            <div class="card"><span class="badge">Contexto</span><p style="font-size:.85rem;margin-top:8px;">Respeite o domínio (tempo ≥ 0, quantidade ≥ 0).</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Ache xᵥ, olhe o sinal de a e escreva os intervalos em x.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Se <span class="tex"><i>a</i> &lt; 0</span>, a função é crescente em:</p>
@@ -536,23 +551,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Divisor de águas</span><p style="font-size:.85rem;margin-top:8px;">O vértice xᵥ = −b/2a separa subida e descida.</p></div>
-            <div class="card"><span class="badge">Concavidade</span><p style="font-size:.85rem;margin-top:8px;">a > 0: decresce, depois cresce. a < 0: cresce, depois decresce.</p></div>
-            <div class="card"><span class="badge">Contexto</span><p style="font-size:.85rem;margin-top:8px;">Respeite o domínio (tempo ≥ 0, quantidade ≥ 0).</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Ache xᵥ, olhe o sinal de a e escreva os intervalos em x.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -572,7 +586,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 15</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -947,3 +961,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

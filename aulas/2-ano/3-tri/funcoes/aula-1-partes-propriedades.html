@@ -266,6 +266,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:0px;width:min(60%,560px);height:auto;opacity:.92;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -278,54 +280,45 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="850" cy="30" r="6" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Trimestre 3 · Parte 1 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.8rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:15ch;">Funções: por <span style="color:var(--primary);">partes</span> e propriedades</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:48ch;">Como descrever uma função com várias regras e como reconhecer se ela é injetora, sobrejetora ou bijetora.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Funções: por <span style="color:var(--primary);">partes</span> e propriedades</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Como descrever uma função com várias regras e como reconhecer se ela é injetora, sobrejetora ou bijetora.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Pense na função que associa cada pessoa da sala à sua poltrona. Três cenas possíveis:</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 90–95</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">f(x) = { ... }</span>
             <span class="badge">H19 · H20 · H21 · H22</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da função com "várias regras" até as três propriedades que classificam qualquer função.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18h6v-6h6v-6h6"/></svg>
-              <div><strong>Função definida por partes</strong><div class="hint">regras diferentes para intervalos diferentes</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Resolução de problemas</strong><div class="hint">tarifas, contas e cobranças por faixa</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="8" r="2.4"/><circle cx="7" cy="16" r="2.4"/><circle cx="17" cy="12" r="2.4"/><path d="M9 8h6M9 16h6"/></svg>
-              <div><strong>Injetora e sobrejetora</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">como reconhecer cada uma</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="2.2"/><circle cx="8" cy="16" r="2.2"/><circle cx="16" cy="8" r="2.2"/><circle cx="16" cy="16" r="2.2"/><path d="M9.6 8.6l4.8-.2M9.6 15.4l4.8.2"/></svg>
-              <div><strong>Bijetora</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">injetora + sobrejetora ao mesmo tempo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>
-              <div><strong>Problemas no ENEM e vestibulares</strong><div class="hint">quadrilha, cinema, gráficos, parábola</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="40" y="110" width="140" height="40" rx="10" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><path d="M62 110 L84 78 L150 78 L170 110 Z" fill="var(--surface)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="148" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><rect x="100" y="62" width="40" height="14" rx="3" fill="var(--growth)" /><text x="120" y="73" font-size="10" fill="var(--surface)" text-anchor="middle" font-weight="700">TÁXI</text><rect x="200" y="40" width="100" height="70" rx="8" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="250" y="66" font-size="15" fill="var(--primary)" text-anchor="middle" font-weight="700">P = 5 + 3x</text><text x="250" y="92" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">fixo + por km</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A lotação do cinema</h2>
+          
+          <p class="lede">Pense na função que associa cada pessoa da sala à sua poltrona. Três cenas possíveis:</p>
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><strong style="font-size:.88rem;">Mais poltronas que pessoas</strong><p style="font-size:.85rem;margin-top:6px;">Cada um na sua, mas sobram poltronas vazias.</p></div>
+            <div class="card"><strong style="font-size:.88rem;">Sala lotada, 1 por poltrona</strong><p style="font-size:.85rem;margin-top:6px;">Toda poltrona ocupada, ninguém divide.</p></div>
+            <div class="card"><strong style="font-size:.88rem;">Poltronas divididas</strong><p style="font-size:.85rem;margin-top:6px;">Todas ocupadas, e crianças dividem poltrona com um adulto.</p></div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Isso também é matemática</h4>
+            <p>Cada cenário descreve uma <strong>propriedade diferente</strong> de uma função (pessoa → poltrona). Vamos formalizar isso — e antes, ver como escrever uma função que muda de regra dependendo do valor de x.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -350,25 +343,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">A lotação do cinema</h2>
-          <p class="lede">Pense na função que associa cada pessoa da sala à sua poltrona. Três cenas possíveis:</p>
-          <div class="grid3" style="margin-top:10px;">
-            <div class="card"><strong style="font-size:.88rem;">Mais poltronas que pessoas</strong><p style="font-size:.85rem;margin-top:6px;">Cada um na sua, mas sobram poltronas vazias.</p></div>
-            <div class="card"><strong style="font-size:.88rem;">Sala lotada, 1 por poltrona</strong><p style="font-size:.85rem;margin-top:6px;">Toda poltrona ocupada, ninguém divide.</p></div>
-            <div class="card"><strong style="font-size:.88rem;">Poltronas divididas</strong><p style="font-size:.85rem;margin-top:6px;">Todas ocupadas, e crianças dividem poltrona com um adulto.</p></div>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            <h4>Isso também é matemática</h4>
-            <p>Cada cenário descreve uma <strong>propriedade diferente</strong> de uma função (pessoa → poltrona). Vamos formalizar isso — e antes, ver como escrever uma função que muda de regra dependendo do valor de x.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: FUNÇÃO POR PARTES -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 90 · Teoria</div>
@@ -387,7 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro, oral</div>
@@ -401,7 +374,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: PROBLEMAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 91 · Teoria</div>
@@ -420,7 +392,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · Em duplas · No ENEM é assim (ENEM PPL 2010)</div>
@@ -437,7 +408,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 TEORIA: SOBREJETORA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 92 · Teoria</div>
@@ -469,7 +439,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 TEORIA: INJETORA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 93 · Teoria</div>
@@ -500,7 +469,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 ATIVIDADE 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro</div>
@@ -526,7 +494,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 TEORIA: BIJETORA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 94 · Teoria</div>
@@ -558,7 +525,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ATIVIDADE 4 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · No quadro, com a turma</div>
@@ -584,7 +550,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ATIVIDADE 5: ENEM -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 95 · No ENEM é assim</div>
@@ -604,7 +569,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 ATIVIDADE 6: PARÁBOLA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 6 · Em duplas</div>
@@ -622,7 +586,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da parte 1</div>
+          <h2 class="title">Próxima parada: composição e inversa</h2>
+          <p class="lede">Você já sabe reconhecer o "DNA" de uma função. Na Parte 2, vamos combinar funções (composta) e descobrir como "desfazer" uma função (inversa) — e só funções bijetoras têm essa superpotência.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
+              Questões adaptadas do ENEM (INEP) e UFF.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -636,15 +614,15 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <h4>E a função por partes?</h4>
             <p>Uma função por partes também pode ser classificada com essas mesmas propriedades — basta analisar o comportamento de <strong>cada sentença</strong> no seu intervalo.</p>
           </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Pense na função que associa cada pessoa da sala à sua poltrona. Três cenas possíveis:</p></div>
         </div>
       </section>
 
-      <!-- 16 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. f(x) = x² (ℝ→ℝ) não é injetora porque:</p>
@@ -686,21 +664,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 ENCERRAMENTO -->
+      
       <section class="slide">
-        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Fim da parte 1</div>
-          <h2 class="title">Próxima parada: composição e inversa</h2>
-          <p class="lede">Você já sabe reconhecer o "DNA" de uma função. Na Parte 2, vamos combinar funções (composta) e descobrir como "desfazer" uma função (inversa) — e só funções bijetoras têm essa superpotência.</p>
-          <div class="card" style="margin-top:16px;">
-            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
-            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
-              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
-              Questões adaptadas do ENEM (INEP) e UFF.
-            </p>
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
     </div>
 
@@ -984,3 +963,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

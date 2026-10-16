@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Retomada R9</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Retomada: <span style="color:var(--primary);">equação do 2º grau</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Uma bola chutada descreve uma parábola. Para saber onde ela está em cada instante, e quando volta ao chão, resolvemos equações do 2º grau com Bhaskara ou com soma e produto.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Retomada: <span style="color:var(--primary);">equação do 2º grau</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Uma bola chutada descreve uma parábola. Para saber onde ela está em cada instante, e quando volta ao chão, resolvemos equações do 2º grau com Bhaskara ou com soma e produto.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Se a altura é h = −5 t 2 + 20 t , quando ela volta ao chão ( h = 0 )?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">ax² + bx + c = 0</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">Δ = b² − 4ac</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">soma e produto</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="150" y="40" width="20" height="126" rx="3" fill="var(--ink-faint)" /><rect x="120" y="160" width="80" height="12" rx="3" fill="var(--ink-faint)" /><line x1="60" y1="54" x2="260" y2="54" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/><line x1="60" y1="54" x2="40" y2="100" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="54" x2="80" y2="100" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><line x1="260" y1="54" x2="240" y2="100" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><line x1="260" y1="54" x2="280" y2="100" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><rect x="26" y="100" width="68" height="12" rx="4" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><rect x="226" y="100" width="68" height="12" rx="4" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="60" y="90" font-size="14" fill="var(--primary)" text-anchor="middle" font-weight="700">x + 3</text><text x="260" y="90" font-size="14" fill="var(--growth)" text-anchor="middle" font-weight="700">12</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Das raízes ao problema.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Forma geral</strong><div class="hint">ax² + bx + c = 0, com a ≠ 0</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Fórmula resolutiva</strong><div class="hint">Bhaskara e o discriminante Δ</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Soma e produto</strong><div class="hint">Girard: −b ÷ a e c ÷ a</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>f(x) = k</strong><div class="hint">igualar a zero e resolver</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">receita e uma única raiz</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A bola e a parábola</h2>
+          
+          
+          <p class="lede">Uma bola de futebol chutada descreve, em geral, uma <strong>parábola</strong>. Se a altura é <span class="tex"><i>h</i> = −5<i>t</i><sup>2</sup> + 20<i>t</i></span>, quando ela volta ao chão (<span class="tex"><i>h</i> = 0</span>)? Precisamos resolver uma equação do 2º grau.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Resolva ax² + bx + c = 0</b></p><div class="row"><div><label>a</label><input type="number" id="q9-a" value="1" step="any" ></div><div><label>b</label><input type="number" id="q9-b" value="-8" step="any" ></div><div><label>c</label><input type="number" id="q9-c" value="15" step="any" ></div></div><svg id="q9-s" viewBox="0 0 360 200" style="width:100%;max-width:340px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Δ = <b class="mono" id="q9-d"></b></p><p class="small" style="margin:8px 0 0;">Raízes: <b class="mono" id="q9-r"></b></p><p class="hint" id="q9-h" style="margin-top:6px;"></p></div>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em <span class="tex"><i>h</i> = −5<i>t</i><sup>2</sup> + 20<i>t</i></span>, a bola está no chão quando <span class="tex"><i>t</i> =</span></p><button class="choice mqo" data-i="0"><span class="tex">0</span> ou <span class="tex">2</span></button><button class="choice mqo" data-i="1"><span class="tex">0</span> ou <span class="tex">4</span></button><button class="choice mqo" data-i="2"><span class="tex">2</span> ou <span class="tex">4</span></button><button class="choice mqo" data-i="3">só <span class="tex"><i>t</i> = 4</span></button><div class="fb"></div><div class="answer"><p><span class="tex">−5<i>t</i>(<i>t</i> − 4) = 0</span> ⇒ <span class="tex"><i>t</i> = 0</span> (chute) ou <span class="tex"><i>t</i> = 4</span> (volta ao chão).</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">A bola e a parábola</h2>
-          
-          <p class="lede">Uma bola de futebol chutada descreve, em geral, uma <strong>parábola</strong>. Se a altura é <span class="tex"><i>h</i> = −5<i>t</i><sup>2</sup> + 20<i>t</i></span>, quando ela volta ao chão (<span class="tex"><i>h</i> = 0</span>)? Precisamos resolver uma equação do 2º grau.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Resolva ax² + bx + c = 0</b></p><div class="row"><div><label>a</label><input type="number" id="q9-a" value="1" step="any" ></div><div><label>b</label><input type="number" id="q9-b" value="-8" step="any" ></div><div><label>c</label><input type="number" id="q9-c" value="15" step="any" ></div></div><svg id="q9-s" viewBox="0 0 360 200" style="width:100%;max-width:340px;margin-inline:auto;height:auto;display:block;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;" role="img" aria-hidden="true"></svg><p class="small" style="margin:8px 0 0;">Δ = <b class="mono" id="q9-d"></b></p><p class="small" style="margin:8px 0 0;">Raízes: <b class="mono" id="q9-r"></b></p><p class="hint" id="q9-h" style="margin-top:6px;"></p></div>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em <span class="tex"><i>h</i> = −5<i>t</i><sup>2</sup> + 20<i>t</i></span>, a bola está no chão quando <span class="tex"><i>t</i> =</span></p><button class="choice mqo" data-i="0"><span class="tex">0</span> ou <span class="tex">2</span></button><button class="choice mqo" data-i="1"><span class="tex">0</span> ou <span class="tex">4</span></button><button class="choice mqo" data-i="2"><span class="tex">2</span> ou <span class="tex">4</span></button><button class="choice mqo" data-i="3">só <span class="tex"><i>t</i> = 4</span></button><div class="fb"></div><div class="answer"><p><span class="tex">−5<i>t</i>(<i>t</i> − 4) = 0</span> ⇒ <span class="tex"><i>t</i> = 0</span> (chute) ou <span class="tex"><i>t</i> = 4</span> (volta ao chão).</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -389,113 +383,120 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Resolver por Bhaskara</h2>
           
+          
           <p class="lede">Resolva <span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 15 = 0</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Coeficientes</strong><div class="hint"><span class="tex"><i>a</i> = 1</span>, <span class="tex"><i>b</i> = −8</span>, <span class="tex"><i>c</i> = 15</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Discriminante</strong><div class="hint"><span class="tex">Δ = 64 − 60 = 4</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Raízes</strong><div class="hint"><span class="tex"><i>x</i> = <span class="fr"><span>8 ± 2</span><span>2</span></span></span>: <span class="tex"><i>x</i> = 5</span> ou <span class="tex"><i>x</i> = 3</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> = 3</span> ou <span class="tex"><i>x</i> = 5</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Coeficientes</strong><div class="hint"><span class="tex"><i>a</i> = 1</span>, <span class="tex"><i>b</i> = −8</span>, <span class="tex"><i>c</i> = 15</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Discriminante</strong><div class="hint"><span class="tex">Δ = 64 − 60 = 4</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Raízes</strong><div class="hint"><span class="tex"><i>x</i> = <span class="fr"><span>8 ± 2</span><span>2</span></span></span>: <span class="tex"><i>x</i> = 5</span> ou <span class="tex"><i>x</i> = 3</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> = 3</span> ou <span class="tex"><i>x</i> = 5</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">f(x) = k</h2>
           
+          
           <p class="lede">Para <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i><sup>2</sup> − 8<i>x</i> + 15</span>, em que valores de <span class="tex"><i>x</i></span> temos <span class="tex"><i>f</i>(<i>x</i>) = 3</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Igualar</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 15 = 3</span> ⇒ <span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 12 = 0</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Soma e produto</strong><div class="hint"><span class="tex"><i>x</i>' + <i>x</i>'' = 8</span> e <span class="tex"><i>x</i>' · <i>x</i>'' = 12</span>: números <span class="tex">2</span> e <span class="tex">6</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> = 2</span> ou <span class="tex"><i>x</i> = 6</span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Igualar</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 15 = 3</span> ⇒ <span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 12 = 0</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Soma e produto</strong><div class="hint"><span class="tex"><i>x</i>' + <i>x</i>'' = 8</span> e <span class="tex"><i>x</i>' · <i>x</i>'' = 12</span>: números <span class="tex">2</span> e <span class="tex">6</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> = 2</span> ou <span class="tex"><i>x</i> = 6</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Receita da livraria</h2>
           
+          
           <p class="lede">Uma livraria vende um livro por R&#36; 20,00 e vende <span class="tex">60</span> por mês. Para cada R&#36; 1,00 de desconto, vende <span class="tex">5</span> a mais. Para qual desconto <span class="tex"><i>x</i></span> a receita <span class="tex">(20 − <i>x</i>)(60 + 5<i>x</i>)</span> é de R&#36; 1.280,00 (o máximo possível)?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Montar</strong><div class="hint"><span class="tex">(20 − <i>x</i>)(60 + 5<i>x</i>) = 1200 + 40<i>x</i> − 5<i>x</i><sup>2</sup></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Igualar</strong><div class="hint"><span class="tex">−5<i>x</i><sup>2</sup> + 40<i>x</i> + 1200 = 1280</span> ⇒ <span class="tex">−5<i>x</i><sup>2</sup> + 40<i>x</i> − 80 = 0</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Simplificar</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 16 = 0</span> ⇒ <span class="tex">Δ = 0</span> ⇒ <span class="tex"><i>x</i> = 4</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Desconto de R&#36; 4,00 (única raiz: o máximo).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Montar</strong><div class="hint"><span class="tex">(20 − <i>x</i>)(60 + 5<i>x</i>) = 1200 + 40<i>x</i> − 5<i>x</i><sup>2</sup></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Igualar</strong><div class="hint"><span class="tex">−5<i>x</i><sup>2</sup> + 40<i>x</i> + 1200 = 1280</span> ⇒ <span class="tex">−5<i>x</i><sup>2</sup> + 40<i>x</i> − 80 = 0</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Simplificar</strong><div class="hint"><span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + 16 = 0</span> ⇒ <span class="tex">Δ = 0</span> ⇒ <span class="tex"><i>x</i> = 4</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Desconto de R&#36; 4,00 (única raiz: o máximo).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow success">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Uma única raiz real</h2>
           
+          
           <p class="lede">Para que valores de <span class="tex"><i>p</i></span> a equação <span class="tex"><i>x</i><sup>2</sup> + <i>px</i> + 4 = 0</span> tem uma só raiz real?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Condição</strong><div class="hint"><span class="tex">Δ = 0</span>: <span class="tex"><i>p</i><sup>2</sup> − 16 = 0</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex"><i>p</i> = 4</span> ou <span class="tex"><i>p</i> = −4</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>p</i> = ±4</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Condição</strong><div class="hint"><span class="tex">Δ = 0</span>: <span class="tex"><i>p</i><sup>2</sup> − 16 = 0</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Resolver</strong><div class="hint"><span class="tex"><i>p</i> = 4</span> ou <span class="tex"><i>p</i> = −4</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>p</i> = ±4</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Raiz positiva</h2>
-          
-          <p class="lede">Se <span class="tex"><i>x</i></span> é real positivo e <span class="tex">2<i>x</i><sup>2</sup> + 10<i>x</i> − 28 = 0</span>, então <span class="tex"><i>x</i></span> vale:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">2</span></button><button class="choice mqo" data-i="1"><span class="tex">5</span></button><button class="choice mqo" data-i="2"><span class="tex">7</span></button><button class="choice mqo" data-i="3"><span class="tex">14</span></button><div class="fb"></div><div class="answer"><p>Dividindo por <span class="tex">2</span>: <span class="tex"><i>x</i><sup>2</sup> + 5<i>x</i> − 14 = 0</span> ⇒ <span class="tex"><i>x</i> = 2</span> ou <span class="tex"><i>x</i> = −7</span>. <strong>Alternativa A.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Se <span class="tex"><i>x</i></span> é real positivo e <span class="tex">2<i>x</i><sup>2</sup> + 10<i>x</i> − 28 = 0</span>, então <span class="tex"><i>x</i></span> vale:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">2</span></li><li><span class="tex">5</span></li><li><span class="tex">7</span></li><li><span class="tex">14</span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. A equação <span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + <i>k</i> = 0</span> tem uma raiz igual a <span class="tex">3</span>. A outra raiz é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">3</span></li><li><span class="tex">4</span></li><li><span class="tex">5</span></li><li><span class="tex">8</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">A outra raiz</h2>
-          
-          <p class="lede">A equação <span class="tex"><i>x</i><sup>2</sup> − 8<i>x</i> + <i>k</i> = 0</span> tem uma raiz igual a <span class="tex">3</span>. A outra raiz é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">3</span></button><button class="choice mqo" data-i="1"><span class="tex">4</span></button><button class="choice mqo" data-i="2"><span class="tex">5</span></button><button class="choice mqo" data-i="3"><span class="tex">8</span></button><div class="fb"></div><div class="answer"><p>A soma das raízes é <span class="tex">8</span>: <span class="tex">3 + <i>x</i> = 8</span> ⇒ <span class="tex"><i>x</i> = 5</span>. <strong>Alternativa C.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Discriminante</h2>
-          
-          <p class="lede">A equação <span class="tex"><i>x</i><sup>2</sup> − 6<i>x</i> + 9 = 0</span> tem:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">duas raízes diferentes</button><button class="choice mqo" data-i="1">uma raiz dupla</button><button class="choice mqo" data-i="2">nenhuma raiz real</button><button class="choice mqo" data-i="3">três raízes</button><div class="fb"></div><div class="answer"><p><span class="tex">Δ = 36 − 36 = 0</span>: raiz dupla <span class="tex"><i>x</i> = 3</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. A equação <span class="tex"><i>x</i><sup>2</sup> − 6<i>x</i> + 9 = 0</span> tem:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>duas raízes diferentes</li><li>uma raiz dupla</li><li>nenhuma raiz real</li><li>três raízes</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Preço e quantidade</h2>
-          
-          <p class="lede">Uma loja vende um produto a R&#36; 12,00 e <span class="tex">80</span> unidades por mês. Para cada R&#36; 1,00 de desconto <span class="tex"><i>x</i></span>, vende <span class="tex">10</span> unidades a mais: receita <span class="tex">(12 − <i>x</i>)(80 + 10<i>x</i>)</span>. A receita é R&#36; 1.000,00 (o máximo) para um desconto de:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">R&#36; 2,00</button><button class="choice mqo" data-i="1">R&#36; 4,00</button><button class="choice mqo" data-i="2">R&#36; 6,00</button><button class="choice mqo" data-i="3">R&#36; 8,00</button><button class="choice mqo" data-i="4">R&#36; 10,00</button><div class="fb"></div><div class="answer"><p><span class="tex">−10<i>x</i><sup>2</sup> + 40<i>x</i> + 960 = 1000</span> ⇒ <span class="tex"><i>x</i><sup>2</sup> − 4<i>x</i> + 4 = 0</span> ⇒ <span class="tex"><i>x</i> = 2</span> (raiz dupla). <strong>Alternativa A.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Uma loja vende um produto a R&#36; 12,00 e <span class="tex">80</span> unidades por mês. Para cada R&#36; 1,00 de desconto <span class="tex"><i>x</i></span>, vende <span class="tex">10</span> unidades a mais: receita <span class="tex">(12 − <i>x</i>)(80 + 10<i>x</i>)</span>. A receita é R&#36; 1.000,00 (o máximo) para um desconto de:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R&#36; 2,00</li><li>R&#36; 4,00</li><li>R&#36; 6,00</li><li>R&#36; 8,00</li><li>R&#36; 10,00</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;">Dividindo por <span class="tex">2</span>: <span class="tex"><i>x</i><sup>2</sup> + 5<i>x</i> − 14 = 0</span> ⇒ <span class="tex"><i>x</i> = 2</span> ou <span class="tex"><i>x</i> = −7</span>.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">A soma das raízes é <span class="tex">8</span>: <span class="tex">3 + <i>x</i> = 8</span> ⇒ <span class="tex"><i>x</i> = 5</span>.</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">Δ = 36 − 36 = 0</span>: raiz dupla <span class="tex"><i>x</i> = 3</span>.</p></div>
+<div class="card success"><strong>4. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">−10<i>x</i><sup>2</sup> + 40<i>x</i> + 960 = 1000</span> ⇒ <span class="tex"><i>x</i><sup>2</sup> − 4<i>x</i> + 4 = 0</span> ⇒ <span class="tex"><i>x</i> = 2</span> (raiz dupla).</p></div></div>
         </div>
       </section>
 
@@ -514,12 +515,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Fórmula</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i> = <span class="fr"><span>−<i>b</i> ± <span class="rt">√<span class="rr">Δ</span></span></span><span>2<i>a</i></span></span></span> com <span class="tex">Δ = <i>b</i><sup>2</sup> − 4<i>ac</i></span>.</p></div>
+            <div class="card"><span class="badge">Girard</span><p style="font-size:.85rem;margin-top:8px;">Soma <span class="tex">−<i>b</i> ÷ <i>a</i></span> e produto <span class="tex"><i>c</i> ÷ <i>a</i></span>.</p></div>
+            <div class="card"><span class="badge">Problemas</span><p style="font-size:.85rem;margin-top:8px;">Monte a equação, iguale a zero, resolva e interprete.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Equações do 2º grau resolvem trajetórias, receitas e áreas. Agora, as raízes e o vértice no gráfico.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Se a altura é h = −5 t 2 + 20 t , quando ela volta ao chão ( h = 0 )?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. <span class="tex">Δ = <i>b</i><sup>2</sup> − 4<i>ac</i></span> vale <span class="tex">0</span>. A equação tem:</p>
@@ -561,23 +579,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Fórmula</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>x</i> = <span class="fr"><span>−<i>b</i> ± <span class="rt">√<span class="rr">Δ</span></span></span><span>2<i>a</i></span></span></span> com <span class="tex">Δ = <i>b</i><sup>2</sup> − 4<i>ac</i></span>.</p></div>
-            <div class="card"><span class="badge">Girard</span><p style="font-size:.85rem;margin-top:8px;">Soma <span class="tex">−<i>b</i> ÷ <i>a</i></span> e produto <span class="tex"><i>c</i> ÷ <i>a</i></span>.</p></div>
-            <div class="card"><span class="badge">Problemas</span><p style="font-size:.85rem;margin-top:8px;">Monte a equação, iguale a zero, resolva e interprete.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Equações do 2º grau resolvem trajetórias, receitas e áreas. Agora, as raízes e o vértice no gráfico.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -597,7 +614,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -952,3 +969,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

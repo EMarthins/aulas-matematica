@@ -266,6 +266,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -278,54 +280,49 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="130" cy="225" r="6" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Trimestre 3 · Parte 2 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.8rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:15ch;">Composição e <span style="color:var(--primary);">inversa</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:48ch;">Como combinar duas funções em uma só — e como "desfazer" uma função para voltar ao valor original.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Composição e <span style="color:var(--primary);">inversa</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Como combinar duas funções em uma só — e como "desfazer" uma função para voltar ao valor original.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 96–100</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">(g∘f)(x) = g(f(x))</span>
             <span class="badge">H19 · H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">De combinar funções a desfazê-las — e como ler tudo isso no gráfico.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></svg>
-              <div><strong>Função composta</strong><div class="hint">encadeando duas funções em uma só</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v5.2L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.2V3"/></svg>
-              <div><strong>Composta na prática</strong><div class="hint">descontos sucessivos no ENEM</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l16-16M14 4h6v6"/></svg>
-              <div><strong>Função inversa</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">definição e como encontrá-la</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" transform="rotate(45 12 12)"/></svg>
-              <div><strong>Gráfico da inversa</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">o espelho na reta y = x</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Resolução de problemas</strong><div class="hint">conversão de temperatura e mais</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="132" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="60" y="138" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="94" cy="124" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="94" y="130" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="128" cy="116" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="128" y="122" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><rect x="170" y="60" width="120" height="64" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="230" cy="92" r="16" fill="var(--surface)" stroke="var(--success)" stroke-width="2"/><text x="230" y="98" font-size="16" fill="var(--success)" text-anchor="middle" font-weight="700">50</text><rect x="176" y="118" width="120" height="16" rx="6" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Dá para "desfazer" uma função?</h2>
+          
+          <div class="grid2">
+            <div class="card">
+              <strong>Ida</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Você sabe a distância de uma viagem e quer saber quanto vai gastar de combustível e depois em reais.</p>
+            </div>
+            <div class="card">
+              <strong>Volta</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Agora você só sabe quanto <strong>gastou</strong> — dá para descobrir a distância percorrida?</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Duas ideias, um mesmo tema</h4>
+            <p>Encadear cálculos (ida) é <strong>composição de funções</strong>. Voltar do resultado à entrada original é <strong>função inversa</strong>. Vamos ver as duas.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -348,29 +345,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Dá para "desfazer" uma função?</h2>
-          <div class="grid2">
-            <div class="card">
-              <strong>Ida</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Você sabe a distância de uma viagem e quer saber quanto vai gastar de combustível e depois em reais.</p>
-            </div>
-            <div class="card">
-              <strong>Volta</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Agora você só sabe quanto <strong>gastou</strong> — dá para descobrir a distância percorrida?</p>
-            </div>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            <h4>Duas ideias, um mesmo tema</h4>
-            <p>Encadear cálculos (ida) é <strong>composição de funções</strong>. Voltar do resultado à entrada original é <strong>função inversa</strong>. Vamos ver as duas.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: COMPOSTA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 96 · Teoria</div>
@@ -396,7 +370,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro, oral</div>
@@ -421,7 +394,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: COMPOSTA NA PRATICA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim (ENEM 2013)</div>
@@ -440,7 +412,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · Em duplas</div>
@@ -461,7 +432,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 TEORIA: FUNÇÃO INVERSA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 97 · Teoria</div>
@@ -482,7 +452,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 ATIVIDADE 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro</div>
@@ -502,7 +471,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 TEORIA: GRÁFICO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 98 · Teoria</div>
@@ -532,7 +500,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ATIVIDADE 4 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · No quadro, oral</div>
@@ -545,7 +512,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 TEORIA: PROBLEMAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aulas 99–100 · Teoria</div>
@@ -563,7 +529,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ATIVIDADE 5 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 5 · Em duplas</div>
@@ -579,7 +544,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da unidade</div>
+          <h2 class="title">Você completou as funções!</h2>
+          <p class="lede">Da função por partes até a composição e a inversa — agora é hora de revisar tudo com o guia visual da unidade completa.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
+              Questões adaptadas do ENEM (INEP) e de exercícios clássicos de função composta e inversa.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -598,12 +577,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. f(x)=x+5, g(x)=2x. g(f(1)) vale:</p>
@@ -645,21 +623,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ENCERRAMENTO -->
+      
       <section class="slide">
-        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Fim da unidade</div>
-          <h2 class="title">Você completou as funções!</h2>
-          <p class="lede">Da função por partes até a composição e a inversa — agora é hora de revisar tudo com o guia visual da unidade completa.</p>
-          <div class="card" style="margin-top:16px;">
-            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
-            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
-              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
-              Questões adaptadas do ENEM (INEP) e de exercícios clássicos de função composta e inversa.
-            </p>
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
     </div>
 
@@ -943,3 +922,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

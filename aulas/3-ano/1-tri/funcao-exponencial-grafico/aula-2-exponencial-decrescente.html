@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,44 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Módulo 03 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Exponencial decrescente: <span style="color:var(--decay);">a queda que desacelera</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">A radioatividade se desintegra pela metade a cada intervalo fixo — a meia-vida. A massa nunca chega a zero, mas fica cada vez menor.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Exponencial decrescente: <span style="color:var(--decay);">a queda que desacelera</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">A radioatividade se desintegra pela metade a cada intervalo fixo — a meia-vida. A massa nunca chega a zero, mas fica cada vez menor.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> A <strong>meia-vida</strong> é o tempo para que metade de um material radioativo se desintegre. Uma amostra de <strong>80 g</strong> com meia-vida de <strong>2 h</strong> perde metade da massa a cada 2 horas.</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">0 < a < 1</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">espelho de aˣ</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">assíntota y = 0</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><circle cx="100" cy="100" r="74" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="70" cy="80" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="110" cy="70" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="92" cy="112" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="132" cy="110" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="62" cy="122" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="108" cy="140" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="138" cy="82" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="82" cy="60" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="56" cy="98" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="124" cy="128" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="96" cy="92" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="76" cy="136" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><path d="M200 164 Q250 156 270 112 Q285 70 300 20" fill="none" stroke="var(--decay)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="196" y1="170" x2="308" y2="170" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><line x1="196" y1="170" x2="196" y2="14" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="252" y="190" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">tempo</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Decaimento exponencial.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Meia-vida</strong><div class="hint">material radioativo e medicamentos</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Base entre 0 e 1</strong><div class="hint">a curva desce</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Espelho</strong><div class="hint"><span class="tex">(1 ÷ <i>a</i>)<sup><i>x</i></sup></span> é <span class="tex"><i>a</i><sup><i>x</i></sup></span> refletido</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Comparações</strong><div class="hint">decrescente inverte a desigualdade</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Leitura de gráficos</strong><div class="hint">achar a base pelos pontos</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Meia-vida</h2>
+          
+          
+          <p class="lede">A <strong>meia-vida</strong> é o tempo para que metade de um material radioativo se desintegre. Uma amostra de <strong>80 g</strong> com meia-vida de <strong>2 h</strong> perde metade da massa a cada 2 horas.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>Tempo (h)</th><th>Massa (g)</th></tr>
+  <tr><td style="text-align:left;">0</td><td>80</td></tr>
+  <tr><td style="text-align:left;">2</td><td>40</td></tr>
+  <tr><td style="text-align:left;">4</td><td>20</td></tr>
+  <tr><td style="text-align:left;">6</td><td>10</td></tr>
+  <tr><td style="text-align:left;">t</td><td><span class="tex">80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup><i>t</i> ÷ 2</sup></span></td></tr>
+</table>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Depois de 6 horas, restam:</p><button class="choice mqo" data-i="0">5 g</button><button class="choice mqo" data-i="1">10 g</button><button class="choice mqo" data-i="2">20 g</button><button class="choice mqo" data-i="3">40 g</button><div class="fb"></div><div class="answer"><p>6 h são 3 meias-vidas: <span class="tex">80 → 40 → 20 → 10</span>. Pela lei: <span class="tex">80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = 80 ÷ 8 = 10</span> g.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,28 +368,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Para início de conversa</div>
-          <h2 class="title">Meia-vida</h2>
-          
-          <p class="lede">A <strong>meia-vida</strong> é o tempo para que metade de um material radioativo se desintegre. Uma amostra de <strong>80 g</strong> com meia-vida de <strong>2 h</strong> perde metade da massa a cada 2 horas.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <table class="tbl">
-  <tr><th>Tempo (h)</th><th>Massa (g)</th></tr>
-  <tr><td style="text-align:left;">0</td><td>80</td></tr>
-  <tr><td style="text-align:left;">2</td><td>40</td></tr>
-  <tr><td style="text-align:left;">4</td><td>20</td></tr>
-  <tr><td style="text-align:left;">6</td><td>10</td></tr>
-  <tr><td style="text-align:left;">t</td><td><span class="tex">80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup><i>t</i> ÷ 2</sup></span></td></tr>
-</table>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Depois de 6 horas, restam:</p><button class="choice mqo" data-i="0">5 g</button><button class="choice mqo" data-i="1">10 g</button><button class="choice mqo" data-i="2">20 g</button><button class="choice mqo" data-i="3">40 g</button><div class="fb"></div><div class="answer"><p>6 h são 3 meias-vidas: <span class="tex">80 → 40 → 20 → 10</span>. Pela lei: <span class="tex">80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = 80 ÷ 8 = 10</span> g.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow decay">Teoria · gráfico</div>
@@ -388,7 +382,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -410,119 +403,130 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Meia-vida</h2>
+          
           
           <p class="lede">Uma amostra de 80 g tem meia-vida de 2 h: <span class="tex"><i>M</i>(<i>t</i>) = 80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup><i>t</i> ÷ 2</sup></span>. Quanto resta após 6 h?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Substitua</strong><div class="hint"><span class="tex"><i>M</i>(6) = 80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>6 ÷ 2</sup> = 80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Calcule a potência</strong><div class="hint"><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = <span class="fr"><span>1</span><span>8</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Multiplique</strong><div class="hint"><span class="tex">80 · <span class="fr"><span>1</span><span>8</span></span> = 10</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Restam <strong>10 g</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Substitua</strong><div class="hint"><span class="tex"><i>M</i>(6) = 80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>6 ÷ 2</sup> = 80 · (<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Calcule a potência</strong><div class="hint"><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = <span class="fr"><span>1</span><span>8</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Multiplique</strong><div class="hint"><span class="tex">80 · <span class="fr"><span>1</span><span>8</span></span> = 10</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Restam <strong>10 g</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Desvalorização</h2>
+          
           
           <p class="lede">Um equipamento de R&#36; 20 000 perde 15% do valor por ano: <span class="tex"><i>V</i>(<i>t</i>) = 20 000 · 0,85<sup><i>t</i></sup></span>. Quanto vale após 2 anos?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Base</strong><div class="hint">Queda de 15%: <span class="tex"><i>a</i> = 0,85</span> (entre 0 e 1: decrescente).</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Potência</strong><div class="hint"><span class="tex">0,85<sup>2</sup> = 0,7225</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex">20 000 · 0,7225 = 14 450</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Vale <strong>R&#36; 14 450</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Base</strong><div class="hint">Queda de 15%: <span class="tex"><i>a</i> = 0,85</span> (entre 0 e 1: decrescente).</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Potência</strong><div class="hint"><span class="tex">0,85<sup>2</sup> = 0,7225</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex">20 000 · 0,7225 = 14 450</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Vale <strong>R&#36; 14 450</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Comparação com base menor que 1</h2>
           
+          
           <p class="lede">Compare <span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup></span> e <span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>5</sup></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Calcule</strong><div class="hint"><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = <span class="fr"><span>1</span><span>8</span></span></span> e <span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>5</sup> = <span class="fr"><span>1</span><span>32</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Compare</strong><div class="hint"><span class="tex"><span class="fr"><span>1</span><span>8</span></span> &gt; <span class="fr"><span>1</span><span>32</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Regra</strong><div class="hint">Base entre 0 e 1: <span class="tex">3 &lt; 5</span> mas <span class="tex"><i>f</i>(3) &gt; <i>f</i>(5)</span> — a desigualdade <strong>inverte</strong>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> &gt; (<span class="fr"><span>1</span><span>2</span></span>)<sup>5</sup></span>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Calcule</strong><div class="hint"><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> = <span class="fr"><span>1</span><span>8</span></span></span> e <span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>5</sup> = <span class="fr"><span>1</span><span>32</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Compare</strong><div class="hint"><span class="tex"><span class="fr"><span>1</span><span>8</span></span> &gt; <span class="fr"><span>1</span><span>32</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Regra</strong><div class="hint">Base entre 0 e 1: <span class="tex">3 &lt; 5</span> mas <span class="tex"><i>f</i>(3) &gt; <i>f</i>(5)</span> — a desigualdade <strong>inverte</strong>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex">(<span class="fr"><span>1</span><span>2</span></span>)<sup>3</sup> &gt; (<span class="fr"><span>1</span><span>2</span></span>)<sup>5</sup></span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow decay">Exemplo resolvido passo a passo</div>
           <h2 class="title">Inequação exponencial simples</h2>
           
+          
           <p class="lede">Resolva <span class="tex">(<span class="fr"><span>1</span><span>3</span></span>)<sup><i>x</i></sup> &gt; <span class="fr"><span>1</span><span>27</span></span></span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Mesma base</strong><div class="hint"><span class="tex"><span class="fr"><span>1</span><span>27</span></span> = (<span class="fr"><span>1</span><span>3</span></span>)<sup>3</sup></span> ⇒ <span class="tex">(<span class="fr"><span>1</span><span>3</span></span>)<sup><i>x</i></sup> &gt; (<span class="fr"><span>1</span><span>3</span></span>)<sup>3</sup></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Base entre 0 e 1</strong><div class="hint">A função é decrescente: ao tirar a base, a desigualdade <strong>inverte</strong>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Resultado</strong><div class="hint"><span class="tex"><i>x</i> &lt; 3</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> &lt; 3</span>. Teste: <span class="tex"><i>x</i> = 2</span> ⇒ <span class="tex"><span class="fr"><span>1</span><span>9</span></span> &gt; <span class="fr"><span>1</span><span>27</span></span></span> ✓.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Mesma base</strong><div class="hint"><span class="tex"><span class="fr"><span>1</span><span>27</span></span> = (<span class="fr"><span>1</span><span>3</span></span>)<sup>3</sup></span> ⇒ <span class="tex">(<span class="fr"><span>1</span><span>3</span></span>)<sup><i>x</i></sup> &gt; (<span class="fr"><span>1</span><span>3</span></span>)<sup>3</sup></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Base entre 0 e 1</strong><div class="hint">A função é decrescente: ao tirar a base, a desigualdade <strong>inverte</strong>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Resultado</strong><div class="hint"><span class="tex"><i>x</i> &lt; 3</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>x</i> &lt; 3</span>. Teste: <span class="tex"><i>x</i> = 2</span> ⇒ <span class="tex"><span class="fr"><span>1</span><span>9</span></span> &gt; <span class="fr"><span>1</span><span>27</span></span></span> ✓.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Lei pelo gráfico</h2>
           
+          
           <p class="lede">O gráfico de <span class="tex"><i>f</i>(<i>x</i>) = <i>a</i><sup><i>x</i></sup></span> passa por <span class="tex">(1, 0,25)</span>. Determine <span class="tex"><i>a</i></span> e <span class="tex"><i>f</i>(−1)</span>.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Base</strong><div class="hint"><span class="tex"><i>f</i>(1) = <i>a</i> = 0,25 = <span class="fr"><span>1</span><span>4</span></span></span> (entre 0 e 1: decrescente).</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Lei</strong><div class="hint"><span class="tex"><i>f</i>(<i>x</i>) = (<span class="fr"><span>1</span><span>4</span></span>)<sup><i>x</i></sup> = 4<sup>−<i>x</i></sup></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex"><i>f</i>(−1) = (<span class="fr"><span>1</span><span>4</span></span>)<sup>−1</sup> = 4</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>a</i> = <span class="fr"><span>1</span><span>4</span></span></span> e <span class="tex"><i>f</i>(−1) = 4</span>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Base</strong><div class="hint"><span class="tex"><i>f</i>(1) = <i>a</i> = 0,25 = <span class="fr"><span>1</span><span>4</span></span></span> (entre 0 e 1: decrescente).</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Lei</strong><div class="hint"><span class="tex"><i>f</i>(<i>x</i>) = (<span class="fr"><span>1</span><span>4</span></span>)<sup><i>x</i></sup> = 4<sup>−<i>x</i></sup></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex"><i>f</i>(−1) = (<span class="fr"><span>1</span><span>4</span></span>)<sup>−1</sup> = 4</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>a</i> = <span class="fr"><span>1</span><span>4</span></span></span> e <span class="tex"><i>f</i>(−1) = 4</span>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
-          <h2 class="title">Reconhecendo</h2>
-          
-          <p class="lede">Qual das funções é decrescente?</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">2<sup><i>x</i></sup></span></button><button class="choice mqo" data-i="1"><span class="tex">3<sup><i>x</i></sup></span></button><button class="choice mqo" data-i="2"><span class="tex">(<span class="fr"><span>1</span><span>5</span></span>)<sup><i>x</i></sup></span></button><button class="choice mqo" data-i="3"><span class="tex">1,5<sup><i>x</i></sup></span></button><button class="choice mqo" data-i="4"><span class="tex">10<sup><i>x</i></sup></span></button><div class="fb"></div><div class="answer"><p>Só <span class="tex">(<span class="fr"><span>1</span><span>5</span></span>)<sup><i>x</i></sup></span> tem base entre 0 e 1. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Qual das funções é decrescente?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">2<sup><i>x</i></sup></span></li><li><span class="tex">3<sup><i>x</i></sup></span></li><li><span class="tex">(<span class="fr"><span>1</span><span>5</span></span>)<sup><i>x</i></sup></span></li><li><span class="tex">1,5<sup><i>x</i></sup></span></li><li><span class="tex">10<sup><i>x</i></sup></span></li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Uma massa de 80 g tem meia-vida de 2 h. Após 4 h restam:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>10 g</li><li>20 g</li><li>30 g</li><li>40 g</li><li>60 g</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
-          <h2 class="title">Meia-vida</h2>
-          
-          <p class="lede">Uma massa de 80 g tem meia-vida de 2 h. Após 4 h restam:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">10 g</button><button class="choice mqo" data-i="1">20 g</button><button class="choice mqo" data-i="2">30 g</button><button class="choice mqo" data-i="3">40 g</button><button class="choice mqo" data-i="4">60 g</button><div class="fb"></div><div class="answer"><p>4 h são 2 meias-vidas: <span class="tex">80 → 40 → 20</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow decay">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Desvalorização</h2>
-          
-          <p class="lede">Um equipamento de R&#36; 20 000 perde 15% do valor por ano. Seu valor, em reais, após 2 anos é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">14 000</button><button class="choice mqo" data-i="1">14 450</button><button class="choice mqo" data-i="2">15 000</button><button class="choice mqo" data-i="3">16 000</button><button class="choice mqo" data-i="4">17 000</button><div class="fb"></div><div class="answer"><p><span class="tex">20 000 · 0,85<sup>2</sup> = 20 000 · 0,7225 = 14 450</span>. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um equipamento de R&#36; 20 000 perde 15% do valor por ano. Seu valor, em reais, após 2 anos é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>14 000</li><li>14 450</li><li>15 000</li><li>16 000</li><li>17 000</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Só <span class="tex">(<span class="fr"><span>1</span><span>5</span></span>)<sup><i>x</i></sup></span> tem base entre 0 e 1.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">4 h são 2 meias-vidas: <span class="tex">80 → 40 → 20</span>.</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">20 000 · 0,85<sup>2</sup> = 20 000 · 0,7225 = 14 450</span>.</p></div></div>
         </div>
       </section>
 
@@ -541,12 +545,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Base</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">0 &lt; <i>a</i> &lt; 1</span>: curva decrescente.</p></div>
+            <div class="card"><span class="badge">Espelho</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(<span class="fr"><span>1</span><span><i>a</i></span></span>)<sup><i>x</i></sup></span> reflete <span class="tex"><i>a</i><sup><i>x</i></sup></span> no eixo y.</p></div>
+            <div class="card"><span class="badge">Desigualdade</span><p style="font-size:.85rem;margin-top:8px;">Inverte quando a base está entre 0 e 1.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Cada meia-vida corta pela metade: a curva cai, mas nunca toca o eixo.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: A <strong>meia-vida</strong> é o tempo para que metade de um material radioativo se desintegre. Uma amostra de <strong>80 g</strong> com meia-vida de <strong>2 h</strong> perde metade da massa a cada 2 horas.</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. A função <span class="tex"><i>f</i>(<i>x</i>) = 0,7<sup><i>x</i></sup></span> é:</p>
@@ -588,23 +609,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Base</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">0 &lt; <i>a</i> &lt; 1</span>: curva decrescente.</p></div>
-            <div class="card"><span class="badge">Espelho</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(<span class="fr"><span>1</span><span><i>a</i></span></span>)<sup><i>x</i></sup></span> reflete <span class="tex"><i>a</i><sup><i>x</i></sup></span> no eixo y.</p></div>
-            <div class="card"><span class="badge">Desigualdade</span><p style="font-size:.85rem;margin-top:8px;">Inverte quando a base está entre 0 e 1.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Cada meia-vida corta pela metade: a curva cai, mas nunca toca o eixo.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -624,7 +644,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -995,3 +1015,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

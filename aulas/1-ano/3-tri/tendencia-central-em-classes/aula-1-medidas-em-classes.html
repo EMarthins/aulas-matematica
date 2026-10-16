@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 06 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Dados agrupados em classes: <span style="color:var(--primary);">o ponto médio fala pela classe</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Quando só conhecemos quantos dados caíram em cada intervalo, usamos o ponto médio da classe como representante dela. Com isso calculamos média, moda e mediana.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Dados agrupados em classes: <span style="color:var(--primary);">o ponto médio fala pela classe</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Quando só conhecemos quantos dados caíram em cada intervalo, usamos o ponto médio da classe como representante dela. Com isso calculamos média, moda e mediana.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">ponto médio xᵢ</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">média: Σ xᵢ·fᵢ ÷ n</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">moda e mediana: classes</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="20" x2="36" y2="168" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><rect x="56" y="98" width="40" height="70" rx="4" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="76" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">A</text><rect x="118" y="58" width="40" height="110" rx="4" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="138" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">B</text><rect x="180" y="114" width="40" height="54" rx="4" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="200" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">C</text><rect x="242" y="78" width="40" height="90" rx="4" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="262" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">D</text><text x="160" y="14" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">preferência da turma</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da tabela por classes às três medidas.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Convenção</strong><div class="hint">frequências uniformes na classe</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Ponto médio</strong><div class="hint">xᵢ = (a + b) ÷ 2</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Média</strong><div class="hint">Σ xᵢ·fᵢ ÷ n</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Moda</strong><div class="hint">ponto médio da classe modal</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Mediana</strong><div class="hint">ponto médio da classe central</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A média das médias</h2>
+          
+          
+          <p class="lede">Em uma gincana é preciso descobrir a <strong>altura média</strong> dos alunos do colégio, mas não há tempo para medir todos. Uma ideia: pedir a cada turma um resumo — por exemplo, <strong>quantos alunos há em cada faixa de altura</strong> — e calcular a média a partir desses resumos. É o que se faz com <strong>dados agrupados em classes</strong>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual o ponto médio da classe <span class="tex">60 ⊢ 70</span>?</p><button class="choice mqo" data-i="0">60</button><button class="choice mqo" data-i="1">65</button><button class="choice mqo" data-i="2">70</button><button class="choice mqo" data-i="3">130</button><div class="fb"></div><div class="answer"><p><span class="tex">(60 + 70) ÷ 2 = 65</span>. Esse valor representa todos os dados da classe.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Com dados em classes, <strong>não conhecemos os valores exatos</strong>: usamos <span class="tex"><i>x</i><sub><i>i</i></sub></span> = ponto médio. Os resultados são <strong>aproximados</strong>.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">A média das médias</h2>
-          
-          <p class="lede">Em uma gincana é preciso descobrir a <strong>altura média</strong> dos alunos do colégio, mas não há tempo para medir todos. Uma ideia: pedir a cada turma um resumo — por exemplo, <strong>quantos alunos há em cada faixa de altura</strong> — e calcular a média a partir desses resumos. É o que se faz com <strong>dados agrupados em classes</strong>.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual o ponto médio da classe <span class="tex">60 ⊢ 70</span>?</p><button class="choice mqo" data-i="0">60</button><button class="choice mqo" data-i="1">65</button><button class="choice mqo" data-i="2">70</button><button class="choice mqo" data-i="3">130</button><div class="fb"></div><div class="answer"><p><span class="tex">(60 + 70) ÷ 2 = 65</span>. Esse valor representa todos os dados da classe.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Com dados em classes, <strong>não conhecemos os valores exatos</strong>: usamos <span class="tex"><i>x</i><sub><i>i</i></sub></span> = ponto médio. Os resultados são <strong>aproximados</strong>.</p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · as três medidas</div>
@@ -385,7 +379,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -409,71 +402,73 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">As três medidas das massas</h2>
           
+          
           <p class="lede">Com a tabela da massa de 30 alunos (classes <span class="tex">40 ⊢ 50</span> a <span class="tex">80 ⊢ 90</span> com frequências <span class="tex">4, 10, 7, 6, 3</span>), calcule a média, a moda e a mediana.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex"><i>x</i><sub><i>i</i></sub></span>: <span class="tex">45, 55, 65, 75, 85</span>. <span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 180 + 550 + 455 + 450 + 255 = 1 890</span>; média <span class="tex">= 1 890 ÷ 30 = 63</span> kg.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Classe modal: <span class="tex">50 ⊢ 60</span> (<span class="tex"><i>f</i> = 10</span>); moda <span class="tex">= 55</span> kg.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 30</span>: posições <span class="tex">15</span> e <span class="tex">16</span>. Acumuladas: <span class="tex">4, 14, 21</span> ⇒ ambas na classe <span class="tex">60 ⊢ 70</span>: mediana <span class="tex">= 65</span> kg.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Média <strong>63 kg</strong>, moda <strong>55 kg</strong>, mediana <strong>65 kg</strong> (valores aproximados).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex"><i>x</i><sub><i>i</i></sub></span>: <span class="tex">45, 55, 65, 75, 85</span>. <span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 180 + 550 + 455 + 450 + 255 = 1 890</span>; média <span class="tex">= 1 890 ÷ 30 = 63</span> kg.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Classe modal: <span class="tex">50 ⊢ 60</span> (<span class="tex"><i>f</i> = 10</span>); moda <span class="tex">= 55</span> kg.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 30</span>: posições <span class="tex">15</span> e <span class="tex">16</span>. Acumuladas: <span class="tex">4, 14, 21</span> ⇒ ambas na classe <span class="tex">60 ⊢ 70</span>: mediana <span class="tex">= 65</span> kg.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Média <strong>63 kg</strong>, moda <strong>55 kg</strong>, mediana <strong>65 kg</strong> (valores aproximados).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Salário semanal</h2>
           
+          
           <p class="lede">O salário semanal (reais) de 35 colaboradores: <span class="tex">280 ⊢ 300</span>: 5; <span class="tex">300 ⊢ 320</span>: 13; <span class="tex">320 ⊢ 340</span>: 9; <span class="tex">340 ⊢ 360</span>: 5; <span class="tex">360 ⊢ 380</span>: 3. Calcule as três medidas.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex"><i>x</i><sub><i>i</i></sub></span>: <span class="tex">290, 310, 330, 350, 370</span>. <span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 1 450 + 4 030 + 2 970 + 1 750 + 1 110 = 11 310</span>; média <span class="tex">= 11 310 ÷ 35 ≈ 323,14</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Classe modal <span class="tex">300 ⊢ 320</span> (<span class="tex">13</span>): moda <span class="tex">= 310</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 35</span> (ímpar): posição <span class="tex">18</span>. Acumuladas <span class="tex">5, 18, ...</span> ⇒ 18º na classe <span class="tex">300 ⊢ 320</span>: mediana <span class="tex">= 310</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Média <strong>≈ R&#36; 323,14</strong>; moda e mediana <strong>R&#36; 310</strong>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex"><i>x</i><sub><i>i</i></sub></span>: <span class="tex">290, 310, 330, 350, 370</span>. <span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 1 450 + 4 030 + 2 970 + 1 750 + 1 110 = 11 310</span>; média <span class="tex">= 11 310 ÷ 35 ≈ 323,14</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Classe modal <span class="tex">300 ⊢ 320</span> (<span class="tex">13</span>): moda <span class="tex">= 310</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 35</span> (ímpar): posição <span class="tex">18</span>. Acumuladas <span class="tex">5, 18, ...</span> ⇒ 18º na classe <span class="tex">300 ⊢ 320</span>: mediana <span class="tex">= 310</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Média <strong>≈ R&#36; 323,14</strong>; moda e mediana <strong>R&#36; 310</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Média por classes</h2>
-          
-          <p class="lede">Na tabela das massas (classes de <span class="tex">40</span> a <span class="tex">90</span> com frequências <span class="tex">4, 10, 7, 6, 3</span>), a massa média, em kg, é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">58</button><button class="choice mqo" data-i="1">60</button><button class="choice mqo" data-i="2">63</button><button class="choice mqo" data-i="3">65</button><button class="choice mqo" data-i="4">70</button><div class="fb"></div><div class="answer"><p><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 1 890</span>; <span class="tex">1 890 ÷ 30 = 63</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Na tabela das massas (classes de <span class="tex">40</span> a <span class="tex">90</span> com frequências <span class="tex">4, 10, 7, 6, 3</span>), a massa média, em kg, é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>58</li><li>60</li><li>63</li><li>65</li><li>70</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Na mesma tabela, a moda é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>50 kg</li><li>55 kg</li><li>60 kg</li><li>65 kg</li><li>10 kg</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Moda por classes</h2>
-          
-          <p class="lede">Na mesma tabela, a moda é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">50 kg</button><button class="choice mqo" data-i="1">55 kg</button><button class="choice mqo" data-i="2">60 kg</button><button class="choice mqo" data-i="3">65 kg</button><button class="choice mqo" data-i="4">10 kg</button><div class="fb"></div><div class="answer"><p>A classe modal é <span class="tex">50 ⊢ 60</span> (<span class="tex"><i>f</i> = 10</span>); a moda é o ponto médio: <span class="tex">55</span> kg. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Mediana por classes</h2>
-          
-          <p class="lede">Na mesma tabela (n = 30), a mediana é:</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">55 kg</button><button class="choice mqo" data-i="1">60 kg</button><button class="choice mqo" data-i="2">63 kg</button><button class="choice mqo" data-i="3">65 kg</button><button class="choice mqo" data-i="4">75 kg</button><div class="fb"></div><div class="answer"><p>Posições <span class="tex">15</span> e <span class="tex">16</span> estão na classe <span class="tex">60 ⊢ 70</span> (acumuladas <span class="tex">4, 14, 21</span>): ponto médio <span class="tex">65</span> kg. <strong>Alternativa D.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Na mesma tabela (n = 30), a mediana é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>55 kg</li><li>60 kg</li><li>63 kg</li><li>65 kg</li><li>75 kg</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 1 890</span>; <span class="tex">1 890 ÷ 30 = 63</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">A classe modal é <span class="tex">50 ⊢ 60</span> (<span class="tex"><i>f</i> = 10</span>); a moda é o ponto médio: <span class="tex">55</span> kg.</p></div>
+<div class="card success"><strong>3. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;">Posições <span class="tex">15</span> e <span class="tex">16</span> estão na classe <span class="tex">60 ⊢ 70</span> (acumuladas <span class="tex">4, 14, 21</span>): ponto médio <span class="tex">65</span> kg.</p></div></div>
         </div>
       </section>
 
@@ -492,12 +487,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Ponto médio</span><p style="font-size:.85rem;margin-top:8px;">xᵢ = (a + b) ÷ 2 representa a classe.</p></div>
+            <div class="card"><span class="badge">Média</span><p style="font-size:.85rem;margin-top:8px;">Σ xᵢ·fᵢ ÷ n.</p></div>
+            <div class="card"><span class="badge">Moda e mediana</span><p style="font-size:.85rem;margin-top:8px;">Pontos médios das classes modal e mediana.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Pontos médios como representantes e conferência do total.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O ponto médio de <span class="tex">20 ⊢ 30</span> é:</p>
@@ -539,23 +550,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Ponto médio</span><p style="font-size:.85rem;margin-top:8px;">xᵢ = (a + b) ÷ 2 representa a classe.</p></div>
-            <div class="card"><span class="badge">Média</span><p style="font-size:.85rem;margin-top:8px;">Σ xᵢ·fᵢ ÷ n.</p></div>
-            <div class="card"><span class="badge">Moda e mediana</span><p style="font-size:.85rem;margin-top:8px;">Pontos médios das classes modal e mediana.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Pontos médios como representantes e conferência do total.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -575,7 +585,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 15</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -928,3 +938,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

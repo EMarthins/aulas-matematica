@@ -477,6 +477,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
       <!-- ============================================================ -->
       <!-- SLIDE 0 — CAPA -->
       <!-- ============================================================ -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg class="cover-curve" viewBox="0 0 900 260" style="position:absolute;right:-40px;bottom:10px;width:min(70%,620px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true">
@@ -488,100 +490,30 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="219" r="8" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Trimestre 3</div>
-          <h1 class="disp" style="font-size:clamp(2.6rem,7.4vw,5rem);font-weight:900;line-height:.94;margin:0 0 10px;max-width:11ch;">Exponenciais<br><span style="color:var(--primary);">em ação</span></h1>
-          <p class="subtitle" style="font-size:clamp(1.02rem,1.9vw,1.28rem);max-width:46ch;">Da árvore genealógica ao decaimento radioativo: equações e funções exponenciais, explicadas do zero.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Exponenciais<br><span style="color:var(--primary);">em ação</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Da árvore genealógica ao decaimento radioativo: equações e funções exponenciais, explicadas do zero.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 69–74</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">f(x) = a<sup>x</sup></span>
             <span class="badge">H15 · H20 · H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- ============================================================ -->
-      <!-- SLIDE 1 — ROTEIRO -->
-      <!-- ============================================================ -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Seis paradas — da definição ao desafio final — para dominar equações e funções exponenciais.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6m0 0 4-2m-4 2L8 7M6 21h12M8 21c0-4 1-7 4-9m4 9c0-4-1-7-4-9"/></svg>
-              <div><strong>Equação exponencial</strong><div class="hint">a incógnita sobe pro expoente — e como resolver isso</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M4 19V5m0 14 5-8 4 3 7-11"/></svg>
-              <div><strong>Função exponencial</strong><div class="hint">a lei f(x) = a<sup style="font-size:.7em">x</sup> e como ler seus gráficos</div></div>
-            </div>
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c4 0 5-11 9-11s6 9 9 9"/></svg>
-              <div><strong>Crescimento</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">juros compostos e o que faz uma curva disparar</div></div>
-            </div>
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6c4 0 5 11 9 11s6-9 9-9"/></svg>
-              <div><strong>Decaimento</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">meia-vida, remédios e substâncias radioativas</div></div>
-            </div>
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Resolvendo problemas</strong><div class="hint">população, finanças, física — tudo com a mesma ideia</div></div>
-            </div>
-
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">06</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8M12 17v4M6 3h12l-1 8a5 5 0 0 1-10 0L6 3Z"/></svg>
-              <div><strong>Desafio final</strong><div class="hint">quiz rápido pra fechar com chave de ouro</div></div>
-            </div>
-
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><circle cx="100" cy="100" r="74" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="70" cy="80" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="110" cy="70" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="92" cy="112" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="132" cy="110" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="62" cy="122" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="108" cy="140" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="138" cy="82" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="82" cy="60" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="56" cy="98" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="124" cy="128" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><circle cx="96" cy="92" r="7" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="76" cy="136" r="7" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><path d="M200 164 Q250 156 270 112 Q285 70 300 20" fill="none" stroke="var(--decay)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><line x1="196" y1="170" x2="308" y2="170" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><line x1="196" y1="170" x2="196" y2="14" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="252" y="190" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">tempo</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 2 — OBJETIVOS -->
-      <!-- ============================================================ -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Objetivos da aula</div>
-          <h2 class="title">O que você vai saber fazer</h2>
-          <div class="grid2" style="margin-top:18px;">
-            <ul class="plain">
-              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Reconhecer e <strong>resolver equações exponenciais</strong>, reduzindo à mesma base ou trocando de variável.</span></li>
-              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Identificar a <strong>função exponencial</strong> f(x) = a<sup style="font-size:.7em">x</sup> e calcular seu valor numérico.</span></li>
-              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Ler e construir <strong>gráficos</strong>, distinguindo crescimento (a&gt;1) de decaimento (0&lt;a&lt;1).</span></li>
-              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Aplicar tudo isso em <strong>situações reais</strong>: juros compostos, população, meia-vida e decaimento radioativo.</span></li>
-            </ul>
-            <div class="card">
-              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Habilidades trabalhadas</h4>
-              <div style="display:flex;flex-direction:column;gap:10px;">
-                <div><span class="badge">H15</span> <span style="font-size:.88rem;color:var(--ink-soft);">Identificar a relação de dependência entre grandezas</span></div>
-                <div><span class="badge">H20</span> <span style="font-size:.88rem;color:var(--ink-soft);">Interpretar gráfico cartesiano de grandezas relacionadas</span></div>
-                <div><span class="badge">H21</span> <span style="font-size:.88rem;color:var(--ink-soft);">Resolver situação-problema com modelagem algébrica</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 3 — GANCHO: ÁRVORE GENEALÓGICA -->
-      <!-- ============================================================ -->
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
           <h2 class="title">Quantos ancestrais você tem?</h2>
+          
           <div class="grid2">
             <div>
               <svg viewBox="0 0 320 170" style="width:100%;height:auto;">
@@ -626,12 +558,34 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
               </div>
             </div>
           </div>
+        
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 4 — TEORIA: EQUAÇÃO EXPONENCIAL -->
-      <!-- ============================================================ -->
+
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Objetivos da aula</div>
+          <h2 class="title">O que você vai saber fazer</h2>
+          <div class="grid2" style="margin-top:18px;">
+            <ul class="plain">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Reconhecer e <strong>resolver equações exponenciais</strong>, reduzindo à mesma base ou trocando de variável.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Identificar a <strong>função exponencial</strong> f(x) = a<sup style="font-size:.7em">x</sup> e calcular seu valor numérico.</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Ler e construir <strong>gráficos</strong>, distinguindo crescimento (a&gt;1) de decaimento (0&lt;a&lt;1).</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg><span>Aplicar tudo isso em <strong>situações reais</strong>: juros compostos, população, meia-vida e decaimento radioativo.</span></li>
+            </ul>
+            <div class="card">
+              <h4 class="disp" style="margin:0 0 10px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);">Habilidades trabalhadas</h4>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div><span class="badge">H15</span> <span style="font-size:.88rem;color:var(--ink-soft);">Identificar a relação de dependência entre grandezas</span></div>
+                <div><span class="badge">H20</span> <span style="font-size:.88rem;color:var(--ink-soft);">Interpretar gráfico cartesiano de grandezas relacionadas</span></div>
+                <div><span class="badge">H21</span> <span style="font-size:.88rem;color:var(--ink-soft);">Resolver situação-problema com modelagem algébrica</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 69 · Teoria</div>
@@ -657,9 +611,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 5 — TEORIA: TROCA DE VARIÁVEL -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 69 · Teoria</div>
@@ -686,9 +637,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 6 — ATIVIDADE 1 -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · Pratique</div>
@@ -714,9 +662,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 7 — TEORIA: FUNÇÃO EXPONENCIAL -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 70 · Teoria</div>
@@ -748,9 +693,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 8 — ATIVIDADE 2 -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · Pratique</div>
@@ -773,9 +715,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 9 — TEORIA: GRÁFICOS -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 71 · Teoria</div>
@@ -815,13 +754,12 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 10 — DUAS FACES: JUROS x MEIA-VIDA -->
-      <!-- ============================================================ -->
+      
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Exemplos práticos</div>
           <h2 class="title">Duas faces do mesmo fenômeno</h2>
+          
           <div class="grid2" style="margin-top:12px;">
             <div class="card growth">
               <div style="display:flex;align-items:center;gap:8px;">
@@ -849,12 +787,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             </div>
           </div>
           <p class="hint" style="margin-top:12px;">Mesma estrutura matemática — a &gt; 1 dispara para cima, 0 &lt; a &lt; 1 se aproxima suavemente de zero.</p>
+        
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 11 — ATIVIDADE 3 -->
-      <!-- ============================================================ -->
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · Pratique</div>
@@ -897,9 +834,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 12 — TEORIA: RESOLVENDO PROBLEMAS -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 72 · Aplicações</div>
@@ -931,9 +865,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 13 — ATIVIDADE 4 (ENEM) -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · No ENEM é assim</div>
@@ -956,9 +887,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 14 — SÍNTESE -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -994,14 +922,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 15 — QUIZ FINAL -->
-      <!-- ============================================================ -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. f(x) = a<sup style="font-size:.7em">x</sup> é decrescente quando:</p>
@@ -1043,9 +968,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- ============================================================ -->
-      <!-- SLIDE 16 — ENCERRAMENTO -->
-      <!-- ============================================================ -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -1426,3 +1365,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

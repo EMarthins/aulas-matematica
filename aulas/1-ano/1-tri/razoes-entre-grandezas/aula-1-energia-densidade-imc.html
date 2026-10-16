@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,29 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 04 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Energia, densidade e IMC: <span style="color:var(--primary);">grandezas que são razões</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">A conta de luz em kWh, a densidade de um material em g/cm³ e o IMC em kg/m²: três situações em que uma grandeza nasce da divisão ou da multiplicação de outras.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Energia, densidade e IMC: <span style="color:var(--primary);">grandezas que são razões</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">A conta de luz em kWh, a densidade de um material em g/cm³ e o IMC em kg/m²: três situações em que uma grandeza nasce da divisão ou da multiplicação de outras.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">kWh = kW · h</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">d = m ÷ V</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">IMC = m ÷ h²</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="40" y="110" width="140" height="40" rx="10" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><path d="M62 110 L84 78 L150 78 L170 110 Z" fill="var(--surface)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="148" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><rect x="100" y="62" width="40" height="14" rx="3" fill="var(--growth)" /><text x="120" y="73" font-size="10" fill="var(--surface)" text-anchor="middle" font-weight="700">TÁXI</text><rect x="200" y="40" width="100" height="70" rx="8" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="250" y="66" font-size="15" fill="var(--primary)" text-anchor="middle" font-weight="700">P = 5 + 3x</text><text x="250" y="92" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">fixo + por km</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Como as unidades se combinam para formar novas grandezas.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Energia elétrica</strong><div class="hint">quilowatt-hora: potência × tempo</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Densidade</strong><div class="hint">massa ÷ volume e o salto de g/cm³ para kg/m³</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>IMC</strong><div class="hint">massa ÷ altura ao quadrado</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Problemas</strong><div class="hint">conta de luz, bloco de gelo e peso de uma pessoa</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O que um relógio, uma balança e um multímetro têm em comum?</h2>
+          
+          
+          <p class="lede">Todos servem para <strong>medir</strong> uma grandeza: tempo, massa, corrente e tensão elétrica. Algumas grandezas são medidas diretamente; outras são calculadas a partir de duas ou mais — como a energia que consumimos em casa.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Na conta de luz, a unidade de consumo é o quilowatt-hora (kWh). Ela mede:</p><button class="choice mqo" data-i="0">potência</button><button class="choice mqo" data-i="1">tempo</button><button class="choice mqo" data-i="2">energia</button><button class="choice mqo" data-i="3">tensão elétrica</button><div class="fb"></div><div class="answer"><p>O kWh é uma unidade de <strong>energia</strong>: é a energia gasta por um aparelho de 1 kW de potência ligado por 1 hora.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Grandeza derivada = combinação de outras. <strong>Energia = potência × tempo</strong>; <strong>densidade = massa ÷ volume</strong>.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -350,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O que um relógio, uma balança e um multímetro têm em comum?</h2>
-          
-          <p class="lede">Todos servem para <strong>medir</strong> uma grandeza: tempo, massa, corrente e tensão elétrica. Algumas grandezas são medidas diretamente; outras são calculadas a partir de duas ou mais — como a energia que consumimos em casa.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Na conta de luz, a unidade de consumo é o quilowatt-hora (kWh). Ela mede:</p><button class="choice mqo" data-i="0">potência</button><button class="choice mqo" data-i="1">tempo</button><button class="choice mqo" data-i="2">energia</button><button class="choice mqo" data-i="3">tensão elétrica</button><div class="fb"></div><div class="answer"><p>O kWh é uma unidade de <strong>energia</strong>: é a energia gasta por um aparelho de 1 kW de potência ligado por 1 hora.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Grandeza derivada = combinação de outras. <strong>Energia = potência × tempo</strong>; <strong>densidade = massa ÷ volume</strong>.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -385,20 +380,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">O equipamento novo de Abigail</h2>
           
+          
           <p class="lede">Abigail comprou um equipamento de <strong>250 W</strong> que fica ligado <strong>5 h por dia</strong> durante 30 dias. A tarifa é de <strong>R&#36; 0,65 por kWh</strong>. Quanto o aparelho acrescenta à conta?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Passe a potência para kW</strong><div class="hint">250 W ÷ 1 000 = 0,25 kW.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Calcule o tempo total</strong><div class="hint">5 h × 30 dias = 150 h.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Consumo em kWh</strong><div class="hint">0,25 kW × 150 h = 37,5 kWh.</div></div></div>
-            <div class="step-row"><span class="badge">4</span><div><strong>Multiplique pela tarifa</strong><div class="hint">37,5 × 0,65 = R&#36; 24,375 ≈ R&#36; 24,38.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O equipamento acrescenta cerca de <strong>R&#36; 24,38</strong> à conta do mês.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Passe a potência para kW</strong><div class="hint">250 W ÷ 1 000 = 0,25 kW.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Calcule o tempo total</strong><div class="hint">5 h × 30 dias = 150 h.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Consumo em kWh</strong><div class="hint">0,25 kW × 150 h = 37,5 kWh.</div></div></div>
+            <div class="step-row rv"><span class="badge">4</span><div><strong>Multiplique pela tarifa</strong><div class="hint">37,5 × 0,65 = R&#36; 24,375 ≈ R&#36; 24,38.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O equipamento acrescenta cerca de <strong>R&#36; 24,38</strong> à conta do mês.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -421,23 +418,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
-          <h2 class="title">Um bloco de gelo de 2 m³</h2>
-          
-          <p class="lede">Qual é a massa de um bloco de gelo de <strong>2 m³</strong>, sabendo que a densidade do gelo é <strong>0,92 g/cm³</strong>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Converta a densidade para o SI</strong><div class="hint">0,92 g/cm³ = 0,92 × 1 000 = 920 kg/m³.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Use massa = densidade × volume</strong><div class="hint">920 kg/m³ × 2 m³.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Simplifique as unidades</strong><div class="hint">kg/m³ × m³ = kg.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A massa do bloco é de <strong>1 840 kg</strong>.</p></div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -467,39 +447,54 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">A massa de Renata</h2>
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Um bloco de gelo de 2 m³</h2>
           
-          <p class="lede">Renata tem 1,50 m de altura e IMC igual a 28 (sobrepeso). Qual é, aproximadamente, a massa dela?</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">63 kg</button><button class="choice mqo" data-i="1">68 kg</button><button class="choice mqo" data-i="2">72 kg</button><button class="choice mqo" data-i="3">76 kg</button><button class="choice mqo" data-i="4">80 kg</button><div class="fb"></div><div class="answer"><p>IMC <span class="tex">= <i>m</i> ÷ <i>h</i><sup>2</sup></span>, então <span class="tex"><i>m</i> = IMC · <i>h</i><sup>2</sup></span>. Com <span class="tex"><i>h</i><sup>2</sup> = 1,5<sup>2</sup> = 2,25</span>: <span class="tex"><i>m</i> = 28 · 2,25 = 63</span> kg. <strong>Alternativa A.</strong> Sempre dá para achar uma das três informações conhecendo as outras duas.</p></div></div>
           
+          <p class="lede">Qual é a massa de um bloco de gelo de <strong>2 m³</strong>, sabendo que a densidade do gelo é <strong>0,92 g/cm³</strong>?</p>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Converta a densidade para o SI</strong><div class="hint">0,92 g/cm³ = 0,92 × 1 000 = 920 kg/m³.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Use massa = densidade × volume</strong><div class="hint">920 kg/m³ × 2 m³.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Simplifique as unidades</strong><div class="hint">kg/m³ × m³ = kg.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A massa do bloco é de <strong>1 840 kg</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">O mercúrio do garimpeiro</h2>
-          
-          <p class="lede">A densidade do mercúrio é de cerca de 13 g/cm³. Qual a massa necessária para encher um frasco de meio litro?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">0,65 kg</button><button class="choice mqo" data-i="1">6,5 kg</button><button class="choice mqo" data-i="2">65 kg</button><button class="choice mqo" data-i="3">26 kg</button><button class="choice mqo" data-i="4">650 g</button><div class="fb"></div><div class="answer"><p>Meio litro <span class="tex">= 500</span> mL <span class="tex">= 500</span> cm³. Massa <span class="tex">= 13 · 500 = 6 500</span> g <span class="tex">= 6,5</span> kg. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Renata tem 1,50 m de altura e IMC igual a 28 (sobrepeso). Qual é, aproximadamente, a massa dela?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>63 kg</li><li>68 kg</li><li>72 kg</li><li>76 kg</li><li>80 kg</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. A densidade do mercúrio é de cerca de 13 g/cm³. Qual a massa necessária para encher um frasco de meio litro?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>0,65 kg</li><li>6,5 kg</li><li>65 kg</li><li>26 kg</li><li>650 g</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">O chuveiro elétrico</h2>
-          
-          <p class="lede">Um chuveiro de 5 400 W é usado 20 minutos por dia, durante 30 dias. A tarifa é de R&#36; 0,70 por kWh. O custo mensal do chuveiro é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">R&#36; 18,90</button><button class="choice mqo" data-i="1">R&#36; 37,80</button><button class="choice mqo" data-i="2">R&#36; 56,70</button><button class="choice mqo" data-i="3">R&#36; 113,40</button><button class="choice mqo" data-i="4">R&#36; 378,00</button><div class="fb"></div><div class="answer"><p><span class="tex">5 400</span> W <span class="tex">= 5,4</span> kW. Tempo: <span class="tex">20</span> min × <span class="tex">30</span> dias <span class="tex">= 600</span> min <span class="tex">= 10</span> h. Consumo: <span class="tex">5,4 · 10 = 54</span> kWh. Custo: <span class="tex">54 · 0,70 = 37,80</span> reais. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um chuveiro de 5 400 W é usado 20 minutos por dia, durante 30 dias. A tarifa é de R&#36; 0,70 por kWh. O custo mensal do chuveiro é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R&#36; 18,90</li><li>R&#36; 37,80</li><li>R&#36; 56,70</li><li>R&#36; 113,40</li><li>R&#36; 378,00</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;">IMC <span class="tex">= <i>m</i> ÷ <i>h</i><sup>2</sup></span>, então <span class="tex"><i>m</i> = IMC · <i>h</i><sup>2</sup></span>. Com <span class="tex"><i>h</i><sup>2</sup> = 1,5<sup>2</sup> = 2,25</span>: <span class="tex"><i>m</i> = 28 · 2,25 = 63</span> kg. Sempre dá para achar uma das três informações conhecendo as outras duas.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Meio litro <span class="tex">= 500</span> mL <span class="tex">= 500</span> cm³. Massa <span class="tex">= 13 · 500 = 6 500</span> g <span class="tex">= 6,5</span> kg.</p></div>
+<div class="card success"><strong>3. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">5 400</span> W <span class="tex">= 5,4</span> kW. Tempo: <span class="tex">20</span> min × <span class="tex">30</span> dias <span class="tex">= 600</span> min <span class="tex">= 10</span> h. Consumo: <span class="tex">5,4 · 10 = 54</span> kWh. Custo: <span class="tex">54 · 0,70 = 37,80</span> reais.</p></div></div>
         </div>
       </section>
 
@@ -518,12 +513,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Energia</span><p style="font-size:.85rem;margin-top:8px;">kWh = kW × h; custo = kWh × tarifa.</p></div>
+            <div class="card"><span class="badge">Densidade</span><p style="font-size:.85rem;margin-top:8px;">d = m ÷ V; 1 g/cm³ = 1 000 kg/m³.</p></div>
+            <div class="card"><span class="badge">IMC</span><p style="font-size:.85rem;margin-top:8px;">IMC = m ÷ h² (kg/m²).</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Converta as unidades primeiro, depois calcule a razão.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Um aparelho de 2 000 W ligado por 3 h consome:</p>
@@ -565,23 +576,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Energia</span><p style="font-size:.85rem;margin-top:8px;">kWh = kW × h; custo = kWh × tarifa.</p></div>
-            <div class="card"><span class="badge">Densidade</span><p style="font-size:.85rem;margin-top:8px;">d = m ÷ V; 1 g/cm³ = 1 000 kg/m³.</p></div>
-            <div class="card"><span class="badge">IMC</span><p style="font-size:.85rem;margin-top:8px;">IMC = m ÷ h² (kg/m²).</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Converta as unidades primeiro, depois calcule a razão.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -601,7 +611,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 15</div>
+      <div class="rail-count" id="railCount">1 / 16</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -956,3 +966,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

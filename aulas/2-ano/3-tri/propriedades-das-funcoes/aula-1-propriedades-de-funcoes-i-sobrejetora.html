@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 10 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Função <span style="color:var(--primary);">sobrejetora:</span> todo elemento é atingido</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Uma função é sobrejetora quando a imagem é igual ao contradomínio: nenhum elemento do contradomínio fica “sem par”. A propriedade depende do contradomínio escolhido.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Função <span style="color:var(--primary);">sobrejetora:</span> todo elemento é atingido</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Uma função é sobrejetora quando a imagem é igual ao contradomínio: nenhum elemento do contradomínio fica “sem par”. A propriedade depende do contradomínio escolhido.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">Im = CD</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">sem sobras</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">depende do CD</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="40" y="110" width="140" height="40" rx="10" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><path d="M62 110 L84 78 L150 78 L170 110 Z" fill="var(--surface)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="148" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><rect x="100" y="62" width="40" height="14" rx="3" fill="var(--growth)" /><text x="120" y="73" font-size="10" fill="var(--surface)" text-anchor="middle" font-weight="700">TÁXI</text><rect x="200" y="40" width="100" height="70" rx="8" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="250" y="66" font-size="15" fill="var(--primary)" text-anchor="middle" font-weight="700">P = 5 + 3x</text><text x="250" y="92" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">fixo + por km</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Imagem, contradomínio e sobrejetividade.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13"/></svg><div><strong>Revisão</strong><div class="hint">D, CD e Im</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Sobrejetora</strong><div class="hint">Im = CD</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Diagrama</strong><div class="hint">setas que chegam em todos</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Gráfico</strong><div class="hint">reta horizontal toca</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Exemplos</strong><div class="hint">x² e 2x + 1</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Cadeiras e alunos</h2>
+          
+          
+          <p class="lede">Em uma sala há <span class="tex">3</span> alunos e <span class="tex">3</span> cadeiras. Se cada aluno escolhe uma cadeira e <strong>nenhuma cadeira fica vazia</strong>, dizemos que a escolha “cobre todas as cadeiras”: é uma função sobrejetora dos alunos nas cadeiras.</p>
+          <div class="grid2" style="margin-top:6px;">
+            
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Uma função é sobrejetora quando:</p><button class="choice mqo" data-i="0">a imagem é igual ao contradomínio</button><button class="choice mqo" data-i="1">a imagem tem 1 elemento</button><button class="choice mqo" data-i="2">o domínio é vazio</button><button class="choice mqo" data-i="3">dois elementos têm a mesma imagem</button><div class="fb"></div><div class="answer"><p>Im = CD. <strong>Alternativa A.</strong></p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Cadeiras e alunos</h2>
-          
-          <p class="lede">Em uma sala há <span class="tex">3</span> alunos e <span class="tex">3</span> cadeiras. Se cada aluno escolhe uma cadeira e <strong>nenhuma cadeira fica vazia</strong>, dizemos que a escolha “cobre todas as cadeiras”: é uma função sobrejetora dos alunos nas cadeiras.</p>
-          <div class="grid2" style="margin-top:6px;">
-            
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Uma função é sobrejetora quando:</p><button class="choice mqo" data-i="0">a imagem é igual ao contradomínio</button><button class="choice mqo" data-i="1">a imagem tem 1 elemento</button><button class="choice mqo" data-i="2">o domínio é vazio</button><button class="choice mqo" data-i="3">dois elementos têm a mesma imagem</button><div class="fb"></div><div class="answer"><p>Im = CD. <strong>Alternativa A.</strong></p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Teoria · definição</div>
@@ -378,18 +372,20 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Diagrama</h2>
           
+          
           <p class="lede">Se <span class="tex"><i>A</i> = {1, 2, 3}</span>, <span class="tex"><i>B</i> = {<i>a</i>, <i>b</i>}</span> e <span class="tex"><i>f</i>(1) = <i>a</i></span>, <span class="tex"><i>f</i>(2) = <i>a</i></span>, <span class="tex"><i>f</i>(3) = <i>b</i></span>, <span class="tex"><i>f</i></span> é sobrejetora?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>Im</i>(<i>f</i>) = {<i>a</i>, <i>b</i>}</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Compare</strong><div class="hint"><span class="tex"><i>Im</i>(<i>f</i>) = <i>B</i></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Sim, <strong>sobrejetora</strong> (todos os elementos de <span class="tex"><i>B</i></span> são atingidos).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Imagem</strong><div class="hint"><span class="tex"><i>Im</i>(<i>f</i>) = {<i>a</i>, <i>b</i>}</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Compare</strong><div class="hint"><span class="tex"><i>Im</i>(<i>f</i>) = <i>B</i></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Sim, <strong>sobrejetora</strong> (todos os elementos de <span class="tex"><i>B</i></span> são atingidos).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -405,66 +401,64 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Algébrico</h2>
           
+          
           <p class="lede"><span class="tex"><i>f</i>: ℝ → ℝ</span>, <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i> + 5</span>. É sobrejetora?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Dado <span class="tex"><i>y</i></span></strong><div class="hint"><span class="tex"><i>x</i> + 5 = <i>y</i></span> ⇒ <span class="tex"><i>x</i> = <i>y</i> − 5</span> ∈ ℝ.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Conclusão</strong><div class="hint">Sempre existe <span class="tex"><i>x</i></span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Sim, é <strong>sobrejetora</strong>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Dado <span class="tex"><i>y</i></span></strong><div class="hint"><span class="tex"><i>x</i> + 5 = <i>y</i></span> ⇒ <span class="tex"><i>x</i> = <i>y</i> − 5</span> ∈ ℝ.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Conclusão</strong><div class="hint">Sempre existe <span class="tex"><i>x</i></span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Sim, é <strong>sobrejetora</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Imagem</h2>
-          
-          <p class="lede"><span class="tex"><i>f</i>: ℝ → ℝ</span>, <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span> NÃO é sobrejetora porque:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><i>Im</i></span> não inclui números negativos</button><button class="choice mqo" data-i="1"><span class="tex"><i>f</i></span> não é definida em <span class="tex">0</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>f</i></span> é crescente</button><button class="choice mqo" data-i="3"><span class="tex"><i>f</i></span> é constante</button><div class="fb"></div><div class="answer"><p>Valores negativos do CD não são atingidos. <strong>Alternativa A.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. <span class="tex"><i>f</i>: ℝ → ℝ</span>, <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span> NÃO é sobrejetora porque:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"><i>Im</i></span> não inclui números negativos</li><li><span class="tex"><i>f</i></span> não é definida em <span class="tex">0</span></li><li><span class="tex"><i>f</i></span> é crescente</li><li><span class="tex"><i>f</i></span> é constante</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Qual função de <span class="tex">ℝ</span> em <span class="tex">ℝ</span> é sobrejetora?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span></li><li><span class="tex"><i>f</i>(<i>x</i>) = 3<i>x</i> − 2</span></li><li><span class="tex"><i>f</i>(<i>x</i>) = |<i>x</i>|</span></li><li><span class="tex"><i>f</i>(<i>x</i>) = 5</span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Afim</h2>
-          
-          <p class="lede">Qual função de <span class="tex">ℝ</span> em <span class="tex">ℝ</span> é sobrejetora?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span></button><button class="choice mqo" data-i="1"><span class="tex"><i>f</i>(<i>x</i>) = 3<i>x</i> − 2</span></button><button class="choice mqo" data-i="2"><span class="tex"><i>f</i>(<i>x</i>) = |<i>x</i>|</span></button><button class="choice mqo" data-i="3"><span class="tex"><i>f</i>(<i>x</i>) = 5</span></button><div class="fb"></div><div class="answer"><p>Afim com <span class="tex"><i>a</i> ≠ 0</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Contradomínio</h2>
-          
-          <p class="lede"><span class="tex"><i>f</i>: ℝ → ℝ<sub>≥0</sub></span>, <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span> é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">sobrejetora</button><button class="choice mqo" data-i="1">não sobrejetora</button><button class="choice mqo" data-i="2">decrescente</button><button class="choice mqo" data-i="3">constante</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>Im</i> = [0, +∞) = CD</span>. <strong>Alternativa A.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. <span class="tex"><i>f</i>: ℝ → ℝ<sub>≥0</sub></span>, <span class="tex"><i>f</i>(<i>x</i>) = <i>x</i>²</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>sobrejetora</li><li>não sobrejetora</li><li>decrescente</li><li>constante</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo SAEB</div>
+          <div class="eyebrow primary">Prática independente · Estilo SAEB</div>
           <h2 class="title">Cobrindo todas as vagas</h2>
-          
-          <p class="lede">Uma empresa tem <span class="tex">4</span> vagas e distribui <span class="tex">6</span> candidatos aprovados entre elas, de modo que <strong>todas as vagas sejam preenchidas</strong>. A distribuição, como função dos candidatos nas vagas, é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">injetora</button><button class="choice mqo" data-i="1">sobrejetora</button><button class="choice mqo" data-i="2">constante</button><button class="choice mqo" data-i="3">não é função</button><button class="choice mqo" data-i="4">bijetora necessariamente</button><div class="fb"></div><div class="answer"><p>Todas as vagas (CD) são atingidas: sobrejetora. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do SAEB/ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do SAEB/ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Uma empresa tem <span class="tex">4</span> vagas e distribui <span class="tex">6</span> candidatos aprovados entre elas, de modo que <strong>todas as vagas sejam preenchidas</strong>. A distribuição, como função dos candidatos nas vagas, é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>injetora</li><li>sobrejetora</li><li>constante</li><li>não é função</li><li>bijetora necessariamente</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;">Valores negativos do CD não são atingidos.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Afim com <span class="tex"><i>a</i> ≠ 0</span>.</p></div>
+<div class="card success"><strong>3. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>Im</i> = [0, +∞) = CD</span>.</p></div>
+<div class="card success"><strong>4. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Todas as vagas (CD) são atingidas: sobrejetora.</p></div></div>
         </div>
       </section>
 
@@ -483,12 +477,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Sobrejetora</span><p style="font-size:.85rem;margin-top:8px;">Im = CD.</p></div>
+            <div class="card"><span class="badge">Teste</span><p style="font-size:.85rem;margin-top:8px;">Reta horizontal no CD sempre toca o gráfico.</p></div>
+            <div class="card"><span class="badge">CD</span><p style="font-size:.85rem;margin-top:8px;">Mudar o contradomínio muda a propriedade.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Na próxima aula: função injetora.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Sobrejetora significa:</p>
@@ -530,23 +540,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Sobrejetora</span><p style="font-size:.85rem;margin-top:8px;">Im = CD.</p></div>
-            <div class="card"><span class="badge">Teste</span><p style="font-size:.85rem;margin-top:8px;">Reta horizontal no CD sempre toca o gráfico.</p></div>
-            <div class="card"><span class="badge">CD</span><p style="font-size:.85rem;margin-top:8px;">Mudar o contradomínio muda a propriedade.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Na próxima aula: função injetora.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -566,7 +575,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 15</div>
+      <div class="rail-count" id="railCount">1 / 16</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -910,3 +919,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

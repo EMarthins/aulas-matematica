@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--growth)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 08 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Semelhança de triângulos: <span style="color:var(--growth);">basta ter dois ângulos iguais</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Com triângulos a conta fica mais simples: dois ângulos iguais (caso AA) garantem a semelhança. Daí saem alturas de prédios, larguras de rios e muitos problemas.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Semelhança de triângulos: <span style="color:var(--growth);">basta ter dois ângulos iguais</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Com triângulos a conta fica mais simples: dois ângulos iguais (caso AA) garantem a semelhança. Daí saem alturas de prédios, larguras de rios e muitos problemas.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">caso AA</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">lados proporcionais</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">sombras e rios</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="70" y="90" width="180" height="80" rx="3" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><path d="M54 92 L160 20 L266 92 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="140" y="120" width="40" height="50" rx="3" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/><rect x="88" y="108" width="30" height="26" rx="3" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/><rect x="202" y="108" width="30" height="26" rx="3" fill="var(--surface)" stroke="var(--primary)" stroke-width="2"/><line x1="160" y1="20" x2="160" y2="92" stroke="var(--ink-soft)" stroke-width="1.5" stroke-linecap="round"/><text x="168" y="62" font-size="13" fill="var(--ink)" text-anchor="start" font-weight="700">h</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do ângulo à medida inacessível.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Caso AA</strong><div class="hint">dois ângulos iguais</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Razão de semelhança</strong><div class="hint">ordem dos vértices</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Sombras</strong><div class="hint">altura de objetos distantes</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Retas paralelas</strong><div class="hint">triângulos que se formam</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">rio, prédio e perímetro</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O corte paralelo do kiwi</h2>
+          
+          
+          <p class="lede">Se cortarmos um triângulo por uma reta <strong>paralela a um dos lados</strong>, aparece um triângulo menor com os <strong>mesmos ângulos</strong> do original. Esse é o ponto de partida: dois ângulos iguais bastam para garantir a semelhança de triângulos (caso <strong>AA</strong>).</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 400 175" style="width:100%;max-width:480px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="30,120 120,120 90,55" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><polygon points="190,150 370,150 310,20" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2.4" stroke-linejoin="round"/><path d="M50,120 A20,20 0 0 0 43.6,105.3" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="59.3" y="111.2" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text><path d="M111.6,101.8 A20,20 0 0 0 100,120" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="93" y="106.8" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">70°</text><path d="M210,150 A20,20 0 0 0 203.6,135.3" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="219.3" y="141.2" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text><path d="M361.6,131.8 A20,20 0 0 0 350,150" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="343" y="136.8" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">70°</text><text x="17.2" y="129.6" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">A</text><text x="132.3" y="130.7" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">B</text><text x="93.1" y="45.4" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">C</text><text x="177.2" y="159.6" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">D</text><text x="382.3" y="160.7" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">E</text><text x="313.1" y="10.4" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">F</text><text x="71.9" y="137.6" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><text x="276.9" y="167.6" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text></svg>
+            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Os triângulos ABC (ângulos 50° e 70°) e DEF (ângulos 50° e 70°) são:</p><button class="choice mqo" data-i="0">semelhantes (caso AA)</button><button class="choice mqo" data-i="1">congruentes</button><button class="choice mqo" data-i="2">não semelhantes</button><button class="choice mqo" data-i="3">impossível saber</button><div class="fb"></div><div class="answer"><p>Dois ângulos iguais (<span class="tex">50°</span> e <span class="tex">70°</span>) ⇒ o terceiro também é igual (<span class="tex">60°</span>): <strong>semelhantes</strong>. Como <span class="tex">DE = 2 · AB</span>, a razão é <span class="tex"><i>k</i> = 2</span> (mas não são congruentes).</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Para início de conversa</div>
-          <h2 class="title">O corte paralelo do kiwi</h2>
-          
-          <p class="lede">Se cortarmos um triângulo por uma reta <strong>paralela a um dos lados</strong>, aparece um triângulo menor com os <strong>mesmos ângulos</strong> do original. Esse é o ponto de partida: dois ângulos iguais bastam para garantir a semelhança de triângulos (caso <strong>AA</strong>).</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 400 175" style="width:100%;max-width:480px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="30,120 120,120 90,55" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><polygon points="190,150 370,150 310,20" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2.4" stroke-linejoin="round"/><path d="M50,120 A20,20 0 0 0 43.6,105.3" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="59.3" y="111.2" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text><path d="M111.6,101.8 A20,20 0 0 0 100,120" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="93" y="106.8" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">70°</text><path d="M210,150 A20,20 0 0 0 203.6,135.3" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="219.3" y="141.2" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">50°</text><path d="M361.6,131.8 A20,20 0 0 0 350,150" fill="none" stroke="var(--growth)" stroke-width="2"/><text x="343" y="136.8" fill="var(--growth)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">70°</text><text x="17.2" y="129.6" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">A</text><text x="132.3" y="130.7" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">B</text><text x="93.1" y="45.4" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">C</text><text x="177.2" y="159.6" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">D</text><text x="382.3" y="160.7" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">E</text><text x="313.1" y="10.4" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">F</text><text x="71.9" y="137.6" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">3</text><text x="276.9" y="167.6" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text></svg>
-            <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Os triângulos ABC (ângulos 50° e 70°) e DEF (ângulos 50° e 70°) são:</p><button class="choice mqo" data-i="0">semelhantes (caso AA)</button><button class="choice mqo" data-i="1">congruentes</button><button class="choice mqo" data-i="2">não semelhantes</button><button class="choice mqo" data-i="3">impossível saber</button><div class="fb"></div><div class="answer"><p>Dois ângulos iguais (<span class="tex">50°</span> e <span class="tex">70°</span>) ⇒ o terceiro também é igual (<span class="tex">60°</span>): <strong>semelhantes</strong>. Como <span class="tex">DE = 2 · AB</span>, a razão é <span class="tex"><i>k</i> = 2</span> (mas não são congruentes).</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -386,19 +380,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">A altura do prédio pela sombra</h2>
           
+          
           <p class="lede">No mesmo instante, um poste de 2 m projeta sombra de 0,8 m e um prédio projeta sombra de 12 m. Qual a altura do prédio?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Triângulos semelhantes</strong><div class="hint">Os raios do sol formam o <strong>mesmo ângulo</strong> com o chão e poste e prédio formam <span class="tex">90°</span>: AA.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Proporção</strong><div class="hint"><span class="tex"><span class="fr"><span><i>h</i></span><span>12</span></span> = <span class="fr"><span>2</span><span>0,8</span></span></span> (altura ÷ sombra é igual nos dois).</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Calcule</strong><div class="hint"><span class="tex"><i>h</i> = 12 · <span class="fr"><span>2</span><span>0,8</span></span> = 12 · 2,5 = 30</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O prédio tem <strong>30 m</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Triângulos semelhantes</strong><div class="hint">Os raios do sol formam o <strong>mesmo ângulo</strong> com o chão e poste e prédio formam <span class="tex">90°</span>: AA.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Proporção</strong><div class="hint"><span class="tex"><span class="fr"><span><i>h</i></span><span>12</span></span> = <span class="fr"><span>2</span><span>0,8</span></span></span> (altura ÷ sombra é igual nos dois).</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Calcule</strong><div class="hint"><span class="tex"><i>h</i> = 12 · <span class="fr"><span>2</span><span>0,8</span></span> = 12 · 2,5 = 30</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O prédio tem <strong>30 m</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -418,19 +414,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">A largura do rio</h2>
           
+          
           <p class="lede">Um observador em <span class="tex"><i>O</i></span> quer saber a distância até um ponto <span class="tex"><i>P</i></span> na outra margem. Com <span class="tex">OA ∥ BC</span>, <span class="tex">OA = 20</span> m, <span class="tex">BC = 30</span> m e <span class="tex">OB = 15</span> m, e <span class="tex"><i>P</i></span>, <span class="tex"><i>O</i></span>, <span class="tex"><i>B</i></span> alinhados (também <span class="tex"><i>P</i></span>, <span class="tex"><i>A</i></span>, <span class="tex"><i>C</i></span>), quanto vale <span class="tex">PO</span>?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Triângulos semelhantes</strong><div class="hint"><span class="tex">△POA ∼ △PBC</span> (ângulo em <span class="tex"><i>P</i></span> comum e <span class="tex">OA ∥ BC</span>).</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Proporção</strong><div class="hint"><span class="tex"><span class="fr"><span>PO</span><span>PB</span></span> = <span class="fr"><span>OA</span><span>BC</span></span> = <span class="fr"><span>20</span><span>30</span></span> = <span class="fr"><span>2</span><span>3</span></span></span>, com <span class="tex">PB = PO + 15</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Resolva</strong><div class="hint"><span class="tex">3 · PO = 2 · (PO + 15)</span> ⇒ <span class="tex">PO = 30</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A distância é de <strong>30 m</strong> (<span class="tex">PB = 45</span> m).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Triângulos semelhantes</strong><div class="hint"><span class="tex">△POA ∼ △PBC</span> (ângulo em <span class="tex"><i>P</i></span> comum e <span class="tex">OA ∥ BC</span>).</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Proporção</strong><div class="hint"><span class="tex"><span class="fr"><span>PO</span><span>PB</span></span> = <span class="fr"><span>OA</span><span>BC</span></span> = <span class="fr"><span>20</span><span>30</span></span> = <span class="fr"><span>2</span><span>3</span></span></span>, com <span class="tex">PB = PO + 15</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Resolva</strong><div class="hint"><span class="tex">3 · PO = 2 · (PO + 15)</span> ⇒ <span class="tex">PO = 30</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A distância é de <strong>30 m</strong> (<span class="tex">PB = 45</span> m).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -450,55 +448,54 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Perímetro de um triângulo semelhante</h2>
           
+          
           <p class="lede">Um triângulo tem lados 6 cm, 8 cm e 10 cm. Um triângulo semelhante a ele tem perímetro 36 cm. Quais os seus lados?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Perímetro original</strong><div class="hint"><span class="tex">6 + 8 + 10 = 24</span> cm.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Razão</strong><div class="hint"><span class="tex"><i>k</i> = 36 ÷ 24 = 1,5</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Lados do novo</strong><div class="hint"><span class="tex">6 · 1,5 = 9</span>; <span class="tex">8 · 1,5 = 12</span>; <span class="tex">10 · 1,5 = 15</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Lados <span class="tex">9</span> cm, <span class="tex">12</span> cm e <span class="tex">15</span> cm (soma <span class="tex">36</span> ✓).</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Perímetro original</strong><div class="hint"><span class="tex">6 + 8 + 10 = 24</span> cm.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Razão</strong><div class="hint"><span class="tex"><i>k</i> = 36 ÷ 24 = 1,5</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Lados do novo</strong><div class="hint"><span class="tex">6 · 1,5 = 9</span>; <span class="tex">8 · 1,5 = 12</span>; <span class="tex">10 · 1,5 = 15</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Lados <span class="tex">9</span> cm, <span class="tex">12</span> cm e <span class="tex">15</span> cm (soma <span class="tex">36</span> ✓).</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Sombra do poste</h2>
-          
-          <p class="lede">Um poste de 3 m projeta sombra de 1,2 m. No mesmo instante, uma árvore projeta sombra de 8 m. A altura da árvore é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">16 m</button><button class="choice mqo" data-i="1">18 m</button><button class="choice mqo" data-i="2">20 m</button><button class="choice mqo" data-i="3">22 m</button><button class="choice mqo" data-i="4">24 m</button><div class="fb"></div><div class="answer"><p><span class="tex"><span class="fr"><span><i>h</i></span><span>8</span></span> = <span class="fr"><span>3</span><span>1,2</span></span></span> ⇒ <span class="tex"><i>h</i> = 8 · 2,5 = 20</span> m. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um poste de 3 m projeta sombra de 1,2 m. No mesmo instante, uma árvore projeta sombra de 8 m. A altura da árvore é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>16 m</li><li>18 m</li><li>20 m</li><li>22 m</li><li>24 m</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Os lados de um triângulo medem 10, 12 e 18 cm. Um triângulo semelhante a ele tem perímetro 60 cm. Seu maior lado mede:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>24 cm</li><li>27 cm</li><li>30 cm</li><li>36 cm</li><li>40 cm</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Semelhante com perímetro</h2>
-          
-          <p class="lede">Os lados de um triângulo medem 10, 12 e 18 cm. Um triângulo semelhante a ele tem perímetro 60 cm. Seu maior lado mede:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">24 cm</button><button class="choice mqo" data-i="1">27 cm</button><button class="choice mqo" data-i="2">30 cm</button><button class="choice mqo" data-i="3">36 cm</button><button class="choice mqo" data-i="4">40 cm</button><div class="fb"></div><div class="answer"><p>Perímetro original: <span class="tex">40</span>; <span class="tex"><i>k</i> = 60 ÷ 40 = 1,5</span>. Maior lado: <span class="tex">18 · 1,5 = 27</span> cm. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">A distância até o ponto P</h2>
-          
-          <p class="lede">Com <span class="tex">OA ∥ BC</span>, <span class="tex">OA = 20</span> m, <span class="tex">BC = 30</span> m e <span class="tex">OB = 15</span> m, a distância <span class="tex">PO</span> do observador ao ponto <span class="tex"><i>P</i></span> é, em metros:<svg viewBox="0 0 360 200" style="width:100%;max-width:420px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="180,20 60,170 300,170" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linejoin="round"/><line x1="100" y1="120" x2="260" y2="120" stroke="var(--primary)" stroke-width="2.6" stroke-linecap="round" /><line x1="180" y1="20" x2="60" y2="170" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" /><circle cx="180" cy="20" r="3.5" fill="var(--decay)"/><circle cx="100" cy="120" r="3.5" fill="var(--ink)"/><circle cx="260" cy="120" r="3.5" fill="var(--ink)"/><circle cx="60" cy="170" r="3.5" fill="var(--ink)"/><circle cx="300" cy="170" r="3.5" fill="var(--ink)"/><text x="180" y="12" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">P</text><text x="86" y="118" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">O</text><text x="274" y="118" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">A</text><text x="46" y="178" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">B</text><text x="314" y="178" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">C</text><text x="180" y="112" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">20</text><text x="180" y="188" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">30</text><text x="62" y="148" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">15</text></svg></p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">15</button><button class="choice mqo" data-i="1">20</button><button class="choice mqo" data-i="2">30</button><button class="choice mqo" data-i="3">35</button><button class="choice mqo" data-i="4">45</button><div class="fb"></div><div class="answer"><p><span class="tex">△POA ∼ △PBC</span>: <span class="tex"><span class="fr"><span>20</span><span>30</span></span> = <span class="fr"><span>PO</span><span>PO + 15</span></span></span> ⇒ <span class="tex">30 · PO = 20 · PO + 300</span> ⇒ <span class="tex">PO = 30</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Com <span class="tex">OA ∥ BC</span>, <span class="tex">OA = 20</span> m, <span class="tex">BC = 30</span> m e <span class="tex">OB = 15</span> m, a distância <span class="tex">PO</span> do observador ao ponto <span class="tex"><i>P</i></span> é, em metros:<svg viewBox="0 0 360 200" style="width:100%;max-width:420px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="180,20 60,170 300,170" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linejoin="round"/><line x1="100" y1="120" x2="260" y2="120" stroke="var(--primary)" stroke-width="2.6" stroke-linecap="round" /><line x1="180" y1="20" x2="60" y2="170" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" /><circle cx="180" cy="20" r="3.5" fill="var(--decay)"/><circle cx="100" cy="120" r="3.5" fill="var(--ink)"/><circle cx="260" cy="120" r="3.5" fill="var(--ink)"/><circle cx="60" cy="170" r="3.5" fill="var(--ink)"/><circle cx="300" cy="170" r="3.5" fill="var(--ink)"/><text x="180" y="12" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">P</text><text x="86" y="118" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">O</text><text x="274" y="118" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">A</text><text x="46" y="178" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">B</text><text x="314" y="178" fill="var(--ink)" font-size="13" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">C</text><text x="180" y="112" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">20</text><text x="180" y="188" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">30</text><text x="62" y="148" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">15</text></svg></p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>15</li><li>20</li><li>30</li><li>35</li><li>45</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><span class="fr"><span><i>h</i></span><span>8</span></span> = <span class="fr"><span>3</span><span>1,2</span></span></span> ⇒ <span class="tex"><i>h</i> = 8 · 2,5 = 20</span> m.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Perímetro original: <span class="tex">40</span>; <span class="tex"><i>k</i> = 60 ÷ 40 = 1,5</span>. Maior lado: <span class="tex">18 · 1,5 = 27</span> cm.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">△POA ∼ △PBC</span>: <span class="tex"><span class="fr"><span>20</span><span>30</span></span> = <span class="fr"><span>PO</span><span>PO + 15</span></span></span> ⇒ <span class="tex">30 · PO = 20 · PO + 300</span> ⇒ <span class="tex">PO = 30</span>.</p></div></div>
         </div>
       </section>
 
@@ -517,12 +514,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Caso AA</span><p style="font-size:.85rem;margin-top:8px;">Dois ângulos iguais ⇒ semelhantes.</p></div>
+            <div class="card"><span class="badge">Proporção</span><p style="font-size:.85rem;margin-top:8px;">Lados homólogos, na ordem certa; inteiro com inteiro.</p></div>
+            <div class="card"><span class="badge">Sombras</span><p style="font-size:.85rem;margin-top:8px;">Altura ÷ sombra constante no mesmo instante.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Identifique os ângulos, monte a proporção e confira.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Dois triângulos com dois ângulos iguais são:</p>
@@ -564,23 +577,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Caso AA</span><p style="font-size:.85rem;margin-top:8px;">Dois ângulos iguais ⇒ semelhantes.</p></div>
-            <div class="card"><span class="badge">Proporção</span><p style="font-size:.85rem;margin-top:8px;">Lados homólogos, na ordem certa; inteiro com inteiro.</p></div>
-            <div class="card"><span class="badge">Sombras</span><p style="font-size:.85rem;margin-top:8px;">Altura ÷ sombra constante no mesmo instante.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Identifique os ângulos, monte a proporção e confira.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -600,7 +612,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 16</div>
+      <div class="rail-count" id="railCount">1 / 17</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -947,3 +959,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

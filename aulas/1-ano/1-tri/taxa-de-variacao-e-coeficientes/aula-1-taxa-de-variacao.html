@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 10 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Taxa de variação: <span style="color:var(--primary);">quanto y muda quando x muda</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">O coeficiente angular a é a taxa de variação da função afim: a razão entre a variação de y e a variação de x. E o coeficiente linear b diz onde a reta começa.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Taxa de variação: <span style="color:var(--primary);">quanto y muda quando x muda</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">O coeficiente angular a é a taxa de variação da função afim: a razão entre a variação de y e a variação de x. E o coeficiente linear b diz onde a reta começa.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Se um salário passa de 90 para 150 reais quando as vendas vão de 2 para 5, quanto ele sobe por venda?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">a = Δy / Δx</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">b = f(0)</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">mesmo a: paralelas</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="40" y="110" width="140" height="40" rx="10" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><path d="M62 110 L84 78 L150 78 L170 110 Z" fill="var(--surface)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="148" cy="152" r="14" fill="var(--ink)" stroke="var(--ink-soft)" stroke-width="2"/><rect x="100" y="62" width="40" height="14" rx="3" fill="var(--growth)" /><text x="120" y="73" font-size="10" fill="var(--surface)" text-anchor="middle" font-weight="700">TÁXI</text><rect x="200" y="40" width="100" height="70" rx="8" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><text x="250" y="66" font-size="15" fill="var(--primary)" text-anchor="middle" font-weight="700">P = 5 + 3x</text><text x="250" y="92" font-size="11" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">fixo + por km</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">A inclinação e o ponto de partida da reta.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Variação</strong><div class="hint">Δy e Δx entre dois pontos</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Taxa de variação</strong><div class="hint">a = Δy ÷ Δx, constante na função afim</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Coeficiente linear</strong><div class="hint">onde a reta corta o eixo y</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Retas paralelas</strong><div class="hint">mesmo a, b diferentes</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">vendas, faturas e leitura de gráficos</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Quanto a reta sobe a cada passo?</h2>
+          
+          
+          <p class="lede">Em uma função afim, <strong>para cada aumento de 1 em <span class="tex"><i>x</i></span>, <span class="tex"><i>y</i></span> varia sempre a mesma quantidade</strong>. Essa quantidade é a taxa de variação. Se um salário passa de 90 para 150 reais quando as vendas vão de 2 para 5, quanto ele sobe por venda?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A taxa de variação do salário por venda (de <span class="tex"><i>x</i> = 2</span> para <span class="tex"><i>x</i> = 5</span>) é:</p><button class="choice mqo" data-i="0">10 reais</button><button class="choice mqo" data-i="1">20 reais</button><button class="choice mqo" data-i="2">30 reais</button><button class="choice mqo" data-i="3">60 reais</button><div class="fb"></div><div class="answer"><p><span class="tex">Δ<i>y</i> = 150 − 90 = 60</span> e <span class="tex">Δ<i>x</i> = 5 − 2 = 3</span>. Taxa: <span class="tex"><i>a</i> = 60 ÷ 3 = 20</span> reais por venda.</p></div></div>
+            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;"><span class="tex"><i>a</i> = <span class="fr"><span><i>y</i><sub>2</sub> − <i>y</i><sub>1</sub></span><span><i>x</i><sub>2</sub> − <i>x</i><sub>1</sub></span></span></span> vale <strong>igual para qualquer par de pontos</strong> da mesma reta.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Quanto a reta sobe a cada passo?</h2>
-          
-          <p class="lede">Em uma função afim, <strong>para cada aumento de 1 em <span class="tex"><i>x</i></span>, <span class="tex"><i>y</i></span> varia sempre a mesma quantidade</strong>. Essa quantidade é a taxa de variação. Se um salário passa de 90 para 150 reais quando as vendas vão de 2 para 5, quanto ele sobe por venda?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A taxa de variação do salário por venda (de <span class="tex"><i>x</i> = 2</span> para <span class="tex"><i>x</i> = 5</span>) é:</p><button class="choice mqo" data-i="0">10 reais</button><button class="choice mqo" data-i="1">20 reais</button><button class="choice mqo" data-i="2">30 reais</button><button class="choice mqo" data-i="3">60 reais</button><div class="fb"></div><div class="answer"><p><span class="tex">Δ<i>y</i> = 150 − 90 = 60</span> e <span class="tex">Δ<i>x</i> = 5 − 2 = 3</span>. Taxa: <span class="tex"><i>a</i> = 60 ÷ 3 = 20</span> reais por venda.</p></div></div>
-            <div class="card primary"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;"><span class="tex"><i>a</i> = <span class="fr"><span><i>y</i><sub>2</sub> − <i>y</i><sub>1</sub></span><span><i>x</i><sub>2</sub> − <i>x</i><sub>1</sub></span></span></span> vale <strong>igual para qualquer par de pontos</strong> da mesma reta.</p></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -387,35 +381,21 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Projeção de vendas</h2>
           
-          <p class="lede">Uma loja vendeu 25 mil itens no ano 1 e 65 mil no ano 5, com crescimento constante. Qual a lei <span class="tex"><i>V</i>(<i>x</i>)</span> e qual a projeção para o ano 7?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Taxa de variação</strong><div class="hint"><span class="tex"><i>a</i> = <span class="fr"><span>65 − 25</span><span>5 − 1</span></span> = <span class="fr"><span>40</span><span>4</span></span> = 10</span> mil itens por ano.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Valor inicial</strong><div class="hint"><span class="tex">25 = 10 · 1 + <i>b</i></span> ⇒ <span class="tex"><i>b</i> = 15</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Lei e projeção</strong><div class="hint"><span class="tex"><i>V</i>(<i>x</i>) = 10<i>x</i> + 15</span>. Para <span class="tex"><i>x</i> = 7</span>: <span class="tex"><i>V</i>(7) = 85</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A projeção para o ano 7 é de <strong>85 mil itens</strong>.</p></div>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Cuidado</div>
-          <h2 class="title">Um erro clássico: inverter só uma subtração</h2>
           
-          <div class="grid2">
-            <div>
-              <p class="lede">Um colega calculou a taxa entre <span class="tex">(1, 20)</span> e <span class="tex">(5, 60)</span> assim: <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>1 − 5</span></span> = <span class="fr"><span>40</span><span>−4</span></span> = −10</span>. Mas o gráfico <strong>é crescente</strong>.</p>
-              <div class="callout danger"><h4>Onde está o erro?</h4><p>Ele subtraiu <span class="tex"><i>y</i><sub>2</sub> − <i>y</i><sub>1</sub></span> em cima e <span class="tex"><i>x</i><sub>1</sub> − <i>x</i><sub>2</sub></span> embaixo: <strong>ordens diferentes</strong>. O correto é <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>5 − 1</span></span> = 10</span>.</p></div>
-            </div>
-            <div class="callout success"><h4>Teste de coerência</h4><p>Reta crescente → <span class="tex"><i>a</i></span> positivo. Reta decrescente → <span class="tex"><i>a</i></span> negativo. Se o sinal do resultado contradiz o desenho, revise a ordem das subtrações.</p></div>
-          </div>
+          <p class="lede">Uma loja vendeu 25 mil itens no ano 1 e 65 mil no ano 5, com crescimento constante. Qual a lei <span class="tex"><i>V</i>(<i>x</i>)</span> e qual a projeção para o ano 7?</p>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Taxa de variação</strong><div class="hint"><span class="tex"><i>a</i> = <span class="fr"><span>65 − 25</span><span>5 − 1</span></span> = <span class="fr"><span>40</span><span>4</span></span> = 10</span> mil itens por ano.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Valor inicial</strong><div class="hint"><span class="tex">25 = 10 · 1 + <i>b</i></span> ⇒ <span class="tex"><i>b</i> = 15</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Lei e projeção</strong><div class="hint"><span class="tex"><i>V</i>(<i>x</i>) = 10<i>x</i> + 15</span>. Para <span class="tex"><i>x</i> = 7</span>: <span class="tex"><i>V</i>(7) = 85</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A projeção para o ano 7 é de <strong>85 mil itens</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -438,42 +418,66 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Taxa em uma tabela</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
           
           <p class="lede">Em uma função afim, <span class="tex"><i>f</i>(3) = 11</span> e <span class="tex"><i>f</i>(7) = 27</span>. Sem achar a lei, o coeficiente angular é:</p>
           <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">3</button><button class="choice mqo" data-i="1">4</button><button class="choice mqo" data-i="2">5</button><button class="choice mqo" data-i="3">8</button><button class="choice mqo" data-i="4">16</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>a</i> = <span class="fr"><span>27 − 11</span><span>7 − 3</span></span> = <span class="fr"><span>16</span><span>4</span></span> = 4</span>. <strong>Alternativa B.</strong> (De <span class="tex"><i>x</i> = 3</span> a <span class="tex"><i>x</i> = 7</span>, <span class="tex"><i>y</i></span> sobe 16 em 4 passos.)</p></div></div>
           
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Reta paralela</h2>
-          
-          <p class="lede">A reta <span class="tex"><i>r</i></span> é paralela à reta <span class="tex"><i>y</i> = 3<i>x</i> − 2</span> e passa por <span class="tex">(0, 5)</span>. A lei de <span class="tex"><i>r</i></span> é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">y = 3x − 2</button><button class="choice mqo" data-i="1">y = −3x + 5</button><button class="choice mqo" data-i="2">y = 3x + 5</button><button class="choice mqo" data-i="3">y = 5x + 3</button><button class="choice mqo" data-i="4">y = x/3 + 5</button><div class="fb"></div><div class="answer"><p>Paralelas têm o mesmo <span class="tex"><i>a</i></span>: <span class="tex"><i>a</i> = 3</span>. Passa por <span class="tex">(0, 5)</span>: <span class="tex"><i>b</i> = 5</span>. Lei: <span class="tex"><i>y</i> = 3<i>x</i> + 5</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. A reta <span class="tex"><i>r</i></span> é paralela à reta <span class="tex"><i>y</i> = 3<i>x</i> − 2</span> e passa por <span class="tex">(0, 5)</span>. A lei de <span class="tex"><i>r</i></span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>y = 3x − 2</li><li>y = −3x + 5</li><li>y = 3x + 5</li><li>y = 5x + 3</li><li>y = x/3 + 5</li></ol></div></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
+          <h2 class="title">Fatura de água</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Uma fatura de água tem uma taxa fixa mais um valor proporcional ao consumo em m³. O gráfico é uma reta que passa por <span class="tex">(0, 20)</span> e <span class="tex">(8, 60)</span>.<svg viewBox="0 0 320 190" style="width:100%;max-width:320px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="164" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="81.3" y1="164" x2="81.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="81.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="126.7" y1="164" x2="126.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="126.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="172" y1="164" x2="172" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="172" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text><line x1="217.3" y1="164" x2="217.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="217.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">8</text><line x1="262.7" y1="164" x2="262.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="262.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">10</text><line x1="308" y1="164" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">12</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="126" x2="308" y2="126" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="130" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">20</text><line x1="36" y1="88" x2="308" y2="88" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">40</text><line x1="36" y1="50" x2="308" y2="50" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="54" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">60</text><line x1="36" y1="12" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">80</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="164" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="306" y="158" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,126 217.3,50" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="126" r="5" fill="var(--primary)"/><circle cx="217.3" cy="50" r="5" fill="var(--primary)"/><circle cx="36" cy="126" r="4.5" fill="var(--decay)"/><text x="46" y="120" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">(0, 20)</text><circle cx="217.3" cy="50" r="4.5" fill="var(--decay)"/><text x="209.3" y="42" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">(8, 60)</text></svg>Um consumo de 11 m³ resulta em uma fatura, em reais, de:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>65</li><li>70</li><li>75</li><li>80</li><li>85</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Paralelas têm o mesmo <span class="tex"><i>a</i></span>: <span class="tex"><i>a</i> = 3</span>. Passa por <span class="tex">(0, 5)</span>: <span class="tex"><i>b</i> = 5</span>. Lei: <span class="tex"><i>y</i> = 3<i>x</i> + 5</span>.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Taxa: <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>8 − 0</span></span> = 5</span> reais por m³. Lei: <span class="tex"><i>y</i> = 5<i>x</i> + 20</span>. Para <span class="tex"><i>x</i> = 11</span>: <span class="tex">55 + 20 = 75</span>.</p></div></div>
         </div>
       </section>
 
 
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
-          <h2 class="title">Fatura de água</h2>
+          <div class="eyebrow">Cuidado</div>
+          <h2 class="title">Um erro clássico: inverter só uma subtração</h2>
           
-          <p class="lede">Uma fatura de água tem uma taxa fixa mais um valor proporcional ao consumo em m³. O gráfico é uma reta que passa por <span class="tex">(0, 20)</span> e <span class="tex">(8, 60)</span>.<svg viewBox="0 0 320 190" style="width:100%;max-width:320px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><line x1="36" y1="164" x2="36" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="81.3" y1="164" x2="81.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="81.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">2</text><line x1="126.7" y1="164" x2="126.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="126.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">4</text><line x1="172" y1="164" x2="172" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="172" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">6</text><line x1="217.3" y1="164" x2="217.3" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="217.3" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">8</text><line x1="262.7" y1="164" x2="262.7" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="262.7" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">10</text><line x1="308" y1="164" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="308" y="178" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">12</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><line x1="36" y1="126" x2="308" y2="126" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="130" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">20</text><line x1="36" y1="88" x2="308" y2="88" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="92" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">40</text><line x1="36" y1="50" x2="308" y2="50" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="54" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">60</text><line x1="36" y1="12" x2="308" y2="12" stroke="var(--line)" stroke-width="1" stroke-linecap="round" /><text x="31" y="16" fill="var(--ink-faint)" font-size="10" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">80</text><line x1="36" y1="164" x2="308" y2="164" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><line x1="36" y1="164" x2="36" y2="12" stroke="var(--ink-soft)" stroke-width="1.6" stroke-linecap="round" /><text x="306" y="158" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="end" >x</text><text x="46" y="22" fill="var(--ink-soft)" font-size="13" font-family="Source Serif 4, serif" font-style="italic" text-anchor="start" >y</text><polyline points="36,126 217.3,50" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="126" r="5" fill="var(--primary)"/><circle cx="217.3" cy="50" r="5" fill="var(--primary)"/><circle cx="36" cy="126" r="4.5" fill="var(--decay)"/><text x="46" y="120" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">(0, 20)</text><circle cx="217.3" cy="50" r="4.5" fill="var(--decay)"/><text x="209.3" y="42" fill="var(--decay)" font-size="12" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">(8, 60)</text></svg>Um consumo de 11 m³ resulta em uma fatura, em reais, de:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">65</button><button class="choice mqo" data-i="1">70</button><button class="choice mqo" data-i="2">75</button><button class="choice mqo" data-i="3">80</button><button class="choice mqo" data-i="4">85</button><div class="fb"></div><div class="answer"><p>Taxa: <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>8 − 0</span></span> = 5</span> reais por m³. Lei: <span class="tex"><i>y</i> = 5<i>x</i> + 20</span>. Para <span class="tex"><i>x</i> = 11</span>: <span class="tex">55 + 20 = 75</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <div class="grid2">
+            <div>
+              <p class="lede">Um colega calculou a taxa entre <span class="tex">(1, 20)</span> e <span class="tex">(5, 60)</span> assim: <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>1 − 5</span></span> = <span class="fr"><span>40</span><span>−4</span></span> = −10</span>. Mas o gráfico <strong>é crescente</strong>.</p>
+              <div class="callout danger"><h4>Onde está o erro?</h4><p>Ele subtraiu <span class="tex"><i>y</i><sub>2</sub> − <i>y</i><sub>1</sub></span> em cima e <span class="tex"><i>x</i><sub>1</sub> − <i>x</i><sub>2</sub></span> embaixo: <strong>ordens diferentes</strong>. O correto é <span class="tex"><i>a</i> = <span class="fr"><span>60 − 20</span><span>5 − 1</span></span> = 10</span>.</p></div>
+            </div>
+            <div class="callout success"><h4>Teste de coerência</h4><p>Reta crescente → <span class="tex"><i>a</i></span> positivo. Reta decrescente → <span class="tex"><i>a</i></span> negativo. Se o sinal do resultado contradiz o desenho, revise a ordem das subtrações.</p></div>
+          </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -489,12 +493,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Taxa</span><p style="font-size:.85rem;margin-top:8px;">a = Δy ÷ Δx, igual para qualquer par de pontos da reta.</p></div>
+            <div class="card"><span class="badge">Coeficiente linear</span><p style="font-size:.85rem;margin-top:8px;">b = f(0): onde a reta corta o eixo y.</p></div>
+            <div class="card"><span class="badge">Paralelas</span><p style="font-size:.85rem;margin-top:8px;">Mesmo a e b diferentes.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Mesma ordem nas subtrações, sinal coerente com o desenho.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Se um salário passa de 90 para 150 reais quando as vendas vão de 2 para 5, quanto ele sobe por venda?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. A taxa de variação entre <span class="tex">(1, 3)</span> e <span class="tex">(3, 11)</span> é:</p>
@@ -536,23 +557,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Taxa</span><p style="font-size:.85rem;margin-top:8px;">a = Δy ÷ Δx, igual para qualquer par de pontos da reta.</p></div>
-            <div class="card"><span class="badge">Coeficiente linear</span><p style="font-size:.85rem;margin-top:8px;">b = f(0): onde a reta corta o eixo y.</p></div>
-            <div class="card"><span class="badge">Paralelas</span><p style="font-size:.85rem;margin-top:8px;">Mesmo a e b diferentes.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Mesma ordem nas subtrações, sinal coerente com o desenho.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -572,7 +592,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 16</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -949,3 +969,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

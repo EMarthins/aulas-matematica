@@ -273,7 +273,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 <div class="app">
   <div class="topbar">
     <div class="brand"><span class="dot"></span> Língua Portuguesa · 6º ano · Leitura e interpretação</div>
-    <div>Aula 1 · Ler para compreender: ideia central e informações explícitas</div>
+    <div>Módulo 01 · Aula 1 · Ler para compreender: ideia central e informações explícitas</div>
   </div>
 
   <div class="stage" id="stage">
@@ -283,7 +283,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
       <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Língua Portuguesa · 6º ano · Aula 1</div>
+          <div class="eyebrow">Língua Portuguesa · 6º ano · Módulo 01 · Aula 1</div>
           <div class="grid2" style="align-items:center;gap:18px;">
             <div>
               <h1 class="disp" style="font-size:clamp(1.9rem,4.6vw,3.3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">O que o texto <span style="color:var(--primary);">diz</span> e o que a gente imagina?</h1>
@@ -848,3 +848,25 @@ document.querySelectorAll('.rf-btn').forEach(function(b){
   pintar(); ajustar();
 })();
 </script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../../../../app/ferramentas.js" id="ferramentas"></script>

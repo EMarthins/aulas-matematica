@@ -65,3 +65,4 @@ const cenas = {
     [0, 1, 2, 3].map(r => [0, 1, 2].map(c => R(112 + c * 34, 66 + r * 26, 28, 20, c === 2 ? 'decay-soft' : 'growth-soft', c === 2 ? 'decay' : 'growth', 4)).join('')).join('')
 };
 module.exports = { cenas, R, C, L, T, P, chao };
+require('./ilus2.js')(module.exports);

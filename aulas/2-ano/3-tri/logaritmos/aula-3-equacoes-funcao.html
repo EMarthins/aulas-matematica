@@ -266,6 +266,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(64%,580px);height:auto;opacity:.92;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -276,54 +278,49 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="130" cy="130" r="5" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Trimestre 3 · Parte 3 de 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.8rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:15ch;">Equações e <span style="color:var(--primary);">função logarítmica</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:48ch;">A inversa da exponencial: como resolver equações, ler gráficos crescentes e decrescentes, e aplicar tudo em problemas reais.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Equações e <span style="color:var(--primary);">função logarítmica</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">A inversa da exponencial: como resolver equações, ler gráficos crescentes e decrescentes, e aplicar tudo em problemas reais.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 85–89</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">f(x) = log<sub>a</sub> x</span>
             <span class="badge">H21 · H15 · H20</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da equação à função, dos gráficos aos problemas reais.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
-              <div><strong>Equações logarítmicas</strong><div class="hint">a incógnita no logaritmando ou na base</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M4 19V5m0 14 5-8 4 3 7-11"/></svg>
-              <div><strong>Função logarítmica: definição</strong><div class="hint">a inversa da função exponencial</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-16 12-16 16-16"/></svg>
-              <div><strong>Crescente (a &gt; 1)</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">como ler e construir o gráfico</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4c4 16 12 16 16 16"/></svg>
-              <div><strong>Decrescente (0 &lt; a &lt; 1)</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">curvas de nível e translações</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Resolução de problemas</strong><div class="hint">juros compostos, vacinas, tempo de espera</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="96" x2="300" y2="96" stroke="var(--line-strong)" stroke-width="1" stroke-linecap="round"/><path d="M20 96 L60 96 L68 70 L76 124 L86 50 L96 140 L108 30 L120 150 L134 62 L146 120 L160 88 L180 100 L200 94 L260 96 L300 96" fill="none" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="18" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">escalas que “comprimem” números enormes</text><rect x="40" y="164" width="54" height="16" rx="3" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="67" y="176" font-size="11" fill="var(--ink)" text-anchor="middle" font-weight="700">4</text><rect x="106" y="164" width="54" height="16" rx="3" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="133" y="176" font-size="11" fill="var(--ink)" text-anchor="middle" font-weight="700">5</text><rect x="172" y="164" width="54" height="16" rx="3" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="199" y="176" font-size="11" fill="var(--ink)" text-anchor="middle" font-weight="700">6</text><rect x="238" y="164" width="54" height="16" rx="3" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="265" y="176" font-size="11" fill="var(--ink)" text-anchor="middle" font-weight="700">7</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">100 seguidores importam mais para quem?</h2>
+          
+          <div class="grid2">
+            <div class="card">
+              <strong>Situação A</strong>
+              <p style="margin-top:6px;">Um perfil com <strong>100 seguidores</strong> ganha mais 100 hoje. Dobrou.</p>
+            </div>
+            <div class="card">
+              <strong>Situação B</strong>
+              <p style="margin-top:6px;">Um influenciador com <strong>10 milhões de seguidores</strong> ganha mais 100 hoje. Quase nada mudou.</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>O impacto foi o mesmo?</h4>
+            <p>Não — o engajamento envolve <strong>proporção e escala</strong>. O logaritmo é a ferramenta que mede o impacto real de uma mudança, mesmo em grandezas de tamanhos completamente diferentes. Hoje vamos usar essa ideia em <strong>equações</strong> e numa <strong>função</strong> completa.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -347,29 +344,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">100 seguidores importam mais para quem?</h2>
-          <div class="grid2">
-            <div class="card">
-              <strong>Situação A</strong>
-              <p style="margin-top:6px;">Um perfil com <strong>100 seguidores</strong> ganha mais 100 hoje. Dobrou.</p>
-            </div>
-            <div class="card">
-              <strong>Situação B</strong>
-              <p style="margin-top:6px;">Um influenciador com <strong>10 milhões de seguidores</strong> ganha mais 100 hoje. Quase nada mudou.</p>
-            </div>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            <h4>O impacto foi o mesmo?</h4>
-            <p>Não — o engajamento envolve <strong>proporção e escala</strong>. O logaritmo é a ferramenta que mede o impacto real de uma mudança, mesmo em grandezas de tamanhos completamente diferentes. Hoje vamos usar essa ideia em <strong>equações</strong> e numa <strong>função</strong> completa.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: EQUAÇÕES -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 85 · Teoria</div>
@@ -391,7 +365,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro</div>
@@ -415,7 +388,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: FUNÇÃO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 86 · Teoria</div>
@@ -439,7 +411,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · No quadro, oral</div>
@@ -452,7 +423,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 TEORIA: CRESCENTE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 87 · Teoria</div>
@@ -483,7 +453,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 ATIVIDADE 3 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro, oral</div>
@@ -503,7 +472,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 TEORIA: DECRESCENTE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 88 · Teoria</div>
@@ -531,7 +499,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 ATIVIDADE 4 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · Em duplas</div>
@@ -562,7 +529,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 TEORIA: PROBLEMAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 89 · Teoria</div>
@@ -579,7 +545,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ATIVIDADE 5 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 5 · No quadro, em duplas</div>
@@ -596,7 +561,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da unidade</div>
+          <h2 class="title">Você completou os logaritmos!</h2>
+          <p class="lede">Da definição às funções crescentes e decrescentes, passando pelas propriedades e aplicações reais — agora é hora de praticar e revisar com o guia visual da unidade.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
+              BONJORNO, J. R. et al. <em>Prisma matemática: funções e progressões</em>. São Paulo: FTD, 2020.<br>
+              Questões adaptadas de concursos e vestibulares — TJ-PR e IBADE.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -616,12 +596,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. A inversa de f(x) = 5<sup>x</sup> é:</p>
@@ -663,22 +642,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ENCERRAMENTO -->
+      
       <section class="slide">
-        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Fim da unidade</div>
-          <h2 class="title">Você completou os logaritmos!</h2>
-          <p class="lede">Da definição às funções crescentes e decrescentes, passando pelas propriedades e aplicações reais — agora é hora de praticar e revisar com o guia visual da unidade.</p>
-          <div class="card" style="margin-top:16px;">
-            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
-            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
-              FUGITA, F. et al. <em>Por toda parte matemática: 2º ano</em>. São Paulo: FTD, 2024.<br>
-              BONJORNO, J. R. et al. <em>Prisma matemática: funções e progressões</em>. São Paulo: FTD, 2020.<br>
-              Questões adaptadas de concursos e vestibulares — TJ-PR e IBADE.
-            </p>
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
     </div>
 
@@ -962,3 +941,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

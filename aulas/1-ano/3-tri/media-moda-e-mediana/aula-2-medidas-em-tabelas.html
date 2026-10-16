@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,41 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--growth)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 05 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Medidas para dados agrupados em tabela: <span style="color:var(--growth);">média ponderada pela frequência</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Quando os dados já vêm em uma tabela de frequências, não é preciso listá-los um a um: multiplique cada valor pela sua frequência, some e divida pelo total.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Medidas para dados agrupados em tabela: <span style="color:var(--growth);">média ponderada pela frequência</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Quando os dados já vêm em uma tabela de frequências, não é preciso listá-los um a um: multiplique cada valor pela sua frequência, some e divida pelo total.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Qual a média?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">x̄ = Σ xᵢ·fᵢ ÷ n</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">moda: maior fᵢ</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">mediana: pela acumulada</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="20" x2="36" y2="168" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><rect x="56" y="98" width="40" height="70" rx="4" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="76" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">A</text><rect x="118" y="58" width="40" height="110" rx="4" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="138" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">B</text><rect x="180" y="114" width="40" height="54" rx="4" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="200" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">C</text><rect x="242" y="78" width="40" height="90" rx="4" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="262" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">D</text><text x="160" y="14" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">preferência da turma</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Das frequências às medidas.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Média ponderada</strong><div class="hint">xᵢ · fᵢ</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Moda</strong><div class="hint">valor de maior frequência</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Mediana</strong><div class="hint">posição n/2 pela acumulada</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Conferência</strong><div class="hint">comparar com a lista completa</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">famílias, livros e notas</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A tabela dos livros</h2>
+          
+          
+          <p class="lede">Vinte estudantes informaram quantos livros leram no semestre: <strong>0 livro</strong>: 1 estudante; <strong>1</strong>: 2; <strong>2</strong>: 4; <strong>3</strong>: 5; <strong>4</strong>: 3; <strong>5</strong>: 3; <strong>6</strong>: 1; <strong>7</strong>: 1. Qual a média? Em vez de escrever 20 números, usamos as frequências como “pesos”.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>xᵢ</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+  <tr><td style="text-align:left;">fᵢ</td><td>1</td><td>2</td><td>4</td><td>5</td><td>3</td><td>3</td><td>1</td><td>1</td></tr>
+  <tr><td style="text-align:left;">xᵢ·fᵢ</td><td>0</td><td>2</td><td>8</td><td>15</td><td>12</td><td>15</td><td>6</td><td>7</td></tr>
+</table>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A soma dos produtos <span class="tex"><i>x</i><sub><i>i</i></sub> · <i>f</i><sub><i>i</i></sub></span> é <span class="tex">65</span> e há <span class="tex">20</span> estudantes. A média de livros é:</p><button class="choice mqo" data-i="0">2,5</button><button class="choice mqo" data-i="1">3</button><button class="choice mqo" data-i="2">3,25</button><button class="choice mqo" data-i="3">3,5</button><div class="fb"></div><div class="answer"><p><span class="tex">média = <span class="fr"><span>65</span><span>20</span></span> = 3,25</span> livros por estudante.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,25 +365,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Para início de conversa</div>
-          <h2 class="title">A tabela dos livros</h2>
-          
-          <p class="lede">Vinte estudantes informaram quantos livros leram no semestre: <strong>0 livro</strong>: 1 estudante; <strong>1</strong>: 2; <strong>2</strong>: 4; <strong>3</strong>: 5; <strong>4</strong>: 3; <strong>5</strong>: 3; <strong>6</strong>: 1; <strong>7</strong>: 1. Qual a média? Em vez de escrever 20 números, usamos as frequências como “pesos”.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <table class="tbl">
-  <tr><th>xᵢ</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
-  <tr><td style="text-align:left;">fᵢ</td><td>1</td><td>2</td><td>4</td><td>5</td><td>3</td><td>3</td><td>1</td><td>1</td></tr>
-  <tr><td style="text-align:left;">xᵢ·fᵢ</td><td>0</td><td>2</td><td>8</td><td>15</td><td>12</td><td>15</td><td>6</td><td>7</td></tr>
-</table>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">A soma dos produtos <span class="tex"><i>x</i><sub><i>i</i></sub> · <i>f</i><sub><i>i</i></sub></span> é <span class="tex">65</span> e há <span class="tex">20</span> estudantes. A média de livros é:</p><button class="choice mqo" data-i="0">2,5</button><button class="choice mqo" data-i="1">3</button><button class="choice mqo" data-i="2">3,25</button><button class="choice mqo" data-i="3">3,5</button><div class="fb"></div><div class="answer"><p><span class="tex">média = <span class="fr"><span>65</span><span>20</span></span> = 3,25</span> livros por estudante.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Teoria · medidas em tabelas</div>
@@ -389,71 +383,73 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Livros lidos: as três medidas</h2>
           
+          
           <p class="lede">Com a tabela dos livros (valores <span class="tex">0</span> a <span class="tex">7</span> com frequências <span class="tex">1, 2, 4, 5, 3, 3, 1, 1</span>), calcule a média, a moda e a mediana.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 0 + 2 + 8 + 15 + 12 + 15 + 6 + 7 = 65</span>; <span class="tex"><i>n</i> = 20</span>; média <span class="tex">= 65 ÷ 20 = 3,25</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Maior frequência: <span class="tex">5</span> (valor <span class="tex">3</span>): moda <span class="tex">= 3</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 20</span> (par): posições <span class="tex">10</span> e <span class="tex">11</span>. Acumuladas: <span class="tex">1, 3, 7, 12, ...</span> ⇒ o 10º e o 11º estão no valor <span class="tex">3</span>: mediana <span class="tex">= 3</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Média <strong>3,25</strong>, moda <strong>3</strong>, mediana <strong>3</strong> livros.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 0 + 2 + 8 + 15 + 12 + 15 + 6 + 7 = 65</span>; <span class="tex"><i>n</i> = 20</span>; média <span class="tex">= 65 ÷ 20 = 3,25</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Maior frequência: <span class="tex">5</span> (valor <span class="tex">3</span>): moda <span class="tex">= 3</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 20</span> (par): posições <span class="tex">10</span> e <span class="tex">11</span>. Acumuladas: <span class="tex">1, 3, 7, 12, ...</span> ⇒ o 10º e o 11º estão no valor <span class="tex">3</span>: mediana <span class="tex">= 3</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Média <strong>3,25</strong>, moda <strong>3</strong>, mediana <strong>3</strong> livros.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Filhos por família</h2>
           
+          
           <p class="lede">Em 50 famílias, o número de filhos foi: 0 filho: 5 famílias; 1: 12; 2: 18; 3: 10; 4: 5. Calcule as três medidas.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">(0 · 5 + 1 · 12 + 2 · 18 + 3 · 10 + 4 · 5) ÷ 50 = 98 ÷ 50 = 1,96</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Maior frequência: <span class="tex">18</span> (valor <span class="tex">2</span>): moda <span class="tex">= 2</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 50</span>: posições <span class="tex">25</span> e <span class="tex">26</span>. Acumuladas: <span class="tex">5, 17, 35</span> ⇒ ambas no valor <span class="tex">2</span>: mediana <span class="tex">= 2</span>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Média <span class="tex">1,96</span>, moda <span class="tex">2</span>, mediana <span class="tex">2</span> filhos.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">(0 · 5 + 1 · 12 + 2 · 18 + 3 · 10 + 4 · 5) ÷ 50 = 98 ÷ 50 = 1,96</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Moda</strong><div class="hint">Maior frequência: <span class="tex">18</span> (valor <span class="tex">2</span>): moda <span class="tex">= 2</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Mediana</strong><div class="hint"><span class="tex"><i>n</i> = 50</span>: posições <span class="tex">25</span> e <span class="tex">26</span>. Acumuladas: <span class="tex">5, 17, 35</span> ⇒ ambas no valor <span class="tex">2</span>: mediana <span class="tex">= 2</span>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Média <span class="tex">1,96</span>, moda <span class="tex">2</span>, mediana <span class="tex">2</span> filhos.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Média ponderada</h2>
-          
-          <p class="lede">Valores <span class="tex">1, 2, 3</span> com frequências <span class="tex">2, 3, 5</span>. A média é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">2</button><button class="choice mqo" data-i="1">2,3</button><button class="choice mqo" data-i="2">2,5</button><button class="choice mqo" data-i="3">3</button><button class="choice mqo" data-i="4">7,67</button><div class="fb"></div><div class="answer"><p><span class="tex">(1 · 2 + 2 · 3 + 3 · 5) ÷ (2 + 3 + 5) = (2 + 6 + 15) ÷ 10 = 2,3</span>. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Valores <span class="tex">1, 2, 3</span> com frequências <span class="tex">2, 3, 5</span>. A média é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>2</li><li>2,3</li><li>2,5</li><li>3</li><li>7,67</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Em uma tabela com <span class="tex"><i>n</i> = 20</span>, as frequências acumuladas dos valores 0, 1, 2, 3 são 1, 3, 7, 12. A mediana está no valor:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>0</li><li>1</li><li>2</li><li>3</li><li>7</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Mediana pela acumulada</h2>
-          
-          <p class="lede">Em uma tabela com <span class="tex"><i>n</i> = 20</span>, as frequências acumuladas dos valores 0, 1, 2, 3 são 1, 3, 7, 12. A mediana está no valor:</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">0</button><button class="choice mqo" data-i="1">1</button><button class="choice mqo" data-i="2">2</button><button class="choice mqo" data-i="3">3</button><button class="choice mqo" data-i="4">7</button><div class="fb"></div><div class="answer"><p>Posições <span class="tex">10</span> e <span class="tex">11</span>: acumulada passa de <span class="tex">7</span> (valor <span class="tex">2</span>) para <span class="tex">12</span> (valor <span class="tex">3</span>): ambas são do valor <span class="tex">3</span>. <strong>Alternativa D.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Média de livros</h2>
-          
-          <p class="lede">Na tabela dos livros (frequências 1, 2, 4, 5, 3, 3, 1, 1 para os valores 0 a 7), a média de livros por estudante é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">2,5</button><button class="choice mqo" data-i="1">3</button><button class="choice mqo" data-i="2">3,25</button><button class="choice mqo" data-i="3">3,5</button><button class="choice mqo" data-i="4">4</button><div class="fb"></div><div class="answer"><p><span class="tex">65 ÷ 20 = 3,25</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Na tabela dos livros (frequências 1, 2, 4, 5, 3, 3, 1, 1 para os valores 0 a 7), a média de livros por estudante é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>2,5</li><li>3</li><li>3,25</li><li>3,5</li><li>4</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">(1 · 2 + 2 · 3 + 3 · 5) ÷ (2 + 3 + 5) = (2 + 6 + 15) ÷ 10 = 2,3</span>.</p></div>
+<div class="card success"><strong>2. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;">Posições <span class="tex">10</span> e <span class="tex">11</span>: acumulada passa de <span class="tex">7</span> (valor <span class="tex">2</span>) para <span class="tex">12</span> (valor <span class="tex">3</span>): ambas são do valor <span class="tex">3</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">65 ÷ 20 = 3,25</span>.</p></div></div>
         </div>
       </section>
 
@@ -472,12 +468,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Média</span><p style="font-size:.85rem;margin-top:8px;">Σ xᵢ·fᵢ ÷ n, com n = Σ fᵢ.</p></div>
+            <div class="card"><span class="badge">Moda</span><p style="font-size:.85rem;margin-top:8px;">Valor de maior frequência.</p></div>
+            <div class="card"><span class="badge">Mediana</span><p style="font-size:.85rem;margin-top:8px;">Posição n/2 pela acumulada.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Frequência é peso: multiplique, some e divida pelo total.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Qual a média?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Em uma tabela de frequências, a média usa:</p>
@@ -519,23 +532,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Média</span><p style="font-size:.85rem;margin-top:8px;">Σ xᵢ·fᵢ ÷ n, com n = Σ fᵢ.</p></div>
-            <div class="card"><span class="badge">Moda</span><p style="font-size:.85rem;margin-top:8px;">Valor de maior frequência.</p></div>
-            <div class="card"><span class="badge">Mediana</span><p style="font-size:.85rem;margin-top:8px;">Posição n/2 pela acumulada.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Frequência é peso: multiplique, some e divida pelo total.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -555,7 +567,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 13</div>
+      <div class="rail-count" id="railCount">1 / 14</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -909,3 +921,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

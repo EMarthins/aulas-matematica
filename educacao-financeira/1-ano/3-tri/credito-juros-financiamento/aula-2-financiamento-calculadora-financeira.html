@@ -293,6 +293,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -302,30 +304,19 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="26" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Educação Financeira · 1ª série · Trimestre 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Financiamento, prestações e a <span style="color:var(--primary);">calculadora financeira</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Taxas equivalentes, o cálculo da prestação de um crediário e como a HP 12C (e um simulador) resolvem juros, prazo e parcelas em segundos.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Financiamento, prestações e a <span style="color:var(--primary);">calculadora financeira</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Taxas equivalentes, o cálculo da prestação de um crediário e como a HP 12C (e um simulador) resolvem juros, prazo e parcelas em segundos.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 38, 40</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">PV · PMT · n · i · FV</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">Taxa equivalente</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Da geladeira que estragou até a conta exata da prestação.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 9h6v12h-6M8 7h2M8 11h2M8 15h2"/></svg><div><strong>O crediário e as financeiras</strong><div class="hint">quem financia e por que os juros são altos</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Taxas equivalentes</strong><div class="hint">12% ao ano não é 1% ao mês — converta certo</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>ENEM: comparando financiamentos</strong><div class="hint">qual loja custa menos ao final de um ano?</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 15c.6.7 1.7 1 3 1s2.7-.6 2.7-1.7c0-1-1-1.4-3-1.8s-3-.9-3-1.9C8.7 9.6 10.2 9 12 9s2.4.3 3 1"/></svg><div><strong>A prestação (PMT)</strong><div class="hint">dona Angelina, a geladeira e o sofá</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>A calculadora financeira</strong><div class="hint">PV, PMT, n, i e FV — e por que a HP 12C não tem "="</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Mão na massa</strong><div class="hint">taxa do notebook, prestação do empréstimo, preço à vista e prazo da geladeira</div></div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="132" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="60" y="138" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="94" cy="124" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="94" y="130" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="128" cy="116" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="128" y="122" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><rect x="170" y="60" width="120" height="64" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="230" cy="92" r="16" fill="var(--surface)" stroke="var(--success)" stroke-width="2"/><text x="230" y="98" font-size="16" fill="var(--success)" text-anchor="middle" font-weight="700">50</text><rect x="176" y="118" width="120" height="16" rx="6" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
@@ -345,26 +336,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">Parte 2 · para início de conversa</div>
-          <h2 class="title">A geladeira estragou e não há cartão nem dinheiro</h2>
-          
-          <div class="grid2">
-            <div>
-              <p class="lede">A geladeira da sua casa estragou. Vocês <strong>não têm cartão de crédito</strong> nem dinheiro para comprar à vista. Qual forma de crédito é a ideal para este caso?</p>
-              <div class="callout"><h4>Para estas situações existe o crediário</h4><p>Empresas especializadas, as <strong>financeiras</strong>, oferecem crédito para móveis, automóveis e eletrodomésticos.</p></div>
-            </div>
-            <div>
-              <div class="card"><strong>Como funciona</strong><p style="font-size:.9rem;margin-top:8px;">A financeira <strong>paga a loja</strong> e o cliente paga <strong>parcelado, em carnê/boleto, para a financeira</strong>. Como o risco de inadimplência é alto, os juros também são altos.</p></div>
-              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em juros compostos, 12% ao ano é a mesma coisa que 1% ao mês?</p><button class="choice mqo" data-i="0">Sim, é só dividir por 12</button><button class="choice mqo" data-i="1">Não: a taxa mensal equivalente é um pouco menor que 1%</button><button class="choice mqo" data-i="2">Não: a taxa mensal equivalente é maior que 1%</button><button class="choice mqo" data-i="3">Depende do banco</button><div class="fb"></div><div class="answer"><p>Não é dividir por 12! A taxa equivalente é (1,12)<sup>1/12</sup> − 1 ≈ <strong>0,949% ao mês</strong>. Vamos entender essa conversão.</p></div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -395,27 +366,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">ENEM 2018 PPL · comparando financiamentos</div>
-          <h2 class="title">Qual loja tem o menor valor final?</h2>
-          
-          <p class="lede">Um cliente quer trocar de carro. As três lojas aceitam o carro usado como entrada e financiam o restante por um ano, com juros (modelo da questão): <strong>valor final = (novo − usado) × fator de juros</strong>.</p>
-          <table class="tbl">
-  <tr><th>loja</th><th>carro novo</th><th>carro usado</th><th>a financiar</th><th>juros</th><th>valor final</th></tr>
-  <tr><td style="text-align:left;">A</td><td>R$ 28.500</td><td>R$ 13.500</td><td>R$ 15.000</td><td>18%</td><td><b>R$ 17.700</b></td></tr>
-  <tr><td style="text-align:left;">B</td><td>R$ 27.000</td><td>R$ 13.000</td><td>R$ 14.000</td><td>20%</td><td><b>R$ 16.800</b></td></tr>
-  <tr><td style="text-align:left;">C</td><td>R$ 26.500</td><td>R$ 12.000</td><td>R$ 14.500</td><td>19%</td><td><b>R$ 17.255</b></td></tr>
-</table>
-          <div class="grid2" style="margin-top:8px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual o menor valor final?</p><button class="choice mqo" data-i="0">R$ 14 mil</button><button class="choice mqo" data-i="1">R$ 15 mil</button><button class="choice mqo" data-i="2">R$ 16.800</button><button class="choice mqo" data-i="3">R$ 17.255</button><button class="choice mqo" data-i="4">R$ 17.700</button><div class="fb"></div><div class="answer"><p><strong>R$ 16.800 (loja B)</strong>: 14.000 × 1,20. Repare: a maior taxa (20%) não é a pior oferta, porque o valor financiado também importa.</p></div></div>
-            <div class="callout"><h4>Atenção</h4><p>Uma compra a prazo hoje é feita em condições diferentes das da questão (juros compostos). Por isso estudamos, a seguir, o parcelamento no sistema de juros compostos.</p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Parte 2 · estudo de caso</div>
@@ -438,7 +388,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Atividade · o sofá do crediário</div>
@@ -455,7 +404,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           <div class="callout success"><h4>Para saber mais</h4><p>Use o conversor de taxas do <em>Clube dos Poupadores</em> e a <strong>Calculadora do Cidadão</strong> do Banco Central (financiamento com prestações fixas) para conferir.</p></div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -475,7 +423,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -498,7 +445,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -523,7 +469,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Atividades · mão na massa com a HP 12C</div>
@@ -541,11 +486,61 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">A geladeira estragou e não há cartão nem dinheiro</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">A geladeira da sua casa estragou. Vocês <strong>não têm cartão de crédito</strong> nem dinheiro para comprar à vista. Qual forma de crédito é a ideal para este caso?</p>
+              <div class="callout"><h4>Para estas situações existe o crediário</h4><p>Empresas especializadas, as <strong>financeiras</strong>, oferecem crédito para móveis, automóveis e eletrodomésticos.</p></div>
+            </div>
+            <div>
+              <div class="card"><strong>Como funciona</strong><p style="font-size:.9rem;margin-top:8px;">A financeira <strong>paga a loja</strong> e o cliente paga <strong>parcelado, em carnê/boleto, para a financeira</strong>. Como o risco de inadimplência é alto, os juros também são altos.</p></div>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em juros compostos, 12% ao ano é a mesma coisa que 1% ao mês?</p><button class="choice mqo" data-i="0">Sim, é só dividir por 12</button><button class="choice mqo" data-i="1">Não: a taxa mensal equivalente é um pouco menor que 1%</button><button class="choice mqo" data-i="2">Não: a taxa mensal equivalente é maior que 1%</button><button class="choice mqo" data-i="3">Depende do banco</button><div class="fb"></div><div class="answer"><p>Não é dividir por 12! A taxa equivalente é (1,12)<sup>1/12</sup> − 1 ≈ <strong>0,949% ao mês</strong>. Vamos entender essa conversão.</p></div></div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente · ENEM 2018 PPL · comparando financiamentos</div>
+          <h2 class="title">Qual loja tem o menor valor final?</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><table class="tbl">
+  <tr><th>loja</th><th>carro novo</th><th>carro usado</th><th>a financiar</th><th>juros</th><th>valor final</th></tr>
+  <tr><td style="text-align:left;">A</td><td>R$ 28.500</td><td>R$ 13.500</td><td>R$ 15.000</td><td>18%</td><td><b>R$ 17.700</b></td></tr>
+  <tr><td style="text-align:left;">B</td><td>R$ 27.000</td><td>R$ 13.000</td><td>R$ 14.000</td><td>20%</td><td><b>R$ 16.800</b></td></tr>
+  <tr><td style="text-align:left;">C</td><td>R$ 26.500</td><td>R$ 12.000</td><td>R$ 14.500</td><td>19%</td><td><b>R$ 17.255</b></td></tr>
+</table>
+          <div class="grid2" style="margin-top:8px;">
+            
+            <div class="callout"><h4>Atenção</h4><p>Uma compra a prazo hoje é feita em condições diferentes das da questão (juros compostos). Por isso estudamos, a seguir, o parcelamento no sistema de juros compostos.</p></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um cliente quer trocar de carro. As três lojas aceitam o carro usado como entrada e financiam o restante por um ano, com juros (modelo da questão): <strong>valor final = (novo − usado) × fator de juros</strong>. Qual o menor valor final?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R$ 14 mil</li><li>R$ 15 mil</li><li>R$ 16.800</li><li>R$ 17.255</li><li>R$ 17.700</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><strong>R$ 16.800 (loja B)</strong>: 14.000 × 1,20. Repare: a maior taxa (20%) não é a pior oferta, porque o valor financiado também importa.</p></div></div>
+        </div>
+      </section>
+
 
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <h2 class="title">Três ideias para levar</h2>
           
           <div class="grid3" style="margin-top:10px;">
             <div class="card"><span class="badge">Taxa equivalente</span><p style="font-size:.85rem;margin-top:8px;">Em juros compostos, converta com expoente: (1,12)^(1/12) − 1 ≈ 0,949% a.m. — nunca só dividir.</p></div>
@@ -559,12 +554,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. A taxa mensal equivalente a 12% ao ano em juros compostos é:</p>
@@ -615,6 +609,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -636,7 +646,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 15</div>
+      <div class="rail-count" id="railCount">1 / 16</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -977,3 +987,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

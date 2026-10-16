@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,42 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Módulo 10 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Volume do cone: <span style="color:var(--primary);">um terço do cilindro</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Um chocolate em forma de cone, uma casquinha de sorvete, um funil: quanto cabe em cada um? O cone ocupa exatamente um terço do cilindro de mesma base e mesma altura.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Volume do cone: <span style="color:var(--primary);">um terço do cilindro</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Um chocolate em forma de cone, uma casquinha de sorvete, um funil: quanto cabe em cada um? O cone ocupa exatamente um terço do cilindro de mesma base e mesma altura.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Qual deve ser o novo raio?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">V = πr²h ÷ 3</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">⅓ do cilindro</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">reduzir volume ⇒ r muda</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="172" width="320" height="28" rx="0" fill="var(--surface)" /><line x1="0" y1="172" x2="320" y2="172" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><path d="M80 80 L80 150 L200 150 L200 80 Z" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 80 L120 50 L240 50 L200 80 Z" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M200 80 L240 50 L240 120 L200 150 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="140" y="166" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">comprimento</text><text x="246" y="100" font-size="12" fill="var(--ink)" text-anchor="start" font-weight="700">altura</text><text x="150" y="44" font-size="12" fill="var(--ink)" text-anchor="middle" font-weight="700">largura</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">volume = c · l · h</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do cilindro ao cone.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Cone e cilindro</strong><div class="hint">mesma base e altura</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Fórmula</strong><div class="hint">V = πr²h ÷ 3</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Escala</strong><div class="hint">dobrar r ou h</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Semelhança</strong><div class="hint">funil cheio até a metade</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">percentuais de volume</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O chocolate em forma de cone</h2>
+          
+          
+          <p class="lede">Uma empresa vende chocolate maciço em forma de <strong>cone circular reto</strong> com <strong>8 cm de diâmetro</strong> e <strong>10 cm de altura</strong>. Com o aumento dos ingredientes, ela decide fazer o chocolate com <strong>volume 19% menor</strong>, mantendo a altura. Qual deve ser o novo raio?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>Passo</th><th>Cálculo (<span class="tex">π = 3</span>)</th></tr>
+  <tr><td style="text-align:left;">Volume atual</td><td><span class="tex">3 · 4<sup>2</sup> · 10 ÷ 3 = 160</span> cm³</td></tr>
+  <tr><td style="text-align:left;">Volume novo (−19%)</td><td><span class="tex">0,81 · 160 = 129,6</span> cm³</td></tr>
+  <tr><td style="text-align:left;">Novo raio</td><td><span class="tex"><i>r</i><sup>2</sup> = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span> cm</td></tr>
+</table>
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O novo raio do chocolate, em cm, é:</p><button class="choice mqo" data-i="0">3,0</button><button class="choice mqo" data-i="1">3,2</button><button class="choice mqo" data-i="2">3,6</button><button class="choice mqo" data-i="3">3,8</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>V</i> = <span class="fr"><span>π <i>r</i><sup>2</sup> · 10</span><span>3</span></span></span>: com <span class="tex">0,81 · <i>V</i></span>, <span class="tex"><i>r</i><sup>2</sup></span> fica <span class="tex">0,81 · 16 = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span>.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,26 +365,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O chocolate em forma de cone</h2>
-          
-          <p class="lede">Uma empresa vende chocolate maciço em forma de <strong>cone circular reto</strong> com <strong>8 cm de diâmetro</strong> e <strong>10 cm de altura</strong>. Com o aumento dos ingredientes, ela decide fazer o chocolate com <strong>volume 19% menor</strong>, mantendo a altura. Qual deve ser o novo raio?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <table class="tbl">
-  <tr><th>Passo</th><th>Cálculo (<span class="tex">π = 3</span>)</th></tr>
-  <tr><td style="text-align:left;">Volume atual</td><td><span class="tex">3 · 4<sup>2</sup> · 10 ÷ 3 = 160</span> cm³</td></tr>
-  <tr><td style="text-align:left;">Volume novo (−19%)</td><td><span class="tex">0,81 · 160 = 129,6</span> cm³</td></tr>
-  <tr><td style="text-align:left;">Novo raio</td><td><span class="tex"><i>r</i><sup>2</sup> = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span> cm</td></tr>
-</table>
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">O novo raio do chocolate, em cm, é:</p><button class="choice mqo" data-i="0">3,0</button><button class="choice mqo" data-i="1">3,2</button><button class="choice mqo" data-i="2">3,6</button><button class="choice mqo" data-i="3">3,8</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>V</i> = <span class="fr"><span>π <i>r</i><sup>2</sup> · 10</span><span>3</span></span></span>: com <span class="tex">0,81 · <i>V</i></span>, <span class="tex"><i>r</i><sup>2</sup></span> fica <span class="tex">0,81 · 16 = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span>.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -392,7 +386,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resumo visual</div>
@@ -411,116 +404,127 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Volume do cone</h2>
           
+          
           <p class="lede">Calcule o volume de um cone reto de raio 3 cm e altura 4 cm. (Use <span class="tex">π = 3</span>.)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Cilindro de mesma base e altura</strong><div class="hint"><span class="tex">π <i>r</i><sup>2</sup> <i>h</i> = 3 · 9 · 4 = 108</span> cm³.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Cone</strong><div class="hint"><span class="tex">108 ÷ 3 = 36</span> cm³.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> = 36</span> cm³.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Cilindro de mesma base e altura</strong><div class="hint"><span class="tex">π <i>r</i><sup>2</sup> <i>h</i> = 3 · 9 · 4 = 108</span> cm³.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Cone</strong><div class="hint"><span class="tex">108 ÷ 3 = 36</span> cm³.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><span class="tex"><i>V</i> = 36</span> cm³.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Cone dentro do cilindro</h2>
           
+          
           <p class="lede">Um cilindro de volume 90 cm³ contém um cone de mesma base e altura. Qual o volume do cone? E o espaço restante?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Cone</strong><div class="hint"><span class="tex">90 ÷ 3 = 30</span> cm³.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Restante</strong><div class="hint"><span class="tex">90 − 30 = 60</span> cm³ (dois terços).</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Cone: <strong>30 cm³</strong>; espaço restante: <strong>60 cm³</strong>.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Cone</strong><div class="hint"><span class="tex">90 ÷ 3 = 30</span> cm³.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Restante</strong><div class="hint"><span class="tex">90 − 30 = 60</span> cm³ (dois terços).</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Cone: <strong>30 cm³</strong>; espaço restante: <strong>60 cm³</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">O chocolate (ENEM 2022)</h2>
           
+          
           <p class="lede">Um chocolate em forma de cone tem diâmetro 8 cm e altura 10 cm. O novo chocolate terá volume 19% menor, mantendo a altura. Qual o novo raio? (Use <span class="tex">π = 3</span>.)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Volume atual</strong><div class="hint"><span class="tex"><i>V</i> = <span class="fr"><span>3 · 4<sup>2</sup> · 10</span><span>3</span></span> = 160</span> cm³.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Volume novo</strong><div class="hint"><span class="tex">0,81 · 160 = 129,6</span> cm³.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Raio novo</strong><div class="hint"><span class="tex">129,6 = <span class="fr"><span>3 · <i>r</i><sup>2</sup> · 10</span><span>3</span></span> = 10 <i>r</i><sup>2</sup></span> ⇒ <span class="tex"><i>r</i><sup>2</sup> = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span> cm.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>O novo raio é <strong>3,6 cm</strong> (diâmetro 7,2 cm).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Volume atual</strong><div class="hint"><span class="tex"><i>V</i> = <span class="fr"><span>3 · 4<sup>2</sup> · 10</span><span>3</span></span> = 160</span> cm³.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Volume novo</strong><div class="hint"><span class="tex">0,81 · 160 = 129,6</span> cm³.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Raio novo</strong><div class="hint"><span class="tex">129,6 = <span class="fr"><span>3 · <i>r</i><sup>2</sup> · 10</span><span>3</span></span> = 10 <i>r</i><sup>2</sup></span> ⇒ <span class="tex"><i>r</i><sup>2</sup> = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span> cm.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>O novo raio é <strong>3,6 cm</strong> (diâmetro 7,2 cm).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Funil cheio pela metade</h2>
           
+          
           <p class="lede">Um funil cônico cheio tem 120 mL. Quanto de líquido há quando a altura do líquido é a metade da altura do funil?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Semelhança</strong><div class="hint">O líquido forma um cone semelhante, com razão <span class="tex">1 ÷ 2</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Volumes</strong><div class="hint">Razão de volumes: <span class="tex">(1 ÷ 2)<sup>3</sup> = 1 ÷ 8</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex">120 ÷ 8 = 15</span> mL.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><strong>15 mL</strong> (e não 60 mL!).</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Semelhança</strong><div class="hint">O líquido forma um cone semelhante, com razão <span class="tex">1 ÷ 2</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Volumes</strong><div class="hint">Razão de volumes: <span class="tex">(1 ÷ 2)<sup>3</sup> = 1 ÷ 8</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Valor</strong><div class="hint"><span class="tex">120 ÷ 8 = 15</span> mL.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><strong>15 mL</strong> (e não 60 mL!).</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Copo cônico</h2>
           
+          
           <p class="lede">Um copo cônico tem raio 4 cm e altura 9 cm. Qual a capacidade em mL? (Use <span class="tex">π = 3</span>.)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Volume</strong><div class="hint"><span class="tex"><i>V</i> = <span class="fr"><span>3 · 16 · 9</span><span>3</span></span> = 144</span> cm³.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Em mL</strong><div class="hint"><span class="tex">144</span> mL.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p><strong>144 mL</strong>.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Volume</strong><div class="hint"><span class="tex"><i>V</i> = <span class="fr"><span>3 · 16 · 9</span><span>3</span></span> = 144</span> cm³.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Em mL</strong><div class="hint"><span class="tex">144</span> mL.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p><strong>144 mL</strong>.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Volume</h2>
-          
-          <p class="lede">O volume de um cone reto de raio 3 e altura 4, com <span class="tex">π = 3</span>, é:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">12</button><button class="choice mqo" data-i="1">24</button><button class="choice mqo" data-i="2">36</button><button class="choice mqo" data-i="3">72</button><button class="choice mqo" data-i="4">108</button><div class="fb"></div><div class="answer"><p><span class="tex">3 · 9 · 4 ÷ 3 = 36</span>. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. O volume de um cone reto de raio 3 e altura 4, com <span class="tex">π = 3</span>, é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>12</li><li>24</li><li>36</li><li>72</li><li>108</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Um cilindro de 90 cm³ contém um cone de mesma base e altura. O volume do cone é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>15 cm³</li><li>30 cm³</li><li>45 cm³</li><li>60 cm³</li><li>180 cm³</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Cone no cilindro</h2>
-          
-          <p class="lede">Um cilindro de 90 cm³ contém um cone de mesma base e altura. O volume do cone é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">15 cm³</button><button class="choice mqo" data-i="1">30 cm³</button><button class="choice mqo" data-i="2">45 cm³</button><button class="choice mqo" data-i="3">60 cm³</button><button class="choice mqo" data-i="4">180 cm³</button><div class="fb"></div><div class="answer"><p><span class="tex">90 ÷ 3 = 30</span>. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Chocolate menor</h2>
-          
-          <p class="lede">Um chocolate em forma de cone tem raio 4 cm e altura 10 cm. A empresa produzirá um com volume 19% menor, mantendo a altura de 10 cm. O raio do novo chocolate será de:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">3,0 cm</button><button class="choice mqo" data-i="1">3,2 cm</button><button class="choice mqo" data-i="2">3,6 cm</button><button class="choice mqo" data-i="3">3,8 cm</button><button class="choice mqo" data-i="4">4,0 cm</button><div class="fb"></div><div class="answer"><p><span class="tex"><i>r</i><sup>2</sup> = 0,81 · 16 = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Um chocolate em forma de cone tem raio 4 cm e altura 10 cm. A empresa produzirá um com volume 19% menor, mantendo a altura de 10 cm. O raio do novo chocolate será de:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>3,0 cm</li><li>3,2 cm</li><li>3,6 cm</li><li>3,8 cm</li><li>4,0 cm</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">3 · 9 · 4 ÷ 3 = 36</span>.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">90 ÷ 3 = 30</span>.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex"><i>r</i><sup>2</sup> = 0,81 · 16 = 12,96</span> ⇒ <span class="tex"><i>r</i> = 3,6</span>.</p></div></div>
         </div>
       </section>
 
@@ -539,12 +543,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Fórmula</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>V</i> = π <i>r</i><sup>2</sup> <i>h</i> ÷ 3</span>.</p></div>
+            <div class="card"><span class="badge">Relação</span><p style="font-size:.85rem;margin-top:8px;">Um terço do cilindro de mesma base e altura.</p></div>
+            <div class="card"><span class="badge">Semelhança</span><p style="font-size:.85rem;margin-top:8px;">Razão <span class="tex"><i>k</i></span> ⇒ volume <span class="tex"><i>k</i><sup>3</sup></span>.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Cilindro dividido por três: o cone está pronto.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Qual deve ser o novo raio?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O volume do cone é:</p>
@@ -586,23 +607,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Fórmula</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>V</i> = π <i>r</i><sup>2</sup> <i>h</i> ÷ 3</span>.</p></div>
-            <div class="card"><span class="badge">Relação</span><p style="font-size:.85rem;margin-top:8px;">Um terço do cilindro de mesma base e altura.</p></div>
-            <div class="card"><span class="badge">Semelhança</span><p style="font-size:.85rem;margin-top:8px;">Razão <span class="tex"><i>k</i></span> ⇒ volume <span class="tex"><i>k</i><sup>3</sup></span>.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Cilindro dividido por três: o cone está pronto.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -622,7 +642,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -973,3 +993,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

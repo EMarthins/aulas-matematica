@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,41 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--growth)"/>
           </svg>
           <div class="eyebrow">Matemática · 1ª série · Módulo 06 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Valores discrepantes e a escolha da medida: <span style="color:var(--growth);">qual número representa melhor?</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Poucos valores muito altos (ou muito baixos) puxam a média e enganam. Saber reconhecer valores discrepantes ajuda a escolher entre média, mediana e moda e a justificar a escolha.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Valores discrepantes e a escolha da medida: <span style="color:var(--growth);">qual número representa melhor?</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Poucos valores muito altos (ou muito baixos) puxam a média e enganam. Saber reconhecer valores discrepantes ajuda a escolher entre média, mediana e moda e a justificar a escolha.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> o intervalo mais comum?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">outlier para mais: média > mediana</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">mediana: resistente</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">moda: mais frequente</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="20" x2="36" y2="168" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><rect x="56" y="98" width="40" height="70" rx="4" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="76" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">A</text><rect x="118" y="58" width="40" height="110" rx="4" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="138" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">B</text><rect x="180" y="114" width="40" height="54" rx="4" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="200" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">C</text><rect x="242" y="78" width="40" height="90" rx="4" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="262" y="186" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">D</text><text x="160" y="14" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">preferência da turma</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do dado estranho à decisão.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Valor discrepante</strong><div class="hint">extremo em relação ao grupo</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Efeito na média</strong><div class="hint">puxa para o lado do extremo</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Comparar medidas</strong><div class="hint">média × mediana × moda</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Escolher a medida</strong><div class="hint">justificar com a distribuição</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Problemas</strong><div class="hint">entregas, salários e grupos</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Quantas horas por semana você estuda em casa?</h2>
+          
+          
+          <p class="lede">Se coletarmos as respostas da turma, haverá quem estude pouco e quem estude bastante. A coordenação quer <strong>um número</strong> para resumir: a média? o valor que mais apareceu? o intervalo mais comum? A resposta depende de a distribuição ter ou não <strong>valores discrepantes</strong>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <table class="tbl">
+  <tr><th>Tipo</th><th>Posição</th><th>Efeito na média</th></tr>
+  <tr><td style="text-align:left;">Discrepante para mais</td><td>à direita (valor muito alto)</td><td>média sobe: média > mediana</td></tr>
+  <tr><td style="text-align:left;">Discrepante para menos</td><td>à esquerda (valor muito baixo)</td><td>média cai: média < mediana</td></tr>
+</table>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em uma empresa, um diretor ganha muito mais que todos. Para descrever o salário típico, a medida mais adequada é:</p><button class="choice mqo" data-i="0">a média</button><button class="choice mqo" data-i="1">a mediana</button><button class="choice mqo" data-i="2">o maior salário</button><button class="choice mqo" data-i="3">a soma</button><div class="fb"></div><div class="answer"><p>O salário do diretor é um <strong>valor discrepante para mais</strong> e puxa a média para cima; a <strong>mediana</strong> continua representando o funcionário típico.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,25 +365,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Para início de conversa</div>
-          <h2 class="title">Quantas horas por semana você estuda em casa?</h2>
-          
-          <p class="lede">Se coletarmos as respostas da turma, haverá quem estude pouco e quem estude bastante. A coordenação quer <strong>um número</strong> para resumir: a média? o valor que mais apareceu? o intervalo mais comum? A resposta depende de a distribuição ter ou não <strong>valores discrepantes</strong>.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <table class="tbl">
-  <tr><th>Tipo</th><th>Posição</th><th>Efeito na média</th></tr>
-  <tr><td style="text-align:left;">Discrepante para mais</td><td>à direita (valor muito alto)</td><td>média sobe: média > mediana</td></tr>
-  <tr><td style="text-align:left;">Discrepante para menos</td><td>à esquerda (valor muito baixo)</td><td>média cai: média < mediana</td></tr>
-</table>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Em uma empresa, um diretor ganha muito mais que todos. Para descrever o salário típico, a medida mais adequada é:</p><button class="choice mqo" data-i="0">a média</button><button class="choice mqo" data-i="1">a mediana</button><button class="choice mqo" data-i="2">o maior salário</button><button class="choice mqo" data-i="3">a soma</button><div class="fb"></div><div class="answer"><p>O salário do diretor é um <strong>valor discrepante para mais</strong> e puxa a média para cima; a <strong>mediana</strong> continua representando o funcionário típico.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Teoria · escolhendo a medida</div>
@@ -389,7 +383,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -413,71 +406,73 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">O tempo padrão de entrega</h2>
           
+          
           <p class="lede">Com a tabela das entregas (frequências <span class="tex">12, 24, 8, 4, 2</span> nas classes de <span class="tex">10</span> a <span class="tex">60</span>), calcule média, moda e mediana e decida qual divulgar como “tempo padrão”.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 180 + 600 + 280 + 180 + 110 = 1 350</span>; média <span class="tex">= 1 350 ÷ 50 = 27</span> min.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Moda e mediana</strong><div class="hint">Classe modal <span class="tex">20 ⊢ 30</span> (moda <span class="tex">25</span>). <span class="tex"><i>n</i> = 50</span>: posições <span class="tex">25</span> e <span class="tex">26</span> na classe <span class="tex">20 ⊢ 30</span> (acumuladas <span class="tex">12, 36</span>): mediana <span class="tex">25</span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Escolha</strong><div class="hint">A média (<span class="tex">27</span>) é puxada pelas entregas lentas; <strong>mediana e moda (<span class="tex">25</span>)</strong> descrevem melhor a entrega comum.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>Divulgar <strong>25 minutos</strong> (mediana/moda) é mais justo que 27 min.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Média</strong><div class="hint"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 180 + 600 + 280 + 180 + 110 = 1 350</span>; média <span class="tex">= 1 350 ÷ 50 = 27</span> min.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Moda e mediana</strong><div class="hint">Classe modal <span class="tex">20 ⊢ 30</span> (moda <span class="tex">25</span>). <span class="tex"><i>n</i> = 50</span>: posições <span class="tex">25</span> e <span class="tex">26</span> na classe <span class="tex">20 ⊢ 30</span> (acumuladas <span class="tex">12, 36</span>): mediana <span class="tex">25</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Escolha</strong><div class="hint">A média (<span class="tex">27</span>) é puxada pelas entregas lentas; <strong>mediana e moda (<span class="tex">25</span>)</strong> descrevem melhor a entrega comum.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>Divulgar <strong>25 minutos</strong> (mediana/moda) é mais justo que 27 min.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Prática guiada</div>
           <h2 class="title">Escolhendo por tipo de dado</h2>
           
+          
           <p class="lede">Escolha a medida mais adequada: (a) tamanho de camisa mais vendido; (b) preços de imóveis em um bairro com algumas mansões; (c) notas de uma prova, sem valores extremos.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>(a) Tamanho mais vendido</strong><div class="hint">Variável qualitativa/ordinal: <strong>moda</strong>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>(b) Imóveis com mansões</strong><div class="hint">Valores discrepantes para mais: <strong>mediana</strong>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>(c) Notas sem extremos</strong><div class="hint">Distribuição simétrica: <strong>média</strong>.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>(a) moda · (b) mediana · (c) média.</p></div>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>(a) Tamanho mais vendido</strong><div class="hint">Variável qualitativa/ordinal: <strong>moda</strong>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>(b) Imóveis com mansões</strong><div class="hint">Valores discrepantes para mais: <strong>mediana</strong>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>(c) Notas sem extremos</strong><div class="hint">Distribuição simétrica: <strong>média</strong>.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>(a) moda · (b) mediana · (c) média.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Efeito na média</h2>
-          
-          <p class="lede">Em uma distribuição com poucos valores muito altos, é <strong>mais provável</strong> que:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">a média seja menor que a mediana</button><button class="choice mqo" data-i="1">a média seja maior que a mediana</button><button class="choice mqo" data-i="2">a média seja igual à moda</button><button class="choice mqo" data-i="3">a média não exista</button><button class="choice mqo" data-i="4">a mediana seja negativa</button><div class="fb"></div><div class="answer"><p>Valores altos puxam a média para cima: média <span class="tex">&gt;</span> mediana. <strong>Alternativa B.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Em uma distribuição com poucos valores muito altos, é <strong>mais provável</strong> que:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>a média seja menor que a mediana</li><li>a média seja maior que a mediana</li><li>a média seja igual à moda</li><li>a média não exista</li><li>a mediana seja negativa</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Na tabela das entregas (média 27 min; mediana e moda 25 min), a medida mais adequada para divulgar o tempo padrão é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>a média, por ser a mais precisa</li><li>a mediana, pois a média é puxada pelas entregas mais demoradas</li><li>a soma dos tempos</li><li>a amplitude</li><li>qualquer uma é igualmente adequada</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Medida das entregas</h2>
-          
-          <p class="lede">Na tabela das entregas (média 27 min; mediana e moda 25 min), a medida mais adequada para divulgar o tempo padrão é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">a média, por ser a mais precisa</button><button class="choice mqo" data-i="1">a mediana, pois a média é puxada pelas entregas mais demoradas</button><button class="choice mqo" data-i="2">a soma dos tempos</button><button class="choice mqo" data-i="3">a amplitude</button><button class="choice mqo" data-i="4">qualquer uma é igualmente adequada</button><div class="fb"></div><div class="answer"><p>A média é afetada pela cauda de entregas lentas; a mediana descreve melhor a entrega típica. <strong>Alternativa B.</strong></p></div></div>
-          
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Salário médio</h2>
-          
-          <p class="lede">Na tabela do salário semanal de 35 colaboradores (<span class="tex">280 ⊢ 300</span>: 5; <span class="tex">300 ⊢ 320</span>: 13; <span class="tex">320 ⊢ 340</span>: 9; <span class="tex">340 ⊢ 360</span>: 5; <span class="tex">360 ⊢ 380</span>: 3), o salário médio, usando pontos médios, é, aproximadamente:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">R&#36; 310,00</button><button class="choice mqo" data-i="1">R&#36; 320,00</button><button class="choice mqo" data-i="2">R&#36; 323,14</button><button class="choice mqo" data-i="3">R&#36; 330,00</button><button class="choice mqo" data-i="4">R&#36; 340,00</button><div class="fb"></div><div class="answer"><p><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 11 310</span>; <span class="tex">11 310 ÷ 35 ≈ 323,14</span>. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. Na tabela do salário semanal de 35 colaboradores (<span class="tex">280 ⊢ 300</span>: 5; <span class="tex">300 ⊢ 320</span>: 13; <span class="tex">320 ⊢ 340</span>: 9; <span class="tex">340 ⊢ 360</span>: 5; <span class="tex">360 ⊢ 380</span>: 3), o salário médio, usando pontos médios, é, aproximadamente:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>R&#36; 310,00</li><li>R&#36; 320,00</li><li>R&#36; 323,14</li><li>R&#36; 330,00</li><li>R&#36; 340,00</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Valores altos puxam a média para cima: média <span class="tex">&gt;</span> mediana.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">A média é afetada pela cauda de entregas lentas; a mediana descreve melhor a entrega típica.</p></div>
+<div class="card success"><strong>3. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">∑ <i>x</i><sub><i>i</i></sub> <i>f</i><sub><i>i</i></sub> = 11 310</span>; <span class="tex">11 310 ÷ 35 ≈ 323,14</span>.</p></div></div>
         </div>
       </section>
 
@@ -496,12 +491,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Discrepantes</span><p style="font-size:.85rem;margin-top:8px;">Extremos puxam a média; mediana resiste.</p></div>
+            <div class="card"><span class="badge">Escolha</span><p style="font-size:.85rem;margin-top:8px;">Média: simétrica. Mediana: com discrepantes. Moda: qualitativas e mais comum.</p></div>
+            <div class="card"><span class="badge">Justificar</span><p style="font-size:.85rem;margin-top:8px;">Compare as três medidas e explique.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Comparar as três medidas revela a forma dos dados.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: o intervalo mais comum?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Um valor discrepante para mais:</p>
@@ -543,23 +555,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Discrepantes</span><p style="font-size:.85rem;margin-top:8px;">Extremos puxam a média; mediana resiste.</p></div>
-            <div class="card"><span class="badge">Escolha</span><p style="font-size:.85rem;margin-top:8px;">Média: simétrica. Mediana: com discrepantes. Moda: qualitativas e mais comum.</p></div>
-            <div class="card"><span class="badge">Justificar</span><p style="font-size:.85rem;margin-top:8px;">Compare as três medidas e explique.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Comparar as três medidas revela a forma dos dados.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -579,7 +590,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 15</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -932,3 +943,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

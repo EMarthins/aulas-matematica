@@ -266,6 +266,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -277,60 +279,50 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="360" cy="110" r="6" fill="var(--growth)"/>
             <circle cx="130" cy="225" r="6" fill="var(--decay)"/>
           </svg>
-          <div class="eyebrow growth">Educação Financeira · 3ª série · Trimestre 3 · Parte 3 de 3</div>
-          <h1 class="disp" style="font-size:clamp(2rem,5.4vw,3.6rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:17ch;">Canais, parcerias e <span style="color:var(--growth);">custos</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Do primeiro contato com o cliente ao último centavo do orçamento — as peças que faltavam para fechar o seu plano de negócio.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="eyebrow">Educação Financeira · 3ª série · Trimestre 3 · Parte 3 de 3</div>
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Canais, parcerias e <span style="color:var(--growth);">custos</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Do primeiro contato com o cliente ao último centavo do orçamento — as peças que faltavam para fechar o seu plano de negócio.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 42, 44–46</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">C(x) = CF + CV·x</span>
             <span class="badge">H20 · H21 · H23 · Hd10</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do primeiro contato com o cliente até o ponto de equilíbrio do negócio.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/></svg>
-              <div><strong>Canais e relacionamento</strong><div class="hint">a ponte entre a empresa e o cliente</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><rect x="15" y="4" width="6" height="6" rx="1"/></svg>
-              <div><strong>FAZER · TER · CONTAR COM</strong><div class="hint">atividades, recursos e parcerias</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">03</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><circle cx="17" cy="14" r="1.3" fill="currentColor" stroke="none"/></svg>
-              <div><strong>Custos fixos e variáveis</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">de onde vem o preço final</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
-              <div><strong>O papel do SEBRAE</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">apoio para quem empreende</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M9 12l2 2 4-4"/></svg>
-              <div><strong>ENEM 2025 · licitação</strong><div class="hint">uma disputa real, passo a passo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">06</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 4"/></svg>
-              <div><strong>Estudo de caso</strong><div class="hint">a fábrica de brownies</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="132" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="60" y="138" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="94" cy="124" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="94" y="130" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="128" cy="116" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="128" y="122" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><rect x="170" y="60" width="120" height="64" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="230" cy="92" r="16" fill="var(--surface)" stroke="var(--success)" stroke-width="2"/><text x="230" y="98" font-size="16" fill="var(--success)" text-anchor="middle" font-weight="700">50</text><rect x="176" y="118" width="120" height="16" rx="6" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Uma boa ideia é suficiente para abrir um negócio?</h2>
+          
+          <div class="grid2">
+            <div class="card">
+              <strong>O sonho</strong>
+              <p style="margin-top:6px;font-size:.9rem;">É comum sonhar em ter o próprio negócio — mas quase metade das pequenas empresas brasileiras fecha as portas antes de completar 5 anos. O motivo mais citado pelos empresários não é falta de vontade: é <strong>falta de gestão, planejamento financeiro e pesquisa de mercado</strong>.</p>
+            </div>
+            <div class="card">
+              <strong>A pergunta de amanhã</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Imagine que amanhã é o primeiro dia de funcionamento da sua empresa. Você já definiu a proposta de valor, o público, os canais e o relacionamento com o cliente. O que mais precisa estar pronto? <strong>O que fazer? O que ter? Com quem contar?</strong></p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:14px;">
+            <h4>Da comunicação à conta no fim do mês</h4>
+            <p>Hoje fechamos o plano de negócios: como o cliente chega até você, o que a operação exige por trás da proposta de valor — e quanto tudo isso custa.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -355,29 +347,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Uma boa ideia é suficiente para abrir um negócio?</h2>
-          <div class="grid2">
-            <div class="card">
-              <strong>O sonho</strong>
-              <p style="margin-top:6px;font-size:.9rem;">É comum sonhar em ter o próprio negócio — mas quase metade das pequenas empresas brasileiras fecha as portas antes de completar 5 anos. O motivo mais citado pelos empresários não é falta de vontade: é <strong>falta de gestão, planejamento financeiro e pesquisa de mercado</strong>.</p>
-            </div>
-            <div class="card">
-              <strong>A pergunta de amanhã</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Imagine que amanhã é o primeiro dia de funcionamento da sua empresa. Você já definiu a proposta de valor, o público, os canais e o relacionamento com o cliente. O que mais precisa estar pronto? <strong>O que fazer? O que ter? Com quem contar?</strong></p>
-            </div>
-          </div>
-          <div class="callout" style="margin-top:14px;">
-            <h4>Da comunicação à conta no fim do mês</h4>
-            <p>Hoje fechamos o plano de negócios: como o cliente chega até você, o que a operação exige por trás da proposta de valor — e quanto tudo isso custa.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: CANAIS E RELACIONAMENTO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 44 · Teoria</div>
@@ -398,7 +367,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE: MICHELE E JULIANA + DICAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Estudo de caso · Em duplas</div>
@@ -423,7 +391,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 ATIVIDADE: PEDRO E O CARDÁPIO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade · Em duplas</div>
@@ -440,7 +407,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 TEORIA: FAZER/TER/CONTAR COM -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 45 · Teoria</div>
@@ -459,7 +425,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 ATIVIDADE: CAMISETAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade · Analise o negócio</div>
@@ -476,7 +441,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 TEORIA: RECURSOS PRINCIPAIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 45 · Teoria</div>
@@ -503,7 +467,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 TEORIA: PARCERIAS + ATIVIDADE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 45 · Teoria</div>
@@ -521,7 +484,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 TEORIA: CUSTOS FIXOS E VARIÁVEIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 46 · Teoria</div>
@@ -546,7 +508,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 TEORIA: FUNÇÃO CUSTO + ATIVIDADE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 46 · Teoria</div>
@@ -566,7 +527,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 TEORIA: SEBRAE + 6 PASSOS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 42 · Teoria</div>
@@ -594,7 +554,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 ENEM 2025 SETUP -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim (ENEM 2025 · Reaplicação · Caderno Azul · MT · Competência 6 · H25)</div>
@@ -621,7 +580,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 ENEM 2025 RESOLUÇÃO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Resolvendo o item</div>
@@ -655,7 +613,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 ESTUDO DE CASO BROWNIES 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Estudo de caso · SEBRAE</div>
@@ -691,7 +648,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 ESTUDO DE CASO BROWNIES 2 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Estudo de caso · SEBRAE</div>
@@ -715,7 +671,25 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 18 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da unidade</div>
+          <h2 class="title">Seu plano de negócios está completo!</h2>
+          <p class="lede">Do perfil do empreendedor à pesquisa de mercado, da proposta de valor aos canais, parcerias e custos — os nove blocos do Canvas já foram trabalhados. Revise tudo com o guia visual da unidade completa.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.78rem;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+              BARROS, Josi Gomes. <em>Educação Financeira: 3ª série do ensino médio</em>. 1. ed. Maceió, AL: Editora Cab, 2024.<br>
+              SEBRAE. Portal Sebrae. Disponível em: sebrae.com.br/sites/PortalSebrae. Acesso em: 02 set. 2026.<br>
+              O que é o relacionamento com clientes no canvas? Portal Insights. Acesso em: 01 ago. 2025.<br>
+              Canvas – Canais. Hora de Empreender. Acesso em: 01 ago. 2025.<br>
+              PLATAFORMA ASSAAD. Questões do ENEM (2020 PPL, 2021, 2023, 2025). Disponível em: plataformaassaad.com.br<br>
+              INEP. Provas e Gabaritos. Disponível em: gov.br/inep. Acesso em: 17 set. 2026.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -736,12 +710,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 19 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O bloco do Canvas que torna o caminho entre cliente e empresa o mais curto possível é:</p>
@@ -792,25 +765,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 20 ENCERRAMENTO -->
+      
       <section class="slide">
-        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Fim da unidade</div>
-          <h2 class="title">Seu plano de negócios está completo!</h2>
-          <p class="lede">Do perfil do empreendedor à pesquisa de mercado, da proposta de valor aos canais, parcerias e custos — os nove blocos do Canvas já foram trabalhados. Revise tudo com o guia visual da unidade completa.</p>
-          <div class="card" style="margin-top:16px;">
-            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
-            <p style="font-size:.78rem;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-              BARROS, Josi Gomes. <em>Educação Financeira: 3ª série do ensino médio</em>. 1. ed. Maceió, AL: Editora Cab, 2024.<br>
-              SEBRAE. Portal Sebrae. Disponível em: sebrae.com.br/sites/PortalSebrae. Acesso em: 02 set. 2026.<br>
-              O que é o relacionamento com clientes no canvas? Portal Insights. Acesso em: 01 ago. 2025.<br>
-              Canvas – Canais. Hora de Empreender. Acesso em: 01 ago. 2025.<br>
-              PLATAFORMA ASSAAD. Questões do ENEM (2020 PPL, 2021, 2023, 2025). Disponível em: plataformaassaad.com.br<br>
-              INEP. Provas e Gabaritos. Disponível em: gov.br/inep. Acesso em: 17 set. 2026.
-            </p>
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
     </div>
 
@@ -1094,3 +1064,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

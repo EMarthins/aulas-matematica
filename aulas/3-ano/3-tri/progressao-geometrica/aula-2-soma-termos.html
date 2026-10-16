@@ -269,6 +269,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg class="cover-curve" viewBox="0 0 900 260" style="position:absolute;right:-40px;bottom:10px;width:min(70%,620px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true">
@@ -286,59 +288,52 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <text x="590" y="130" class="mono" font-size="26" fill="var(--decay)" opacity=".9">Σ</text>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3 · Parte 2 de 2</div>
-          <h1 class="disp" style="font-size:clamp(2.2rem,6vw,4.2rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:14ch;">A soma de <span style="color:var(--primary);">tudo</span> na PG</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:48ch;">Do tabuleiro de xadrez às parcelas do cartão de crédito: somando os n primeiros termos de uma PG finita.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">A soma de <span style="color:var(--primary);">tudo</span> na PG</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Do tabuleiro de xadrez às parcelas do cartão de crédito: somando os n primeiros termos de uma PG finita.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 82–84</span>
             <span class="badge" style="color:var(--growth-ink);background:var(--growth-soft);border-color:transparent;">S<sub>n</sub> = a<sub>1</sub>(q<sup>n</sup>−1)/(q−1)</span>
             <span class="badge">H21</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Seis paradas para somar os termos de uma PG finita — e aplicar isso a problemas financeiros reais.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--growth);border-radius:14px;background:var(--growth-soft);">
-              <span class="badge" style="color:var(--growth-ink);background:var(--surface);">01</span>
-              <svg class="icon growth" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h4v-6H4v6Zm7 0h4V10h-4v10Zm7 0h4V4h-4v16Z"/></svg>
-              <div><strong>Fórmula da soma</strong><div class="hint" style="color:var(--growth-ink);opacity:.8;">S<sub>n</sub> = a<sub>1</sub>(q<sup>n</sup>−1)/(q−1)</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">02</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12l-1 8a5 5 0 0 1-10 0L6 3Z"/><path d="M8 21h8M12 17v4"/></svg>
-              <div><strong>O tabuleiro de xadrez</strong><div class="hint">a lenda que mostra o poder do crescimento geométrico</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">03</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 12 4l8 16H4Z"/></svg>
-              <div><strong>No ENEM é assim</strong><div class="hint">duas questões reais resolvidas passo a passo</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">04</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9 9.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .8-3 1.9 1 1.8 3 1.8 3-.8 3-1.8"/></svg>
-              <div><strong>Aplicações financeiras</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">poupanças, depósitos e parcelas — habilidade H21</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-              <div><strong>Praticando mais</strong><div class="hint">exercícios variados para consolidar</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">06</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8M12 17v4M6 3h12l-1 8a5 5 0 0 1-10 0L6 3Z"/></svg>
-              <div><strong>Desafio final</strong><div class="hint">quiz rápido pra fechar com chave de ouro</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="30" y="150" width="52" height="20" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="56" y="142" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">3</text><rect x="82" y="122" width="52" height="48" rx="2" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="108" y="114" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">7</text><rect x="134" y="94" width="52" height="76" rx="2" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="160" y="86" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">11</text><rect x="186" y="66" width="52" height="104" rx="2" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="212" y="58" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">15</text><rect x="238" y="38" width="52" height="132" rx="2" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="264" y="30" font-size="15" fill="var(--ink)" text-anchor="middle" font-weight="700">19</text><text x="160" y="192" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">cada degrau: + 4</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O pedido do inventor do xadrez</h2>
+          
+          <div class="grid2">
+            <div>
+              <p>Conta a lenda que o rei hindu Sheram, maravilhado com o jogo de xadrez, quis recompensar generosamente seu inventor, Seta. Este pediu algo aparentemente modesto:</p>
+              <div class="callout">
+                <h4>O pedido de Seta</h4>
+                <p>"Um grão de trigo na 1ª casa do tabuleiro, dois grãos na 2ª, quatro na 3ª, oito na 4ª... dobrando a cada casa, até a 64ª."</p>
+              </div>
+            </div>
+            <div>
+              <p>O tabuleiro tem <strong>64 casas</strong>. Isso é uma PG de razão q = 2. O rei achou o pedido humilde — até seus conselheiros calcularem o total.</p>
+              <button class="reveal" onclick="toggleAnswer(this)">Foi mesmo um pedido humilde?</button>
+              <div class="answer">
+                <p>Somar os 64 termos da PG (1, 2, 4, 8, …, 2⁶³) dá um número astronômico: mais de 18 quintilhões de grãos.</p>
+                <p class="hint">Segundo o matemático David Darling, esse trigo "preencheria um edifício de 40 km de largura, 40 km de comprimento e 300 metros de altura". Vamos aprender a fórmula que calcula isso em segundos.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -362,32 +357,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO: TABULEIRO DE XADREZ -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">O pedido do inventor do xadrez</h2>
-          <div class="grid2">
-            <div>
-              <p>Conta a lenda que o rei hindu Sheram, maravilhado com o jogo de xadrez, quis recompensar generosamente seu inventor, Seta. Este pediu algo aparentemente modesto:</p>
-              <div class="callout">
-                <h4>O pedido de Seta</h4>
-                <p>"Um grão de trigo na 1ª casa do tabuleiro, dois grãos na 2ª, quatro na 3ª, oito na 4ª... dobrando a cada casa, até a 64ª."</p>
-              </div>
-            </div>
-            <div>
-              <p>O tabuleiro tem <strong>64 casas</strong>. Isso é uma PG de razão q = 2. O rei achou o pedido humilde — até seus conselheiros calcularem o total.</p>
-              <button class="reveal" onclick="toggleAnswer(this)">Foi mesmo um pedido humilde?</button>
-              <div class="answer">
-                <p>Somar os 64 termos da PG (1, 2, 4, 8, …, 2⁶³) dá um número astronômico: mais de 18 quintilhões de grãos.</p>
-                <p class="hint">Segundo o matemático David Darling, esse trigo "preencheria um edifício de 40 km de largura, 40 km de comprimento e 300 metros de altura". Vamos aprender a fórmula que calcula isso em segundos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: FÓRMULA DA SOMA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 82–83 · Teoria</div>
@@ -413,11 +382,12 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 EXEMPLO: VAZAMENTO DO TANQUE -->
+      
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Exemplo prático</div>
           <h2 class="title">O vazamento que dobra a cada dia</h2>
+          
           <p class="lede">Um tanque de água vazou 2 litros no 1º dia. Como o orifício foi aumentando, no dia seguinte o vazamento foi o dobro do anterior, e assim sucessivamente. O tanque só foi consertado 12 dias depois. Qual o total de litros perdidos?</p>
           <div class="card growth" style="margin-top:10px;">
             <p style="margin:0 0 6px;">É uma PG com a<sub>1</sub> = 2, q = 2, n = 12.</p>
@@ -427,10 +397,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
               <p><strong>S<sub>12</sub> = 8.190 litros perdidos</strong></p>
             </div>
           </div>
+        
         </div>
       </section>
 
-      <!-- 6 VOLTA AO GANCHO INICIAL -->
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Fechando o ciclo</div>
@@ -447,7 +418,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 ATIVIDADE 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · Pratique</div>
@@ -472,7 +442,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 ENEM 1 -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · No ENEM é assim (ENEM 2023, Q159)</div>
@@ -495,7 +464,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 TEORIA: APLICAÇÕES FINANCEIRAS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 84 · Aplicações financeiras</div>
@@ -521,11 +489,12 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 EXEMPLO: POUPANÇA DA FORMATURA -->
+      
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Exemplo resolvido</div>
           <h2 class="title">A poupança da formatura</h2>
+          
           <p class="lede">Uma comissão de formatura decide depositar R$ 100,00 todo final de mês numa conta que rende 1% ao mês (q = 1,01). Com 10 depósitos mensais consecutivos, qual o montante total arrecadado? (Dado: 1,01<sup>10</sup> ≈ 1,1046)</p>
           <div class="card" style="margin-top:10px;">
             <p style="margin:0 0 6px;">a<sub>1</sub> = 100·1,01 = 101 (1º depósito já rende 1 mês) · q = 1,01 · n = 10</p>
@@ -536,14 +505,17 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
               <p><strong>S<sub>10</sub> = R$ 1.056,46</strong></p>
             </div>
           </div>
+        
         </div>
       </section>
 
-      <!-- 11 EXEMPLO: VALOR PRESENTE DAS PARCELAS -->
+
+      
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Exemplo resolvido</div>
           <h2 class="title">Quanto vale, hoje, uma compra parcelada?</h2>
+          
           <p class="lede">Um equipamento é pago em 4 parcelas mensais de R$ 500,00, com juros de 2% ao mês (q = 1,02). Qual o valor equivalente à vista dessas parcelas? (Dado: 1,02<sup>−4</sup> ≈ 0,9238)</p>
           <div class="card decay" style="margin-top:10px;">
             <p style="margin:0 0 6px;">Trazendo cada parcela a valor presente, formamos uma PG <strong>decrescente</strong>: a<sub>1</sub> = 500·1,02<sup>−1</sup> ≈ 490,20, razão q = 1,02<sup>−1</sup> ≈ 0,9804, n = 4.</p>
@@ -554,10 +526,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
               <p><strong>S<sub>4</sub> = R$ 1.905,00</strong></p>
             </div>
           </div>
+        
         </div>
       </section>
 
-      <!-- 12 ENEM 2 (FLAGSHIP) -->
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No ENEM é assim (ENEM 2023, Q137)</div>
@@ -581,7 +554,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ATIVIDADE FINANCEIRA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 4 · Pratique problemas financeiros</div>
@@ -610,7 +582,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 PRATIQUE MAIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 5 · Pratique mais</div>
@@ -631,7 +602,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 SÍNTESE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -662,12 +632,11 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 16 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.92rem;">1. A fórmula da soma dos n primeiros termos de uma PG (q≠1) é:</p>
@@ -709,7 +678,23 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 ENCERRAMENTO -->
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
           <div class="eyebrow">Para continuar</div>
@@ -1064,3 +1049,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

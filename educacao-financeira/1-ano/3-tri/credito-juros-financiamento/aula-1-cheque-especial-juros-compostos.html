@@ -274,6 +274,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -283,32 +285,42 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="24" r="8" fill="var(--danger)"/>
           </svg>
           <div class="eyebrow">Educação Financeira · 1ª série · Trimestre 3</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Crédito, cheque especial e <span style="color:var(--danger);">juros compostos</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Por que o cheque especial vira bola de neve, como funcionam os juros sobre juros e como a matemática ajuda a decidir se vale a pena usar crédito.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Crédito, cheque especial e <span style="color:var(--danger);">juros compostos</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Por que o cheque especial vira bola de neve, como funcionam os juros sobre juros e como a matemática ajuda a decidir se vale a pena usar crédito.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Alane está sem dinheiro, mas aceitou jantar com os amigos e pediu o <strong>prato mais caro</strong>. Quando perguntaram como pagaria, ela respondeu:</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 36, 37</span>
             <span class="badge" style="color:var(--danger);background:var(--danger-soft);border-color:transparent;">Cheque especial: 9,78% a.m.</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">FV = PV·(1+i)ⁿ</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="132" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="60" y="138" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="94" cy="124" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="94" y="130" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><circle cx="128" cy="116" r="22" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="128" y="122" font-size="13" fill="var(--decay)" text-anchor="middle" font-weight="700">R&#36;</text><rect x="170" y="60" width="120" height="64" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><circle cx="230" cy="92" r="16" fill="var(--surface)" stroke="var(--success)" stroke-width="2"/><text x="230" y="98" font-size="16" fill="var(--success)" text-anchor="middle" font-weight="700">50</text><rect x="176" y="118" width="120" height="16" rx="6" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do jantar da Alane ao cálculo exato do que o crédito custa.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg><div><strong>O jantar no cheque especial</strong><div class="hint">o que acontece quando "só se vive uma vez"</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Investimento líquido no ENEM</strong><div class="hint">rendimento bruto − taxa = líquido (Enem Digital 2020)</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="1"/><path d="M14 9h6v12h-6M8 7h2M8 11h2M8 15h2"/></svg><div><strong>O que é o cheque especial</strong><div class="hint">um empréstimo automático e caríssimo</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Estudo de caso: Paloma</strong><div class="hint">juros de atraso x juros do cheque especial</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19 10 12l4 4 6-9"/><path d="M15 7h5v5"/></svg><div><strong>Juros compostos</strong><div class="hint">juros sobre juros: a fórmula FV = PV·(1+i)ⁿ</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5 10 12l4-4 6 9"/><path d="M15 17h5v-5"/></svg><div><strong>Cartão: 16% ao mês</strong><div class="hint">a dívida de R$ 1.000 que dobra em 6 meses</div></div></div>
-            <div class="step-row"><span class="badge">07</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>ENEM: quando o capital dobra?</strong><div class="hint">logaritmo e prazo de carência (ENEM 2019 PPL)</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">O jantar da Alane</h2>
+          
+          
+          <div class="grid2">
+            <div>
+              <p class="lede">Alane está sem dinheiro, mas aceitou jantar com os amigos e pediu o <strong>prato mais caro</strong>. Quando perguntaram como pagaria, ela respondeu:</p>
+              <div class="callout danger"><h4>"Não tem problema! Vou usar o cheque especial. Só se vive uma vez e eu adoro camarão!"</h4><p></p></div>
+            </div>
+            <div>
+              <div class="card growth"><strong>Pense e responda</strong><p style="font-size:.92rem;margin-top:8px;">O que você entende por <strong>cheque especial</strong>? No lugar da Alane, o que você faria?</p></div>
+              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alane usou o cheque especial para jantar. Foi uma boa ideia?</p><button class="choice mqo" data-i="0">Sim: é dinheiro do banco, sem custo</button><button class="choice mqo" data-i="1">Não: os juros do cheque especial estão entre os mais altos do mercado</button><button class="choice mqo" data-i="2">Sim, desde que ela pague só no fim do ano</button><button class="choice mqo" data-i="3">Tanto faz</button><div class="fb"></div><div class="answer"><p>O cheque especial "empresta" na hora, mas <strong>os juros são altíssimos</strong>. Usá-lo por alguns dias já pode virar uma bola de neve.</p></div></div>
+            </div>
           </div>
+        
         </div>
       </section>
 
@@ -328,43 +340,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow danger">Para início de conversa</div>
-          <h2 class="title">O jantar da Alane</h2>
-          
-          <div class="grid2">
-            <div>
-              <p class="lede">Alane está sem dinheiro, mas aceitou jantar com os amigos e pediu o <strong>prato mais caro</strong>. Quando perguntaram como pagaria, ela respondeu:</p>
-              <div class="callout danger"><h4>"Não tem problema! Vou usar o cheque especial. Só se vive uma vez e eu adoro camarão!"</h4><p></p></div>
-            </div>
-            <div>
-              <div class="card growth"><strong>Pense e responda</strong><p style="font-size:.92rem;margin-top:8px;">O que você entende por <strong>cheque especial</strong>? No lugar da Alane, o que você faria?</p></div>
-              <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alane usou o cheque especial para jantar. Foi uma boa ideia?</p><button class="choice mqo" data-i="0">Sim: é dinheiro do banco, sem custo</button><button class="choice mqo" data-i="1">Não: os juros do cheque especial estão entre os mais altos do mercado</button><button class="choice mqo" data-i="2">Sim, desde que ela pague só no fim do ano</button><button class="choice mqo" data-i="3">Tanto faz</button><div class="fb"></div><div class="answer"><p>O cheque especial "empresta" na hora, mas <strong>os juros são altíssimos</strong>. Usá-lo por alguns dias já pode virar uma bola de neve.</p></div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">ENEM Digital 2020 · rendimento líquido</div>
-          <h2 class="title">Antes do crédito, revisitando investimentos</h2>
-          
-          <p class="lede">Um investidor aplica <strong>R$ 10 mil</strong> por um mês. A aplicação <strong>Básica</strong> rende 0,542% e cobra taxa administrativa fixa de <strong>R$ 0,30</strong>. A <strong>Pessoal</strong> rende 0,560% e cobra <strong>3,8% sobre o rendimento bruto</strong>. Qual dá maior rendimento líquido e de quanto?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div><div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alternativas</p><button class="choice mqo" data-i="0">Básica, R$ 53,90</button><button class="choice mqo" data-i="1">Básica, R$ 54,50</button><button class="choice mqo" data-i="2">Pessoal, R$ 56,00</button><button class="choice mqo" data-i="3">Pessoal, R$ 58,12</button><button class="choice mqo" data-i="4">Pessoal, R$ 59,80</button><div class="fb"></div><div class="answer"><p>Básica, <strong>R$ 53,90</strong> (alternativa A).</p></div></div></div>
-            <div><button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
-<div class="answer"><p><strong>Básica:</strong> 10.000 × 0,00542 = R$ 54,20; menos R$ 0,30 → <strong>R$ 53,90</strong>.</p>
-              <p><strong>Pessoal:</strong> 10.000 × 0,0056 = R$ 56,00; taxa 3,8% × 56 = R$ 2,128 → <strong>R$ 53,872</strong>.</p>
-              <p class="hint">Rendimento líquido = bruto − taxa. A "maior taxa" nem sempre rende mais: foi o que vimos na unidade de investimentos. Agora, o outro lado da moeda: o crédito.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Parte 1 · teoria</div>
@@ -382,7 +357,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -408,23 +382,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow danger">Atividade · Jorge e o show de rock</div>
-          <h2 class="title">Quanto custou o ingresso?</h2>
-          
-          <p class="lede">Jorge estava sem dinheiro, mas foi a um show: ingresso <strong>R$ 110</strong> + <strong>R$ 85</strong> de transporte e alimentação, tudo no <strong>cheque especial</strong>. Demorou <strong>45 dias</strong> para cobrir. Taxa: <strong>9,5% ao mês</strong>. Quanto pagou de juros?</p>
-          <div class="grid2" style="margin-top:8px;">
-            <button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
-<div class="answer"><p>Dívida: 110 + 85 = <strong>R$ 195</strong>. Taxa diária equivalente: (1,095)<sup>1/30</sup> − 1 ≈ <strong>0,303% ao dia</strong>.</p><p>FV = 195 · (1,00303)<sup>45</sup> ≈ <strong>R$ 223,44</strong> → juros de <strong>R$ 28,44</strong>.</p></div>
-            <div class="callout success"><h4>Planejamento</h4><p>Para evitar o cheque especial: orçamento <strong>equilibrado</strong> (despesas ≤ receitas) e a pergunta: "isso é uma <strong>urgência</strong> ou pode esperar e ser planejado?"</p></div>
-          </div>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual é o principal modo de evitar o cheque especial e o endividamento?</p><button class="choice mqo" data-i="0">Ter um orçamento pessoal bem controlado e equilibrado</button><button class="choice mqo" data-i="1">Pagar sempre o valor mínimo</button><button class="choice mqo" data-i="2">Pedir mais um empréstimo</button><button class="choice mqo" data-i="3">Ignorar os juros</button><div class="fb"></div><div class="answer"><p>Um <strong>orçamento controlado</strong> (despesas não maiores que a receita) e a análise de urgência antes de gastar.</p></div></div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Parte 2 · para início de conversa</div>
@@ -443,7 +400,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -467,7 +423,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow growth">Parte 2 · fórmula</div>
@@ -486,7 +441,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -507,22 +461,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow primary">ENEM 2019 PPL · juros compostos e logaritmo</div>
-          <h2 class="title">Em quanto tempo o capital dobra?</h2>
-          
-          <p class="lede">Uma pessoa investe <strong>R$ 200</strong> a <strong>5% ao mês</strong> e quer <strong>duplicar</strong> o valor (R$ 400) ainda dentro do prazo de carência. Há planos com carências de 10, 15, 20, 28 e 40 meses. Qual escolher? Use log 2 = 0,30 e log 1,05 = 0,02.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div><div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual plano atende com a menor carência?</p><button class="choice mqo" data-i="0">Plano A — 10 meses</button><button class="choice mqo" data-i="1">Plano B — 15 meses</button><button class="choice mqo" data-i="2">Plano C — 20 meses</button><button class="choice mqo" data-i="3">Plano D — 28 meses</button><button class="choice mqo" data-i="4">Plano E — 40 meses</button><div class="fb"></div><div class="answer"><p><strong>Plano B — 15 meses</strong>: é a menor carência em que o capital já dobrou.</p></div></div></div>
-            <div><button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
-<div class="answer"><p>400 = 200·(1,05)<sup>n</sup> → 2 = 1,05<sup>n</sup>.</p><p>log 2 = n · log 1,05 → 0,30 = n · 0,02 → <strong>n = 15 meses</strong>.</p><p>A (10 meses) é pouco; C, D e E servem, mas têm carência maior que a necessária.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Quanto vale cada taxa?</div>
@@ -540,11 +478,69 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Antes do crédito, revisitando investimentos</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <p class="lede">Um investidor aplica <strong>R$ 10 mil</strong> por um mês. A aplicação <strong>Básica</strong> rende 0,542% e cobra taxa administrativa fixa de <strong>R$ 0,30</strong>. A <strong>Pessoal</strong> rende 0,560% e cobra <strong>3,8% sobre o rendimento bruto</strong>. Qual dá maior rendimento líquido e de quanto?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div><div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Alternativas</p><button class="choice mqo" data-i="0">Básica, R$ 53,90</button><button class="choice mqo" data-i="1">Básica, R$ 54,50</button><button class="choice mqo" data-i="2">Pessoal, R$ 56,00</button><button class="choice mqo" data-i="3">Pessoal, R$ 58,12</button><button class="choice mqo" data-i="4">Pessoal, R$ 59,80</button><div class="fb"></div><div class="answer"><p>Básica, <strong>R$ 53,90</strong> (alternativa A).</p></div></div></div>
+            <div><button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p><strong>Básica:</strong> 10.000 × 0,00542 = R$ 54,20; menos R$ 0,30 → <strong>R$ 53,90</strong>.</p>
+              <p><strong>Pessoal:</strong> 10.000 × 0,0056 = R$ 56,00; taxa 3,8% × 56 = R$ 2,128 → <strong>R$ 53,872</strong>.</p>
+              <p class="hint">Rendimento líquido = bruto − taxa. A "maior taxa" nem sempre rende mais: foi o que vimos na unidade de investimentos. Agora, o outro lado da moeda: o crédito.</p></div></div>
+          </div>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Quanto custou o ingresso?</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid2" style="margin-top:8px;">
+            <button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p>Dívida: 110 + 85 = <strong>R$ 195</strong>. Taxa diária equivalente: (1,095)<sup>1/30</sup> − 1 ≈ <strong>0,303% ao dia</strong>.</p><p>FV = 195 · (1,00303)<sup>45</sup> ≈ <strong>R$ 223,44</strong> → juros de <strong>R$ 28,44</strong>.</p></div>
+            <div class="callout success"><h4>Planejamento</h4><p>Para evitar o cheque especial: orçamento <strong>equilibrado</strong> (despesas ≤ receitas) e a pergunta: "isso é uma <strong>urgência</strong> ou pode esperar e ser planejado?"</p></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Jorge estava sem dinheiro, mas foi a um show: ingresso <strong>R$ 110</strong> + <strong>R$ 85</strong> de transporte e alimentação, tudo no <strong>cheque especial</strong>. Demorou <strong>45 dias</strong> para cobrir. Taxa: <strong>9,5% ao mês</strong>. Quanto pagou de juros? Qual é o principal modo de evitar o cheque especial e o endividamento?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>Ter um orçamento pessoal bem controlado e equilibrado</li><li>Pagar sempre o valor mínimo</li><li>Pedir mais um empréstimo</li><li>Ignorar os juros</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente · ENEM 2019 PPL · juros compostos e logaritmo</div>
+          <h2 class="title">Em quanto tempo o capital dobra?</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><div class="grid2" style="margin-top:6px;">
+            <div></div>
+            <div><button class="reveal" onclick="toggleAnswer(this)">Resolução</button>
+<div class="answer"><p>400 = 200·(1,05)<sup>n</sup> → 2 = 1,05<sup>n</sup>.</p><p>log 2 = n · log 1,05 → 0,30 = n · 0,02 → <strong>n = 15 meses</strong>.</p><p>A (10 meses) é pouco; C, D e E servem, mas têm carência maior que a necessária.</p></div></div>
+          </div></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Uma pessoa investe <strong>R$ 200</strong> a <strong>5% ao mês</strong> e quer <strong>duplicar</strong> o valor (R$ 400) ainda dentro do prazo de carência. Há planos com carências de 10, 15, 20, 28 e 40 meses. Qual escolher? Use log 2 = 0,30 e log 1,05 = 0,02. Qual plano atende com a menor carência?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>Plano A — 10 meses</li><li>Plano B — 15 meses</li><li>Plano C — 20 meses</li><li>Plano D — 28 meses</li><li>Plano E — 40 meses</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;">Um <strong>orçamento controlado</strong> (despesas não maiores que a receita) e a análise de urgência antes de gastar.</p></div>
+<div class="card success"><strong>2. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;"><strong>Plano B — 15 meses</strong>: é a menor carência em que o capital já dobrou.</p></div></div>
+        </div>
+      </section>
+
 
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <h2 class="title">Três ideias para levar</h2>
           
           <div class="grid3" style="margin-top:10px;">
             <div class="card"><span class="badge">Cheque especial</span><p style="font-size:.85rem;margin-top:8px;">Crédito automático, caro e perigoso: usar só em emergência real e quitar rápido.</p></div>
@@ -555,15 +551,15 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <h4>A mensagem central</h4>
             <p class="formula big" style="display:block;text-align:center;margin-top:8px;">"Antes de usar crédito, calcule o que ele custa."</p>
           </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Alane está sem dinheiro, mas aceitou jantar com os amigos e pediu o <strong>prato mais caro</strong>. Quando perguntaram como pagaria, ela respondeu:</p></div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/5</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Por que o cheque especial é considerado um crédito perigoso?</p>
@@ -614,6 +610,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
+          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
+        </div>
+      </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -634,7 +646,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -977,3 +989,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

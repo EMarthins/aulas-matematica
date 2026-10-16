@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">Matemática · 2ª série · Módulo 01 · Aula 2</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Seno, cosseno e tangente: <span style="color:var(--primary);">razões que não mudam</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Em triângulos semelhantes, a razão entre dois lados é sempre a mesma. É essa constância que permite calcular distâncias inacessíveis apenas com um ângulo e uma medida.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Seno, cosseno e tangente: <span style="color:var(--primary);">razões que não mudam</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Em triângulos semelhantes, a razão entre dois lados é sempre a mesma. É essa constância que permite calcular distâncias inacessíveis apenas com um ângulo e uma medida.</p>
+              
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">sen · cos · tg</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">30° · 45° · 60°</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">ângulos obtusos</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="220" y="26" width="30" height="142" rx="3" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><path d="M214 26 L235 6 L256 26 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="132" r="8" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><line x1="60" y1="140" x2="60" y2="168" stroke="var(--growth)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="40" stroke="var(--decay)" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="132" stroke="var(--ink-soft)" stroke-width="1.5" stroke-linecap="round"/><path d="M96 132 A36 36 0 0 0 91 113" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="112" y="126" font-size="14" fill="var(--primary)" text-anchor="start" font-weight="700">θ</text><text x="258" y="100" font-size="14" fill="var(--ink)" text-anchor="start" font-weight="700">h</text><text x="140" y="152" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">d</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do ângulo medido à distância calculada.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Os lados</strong><div class="hint">oposto, adjacente e hipotenusa</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>As razões</strong><div class="hint">seno, cosseno e tangente</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Ângulos notáveis</strong><div class="hint">30°, 45° e 60°</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Problemas</strong><div class="hint">achar lados e alturas</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Obtusos</strong><div class="hint">seno e cosseno de 90° a 180°</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Medir um morro sem subir nele</h2>
+          
+          
+          <p class="lede">Um <strong>teodolito</strong> só mede ângulos, mas topógrafos desenham mapas inteiros com ele. O segredo: no triângulo retângulo, conhecer <strong>um ângulo e um lado</strong> basta para descobrir todos os outros. A ferramenta é a <strong>trigonometria</strong>.</p>
+          <div class="grid2" style="margin-top:6px;">
+            <svg viewBox="0 0 290 175" style="width:100%;max-width:290px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="213.6,36 76.3,139 213.6,139" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><path d="M202.6,139 L202.6,128 L213.6,128" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="110.3" y="132" fill="var(--growth)" font-size="17" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >θ</text><text x="221.6" y="91.5" fill="var(--decay)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">cateto oposto</text><text x="144.9" y="156" fill="var(--success)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">cateto adjacente</text><text x="134.9" y="79.5" fill="var(--primary)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">hipotenusa</text></svg>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual cateto fica “de frente” (oposto) ao ângulo θ?</p><button class="choice mqo" data-i="0">o horizontal, junto ao ângulo</button><button class="choice mqo" data-i="1">o vertical, do outro lado</button><button class="choice mqo" data-i="2">a hipotenusa</button><button class="choice mqo" data-i="3">nenhum deles</button><div class="fb"></div><div class="answer"><p>O <strong>oposto</strong> é o cateto que não toca o ângulo θ; o <strong>adjacente</strong> é o que toca, e a hipotenusa fica de frente para o ângulo reto.</p></div></div>
           </div>
+        
         </div>
       </section>
 
@@ -351,21 +360,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Medir um morro sem subir nele</h2>
-          
-          <p class="lede">Um <strong>teodolito</strong> só mede ângulos, mas topógrafos desenham mapas inteiros com ele. O segredo: no triângulo retângulo, conhecer <strong>um ângulo e um lado</strong> basta para descobrir todos os outros. A ferramenta é a <strong>trigonometria</strong>.</p>
-          <div class="grid2" style="margin-top:6px;">
-            <svg viewBox="0 0 290 175" style="width:100%;max-width:290px;height:auto;display:block;margin:6px auto;" role="img" aria-hidden="true"><polygon points="213.6,36 76.3,139 213.6,139" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2.4" stroke-linejoin="round"/><path d="M202.6,139 L202.6,128 L213.6,128" fill="none" stroke="var(--ink)" stroke-width="1.5"/><text x="110.3" y="132" fill="var(--growth)" font-size="17" font-family="Source Serif 4, serif" font-style="italic" text-anchor="middle" >θ</text><text x="221.6" y="91.5" fill="var(--decay)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="start">cateto oposto</text><text x="144.9" y="156" fill="var(--success)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">cateto adjacente</text><text x="134.9" y="79.5" fill="var(--primary)" font-size="11" font-family="Archivo, sans-serif" font-weight="700" text-anchor="end">hipotenusa</text></svg>
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Qual cateto fica “de frente” (oposto) ao ângulo θ?</p><button class="choice mqo" data-i="0">o horizontal, junto ao ângulo</button><button class="choice mqo" data-i="1">o vertical, do outro lado</button><button class="choice mqo" data-i="2">a hipotenusa</button><button class="choice mqo" data-i="3">nenhum deles</button><div class="fb"></div><div class="answer"><p>O <strong>oposto</strong> é o cateto que não toca o ângulo θ; o <strong>adjacente</strong> é o que toca, e a hipotenusa fica de frente para o ângulo reto.</p></div></div>
-          </div>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -386,7 +380,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -414,50 +407,40 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Exemplo resolvido</div>
+          <div class="eyebrow primary">Exemplo resolvido passo a passo</div>
           <h2 class="title">Altura de uma árvore</h2>
           
+          
           <p class="lede">A <span class="tex">20</span> m do pé de uma árvore, o ângulo de elevação do topo é <span class="tex">60°</span>. Qual a altura da árvore? (use <span class="tex"><span class="rt">√<span class="rr">3</span></span> ≈ 1,73</span>)</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Esboço</strong><div class="hint">Cateto adjacente <span class="tex">20</span> m (distância), cateto oposto <span class="tex"><i>h</i></span> (altura), ângulo <span class="tex">60°</span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Razão certa</strong><div class="hint">Oposto e adjacente: a <strong>tangente</strong>. <span class="tex">tg 60° = <span class="fr"><span><i>h</i></span><span>20</span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"><i>h</i> = 20 · <span class="rt">√<span class="rr">3</span></span> ≈ 20 · 1,73 = 34,6</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A árvore tem cerca de <span class="tex">34,6</span> m.</p></div>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Esboço</strong><div class="hint">Cateto adjacente <span class="tex">20</span> m (distância), cateto oposto <span class="tex"><i>h</i></span> (altura), ângulo <span class="tex">60°</span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Razão certa</strong><div class="hint">Oposto e adjacente: a <strong>tangente</strong>. <span class="tex">tg 60° = <span class="fr"><span><i>h</i></span><span>20</span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"><i>h</i> = 20 · <span class="rt">√<span class="rr">3</span></span> ≈ 20 · 1,73 = 34,6</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A árvore tem cerca de <span class="tex">34,6</span> m.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
+          <div class="eyebrow growth">Exemplo resolvido passo a passo</div>
           <h2 class="title">Comprimento de uma rampa</h2>
           
-          <p class="lede">Uma rampa forma <span class="tex">30°</span> com o chão e sobe <span class="tex">3</span> m. Qual o comprimento da rampa?</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Esboço</strong><div class="hint">Altura é o cateto oposto (<span class="tex">3</span> m); a rampa é a hipotenusa <span class="tex"><i>x</i></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Razão certa</strong><div class="hint">Oposto e hipotenusa: o <strong>seno</strong>. <span class="tex">sen 30° = <span class="fr"><span>3</span><span><i>x</i></span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">3</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"> <span class="fr"><span>1</span><span>2</span></span> = <span class="fr"><span>3</span><span><i>x</i></span></span></span> ⇒ <span class="tex"><i>x</i> = 6</span> m.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A rampa mede <span class="tex">6</span> m.</p></div>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Exemplo resolvido</div>
-          <h2 class="title">Triângulo retângulo isósceles</h2>
           
-          <p class="lede">A diagonal de um quadrado de lado <span class="tex">8</span> cm forma com um lado um ângulo de <span class="tex">45°</span>. Calcule a diagonal.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
-            <div class="step-row"><span class="badge">1</span><div><strong>Razão certa</strong><div class="hint">Lado (adjacente) e diagonal (hipotenusa): o <strong>cosseno</strong>. <span class="tex">cos 45° = <span class="fr"><span>8</span><span><i>d</i></span></span></span>.</div></div></div>
-            <div class="step-row"><span class="badge">2</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"> <span class="fr"><span><span class="rt">√<span class="rr">2</span></span></span><span>2</span></span> = <span class="fr"><span>8</span><span><i>d</i></span></span></span> ⇒ <span class="tex"><i>d</i> = <span class="fr"><span>16</span><span><span class="rt">√<span class="rr">2</span></span></span></span> = 8<span class="rt">√<span class="rr">2</span></span> ≈ 11,3</span> cm.</div></div></div>
-          </div>
-          <div class="callout success"><h4>Resultado</h4><p>A diagonal mede <span class="tex">8<span class="rt">√<span class="rr">2</span></span> ≈ 11,3</span> cm.</p></div>
+          <p class="lede">Uma rampa forma <span class="tex">30°</span> com o chão e sobe <span class="tex">3</span> m. Qual o comprimento da rampa?</p>
+          <div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv on"><span class="badge">1</span><div><strong>Esboço</strong><div class="hint">Altura é o cateto oposto (<span class="tex">3</span> m); a rampa é a hipotenusa <span class="tex"><i>x</i></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Razão certa</strong><div class="hint">Oposto e hipotenusa: o <strong>seno</strong>. <span class="tex">sen 30° = <span class="fr"><span>3</span><span><i>x</i></span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">3</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"> <span class="fr"><span>1</span><span>2</span></span> = <span class="fr"><span>3</span><span><i>x</i></span></span></span> ⇒ <span class="tex"><i>x</i> = 6</span> m.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A rampa mede <span class="tex">6</span> m.</p></div></div><button class="reveal rv-btn" type="button" data-label="Mostrar próxima etapa">Mostrar próxima etapa →</button></div>
+          
+        
         </div>
       </section>
 
@@ -481,51 +464,64 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow primary">Praticando</div>
-          <h2 class="title">Altura do poste</h2>
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Triângulo retângulo isósceles</h2>
           
-          <p class="lede">Um fio esticado do topo de um poste ao chão forma <span class="tex">30°</span> com o solo e mede <span class="tex">12</span> m. A altura do poste é:</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">4 m</button><button class="choice mqo" data-i="1">6 m</button><button class="choice mqo" data-i="2"><span class="tex">6<span class="rt">√<span class="rr">3</span></span></span> m</button><button class="choice mqo" data-i="3">12 m</button><div class="fb"></div><div class="answer"><p>Altura é o oposto e o fio, a hipotenusa: <span class="tex">sen 30° = <i>h</i> ÷ 12</span> ⇒ <span class="tex"><i>h</i> = 12 · <span class="fr"><span>1</span><span>2</span></span> = 6</span> m. <strong>Alternativa B.</strong></p></div></div>
           
+          <p class="lede">A diagonal de um quadrado de lado <span class="tex">8</span> cm forma com um lado um ângulo de <span class="tex">45°</span>. Calcule a diagonal.</p>
+          <p class="hint" style="margin-top:2px;">Pare e tente sozinho (ou em dupla) por 1 minuto. Revele uma etapa por vez só para conferir o seu caminho.</p><div data-rv><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+            <div class="step-row rv"><span class="badge">1</span><div><strong>Razão certa</strong><div class="hint">Lado (adjacente) e diagonal (hipotenusa): o <strong>cosseno</strong>. <span class="tex">cos 45° = <span class="fr"><span>8</span><span><i>d</i></span></span></span>.</div></div></div>
+            <div class="step-row rv"><span class="badge">2</span><div><strong>Cálculo</strong><div class="hint"><span class="tex"> <span class="fr"><span><span class="rt">√<span class="rr">2</span></span></span><span>2</span></span> = <span class="fr"><span>8</span><span><i>d</i></span></span></span> ⇒ <span class="tex"><i>d</i> = <span class="fr"><span>16</span><span><span class="rt">√<span class="rr">2</span></span></span></span> = 8<span class="rt">√<span class="rr">2</span></span> ≈ 11,3</span> cm.</div></div></div>
+          </div><div class="rv"><div class="callout success"><h4>Resultado</h4><p>A diagonal mede <span class="tex">8<span class="rt">√<span class="rr">2</span></span> ≈ 11,3</span> cm.</p></div></div><button class="reveal rv-btn" type="button" data-label="Revelar uma etapa">Revelar uma etapa →</button></div>
+          
+        
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Praticando</div>
-          <h2 class="title">Sombra</h2>
-          
-          <p class="lede">Quando o ângulo de elevação do Sol é <span class="tex">45°</span>, uma estaca de <span class="tex">2</span> m projeta uma sombra de:</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1 m</button><button class="choice mqo" data-i="1"><span class="tex"><span class="rt">√<span class="rr">2</span></span></span> m</button><button class="choice mqo" data-i="2">2 m</button><button class="choice mqo" data-i="3">4 m</button><div class="fb"></div><div class="answer"><p><span class="tex">tg 45° = 1 = 2 ÷ <i>s</i></span> ⇒ <span class="tex"><i>s</i> = 2</span> m. <strong>Alternativa C.</strong></p></div></div>
-          
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Agora é com você</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um fio esticado do topo de um poste ao chão forma <span class="tex">30°</span> com o solo e mede <span class="tex">12</span> m. A altura do poste é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>4 m</li><li>6 m</li><li><span class="tex">6<span class="rt">√<span class="rr">3</span></span></span> m</li><li>12 m</li></ol></div>
+<div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">2. Quando o ângulo de elevação do Sol é <span class="tex">45°</span>, uma estaca de <span class="tex">2</span> m projeta uma sombra de:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>1 m</li><li><span class="tex"><span class="rt">√<span class="rr">2</span></span></span> m</li><li>2 m</li><li>4 m</li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow decay">Praticando</div>
+          <div class="eyebrow primary">Prática independente</div>
           <h2 class="title">Obtusos</h2>
-          
-          <p class="lede">O valor de <span class="tex">cos 150°</span> é:</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">−<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span></button><button class="choice mqo" data-i="1"><span class="tex">−<span class="fr"><span>1</span><span>2</span></span></span></button><button class="choice mqo" data-i="2"><span class="tex"><span class="fr"><span>1</span><span>2</span></span></span></button><button class="choice mqo" data-i="3"><span class="tex"><span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span></button><div class="fb"></div><div class="answer"><p><span class="tex">cos 150° = −cos 30° = −<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span>. <strong>Alternativa A.</strong></p></div></div>
-          
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="grid2" style="margin-top:6px;"><div class="card" style="margin-top:8px;"><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">3. O valor de <span class="tex">cos 150°</span> é:</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">−<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span></li><li><span class="tex">−<span class="fr"><span>1</span><span>2</span></span></span></li><li><span class="tex"><span class="fr"><span>1</span><span>2</span></span></span></li><li><span class="tex"><span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span></li></ol></div></div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Estilo ENEM</div>
+          <div class="eyebrow primary">Prática independente · Estilo ENEM</div>
           <h2 class="title">Escada e ângulo</h2>
-          
-          <p class="lede">Uma escada de <span class="tex">10</span> m apoiada em uma parede forma <span class="tex">60°</span> com o chão. A altura que ela alcança na parede é, em metros, aproximadamente (use <span class="tex"><span class="rt">√<span class="rr">3</span></span> ≈ 1,7</span>):</p>
-          <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">5,0</button><button class="choice mqo" data-i="1">7,1</button><button class="choice mqo" data-i="2">8,5</button><button class="choice mqo" data-i="3">10,0</button><button class="choice mqo" data-i="4">17,0</button><div class="fb"></div><div class="answer"><p>Altura é o cateto oposto: <span class="tex">sen 60° = <span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span> ⇒ <span class="tex"><i>h</i> = 10 · 0,85 = 8,5</span> m. <strong>Alternativa C.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Questão original, no formato do ENEM.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">4. Uma escada de <span class="tex">10</span> m apoiada em uma parede forma <span class="tex">60°</span> com o chão. A altura que ela alcança na parede é, em metros, aproximadamente (use <span class="tex"><span class="rt">√<span class="rr">3</span></span> ≈ 1,7</span>):</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>5,0</li><li>7,1</li><li>8,5</li><li>10,0</li><li>17,0</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa B</strong><p style="font-size:.86rem;margin-top:6px;">Altura é o oposto e o fio, a hipotenusa: <span class="tex">sen 30° = <i>h</i> ÷ 12</span> ⇒ <span class="tex"><i>h</i> = 12 · <span class="fr"><span>1</span><span>2</span></span> = 6</span> m.</p></div>
+<div class="card success"><strong>2. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">tg 45° = 1 = 2 ÷ <i>s</i></span> ⇒ <span class="tex"><i>s</i> = 2</span> m.</p></div>
+<div class="card success"><strong>3. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">cos 150° = −cos 30° = −<span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span>.</p></div>
+<div class="card success"><strong>4. Alternativa C</strong><p style="font-size:.86rem;margin-top:6px;">Altura é o cateto oposto: <span class="tex">sen 60° = <span class="fr"><span><span class="rt">√<span class="rr">3</span></span></span><span>2</span></span></span> ⇒ <span class="tex"><i>h</i> = 10 · 0,85 = 8,5</span> m.</p></div></div>
         </div>
       </section>
 
@@ -544,12 +540,28 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Razões</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">sen θ = <span class="fr"><span>oposto</span><span>hipotenusa</span></span></span>, <span class="tex">cos θ = <span class="fr"><span>adjacente</span><span>hipotenusa</span></span></span>, <span class="tex">tg θ = <span class="fr"><span>oposto</span><span>adjacente</span></span></span>.</p></div>
+            <div class="card"><span class="badge">Notáveis</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">30°</span>, <span class="tex">45°</span> e <span class="tex">60°</span> têm valores exatos, com <span class="tex"><span class="rt">√<span class="rr">2</span></span></span> e <span class="tex"><span class="rt">√<span class="rr">3</span></span></span>.</p></div>
+            <div class="card"><span class="badge">Obtusos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">sen <i>x</i> = sen (180° − <i>x</i>)</span> e <span class="tex">cos <i>x</i> = −cos (180° − <i>x</i>)</span>.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com um ângulo e um lado, o triângulo retângulo entrega todo o resto. Na próxima aula: triângulos quaisquer, com a lei dos senos.</p>
+          </div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. O seno de um ângulo agudo é a razão entre:</p>
@@ -591,23 +603,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Razões</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">sen θ = <span class="fr"><span>oposto</span><span>hipotenusa</span></span></span>, <span class="tex">cos θ = <span class="fr"><span>adjacente</span><span>hipotenusa</span></span></span>, <span class="tex">tg θ = <span class="fr"><span>oposto</span><span>adjacente</span></span></span>.</p></div>
-            <div class="card"><span class="badge">Notáveis</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">30°</span>, <span class="tex">45°</span> e <span class="tex">60°</span> têm valores exatos, com <span class="tex"><span class="rt">√<span class="rr">2</span></span></span> e <span class="tex"><span class="rt">√<span class="rr">3</span></span></span>.</p></div>
-            <div class="card"><span class="badge">Obtusos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">sen <i>x</i> = sen (180° − <i>x</i>)</span> e <span class="tex">cos <i>x</i> = −cos (180° − <i>x</i>)</span>.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Com um ângulo e um lado, o triângulo retângulo entrega todo o resto. Na próxima aula: triângulos quaisquer, com a lei dos senos.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -627,7 +638,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 18</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -1034,3 +1045,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

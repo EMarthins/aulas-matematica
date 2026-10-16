@@ -266,6 +266,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="slides" id="slides">
 
       <!-- 0 CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 300" style="position:absolute;right:-20px;bottom:0px;width:min(58%,540px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -277,54 +279,50 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="470" cy="165" r="7" fill="var(--decay)"/>
           </svg>
           <div class="eyebrow">Matemática · 3ª série · Trimestre 3 · Parte 2 de 2</div>
-          <h1 class="disp" style="font-size:clamp(1.9rem,5vw,3.3rem);font-weight:900;line-height:.98;margin:0 0 10px;max-width:17ch;">Cosseno, tangente e a <span style="color:var(--primary);">relação fundamental</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:50ch;">Completando o trio trigonométrico — e descobrindo a equação que liga seno e cosseno para sempre.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Cosseno, tangente e a <span style="color:var(--primary);">relação fundamental</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Completando o trio trigonométrico — e descobrindo a equação que liga seno e cosseno para sempre.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Conforme a posição do sol muda ao longo do dia, a sombra de uma árvore também muda de tamanho. Como criar um modelo matemático para essa situação?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">AULAS 88, 90–92</span>
             <span class="badge" style="color:var(--decay-ink);background:var(--decay-soft);border-color:transparent;">sen²θ + cos²θ = 1</span>
             <span class="badge">H8</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
-        </div>
-      </section>
-
-      <!-- 1 ROTEIRO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Fechando o trio de razões trigonométricas e amarrando tudo numa única identidade.</p>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px;">
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">01</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
-              <div><strong>Razão cosseno</strong><div class="hint">cateto adjacente sobre hipotenusa</div></div>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
             </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--decay);border-radius:14px;background:var(--decay-soft);">
-              <span class="badge" style="color:var(--decay-ink);background:var(--surface);">02</span>
-              <svg class="icon decay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 20 4M14 4h6v6"/></svg>
-              <div><strong>Razão tangente</strong><div class="hint" style="color:var(--decay-ink);opacity:.8;">cateto oposto sobre cateto adjacente</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">03</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
-              <div><strong>Ângulos notáveis completos</strong><div class="hint">seno, cosseno e tangente de 30°, 45° e 60°</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">04</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M4 20 12 4l8 16M12 4v16"/></svg>
-              <div><strong>Relação fundamental</strong><div class="hint">sen²θ + cos²θ = 1, direto do Teorema de Pitágoras</div></div>
-            </div>
-            <div style="display:flex;gap:14px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;">
-              <span class="badge">05</span>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 20 4M14 4h6v6"/></svg>
-              <div><strong>Questões do ENEM</strong><div class="hint">túnel triangular, pipa e mais</div></div>
-            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="168" width="320" height="32" rx="0" fill="var(--surface)" /><line x1="0" y1="168" x2="320" y2="168" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="220" y="26" width="30" height="142" rx="3" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><path d="M214 26 L235 6 L256 26 Z" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="132" r="8" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><line x1="60" y1="140" x2="60" y2="168" stroke="var(--growth)" stroke-width="3" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="40" stroke="var(--decay)" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="132" x2="235" y2="132" stroke="var(--ink-soft)" stroke-width="1.5" stroke-linecap="round"/><path d="M96 132 A36 36 0 0 0 91 113" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="112" y="126" font-size="14" fill="var(--primary)" text-anchor="start" font-weight="700">θ</text><text x="258" y="100" font-size="14" fill="var(--ink)" text-anchor="start" font-weight="700">h</text><text x="140" y="152" font-size="13" fill="var(--ink)" text-anchor="middle" font-weight="700">d</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
           </div>
         </div>
       </section>
 
-      <!-- 2 OBJETIVOS -->
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">A sombra que muda com o sol</h2>
+          
+          <p class="lede">Conforme a posição do sol muda ao longo do dia, a sombra de uma árvore também muda de tamanho. Como criar um modelo matemático para essa situação?</p>
+          <div class="grid2">
+            <div class="card">
+              <strong>Montando o triângulo</strong>
+              <p style="margin-top:6px;font-size:.9rem;">Construindo um triângulo retângulo com o ângulo de inclinação do raio de sol, a altura da árvore (cateto oposto) e sua sombra no chão (cateto adjacente).</p>
+            </div>
+            <div class="card decay">
+              <strong style="color:var(--decay-ink);">A razão que entra em cena</strong>
+              <p style="margin-top:6px;font-size:.9rem;">A razão que relaciona hipotenusa, cateto adjacente e o ângulo entre eles é o <strong>cosseno</strong>.</p>
+            </div>
+          </div>
+          <div class="callout decay" style="margin-top:14px;">
+            <h4>O que falta no trio</h4>
+            <p>Com seno (Parte 1) e cosseno de hoje, falta apenas uma razão para completar o conjunto: a tangente.</p>
+          </div>
+        
+        </div>
+      </section>
+
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Objetivos da aula</div>
@@ -348,30 +346,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 3 GANCHO -->
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">A sombra que muda com o sol</h2>
-          <p class="lede">Conforme a posição do sol muda ao longo do dia, a sombra de uma árvore também muda de tamanho. Como criar um modelo matemático para essa situação?</p>
-          <div class="grid2">
-            <div class="card">
-              <strong>Montando o triângulo</strong>
-              <p style="margin-top:6px;font-size:.9rem;">Construindo um triângulo retângulo com o ângulo de inclinação do raio de sol, a altura da árvore (cateto oposto) e sua sombra no chão (cateto adjacente).</p>
-            </div>
-            <div class="card decay">
-              <strong style="color:var(--decay-ink);">A razão que entra em cena</strong>
-              <p style="margin-top:6px;font-size:.9rem;">A razão que relaciona hipotenusa, cateto adjacente e o ângulo entre eles é o <strong>cosseno</strong>.</p>
-            </div>
-          </div>
-          <div class="callout decay" style="margin-top:14px;">
-            <h4>O que falta no trio</h4>
-            <p>Com seno (Parte 1) e cosseno de hoje, falta apenas uma razão para completar o conjunto: a tangente.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4 TEORIA: COSSENO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 88 · Teoria</div>
@@ -395,7 +369,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 5 ATIVIDADE: COSSENO RÁPIDO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 1 · No quadro, oral</div>
@@ -409,7 +382,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 6 TEORIA: TANGENTE -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aulas 90–91 · Teoria</div>
@@ -433,7 +405,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 7 EXEMPLO: PRÉDIO IFPR -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Vamos fazer juntos</div>
@@ -448,7 +419,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 8 ENEM: TÚNEL -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2022 PPL — Questão 159</div>
@@ -472,7 +442,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 9 ATIVIDADE: PERGOLADO -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 2 · Em duplas</div>
@@ -488,7 +457,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 10 ÂNGULOS NOTÁVEIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Ângulos notáveis</div>
@@ -509,7 +477,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 11 TEORIA: RELAÇÃO FUNDAMENTAL -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Aula 92 · Teoria</div>
@@ -527,7 +494,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 12 ATIVIDADE: VF + TANGENTE = SEN/COS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Atividade 3 · No quadro, oral</div>
@@ -545,7 +511,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 13 ENEM: PIPA -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">No ENEM é assim · ENEM 2024 PPL — Questão 153</div>
@@ -571,7 +536,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 14 ATIVIDADE: PRATIQUE MAIS -->
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Pratique mais</div>
@@ -584,7 +548,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 15 SÍNTESE -->
+      <section class="slide">
+        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="eyebrow">Fim da unidade</div>
+          <h2 class="title">Você completou a trigonometria no triângulo retângulo!</h2>
+          <p class="lede">Das relações métricas às três razões trigonométricas e à relação fundamental — agora é hora de revisar tudo com o guia visual da unidade completa.</p>
+          <div class="card" style="margin-top:16px;">
+            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
+            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
+              BONJORNO, GIOVANNI JR.; CÂMARA, P. <em>Matemática Ensino Médio: Geometria e Trigonometria</em> — Coleção Prisma. São Paulo: FTD, 2020.<br>
+              JOTA, Lafayette (Org.). <em>Matemática — O ciclo trigonométrico, as funções e as equações trigonométricas</em>. Módulo 5. São Paulo: FTD, 2017.<br>
+              Questões adaptadas do ENEM (INEP) 2020, 2022 PPL, 2024 PPL, e do CEDERJ.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Síntese</div>
@@ -598,15 +577,15 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <h4>A equação que amarra tudo</h4>
             <p><strong>sen²θ + cos²θ = 1</strong> — direto do Teorema de Pitágoras, vale para qualquer ângulo agudo θ de um triângulo retângulo, e mostra que seno e cosseno nunca são independentes um do outro.</p>
           </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Conforme a posição do sol muda ao longo do dia, a sombra de uma árvore também muda de tamanho. Como criar um modelo matemático para essa situação?</p></div>
         </div>
       </section>
 
-      <!-- 16 QUIZ FINAL -->
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. cos α é a razão entre:</p>
@@ -648,22 +627,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-      <!-- 17 ENCERRAMENTO -->
+      
       <section class="slide">
-        <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
-          <div class="eyebrow">Fim da unidade</div>
-          <h2 class="title">Você completou a trigonometria no triângulo retângulo!</h2>
-          <p class="lede">Das relações métricas às três razões trigonométricas e à relação fundamental — agora é hora de revisar tudo com o guia visual da unidade completa.</p>
-          <div class="card" style="margin-top:16px;">
-            <strong style="font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);">Referências</strong>
-            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px;line-height:1.6;">
-              BONJORNO, GIOVANNI JR.; CÂMARA, P. <em>Matemática Ensino Médio: Geometria e Trigonometria</em> — Coleção Prisma. São Paulo: FTD, 2020.<br>
-              JOTA, Lafayette (Org.). <em>Matemática — O ciclo trigonométrico, as funções e as equações trigonométricas</em>. Módulo 5. São Paulo: FTD, 2017.<br>
-              Questões adaptadas do ENEM (INEP) 2020, 2022 PPL, 2024 PPL, e do CEDERJ.
-            </p>
+        <div class="slide-inner">
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
+          
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
+          <div class="grid3" style="margin-top:10px;">
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
     </div>
 
@@ -961,3 +940,27 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 })();
 </script>
 <script src="../../../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

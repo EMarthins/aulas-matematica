@@ -35,3 +35,17 @@ Eixos: **História** pergunta → contexto → causas → acontecimentos → fon
 Regras: fontes primárias e imagens com legenda e procedência; separar fatos documentados, interpretações de historiadores e opiniões dos alunos; evitar causa única e inevitabilidade; em mapas e gráficos, fonte, período, unidade e escala; debate sempre ligado ao objetivo.
 
 Terceira estrutura, a definir: aula de **revisão e preparação para avaliações**.
+
+## Conversão das aulas antigas (16/10/2026)
+
+As aulas que já existiam (decks antigos: capa, roteiro, objetivos, gancho, teoria, exemplos, "Praticando", quiz, síntese) foram **reorganizadas na estrutura padrão sem criar conteúdo novo**, pelo script `scripts/reestruturar/reestruturar.js` (idempotente; roda sozinho no começo de `node scripts/preparar.js`, então um deck regenerado por um gerador antigo volta ao padrão).
+
+O que o script faz em cada aula (Exatas e, de forma geral, as demais matérias):
+- **Capa → abertura**: imagem de contextualização original (43 cenas em `scripts/gerador-padrao/ilus.js` + `ilus2.js`, escolhida pelo assunto) e a pergunta "Pense nisto" tirada do próprio gancho.
+- "Para início de conversa" → **Conhecimentos prévios** (logo depois da abertura); "Roteiro" sai; objetivos ficam.
+- "Exemplo resolvido" → **passo a passo**, com as etapas reveladas uma a uma (botão); o último exemplo (se houver 2+) vira **Prática guiada** ("tente antes de revelar"); com um só exemplo, a 1ª questão interativa faz o papel de guiada.
+- "Praticando" / "Estilo SAEB/ENEM" → **Prática independente SEM resposta** (2 questões por slide) + **Correção comentada** (gabarito e comentário que já existiam na questão).
+- "Cuidados" passa para depois da correção; "Síntese" ganha a **pergunta de revisão** (retoma o gancho); "Desafio final" vira **Exit ticket**; novo slide **"O que ainda ficou difícil?"** (autoavaliação guardada no aparelho).
+- Em Humanas (História, Geografia, Filosofia, Sociologia, Arte, Português, Inglês, Ed. Física) o nome da etapa é "Atividade de aplicação". A estrutura completa de Humanas (fonte/evidência e análise/comparação) só existe nas aulas feitas direto no `gerador-padrao` (Português 6º ano); nas demais é uma adaptação.
+
+Conferência automática: `node scripts/reestruturar/conferir.js` (seções/divs balanceadas, 1 slide ativo, ordem das etapas, imagem na capa). Relatório de trimestres: `node scripts/reestruturar/auditoria-trimestres.js` → `docs/auditoria-trimestres.md`.

@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,30 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">ENA · PROFMAT · Capítulo 9 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Contagem: <span style="color:var(--primary);">princípio multiplicativo</span> e fórmulas</h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Etapas independentes se multiplicam; casos que não se misturam se somam. Fatorial, arranjo, permutação e combinação, e a pergunta de ouro: a ordem importa?</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Contagem: <span style="color:var(--primary);">princípio multiplicativo</span> e fórmulas</h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Etapas independentes se multiplicam; casos que não se misturam se somam. Fatorial, arranjo, permutação e combinação, e a pergunta de ouro: a ordem importa?</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Marina tem <strong>4 camisas</strong> e <strong>3 calças</strong>. Quantos <strong>looks</strong> diferentes (uma camisa e uma calça) ela pode montar?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">3 questões em 60</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">n! · A(n,k) · C(n,k)</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">Comece pelo mais restrito</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="70" y="52" width="60" height="90" rx="8" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="100" y="108" font-size="20" fill="var(--ink)" text-anchor="middle" font-weight="700">A</text><rect x="104" y="46" width="60" height="90" rx="8" fill="var(--growth-soft)" stroke="var(--growth)" stroke-width="2"/><text x="134" y="102" font-size="20" fill="var(--ink)" text-anchor="middle" font-weight="700">K</text><rect x="138" y="40" width="60" height="90" rx="8" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><text x="168" y="96" font-size="20" fill="var(--ink)" text-anchor="middle" font-weight="700">Q</text><rect x="172" y="46" width="60" height="90" rx="8" fill="var(--success-soft)" stroke="var(--success)" stroke-width="2"/><text x="202" y="102" font-size="20" fill="var(--ink)" text-anchor="middle" font-weight="700">J</text><rect x="206" y="52" width="60" height="90" rx="8" fill="var(--primary-soft)" stroke="var(--primary)" stroke-width="2"/><text x="236" y="108" font-size="20" fill="var(--ink)" text-anchor="middle" font-weight="700">10</text><text x="160" y="188" font-size="12" fill="var(--ink-soft)" text-anchor="middle" font-weight="700">de quantas maneiras?</text></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Contar sem listar: três ideias bastam.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Multiplicar ou somar?</strong><div class="hint">etapas “e” × casos “ou”</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Fatorial</strong><div class="hint">n! e 0! = 1</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>Regra de ouro</strong><div class="hint">comece pela etapa mais restrita (ENA 2025 Q2)</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Arranjo, permutação, combinação</strong><div class="hint">a ordem importa?</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><div><strong>Senhas sem repetição vizinha</strong><div class="hint">ENA 2026 Q12</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Camisas e calças</h2>
+          
+          
+          <p class="lede">Marina tem <strong>4 camisas</strong> e <strong>3 calças</strong>. Quantos <strong>looks</strong> diferentes (uma camisa e uma calça) ela pode montar?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Número de looks:</p><button class="choice mqo" data-i="0">7</button><button class="choice mqo" data-i="1">12</button><button class="choice mqo" data-i="2">24</button><button class="choice mqo" data-i="3">3</button><div class="fb"></div><div class="answer"><p>Para cada camisa (4 escolhas) há 3 calças: <span class="tex">4 × 3 = 12</span>. As etapas são independentes e ligadas por “e” → <strong>multiplica-se</strong>. Se fosse “uma camisa <em>ou</em> uma calça” (casos que não se misturam), somaríamos: 7.</p></div></div>
+            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Monte os looks</b></p><div class="row"><div><label>camisas</label><input type="number" id="k1-c" value="4" step="1" min="1" max="6"></div><div><label>calças</label><input type="number" id="k1-p" value="3" step="1" min="1" max="6"></div></div><div id="k1-r" style="margin-top:8px;font-size:.85rem;line-height:1.6;max-height:7em;overflow:auto;"></div><p class="hint" id="k1-h" style="margin-top:6px;"></p></div>
           </div>
+        
         </div>
       </section>
 
@@ -352,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Camisas e calças</h2>
-          
-          <p class="lede">Marina tem <strong>4 camisas</strong> e <strong>3 calças</strong>. Quantos <strong>looks</strong> diferentes (uma camisa e uma calça) ela pode montar?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Número de looks:</p><button class="choice mqo" data-i="0">7</button><button class="choice mqo" data-i="1">12</button><button class="choice mqo" data-i="2">24</button><button class="choice mqo" data-i="3">3</button><div class="fb"></div><div class="answer"><p>Para cada camisa (4 escolhas) há 3 calças: <span class="tex">4 × 3 = 12</span>. As etapas são independentes e ligadas por “e” → <strong>multiplica-se</strong>. Se fosse “uma camisa <em>ou</em> uma calça” (casos que não se misturam), somaríamos: 7.</p></div></div>
-            <div class="wid"><p class="small" style="margin:0 0 4px;"><b>Monte os looks</b></p><div class="row"><div><label>camisas</label><input type="number" id="k1-c" value="4" step="1" min="1" max="6"></div><div><label>calças</label><input type="number" id="k1-p" value="3" step="1" min="1" max="6"></div></div><div id="k1-r" style="margin-top:8px;font-size:.85rem;line-height:1.6;max-height:7em;overflow:auto;"></div><p class="hint" id="k1-h" style="margin-top:6px;"></p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · princípios</div>
@@ -383,7 +377,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Regra de ouro</div>
@@ -396,19 +389,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2025 · Q2</div>
-          <h2 class="title">Ímpares de quatro algarismos distintos</h2>
-          
-          <p class="lede">Quantos são os números inteiros positivos <strong>ímpares</strong> de quatro algarismos <strong>distintos</strong>?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1960</button><button class="choice mqo" data-i="1">2240</button><button class="choice mqo" data-i="2">2520</button><button class="choice mqo" data-i="3">2800</button><button class="choice mqo" data-i="4">4536</button><div class="fb"></div><div class="answer"><p>Unidades: <span class="tex">1, 3, 5, 7, 9</span> → 5. Milhar: não pode ser 0 nem o das unidades → 8. Centena: sobram <span class="tex">10 − 2 = 8</span>. Dezena: <span class="tex">10 − 3 = 7</span>. Total <span class="tex">5 · 8 · 8 · 7 = 2240</span>. <strong>Alternativa B.</strong> (Se começasse pelo milhar, teria de separar o caso “unidade já usada”.)</p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -431,7 +411,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Treino 9.3</div>
@@ -447,7 +426,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Padrão que cai</div>
@@ -462,15 +440,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q12</div>
-          <h2 class="title">Senha de 6 dígitos sem iguais consecutivos</h2>
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Ímpares de quatro algarismos distintos</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
           
-          <p class="lede">Uma senha tem 6 dígitos (0 a 9) e <strong>não pode ter dígitos iguais consecutivos</strong> (ex.: 344563 é inválida; 345463 e 021413 são válidas). Quantas senhas são possíveis?</p>
-          <div class="mq" data-a="3"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0"><span class="tex">10<sup>6</sup></span></button><button class="choice mqo" data-i="1"><span class="tex">10 · 9<sup>6</sup></span></button><button class="choice mqo" data-i="2"><span class="tex">9<sup>6</sup></span></button><button class="choice mqo" data-i="3"><span class="tex">10 · 9<sup>5</sup></span></button><button class="choice mqo" data-i="4"><span class="tex">10 · 9 · 8<sup>4</sup></span></button><div class="fb"></div><div class="answer"><p>1º dígito: 10 opções. Cada um dos 5 seguintes: 9 opções (qualquer um exceto o anterior). Total: <span class="tex">10 · 9 · 9 · 9 · 9 · 9 = 10 · 9<sup>5</sup></span>. <strong>Alternativa D.</strong></p></div></div>
+          <p class="lede">Quantos são os números inteiros positivos <strong>ímpares</strong> de quatro algarismos <strong>distintos</strong>?</p>
+          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1960</button><button class="choice mqo" data-i="1">2240</button><button class="choice mqo" data-i="2">2520</button><button class="choice mqo" data-i="3">2800</button><button class="choice mqo" data-i="4">4536</button><div class="fb"></div><div class="answer"><p>Unidades: <span class="tex">1, 3, 5, 7, 9</span> → 5. Milhar: não pode ser 0 nem o das unidades → 8. Centena: sobram <span class="tex">10 − 2 = 8</span>. Dezena: <span class="tex">10 − 3 = 7</span>. Total <span class="tex">5 · 8 · 8 · 7 = 2240</span>. <strong>Alternativa B.</strong> (Se começasse pelo milhar, teria de separar o caso “unidade já usada”.)</p></div></div>
           <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">Senha de 6 dígitos sem iguais consecutivos</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Uma senha tem 6 dígitos (0 a 9) e <strong>não pode ter dígitos iguais consecutivos</strong> (ex.: 344563 é inválida; 345463 e 021413 são válidas). Quantas senhas são possíveis?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li><span class="tex">10<sup>6</sup></span></li><li><span class="tex">10 · 9<sup>6</sup></span></li><li><span class="tex">9<sup>6</sup></span></li><li><span class="tex">10 · 9<sup>5</sup></span></li><li><span class="tex">10 · 9 · 8<sup>4</sup></span></li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa D</strong><p style="font-size:.86rem;margin-top:6px;">1º dígito: 10 opções. Cada um dos 5 seguintes: 9 opções (qualquer um exceto o anterior). Total: <span class="tex">10 · 9 · 9 · 9 · 9 · 9 = 10 · 9<sup>5</sup></span>.</p></div></div>
         </div>
       </section>
 
@@ -489,12 +489,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Multiplicar/somar</span><p style="font-size:.85rem;margin-top:8px;">Etapas independentes (“e”) multiplicam; casos exclusivos (“ou”) somam.</p></div>
+            <div class="card"><span class="badge">Ordem importa?</span><p style="font-size:.85rem;margin-top:8px;">Sim: arranjo/multiplicativo. Não: combinação <span class="tex"><i>C</i>(<i>n</i>, <i>k</i>)</span>.</p></div>
+            <div class="card"><span class="badge">Mais restrito primeiro</span><p style="font-size:.85rem;margin-top:8px;">Ímpar → unidade primeiro; depois desconte o que foi usado.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Comece pela etapa mais restrita e pergunte se a ordem importa.</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Marina tem <strong>4 camisas</strong> e <strong>3 calças</strong>. Quantos <strong>looks</strong> diferentes (uma camisa e uma calça) ela pode montar?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Quantos números de 3 algarismos distintos existem?</p>
@@ -536,23 +553,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Multiplicar/somar</span><p style="font-size:.85rem;margin-top:8px;">Etapas independentes (“e”) multiplicam; casos exclusivos (“ou”) somam.</p></div>
-            <div class="card"><span class="badge">Ordem importa?</span><p style="font-size:.85rem;margin-top:8px;">Sim: arranjo/multiplicativo. Não: combinação <span class="tex"><i>C</i>(<i>n</i>, <i>k</i>)</span>.</p></div>
-            <div class="card"><span class="badge">Mais restrito primeiro</span><p style="font-size:.85rem;margin-top:8px;">Ímpar → unidade primeiro; depois desconte o que foi usado.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Comece pela etapa mais restrita e pergunte se a ordem importa.</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -572,7 +588,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 14</div>
+      <div class="rail-count" id="railCount">1 / 16</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -930,3 +946,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>

@@ -300,6 +300,8 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
 
 
       <!-- CAPA -->
+      
+      <!-- ABERTURA -->
       <section class="slide active">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;position:relative;">
           <svg viewBox="0 0 900 260" style="position:absolute;right:-30px;bottom:6px;width:min(62%,560px);height:auto;opacity:.9;pointer-events:none;" aria-hidden="true" class="cover-curve">
@@ -309,32 +311,37 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <circle cx="840" cy="30" r="8" fill="var(--primary)"/>
           </svg>
           <div class="eyebrow">ENA · PROFMAT · Capítulo 2 · Aula 1</div>
-          <h1 class="disp" style="font-size:clamp(2.1rem,5.6vw,3.9rem);font-weight:900;line-height:1.0;margin:0 0 10px;max-width:15ch;">Restos, divisibilidade e <span style="color:var(--primary);">MMC / MDC</span></h1>
-          <p class="subtitle" style="font-size:clamp(1rem,1.8vw,1.22rem);max-width:52ch;">Questões de “truque limpo”: quem conhece a ideia resolve em um minuto. Divisão euclidiana, o macete dos restos, critérios de divisibilidade, MMC, MDC e número de divisores.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <div class="grid2" style="align-items:center;gap:18px;">
+            <div>
+              <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Restos, divisibilidade e <span style="color:var(--primary);">MMC / MDC</span></h1>
+              <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Questões de “truque limpo”: quem conhece a ideia resolve em um minuto. Divisão euclidiana, o macete dos restos, critérios de divisibilidade, MMC, MDC e número de divisores.</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Dois sinais luminosos piscam, um a cada <strong>12 s</strong> e outro a cada <strong>18 s</strong>. Acabaram de piscar juntos. Daqui a quanto tempo piscam juntos de novo?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">5 questões em 60</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">n = d·q + r</span>
             <span class="badge" style="color:var(--decay);background:var(--decay-soft);border-color:transparent;">MMC × MDC = a × b</span>
           </div>
-          <button class="reveal" style="margin-top:22px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+              <button class="reveal" style="margin-top:18px;width:fit-content;" onclick="goTo(1)">Começar a aula →</button>
+            </div>
+            <figure class="fig-ctx" style="margin:0;text-align:center;"><svg viewBox="0 0 320 200" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;" role="img" aria-label="Ilustração original de contexto."><rect x="0" y="170" width="320" height="30" rx="0" fill="var(--surface)" /><line x1="0" y1="170" x2="320" y2="170" stroke="var(--line-strong)" stroke-width="2" stroke-linecap="round"/><rect x="60" y="20" width="26" height="130" rx="13" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="2"/><circle cx="73" cy="156" r="18" fill="var(--decay-soft)" stroke="var(--decay)" stroke-width="2"/><rect x="68" y="60" width="10" height="96" rx="0" fill="var(--decay)" /><line x1="88" y1="30" x2="100" y2="30" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="34" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">15</text><line x1="88" y1="52" x2="100" y2="52" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="56" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">10</text><line x1="88" y1="74" x2="100" y2="74" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="78" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">5</text><line x1="88" y1="96" x2="100" y2="96" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="100" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">0</text><line x1="88" y1="118" x2="100" y2="118" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="122" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">-5</text><line x1="88" y1="140" x2="100" y2="140" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="106" y="144" font-size="12" fill="var(--ink-soft)" text-anchor="start" font-weight="700">-10</text><line x1="190" y1="100" x2="300" y2="100" stroke="var(--ink-soft)" stroke-width="3" stroke-linecap="round"/><line x1="196" y1="94" x2="196" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="196" y="124" font-size="11" fill="var(--primary)" text-anchor="middle" font-weight="700">−3</text><line x1="212" y1="94" x2="212" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="212" y="124" font-size="11" fill="var(--primary)" text-anchor="middle" font-weight="700">−2</text><line x1="228" y1="94" x2="228" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="228" y="124" font-size="11" fill="var(--primary)" text-anchor="middle" font-weight="700">−1</text><line x1="244" y1="94" x2="244" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="244" y="124" font-size="11" fill="var(--growth)" text-anchor="middle" font-weight="700">0</text><line x1="260" y1="94" x2="260" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="260" y="124" font-size="11" fill="var(--growth)" text-anchor="middle" font-weight="700">1</text><line x1="276" y1="94" x2="276" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="276" y="124" font-size="11" fill="var(--growth)" text-anchor="middle" font-weight="700">2</text><line x1="292" y1="94" x2="292" y2="106" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/><text x="292" y="124" font-size="11" fill="var(--growth)" text-anchor="middle" font-weight="700">3</text><circle cx="212" cy="100" r="6" fill="var(--primary)" /></svg><figcaption style="font-size:.78rem;color:var(--ink-faint);margin-top:4px;">Ilustração original de contexto.</figcaption></figure>
+          </div>
         </div>
       </section>
 
 
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Roteiro</div>
-          <h2 class="title">A trilha de hoje</h2>
-          <p class="lede">Do resto da divisão ao calendário de eventos que se repetem.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-            <div class="step-row"><span class="badge">01</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></svg><div><strong>Divisão euclidiana</strong><div class="hint">n = d·q + r com 0 ≤ r < d</div></div></div>
-            <div class="step-row"><span class="badge">02</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 3a5.5 5.5 0 0 0-4 9.3c.8.8 1.5 1.6 1.5 3.2V17h6v-1.5c0-1.6.7-2.4 1.5-3.2A5.5 5.5 0 0 0 9.5 3Z"/><path d="M7 21h5"/></svg><div><strong>O macete dos restos</strong><div class="hint">ENA 2026 Q17: resto 220 por 451 → resto por 41</div></div></div>
-            <div class="step-row"><span class="badge">03</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><div><strong>Congruências</strong><div class="hint">potências e restos (3¹⁰⁰ por 4)</div></div></div>
-            <div class="step-row"><span class="badge">04</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><div><strong>Critérios de divisibilidade</strong><div class="hint">2, 3, 4, 5, 6, 8, 9, 10 e 11</div></div></div>
-            <div class="step-row"><span class="badge">05</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>MMC e MDC</strong><div class="hint">eventos repetidos × divisão em grupos iguais</div></div></div>
-            <div class="step-row"><span class="badge">06</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M4 19h16"/></svg><div><strong>Número de divisores</strong><div class="hint">expoentes + 1, multiplicados</div></div></div>
-            <div class="step-row"><span class="badge">07</span><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg><div><strong>Questões que já caíram</strong><div class="hint">ENA 2026 Q8 e Q17</div></div></div>
+          <div class="eyebrow growth">Conhecimentos prévios</div>
+          <h2 class="title">Dois sinais, um instante de encontro</h2>
+          
+          
+          <p class="lede">Dois sinais luminosos piscam, um a cada <strong>12 s</strong> e outro a cada <strong>18 s</strong>. Acabaram de piscar juntos. Daqui a quanto tempo piscam juntos de novo?</p>
+          <div class="grid2" style="margin-top:6px;">
+            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Primeiro encontro futuro:</p><button class="choice mqo" data-i="0">6 s</button><button class="choice mqo" data-i="1">30 s</button><button class="choice mqo" data-i="2">36 s</button><button class="choice mqo" data-i="3">216 s</button><div class="fb"></div><div class="answer"><p>O primeiro instante em que ambos coincidem é o <strong>menor múltiplo comum</strong> de 12 e 18: <span class="tex">mmc(12, 18) = 36</span> s. (216 também é múltiplo comum, mas não é o primeiro.)</p></div></div>
+            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Eventos que se repetem de <span class="tex"><i>a</i></span> em <span class="tex"><i>a</i></span> e de <span class="tex"><i>b</i></span> em <span class="tex"><i>b</i></span> coincidem nos <strong>múltiplos comuns</strong> — todos múltiplos do MMC. É a mesma ideia da <strong>divisão com resto</strong>.</p></div>
           </div>
+        
         </div>
       </section>
 
@@ -354,21 +361,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow">Para início de conversa</div>
-          <h2 class="title">Dois sinais, um instante de encontro</h2>
-          
-          <p class="lede">Dois sinais luminosos piscam, um a cada <strong>12 s</strong> e outro a cada <strong>18 s</strong>. Acabaram de piscar juntos. Daqui a quanto tempo piscam juntos de novo?</p>
-          <div class="grid2" style="margin-top:6px;">
-            <div class="mq" data-a="2"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Primeiro encontro futuro:</p><button class="choice mqo" data-i="0">6 s</button><button class="choice mqo" data-i="1">30 s</button><button class="choice mqo" data-i="2">36 s</button><button class="choice mqo" data-i="3">216 s</button><div class="fb"></div><div class="answer"><p>O primeiro instante em que ambos coincidem é o <strong>menor múltiplo comum</strong> de 12 e 18: <span class="tex">mmc(12, 18) = 36</span> s. (216 também é múltiplo comum, mas não é o primeiro.)</p></div></div>
-            <div class="card growth"><strong>Ideia-chave</strong><p style="font-size:.92rem;margin-top:8px;">Eventos que se repetem de <span class="tex"><i>a</i></span> em <span class="tex"><i>a</i></span> e de <span class="tex"><i>b</i></span> em <span class="tex"><i>b</i></span> coincidem nos <strong>múltiplos comuns</strong> — todos múltiplos do MMC. É a mesma ideia da <strong>divisão com resto</strong>.</p></div>
-          </div>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · divisão euclidiana</div>
@@ -386,7 +378,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Macete · usado em 2026 Q17</div>
@@ -403,7 +394,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · congruências</div>
@@ -419,7 +409,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           </div>
         </div>
       </section>
-
 
       <section class="slide">
         <div class="slide-inner">
@@ -442,7 +431,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · MMC e MDC</div>
@@ -461,7 +449,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow">Teoria · divisores</div>
@@ -479,7 +466,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow danger">Armadilha · ENA 2026 Q8</div>
@@ -493,31 +479,6 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q8</div>
-          <h2 class="title">Duas promoções que se repetem</h2>
-          
-          <p class="lede">O produto A entra em promoção de <strong>8 em 8 horas</strong> e o B de <strong>12 em 12 horas</strong>. Agora ambos estão em promoção e a campanha dura mais <strong>50 horas</strong>. Quantas vezes mais eles estarão <strong>simultaneamente</strong> em promoção?</p>
-          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1 vez</button><button class="choice mqo" data-i="1">2 vezes</button><button class="choice mqo" data-i="2">3 vezes</button><button class="choice mqo" data-i="3">4 vezes</button><button class="choice mqo" data-i="4">5 vezes</button><div class="fb"></div><div class="answer"><p><span class="tex">mmc(8, 12) = 24</span> → as coincidências são em 24 h e 48 h (72 passa de 50). Duas vezes. <strong>Alternativa B.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
-      <section class="slide">
-        <div class="slide-inner">
-          <div class="eyebrow growth">Já caiu · ENA 2026 · Q17</div>
-          <h2 class="title">O resto que “passa” para 41</h2>
-          
-          <p class="lede">Um inteiro positivo deixa <strong>resto 220</strong> quando dividido por <strong>451</strong>. Qual é o resto da divisão desse número por <strong>41</strong>?</p>
-          <div class="mq" data-a="0"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">15</button><button class="choice mqo" data-i="1">20</button><button class="choice mqo" data-i="2">41</button><button class="choice mqo" data-i="3">220</button><button class="choice mqo" data-i="4">11</button><div class="fb"></div><div class="answer"><p><span class="tex">451 = 11 · 41</span>, então <span class="tex"><i>n</i> = 451<i>q</i> + 220 = 41(11<i>q</i>) + 220</span> e <span class="tex">220 = 5 · 41 + 15</span>. Logo <span class="tex"><i>n</i> = 41(11<i>q</i> + 5) + 15</span>. Resto <strong>15</strong>. <strong>Alternativa A.</strong></p></div></div>
-          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
-        </div>
-      </section>
-
-
       <section class="slide">
         <div class="slide-inner">
           <div class="eyebrow primary">Treino 2.2 · divisores</div>
@@ -530,6 +491,40 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <div class="step-row"><span class="badge">3</span><div><strong>Multiplique</strong><div class="hint"><span class="tex">4 · 3 · 2 = 24</span></div></div></div>
           </div>
           <div class="callout success"><h4>Resultado</h4><p>360 tem <strong>24 divisores positivos</strong>.</p></div>
+        </div>
+      </section>
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow growth">Prática guiada</div>
+          <h2 class="title">Duas promoções que se repetem</h2>
+          <p class="hint" style="margin-top:-2px;">Tente primeiro; depois toque numa alternativa para conferir.</p>
+          
+          <p class="lede">O produto A entra em promoção de <strong>8 em 8 horas</strong> e o B de <strong>12 em 12 horas</strong>. Agora ambos estão em promoção e a campanha dura mais <strong>50 horas</strong>. Quantas vezes mais eles estarão <strong>simultaneamente</strong> em promoção?</p>
+          <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">Escolha a alternativa:</p><button class="choice mqo" data-i="0">1 vez</button><button class="choice mqo" data-i="1">2 vezes</button><button class="choice mqo" data-i="2">3 vezes</button><button class="choice mqo" data-i="3">4 vezes</button><button class="choice mqo" data-i="4">5 vezes</button><div class="fb"></div><div class="answer"><p><span class="tex">mmc(8, 12) = 24</span> → as coincidências são em 24 h e 48 h (72 passa de 50). Duas vezes. <strong>Alternativa B.</strong></p></div></div>
+          <p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p>
+        
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow primary">Prática independente</div>
+          <h2 class="title">O resto que “passa” para 41</h2>
+          <p class="hint">Resolva no caderno. As respostas estão no slide de correção comentada.</p><div class="card" style="margin-top:8px;"><div style="margin-bottom:6px;"><p class="hint" style="margin-top:6px;">Enunciado resumido; alternativas de treino.</p></div><p style="font-weight:700;font-size:.95rem;margin:0 0 6px;">1. Um inteiro positivo deixa <strong>resto 220</strong> quando dividido por <strong>451</strong>. Qual é o resto da divisão desse número por <strong>41</strong>?</p><ol type="A" style="margin:0 0 0 1.2rem;padding:0;font-size:.92rem;line-height:1.7;"><li>15</li><li>20</li><li>41</li><li>220</li><li>11</li></ol></div>
+        </div>
+      </section>
+
+
+      
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow success">Correção comentada</div>
+          <h2 class="title">Conferindo as respostas</h2>
+          <div class="grid2" style="margin-top:6px;"><div class="card success"><strong>1. Alternativa A</strong><p style="font-size:.86rem;margin-top:6px;"><span class="tex">451 = 11 · 41</span>, então <span class="tex"><i>n</i> = 451<i>q</i> + 220 = 41(11<i>q</i>) + 220</span> e <span class="tex">220 = 5 · 41 + 15</span>. Logo <span class="tex"><i>n</i> = 41(11<i>q</i> + 5) + 15</span>. Resto <strong>15</strong>.</p></div></div>
         </div>
       </section>
 
@@ -548,12 +543,29 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
+      <section class="slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Síntese</div>
+          <h2 class="title">Três ideias para levar</h2>
+          
+          <div class="grid3" style="margin-top:10px;">
+            <div class="card"><span class="badge">Restos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>n</i> = <i>d</i>·<i>q</i> + <i>r</i></span> com <span class="tex">0 ≤ <i>r</i> &lt; <i>d</i></span>; se <span class="tex"><i>d</i></span> divide <span class="tex"><i>D</i></span>, os restos “passam” de <span class="tex"><i>D</i></span> para <span class="tex"><i>d</i></span>.</p></div>
+            <div class="card"><span class="badge">MMC × MDC</span><p style="font-size:.85rem;margin-top:8px;">MMC: eventos que se repetem. MDC: grupos iguais. <span class="tex">mmc · mdc = <i>a</i> · <i>b</i></span>.</p></div>
+            <div class="card"><span class="badge">Divisores</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(α+1)(β+1)⋯</span> a partir da fatoração.</p></div>
+          </div>
+          <div class="callout success" style="margin-top:18px;">
+            <h4>A mensagem central</h4>
+            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Antes de calcular, pergunte: é resto, múltiplo comum ou fatoração?</p>
+          </div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Dois sinais luminosos piscam, um a cada <strong>12 s</strong> e outro a cada <strong>18 s</strong>. Acabaram de piscar juntos. Daqui a quanto tempo piscam juntos de novo?</p></div>
+        </div>
+      </section>
 
       <section class="slide">
         <div class="slide-inner" style="position:relative;">
           <div class="score-pill">Pontos: <span id="scoreVal">0</span>/4</div>
-          <div class="eyebrow">Desafio final</div>
-          <h2 class="title">Quiz interativo</h2>
+          <div class="eyebrow">Exit ticket</div>
+          <h2 class="title">Questões de saída</h2>
           <div class="grid2" style="margin-top:8px;">
             <div>
               <p style="font-weight:700;font-size:.9rem;">1. Qual o resto da divisão de <span class="tex"><i>n</i> = 35<i>q</i> + 17</span> por 7?</p>
@@ -597,23 +609,22 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
         </div>
       </section>
 
-
+      
       <section class="slide">
         <div class="slide-inner">
-          <div class="eyebrow">Síntese</div>
-          <h2 class="title">A ideia central</h2>
+          <div class="eyebrow primary">Questão de saída</div>
+          <h2 class="title">O que ainda ficou difícil?</h2>
           
+          <p class="lede">Escolha como você saiu desta aula (isso fica só no seu aparelho):</p>
           <div class="grid3" style="margin-top:10px;">
-            <div class="card"><span class="badge">Restos</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex"><i>n</i> = <i>d</i>·<i>q</i> + <i>r</i></span> com <span class="tex">0 ≤ <i>r</i> &lt; <i>d</i></span>; se <span class="tex"><i>d</i></span> divide <span class="tex"><i>D</i></span>, os restos “passam” de <span class="tex"><i>D</i></span> para <span class="tex"><i>d</i></span>.</p></div>
-            <div class="card"><span class="badge">MMC × MDC</span><p style="font-size:.85rem;margin-top:8px;">MMC: eventos que se repetem. MDC: grupos iguais. <span class="tex">mmc · mdc = <i>a</i> · <i>b</i></span>.</p></div>
-            <div class="card"><span class="badge">Divisores</span><p style="font-size:.85rem;margin-top:8px;"><span class="tex">(α+1)(β+1)⋯</span> a partir da fatoração.</p></div>
+            <button class="choice rf-btn" data-v="entendi">😀 Entendi bem e consigo explicar</button>
+            <button class="choice rf-btn" data-v="duvida">🤔 Entendi, mas ainda tenho dúvidas</button>
+            <button class="choice rf-btn" data-v="dificil">😕 Preciso rever este assunto</button>
           </div>
-          <div class="callout success" style="margin-top:18px;">
-            <h4>A mensagem central</h4>
-            <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Antes de calcular, pergunte: é resto, múltiplo comum ou fatoração?</p>
-          </div>
+          <p class="hint rf-msg" style="margin-top:10px;"></p>
         </div>
       </section>
+
 
       <section class="slide">
         <div class="slide-inner" style="display:flex;flex-direction:column;justify-content:center;">
@@ -633,7 +644,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
     <div class="navbar">
       <button class="navbtn" id="prevBtn" onclick="prev()" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="rail" id="rail"></div>
-      <div class="rail-count" id="railCount">1 / 17</div>
+      <div class="rail-count" id="railCount">1 / 19</div>
       <button class="navbtn" id="nextBtn" onclick="next()" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
     </div>
   </div>
@@ -987,3 +998,27 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
 })();
 </script>
 <script src="../../app/ferramentas.js" id="ferramentas"></script>
+<script id="padrao-js">(function(){
+var st = document.createElement('style');
+st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
+document.head.appendChild(st);
+document.querySelectorAll('[data-rv]').forEach(function(box){
+  var itens = [].slice.call(box.querySelectorAll('.rv')), btn = box.querySelector('.rv-btn');
+  function restam(){ return itens.some(function(x){ return !x.classList.contains('on'); }); }
+  if(!restam() && btn) btn.style.display = 'none';
+  if(btn) btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var p = itens.filter(function(x){ return !x.classList.contains('on'); })[0];
+    if(p) p.classList.add('on');
+    if(!restam()) btn.style.display = 'none';
+  });
+});
+document.querySelectorAll('.rf-btn').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.parentNode.querySelectorAll('.rf-btn').forEach(function(x){ x.classList.remove('sel'); }); b.classList.add('sel');
+    var m = b.parentNode.parentNode.querySelector('.rf-msg');
+    if(m) m.textContent = b.dataset.v === 'entendi' ? 'Ótimo! Tente explicar o assunto para um colega.' : b.dataset.v === 'duvida' ? 'Anote a dúvida para perguntar na próxima aula.' : 'Sem problema: revise a explicação e refaça os exemplos.';
+    try{ localStorage.setItem('saida:' + location.pathname, b.dataset.v); }catch(e){}
+  });
+});
+})();</script>
