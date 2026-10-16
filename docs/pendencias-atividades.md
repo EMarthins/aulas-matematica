@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 53 módulos (118 aulas) aguardando atividades.**
+**Total: 66 módulos (151 aulas) aguardando atividades.**
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 
@@ -30,6 +30,22 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Retomada: comportamento de funções e sistemas lineares** — 2 aulas (`aulas/2-ano/2-tri/retomada-funcoes-e-sistemas/`)
 - [ ] **Retomada: progressão aritmética** — 2 aulas (`aulas/2-ano/2-tri/retomada-progressao-aritmetica/`)
 - [ ] **Retomada: progressão geométrica** — 2 aulas (`aulas/2-ano/2-tri/retomada-progressao-geometrica/`)
+
+### Matemática · 2° Ano · 3° Trimestre (13 módulos)
+
+- [ ] **Equação e função exponencial** — 3 aulas (`aulas/2-ano/3-tri/equacao-e-funcao-exponencial/`)
+- [ ] **Função exponencial: problemas e gráficos** — 3 aulas (`aulas/2-ano/3-tri/funcao-exponencial-problemas-e-graficos/`)
+- [ ] **Logaritmo: definição e consequências** — 3 aulas (`aulas/2-ano/3-tri/logaritmo-definicao-e-consequencias/`)
+- [ ] **Logaritmos decimais e condição de existência** — 2 aulas (`aulas/2-ano/3-tri/logaritmos-decimais-e-existencia/`)
+- [ ] **Propriedades operatórias dos logaritmos** — 3 aulas (`aulas/2-ano/3-tri/propriedades-dos-logaritmos/`)
+- [ ] **Logaritmos: problemas e mudança de base** — 2 aulas (`aulas/2-ano/3-tri/logaritmos-problemas-e-mudanca-de-base/`)
+- [ ] **Equações logarítmicas e função logarítmica** — 2 aulas (`aulas/2-ano/3-tri/equacoes-logaritmicas-e-funcao-logaritmica/`)
+- [ ] **Função logarítmica: gráficos e problemas** — 3 aulas (`aulas/2-ano/3-tri/funcao-logaritmica-graficos-e-problemas/`)
+- [ ] **Funções definidas por mais de uma sentença** — 2 aulas (`aulas/2-ano/3-tri/funcoes-definidas-por-partes/`)
+- [ ] **Propriedades das funções** — 4 aulas (`aulas/2-ano/3-tri/propriedades-das-funcoes/`)
+- [ ] **Função composta e função inversa** — 3 aulas (`aulas/2-ano/3-tri/funcao-composta-e-inversa/`)
+- [ ] **Função inversa: problemas** — 2 aulas (`aulas/2-ano/3-tri/funcao-inversa-problemas/`)
+- [ ] **Retomada: Teorema de Pitágoras** — 1 aula (`aulas/2-ano/3-tri/retomada-teorema-de-pitagoras/`)
 
 ### Recomposição Matemática · 9° Ano · 1° Trimestre (6 módulos)
 

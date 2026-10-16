@@ -1297,6 +1297,145 @@ export const MATERIAS = [
           {
             nome: '3° Trimestre',
             unidades: [
+              // >>> mat-2ano-3tri
+              {
+                titulo: 'Equação e função exponencial',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equação exponencial', arquivo:'aulas/2-ano/3-tri/equacao-e-funcao-exponencial/aula-1-equacao-exponencial.html' },
+                  { tipo:'Aula 2', titulo:'Função exponencial: definição algébrica', arquivo:'aulas/2-ano/3-tri/equacao-e-funcao-exponencial/aula-2-funcao-exponencial-definicao-algebrica.html' },
+                  { tipo:'Aula 3', titulo:'Função exponencial: definição gráfica', arquivo:'aulas/2-ano/3-tri/equacao-e-funcao-exponencial/aula-3-funcao-exponencial-definicao-grafica.html' }
+                ]
+              },
+              {
+                titulo: 'Função exponencial: problemas e gráficos',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função exponencial: resolução de problemas', arquivo:'aulas/2-ano/3-tri/funcao-exponencial-problemas-e-graficos/aula-1-funcao-exponencial-resolucao-de-problemas.html' },
+                  { tipo:'Aula 2', titulo:'Função exponencial crescente: representação gráfica', arquivo:'aulas/2-ano/3-tri/funcao-exponencial-problemas-e-graficos/aula-2-funcao-exponencial-crescente.html' },
+                  { tipo:'Aula 3', titulo:'Função exponencial decrescente: representação gráfica', arquivo:'aulas/2-ano/3-tri/funcao-exponencial-problemas-e-graficos/aula-3-funcao-exponencial-decrescente.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmo: definição e consequências',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Logaritmo: definição', arquivo:'aulas/2-ano/3-tri/logaritmo-definicao-e-consequencias/aula-1-logaritmo-definicao.html' },
+                  { tipo:'Aula 2', titulo:'Logaritmo: consequências da definição I', arquivo:'aulas/2-ano/3-tri/logaritmo-definicao-e-consequencias/aula-2-logaritmo-consequencias-da-definicao-i.html' },
+                  { tipo:'Aula 3', titulo:'Logaritmo: consequências da definição II', arquivo:'aulas/2-ano/3-tri/logaritmo-definicao-e-consequencias/aula-3-logaritmo-consequencias-da-definicao-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmos decimais e condição de existência',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Logaritmo de base 10', arquivo:'aulas/2-ano/3-tri/logaritmos-decimais-e-existencia/aula-1-logaritmo-de-base-10.html' },
+                  { tipo:'Aula 2', titulo:'Logaritmo: condição de existência', arquivo:'aulas/2-ano/3-tri/logaritmos-decimais-e-existencia/aula-2-logaritmo-condicao-de-existencia.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades operatórias dos logaritmos',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Logaritmo de um produto', arquivo:'aulas/2-ano/3-tri/propriedades-dos-logaritmos/aula-1-logaritmo-de-um-produto.html' },
+                  { tipo:'Aula 2', titulo:'Logaritmo de um quociente', arquivo:'aulas/2-ano/3-tri/propriedades-dos-logaritmos/aula-2-logaritmo-de-um-quociente.html' },
+                  { tipo:'Aula 3', titulo:'Logaritmo de uma potência', arquivo:'aulas/2-ano/3-tri/propriedades-dos-logaritmos/aula-3-logaritmo-de-uma-potencia.html' }
+                ]
+              },
+              {
+                titulo: 'Logaritmos: problemas e mudança de base',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Logaritmo: resolução de problemas', arquivo:'aulas/2-ano/3-tri/logaritmos-problemas-e-mudanca-de-base/aula-1-logaritmo-resolucao-de-problemas.html' },
+                  { tipo:'Aula 2', titulo:'Logaritmo: mudança de base', arquivo:'aulas/2-ano/3-tri/logaritmos-problemas-e-mudanca-de-base/aula-2-logaritmo-mudanca-de-base.html' }
+                ]
+              },
+              {
+                titulo: 'Equações logarítmicas e função logarítmica',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações logarítmicas', arquivo:'aulas/2-ano/3-tri/equacoes-logaritmicas-e-funcao-logaritmica/aula-1-equacoes-logaritmicas.html' },
+                  { tipo:'Aula 2', titulo:'Função logarítmica: definição', arquivo:'aulas/2-ano/3-tri/equacoes-logaritmicas-e-funcao-logaritmica/aula-2-funcao-logaritmica-definicao.html' }
+                ]
+              },
+              {
+                titulo: 'Função logarítmica: gráficos e problemas',
+                accent: 'decay',
+                icon: 'curve-log',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função logarítmica crescente: representação gráfica', arquivo:'aulas/2-ano/3-tri/funcao-logaritmica-graficos-e-problemas/aula-1-funcao-logaritmica-crescente.html' },
+                  { tipo:'Aula 2', titulo:'Função logarítmica decrescente: representação gráfica', arquivo:'aulas/2-ano/3-tri/funcao-logaritmica-graficos-e-problemas/aula-2-funcao-logaritmica-decrescente.html' },
+                  { tipo:'Aula 3', titulo:'Função logarítmica: resolução de situações-problema', arquivo:'aulas/2-ano/3-tri/funcao-logaritmica-graficos-e-problemas/aula-3-funcao-logaritmica-situacoes-problema.html' }
+                ]
+              },
+              {
+                titulo: 'Funções definidas por mais de uma sentença',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Gráfico de uma função definida por mais de uma sentença', arquivo:'aulas/2-ano/3-tri/funcoes-definidas-por-partes/aula-1-grafico-de-funcao-por-partes.html' },
+                  { tipo:'Aula 2', titulo:'Resolução de situações-problema com funções definidas por mais de uma sentença', arquivo:'aulas/2-ano/3-tri/funcoes-definidas-por-partes/aula-2-funcoes-por-partes-situacoes-problema.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades das funções',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Propriedades de funções I: função sobrejetora', arquivo:'aulas/2-ano/3-tri/propriedades-das-funcoes/aula-1-propriedades-de-funcoes-i-sobrejetora.html' },
+                  { tipo:'Aula 2', titulo:'Propriedades de funções II: função injetora', arquivo:'aulas/2-ano/3-tri/propriedades-das-funcoes/aula-2-propriedades-de-funcoes-ii-injetora.html' },
+                  { tipo:'Aula 3', titulo:'Propriedades de funções III: função bijetora', arquivo:'aulas/2-ano/3-tri/propriedades-das-funcoes/aula-3-propriedades-de-funcoes-iii-bijetora.html' },
+                  { tipo:'Aula 4', titulo:'Propriedades de funções: resolução de problemas', arquivo:'aulas/2-ano/3-tri/propriedades-das-funcoes/aula-4-propriedades-de-funcoes-resolucao-de-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Função composta e função inversa',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função composta', arquivo:'aulas/2-ano/3-tri/funcao-composta-e-inversa/aula-1-funcao-composta.html' },
+                  { tipo:'Aula 2', titulo:'Função inversa', arquivo:'aulas/2-ano/3-tri/funcao-composta-e-inversa/aula-2-funcao-inversa.html' },
+                  { tipo:'Aula 3', titulo:'Gráfico da função inversa', arquivo:'aulas/2-ano/3-tri/funcao-composta-e-inversa/aula-3-grafico-da-funcao-inversa.html' }
+                ]
+              },
+              {
+                titulo: 'Função inversa: problemas',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função inversa: resolução de problemas I', arquivo:'aulas/2-ano/3-tri/funcao-inversa-problemas/aula-1-funcao-inversa-resolucao-de-problemas-i.html' },
+                  { tipo:'Aula 2', titulo:'Função inversa: resolução de problemas II', arquivo:'aulas/2-ano/3-tri/funcao-inversa-problemas/aula-2-funcao-inversa-resolucao-de-problemas-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Retomada: Teorema de Pitágoras',
+                accent: 'success',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada: Teorema de Pitágoras', arquivo:'aulas/2-ano/3-tri/retomada-teorema-de-pitagoras/aula-1-retomada-teorema-de-pitagoras.html' }
+                ]
+              },
+              // <<< mat-2ano-3tri
               {
                 titulo: 'Exponenciais',
                 accent: 'growth',
