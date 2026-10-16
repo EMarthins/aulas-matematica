@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 41 módulos (106 aulas) aguardando atividades.**
+**Total: 53 módulos (118 aulas) aguardando atividades.**
 
 ### Matemática · 2° Ano · 2° Trimestre (22 módulos)
 
@@ -58,3 +58,51 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Volumes** — 5 aulas (`aulas/9-ano/3-tri/volumes/`)
 - [ ] **Expressões algébricas** — 3 aulas (`aulas/9-ano/3-tri/expressoes-algebricas/`)
 - [ ] **Sequências e padrões** — 4 aulas (`aulas/9-ano/3-tri/sequencias-e-padroes/`)
+
+### Língua Portuguesa · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Leitura e interpretação** — 1 aula (`aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/`)
+
+### Língua Inglesa · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Vocabulário e comunicação** — 1 aula (`aulas/ingles/6-ano/1-tri/vocabulario-e-comunicacao/`)
+
+### Arte · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Artes visuais** — 1 aula (`aulas/arte/6-ano/1-tri/artes-visuais/`)
+
+### Educação Física · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Esportes** — 1 aula (`aulas/educacao-fisica/6-ano/1-tri/esportes/`)
+
+### Ciências · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Vida e evolução** — 1 aula (`aulas/ciencias/6-ano/1-tri/vida-e-evolucao/`)
+
+### História · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Antiguidade e Idade Média** — 1 aula (`aulas/historia/6-ano/1-tri/antiguidade-e-idade-media/`)
+
+### Geografia · 6° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Espaço e cartografia** — 1 aula (`aulas/geografia/6-ano/1-tri/espaco-e-cartografia/`)
+
+### Física · 1° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Mecânica** — 1 aula (`aulas/fisica/1-ano/1-tri/mecanica/`)
+
+### Química · 1° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Matéria e estrutura atômica** — 1 aula (`aulas/quimica/1-ano/1-tri/materia-e-estrutura-atomica/`)
+
+### Biologia · 1° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Citologia e genética** — 1 aula (`aulas/biologia/1-ano/1-tri/citologia-e-genetica/`)
+
+### Filosofia · 1° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Introdução à Filosofia** — 1 aula (`aulas/filosofia/1-ano/1-tri/introducao-a-filosofia/`)
+
+### Sociologia · 1° Ano · 1° Trimestre (1 módulos)
+
+- [ ] **Cultura e sociedade** — 1 aula (`aulas/sociologia/1-ano/1-tri/cultura-e-sociedade/`)

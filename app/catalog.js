@@ -2125,8 +2125,356 @@ export const MATERIAS = [
         ]
       }
     ]
-  }
+  },
   // <<< ena-profmat
+  // >>> novas-portugues
+  {
+    id: 'portugues',
+    nome: 'Língua Portuguesa',
+    icon: 'dots',
+    lede: 'Leitura, gramática, produção de texto e literatura, do 6º ano ao 3º ano do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Leitura e interpretação',
+                accent: 'primary',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ler para compreender: ideia central e informações explícitas', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-1-ler-para-compreender.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-portugues
+  // >>> novas-ingles
+  {
+    id: 'ingles',
+    nome: 'Língua Inglesa',
+    icon: 'flag',
+    lede: 'Inglês para a escola e para o ENEM: vocabulário, gramática e leitura.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Vocabulário e comunicação',
+                accent: 'growth',
+                icon: 'flag',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Hello! Cumprimentos e apresentações', arquivo:'aulas/ingles/6-ano/1-tri/vocabulario-e-comunicacao/aula-1-hello-greetings-and-introductions.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-ingles
+  // >>> novas-arte
+  {
+    id: 'arte',
+    nome: 'Arte',
+    icon: 'wave',
+    lede: 'Linguagens artísticas e história da arte.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Artes visuais',
+                accent: 'decay',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Elementos da linguagem visual: ponto, linha, forma e cor', arquivo:'aulas/arte/6-ano/1-tri/artes-visuais/aula-1-elementos-da-linguagem-visual.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-arte
+  // >>> novas-educacao-fisica
+  {
+    id: 'educacao-fisica',
+    nome: 'Educação Física',
+    icon: 'stairs',
+    lede: 'Movimento, esporte, saúde e cultura corporal.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Esportes',
+                accent: 'growth',
+                icon: 'stairs',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'O que é esporte: classificação e fundamentos', arquivo:'aulas/educacao-fisica/6-ano/1-tri/esportes/aula-1-esporte-classificacao-e-fundamentos.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-educacao-fisica
+  // >>> novas-ciencias
+  {
+    id: 'ciencias',
+    nome: 'Ciências',
+    icon: 'venn',
+    lede: 'Ciências da Natureza no Ensino Fundamental.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Vida e evolução',
+                accent: 'growth',
+                icon: 'venn',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'O que é vida? Características dos seres vivos e a célula', arquivo:'aulas/ciencias/6-ano/1-tri/vida-e-evolucao/aula-1-o-que-e-vida-e-as-celulas.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-ciencias
+  // >>> novas-historia
+  {
+    id: 'historia',
+    nome: 'História',
+    icon: 'chain',
+    lede: 'Do mundo antigo ao Brasil contemporâneo.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Antiguidade e Idade Média',
+                accent: 'decay',
+                icon: 'chain',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Como a História é contada: fontes, tempo e periodização', arquivo:'aulas/historia/6-ano/1-tri/antiguidade-e-idade-media/aula-1-como-a-historia-e-contada.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-historia
+  // >>> novas-geografia
+  {
+    id: 'geografia',
+    nome: 'Geografia',
+    icon: 'planet',
+    lede: 'Espaço geográfico, natureza, população e economia.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Espaço e cartografia',
+                accent: 'growth',
+                icon: 'planet',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Orientação e leitura de mapas: pontos cardeais, escala e legenda', arquivo:'aulas/geografia/6-ano/1-tri/espaco-e-cartografia/aula-1-orientacao-e-leitura-de-mapas.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-geografia
+  // >>> novas-fisica
+  {
+    id: 'fisica',
+    nome: 'Física',
+    icon: 'wave',
+    lede: 'Física do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Mecânica',
+                accent: 'primary',
+                icon: 'wave',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Movimento: referencial, deslocamento e velocidade média', arquivo:'aulas/fisica/1-ano/1-tri/mecanica/aula-1-movimento-referencial-e-velocidade-media.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-fisica
+  // >>> novas-quimica
+  {
+    id: 'quimica',
+    nome: 'Química',
+    icon: 'combo',
+    lede: 'Química do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Matéria e estrutura atômica',
+                accent: 'decay',
+                icon: 'combo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Matéria, substâncias e misturas', arquivo:'aulas/quimica/1-ano/1-tri/materia-e-estrutura-atomica/aula-1-materia-substancias-e-misturas.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-quimica
+  // >>> novas-biologia
+  {
+    id: 'biologia',
+    nome: 'Biologia',
+    icon: 'curve-up',
+    lede: 'Biologia do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Citologia e genética',
+                accent: 'growth',
+                icon: 'curve-up',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'A célula: membrana, citoplasma, núcleo e organelas', arquivo:'aulas/biologia/1-ano/1-tri/citologia-e-genetica/aula-1-a-celula-organelas-e-membrana.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-biologia
+  // >>> novas-filosofia
+  {
+    id: 'filosofia',
+    nome: 'Filosofia',
+    icon: 'logic',
+    lede: 'Pensamento filosófico para o Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Introdução à Filosofia',
+                accent: 'primary',
+                icon: 'logic',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'O que é Filosofia? Do mito à razão', arquivo:'aulas/filosofia/1-ano/1-tri/introducao-a-filosofia/aula-1-o-que-e-filosofia-mito-e-razao.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-filosofia
+  // >>> novas-sociologia
+  {
+    id: 'sociologia',
+    nome: 'Sociologia',
+    icon: 'bars',
+    lede: 'Sociologia para o Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '1° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Cultura e sociedade',
+                accent: 'decay',
+                icon: 'bars',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'O olhar sociológico e o conceito de cultura', arquivo:'aulas/sociologia/1-ano/1-tri/cultura-e-sociedade/aula-1-o-olhar-sociologico-e-o-conceito-de-cultura.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< novas-sociologia
 ];
 
 import { completar } from './catalog-extra.js';

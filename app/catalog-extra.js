@@ -42,6 +42,20 @@ const anoVazio = (ano, titulos) => ({
   trimestres: TRI.map((nome, t) => ({ nome, unidades: titulos.filter((_, i) => i % 3 === t).map((x, k) => vazia(x, t + k)) })).filter(t => t.unidades.length)
 });
 
+// matéria nova que já ganhou aulas em catalog.js: acrescenta os anos, trimestres e módulos que ainda faltam (como "em breve")
+function completaExistente(m, n) {
+  n.anos.forEach(ano => {
+    const vazio = anoVazio(ano, n.temas), a = m.CATALOG.find(x => x.ano === ano);
+    if (!a) { m.CATALOG.push(vazio); return; }
+    vazio.trimestres.forEach(tv => {
+      const t = a.trimestres.find(x => x.nome === tv.nome);
+      if (!t) { a.trimestres.push(tv); return; }
+      tv.unidades.forEach(uv => { if (!t.unidades.some(u => u.titulo === uv.titulo)) t.unidades.push(uv); });
+    });
+    a.trimestres.sort((x, y) => x.nome.localeCompare(y.nome));
+  });
+}
+
 export function completar(MATERIAS) {
   const porId = Object.fromEntries(MATERIAS.map(m => [m.id, m]));
   const garante = (m, ano, titulos) => { if (titulos && !m.CATALOG.some(a => a.ano === ano)) m.CATALOG.push(anoVazio(ano, titulos)); };
@@ -49,7 +63,7 @@ export function completar(MATERIAS) {
   TODOS.forEach(ano => { garante(porId.matematica, ano, MAT[ano] || ['Módulo 1', 'Módulo 2', 'Módulo 3']); garante(porId['educacao-financeira'], ano, EF[ano] || ['Módulo 1']); });
   // matérias novas
   NOVAS.forEach(n => {
-    if (porId[n.id]) return;
+    if (porId[n.id]) { completaExistente(porId[n.id], n); return; }
     MATERIAS.push({ id: n.id, nome: n.nome, icon: n.icon, lede: n.lede, emBreve: true, CATALOG: n.anos.map(ano => anoVazio(ano, n.temas)) });
   });
   MATERIAS.forEach(m => { if (!m.CATALOG.some(a => /Parte/.test(a.ano))) m.CATALOG.sort((a, b) => chaveAno(a.ano) - chaveAno(b.ano)); });
