@@ -293,7 +293,7 @@ cdb-l-numeracao-07 | O número é $5 307$. Valor relativo do $3$: $300$. Valor a
 cdb-l-numeracao-08 | A soma dos valores relativos dos algarismos de um número é sempre igual ao próprio número.
 cdb-l-numeracao-09 | Na $1ª$ ordem (unidades): nela o valor relativo é igual ao valor absoluto.
 cdb-l-numeracao-10 | Um algarismo $d$ na ordem $k$ tem V.R. $= d · 10^{k-1}$ e V.A. $= d$. A diferença é $d(10^{k-1} - 1) = 396 = 4 · 99$: $d = 4$ e a ordem é a $3ª$ (centenas).
-cdb-l-numeracao-11 | A soma dos valores relativos é o próprio número: $3 · N = 873$ ⇒ $N = 291$. O número tem $29$ dezenas.
+cdb-l-numeracao-11 | A soma dos valores relativos é o próprio número: $3N = 873$ ⇒ $N = 291$. O número $291$ tem $9$ dezenas na ordem das dezenas ($29$ dezenas no total).
 cdb-l-numeracao-12 | Maior: $99$. Menor: $10$.
 cdb-l-numeracao-13 | Maior: $98$. Menor: $10$.
 cdb-l-numeracao-14 | Maior: $987$. Menor: $102$.
@@ -307,4 +307,242 @@ cdb-l-numeracao-21 | Do $0$ ao $149$: $10 · 1 + 90 · 2 + 50 · 3 = 340$ algari
 cdb-l-numeracao-22 | De $27$ a $498$ são $472$ números e $1 343$ algarismos.
 cdb-l-numeracao-23 | De $33$ a $1 498$: $4 830$ algarismos.
 cdb-l-numeracao-24 | Pares de $64$ a $708$: $951$ algarismos.
-cdb-l-numeracao-25 | Ímpares de $45$ a $585$: $785$ algarismos.
+cdb-l-numeracao-25 | Ímpares de $47$ a $585$: $27$ de dois algarismos ($54$ algarismos) e $243$ de três algarismos ($729$ algarismos). Total: $783$ algarismos.
+cdb-l-numeracao-26 | Há $450$ números pares de três algarismos ($100$ a $998$): $450 · 3 = 1 350$ algarismos.
+cdb-l-numeracao-27 | Múltiplos de $3$ entre $23$ e $314$: de $24$ a $312$, são $97$ números; usam $265$ algarismos.
+cdb-l-numeracao-28 | Múltiplos pares de $7$ (múltiplos de $14$) entre $42$ e $444$: $29$ números; usam $82$ algarismos.
+cdb-l-numeracao-29 | Há $9 · 10^{n-1}$ números de $n$ algarismos, portanto são necessários $9 · 10^{n-1} · n$ algarismos.
+cdb-l-numeracao-30 | $9 · 1 + 90 · 2 + 215 · 3 = 834$ algarismos.
+cdb-l-numeracao-31 | Até a página $99$ usam-se $189$ algarismos; restam $792 - 189 = 603$, que dão $603 ÷ 3 = 201$ páginas de três algarismos. O livro tem $99 + 201 = 300$ páginas.
+cdb-l-numeracao-32 | Até $99$ há $189$ algarismos; restam $1 467 - 189 = 1 278 = 3 · 426$. O $426º$ número de três algarismos é $525$, e a posição $1 467$ é o último algarismo dele: $5$.
+cdb-l-numeracao-33 | Até $99$ há $189$ algarismos; restam $454 - 189 = 265 = 3 · 88 + 1$. É o primeiro algarismo do $89º$ número de três algarismos ($188$): $1$.
+cdb-l-numeracao-34 | Os números $5, 15, 25, …, 1 235$ terminam em $5$: aparece $124$ vezes na ordem das unidades.
+cdb-l-numeracao-35 | Centena $2$: de $200$ a $299$ ($100$), de $1 200$ a $1 299$ ($100$) e de $2 200$ a $2 234$ ($35$): $235$ vezes.
+cdb-l-numeracao-36 | Contando o algarismo $6$ de $0$ a $4 639$: $1 364$ vezes.
+cdb-l-numeracao-37 | Com o $0$ à direita o número fica multiplicado por $10$: $10n - n = 513$ ⇒ $9n = 513$ ⇒ $n = 57$.
+cdb-l-numeracao-38 | $10n + 4 - n = 346$ ⇒ $9n = 342$ ⇒ $n = 38$.
+cdb-l-numeracao-39 | Acrescentar $21$ à direita é $100n + 21$: $100n + 21 - n = 2 793$ ⇒ $99n = 2 772$ ⇒ $n = 28$.
+cdb-l-numeracao-40 | Para $10a + b$ vira $100a + b$: a diferença é $90a = 180$ ⇒ $a = 2$. O maior ímpar é $29$.
+cdb-l-numeracao-41 | O dígito $3$ aparecerá tanto onde havia $3$ quanto onde havia $7$: de $0$ a $465$ há $283$ algarismos $3$ ou $7$. Resposta: $283$ vezes.
+cdb-l-numeracao-43 | Ímpares de $5$ a $175$: $5, 7, 9$ ($3$ algarismos) + $11$ a $99$ ($45$ números de $2$ algarismos: $90$) + $101$ a $175$ ($38$ números de $3$ algarismos: $114$). Total: $3 + 90 + 114 = 207$ algarismos.
+cdb-l-numeracao-44 | O algarismo $7$ aparece $865$ vezes de $1$ a $2 850$.
+cdb-l-numeracao-48 | Com $n$ de dois algarismos, $10n + 7 - n = 178$ ⇒ $9n = 171$ ⇒ $n = 19$.
+cdb-l-numeracao-49 | Pares $(a, a + 7)$ com $a$ de $1$ a $93$ e produto múltiplo de $5$: $a$ ou $a + 7$ termina em $0$ ou $5$. Há $37$ maneiras.
+cdb-l-numeracao-51 | De $23$ a $99$ há $77$ números ($154$ algarismos); restam $1 507 - 154 = 1 353 = 3 · 451$ algarismos, ou seja, $451$ números de três algarismos ($100$ a $550$). O maior será $550$.
+cdb-l-numeracao-52 | Múltiplos de $3$ menores que $330$ e não múltiplos de $5$: usam $234$ algarismos.
+cdb-l-numeros-binomiais-04 | O penúltimo termo é o de $x^1$: $C_{50,49} · x · (-3)^{49} = 50 · (-3)^{49} x = -50 · 3^{49}x$.
+cdb-l-numeros-decimais-02 | Há $60 + 20 + 15 + 5 = 100$ andares, cada um com $419 ÷ 100 = 4,19$ m. Parte residencial: $60 · 4,19 = 251,4$ m.
+cdb-l-numeros-decimais-01 | a) $(4,8 - 0,4) · 1,06 = 4,664$. b) $0,25 · 0,008 = 0,002$. c) $0,81 ÷ 0,027 + 0,49 = 30 + 0,49 = 30,49$. d) $(1 - 0,75)^2 = 0,0625$.
+cdb-l-numeros-decimais-03 | a) $k = 13,272 ÷ 4,2 = 3,16$. b) $k = 8,7 - 3,56 = 5,14$.
+cdb-l-numeros-decimais-05 | a) $1,121 > 1,112 > 1,1035$. b) $7,23 > 7,2 > 7,198$. c) $0,042 > 0,04 > 0,039$.
+cdb-l-numeros-decimais-adicao-e-01 | A) $5,4$. B) $2,4$. C) $70$. D) $32,4$. E) $5,2$. F) $0,8$. G) $0,875$. H) $1,5$.
+cdb-l-numeros-inteiros-2-05 | $-4 - 11 + 13 + 5 = 3$: o camelô teve lucro de R&#36; 3,00.
+cdb-l-numeros-inteiros-e-geometr-04 | a) Perímetro $2(c + l) = 320$ com $c = 2l$: $6l = 320$ ⇒ $l = {160|3} ≈ 53,3$ m e $c = {320|3} ≈ 106,7$ m. b) $x + 2x + 2x + 1 = 16$ ⇒ $5x = 15$ ⇒ $x = 3$: lados de $3$ cm, $6$ cm e $7$ cm.
+cdb-l-numeros-negativos-02 | 2.1) $0 > -5$. 2.2) $-201 < -200$. 2.3) $-8 > -9$. 2.4) $+2 > -4$.
+cdb-l-numeros-negativos-03 | Valores absolutos: $|-10| = 10$; $|+4| = 4$; $|-26| = 26$; $|+16| = 16$; $|-2| = 2$; $|0| = 0$.
+cdb-l-numeros-negativos-04 | 4.1) $+2 - (-5) = 7$. 4.2) $+4 - (+2) = 2$. 4.3) $-4 - (-4) = 0$. 4.4) $-9 + 5 = -4$. 4.5) $-17 - 17 = -34$. 4.6) $8 + 3 = 11$. 5) À meia-noite: $-2 - 6 = -8$ °C. Ao meio-dia: $+5$ °C. Subiu $5 - (-8) = 13$ °C.
+cdb-l-numeros-rcionais-02 | $3 ÷ {1|2} = 6$ pacotes.
+cdb-l-numeros-rcionais-03 | Falsa: $-{1|4} = -0,25$ e é diferente de $-1,4$.
+cdb-l-numeros-rcionais-05 | Falsa: o oposto de ${7|5}$ é $-{7|5}$ (${5|7}$ é o inverso).
+cdb-l-numeros-rcionais-06 | $-0,5 - 1,7 = -2,2$.
+cdb-l-numeros-rcionais-07 | Uma fração tem representação decimal exata quando apresenta um número finito de casas decimais.
+cdb-l-numeros-rcionais-08 | $17% = {17|100}$.
+cdb-l-numeros-rcionais-09 | Verdadeira: todo número inteiro é racional (por exemplo, $5 = {5|1}$).
+cdb-l-numeros-rcionais-10 | $1 745 - 979 = 766$: faltam R&#36; 766,00.
+cdb-l-numeros-reais-03 | $2,555… = 2 + {5|9} = {23|9}$. Como são primos entre si, $x = 23$ e $y = 9$.
+cdb-l-numeros-reais-04 | $√{576} = 24$: há $24$ quadradinhos em cada linha.
+cdb-l-numeros-reais-10 | No século XX: $1 936 = 44^2$. No século XXI: $2 025 = 45^2$.
+cdb-l-numeros-reais-2-01 | a) Falsa (todo inteiro $n$ pode ser escrito como ${n|1}$). b) Verdadeira. c) Verdadeira.
+cdb-l-numeros-reais-2-02 | a) $√2 ∈ ℝ$. b) $√9 = 3 ∈ ℤ$. c) ${1|3} ∉ ℤ$. d) ${4|2} = 2 ∈ ℤ$.
+cdb-l-numeros-reais-2-05 | A frase é verdadeira: os irracionais são reais que não podem ser escritos como fração de inteiros (são "não fracionários") e, por isso, têm decimais infinitos e não periódicos.
+cdb-l-numeros-reais-2-06 | a) $13 = 9 + 4$ (ou $3^2 + 2^2$): $√{13}$ é a hipotenusa de um triângulo retângulo de catetos $3$ e $2$. b) $34 = 25 + 9$ (ou $5^2 + 3^2$): $√{34}$ é a hipotenusa de catetos $5$ e $3$.
+cdb-l-numeros-reais-2-07 | ${205|100} = 2,05$; ${27|1 000} = 0,027$; ${1|3} = 0,333…$ (período $3$); ${1|80} = 0,0125$; ${5|7} = 0,714285714285…$ (período $714285$); ${5|6} = 0,8333…$ (período $3$).
+cdb-l-numeros-reais-2-10 | $√{11} ≈ 3,317$ e $√{12} ≈ 3,464$. Por exemplo $q = 3,4 = {17|5}$ (pois $11 < 11,56 < 12$).
+cdb-l-numeros-reais-2-11 | $√{10} ≈ 3,16227…$ a) Erro menor que $0,01$: $3,16$ (por defeito) e $3,17$ (por excesso); $2 + √{10}$: $5,16$ e $5,17$. b) Erro menor que $0,0001$: $3,1622$ e $3,1623$; $2 + √{10}$: $5,1622$ e $5,1623$.
+cdb-l-numeros-reais-2-13 | Só o conjunto b) é um intervalo de números reais: $]7, 32]$. Os conjuntos a) (naturais), c) (inteiros) e d) (racionais) não preenchem a reta e não são intervalos.
+cdb-l-numeros-reais-2-15 | $A = [-2, 0[$; $B = ]-∞, √5[$; $C = ]-∞, {2|3}]$.
+cdb-l-numeros-reais-2-18 | São inequações: $5x < 2$; ${x + 4|3} ≥ -x - 1$; e ${x|3} > {3x|5}$. A expressão $3x + 4 = 6$ é uma equação.
+cdb-l-numeros-reais-2-19 | $20 + 3x > 3 · {x|2}$, isto é, $20 + 3x > {3x|2}$. Resolvendo: ${3x|2} > -20$ ⇒ $x > -{40|3}$.
+cdb-l-piramides-02 | A pirâmide menor (altura $x$) é semelhante à inteira, com razão ${x|h}$; sua área lateral é $A · ({x|h})^2$. A área do tronco é $A - A · ({x|h})^2$. Igualando: $1 - ({x|h})^2 = ({x|h})^2$ ⇒ $({x|h})^2 = {1|2}$ ⇒ $x = {h|√2} = {h√2|2}$.
+cdb-l-piramides-03 | No tetraedro de aresta $L$: altura $H = {L√6|3}$ e raio da circunferência circunscrita à face $R = {L√3|3}$. $V = {1|3}π R^2 H = {1|3}π · {L^2|3} · {L√6|3} = {π√6 L^3|27}$.
+cdb-l-piramides-04 | Raio da base $R = {L√3|3}$ e altura $H = {L√6|3}$. $A_{lateral} = 2πRH = 2π · {L√3|3} · {L√6|3} = {2π L^2 √{18}|9} = {2√2 π L^2|3}$.
+cdb-l-piramides-07 | $VA$, $VB$ e $VC$ são perpendiculares dois a dois e iguais a $1$ m: o triângulo $ABC$ é equilátero de lado $√2$ e o volume da pirâmide é ${1|6}$. Com área de $ABC$ igual a ${√3|2}$: ${1|3} · {√3|2} · d = {1|6}$ ⇒ $d = {1|√3} = {√3|3}$ m.
+cdb-l-poligono-01 | Triângulo qualquer: $180°$. Retângulo (quadrilátero): $360°$.
+cdb-l-poligono-02 | $4x + 2x + 4x + 2x = 360°$ ⇒ $12x = 360°$ ⇒ $x = 30°$. Os ângulos medem $120°$ (os dois de $4x$) e $60°$ (os dois de $2x$).
+cdb-l-poligonos-2-01 | $3 · 3 = 9$ cm.
+cdb-l-poligonos-2-02 | $20 ÷ 4 = 5$ cm.
+cdb-l-poligonos-2-03 | Perímetro: $2 · (10 + 5) = 30$ m. Portas: $2 · 0,8 = 1,6$ m. Rodapé: $30 - 1,6 = 28,4$ m.
+cdb-l-poliedros-e-solidos-04 | Alternativa C (conforme o gabarito da lista).
+cdb-l-poligonos-2-08 | Interno em $P$: $180° - 125° = 55°$; interno em $M$: $180° - 100° = 80°$; $x = 180° - 55° - 80° = 45°$. a) Internos: $45°$, $80°$ e $55°$. b) Externos: $135°$, $100°$ e $125°$ (somam $360°$). c) $x = 45°$.
+cdb-l-poligonos-3-02 | $S = (9 - 2) · 180° = 1 260°$.
+cdb-l-poligonos-3-03 | $S = (60 - 2) · 180° = 10 440°$.
+cdb-l-poligonos-3-04 | $a_i = {(15 - 2) · 180°|15} = {2 340°|15} = 156°$.
+cdb-l-poligonos-3-05 | $(n - 2) · 180° = 1 980°$ ⇒ $n - 2 = 11$ ⇒ $n = 13$ lados.
+cdb-l-poligonos-3-06 | $75°$ (gabarito da lista).
+cdb-l-poligonos-3-07 | $360°$ (a soma dos ângulos ao redor de um vértice é uma volta completa).
+cdb-l-poligonos-3-08 | O ângulo azul é externo ao decágono: $180° - 144° = 36°$; o ângulo marcado, entre a diagonal e o lado, vale $54°$ (gabarito da lista).
+cdb-l-poligonos-3-09 | Alternativa D (quadrilátero): $(4 - 2) · 180° = 360°$.
+cdb-l-poligonos-3-10 | Ângulo externo $= 180° - 160° = 20°$ (ou ${360°|18} = 20°$).
+cdb-l-polinomios-04 | a) Jardim: $10 · 4 = 40$ m². b) Área total $(10 + 2x)(4 + 2x) = 40 + 28x + 4x^2$; calçada $= 4x^2 + 28x$ m².
+cdb-l-polinomios-05 | a) $45x + 67y$. b) $45 · 200 + 67 · 300 = 9 000 + 20 100 = 29 100$: R&#36; 29 100,00.
+cdb-l-polinomios-06 | Trapézio: $x + x + x + (x + 11) = 4x + 11$. Retângulo: $2 · (5x + {3|2}x) = 10x + 3x = 13x$.
+cdb-l-polinomios-08 | Soma das áreas $= 4x^2$. Cada triângulo grande: $x^2$ (são dois); o triângulo médio, o quadrado e o paralelogramo: ${x^2|2}$ cada; cada triângulo pequeno: ${x^2|4}$ (são dois). Conferência: $2x^2 + 3 · {x^2|2} + 2 · {x^2|4} = 4x^2$.
+cdb-l-polinomios-09 | Terreno total: $100 · (100 - x)$. Cada lote tem ${1|3}$ dessa área: ${100(100 - x)|3} = {10 000 - 100x|3}$ m².
+cdb-l-polinomios-11 | $-5x^3 + 2x^2 + 6$: grau $3$, incompleto. $4b^3 - 7b^2 + 5b - 5$: grau $3$, completo. $m^3 + m - 1$: grau $3$, incompleto. $y^3 - 3y^2 + 5y$: grau $3$, incompleto.
+cdb-l-porcentagem-utilizando-reg-03 | ${331,20|460} = 0,72$: o preço ficou em $72%$, portanto o desconto foi de $28%$.
+cdb-l-potencia-com-numeros-intei-02 | Positivo: expoente par ($8$), então $(-41)^8 > 0$.
+cdb-l-potencia-com-numeros-intei-03 | Positivo: $a = 37^3 = 50 653 > 0$.
+cdb-l-potencia-com-numeros-intei-04 | Negativo: $(-10)^{1001}$ tem expoente ímpar, logo é $-10^{1001} < 0$.
+cdb-l-potenciacao-e-raiz-09 | 07) $4 096$; $243$; $4 096$; $64$. 08) $55 · 56^2 = 172 480$; $22 · 12^2 = 3 168$; $23^2 · 11 = 5 819$; $14 · 10^3 = 14 000$. 09) $4 096$; $125$; $216$; $512$.
+cdb-l-potenciacao-e-raiz-10 | $6$ ($6^2 = 36$), $7$ ($7^2 = 49$), $9$ ($9^2 = 81$) e $11$ ($11^2 = 121$) (também valem os opostos $-6$, $-7$, $-9$ e $-11$).
+cdb-l-potenciacao-e-raiz-quadrad-02 | $(3^{10} · 3^{-5})^3 = (3^5)^3 = 3^{15}$ e $9^6 = 3^{12}$. Logo a expressão vale $3^3 = 27$.
+cdb-l-probabilidade-e-genetica-04 | Têm A ou B: $6 000 - 1 846 = 4 154$. Têm os dois: $2 527 + 2 234 - 4 154 = 607$. Probabilidade: ${607|6 000}$ (cerca de $10,1%$).
+cdb-l-progressao-geometrica-04 | $S_{10} = {4(2^{10} - 1)|2 - 1} = 4 · 1 023 = 4 092$.
+cdb-l-proporcionalidade-directa-01 | Razão dos raios: ${4|6} = {2|3}$. Razão das alturas: ${9|15} = {3|5}$.
+cdb-l-proporcionalidade-directa-04 | ${6|4} = {3|2}$: os antecedentes são $6$ e $3$ e os extremos são $6$ e $2$ (o produto dos extremos, $12$, é igual ao dos meios, $4 · 3 = 12$).
+cdb-l-proporcionalidade-directa-05 | ${A|B} = {1|3}$ com $A = 2$: $B = 6$ golos.
+cdb-l-proporcionalidade-directa-08 | $300$ g $= 0,3$ kg: $0,3 · 4,80 = 1,44$ euros. $750$ g $= 0,75$ kg: $0,75 · 4,80 = 3,60$ euros.
+cdb-l-proporcionalidade-directa-09 | Metade da receita: $3$ ovos; $62,5$ g de manteiga; $62,5$ g de açúcar; $50$ g de chocolate em pó; $125$ g de farinha.
+cdb-l-proporcionalidade-directa-10 | A constante é ${B|A} = {20|5} = 4$. Expressão: $B = 4A$. Para $A = 15$: $B = 60$. Para $A = 2,1$: $B = 8,4$.
+cdb-l-proporcionalidade-directa-11 | A razão altura ÷ sombra é ${6|8} = {3|4}$: altura $= {3|4} · $ sombra. Sombra de $7$ m: altura $= {3|4} · 7 = 5,25$ m. Árvore de $10$ m: sombra $= 10 ÷ {3|4} = {40|3} ≈ 13,3$ m.
+cdb-l-proporcionalidade-directa-12 | Colorido: $25% + 50% + 15% = 90%$. Ficou por colorir $10%$ (isto é, $8$ quadrados).
+cdb-l-proporcionalidade-directa-13 | Com $750$ euros: juro $= 0,06 · 750 = 45$; recebe $795$ euros. Com $1 000$ euros: juro $60$; recebe $1 060$ euros.
+cdb-l-proporcionalidade-directa-14 | Paga $55%$ de $27,50$: $0,55 · 27,50 = 15,125$, ou seja, $15,13$ euros.
+cdb-l-proporcionalidade-directa-16 | Gordura: $0,082 · 250 = 20,5$ g. Proteínas: $0,047 · 250 = 11,75$ g.
+cdb-l-proporcionalidade-directa-17 | Redução: $650 - 400 = 250$; ${250|650} ≈ 0,385$: desconto de cerca de $38,5%$.
+cdb-l-proporcionalidade-directa-20 | Hotel A ($10N$): $0, 100, 200, 300, 400, 500, 600, 700, 800, 900$. Hotel B ($1,5N + 600$): $600, 615, 630, 645, 660, 675, 690, 705, 720, 735$. O hotel B é melhor quando $1,5N + 600 < 10N$, isto é, $N > 70,6$: a partir de $71$ convidados. O gráfico do hotel A (reta pela origem) traduz proporcionalidade direta.
+cdb-l-proporcionalidade-inversa-02 | Os produtos $v · t$ são todos iguais a $-12$ ($-1 · 12$, $-2 · 6$, $0,5 · (-24)$, $-36 · {1|3}$, $3 · (-4)$, $-4,8 · 2,5$, $10 · (-1,2)$). Logo há proporcionalidade inversa, com constante $-12$.
+cdb-l-proporcionalidade-inversa-03 | $k = 20 · 0,25 = 5$. Expressão: $y = {5|x}$.
+cdb-l-proporcionalidade-inversa-05 | a) Volume da piscina: $2 500 · 8 = 20 000$ L. Caudais: $20 000 ÷ 5 = 4 000$ L/h; $20 000 ÷ 10 = 2 000$ L/h; $20 000 ÷ 20 = 1 000$ L/h. b) A constante de proporcionalidade é o volume da piscina ($20 000$ litros).
+cdb-l-proporcionalidade-inversa-07 | a) $f(-6) = -{1|2}$; $f({1|12}) = 36$; $f(-0,25) = -12$. $g(-6) = {1|3}$; $g({1|12}) = -24$; $g(-0,25) = 8$. b) ${3|x} = -9$ ⇒ $x = -{1|3}$; $-{2|x} = -9$ ⇒ $x = {2|9}$.
+cdb-l-proporcionalidade-inversa-08 | Total: $4 · 8 · 15 = 480$ horas de trabalho. Com $6$ h por dia: $480 ÷ (4 · 6) = 20$ dias.
+cdb-l-prova-pronta-de-matematica-01 | 1.1) Diâmetro: $2 · 35 = 70$ cm. 1.2) Perímetro: $π · 70 ≈ 3,14 · 70 = 219,8$ cm. 1.3) Cada volta percorre $219,8$ cm; em $85$ voltas: $85 · 219,8 = 18 683$ cm $≈ 186,8$ m.
+cdb-l-raiz-quadrada-03 | $√{625} = √{5^2 · 5^2} = 25$; $√{100} = √{2^2 · 5^2} = 10$; $√{81} = √{3^2 · 3^2} = 9$.
+cdb-l-raiz-quadrada-04 | Em $a√b = c$: $a$ é o índice, $b$ é o radicando e $c$ é a raiz. Quando a raiz é quadrada, $a = 2$.
+cdb-l-razao-e-proporcao-02 | Inversamente proporcionais: $1 · 12 = 2 · y = 4 · x$. Logo $y = 6$ e $x = 3$.
+cdb-l-razao-e-proporcao-03 | Soma das razões: $2 + 3 + 5 = 10$; cada parte vale $16$. As partes são $32$, $48$ e $80$.
+cdb-l-razao-e-proporcao-04 | Diretamente aos filhos ($2$, $3$, $6$) e inversamente às idades ($30$, $36$, $48$): pesos ${2|30} = {1|15}$, ${3|36} = {1|12}$ e ${6|48} = {1|8}$, ou seja, $8 : 10 : 15$ (soma $33$). Cada parte: $495 000 ÷ 33 = 15 000$. Recebem R&#36; 120 000, R&#36; 150 000 e R&#36; 225 000.
+cdb-l-razao-e-proporcao-07 | a) $y = 2x$ (constante ${10|5} = 2$). b) O gráfico é um segmento de reta que passa pela origem, de $(-2, -4)$ até $(3, 6)$. c) Para $x = 2$: $y = 4$.
+cdb-l-regra-de-3-simples-01 | $6 000$ kg de cana produzem $500$ L; $15 000$ kg produzem $500 · {15 000|6 000} = 1 250$ litros.
+cdb-l-regra-de-3-simples-02 | Por metro: $2 160 ÷ 12 = 180$ tijolos. Para $30$ m: $30 · 180 = 5 400$ tijolos.
+cdb-l-regra-de-3-simples-03 | Juros proporcionais ao capital: ${2 100|500} · 2,50 = 10,50$. Serão R&#36; 10,50.
+cdb-l-regra-de-3-simples-04 | Grandezas inversamente proporcionais: $5 · 12 = 30 · d$ ⇒ $d = 2$ dias.
+cdb-l-regra-de-tres-simples-05 | Massa total: $90 · 15 = 1 350$ g. Pães de $10$ g: $1 350 ÷ 10 = 135$ pães.
+cdb-l-retas-e-triangulos-06 | À esquerda: $180° - 90° - 38° = 52°$. À direita: $? + 53° + 76° = 180°$ ⇒ $? = 51°$.
+cdb-l-retas-e-triangulos-08 | $240 ÷ 3 = 80$ cm.
+cdb-l-retas-e-triangulos-09 | $150 - 2 · 30 = 90$ cm.
+cdb-l-retas-perpendiculares-01 | Coeficiente angular de $t$: $-{2|3}$. Para $s ⊥ t$: $m_s = {3|2}$. Por $P(3, 4)$: $y - 4 = {3|2}(x - 3)$ ⇒ $2y - 8 = 3x - 9$ ⇒ $3x - 2y - 1 = 0$.
+cdb-l-retas-perpendiculares-03 | $s$: $x + 2y - 1 = 0$ tem $m_s = -{1|2}$. $r$: $4x - 2y + 12 = 0$ tem $m_r = 2$. Como $m_s · m_r = -{1|2} · 2 = -1$, as retas são perpendiculares.
+cdb-l-retas-perpendiculares-05 | A bissetriz dos quadrantes ímpares é $y = x$ ($m = 1$) e a dos quadrantes pares é $y = -x$ ($m = -1$). Como $1 · (-1) = -1$, são perpendiculares.
+cdb-l-semelhanca-de-figuras-i-05 | A razão de semelhança (menor para maior) é ${7,5|5} = 1,5$. O lado de $6$ cm da figura menor corresponde a $c$: ${6|c} = 1,5$ ⇒ $c = 4$ cm. E $d = 6 · 1,5 = 9$ cm.
+cdb-l-semelhanca-de-figuras-i-06 | Tomando o retângulo $A$ ($2 × 1$ quadrículas): o segundo mede $4 × 2$ e o terceiro $6 × 3$. Razões de semelhança de $A$ para eles: ${1|2}$ e ${1|3}$. Razões entre as áreas (com $A = 1$): $4$ e $9$, que são $2^2$ e $3^2$, o quadrado das razões de semelhança (ampliação).
+cdb-l-semelhanca-de-figuras-i-08 | Lado de $B$: $4 · {3|2} = 6$ cm. Perímetro de $B$: $24$ cm. Perímetro de $A$: $16$ cm. Razão dos perímetros ($B$ para $A$): ${24|16} = {3|2}$ (igual à razão de semelhança). Área de $A$: $4^2 = 16$ cm².
+cdb-l-semelhanca-de-figuras-i-10 | Os triângulos têm dois ângulos iguais ($75°$ e $75°$; logo o terceiro é $30°$ em ambos): são semelhantes (critério AA). Correspondência $A ↔ D$, $C ↔ F$, $B ↔ E$: ${c|f} = {a|d} = {b|e}$.
+cdb-l-semelhanca-de-figuras-i-11 | Os triângulos $ABC$ e $ACD$ têm ângulo reto em $C$ e ângulos de $60°$ e $30°$: ângulo $B = 60°$ ($ABC$) e $D = 30°$ ($ACD$), logo $\hat{A}$ em $ABC$ vale $30°$ e em $ACD$ vale $60°$. São semelhantes (AA), com $A ↔ D$, $B ↔ A$, $C ↔ C$: ${h|m} = {n|h} = {d|b}$.
+cdb-l-semelhanca-de-triangulos-01 | A pessoa tem $1,8$ m e sombra de $0,6$ m: a altura é $3$ vezes a sombra. O poste, com sombra de $2$ m, tem $6$ m. Depois, a sombra do poste mede $1,5$ m; a da pessoa passa a medir ${1,5|6} · 1,8 = 0,45$ m, isto é, $45$ cm.
+cdb-l-semelhanca-de-triangulos-03 | Razão altura/sombra do obelisco: ${12|4,8} = 2,5$. A sombra de uma pessoa de $1,80$ m mede ${1,8|2,5} = 0,72$ m. Ela pode se afastar até $4,8 - 0,72 = 4,08$ m do centro da base.
+cdb-l-semelhanca-de-triangulos-04 | Triângulos $ABD$ e $ACE$ semelhantes: ${AC|12,3} = {4|1,5}$ ⇒ $AC = 32,8$ m. Faltam $32,8 - 12,3 = 20,5$ m para atingir o ponto mais alto.
+cdb-l-semelhanca-de-triangulos-05 | Razão de semelhança ($AED$ para $ABC$): ${AD|AC} = {10|20} = {1|2}$. Então $DE = 8$ cm, $AB = 2 · 10,4 = 20,8$ cm. $CE = 20 - 10,4 = 9,6$ e $DB = 20,8 - 10 = 10,8$. Perímetro de $BCED$: $16 + 9,6 + 8 + 10,8 = 44,4$ cm.
+cdb-l-semelhanca-de-triangulos-06 | ${h|490} = {150|220}$ ⇒ $h ≈ 334,09$ cm $≈ 3,34$ m.
+cdb-l-semelhanca-de-triangulos-07 | Percurso horizontal: $5 · 24 = 120$ cm; desnível: $90$ cm. Trecho inclinado: $√{120^2 + 90^2} = 150$ cm. Total do corrimão: $30 + 150 + 30 = 210$ cm $= 2,1$ m.
+cdb-l-semelhanca-de-triangulos-08 | $A = (2 + √2)^2 = 4 + 4√2 + 2 = 6 + 4√2 ≈ 11,66$ cm².
+cdb-l-semelhanca-de-triangulos-09 | O lado $s$ do quadrado: os triângulos $BDE$ e $BAC$ são semelhantes: ${2 - s|2} = {s|6}$ ⇒ $12 - 6s = 2s$ ⇒ $s = 1,5$ cm.
+cdb-l-sistemas-de-equacoes-i-01 | $g + b = 300$ e $2g + 4b = 720$ ⇒ $2b = 120$: $60$ bois e $240$ galinhas.
+cdb-l-sistemas-de-equacoes-i-03 | $a$ acertos e $50 - a$ erros: $5a - 3(50 - a) = 130$ ⇒ $8a = 280$ ⇒ $a = 35$ exercícios acertados.
+cdb-l-sistemas-de-equacoes-i-04 | $g + b = 350$ e $2g + 4b = 920$ ⇒ $2b = 220$: $110$ bois e $240$ galinhas.
+cdb-l-sistemas-de-equacoes-i-05 | $x + y = 41$ e $10x + 50y = 810$ ⇒ $40y = 400$: $10$ notas de R&#36; 50,00 e $31$ notas de R&#36; 10,00.
+cdb-l-sistemas-de-equacoes-i-12 | $3b + 2s = 900$ e $b + s = 350$ ⇒ $b = 900 - 700 = 200$ e $s = 150$. Cada pacote de biscoitos pesa $200$ g e cada pacote de balas, $150$ g.
+cdb-l-sistemas-lineares-01 | $D = 3 · 3 - 1 · 2 = 7$; $D_x = 9 · 3 - 1 · 13 = 14$; $D_y = 3 · 13 - 9 · 2 = 21$. Logo $x = 2$ e $y = 3$.
+cdb-l-sistemas-lineares-02 | Somando as duas primeiras equações: $3x + y = 5$. Da 3ª menos a 2ª: $-x + 2y = 3$. Daí $y = 2$, $x = 1$ e $z = 3$. Conferência: $1 + 4 - 3 = 2$. Solução: $(1, 2, 3)$.
+cdb-l-sistemas-lineares-04 | Escalonando a matriz $4 × 5$ obtém-se $3$ linhas não nulas: a característica (posto) é $3$.
+cdb-l-tales-de-mileto-04 | Pelo Teorema de Tales: ${AD|DB} = {AE|EC}$ ⇒ ${x|x + 6} = {3|4}$ ⇒ $4x = 3x + 18$ ⇒ $x = 18$. Então $AB = x + (x + 6) = 18 + 24 = 42$.
+cdb-l-tales-de-mileto-05 | As frentes para a rua B são proporcionais às frentes para a rua A: ${x|15} = {28|20} = {y|25}$. Logo $x = 21$ m e $y = 35$ m.
+cdb-l-tales-de-mileto-06 | Os segmentos medem $5$, $6$ e $9$ (soma $20$) e a outra transversal mede $60$: razão $3$. Os segmentos medem $15$ cm, $18$ cm e $27$ cm.
+cdb-l-tales-de-mileto-07 | ${a|b} = {3|5}$ com o menor $= 6$ m: o maior mede $6 · {5|3} = 10$ m.
+cdb-l-tales-de-mileto-08 | ${80|90} = {60|x}$ ⇒ $x = {90 · 60|80} = 67,5$ m.
+cdb-l-tales-de-mileto-09 | Como $RS ∥ DE$: ${AR|RD} = {AS|SE}$, isto é, ${10|20} = {x|y}$ e $x + y = 42$. Logo $x = 14$ cm e $y = 28$ cm.
+cdb-l-tales-de-mileto-10 | $AB = 24$ e $AD = 10$ (logo $DB = 14$). Como $DE ∥ BC$: ${AE|AC} = {AD|AB}$ ⇒ $AC = {15 · 24|10} = 36$ cm.
+cdb-l-tales-de-mileto-12 | Como $AE ∥ BD$: ${a|b} = {x|3x} = {1|3}$ e $a + b = 8$ ⇒ $a = 2$ cm e $b = 6$ cm.
+cdb-l-tales-de-mileto-13 | As frentes para a rua são proporcionais aos fundos: ${x|20} = {y|30} = {z|50}$ e $x + y + z = 80$. A constante é ${80|100} = 0,8$: $x = 16$ m, $y = 24$ m e $z = 40$ m.
+cdb-l-tales-de-mileto-14 | O fio entre os topos mede $5$ m para $4$ m de distância horizontal. Dos $4$ m de fio até o primeiro poste, a distância horizontal é ${4|5} · 4 = 3,2$ m. O fio foi preso a $3,2$ m do poste mais próximo.
+cdb-l-tales-de-mileto-15 | ${x - 1|3} = {x + 4|x}$ ⇒ $x^2 - x = 3x + 12$ ⇒ $x^2 - 4x - 12 = 0$ ⇒ $x = 6$. $AB = (x - 1) + 3 = 8$ e $AC = (x + 4) + x = 16$.
+cdb-l-tales-de-mileto-18 | ${x|30} = {y|45}$ e $x + y = 90$ ⇒ $x = 36$ m e $y = 54$ m.
+cdb-l-tales-de-mileto-20 | Pelo Teorema de Tales: ${OP|OR} = {AB|AD}$ e ${PQ|OR} = {BC|AD}$. Com $OR = 120$ e $AD = 40 + 30 + 20 = 90$: $PQ = {120 · 30|90} = 40$ m.
+cdb-l-tales-de-mileto-21 | Razão altura/sombra do bloco: ${1|1,5} = {2|3}$. Altura da antena: ${2|3} · 6 = 4$ m.
+cdb-l-tales-de-mileto-22 | Razão altura/sombra do pedestal: ${2|3,2} = 0,625$. Altura da estátua: $0,625 · 8 = 5$ m.
+cdb-l-tales-de-mileto-23 | ${x|x + 5} = {2x|x + 20}$ ⇒ $x + 20 = 2x + 10$ ⇒ $x = 10$. $AB = 10 + 15 = 25$ e $AC = 2x + (x + 20) = 20 + 30 = 50$.
+cdb-l-tales-de-mileto-24 | ${MN|10} = {NP|25} = {21|35}$: $MN = 6$ cm e $NP = 15$ cm.
+cdb-l-tales-de-mileto-25 | ${1,8|2,7} = {h|9}$ ⇒ $h = 6$ m.
+cdb-l-tales-de-mileto-26 | ${1,5|0,5} = 3$: a altura é $3$ vezes a sombra. A torre mede $3 · 15 = 45$ m.
+cdb-l-tales-de-mileto-27 | Os triângulos $ABC$ e $DEC$ são semelhantes ($AB ∥ ED$): ${AC|DC} = {BC|EC} = {AB|DE}$, isto é, ${4|y} = {3|1} = {x|2}$. Logo $y = {4|3}$ e $x = 6$.
+cdb-l-tales-de-mileto-28 | A razão de semelhança é ${8|4} = 2$. a) Cada lado congruente do segundo mede $10 ÷ 2 = 5$ cm. b) Perímetros: $10 + 10 + 8 = 28$ cm e $5 + 5 + 4 = 14$ cm. c) Razão do primeiro para o segundo: $2$ (ou $2 : 1$).
+cdb-l-tales-de-mileto-29 | ${1,8|1,2} = 1,5$: a altura é $1,5$ vez a sombra. O mastro mede $1,5 · 6 = 9$ m.
+cdb-l-tales-de-mileto-30 | O triângulo menor tem lado ${18|3} = 6$ cm. Os lados do maior medem $6 · {3|2} = 9$ cm.
+cdb-l-tales-de-mileto-31 | O maior lado ($15$) vira $27$: razão $1,8$. Os lados medem $18$ cm, $21,6$ cm e $27$ cm.
+cdb-l-tales-de-mileto-32 | Os ângulos marcados mostram que $ABC ∼ DFE$ ($A ↔ D$, $B ↔ F$, $C ↔ E$): ${DF|AB} = {FE|BC} = {DE|AC} = {4|8} = {5|10} = {1|2}$. Logo $y = DE = {14|2} = 7$ e, como $AC = x + y + x = 14$, $x = 3,5$.
+cdb-l-tales-de-mileto-34 | O perímetro de $T_2$ é ${3|4} · 38 = 28,5$ cm; o lado desconhecido de $T_2$ mede $28,5 - 15 = 13,5$ cm. Os lados de $T_1$ são ${4|3}$ dos de $T_2$: $8$ cm, $12$ cm e $18$ cm.
+cdb-l-tales-de-mileto-35 | ${h|5} = {30|4}$ ⇒ $h = 37,5$ m.
+cdb-l-tales-de-mileto-37 | A sombra do poste mede $2,70 + 6,30 = 9$ m. ${h|1,8} = {9|2,7}$ ⇒ $h = 6$ m.
+cdb-l-tales-de-mileto-38 | $ABC ∼ EDC$: ${x|60} = {300|36}$ ⇒ $x = 500$ m.
+cdb-l-tales-de-mileto-39 | A razão de $ABC$ para $A'B'C'$ é $3$: os lados de $A'B'C'$ medem ${9|3} = 3$ cm, ${18|3} = 6$ cm e ${21|3} = 7$ cm.
+cdb-l-tales-de-mileto-40 | Perímetro do primeiro: $10,5$ cm. Razão: ${70|10,5} = {20|3}$. Lados: $14$ cm, $26$ cm e $30$ cm.
+cdb-l-tales-de-mileto-41 | Razão ${15|25} = 0,6$: o perímetro mede $0,6 · 60 = 36$ m.
+cdb-l-tales-de-mileto-42 | Com $MN ∥ BC$: ${AM|AB} = {AN|AC}$, isto é, ${4|4 + x} = {6|6 + x + 3}$ ⇒ $36 + 4x = 24 + 6x$ ⇒ $x = 6$. Assim $AB = 4 + 6 = 10$ e $AC = 6 + 9 = 15$.
+cdb-l-tales-de-mileto-43 | ${12|4} = 3$: a altura é $3$ vezes a sombra. O edifício mede $3 · 30 = 90$ m.
+cdb-l-tales-de-mileto-44 | Razão do banco: ${30|40} = {3|4}$. Altura do garoto: $x = {3|4} · 120 = 90$ cm.
+cdb-l-tales-de-mileto-45 | ${0,6|0,4} = 1,5$. A árvore mede $1,5 · 4,5 = 6,75$ m.
+cdb-l-tales-de-mileto-46 | ${1|0,6} = {5|3}$. O poste mede ${5|3} · 12 = 20$ m.
+cdb-l-tales-de-mileto-47 | Com a sombra $x$: ${1,5|x} = {4|x + 2}$ ⇒ $4x = 1,5x + 3$ ⇒ $x = 1,2$ m.
+cdb-l-tales-de-mileto-48 | $AB = √{40^2 + 30^2} = 50$ m e $BC = √{80^2 + 60^2} = 100$ m. Distância percorrida: $150$ m.
+cdb-l-tales-de-mileto-49 | $√{15^2 + 8^2} = √{289} = 17$ m.
+cdb-l-tales-de-mileto-50 | $√{1,2^2 + 1,6^2} = √{4} = 2$ m.
+cdb-l-tales-de-mileto-51 | $OA = 4$ km, $AB = 2$ km e $BC = √{4^2 + 3^2} = 5$ km. Distância percorrida: $4 + 2 + 5 = 11$ km.
+cdb-l-tales-de-mileto-52 | Velocidades $v$ e $v + 7$: $v^2 + (v + 7)^2 = 13^2$ ⇒ $v^2 + 7v - 60 = 0$ ⇒ $v = 5$. Os navios viajam a $5$ milhas/h e $12$ milhas/h.
+cdb-l-tales-de-mileto-53 | $√{6^2 + 8^2} = 10$ m de fio.
+cdb-l-tales-de-mileto-54 | $c^2 = 14^2 - (5√3)^2 = 196 - 75 = 121$ ⇒ $c = 11$ cm.
+cdb-l-tales-de-mileto-55 | $h^2 = (2 + √5)^2 + (-2 + √5)^2 = (9 + 4√5) + (9 - 4√5) = 18$ ⇒ $h = 3√2$ cm.
+cdb-l-tales-de-mileto-56 | $√{12^2 + 16^2} = 20$ m.
+cdb-l-tales-de-mileto-58 | Em um quadrilátero de diagonais perpendiculares: $AB^2 + CD^2 = AD^2 + BC^2$ ⇒ $16 + 64 = 36 + x^2$ ⇒ $x^2 = 44$ ⇒ $x = 2√{11} ≈ 6,63$ cm.
+cdb-l-tales-de-mileto-59 | Tronco $t$ e parte quebrada $9 - t$: $t^2 + 3^2 = (9 - t)^2$ ⇒ $9 = 81 - 18t$ ⇒ $t = 4$ m.
+cdb-l-tales-de-mileto-60 | $√{1,2^2 + 0,5^2} = √{1,69} = 1,3$ km.
+cdb-l-tales-de-mileto-61 | $√{15^2 + 20^2} = 25$ km.
+cdb-l-tales-de-mileto-62 | Cada cabo: $√{8^2 + 6^2} = 10$ m. Com $3$ cabos: $30$ m.
+cdb-l-tales-de-mileto-63 | $x^2 + 12^2 = (x + 8)^2$ ⇒ $144 = 16x + 64$ ⇒ $x = 5$. Perímetro: $2 · (5 + 12) = 34$ cm.
+cdb-l-tales-de-mileto-64 | O lado do losango é a hipotenusa de um triângulo de catetos $8$ e $6$ (metades dos lados): $x = 10$ cm.
+cdb-l-tales-de-mileto-67 | a) $x = √{6^2 + 8^2} = 10$. b) (triângulo $NMP$) $x = √{2^2 + 8^2} = √{68} = 2√{17} ≈ 8,25$. c) (triângulo $PQR$) $x^2 + 12^2 = 13^2$ ⇒ $x = 5$. d) $x^2 + (√{11})^2 = 6^2$ ⇒ $x = 5$.
+cdb-l-tales-de-mileto-69 | $c^2 = 1^2 - 0,6^2 = 0,64$ ⇒ $c = 0,8$ cm.
+cdb-l-tales-de-mileto-70 | $a = √{5^2 - 4^2} = 3$; $b = 12 - 3 = 9$; $c = √{9^2 + 12^2} = 15$.
+cdb-l-tales-de-mileto-71 | Catetos iguais $c$: $2c^2 = 64$ ⇒ $c = 4√2$ m.
+cdb-l-tales-de-mileto-72 | Lados $x$ e $2x$: $2(x + 2x) = 30$ ⇒ $x = 5$ e $2x = 10$. Diagonal: $√{5^2 + 10^2} = 5√5 ≈ 11,18$ cm.
+cdb-l-tales-de-mileto-73 | Catetos $x$ e $2x$: $x^2 + 4x^2 = 100$ ⇒ $x = 2√5$. a) Menor cateto: $2√5 ≈ 4,47$ cm. b) Perímetro: $2√5 + 4√5 + 10 = 10 + 6√5 ≈ 23,4$ cm.
+cdb-l-tales-de-mileto-74 | $√{2,5^2 - 1,5^2} = √{4} = 2$ m.
+cdb-l-temas-variados-7-ano-01 | Grandezas inversamente proporcionais (a engrenagem menor gira mais): Pelo enunciado, $15$ giros da maior correspondem a $48$ da menor: ${195|15} · 48 = 13 · 48 = 624$ giros.
+cdb-l-temas-variados-7-ano-02 | Capacidade total: $9 · 70 = 630$ kg. Pessoas de $63$ kg: $630 ÷ 63 = 10$ pessoas.
+cdb-l-temas-variados-7-ano-03 | a) $3x + 2x + 5 + 5x + 15 = 180$ ⇒ $x = 16$: ângulos de $48°$, $37°$ e $95°$. b) $15x + 15 = 360$ ⇒ $x = 23$: ângulos de $41°$, $140°$, $77°$ e $102°$.
+cdb-l-temas-variados-7-ano-2-02 | Crescimento de $300%$: $40 + 3 · 40 = 160$ unidades por semana.
+cdb-l-temas-variados-7-ano-2-03 | $25%$ da turma são $11$ alunos: $11 · 4 = 44$ alunos.
+cdb-l-temas-variados-7-ano-2-04 | $80%$ do preço é R&#36; 760,00: $760 ÷ 0,8 = 950$. A TV custa R&#36; 950,00.
+cdb-l-temas-variados-7-ano-05 | 6) a) Percurso: $4,5 · 80 = 360$ km; a $90$ km/h: $4$ horas. b) Em $5$ h: $72$ km/h. 7) Percurso: $9,6 · 1,5 = 14,4$ km; o segundo: ${14,4|2} = 7,2$ km/h. 8) ${45 000|8} · 10 = 56 250$ L. 9) Percurso: $75 · {40|60} = 50$ km; na volta: $50 ÷ {50|60} = 60$ km/h. 10) $64 · 1,6 = 80 · d$ ⇒ $d = 1,28$ m.
+cdb-l-temas-variados-7-ano-2-05 | 5) Sapato de R&#36; 98,00 com reajuste de $12%$: $98 · 1,12 = 109,76$. Novo preço: R&#36; 109,76.
+cdb-l-temas-variados-7-ano-2-06 | 6) Produção atual $= 1,2 ×$ a anterior: $1 500 ÷ 1,2 = 1 250$ pães por dia antes do aumento.
+cdb-l-temas-variados-7-ano-2-07 | 7) Flávio: $106,8 - 21,7 = 85,1$ kg. Deve chegar a $73$ kg: ainda deve perder $85,1 - 73 = 12,1$ kg.
+cdb-l-temas-variados-7-ano-2-08 | 8) a) $10$ crianças. b) Meninos: $6$ ($60%$); meninas: $4$ ($40%$). Cabelo preto: $4$ ($40%$); louro: $3$ ($30%$); ruivo: $3$ ($30%$).
+cdb-l-temas-variados-7-ano-2-09 | 9) $1 500 + 0,015 · 8 200 = 1 500 + 123 = 1 623$: Luciana ganhou R&#36; 1 623,00.
+cdb-l-temas-variados-7-ano-2-10 | 10) Parte a juro simples: $10 000 · (1 + 0,04 · 3) = 11 200$. Parte a juro composto: $40 000 · 1,03^3 ≈ 43 709,08$. Montante total: $≈$ R&#36; 54 909,08.
+cdb-l-temas-variados-7-ano-2-11 | $40 000 · 0,018 · t = 3 600$ ⇒ $720t = 3 600$ ⇒ $t = 5$ meses.
+cdb-l-teorema-de-pitagoras-04 | Hipotenusa: $√{60^2 + 80^2} = 100$ m. Perímetro: $60 + 80 + 100 = 240$ m. Com $4$ fios: $4 · 240 = 960$ m de arame.
+cdb-l-teste-pronto-fracoes-6-ano-01 | a) ${1|3}$. b) ${1|3}$. c) ${3|8}$. d) ${3|7}$.
+cdb-l-teste-pronto-fracoes-6-ano-02 | a) ${1|5} = {2|10}$: falta o $10$. b) ${5|2} = {25|10}$: falta o $2$.
+cdb-l-teste-pronto-fracoes-6-ano-03 | a) ${40|60} = {2|3}$. b) ${100|250} = {2|5}$.
+cdb-l-teste-pronto-fracoes-6-ano-04 | Já gozou ${1|3} · 27 = 9$ dias. Faltam $27 - 9 = 18$ dias.
+cdb-l-teste-pronto-fracoes-6-ano-05 | a) ${1|3} + {1|9}$ é a fração do dinheiro que gastou no livro e na caneta (${4|9}$). b) $1 - ({1|3} + {1|9})$ é a fração do dinheiro que lhe restou na carteira (${5|9}$).
+cdb-l-teste-pronto-geometria-6-a-02 | Um ângulo é representado pelos seus dois lados (semirretas), pelo vértice (origem comum) e pela amplitude.
+cdb-l-teste-pronto-geometria-6-a-05 | a) $27$ mm $= 0,00027$ hm. b) $125$ km $= 1 250 000$ dm. c) $3,4$ m $= 3 400$ mm. d) $24,9$ dm $= 0,249$ dam.
+cdb-l-transformacoes-trigonometr-06 | $2 985° = 8 · 360° + 105°$, logo $cos 2 985° = cos 105° = -cos 75° = -{√6 - √2|4}$ (pois $cos 75° = cos 45° cos 30° - sen 45° sen 30° = {√6 - √2|4}$).
+cdb-l-triangulos-quadrilateros-e-02 | Classificação dos triângulos: $3, 4, 5$: escaleno e retângulo. $10, 8, 10$: isósceles e acutângulo. $6, 12, 6$: não existe ($6 + 6 = 12$). $5, 6, 7$: escaleno e acutângulo. 3) 3.1: não ($8 + 3 < 12$). 3.2: sim ($5 + 7 > 9$). 3.3: sim ($1$ dm $= 10$ cm e $8 + 5 > 10$).
+cdb-l-triangulos-quadrilateros-e-03 | 3.1) Não é possível ($8 + 3 < 12$). 3.2) É possível. 3.3) É possível ($10 < 8 + 5$). 4) As informações são suficientes em 4.1 (triângulo equilátero de lado $5$ cm) e em 4.4 (retângulo com catetos de $6$ cm); não são suficientes em 4.2 (falta o 3º lado ou um ângulo) nem em 4.3 (os ângulos não determinam o tamanho).
+cdb-l-triangulos-quadrilateros-e-04 | 4.1) Suficiente: equilátero de lado $5$ cm. 4.2) Insuficiente: faltam o terceiro lado ou um ângulo. 4.3) Insuficiente: só os ângulos não definem o tamanho (há infinitos triângulos semelhantes). 4.4) Suficiente: triângulo retângulo isósceles com catetos de $6$ cm.
+cdb-l-triangulos-quadrilateros-e-07 | 7.3) A: paralelogramo; B: losango; C: retângulo; D: quadrado; E: paralelogramo; F: trapézio isósceles. 7.2) (bissectam-se; perpendiculares; mesmo comprimento) A: V, F, F. B: V, V, F. C: V, F, V. D: V, V, V. E: V, F, F. F: F, F, V.
+cdb-l-trigonometria-em-um-triang-06 | Com $CD = h$: $BC = {h|√3}$ e $AC = 5 + {h|√3}$. Em $ADC$: $(5√7)^2 = (5 + {h|√3})^2 + h^2$ ⇒ $175 = 25 + {10h|√3} + {4h^2|3}$ ⇒ $4h^2 + 10√3 h - 450 = 0$ ⇒ $h = 5√3$. Logo $CD = 5√3 ≈ 8,66$ dm.
+cdb-l-trigonometria-no-triangulo-04 | Com $d$ a distância final ao morro: $h = (d + 50) · tg 45° = d + 50$ e $h = d · tg 60° = d√3$. Então $d(√3 - 1) = 50$ ⇒ $d = 25(√3 + 1)$ e $h = 25(3 + √3) ≈ 118,3$ m.
+cdb-l-regra-de-3-simples-05 | Massa total: $90 · 15 = 1 350$ g; pães de $10$ g: $1 350 ÷ 10 = 135$ pães (gabarito da lista).
