@@ -1,0 +1,53 @@
+// Matemática · 7º ano · 3º trimestre · Ângulos e polígonos (base: slides "Ângulos" e "Polígonos — elementos e classificação" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '7° Ano', tri: 3, pasta: 'aulas/7-ano/3-tri/angulos-e-poligonos/', titulo: 'Ângulos e polígonos', accent: 'primary', icon: 'polygon', key: 'm7p37', area: 'Matemática · 7º ano',
+  aulas: [
+    A('angulos-opostos-pelo-vertice-e-retas-paralelas', 'Ângulos opostos pelo vértice e retas paralelas',
+      `O que se repete quando as ${co('primary')}retas se cruzam</span>`,
+      'Em um cruzamento de ruas, por que os ângulos “de frente um para o outro” têm sempre a mesma medida? E o que muda quando duas ruas paralelas são cortadas por uma terceira?',
+      'mapa', [['opostos pelo vértice'], ['paralelas e transversal', 'growth'], ['correspondentes', 'decay']],
+      ['Quando duas retas se cruzam, formam quatro ângulos. Vamos descobrir como eles se relacionam.', ['Ângulos suplementares somam:', ['$90°$', '$180°$', '$270°$', '$360°$'], 1, '$180°$.'], 'Cruze dois lápis sobre a mesa e observe: quais ângulos parecem iguais?'],
+      ['<strong>Identificar</strong> ângulos opostos pelo vértice e adjacentes suplementares.', '<strong>Reconhecer</strong> ângulos formados por paralelas cortadas por uma transversal.', '<strong>Calcular</strong> ângulos desconhecidos usando essas relações.'],
+      'Ângulos <strong>opostos pelo vértice</strong> são sempre <strong>iguais</strong>.',
+      [['Ângulos opostos pelo vértice', ['Duas retas concorrentes formam quatro ângulos.', 'Os <strong>opostos pelo vértice</strong> (o “de frente”) são <strong>congruentes</strong>.', 'Os <strong>adjacentes</strong> (vizinhos) são <strong>suplementares</strong>: somam $180°$.'],
+        tbl(['Par', 'Relação'], [['opostos pelo vértice', 'iguais'], ['adjacentes', 'somam $180°$']])],
+       ['Paralelas e transversal', ['Uma reta que corta duas paralelas é a <strong>transversal</strong>; ela forma $8$ ângulos.', '<strong>Correspondentes</strong> (mesma posição) e <strong>alternos</strong> (lados opostos da transversal) são <strong>iguais</strong>.', '<strong>Colaterais</strong> (mesmo lado da transversal) são <strong>suplementares</strong>.'],
+        fig('mapa', 'Ilustração original: ruas paralelas cortadas por uma avenida.', '300px')],
+       ['Usando as relações', ['Descubra um ângulo e obtenha vários outros: iguais ou suplementares.', 'Dado um ângulo de $70°$: correspondente $70°$; colateral interno $110°$.', 'Escreva uma equação quando o ângulo tiver uma incógnita.'],
+        callout('Estratégia', 'Marque os iguais com a mesma letra e os que somam $180°$ com sinais diferentes.', 'primary')]],
+      [['Opostos pelo vértice', 'Dois ângulos opostos pelo vértice medem $x + 20°$ e $60°$. Calcule $x$.', [['São iguais', '$x + 20 = 60$.'], ['Resolva', '$x = 40$.']], '$x = 40°$'],
+       ['Paralelas cortadas por transversal', 'Duas paralelas são cortadas por uma transversal e um ângulo mede $70°$. Qual é o ângulo colateral interno a ele?', [['Colaterais internos são suplementares', '$180° - 70°$.']], '$110°$']],
+      ['Adjacentes', 'Dois ângulos adjacentes formam uma reta. Um mede $115°$. Quanto mede o outro?', ['Que soma têm ângulos adjacentes sobre uma reta?', '$180° - 115°$.', 'Confira.'], '$180° - 115° = 65°$.'],
+      [['Dois ângulos opostos pelo vértice:', ['somam $90°$', 'somam $180°$', 'são iguais', 'são complementares'], 2, 'Opostos pelo vértice são congruentes.'],
+       ['Um ângulo mede $48°$. O oposto pelo vértice a ele mede:', ['$132°$', '$42°$', '$48°$', '$96°$'], 2, 'São iguais.'],
+       ['Paralelas cortadas por transversal: um ângulo mede $65°$ e o alterno interno a ele mede:', ['$115°$', '$65°$', '$25°$', '$130°$'], 1, 'Alternos internos são iguais.'],
+       ['Colaterais internos de $80°$ e $x$: o valor de $x$ é:', ['$80°$', '$100°$', '$10°$', '$280°$'], 1, 'Colaterais somam $180°$.']],
+      [[['Opostos pelo vértice', 'São iguais.'], ['Adjacentes', 'Somam $180°$ quando formam uma reta.'], ['Paralelas', 'Correspondentes e alternos: iguais. Colaterais: suplementares.']], 'Por que os ângulos alternos internos de paralelas são iguais?', 'Voltando ao cruzamento: ângulos opostos pelo vértice são sempre iguais.'],
+      [['Dois ângulos adjacentes sobre uma reta: um mede $60°$; o outro:', ['$60°$', '$30°$', '$120°$', '$300°$'], 2], ['Ângulos correspondentes entre paralelas são:', ['iguais', 'suplementares', 'complementares', 'sempre retos'], 0], ['Se um ângulo colateral externo mede $110°$, o outro mede:', ['$110°$', '$70°$', '$20°$', '$250°$'], 1]]),
+
+    A('poligonos-diagonais-e-soma-dos-angulos', 'Polígonos: diagonais e soma dos ângulos',
+      `Quantas ${co('primary')}diagonais</span> tem um hexágono?`,
+      'Quantas diagonais tem um hexágono? E quanto vale a soma de todos os ângulos internos dele?',
+      'piso', [['diagonais'], ['soma dos ângulos', 'growth'], ['polígono regular', 'decay']],
+      ['Já sabemos dar nome aos polígonos. Agora vamos descobrir regras para suas diagonais e seus ângulos.', ['A soma dos ângulos internos de um triângulo é:', ['$90°$', '$180°$', '$270°$', '$360°$'], 1, '$180°$.'], 'Desenhe um quadrilátero e trace uma diagonal. Em quantos triângulos ele se divide?'],
+      ['Calcular o <strong>número de diagonais</strong> de um polígono.', 'Calcular a <strong>soma dos ângulos internos</strong>.', 'Calcular o ângulo interno e externo de um polígono <strong>regular</strong>.'],
+      'Divida o polígono em triângulos: <strong>cada triângulo contribui com $180°$</strong>.',
+      [['Diagonais', ['<strong>Diagonal</strong> é o segmento que liga dois vértices não consecutivos.', 'Em um polígono de $n$ lados: $d = {n · (n - 3)|2}$.', 'Hexágono ($n = 6$): $d = {6 · 3|2} = 9$.'],
+        tbl(['Polígono', 'n', 'Diagonais'], [['quadrilátero', '$4$', '$2$'], ['pentágono', '$5$', '$5$'], ['hexágono', '$6$', '$9$']])],
+       ['Soma dos ângulos internos', ['De um vértice, as diagonais dividem o polígono em $n - 2$ triângulos.', '$S = (n - 2) · 180°$.', 'Hexágono: $(6 - 2) · 180° = 720°$.'],
+        fig('piso', 'Ilustração original: hexágonos de um piso.', '280px')],
+       ['Polígonos regulares', ['Em um polígono <strong>regular</strong>, cada ângulo interno é $S ÷ n$.', 'Ângulo externo: $360° ÷ n$; interno $+$ externo $= 180°$.', 'Hexágono regular: interno $720° ÷ 6 = 120°$ e externo $60°$.'],
+        tbl(['Regular', 'Interno', 'Externo'], [['triângulo', '$60°$', '$120°$'], ['quadrado', '$90°$', '$90°$'], ['hexágono', '$120°$', '$60°$']])]],
+      [['Diagonais do pentágono', 'Quantas diagonais tem um pentágono?', [['Use $d = {n(n - 3)|2}$ com $n = 5$', '${5 · 2|2}$.']], '$5$ diagonais'],
+       ['Soma dos ângulos', 'Calcule a soma dos ângulos internos de um octógono e o ângulo interno do octógono regular.', [['$n = 8$', '$S = (8 - 2) · 180° = 1080°$.'], ['Divida por $8$', '$1080° ÷ 8 = 135°$.']], '$1080°$; cada ângulo mede $135°$']],
+      ['O hexágono', 'Resolva a pergunta inicial: diagonais e soma dos ângulos de um hexágono.', ['Use $d = {n(n - 3)|2}$ com $n = 6$.', 'Use $S = (n - 2) · 180°$.', '$4 · 180° = ?$'], '$d = 9$ e $S = 4 · 180° = 720°$.'],
+      [['Um quadrilátero tem quantas diagonais?', ['$1$', '$2$', '$3$', '$4$'], 1, '${4 · 1|2} = 2$.'],
+       ['A soma dos ângulos internos de um pentágono é:', ['$360°$', '$540°$', '$720°$', '$180°$'], 1, '$(5 - 2) · 180° = 540°$.'],
+       ['Cada ângulo interno de um pentágono regular mede:', ['$72°$', '$108°$', '$120°$', '$90°$'], 1, '$540° ÷ 5 = 108°$.'],
+       ['O ângulo externo de um polígono regular de $10$ lados mede:', ['$18°$', '$36°$', '$72°$', '$144°$'], 1, '$360° ÷ 10 = 36°$.']],
+      [[['Diagonais', '$d = {n(n - 3)|2}$.'], ['Soma interna', '$S = (n - 2) · 180°$.'], ['Regular', 'Interno $= S ÷ n$; externo $= 360° ÷ n$.']], 'Por que a soma dos ângulos externos de qualquer polígono convexo é sempre $360°$?', 'Voltando ao hexágono: $9$ diagonais e $720°$ de soma dos ângulos internos.'],
+      [['Quantas diagonais tem um heptágono ($n = 7$)?', ['$7$', '$14$', '$21$', '$28$'], 1], ['A soma dos ângulos internos de um quadrilátero é:', ['$180°$', '$360°$', '$540°$', '$720°$'], 1], ['O ângulo externo de um quadrado é:', ['$45°$', '$90°$', '$180°$', '$270°$'], 1]])
+  ]
+});

@@ -1,0 +1,53 @@
+// Matemática · 7º ano · 3º trimestre · Estatística e probabilidade (base: slides "Pesquisa estatística", "Gráficos e médias", "Probabilidade" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '7° Ano', tri: 3, pasta: 'aulas/7-ano/3-tri/estatistica-e-probabilidade/', titulo: 'Estatística e probabilidade', accent: 'accent', icon: 'pie', key: 'm7p56', area: 'Matemática · 7º ano',
+  aulas: [
+    A('pesquisa-estatistica-tabelas-e-graficos', 'Pesquisa estatística, tabelas e gráficos',
+      `Transformar respostas em ${co('primary')}informação</span>`,
+      'Uma escola quer saber qual esporte os alunos preferem. Como coletar, organizar e mostrar os dados para a diretora entender rápido?',
+      'grafico', [['população e amostra'], ['frequência', 'growth'], ['gráficos', 'decay']],
+      ['Todo dia vemos pesquisas em jornais e redes. Entender como são feitas ajuda a não ser enganado por elas.', ['Numa tabela, a frequência indica:', ['o nome da variável', 'quantas vezes o valor aparece', 'a média', 'o maior valor'], 1, 'Frequência = contagem.'], 'Qual esporte você acha que é o mais votado na sua sala?'],
+      ['<strong>Distinguir</strong> população, amostra e variável.', '<strong>Montar</strong> tabela de frequência absoluta e relativa.', '<strong>Escolher</strong> e ler gráficos de barras, setores e linhas.'],
+      'Frequência relativa = frequência absoluta ÷ total. A soma é sempre $100%$.',
+      [['Pesquisa e amostra', ['<strong>População</strong>: todos os elementos pesquisados. <strong>Amostra</strong>: parte representativa dela.', '<strong>Variável</strong> qualitativa (esporte) ou quantitativa (idade).', 'Amostra mal escolhida gera conclusões erradas.'],
+        fig('grafico', 'Ilustração original: gráfico de barras.', '280px')],
+       ['Tabela de frequência', ['Frequência absoluta ($f$): contagem. Relativa: $f ÷ n$.', 'Esportes de $40$ alunos: futebol $20$, vôlei $12$, basquete $8$.', 'Futebol: ${20|40} = 50%$; vôlei $30%$; basquete $20%$.'],
+        tbl(['Esporte', 'f', 'fr'], [['futebol', '$20$', '$50%$'], ['vôlei', '$12$', '$30%$'], ['basquete', '$8$', '$20%$']])],
+       ['Escolha do gráfico', ['Barras: comparar categorias. Setores (pizza): partes de um todo.', 'Linhas: evolução no tempo. Histograma: dados em faixas.', 'Todo gráfico precisa de título, eixos nomeados e fonte.'],
+        callout('Atenção', 'Eixos que não começam no zero podem exagerar diferenças.', 'decay')]],
+      [['Frequência relativa', 'Em $50$ alunos, $15$ preferem pizza. Qual a frequência relativa?', [['${15|50}$', '$0,3$ ou $30%$.']], '$30%$'],
+       ['Qual gráfico?', 'Qual gráfico é melhor para mostrar a temperatura ao longo de uma semana?', [['É evolução no tempo', 'Gráfico de linhas.']], 'Gráfico de linhas']],
+      ['A pesquisa escolar', 'Com futebol $20$, vôlei $12$ e basquete $8$, monte as frequências relativas e escolha um gráfico.', ['Total $40$.', 'Divida cada frequência por $40$.', 'Partes de um todo: setores.'], 'Futebol $50%$, vôlei $30%$ e basquete $20%$; gráfico de setores ou de barras.'],
+      [['A soma das frequências relativas é:', ['$0$', '$50%$', '$100%$', '$200%$'], 2, 'Sempre o todo.'],
+       ['Idade é uma variável:', ['qualitativa', 'quantitativa', 'impossível', 'nominal'], 1, 'Numérica.'],
+       ['Para comparar categorias usamos preferencialmente:', ['gráfico de barras', 'mapa', 'foto', 'esquema'], 0, 'Barras.'],
+       ['A amostra é:', ['toda a população', 'uma parte da população', 'a média', 'o gráfico'], 1, 'Parte representativa.']],
+      [[['Amostra', 'Parte da população.'], ['Frequência', 'Absoluta e relativa.'], ['Gráfico', 'Escolha conforme o objetivo.']], 'Como saber se uma amostra é representativa?', 'Voltando à escola: futebol $50%$, vôlei $30%$, basquete $20%$.'],
+      [['Em $20$ respostas, $5$ dizem “sim”. A frequência relativa é:', ['$5%$', '$20%$', '$25%$', '$50%$'], 2], ['O gráfico de setores mostra:', ['evolução no tempo', 'partes de um todo', 'correlação', 'localização'], 1], ['A população de uma pesquisa de turma é:', ['só um aluno', 'todos os alunos da turma', 'a média', 'o professor'], 1]]),
+
+    A('probabilidade-introducao-e-eventos', 'Probabilidade: primeiras ideias',
+      `Quanto é ${co('primary')}provável</span>?`,
+      'No lançamento de um dado, é mais provável sair par ou sair 6? Como medir isso com um número entre $0$ e $1$?',
+      'dados', [['experimento aleatório'], ['espaço amostral', 'growth'], ['P(A)', 'decay']],
+      ['Jogos de dados, sorteios e previsão do tempo envolvem acaso. A probabilidade mede essa chance.', ['Ao lançar uma moeda, quantos resultados são possíveis?', ['$1$', '$2$', '$3$', '$4$'], 1, 'Cara ou coroa.'], 'Dê um exemplo de evento certo e um impossível.'],
+      ['<strong>Listar</strong> o espaço amostral.', '<strong>Calcular</strong> a probabilidade de um evento.', '<strong>Expressar</strong> a probabilidade como fração, decimal e porcentagem.'],
+      'Probabilidade $= {casos favoráveis|casos possíveis}$, sempre entre $0$ e $1$.',
+      [['Experimento aleatório', ['Experimento <strong>aleatório</strong>: o resultado depende do acaso.', '<strong>Espaço amostral</strong>: todos os resultados possíveis. Dado: $1, 2, 3, 4, 5, 6$.', '<strong>Evento</strong>: um ou mais resultados (por exemplo, “sair par”).'],
+        fig('dados', 'Ilustração original: dados.', '280px')],
+       ['Calculando', ['$P = {favoráveis|possíveis}$ (resultados igualmente prováveis).', 'Sair par num dado: ${3|6} = {1|2} = 0,5 = 50%$.', 'Sair $6$: ${1|6} ≈ 16,7%$.'],
+        tbl(['Evento', 'Probabilidade'], [['sair par', '${1|2}$'], ['sair $6$', '${1|6}$'], ['sair $7$', '$0$']])],
+       ['Evento certo, impossível e complementar', ['Certo: $P = 1$. Impossível: $P = 0$.', 'Complementar: $P(não ocorrer) = 1 - P(ocorrer)$.', 'P(chover) $= 30%$ ⇒ P(não chover) $= 70%$.'],
+        callout('Dica', 'Se contar os favoráveis é difícil, conte os complementares.', 'primary')]],
+      [['Dado', 'Qual a probabilidade de sair múltiplo de $3$ num dado?', [['Favoráveis', '$3$ e $6$.'], ['Possíveis', '$6$.']], '${2|6} = {1|3}$'],
+       ['Complementar', 'Se a chance de ganhar um jogo é $25%$, qual a de não ganhar?', [['$100% - 25%$', '$75%$.']], '$75%$']],
+      ['Par ou seis', 'Compare as probabilidades de sair par e de sair $6$ num dado.', ['Par: 3 favoráveis.', 'Seis: 1 favorável.', 'Compare ${3|6}$ e ${1|6}$.'], 'Par: ${1|2}$; seis: ${1|6}$. Sair par é mais provável.'],
+      [['A probabilidade de sair $4$ num dado é:', ['${1|2}$', '${1|4}$', '${1|6}$', '${4|6}$'], 2, 'Um caso em seis.'],
+       ['Um evento impossível tem probabilidade:', ['$0$', '${1|2}$', '$1$', '$100%$'], 0, 'Nenhum caso favorável.'],
+       ['Numa urna com $2$ bolas vermelhas e $3$ azuis, P(vermelha) é:', ['${2|3}$', '${3|5}$', '${2|5}$', '${1|2}$'], 2, '$2$ em $5$.'],
+       ['Se P(A) $= 0,2$, então P(não A) é:', ['$0,2$', '$0,8$', '$1,2$', '$0,02$'], 1, '$1 - 0,2$.']],
+      [[['Espaço amostral', 'Todos os resultados possíveis.'], ['P', 'Favoráveis ÷ possíveis.'], ['Complementar', '$1 - P$.']], 'Por que a probabilidade nunca passa de $1$?', 'Voltando ao dado: sair par é mais provável do que sair $6$.'],
+      [['P(sair número menor que $3$) num dado:', ['${1|6}$', '${1|3}$', '${1|2}$', '${2|3}$'], 1], ['Numa moeda, P(cara) é:', ['$25%$', '$50%$', '$75%$', '$100%$'], 1], ['P(sair $8$ num dado) é:', ['$0$', '${1|8}$', '${1|6}$', '$1$'], 0]])
+  ]
+});

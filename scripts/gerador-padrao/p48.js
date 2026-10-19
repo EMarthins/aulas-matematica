@@ -1,0 +1,53 @@
+// Matemática · 9º ano · 3º trimestre · Funções (base: slides "Função afim" e "Função quadrática" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '9° Ano', tri: 3, pasta: 'aulas/9-ano/3-tri/funcoes-afim-e-quadratica/', titulo: 'Funções afim e quadrática', accent: 'growth', icon: 'algebra', key: 'm9p48', area: 'Matemática · 9º ano',
+  aulas: [
+    A('funcao-afim-e-seu-grafico', 'Função afim e seu gráfico',
+      `Quando uma grandeza ${co('primary')}depende da outra</span>`,
+      'Um táxi cobra R&#36; 5 de bandeirada mais R&#36; 2 por quilômetro. Como o preço depende da distância e como seria o gráfico?',
+      'taxi', [['função'], ['coeficientes', 'growth'], ['gráfico', 'decay']],
+      ['Função é uma regra que associa cada valor de $x$ a um único valor de $y$.', ['Se $y = 2x + 1$ e $x = 3$, então $y$ vale:', ['$5$', '$6$', '$7$', '$9$'], 2, '$2 · 3 + 1 = 7$.'], 'Se cada caderno custa R&#36; 8, escreva o preço $p$ de $n$ cadernos.'],
+      ['<strong>Reconhecer</strong> a função afim $y = ax + b$.', '<strong>Interpretar</strong> $a$ (inclinação) e $b$ (intercepto).', '<strong>Construir</strong> o gráfico e achar a raiz.'],
+      'Função afim: $f(x) = ax + b$. O gráfico é sempre uma <strong>reta</strong>.',
+      [['Definição', ['<strong>Função afim</strong>: $f(x) = ax + b$, com $a$ e $b$ números reais.', '$b$ é o valor em $x = 0$ (onde a reta corta o eixo $y$).', '$a$ é a <strong>taxa de variação</strong>: quanto $y$ muda quando $x$ aumenta $1$.'],
+        fig('taxi', 'Ilustração original: táxi.', '280px')],
+       ['Gráfico', ['Reta pelos pontos $(0, b)$ e $(x, y)$ de qualquer outra tabela.', '$a > 0$: função <strong>crescente</strong>; $a < 0$: <strong>decrescente</strong>.', '<strong>Raiz</strong>: valor de $x$ com $f(x) = 0$, ou seja, $x = -{b|a}$.'],
+        tbl(['x', '0', '1', '2', '3'], [['$f(x) = 2x + 5$', '$5$', '$7$', '$9$', '$11$']])],
+       ['Interpretando o táxi', ['Preço: $p = 5 + 2d$ (bandeirada R&#36; 5 e R&#36; 2 por km).', 'Para $d = 10$ km: $p = 25$.', 'Taxa de variação: R&#36; 2 por quilômetro.'],
+        callout('Atenção', '$a$ e $b$ têm significado: taxa e valor inicial. Sempre interprete na situação.', 'primary')]],
+      [['Valor da função', 'Dada $f(x) = 3x - 4$, calcule $f(5)$.', [['Substitua', '$3 · 5 - 4$.'], ['Calcule', '$15 - 4 = 11$.']], '$11$'],
+       ['Raiz', 'Qual a raiz de $f(x) = 2x - 6$?', [['$2x - 6 = 0$', '$2x = 6$.'], ['Resolva', '$x = 3$.']], '$x = 3$']],
+      ['O táxi', 'Escreva a função do preço e calcule o custo de uma corrida de $12$ km.', ['Valor fixo mais valor por km.', '$p = 5 + 2d$.', 'Substitua $d = 12$.'], '$p = 5 + 2d$; para $12$ km: $5 + 24 = 29$, ou seja, R&#36; 29.'],
+      [['Em $f(x) = 4x + 1$, o valor $f(2)$ é:', ['$7$', '$8$', '$9$', '$10$'], 2, '$4 · 2 + 1$.'],
+       ['A função $f(x) = -3x + 2$ é:', ['crescente', 'decrescente', 'constante', 'quadrática'], 1, '$a < 0$.'],
+       ['A reta de $f(x) = 2x + 7$ corta o eixo $y$ em:', ['$2$', '$7$', '$-7$', '$9$'], 1, 'Em $x = 0$, $y = b$.'],
+       ['A raiz de $f(x) = 5x - 10$ é:', ['$-2$', '$2$', '$10$', '$-10$'], 1, '$5x = 10$.']],
+      [[['Forma', '$f(x) = ax + b$.'], ['Gráfico', 'Reta; $a$ dá a inclinação, $b$ o corte em $y$.'], ['Raiz', '$x = -{b|a}$.']], 'O que significa $a = 0$?', 'Voltando ao táxi: a corrida custa R&#36; 5 mais R&#36; 2 por km.'],
+      [['Se $f(x) = x + 9$, então $f(0)$ é:', ['$0$', '$9$', '$1$', '$10$'], 1], ['A função $f(x) = 2x - 1$ é:', ['crescente', 'decrescente', 'constante', 'nula'], 0], ['A raiz de $f(x) = 3x - 9$ é:', ['$3$', '$9$', '$-3$', '$27$'], 0]]),
+
+    A('funcao-quadratica-e-parabola', 'Função quadrática e parábola',
+      `A curva que ${co('primary')}sobe e desce</span>`,
+      'Uma bola é chutada e sua altura é $h = -t^2 + 4t$ (em metros, $t$ em segundos). Quando ela atinge a altura máxima e quanto vale?',
+      'bola', [['parábola'], ['raízes', 'growth'], ['vértice', 'decay']],
+      ['Muitos movimentos, como o voo de uma bola, são descritos por funções do 2º grau.', ['O valor de $-t^2 + 4t$ para $t = 2$ é:', ['$0$', '$2$', '$4$', '$12$'], 2, '$-4 + 8 = 4$.'], 'A bola sobe e depois desce: o que isso diz sobre a forma do gráfico?'],
+      ['<strong>Reconhecer</strong> a função quadrática $f(x) = ax^2 + bx + c$.', '<strong>Achar</strong> raízes e vértice da parábola.', '<strong>Interpretar</strong> máximo e mínimo.'],
+      'O gráfico é uma <strong>parábola</strong>: $a > 0$ abre para cima (mínimo); $a < 0$ para baixo (máximo).',
+      [['Função quadrática', ['$f(x) = ax^2 + bx + c$ com $a ≠ 0$.', 'O gráfico é uma <strong>parábola</strong> simétrica em relação a uma reta vertical.', '$a > 0$: concavidade para cima; $a < 0$: para baixo.'],
+        fig('bola', 'Ilustração original: bola em movimento.', '280px')],
+       ['Raízes e vértice', ['<strong>Raízes</strong>: $f(x) = 0$ (Bhaskara). Cortam o eixo $x$.', '<strong>Vértice</strong>: $x_v = -{b|2a}$ e $y_v = f(x_v)$.', 'O vértice é o ponto de máximo ($a < 0$) ou de mínimo ($a > 0$).'],
+        tbl(['Elemento', 'Fórmula'], [['raízes', '$x = {-b ± √Δ|2a}$'], ['vértice (x)', '$x_v = -{b|2a}$']])],
+       ['A bola', ['$h = -t^2 + 4t$: $a = -1$, $b = 4$, $c = 0$.', 'Raízes: $-t^2 + 4t = 0$ ⇒ $t(-t + 4) = 0$ ⇒ $t = 0$ ou $t = 4$.', 'Vértice: $t_v = -{4|-2} = 2$ e $h_v = -4 + 8 = 4$.'],
+        callout('Dica', 'A altura máxima ocorre no meio entre as raízes.', 'primary')]],
+      [['Vértice', 'Ache o vértice de $f(x) = x^2 - 6x + 5$.', [['$x_v = -{b|2a}$', '$x_v = {6|2} = 3$.'], ['$y_v = f(3)$', '$9 - 18 + 5 = -4$.']], '$(3, -4)$'],
+       ['Raízes', 'Ache as raízes de $f(x) = x^2 - 4x$.', [['Fatore', '$x(x - 4) = 0$.'], ['Raízes', '$x = 0$ ou $x = 4$.']], '$0$ e $4$']],
+      ['A altura máxima', 'Em $h = -t^2 + 4t$, quando a bola atinge a altura máxima e quanto vale?', ['Ache o $t$ do vértice.', '$t_v = 2$.', 'Calcule $h(2)$.'], 'Em $t = 2$ s, com altura máxima de $4$ m.'],
+      [['O gráfico de uma função quadrática é uma:', ['reta', 'parábola', 'hipérbole', 'circunferência'], 1, 'Parábola.'],
+       ['Se $a < 0$, a parábola tem:', ['mínimo', 'máximo', 'nenhuma raiz', 'duas retas'], 1, 'Concavidade para baixo.'],
+       ['O $x$ do vértice de $f(x) = x^2 - 8x + 3$ é:', ['$4$', '$8$', '$-4$', '$2$'], 0, '$8 ÷ 2$.'],
+       ['As raízes de $f(x) = x^2 - 1$ são:', ['$1$ apenas', '$-1$ e $1$', '$0$ e $1$', 'não há'], 1, '$x^2 = 1$.']],
+      [[['Parábola', 'Gráfico da função do 2º grau.'], ['Vértice', '$x_v = -{b|2a}$.'], ['Raízes', 'Bhaskara.']], 'O que acontece com a parábola quando $a$ muda de sinal?', 'Voltando à bola: máximo de $4$ m aos $2$ s.'],
+      [['Em $f(x) = -x^2 + 2x$, o $x$ do vértice é:', ['$1$', '$2$', '$-1$', '$0$'], 0], ['Se $a > 0$, o vértice é ponto de:', ['máximo', 'mínimo', 'inflexão', 'raiz'], 1], ['As raízes de $x^2 - 9$ são:', ['$3$', '$-3$ e $3$', '$9$', '$0$ e $3$'], 1]])
+  ]
+});

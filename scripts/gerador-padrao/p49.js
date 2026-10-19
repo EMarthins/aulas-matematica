@@ -1,0 +1,53 @@
+// Matemática · 9º ano · 3º trimestre · Probabilidade e estatística (base: slides "Probabilidade", "Medidas de tendência central" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '9° Ano', tri: 3, pasta: 'aulas/9-ano/3-tri/probabilidade-e-estatistica/', titulo: 'Probabilidade e estatística', accent: 'accent', icon: 'pie', key: 'm9p49', area: 'Matemática · 9º ano',
+  aulas: [
+    A('probabilidade-espaco-amostral-e-eventos', 'Probabilidade: espaço amostral e eventos',
+      `Qual a ${co('primary')}chance</span> de acontecer?`,
+      'Em um sorteio de rifa com $50$ bilhetes, você tem $5$. Qual a chance de ganhar? E de não ganhar?',
+      'cartas', [['espaço amostral'], ['evento', 'growth'], ['P(A)', 'decay']],
+      ['Probabilidade mede a chance de um acontecimento em uma escala de $0$ a $1$ (ou de $0%$ a $100%$).', ['Ao lançar uma moeda, os resultados possíveis são:', ['só cara', 'cara ou coroa', 'três', 'nenhum'], 1, 'Dois resultados.'], 'É mais provável tirar “cara” ou um número par num dado? Por quê?'],
+      ['<strong>Listar</strong> o espaço amostral de um experimento.', '<strong>Calcular</strong> $P(A)$ quando os resultados são igualmente prováveis.', '<strong>Usar</strong> o evento complementar.'],
+      'Eventos igualmente prováveis: $P(A) = {casos favoráveis|casos possíveis}$.',
+      [['Experimento e espaço amostral', ['<strong>Experimento aleatório</strong>: o resultado depende do acaso (dado, moeda, sorteio).', '<strong>Espaço amostral</strong>: conjunto de todos os resultados possíveis. Dado: $1, 2, 3, 4, 5, 6$.', '<strong>Evento</strong>: parte do espaço amostral. “Sair par” = $2, 4, 6$.'],
+        fig('cartas', 'Ilustração original: cartas.', '280px')],
+       ['Cálculo da probabilidade', ['$P(A) = {n(A)|n(Ω)}$ (casos favoráveis sobre casos possíveis).', 'Sair par no dado: ${3|6} = {1|2} = 50%$.', 'A probabilidade fica entre $0$ (impossível) e $1$ (certo).'],
+        tbl(['Evento', 'P'], [['sair $5$ no dado', '${1|6}$'], ['sair par', '${1|2}$'], ['sair $7$', '$0$']])],
+       ['Evento complementar', ['O complementar de $A$ é “não acontecer $A$”: $P(não A) = 1 - P(A)$.', 'Rifa: ganhar ${5|50} = 10%$; não ganhar $100% - 10% = 90%$.', 'Muitas vezes é mais fácil calcular o complementar.'],
+        callout('Dica', 'Soma de todas as probabilidades de um espaço amostral = $1$.', 'primary')]],
+      [['Dado', 'Qual a probabilidade de sair um número maior que $4$ ao lançar um dado?', [['Favoráveis', '$5$ e $6$: $2$ casos.'], ['Possíveis', '$6$.']], '${2|6} = {1|3}$'],
+       ['Baralho', 'Qual a probabilidade de tirar uma carta de copas de um baralho de $52$ cartas ($13$ copas)?', [['Favoráveis', '$13$.'], ['Possíveis', '$52$.']], '${13|52} = {1|4} = 25%$']],
+      ['A rifa', 'Você tem $5$ de $50$ bilhetes. Qual a chance de ganhar e de não ganhar?', ['${5|50}$.', 'Simplifique e passe a porcentagem.', 'Use o complementar.'], 'Ganhar: ${1|10} = 10%$; não ganhar: $90%$.'],
+      [['A probabilidade de sair cara numa moeda é:', ['$0$', '${1|2}$', '$1$', '${1|4}$'], 1, 'Um caso favorável em dois.'],
+       ['Num saco com $3$ bolas vermelhas e $2$ azuis, P(azul) é:', ['${2|5}$', '${3|5}$', '${2|3}$', '${1|2}$'], 0, '$2$ de $5$.'],
+       ['A probabilidade de um evento impossível é:', ['$0$', '${1|2}$', '$1$', '$-1$'], 0, 'Nenhum caso favorável.'],
+       ['Se P(chover) $= 0,3$, P(não chover) é:', ['$0,3$', '$0,6$', '$0,7$', '$1,3$'], 2, '$1 - 0,3$.']],
+      [[['P(A)', 'Favoráveis sobre possíveis.'], ['Limites', 'De $0$ a $1$.'], ['Complementar', '$1 - P(A)$.']], 'Quando a fórmula favoráveis/possíveis NÃO vale?', 'Voltando à rifa: $10%$ de ganhar e $90%$ de não ganhar.'],
+      [['Num dado, P(sair $3$) é:', ['${1|3}$', '${1|6}$', '${1|2}$', '$3$'], 1], ['P(sair número ímpar) num dado é:', ['${1|6}$', '${1|2}$', '${2|3}$', '${1|3}$'], 1], ['Se P(A) $= {2|5}$, então P(não A) é:', ['${2|5}$', '${3|5}$', '${1|5}$', '${5|2}$'], 1]]),
+
+    A('media-moda-mediana-e-graficos', 'Média, moda, mediana e gráficos',
+      `Resumir dados em ${co('primary')}um número</span>`,
+      'As notas de cinco provas foram $6$, $7$, $7$, $8$ e $10$. Qual número resume bem a turma: a média, a mediana ou a moda?',
+      'grafico', [['média'], ['mediana', 'growth'], ['moda', 'decay']],
+      ['Pesquisas geram muitos números. Medidas de tendência central resumem os dados.', ['A soma de $4 + 6 + 8$ é:', ['$16$', '$18$', '$20$', '$12$'], 1, '$4 + 6 + 8 = 18$.'], 'Qual idade é mais comum na sua sala?'],
+      ['<strong>Calcular</strong> média, moda e mediana.', '<strong>Escolher</strong> a medida mais adequada.', '<strong>Ler</strong> dados em tabelas e gráficos.'],
+      'A média é afetada por valores muito altos ou baixos; a mediana, não.',
+      [['Média aritmética', ['<strong>Média</strong> = soma dos valores ÷ quantidade de valores.', 'Notas $6, 7, 7, 8, 10$: soma $38$, média $38 ÷ 5 = 7,6$.', '<strong>Média ponderada</strong>: cada valor tem um peso.'],
+        fig('grafico', 'Ilustração original: gráfico de barras.', '280px')],
+       ['Moda e mediana', ['<strong>Moda</strong>: valor que mais se repete. Notas acima: moda $7$.', '<strong>Mediana</strong>: valor central dos dados em ordem. Notas acima: mediana $7$.', 'Com quantidade par de dados, a mediana é a média dos dois centrais.'],
+        tbl(['Medida', 'Valor'], [['média', '$7,6$'], ['moda', '$7$'], ['mediana', '$7$']])],
+       ['Qual escolher?', ['Média: quando não há valores extremos.', 'Mediana: quando há valores extremos (ex.: salários).', 'Moda: para o dado mais comum (tamanho de sapato mais vendido).'],
+        callout('Atenção', 'Se um aluno tirar $0$ no lugar do $10$, a média cai, mas a mediana continua $7$.', 'decay')]],
+      [['Média e mediana', 'Calcule a média e a mediana de $3, 5, 8, 10, 14$.', [['Média', '$(3 + 5 + 8 + 10 + 14) ÷ 5 = 8$.'], ['Mediana', 'Valor central: $8$.']], 'Média $8$ e mediana $8$'],
+       ['Mediana com par', 'Qual a mediana de $2, 4, 6, 10$?', [['Dois centrais', '$4$ e $6$.'], ['Média deles', '$5$.']], '$5$']],
+      ['As notas', 'Para as notas $6, 7, 7, 8, 10$, calcule média, moda e mediana.', ['Some todas e divida por $5$.', 'Qual valor se repete?', 'Qual está no centro?'], 'Média $7,6$; moda $7$; mediana $7$.'],
+      [['A média de $4, 6, 8$ é:', ['$5$', '$6$', '$7$', '$18$'], 1, '$18 ÷ 3$.'],
+       ['A moda de $2, 3, 3, 5, 3, 7$ é:', ['$2$', '$3$', '$5$', '$7$'], 1, 'O $3$ aparece mais vezes.'],
+       ['A mediana de $1, 3, 5, 7, 9$ é:', ['$3$', '$5$', '$7$', '$25$'], 1, 'O valor central.'],
+       ['Qual medida é menos afetada por um valor extremo?', ['média', 'mediana', 'soma', 'amplitude'], 1, 'A mediana.']],
+      [[['Média', 'Soma sobre quantidade.'], ['Moda', 'O que mais aparece.'], ['Mediana', 'Valor central em ordem.']], 'Em que situação a mediana representa melhor que a média?', 'Voltando às notas: média $7,6$; moda e mediana $7$.'],
+      [['A média de $10, 20, 30$ é:', ['$15$', '$20$', '$25$', '$60$'], 1], ['A moda de $1, 1, 2, 3$ é:', ['$1$', '$2$', '$3$', '$7$'], 0], ['A mediana de $5, 1, 9$ é:', ['$1$', '$5$', '$9$', '$15$'], 1]])
+  ]
+});

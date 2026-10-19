@@ -1,0 +1,53 @@
+// Matemática · 7º ano · 1º trimestre · Números inteiros: propriedades e potenciação (base: slides "Números inteiros — propriedades" e "Potenciação com números inteiros" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '7° Ano', tri: 1, pasta: 'aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/', titulo: 'Inteiros: propriedades e potenciação', accent: 'primary', icon: 'numbers', key: 'm7p33', area: 'Matemática · 7º ano',
+  aulas: [
+    A('propriedades-das-operacoes-com-inteiros', 'Propriedades das operações com inteiros',
+      `Regras que ${co('primary')}sempre</span> valem`,
+      'Uma loja soma o estoque da manhã e o da tarde. A ordem das parcelas muda o total? E se fosse uma subtração?',
+      'balanca', [['comutativa'], ['associativa', 'growth'], ['distributiva', 'decay']],
+      ['Algumas contas “parecem diferentes” mas dão o mesmo resultado. Hoje vamos entender por quê, com os inteiros.', ['$-3 + 7$ é igual a:', ['$-4$', '$4$', '$10$', '$-10$'], 1, '$-3 + 7 = 4$ e também $7 + (-3) = 4$.'], 'Troque a ordem em $5 - 2$ e em $2 - 5$. O resultado é o mesmo?'],
+      ['<strong>Reconhecer</strong> as propriedades da adição e da multiplicação de inteiros.', '<strong>Usar</strong> a propriedade distributiva para calcular de forma mais simples.', 'Saber que a <strong>subtração não é comutativa</strong>.'],
+      'Comutar é <strong>trocar de lugar</strong>; associar é <strong>trocar o agrupamento</strong>.',
+      [['Propriedades da adição', ['<strong>Comutativa</strong>: $a + b = b + a$.', '<strong>Associativa</strong>: $(a + b) + c = a + (b + c)$.', '<strong>Elemento neutro</strong>: $a + 0 = a$. <strong>Oposto</strong>: $a + (-a) = 0$.'],
+        tbl(['Propriedade', 'Exemplo'], [['comutativa', '$-3 + 7 = 7 + (-3) = 4$'], ['elemento neutro', '$-5 + 0 = -5$'], ['oposto', '$8 + (-8) = 0$']])],
+       ['Propriedades da multiplicação', ['<strong>Comutativa</strong>: $a · b = b · a$. <strong>Associativa</strong>: $(a · b) · c = a · (b · c)$.', '<strong>Elemento neutro</strong>: $a · 1 = a$. Multiplicar por $0$ dá $0$.', '<strong>Distributiva</strong>: $a · (b + c) = a · b + a · c$.'],
+        callout('Use a seu favor', '$7 · 98 = 7 · (100 - 2) = 700 - 14 = 686$.', 'primary')],
+       ['O que não vale', ['A <strong>subtração</strong> não é comutativa: $5 - 2 = 3$, mas $2 - 5 = -3$.', 'A divisão também não é comutativa: $8 ÷ 2 ≠ 2 ÷ 8$.', 'Não existe divisão por zero.'],
+        tbl(['Conta', 'Troca', 'Mesmo resultado?'], [['$5 - 2 = 3$', '$2 - 5 = -3$', 'não'], ['$5 + 2 = 7$', '$2 + 5 = 7$', 'sim']])]],
+      [['Propriedade distributiva', 'Calcule $5 · (-3 + 8)$ de dois modos.', [['Somando dentro do parêntese', '$-3 + 8 = 5$; $5 · 5 = 25$.'], ['Distribuindo', '$5 · (-3) + 5 · 8 = -15 + 40 = 25$.']], '$25$ nos dois modos'],
+       ['Cálculo esperto', 'Use a distributiva para calcular $6 · 102$.', [['Reescreva $102$', '$102 = 100 + 2$.'], ['Distribua', '$6 · 100 + 6 · 2 = 600 + 12$.']], '$612$']],
+      ['Qual propriedade?', 'Em $(-2 + 9) + 4 = -2 + (9 + 4)$, qual propriedade foi usada?', ['O que mudou: a ordem ou o agrupamento?', 'Os números continuaram na mesma ordem.', 'Mudou o agrupamento.'], 'A propriedade <strong>associativa</strong> da adição.'],
+      [['$a + (-a)$ é sempre igual a:', ['$a$', '$-a$', '$0$', '$1$'], 2, 'Um número somado ao seu oposto dá zero.'],
+       ['Qual igualdade é um exemplo da propriedade comutativa?', ['$3 · 5 = 5 · 3$', '$(2 + 3) + 4 = 2 + (3 + 4)$', '$2 · (3 + 4) = 6 + 8$', '$7 + 0 = 7$'], 0, 'Trocar a ordem dos fatores.'],
+       ['Usando a distributiva, $4 · (10 - 3)$ é igual a:', ['$40 - 3$', '$40 - 12$', '$14 - 3$', '$4 - 12$'], 1, '$4 · 10 - 4 · 3 = 40 - 12 = 28$.'],
+       ['Qual operação NÃO é comutativa?', ['adição', 'multiplicação', 'subtração', 'nenhuma das anteriores'], 2, '$5 - 2 ≠ 2 - 5$.']],
+      [[['Adição e multiplicação', 'Comutativa, associativa, elemento neutro; oposto na adição.'], ['Distributiva', '$a(b + c) = ab + ac$.'], ['Limites', 'Subtração e divisão não são comutativas.']], 'Dê um exemplo em que trocar a ordem em uma subtração muda o resultado.', 'Voltando à loja: somar manhã + tarde ou tarde + manhã dá o mesmo total (comutativa); com subtração, a ordem importa.'],
+      [['$(-4) · 7$ é igual a:', ['$7 · (-4)$', '$-4 + 7$', '$4 · 7$', '$-4 · -7$'], 0], ['$9 · 1$ é:', ['$1$', '$9$', '$0$', '$10$'], 1], ['Em $2 · (5 + 3) = 2 · 5 + 2 · 3$ foi usada a propriedade:', ['comutativa', 'associativa', 'distributiva', 'do elemento neutro'], 2]]),
+
+    A('potenciacao-com-numeros-inteiros', 'Potenciação com números inteiros',
+      `E se a base for ${co('primary')}negativa</span>?`,
+      'O número $(-2)^4$ é positivo ou negativo? E $(-2)^3$? E por que $-2^2$ é diferente de $(-2)^2$?',
+      'colonia', [['base negativa'], ['expoente par e ímpar', 'growth'], ['propriedades', 'decay']],
+      ['Você já sabe que $2^3 = 8$. Vamos ver o que muda quando a base é negativa.', ['$(-3) · (-3)$ é igual a:', ['$-9$', '$9$', '$-6$', '$6$'], 1, 'Sinais iguais: positivo.'], 'Qual é o sinal de $(-1) · (-1) · (-1)$?'],
+      ['<strong>Determinar o sinal</strong> de uma potência de base negativa.', '<strong>Calcular</strong> potências de base inteira.', 'Aplicar as <strong>propriedades</strong> do produto, do quociente e da potência de potência.'],
+      '<strong>Parênteses mandam</strong>: $(-3)^2 = 9$ e $-3^2 = -9$.',
+      [['Sinal da potência', ['Base negativa com expoente <strong>par</strong>: resultado <strong>positivo</strong>. $(-2)^4 = 16$.', 'Base negativa com expoente <strong>ímpar</strong>: resultado <strong>negativo</strong>. $(-2)^3 = -8$.', 'Base positiva: sempre positivo.'],
+        tbl(['Potência', 'Cálculo', 'Resultado'], [['$(-2)^3$', '$(-2)(-2)(-2)$', '$-8$'], ['$(-2)^4$', '$(-2)(-2)(-2)(-2)$', '$16$']])],
+       ['Cuidado com os parênteses', ['$(-3)^2$ é o quadrado de $-3$: $(-3)(-3) = 9$.', '$-3^2$ é o <strong>oposto</strong> de $3^2$: $-(3 · 3) = -9$.', 'Sem parênteses, o expoente atua só no número que está colado a ele.'],
+        callout('Atenção', '$(-3)^2 = 9$, mas $-3^2 = -9$.', 'decay')],
+       ['Propriedades', ['$a^m · a^n = a^{m+n}$ e $a^m ÷ a^n = a^{m-n}$ (mesma base).', '$(a^m)^n = a^{m · n}$.', '$a^0 = 1$ (com $a ≠ 0$) e $a^1 = a$.'],
+        tbl(['Propriedade', 'Exemplo'], [['produto', '$2^3 · 2^4 = 2^7 = 128$'], ['quociente', '$5^6 ÷ 5^4 = 5^2 = 25$'], ['potência de potência', '$(3^2)^2 = 3^4 = 81$']])]],
+      [['Base negativa', 'Calcule $(-2)^5$.', [['Expoente ímpar', 'O resultado é negativo.'], ['Calcule o módulo', '$2^5 = 32$.']], '$-32$'],
+       ['Produto de potências', 'Calcule $2^3 · 2^4$.', [['Mesma base: some os expoentes', '$2^{3+4} = 2^7$.'], ['Calcule', '$2^7 = 128$.']], '$128$']],
+      ['Parênteses fazem diferença', 'Calcule $(-3)^2$ e $-3^2$.', ['No primeiro, a base é $-3$.', 'No segundo, o expoente vale só para $3$.', 'Calcule os dois.'], '$(-3)^2 = 9$ e $-3^2 = -(3^2) = -9$.'],
+      [['O valor de $(-2)^4$ é:', ['$-16$', '$16$', '$-8$', '$8$'], 1, 'Expoente par: positivo.'],
+       ['O valor de $-5^2$ é:', ['$25$', '$-25$', '$10$', '$-10$'], 1, '$-(5 · 5) = -25$.'],
+       ['O valor de $3^4 ÷ 3^2$ é:', ['$3^6$', '$3^2$', '$1^2$', '$9^2$'], 1, '$3^{4-2} = 3^2$.'],
+       ['O valor de $(-1)^{101}$ é:', ['$1$', '$-1$', '$101$', '$-101$'], 1, 'Expoente ímpar: negativo; $1^{101} = 1$.']],
+      [[['Sinal', 'Base negativa: expoente par dá $+$; ímpar dá $-$.'], ['Parênteses', '$(-a)^n$ e $-a^n$ são diferentes.'], ['Propriedades', 'Mesma base: soma, diferença ou produto dos expoentes.']], 'Por que $(-1)^n$ é sempre $1$ ou $-1$?', 'Voltando à pergunta: $(-2)^4 = 16$ (positivo), $(-2)^3 = -8$ (negativo) e $-2^2 = -4$, diferente de $(-2)^2 = 4$.'],
+      [['O valor de $(-3)^3$ é:', ['$27$', '$-27$', '$9$', '$-9$'], 1], ['O valor de $(-4)^2$ é:', ['$16$', '$-16$', '$8$', '$-8$'], 0], ['O valor de $2^5 · 2^2$ é:', ['$2^{10}$', '$2^7$', '$4^7$', '$2^3$'], 1]])
+  ]
+});

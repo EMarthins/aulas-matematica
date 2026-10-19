@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 2º trimestre · Áreas e volumes (base: slides "Área de figuras planas", "Volume do prisma e do cilindro" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 2, pasta: 'aulas/8-ano/2-tri/areas-e-volumes/', titulo: 'Áreas e volumes', accent: 'warm', icon: 'cube', key: 'm8p57', area: 'Matemática · 8º ano',
+  aulas: [
+    A('area-de-figuras-planas', 'Área de figuras planas',
+      `Quanto de ${co('primary')}piso</span> eu preciso?`,
+      'Uma sala retangular de $5$ m por $4$ m será forrada com piso. E se a sala tivesse formato de triângulo ou de trapézio? Como calcular a área em cada caso?',
+      'piso', [['retângulo'], ['triângulo e trapézio', 'growth'], ['composta', 'decay']],
+      ['A área mede a superfície. Todas as fórmulas partem do retângulo.', ['A área de um retângulo $5$ por $4$ é:', ['$9$', '$18$', '$20$', '$54$'], 2, '$5 · 4$.'], 'Em qual unidade medimos área: m ou m²?'],
+      ['<strong>Calcular</strong> a área de retângulo, triângulo, paralelogramo e trapézio.', '<strong>Decompor</strong> figuras compostas.', '<strong>Resolver</strong> problemas de piso, pintura e terreno.'],
+      'Área é sempre em <strong>unidade quadrada</strong> (m², cm²).',
+      [['Fórmulas', ['Retângulo: $A = b · h$. Paralelogramo: $A = b · h$. Triângulo: $A = {b · h|2}$.', 'Trapézio: $A = {(B + b) · h|2}$. Losango: $A = {D · d|2}$.', 'Altura é sempre <strong>perpendicular</strong> à base.'],
+        fig('piso', 'Ilustração original: piso.', '300px')],
+       ['Por que essas fórmulas?', ['O triângulo é metade de um paralelogramo de mesma base e altura.', 'O trapézio vira um paralelogramo ao juntarmos duas cópias.', 'O losango é metade do retângulo das diagonais.'],
+        tbl(['Figura', 'Área'], [['retângulo $5×4$', '$20$ m²'], ['triângulo $b = 6$, $h = 4$', '$12$ m²'], ['trapézio $B = 7$, $b = 3$, $h = 4$', '$20$ m²']])],
+       ['Figuras compostas', ['Divida em figuras conhecidas e some (ou subtraia).', 'Sala em “L”: retângulo $5×4$ mais retângulo $2×3$: $20 + 6 = 26$ m².', 'Metros quadrados de piso: some uns 10% de sobra para cortes.'],
+        callout('Dica', 'Desenhe e marque as medidas antes de calcular.', 'primary')]],
+      [['Triângulo', 'Calcule a área de um triângulo de base $10$ cm e altura $6$ cm.', [['$A = {b · h|2}$', '${60|2} = 30$.']], '$30$ cm²'],
+       ['Trapézio', 'Calcule a área de um trapézio de bases $8$ e $4$ e altura $5$.', [['$A = {(B + b) h|2}$', '${12 · 5|2} = 30$.']], '$30$ m²']],
+      ['O piso', 'Quantos m² de piso são necessários numa sala de $5$ m por $4$ m? E se o piso vem em caixas de $2$ m², quantas caixas?', ['Área da sala: $5 · 4$.', 'Divida por $2$.', 'Arredonde para cima se necessário.'], '$20$ m² de piso; $20 ÷ 2 = 10$ caixas.'],
+      [['A área de um quadrado de lado $6$ é:', ['$12$', '$24$', '$36$', '$66$'], 2, '$6 · 6$.'],
+       ['A área de um triângulo de base $8$ e altura $5$ é:', ['$13$', '$20$', '$40$', '$80$'], 1, '${40|2}$.'],
+       ['A área de um losango de diagonais $10$ e $6$ é:', ['$16$', '$30$', '$60$', '$32$'], 1, '${60|2}$.'],
+       ['A unidade de área é:', ['m', 'm²', 'm³', 'kg'], 1, 'Metro quadrado.']],
+      [[['Retângulo', '$b · h$.'], ['Triângulo', 'Metade de $b · h$.'], ['Trapézio', '${(B + b) h|2}$.']], 'Por que a altura precisa ser perpendicular à base?', 'Voltando à sala: $20$ m² de piso.'],
+      [['A área de um retângulo $7$ por $3$ é:', ['$10$', '$21$', '$20$', '$42$'], 1], ['A área de um paralelogramo $b = 5$ e $h = 4$ é:', ['$9$', '$10$', '$20$', '$40$'], 2], ['A área de um triângulo $b = 4$ e $h = 4$ é:', ['$4$', '$8$', '$16$', '$32$'], 1]]),
+
+    A('volume-de-prismas-e-cilindros', 'Volume de prismas e cilindros',
+      `Quanto ${co('primary')}cabe</span> dentro?`,
+      'Uma caixa-d’água cilíndrica tem $1$ m de raio e $1,5$ m de altura. Quantos litros ela comporta? ($1$ m³ $= 1 000$ L)',
+      'caixa', [['prisma'], ['cilindro', 'growth'], ['litros', 'decay']],
+      ['Volume mede o espaço ocupado. Em prismas e cilindros, ele é a área da base vezes a altura.', ['O volume de um cubo de aresta $3$ é:', ['$9$', '$18$', '$27$', '$81$'], 2, '$3 · 3 · 3$.'], 'Quantos litros cabem em $1$ m³?'],
+      ['<strong>Aplicar</strong> $V = A_{base} · h$ em prismas.', '<strong>Calcular</strong> o volume do cilindro.', '<strong>Converter</strong> m³, dm³ e litros.'],
+      'Prisma e cilindro: $V = A_{base} · h$. Cilindro: $V = π r^2 h$.',
+      [['Volume do prisma', ['$V = A_{base} · h$.', 'Paralelepípedo $a × b × c$: $V = a · b · c$.', 'Cubo de aresta $a$: $V = a^3$.'],
+        fig('caixa', 'Ilustração original: caixa.', '280px')],
+       ['Volume do cilindro', ['A base é um círculo: $A_{base} = π r^2$.', '$V = π r^2 h$.', 'Raio $1$ m e altura $1,5$ m: $V = 3,14 · 1 · 1,5 = 4,71$ m³.'],
+        tbl(['Sólido', 'Volume'], [['cubo de aresta $2$', '$8$'], ['caixa $2 × 3 × 4$', '$24$'], ['cilindro $r = 1$, $h = 1,5$', '$4,71$']])],
+       ['Unidades', ['$1$ m³ $= 1 000$ dm³ $= 1 000$ L; $1$ dm³ $= 1$ L; $1$ cm³ $= 1$ mL.', '$4,71$ m³ $= 4 710$ L.', 'Converta antes de comparar capacidades.'],
+        callout('Atenção', 'Volume em cm³, m³: cada vez uma <strong>potência de 3</strong> na conversão de comprimento.', 'decay')]],
+      [['Caixa', 'Calcule o volume de uma caixa $5 × 4 × 3$ cm.', [['Multiplique', '$5 · 4 · 3 = 60$.']], '$60$ cm³'],
+       ['Cilindro', 'Calcule o volume de um cilindro com $r = 2$ cm e $h = 5$ cm ($π = 3,14$).', [['Base', '$3,14 · 4 = 12,56$.'], ['Multiplique pela altura', '$12,56 · 5 = 62,8$.']], '$62,8$ cm³']],
+      ['A caixa-d’água', 'Quantos litros comporta um cilindro de raio $1$ m e altura $1,5$ m?', ['$V = π r^2 h$ em m³.', 'Use $π = 3,14$.', '$1$ m³ $= 1 000$ L.'], '$V = 4,71$ m³ $= 4 710$ litros.'],
+      [['O volume de um cubo de aresta $4$ é:', ['$12$', '$16$', '$48$', '$64$'], 3, '$4^3$.'],
+       ['Um litro corresponde a:', ['$1$ cm³', '$1$ dm³', '$1$ m³', '$10$ dm³'], 1, '$1$ dm³.'],
+       ['O volume de um cilindro de $A_{base} = 10$ e $h = 3$ é:', ['$13$', '$30$', '$300$', '$3,3$'], 1, '$10 · 3$.'],
+       ['Dobrando a altura de um prisma, o volume:', ['não muda', 'dobra', 'quadruplica', 'metade'], 1, 'Proporcional a $h$.']],
+      [[['Prisma', '$V = A_b · h$.'], ['Cilindro', '$V = π r^2 h$.'], ['Unidades', '$1$ dm³ = $1$ L.']], 'Por que o volume do cilindro tem $r^2$?', 'Voltando à caixa-d’água: $4 710$ L.'],
+      [['O volume de uma caixa $2 × 2 × 5$ é:', ['$9$', '$10$', '$20$', '$25$'], 2], ['$2$ m³ equivalem a:', ['$20$ L', '$200$ L', '$2 000$ L', '$20 000$ L'], 2], ['Um cilindro de $r = 1$, $h = 2$ ($π = 3,14$) tem volume:', ['$3,14$', '$6,28$', '$12,56$', '$2$'], 1]])
+  ]
+});

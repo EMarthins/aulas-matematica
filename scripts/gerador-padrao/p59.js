@@ -1,0 +1,53 @@
+// Matemática · 9º ano · 1º trimestre · Radicais (base: slides "Radicais", "Racionalização de denominadores", "Potências de expoente fracionário" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '9° Ano', tri: 1, pasta: 'aulas/9-ano/1-tri/radicais-e-potencias/', titulo: 'Radicais e potências', accent: 'decay', icon: 'numbers', key: 'm9p59', area: 'Matemática · 9º ano',
+  aulas: [
+    A('radicais-simplificacao-e-operacoes', 'Radicais: simplificação e operações',
+      `Raízes que ${co('primary')}não são exatas</span>`,
+      'A diagonal de um quadrado de lado $4$ mede $√{32}$. Dá para escrever esse número de forma mais simples e somar com outras raízes?',
+      'plano', [['radical'], ['simplificar', 'growth'], ['operar', 'decay']],
+      ['Raízes não exatas aparecem em diagonais, áreas e fórmulas. Aprender a manipulá-las evita aproximações.', ['O valor de $√{49}$ é:', ['$6$', '$7$', '$8$', '$9$'], 1, '$7 · 7 = 49$.'], 'Entre quais inteiros está $√{32}$?'],
+      ['<strong>Simplificar</strong> radicais extraindo fatores quadrados.', '<strong>Somar e subtrair</strong> radicais semelhantes.', '<strong>Multiplicar e dividir</strong> radicais.'],
+      'Só se somam radicais <strong>semelhantes</strong> (mesmo radicando e mesmo índice).',
+      [['Simplificação', ['$√{a · b} = √a · √b$ para $a, b ≥ 0$.', '$√{32} = √{16 · 2} = 4√2$.', 'Fatore o radicando e extraia os quadrados perfeitos.'],
+        fig('plano', 'Ilustração original: plano cartesiano.', '280px')],
+       ['Soma e subtração', ['Radicais semelhantes: $3√2 + 5√2 = 8√2$.', '$√{18} + √8 = 3√2 + 2√2 = 5√2$.', 'Radicais diferentes não se reduzem: $√2 + √3$ fica assim.'],
+        tbl(['Expressão', 'Resultado'], [['$2√3 + 4√3$', '$6√3$'], ['$√{12} + √3$', '$2√3 + √3 = 3√3$']])],
+       ['Produto e quociente', ['$√a · √b = √{ab}$ e $√a ÷ √b = √{{a|b}}$.', '$√2 · √8 = √{16} = 4$.', '$(√5)^2 = 5$.'],
+        callout('Atenção', '$√{a + b} ≠ √a + √b$.', 'decay')]],
+      [['Simplificando', 'Simplifique $√{75}$.', [['Fatore', '$75 = 25 · 3$.'], ['Extraia', '$√{25} · √3 = 5√3$.']], '$5√3$'],
+       ['Somando', 'Calcule $√{12} + √{27}$.', [['Simplifique', '$2√3 + 3√3$.'], ['Some', '$5√3$.']], '$5√3$']],
+      ['A diagonal', 'Simplifique $√{32}$ e dê um valor aproximado.', ['$32 = 16 · 2$.', '$√{16} = 4$.', '$√2 ≈ 1,41$.'], '$√{32} = 4√2 ≈ 5,66$.'],
+      [['A forma simplificada de $√{50}$ é:', ['$5√2$', '$2√5$', '$25√2$', '$10√5$'], 0, '$50 = 25 · 2$.'],
+       ['O valor de $3√5 + 2√5$ é:', ['$5√5$', '$6√{10}$', '$5√{10}$', '$√{25}$'], 0, 'Radicais semelhantes.'],
+       ['O valor de $√3 · √{12}$ é:', ['$√{15}$', '$6$', '$9$', '$3$'], 1, '$√{36}$.'],
+       ['O valor de $(√7)^2$ é:', ['$7$', '$14$', '$49$', '$√{14}$'], 0, 'Elevar ao quadrado desfaz a raiz.']],
+      [[['Simplificar', 'Extraia quadrados perfeitos.'], ['Somar', 'Só radicais semelhantes.'], ['Multiplicar', 'Multiplique os radicandos.']], 'Por que $√2 + √3$ não vira $√5$?', 'Voltando à diagonal: $√{32} = 4√2$.'],
+      [['A forma simplificada de $√{18}$ é:', ['$2√3$', '$3√2$', '$9√2$', '$6√3$'], 1], ['O valor de $√2 · √2$ é:', ['$2$', '$4$', '$√4$', '$1$'], 0], ['O valor de $√{20} + √5$ é:', ['$3√5$', '$√{25}$', '$5√2$', '$2√5$'], 0]]),
+
+    A('racionalizacao-e-potencias-fracionarias', 'Racionalização e potências de expoente fracionário',
+      `Tirar a raiz do ${co('primary')}denominador</span>`,
+      'Como calcular ${1|√2}$ sem uma calculadora? E o que significa $4^{1/2}$ — uma potência de expoente fracionário?',
+      'calculadora', [['racionalização'], ['expoente fracionário', 'growth'], ['raiz n-ésima', 'decay']],
+      ['Dividir por um número irracional é incômodo. Racionalizar troca o denominador por um número racional.', ['O valor de ${6|3}$ é:', ['$2$', '$3$', '$9$', '$18$'], 0, '$6 ÷ 3$.'], 'Quanto vale $√9 · √9$?'],
+      ['<strong>Racionalizar</strong> denominadores do tipo $√a$ e $a + √b$.', '<strong>Converter</strong> radicais em potências e vice-versa.', '<strong>Calcular</strong> com expoentes fracionários.'],
+      'Multiplicar numerador e denominador pelo mesmo número não altera a fração.',
+      [['Denominador com raiz', ['${1|√2} = {1 · √2|√2 · √2} = {√2|2}$.', '${6|√3} = {6√3|3} = 2√3$.', 'Multiplique pelo próprio radical (equivale a multiplicar por $1$).'],
+        fig('calculadora', 'Ilustração original: calculadora.', '280px')],
+       ['Conjugado', ['Para ${1|2 + √3}$ multiplique por $2 - √3$ (o <strong>conjugado</strong>).', '$(2 + √3)(2 - √3) = 4 - 3 = 1$.', 'Então ${1|2 + √3} = 2 - √3$.'],
+        callout('Dica', 'Conjugado: troque o sinal do meio. O produto elimina a raiz.', 'primary')],
+       ['Expoente fracionário', ['$a^{1/2} = √a$ e $a^{1/n} = $ raiz $n$-ésima de $a$.', '$4^{1/2} = 2$ e $8^{1/3} = 2$.', '$a^{m/n} = $ raiz $n$-ésima de $a^m$: $8^{2/3} = 4$.'],
+        tbl(['Potência', 'Valor'], [['$9^{1/2}$', '$3$'], ['$27^{1/3}$', '$3$'], ['$8^{2/3}$', '$4$']])]],
+      [['Racionalizando', 'Racionalize ${4|√2}$.', [['Multiplique por ${√2|√2}$', '${4√2|2}$.'], ['Simplifique', '$2√2$.']], '$2√2$'],
+       ['Expoente fracionário', 'Calcule $16^{1/2}$ e $27^{1/3}$.', [['$16^{1/2} = √{16}$', '$4$.'], ['$27^{1/3}$', 'Raiz cúbica de $27$: $3$.']], '$4$ e $3$']],
+      ['Sem calculadora', 'Racionalize ${1|√2}$ e dê um valor aproximado ($√2 ≈ 1,41$).', ['Multiplique por ${√2|√2}$.', 'Resultado ${√2|2}$.', 'Divida $1,41$ por $2$.'], '${1|√2} = {√2|2} ≈ 0,71$.'],
+      [['A racionalização de ${3|√3}$ é:', ['$√3$', '$3√3$', '$3$', '${√3|3}$'], 0, '${3√3|3}$.'],
+       ['O valor de $25^{1/2}$ é:', ['$5$', '$12,5$', '$25$', '$50$'], 0, 'Raiz quadrada.'],
+       ['O valor de $8^{1/3}$ é:', ['$2$', '$3$', '$4$', '$8/3$'], 0, 'Raiz cúbica.'],
+       ['O conjugado de $3 + √2$ é:', ['$3 - √2$', '$-3 - √2$', '$√2 - 3$', '$3 · √2$'], 0, 'Troca o sinal do meio.']],
+      [[['Racionalizar', 'Multiplicar por 1 conveniente.'], ['Conjugado', 'Sinal trocado: produto sem raiz.'], ['Expoente', '$a^{1/n}$ é a raiz $n$-ésima.']], 'Por que o produto de conjugados elimina a raiz?', 'Voltando ao início: ${1|√2} = {√2|2} ≈ 0,71$ e $4^{1/2} = 2$.'],
+      [['A racionalização de ${2|√2}$ é:', ['$√2$', '$2√2$', '$2$', '${1|√2}$'], 0], ['O valor de $64^{1/2}$ é:', ['$4$', '$8$', '$16$', '$32$'], 1], ['O valor de $9^{3/2}$ é:', ['$3$', '$9$', '$27$', '$81$'], 2]])
+  ]
+});

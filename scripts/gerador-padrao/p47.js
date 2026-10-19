@@ -1,0 +1,53 @@
+// Matemática · 9º ano · 2º trimestre · Semelhança, Pitágoras e trigonometria (base: slides "Semelhança de triângulos", "Teorema de Pitágoras", "Razões trigonométricas" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '9° Ano', tri: 2, pasta: 'aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/', titulo: 'Semelhança, Pitágoras e trigonometria', accent: 'decay', icon: 'triangle', key: 'm9p47', area: 'Matemática · 9º ano',
+  aulas: [
+    A('semelhanca-de-triangulos-e-teorema-de-tales', 'Semelhança de triângulos e Teorema de Tales',
+      `Mesma forma, ${co('primary')}tamanhos diferentes</span>`,
+      'Uma árvore projeta uma sombra de $12$ m no mesmo instante em que uma vara de $2$ m projeta $3$ m. Qual a altura da árvore?',
+      'torre', [['semelhança'], ['razão', 'growth'], ['Tales', 'decay']],
+      ['Uma foto e sua ampliação têm a mesma forma: os ângulos são iguais e os lados guardam uma razão fixa.', ['A razão entre $6$ e $2$ é:', ['$2$', '$3$', '$4$', '$12$'], 1, '$6 ÷ 2$.'], 'Se uma foto é ampliada duas vezes, o que acontece com os ângulos?'],
+      ['<strong>Reconhecer</strong> triângulos semelhantes (ângulos iguais, lados proporcionais).', '<strong>Calcular</strong> medidas com a razão de semelhança.', '<strong>Aplicar</strong> o Teorema de Tales.'],
+      'Semelhantes: ângulos <strong>iguais</strong> e lados correspondentes <strong>proporcionais</strong>.',
+      [['Triângulos semelhantes', ['Dois triângulos são <strong>semelhantes</strong> se têm os três ângulos iguais; então os lados correspondentes são proporcionais.', 'Razão de semelhança: $k = {lado maior|lado menor}$.', 'Basta que dois ângulos sejam iguais (caso AA).'],
+        fig('torre', 'Ilustração original: torre e sombra.', '280px')],
+       ['Aplicação: sombras', ['No mesmo instante, objetos verticais e suas sombras formam triângulos semelhantes.', 'Vara: $2$ m com sombra $3$ m; árvore: altura $h$ com sombra $12$ m.', '${h|12} = {2|3}$ ⇒ $h = 8$ m.'],
+        callout('Dica', 'Sempre compare lados correspondentes: altura com altura, sombra com sombra.', 'primary')],
+       ['Teorema de Tales', ['<strong>Retas paralelas</strong> cortadas por duas transversais determinam segmentos proporcionais.', '${AB|BC} = {DE|EF}$ para feixe de paralelas.', 'Ex.: segmentos $3$ e $6$ de um lado e $4$ e $x$ do outro: $x = 8$.'],
+        tbl(['Situação', 'Proporção'], [['sombras', '${h|S} = {H|T}$'], ['Tales', '${a|b} = {c|d}$']])]],
+      [['Sombras', 'Uma vara de $2$ m tem sombra de $3$ m. Qual a altura de uma árvore com sombra de $12$ m?', [['Proporção', '${h|12} = {2|3}$.'], ['Resolva', '$3h = 24$, $h = 8$.']], '$8$ m'],
+       ['Tales', 'Três paralelas cortam duas transversais; de um lado os segmentos são $3$ e $6$ e do outro $4$ e $x$. Ache $x$.', [['Proporção', '${3|6} = {4|x}$.'], ['Resolva', '$x = 8$.']], '$8$']],
+      ['A árvore', 'No mesmo instante, um poste de $5$ m projeta sombra de $4$ m. Qual a sombra de uma árvore de $15$ m?', ['${5|15} = {4|s}$.', 'Multiplique em cruz.', '$5s = 60$.'], 'A sombra mede $12$ m.'],
+      [['Triângulos com ângulos iguais são:', ['congruentes', 'semelhantes', 'retângulos', 'isósceles'], 1, 'Ângulos iguais ⇒ semelhantes.'],
+       ['Se $k = 2$, o lado correspondente de $5$ mede:', ['$2,5$', '$7$', '$10$', '$25$'], 2, '$5 · 2$.'],
+       ['Uma vara de $1$ m tem sombra $0,5$ m. Um prédio com sombra $20$ m tem altura:', ['$10$ m', '$40$ m', '$20$ m', '$25$ m'], 1, '${h|20} = {1|0,5}$.'],
+       ['O Teorema de Tales trata de:', ['ângulos de triângulo', 'paralelas e transversais', 'área do círculo', 'Pitágoras'], 1, 'Segmentos proporcionais.']],
+      [[['Semelhança', 'Ângulos iguais, lados proporcionais.'], ['Razão', 'Constante entre lados correspondentes.'], ['Tales', 'Paralelas determinam segmentos proporcionais.']], 'Por que sombras no mesmo instante formam triângulos semelhantes?', 'Voltando à árvore: com $12$ m de sombra, tem $8$ m de altura.'],
+      [['Triângulos semelhantes com razão $3$: o lado $4$ vira:', ['$7$', '$12$', '$1,33$', '$16$'], 1], ['Uma vara de $2$ m e sombra $1$ m. Uma árvore de sombra $6$ m tem altura:', ['$6$ m', '$12$ m', '$3$ m', '$8$ m'], 1], ['Dois ângulos iguais bastam para semelhança?', ['sim', 'não', 'só em isósceles', 'só em retângulos'], 0]]),
+
+    A('teorema-de-pitagoras-e-trigonometria', 'Teorema de Pitágoras e razões trigonométricas',
+      `A conta da ${co('primary')}rampa e da escada</span>`,
+      'Uma escada de $5$ m encosta numa parede com o pé a $3$ m dela. A que altura ela alcança? E que ângulo faz com o chão?',
+      'escada', [['Pitágoras'], ['seno e cosseno', 'growth'], ['tangente', 'decay']],
+      ['Em um triângulo retângulo, os lados guardam relações exatas entre si e com os ângulos.', ['O maior lado de um triângulo retângulo é:', ['um cateto', 'a hipotenusa', 'a altura', 'a mediana'], 1, 'A hipotenusa, oposta ao ângulo reto.'], 'Qual é o ângulo reto e quanto mede?'],
+      ['<strong>Aplicar</strong> o Teorema de Pitágoras.', '<strong>Definir</strong> seno, cosseno e tangente de um ângulo agudo.', '<strong>Resolver</strong> problemas com triângulo retângulo.'],
+      'Pitágoras: $a^2 = b^2 + c^2$, com $a$ a hipotenusa.',
+      [['Teorema de Pitágoras', ['Em todo triângulo retângulo: <strong>hipotenusa²</strong> = <strong>cateto²</strong> + <strong>cateto²</strong>.', 'Ex.: $3$, $4$ e $5$: $5^2 = 3^2 + 4^2$ ($25 = 9 + 16$).', 'Serve para achar o lado que falta.'],
+        fig('escada', 'Ilustração original: escada na parede.', '280px')],
+       ['Razões trigonométricas', ['Num ângulo agudo $α$: <strong>seno</strong> = cateto oposto ÷ hipotenusa.', '<strong>cosseno</strong> = cateto adjacente ÷ hipotenusa; <strong>tangente</strong> = oposto ÷ adjacente.', 'Para $30°$, $45°$ e $60°$: seno $0,5$, $0,71$ e $0,87$; cosseno $0,87$, $0,71$ e $0,5$.'],
+        tbl(['Ângulo', 'Seno', 'Cosseno', 'Tangente'], [['$30°$', '$0,50$', '$0,87$', '$0,58$'], ['$45°$', '$0,71$', '$0,71$', '$1,00$'], ['$60°$', '$0,87$', '$0,50$', '$1,73$']])],
+       ['Aplicações', ['Escada de $5$ m, pé a $3$ m: altura $= √{25 - 9} = 4$ m.', 'Rampa que sobe $2$ m em $10$ m de percurso: seno $= {2|10} = 0,2$.', 'Altura de um prédio: tangente do ângulo vezes a distância.'],
+        callout('Atenção', 'Trabalhe com os lados em relação ao ângulo escolhido: oposto e adjacente mudam se você mudar de ângulo.', 'decay')]],
+      [['Pitágoras', 'Os catetos medem $6$ e $8$. Quanto mede a hipotenusa?', [['$a^2 = 6^2 + 8^2$', '$36 + 64 = 100$.'], ['Raiz', '$a = 10$.']], '$10$'],
+       ['Trigonometria', 'Numa rampa, o ângulo é $30°$ e o percurso mede $10$ m. Qual a altura (seno de $30° = 0,5$)?', [['Seno = oposto ÷ hipotenusa', '$0,5 = {h|10}$.'], ['Resolva', '$h = 5$.']], '$5$ m']],
+      ['A escada', 'Escada de $5$ m, com o pé a $3$ m da parede. Qual a altura alcançada?', ['Hipotenusa $= 5$, um cateto $= 3$.', '$5^2 = 3^2 + h^2$.', '$h^2 = 16$.'], '$h = 4$ m.'],
+      [['A hipotenusa de um triângulo de catetos $5$ e $12$ mede:', ['$13$', '$17$', '$15$', '$7$'], 0, '$25 + 144 = 169$.'],
+       ['Se a hipotenusa mede $10$ e um cateto $6$, o outro cateto mede:', ['$4$', '$8$', '$12$', '$16$'], 1, '$100 - 36 = 64$.'],
+       ['O cosseno de um ângulo agudo é:', ['oposto ÷ hipotenusa', 'adjacente ÷ hipotenusa', 'oposto ÷ adjacente', 'hipotenusa ÷ adjacente'], 1, 'Cosseno = adjacente ÷ hipotenusa.'],
+       ['Qual terna forma um triângulo retângulo?', ['$2, 3, 4$', '$5, 12, 13$', '$4, 5, 7$', '$6, 7, 8$'], 1, '$25 + 144 = 169$.']],
+      [[['Pitágoras', '$a^2 = b^2 + c^2$.'], ['Seno e cosseno', 'Sobre a hipotenusa.'], ['Tangente', 'Oposto sobre adjacente.']], 'Por que a hipotenusa é sempre o maior lado?', 'Voltando à escada: alcança $4$ m de altura.'],
+      [['Catetos $9$ e $12$: a hipotenusa mede:', ['$15$', '$21$', '$18$', '$10$'], 0], ['A tangente de $45°$ vale:', ['$0$', '$0,5$', '$1$', '$2$'], 2], ['Um cateto $8$ e a hipotenusa $17$: o outro cateto mede:', ['$9$', '$15$', '$25$', '$12$'], 1]])
+  ]
+});

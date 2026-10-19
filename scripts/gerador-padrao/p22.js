@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 1º trimestre · MMC e MDC (base: slides "MMC & MDC" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 1, pasta: 'aulas/6-ano/1-tri/mmc-e-mdc/', titulo: 'MMC e MDC', accent: 'decay', icon: 'combo', key: 'm6p22', area: 'Matemática · 6º ano',
+  aulas: [
+    A('minimo-multiplo-comum', 'Mínimo múltiplo comum (MMC)',
+      `Quando os dois ${co('primary')}se encontram</span> de novo?`,
+      'Dois ônibus saem juntos do terminal às 6h. Um passa a cada $12$ minutos e o outro a cada $15$ minutos. Daqui a quanto tempo saem juntos outra vez?',
+      'relogio', [['MMC'], ['múltiplos comuns', 'growth'], ['fatoração', 'decay']],
+      ['Já listamos múltiplos de um número. Agora vamos procurar múltiplos que dois números têm em comum.', ['O primeiro múltiplo de $6$ maior que $0$ é:', ['$0$', '$6$', '$12$', '$3$'], 1, '$6 · 1 = 6$.'], 'Liste os cinco primeiros múltiplos de $4$ e de $6$. Algum número aparece nas duas listas?'],
+      ['Encontrar os <strong>múltiplos comuns</strong> de dois ou mais números.', 'Calcular o <strong>MMC</strong> listando múltiplos e pela <strong>decomposição em fatores primos</strong>.', 'Resolver problemas de <strong>eventos que se repetem</strong>.'],
+      'O MMC é o <strong>menor</strong> múltiplo comum <strong>diferente de zero</strong>.',
+      [['O que é o MMC', ['Múltiplos de $4$: $4, 8, 12, 16, 20, 24, …$', 'Múltiplos de $6$: $6, 12, 18, 24, …$', 'Os múltiplos comuns são $12, 24, …$: o <strong>menor</strong> deles, $12$, é o MMC: $mmc(4, 6) = 12$.'],
+        tbl(['Números', 'Múltiplos comuns', 'MMC'], [['$4$ e $6$', '$12, 24, 36, …$', '$12$'], ['$3$ e $5$', '$15, 30, 45, …$', '$15$']])],
+       ['MMC pela decomposição', ['Decomponha cada número em fatores primos.', 'Multiplique <strong>todos os fatores</strong>, tomando cada primo com o <strong>maior expoente</strong>.', 'Exemplo: $12 = 2^2 · 3$ e $18 = 2 · 3^2$ ⇒ $mmc = 2^2 · 3^2 = 36$.'],
+        callout('Regra prática', 'Fatores comuns e não comuns, <strong>com o maior expoente</strong>.', 'primary')],
+       ['Quando usar o MMC', ['Eventos que <strong>se repetem</strong> e voltam a coincidir (ônibus, luzes que piscam, plantões).', 'A resposta é o MMC dos intervalos.', 'Também serve para igualar denominadores de frações.'],
+        fig('relogio', 'Ilustração original: relógio.', '260px')]],
+      [['MMC de 12 e 15', 'Calcule $mmc(12, 15)$ listando os múltiplos.', [['Múltiplos de $12$', '$12, 24, 36, 48, 60, 72, …$'], ['Múltiplos de $15$', '$15, 30, 45, 60, 75, …$'], ['Primeiro comum', '$60$.']], '$mmc(12, 15) = 60$'],
+       ['MMC de 8 e 12 por fatores primos', 'Calcule $mmc(8, 12)$.', [['Decomponha', '$8 = 2^3$ e $12 = 2^2 · 3$.'], ['Maior expoente de cada primo', '$2^3$ e $3$.'], ['Multiplique', '$8 · 3 = 24$.']], '$mmc(8, 12) = 24$']],
+      ['Os ônibus', 'Resolva a pergunta inicial: de quanto em quanto tempo os dois ônibus saem juntos?', ['Qual conta responde “quando coincidem”?', 'Calcule $mmc(12, 15)$.', 'Converta para horas se quiser.'], '$mmc(12, 15) = 60$ minutos. Saem juntos de novo às $7$h.'],
+      [['O MMC de $4$ e $6$ é:', ['$2$', '$10$', '$12$', '$24$'], 2, '$12$ é o menor múltiplo comum.'],
+       ['O MMC de $9$ e $12$ é:', ['$3$', '$36$', '$18$', '$108$'], 1, '$9 = 3^2$ e $12 = 2^2 · 3$: $2^2 · 3^2 = 36$.'],
+       ['Duas luzes piscam a cada $10$ s e a cada $25$ s. Piscam juntas de novo depois de:', ['$5$ s', '$35$ s', '$50$ s', '$250$ s'], 2, '$mmc(10, 25) = 50$.'],
+       ['O MMC de $5$ e $7$ é:', ['$12$', '$35$', '$1$', '$57$'], 1, 'Sem fatores em comum, o MMC é o produto: $35$.']],
+      [[['MMC', 'Menor múltiplo comum diferente de zero.'], ['Decomposição', 'Todos os primos, cada um com o maior expoente.'], ['Uso', 'Eventos que se repetem e voltam a coincidir.']], 'Se dois números não têm fatores comuns, quanto vale o MMC deles?', 'Voltando aos ônibus: $mmc(12, 15) = 60$ minutos.'],
+      [['O MMC de $3$ e $4$ é:', ['$7$', '$12$', '$1$', '$24$'], 1], ['O MMC de $10$ e $15$ é:', ['$5$', '$25$', '$30$', '$150$'], 2], ['O MMC de $8$ e $24$ é:', ['$8$', '$24$', '$32$', '$192$'], 1]]),
+
+    A('maximo-divisor-comum', 'Máximo divisor comum (MDC)',
+      `Cortar em pedaços ${co('primary')}iguais</span>, o maior possível`,
+      'Uma costureira tem fitas de $24$ m e $36$ m e quer cortá-las em pedaços iguais, os maiores possíveis, sem sobras. Qual é o comprimento de cada pedaço?',
+      'regua', [['MDC'], ['divisores comuns', 'growth'], ['primos entre si', 'decay']],
+      ['Agora a pergunta é outra: procuramos os divisores que dois números têm em comum.', ['Os divisores de $8$ são:', ['$1, 2, 4, 8$', '$2, 4, 8$', '$1, 8$', '$1, 2, 8$'], 0, '$1, 2, 4, 8$.'], 'Quais números dividem ao mesmo tempo $12$ e $18$?'],
+      ['Encontrar os <strong>divisores comuns</strong> de dois números.', 'Calcular o <strong>MDC</strong> listando divisores e pela <strong>decomposição</strong>.', 'Resolver problemas de <strong>partilha em partes iguais</strong>.'],
+      'O MDC é o <strong>maior</strong> divisor comum. Se for $1$, os números são <strong>primos entre si</strong>.',
+      [['O que é o MDC', ['Divisores de $18$: $1, 2, 3, 6, 9, 18$.', 'Divisores de $30$: $1, 2, 3, 5, 6, 10, 15, 30$.', 'Divisores comuns: $1, 2, 3, 6$; o maior é o MDC: $mdc(18, 30) = 6$.'],
+        tbl(['Números', 'Divisores comuns', 'MDC'], [['$18$ e $30$', '$1, 2, 3, 6$', '$6$'], ['$8$ e $15$', '$1$', '$1$']])],
+       ['MDC pela decomposição', ['Decomponha cada número em fatores primos.', 'Multiplique só os fatores <strong>comuns</strong>, com o <strong>menor expoente</strong>.', 'Exemplo: $48 = 2^4 · 3$ e $72 = 2^3 · 3^2$ ⇒ $mdc = 2^3 · 3 = 24$.'],
+        callout('Regra prática', 'Só os fatores comuns, <strong>com o menor expoente</strong>.', 'primary')],
+       ['Primos entre si e relação com o MMC', ['Se $mdc(a, b) = 1$, os números são <strong>primos entre si</strong> (ex.: $8$ e $15$).', 'Vale sempre: $mmc(a, b) · mdc(a, b) = a · b$.', 'Exemplo: $mmc(4, 6) · mdc(4, 6) = 12 · 2 = 24 = 4 · 6$.'],
+        tbl(['a e b', 'MMC', 'MDC', 'MMC · MDC', 'a · b'], [['$4$ e $6$', '$12$', '$2$', '$24$', '$24$']])]],
+      [['MDC de 18 e 30 pela lista', 'Calcule $mdc(18, 30)$.', [['Divisores de $18$', '$1, 2, 3, 6, 9, 18$.'], ['Divisores de $30$', '$1, 2, 3, 5, 6, 10, 15, 30$.'], ['Maior comum', '$6$.']], '$mdc(18, 30) = 6$'],
+       ['MDC de 48 e 72', 'Calcule $mdc(48, 72)$ pela decomposição.', [['Decomponha', '$48 = 2^4 · 3$ e $72 = 2^3 · 3^2$.'], ['Fatores comuns com o menor expoente', '$2^3$ e $3$.'], ['Multiplique', '$8 · 3 = 24$.']], '$mdc(48, 72) = 24$']],
+      ['As fitas', 'Resolva a pergunta inicial: qual o maior pedaço igual que se pode cortar das fitas de $24$ m e $36$ m?', ['Procure um número que divida $24$ e $36$.', 'Queremos o <strong>maior</strong>: calcule o MDC.', '$24 = 2^3 · 3$ e $36 = 2^2 · 3^2$.'], '$mdc(24, 36) = 2^2 · 3 = 12$. Cada pedaço mede $12$ m (2 pedaços da primeira fita e 3 da segunda).'],
+      [['O MDC de $12$ e $18$ é:', ['$2$', '$3$', '$6$', '$36$'], 2, 'Divisores comuns: $1, 2, 3, 6$. O maior é $6$.'],
+       ['O MDC de $15$ e $25$ é:', ['$1$', '$5$', '$15$', '$75$'], 1, '$15 = 3 · 5$ e $25 = 5^2$: fator comum $5$.'],
+       ['Dois números primos entre si têm MDC igual a:', ['$0$', '$1$', '$2$', 'ao produto deles'], 1, 'Primos entre si só têm o divisor $1$ em comum.'],
+       ['Fitas de $40$ cm e $60$ cm serão cortadas em pedaços iguais, os maiores possíveis. Cada pedaço mede:', ['$10$ cm', '$20$ cm', '$120$ cm', '$5$ cm'], 1, '$mdc(40, 60) = 20$.']],
+      [[['MDC', 'Maior divisor comum.'], ['Decomposição', 'Só os fatores comuns, com o menor expoente.'], ['Relação', '$mmc · mdc = a · b$.']], 'Que problemas pedem MMC e que problemas pedem MDC? Dê um exemplo de cada.', 'Voltando às fitas: $mdc(24, 36) = 12$, então cada pedaço mede $12$ m.'],
+      [['O MDC de $16$ e $24$ é:', ['$4$', '$8$', '$48$', '$2$'], 1], ['O MDC de $9$ e $10$ é:', ['$1$', '$9$', '$10$', '$90$'], 0], ['O produto $mmc(4, 6) · mdc(4, 6)$ vale:', ['$10$', '$12$', '$24$', '$48$'], 2]])
+  ]
+});

@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 3º trimestre · Polígonos e circunferência (base: slides "Polígonos" e "Circunferência" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 3, pasta: 'aulas/6-ano/3-tri/poligonos-e-circunferencia/', titulo: 'Polígonos e circunferência', accent: 'decay', icon: 'polygon', key: 'm6p30', area: 'Matemática · 6º ano',
+  aulas: [
+    A('poligonos-e-triangulos', 'Polígonos e triângulos',
+      `Figuras ${co('primary')}fechadas</span> de lados retos`,
+      'Quantos lados tem uma placa de “PARE”? E uma placa de “Dê a preferência”? Como dar nome a cada figura?',
+      'piso', [['polígonos'], ['nomes', 'growth'], ['triângulos', 'decay']],
+      ['Placas, pisos e embalagens têm formas com lados retos. Vamos aprender a chamá-las pelo nome certo.', ['Um quadrado tem quantos lados?', ['$3$', '$4$', '$5$', '$6$'], 1, 'Quatro lados iguais.'], 'Procure na sala dois objetos com formato de polígono e conte os lados.'],
+      ['<strong>Reconhecer polígonos</strong>, seus elementos e seus nomes.', '<strong>Classificar triângulos</strong> quanto aos lados e quanto aos ângulos.', 'Usar que a <strong>soma dos ângulos internos</strong> de um triângulo é $180°$.'],
+      'O nome do polígono vem do <strong>número de lados</strong> (ou de ângulos).',
+      [['O que é um polígono', ['<strong>Polígono</strong> é uma figura plana <strong>fechada</strong> formada só por segmentos de reta.', 'Elementos: <strong>lados</strong>, <strong>vértices</strong> e <strong>ângulos</strong>.', 'Número de lados = número de vértices = número de ângulos.'],
+        fig('piso', 'Ilustração original: piso de hexágonos.', '300px')],
+       ['Nomes dos polígonos', ['$3$ lados: triângulo; $4$: quadrilátero; $5$: pentágono; $6$: hexágono.', '$7$: heptágono; $8$: octógono; $9$: eneágono; $10$: decágono.', 'Polígono <strong>regular</strong>: todos os lados e todos os ângulos iguais.'],
+        tbl(['Lados', 'Nome'], [['$3$', 'triângulo'], ['$4$', 'quadrilátero'], ['$5$', 'pentágono'], ['$6$', 'hexágono']])],
+       ['Triângulos', ['Quanto aos lados: <strong>equilátero</strong> (3 iguais), <strong>isósceles</strong> (2 iguais), <strong>escaleno</strong> (todos diferentes).', 'Quanto aos ângulos: <strong>acutângulo</strong> (todos agudos), <strong>retângulo</strong> (um reto), <strong>obtusângulo</strong> (um obtuso).', 'A soma dos ângulos internos é sempre $180°$.'],
+        callout('Dica', 'Se dois ângulos de um triângulo medem $40°$ e $75°$, o terceiro mede $180° - 115° = 65°$.', 'primary')]],
+      [['Nomeando', 'Que nome tem um polígono de $6$ lados? E o de $8$ lados?', [['Consulte a tabela de nomes', '$6$: hexágono; $8$: octógono.']], 'Hexágono e octógono'],
+       ['Ângulo que falta', 'Em um triângulo, dois ângulos medem $40°$ e $75°$. Quanto mede o terceiro?', [['Some os dois', '$40° + 75° = 115°$.'], ['Subtraia de $180°$', '$180° - 115° = 65°$.']], '$65°$']],
+      ['Classificar um triângulo', 'Um triângulo tem lados de $5$ cm, $5$ cm e $8$ cm. Como se classifica quanto aos lados?', ['Quantos lados são iguais?', 'Dois lados iguais: qual o nome?', 'Confira as definições.'], 'Tem exatamente dois lados iguais: <strong>isósceles</strong>.'],
+      [['Um pentágono tem:', ['$4$ lados', '$5$ lados', '$6$ lados', '$8$ lados'], 1, 'Penta = cinco.'],
+       ['Um triângulo com os três lados iguais é:', ['escaleno', 'isósceles', 'equilátero', 'retângulo'], 2, 'Equi = igual.'],
+       ['Dois ângulos de um triângulo medem $50°$ e $60°$. O terceiro mede:', ['$60°$', '$70°$', '$80°$', '$110°$'], 1, '$180° - 110° = 70°$.'],
+       ['Um polígono regular tem:', ['só os lados iguais', 'só os ângulos iguais', 'lados e ângulos iguais', 'um lado maior que os outros'], 2, 'Lados e ângulos iguais.']],
+      [[['Polígono', 'Figura plana fechada de lados retos; nome pelo número de lados.'], ['Triângulos', 'Equilátero, isósceles, escaleno; acutângulo, retângulo, obtusângulo.'], ['Ângulos', 'Soma dos ângulos internos do triângulo: $180°$.']], 'Por que um triângulo não pode ter dois ângulos retos?', 'Voltando às placas: a placa “PARE” é um octógono (8 lados) e a “Dê a preferência” é um triângulo.'],
+      [['Um hexágono tem quantos vértices?', ['$5$', '$6$', '$7$', '$8$'], 1], ['Um triângulo com um ângulo de $90°$ é:', ['acutângulo', 'retângulo', 'obtusângulo', 'equilátero'], 1], ['Em um triângulo, dois ângulos medem $30°$ e $90°$. O terceiro mede:', ['$30°$', '$60°$', '$90°$', '$120°$'], 1]]),
+
+    A('circunferencia-e-circulo', 'Circunferência e círculo',
+      `Por que a roda é ${co('primary')}redonda</span>?`,
+      'Por que as rodas dos carros são circulares? E quanto uma roda de $60$ cm de diâmetro percorre em uma volta?',
+      'roda', [['circunferência'], ['raio e diâmetro', 'growth'], ['comprimento', 'decay']],
+      ['Moedas, rodas e relógios são circulares: todos os pontos da borda estão à mesma distância do centro.', ['A distância do centro à borda da circunferência é o:', ['diâmetro', 'raio', 'arco', 'corda'], 1, 'Raio.'], 'Com um barbante e um prego, como você desenharia uma circunferência no chão?'],
+      ['<strong>Identificar</strong> centro, raio, diâmetro, corda e arco.', 'Diferenciar <strong>circunferência</strong> e <strong>círculo</strong>.', 'Calcular o <strong>comprimento</strong> da circunferência com $π ≈ 3,14$.'],
+      'O <strong>diâmetro</strong> é sempre o <strong>dobro do raio</strong>.',
+      [['Elementos', ['<strong>Centro</strong>: ponto de onde todos os pontos da borda estão à mesma distância.', '<strong>Raio</strong> ($r$): do centro até a borda. <strong>Diâmetro</strong> ($d$): corda que passa pelo centro; $d = 2r$.', '<strong>Corda</strong>: segmento com extremos na circunferência. <strong>Arco</strong>: parte da circunferência.'],
+        fig('roda', 'Ilustração original: roda com raio.', '300px')],
+       ['Circunferência × círculo', ['<strong>Circunferência</strong> é a linha (a borda).', '<strong>Círculo</strong> é a região: a linha mais tudo que está dentro.', 'Uma moeda é um círculo; o contorno dela é uma circunferência.'],
+        tbl(['Nome', 'O que é'], [['circunferência', 'linha da borda'], ['círculo', 'borda + interior']])],
+       ['Comprimento da circunferência', ['A razão entre o comprimento $C$ e o diâmetro $d$ é sempre a mesma: $π ≈ 3,14$.', '$C = π · d$ ou $C = 2 · π · r$.', 'Exemplo: $d = 10$ cm ⇒ $C ≈ 3,14 · 10 = 31,4$ cm.'],
+        callout('Aproximação', 'Usamos $π ≈ 3,14$ (o número tem infinitas casas, sem período).', 'primary')]],
+      [['Raio e diâmetro', 'O raio de uma circunferência mede $5$ cm. Quanto mede o diâmetro? E se o diâmetro for $12$ cm?', [['Diâmetro é o dobro do raio', '$2 · 5 = 10$ cm.'], ['Raio é a metade do diâmetro', '$12 ÷ 2 = 6$ cm.']], 'Diâmetro $10$ cm; raio $6$ cm'],
+       ['Comprimento', 'Calcule o comprimento de uma circunferência de diâmetro $10$ cm (use $π = 3,14$).', [['Use $C = π · d$', '$C = 3,14 · 10$.'], ['Calcule', '$31,4$.']], '$31,4$ cm']],
+      ['A roda', 'Uma roda tem $60$ cm de diâmetro. Quanto ela percorre em uma volta completa? (use $π = 3,14$)', ['A distância em uma volta é o comprimento da roda.', '$C = π · d$.', '$3,14 · 60 = ?$'], '$C = 3,14 · 60 = 188,4$ cm em uma volta.'],
+      [['O diâmetro de uma circunferência de raio $7$ cm é:', ['$3,5$ cm', '$7$ cm', '$14$ cm', '$21$ cm'], 2, '$d = 2r = 14$.'],
+       ['O segmento que passa pelo centro e liga dois pontos da circunferência é o:', ['raio', 'diâmetro', 'arco', 'ponto'], 1, 'Diâmetro.'],
+       ['O comprimento de uma circunferência de diâmetro $20$ cm ($π = 3,14$) é:', ['$31,4$ cm', '$62,8$ cm', '$6,28$ cm', '$314$ cm'], 1, '$3,14 · 20 = 62,8$.'],
+       ['A diferença entre círculo e circunferência é que o círculo:', ['é só a linha', 'inclui o interior', 'não tem centro', 'não tem raio'], 1, 'O círculo inclui a região interna.']],
+      [[['Elementos', 'Centro, raio, diâmetro ($d = 2r$), corda e arco.'], ['Dois nomes', 'Circunferência é a linha; círculo é a região.'], ['Comprimento', '$C = π · d = 2πr$, com $π ≈ 3,14$.']], 'Por que o diâmetro é a maior corda de uma circunferência?', 'Voltando à roda: $60$ cm de diâmetro dão $188,4$ cm por volta.'],
+      [['O raio de uma circunferência de diâmetro $18$ cm é:', ['$36$ cm', '$9$ cm', '$18$ cm', '$6$ cm'], 1], ['O comprimento de uma circunferência de raio $5$ cm ($π = 3,14$) é:', ['$15,7$ cm', '$31,4$ cm', '$78,5$ cm', '$62,8$ cm'], 1], ['O centro de uma circunferência:', ['pertence a ela', 'está a distâncias iguais de todos os pontos dela', 'é um arco', 'é uma corda'], 1]])
+  ]
+});

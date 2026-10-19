@@ -6,6 +6,8 @@ const { spawnSync } = require('child_process');
 const passos = [
   ['aulas na estrutura padrão (reestruturação automática)', 'scripts/reestruturar/reestruturar.js'],
   ['conferência da estrutura das aulas', 'scripts/reestruturar/conferir.js'],
+  ['contas das questões dos módulos do CD', 'scripts/gerador-padrao/conferir-contas.js'],
+  ['sobras da mini-linguagem nos módulos do CD', 'scripts/gerador-padrao/vazamentos-cd.js'],
   ['layout legível em qualquer tela', 'scripts/aplicar-layout.js'],
   ['fontes locais', 'scripts/aplicar-fontes.js'],
   ['progresso no aparelho do aluno', 'scripts/aplicar-progresso.js'],

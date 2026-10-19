@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 1º trimestre · Equações e sistemas (base: slides "Equações do 1º grau", "Sistemas de equações" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 1, pasta: 'aulas/8-ano/1-tri/equacoes-e-sistemas/', titulo: 'Equações do 1º grau e sistemas', accent: 'growth', icon: 'algebra', key: 'm8p42', area: 'Matemática · 8º ano',
+  aulas: [
+    A('equacoes-do-1-grau-e-problemas', 'Equações do 1º grau e problemas',
+      `Qual é o ${co('primary')}valor de x</span>?`,
+      'Ana tem o triplo da idade do irmão, e a soma das idades é $24$ anos. Como descobrir a idade de cada um usando uma equação?',
+      'balanca', [['equação'], ['balança', 'growth'], ['problemas', 'decay']],
+      ['Equação é como uma balança em equilíbrio: o que se faz de um lado precisa ser feito do outro.', ['Se $x + 5 = 12$, então $x$ vale:', ['$5$', '$7$', '$12$', '$17$'], 1, '$12 - 5 = 7$.'], 'Pense em um número: dobrado e somado a $3$ dá $11$. Qual é ele?'],
+      ['<strong>Resolver</strong> equações do 1º grau com uma incógnita.', '<strong>Verificar</strong> a solução substituindo na equação.', '<strong>Traduzir</strong> problemas para a linguagem algébrica.'],
+      'Operação inversa nos <strong>dois lados</strong>: a igualdade nunca perde o equilíbrio.',
+      [['Resolvendo uma equação', ['<strong>Equação do 1º grau</strong>: $ax + b = c$ com $a ≠ 0$.', 'Princípio da balança: somar, subtrair, multiplicar ou dividir os dois lados pelo mesmo número (≠ 0) não muda a solução.', 'Isole $x$: $2x + 3 = 11$ ⇒ $2x = 8$ ⇒ $x = 4$.'],
+        fig('balanca', 'Ilustração original: balança de pratos.', '300px')],
+       ['Incógnita nos dois lados', ['Junte os termos com $x$ de um lado e os números do outro.', '$5x - 4 = 2x + 8$ ⇒ $5x - 2x = 8 + 4$ ⇒ $3x = 12$ ⇒ $x = 4$.', 'Passando um termo para o outro lado, troque o sinal.'],
+        callout('Verificação', 'Substitua $x = 4$: $5 · 4 - 4 = 16$ e $2 · 4 + 8 = 16$. Confere.', 'primary')],
+       ['Problemas', ['1) Defina a incógnita. 2) Escreva a equação. 3) Resolva. 4) Responda à pergunta e confira.', 'Com parênteses e frações, use a distributiva e o MMC.', 'Resposta sempre com a unidade do problema.'],
+        tbl(['Frase', 'Equação'], [['o dobro de um número, mais $3$, dá $11$', '$2x + 3 = 11$'], ['a soma de dois números consecutivos é $21$', '$x + (x + 1) = 21$']])]],
+      [['Resolvendo', 'Resolva $3x - 7 = 2x + 5$.', [['Junte os $x$', '$3x - 2x = 5 + 7$.'], ['Calcule', '$x = 12$.']], '$x = 12$', 'Confira: $3 · 12 - 7 = 29$ e $2 · 12 + 5 = 29$.'],
+       ['Com parênteses', 'Resolva $2(x + 3) = 14$.', [['Distributiva', '$2x + 6 = 14$.'], ['Isole $x$', '$2x = 8$ e $x = 4$.']], '$x = 4$']],
+      ['As idades', 'Ana tem o triplo da idade do irmão e a soma é $24$ anos. Quantos anos cada um tem?', ['Chame a idade do irmão de $x$; a de Ana é $3x$.', '$x + 3x = 24$.', '$4x = 24$.'], 'Irmão: $x = 6$ anos; Ana: $3 · 6 = 18$ anos (soma $24$).'],
+      [['A solução de $x + 9 = 15$ é:', ['$6$', '$24$', '$9$', '$15$'], 0, '$15 - 9 = 6$.'],
+       ['A solução de $4x = 28$ é:', ['$24$', '$32$', '$7$', '$112$'], 2, '$28 ÷ 4 = 7$.'],
+       ['A solução de $2x + 1 = x + 6$ é:', ['$5$', '$7$', '$3$', '$1$'], 0, '$2x - x = 6 - 1$.'],
+       ['O dobro de um número menos $4$ é igual a $10$. O número é:', ['$3$', '$5$', '$7$', '$14$'], 2, '$2x - 4 = 10$ ⇒ $x = 7$.']],
+      [[['Balança', 'Mesma operação nos dois lados.'], ['Isolar', 'Termos com $x$ de um lado, números do outro.'], ['Problemas', 'Incógnita → equação → solução → conferência.']], 'Por que não podemos dividir os dois lados por zero?', 'Voltando às idades: irmão com $6$ anos e Ana com $18$.'],
+      [['A solução de $x - 3 = 10$ é:', ['$7$', '$13$', '$30$', '$-7$'], 1], ['A solução de $5x - 2 = 3x + 6$ é:', ['$4$', '$2$', '$8$', '$-4$'], 0], ['A soma de dois números consecutivos é $15$. O menor é:', ['$6$', '$7$', '$8$', '$5$'], 1]]),
+
+    A('sistemas-de-equacoes-do-1-grau', 'Sistemas de equações do 1º grau',
+      `Duas pistas, ${co('primary')}duas incógnitas</span>`,
+      'Em uma lanchonete, $2$ salgados e $1$ suco custam R&#36; 11 e $1$ salgado e $2$ sucos custam R&#36; 10. Quanto custa cada item?',
+      'mercado', [['sistema'], ['substituição', 'growth'], ['adição', 'decay']],
+      ['Quando há duas incógnitas, uma equação não basta: precisamos de duas informações.', ['Se $x + y = 10$ e $x = 4$, então $y$ vale:', ['$4$', '$6$', '$10$', '$14$'], 1, '$10 - 4 = 6$.'], 'Dois números somam $10$ e um é o dobro do outro. Quais são?'],
+      ['<strong>Montar</strong> um sistema a partir de um problema.', '<strong>Resolver</strong> pelos métodos da substituição e da adição.', '<strong>Interpretar</strong> a solução $(x, y)$.'],
+      'A solução precisa satisfazer <strong>as duas equações</strong> ao mesmo tempo.',
+      [['O que é um sistema', ['Um <strong>sistema</strong> reúne duas equações com as mesmas incógnitas.', 'A solução é o par $(x, y)$ que torna as duas equações verdadeiras.', 'Ex.: $x + y = 10$ e $x - y = 2$ têm solução $(6, 4)$.'],
+        fig('mercado', 'Ilustração original: mercado.', '280px')],
+       ['Método da substituição', ['Isole uma incógnita em uma equação e substitua na outra.', '$x + y = 10$ e $x = 2y + 1$: $2y + 1 + y = 10$ ⇒ $3y = 9$ ⇒ $y = 3$ e $x = 7$.', 'Boa escolha quando uma incógnita já está isolada.'],
+        callout('Dica', 'Ao final, volte nas duas equações e confira o par encontrado.', 'primary')],
+       ['Método da adição', ['Some as equações de modo que uma incógnita desapareça.', '$x + y = 10$ e $x - y = 2$: somando, $2x = 12$ ⇒ $x = 6$ e $y = 4$.', 'Se preciso, multiplique uma equação por um número para criar termos opostos.'],
+        tbl(['Método', 'Quando usar'], [['substituição', 'uma incógnita isolada'], ['adição', 'coeficientes iguais ou opostos']])]],
+      [['Adição', 'Resolva $x + y = 9$ e $x - y = 3$.', [['Some as equações', '$2x = 12$ e $x = 6$.'], ['Ache $y$', '$6 + y = 9$ e $y = 3$.']], '$(x, y) = (6, 3)$'],
+       ['Substituição', 'Resolva $y = 2x$ e $x + y = 12$.', [['Substitua $y$', '$x + 2x = 12$.'], ['Resolva', '$3x = 12$, $x = 4$, $y = 8$.']], '$(x, y) = (4, 8)$']],
+      ['A lanchonete', 'Salgado $s$ e suco $c$: $2s + c = 11$ e $s + 2c = 10$. Qual o preço de cada um?', ['Isole $c$ na primeira: $c = 11 - 2s$.', 'Substitua: $s + 2(11 - 2s) = 10$.', '$22 - 3s = 10$.'], '$s = 4$ e $c = 3$: salgado R&#36; 4 e suco R&#36; 3 (confira: $2 · 4 + 3 = 11$ e $4 + 2 · 3 = 10$).'],
+      [['A solução de $x + y = 7$ e $x - y = 1$ é:', ['$(3, 4)$', '$(4, 3)$', '$(5, 2)$', '$(6, 1)$'], 1, '$2x = 8$.'],
+       ['Se $y = x + 2$ e $x + y = 8$, então $x$ vale:', ['$2$', '$3$', '$4$', '$6$'], 1, '$2x + 2 = 8$.'],
+       ['A soma de dois números é $20$ e a diferença é $4$. O maior é:', ['$8$', '$10$', '$12$', '$16$'], 2, '$(20 + 4) ÷ 2 = 12$.'],
+       ['Um par $(x, y)$ é solução do sistema quando:', ['satisfaz só uma equação', 'satisfaz as duas equações', 'é par', 'é positivo'], 1, 'Precisa valer nas duas.']],
+      [[['Sistema', 'Duas equações, duas incógnitas.'], ['Substituição', 'Isole e substitua.'], ['Adição', 'Elimine uma incógnita somando.']], 'Quando a adição é mais prática que a substituição?', 'Voltando ao lanche: salgado R&#36; 4 e suco R&#36; 3.'],
+      [['A solução de $x + y = 5$ e $x - y = 1$ é:', ['$(3, 2)$', '$(2, 3)$', '$(4, 1)$', '$(5, 0)$'], 0], ['Se $x = 3y$ e $x + y = 16$, então $y$ vale:', ['$3$', '$4$', '$12$', '$8$'], 1], ['Dois números somam $9$ e um é o dobro do outro. O maior é:', ['$3$', '$4$', '$6$', '$5$'], 2]])
+  ]
+});

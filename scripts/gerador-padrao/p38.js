@@ -1,0 +1,53 @@
+// Matemática · 7º ano · 3º trimestre · Poliedros e sólidos que giram (base: slides "Formas geométricas espaciais — poliedros e sólidos que giram" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '7° Ano', tri: 3, pasta: 'aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/', titulo: 'Poliedros e sólidos que giram', accent: 'decay', icon: 'cube', key: 'm7p38', area: 'Matemática · 7º ano',
+  aulas: [
+    A('poliedros-faces-arestas-e-vertices', 'Poliedros: faces, arestas e vértices',
+      `Contando ${co('primary')}faces, arestas e vértices</span>`,
+      'Quantas faces, quantas arestas e quantos vértices tem um dado de $6$ lados? Existe alguma relação entre esses números?',
+      'dados', [['poliedros'], ['prismas e pirâmides', 'growth'], ['relação de Euler', 'decay']],
+      ['Caixas, dados e tendas lembram sólidos com faces planas: os poliedros.', ['Um cubo tem quantas faces?', ['$4$', '$6$', '$8$', '$12$'], 1, 'Seis faces quadradas.'], 'Cite três objetos de casa que tenham formato de poliedro.'],
+      ['<strong>Reconhecer</strong> poliedros e seus elementos (faces, arestas, vértices).', '<strong>Diferenciar</strong> prismas e pirâmides.', 'Usar a <strong>relação de Euler</strong> ($V - A + F = 2$).'],
+      'Faces são <strong>polígonos</strong>; arestas são os <strong>lados</strong> das faces; vértices são os <strong>cantos</strong>.',
+      [['O que é um poliedro', ['<strong>Poliedro</strong> é um sólido limitado só por <strong>faces planas</strong> (polígonos).', '<strong>Arestas</strong>: segmentos onde duas faces se encontram. <strong>Vértices</strong>: pontos onde as arestas se encontram.', 'Ex.: cubo, caixa de sapato, pirâmide.'],
+        fig('dados', 'Ilustração original: dois dados.', '300px')],
+       ['Prismas e pirâmides', ['<strong>Prisma</strong>: duas bases iguais e paralelas e faces laterais que são paralelogramos (retângulos, se o prisma for reto).', '<strong>Pirâmide</strong>: uma base e faces laterais triangulares que se encontram em um vértice.', 'O nome vem da base: prisma triangular, pirâmide quadrangular…'],
+        tbl(['Sólido', 'Faces', 'Arestas', 'Vértices'], [['cubo', '$6$', '$12$', '$8$'], ['pirâmide quadrangular', '$5$', '$8$', '$5$'], ['prisma triangular', '$5$', '$9$', '$6$']])],
+       ['Relação de Euler', ['Em todo poliedro convexo: $V - A + F = 2$.', 'Cubo: $8 - 12 + 6 = 2$.', 'Serve para descobrir o número que falta (por exemplo, as arestas).'],
+        callout('Dica', 'Para conferir uma contagem, aplique Euler: o resultado deve ser $2$.', 'primary')]],
+      [['Contando no cubo', 'Quantas faces, arestas e vértices tem um cubo?', [['Faces', '$6$ quadrados.'], ['Arestas', '$4$ em cima, $4$ embaixo e $4$ laterais: $12$.'], ['Vértices', '$4$ em cima e $4$ embaixo: $8$.']], '$F = 6$, $A = 12$, $V = 8$'],
+       ['Usando Euler', 'Um poliedro tem $8$ faces e $12$ vértices. Quantas arestas ele tem?', [['Aplique $V - A + F = 2$', '$12 - A + 8 = 2$.'], ['Resolva', '$A = 18$.']], '$18$ arestas']],
+      ['A pirâmide quadrangular', 'Verifique a relação de Euler em uma pirâmide de base quadrada ($5$ faces, $8$ arestas, $5$ vértices).', ['Calcule $V - A + F$.', '$5 - 8 + 5$.', 'O resultado é $2$?'], '$5 - 8 + 5 = 2$: a relação de Euler vale.'],
+      [['Um prisma triangular tem quantas faces?', ['$3$', '$4$', '$5$', '$6$'], 2, '$2$ bases triangulares e $3$ faces laterais.'],
+       ['Uma pirâmide de base hexagonal tem quantos vértices?', ['$6$', '$7$', '$8$', '$12$'], 1, '$6$ da base e $1$ do topo.'],
+       ['Um poliedro com $6$ vértices e $9$ arestas tem quantas faces?', ['$4$', '$5$', '$6$', '$7$'], 1, '$6 - 9 + F = 2$ ⇒ $F = 5$.'],
+       ['Qual dos sólidos NÃO é um poliedro?', ['cubo', 'pirâmide', 'prisma', 'esfera'], 3, 'A esfera não tem faces planas.']],
+      [[['Poliedro', 'Sólido de faces planas: faces, arestas e vértices.'], ['Prisma e pirâmide', 'Prisma: duas bases; pirâmide: uma base e um vértice no topo.'], ['Euler', '$V - A + F = 2$.']], 'Por que uma esfera não é um poliedro?', 'Voltando ao dado: $6$ faces, $12$ arestas e $8$ vértices; $8 - 12 + 6 = 2$.'],
+      [['Quantas arestas tem um cubo?', ['$6$', '$8$', '$12$', '$16$'], 2], ['Uma pirâmide triangular (tetraedro) tem quantas faces?', ['$3$', '$4$', '$5$', '$6$'], 1], ['Se $F = 7$ e $V = 10$, então $A$ vale:', ['$13$', '$15$', '$17$', '$19$'], 1]]),
+
+    A('solidos-que-giram-cilindro-cone-e-esfera', 'Sólidos que giram: cilindro, cone e esfera',
+      `Formas com superfície ${co('primary')}curva</span>`,
+      'Uma lata de refrigerante, um funil e uma bola de futebol têm formas diferentes. Que nomes elas recebem e o que têm em comum?',
+      'caixa', [['cilindro'], ['cone', 'growth'], ['esfera', 'decay']],
+      ['Nem todo sólido tem faces planas: alguns têm uma superfície curva e se formam “girando” uma figura plana.', ['A roda de uma bicicleta lembra qual figura plana?', ['quadrado', 'triângulo', 'círculo', 'retângulo'], 2, 'O círculo.'], 'Gire um lápis entre os dedos: que forma você “enxerga” no ar?'],
+      ['<strong>Reconhecer</strong> cilindro, cone e esfera e seus elementos.', '<strong>Relacionar</strong> cada sólido com a figura plana que, ao girar, o gera.', '<strong>Identificar</strong> a planificação do cilindro.'],
+      'Corpos redondos <strong>não têm só faces planas</strong>: por isso não são poliedros.',
+      [['Corpos redondos', ['<strong>Cilindro</strong>: duas bases circulares e uma superfície lateral curva.', '<strong>Cone</strong>: uma base circular e um vértice; a superfície lateral é curva.', '<strong>Esfera</strong>: todos os pontos da superfície estão à mesma distância do centro.'],
+        tbl(['Sólido', 'Objeto'], [['cilindro', 'lata, cano'], ['cone', 'funil, chapéu de festa'], ['esfera', 'bola, globo']])],
+       ['Sólidos de revolução', ['Gire um <strong>retângulo</strong> em torno de um lado: surge um <strong>cilindro</strong>.', 'Gire um <strong>triângulo retângulo</strong> em torno de um cateto: surge um <strong>cone</strong>.', 'Gire um <strong>semicírculo</strong> em torno do diâmetro: surge uma <strong>esfera</strong>.'],
+        fig('caixa', 'Ilustração original: sólidos.', '280px')],
+       ['Planificação do cilindro', ['A planificação do cilindro tem <strong>dois círculos</strong> (as bases) e <strong>um retângulo</strong> (a lateral).', 'A largura do retângulo é igual ao <strong>comprimento da circunferência</strong> da base.', 'Cone: um círculo e um setor circular. Esfera: não tem planificação exata.'],
+        callout('Atenção', 'Retângulo e círculos: é como o rótulo e as tampas de uma lata.', 'primary')]],
+      [['Identificando sólidos', 'Que sólido lembra uma casquinha de sorvete? E uma bola de gude?', [['Casquinha: base circular e vértice', 'Cone.'], ['Bola de gude: tudo à mesma distância do centro', 'Esfera.']], 'Cone e esfera'],
+       ['Que figura gira?', 'Qual figura plana gira para formar um cilindro?', [['Cilindro: lateral reta, bases iguais', 'Um retângulo girando em torno de um dos lados.']], 'Um <strong>retângulo</strong>']],
+      ['Planificando a lata', 'Quais figuras formam a planificação de uma lata de refrigerante?', ['A lata é um cilindro.', 'O que são as tampas?', 'O que é o rótulo desenrolado?'], 'Dois <strong>círculos</strong> (tampa e fundo) e um <strong>retângulo</strong> (o rótulo).'],
+      [['Um funil lembra:', ['um cilindro', 'um cone', 'um prisma', 'uma pirâmide'], 1, 'Base circular e vértice: cone.'],
+       ['Qual figura plana, ao girar em torno de um cateto, forma um cone?', ['retângulo', 'círculo', 'triângulo retângulo', 'quadrado'], 2, 'Triângulo retângulo.'],
+       ['A esfera tem:', ['uma base', 'duas bases', 'nenhuma face plana', 'faces triangulares'], 2, 'Só superfície curva.'],
+       ['A planificação do cilindro tem:', ['$2$ retângulos', '$1$ círculo', '$2$ círculos e $1$ retângulo', '$3$ círculos'], 2, 'Duas bases circulares e uma lateral retangular.']],
+      [[['Redondos', 'Cilindro, cone e esfera: superfície curva.'], ['Revolução', 'Retângulo → cilindro; triângulo retângulo → cone; semicírculo → esfera.'], ['Planificação', 'Cilindro: $2$ círculos e $1$ retângulo.']], 'Cite um objeto de cada sólido que você viu hoje.', 'Voltando às formas: lata é cilindro, funil é cone e bola é esfera.'],
+      [['Uma lata de tinta tem formato de:', ['cone', 'esfera', 'cilindro', 'pirâmide'], 2], ['O cone tem quantas bases?', ['$0$', '$1$', '$2$', '$3$'], 1], ['Um semicírculo girando em torno do diâmetro forma:', ['um cone', 'um cilindro', 'uma esfera', 'um prisma'], 2]])
+  ]
+});

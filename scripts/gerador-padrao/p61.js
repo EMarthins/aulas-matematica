@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 2º trimestre · Cônicas (base: slides "As Cônicas" do CD e "Elipse" do Matemática Essencial)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 2, destino: 'mat-3ano-2tri', pasta: 'aulas/3-ano/2-tri/conicas/', titulo: 'Cônicas: elipse, hipérbole e parábola', accent: 'accent', icon: 'polygon', key: 'm3p61', area: 'Matemática · 3ª série',
+  aulas: [
+    A('elipse-e-hiperbole', 'Elipse e hipérbole',
+      `Curvas de ${co('primary')}dois focos</span>`,
+      'A órbita de um planeta é uma elipse com o Sol em um dos focos. O que define uma elipse e como escrever sua equação?',
+      'globo', [['focos'], ['elipse', 'growth'], ['hipérbole', 'decay']],
+      ['Cortando um cone com um plano surgem curvas muito usadas: a elipse, a hipérbole e a parábola.', ['A distância entre $(0, 0)$ e $(3, 4)$ é:', ['$3$', '$4$', '$5$', '$7$'], 2, '$√{9 + 16}$.'], 'Prenda as pontas de um barbante em dois pregos e puxe com um lápis: que curva aparece?'],
+      ['<strong>Definir</strong> elipse e hipérbole a partir dos focos.', '<strong>Escrever</strong> a equação reduzida da elipse centrada na origem.', '<strong>Identificar</strong> $a$, $b$, $c$ e a excentricidade.'],
+      'Elipse: soma das distâncias aos focos é constante ($2a$). Hipérbole: diferença constante.',
+      [['A elipse', ['Conjunto dos pontos cuja <strong>soma</strong> das distâncias a dois pontos fixos (<strong>focos</strong>) é constante: $2a$.', 'Equação com centro na origem e focos no eixo $x$: ${x^2|a^2} + {y^2|b^2} = 1$.', 'Relação: $a^2 = b^2 + c^2$, em que $c$ é a distância do centro a cada foco.'],
+        fig('globo', 'Ilustração original: globo.', '280px')],
+       ['Exemplo', ['${x^2|25} + {y^2|9} = 1$: $a = 5$, $b = 3$ e $c = √{25 - 9} = 4$.', 'Focos em $(±4, 0)$; vértices em $(±5, 0)$.', 'Excentricidade $e = {c|a} = {4|5} = 0,8$.'],
+        tbl(['Elemento', 'Valor'], [['semieixo maior $a$', '$5$'], ['semieixo menor $b$', '$3$'], ['distância focal $c$', '$4$']])],
+       ['A hipérbole', ['Conjunto dos pontos cuja <strong>diferença</strong> (em módulo) das distâncias aos focos é constante.', 'Equação: ${x^2|a^2} - {y^2|b^2} = 1$, com $c^2 = a^2 + b^2$.', 'Tem duas partes (ramos) e assíntotas $y = ±{b|a}x$.'],
+        callout('Atenção', 'Na elipse $c < a$ ($e < 1$); na hipérbole $c > a$ ($e > 1$).', 'decay')]],
+      [['Elipse', 'Na elipse ${x^2|16} + {y^2|7} = 1$, ache $a$, $b$ e $c$.', [['$a^2 = 16$ e $b^2 = 7$', '$a = 4$, $b = √7$.'], ['$c^2 = a^2 - b^2$', '$c = √{16 - 7} = 3$.']], '$a = 4$, $b = √7$, $c = 3$'],
+       ['Hipérbole', 'Na hipérbole ${x^2|9} - {y^2|16} = 1$, ache $c$.', [['$c^2 = a^2 + b^2$', '$9 + 16 = 25$.'], ['Raiz', '$c = 5$.']], '$c = 5$']],
+      ['A órbita', 'Uma elipse tem semieixo maior $5$ e semieixo menor $3$. Qual a distância focal $c$ e a excentricidade?', ['$a = 5$, $b = 3$.', '$c^2 = a^2 - b^2$.', '$e = {c|a}$.'], '$c = 4$ e $e = {4|5} = 0,8$.'],
+      [['Na elipse, a soma das distâncias aos focos é:', ['variável', 'constante', 'zero', 'igual a $c$'], 1, 'Definição.'],
+       ['Em ${x^2|25} + {y^2|9} = 1$, o valor de $a$ é:', ['$3$', '$5$', '$9$', '$25$'], 1, '$a^2 = 25$.'],
+       ['A relação da elipse é:', ['$a^2 = b^2 + c^2$', '$c^2 = a^2 + b^2$', '$a = b + c$', '$b^2 = a^2 + c^2$'], 0, '$c^2 = a^2 - b^2$.'],
+       ['Na hipérbole a excentricidade é:', ['menor que $1$', 'igual a $1$', 'maior que $1$', 'zero'], 2, '$c > a$.']],
+      [[['Elipse', 'Soma constante; $a^2 = b^2 + c^2$.'], ['Hipérbole', 'Diferença constante; $c^2 = a^2 + b^2$.'], ['Excentricidade', '$e = {c|a}$.']], 'O que acontece com a elipse quando os focos coincidem?', 'Voltando ao planeta: a órbita é uma elipse com o Sol em um dos focos.'],
+      [['Em ${x^2|100} + {y^2|36} = 1$, o valor de $c$ é:', ['$6$', '$8$', '$10$', '$64$'], 1], ['Na hipérbole ${x^2|4} - {y^2|5} = 1$, o valor de $c$ é:', ['$1$', '$3$', '$9$', '$√{20}$'], 1], ['Se $a = 10$ e $c = 6$, a excentricidade da elipse é:', ['$0,6$', '$1,67$', '$4$', '$0,4$'], 0]]),
+
+    A('parabola-foco-e-diretriz', 'Parábola: foco e diretriz',
+      `A forma das ${co('primary')}antenas e dos faróis</span>`,
+      'Uma antena parabólica concentra os sinais em um único ponto. Que propriedade geométrica da parábola faz isso e qual é sua equação?',
+      'ondas', [['foco'], ['diretriz', 'growth'], ['equação', 'decay']],
+      ['A parábola do 2º grau que já estudamos também é uma cônica, com foco e diretriz.', ['O vértice de $y = x^2$ está em:', ['$(0, 0)$', '$(1, 1)$', '$(0, 1)$', '$(1, 0)$'], 0, 'Origem.'], 'Se uma luz sai do foco de um espelho parabólico, ela sai espalhada ou em feixe paralelo?'],
+      ['<strong>Definir</strong> a parábola por foco e diretriz.', '<strong>Escrever</strong> a equação $y^2 = 4px$ e $x^2 = 4py$.', '<strong>Relacionar</strong> com a função quadrática.'],
+      'Parábola: todo ponto está à <strong>mesma distância</strong> do foco e da diretriz.',
+      [['Definição', ['Conjunto dos pontos que ficam à mesma distância de um ponto fixo (<strong>foco</strong>) e de uma reta fixa (<strong>diretriz</strong>).', 'O <strong>vértice</strong> está no meio entre o foco e a diretriz.', 'O eixo de simetria passa pelo foco e é perpendicular à diretriz.'],
+        fig('ondas', 'Ilustração original: ondas.', '280px')],
+       ['Equações', ['Vértice na origem e foco $(0, p)$: $x^2 = 4py$ (diretriz $y = -p$).', 'Foco $(p, 0)$: $y^2 = 4px$ (diretriz $x = -p$).', 'Ex.: foco $(0, 1)$: $x^2 = 4y$, ou seja, $y = {x^2|4}$.'],
+        tbl(['Foco', 'Equação'], [['$(0, 1)$', '$x^2 = 4y$'], ['$(0, 2)$', '$x^2 = 8y$'], ['$(3, 0)$', '$y^2 = 12x$']])],
+       ['Aplicações', ['Antenas e telescópios: ondas paralelas ao eixo se refletem e passam pelo foco.', 'Faróis: lâmpada no foco gera feixe paralelo.', 'Trajetória de projéteis (sem resistência do ar) é uma parábola.'],
+        callout('Dica', 'Em $y = ax^2$ o foco está em $(0, {1|4a})$.', 'primary')]],
+      [['Achando o foco', 'Ache o foco de $x^2 = 8y$.', [['Compare com $x^2 = 4py$', '$4p = 8$ ⇒ $p = 2$.']], 'Foco $(0, 2)$; diretriz $y = -2$'],
+       ['Equação', 'Escreva a equação da parábola de vértice na origem e foco $(0, 3)$.', [['$p = 3$', '$x^2 = 4py$.'], ['Substitua', '$x^2 = 12y$.']], '$x^2 = 12y$']],
+      ['A antena', 'Uma antena tem formato $y = {x^2|8}$ (em metros). Onde deve ficar o receptor (foco)?', ['Reescreva como $x^2 = 8y$.', 'Compare com $x^2 = 4py$.', '$p = 2$.'], 'O receptor fica em $(0, 2)$, a $2$ m do vértice.'],
+      [['Na parábola, o vértice fica:', ['no foco', 'na diretriz', 'no meio entre foco e diretriz', 'fora do eixo'], 2, 'Ponto médio.'],
+       ['O foco de $x^2 = 4y$ é:', ['$(0, 1)$', '$(1, 0)$', '$(0, 4)$', '$(4, 0)$'], 0, '$p = 1$.'],
+       ['A diretriz de $x^2 = 4y$ é:', ['$y = 1$', '$y = -1$', '$x = -1$', '$x = 1$'], 1, '$y = -p$.'],
+       ['Qual dispositivo usa a propriedade do foco da parábola?', ['balança', 'antena parabólica', 'régua', 'compasso'], 1, 'Concentra sinais no foco.']],
+      [[['Foco e diretriz', 'Mesma distância.'], ['Equação', '$x^2 = 4py$.'], ['Aplicação', 'Antenas, faróis e projéteis.']], 'Por que o receptor da antena fica no foco?', 'Voltando à antena: o receptor fica no foco $(0, 2)$.'],
+      [['O foco de $x^2 = 12y$ é:', ['$(0, 3)$', '$(3, 0)$', '$(0, 12)$', '$(12, 0)$'], 0], ['A parábola $y^2 = 8x$ tem foco em:', ['$(8, 0)$', '$(2, 0)$', '$(0, 2)$', '$(4, 0)$'], 1], ['A diretriz de $y^2 = 8x$ é:', ['$x = 2$', '$x = -2$', '$y = 2$', '$y = -2$'], 1]])
+  ]
+});

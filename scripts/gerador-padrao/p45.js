@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 3º trimestre · Juros simples e grandezas proporcionais (base: slides "Juros simples", "Regra de três" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 3, pasta: 'aulas/8-ano/3-tri/juros-simples-e-proporcionalidade/', titulo: 'Juros simples e proporcionalidade', accent: 'warm', icon: 'percent', key: 'm8p45', area: 'Matemática · 8º ano',
+  aulas: [
+    A('juros-simples', 'Juros simples',
+      `O ${co('primary')}preço do tempo</span>`,
+      'Você pega R&#36; 1&nbsp;000 emprestados a $2%$ ao mês durante $5$ meses. Quanto paga de juros? Quanto devolve no total?',
+      'dinheiro', [['juros'], ['montante', 'growth'], ['taxa', 'decay']],
+      ['Quem empresta dinheiro cobra um “aluguel”: os juros. Vamos aprender a calculá-los.', ['O valor de $5%$ de $200$ é:', ['$5$', '$10$', '$20$', '$100$'], 1, '$0,05 · 200 = 10$.'], 'Se você deve R&#36; 100 com juros de R&#36; 10 por mês, quanto pagará em 3 meses só de juros?'],
+      ['<strong>Identificar</strong> capital, taxa, tempo, juros e montante.', '<strong>Calcular</strong> juros simples com $J = C · i · t$.', '<strong>Calcular</strong> o montante e comparar propostas.'],
+      'Nos juros simples a taxa incide <strong>sempre sobre o capital inicial</strong>.',
+      [['Termos e fórmula', ['<strong>Capital</strong> $C$: valor inicial. <strong>Taxa</strong> $i$: percentual por período. <strong>Tempo</strong> $t$: número de períodos.', '<strong>Juros</strong>: $J = C · i · t$.', '<strong>Montante</strong>: $M = C + J$.'],
+        fig('dinheiro', 'Ilustração original: dinheiro.', '280px')],
+       ['Um exemplo', ['Capital R&#36; 1 000, taxa $2%$ ao mês, $5$ meses.', '$J = 1 000 · 0,02 · 5 = 100$.', 'Montante: $M = 1 000 + 100 = 1 100$.'],
+        tbl(['Mês', 'Juros acumulados'], [['1', 'R&#36; 20'], ['2', 'R&#36; 40'], ['5', 'R&#36; 100']])],
+       ['Cuidados', ['A taxa e o tempo precisam estar na <strong>mesma unidade</strong> (mês com mês, ano com ano).', 'A taxa entra em forma decimal: $2% = 0,02$.', 'Juros simples crescem de forma <strong>linear</strong>: o mesmo valor a cada período.'],
+        callout('Atenção', 'Taxa ao ano e tempo em meses? Converta antes de calcular.', 'decay')]],
+      [['Calculando os juros', 'Qual o juro de R&#36; 800 a $3%$ ao mês durante $4$ meses?', [['Fórmula', '$J = C · i · t$.'], ['Calcule', '$800 · 0,03 · 4 = 96$.']], 'R&#36; 96'],
+       ['Montante', 'Qual o montante nesse caso?', [['$M = C + J$', '$800 + 96 = 896$.']], 'R&#36; 896']],
+      ['O empréstimo', 'Em R&#36; 1 000 a $2%$ ao mês durante $5$ meses, quanto se paga de juros e qual é o total devolvido?', ['Use $J = C · i · t$.', '$J = 1 000 · 0,02 · 5$.', '$M = C + J$.'], 'Juros R&#36; 100; total devolvido R&#36; 1 100.'],
+      [['O juro de R&#36; 500 a $10%$ ao ano por $2$ anos é:', ['R&#36; 50', 'R&#36; 100', 'R&#36; 150', 'R&#36; 1&nbsp;000'], 1, '$500 · 0,1 · 2 = 100$.'],
+       ['Um capital de R&#36; 200 rende R&#36; 24 de juros em $3$ meses. O montante é:', ['R&#36; 176', 'R&#36; 224', 'R&#36; 248', 'R&#36; 24'], 1, '$200 + 24$.'],
+       ['Nos juros simples, a taxa incide sobre:', ['o montante', 'o capital inicial', 'os juros', 'o tempo'], 1, 'Sempre sobre o capital inicial.'],
+       ['Com $i = 1%$ ao mês e capital R&#36; 1 000, em $6$ meses os juros são:', ['R&#36; 6', 'R&#36; 60', 'R&#36; 600', 'R&#36; 16'], 1, '$1 000 · 0,01 · 6$.']],
+      [[['Juros', '$J = C · i · t$.'], ['Montante', '$M = C + J$.'], ['Unidades', 'Taxa e tempo no mesmo período.']], 'Por que juros simples formam uma reta no gráfico?', 'Voltando ao empréstimo: R&#36; 100 de juros e R&#36; 1 100 de montante.'],
+      [['O juro de R&#36; 1 000 a $5%$ ao mês por $2$ meses é:', ['R&#36; 50', 'R&#36; 100', 'R&#36; 10', 'R&#36; 500'], 1], ['O montante de R&#36; 300 com R&#36; 45 de juros é:', ['R&#36; 255', 'R&#36; 345', 'R&#36; 330', 'R&#36; 45'], 1], ['A taxa $4%$ em forma decimal é:', ['$4$', '$0,4$', '$0,04$', '$0,004$'], 2]]),
+
+    A('grandezas-proporcionais-e-regra-de-tres', 'Grandezas proporcionais e regra de três',
+      `Se um dobra, ${co('primary')}o outro também?</span>`,
+      'Uma torneira enche $20$ L em $4$ minutos. Em quanto tempo enche $50$ L? E se forem duas torneiras iguais?',
+      'fabrica', [['proporção'], ['direta', 'growth'], ['inversa', 'decay']],
+      ['Muitas situações do dia a dia ligam duas grandezas: preço e quantidade, velocidade e tempo.', ['Se $3$ canetas custam R&#36; 6, $6$ canetas custam:', ['R&#36; 9', 'R&#36; 12', 'R&#36; 18', 'R&#36; 3'], 1, 'Dobrou a quantidade, dobrou o preço.'], 'Se um carro dobra a velocidade, o tempo da viagem dobra ou cai pela metade?'],
+      ['<strong>Reconhecer</strong> grandezas direta e inversamente proporcionais.', '<strong>Resolver</strong> problemas de regra de três simples.', '<strong>Verificar</strong> se a resposta é coerente.'],
+      'Direta: as razões são <strong>iguais</strong>. Inversa: o produto é <strong>constante</strong>.',
+      [['Proporcionalidade direta', ['Duas grandezas são <strong>diretamente proporcionais</strong> quando, se uma dobra, a outra dobra.', '${a|b} = {c|d}$ ⇒ $a · d = b · c$ (produto cruzado).', 'Ex.: $20$ L em $4$ min; $50$ L em $x$ min: ${20|50} = {4|x}$ ⇒ $x = 10$ min.'],
+        fig('fabrica', 'Ilustração original: fábrica.', '280px')],
+       ['Proporcionalidade inversa', ['Se uma dobra, a outra cai pela metade: o <strong>produto</strong> se mantém.', '$4$ operários levam $6$ dias; $8$ operários levam $x$: $4 · 6 = 8 · x$ ⇒ $x = 3$ dias.', 'Velocidade e tempo (mesma distância) são inversas.'],
+        tbl(['Velocidade', 'Tempo para 120 km'], [['$40$ km/h', '$3$ h'], ['$80$ km/h', '$1,5$ h'], ['$120$ km/h', '$1$ h']])],
+       ['Regra de três', ['1) Monte uma tabela. 2) Decida se é direta ou inversa. 3) Escreva a proporção (inversa: inverta uma razão). 4) Resolva.', 'Confira o sentido: mais trabalhadores ⇒ menos dias.', 'Responda com a unidade.'],
+        callout('Dica', 'Pergunte: “se uma cresce, a outra cresce ou diminui?”', 'primary')]],
+      [['Regra de três direta', 'Se $5$ kg de arroz custam R&#36; 30, quanto custam $8$ kg?', [['Proporção', '${5|8} = {30|x}$.'], ['Resolva', '$5x = 240$ e $x = 48$.']], 'R&#36; 48'],
+       ['Regra de três inversa', 'Quatro pedreiros fazem um muro em $6$ dias. Em quantos dias $3$ pedreiros fazem o mesmo muro?', [['Inversa: o produto é constante', '$4 · 6 = 3 · x$.'], ['Resolva', '$x = 8$.']], '$8$ dias']],
+      ['A torneira', 'Uma torneira enche $20$ L em $4$ min. Em quanto tempo enche $50$ L? E duas torneiras iguais enchem os $50$ L em quanto tempo?', ['Litros e tempo: direta.', '${20|50} = {4|x}$.', 'Duas torneiras: o tempo cai à metade.'], '$x = 10$ min com uma torneira e $5$ min com duas.'],
+      [['Se $3$ cadernos custam R&#36; 24, $5$ cadernos custam:', ['R&#36; 32', 'R&#36; 40', 'R&#36; 48', 'R&#36; 30'], 1, '${24|3} = 8$ cada.'],
+       ['Um carro faz um trajeto em $2$ h a $90$ km/h. A $60$ km/h leva:', ['$1$ h', '$2,5$ h', '$3$ h', '$4$ h'], 2, '$90 · 2 = 60 · t$.'],
+       ['Duas grandezas inversas têm constante:', ['a soma', 'o produto', 'a diferença', 'a razão'], 1, 'Produto constante.'],
+       ['Se $6$ máquinas produzem $120$ peças, $9$ máquinas produzem:', ['$150$', '$180$', '$240$', '$80$'], 1, '$20$ por máquina.']],
+      [[['Direta', 'Razões iguais: produto cruzado.'], ['Inversa', 'Produto constante.'], ['Conferência', 'A resposta tem sentido?']], 'Por que mais pedreiros significam menos dias?', 'Voltando à torneira: $50$ L em $10$ min (uma) ou $5$ min (duas).'],
+      [['Se $2$ kg custam R&#36; 14, $5$ kg custam:', ['R&#36; 28', 'R&#36; 35', 'R&#36; 70', 'R&#36; 21'], 1], ['Dobrando o número de operários, o tempo da obra:', ['dobra', 'cai à metade', 'não muda', 'triplica'], 1], ['$10$ torneiras enchem um tanque em $6$ h. $20$ torneiras enchem em:', ['$3$ h', '$12$ h', '$6$ h', '$2$ h'], 0]])
+  ]
+});

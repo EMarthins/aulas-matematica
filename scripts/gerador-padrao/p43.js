@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 2º trimestre · Geometria plana (base: slides "Ângulos e retas", "Triângulos", "Quadriláteros", "Polígonos" e "Circunferência" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 2, pasta: 'aulas/8-ano/2-tri/triangulos-e-poligonos/', titulo: 'Ângulos, triângulos e polígonos', accent: 'primary', icon: 'triangle', key: 'm8p43', area: 'Matemática · 8º ano',
+  aulas: [
+    A('angulos-entre-retas-e-triangulos', 'Ângulos entre retas e triângulos',
+      `Somando ${co('primary')}ângulos</span>`,
+      'Dobre um triângulo de papel juntando os três cantos: eles formam uma linha reta. Isso vale para qualquer triângulo?',
+      'telhado', [['ângulos'], ['paralelas', 'growth'], ['triângulos', 'decay']],
+      ['Ângulos aparecem em telhados, escadas e esquadros. Vamos descobrir regras para calculá-los sem medir.', ['Dois ângulos suplementares somam:', ['$90°$', '$180°$', '$270°$', '$360°$'], 1, 'Suplementares: $180°$.'], 'Quanto mede o ângulo reto? E o raso?'],
+      ['<strong>Usar</strong> ângulos opostos pelo vértice, complementares e suplementares.', '<strong>Reconhecer</strong> ângulos formados por retas paralelas e uma transversal.', '<strong>Aplicar</strong> a soma dos ângulos de um triângulo.'],
+      'Em todo triângulo: $α + β + γ = 180°$. O ângulo externo é a soma dos dois internos não adjacentes.',
+      [['Ângulos e retas', ['<strong>Opostos pelo vértice</strong> são iguais. <strong>Complementares</strong> somam $90°$; <strong>suplementares</strong> somam $180°$.', 'Duas retas <strong>paralelas</strong> cortadas por uma transversal formam ângulos <strong>correspondentes</strong> e <strong>alternos internos</strong> iguais.', 'Ângulos <strong>colaterais internos</strong> somam $180°$.'],
+        fig('telhado', 'Ilustração original: telhado com retas paralelas.', '300px')],
+       ['Soma dos ângulos de um triângulo', ['Em qualquer triângulo, a soma dos ângulos internos é $180°$.', 'Triângulo com ângulos $50°$ e $60°$: o terceiro mede $180° - 110° = 70°$.', 'Ângulo externo = soma dos dois internos não adjacentes.'],
+        tbl(['Triângulo', 'Característica'], [['equilátero', 'três ângulos de $60°$'], ['isósceles', 'dois ângulos iguais (da base)'], ['retângulo', 'um ângulo de $90°$']])],
+       ['Classificação', ['Quanto aos lados: equilátero, isósceles, escaleno.', 'Quanto aos ângulos: acutângulo (todos agudos), retângulo, obtusângulo.', 'Desigualdade triangular: cada lado é menor que a soma dos outros dois.'],
+        callout('Atenção', 'Com lados $3$, $4$ e $8$ não existe triângulo: $3 + 4 < 8$.', 'decay')]],
+      [['Terceiro ângulo', 'Dois ângulos de um triângulo medem $50°$ e $60°$. Quanto mede o terceiro?', [['Some os dois', '$50° + 60° = 110°$.'], ['Subtraia de $180°$', '$180° - 110° = 70°$.']], '$70°$'],
+       ['Isósceles', 'No triângulo isósceles com ângulo do vértice $40°$, quanto mede cada ângulo da base?', [['Sobram', '$180° - 40° = 140°$.'], ['Divida por dois', '$70°$.']], '$70°$ cada']],
+      ['Dobradura', 'Explique por que os três cantos de um triângulo formam uma linha reta quando juntados.', ['Os três ângulos somam quanto?', 'Qual ângulo mede $180°$?', 'Conclua.'], 'Os ângulos somam $180°$, que é o ângulo raso (uma reta).'],
+      [['Um ângulo complementar a $35°$ mede:', ['$45°$', '$55°$', '$145°$', '$65°$'], 1, '$90° - 35°$.'],
+       ['Dois ângulos de um triângulo medem $90°$ e $25°$. O terceiro mede:', ['$55°$', '$65°$', '$75°$', '$155°$'], 1, '$180° - 115°$.'],
+       ['O triângulo equilátero tem ângulos de:', ['$30°$', '$45°$', '$60°$', '$90°$'], 2, '$180° ÷ 3$.'],
+       ['Pode existir um triângulo de lados $2$, $3$ e $9$?', ['sim', 'não, pois $2 + 3 < 9$', 'sim, se for isósceles', 'sim, se for retângulo'], 1, 'Desigualdade triangular.']],
+      [[['Retas', 'Opostos pelo vértice são iguais.'], ['Triângulo', 'Soma $180°$.'], ['Existência', 'Lado menor que a soma dos outros dois.']], 'Por que o ângulo externo é a soma de dois internos?', 'Voltando à dobradura: os três ângulos juntos formam $180°$.'],
+      [['Um ângulo suplementar a $120°$ mede:', ['$60°$', '$30°$', '$240°$', '$90°$'], 0], ['Num triângulo, dois ângulos medem $70°$ e $50°$. O terceiro mede:', ['$50°$', '$60°$', '$70°$', '$80°$'], 1], ['Os ângulos da base de um isósceles medem $50°$. O ângulo do vértice mede:', ['$50°$', '$80°$', '$100°$', '$130°$'], 1]]),
+
+    A('quadrilateros-e-poligonos', 'Quadriláteros e polígonos',
+      `Do triângulo a ${co('primary')}qualquer polígono</span>`,
+      'Um piso é feito de ladrilhos hexagonais. Quanto mede cada ângulo interno de um hexágono regular? Por que eles encaixam sem deixar vãos?',
+      'piso', [['quadriláteros'], ['polígonos', 'growth'], ['ângulos internos', 'decay']],
+      ['Todo polígono pode ser dividido em triângulos, e já sabemos a soma dos ângulos de um triângulo.', ['O número de lados de um hexágono é:', ['$5$', '$6$', '$7$', '$8$'], 1, 'Hexa = seis.'], 'Cite figuras que têm quatro lados.'],
+      ['<strong>Classificar</strong> quadriláteros (paralelogramo, retângulo, losango, quadrado, trapézio).', '<strong>Calcular</strong> a soma dos ângulos internos de um polígono.', '<strong>Obter</strong> o ângulo de um polígono regular.'],
+      'Soma dos ângulos internos: $S = (n - 2) · 180°$. Em quadriláteros, $S = 360°$.',
+      [['Quadriláteros', ['<strong>Paralelogramo</strong>: lados opostos paralelos e iguais. <strong>Retângulo</strong>: quatro ângulos retos. <strong>Losango</strong>: quatro lados iguais.', '<strong>Quadrado</strong>: retângulo e losango ao mesmo tempo. <strong>Trapézio</strong>: um par de lados paralelos.', 'A soma dos ângulos internos de um quadrilátero é $360°$.'],
+        fig('piso', 'Ilustração original: piso de ladrilhos.', '300px')],
+       ['Polígonos', ['<strong>Polígono</strong> é uma linha fechada formada só por segmentos. Nomes: triângulo, quadrilátero, pentágono, hexágono, …', 'Divida em triângulos a partir de um vértice: $n$ lados formam $n - 2$ triângulos.', 'Soma dos ângulos internos: $S = (n - 2) · 180°$.'],
+        tbl(['Polígono', 'Lados', 'Soma dos internos'], [['triângulo', '$3$', '$180°$'], ['quadrilátero', '$4$', '$360°$'], ['pentágono', '$5$', '$540°$'], ['hexágono', '$6$', '$720°$']])],
+       ['Polígonos regulares', ['<strong>Regular</strong> tem todos os lados e todos os ângulos iguais.', 'Ângulo interno: $a_i = {(n - 2) · 180°|n}$. Hexágono regular: ${720°|6} = 120°$.', 'A soma dos ângulos externos de qualquer polígono convexo é $360°$.'],
+        callout('Dica', 'Ângulo interno + externo = $180°$ em cada vértice.', 'primary')]],
+      [['Soma dos internos', 'Qual a soma dos ângulos internos de um pentágono?', [['$n = 5$', '$(5 - 2) · 180°$'], ['Calcule', '$3 · 180° = 540°$.']], '$540°$'],
+       ['Ângulo do hexágono regular', 'Quanto mede cada ângulo interno de um hexágono regular?', [['Soma', '$(6 - 2) · 180° = 720°$.'], ['Divida por $6$', '$120°$.']], '$120°$']],
+      ['O piso', 'Por que três hexágonos regulares se encaixam em torno de um ponto sem deixar vão?', ['Cada ângulo mede $120°$.', 'Três ângulos juntos: $3 · 120°$.', 'Compare com uma volta completa.'], '$3 · 120° = 360°$, uma volta completa: encaixam perfeitamente.'],
+      [['A soma dos ângulos internos de um quadrilátero é:', ['$180°$', '$270°$', '$360°$', '$540°$'], 2, '$(4 - 2) · 180°$.'],
+       ['Um polígono de $8$ lados tem soma dos internos:', ['$1 080°$', '$720°$', '$1 440°$', '$900°$'], 0, '$6 · 180° = 1 080°$.'],
+       ['O ângulo interno de um pentágono regular mede:', ['$100°$', '$108°$', '$120°$', '$72°$'], 1, '$540° ÷ 5$.'],
+       ['Qual quadrilátero tem quatro lados iguais e ângulos retos?', ['retângulo', 'losango', 'trapézio', 'quadrado'], 3, 'Só o quadrado reúne as duas.']],
+      [[['Quadriláteros', 'Soma $360°$; quadrado = retângulo + losango.'], ['Fórmula', '$(n - 2) · 180°$.'], ['Regular', 'Divida a soma por $n$.']], 'Por que dividimos o polígono em $n - 2$ triângulos?', 'Voltando ao piso: o hexágono regular tem ângulo de $120°$ e três deles fecham $360°$.'],
+      [['A soma dos internos de um hexágono é:', ['$540°$', '$720°$', '$900°$', '$360°$'], 1], ['O ângulo interno de um triângulo equilátero é:', ['$30°$', '$45°$', '$60°$', '$90°$'], 2], ['O ângulo interno de um octógono regular mede:', ['$120°$', '$135°$', '$140°$', '$150°$'], 1]])
+  ]
+});

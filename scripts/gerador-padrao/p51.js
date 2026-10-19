@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 1º trimestre · Probabilidade (base: slides "Probabilidade", "Probabilidade condicional" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 1, destino: 'mat-3ano-1tri', pasta: 'aulas/3-ano/1-tri/probabilidade/', titulo: 'Probabilidade', accent: 'accent', icon: 'dots', key: 'm3p51', area: 'Matemática · 3ª série',
+  aulas: [
+    A('probabilidade-uniao-e-eventos-independentes', 'Probabilidade: união e eventos independentes',
+      `E, ${co('primary')}ou</span>, ou ambos?`,
+      'Num baralho de $52$ cartas, qual a chance de tirar uma carta que seja “copas” ou “rei”? E de, em dois lançamentos de moeda, sair cara nos dois?',
+      'cartas', [['união'], ['independentes', 'growth'], ['regra do E', 'decay']],
+      ['Já sabemos $P(A) = {favoráveis|possíveis}$. Agora vamos combinar eventos.', ['A probabilidade de sair cara numa moeda é:', ['${1|4}$', '${1|2}$', '$1$', '$2$'], 1, '${1|2}$.'], 'Dois lançamentos de moeda: quantos resultados possíveis há?'],
+      ['<strong>Calcular</strong> $P(A ∪ B)$.', '<strong>Reconhecer</strong> eventos independentes e mutuamente exclusivos.', '<strong>Calcular</strong> $P(A ∩ B)$ para eventos independentes.'],
+      'União: $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$. Independentes: $P(A ∩ B) = P(A) · P(B)$.',
+      [['Regra do OU (união)', ['$P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$: subtraímos a interseção, contada duas vezes.', 'Copas ou rei: ${13|52} + {4|52} - {1|52} = {16|52} = {4|13}$.', 'Se $A$ e $B$ não podem ocorrer juntos (<strong>mutuamente exclusivos</strong>), $P(A ∩ B) = 0$ e basta somar.'],
+        fig('cartas', 'Ilustração original: cartas.', '280px')],
+       ['Eventos independentes', ['Dois eventos são <strong>independentes</strong> quando um não altera a chance do outro.', 'Regra do E: $P(A ∩ B) = P(A) · P(B)$.', 'Duas caras seguidas: ${1|2} · {1|2} = {1|4}$.'],
+        tbl(['Situação', 'Probabilidade'], [['cara e cara', '${1|4}$'], ['par num dado e cara na moeda', '${1|2} · {1|2} = {1|4}$']])],
+       ['Eventos dependentes', ['Se a retirada é <strong>sem reposição</strong>, o 2º evento depende do 1º.', 'Duas copas seguidas de um baralho: ${13|52} · {12|51}$.', 'Calcule a segunda probabilidade já com o novo total.'],
+        callout('Atenção', 'Com reposição → independentes; sem reposição → dependentes.', 'decay')]],
+      [['União', 'Qual a probabilidade de sair múltiplo de $2$ ou de $3$ num dado?', [['Múltiplos de $2$: $2, 4, 6$; de $3$: $3, 6$', '${3|6} + {2|6} - {1|6}$'], ['Calcule', '${4|6} = {2|3}$.']], '${2|3}$'],
+       ['Independentes', 'Qual a probabilidade de, lançando um dado e uma moeda, sair $6$ e cara?', [['Dado', '${1|6}$.'], ['Moeda', '${1|2}$.'], ['Multiplique', '${1|12}$.']], '${1|12}$']],
+      ['Copas ou rei', 'Calcule a probabilidade de tirar “copas ou rei” em um baralho de $52$ cartas.', ['Copas: $13$; reis: $4$.', 'O rei de copas está nos dois grupos.', 'Subtraia a interseção.'], '${13|52} + {4|52} - {1|52} = {16|52} = {4|13}$ (cerca de $30,8%$).'],
+      [['Num dado, a probabilidade de sair $1$ ou $2$ é:', ['${1|6}$', '${1|3}$', '${1|2}$', '${2|3}$'], 1, '${2|6}$.'],
+       ['A probabilidade de duas caras seguidas é:', ['${1|2}$', '${1|3}$', '${1|4}$', '${1|8}$'], 2, '${1|2} · {1|2}$.'],
+       ['Eventos mutuamente exclusivos têm $P(A ∩ B)$ igual a:', ['$0$', '${1|2}$', '$1$', '$P(A)$'], 0, 'Não ocorrem juntos.'],
+       ['Retirar duas bolas sem reposição torna os eventos:', ['independentes', 'dependentes', 'impossíveis', 'certos'], 1, 'O total muda.']],
+      [[['União', 'Soma menos a interseção.'], ['Independentes', 'Multiplique.'], ['Dependentes', 'Atualize o total.']], 'Por que subtraímos $P(A ∩ B)$ na união?', 'Voltando às cartas: copas ou rei tem probabilidade ${4|13}$.'],
+      [['P(par ou maior que $4$) num dado:', ['${1|2}$', '${2|3}$', '${1|3}$', '${5|6}$'], 1], ['Duas moedas: P(duas coroas):', ['${1|2}$', '${1|4}$', '${1|8}$', '$1$'], 1], ['Se $P(A) = 0,4$ e $P(B) = 0,5$ (independentes), $P(A ∩ B)$ é:', ['$0,9$', '$0,2$', '$0,1$', '$0,45$'], 1]]),
+
+    A('probabilidade-condicional', 'Probabilidade condicional',
+      `A chance muda quando ${co('primary')}sabemos algo</span>`,
+      'Numa sala, $60%$ dos alunos jogam futebol e $24%$ jogam futebol e vôlei. Sabendo que um aluno joga futebol, qual a chance de ele jogar vôlei?',
+      'esporte', [['condicional'], ['P(A|B)', 'growth'], ['tabela', 'decay']],
+      ['Quando recebemos uma informação nova, o espaço amostral diminui e a probabilidade muda.', ['Num grupo de $10$ pessoas, $4$ são mulheres. P(mulher) é:', ['$0,2$', '$0,4$', '$0,6$', '$4$'], 1, '${4|10}$.'], 'Se você já sabe que o número do dado é par, qual a chance de ser $6$?'],
+      ['<strong>Calcular</strong> $P(A|B)$.', '<strong>Interpretar</strong> tabelas de dupla entrada.', '<strong>Aplicar</strong> $P(A ∩ B) = P(B) · P(A|B)$.'],
+      'Condicional: restrinja o universo ao evento dado e conte de novo.',
+      [['Definição', ['$P(A|B)$ é a probabilidade de $A$ <strong>dado que</strong> $B$ ocorreu.', '$P(A|B) = {P(A ∩ B)|P(B)}$, com $P(B) > 0$.', 'O universo passa a ser só o evento $B$.'],
+        fig('esporte', 'Ilustração original: esportes.', '280px')],
+       ['Tabela de dupla entrada', ['Futebol: $60%$; futebol e vôlei: $24%$.', '$P(vôlei|futebol) = {24%|60%} = 0,4 = 40%$.', 'Na tabela, divida a célula pela soma da linha (ou coluna) dada.'],
+        tbl(['', 'vôlei', 'não vôlei', 'total'], [['futebol', '$24$', '$36$', '$60$'], ['não futebol', '$16$', '$24$', '$40$']])],
+       ['Regra do produto', ['Da definição: $P(A ∩ B) = P(B) · P(A|B)$.', 'Duas copas seguidas: ${13|52} · {12|51}$.', 'Se $A$ e $B$ são independentes, $P(A|B) = P(A)$.'],
+        callout('Dica', 'Condicional = parte do evento dado em que $A$ também acontece.', 'primary')]],
+      [['Dado par', 'Num dado, qual a probabilidade de sair $6$, sabendo que saiu um número par?', [['Universo: pares', '$2, 4, 6$ (3 casos).'], ['Favorável', '$6$ (1 caso).']], '${1|3}$'],
+       ['Pela tabela', 'Na tabela acima, qual a probabilidade de jogar vôlei entre os que não jogam futebol?', [['Linha “não futebol”', 'total $40$.'], ['Vôlei', '$16$.']], '${16|40} = 40%$']],
+      ['Futebol e vôlei', 'Se $60%$ jogam futebol e $24%$ jogam futebol e vôlei, qual a chance de jogar vôlei sabendo que joga futebol?', ['$P(A ∩ B) = 24%$.', '$P(B) = 60%$.', 'Divida.'], '${24|60} = 0,4$: chance de $40%$.'],
+      [['Em $P(A|B)$, o universo é:', ['todo o espaço amostral', 'o evento $A$', 'o evento $B$', 'vazio'], 2, 'O evento dado.'],
+       ['Num dado, P(maior que $4$ | par) é:', ['${1|3}$', '${1|2}$', '${2|3}$', '${1|6}$'], 0, 'Pares: $2, 4, 6$; só o $6$ é maior que $4$.'],
+       ['Se $P(A ∩ B) = 0,2$ e $P(B) = 0,5$, então $P(A|B)$ é:', ['$0,1$', '$0,4$', '$0,7$', '$2,5$'], 1, '$0,2 ÷ 0,5$.'],
+       ['Se $A$ e $B$ são independentes, $P(A|B)$ é igual a:', ['$P(B)$', '$P(A)$', '$0$', '$1$'], 1, 'Saber $B$ não muda $A$.']],
+      [[['Condicional', '${P(A ∩ B)|P(B)}$.'], ['Universo', 'Reduzido ao evento dado.'], ['Produto', '$P(A ∩ B) = P(B) · P(A|B)$.']], 'Por que o denominador é $P(B)$ e não $1$?', 'Voltando à sala: entre os de futebol, $40%$ jogam vôlei.'],
+      [['Num dado, P(ímpar | maior que $2$) é:', ['${1|2}$', '${1|4}$', '${2|3}$', '${1|3}$'], 0], ['Se $P(A ∩ B) = 0,3$ e $P(B) = 0,6$, P(A|B) é:', ['$0,18$', '$0,5$', '$0,9$', '$2$'], 1], ['Em uma urna com $3$ bolas azuis e $2$ vermelhas (sem reposição), P(2ª azul | 1ª azul) é:', ['${3|5}$', '${2|5}$', '${3|4}$', '${1|2}$'], 3]])
+  ]
+});

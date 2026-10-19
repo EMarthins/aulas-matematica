@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 2º trimestre · Circunferência e círculo (base: slides "Circunferência e círculo" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 2, pasta: 'aulas/8-ano/2-tri/circunferencia-e-circulo/', titulo: 'Circunferência e círculo', accent: 'accent', icon: 'polygon', key: 'm8p44', area: 'Matemática · 8º ano',
+  aulas: [
+    A('circunferencia-comprimento-e-pi', 'Circunferência: elementos, comprimento e π',
+      `A volta da ${co('primary')}roda</span>`,
+      'Uma roda de bicicleta tem $60$ cm de diâmetro. Quanto a bicicleta anda a cada volta completa da roda?',
+      'roda', [['raio e diâmetro'], ['π', 'growth'], ['comprimento', 'decay']],
+      ['Todas as rodas têm algo em comum: a razão entre a volta e o diâmetro é sempre a mesma.', ['O diâmetro é igual a:', ['o raio', 'duas vezes o raio', 'metade do raio', 'o raio ao quadrado'], 1, '$d = 2r$.'], 'Meça uma lata: compare o comprimento da volta com o diâmetro.'],
+      ['<strong>Identificar</strong> centro, raio, diâmetro e corda.', '<strong>Entender</strong> o número $π$ como razão entre comprimento e diâmetro.', '<strong>Calcular</strong> o comprimento da circunferência.'],
+      'Comprimento da circunferência: $C = 2πr = πd$, com $π ≈ 3,14$.',
+      [['Elementos', ['<strong>Circunferência</strong>: pontos à mesma distância do <strong>centro</strong>. Essa distância é o <strong>raio</strong> $r$.', '<strong>Diâmetro</strong>: corda que passa pelo centro; $d = 2r$.', '<strong>Corda</strong>: segmento que liga dois pontos da circunferência.'],
+        fig('roda', 'Ilustração original: roda.', '280px')],
+       ['O número π', ['Dividindo o comprimento $C$ de qualquer circunferência pelo seu diâmetro, obtém-se sempre o mesmo número: $π = {C|d} ≈ 3,14159…$', '$π$ é irracional: não termina nem se repete.', 'Em cálculos usamos $π ≈ 3,14$.'],
+        callout('Atenção', '$3,14$ é aproximação: o valor exato é $π$.', 'primary')],
+       ['Comprimento', ['$C = π · d$ ou $C = 2 · π · r$.', 'Roda de $d = 60$ cm: $C = 3,14 · 60 = 188,4$ cm.', 'Se a roda dá $10$ voltas, a bicicleta anda $10 · C$.'],
+        tbl(['Raio', 'Comprimento (π ≈ 3,14)'], [['$1$', '$6,28$'], ['$5$', '$31,4$'], ['$10$', '$62,8$']])]],
+      [['Comprimento', 'Calcule o comprimento de uma circunferência de raio $5$ cm (use $π = 3,14$).', [['Fórmula', '$C = 2πr$.'], ['Calcule', '$2 · 3,14 · 5 = 31,4$.']], '$31,4$ cm'],
+       ['Achando o raio', 'Uma circunferência tem comprimento $62,8$ cm. Qual o raio?', [['$C = 2πr$', '$62,8 = 6,28 · r$.'], ['Divida', '$r = 10$.']], '$10$ cm']],
+      ['A bicicleta', 'A roda tem $60$ cm de diâmetro. Quantos metros a bicicleta anda em $100$ voltas ($π = 3,14$)?', ['$C = π d$.', '$C = 188,4$ cm por volta.', 'Multiplique por $100$ e converta para metros.'], '$188,4 · 100 = 18 840$ cm $= 188,4$ m.'],
+      [['O raio de uma circunferência de diâmetro $20$ cm é:', ['$5$ cm', '$10$ cm', '$20$ cm', '$40$ cm'], 1, '$r = d ÷ 2$.'],
+       ['O comprimento de uma circunferência de raio $1$ ($π = 3,14$) é:', ['$3,14$', '$6,28$', '$1$', '$9,42$'], 1, '$2π · 1$.'],
+       ['A razão entre o comprimento e o diâmetro é:', ['$1$', '$2$', '$π$', '$4$'], 2, 'Por definição de $π$.'],
+       ['O número π é:', ['natural', 'racional', 'irracional', 'inteiro'], 2, 'Decimal infinito e não periódico.']],
+      [[['Elementos', 'Raio, diâmetro ($d = 2r$) e corda.'], ['π', 'Razão $C ÷ d$ ≈ $3,14$.'], ['Comprimento', '$C = 2πr$.']], 'Por que $π$ é o mesmo para qualquer circunferência?', 'Voltando à roda: cada volta leva a bicicleta $188,4$ cm adiante.'],
+      [['Uma circunferência de diâmetro $10$ tem comprimento ($π = 3,14$):', ['$15,7$', '$31,4$', '$62,8$', '$3,14$'], 1], ['O raio de uma circunferência de comprimento $12,56$ ($π = 3,14$) é:', ['$1$', '$2$', '$4$', '$6$'], 1], ['O diâmetro é o dobro do:', ['comprimento', 'raio', 'centro', 'π'], 1]]),
+
+    A('area-do-circulo', 'Área do círculo',
+      `${co('primary')}Quanto cabe</span> dentro da circunferência?`,
+      'Uma pizza de $30$ cm de diâmetro e duas de $15$ cm de diâmetro: qual rende mais massa? Como calcular a área de um círculo?',
+      'pizza', [['círculo'], ['área', 'growth'], ['coroa circular', 'decay']],
+      ['Círculo é a região dentro da circunferência. Medir a superfície pede unidade ao quadrado.', ['A área de um quadrado de lado $5$ é:', ['$10$', '$20$', '$25$', '$55$'], 2, '$5 · 5$.'], 'Qual é o raio de um círculo de diâmetro $30$ cm?'],
+      ['<strong>Calcular</strong> a área do círculo com $A = πr^2$.', '<strong>Resolver</strong> problemas com pizzas, praças e rodas.', '<strong>Calcular</strong> a área de uma coroa circular.'],
+      'Atenção ao quadrado: a área depende de $r^2$. Dobrar o raio <strong>quadruplica</strong> a área.',
+      [['Fórmula', ['Área do círculo: $A = π · r^2$.', 'Raio $10$ cm: $A = 3,14 · 100 = 314$ cm².', 'Primeiro eleve o raio ao quadrado, depois multiplique por $π$.'],
+        fig('pizza', 'Ilustração original: pizza.', '280px')],
+       ['Comparando', ['Pizza de $d = 30$ cm ($r = 15$): $A = 3,14 · 225 = 706,5$ cm².', 'Duas pizzas de $d = 15$ cm ($r = 7,5$): $2 · 3,14 · 56,25 = 353,25$ cm².', 'A pizza grande rende o dobro das duas pequenas.'],
+        callout('Dica', 'Dobrar o raio quadruplica a área: $(2r)^2 = 4r^2$.', 'primary')],
+       ['Coroa circular', ['É a região entre duas circunferências de mesmo centro (raio maior $R$ e menor $r$).', '$A = π R^2 - π r^2 = π(R^2 - r^2)$.', 'Exemplo: $R = 5$ e $r = 3$: $A = 3,14 · (25 - 9) = 50,24$.'],
+        tbl(['Figura', 'Área'], [['círculo', '$πr^2$'], ['coroa circular', '$π(R^2 - r^2)$']])]],
+      [['Área do círculo', 'Calcule a área de um círculo de raio $4$ cm ($π = 3,14$).', [['Eleve ao quadrado', '$4^2 = 16$.'], ['Multiplique', '$3,14 · 16 = 50,24$.']], '$50,24$ cm²'],
+       ['Pelo diâmetro', 'Qual a área de um círculo de diâmetro $20$ m?', [['Raio', '$r = 10$.'], ['Área', '$3,14 · 100 = 314$.']], '$314$ m²']],
+      ['As pizzas', 'Compare a área de uma pizza de $d = 30$ cm com a de duas pizzas de $d = 15$ cm.', ['Raios: $15$ cm e $7,5$ cm.', 'Calcule $πr^2$ para cada.', 'Compare com duas pequenas.'], 'Grande: $706,5$ cm²; duas pequenas: $353,25$ cm². A grande rende o dobro.'],
+      [['A área de um círculo de raio $3$ ($π = 3,14$) é:', ['$9,42$', '$18,84$', '$28,26$', '$56,52$'], 2, '$3,14 · 9$.'],
+       ['Se o raio dobra, a área:', ['dobra', 'triplica', 'quadruplica', 'não muda'], 2, '$(2r)^2 = 4r^2$.'],
+       ['A unidade de área do círculo de raio em metros é:', ['m', 'm²', 'm³', 'cm'], 1, 'Área: metro quadrado.'],
+       ['Um círculo de área $78,5$ cm² ($π = 3,14$) tem raio:', ['$3$ cm', '$4$ cm', '$5$ cm', '$25$ cm'], 2, '$r^2 = 25$.']],
+      [[['Área', '$A = πr^2$.'], ['Raio dobrado', 'Área quadruplicada.'], ['Coroa', '$π(R^2 - r^2)$.']], 'Por que a área usa $r^2$ e o comprimento só $r$?', 'Voltando às pizzas: a grande tem o dobro da área das duas pequenas juntas.'],
+      [['A área de um círculo de raio $10$ ($π = 3,14$) é:', ['$31,4$', '$62,8$', '$314$', '$100$'], 2], ['Um círculo de diâmetro $8$ tem área ($π = 3,14$):', ['$25,12$', '$50,24$', '$200,96$', '$12,56$'], 1], ['A área da coroa circular com $R = 3$ e $r = 2$ é ($π = 3,14$):', ['$3,14$', '$15,7$', '$31,4$', '$6,28$'], 1]])
+  ]
+});

@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 2º trimestre · Geometria analítica (base: slides "Geometria analítica: ponto e reta", "Circunferência" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 2, destino: 'mat-3ano-2tri', pasta: 'aulas/3-ano/2-tri/geometria-analitica/', titulo: 'Geometria analítica', accent: 'primary', icon: 'grid', key: 'm3p53', area: 'Matemática · 3ª série',
+  aulas: [
+    A('ponto-distancia-e-equacao-da-reta', 'Ponto, distância e equação da reta',
+      `Geometria com ${co('primary')}coordenadas</span>`,
+      'Dois mercados estão em $A(1, 2)$ e $B(7, 10)$ em um mapa quadriculado de $1$ km. Qual a distância entre eles e qual a reta que os liga?',
+      'mapa', [['plano cartesiano'], ['distância', 'growth'], ['reta', 'decay']],
+      ['O plano cartesiano transforma figuras em números: cada ponto é um par $(x, y)$.', ['O ponto $(3, -2)$ está:', ['à direita e abaixo da origem', 'à esquerda e acima', 'sobre o eixo $x$', 'sobre o eixo $y$'], 0, '$x > 0$ e $y < 0$.'], 'Como você diria a posição da sua escola em coordenadas num mapa?'],
+      ['<strong>Calcular</strong> a distância entre dois pontos e o ponto médio.', '<strong>Determinar</strong> o coeficiente angular de uma reta.', '<strong>Escrever</strong> a equação de uma reta.'],
+      'Distância: $d = √{(x_2 - x_1)^2 + (y_2 - y_1)^2}$ (é Pitágoras!).',
+      [['Distância e ponto médio', ['Entre $A(x_1, y_1)$ e $B(x_2, y_2)$: $d = √{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.', 'Ponto médio: $M = ({x_1 + x_2|2}, {y_1 + y_2|2})$.', '$A(1, 2)$ e $B(7, 10)$: $d = √{36 + 64} = 10$; $M = (4, 6)$.'],
+        fig('mapa', 'Ilustração original: mapa quadriculado.', '300px')],
+       ['Coeficiente angular', ['Inclinação da reta: $m = {y_2 - y_1|x_2 - x_1}$.', '$m > 0$: reta sobe; $m < 0$: desce; $m = 0$: horizontal.', 'Entre $A$ e $B$: $m = {8|6} = {4|3}$.'],
+        tbl(['m', 'Reta'], [['positivo', 'crescente'], ['negativo', 'decrescente'], ['zero', 'horizontal']])],
+       ['Equação da reta', ['Forma ponto-inclinação: $y - y_1 = m(x - x_1)$.', 'Por $A(1, 2)$ com $m = {4|3}$: $y - 2 = {4|3}(x - 1)$ ⇒ $3y - 6 = 4x - 4$ ⇒ $4x - 3y + 2 = 0$.', 'Forma reduzida: $y = mx + n$; $n$ é onde a reta corta o eixo $y$.'],
+        callout('Dica', 'Duas retas são paralelas se têm o mesmo $m$; perpendiculares se $m_1 · m_2 = -1$.', 'primary')]],
+      [['Distância', 'Calcule a distância entre $(0, 0)$ e $(3, 4)$.', [['Diferenças', '$3$ e $4$.'], ['Pitágoras', '$√{9 + 16} = 5$.']], '$5$'],
+       ['Reta por dois pontos', 'Ache $m$ da reta que passa por $(1, 3)$ e $(3, 7)$.', [['$m = {y_2 - y_1|x_2 - x_1}$', '${4|2} = 2$.']], '$m = 2$']],
+      ['Os mercados', 'Calcule a distância entre $A(1, 2)$ e $B(7, 10)$ e o ponto médio do trecho.', ['Diferenças em $x$ e $y$: $6$ e $8$.', 'Pitágoras com $6$, $8$.', 'Média das coordenadas.'], 'Distância $10$ km; ponto médio $(4, 6)$.'],
+      [['A distância entre $(1, 1)$ e $(4, 5)$ é:', ['$3$', '$4$', '$5$', '$7$'], 2, '$√{9 + 16}$.'],
+       ['O ponto médio de $(2, 4)$ e $(6, 10)$ é:', ['$(4, 7)$', '$(8, 14)$', '$(3, 5)$', '$(4, 6)$'], 0, 'Médias.'],
+       ['A reta de $m = -2$ é:', ['crescente', 'decrescente', 'horizontal', 'vertical'], 1, '$m < 0$.'],
+       ['Retas com mesmo coeficiente angular são:', ['perpendiculares', 'paralelas', 'secantes', 'coincidentes sempre'], 1, 'Paralelas (ou coincidentes).']],
+      [[['Distância', 'Pitágoras nas diferenças.'], ['Inclinação', '$m = {Δy|Δx}$.'], ['Reta', '$y - y_1 = m(x - x_1)$.']], 'Por que a fórmula da distância é o Teorema de Pitágoras?', 'Voltando ao mapa: $10$ km entre os mercados, ponto médio $(4, 6)$.'],
+      [['A distância entre $(0, 0)$ e $(6, 8)$ é:', ['$10$', '$14$', '$7$', '$2$'], 0], ['O coeficiente angular da reta por $(0, 1)$ e $(2, 5)$ é:', ['$1$', '$2$', '$3$', '$4$'], 1], ['A reta $y = 3x + 1$ corta o eixo $y$ em:', ['$3$', '$1$', '$-1$', '$0$'], 1]]),
+
+    A('circunferencia-no-plano-cartesiano', 'Circunferência no plano cartesiano',
+      `Um círculo com ${co('primary')}equação</span>`,
+      'Uma antena cobre um raio de $5$ km em torno do ponto $(2, 3)$. Um bairro em $(5, 7)$ recebe o sinal?',
+      'mapa', [['circunferência'], ['equação', 'growth'], ['posição', 'decay']],
+      ['A circunferência é o conjunto dos pontos à mesma distância do centro. No plano, isso vira uma equação.', ['A distância entre $(0, 0)$ e $(3, 4)$ é:', ['$3$', '$4$', '$5$', '$7$'], 2, '$√{9 + 16}$.'], 'Qual figura formam todos os pontos a $2$ unidades da origem?'],
+      ['<strong>Escrever</strong> a equação reduzida da circunferência.', '<strong>Identificar</strong> centro e raio.', '<strong>Decidir</strong> a posição de um ponto em relação à circunferência.'],
+      'Equação reduzida: $(x - a)^2 + (y - b)^2 = r^2$, com centro $(a, b)$.',
+      [['Equação reduzida', ['Centro $C(a, b)$ e raio $r$: $(x - a)^2 + (y - b)^2 = r^2$.', 'Centro $(2, 3)$ e raio $5$: $(x - 2)^2 + (y - 3)^2 = 25$.', 'Centro na origem: $x^2 + y^2 = r^2$.'],
+        fig('mapa', 'Ilustração original: mapa.', '300px')],
+       ['Posição de um ponto', ['Calcule $(x - a)^2 + (y - b)^2$ e compare com $r^2$.', 'Menor que $r^2$: ponto <strong>dentro</strong>; igual: <strong>sobre</strong> a circunferência; maior: <strong>fora</strong>.', 'Bairro $(5, 7)$: $(3)^2 + (4)^2 = 25 = r^2$: exatamente na borda.'],
+        tbl(['Resultado', 'Posição'], [['menor que $r^2$', 'interno'], ['igual a $r^2$', 'sobre a circunferência'], ['maior que $r^2$', 'externo']])],
+       ['Da equação geral à reduzida', ['Equação geral: $x^2 + y^2 - 4x - 6y - 12 = 0$.', 'Complete quadrados: $(x - 2)^2 + (y - 3)^2 = 25$.', 'Centro $(2, 3)$ e raio $5$.'],
+        callout('Atenção', 'O raio é a <strong>raiz</strong> do lado direito: em $... = 25$, $r = 5$.', 'decay')]],
+      [['Lendo a equação', 'Identifique centro e raio de $(x - 1)^2 + (y + 2)^2 = 9$.', [['Compare com $(x - a)^2 + (y - b)^2$', '$a = 1$ e $b = -2$.'], ['Raio', '$r^2 = 9$ ⇒ $r = 3$.']], 'Centro $(1, -2)$, raio $3$'],
+       ['Posição', 'O ponto $(1, 1)$ está dentro de $x^2 + y^2 = 4$?', [['Calcule', '$1 + 1 = 2$.'], ['Compare com $r^2 = 4$', '$2 < 4$.']], 'Sim, é interno']],
+      ['A antena', 'A antena cobre raio $5$ km em torno de $(2, 3)$. O bairro $(5, 7)$ recebe sinal?', ['Equação: $(x - 2)^2 + (y - 3)^2 = 25$.', 'Substitua $(5, 7)$.', 'Compare com $25$.'], '$3^2 + 4^2 = 25$: o bairro está exatamente na borda da cobertura.'],
+      [['A equação da circunferência de centro $(0, 0)$ e raio $3$ é:', ['$x^2 + y^2 = 3$', '$x^2 + y^2 = 9$', '$x + y = 9$', '$x^2 - y^2 = 9$'], 1, '$r^2 = 9$.'],
+       ['O centro de $(x - 4)^2 + (y - 1)^2 = 16$ é:', ['$(4, 1)$', '$(-4, -1)$', '$(1, 4)$', '$(16, 1)$'], 0, 'Sinais invertidos.'],
+       ['O raio de $(x - 4)^2 + (y - 1)^2 = 16$ é:', ['$16$', '$8$', '$4$', '$2$'], 2, '$√{16}$.'],
+       ['O ponto $(3, 0)$ em relação a $x^2 + y^2 = 4$ é:', ['interno', 'sobre', 'externo', 'o centro'], 2, '$9 > 4$.']],
+      [[['Equação', '$(x - a)^2 + (y - b)^2 = r^2$.'], ['Posição', 'Compare a distância ao centro com o raio.'], ['Raio', 'Raiz do lado direito.']], 'Como saber o centro olhando a equação?', 'Voltando à antena: o bairro está na borda, a $5$ km do centro.'],
+      [['A circunferência $x^2 + y^2 = 25$ tem raio:', ['$5$', '$25$', '$10$', '$2,5$'], 0], ['O ponto $(0, 5)$ está sobre $x^2 + y^2 = 25$?', ['sim', 'não', 'só se $r = 5$ fosse $4$', 'depende do centro'], 0], ['O centro de $(x + 2)^2 + y^2 = 1$ é:', ['$(2, 0)$', '$(-2, 0)$', '$(0, -2)$', '$(0, 2)$'], 1]])
+  ]
+});

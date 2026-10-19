@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 1º trimestre · Conjuntos numéricos: reais e irracionais (base: slides "Conjunto dos números reais", "Números irracionais", "Representação de números racionais na forma decimal" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 1, pasta: 'aulas/8-ano/1-tri/numeros-reais-e-irracionais/', titulo: 'Números reais e irracionais', accent: 'primary', icon: 'sigma', key: 'm8p39', area: 'Matemática · 8º ano',
+  aulas: [
+    A('conjuntos-numericos-e-numeros-reais', 'Conjuntos numéricos e números reais',
+      `Do ${co('primary')}contar</span> ao medir tudo`,
+      'Por que precisamos de vários tipos de número: naturais para contar, inteiros para dívidas, racionais para partes e... outros ainda para medir a diagonal de um quadrado?',
+      'venn', [['ℕ, ℤ, ℚ'], ['ℝ', 'growth'], ['diagrama de Venn', 'decay']],
+      ['Cada conjunto numérico nasceu de uma necessidade nova: contar, repartir, medir.', ['O número $-5$ pertence ao conjunto dos:', ['naturais', 'inteiros', 'irracionais', 'nenhum'], 1, '$-5$ é inteiro (mas não é natural).'], 'Em qual conjunto você colocaria $0,25$? E $-3$?'],
+      ['<strong>Reconhecer</strong> os conjuntos ℕ, ℤ, ℚ e ℝ e a relação de inclusão entre eles.', '<strong>Classificar</strong> um número em seus conjuntos.', '<strong>Representar</strong> intervalos na reta real.'],
+      'Cada conjunto <strong>contém</strong> o anterior: $ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ$.',
+      [['Os conjuntos numéricos', ['<strong>ℕ</strong> (naturais): $0, 1, 2, 3, …$. <strong>ℤ</strong> (inteiros): $…, -2, -1, 0, 1, 2, …$.', '<strong>ℚ</strong> (racionais): números que se escrevem como ${a|b}$ ($b ≠ 0$): $-{3|4}$, $0,25$, $5$.', '<strong>ℝ</strong> (reais): racionais e irracionais juntos.'],
+        fig('venn', 'Ilustração original: diagrama de conjuntos.', '300px')],
+       ['Inclusão e classificação', ['Todo natural é inteiro, todo inteiro é racional e todo racional é real: $ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ$.', 'O número $-3$ é inteiro, racional e real, mas não é natural.', 'O número $0,25 = {1|4}$ é racional e real, mas não é inteiro.'],
+        tbl(['Número', 'ℕ', 'ℤ', 'ℚ', 'ℝ'], [['$7$', 'sim', 'sim', 'sim', 'sim'], ['$-3$', 'não', 'sim', 'sim', 'sim'], ['$0,25$', 'não', 'não', 'sim', 'sim']])],
+       ['Reta real e intervalos', ['Cada número real corresponde a um ponto da reta, e cada ponto, a um real.', 'Intervalo <strong>aberto</strong> $]2, 5[$: vai de $2$ a $5$ sem incluir as pontas. <strong>Fechado</strong> $[2, 5]$: inclui.', 'Na notação de conjunto: os $x$ reais tais que $2 < x ≤ 5$ formam o intervalo $]2, 5]$.'],
+        callout('Atenção', 'A bolinha <strong>aberta</strong> não inclui o número; a <strong>fechada</strong> inclui.', 'decay')]],
+      [['Classificando $-4$', 'A que conjuntos pertence o número $-4$?', [['É natural?', 'Não: é negativo.'], ['É inteiro?', 'Sim; logo também racional e real.']], 'ℤ, ℚ e ℝ (não é ℕ)'],
+       ['Classificando ${3|8}$', 'A que conjuntos pertence ${3|8}$?', [['É inteiro?', 'Não.'], ['É fração de inteiros?', 'Sim: racional (e real).']], 'ℚ e ℝ']],
+      ['Qual conjunto?', 'Qual é o menor conjunto numérico que contém o número $-2,5$?', ['É natural? É inteiro?', 'Pode ser escrito como fração de inteiros?', '$-2,5 = -{5|2}$.'], '$-2,5 = -{5|2}$ é racional: o menor conjunto é <strong>ℚ</strong>.'],
+      [['Qual afirmação é verdadeira?', ['$ℤ ⊂ ℕ$', '$ℕ ⊂ ℤ$', '$ℚ ⊂ ℤ$', '$ℝ ⊂ ℚ$'], 1, 'Todo natural é inteiro.'],
+       ['O número ${7|3}$ pertence a:', ['ℕ e ℤ', 'ℚ', 'só a ℤ', 'só a ℕ'], 1, 'É uma fração de inteiros: racional.'],
+       ['O número $-9$ NÃO pertence a:', ['ℤ', 'ℚ', 'ℝ', 'ℕ'], 3, 'Negativos não são naturais.'],
+       ['O intervalo $[1, 4[$ contém:', ['$1$ e $4$', 'só o $4$', '$1$ mas não o $4$', 'nem o $1$ nem o $4$'], 2, 'Fechado em $1$ e aberto em $4$.']],
+      [[['Conjuntos', 'ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ.'], ['Classificar', 'Pergunte: é natural? inteiro? fração de inteiros?'], ['Intervalos', 'Aberto não inclui a ponta; fechado inclui.']], 'Por que todo número inteiro também é racional?', 'Voltando à pergunta: cada novo conjunto resolve um problema que o anterior não resolvia.'],
+      [['O número $0$ pertence a:', ['só a ℕ', 'ℕ, ℤ, ℚ e ℝ', 'só a ℤ', 'só a ℝ'], 1], ['O número $-{1|2}$ é:', ['natural', 'inteiro', 'racional', 'nenhuma das alternativas'], 2], ['O intervalo $]-1, 2]$ inclui:', ['$-1$', '$2$', 'os dois', 'nenhum dos dois'], 1]]),
+
+    A('numeros-irracionais-e-representacao-decimal', 'Números irracionais e representação decimal',
+      `Decimais que ${co('primary')}nunca terminam</span> nem se repetem`,
+      'A diagonal de um quadrado de lado $1$ mede $√2$. Dá para escrever $√2$ como fração? O que acontece com as casas decimais dela?',
+      'plano', [['irracionais'], ['dízimas', 'growth'], ['π e √2', 'decay']],
+      ['Já vimos que racionais têm decimais finitos ou periódicos. Existem números que não se encaixam em nenhum dos dois.', ['${1|3}$ em decimal é:', ['$0,3$', '$0,33$', '$0,333…$', '$3,3$'], 2, 'Dízima periódica.'], 'Você acha que $3,14$ é exatamente o número $π$? Por quê?'],
+      ['<strong>Distinguir</strong> decimal finito, dízima periódica e decimal infinito não periódico.', '<strong>Reconhecer</strong> números irracionais ($√2$, $π$…).', '<strong>Passar</strong> uma dízima periódica simples para fração.'],
+      'Racional: decimal <strong>finito</strong> ou <strong>periódico</strong>. Irracional: infinito e <strong>sem período</strong>.',
+      [['Racionais na forma decimal', ['${3|4} = 0,75$: decimal <strong>finito</strong>.', '${1|3} = 0,333…$ e ${2|11} = 0,1818…$: <strong>dízimas periódicas</strong> (um grupo de algarismos se repete: o <strong>período</strong>).', 'Toda fração gera decimal finito ou dízima periódica.'],
+        tbl(['Fração', 'Decimal', 'Período'], [['${1|3}$', '$0,333…$', '$3$'], ['${2|11}$', '$0,1818…$', '$18$']])],
+       ['Números irracionais', ['<strong>Irracional</strong> é o número cuja representação decimal é <strong>infinita e não periódica</strong>; não pode ser escrito como fração de inteiros.', 'Exemplos: $√2 = 1,41421356…$, $√3$, $π = 3,14159265…$', 'Raízes <strong>não exatas</strong> de naturais são irracionais: $√2$, $√3$, $√5$ (mas $√4 = 2$ é racional).'],
+        callout('Aproximações', '$π ≈ 3,14$ e $√2 ≈ 1,41$ são <strong>aproximações</strong>, não o valor exato.', 'primary')],
+       ['Geratriz de uma dízima', ['<strong>Geratriz</strong> é a fração que gera a dízima.', 'Dízima simples: período no numerador e tantos $9$ no denominador quantos algarismos do período.', '$0,777… = {7|9}$ e $0,2323… = {23|99}$.'],
+        tbl(['Dízima', 'Geratriz'], [['$0,333…$', '${3|9} = {1|3}$'], ['$0,5656…$', '${56|99}$']])]],
+      [['Racional ou irracional?', 'O número $√9$ é racional ou irracional? E o $√10$?', [['$√9$', '$√9 = 3$: racional.'], ['$√10$', 'Não é raiz exata: irracional.']], '$√9$ é racional; $√10$ é irracional'],
+       ['Geratriz', 'Escreva $0,666…$ como fração.', [['Período $6$, um algarismo', 'Denominador $9$.'], ['Simplifique', '${6|9} = {2|3}$.']], '${2|3}$']],
+      ['Classificar $π$', 'O número $π = 3,14159…$ é racional ou irracional? Justifique.', ['Observe as casas decimais.', 'Elas terminam? Têm um período?', 'Conclua.'], 'As casas decimais de $π$ não terminam e não se repetem: $π$ é <strong>irracional</strong>.'],
+      [['Qual destes números é irracional?', ['$0,25$', '$√{16}$', '$√7$', '${5|8}$'], 2, '$√7$ não é raiz exata.'],
+       ['A dízima $0,444…$ é igual a:', ['${4|10}$', '${4|9}$', '${4|100}$', '${1|4}$'], 1, 'Período $4$: ${4|9}$.'],
+       ['O decimal $0,121212…$ é:', ['irracional', 'racional periódico', 'finito', 'inteiro'], 1, 'Tem período $12$: racional.'],
+       ['Qual alternativa NÃO é racional?', ['$-3$', '$0,75$', '$0,333…$', '$√2$'], 3, '$√2$ é irracional.']],
+      [[['Racional', 'Decimal finito ou periódico.'], ['Irracional', 'Decimal infinito e sem período ($√2$, $π$).'], ['Geratriz', 'Dízima simples: período sobre tantos noves.']], 'Por que $3,14$ não é exatamente $π$?', 'Voltando à diagonal: $√2 ≈ 1,414…$ nunca termina nem se repete; é irracional.'],
+      [['Qual destes é irracional?', ['$√{25}$', '$√{11}$', '$0,1$', '${1|7}$'], 1], ['A geratriz de $0,888…$ é:', ['${8|9}$', '${8|10}$', '${1|8}$', '${9|8}$'], 0], ['O número $π$ é:', ['racional', 'inteiro', 'irracional', 'natural'], 2]])
+  ]
+});

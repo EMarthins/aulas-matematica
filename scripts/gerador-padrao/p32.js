@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 3º trimestre · Volume, capacidade e massa (base: slides "Medida de volume", "Medidas de massa" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 3, pasta: 'aulas/6-ano/3-tri/volume-capacidade-e-massa/', titulo: 'Volume, capacidade e massa', accent: 'success', icon: 'cube', key: 'm6p32', area: 'Matemática · 6º ano',
+  aulas: [
+    A('volume-e-capacidade', 'Volume e capacidade',
+      `Quanto ${co('primary')}cabe</span> dentro?`,
+      'Uma caixa-d’água em forma de cubo tem $1$ m de aresta. Quantos litros de água ela comporta?',
+      'caixa', [['volume'], ['m³ e cm³', 'growth'], ['litros', 'decay']],
+      ['O volume mede o espaço ocupado por um sólido; a capacidade mede quanto um recipiente comporta.', ['Qual unidade mede volume?', ['m', 'm²', 'm³', 'g'], 2, 'Metro cúbico.'], 'Quantas caixinhas de $1$ cm de aresta cabem em uma caixa de $2$ cm por $2$ cm por $2$ cm?'],
+      ['<strong>Calcular o volume</strong> de um bloco retangular e de um cubo.', '<strong>Converter</strong> entre m³, dm³, cm³ e litros.', 'Resolver problemas de <strong>capacidade</strong>.'],
+      '<strong>1 dm³ = 1 litro</strong> e <strong>1 m³ = 1 000 litros</strong>: guarde essas duas.',
+      [['Volume do bloco retangular', ['<strong>Volume</strong> é o espaço ocupado por um sólido; a unidade é o cubo de $1$ unidade de aresta.', 'Bloco retangular de comprimento $c$, largura $l$ e altura $h$: $V = c · l · h$.', 'Cubo de aresta $a$: $V = a · a · a = a^3$.'],
+        fig('caixa', 'Ilustração original: caixa em forma de bloco retangular.', '300px')],
+       ['Unidades de volume', ['$1$ m³ é o volume de um cubo de $1$ m de aresta: $1$ m³ $= 1000$ dm³ $= 1 000 000$ cm³.', 'Cada passo de unidade (m³ → dm³ → cm³) multiplica por $1000$.', 'O sentido contrário divide por $1000$.'],
+        tbl(['Unidade', 'Valor'], [['$1$ m³', '$1000$ dm³'], ['$1$ dm³', '$1000$ cm³']])],
+       ['Capacidade e litros', ['<strong>Capacidade</strong> é o quanto um recipiente comporta; a unidade é o <strong>litro</strong> (L).', '$1$ dm³ $= 1$ L e $1$ m³ $= 1000$ L; $1$ L $= 1000$ mL $= 1000$ cm³.', 'Um aquário de $60$ cm³·1000 ... compare as unidades antes de calcular.'.replace('Um aquário de $60$ cm³·1000 ... compare', 'Compare')],
+        callout('Resumo', '$1$ L $= 1$ dm³ $= 1000$ cm³ $= 1000$ mL.', 'primary')]],
+      [['Volume de um bloco', 'Calcule o volume de um bloco de $4$ cm por $3$ cm por $2$ cm.', [['Use $V = c · l · h$', '$4 · 3 · 2$.'], ['Calcule', '$24$.']], '$24$ cm³'],
+       ['Capacidade de um aquário', 'Um aquário mede $50$ cm de comprimento, $30$ cm de largura e $40$ cm de altura. Quantos litros ele comporta?', [['Volume em cm³', '$50 · 30 · 40 = 60 000$ cm³.'], ['Converta para litros', '$1000$ cm³ $= 1$ L: $60 000 ÷ 1000 = 60$.']], '$60$ litros']],
+      ['A caixa-d’água', 'Quantos litros cabem em um cubo de $1$ m de aresta?', ['Volume do cubo: $1 · 1 · 1$.', '$1$ m³ $= 1000$ dm³.', '$1$ dm³ $= 1$ L.'], '$1$ m³ $= 1000$ dm³ $= 1000$ litros.'],
+      [['O volume de um cubo de aresta $5$ cm é:', ['$15$ cm³', '$25$ cm³', '$125$ cm³', '$20$ cm³'], 2, '$5 · 5 · 5 = 125$.'],
+       ['Quantos litros equivalem a $3$ m³?', ['$3$ L', '$30$ L', '$300$ L', '$3000$ L'], 3, '$1$ m³ $= 1000$ L.'],
+       ['Um bloco de $10$ cm por $10$ cm por $10$ cm tem capacidade de:', ['$1$ mL', '$10$ mL', '$100$ mL', '$1$ L'], 3, '$10 · 10 · 10 = 1000$ cm³ $= 1$ L.'],
+       ['Um reservatório de $2$ m por $3$ m por $1$ m tem volume de:', ['$6$ m³', '$5$ m³', '$6$ m²', '$12$ m³'], 0, '$2 · 3 · 1 = 6$ m³.']],
+      [[['Volume', 'Bloco: $c · l · h$; cubo: $a^3$.'], ['Unidades', 'm³ → dm³ → cm³ multiplica por $1000$ a cada passo.'], ['Litro', '$1$ L $= 1$ dm³; $1$ m³ $= 1000$ L.']], 'Por que a capacidade de uma caixa de $1$ m de aresta é $1000$ L?', 'Voltando à caixa-d’água: $1$ m³ comporta $1000$ litros.'],
+      [['O volume de um bloco $2 × 5 × 4$ (em cm) é:', ['$11$ cm³', '$40$ cm³', '$20$ cm³', '$80$ cm³'], 1], ['$2$ L equivalem a:', ['$20$ mL', '$200$ mL', '$2000$ mL', '$20 000$ mL'], 2], ['$2$ dm³ são quantos litros?', ['$2$', '$20$', '$0,2$', '$200$'], 0]]),
+
+    A('medidas-de-massa', 'Medidas de massa',
+      `Do ${co('primary')}grama</span> à tonelada`,
+      'Quantos pacotes de $250$ g de café completam $2$ kg? E quantos quilogramas cabem em uma tonelada?',
+      'mercado', [['grama e quilograma'], ['conversões', 'growth'], ['problemas', 'decay']],
+      ['Pesamos ingredientes, pessoas e cargas. Cada situação usa uma unidade mais conveniente.', ['Um quilograma é igual a quantos gramas?', ['$10$', '$100$', '$1000$', '$10 000$'], 2, '$1$ kg $= 1000$ g.'], 'Você carregaria uma mochila de $3$ g ou de $3$ kg? Explique.'],
+      ['<strong>Reconhecer</strong> as unidades de massa: mg, g, kg e t.', '<strong>Converter</strong> entre as unidades.', 'Resolver <strong>problemas</strong> de massa.'],
+      'Para <strong>passar para uma unidade menor</strong>, multiplique; para uma maior, divida.',
+      [['As unidades', ['A unidade fundamental de massa é o <strong>quilograma</strong> (kg); o <strong>grama</strong> (g) é a milésima parte do kg.', '$1$ kg $= 1000$ g; $1$ g $= 1000$ mg; $1$ t $= 1000$ kg.', 'Peso no dia a dia e massa são usados quase como sinônimos.'],
+        tbl(['Unidade', 'Equivale a'], [['$1$ t', '$1000$ kg'], ['$1$ kg', '$1000$ g'], ['$1$ g', '$1000$ mg']])],
+       ['Convertendo', ['De unidade <strong>maior</strong> para <strong>menor</strong>: multiplique por $1000$ (a cada passo).', 'De <strong>menor</strong> para <strong>maior</strong>: divida por $1000$.', '$3,5$ kg $= 3,5 · 1000 = 3500$ g e $2400$ kg $= 2,4$ t.'],
+        callout('Dica', 'Pense: se a unidade fica menor, o número fica maior.', 'primary')],
+       ['Problemas de massa', ['Converta tudo para a <strong>mesma unidade</strong> antes de calcular.', 'Para saber quantos pacotes de $250$ g formam $2$ kg: $2000 ÷ 250 = 8$.', 'Uma arroba equivale a cerca de $15$ kg (usada em pecuária).'],
+        fig('mercado', 'Ilustração original: prateleira com produtos.', '260px')]],
+      [['De kg para g', 'Converta $3,5$ kg para gramas.', [['Passe para a unidade menor', 'Multiplique por $1000$.'], ['Calcule', '$3,5 · 1000 = 3500$.']], '$3500$ g'],
+       ['De t para kg', 'Converta $2,4$ t para quilogramas.', [['Multiplique por $1000$', '$2,4 · 1000 = 2400$.']], '$2400$ kg']],
+      ['Os pacotes de café', 'Quantos pacotes de $250$ g completam $2$ kg?', ['Converta $2$ kg para gramas.', '$2000$ g ÷ $250$ g.', 'Quantas vezes $250$ cabe em $2000$?'], '$2$ kg $= 2000$ g e $2000 ÷ 250 = 8$ pacotes.'],
+      [['$4$ kg equivalem a:', ['$40$ g', '$400$ g', '$4000$ g', '$40 000$ g'], 2, '$4 · 1000 = 4000$.'],
+       ['$1500$ g equivalem a:', ['$15$ kg', '$1,5$ kg', '$0,15$ kg', '$150$ kg'], 1, '$1500 ÷ 1000 = 1,5$.'],
+       ['Uma carga de $3$ t tem quantos quilogramas?', ['$30$', '$300$', '$3000$', '$30 000$'], 2, '$3 · 1000 = 3000$.'],
+       ['Quantos pacotes de $500$ g formam $3$ kg?', ['$3$', '$6$', '$15$', '$30$'], 1, '$3000 ÷ 500 = 6$.']],
+      [[['Unidades', 'mg, g, kg e t: cada uma vale $1000$ da menor.'], ['Conversão', 'Para menor, multiplique; para maior, divida por $1000$.'], ['Problemas', 'Use a mesma unidade antes de calcular.']], 'Como saber se $850$ g é mais ou menos que $1$ kg sem calcular?', 'Voltando aos pacotes: $2$ kg $= 2000$ g formam $8$ pacotes de $250$ g; e $1$ t $= 1000$ kg.'],
+      [['$2$ kg equivalem a:', ['$20$ g', '$200$ g', '$2000$ g', '$20 000$ g'], 2], ['$750$ g equivalem a:', ['$7,5$ kg', '$0,75$ kg', '$75$ kg', '$0,075$ kg'], 1], ['$5$ t equivalem a:', ['$50$ kg', '$500$ kg', '$5000$ kg', '$50 000$ kg'], 2]])
+  ]
+});

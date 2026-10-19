@@ -14,6 +14,285 @@ export const MATERIAS = [
     icon: 'sigma',
     lede: 'Material interativo de Matemática para o 9º ano do Ensino Fundamental e para a 2ª e a 3ª séries do Ensino Médio — slides navegáveis e infográficos de apoio, prontos para projetar em sala.',
     CATALOG: [
+      // >>> mat-9ano
+      {
+        ano: '9° Ano',
+        preencher: true,
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Equações do 2º grau',
+                accent: 'primary',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações do 2º grau: incompletas e Bhaskara', arquivo:'aulas/9-ano/1-tri/equacoes-do-2-grau/aula-1-equacoes-incompletas-e-formula-de-bhaskara.html' },
+                  { tipo:'Aula 2', titulo:'Soma e produto das raízes e problemas', arquivo:'aulas/9-ano/1-tri/equacoes-do-2-grau/aula-2-soma-e-produto-das-raizes-e-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Radicais e potências',
+                accent: 'decay',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Radicais: simplificação e operações', arquivo:'aulas/9-ano/1-tri/radicais-e-potencias/aula-1-radicais-simplificacao-e-operacoes.html' },
+                  { tipo:'Aula 2', titulo:'Racionalização e potências de expoente fracionário', arquivo:'aulas/9-ano/1-tri/radicais-e-potencias/aula-2-racionalizacao-e-potencias-fracionarias.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Semelhança, Pitágoras e trigonometria',
+                accent: 'decay',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Semelhança de triângulos e Teorema de Tales', arquivo:'aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/aula-1-semelhanca-de-triangulos-e-teorema-de-tales.html' },
+                  { tipo:'Aula 2', titulo:'Teorema de Pitágoras e razões trigonométricas', arquivo:'aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/aula-2-teorema-de-pitagoras-e-trigonometria.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Funções afim e quadrática',
+                accent: 'growth',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Função afim e seu gráfico', arquivo:'aulas/9-ano/3-tri/funcoes-afim-e-quadratica/aula-1-funcao-afim-e-seu-grafico.html' },
+                  { tipo:'Aula 2', titulo:'Função quadrática e parábola', arquivo:'aulas/9-ano/3-tri/funcoes-afim-e-quadratica/aula-2-funcao-quadratica-e-parabola.html' }
+                ]
+              },
+              {
+                titulo: 'Probabilidade e estatística',
+                accent: 'accent',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Probabilidade: espaço amostral e eventos', arquivo:'aulas/9-ano/3-tri/probabilidade-e-estatistica/aula-1-probabilidade-espaco-amostral-e-eventos.html' },
+                  { tipo:'Aula 2', titulo:'Média, moda, mediana e gráficos', arquivo:'aulas/9-ano/3-tri/probabilidade-e-estatistica/aula-2-media-moda-mediana-e-graficos.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // <<< mat-9ano
+      // >>> mat-8ano
+      {
+        ano: '8° Ano',
+        preencher: true,
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Números reais e irracionais',
+                accent: 'primary',
+                icon: 'sigma',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Conjuntos numéricos e números reais', arquivo:'aulas/8-ano/1-tri/numeros-reais-e-irracionais/aula-1-conjuntos-numericos-e-numeros-reais.html' },
+                  { tipo:'Aula 2', titulo:'Números irracionais e representação decimal', arquivo:'aulas/8-ano/1-tri/numeros-reais-e-irracionais/aula-2-numeros-irracionais-e-representacao-decimal.html' }
+                ]
+              },
+              {
+                titulo: 'Potências e raízes',
+                accent: 'growth',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Propriedades das potências e notação científica', arquivo:'aulas/8-ano/1-tri/potencias-e-raizes/aula-1-propriedades-das-potencias-e-notacao-cientifica.html' },
+                  { tipo:'Aula 2', titulo:'Raiz quadrada e raízes exatas', arquivo:'aulas/8-ano/1-tri/potencias-e-raizes/aula-2-raiz-quadrada-e-raizes-exatas.html' }
+                ]
+              },
+              {
+                titulo: 'Cálculo algébrico e produtos notáveis',
+                accent: 'decay',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Monômios e polinômios', arquivo:'aulas/8-ano/1-tri/calculo-algebrico/aula-1-monomios-e-polinomios.html' },
+                  { tipo:'Aula 2', titulo:'Produtos notáveis e fatoração', arquivo:'aulas/8-ano/1-tri/calculo-algebrico/aula-2-produtos-notaveis-e-fatoracao.html' }
+                ]
+              },
+              {
+                titulo: 'Equações do 1º grau e sistemas',
+                accent: 'growth',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações do 1º grau e problemas', arquivo:'aulas/8-ano/1-tri/equacoes-e-sistemas/aula-1-equacoes-do-1-grau-e-problemas.html' },
+                  { tipo:'Aula 2', titulo:'Sistemas de equações do 1º grau', arquivo:'aulas/8-ano/1-tri/equacoes-e-sistemas/aula-2-sistemas-de-equacoes-do-1-grau.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Ângulos, triângulos e polígonos',
+                accent: 'primary',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ângulos entre retas e triângulos', arquivo:'aulas/8-ano/2-tri/triangulos-e-poligonos/aula-1-angulos-entre-retas-e-triangulos.html' },
+                  { tipo:'Aula 2', titulo:'Quadriláteros e polígonos', arquivo:'aulas/8-ano/2-tri/triangulos-e-poligonos/aula-2-quadrilateros-e-poligonos.html' }
+                ]
+              },
+              {
+                titulo: 'Circunferência e círculo',
+                accent: 'accent',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Circunferência: elementos, comprimento e π', arquivo:'aulas/8-ano/2-tri/circunferencia-e-circulo/aula-1-circunferencia-comprimento-e-pi.html' },
+                  { tipo:'Aula 2', titulo:'Área do círculo', arquivo:'aulas/8-ano/2-tri/circunferencia-e-circulo/aula-2-area-do-circulo.html' }
+                ]
+              },
+              {
+                titulo: 'Áreas e volumes',
+                accent: 'warm',
+                icon: 'cube',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Área de figuras planas', arquivo:'aulas/8-ano/2-tri/areas-e-volumes/aula-1-area-de-figuras-planas.html' },
+                  { tipo:'Aula 2', titulo:'Volume de prismas e cilindros', arquivo:'aulas/8-ano/2-tri/areas-e-volumes/aula-2-volume-de-prismas-e-cilindros.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Juros simples e proporcionalidade',
+                accent: 'warm',
+                icon: 'percent',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Juros simples', arquivo:'aulas/8-ano/3-tri/juros-simples-e-proporcionalidade/aula-1-juros-simples.html' },
+                  { tipo:'Aula 2', titulo:'Grandezas proporcionais e regra de três', arquivo:'aulas/8-ano/3-tri/juros-simples-e-proporcionalidade/aula-2-grandezas-proporcionais-e-regra-de-tres.html' }
+                ]
+              },
+              {
+                titulo: 'Contagem, probabilidade e estatística',
+                accent: 'accent',
+                icon: 'combo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Árvore de possibilidades e probabilidade', arquivo:'aulas/8-ano/3-tri/contagem-e-estatistica/aula-1-arvore-de-possibilidades-e-probabilidade.html' },
+                  { tipo:'Aula 2', titulo:'Gráficos, média e amplitude', arquivo:'aulas/8-ano/3-tri/contagem-e-estatistica/aula-2-graficos-media-e-amplitude.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // <<< mat-8ano
+      // >>> mat-7ano
+      {
+        ano: '7° Ano',
+        preencher: true,
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Inteiros: propriedades e potenciação',
+                accent: 'primary',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Propriedades das operações com inteiros', arquivo:'aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/aula-1-propriedades-das-operacoes-com-inteiros.html' },
+                  { tipo:'Aula 2', titulo:'Potenciação com números inteiros', arquivo:'aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/aula-2-potenciacao-com-numeros-inteiros.html' }
+                ]
+              },
+              {
+                titulo: 'Números racionais',
+                accent: 'growth',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Números racionais: representação e comparação', arquivo:'aulas/7-ano/1-tri/numeros-racionais/aula-1-numeros-racionais-representacao-e-comparacao.html' },
+                  { tipo:'Aula 2', titulo:'Operações com racionais, potências e raízes', arquivo:'aulas/7-ano/1-tri/numeros-racionais/aula-2-operacoes-com-racionais-potencias-e-raizes.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Equações e inequações do 1º grau',
+                accent: 'decay',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações do 1º grau', arquivo:'aulas/7-ano/2-tri/equacoes-e-inequacoes/aula-1-equacoes-do-1-grau.html' },
+                  { tipo:'Aula 2', titulo:'Inequações do 1º grau', arquivo:'aulas/7-ano/2-tri/equacoes-e-inequacoes/aula-2-inequacoes-do-1-grau.html' }
+                ]
+              },
+              {
+                titulo: 'Razão, proporção e regra de três',
+                accent: 'success',
+                icon: 'percent',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Razão, proporção e grandezas proporcionais', arquivo:'aulas/7-ano/2-tri/proporcao-e-regra-de-tres/aula-1-razao-proporcao-e-grandezas-proporcionais.html' },
+                  { tipo:'Aula 2', titulo:'Regra de três simples', arquivo:'aulas/7-ano/2-tri/proporcao-e-regra-de-tres/aula-2-regra-de-tres-simples.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Ângulos e polígonos',
+                accent: 'primary',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ângulos opostos pelo vértice e retas paralelas', arquivo:'aulas/7-ano/3-tri/angulos-e-poligonos/aula-1-angulos-opostos-pelo-vertice-e-retas-paralelas.html' },
+                  { tipo:'Aula 2', titulo:'Polígonos: diagonais e soma dos ângulos', arquivo:'aulas/7-ano/3-tri/angulos-e-poligonos/aula-2-poligonos-diagonais-e-soma-dos-angulos.html' }
+                ]
+              },
+              {
+                titulo: 'Poliedros e sólidos que giram',
+                accent: 'decay',
+                icon: 'cube',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Poliedros: faces, arestas e vértices', arquivo:'aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/aula-1-poliedros-faces-arestas-e-vertices.html' },
+                  { tipo:'Aula 2', titulo:'Sólidos que giram: cilindro, cone e esfera', arquivo:'aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/aula-2-solidos-que-giram-cilindro-cone-e-esfera.html' }
+                ]
+              },
+              {
+                titulo: 'Estatística e probabilidade',
+                accent: 'accent',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Pesquisa estatística, tabelas e gráficos', arquivo:'aulas/7-ano/3-tri/estatistica-e-probabilidade/aula-1-pesquisa-estatistica-tabelas-e-graficos.html' },
+                  { tipo:'Aula 2', titulo:'Probabilidade: primeiras ideias', arquivo:'aulas/7-ano/3-tri/estatistica-e-probabilidade/aula-2-probabilidade-introducao-e-eventos.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // <<< mat-7ano
       // >>> mat-6ano
       {
         ano: '6° Ano',
@@ -32,6 +311,147 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Características do sistema de numeração decimal II', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-2-caracteristicas-do-sistema-de-numeracao-decimal-ii.html' },
                   { tipo:'Aula 3', titulo:'Sistema de numeração decimal: ordens e classes I', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-3-sistema-de-numeracao-decimal-ordens-e-classes-i.html' },
                   { tipo:'Aula 4', titulo:'Sistema de numeração decimal: ordens e classes II', arquivo:'aulas/6-ano/1-tri/sistema-de-numeracao-decimal/aula-4-sistema-de-numeracao-decimal-ordens-e-classes-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Potenciação e expressões numéricas',
+                accent: 'primary',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Potenciação de números naturais', arquivo:'aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/aula-1-potenciacao-de-numeros-naturais.html' },
+                  { tipo:'Aula 2', titulo:'Expressões numéricas e ordem das operações', arquivo:'aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/aula-2-expressoes-numericas-e-ordem-das-operacoes.html' }
+                ]
+              },
+              {
+                titulo: 'Múltiplos, divisores e números primos',
+                accent: 'growth',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Múltiplos e divisores', arquivo:'aulas/6-ano/1-tri/multiplos-divisores-e-primos/aula-1-multiplos-e-divisores.html' },
+                  { tipo:'Aula 2', titulo:'Critérios de divisibilidade', arquivo:'aulas/6-ano/1-tri/multiplos-divisores-e-primos/aula-2-criterios-de-divisibilidade.html' },
+                  { tipo:'Aula 3', titulo:'Números primos e decomposição em fatores primos', arquivo:'aulas/6-ano/1-tri/multiplos-divisores-e-primos/aula-3-numeros-primos-e-decomposicao.html' }
+                ]
+              },
+              {
+                titulo: 'MMC e MDC',
+                accent: 'decay',
+                icon: 'combo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Mínimo múltiplo comum (MMC)', arquivo:'aulas/6-ano/1-tri/mmc-e-mdc/aula-1-minimo-multiplo-comum.html' },
+                  { tipo:'Aula 2', titulo:'Máximo divisor comum (MDC)', arquivo:'aulas/6-ano/1-tri/mmc-e-mdc/aula-2-maximo-divisor-comum.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '2° Trimestre',
+            unidades: [
+              {
+                titulo: 'Frações',
+                accent: 'decay',
+                icon: 'pie',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Fração: parte de um todo e frações equivalentes', arquivo:'aulas/6-ano/2-tri/fracoes/aula-1-fracao-parte-de-um-todo-e-equivalencia.html' },
+                  { tipo:'Aula 2', titulo:'Comparação e simplificação de frações', arquivo:'aulas/6-ano/2-tri/fracoes/aula-2-comparacao-e-simplificacao-de-fracoes.html' }
+                ]
+              },
+              {
+                titulo: 'Operações com frações',
+                accent: 'growth',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Adição e subtração de frações', arquivo:'aulas/6-ano/2-tri/operacoes-com-fracoes/aula-1-adicao-e-subtracao-de-fracoes.html' },
+                  { tipo:'Aula 2', titulo:'Multiplicação e divisão de frações', arquivo:'aulas/6-ano/2-tri/operacoes-com-fracoes/aula-2-multiplicacao-e-divisao-de-fracoes.html' }
+                ]
+              },
+              {
+                titulo: 'Números decimais',
+                accent: 'primary',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Leitura e comparação de números decimais', arquivo:'aulas/6-ano/2-tri/numeros-decimais/aula-1-leitura-e-comparacao-de-numeros-decimais.html' },
+                  { tipo:'Aula 2', titulo:'Frações e números decimais', arquivo:'aulas/6-ano/2-tri/numeros-decimais/aula-2-fracao-decimal-e-transformacoes.html' }
+                ]
+              },
+              {
+                titulo: 'Operações com números decimais',
+                accent: 'success',
+                icon: 'coin',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Adição e subtração de números decimais', arquivo:'aulas/6-ano/2-tri/operacoes-com-decimais/aula-1-adicao-e-subtracao-de-decimais.html' },
+                  { tipo:'Aula 2', titulo:'Multiplicação e divisão de números decimais', arquivo:'aulas/6-ano/2-tri/operacoes-com-decimais/aula-2-multiplicacao-e-divisao-de-decimais.html' }
+                ]
+              },
+              {
+                titulo: 'Porcentagem',
+                accent: 'decay',
+                icon: 'percent',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem: o que é e como calcular', arquivo:'aulas/6-ano/2-tri/porcentagem/aula-1-porcentagem-conceito-e-calculo.html' },
+                  { tipo:'Aula 2', titulo:'Aumentos e descontos percentuais', arquivo:'aulas/6-ano/2-tri/porcentagem/aula-2-aumentos-e-descontos-percentuais.html' }
+                ]
+              }
+            ]
+          },
+          {
+            nome: '3° Trimestre',
+            unidades: [
+              {
+                titulo: 'Números inteiros',
+                accent: 'primary',
+                icon: 'numbers',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Números inteiros e reta numérica', arquivo:'aulas/6-ano/3-tri/numeros-inteiros/aula-1-numeros-inteiros-e-reta-numerica.html' },
+                  { tipo:'Aula 2', titulo:'Operações com números inteiros', arquivo:'aulas/6-ano/3-tri/numeros-inteiros/aula-2-operacoes-com-numeros-inteiros.html' }
+                ]
+              },
+              {
+                titulo: 'Ponto, reta, plano e ângulos',
+                accent: 'growth',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ponto, reta e plano', arquivo:'aulas/6-ano/3-tri/geometria-e-angulos/aula-1-ponto-reta-e-plano.html' },
+                  { tipo:'Aula 2', titulo:'Ângulos e sua medida', arquivo:'aulas/6-ano/3-tri/geometria-e-angulos/aula-2-angulos-e-sua-medida.html' }
+                ]
+              },
+              {
+                titulo: 'Polígonos e circunferência',
+                accent: 'decay',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Polígonos e triângulos', arquivo:'aulas/6-ano/3-tri/poligonos-e-circunferencia/aula-1-poligonos-e-triangulos.html' },
+                  { tipo:'Aula 2', titulo:'Circunferência e círculo', arquivo:'aulas/6-ano/3-tri/poligonos-e-circunferencia/aula-2-circunferencia-e-circulo.html' }
+                ]
+              },
+              {
+                titulo: 'Perímetro e área',
+                accent: 'primary',
+                icon: 'cube',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Perímetro de figuras planas', arquivo:'aulas/6-ano/3-tri/perimetro-e-area/aula-1-perimetro-de-figuras-planas.html' },
+                  { tipo:'Aula 2', titulo:'Área de figuras planas', arquivo:'aulas/6-ano/3-tri/perimetro-e-area/aula-2-area-de-figuras-planas.html' }
+                ]
+              },
+              {
+                titulo: 'Volume, capacidade e massa',
+                accent: 'success',
+                icon: 'cube',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Volume e capacidade', arquivo:'aulas/6-ano/3-tri/volume-capacidade-e-massa/aula-1-volume-e-capacidade.html' },
+                  { tipo:'Aula 2', titulo:'Medidas de massa', arquivo:'aulas/6-ano/3-tri/volume-capacidade-e-massa/aula-2-medidas-de-massa.html' }
                 ]
               }
             ]
@@ -654,10 +1074,22 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Memória: problema e resposta', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Problemas com logaritmos: trilha de desafios', arquivo:'aulas/3-ano/1-tri/funcao-logaritmica-problemas/atividade-pratica.html' }
                 ]
-              }
+              },
+              // <<< mat-3ano-1tri
+              // >>> cd-mat-3ano-1tri
+              {
+                titulo: 'Probabilidade',
+                accent: 'accent',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Probabilidade: união e eventos independentes', arquivo:'aulas/3-ano/1-tri/probabilidade/aula-1-probabilidade-uniao-e-eventos-independentes.html' },
+                  { tipo:'Aula 2', titulo:'Probabilidade condicional', arquivo:'aulas/3-ano/1-tri/probabilidade/aula-2-probabilidade-condicional.html' }
+                ]
+              },
+              // <<< cd-mat-3ano-1tri
             ]
           },
-          // <<< mat-3ano-1tri
           // >>> mat-3ano-2tri
           {
             nome: '2° Trimestre',
@@ -826,10 +1258,32 @@ export const MATERIAS = [
                   { tipo:'Atividade', sub:'Criativa', titulo:'Memória da razão de semelhança', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/atividade-criativa.html' },
                   { tipo:'Atividade', sub:'Prática', titulo:'Área e perímetro: trilha de desafios', arquivo:'aulas/3-ano/2-tri/area-e-perimetro/atividade-pratica.html' }
                 ]
-              }
+              },
+              // <<< mat-3ano-2tri
+              // >>> cd-mat-3ano-2tri
+              {
+                titulo: 'Geometria analítica',
+                accent: 'primary',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ponto, distância e equação da reta', arquivo:'aulas/3-ano/2-tri/geometria-analitica/aula-1-ponto-distancia-e-equacao-da-reta.html' },
+                  { tipo:'Aula 2', titulo:'Circunferência no plano cartesiano', arquivo:'aulas/3-ano/2-tri/geometria-analitica/aula-2-circunferencia-no-plano-cartesiano.html' }
+                ]
+              },
+              {
+                titulo: 'Cônicas: elipse, hipérbole e parábola',
+                accent: 'accent',
+                icon: 'polygon',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Elipse e hipérbole', arquivo:'aulas/3-ano/2-tri/conicas/aula-1-elipse-e-hiperbole.html' },
+                  { tipo:'Aula 2', titulo:'Parábola: foco e diretriz', arquivo:'aulas/3-ano/2-tri/conicas/aula-2-parabola-foco-e-diretriz.html' }
+                ]
+              },
+              // <<< cd-mat-3ano-2tri
             ]
           },
-          // <<< mat-3ano-2tri
           {
             nome: '3° Trimestre',
             unidades: [
@@ -960,6 +1414,38 @@ export const MATERIAS = [
                 ]
               },
               // <<< mat-3ano-3tri
+              // >>> cd-mat-3ano-3tri
+              {
+                titulo: 'Polinômios e números complexos',
+                accent: 'warm',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Polinômios: valor numérico, raízes e divisão', arquivo:'aulas/3-ano/3-tri/polinomios-e-complexos/aula-1-polinomios-valor-numerico-raizes-e-divisao.html' },
+                  { tipo:'Aula 2', titulo:'Números complexos', arquivo:'aulas/3-ano/3-tri/polinomios-e-complexos/aula-2-numeros-complexos.html' }
+                ]
+              },
+              {
+                titulo: 'Matemática financeira: juros compostos',
+                accent: 'growth',
+                icon: 'coin',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Juros compostos e montante', arquivo:'aulas/3-ano/3-tri/matematica-financeira/aula-1-juros-compostos-e-montante.html' },
+                  { tipo:'Aula 2', titulo:'Descontos, acréscimos e variações percentuais', arquivo:'aulas/3-ano/3-tri/matematica-financeira/aula-2-descontos-acrescimos-e-variacoes-percentuais.html' }
+                ]
+              },
+              {
+                titulo: 'Financiamentos: SAC e Price',
+                accent: 'warm',
+                icon: 'coin',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Financiamento pelo sistema SAC', arquivo:'aulas/3-ano/3-tri/financiamentos-sac-e-price/aula-1-financiamento-sac.html' },
+                  { tipo:'Aula 2', titulo:'Financiamento pela Tabela Price e comparação', arquivo:'aulas/3-ano/3-tri/financiamentos-sac-e-price/aula-2-financiamento-price-e-comparacao.html' }
+                ]
+              },
+              // <<< cd-mat-3ano-3tri
               {
                 titulo: 'Sequências Numéricas',
                 accent: 'primary',
@@ -1442,10 +1928,22 @@ export const MATERIAS = [
                   { tipo:'Aula R15', titulo:'Retomada: PA e PG; termo geral da PG', arquivo:'aulas/2-ano/2-tri/retomada-progressao-geometrica/aula-1-retomada-pa-e-pg.html' },
                   { tipo:'Aula R16', titulo:'Retomada: soma dos termos de uma PG', arquivo:'aulas/2-ano/2-tri/retomada-progressao-geometrica/aula-2-retomada-soma-da-pg.html' }
                 ]
-              }
+              },
+              // <<< mat-2ano-2tri
+              // >>> cd-mat-2ano-2tri
+              {
+                titulo: 'Matrizes, determinantes e sistemas lineares',
+                accent: 'decay',
+                icon: 'grid',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Matrizes e operações', arquivo:'aulas/2-ano/2-tri/matrizes-e-sistemas-lineares/aula-1-matrizes-e-operacoes.html' },
+                  { tipo:'Aula 2', titulo:'Determinantes e sistemas lineares', arquivo:'aulas/2-ano/2-tri/matrizes-e-sistemas-lineares/aula-2-determinantes-e-sistemas-lineares.html' }
+                ]
+              },
+              // <<< cd-mat-2ano-2tri
             ]
           },
-          // <<< mat-2ano-2tri
           {
             nome: '3° Trimestre',
             unidades: [
@@ -1588,6 +2086,28 @@ export const MATERIAS = [
                 ]
               },
               // <<< mat-2ano-3tri
+              // >>> cd-mat-2ano-3tri
+              {
+                titulo: 'Análise combinatória',
+                accent: 'primary',
+                icon: 'combo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Princípio fundamental da contagem e permutações', arquivo:'aulas/2-ano/3-tri/analise-combinatoria/aula-1-principio-fundamental-da-contagem-e-permutacoes.html' },
+                  { tipo:'Aula 2', titulo:'Arranjos e combinações', arquivo:'aulas/2-ano/3-tri/analise-combinatoria/aula-2-arranjos-e-combinacoes.html' }
+                ]
+              },
+              {
+                titulo: 'Função modular',
+                accent: 'decay',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Módulo de um número e função modular', arquivo:'aulas/2-ano/3-tri/funcao-modular/aula-1-modulo-e-funcao-modular.html' },
+                  { tipo:'Aula 2', titulo:'Equações e inequações modulares', arquivo:'aulas/2-ano/3-tri/funcao-modular/aula-2-equacoes-e-inequacoes-modulares.html' }
+                ]
+              },
+              // <<< cd-mat-2ano-3tri
               {
                 titulo: 'Exponenciais',
                 accent: 'growth',

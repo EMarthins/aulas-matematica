@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 2º trimestre · Números decimais (base: slides "Números decimais" e "Operações com números decimais" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 2, pasta: 'aulas/6-ano/2-tri/numeros-decimais/', titulo: 'Números decimais', accent: 'primary', icon: 'dots', key: 'm6p25', area: 'Matemática · 6º ano',
+  aulas: [
+    A('leitura-e-comparacao-de-numeros-decimais', 'Leitura e comparação de números decimais',
+      `Os números depois da ${co('primary')}vírgula</span>`,
+      'Numa prova de $100$ m, uma atleta fez $9,58$ s e outra fez $9,6$ s. Quem foi mais rápida?',
+      'relogio', [['décimos'], ['centésimos', 'growth'], ['comparar', 'decay']],
+      ['Já conhecemos os números inteiros e as frações. Os decimais são outra forma de escrever partes de um inteiro.', ['Em $3,5$, o algarismo $5$ está na casa dos:', ['inteiros', 'décimos', 'centésimos', 'milésimos'], 1, 'Logo depois da vírgula ficam os décimos.'], 'Dê um exemplo do dia a dia em que se usa número com vírgula.'],
+      ['<strong>Ler e escrever</strong> números decimais usando décimos, centésimos e milésimos.', '<strong>Decompor</strong> um número decimal.', '<strong>Comparar</strong> e ordenar números decimais.'],
+      'Para comparar decimais, <strong>iguale o número de casas</strong> com zeros à direita.',
+      [['As casas decimais', ['Depois da vírgula: <strong>décimos</strong> (${1|10}$), <strong>centésimos</strong> (${1|100}$), <strong>milésimos</strong> (${1|1000}$).', 'Em $2,375$: $2$ inteiros, $3$ décimos, $7$ centésimos e $5$ milésimos.', 'Lê-se “dois inteiros e trezentos e setenta e cinco milésimos”.'],
+        tbl(['Inteiros', 'Décimos', 'Centésimos', 'Milésimos'], [['$2$', '$3$', '$7$', '$5$']])],
+       ['Zeros à direita não mudam o valor', ['$0,5 = 0,50 = 0,500$.', 'Acrescentar zeros à direita da parte decimal <strong>não altera</strong> o número.', 'Isso ajuda a comparar: $9,6 = 9,60$.'],
+        callout('Cuidado', '$0,5$ <strong>não</strong> é $0,05$: o zero antes do $5$ muda a casa.', 'decay')],
+       ['Comparando decimais', ['Compare primeiro a <strong>parte inteira</strong>.', 'Se forem iguais, compare os décimos, depois os centésimos…', 'Iguale as casas: $9,58$ e $9,60$ ⇒ $9,58 < 9,60$.'],
+        tbl(['Número', 'Com 2 casas'], [['$9,6$', '$9,60$'], ['$9,58$', '$9,58$']])]],
+      [['Lendo e decompondo', 'Decomponha $4,26$.', [['Inteiros', '$4$.'], ['Décimos', '$2$ décimos $= 0,2$.'], ['Centésimos', '$6$ centésimos $= 0,06$.']], '$4,26 = 4 + 0,2 + 0,06$'],
+       ['Quem foi mais rápida?', 'Compare $9,58$ e $9,6$.', [['Iguale as casas decimais', '$9,6 = 9,60$.'], ['Compare', '$9,58 < 9,60$.']], '$9,58 < 9,6$: a atleta de $9,58$ s foi mais rápida (menor tempo).']],
+      ['Qual é o maior?', 'Compare $0,7$ e $0,07$.', ['Iguale as casas: $0,7 = 0,70$.', 'Compare $0,70$ e $0,07$.', 'Quem tem mais décimos?'], '$0,7 = 0,70 > 0,07$. O maior é $0,7$.'],
+      [['No número $5,34$, o algarismo $3$ vale:', ['$3$ unidades', '$3$ décimos', '$3$ centésimos', '$3$ dezenas'], 1, 'O $3$ está na casa dos décimos: $0,3$.'],
+       ['Qual é o maior número?', ['$2,08$', '$2,8$', '$2,080$', '$2,008$'], 1, '$2,8 = 2,800$ é o maior.'],
+       ['Em ordem crescente: $0,5$; $0,35$; $0,05$.', ['$0,5; 0,35; 0,05$', '$0,05; 0,35; 0,5$', '$0,35; 0,05; 0,5$', '$0,05; 0,5; 0,35$'], 1, 'Com duas casas: $0,05 < 0,35 < 0,50$.'],
+       ['$0,4$ é igual a:', ['$0,04$', '$0,40$', '$4,0$', '$0,004$'], 1, 'Zeros à direita não alteram: $0,4 = 0,40$.']],
+      [[['Casas decimais', 'Décimos, centésimos e milésimos.'], ['Zeros à direita', 'Não mudam o valor: $0,5 = 0,50$.'], ['Comparação', 'Iguale as casas e compare da esquerda para a direita.']], 'Por que $9,6$ é maior que $9,58$, embora $58 > 6$?', 'Voltando à corrida: $9,58 < 9,6$ s; a atleta de $9,58$ s venceu.'],
+      [['No número $12,705$, o algarismo $7$ vale:', ['$7$', '$0,7$', '$0,07$', '$70$'], 1], ['Qual é o menor número?', ['$3,14$', '$3,4$', '$3,041$', '$3,104$'], 2], ['$0,25$ é igual a:', ['$0,025$', '$0,250$', '$2,5$', '$0,0025$'], 1]]),
+
+    A('fracao-decimal-e-transformacoes', 'Frações e números decimais',
+      `A mesma quantidade, ${co('primary')}duas escritas</span>`,
+      'Um suco vem em uma garrafa de $0,25$ L. Esse valor é o mesmo que ${1|4}$ de litro? Como passar de uma escrita para a outra?',
+      'mercado', [['fração decimal'], ['de fração a decimal', 'growth'], ['dízima', 'decay']],
+      ['Frações e decimais representam as mesmas quantidades. Hoje vamos aprender a ir de um lado ao outro.', ['${1|10}$ escrito como decimal é:', ['$1,0$', '$0,1$', '$0,01$', '$10$'], 1, 'Um décimo é $0,1$.'], 'Pense: ${1|2}$ de litro é $0,5$ L? Explique.'],
+      ['Escrever uma <strong>fração decimal</strong> como número decimal e vice-versa.', 'Transformar qualquer fração em decimal <strong>dividindo</strong> numerador por denominador.', 'Reconhecer <strong>dízimas periódicas</strong> simples.'],
+      'Fração <strong>é</strong> uma divisão: numerador ÷ denominador.',
+      [['Fração decimal', ['<strong>Fração decimal</strong> tem denominador $10$, $100$, $1000$…', '${3|10} = 0,3$; ${7|100} = 0,07$; ${125|1000} = 0,125$.', 'O número de zeros do denominador é o número de casas decimais.'],
+        tbl(['Fração', 'Decimal'], [['${3|10}$', '$0,3$'], ['${7|100}$', '$0,07$'], ['${125|1000}$', '$0,125$']])],
+       ['De qualquer fração ao decimal', ['Divida o numerador pelo denominador.', '${1|4} = 1 ÷ 4 = 0,25$; ${3|5} = 0,6$; ${1|8} = 0,125$.', 'Outro jeito: obtenha uma fração equivalente de denominador $100$: ${1|4} = {25|100} = 0,25$.'],
+        callout('Conferir', '${1|2} = 0,5$ e ${1|4} = 0,25$ são conversões que vale a pena decorar.', 'primary')],
+       ['Do decimal à fração e as dízimas', ['$0,75 = {75|100} = {3|4}$ (simplifique!).', 'Algumas divisões nunca terminam: ${1|3} = 0,333…$ é uma <strong>dízima periódica</strong>.', 'O algarismo (ou grupo) que se repete é o <strong>período</strong>.'],
+        tbl(['Fração', 'Decimal', 'Tipo'], [['${1|3}$', '$0,333…$', 'dízima'], ['${3|4}$', '$0,75$', 'exato']])]],
+      [['De fração a decimal', 'Escreva ${3|5}$ como número decimal.', [['Divida $3$ por $5$', '$3 ÷ 5 = 0,6$.']], '$0,6$', 'Ou: ${3|5} = {6|10} = 0,6$.'],
+       ['De decimal a fração', 'Escreva $0,45$ como fração irredutível.', [['Leia o decimal', '$0,45$ são $45$ centésimos: ${45|100}$.'], ['Simplifique por $5$', '${45 ÷ 5|100 ÷ 5} = {9|20}$.']], '${9|20}$']],
+      ['${1|8}$ em decimal', 'Transforme ${1|8}$ em número decimal.', ['Fração é divisão: $1 ÷ 8$.', '$1,000 ÷ 8$ dá quantos décimos?', 'Continue até o resto zerar.'], '$1 ÷ 8 = 0,125$.'],
+      [['${7|10}$ escrito como decimal é:', ['$7,0$', '$0,7$', '$0,07$', '$70$'], 1, 'Sete décimos: $0,7$.'],
+       ['$0,5$ é igual à fração:', ['${1|5}$', '${1|2}$', '${5|1}$', '${1|50}$'], 1, '$0,5 = {5|10} = {1|2}$.'],
+       ['${3|4}$ em decimal é:', ['$0,34$', '$0,75$', '$3,4$', '$0,43$'], 1, '$3 ÷ 4 = 0,75$.'],
+       ['${1|3}$ em decimal é:', ['$0,3$', '$0,33$', '$0,333…$ (dízima periódica)', '$3,3$'], 2, '$1 ÷ 3$ nunca termina: $0,333…$.']],
+      [[['Fração decimal', 'Denominador $10, 100, 1000$…: vira decimal direto.'], ['Qualquer fração', 'Numerador ÷ denominador.'], ['Dízima periódica', 'Divisão que nunca termina e repete um período.']], 'Como saber, só olhando, se uma fração decimal tem uma, duas ou três casas?', 'Voltando à garrafa: $0,25 = {25|100} = {1|4}$ de litro.'],
+      [['${9|100}$ em decimal é:', ['$0,9$', '$0,09$', '$9,0$', '$0,009$'], 1], ['$0,8$ é igual a:', ['${1|8}$', '${4|5}$', '${8|1}$', '${8|100}$'], 1], ['${1|5}$ em decimal é:', ['$0,5$', '$0,15$', '$0,2$', '$0,02$'], 2]])
+  ]
+});

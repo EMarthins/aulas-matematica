@@ -1,0 +1,53 @@
+// Matemática · 7º ano · 1º trimestre · Números racionais (base: slides "Números racionais" e "Conjuntos dos números racionais — potenciação e radiciação" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '7° Ano', tri: 1, pasta: 'aulas/7-ano/1-tri/numeros-racionais/', titulo: 'Números racionais', accent: 'growth', icon: 'pie', key: 'm7p34', area: 'Matemática · 7º ano',
+  aulas: [
+    A('numeros-racionais-representacao-e-comparacao', 'Números racionais: representação e comparação',
+      `Frações, decimais e ${co('primary')}porcentagens</span> juntos`,
+      'A metade de uma pizza, $0,5$ de pizza e $50%$ da pizza são a mesma quantidade? Como localizar $-{3|4}$ na reta numérica?',
+      'termometro', [['racionais'], ['formas de escrita', 'growth'], ['reta numérica', 'decay']],
+      ['Já conhecemos inteiros, frações e decimais. Os racionais reúnem tudo isso em um só conjunto.', ['${1|4}$ escrito como decimal é:', ['$0,14$', '$0,25$', '$0,4$', '$4,1$'], 1, '$1 ÷ 4 = 0,25$.'], 'Dê um exemplo de número racional negativo no dia a dia (temperatura, saldo…).'],
+      ['<strong>Reconhecer</strong> número racional e suas formas de escrita (fração, decimal, porcentagem).', '<strong>Localizar</strong> racionais na reta numérica.', '<strong>Comparar</strong> e ordenar números racionais.'],
+      'Todo número racional pode ser escrito como <strong>fração de inteiros</strong>, com denominador diferente de zero.',
+      [['O conjunto dos racionais', ['<strong>Número racional</strong> é todo número que pode ser escrito como ${a|b}$, com $a$ e $b$ inteiros e $b ≠ 0$.', 'Inclui os inteiros ($3 = {3|1}$), os decimais finitos ($0,75 = {3|4}$) e as dízimas periódicas ($0,333… = {1|3}$).', 'Representamos o conjunto por $ℚ$.'],
+        tbl(['Número', 'Como fração'], [['$-2$', '$-{2|1}$'], ['$0,75$', '${3|4}$'], ['$0,333…$', '${1|3}$']])],
+       ['Várias escritas para o mesmo número', ['A mesma quantidade pode ser fração, decimal ou porcentagem: ${1|2} = 0,5 = 50%$.', 'Para passar de fração a decimal, divida o numerador pelo denominador.', 'Para o decimal a fração, use décimos, centésimos… e simplifique.'],
+        fig('termometro', 'Ilustração original: termômetro e reta numérica.', '300px')],
+       ['Reta numérica e comparação', ['Os racionais ocupam pontos da reta: $-{3|4}$ está entre $-1$ e $0$, a três quartos da distância de zero para $-1$.', 'Maior é o que está mais à <strong>direita</strong>.', 'Entre dois negativos, é maior o de <strong>menor módulo</strong>: $-{1|2} > -{2|3}$.'],
+        callout('Como comparar', 'Passe para decimais ou use denominador comum: $-{1|2} = -{3|6}$ e $-{2|3} = -{4|6}$.', 'primary')]],
+      [['Mesmo número, três escritas', 'Escreva ${3|5}$ como decimal e como porcentagem.', [['Divida', '$3 ÷ 5 = 0,6$.'], ['Multiplique por $100$', '$0,6 · 100 = 60%$.']], '${3|5} = 0,6 = 60%$'],
+       ['Comparando negativos', 'Compare $-{1|2}$ e $-{2|3}$.', [['Denominador comum', '$-{3|6}$ e $-{4|6}$.'], ['Compare', '$-3 > -4$.']], '$-{1|2} > -{2|3}$']],
+      ['Ordenar racionais', 'Coloque em ordem crescente: $0,5$; $-{1|4}$; $-1$; ${3|4}$.', ['Passe tudo para decimais.', '$-0,25$; $-1$; $0,5$; $0,75$.', 'Leia da esquerda para a direita.'], '$-1 < -{1|4} < 0,5 < {3|4}$.'],
+      [['Qual número NÃO é racional?', ['$0,25$', '$-3$', '${7|0}$', '${2|9}$'], 2, 'O denominador não pode ser zero.'],
+       ['${1|5}$ em porcentagem é:', ['$5%$', '$15%$', '$20%$', '$25%$'], 2, '$1 ÷ 5 = 0,2 = 20%$.'],
+       ['Qual é o maior número?', ['$-{1|2}$', '$-{3|4}$', '$-1$', '$-0,6$'], 0, 'Entre negativos, o de menor módulo: $-0,5$.'],
+       ['$0,375$ é equivalente a:', ['${3|8}$', '${3|7}$', '${375|100}$', '${1|3}$'], 0, '${375|1000} = {3|8}$.']],
+      [[['Racional', '${a|b}$ com $b ≠ 0$: inteiros, decimais finitos e dízimas.'], ['Escritas', 'Fração, decimal e porcentagem são o mesmo número.'], ['Comparação', 'Quem está mais à direita é maior; entre negativos, o de menor módulo.']], 'Por que o denominador de uma fração não pode ser zero?', 'Voltando à pizza: ${1|2} = 0,5 = 50%$ da pizza.'],
+      [['$-0,75$ é igual a:', ['$-{3|4}$', '${3|4}$', '$-{7|5}$', '$-{1|4}$'], 0], ['${3|10}$ em decimal é:', ['$3,10$', '$0,03$', '$0,3$', '$0,13$'], 2], ['Em ordem crescente: $-2$, $-{1|2}$, $0$ — qual é o menor?', ['$-2$', '$-{1|2}$', '$0$', 'não dá para saber'], 0]]),
+
+    A('operacoes-com-racionais-potencias-e-raizes', 'Operações com racionais, potências e raízes',
+      `Contas com ${co('primary')}sinais e frações</span> ao mesmo tempo`,
+      'Em uma noite, a temperatura variou $-{3|2}$ °C por hora durante $4$ horas. Qual foi a variação total? E quanto é $√{{9|16}}$?',
+      'balanca', [['soma e produto'], ['potência de fração', 'growth'], ['raiz quadrada exata', 'decay']],
+      ['Já sabemos operar frações e inteiros separadamente. Agora vamos juntar as duas coisas.', ['${1|2} + {1|4}$ é igual a:', ['${2|6}$', '${3|4}$', '${1|8}$', '${2|4}$'], 1, '${2|4} + {1|4} = {3|4}$.'], 'Qual é o sinal de $(-{1|2}) · (-{1|3})$?'],
+      ['<strong>Somar, subtrair, multiplicar e dividir</strong> números racionais.', '<strong>Calcular potências</strong> de números racionais.', 'Calcular <strong>raízes quadradas exatas</strong> de racionais.'],
+      'Use as regras que já conhece: denominador comum para somar; <strong>sinais</strong> iguais ao dos inteiros.',
+      [['Soma, subtração, produto e divisão', ['Somar/subtrair: denominador comum e regra dos sinais. $-{1|2} + {3|4} = {1|4}$.', 'Multiplicar: numerador × numerador e denominador × denominador, e a regra dos sinais. ${2|3} · (-{9|4}) = -{3|2}$.', 'Dividir: multiplique pelo inverso. ${3|4} ÷ (-{1|2}) = -{3|2}$.'],
+        tbl(['Conta', 'Resultado'], [['$-{1|2} + {3|4}$', '${1|4}$'], ['${2|3} · (-{9|4})$', '$-{3|2}$']])],
+       ['Potências', ['$({a|b})^n = {a^n|b^n}$: eleva-se numerador e denominador.', '$({2|3})^2 = {4|9}$; $(-{1|2})^3 = -{1|8}$.', 'O sinal segue a regra: base negativa com expoente ímpar dá negativo.'],
+        callout('Potência negativa?', 'Por enquanto, expoentes são inteiros positivos ou zero.', 'primary')],
+       ['Raiz quadrada exata', ['A <strong>raiz quadrada</strong> de um racional positivo é o número que elevado ao quadrado dá o radicando.', '$√{{9|16}} = {3|4}$ porque $({3|4})^2 = {9|16}$.', '$√{0,25} = 0,5$ porque $0,5 · 0,5 = 0,25$.'],
+        tbl(['Raiz', 'Resultado'], [['$√{{49|25}}$', '${7|5}$'], ['$√{0,36}$', '$0,6$']])]],
+      [['Soma com sinais', 'Calcule $-{1|2} + {3|4}$.', [['Denominador comum', '$-{2|4} + {3|4}$.'], ['Some os numeradores', '$-2 + 3 = 1$.']], '${1|4}$'],
+       ['Raiz de fração', 'Calcule $√{{49|25}}$.', [['Raiz do numerador', '$√{49} = 7$.'], ['Raiz do denominador', '$√{25} = 5$.']], '${7|5}$']],
+      ['A variação da temperatura', 'A temperatura variou $-{3|2}$ °C por hora durante $4$ horas. Qual foi a variação total?', ['Variação total é produto: $4 · (-{3|2})$.', '$4 = {4|1}$.', 'Multiplique e simplifique.'], '$4 · (-{3|2}) = -{12|2} = -6$: a temperatura caiu $6$ °C.'],
+      [['O valor de $-{1|3} + {1|6}$ é:', ['$-{1|6}$', '${1|6}$', '$-{1|2}$', '${1|2}$'], 0, '$-{2|6} + {1|6} = -{1|6}$.'],
+       ['O valor de $(-{2|3}) · (-{3|5})$ é:', ['$-{2|5}$', '${2|5}$', '${5|8}$', '$-{6|15}$'], 1, 'Sinais iguais: ${6|15} = {2|5}$.'],
+       ['O valor de $({2|3})^3$ é:', ['${6|9}$', '${8|27}$', '${8|9}$', '${2|27}$'], 1, '${2^3|3^3} = {8|27}$.'],
+       ['O valor de $√{{25|36}}$ é:', ['${5|6}$', '${25|6}$', '${5|36}$', '${6|5}$'], 0, '$√{25} = 5$ e $√{36} = 6$.']],
+      [[['Operações', 'Denominador comum para somar; multiplicar numeradores e denominadores; dividir pelo inverso.'], ['Potência', 'Eleva numerador e denominador.'], ['Raiz', 'Raiz do numerador sobre raiz do denominador (quando exatas).']], 'Por que $√{{9|16}} = {3|4}$ é verdadeiro? Mostre elevando ${3|4}$ ao quadrado.', 'Voltando ao problema: $4 · (-{3|2}) = -6$ °C; e $√{{9|16}} = {3|4}$.'],
+      [['O valor de $-{3|4} + {1|2}$ é:', ['$-{1|4}$', '${1|4}$', '$-{5|4}$', '${5|4}$'], 0], ['O valor de $(-{1|2})^2$ é:', ['$-{1|4}$', '${1|4}$', '$-{1|2}$', '${1|2}$'], 1], ['O valor de $√{0,49}$ é:', ['$0,7$', '$0,07$', '$7$', '$0,49$'], 0]])
+  ]
+});

@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 3º trimestre · Polinômios e números complexos (base: slides "Polinômios", "Números complexos" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 3, destino: 'mat-3ano-3tri', pasta: 'aulas/3-ano/3-tri/polinomios-e-complexos/', titulo: 'Polinômios e números complexos', accent: 'warm', icon: 'algebra', key: 'm3p54', area: 'Matemática · 3ª série',
+  aulas: [
+    A('polinomios-valor-numerico-raizes-e-divisao', 'Polinômios: valor numérico, raízes e divisão',
+      `Expressões com ${co('primary')}muitos termos</span>`,
+      'O custo de produzir $x$ peças é $C(x) = x^3 - 6x^2 + 11x - 6$. Para quais valores de $x$ o custo se anula? Como achar isso sem testar todos?',
+      'fabrica', [['grau'], ['raízes', 'growth'], ['divisão', 'decay']],
+      ['Polinômios generalizam as expressões que já vimos (1º e 2º graus).', ['O valor de $x^2 - 3x$ para $x = 4$ é:', ['$4$', '$16$', '$-4$', '$8$'], 0, '$16 - 12 = 4$.'], 'Quantas raízes você espera que um polinômio do 3º grau tenha?'],
+      ['<strong>Calcular</strong> o valor numérico e identificar o grau.', '<strong>Verificar</strong> raízes e usar o teorema do resto.', '<strong>Dividir</strong> polinômios (Briot-Ruffini).'],
+      'Se $a$ é raiz de $P(x)$, então $P(a) = 0$ e $(x - a)$ é fator de $P(x)$.',
+      [['Polinômio', ['$P(x) = a_n x^n + … + a_1 x + a_0$, com $a_n ≠ 0$; o <strong>grau</strong> é $n$.', '<strong>Valor numérico</strong>: substitua $x$. $P(x) = x^3 - 6x^2 + 11x - 6$ ⇒ $P(1) = 1 - 6 + 11 - 6 = 0$.', '<strong>Raiz</strong>: valor $a$ com $P(a) = 0$.'],
+        fig('fabrica', 'Ilustração original: fábrica.', '280px')],
+       ['Teorema do resto', ['O resto da divisão de $P(x)$ por $(x - a)$ é $P(a)$.', 'Se o resto é $0$, $(x - a)$ é <strong>fator</strong> de $P(x)$.', 'Um polinômio de grau $n$ tem no máximo $n$ raízes.'],
+        callout('Dica', 'Teste divisores do termo independente: possíveis raízes inteiras.', 'primary')],
+       ['Briot-Ruffini', ['Dispositivo prático para dividir por $(x - a)$.', '$P(x) = x^3 - 6x^2 + 11x - 6$ dividido por $(x - 1)$: coeficientes $1, -6, 11, -6$ ⇒ $1, -5, 6$, resto $0$.', 'Quociente: $x^2 - 5x + 6 = (x - 2)(x - 3)$. Raízes: $1, 2, 3$.'],
+        tbl(['Raiz testada', 'Resto'], [['$1$', '$0$'], ['$2$', '$0$'], ['$4$', '$6$']])]],
+      [['Valor numérico', 'Dado $P(x) = x^3 - 2x + 1$, calcule $P(2)$.', [['Substitua', '$8 - 4 + 1$.']], '$5$'],
+       ['Raiz e fator', '$x = 1$ é raiz de $P(x) = x^3 - 6x^2 + 11x - 6$? Fatore completamente.', [['$P(1)$', '$1 - 6 + 11 - 6 = 0$: é raiz.'], ['Divida por $(x - 1)$', 'Quociente $x^2 - 5x + 6$.'], ['Fatore', '$(x - 2)(x - 3)$.']], '$P(x) = (x - 1)(x - 2)(x - 3)$']],
+      ['O custo', 'Para $C(x) = x^3 - 6x^2 + 11x - 6$, para quais valores de $x$ o custo se anula?', ['Teste $x = 1$.', 'Divida por $(x - 1)$.', 'Resolva o quociente de grau 2.'], 'O custo se anula em $x = 1$, $x = 2$ e $x = 3$.'],
+      [['O grau de $P(x) = 4x^5 - x + 7$ é:', ['$4$', '$5$', '$7$', '$1$'], 1, 'Maior expoente.'],
+       ['Se $P(3) = 0$, então:', ['$x = 3$ é raiz', '$P$ tem grau $3$', '$P(0) = 3$', '$P$ é nulo'], 0, 'Definição de raiz.'],
+       ['O resto da divisão de $P(x) = x^2 + 1$ por $(x - 2)$ é:', ['$1$', '$3$', '$5$', '$2$'], 2, '$P(2) = 5$.'],
+       ['Um polinômio de grau $4$ tem no máximo:', ['$2$ raízes', '$3$ raízes', '$4$ raízes', '$5$ raízes'], 2, 'Até $n$ raízes.']],
+      [[['Grau', 'Maior expoente.'], ['Raiz', '$P(a) = 0$.'], ['Resto', 'Dividir por $(x - a)$ dá $P(a)$.']], 'Por que testamos divisores do termo independente?', 'Voltando ao custo: raízes $1$, $2$ e $3$.'],
+      [['Se $P(x) = x^2 - 4$, então $P(2)$ é:', ['$0$', '$4$', '$-4$', '$8$'], 0], ['O resto de $x^2 + x$ por $(x - 1)$ é:', ['$0$', '$1$', '$2$', '$3$'], 2], ['As raízes de $(x - 1)(x + 2)$ são:', ['$1$ e $2$', '$-1$ e $2$', '$1$ e $-2$', '$-1$ e $-2$'], 2]]),
+
+    A('numeros-complexos', 'Números complexos',
+      `Raízes de números ${co('primary')}negativos</span>`,
+      'A equação $x^2 + 1 = 0$ não tem raiz real. Existe um novo tipo de número que a resolva? O que ele ajuda a calcular?',
+      'plano', [['unidade imaginária'], ['forma algébrica', 'growth'], ['plano de Argand', 'decay']],
+      ['Quando $Δ < 0$, a equação do 2º grau não tinha solução real. Os complexos ampliam os números para resolvê-las.', ['O valor de $(-3)^2$ é:', ['$-9$', '$9$', '$-6$', '$6$'], 1, 'Quadrado nunca é negativo.'], 'Existe número real que elevado ao quadrado dê $-1$?'],
+      ['<strong>Usar</strong> a unidade imaginária $i$ ($i^2 = -1$).', '<strong>Operar</strong> com números na forma $a + bi$.', '<strong>Localizar</strong> um complexo no plano e calcular o módulo.'],
+      'Todo complexo é $z = a + bi$, com $a$ (parte real) e $b$ (parte imaginária).',
+      [['Unidade imaginária', ['Define-se $i$ tal que $i^2 = -1$.', 'Então $√{-4} = 2i$ e $x^2 + 1 = 0$ tem raízes $x = i$ e $x = -i$.', 'Potências de $i$ repetem-se de $4$ em $4$: $i, -1, -i, 1$.'],
+        fig('plano', 'Ilustração original: plano cartesiano.', '280px')],
+       ['Forma algébrica e operações', ['$z = a + bi$; o <strong>conjugado</strong> de $z$ é $a - bi$.', 'Soma: $(2 + 3i) + (1 - i) = 3 + 2i$.', 'Produto: $(1 + i)(2 + i) = 2 + i + 2i + i^2 = 1 + 3i$.'],
+        tbl(['Operação', 'Resultado'], [['$(2 + 3i) + (1 - i)$', '$3 + 2i$'], ['$(1 + i)(2 + i)$', '$1 + 3i$']])],
+       ['Módulo e plano de Argand', ['Cada complexo $a + bi$ corresponde ao ponto $(a, b)$.', 'Módulo: $|z| = √{a^2 + b^2}$ (distância à origem).', '$|3 + 4i| = √{9 + 16} = 5$.'],
+        callout('Atenção', 'Ao multiplicar, lembre que $i^2 = -1$.', 'decay')]],
+      [['Soma', 'Calcule $(5 + 2i) - (3 - i)$.', [['Subtraia partes reais e imaginárias', '$5 - 3$ e $2i - (-i)$.']], '$2 + 3i$'],
+       ['Módulo', 'Calcule o módulo de $z = 6 + 8i$.', [['$√{a^2 + b^2}$', '$√{36 + 64} = √{100}$.']], '$10$']],
+      ['A equação', 'Resolva $x^2 + 4 = 0$ nos complexos.', ['$x^2 = -4$.', '$x = ±√{-4}$.', 'Use $i^2 = -1$.'], '$x = 2i$ ou $x = -2i$.'],
+      [['O valor de $i^2$ é:', ['$1$', '$-1$', '$i$', '$-i$'], 1, 'Definição.'],
+       ['A parte imaginária de $5 - 7i$ é:', ['$5$', '$7$', '$-7$', '$-5$'], 2, 'Coeficiente de $i$.'],
+       ['O valor de $(2 + i)(2 - i)$ é:', ['$3$', '$5$', '$4 + i$', '$4 - i$'], 1, '$4 - i^2 = 5$.'],
+       ['O módulo de $3 - 4i$ é:', ['$1$', '$5$', '$7$', '$25$'], 1, '$√{9 + 16}$.']],
+      [[['i', '$i^2 = -1$.'], ['Forma', '$a + bi$.'], ['Módulo', '$√{a^2 + b^2}$.']], 'Por que os complexos ampliam os reais?', 'Voltando à equação: $x^2 + 1 = 0$ tem raízes $i$ e $-i$.'],
+      [['O valor de $i^3$ é:', ['$i$', '$-i$', '$1$', '$-1$'], 1], ['O valor de $(1 + i) + (1 - i)$ é:', ['$2$', '$2i$', '$0$', '$1 + i$'], 0], ['O módulo de $1 + i$ é:', ['$1$', '$√2$', '$2$', '$√3$'], 1]])
+  ]
+});

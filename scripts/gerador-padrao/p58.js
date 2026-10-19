@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 3º trimestre · Contagem, probabilidade e estatística (base: slides "Princípio multiplicativo", "Medidas de tendência central" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 3, pasta: 'aulas/8-ano/3-tri/contagem-e-estatistica/', titulo: 'Contagem, probabilidade e estatística', accent: 'accent', icon: 'combo', key: 'm8p58', area: 'Matemática · 8º ano',
+  aulas: [
+    A('arvore-de-possibilidades-e-probabilidade', 'Árvore de possibilidades e probabilidade',
+      `Contar sem ${co('primary')}esquecer nenhum caso</span>`,
+      'Um lanche combina $1$ de $3$ pães e $1$ de $2$ recheios. Quantos lanches diferentes existem? E qual a chance de o seu lanche ser de pão integral com queijo?',
+      'mercado', [['árvore'], ['princípio multiplicativo', 'growth'], ['probabilidade', 'decay']],
+      ['Quando há várias escolhas em sequência, a árvore organiza todas as possibilidades.', ['Com $2$ camisas e $3$ calças, o número de conjuntos é:', ['$5$', '$6$', '$8$', '$9$'], 1, '$2 · 3$.'], 'Quantos resultados tem o lançamento de duas moedas?'],
+      ['<strong>Montar</strong> a árvore de possibilidades.', '<strong>Aplicar</strong> o princípio multiplicativo.', '<strong>Calcular</strong> a probabilidade usando a contagem.'],
+      'Etapas independentes: <strong>multiplique</strong> o número de opções de cada etapa.',
+      [['Árvore de possibilidades', ['Cada escolha vira um “galho”; os caminhos completos são os resultados.', 'Pães $P_1, P_2, P_3$ e recheios $Q, R$: $6$ lanches.', 'Duas moedas: $CC, CK, KC, KK$ ($4$ resultados).'],
+        fig('mercado', 'Ilustração original: mercado.', '280px')],
+       ['Princípio multiplicativo', ['Se há $m$ modos para a 1ª escolha e $n$ para a 2ª, são $m · n$ no total.', 'Senha de $2$ dígitos (0 a 9): $10 · 10 = 100$.', 'Placas com $3$ letras e $4$ números: $26^3 · 10^4$.'],
+        tbl(['Situação', 'Total'], [['3 pães × 2 recheios', '$6$'], ['2 moedas', '$4$'], ['3 moedas', '$8$']])],
+       ['Probabilidade pela contagem', ['$P = {casos favoráveis|casos possíveis}$.', 'Lanche (integral, queijo): $1$ caso favorável em $6$: ${1|6}$.', 'Duas moedas, duas caras: ${1|4}$.'],
+        callout('Dica', 'Primeiro conte o total (árvore), depois os favoráveis.', 'primary')]],
+      [['Contagem', 'Quantos conjuntos de $4$ camisas e $3$ bermudas existem?', [['Multiplique', '$4 · 3 = 12$.']], '$12$'],
+       ['Probabilidade', 'Lançando duas moedas, qual a probabilidade de sair uma cara e uma coroa (em qualquer ordem)?', [['Casos favoráveis', '$CK$ e $KC$: $2$.'], ['Possíveis', '$4$.']], '${2|4} = {1|2}$']],
+      ['O lanche', 'Existem $3$ pães e $2$ recheios. Quantos lanches e qual a chance de sair o integral com queijo ao acaso?', ['Total: $3 · 2$.', 'Só um é integral com queijo.', '${1|6}$.'], '$6$ lanches; probabilidade ${1|6} ≈ 16,7%$.'],
+      [['Três moedas têm quantos resultados?', ['$3$', '$6$', '$8$', '$9$'], 2, '$2 · 2 · 2$.'],
+       ['Senhas de $3$ dígitos (0 a 9, repetindo):', ['$30$', '$100$', '$720$', '$1000$'], 3, '$10^3$.'],
+       ['Duas moedas: P(duas coroas) é:', ['${1|2}$', '${1|3}$', '${1|4}$', '${1|8}$'], 2, 'Um caso em quatro.'],
+       ['A árvore de possibilidades serve para:', ['medir ângulos', 'listar todos os casos', 'calcular áreas', 'achar raízes'], 1, 'Organiza a contagem.']],
+      [[['Árvore', 'Todos os caminhos.'], ['Multiplicar', 'Etapas independentes.'], ['P', 'Favoráveis ÷ possíveis.']], 'Quando a árvore fica grande, o que usamos no lugar dela?', 'Voltando ao lanche: $6$ combinações e chance de ${1|6}$.'],
+      [['$4$ camisas e $2$ calças dão:', ['$6$', '$8$', '$2$', '$16$'], 1], ['Duas moedas: P(duas caras) é:', ['${1|4}$', '${1|2}$', '${1|3}$', '$1$'], 0], ['Um dado e uma moeda têm quantos resultados?', ['$7$', '$8$', '$12$', '$36$'], 2]]),
+
+    A('graficos-media-e-amplitude', 'Gráficos, média e amplitude',
+      `Resumindo ${co('primary')}os dados</span>`,
+      'Os tempos de cinco corredores em segundos foram $12$, $14$, $14$, $15$ e $20$. Qual número resume a prova e qual a diferença entre o mais rápido e o mais lento?',
+      'estadio', [['média'], ['amplitude', 'growth'], ['gráficos', 'decay']],
+      ['Depois de coletar dados, resumimos com poucos números e gráficos.', ['A soma de $4 + 6 + 8$ é:', ['$12$', '$16$', '$18$', '$20$'], 2, '$18$.'], 'Qual o valor mais comum entre as idades da sua turma?'],
+      ['<strong>Calcular</strong> média, mediana, moda e amplitude.', '<strong>Ler</strong> gráficos de colunas, linhas e setores.', '<strong>Comentar</strong> o efeito de valores extremos.'],
+      'Amplitude = maior valor − menor valor. A média é afetada por valores extremos; a mediana não.',
+      [['Medidas', ['<strong>Média</strong>: soma ÷ quantidade. <strong>Moda</strong>: valor mais frequente. <strong>Mediana</strong>: valor central em ordem.', '<strong>Amplitude</strong>: maior − menor.', 'Tempos $12, 14, 14, 15, 20$: média $15$, moda $14$, mediana $14$, amplitude $8$.'],
+        fig('estadio', 'Ilustração original: estádio.', '280px')],
+       ['Lendo gráficos', ['Colunas: comparar categorias. Linhas: evolução no tempo. Setores: partes de um todo.', 'Leia título, eixos, unidade e fonte.', 'Verifique se o eixo começa no zero.'],
+        tbl(['Medida', 'Valor'], [['média', '$15$ s'], ['moda', '$14$ s'], ['mediana', '$14$ s'], ['amplitude', '$8$ s']])],
+       ['Valores extremos', ['O tempo $20$ puxa a média para cima.', 'A mediana ($14$) representa melhor a maioria.', 'Em salários, por exemplo, usa-se a mediana.'],
+        callout('Atenção', 'A média nem sempre é o “valor típico”.', 'decay')]],
+      [['Média e amplitude', 'Calcule média e amplitude de $6, 8, 10, 12, 14$.', [['Média', '$(6 + 8 + 10 + 12 + 14) ÷ 5 = 10$.'], ['Amplitude', '$14 - 6 = 8$.']], 'Média $10$; amplitude $8$'],
+       ['Mediana', 'Calcule a mediana de $5, 9, 1, 7, 3$.', [['Ordene', '$1, 3, 5, 7, 9$.'], ['Central', '$5$.']], '$5$']],
+      ['A prova', 'Para os tempos $12, 14, 14, 15, 20$, calcule média, moda, mediana e amplitude.', ['Some e divida por $5$.', 'Qual repete?', 'Qual está no centro?'], 'Média $15$; moda $14$; mediana $14$; amplitude $8$.'],
+      [['A média de $2, 4, 6$ é:', ['$3$', '$4$', '$6$', '$12$'], 1, '$12 ÷ 3$.'],
+       ['A moda de $3, 5, 5, 7$ é:', ['$3$', '$5$', '$7$', '$15$'], 1, 'O mais frequente.'],
+       ['A amplitude de $4, 9, 15$ é:', ['$4$', '$11$', '$15$', '$19$'], 1, '$15 - 4$.'],
+       ['A mediana de $2, 4, 6, 8$ é:', ['$4$', '$5$', '$6$', '$20$'], 1, 'Média de $4$ e $6$.']],
+      [[['Média', 'Soma sobre quantidade.'], ['Mediana', 'Valor central.'], ['Amplitude', 'Maior − menor.']], 'Por que a mediana resiste a valores extremos?', 'Voltando aos corredores: média $15$, mediana $14$, amplitude $8$.'],
+      [['A média de $10, 20$ é:', ['$10$', '$15$', '$20$', '$30$'], 1], ['A amplitude de $7, 7, 7$ é:', ['$0$', '$7$', '$21$', '$1$'], 0], ['A moda de $1, 2, 2, 3, 3, 3$ é:', ['$1$', '$2$', '$3$', '$6$'], 2]])
+  ]
+});

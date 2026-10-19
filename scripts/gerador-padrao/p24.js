@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 2º trimestre · Operações com frações (base: slides "Operações com frações" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 2, pasta: 'aulas/6-ano/2-tri/operacoes-com-fracoes/', titulo: 'Operações com frações', accent: 'growth', icon: 'algebra', key: 'm6p24', area: 'Matemática · 6º ano',
+  aulas: [
+    A('adicao-e-subtracao-de-fracoes', 'Adição e subtração de frações',
+      `Juntar e tirar ${co('primary')}pedaços</span> do todo`,
+      'Você comeu ${1|4}$ de uma barra de chocolate e seu irmão comeu ${2|4}$. Quanto comeram juntos? E se fossem ${1|3}$ e ${1|4}$ da barra?',
+      'pizza', [['soma de frações'], ['denominador comum', 'growth'], ['subtração', 'decay']],
+      ['Somar frações é juntar partes do mesmo todo; para isso, as partes precisam ter o mesmo tamanho.', ['${2|7} + {3|7}$ é igual a:', ['${5|14}$', '${5|7}$', '${6|7}$', '${1|7}$'], 1, 'Mesmo denominador: some os numeradores e mantenha o denominador.'], 'Por que não dá para somar “uma fatia de pizza grande” com “uma fatia de pizza pequena” sem pensar?'],
+      ['Somar e subtrair frações de <strong>mesmo denominador</strong>.', 'Somar e subtrair frações de <strong>denominadores diferentes</strong> usando o MMC.', '<strong>Simplificar</strong> o resultado e resolver problemas.'],
+      'Só somamos ou subtraímos <strong>numeradores</strong> quando os denominadores são iguais.',
+      [['Mesmo denominador', ['Some (ou subtraia) os <strong>numeradores</strong> e <strong>mantenha o denominador</strong>.', '${3|8} + {1|8} = {4|8} = {1|2}$.', 'Depois, simplifique se for possível.'],
+        tbl(['Conta', 'Resultado', 'Simplificado'], [['${3|8} + {1|8}$', '${4|8}$', '${1|2}$'], ['${5|6} - {1|6}$', '${4|6}$', '${2|3}$']])],
+       ['Denominadores diferentes', ['Encontre o <strong>MMC</strong> dos denominadores.', 'Escreva frações <strong>equivalentes</strong> com esse denominador.', 'Faça a conta com os numeradores.'],
+        tbl(['Passo', 'Exemplo ${1|3} + {1|4}$'], [['MMC', '$mmc(3, 4) = 12$'], ['Equivalentes', '${4|12}$ e ${3|12}$'], ['Soma', '${7|12}$']])],
+       ['Subtração', ['Siga os mesmos passos da soma: denominador comum e depois subtraia os numeradores.', 'O resultado só é positivo se a primeira fração for maior que a segunda.', 'Confira simplificando o final.'],
+        callout('Dica', 'Antes de somar, simplifique cada fração; os números ficam menores.', 'primary')]],
+      [['Soma com denominadores diferentes', 'Calcule ${1|3} + {1|4}$.', [['MMC dos denominadores', '$mmc(3, 4) = 12$.'], ['Frações equivalentes', '${1|3} = {4|12}$ e ${1|4} = {3|12}$.'], ['Some os numeradores', '${4|12} + {3|12} = {7|12}$.']], '${7|12}$'],
+       ['Subtração', 'Calcule ${5|6} - {1|3}$.', [['MMC', '$mmc(6, 3) = 6$.'], ['Equivalente de ${1|3}$', '${1|3} = {2|6}$.'], ['Subtraia e simplifique', '${5|6} - {2|6} = {3|6} = {1|2}$.']], '${1|2}$']],
+      ['Calcule ${3|4} - {1|6}$', 'Resolva ${3|4} - {1|6}$.', ['Qual o MMC de $4$ e $6$?', 'Transforme as duas frações em doze avos.', 'Subtraia os numeradores.'], '$mmc(4, 6) = 12$; ${3|4} = {9|12}$ e ${1|6} = {2|12}$; ${9|12} - {2|12} = {7|12}$.'],
+      [['O valor de ${2|7} + {3|7}$ é:', ['${5|14}$', '${5|7}$', '${6|7}$', '${1|7}$'], 1, 'Mantém o denominador: ${5|7}$.'],
+       ['O valor de ${1|2} + {1|3}$ é:', ['${2|5}$', '${5|6}$', '${2|6}$', '${1|5}$'], 1, '${3|6} + {2|6} = {5|6}$.'],
+       ['O valor de ${7|8} - {3|8}$ é:', ['${4|8}$', '${4|16}$', '${1|4}$', '${10|8}$'], 0, '${7 - 3|8} = {4|8}$, que simplificada vale ${1|2}$ (e ${4|8}$ é a resposta sem simplificar).'],
+       ['O valor de ${3|4} - {1|6}$ é:', ['${2|2}$', '${7|12}$', '${2|10}$', '${5|12}$'], 1, '${9|12} - {2|12} = {7|12}$.']],
+      [[['Mesmo denominador', 'Soma/subtrai numeradores e mantém o denominador.'], ['Denominadores diferentes', 'MMC, frações equivalentes e depois a conta.'], ['Final', 'Simplifique o resultado.']], 'Por que não se soma denominador com denominador?', 'Voltando ao chocolate: ${1|4} + {2|4} = {3|4}$; e ${1|3} + {1|4} = {7|12}$ da barra.'],
+      [['O valor de ${1|5} + {2|5}$ é:', ['${3|10}$', '${3|5}$', '${2|5}$', '${1|5}$'], 1], ['O valor de ${1|2} + {1|4}$ é:', ['${2|6}$', '${2|4}$', '${3|4}$', '${1|8}$'], 2], ['O valor de ${5|6} - {1|2}$ é:', ['${4|4}$', '${1|3}$', '${4|8}$', '${2|3}$'], 1]]),
+
+    A('multiplicacao-e-divisao-de-fracoes', 'Multiplicação e divisão de frações',
+      `Uma parte ${co('primary')}de outra parte</span>`,
+      'Você bebeu ${1|2}$ de ${3|4}$ de litro de suco. Que fração do litro você bebeu? E quantos copinhos de ${1|4}$ de litro cabem em ${3|4}$ de litro?',
+      'mercado', [['produto de frações'], ['fração de quantidade', 'growth'], ['inverso', 'decay']],
+      ['“De” entre frações significa multiplicar. Dividir significa perguntar “quantas vezes cabe”.', ['${1|2}$ de $10$ vale:', ['$2$', '$5$', '$10$', '$20$'], 1, 'Metade de $10$ é $5$.'], 'Quantas metades cabem em $3$ inteiros?'],
+      ['<strong>Multiplicar</strong> frações e calcular a fração de uma quantidade.', '<strong>Dividir</strong> frações multiplicando pelo inverso.', 'Resolver <strong>problemas</strong> com as quatro operações.'],
+      'Na multiplicação, <strong>não</strong> é preciso denominador comum: multiplique em cima e embaixo.',
+      [['Multiplicação', ['Multiplique <strong>numerador por numerador</strong> e <strong>denominador por denominador</strong>.', '${1|2} · {3|4} = {1 · 3|2 · 4} = {3|8}$.', 'Simplifique antes (ou depois) de multiplicar.'],
+        tbl(['Conta', 'Resultado'], [['${2|3} · {3|5}$', '${6|15} = {2|5}$'], ['${1|2} · {1|2}$', '${1|4}$']])],
+       ['Fração de uma quantidade', ['Para achar ${2|5}$ de $30$: divida $30$ por $5$ e multiplique por $2$.', '$30 ÷ 5 = 6$ e $6 · 2 = 12$.', 'É o mesmo que ${2|5} · 30 = {60|5} = 12$.'],
+        fig('mercado', 'Ilustração original: produtos e preços.', '260px')],
+       ['Divisão e inverso', ['O <strong>inverso</strong> de ${a|b}$ é ${b|a}$ (troque numerador e denominador).', 'Dividir por uma fração é <strong>multiplicar pelo inverso</strong>.', '${2|3} ÷ {4|5} = {2|3} · {5|4} = {10|12} = {5|6}$.'],
+        callout('Atenção', 'Só se inverte a fração que está <strong>depois</strong> do sinal ÷.', 'decay')]],
+      [['Metade de três quartos', 'Calcule ${1|2}$ de ${3|4}$.', [['“De” é multiplicar', '${1|2} · {3|4}$.'], ['Numeradores e denominadores', '${1 · 3|2 · 4} = {3|8}$.']], '${3|8}$ do litro'],
+       ['Divisão de frações', 'Calcule ${2|3} ÷ {4|5}$.', [['Inverta a segunda fração', 'Inverso de ${4|5}$: ${5|4}$.'], ['Multiplique', '${2|3} · {5|4} = {10|12}$.'], ['Simplifique', '${10|12} = {5|6}$.']], '${5|6}$']],
+      ['Quantos copinhos?', 'Quantos copinhos de ${1|4}$ de litro cabem em ${3|4}$ de litro?', ['Quantas vezes cabe é uma divisão.', 'Calcule ${3|4} ÷ {1|4}$.', 'Inverta a segunda e multiplique.'], '${3|4} ÷ {1|4} = {3|4} · {4|1} = {12|4} = 3$ copinhos.'],
+      [['O valor de ${2|3} · {3|5}$ é:', ['${5|8}$', '${2|5}$', '${6|8}$', '${1|2}$'], 1, '${6|15} = {2|5}$.'],
+       ['${3|4}$ de $20$ é igual a:', ['$5$', '$15$', '$12$', '$60$'], 1, '$20 ÷ 4 = 5$ e $5 · 3 = 15$.'],
+       ['O valor de ${1|2} ÷ {1|4}$ é:', ['$2$', '${1|8}$', '$8$', '${1|2}$'], 0, '${1|2} · {4|1} = {4|2} = 2$.'],
+       ['O valor de ${5|6} ÷ {5|3}$ é:', ['${25|18}$', '${1|2}$', '$2$', '${5|18}$'], 1, '${5|6} · {3|5} = {15|30} = {1|2}$.']],
+      [[['Produto', 'Numerador × numerador e denominador × denominador.'], ['Fração de quantidade', 'Divida pelo denominador e multiplique pelo numerador.'], ['Divisão', 'Multiplique pelo inverso da segunda fração.']], 'Por que ${1|2}$ de ${3|4}$ é menor que ${3|4}$?', 'Voltando ao suco: ${1|2} · {3|4} = {3|8}$ de litro; e cabem $3$ copinhos de ${1|4}$ em ${3|4}$.'],
+      [['O valor de ${1|3} · {3|4}$ é:', ['${1|4}$', '${4|7}$', '${3|7}$', '${1|12}$'], 0], ['${2|5}$ de $50$ é:', ['$10$', '$20$', '$25$', '$100$'], 1], ['O valor de ${3|5} ÷ {3|10}$ é:', ['$2$', '${9|50}$', '${1|2}$', '$5$'], 0]])
+  ]
+});

@@ -1,0 +1,53 @@
+// Matemática · 2ª série EM · 3º trimestre · Análise combinatória (base: slides "Princípio fundamental da contagem", "Permutação, arranjo e combinação" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '2° Ano', tri: 3, destino: 'mat-2ano-3tri', pasta: 'aulas/2-ano/3-tri/analise-combinatoria/', titulo: 'Análise combinatória', accent: 'primary', icon: 'combo', key: 'm2p50', area: 'Matemática · 2ª série',
+  aulas: [
+    A('principio-fundamental-da-contagem-e-permutacoes', 'Princípio fundamental da contagem e permutações',
+      `De quantas ${co('primary')}maneiras</span>?`,
+      'Uma pessoa tem $4$ camisas e $3$ calças. De quantas maneiras diferentes ela pode se vestir? E de quantas formas $5$ amigos podem sentar em fila?',
+      'pessoas', [['contagem'], ['fatorial', 'growth'], ['permutações', 'decay']],
+      ['Contar sem listar tudo é a ideia central da análise combinatória.', ['Com $2$ camisas e $2$ calças, o número de conjuntos diferentes é:', ['$2$', '$4$', '$6$', '$8$'], 1, '$2 · 2 = 4$.'], 'Quantas senhas de $2$ dígitos existem com os algarismos de $0$ a $9$?'],
+      ['<strong>Aplicar</strong> o princípio multiplicativo.', '<strong>Calcular</strong> com fatorial.', '<strong>Contar</strong> permutações simples e com repetição.'],
+      'Etapas independentes: <strong>multiplique</strong> as possibilidades de cada etapa.',
+      [['Princípio fundamental da contagem', ['Se uma escolha pode ser feita de $m$ modos e outra de $n$ modos, as duas juntas podem ser feitas de $m · n$ modos.', '$4$ camisas e $3$ calças: $4 · 3 = 12$ combinações.', 'Vale para qualquer número de etapas: multiplique todas.'],
+        fig('pessoas', 'Ilustração original: pessoas em fila.', '280px')],
+       ['Fatorial', ['$n! = n · (n - 1) · (n - 2) · … · 2 · 1$, com $0! = 1$.', '$5! = 5 · 4 · 3 · 2 · 1 = 120$.', 'Simplificação: ${7!|5!} = 7 · 6 = 42$.'],
+        tbl(['n', '0', '1', '2', '3', '4', '5'], [['$n!$', '$1$', '$1$', '$2$', '$6$', '$24$', '$120$']])],
+       ['Permutações', ['<strong>Permutação simples</strong>: ordenar $n$ elementos distintos: $P_n = n!$.', '$5$ amigos em fila: $5! = 120$ maneiras.', '<strong>Com repetição</strong>: $P = {n!|a! · b! · …}$. Anagramas de MAMA: ${4!|2! · 2!} = 6$.'],
+        callout('Atenção', 'Se a ordem importa e todos os elementos são usados, é permutação.', 'primary')]],
+      [['Princípio multiplicativo', 'Um restaurante tem $3$ entradas, $4$ pratos e $2$ sobremesas. Quantas refeições completas existem?', [['Etapas', '$3$, $4$ e $2$ opções.'], ['Multiplique', '$3 · 4 · 2 = 24$.']], '$24$'],
+       ['Anagramas', 'Quantos anagramas tem a palavra AMOR?', [['Letras distintas', '$4$ letras.'], ['$4!$', '$24$.']], '$24$']],
+      ['A fila', 'De quantas maneiras $5$ amigos podem sentar em fila? E se dois deles precisam ficar sempre juntos?', ['Sem restrição: $5!$.', 'Junto: trate os dois como um bloco.', 'O bloco pode ter duas ordens internas.'], 'Sem restrição: $120$. Com dois sempre juntos: $4! · 2 = 48$.'],
+      [['O valor de $5!$ é:', ['$25$', '$60$', '$120$', '$720$'], 2, '$5 · 4 · 3 · 2 · 1$.'],
+       ['Com $3$ camisas e $4$ bermudas, o número de combinações é:', ['$7$', '$12$', '$24$', '$1$'], 1, '$3 · 4$.'],
+       ['O número de anagramas de ANA é:', ['$3$', '$6$', '$9$', '$2$'], 0, '${3!|2!} = 3$.'],
+       ['O valor de ${6!|4!}$ é:', ['$2$', '$12$', '$30$', '$720$'], 2, '$6 · 5 = 30$.']],
+      [[['Multiplicar', 'Etapas independentes.'], ['Fatorial', '$n! = n(n - 1)…1$.'], ['Permutação', '$P_n = n!$']], 'Por que $0! = 1$?', 'Voltando às roupas: $4 · 3 = 12$; e à fila: $5! = 120$.'],
+      [['O valor de $4!$ é:', ['$10$', '$16$', '$24$', '$8$'], 2], ['Senhas de $3$ dígitos com repetição (algarismos $0$ a $9$):', ['$30$', '$100$', '$1000$', '$720$'], 2], ['Anagramas de ROMA:', ['$12$', '$24$', '$16$', '$6$'], 1]]),
+
+    A('arranjos-e-combinacoes', 'Arranjos e combinações',
+      `A ordem ${co('primary')}importa</span> ou não?`,
+      'Em uma turma de $10$ alunos, escolhem-se um presidente e um vice; em outra, escolhem-se dois representantes. Os dois casos têm a mesma quantidade de possibilidades?',
+      'escola', [['arranjo'], ['combinação', 'growth'], ['diferença', 'decay']],
+      ['Em alguns problemas a ordem muda o resultado (presidente e vice); em outros não (dois representantes).', ['O valor de $5 · 4$ é:', ['$9$', '$20$', '$1$', '$54$'], 1, '$5 · 4 = 20$.'], 'Escolher “João e Maria” é igual a “Maria e João” numa comissão? E num pódio?'],
+      ['<strong>Diferenciar</strong> arranjo (ordem importa) de combinação (ordem não importa).', '<strong>Calcular</strong> $A_{n,p}$ e $C_{n,p}$.', '<strong>Resolver</strong> problemas de escolha.'],
+      'Pergunte sempre: <strong>trocar a ordem gera outra possibilidade?</strong> Sim → arranjo; não → combinação.',
+      [['Arranjo', ['Escolher $p$ de $n$ elementos <strong>importando a ordem</strong>: $A_{n,p} = {n!|(n - p)!}$.', 'Presidente e vice entre $10$: $A_{10,2} = 10 · 9 = 90$.', 'Pódio com $3$ de $8$ atletas: $8 · 7 · 6 = 336$.'],
+        fig('escola', 'Ilustração original: sala de aula.', '280px')],
+       ['Combinação', ['Escolher $p$ de $n$ <strong>sem importar a ordem</strong>: $C_{n,p} = {n!|p!(n - p)!}$.', 'Dois representantes entre $10$: $C_{10,2} = {90|2} = 45$.', 'Combinação = arranjo ÷ $p!$.'],
+        tbl(['Tipo', 'Fórmula', 'Exemplo'], [['arranjo', '${n!|(n - p)!}$', '$A_{5,2} = 20$'], ['combinação', '${n!|p!(n - p)!}$', '$C_{5,2} = 10$']])],
+       ['Como decidir', ['Fila, senha, pódio, cargos: a ordem importa (arranjo).', 'Comissão, time, cartas de uma mão: a ordem não importa (combinação).', 'Propriedade útil: $C_{n,p} = C_{n,n-p}$.'],
+        callout('Dica', 'Sorteio de uma comissão de $3$ entre $8$: $C_{8,3} = {8 · 7 · 6|6} = 56$.', 'primary')]],
+      [['Arranjo', 'Quantas senhas de $3$ letras diferentes podem ser formadas com $A, B, C, D, E$?', [['Ordem importa', 'Arranjo de $5$ em $3$.'], ['Calcule', '$5 · 4 · 3 = 60$.']], '$60$'],
+       ['Combinação', 'De quantas maneiras escolhemos $3$ pessoas de um grupo de $6$?', [['Ordem não importa', '$C_{6,3} = {6!|3! · 3!}$.'], ['Calcule', '${720|36} = 20$.']], '$20$']],
+      ['Presidente e vice × representantes', 'Compare as possibilidades de escolher presidente e vice com a de escolher dois representantes entre $10$ alunos.', ['No primeiro, a ordem importa.', '$A_{10,2} = 90$.', 'No segundo, $C_{10,2}$.'], 'Presidente e vice: $90$; dois representantes: $45$ (metade, pois a ordem não importa).'],
+      [['O valor de $C_{5,2}$ é:', ['$5$', '$10$', '$20$', '$25$'], 1, '${5 · 4|2}$.'],
+       ['O valor de $A_{4,2}$ é:', ['$6$', '$8$', '$12$', '$16$'], 2, '$4 · 3$.'],
+       ['Escolher uma comissão de $2$ entre $7$ pessoas: quantas maneiras?', ['$14$', '$21$', '$42$', '$49$'], 1, '$C_{7,2} = 21$.'],
+       ['Qual situação é uma combinação?', ['pódio de corrida', 'senha de banco', 'escolha de um time', 'fila de banco'], 2, 'Time: a ordem não importa.']],
+      [[['Arranjo', 'Ordem importa.'], ['Combinação', 'Ordem não importa.'], ['Relação', '$C_{n,p} = {A_{n,p}|p!}$.']], 'Por que a combinação é menor que o arranjo?', 'Voltando à turma: $90$ para presidente e vice, $45$ para dois representantes.'],
+      [['O valor de $C_{4,2}$ é:', ['$4$', '$6$', '$8$', '$12$'], 1], ['O valor de $A_{5,3}$ é:', ['$10$', '$30$', '$60$', '$120$'], 2], ['$C_{6,1}$ vale:', ['$1$', '$6$', '$36$', '$720$'], 1]])
+  ]
+});

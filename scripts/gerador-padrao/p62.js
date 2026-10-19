@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 3º trimestre · Financiamentos SAC e Price (base: "Matemática Essencial · Financeira" e slides de juros do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 3, destino: 'mat-3ano-3tri', pasta: 'aulas/3-ano/3-tri/financiamentos-sac-e-price/', titulo: 'Financiamentos: SAC e Price', accent: 'warm', icon: 'coin', key: 'm3p62', area: 'Matemática · 3ª série',
+  aulas: [
+    A('financiamento-sac', 'Financiamento pelo sistema SAC',
+      `Parcelas que ${co('primary')}diminuem</span> a cada mês`,
+      'Você financia R&#36; 12&nbsp;000 em $4$ parcelas mensais, com juros de $2%$ ao mês sobre o saldo devedor. No sistema SAC, quanto paga em cada parcela?',
+      'dinheiro', [['amortização'], ['juros sobre o saldo', 'growth'], ['SAC', 'decay']],
+      ['Em um financiamento cada parcela paga uma parte da dívida (amortização) e os juros do período.', ['O valor de $2%$ de R&#36; 1&nbsp;000 é:', ['R&#36; 2', 'R&#36; 20', 'R&#36; 200', 'R&#36; 0,2'], 1, '$0,02 · 1 000$.'], 'Quanto você paga de juros num mês sobre uma dívida de R&#36; 500 a $2%$?'],
+      ['<strong>Entender</strong> saldo devedor, amortização, juros e parcela.', '<strong>Montar</strong> a tabela do sistema SAC.', '<strong>Calcular</strong> o total pago.'],
+      'Parcela = amortização + juros. No SAC a amortização é <strong>constante</strong>.',
+      [['Termos', ['<strong>Saldo devedor</strong>: o que ainda se deve. <strong>Amortização</strong>: parte da parcela que abate a dívida.', '<strong>Juros</strong> do mês = taxa × saldo devedor do mês anterior.', '<strong>Parcela</strong> = amortização + juros.'],
+        fig('dinheiro', 'Ilustração original: dinheiro.', '280px')],
+       ['O sistema SAC', ['<strong>SAC</strong> (Sistema de Amortização Constante): a amortização é igual em todas as parcelas.', 'R&#36; 12 000 em $4$ parcelas: amortização de R&#36; 3 000 por mês.', 'Os juros caem a cada mês, então as parcelas <strong>diminuem</strong>.'],
+        tbl(['Mês', 'Saldo', 'Juros', 'Parcela'], [['1', '12 000', '240', '3 240'], ['2', '9 000', '180', '3 180'], ['3', '6 000', '120', '3 120'], ['4', '3 000', '60', '3 060']])],
+       ['Total pago', ['Some as parcelas: $3 240 + 3 180 + 3 120 + 3 060 = 12 600$.', 'Juros totais: $12 600 - 12 000 = 600$.', 'No SAC os juros formam uma P.A. decrescente de razão $-60$.'],
+        callout('Atenção', 'A primeira parcela do SAC é a maior; é preciso caber no orçamento.', 'decay')]],
+      [['Primeira parcela', 'No SAC, qual a 1ª parcela de um financiamento de R&#36; 6 000 em $3$ meses a $1%$ ao mês?', [['Amortização', '$6 000 ÷ 3 = 2 000$.'], ['Juros do 1º mês', '$1% · 6 000 = 60$.'], ['Parcela', '$2 000 + 60 = 2 060$.']], 'R&#36; 2 060'],
+       ['Saldo', 'Qual o saldo devedor após pagar a 1ª amortização de R&#36; 2 000?', [['$6 000 - 2 000$', '$4 000$.']], 'R&#36; 4 000']],
+      ['As parcelas', 'Monte as 4 parcelas do SAC para R&#36; 12 000 a $2%$ ao mês.', ['Amortização constante de $3 000$.', 'Juros = $2%$ do saldo anterior.', 'Parcela = amortização + juros.'], 'R&#36; 3 240, 3 180, 3 120 e 3 060; total pago R&#36; 12 600.'],
+      [['No SAC, a amortização é:', ['crescente', 'constante', 'decrescente', 'nula'], 1, 'Constante.'],
+       ['No SAC, as parcelas ao longo do tempo:', ['aumentam', 'diminuem', 'são iguais', 'dobram'], 1, 'Juros caem.'],
+       ['Parcela = amortização +', ['saldo', 'juros', 'taxa', 'prazo'], 1, 'Mais os juros.'],
+       ['Um saldo de R&#36; 4&nbsp;000 a $3%$ ao mês gera juros de:', ['R&#36; 12', 'R&#36; 120', 'R&#36; 1&nbsp;200', 'R&#36; 40'], 1, '$0,03 · 4 000$.']],
+      [[['Amortização', 'Abate a dívida.'], ['Juros', 'Taxa × saldo anterior.'], ['SAC', 'Amortização constante.']], 'Por que as parcelas do SAC diminuem?', 'Voltando ao financiamento: 3 240, 3 180, 3 120 e 3 060.'],
+      [['A amortização no SAC de R&#36; 8 000 em 4 meses é:', ['R&#36; 1&nbsp;000', 'R&#36; 2&nbsp;000', 'R&#36; 4&nbsp;000', 'R&#36; 8&nbsp;000'], 1], ['Com saldo R&#36; 500 a $2%$, os juros são:', ['R&#36; 1', 'R&#36; 10', 'R&#36; 100', 'R&#36; 5'], 1], ['O total de juros é o total pago menos:', ['o saldo', 'o valor financiado', 'a taxa', 'a parcela'], 1]]),
+
+    A('financiamento-price-e-comparacao', 'Financiamento pela Tabela Price e comparação',
+      `Parcelas ${co('primary')}iguais</span> o tempo todo`,
+      'No mesmo financiamento de R&#36; 12&nbsp;000, a Tabela Price mantém a parcela fixa. Qual o valor dela e quanto se paga a mais de juros que no SAC?',
+      'calculadora', [['Price'], ['parcela fixa', 'growth'], ['comparação', 'decay']],
+      ['Na Tabela Price a parcela é constante: no início paga-se mais juros e amortiza-se menos.', ['O valor de $1,02^2$ é:', ['$1,02$', '$1,04$', '$1,0404$', '$2,04$'], 2, '$1,02 · 1,02$.'], 'Qual você prefere: parcelas fixas ou que diminuem?'],
+      ['<strong>Entender</strong> a parcela fixa da Tabela Price.', '<strong>Usar</strong> a fórmula $PMT = {PV · i|1 - (1 + i)^{-n}}$.', '<strong>Comparar</strong> SAC e Price.'],
+      'Price: parcela constante; os juros diminuem e a amortização aumenta a cada mês.',
+      [['Parcela fixa', ['$PMT = PV · {i|1 - (1 + i)^{-n}}$, com $PV$ o valor financiado.', 'Para R&#36; 12 000, $i = 2%$, $n = 4$: $PMT ≈ 3 151,49$.', 'Cada parcela = juros do mês + amortização (que cresce).'],
+        fig('calculadora', 'Ilustração original: calculadora.', '280px')],
+       ['A tabela', ['Mês 1: juros $240$; amortização $2 911,49$; saldo cai para $9 088,51$.', 'Mês 2: juros $181,77$; amortização $2 969,71$.', 'Total pago: $4 · 3 151,49 ≈ 12 605,94$.'],
+        tbl(['Mês', 'Juros', 'Amortização', 'Parcela'], [['1', '240,00', '2 911,49', '3 151,49'], ['2', '181,77', '2 969,71', '3 151,49'], ['3', '122,38', '3 029,11', '3 151,49'], ['4', '61,79', '3 089,69', '3 151,49']])],
+       ['SAC × Price', ['SAC: 1ª parcela maior, total de juros menor ($600$).', 'Price: parcela fixa, total de juros um pouco maior ($605,94$).', 'A escolha depende do orçamento mensal e do custo total.'],
+        callout('Dica', 'Compare sempre o <strong>custo total</strong>, não só a parcela.', 'primary')]],
+      [['Juros do mês', 'Na Price, quanto são os juros do 2º mês sabendo que o saldo após o 1º é R&#36; 9 088,51 a $2%$?', [['$0,02 · 9 088,51$', '$181,77$.']], 'R&#36; 181,77'],
+       ['Comparando', 'Qual sistema tem total de juros menor no exemplo: SAC ou Price?', [['SAC', '$600$.'], ['Price', '$605,94$.']], 'SAC (R&#36; 600 contra R&#36; 605,94)']],
+      ['A escolha', 'Sua renda permite pagar no máximo R&#36; 3 200 por mês. SAC (1ª parcela R&#36; 3 240) ou Price (R&#36; 3 151,49)?', ['Compare as primeiras parcelas com $3 200$.', 'Quem cabe no orçamento?', 'Considere o custo total.'], 'Só a Price cabe desde o 1º mês (3 151,49); o SAC custa menos no total, mas começa acima de R&#36; 3 200.'],
+      [['Na Tabela Price, as parcelas são:', ['decrescentes', 'crescentes', 'constantes', 'aleatórias'], 2, 'Parcela fixa.'],
+       ['Na Price, ao longo do tempo a amortização:', ['diminui', 'aumenta', 'é constante', 'é zero'], 1, 'Juros caem, amortização sobe.'],
+       ['Entre SAC e Price, qual costuma ter 1ª parcela maior?', ['SAC', 'Price', 'iguais', 'depende do banco'], 0, 'SAC amortiza mais no início.'],
+       ['Para comparar financiamentos, o mais importante é olhar:', ['só a 1ª parcela', 'o custo total e o orçamento', 'o nome do sistema', 'a cor do contrato'], 1, 'Custo total e fluxo de caixa.']],
+      [[['Price', 'Parcela fixa.'], ['SAC', 'Amortização constante.'], ['Comparar', 'Custo total e orçamento.']], 'Por que a amortização cresce na Price?', 'Voltando ao financiamento: Price tem parcela de R&#36; 3 151,49.'],
+      [['A Tabela Price tem parcelas:', ['fixas', 'decrescentes', 'crescentes', 'sem juros'], 0], ['Juros de R&#36; 6 000 a $1%$ ao mês:', ['R&#36; 6', 'R&#36; 60', 'R&#36; 600', 'R&#36; 0,6'], 1], ['No SAC o total de juros costuma ser:', ['maior que na Price', 'menor que na Price', 'sempre zero', 'infinito'], 1]])
+  ]
+});

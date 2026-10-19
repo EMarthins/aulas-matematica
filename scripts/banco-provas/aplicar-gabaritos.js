@@ -16,8 +16,15 @@ const cont = { letra: 0, aberta: 0, excluida: 0, resolucao: 0, ausentes: [] };
 for (const l of ler(/^gab.*\.txt$/)) {
   const [id, letra] = l.trim().split(/\s+/); const q = por[id];
   if (!q) { cont.ausentes.push(id); continue; }
-  if (q.tipo !== 'mc' || !q.alternativas) { cont.ausentes.push(id + ' (não é mc)'); continue; }
-  const i = 'ABCDE'.indexOf(letra); if (i < 0 || i >= q.alternativas.length) { cont.ausentes.push(id + ' letra ' + letra); continue; }
+  const i = 'ABCDE'.indexOf(letra);
+  if (q.tipo !== 'mc' || !q.alternativas) {
+    // lista em que as alternativas vinham como (A)…(E) e o recorte foi tratado como aberta: vira múltipla escolha com as letras achadas no texto do recorte
+    const achadas = [...String(q.busca || '').matchAll(/(?:^|\s)\(?([a-eA-E])[).]\s/g)].map(m => 'ABCDE'.indexOf(m[1].toUpperCase()));
+    const n = Math.max(i + 1, achadas.length ? Math.max(...achadas) + 1 : 5);
+    if (i < 0 || q.tipo === 'vf' || q.tipo === 'soma') { cont.ausentes.push(id + ' (não é mc)'); continue; }
+    q.tipo = 'mc'; q.alternativas = Array.from({ length: n }, (_, k) => ({ t: 'ABCDE'[k], ok: false })); delete q.resposta; delete q.gabarito;
+  }
+  if (i < 0 || i >= q.alternativas.length) { cont.ausentes.push(id + ' letra ' + letra); continue; }
   q.alternativas.forEach((a, k) => { a.ok = k === i; }); delete q.semGabarito; cont.letra++;
 }
 for (const l of ler(/^abertas.*\.txt$/)) {

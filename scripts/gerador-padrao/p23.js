@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 2º trimestre · Frações (base: slides "Frações" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 2, pasta: 'aulas/6-ano/2-tri/fracoes/', titulo: 'Frações', accent: 'decay', icon: 'pie', key: 'm6p23', area: 'Matemática · 6º ano',
+  aulas: [
+    A('fracao-parte-de-um-todo-e-equivalencia', 'Fração: parte de um todo e frações equivalentes',
+      `Dividir o ${co('primary')}todo</span> em partes iguais`,
+      'Uma pizza foi cortada em $8$ pedaços iguais e você comeu $3$. Que fração da pizza você comeu? E se ela tivesse sido cortada em $16$ pedaços?',
+      'pizza', [['fração'], ['numerador e denominador', 'growth'], ['equivalência', 'decay']],
+      ['Dividir em partes iguais faz parte do dia a dia: pizza, chocolate, folha de papel.', ['Dividir uma barra em $4$ partes iguais e pegar $1$ parte é pegar:', ['${1|4}$ da barra', '${4|1}$ da barra', '${1|5}$ da barra', '${3|4}$ da barra'], 0, 'Uma parte de quatro: ${1|4}$.'], 'Desenhe um retângulo e pinte ${3|4}$ dele.'],
+      ['<strong>Ler e escrever</strong> frações usando numerador e denominador.', '<strong>Representar</strong> uma fração como parte de um todo dividido em partes iguais.', 'Reconhecer e obter <strong>frações equivalentes</strong>.'],
+      'As partes precisam ser <strong>iguais</strong>: só assim a fração representa a quantidade.',
+      [['Numerador e denominador', ['O <strong>denominador</strong> diz em quantas partes iguais o todo foi dividido.', 'O <strong>numerador</strong> diz quantas dessas partes foram tomadas.', 'Em ${3|8}$: $3$ partes de $8$ (lê-se “três oitavos”).'],
+        fig('pizza', 'Ilustração original: pizza dividida em 8 fatias iguais.', '300px')],
+       ['Frações equivalentes', ['Frações diferentes podem representar a <strong>mesma quantidade</strong>: ${1|2} = {2|4} = {4|8}$.', 'Para obter uma fração equivalente, <strong>multiplique ou divida</strong> numerador e denominador pelo <strong>mesmo número</strong> (diferente de zero).'],
+        tbl(['Fração', '× 2', '× 3'], [['${1|2}$', '${2|4}$', '${3|6}$'], ['${2|3}$', '${4|6}$', '${6|9}$']])],
+       ['Fração própria, imprópria e número misto', ['<strong>Própria</strong>: numerador menor que o denominador (${3|4}$): vale menos que um inteiro.', '<strong>Imprópria</strong>: numerador maior ou igual ao denominador (${7|4}$): vale um inteiro ou mais.', '${7|4}$ é o mesmo que <strong>1 inteiro e ${3|4}$</strong> (número misto).'],
+        tbl(['Tipo', 'Exemplo'], [['própria', '${3|4}$'], ['imprópria', '${7|4}$'], ['mista', '1 inteiro e ${3|4}$']])]],
+      [['Que fração foi pintada?', 'Um retângulo foi dividido em $10$ partes iguais e $7$ foram pintadas. Que fração foi pintada?', [['Total de partes iguais', '$10$: denominador.'], ['Partes pintadas', '$7$: numerador.']], '${7|10}$'],
+       ['Frações equivalentes a ${2|3}$', 'Escreva duas frações equivalentes a ${2|3}$.', [['Multiplique por $2$', '${2 · 2|3 · 2} = {4|6}$.'], ['Multiplique por $5$', '${2 · 5|3 · 5} = {10|15}$.']], '${4|6}$ e ${10|15}$']],
+      ['Equivalente a ${3|5}$', 'Encontre a fração equivalente a ${3|5}$ que tenha denominador $20$.', ['Por qual número se multiplica $5$ para chegar a $20$?', 'Multiplique <strong>também</strong> o numerador por esse número.', '$3 · 4 = ?$'], '$5 · 4 = 20$; então $3 · 4 = 12$. A fração é ${12|20}$.'],
+      [['Em ${3|8}$, o denominador é:', ['$3$', '$8$', '$5$', '$24$'], 1, 'O denominador é o número de baixo: $8$.'],
+       ['Uma pizza tem $12$ fatias iguais e Ana comeu $5$. A fração que ela comeu é:', ['${5|12}$', '${12|5}$', '${7|12}$', '${5|7}$'], 0, '$5$ fatias de $12$.'],
+       ['Qual fração é equivalente a ${1|2}$?', ['${2|3}$', '${3|6}$', '${2|5}$', '${1|4}$'], 1, '${1 · 3|2 · 3} = {3|6}$.'],
+       ['Qual destas é uma fração imprópria?', ['${3|5}$', '${2|7}$', '${9|4}$', '${1|8}$'], 2, 'O numerador $9$ é maior que o denominador $4$.']],
+      [[['Fração', 'Numerador: partes tomadas. Denominador: partes iguais do todo.'], ['Equivalentes', 'Multiplicar ou dividir os dois termos pelo mesmo número.'], ['Tipos', 'Própria, imprópria e número misto.']], 'Por que as partes do todo precisam ser iguais?', 'Voltando à pizza: ${3|8}$ de $8$ fatias; se ela fosse cortada em $16$, a mesma quantidade seria ${6|16}$.'],
+      [['Em ${5|9}$, o numerador é:', ['$9$', '$5$', '$4$', '$14$'], 1], ['Qual fração é equivalente a ${2|5}$?', ['${4|10}$', '${4|5}$', '${2|10}$', '${5|2}$'], 0], ['Pintar $3$ de $4$ partes iguais representa:', ['${4|3}$', '${3|4}$', '${1|4}$', '${3|7}$'], 1]]),
+
+    A('comparacao-e-simplificacao-de-fracoes', 'Comparação e simplificação de frações',
+      `Qual é ${co('primary')}maior</span>?`,
+      'Qual fatia é maior: ${1|3}$ de uma pizza ou ${3|8}$ da mesma pizza?',
+      'pizza', [['comparar frações'], ['denominador comum', 'growth'], ['irredutível', 'decay']],
+      ['Já sabemos que frações equivalentes valem o mesmo. Vamos usar isso para comparar e simplificar.', ['A fração ${2|4}$ é equivalente a:', ['${1|2}$', '${1|4}$', '${3|4}$', '${2|3}$'], 0, '${2|4} = {1|2}$ (dividindo por $2$).'], 'Compare ${1|2}$ e ${1|3}$ desenhando duas barras iguais.'],
+      ['<strong>Comparar</strong> frações com denominadores iguais, numeradores iguais e quaisquer.', 'Reduzir frações a um <strong>denominador comum</strong> usando o MMC.', '<strong>Simplificar</strong> até a fração irredutível.'],
+      'Para comparar frações com denominadores diferentes, deixe-as <strong>com o mesmo denominador</strong>.',
+      [['Mesmo denominador ou mesmo numerador', ['Mesmo denominador: <strong>maior numerador</strong>, maior fração (${5|8} > {3|8}$).', 'Mesmo numerador: <strong>menor denominador</strong>, maior fração (${3|4} > {3|5}$): as partes são maiores.'],
+        tbl(['Caso', 'Exemplo', 'Maior'], [['denominador igual', '${5|8}$ e ${3|8}$', '${5|8}$'], ['numerador igual', '${3|4}$ e ${3|5}$', '${3|4}$']])],
+       ['Denominadores diferentes', ['Calcule o MMC dos denominadores e escreva frações equivalentes com esse denominador.', 'Compare os numeradores.', 'Exemplo: ${1|3}$ e ${3|8}$: $mmc(3, 8) = 24$; ${8|24}$ e ${9|24}$, então ${3|8}$ é maior.'],
+        callout('Resumo', 'Mesmo denominador ⇒ compare os numeradores.', 'primary')],
+       ['Simplificação', ['Simplificar é <strong>dividir numerador e denominador</strong> por um fator comum.', 'A fração é <strong>irredutível</strong> quando o MDC dos dois termos é $1$.', 'Exemplo: ${12|18} = {6|9} = {2|3}$ (ou direto: ${12 ÷ 6|18 ÷ 6} = {2|3}$).'],
+        tbl(['Fração', 'MDC', 'Irredutível'], [['${12|18}$', '$6$', '${2|3}$'], ['${10|25}$', '$5$', '${2|5}$']])]],
+      [['Qual fatia é maior?', 'Compare ${1|3}$ e ${3|8}$.', [['MMC dos denominadores', '$mmc(3, 8) = 24$.'], ['Frações equivalentes', '${1|3} = {8|24}$ e ${3|8} = {9|24}$.'], ['Compare os numeradores', '$9 > 8$.']], '${3|8}$ é maior que ${1|3}$.'],
+       ['Simplificar ${24|36}$', 'Escreva ${24|36}$ na forma irredutível.', [['MDC de $24$ e $36$', '$12$.'], ['Divida os dois termos por $12$', '${24 ÷ 12|36 ÷ 12}$.']], '${2|3}$']],
+      ['Compare ${2|5}$ e ${3|10}$', 'Qual fração é maior: ${2|5}$ ou ${3|10}$?', ['Qual o MMC de $5$ e $10$?', 'Transforme ${2|5}$ em uma fração de denominador $10$.', 'Compare os numeradores.'], '${2|5} = {4|10}$ e $4 > 3$. Logo ${2|5}$ é maior que ${3|10}$.'],
+      [['Qual é a maior fração?', ['${3|7}$', '${5|7}$', '${2|7}$', '${1|7}$'], 1, 'Mesmo denominador: maior numerador.'],
+       ['Qual é maior: ${1|2}$ ou ${3|8}$?', ['${1|2}$', '${3|8}$', 'são iguais', 'não dá para comparar'], 0, '${1|2} = {4|8}$ e $4 > 3$.'],
+       ['A forma irredutível de ${18|24}$ é:', ['${9|12}$', '${6|8}$', '${3|4}$', '${2|3}$'], 2, '$mdc(18, 24) = 6$: ${3|4}$.'],
+       ['Em ordem crescente, ${1|2}$, ${1|3}$ e ${1|4}$ ficam:', ['${1|4}, {1|3}, {1|2}$', '${1|2}, {1|3}, {1|4}$', '${1|3}, {1|4}, {1|2}$', '${1|4}, {1|2}, {1|3}$'], 0, 'Mesmo numerador: quanto maior o denominador, menor a fração.']],
+      [[['Mesmo denominador', 'Maior numerador, maior fração.'], ['Denominadores diferentes', 'Denominador comum (MMC) e depois os numeradores.'], ['Simplificar', 'Dividir os dois termos pelo MDC até a fração irredutível.']], 'Por que ${1|8}$ é menor que ${1|5}$, embora $8 > 5$?', 'Voltando à pizza: ${3|8} = {9|24}$ é maior que ${1|3} = {8|24}$.'],
+      [['Qual é a menor fração?', ['${2|3}$', '${3|4}$', '${1|2}$', '${5|6}$'], 2], ['Simplificando ${10|15}$ obtém-se:', ['${2|3}$', '${5|3}$', '${1|3}$', '${5|7}$'], 0], ['Qual é maior?', ['${3|4}$', '${2|3}$', 'são iguais', 'não dá para saber'], 0]])
+  ]
+});

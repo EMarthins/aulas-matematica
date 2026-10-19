@@ -1,0 +1,53 @@
+// Matemática · 6º ano · 3º trimestre · Geometria: ponto, reta, plano e ângulos (base: slides "Geometria" e "Medidas de ângulos" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '6° Ano', tri: 3, pasta: 'aulas/6-ano/3-tri/geometria-e-angulos/', titulo: 'Ponto, reta, plano e ângulos', accent: 'growth', icon: 'triangle', key: 'm6p29', area: 'Matemática · 6º ano',
+  aulas: [
+    A('ponto-reta-e-plano', 'Ponto, reta e plano',
+      `As ${co('primary')}ideias</span> que começam a geometria`,
+      'Como o GPS identifica uma esquina (um ponto), uma rua (uma linha) e um bairro (uma região)? Que ideias geométricas aparecem em um mapa?',
+      'mapa', [['ponto'], ['reta, semirreta e segmento', 'growth'], ['paralelas e concorrentes', 'decay']],
+      ['Geometria é a parte da Matemática que estuda formas, posições e medidas. Tudo começa com três ideias simples.', ['A marca que uma ponta de lápis deixa no papel lembra:', ['uma reta', 'um ponto', 'um plano', 'um ângulo'], 1, 'Um ponto, que não tem tamanho.'], 'Quantas retas você consegue desenhar passando por um mesmo ponto?'],
+      ['Reconhecer <strong>ponto, reta e plano</strong> e distinguir <strong>reta, semirreta e segmento</strong>.', 'Classificar <strong>posições relativas</strong> de duas retas (paralelas, concorrentes, perpendiculares).', 'Representar figuras com a <strong>notação</strong> usual.'],
+      'Pontos têm nomes com <strong>letras maiúsculas</strong>; retas, com <strong>letras minúsculas</strong>.',
+      [['Ponto, reta e plano', ['<strong>Ponto</strong>: não tem dimensão; nomeia-se com letra maiúscula ($A$, $B$).', '<strong>Reta</strong>: infinita nos dois sentidos; por dois pontos passa uma única reta.', '<strong>Plano</strong>: superfície ilimitada e plana, como uma folha que se estende para todos os lados.'],
+        fig('mapa', 'Ilustração original: mapa com pontos e ruas.', '320px')],
+       ['Reta, semirreta e segmento', ['<strong>Reta</strong>: sem começo nem fim.', '<strong>Semirreta</strong>: tem começo (origem) e não tem fim.', '<strong>Segmento</strong>: tem começo e fim; tem medida (comprimento).'],
+        tbl(['Figura', 'Origem', 'Fim', 'Mede?'], [['reta', 'não', 'não', 'não'], ['semirreta', 'sim', 'não', 'não'], ['segmento', 'sim', 'sim', 'sim']])],
+       ['Posições de duas retas', ['<strong>Paralelas</strong>: nunca se cruzam (mesma direção).', '<strong>Concorrentes</strong>: se cruzam em um ponto.', '<strong>Perpendiculares</strong>: concorrentes que formam ângulos retos ($90°$).'],
+        callout('Exemplo', 'As linhas de um caderno são paralelas; a margem é perpendicular a elas.', 'primary')]],
+      [['Classificando figuras', 'Uma linha reta que começa em $A$ e passa por $B$ sem terminar é uma reta, uma semirreta ou um segmento?', [['Tem começo?', 'Sim, em $A$.'], ['Tem fim?', 'Não: continua depois de $B$.']], 'Uma <strong>semirreta</strong>'],
+       ['Posição de duas retas', 'Duas ruas se cruzam formando ângulos de $90°$. Como são as retas que as representam?', [['Elas se cruzam?', 'Sim: concorrentes.'], ['O ângulo é reto?', 'Sim: perpendiculares.']], 'Retas <strong>perpendiculares</strong> (um caso de concorrentes)']],
+      ['Quantas retas?', 'Quantas retas passam por dois pontos diferentes $A$ e $B$?', ['Pense em esticar um fio entre dois pregos.', 'Existe mais de um jeito de esticá-lo?', 'Resposta única?'], 'Passa <strong>uma única</strong> reta pelos pontos $A$ e $B$.'],
+      [['Um ponto tem:', ['comprimento', 'largura', 'altura', 'nenhuma dimensão'], 3, 'Ponto é uma ideia sem dimensões.'],
+       ['Quantas retas passam por dois pontos distintos?', ['nenhuma', 'uma', 'duas', 'infinitas'], 1, 'Por dois pontos passa uma única reta.'],
+       ['Qual figura tem começo e fim e pode ser medida?', ['reta', 'semirreta', 'segmento', 'plano'], 2, 'O segmento tem extremidades.'],
+       ['As retas que se cruzam formando ângulos retos são:', ['paralelas', 'perpendiculares', 'reversas', 'coincidentes'], 1, 'Perpendiculares.']],
+      [[['Ideias básicas', 'Ponto, reta e plano.'], ['Retas', 'Reta (infinita), semirreta (uma origem) e segmento (mede).'], ['Posições', 'Paralelas, concorrentes e perpendiculares.']], 'Dê um exemplo do dia a dia de duas retas paralelas e um de perpendiculares.', 'Voltando ao mapa: esquinas são pontos, ruas são retas (ou segmentos) e o bairro é uma região do plano.'],
+      [['Uma semirreta tem:', ['dois extremos', 'um extremo apenas', 'nenhum extremo', 'medida'], 1], ['Retas paralelas:', ['se cruzam em um ponto', 'nunca se cruzam', 'formam $90°$', 'são iguais'], 1], ['Quantos extremos tem um segmento?', ['$0$', '$1$', '$2$', '$3$'], 2]]),
+
+    A('angulos-e-sua-medida', 'Ângulos e sua medida',
+      `Quanto ${co('primary')}abriu</span> o ponteiro?`,
+      'Qual é o ângulo entre os ponteiros do relógio às $3$ horas? E às $6$ horas?',
+      'relogio', [['ângulo'], ['grau', 'growth'], ['complementares e suplementares', 'decay']],
+      ['Quando duas semirretas partem do mesmo ponto, elas formam um ângulo: ele mede a “abertura”.', ['Uma volta completa tem quantos graus?', ['$90°$', '$180°$', '$360°$', '$100°$'], 2, 'Uma volta tem $360°$.'], 'Que ângulo forma uma porta aberta pela metade?'],
+      ['<strong>Medir</strong> ângulos em graus e <strong>classificá-los</strong> (agudo, reto, obtuso, raso).', 'Reconhecer ângulos <strong>complementares</strong> e <strong>suplementares</strong>.', 'Calcular o <strong>complemento</strong> e o <strong>suplemento</strong> de um ângulo.'],
+      'O ângulo é medido em <strong>graus</strong> com o <strong>transferidor</strong>.',
+      [['Medida e classificação', ['O ângulo se mede em <strong>graus</strong> ($°$) com o transferidor.', '<strong>Agudo</strong>: menor que $90°$. <strong>Reto</strong>: $90°$. <strong>Obtuso</strong>: entre $90°$ e $180°$. <strong>Raso</strong>: $180°$.', 'Uma volta completa: $360°$.'],
+        tbl(['Tipo', 'Medida'], [['agudo', 'menor que $90°$'], ['reto', '$90°$'], ['obtuso', 'entre $90°$ e $180°$'], ['raso', '$180°$']])],
+       ['Complementares e suplementares', ['<strong>Complementares</strong>: somam $90°$.', '<strong>Suplementares</strong>: somam $180°$.', 'O complemento de $35°$ é $55°$; o suplemento de $110°$ é $70°$.'],
+        callout('Memorize', 'Complemento: $90° - x$. Suplemento: $180° - x$.', 'primary')],
+       ['Ângulos no relógio', ['De uma hora a outra o ponteiro das horas avança $30°$ ($360° ÷ 12$).', 'Às $3$ horas, os ponteiros formam $90°$ (ângulo reto).', 'Às $6$ horas, formam $180°$ (ângulo raso).'],
+        fig('relogio', 'Ilustração original: relógio com os ponteiros.', '260px')]],
+      [['Complemento', 'Qual é o complemento de $35°$?', [['Complementares somam $90°$', '$90° - 35°$.']], '$55°$'],
+       ['Suplemento', 'Qual é o suplemento de $110°$?', [['Suplementares somam $180°$', '$180° - 110°$.']], '$70°$']],
+      ['O relógio às 3h', 'Que ângulo formam os ponteiros às $3$ horas e como ele se classifica?', ['Quantos graus separam duas horas seguidas?', 'Quantas horas separam o $12$ do $3$?', 'Multiplique e classifique.'], '$3 · 30° = 90°$: ângulo <strong>reto</strong>.'],
+      [['Um ângulo de $120°$ é:', ['agudo', 'reto', 'obtuso', 'raso'], 2, 'Entre $90°$ e $180°$: obtuso.'],
+       ['O complemento de $40°$ é:', ['$50°$', '$140°$', '$130°$', '$60°$'], 0, '$90° - 40° = 50°$.'],
+       ['O suplemento de $75°$ é:', ['$15°$', '$105°$', '$285°$', '$115°$'], 1, '$180° - 75° = 105°$.'],
+       ['Às $6$ horas, os ponteiros do relógio formam um ângulo:', ['agudo', 'reto', 'obtuso', 'raso'], 3, '$180°$: ângulo raso.']],
+      [[['Medida', 'Graus; uma volta tem $360°$.'], ['Classificação', 'Agudo, reto, obtuso e raso.'], ['Pares', 'Complementares somam $90°$; suplementares, $180°$.']], 'Por que o complemento de um ângulo obtuso não existe?', 'Voltando ao relógio: às $3$ h, $90°$ (reto); às $6$ h, $180°$ (raso).'],
+      [['O ângulo reto mede:', ['$45°$', '$90°$', '$180°$', '$360°$'], 1], ['O complemento de $20°$ é:', ['$160°$', '$70°$', '$110°$', '$80°$'], 1], ['O suplemento de $100°$ é:', ['$80°$', '$90°$', '$100°$', '$260°$'], 0]])
+  ]
+});

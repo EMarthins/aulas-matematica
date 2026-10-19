@@ -13,7 +13,8 @@ const iCapa = tplDeck.indexOf('      <!-- 0 CAPA -->');
 const iTail = tplDeck.indexOf('\n    </div>\n\n    <div class="navbar">');
 if (iCapa < 0 || iTail < 0) throw new Error('modelo de deck mudou');
 const DECK_HEAD = tplDeck.slice(0, iCapa);
-const DECK_TAIL = tplDeck.slice(iTail);
+// o modelo (aula de Educação Financeira) foi reestruturado e ganhou o <script id="padrao-js"> no fim; ele NÃO deve herdar isso (senão o JS das revelações roda 2×)
+const DECK_TAIL = tplDeck.slice(iTail).replace(/<script id="padrao-js">[\s\S]*?<\/script>\s*/, '');
 
 const iSheet = tplInfo.indexOf('<div class="sheet">');
 const iInfoScr = tplInfo.indexOf('</div>\n\n<script>', iSheet);

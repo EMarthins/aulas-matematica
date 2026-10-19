@@ -1,0 +1,53 @@
+// Matemática · 2ª série EM · 3º trimestre · Função modular (base: slides "Função modular" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '2° Ano', tri: 3, destino: 'mat-2ano-3tri', pasta: 'aulas/2-ano/3-tri/funcao-modular/', titulo: 'Função modular', accent: 'decay', icon: 'algebra', key: 'm2p60', area: 'Matemática · 2ª série',
+  aulas: [
+    A('modulo-e-funcao-modular', 'Módulo de um número e função modular',
+      `A ${co('primary')}distância</span> não tem sinal`,
+      'Um termômetro marca $-5$ °C e outro $+5$ °C: as temperaturas são diferentes, mas ambas estão a $5$ graus de zero. Como expressar “distância até o zero” com uma função?',
+      'termometro', [['módulo'], ['f(x) = |x|', 'growth'], ['gráfico em V', 'decay']],
+      ['O módulo (valor absoluto) mede a distância de um número até o zero na reta.', ['A distância de $-7$ até $0$ é:', ['$-7$', '$0$', '$7$', '$14$'], 2, 'Distância nunca é negativa.'], 'Quanto vale a distância entre $3$ e $-2$ na reta?'],
+      ['<strong>Calcular</strong> o módulo de um número e de uma expressão.', '<strong>Escrever</strong> a função modular por partes.', '<strong>Construir</strong> o gráfico de $f(x) = |x|$ e variações.'],
+      '$|x| = x$ se $x ≥ 0$ e $|x| = -x$ se $x < 0$.',
+      [['Definição', ['$|x| = x$ para $x ≥ 0$ e $|x| = -x$ para $x < 0$.', '$|5| = 5$, $|-5| = 5$, $|0| = 0$.', 'O módulo é sempre maior ou igual a zero.'],
+        fig('termometro', 'Ilustração original: termômetro.', '280px')],
+       ['Função modular', ['$f(x) = |x|$ tem gráfico em forma de V, com vértice na origem.', 'Domínio: todos os reais; imagem: $y ≥ 0$.', 'Escrita por partes: $f(x) = x$ para $x ≥ 0$ e $f(x) = -x$ para $x < 0$.'],
+        tbl(['x', '-2', '-1', '0', '1', '2'], [['$|x|$', '$2$', '$1$', '$0$', '$1$', '$2$']])],
+       ['Deslocamentos', ['$f(x) = |x - 3|$: vértice em $x = 3$ (desloca para a direita).', '$f(x) = |x| + 2$: vértice em $y = 2$ (sobe).', '$f(x) = |x - 3|$ mede a distância de $x$ até $3$.'],
+        callout('Atenção', '$|a + b| ≠ |a| + |b|$ em geral: $|3 + (-5)| = 2$, mas $3 + 5 = 8$.', 'decay')]],
+      [['Calculando módulos', 'Calcule $|3 - 8| + |-2|$.', [['$|3 - 8| = |-5|$', '$5$.'], ['$|-2|$', '$2$.']], '$7$'],
+       ['Valor da função', 'Dada $f(x) = |x - 4|$, calcule $f(1)$ e $f(9)$.', [['$f(1)$', '$|-3| = 3$.'], ['$f(9)$', '$|5| = 5$.']], '$3$ e $5$']],
+      ['A temperatura', 'Qual a distância até zero das temperaturas $-5$ °C e $+5$ °C? Escreva com módulo.', ['Use $|x|$.', '$|-5|$.', '$|5|$.'], '$|-5| = |5| = 5$: ambas a $5$ graus do zero.'],
+      [['O valor de $|-9|$ é:', ['$-9$', '$0$', '$9$', '$18$'], 2, 'Distância até zero.'],
+       ['A imagem de $f(x) = |x|$ é:', ['todos os reais', '$y ≥ 0$', '$y ≤ 0$', '$y > 0$'], 1, 'Módulo nunca é negativo.'],
+       ['O vértice de $f(x) = |x - 2|$ está em:', ['$(0, 2)$', '$(2, 0)$', '$(-2, 0)$', '$(2, 2)$'], 1, 'Zera em $x = 2$.'],
+       ['Qual afirmação é verdadeira?', ['$|a + b| = |a| + |b|$ sempre', '$|a| ≥ 0$ sempre', '$|a| < 0$ às vezes', '$|-a| = -a$ sempre'], 1, 'Módulo é não negativo.']],
+      [[['Módulo', 'Distância até zero.'], ['Gráfico', 'V com vértice na origem.'], ['Deslocamento', '$|x - a|$ move o vértice para $x = a$.']], 'Por que o gráfico de $|x|$ tem a forma de V?', 'Voltando aos termômetros: $-5$ e $5$ distam $5$ de zero.'],
+      [['O valor de $|2 - 7|$ é:', ['$-5$', '$5$', '$9$', '$14$'], 1], ['O domínio de $f(x) = |x|$ é:', ['$x ≥ 0$', '$x > 0$', 'todos os reais', '$x ≠ 0$'], 2], ['$f(x) = |x| + 3$ tem imagem:', ['$y ≥ 0$', '$y ≥ 3$', '$y ≤ 3$', '$y > 3$'], 1]]),
+
+    A('equacoes-e-inequacoes-modulares', 'Equações e inequações modulares',
+      `Resolver com ${co('primary')}distâncias</span>`,
+      'Uma peça deve medir $10$ cm, com tolerância de $0,2$ cm para mais ou para menos. Como escrever essa condição com módulo e quais medidas são aceitas?',
+      'regua', [['equação'], ['inequação', 'growth'], ['tolerância', 'decay']],
+      ['O módulo transforma problemas de “afastamento” em equações e inequações simples.', ['Os valores de $x$ com $|x| = 3$ são:', ['somente $3$', 'somente $-3$', '$3$ e $-3$', 'nenhum'], 2, 'Dois números a $3$ do zero.'], 'Quais números ficam a menos de $2$ de zero?'],
+      ['<strong>Resolver</strong> $|x| = a$ e $|x - a| = b$.', '<strong>Resolver</strong> $|x| < a$ e $|x| > a$.', '<strong>Modelar</strong> tolerâncias e erros.'],
+      '$|x| = a$ (com $a > 0$) ⇒ $x = a$ ou $x = -a$. $|x| < a$ ⇒ $-a < x < a$.',
+      [['Equações modulares', ['$|x| = a$ com $a > 0$: $x = a$ ou $x = -a$.', '$|x - 3| = 5$: $x - 3 = 5$ ou $x - 3 = -5$ ⇒ $x = 8$ ou $x = -2$.', 'Se $|x| = -2$: sem solução (módulo não é negativo).'],
+        fig('regua', 'Ilustração original: régua.', '280px')],
+       ['Inequações modulares', ['$|x| < a$: $-a < x < a$ (distância <strong>menor</strong>: fica no meio).', '$|x| > a$: $x < -a$ ou $x > a$ (distância <strong>maior</strong>: fica fora).', '$|x - 10| ≤ 0,2$: $9,8 ≤ x ≤ 10,2$.'],
+        tbl(['Condição', 'Solução'], [['$|x| < 4$', '$-4 < x < 4$'], ['$|x| > 4$', '$x < -4$ ou $x > 4$']])],
+       ['Tolerância', ['“Distância de $x$ até $10$ no máximo $0,2$” ⇒ $|x - 10| ≤ 0,2$.', 'Medidas aceitas: de $9,8$ a $10,2$ cm.', 'Muito usado em engenharia e controle de qualidade.'],
+        callout('Dica', 'Leia $|x - a| < r$ como: x está a menos de $r$ de $a$.', 'primary')]],
+      [['Equação', 'Resolva $|x - 2| = 6$.', [['Dois casos', '$x - 2 = 6$ ou $x - 2 = -6$.'], ['Resolva', '$x = 8$ ou $x = -4$.']], '$x = 8$ ou $x = -4$'],
+       ['Inequação', 'Resolva $|x| ≤ 3$.', [['Distância até zero no máximo $3$', '$-3 ≤ x ≤ 3$.']], '$-3 ≤ x ≤ 3$']],
+      ['A peça', 'Uma peça deve medir $10$ cm com tolerância de $0,2$ cm. Escreva a condição com módulo e dê o intervalo aceito.', ['Distância até $10$ no máximo $0,2$.', '$|x - 10| ≤ 0,2$.', 'Resolva a inequação.'], '$|x - 10| ≤ 0,2$ ⇒ $9,8 ≤ x ≤ 10,2$ cm.'],
+      [['As soluções de $|x| = 7$ são:', ['$7$', '$-7$', '$7$ e $-7$', 'nenhuma'], 2, 'Duas soluções.'],
+       ['A solução de $|x| < 5$ é:', ['$x < 5$', '$-5 < x < 5$', '$x > 5$ ou $x < -5$', '$x = ±5$'], 1, 'Entre $-5$ e $5$.'],
+       ['As soluções de $|x - 1| = 4$ são:', ['$5$ e $-3$', '$3$ e $-5$', '$4$ e $-4$', '$1$ e $4$'], 0, '$x - 1 = ±4$.'],
+       ['A equação $|x| = -3$ tem:', ['uma solução', 'duas soluções', 'nenhuma solução', 'infinitas soluções'], 2, 'Módulo nunca é negativo.']],
+      [[['Equação', '$|x| = a$ ⇒ $x = ±a$.'], ['Menor que', 'Entre $-a$ e $a$.'], ['Maior que', 'Fora do intervalo.']], 'Por que $|x| = -3$ não tem solução?', 'Voltando à peça: de $9,8$ a $10,2$ cm.'],
+      [['As soluções de $|x| = 1$ são:', ['$1$', '$-1$', '$1$ e $-1$', 'nenhuma'], 2], ['A solução de $|x| > 2$ é:', ['$-2 < x < 2$', '$x < -2$ ou $x > 2$', '$x > 2$', '$x = 2$'], 1], ['A solução de $|x - 3| ≤ 1$ é:', ['$2 ≤ x ≤ 4$', '$x ≤ 4$', '$x ≥ 2$', '$-1 ≤ x ≤ 1$'], 0]])
+  ]
+});

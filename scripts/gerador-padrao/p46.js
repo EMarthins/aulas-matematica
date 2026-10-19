@@ -1,0 +1,53 @@
+// Matemática · 9º ano · 1º trimestre · Equações do 2º grau (base: slides "Equações do 2º grau", "Bhaskara" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '9° Ano', tri: 1, pasta: 'aulas/9-ano/1-tri/equacoes-do-2-grau/', titulo: 'Equações do 2º grau', accent: 'primary', icon: 'algebra', key: 'm9p46', area: 'Matemática · 9º ano',
+  aulas: [
+    A('equacoes-incompletas-e-formula-de-bhaskara', 'Equações do 2º grau: incompletas e Bhaskara',
+      `Quando a incógnita ${co('primary')}aparece ao quadrado</span>`,
+      'Um terreno retangular tem $x$ de largura e $x + 3$ de comprimento, e $40$ m² de área. Quanto vale $x$?',
+      'terreno', [['2º grau'], ['incompletas', 'growth'], ['Bhaskara', 'decay']],
+      ['Já resolvemos $ax + b = 0$. Agora a incógnita aparece ao quadrado e podem existir duas soluções.', ['A solução positiva de $x^2 = 25$ é:', ['$5$', '$12,5$', '$25$', '$50$'], 0, '$5 · 5 = 25$.'], 'Quanto é $(x + 2)(x + 2)$ desenvolvido?'],
+      ['<strong>Identificar</strong> $a$, $b$ e $c$ numa equação $ax^2 + bx + c = 0$.', '<strong>Resolver</strong> equações incompletas.', '<strong>Resolver</strong> equações completas pela fórmula de Bhaskara.'],
+      'Em $ax^2 + bx + c = 0$ é obrigatório $a ≠ 0$; sem o termo em $x^2$ a equação é do 1º grau.',
+      [['Forma geral', ['<strong>Equação do 2º grau</strong>: $ax^2 + bx + c = 0$, com $a ≠ 0$.', 'Em $x^2 - 5x + 6 = 0$: $a = 1$, $b = -5$, $c = 6$.', 'Incompleta: quando $b = 0$ ou $c = 0$.'],
+        fig('terreno', 'Ilustração original: terreno retangular.', '280px')],
+       ['Equações incompletas', ['$b = 0$: $x^2 - 16 = 0$ ⇒ $x^2 = 16$ ⇒ $x = 4$ ou $x = -4$.', '$c = 0$: $x^2 - 5x = 0$ ⇒ $x(x - 5) = 0$ ⇒ $x = 0$ ou $x = 5$.', 'Um produto é zero quando um dos fatores é zero.'],
+        callout('Atenção', 'Não divida por $x$: você perde a solução $x = 0$. Fatore.', 'decay')],
+       ['Fórmula de Bhaskara', ['Discriminante: $Δ = b^2 - 4ac$.', '$x = {-b ± √Δ|2a}$.', '$Δ > 0$: duas raízes reais; $Δ = 0$: uma raiz; $Δ < 0$: nenhuma raiz real.'],
+        tbl(['Δ', 'Raízes reais'], [['positivo', 'duas, diferentes'], ['zero', 'uma (iguais)'], ['negativo', 'nenhuma']])]],
+      [['Bhaskara', 'Resolva $x^2 - 5x + 6 = 0$.', [['Coeficientes', '$a = 1$, $b = -5$, $c = 6$.'], ['Discriminante', '$Δ = 25 - 24 = 1$.'], ['Raízes', '$x = {5 ± 1|2}$: $x = 3$ ou $x = 2$.']], '$x = 3$ ou $x = 2$', 'Confira: $9 - 15 + 6 = 0$.'],
+       ['Incompleta', 'Resolva $x^2 - 9x = 0$.', [['Fatore', '$x(x - 9) = 0$.'], ['Anule cada fator', '$x = 0$ ou $x = 9$.']], '$x = 0$ ou $x = 9$']],
+      ['O terreno', 'Largura $x$, comprimento $x + 3$, área $40$ m². Ache $x$.', ['$x(x + 3) = 40$.', '$x^2 + 3x - 40 = 0$.', '$Δ = 9 + 160 = 169$.'], '$x = {-3 ± 13|2}$: $x = 5$ (a raiz $-8$ não serve). Terreno de $5$ m por $8$ m.'],
+      [['Em $2x^2 - 3x + 1 = 0$, o valor de $b$ é:', ['$2$', '$-3$', '$1$', '$3$'], 1, 'Coeficiente de $x$.'],
+       ['As raízes de $x^2 - 25 = 0$ são:', ['$5$ apenas', '$-5$ e $5$', '$25$', '$0$ e $5$'], 1, '$x^2 = 25$.'],
+       ['O discriminante de $x^2 + 2x + 1 = 0$ é:', ['$-4$', '$0$', '$4$', '$8$'], 1, '$4 - 4 = 0$.'],
+       ['A equação $x^2 + 1 = 0$ tem, nos reais:', ['duas raízes', 'uma raiz', 'nenhuma raiz', 'infinitas raízes'], 2, '$x^2 = -1$ é impossível.']],
+      [[['Forma', '$ax^2 + bx + c = 0$ com $a ≠ 0$.'], ['Incompletas', 'Isole $x^2$ ou fatore.'], ['Bhaskara', '$x = {-b ± √Δ|2a}$ com $Δ = b^2 - 4ac$.']], 'O que o sinal de Δ informa sobre as raízes?', 'Voltando ao terreno: $5$ m de largura e $8$ m de comprimento.'],
+      [['As raízes de $x^2 - 7x + 12 = 0$ são:', ['$3$ e $4$', '$2$ e $6$', '$1$ e $12$', '$-3$ e $-4$'], 0], ['As raízes de $x^2 - 4x = 0$ são:', ['$0$ e $4$', '$2$ e $-2$', '$4$', '$0$'], 0], ['O discriminante de $x^2 - 4x + 5 = 0$ é:', ['$-4$', '$4$', '$0$', '$36$'], 0]]),
+
+    A('soma-e-produto-das-raizes-e-problemas', 'Soma e produto das raízes e problemas',
+      `Um ${co('primary')}atalho</span> para as raízes`,
+      'Dois números somam $7$ e têm produto $12$. Quais são? Dá para achar sem resolver Bhaskara?',
+      'balanca', [['soma'], ['produto', 'growth'], ['problemas', 'decay']],
+      ['As raízes de uma equação do 2º grau guardam relações simples com seus coeficientes.', ['Dois números de soma $5$ e produto $6$ são:', ['$1$ e $5$', '$2$ e $3$', '$1$ e $6$', '$2$ e $4$'], 1, '$2 + 3 = 5$ e $2 · 3 = 6$.'], 'Quais pares de inteiros têm produto $12$?'],
+      ['<strong>Usar</strong> soma $S = -{b|a}$ e produto $P = {c|a}$.', '<strong>Achar</strong> raízes inteiras por tentativa.', '<strong>Modelar</strong> problemas com equação do 2º grau.'],
+      'Se as raízes são $x_1$ e $x_2$: $x^2 - Sx + P = 0$.',
+      [['Relações de Girard', ['Para $ax^2 + bx + c = 0$ com raízes $x_1$ e $x_2$:', '<strong>Soma</strong>: $x_1 + x_2 = -{b|a}$. <strong>Produto</strong>: $x_1 · x_2 = {c|a}$.', 'Em $x^2 - 7x + 12 = 0$: $S = 7$ e $P = 12$ ⇒ raízes $3$ e $4$.'],
+        fig('balanca', 'Ilustração original: balança.', '280px')],
+       ['Montando a equação', ['Conhecendo as raízes: $x^2 - S x + P = 0$.', 'Raízes $2$ e $5$: $S = 7$, $P = 10$ ⇒ $x^2 - 7x + 10 = 0$.', 'Também permite conferir as raízes encontradas por Bhaskara.'],
+        callout('Dica', 'Procure dois números de soma $-b$ e produto $c$ (quando $a = 1$).', 'primary')],
+       ['Problemas', ['Defina a incógnita e escreva a equação do 2º grau.', 'Descarte raízes que não fazem sentido (negativas para medidas, por exemplo).', 'Responda com a unidade.'],
+        tbl(['Situação', 'Equação'], [['quadrado do número mais ele mesmo é $12$', '$x^2 + x = 12$'], ['área de $x · (x + 2)$ igual a $24$', '$x^2 + 2x - 24 = 0$']])]],
+      [['Soma e produto', 'Ache as raízes de $x^2 - 8x + 15 = 0$ sem Bhaskara.', [['$S = 8$, $P = 15$', 'Dois números: soma $8$, produto $15$.'], ['Teste', '$3$ e $5$.']], '$3$ e $5$'],
+       ['Problema', 'O quadrado de um número somado ao próprio número dá $12$. Qual o número?', [['Equação', '$x^2 + x - 12 = 0$.'], ['$S = -1$ e $P = -12$', 'Raízes $3$ e $-4$.']], '$x = 3$ ou $x = -4$']],
+      ['Os números', 'Dois números somam $7$ e têm produto $12$. Quais são?', ['$x^2 - 7x + 12 = 0$.', 'Soma $7$ e produto $12$.', 'Teste $3$ e $4$.'], 'Os números são $3$ e $4$.'],
+      [['A soma das raízes de $x^2 - 9x + 20 = 0$ é:', ['$9$', '$20$', '$-9$', '$11$'], 0, '$-b/a = 9$.'],
+       ['O produto das raízes de $x^2 + 3x - 10 = 0$ é:', ['$3$', '$-10$', '$10$', '$-3$'], 1, '$c/a$.'],
+       ['Raízes $1$ e $6$ correspondem à equação:', ['$x^2 - 7x + 6 = 0$', '$x^2 + 7x + 6 = 0$', '$x^2 - 6x + 7 = 0$', '$x^2 - 5x + 6 = 0$'], 0, '$S = 7$ e $P = 6$.'],
+       ['A área de um retângulo $x$ por $x + 1$ é $6$. O valor de $x$ é:', ['$1$', '$2$', '$3$', '$6$'], 1, '$2 · 3 = 6$.']],
+      [[['Soma', '$-{b|a}$.'], ['Produto', '${c|a}$.'], ['Problemas', 'Descartar raízes sem sentido.']], 'Como conferir raízes sem refazer Bhaskara?', 'Voltando aos números: $3 + 4 = 7$ e $3 · 4 = 12$.'],
+      [['A soma das raízes de $x^2 - 5x + 6 = 0$ é:', ['$5$', '$6$', '$-5$', '$1$'], 0], ['As raízes de $x^2 - 3x - 10 = 0$ são:', ['$-2$ e $5$', '$2$ e $-5$', '$2$ e $5$', '$-2$ e $-5$'], 0], ['A equação de raízes $2$ e $3$ é:', ['$x^2 - 5x + 6 = 0$', '$x^2 + 5x + 6 = 0$', '$x^2 - 6x + 5 = 0$', '$x^2 - x + 6 = 0$'], 0]])
+  ]
+});

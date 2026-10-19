@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 1º trimestre · Potências e raízes (base: slides "Potenciação e raiz quadrada exata de números racionais" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 1, pasta: 'aulas/8-ano/1-tri/potencias-e-raizes/', titulo: 'Potências e raízes', accent: 'growth', icon: 'numbers', key: 'm8p40', area: 'Matemática · 8º ano',
+  aulas: [
+    A('propriedades-das-potencias-e-notacao-cientifica', 'Propriedades das potências e notação científica',
+      `Números enormes e minúsculos ${co('primary')}em poucos símbolos</span>`,
+      'A distância da Terra ao Sol é cerca de $150 000 000 000$ m e uma bactéria mede cerca de $0,000002$ m. Como escrever números tão grandes e tão pequenos de forma curta?',
+      'colonia', [['propriedades'], ['expoente negativo', 'growth'], ['notação científica', 'decay']],
+      ['Já sabemos multiplicar o mesmo número várias vezes. Agora vamos operar com potências sem precisar desenvolver tudo.', ['O valor de $2^3 · 2^2$ é:', ['$2^5$', '$2^6$', '$4^5$', '$2^1$'], 0, 'Mesma base: soma dos expoentes.'], 'Quantos zeros tem $10^6$? E $10^{-3}$, quantas casas decimais?'],
+      ['Aplicar as <strong>propriedades</strong> das potências de mesma base.', 'Calcular com <strong>expoente zero e negativo</strong>.', 'Escrever números em <strong>notação científica</strong>.'],
+      'Mesma base: no produto <strong>soma</strong> os expoentes; no quociente <strong>subtrai</strong>; na potência de potência <strong>multiplica</strong>.',
+      [['Propriedades', ['$a^m · a^n = a^{m+n}$ e $a^m ÷ a^n = a^{m-n}$ (mesma base).', '$(a^m)^n = a^{m · n}$; $(a · b)^n = a^n · b^n$; $({a|b})^n = {a^n|b^n}$.', '$a^0 = 1$ e $a^1 = a$ (com $a ≠ 0$).'],
+        tbl(['Propriedade', 'Exemplo'], [['produto', '$3^2 · 3^4 = 3^6 = 729$'], ['quociente', '$5^7 ÷ 5^5 = 5^2 = 25$'], ['potência de potência', '$(2^3)^2 = 2^6 = 64$']])],
+       ['Expoente negativo', ['$a^{-n} = {1|a^n}$ (com $a ≠ 0$): o expoente negativo <strong>inverte</strong> a base.', '$2^{-3} = {1|2^3} = {1|8}$ e $10^{-2} = {1|100} = 0,01$.', '$({2|3})^{-1} = {3|2}$.'],
+        callout('Atenção', 'Expoente negativo não deixa o número negativo: $2^{-3} = {1|8} > 0$.', 'decay')],
+       ['Notação científica', ['Um número está em <strong>notação científica</strong> quando é escrito como $a · 10^n$, com $1 ≤ a < 10$.', '$150 000 000 000 = 1,5 · 10^{11}$ e $0,000002 = 2 · 10^{-6}$.', 'O expoente conta quantas casas a vírgula andou (para a esquerda: positivo; para a direita: negativo).'],
+        tbl(['Número', 'Notação científica'], [['$3 000 000$', '$3 · 10^6$'], ['$0,00045$', '$4,5 · 10^{-4}$']])]],
+      [['Usando as propriedades', 'Calcule $2^5 · 2^{-2}$.', [['Mesma base: some os expoentes', '$2^{5 + (-2)} = 2^3$.'], ['Calcule', '$2^3 = 8$.']], '$8$'],
+       ['Notação científica', 'Escreva $0,000002$ em notação científica.', [['Mova a vírgula até ter um algarismo antes dela', '$2,0$: a vírgula andou $6$ casas para a direita.'], ['Expoente negativo', '$10^{-6}$.']], '$2 · 10^{-6}$']],
+      ['Expoente negativo', 'Calcule $10^{-2}$ e $(-2)^{-3}$.', ['Use $a^{-n} = {1|a^n}$.', '$10^{-2} = {1|10^2}$.', '$(-2)^{-3} = {1|(-2)^3} = {1|-8}$.'], '$10^{-2} = 0,01$ e $(-2)^{-3} = -{1|8}$.'],
+      [['O valor de $3^4 ÷ 3^2$ é:', ['$3^6$', '$3^2$', '$1^2$', '$9^2$'], 1, '$3^{4-2} = 3^2 = 9$.'],
+       ['O valor de $2^{-2}$ é:', ['$-4$', '$-{1|4}$', '${1|4}$', '$4$'], 2, '${1|2^2} = {1|4}$.'],
+       ['Em notação científica, $45 000$ é:', ['$45 · 10^3$', '$4,5 · 10^4$', '$0,45 · 10^5$', '$4,5 · 10^3$'], 1, 'A vírgula anda $4$ casas.'],
+       ['O valor de $(2^2)^3$ é:', ['$2^5$', '$2^6$', '$2^8$', '$4^5$'], 1, '$2^{2 · 3} = 2^6 = 64$.']],
+      [[['Propriedades', 'Produto: soma; quociente: subtração; potência de potência: produto dos expoentes.'], ['Expoente negativo', '$a^{-n} = {1|a^n}$.'], ['Notação científica', '$a · 10^n$ com $1 ≤ a < 10$.']], 'Por que $a^0 = 1$? Use $a^3 ÷ a^3$.', 'Voltando às distâncias: $1,5 · 10^{11}$ m até o Sol e $2 · 10^{-6}$ m para a bactéria.'],
+      [['O valor de $5^0 + 5^1$ é:', ['$1$', '$5$', '$6$', '$10$'], 2], ['Em notação científica, $0,0003$ é:', ['$3 · 10^{-4}$', '$3 · 10^{4}$', '$3 · 10^{-3}$', '$0,3 · 10^{-3}$'], 0], ['O valor de $2^3 · 2^{-1}$ é:', ['$2^4$', '$2^2$', '$2^{-3}$', '$2^{-2}$'], 1]]),
+
+    A('raiz-quadrada-e-raizes-exatas', 'Raiz quadrada e raízes exatas',
+      `Qual é o ${co('primary')}lado</span> do quadrado?`,
+      'Um terreno quadrado tem $144$ m² de área. Quanto mede cada lado? E se a área fosse $50$ m²?',
+      'terreno', [['raiz quadrada'], ['quadrados perfeitos', 'growth'], ['estimativa', 'decay']],
+      ['A raiz quadrada é a “operação inversa” de elevar ao quadrado.', ['O valor de $7^2$ é:', ['$14$', '$49$', '$72$', '$9$'], 1, '$7 · 7 = 49$.'], 'Qual número multiplicado por ele mesmo dá $81$?'],
+      ['<strong>Calcular</strong> raízes quadradas exatas de naturais, decimais e frações.', '<strong>Estimar</strong> raízes não exatas entre dois inteiros.', 'Aplicar as <strong>propriedades</strong> da raiz quadrada.'],
+      '$√a$ é o número <strong>não negativo</strong> que, elevado ao quadrado, dá $a$.',
+      [['O que é a raiz quadrada', ['$√{49} = 7$ porque $7^2 = 49$ (e $7 ≥ 0$).', '<strong>Quadrados perfeitos</strong>: $1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, …$', 'Raiz de decimais e frações: $√{0,25} = 0,5$ e $√{{9|16}} = {3|4}$.'],
+        tbl(['Número', 'Raiz'], [['$81$', '$9$'], ['$0,36$', '$0,6$'], ['${25|49}$', '${5|7}$']])],
+       ['Propriedades', ['$√{a · b} = √a · √b$ (com $a, b ≥ 0$).', '$√{{a|b}} = {√a|√b}$ (com $b > 0$).', 'Exemplo: $√{36 · 4} = 6 · 2 = 12$. Atenção: $√{a + b} ≠ √a + √b$.'],
+        callout('Cuidado', '$√{9 + 16} = √{25} = 5$, mas $√9 + √{16} = 7$.', 'decay')],
+       ['Raízes não exatas', ['Se o número não é quadrado perfeito, a raiz é <strong>irracional</strong>.', 'Dá para localizá-la entre dois inteiros consecutivos: $49 < 50 < 64$ ⇒ $7 < √{50} < 8$.', 'A <strong>raiz cúbica</strong> $∛{a}$ procura o número que elevado ao cubo dá $a$: $∛{27} = 3$.'],
+        fig('terreno', 'Ilustração original: terreno quadrado.', '280px')]],
+      [['Raiz exata', 'Calcule $√{144}$ e $√{0,49}$.', [['Procure o número que ao quadrado dá $144$', '$12 · 12 = 144$.'], ['Para o decimal', '$0,7 · 0,7 = 0,49$.']], '$12$ e $0,7$'],
+       ['Estimando', 'Entre quais inteiros consecutivos está $√{50}$?', [['Quadrados perfeitos vizinhos', '$49 = 7^2$ e $64 = 8^2$.'], ['Compare', '$49 < 50 < 64$.']], 'Entre $7$ e $8$ (mais perto de $7$)']],
+      ['O terreno', 'Qual é o lado de um terreno quadrado de $144$ m² de área? E de um de $50$ m²?', ['Lado × lado = área.', '$√{144}$ é exata?', 'Para $50$, estime entre dois inteiros.'], '$√{144} = 12$ m. Para $50$ m², o lado é $√{50}$, que fica entre $7$ m e $8$ m (cerca de $7,07$ m).'],
+      [['O valor de $√{81}$ é:', ['$7$', '$8$', '$9$', '$10$'], 2, '$9 · 9 = 81$.'],
+       ['O valor de $√{{4|25}}$ é:', ['${2|5}$', '${4|5}$', '${2|25}$', '${16|625}$'], 0, '$√4 = 2$ e $√{25} = 5$.'],
+       ['A raiz $√{20}$ está entre:', ['$3$ e $4$', '$4$ e $5$', '$5$ e $6$', '$2$ e $3$'], 1, '$16 < 20 < 25$.'],
+       ['O valor de $√{9 · 16}$ é:', ['$7$', '$12$', '$25$', '$144$'], 1, '$√9 · √{16} = 3 · 4 = 12$.']],
+      [[['Raiz exata', 'Número não negativo que ao quadrado dá o radicando.'], ['Propriedades', 'Produto e quociente passam para dentro e para fora; a soma não.'], ['Estimativa', 'Entre dois quadrados perfeitos vizinhos.']], 'Por que $√{-4}$ não existe entre os números reais?', 'Voltando ao terreno: lado $12$ m para $144$ m² e entre $7$ e $8$ m para $50$ m².'],
+      [['O valor de $√{121}$ é:', ['$11$', '$12$', '$13$', '$21$'], 0], ['O valor de $∛{8}$ é:', ['$2$', '$4$', '$3$', '$8$'], 0], ['A raiz $√{30}$ está entre:', ['$4$ e $5$', '$5$ e $6$', '$6$ e $7$', '$3$ e $4$'], 1]])
+  ]
+});

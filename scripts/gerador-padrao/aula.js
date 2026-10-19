@@ -64,7 +64,7 @@ function unidade(u) {
   const fn = u.tipo === 'humanas' ? humanas : exatas;
   const out = u.aulas.map((s, i) => fn(u, i + 1, s));
   return {
-    meta: { materia: u.materia, ano: u.ano, tri: u.tri, pasta: u.pasta, titulo: u.titulo, accent: u.accent || 'primary', icon: u.icon || 'numbers', aulas: out.map((o, i) => ['Aula ' + (u.inicio ? u.inicio + i : i + 1), o.titulo, o.file]), pendente: true, padrao: true },
+    meta: { materia: u.materia, ano: u.ano, tri: u.tri, pasta: u.pasta, titulo: u.titulo, accent: u.accent || 'primary', icon: u.icon || 'numbers', aulas: out.map((o, i) => ['Aula ' + (u.inicio ? u.inicio + i : i + 1), o.titulo, o.file]), pendente: true, padrao: true, destino: u.destino },
     pages: out.map(o => o.page)
   };
 }

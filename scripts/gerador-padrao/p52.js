@@ -1,0 +1,53 @@
+// Matemática · 2ª série EM · 2º trimestre · Matrizes e sistemas lineares (base: slides "Matrizes", "Determinantes", "Sistemas lineares" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '2° Ano', tri: 2, destino: 'mat-2ano-2tri', pasta: 'aulas/2-ano/2-tri/matrizes-e-sistemas-lineares/', titulo: 'Matrizes, determinantes e sistemas lineares', accent: 'decay', icon: 'grid', key: 'm2p52', area: 'Matemática · 2ª série',
+  aulas: [
+    A('matrizes-e-operacoes', 'Matrizes e operações',
+      `Números organizados em ${co('primary')}linhas e colunas</span>`,
+      'Uma loja registra as vendas de duas lojas em três dias numa tabela. Como somar duas tabelas e multiplicar por um preço usando matrizes?',
+      'tabela', [['matriz'], ['soma', 'growth'], ['produto', 'decay']],
+      ['Tabelas aparecem em planilhas, imagens e jogos. A matemática trata essas tabelas como matrizes.', ['Numa tabela com $3$ linhas e $2$ colunas há quantas células?', ['$5$', '$6$', '$8$', '$9$'], 1, '$3 · 2 = 6$.'], 'Em uma planilha, como se chama a célula da 2ª linha e da 1ª coluna?'],
+      ['<strong>Identificar</strong> a ordem de uma matriz e seus elementos $a_{ij}$.', '<strong>Somar</strong> matrizes e multiplicar por escalar.', '<strong>Multiplicar</strong> duas matrizes.'],
+      'Produto $A · B$ só existe se o nº de colunas de $A$ for igual ao nº de linhas de $B$.',
+      [['O que é uma matriz', ['<strong>Matriz</strong> $m × n$ tem $m$ linhas e $n$ colunas; o elemento $a_{ij}$ está na linha $i$ e coluna $j$.', 'Quadrada: $m = n$. Identidade $I$: diagonal principal com $1$ e o resto $0$.', 'Transposta $A^T$: troca linhas por colunas.'],
+        fig('tabela', 'Ilustração original: tabela de dados.', '300px')],
+       ['Soma e escalar', ['Somam-se (ou subtraem-se) matrizes de <strong>mesma ordem</strong>, elemento a elemento.', 'Multiplicar por escalar $k$: multiplica cada elemento por $k$.', 'Ex.: $2 · [1, 3, 5] = [2, 6, 10]$.'],
+        tbl(['Matriz', 'Elementos'], [['A', '$[1, 2]$'], ['B', '$[3, 4]$'], ['A + B', '$[4, 6]$']])],
+       ['Produto de matrizes', ['$A_{m×n} · B_{n×p}$ resulta em matriz $m × p$.', 'Elemento $c_{ij}$ = linha $i$ de $A$ vezes coluna $j$ de $B$ (multiplique e some).', 'Em geral $A · B ≠ B · A$.'],
+        callout('Atenção', 'A multiplicação de matrizes <strong>não</strong> é comutativa.', 'decay')]],
+      [['Soma', 'Calcule $[2, 5] + [3, -1]$.', [['Elemento a elemento', '$2 + 3$ e $5 + (-1)$.']], '$[5, 4]$'],
+       ['Produto', 'Calcule $[1, 2] · [3, 4]^T$ (linha vezes coluna).', [['Multiplique e some', '$1 · 3 + 2 · 4$.']], '$11$']],
+      ['Vendas', 'Duas lojas venderam $[10, 20]$ e $[15, 5]$ unidades de dois produtos. Qual o total por produto? Se os preços são R&#36; 2 e R&#36; 3, qual a receita total?', ['Some as matrizes.', 'Total: $[25, 25]$.', 'Multiplique pelos preços e some.'], 'Total $[25, 25]$; receita $25 · 2 + 25 · 3 = 125$, ou seja, R&#36; 125.'],
+      [['A ordem de uma matriz com $2$ linhas e $3$ colunas é:', ['$3 × 2$', '$2 × 3$', '$5$', '$6$'], 1, 'Linhas × colunas.'],
+       ['O elemento $a_{21}$ está na:', ['linha 1, coluna 2', 'linha 2, coluna 1', 'linha 2, coluna 2', 'linha 1, coluna 1'], 1, 'Primeiro índice: linha.'],
+       ['Qual produto existe?', ['$A_{2×3} · B_{2×3}$', '$A_{2×3} · B_{3×4}$', '$A_{3×2} · B_{3×2}$', '$A_{4×1} · B_{2×4}$'], 1, 'Colunas de $A$ = linhas de $B$.'],
+       ['Multiplicar $[1, 2, 3]$ por $2$ dá:', ['$[2, 2, 3]$', '$[2, 4, 6]$', '$[3, 4, 5]$', '$[1, 4, 6]$'], 1, 'Cada elemento por $2$.']],
+      [[['Ordem', 'Linhas × colunas.'], ['Soma', 'Mesma ordem, elemento a elemento.'], ['Produto', 'Linha × coluna; não comutativo.']], 'Por que $A · B$ pode existir sem $B · A$ existir?', 'Voltando às lojas: somamos tabelas e multiplicamos pelos preços.'],
+      [['A ordem de $A_{3×1} · B_{1×4}$ é:', ['$3 × 4$', '$1 × 1$', '$4 × 3$', '$3 × 1$'], 0], ['$[1, 0] + [0, 1]$ é igual a:', ['$[1, 1]$', '$[0, 0]$', '$[1, 0]$', '$[2, 2]$'], 0], ['A matriz identidade tem na diagonal:', ['zeros', 'uns', 'dois', 'números quaisquer'], 1]]),
+
+    A('determinantes-e-sistemas-lineares', 'Determinantes e sistemas lineares',
+      `${co('primary')}Resolvendo</span> várias equações de uma vez`,
+      'Dois salgados e um suco custam R&#36; 11; um salgado e dois sucos custam R&#36; 10. Como escrever e resolver esse sistema com determinantes?',
+      'mercado', [['determinante'], ['Cramer', 'growth'], ['classificação', 'decay']],
+      ['Sistemas lineares aparecem em orçamentos, misturas e circuitos. Os determinantes dizem se há solução única.', ['A solução de $x + y = 5$ e $x - y = 1$ é $x$ igual a:', ['$2$', '$3$', '$4$', '$1$'], 1, '$2x = 6$.'], 'Se duas equações descrevem a mesma reta, quantas soluções há?'],
+      ['<strong>Calcular</strong> determinantes $2 × 2$ e $3 × 3$ (Sarrus).', '<strong>Resolver</strong> sistemas pela regra de Cramer.', '<strong>Classificar</strong> sistemas (possível determinado, indeterminado, impossível).'],
+      'Se $D ≠ 0$, o sistema tem <strong>uma única solução</strong>.',
+      [['Determinante', ['$2 × 2$: produto da diagonal principal menos produto da diagonal secundária, ou seja, $D = ad - bc$.', 'Ex.: matriz com linhas $[2, 1]$ e $[1, 2]$: $D = 2 · 2 - 1 · 1 = 3$.', '$3 × 3$: regra de Sarrus (diagonais para a direita menos diagonais para a esquerda).'],
+        fig('mercado', 'Ilustração original: mercado.', '280px')],
+       ['Regra de Cramer', ['Sistema $2 × 2$: $x = {D_x|D}$ e $y = {D_y|D}$, com $D ≠ 0$.', '$D$: determinante dos coeficientes; $D_x$: troque a coluna de $x$ pelos termos independentes; $D_y$ idem.', 'Sistema $2s + c = 11$ e $s + 2c = 10$: $D = 3$, $D_s = 12$, $D_c = 9$ ⇒ $s = 4$ e $c = 3$.'],
+        callout('Dica', 'Confira sempre substituindo nas equações originais.', 'primary')],
+       ['Classificação', ['$D ≠ 0$: <strong>possível e determinado</strong> (uma solução).', '$D = 0$ e equações proporcionais: <strong>possível e indeterminado</strong> (infinitas soluções).', '$D = 0$ com contradição: <strong>impossível</strong> (nenhuma solução).'],
+        tbl(['Sistema', 'Classe'], [['$x + y = 2$, $x - y = 0$', 'determinado'], ['$x + y = 2$, $2x + 2y = 4$', 'indeterminado'], ['$x + y = 2$, $x + y = 3$', 'impossível']])]],
+      [['Determinante', 'Calcule o determinante da matriz de linhas $[3, 2]$ e $[1, 4]$.', [['$ad - bc$', '$3 · 4 - 2 · 1$.'], ['Calcule', '$12 - 2 = 10$.']], '$10$'],
+       ['Cramer', 'Resolva $x + y = 7$ e $x - y = 1$ por Cramer.', [['$D$', '$1 · (-1) - 1 · 1 = -2$.'], ['$D_x$ e $D_y$', '$D_x = 7 · (-1) - 1 · 1 = -8$; $D_y = 1 · 1 - 7 · 1 = -6$.'], ['Divida', '$x = 4$ e $y = 3$.']], '$(4, 3)$']],
+      ['O pedido', 'Resolva $2s + c = 11$ e $s + 2c = 10$ e diga o preço do salgado e do suco.', ['$D = 2 · 2 - 1 · 1$.', '$D_s = 11 · 2 - 1 · 10$.', '$D_c = 2 · 10 - 11 · 1$.'], '$D = 3$, $D_s = 12$, $D_c = 9$ ⇒ salgado R&#36; 4 e suco R&#36; 3.'],
+      [['O determinante de linhas $[1, 2]$ e $[3, 4]$ é:', ['$-2$', '$2$', '$10$', '$-10$'], 0, '$4 - 6$.'],
+       ['Se $D ≠ 0$ o sistema é:', ['impossível', 'indeterminado', 'possível e determinado', 'sem solução'], 2, 'Solução única.'],
+       ['O sistema $x + y = 1$ e $x + y = 2$ é:', ['determinado', 'indeterminado', 'impossível', 'homogêneo'], 2, 'Equações contraditórias.'],
+       ['O sistema $x + y = 3$ e $2x + 2y = 6$ é:', ['determinado', 'indeterminado', 'impossível', 'inexistente'], 1, 'Equações proporcionais.']],
+      [[['Determinante', '$ad - bc$ para $2 × 2$.'], ['Cramer', '$x = {D_x|D}$, $y = {D_y|D}$.'], ['Classificação', '$D ≠ 0$: determinado.']], 'O que significa geometricamente $D = 0$ num sistema $2 × 2$?', 'Voltando ao pedido: salgado R&#36; 4 e suco R&#36; 3.'],
+      [['O determinante de linhas $[2, 0]$ e $[0, 5]$ é:', ['$0$', '$7$', '$10$', '$-10$'], 2], ['Resolvendo $x + y = 4$ e $x - y = 2$, $x$ vale:', ['$1$', '$2$', '$3$', '$6$'], 2], ['Um sistema com infinitas soluções é:', ['impossível', 'possível e indeterminado', 'possível e determinado', 'linear nulo'], 1]])
+  ]
+});

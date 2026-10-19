@@ -1,0 +1,53 @@
+// Matemática · 8º ano · 1º trimestre · Cálculo algébrico (base: slides "Cálculo algébrico", "Produtos notáveis" e "Fatoração" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '8° Ano', tri: 1, pasta: 'aulas/8-ano/1-tri/calculo-algebrico/', titulo: 'Cálculo algébrico e produtos notáveis', accent: 'decay', icon: 'algebra', key: 'm8p41', area: 'Matemática · 8º ano',
+  aulas: [
+    A('monomios-e-polinomios', 'Monômios e polinômios',
+      `Letras que ${co('primary')}representam números</span>`,
+      'Uma pizzaria cobra R&#36; 30 pela pizza e R&#36; 5 por cada ingrediente extra. Como escrever o preço de qualquer pedido usando uma letra?',
+      'pizza', [['monômios'], ['polinômios', 'growth'], ['operações', 'decay']],
+      ['Já usamos letras para representar números desconhecidos. Agora vamos operar com expressões inteiras.', ['O valor de $2x + 3$ para $x = 4$ é:', ['$11$', '$24$', '$9$', '$14$'], 0, '$2 · 4 + 3 = 11$.'], 'Escreva o perímetro de um quadrado de lado $a$.'],
+      ['<strong>Reconhecer</strong> monômios, termos semelhantes e polinômios.', '<strong>Somar e subtrair</strong> polinômios reduzindo termos semelhantes.', '<strong>Multiplicar</strong> monômios e polinômios.'],
+      'Só se somam e subtraem <strong>termos semelhantes</strong> (mesma parte literal).',
+      [['Monômios e termos semelhantes', ['<strong>Monômio</strong>: produto de um número (<strong>coeficiente</strong>) por letras (<strong>parte literal</strong>). Ex.: $5x^2y$.', '<strong>Termos semelhantes</strong> têm a mesma parte literal: $3x^2$ e $-7x^2$ são semelhantes; $3x^2$ e $3x$ não são.', 'Reduzir: $3x^2 + 5x^2 = 8x^2$.'],
+        fig('pizza', 'Ilustração original: pizza.', '280px')],
+       ['Polinômios', ['<strong>Polinômio</strong> é uma soma de monômios. O <strong>grau</strong> é o maior expoente das letras: $4x^3 - 2x + 1$ tem grau $3$.', 'Soma e subtração: reduza os termos semelhantes; na subtração, troque o sinal de cada termo do segundo polinômio.', '$(3x + 2) - (x - 5) = 3x + 2 - x + 5 = 2x + 7$.'],
+        callout('Atenção', 'O sinal de menos antes do parêntese troca o sinal de <strong>todos</strong> os termos de dentro.', 'decay')],
+       ['Multiplicação', ['Monômios: multiplique os coeficientes e some os expoentes das letras iguais: $3x · 4x^2 = 12x^3$.', 'Propriedade distributiva: $2x · (x + 5) = 2x^2 + 10x$.', 'Polinômio por polinômio: cada termo de um multiplica cada termo do outro.'],
+        tbl(['Produto', 'Resultado'], [['$2x · 3x$', '$6x^2$'], ['$x · (x + 4)$', '$x^2 + 4x$'], ['$(x + 1)(x + 2)$', '$x^2 + 3x + 2$']])]],
+      [['Reduzindo termos', 'Reduza $5x + 3 - 2x + 4$.', [['Junte os termos com $x$', '$5x - 2x = 3x$.'], ['Junte os números', '$3 + 4 = 7$.']], '$3x + 7$'],
+       ['Distributiva', 'Desenvolva $3x · (x - 2)$.', [['Multiplique $3x$ por cada termo', '$3x · x = 3x^2$ e $3x · (-2) = -6x$.']], '$3x^2 - 6x$']],
+      ['A pizzaria', 'Escreva o preço $P$ de uma pizza com $n$ ingredientes extras e calcule para $n = 3$.', ['R&#36; 30 fixos mais R&#36; 5 por ingrediente.', '$P = 30 + 5n$.', 'Substitua $n = 3$.'], '$P = 30 + 5n$; para $n = 3$: $P = 30 + 15 = 45$, ou seja, R&#36; 45.'],
+      [['A forma reduzida de $4x + 2x - x$ é:', ['$5x$', '$6x$', '$7x$', '$5x^3$'], 0, '$4 + 2 - 1 = 5$.'],
+       ['Qual par de termos é semelhante?', ['$3x$ e $3x^2$', '$2xy$ e $5xy$', '$x$ e $y$', '$4a$ e $4b$'], 1, 'Mesma parte literal $xy$.'],
+       ['O produto $2x · 5x^2$ é:', ['$7x^3$', '$10x^2$', '$10x^3$', '$7x^2$'], 2, '$2 · 5 = 10$ e $x · x^2 = x^3$.'],
+       ['O grau do polinômio $x^3 - 5x + 2$ é:', ['$1$', '$2$', '$3$', '$5$'], 2, 'O maior expoente é $3$.']],
+      [[['Termos semelhantes', 'Mesma parte literal: só eles se somam.'], ['Polinômio', 'Soma de monômios; grau = maior expoente.'], ['Distributiva', 'Multiplique cada termo de dentro.']], 'Por que $2x + 3x^2$ não pode ser reduzido?', 'Voltando à pizzaria: $P = 30 + 5n$ vale para qualquer número de ingredientes.'],
+      [['A forma reduzida de $7a - 3a$ é:', ['$4a$', '$10a$', '$4$', '$4a^2$'], 0], ['O produto $x · (x + 3)$ é:', ['$x^2 + 3$', '$x^2 + 3x$', '$2x + 3$', '$x + 3x$'], 1], ['$(2x + 1) + (x - 4)$ é igual a:', ['$3x - 3$', '$3x + 5$', '$x - 3$', '$2x^2 - 3$'], 0]]),
+
+    A('produtos-notaveis-e-fatoracao', 'Produtos notáveis e fatoração',
+      `Atalhos para ${co('primary')}multiplicar e desmontar</span>`,
+      'Um quadrado de lado $(x + 3)$ tem qual área? Dá para calcular sem multiplicar termo a termo?',
+      'piso', [['quadrado da soma'], ['diferença de quadrados', 'growth'], ['fatoração', 'decay']],
+      ['Alguns produtos aparecem tanto que ganharam fórmulas. Também vamos fazer o caminho contrário: transformar soma em produto.', ['O valor de $(x + 1)(x + 1)$ começa com:', ['$x^2$', '$2x$', '$x + 2$', '$1$'], 0, '$x · x = x^2$.'], 'Quanto é $13^2$? Dá para calcular como $(10 + 3)^2$?'],
+      ['<strong>Aplicar</strong> o quadrado da soma, o quadrado da diferença e o produto da soma pela diferença.', '<strong>Fatorar</strong> por fator comum e por diferença de quadrados.', 'Usar os produtos notáveis em <strong>cálculo mental</strong>.'],
+      'O erro mais comum: $(a + b)^2 ≠ a^2 + b^2$. Falta o termo do meio, $2ab$.',
+      [['Produtos notáveis', ['<strong>Quadrado da soma</strong>: $(a + b)^2 = a^2 + 2ab + b^2$.', '<strong>Quadrado da diferença</strong>: $(a - b)^2 = a^2 - 2ab + b^2$.', '<strong>Soma pela diferença</strong>: $(a + b)(a - b) = a^2 - b^2$.'],
+        fig('piso', 'Ilustração original: piso quadriculado.', '280px')],
+       ['Aplicações', ['$(x + 3)^2 = x^2 + 6x + 9$ (área do quadrado de lado $x + 3$).', '$(x - 5)(x + 5) = x^2 - 25$.', 'Cálculo mental: $101 · 99 = (100 + 1)(100 - 1) = 10 000 - 1 = 9 999$.'],
+        callout('Atenção', '$(a + b)^2$ NÃO é $a^2 + b^2$: faltam os dois retângulos $ab$ do meio.', 'decay')],
+       ['Fatoração', ['<strong>Fator comum</strong>: $6x + 9 = 3(2x + 3)$ e $x^2 + 5x = x(x + 5)$.', '<strong>Diferença de quadrados</strong>: $a^2 - b^2 = (a + b)(a - b)$.', 'Fatorar é o caminho de volta do produto notável.'],
+        tbl(['Expressão', 'Fatorada'], [['$4x + 8$', '$4(x + 2)$'], ['$x^2 - 16$', '$(x + 4)(x - 4)$']])]],
+      [['Quadrado da soma', 'Desenvolva $(x + 4)^2$.', [['Identifique $a = x$ e $b = 4$', '$a^2 + 2ab + b^2$.'], ['Substitua', '$x^2 + 8x + 16$.']], '$x^2 + 8x + 16$'],
+       ['Fatorando', 'Fatore $x^2 - 49$.', [['É diferença de quadrados', '$x^2$ e $7^2$.'], ['Aplique $(a + b)(a - b)$', '$(x + 7)(x - 7)$.']], '$(x + 7)(x - 7)$']],
+      ['Cálculo mental', 'Calcule $52^2$ usando $(50 + 2)^2$.', ['$a = 50$ e $b = 2$.', '$a^2 + 2ab + b^2$.', '$2 500 + 200 + 4$.'], '$52^2 = 2 500 + 200 + 4 = 2 704$.'],
+      [['O desenvolvimento de $(x - 2)^2$ é:', ['$x^2 - 4$', '$x^2 + 4$', '$x^2 - 4x + 4$', '$x^2 - 2x + 4$'], 2, '$a^2 - 2ab + b^2$.'],
+       ['O produto $(x + 6)(x - 6)$ é:', ['$x^2 - 36$', '$x^2 + 36$', '$x^2 - 12x + 36$', '$x^2 - 6$'], 0, 'Soma pela diferença.'],
+       ['A forma fatorada de $5x + 10$ é:', ['$5(x + 2)$', '$x(5 + 10)$', '$5x(10)$', '$10(x + 5)$'], 0, 'Fator comum $5$.'],
+       ['O valor de $99 · 101$ é:', ['$9 899$', '$9 999$', '$10 001$', '$10 099$'], 1, '$100^2 - 1^2 = 9 999$.']],
+      [[['Quadrado da soma', '$a^2 + 2ab + b^2$.'], ['Soma pela diferença', '$a^2 - b^2$.'], ['Fatorar', 'Fator comum ou diferença de quadrados.']], 'Por que $(a + b)^2$ tem o termo $2ab$?', 'Voltando ao quadrado de lado $x + 3$: a área é $x^2 + 6x + 9$.'],
+      [['O desenvolvimento de $(x + 1)^2$ é:', ['$x^2 + 1$', '$x^2 + 2x + 1$', '$x^2 + x + 1$', '$2x + 1$'], 1], ['A forma fatorada de $x^2 - 9$ é:', ['$(x - 3)^2$', '$(x + 9)(x - 9)$', '$(x + 3)(x - 3)$', '$x(x - 9)$'], 2], ['O valor de $19^2$ é:', ['$361$', '$341$', '$381$', '$321$'], 0]])
+  ]
+});

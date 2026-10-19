@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 3º trimestre · Matemática financeira (base: slides "Juros compostos" e "Porcentagem" do CD)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 3, destino: 'mat-3ano-3tri', pasta: 'aulas/3-ano/3-tri/matematica-financeira/', titulo: 'Matemática financeira: juros compostos', accent: 'growth', icon: 'coin', key: 'm3p55', area: 'Matemática · 3ª série',
+  aulas: [
+    A('juros-compostos-e-montante', 'Juros compostos e montante',
+      `Juros sobre ${co('primary')}juros</span>`,
+      'Você aplica R&#36; 1&nbsp;000 a $10%$ ao ano. Em $3$ anos, quanto terá? Compare com juros simples.',
+      'dinheiro', [['juros compostos'], ['montante', 'growth'], ['simples × compostos', 'decay']],
+      ['No regime composto, os juros de cada período passam a render juros nos períodos seguintes.', ['Aumentar $10%$ em $200$ dá:', ['$210$', '$220$', '$202$', '$300$'], 1, '$200 · 1,1 = 220$.'], 'O que acontece com a dívida do cartão se os juros forem sobre juros?'],
+      ['<strong>Calcular</strong> o montante $M = C(1 + i)^t$.', '<strong>Comparar</strong> juros simples e compostos.', '<strong>Resolver</strong> problemas de tempo e taxa.'],
+      'Fator de crescimento: $(1 + i)$. A cada período, multiplique por ele.',
+      [['Montante composto', ['$M = C · (1 + i)^t$, com $i$ em forma decimal e $t$ na mesma unidade da taxa.', 'R&#36; 1 000 a $10%$ ao ano: $M_1 = 1 100$, $M_2 = 1 210$, $M_3 = 1 331$.', 'Juros totais: $M - C = 331$.'],
+        fig('dinheiro', 'Ilustração original: dinheiro.', '280px')],
+       ['Simples × compostos', ['Simples: $M = C(1 + it)$, crescimento <strong>linear</strong>. Compostos: crescimento <strong>exponencial</strong>.', 'Em $3$ anos: simples R&#36; 1 300; composto R&#36; 1 331.', 'Quanto maior o tempo, maior a diferença.'],
+        tbl(['Anos', 'Simples', 'Composto'], [['1', '1 100', '1 100'], ['2', '1 200', '1 210'], ['3', '1 300', '1 331']])],
+       ['Cuidados', ['Taxa e tempo na mesma unidade (mês com mês).', 'Em prazos longos, use potências: $1,1^3 = 1,331$.', 'Pagar atrasado em cartão cresce de forma exponencial.'],
+        callout('Atenção', 'Dívida a $10%$ ao mês dobra em cerca de $7$ meses: $1,1^7 ≈ 1,95$.', 'decay')]],
+      [['Montante', 'Qual o montante de R&#36; 2 000 a $5%$ ao mês durante $2$ meses?', [['$M = C(1 + i)^t$', '$2 000 · 1,05^2$.'], ['Calcule', '$2 000 · 1,1025 = 2 205$.']], 'R&#36; 2 205'],
+       ['Comparando', 'Compare o juro simples e o composto de R&#36; 1 000 a $10%$ ao ano por $2$ anos.', [['Simples', '$J = 1 000 · 0,1 · 2 = 200$.'], ['Composto', '$1 000 · 1,21 - 1 000 = 210$.']], 'Simples R&#36; 200; composto R&#36; 210']],
+      ['A aplicação', 'R&#36; 1 000 a $10%$ ao ano por $3$ anos: qual o montante? Quanto a mais que no juro simples?', ['$M = 1 000 · 1,1^3$.', '$1,1^3 = 1,331$.', 'Simples: $1 000 + 300$.'], 'Composto R&#36; 1 331, simples R&#36; 1 300: diferença de R&#36; 31.'],
+      [['O fator de crescimento de $20%$ é:', ['$0,2$', '$1,2$', '$2$', '$20$'], 1, '$1 + 0,2$.'],
+       ['O montante de R&#36; 100 a $10%$ ao mês por $2$ meses é:', ['R&#36; 120', 'R&#36; 121', 'R&#36; 110', 'R&#36; 200'], 1, '$100 · 1,21$.'],
+       ['O crescimento nos juros compostos é:', ['linear', 'exponencial', 'constante', 'decrescente'], 1, 'Potência do fator.'],
+       ['Para $t = 1$, juros simples e compostos:', ['são iguais', 'o composto é maior', 'o simples é maior', 'não existem'], 0, 'Igual em um período.']],
+      [[['Fator', '$1 + i$.'], ['Montante', '$M = C(1 + i)^t$.'], ['Comparação', 'Composto ≥ simples (depois de $1$ período).']], 'Por que o composto cresce mais rápido com o tempo?', 'Voltando à aplicação: R&#36; 1 331 em $3$ anos.'],
+      [['O montante de R&#36; 500 a $10%$ por $1$ período é:', ['R&#36; 505', 'R&#36; 550', 'R&#36; 510', 'R&#36; 600'], 1], ['$1,1^2$ vale:', ['$1,1$', '$1,2$', '$1,21$', '$2,2$'], 2], ['Com juros compostos, o montante depende de:', ['só do capital', 'capital, taxa e tempo', 'só da taxa', 'só do tempo'], 1]]),
+
+    A('descontos-acrescimos-e-variacoes-percentuais', 'Descontos, acréscimos e variações percentuais',
+      `Aumentos e descontos ${co('primary')}em sequência</span>`,
+      'Uma loja aumenta um produto em $20%$ e depois dá $20%$ de desconto. O preço volta ao original? Por quê?',
+      'mercado', [['fator'], ['variação', 'growth'], ['sucessivos', 'decay']],
+      ['Aumentos e descontos aparecem em promoções, salários e inflação. O truque é usar o fator multiplicativo.', ['$10%$ de $50$ é:', ['$0,5$', '$5$', '$10$', '$15$'], 1, '$0,1 · 50$.'], 'Se um preço sobe $50%$ e depois cai $50%$, volta ao original?'],
+      ['<strong>Usar</strong> o fator de aumento $(1 + i)$ e de desconto $(1 - i)$.', '<strong>Calcular</strong> variações percentuais sucessivas.', '<strong>Achar</strong> o valor original dado o valor final.'],
+      'Variações sucessivas <strong>se multiplicam</strong>: nunca se somam.',
+      [['Fatores', ['Aumento de $i$: multiplique por $(1 + i)$. Desconto de $i$: multiplique por $(1 - i)$.', 'Aumento de $20%$: $× 1,2$. Desconto de $20%$: $× 0,8$.', 'Variação percentual: ${valor final - valor inicial|valor inicial}$.'],
+        fig('mercado', 'Ilustração original: mercado.', '280px')],
+       ['Variações sucessivas', ['Multiplique os fatores: $1,2 · 0,8 = 0,96$.', 'O preço final é $96%$ do original: perda de $4%$.', 'Aumento de $20%$ seguido de desconto de $20%$ não volta ao preço inicial.'],
+        tbl(['Sequência', 'Fator total'], [['$+20%$ e $-20%$', '$0,96$'], ['$+10%$ duas vezes', '$1,21$'], ['$-50%$ e $+50%$', '$0,75$']])],
+       ['Voltando ao original', ['Se o preço final é $P$ e houve aumento de $i$, o original é ${P|1 + i}$.', 'Final R&#36; 120 após aumento de $20%$: original $120 ÷ 1,2 = 100$.', 'Cuidado: desfazer um aumento de $20%$ exige desconto de ${1|6} ≈ 16,7%$, não $20%$.'],
+        callout('Atenção', 'A porcentagem incide sobre bases diferentes: não dá para somar $+20%$ e $-20%$.', 'decay')]],
+      [['Sucessivos', 'Um produto sobe $10%$ e depois mais $10%$. Qual o aumento total?', [['Fatores', '$1,1 · 1,1 = 1,21$.']], '$21%$'],
+       ['Original', 'Após um desconto de $20%$ o preço é R&#36; 80. Qual era o preço original?', [['Fator', '$0,8$.'], ['Divida', '$80 ÷ 0,8 = 100$.']], 'R&#36; 100']],
+      ['A loja', '$+20%$ seguido de $-20%$: o preço volta ao original? Qual a variação final?', ['Fatores $1,2$ e $0,8$.', 'Multiplique.', 'Compare com $1$.'], '$1,2 · 0,8 = 0,96$: não volta; fica $4%$ menor.'],
+      [['Um aumento de $15%$ equivale a multiplicar por:', ['$0,15$', '$1,15$', '$15$', '$0,85$'], 1, '$1 + 0,15$.'],
+       ['Um desconto de $30%$ equivale a multiplicar por:', ['$0,3$', '$0,7$', '$1,3$', '$30$'], 1, '$1 - 0,3$.'],
+       ['Dois aumentos seguidos de $10%$ somam:', ['$20%$', '$21%$', '$22%$', '$11%$'], 1, '$1,1^2$.'],
+       ['Após aumento de $25%$ o preço é R&#36; 150. O original era:', ['R&#36; 112,50', 'R&#36; 120', 'R&#36; 125', 'R&#36; 187,50'], 1, '$150 ÷ 1,25$.']],
+      [[['Fator', '$1 ± i$.'], ['Sucessivos', 'Multiplique os fatores.'], ['Original', 'Divida pelo fator.']], 'Por que $+50%$ e $-50%$ não se anulam?', 'Voltando à loja: o preço fica $4%$ menor.'],
+      [['Um desconto de $10%$ em R&#36; 200 resulta em:', ['R&#36; 180', 'R&#36; 190', 'R&#36; 220', 'R&#36; 20'], 0], ['O fator de um desconto de $25%$ é:', ['$0,25$', '$0,75$', '$1,25$', '$0,5$'], 1], ['$+50%$ seguido de $-50%$ resulta em fator:', ['$1$', '$0,75$', '$1,25$', '$0,5$'], 1]])
+  ]
+});
