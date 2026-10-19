@@ -46,9 +46,11 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 
 ### Plataforma e venda
 - [ ] 👤 **Publicar as regras do Firestore** (`firestore.rules`) — necessário para a sincronização das trilhas na nuvem.
-- [ ] 🤖 **Planejador de aula (PTD)** — ideia "para depois".
+- [x] 🤖 **Planejador de aula (PTD)** — feito em 19/10/2026 (`professor/planejador.html`; salva no aparelho; PDF e Word). Próximo passo possível: salvar na nuvem.
 - [ ] 👤 Itens do `docs/roadmap-venda.md`: INPI, advogado de direito autoral, preços/Pix/WhatsApp (`app/config-venda.js`), piloto com 10 professores, MEI/CNPJ, termos revisados.
-- [ ] 🤖 Trava real do conteúdo pago, Sentry/analytics, botão "Reportar erro", conta de demonstração (roadmap, fases 1–2).
+- [x] 🤖 Trava real das aulas (servidor), monitoramento de erros, botão "Reportar erro" e demonstração sem conta + teste de 14 dias do Pro — feitos em 19/10/2026 (docs/plataforma-19-out.md).
+- [ ] 👤 Criar as contas **Sentry** e **Cloudflare Web Analytics** e colar as chaves em `app/monitor.js` (o relato automático de erros já funciona sem elas).
+- [ ] 👤 **Tornar o repositório do GitHub privado** (e desligar o GitHub Pages) — sem isso a trava de servidor não impede ler as aulas no GitHub.
 - [ ] 👤 **Revisar uma amostra grande do conteúdo** (matemática, português, gabaritos) antes de vender.
 
 ### Para colocar no ar

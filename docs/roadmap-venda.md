@@ -17,16 +17,16 @@ Decisão: **parar de adicionar aulas** (já são 490+ páginas); o que falta é 
 - [x] 👤 Conta na **Cloudflare** criada; domínio adicionado (plano Free) e servidores DNS trocados no Registro.br (2026-10-13; a delegação de domínio novo leva ~2 h).
 - [x] 🤖 **Cloudflare Pages no ar** em https://edumath.pages.dev e no domínio **https://edumath.com.br** (e www), ativado em 2026-10-14 (projeto `edumath`, deploy automático a cada push na branch master, sem build; HTTP redireciona para HTTPS). Falta: tornar o repositório privado quando for vender e remover o GitHub Pages.
 - [ ] 🤖 Mover as imagens do ENEM (143 MB) para **Cloudflare R2**.
-- [ ] 🤖 Trava real do conteúdo pago (Cloudflare Worker ou Firebase Functions checando o plano do login), em vez da trava no navegador.
-- [ ] 🤖 **Sentry** (erros) e **Cloudflare Web Analytics** (visitas).
+- [x] 🤖 Trava real do conteúdo (Cloudflare Pages Functions conferindo o login do Firebase) — feito em 2026-10-19, ver docs/plataforma-19-out.md. Só vale de verdade depois de tornar o repositório privado.
+- [x] 🤖 **Sentry** (erros) e **Cloudflare Web Analytics** (visitas): código pronto e relato automático de erros no admin (2026-10-19). 👤 Falta criar as contas e colar as chaves em app/monitor.js.
 - [ ] 👤 Se usar Firebase Blaze: ligar alerta de orçamento.
 
 ### Fase 2 — Produto pronto para o professor (🤖)
 - [x] 🤖 **Exportar prova em Word (.docx)** com equações nativas do Word — feito em 2026-10-14 (app/docx.js, botão "Word" no EduMath Provas; testado abrindo no Word de verdade). Pendente: conferir com professores reais em Word de Mac e no Google Docs/LibreOffice.
 - [ ] 🤖 Testes de **sincronização** (2 aparelhos, internet caindo) e **backup** das provas na nuvem.
 - [ ] 🤖 Teste em **celular** (aparelhos simples) e desempenho.
-- [ ] 🤖 Botão **"Reportar erro"** em aulas e questões + registro de correções.
-- [ ] 🤖 **Conta de demonstração** com prova pronta; primeiros 5 minutos sem becos sem saída; teste de 14 dias do Pro.
+- [x] 🤖 Botão **"Reportar erro"** em aulas e questões + registro de correções (feito em 2026-10-14).
+- [x] 🤖 **Demonstração sem conta** (demo.html: prova pronta + planejador + aula, 5 minutos) e **teste de 14 dias do Pro** para professores novos (2026-10-19).
 - [ ] 🤖 Selo discreto "feito com EduMath" na prova/folha de respostas e **indicação** (1 mês grátis por indicado).
 - [ ] 👤 **Revisar uma amostra grande do conteúdo** (matemática, português, gabaritos) e decidir o que só entra no pago depois de revisado.
 - [ ] 👤 Preencher `app/config-venda.js` (WhatsApp, e-mail, Pix, preços) e rodar `docs/teste-contas.md` com contas reais.

@@ -49,5 +49,9 @@ ${FIM}
     } else livres++;
     fs.writeFileSync(f, crlf ? s.replace(/\n/g, '\r\n') : s, 'utf8');
   }
+  // lista das aulas grátis para a trava de servidor (Cloudflare Pages Functions: functions/_middleware.js)
+  fs.mkdirSync(path.join(root, 'functions'), { recursive: true });
+  const NL = String.fromCharCode(10);
+  fs.writeFileSync(path.join(root, 'functions', '_gratis.js'), '// GERADO por scripts/aplicar-acesso.js — aulas liberadas sem conta. Não edite à mão.' + NL + 'export const GRATIS = ' + JSON.stringify([...gratis].filter(a => todos.has(a)).sort(), null, 2) + ';' + NL);
   console.log('acesso: ' + travadas + ' páginas pedem conta · ' + livres + ' aulas grátis' + (semHead.length ? ' · SEM </head>: ' + semHead.join(', ') : ''));
 })();

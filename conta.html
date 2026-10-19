@@ -90,7 +90,7 @@ aoMudarAuth(async function(u){
   var linhas = [['Nome', perfil.nome || u.displayName || '—'], ['E-mail', u.email || '—'], ['Tipo de conta', perfil.role === 'professor' ? 'Professor(a)' : 'Aluno(a)']];
   if(perfil.role === 'professor'){
     var p = planoVigente(await lerProfessor(u.uid).catch(function(){ return null; }));
-    linhas.push(['Plano', p.nome]); $('linkPlanos').hidden = false;
+    linhas.push(['Plano', p.nome + (p.teste ? ' — até ' + fmtData(p.ate) : '')]); $('linkPlanos').hidden = false;
     $('oQue').textContent = 'turmas, atividades, provas, questões próprias e configurações';
     $('cardMateria').hidden = false; $('selMateria').innerHTML = optionsMateria(perfil.materia || '');
   }

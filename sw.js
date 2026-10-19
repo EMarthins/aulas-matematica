@@ -3,7 +3,7 @@
    - Firebase e outros domínios: passam direto pela rede (login e plataforma exigem internet)
    Troque VERSAO para forçar a limpeza do cache antigo.
    As buscas em segundo plano usam cache:'no-cache' (revalidam por ETag), senão o cache HTTP do navegador (até 4 h na Cloudflare) devolvia CSS/JS velhos junto de HTML novo. */
-var VERSAO = 'v36';
+var VERSAO = 'v37';
 var CACHE = 'aulas-' + VERSAO;
 /* Hospedagens que tiram o ".html" do endereço (ex.: Cloudflare Pages: /planos.html -> /planos) respondem com redirecionamento;
    o navegador recusa abrir, numa navegação, uma resposta marcada como "redirecionada". Refazemos a resposta sem a marca. */

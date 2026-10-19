@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planejador de aula (PTD) — Professor</title>
+<link href="../assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../app/style.css">
+<link rel="stylesheet" href="../app/estudo.css">
+<style>
+  .ptd-grid{ display:grid; grid-template-columns:minmax(0,1fr); gap:18px; align-items:start; }
+  @media (min-width:1100px){ .ptd-grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); } .ptd-prev{ position:sticky; top:12px; max-height:calc(100vh - 24px); overflow:auto; } }
+  .ptd-sec{ margin-top:12px; padding:0; }
+  .ptd-sec > summary{ cursor:pointer; padding:14px 18px; font-weight:800; list-style:none; display:flex; gap:10px; align-items:center; }
+  .ptd-sec > summary::-webkit-details-marker{ display:none; }
+  .ptd-sec > summary .n{ display:inline-grid; place-items:center; width:1.7rem; height:1.7rem; border-radius:50%; background:var(--primary-soft); color:var(--primary-ink,var(--primary)); font-size:.85rem; }
+  .ptd-sec > summary::after{ content:'▾'; margin-left:auto; color:var(--ink-faint); transition:transform .15s; }
+  .ptd-sec:not([open]) > summary::after{ transform:rotate(-90deg); }
+  .ptd-corpo{ padding:0 18px 16px; }
+  .ptd-l{ display:grid; grid-template-columns:repeat(auto-fit,minmax(11rem,1fr)); gap:10px 12px; }
+  .ptd-l label, .ptd-corpo > label{ display:block; font-size:.78rem; font-weight:700; color:var(--ink-soft); }
+  .ptd-in, .ptd-l select, .ptd-l input, .ptd-corpo textarea, .ptd-corpo select, .ptd-corpo input[type=text], .ptd-corpo input[type=date]{ width:100%; box-sizing:border-box; font:inherit; font-size:.9rem; margin-top:3px; padding:.5em .7em; border-radius:10px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); }
+  .ptd-corpo textarea{ min-height:5.5rem; resize:vertical; }
+  .ptd-mod{ display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--line); font-size:.9rem; }
+  .ptd-mod input{ margin-top:.3em; width:1.05rem; height:1.05rem; accent-color:var(--primary); flex:none; }
+  .ptd-mod small{ color:var(--ink-faint); }
+  .ptd-checks{ display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:4px 14px; margin:6px 0; }
+  .ptd-checks label{ display:flex; gap:8px; align-items:flex-start; font-size:.86rem; font-weight:600; color:var(--ink); }
+  .ptd-checks input{ margin-top:.25em; accent-color:var(--primary); }
+  .ptd-cron{ width:100%; border-collapse:collapse; font-size:.8rem; margin-top:8px; }
+  .ptd-cron th, .ptd-cron td{ border:1px solid var(--line-strong); padding:3px; vertical-align:top; }
+  .ptd-cron th{ background:var(--surface-2,var(--surface)); font-size:.72rem; text-align:left; padding:5px; }
+  .ptd-cron input, .ptd-cron textarea{ width:100%; box-sizing:border-box; border:0; background:transparent; color:var(--ink); font:inherit; font-size:.8rem; padding:3px; resize:vertical; min-height:2.2rem; }
+  .ptd-cron td.n{ width:2rem; text-align:center; color:var(--ink-faint); }
+  .ptd-cron td.x button{ border:0; background:transparent; cursor:pointer; color:var(--danger,#b00020); font-size:1rem; }
+  .ptd-barra{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .ptd-barra select{ font:inherit; padding:.5em .8em; border-radius:999px; border:1.5px solid var(--line-strong); background:var(--surface); color:var(--ink); max-width:100%; }
+  .ptd-st{ font-size:.8rem; color:var(--ink-faint); }
+  .ptd-folha{ background:#fff; color:#111; border:1px solid var(--line-strong); border-radius:6px; padding:22px 24px; font-family:Georgia,'Times New Roman',serif; font-size:.82rem; line-height:1.45; }
+  .ptd-folha h1{ font-size:1.15rem; text-align:center; margin:0 0 2px; letter-spacing:.02em; }
+  .ptd-folha h2{ font-size:.92rem; margin:14px 0 4px; border-bottom:1px solid #444; padding-bottom:2px; }
+  .ptd-folha .sub{ text-align:center; font-size:.8rem; margin-bottom:10px; color:#333; }
+  .ptd-folha table{ width:100%; border-collapse:collapse; margin:4px 0; }
+  .ptd-folha th, .ptd-folha td{ border:1px solid #555; padding:3px 5px; text-align:left; vertical-align:top; font-size:.78rem; }
+  .ptd-folha th{ background:#eee; }
+  .ptd-folha ul{ margin:3px 0 3px 1.2rem; padding:0; }
+  .ptd-folha .ass{ display:flex; gap:24px; margin-top:34px; }
+  .ptd-folha .ass div{ flex:1; border-top:1px solid #111; text-align:center; font-size:.74rem; padding-top:3px; }
+  .ptd-vazio{ color:#777; font-style:italic; }
+  .demo-aviso{ background:var(--decay-soft); border:1px solid var(--decay); border-radius:12px; padding:10px 14px; margin-bottom:12px; font-size:.88rem; }
+</style>
+<link rel="stylesheet" href="../app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="../index.html"><span class="dot"></span> EduMath</a>
+  <nav><a href="dashboard.html">Painel</a><a href="prova.html">EduMath Provas</a><a href="banco.html">Banco de questões</a><a href="planejador.html" style="color:var(--primary);font-weight:700">Planejador (PTD)</a><span id="userNome" class="mono" style="color:var(--ink-faint);"></span><a href="#" id="logoutBtn">Sair</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:28px 20px 80px;">
+  <div class="eyebrow">Área do professor</div>
+  <h1 class="disp" style="margin:6px 0;font-size:clamp(1.6rem,3.6vw,2.3rem);">Planejador de aula (PTD)</h1>
+  <p class="hint" style="margin:0 0 14px;max-width:62ch;">Monte o <b>Plano de Trabalho Docente</b> do trimestre em poucos minutos: escolha os módulos do catálogo e o planejador monta o cronograma de aulas, busca os objetivos de cada aula e gera o documento pronto para <b>imprimir (PDF)</b> ou <b>abrir no Word</b>. Tudo fica salvo neste aparelho.</p>
+
+  <div class="demo-aviso" id="demoAviso" hidden><b>Modo demonstração.</b> Você está vendo o planejador sem conta: um plano de exemplo já foi carregado. Mexa à vontade — nada é enviado a lugar nenhum. <a href="../login.html?modo=cadastrar">Crie sua conta grátis</a> para usar com suas turmas.</div>
+
+  <div class="card"><div class="ptd-barra">
+    <label for="selPlano" style="font-weight:700;font-size:.85rem;">Plano:</label>
+    <select id="selPlano" aria-label="Escolher plano salvo"></select>
+    <button class="btn sm" id="bNovo" type="button">+ Novo</button>
+    <button class="btn secondary sm" id="bDup" type="button">Duplicar</button>
+    <button class="btn secondary sm" id="bExc" type="button">Excluir</button>
+    <button class="btn secondary sm" id="bEx" type="button" title="Carregar um plano de exemplo">Exemplo</button>
+    <span style="flex:1"></span><span class="ptd-st" id="st">—</span>
+  </div></div>
+
+  <div class="ptd-grid" style="margin-top:6px;">
+    <div id="form">
+      <details class="card ptd-sec" open><summary><span class="n">1</span> Identificação</summary><div class="ptd-corpo"><div class="ptd-l">
+        <div><label for="nome">Nome do plano</label><input id="nome" data-k="nome" placeholder="Ex.: Matemática 1ª série — 2º tri"></div>
+        <div><label for="escola">Estabelecimento de ensino</label><input id="escola" data-k="escola"></div>
+        <div><label for="municipio">Município / NRE</label><input id="municipio" data-k="municipio"></div>
+        <div><label for="professor">Professor(a)</label><input id="professor" data-k="professor"></div>
+        <div><label for="disciplina">Disciplina</label><select id="disciplina" data-k="disciplina"></select></div>
+        <div><label for="ano">Série / ano</label><select id="ano" data-k="ano"></select></div>
+        <div><label for="turmas">Turma(s)</label><input id="turmas" data-k="turmas" placeholder="Ex.: A, B e C"></div>
+        <div><label for="anoLetivo">Ano letivo</label><input id="anoLetivo" data-k="anoLetivo" placeholder="2026"></div>
+        <div><label for="trimestre">Trimestre</label><select id="trimestre" data-k="trimestre"></select></div>
+        <div><label for="aulasSemana">Aulas por semana</label><input id="aulasSemana" data-k="aulasSemana" inputmode="numeric" placeholder="Ex.: 4"></div>
+      </div></div></details>
+
+      <details class="card ptd-sec" open><summary><span class="n">2</span> Conteúdos do trimestre (do catálogo)</summary><div class="ptd-corpo">
+        <p class="hint" style="margin-top:0">Marque os módulos que você vai trabalhar neste trimestre. As aulas de cada módulo entram no cronograma.</p>
+        <div id="mods"></div>
+        <div class="ptd-barra" style="margin-top:10px;"><button class="btn sm" id="bCron" type="button">Montar cronograma com as aulas marcadas</button><button class="btn secondary sm" id="bObj" type="button">Buscar objetivos nas aulas</button><span class="ptd-st" id="stObj"></span></div>
+        <label for="conteudos" style="margin-top:12px;">Conteúdos (edite à vontade)</label><textarea id="conteudos" data-k="conteudos"></textarea>
+      </div></details>
+
+      <details class="card ptd-sec"><summary><span class="n">3</span> Objetivos e habilidades</summary><div class="ptd-corpo">
+        <label for="objetivos">Objetivos de aprendizagem</label><textarea id="objetivos" data-k="objetivos" placeholder="Um objetivo por linha, com verbo observável (identificar, calcular, comparar, interpretar, resolver)."></textarea>
+        <label for="habilidades" style="margin-top:10px;">Habilidades / competências (BNCC, Referencial Curricular)</label><textarea id="habilidades" data-k="habilidades" placeholder="Ex.: EM13MAT101 — ..."></textarea>
+      </div></details>
+
+      <details class="card ptd-sec"><summary><span class="n">4</span> Encaminhamento metodológico e recursos</summary><div class="ptd-corpo">
+        <label for="metodologia">Metodologia</label><textarea id="metodologia" data-k="metodologia" style="min-height:8rem"></textarea>
+        <div style="margin-top:10px;font-size:.78rem;font-weight:700;color:var(--ink-soft)">Recursos</div><div class="ptd-checks" id="recursos"></div>
+        <label for="recursosExtra">Outros recursos</label><input type="text" id="recursosExtra" data-k="recursosExtra">
+      </div></details>
+
+      <details class="card ptd-sec"><summary><span class="n">5</span> Avaliação e recuperação</summary><div class="ptd-corpo">
+        <div style="font-size:.78rem;font-weight:700;color:var(--ink-soft)">Instrumentos</div><div class="ptd-checks" id="instrumentos"></div>
+        <label for="criterios">Critérios de avaliação</label><textarea id="criterios" data-k="criterios"></textarea>
+        <label for="recuperacao" style="margin-top:10px;">Recuperação de aprendizagem</label><textarea id="recuperacao" data-k="recuperacao"></textarea>
+      </div></details>
+
+      <details class="card ptd-sec" open><summary><span class="n">6</span> Cronograma de aulas</summary><div class="ptd-corpo">
+        <p class="hint" style="margin-top:0">Escolha o primeiro dia e os dias da semana em que você tem aula e o planejador distribui as datas (pulando feriados e recessos que você informar).</p>
+        <div class="ptd-l">
+          <div><label for="inicio">Primeira aula</label><input type="date" id="inicio" data-k="inicio"></div>
+          <div><label for="porEncontro">Aulas por encontro</label><select id="porEncontro" data-k="porEncontro"><option>1</option><option>2</option><option>3</option></select></div>
+          <div><label for="feriados">Feriados/recessos (dd/mm, separados por vírgula)</label><input id="feriados" data-k="feriados" placeholder="12/10, 02/11, 15/11"></div>
+        </div>
+        <div class="ptd-checks" id="dias" style="margin-top:8px;"></div>
+        <div class="ptd-barra"><button class="btn sm" id="bDatas" type="button">Distribuir datas</button><button class="btn secondary sm" id="bAdd" type="button">+ Linha</button><button class="btn secondary sm" id="bLimpaCron" type="button">Limpar cronograma</button></div>
+        <div style="overflow:auto"><table class="ptd-cron" id="cron"></table></div>
+      </div></details>
+
+      <details class="card ptd-sec"><summary><span class="n">7</span> Referências</summary><div class="ptd-corpo">
+        <textarea id="refs" data-k="refs" style="min-height:6rem"></textarea>
+      </div></details>
+    </div>
+
+    <aside class="ptd-prev card" style="padding:14px;">
+      <div class="ptd-barra" style="margin-bottom:10px;"><b>Documento</b><span style="flex:1"></span><button class="btn sm" id="bPrint" type="button">Imprimir / salvar PDF</button><button class="btn secondary sm" id="bWord" type="button">Baixar para Word</button></div>
+      <div class="ptd-folha" id="folha"></div>
+    </aside>
+  </div>
+</main>
+
+<script type="module">
+import { protegerPagina, sair } from '../app/auth.js';
+import { iniciarThemeToggle } from '../app/theme-toggle.js';
+import { MATERIAS } from '../app/catalog.js';
+iniciarThemeToggle('theme-pref-app');
+var $ = function(id){ return document.getElementById(id); };
+var DEMO = new URLSearchParams(location.search).get('demo') === '1';
+$('logoutBtn').addEventListener('click', function(e){ e.preventDefault(); sair(); });
+
+var RECURSOS = ['Slides das aulas do EduMath (projetor ou TV)', 'Atividades do EduMath (ENEM, criativa e trilha prática)', 'EduMath Provas (avaliações e gabaritos)', 'Quadro e marcador', 'Caderno do estudante', 'Calculadora e instrumentos de desenho', 'Livro didático / material do Referencial Curricular', 'Celular ou computador (pesquisa e simuladores)'];
+var INSTR = ['Questão de saída (exit ticket) ao fim de cada aula', 'Prática independente com correção comentada', 'Atividade no estilo ENEM (5 questões)', 'Trilha prática de problemas', 'Atividade criativa / projeto', 'Prova do trimestre (EduMath Provas)', 'Autoavaliação: “o que ainda ficou difícil?”', 'Observação e participação nas aulas'];
+var DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+var METODO = 'Aulas dialogadas com slides, seguindo a mesma sequência em todas as aulas: abertura com situação-problema e imagem de contexto; ativação dos conhecimentos prévios; objetivos da aula; explicação com representações visuais; exemplo resolvido passo a passo; prática guiada em duplas (com dicas graduais); prática independente; correção comentada; síntese com as ideias principais; e questão de saída. Uso de problemas contextualizados e de tecnologias digitais.';
+var CRIT = 'Participação e engajamento nas práticas; domínio dos conceitos e procedimentos; capacidade de justificar resoluções; resolução de problemas contextualizados; evolução entre a questão de saída e as práticas seguintes.';
+var RECUP = 'Recuperação contínua: retomada dos conteúdos com menor aproveitamento nas questões de saída, atividades de reforço (trilha prática e revisão espaçada do EduMath) e nova avaliação dos objetivos não alcançados.';
+var REFS = 'BRASIL. Ministério da Educação. Base Nacional Comum Curricular (BNCC). Brasília: MEC, 2018.\nReferencial Curricular da rede estadual (RCO) — componente curricular da disciplina.\nAulas, atividades e questões do EduMath (edumath.com.br), elaboradas a partir das habilidades da BNCC.';
+
+var CAT = MATERIAS.filter(function(m){ return !m.oculta && m.id !== 'gratis'; });
+var P = null, LISTA = [], timer = null, PERFIL = {};
+
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+function br(s){ return esc(s).split('\n').join('<br>'); }
+function lsGet(k, d){ try{ var v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }
+function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } }
+function lsDel(k){ try{ localStorage.removeItem(k); }catch(e){} }
+function uid(){ return 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+var PFX = DEMO ? 'ptd-demo:' : 'ptd:';
+
+function novoPlano(perfil){
+  var mat = CAT.filter(function(m){ return m.id === (perfil && perfil.materia) || m.nome === (perfil && perfil.materia); })[0] || CAT.filter(function(m){ return m.id === 'matematica'; })[0] || CAT[0];
+  var a = mat.CATALOG.filter(function(x){ return /\d/.test(x.ano); })[0] || mat.CATALOG[0];
+  return { id: uid(), nome: '', escola: '', municipio: '', professor: (perfil && perfil.nome) || '', disciplina: mat.id, ano: a.ano, turmas: '', anoLetivo: String(new Date().getFullYear()), trimestre: '1° Trimestre', aulasSemana: '',
+    mods: {}, conteudos: '', objetivos: '', habilidades: '', metodologia: METODO, recursos: [0, 1, 4], recursosExtra: '', instrumentos: [0, 1, 6], criterios: CRIT, recuperacao: RECUP,
+    inicio: '', dias: [1, 3], porEncontro: '1', feriados: '', cron: [], refs: REFS };
+}
+function materia(){ return CAT.filter(function(m){ return m.id === P.disciplina; })[0] || CAT[0]; }
+function anoObj(){ var m = materia(); return m.CATALOG.filter(function(a){ return a.ano === P.ano; })[0] || m.CATALOG[0]; }
+function triObj(){ var a = anoObj(); return a.trimestres.filter(function(t){ return t.nome === P.trimestre; })[0] || a.trimestres[0]; }
+function modsDisponiveis(){ var t = triObj(); return t ? t.unidades.filter(function(u){ return u.itens && u.itens.length; }) : []; }
+
+// ---------- lista de planos ----------
+function carregaLista(){ LISTA = lsGet(PFX + 'lista', []); }
+function salvaLista(){ lsSet(PFX + 'lista', LISTA); }
+function salvaAgora(){
+  if(!P) return; if(!P.nome) P.nome = (materia().nome + ' · ' + P.ano + ' · ' + P.trimestre);
+  var ok = lsSet(PFX + P.id, P); var e = LISTA.filter(function(x){ return x.id === P.id; })[0];
+  if(!e){ e = { id: P.id }; LISTA.push(e); } e.nome = P.nome; e.em = Date.now(); salvaLista(); lsSet(PFX + 'atual', P.id);
+  $('st').textContent = ok ? 'Salvo neste aparelho às ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) : 'Não foi possível salvar (armazenamento cheio ou bloqueado).';
+  desenhaSelPlano();
+}
+function agendaSalvar(){ $('st').textContent = 'Salvando…'; clearTimeout(timer); timer = setTimeout(salvaAgora, 500); }
+function desenhaSelPlano(){
+  var s = $('selPlano'); s.innerHTML = '';
+  LISTA.slice().sort(function(a, b){ return b.em - a.em; }).forEach(function(x){ var o = document.createElement('option'); o.value = x.id; o.textContent = x.nome || '(sem nome)'; if(P && x.id === P.id) o.selected = true; s.appendChild(o); });
+}
+function abre(id){ var p = lsGet(PFX + id, null); if(!p) return; P = p; lsSet(PFX + 'atual', id); preenche(); }
+
+// ---------- formulário ----------
+function opcoes(sel, lista, atual){ sel.innerHTML = ''; lista.forEach(function(x){ var o = document.createElement('option'); o.value = x[0]; o.textContent = x[1]; if(x[0] === atual) o.selected = true; sel.appendChild(o); }); }
+function preenche(){
+  opcoes($('disciplina'), CAT.map(function(m){ return [m.id, m.nome]; }), P.disciplina);
+  opcoes($('ano'), materia().CATALOG.map(function(a){ return [a.ano, a.ano]; }), P.ano); if(!materia().CATALOG.some(function(a){ return a.ano === P.ano; })) P.ano = materia().CATALOG[0].ano;
+  opcoes($('trimestre'), anoObj().trimestres.map(function(t){ return [t.nome, t.nome]; }), P.trimestre); if(!anoObj().trimestres.some(function(t){ return t.nome === P.trimestre; })) P.trimestre = anoObj().trimestres[0].nome;
+  [].forEach.call(document.querySelectorAll('#form [data-k]'), function(el){ var k = el.dataset.k; if(k === 'disciplina' || k === 'ano' || k === 'trimestre') return; el.value = P[k] == null ? '' : P[k]; });
+  $('disciplina').value = P.disciplina; $('ano').value = P.ano; $('trimestre').value = P.trimestre;
+  checks('recursos', RECURSOS, 'recursos'); checks('instrumentos', INSTR, 'instrumentos');
+  var d = $('dias'); d.innerHTML = ''; DIAS.forEach(function(n, i){ var l = document.createElement('label'); l.innerHTML = '<input type="checkbox" value="' + i + '"' + (P.dias.indexOf(i) >= 0 ? ' checked' : '') + '> ' + n; l.querySelector('input').addEventListener('change', function(){ P.dias = [].map.call(d.querySelectorAll('input:checked'), function(x){ return +x.value; }); agendaSalvar(); }); d.appendChild(l); });
+  desenhaMods(); desenhaCron(); desenhaSelPlano(); render();
+}
+function checks(boxId, lista, chave){
+  var box = $(boxId); box.innerHTML = '';
+  lista.forEach(function(t, i){ var l = document.createElement('label'); l.innerHTML = '<input type="checkbox"' + (P[chave].indexOf(i) >= 0 ? ' checked' : '') + '> <span>' + esc(t) + '</span>'; l.querySelector('input').addEventListener('change', function(){ var s = {}; [].forEach.call(box.querySelectorAll('input'), function(x, k){ if(x.checked) s[k] = 1; }); P[chave] = Object.keys(s).map(Number); agendaSalvar(); render(); }); box.appendChild(l); });
+}
+function desenhaMods(){
+  var box = $('mods'); box.innerHTML = ''; var us = modsDisponiveis();
+  if(!us.length){ box.innerHTML = '<p class="hint">Ainda não há módulos com aulas publicadas para esta disciplina, série e trimestre. Você pode preencher os conteúdos e o cronograma à mão.</p>'; return; }
+  us.forEach(function(u){
+    var k = u.titulo, l = document.createElement('label'); l.className = 'ptd-mod';
+    l.innerHTML = '<input type="checkbox"' + (P.mods[k] ? ' checked' : '') + '><span><b>' + esc(u.titulo) + '</b> <small>· ' + u.itens.filter(function(i){ return /^Aula/.test(i.tipo); }).length + ' aula(s)</small></span>';
+    l.querySelector('input').addEventListener('change', function(){ if(this.checked) P.mods[k] = 1; else delete P.mods[k]; var sel = us.filter(function(x){ return P.mods[x.titulo]; }); P.conteudos = sel.map(function(x){ return '• ' + x.titulo; }).join('\n'); $('conteudos').value = P.conteudos; agendaSalvar(); render(); });
+    box.appendChild(l);
+  });
+}
+function aulasMarcadas(){
+  var out = []; modsDisponiveis().forEach(function(u){ if(!P.mods[u.titulo]) return; u.itens.forEach(function(i){ if(/^Aula/.test(i.tipo)) out.push({ modulo: u.titulo, titulo: i.titulo, arquivo: i.arquivo }); }); });
+  return out;
+}
+function montaCron(){
+  var as = aulasMarcadas(); if(!as.length){ alert('Marque pelo menos um módulo com aulas.'); return; }
+  if(P.cron.length && !confirm('O cronograma atual será substituído. Continuar?')) return;
+  P.cron = as.map(function(a, i){ return { data: '', conteudo: a.modulo + ' — ' + a.titulo, objetivo: '', metodo: 'Aula com slides EduMath; prática guiada e independente; questão de saída.', aval: 'Questão de saída', arquivo: a.arquivo }; });
+  desenhaCron(); agendaSalvar(); render();
+}
+function dataBR(d){ return ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2) + '/' + d.getFullYear(); }
+function distribuiDatas(){
+  if(!P.inicio){ alert('Informe a data da primeira aula.'); return; } if(!P.dias.length){ alert('Marque os dias da semana em que você tem aula.'); return; }
+  if(!P.cron.length){ alert('O cronograma está vazio. Monte-o com as aulas dos módulos ou adicione linhas.'); return; }
+  var ferias = {}; String(P.feriados || '').split(',').forEach(function(x){ var m = x.trim().split('/'); if(m.length >= 2) ferias[('0' + (+m[0])).slice(-2) + '/' + ('0' + (+m[1])).slice(-2)] = 1; });
+  var p = P.inicio.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]), i = 0, por = +P.porEncontro || 1, guarda = 0;
+  while(i < P.cron.length && guarda++ < 800){
+    var dm = dataBR(d).slice(0, 5);
+    if(P.dias.indexOf(d.getDay()) >= 0 && !ferias[dm]){ for(var k = 0; k < por && i < P.cron.length; k++) P.cron[i++].data = dataBR(d); }
+    d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+  }
+  desenhaCron(); agendaSalvar(); render();
+}
+function desenhaCron(){
+  var t = $('cron'); var h = '<tr><th>Nº</th><th>Data</th><th>Conteúdo / aula</th><th>Objetivo</th><th>Metodologia e recursos</th><th>Avaliação</th><th></th></tr>';
+  P.cron.forEach(function(r, i){ h += '<tr data-i="' + i + '"><td class="n">' + (i + 1) + '</td><td><input data-c="data" value="' + esc(r.data) + '" placeholder="dd/mm/aaaa"></td><td><textarea data-c="conteudo">' + esc(r.conteudo) + '</textarea></td><td><textarea data-c="objetivo">' + esc(r.objetivo) + '</textarea></td><td><textarea data-c="metodo">' + esc(r.metodo) + '</textarea></td><td><textarea data-c="aval">' + esc(r.aval) + '</textarea></td><td class="x"><button type="button" title="Remover linha" aria-label="Remover linha">✕</button></td></tr>'; });
+  t.innerHTML = h;
+}
+$('cron').addEventListener('input', function(e){ var tr = e.target.closest('tr'); if(!tr || !e.target.dataset.c) return; P.cron[+tr.dataset.i][e.target.dataset.c] = e.target.value; agendaSalvar(); render(); });
+$('cron').addEventListener('click', function(e){ var b = e.target.closest('.x button'); if(!b) return; P.cron.splice(+b.closest('tr').dataset.i, 1); desenhaCron(); agendaSalvar(); render(); });
+$('bAdd').addEventListener('click', function(){ P.cron.push({ data: '', conteudo: '', objetivo: '', metodo: '', aval: '' }); desenhaCron(); agendaSalvar(); render(); });
+$('bLimpaCron').addEventListener('click', function(){ if(P.cron.length && confirm('Apagar todas as linhas do cronograma?')){ P.cron = []; desenhaCron(); agendaSalvar(); render(); } });
+$('bCron').addEventListener('click', montaCron);
+$('bDatas').addEventListener('click', distribuiDatas);
+
+// objetivos: lê o slide "Objetivos da aula" de cada aula do cronograma (4 de cada vez)
+function objetivosDe(html){
+  var doc = new DOMParser().parseFromString(html, 'text/html'), alvo = null;
+  [].forEach.call(doc.querySelectorAll('.slide'), function(s){ var e = s.querySelector('.eyebrow'); if(!alvo && e && /^Objetivos/i.test(e.textContent.trim())) alvo = s; });
+  if(!alvo) return '';
+  return [].map.call(alvo.querySelectorAll('li'), function(li){
+    var c = li.cloneNode(true);
+    [].forEach.call(c.querySelectorAll('.fr'), function(f){ var p = f.children; if(p.length === 2) f.textContent = p[0].textContent + '/' + p[1].textContent; });
+    [].forEach.call(c.querySelectorAll('sup'), function(s){ s.textContent = '^' + s.textContent; });
+    [].forEach.call(c.querySelectorAll('sub'), function(s){ s.textContent = '_' + s.textContent; });
+    return c.textContent.replace(/\s+/g, ' ').trim();
+  }).filter(Boolean).join('; ');
+}
+$('bObj').addEventListener('click', async function(){
+  var linhas = P.cron.filter(function(r){ return r.arquivo && !r.objetivo; });
+  if(!linhas.length){ $('stObj').textContent = P.cron.some(function(r){ return r.arquivo; }) ? 'Todos os objetivos já estão preenchidos.' : 'Monte o cronograma com as aulas dos módulos primeiro.'; return; }
+  var feitos = 0, falhas = 0, fila = linhas.slice();
+  async function trabalha(){
+    while(fila.length){
+      var r = fila.shift();
+      try{ var resp = await fetch('../' + r.arquivo, { credentials: 'same-origin' }); if(!resp.ok) throw new Error(resp.status); r.objetivo = objetivosDe(await resp.text()); if(!r.objetivo) falhas++; }catch(e){ falhas++; }
+      feitos++; $('stObj').textContent = 'Buscando objetivos… ' + feitos + '/' + linhas.length;
+    }
+  }
+  await Promise.all([trabalha(), trabalha(), trabalha(), trabalha()]);
+  $('stObj').textContent = 'Pronto: ' + (linhas.length - falhas) + ' aula(s) com objetivos' + (falhas ? ' · ' + falhas + ' sem objetivos (preencha à mão)' : '') + '.';
+  if(!P.objetivos){ var all = {}; P.cron.forEach(function(r){ (r.objetivo || '').split('; ').forEach(function(o){ if(o) all[o] = 1; }); }); P.objetivos = Object.keys(all).slice(0, 12).map(function(o){ return '• ' + o; }).join('\n'); $('objetivos').value = P.objetivos; }
+  desenhaCron(); agendaSalvar(); render();
+});
+
+// campos simples
+$('form').addEventListener('input', function(e){
+  var k = e.target.dataset && e.target.dataset.k; if(!k) return;
+  P[k] = e.target.value;
+  if(k === 'disciplina'){ P.mods = {}; P.cron = []; P.ano = (materia().CATALOG.filter(function(a){ return /\d/.test(a.ano); })[0] || materia().CATALOG[0]).ano; P.trimestre = anoObj().trimestres[0].nome; preenche(); }
+  else if(k === 'ano'){ P.mods = {}; P.trimestre = anoObj().trimestres[0].nome; preenche(); }
+  else if(k === 'trimestre'){ P.mods = {}; desenhaMods(); }
+  agendaSalvar(); render();
+});
+
+// ---------- documento ----------
+function lista(txt){ var ls = String(txt || '').split('\n').map(function(x){ return x.replace(/^[•\-\*]\s*/, '').trim(); }).filter(Boolean); return ls.length ? '<ul>' + ls.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '<p class="ptd-vazio">(preencher)</p>'; }
+function bloco(t, h){ return '<h2>' + t + '</h2>' + h; }
+function documento(){
+  var m = materia(), cron = P.cron.length ? '<table><tr><th style="width:2rem">Nº</th><th style="width:4.6rem">Data</th><th>Conteúdo / aula</th><th>Objetivo</th><th>Metodologia e recursos</th><th>Avaliação</th></tr>' + P.cron.map(function(r, i){ return '<tr><td>' + (i + 1) + '</td><td>' + esc(r.data) + '</td><td>' + esc(r.conteudo) + '</td><td>' + esc(r.objetivo) + '</td><td>' + esc(r.metodo) + '</td><td>' + esc(r.aval) + '</td></tr>'; }).join('') + '</table>' : '<p class="ptd-vazio">(cronograma ainda vazio)</p>';
+  var rec = P.recursos.map(function(i){ return RECURSOS[i]; }); if(P.recursosExtra) rec.push(P.recursosExtra);
+  var ins = P.instrumentos.map(function(i){ return INSTR[i]; });
+  var ident = '<table><tr><th style="width:22%">Estabelecimento</th><td colspan="3">' + esc(P.escola) + '</td></tr><tr><th>Município / NRE</th><td>' + esc(P.municipio) + '</td><th style="width:16%">Ano letivo</th><td>' + esc(P.anoLetivo) + '</td></tr><tr><th>Professor(a)</th><td colspan="3">' + esc(P.professor) + '</td></tr><tr><th>Disciplina</th><td>' + esc(m.nome) + '</td><th>Série / ano</th><td>' + esc(P.ano) + '</td></tr><tr><th>Turma(s)</th><td>' + esc(P.turmas) + '</td><th>Trimestre</th><td>' + esc(P.trimestre) + '</td></tr><tr><th>Aulas por semana</th><td>' + esc(P.aulasSemana) + '</td><th>Total de aulas</th><td>' + P.cron.length + '</td></tr></table>';
+  return '<h1>PLANO DE TRABALHO DOCENTE — PTD</h1><div class="sub">' + esc(m.nome) + ' · ' + esc(P.ano) + ' · ' + esc(P.trimestre) + '</div>' + ident +
+    bloco('1. Conteúdos', lista(P.conteudos)) + bloco('2. Objetivos de aprendizagem', lista(P.objetivos)) + bloco('3. Habilidades e competências', lista(P.habilidades)) +
+    bloco('4. Encaminhamento metodológico', '<p>' + br(P.metodologia) + '</p>') + bloco('5. Recursos', lista(rec.join('\n'))) +
+    bloco('6. Avaliação', '<p><b>Instrumentos:</b></p>' + lista(ins.join('\n')) + (P.criterios ? '<p><b>Critérios:</b> ' + br(P.criterios) + '</p>' : '') + (P.recuperacao ? '<p><b>Recuperação:</b> ' + br(P.recuperacao) + '</p>' : '')) +
+    bloco('7. Cronograma de aulas', cron) + bloco('8. Referências', lista(P.refs)) +
+    '<div class="ass"><div>Professor(a)</div><div>Coordenação pedagógica</div><div>Direção</div></div><p style="text-align:right;font-size:.74rem;margin-top:12px;">Gerado com EduMath · ' + new Date().toLocaleDateString('pt-BR') + '</p>';
+}
+function render(){ if(P) $('folha').innerHTML = documento(); }
+var CSS_DOC = 'body{font-family:Georgia,"Times New Roman",serif;color:#111;margin:16mm 14mm;font-size:10.5pt;line-height:1.4}h1{font-size:15pt;text-align:center;margin:0 0 2px}h2{font-size:11.5pt;margin:14px 0 4px;border-bottom:1px solid #444;padding-bottom:2px}.sub{text-align:center;font-size:10pt;margin-bottom:8px;color:#333}table{width:100%;border-collapse:collapse;margin:4px 0}th,td{border:1px solid #555;padding:3px 5px;text-align:left;vertical-align:top;font-size:9.5pt}th{background:#eee}ul{margin:3px 0 3px 18px;padding:0}.ass{display:flex;gap:24px;margin-top:34px}.ass div{flex:1;border-top:1px solid #111;text-align:center;font-size:9pt;padding-top:3px}.ptd-vazio{color:#777;font-style:italic}tr{page-break-inside:avoid}';
+function paginaCompleta(extraHead){ return '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>PTD — ' + esc(P.nome || materia().nome) + '</title>' + (extraHead || '') + '<style>' + CSS_DOC + '</style></head><body>' + documento() + '</body></html>'; }
+$('bPrint').addEventListener('click', function(){
+  var w = window.open('', '_blank'); if(!w){ alert('Libere pop-ups para imprimir ou salvar em PDF.'); return; }
+  w.document.write(paginaCompleta() + '<script>setTimeout(function(){window.print()},400)<' + '/script>'); w.document.close();
+});
+$('bWord').addEventListener('click', function(){
+  var head = '<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml>';
+  var html = paginaCompleta(head).replace('<html lang="pt-BR">', '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40" lang="pt-BR">');
+  var blob = new Blob(['﻿', html], { type: 'application/msword' }), a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'PTD - ' + (P.nome || materia().nome).replace(/[^\wÀ-ſ ·-]/g, '').trim() + '.doc'; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 500);
+});
+
+// ---------- planos: novo / duplicar / excluir / exemplo ----------
+$('selPlano').addEventListener('change', function(){ salvaAgora(); abre(this.value); });
+$('bNovo').addEventListener('click', function(){ salvaAgora(); P = novoPlano(PERFIL); preenche(); salvaAgora(); });
+$('bDup').addEventListener('click', function(){ salvaAgora(); var c = JSON.parse(JSON.stringify(P)); c.id = uid(); c.nome = (P.nome || 'Plano') + ' (cópia)'; P = c; preenche(); salvaAgora(); });
+$('bExc').addEventListener('click', function(){
+  if(!confirm('Excluir o plano “' + (P.nome || 'sem nome') + '”? Isso não pode ser desfeito.')) return;
+  lsDel(PFX + P.id); LISTA = LISTA.filter(function(x){ return x.id !== P.id; }); salvaLista();
+  if(LISTA.length) abre(LISTA[0].id); else { P = novoPlano(PERFIL); preenche(); salvaAgora(); }
+});
+function exemplo(){
+  var p = novoPlano(PERFIL); var m = CAT.filter(function(x){ return x.id === 'matematica'; })[0];
+  p.nome = 'Exemplo — Matemática 1ª série, 1º trimestre'; p.escola = 'Colégio Estadual Exemplo'; p.municipio = 'Curitiba / NRE Curitiba'; p.professor = (PERFIL && PERFIL.nome) || 'Prof. Exemplo'; p.disciplina = m.id;
+  var a = m.CATALOG.filter(function(x){ return x.ano === '1° Ano'; })[0] || m.CATALOG[0]; p.ano = a.ano; p.trimestre = a.trimestres[0].nome; p.turmas = 'A e B'; p.aulasSemana = '4'; p.inicio = new Date().getFullYear() + '-02-09'; p.dias = [1, 2, 4, 5]; p.porEncontro = '1';
+  var us = a.trimestres[0].unidades.filter(function(u){ return u.itens && u.itens.length; }).slice(0, 2); us.forEach(function(u){ p.mods[u.titulo] = 1; });
+  p.conteudos = us.map(function(u){ return '• ' + u.titulo; }).join('\n');
+  p.cron = []; us.forEach(function(u){ u.itens.forEach(function(i){ if(/^Aula/.test(i.tipo)) p.cron.push({ data: '', conteudo: u.titulo + ' — ' + i.titulo, objetivo: '', metodo: 'Aula com slides EduMath; prática guiada e independente; questão de saída.', aval: 'Questão de saída', arquivo: i.arquivo }); }); });
+  return p;
+}
+$('bEx').addEventListener('click', function(){ salvaAgora(); P = exemplo(); preenche(); distribuiDatasSilencioso(); salvaAgora(); $('stObj').textContent = 'Plano de exemplo carregado. Clique em “Buscar objetivos nas aulas” para completar.'; });
+function distribuiDatasSilencioso(){ try{ distribuiDatas(); }catch(e){} }
+
+function iniciar(perfil){
+  PERFIL = perfil || {}; carregaLista();
+  var atual = lsGet(PFX + 'atual', null);
+  if(atual && lsGet(PFX + atual, null)) abre(atual);
+  else if(LISTA.length) abre(LISTA[0].id);
+  else { P = DEMO ? exemplo() : novoPlano(PERFIL); preenche(); if(DEMO){ distribuiDatasSilencioso(); } salvaAgora(); }
+}
+
+// arranque (depois de tudo definido)
+if(DEMO){ $('demoAviso').hidden = false; $('userNome').textContent = 'demonstração'; iniciar({ nome: 'Prof. Exemplo' }); }
+else protegerPagina('professor', function(user, perfil){ $('userNome').textContent = perfil.nome; iniciar(perfil); }, '../login.html');
+</script>
+<script type="module" src="../app/sidebar.js"></script>
+</body>
+</html>

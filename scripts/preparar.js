@@ -20,6 +20,8 @@ const passos = [
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],
   ['sincronização com a nuvem', 'scripts/testar-nuvem.js'],
+  ['trava de servidor das aulas', 'scripts/testar-gate.js'],
+  ['monitoramento de erros', 'scripts/testar-monitor.js'],
   ['testes estáticos', 'scripts/testar.js']
 ];
 let falhou = false;

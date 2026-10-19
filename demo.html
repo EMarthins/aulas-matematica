@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Experimente sem criar conta — EduMath</title>
+<meta name="description" content="Conheça o EduMath em 5 minutos, sem cadastro: uma prova pronta para mexer, o planejador de aula (PTD) e uma aula completa.">
+<link href="assets/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="app/style.css">
+<style>
+  .dm-head{ text-align:center; margin-bottom:26px; }
+  .dm-head h1{ font-size:clamp(1.7rem,4.2vw,2.6rem); font-weight:900; margin:6px 0 10px; line-height:1.1; }
+  .dm-head .lede{ max-width:52ch; margin:0 auto; color:var(--ink-soft); }
+  .dm-prog{ max-width:44rem; margin:0 auto 18px; }
+  .dm-bar{ height:10px; border-radius:99px; background:var(--surface-2,var(--line)); overflow:hidden; }
+  .dm-bar > i{ display:block; height:100%; width:0; background:var(--success); border-radius:99px; transition:width .3s; }
+  .dm-passos{ max-width:44rem; margin:0 auto; display:flex; flex-direction:column; gap:12px; padding:0; list-style:none; counter-reset:p; }
+  .dm-p{ display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:16px 18px; }
+  .dm-p .n{ flex:none; width:2.2rem; height:2.2rem; border-radius:50%; display:grid; place-items:center; font-weight:900; background:var(--primary-soft); color:var(--primary); }
+  .dm-p.ok .n{ background:var(--success); color:#fff; }
+  .dm-p h2{ margin:0; font-size:1.05rem; }
+  .dm-p p{ margin:.3em 0 .6em; color:var(--ink-soft); font-size:.9rem; line-height:1.5; }
+  .dm-p .t{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em; }
+  .dm-btn{ display:inline-block; text-decoration:none; font-weight:800; font-size:.88rem; padding:.6em 1.1em; border-radius:12px; background:var(--primary); color:var(--primary-ink); }
+  .dm-btn.sec{ background:transparent; color:var(--ink); border:1.5px solid var(--line-strong); }
+  .dm-fim{ max-width:44rem; margin:26px auto 0; padding:22px; border:2px solid var(--primary); border-radius:20px; text-align:center; }
+  .dm-fim h2{ margin:0 0 6px; font-size:1.3rem; }
+  .dm-fim ul{ list-style:none; padding:0; margin:12px auto 16px; max-width:30rem; text-align:left; color:var(--ink-soft); font-size:.92rem; line-height:1.7; }
+  .dm-fim li::before{ content:"\2713  "; color:var(--success); font-weight:900; }
+</style>
+<link rel="stylesheet" href="app/sidebar.css">
+<script>try{document.documentElement.classList.add('sb-on');if(localStorage.getItem('sb:colapsada')==='1')document.documentElement.classList.add('sb-collapsed')}catch(e){}</script>
+</head>
+<body>
+<button type="button" id="themeToggle" class="theme-toggle" aria-label="Mudar tema">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<header class="topbar"><div class="wrap row between">
+  <a class="brand" href="index.html"><span class="dot"></span> EduMath</a>
+  <nav><a href="home.html">Home</a> <a href="catalogo.html">Catálogo</a><a href="planos.html">Planos</a><a href="login.html">Entrar</a></nav>
+</div></header>
+
+<main class="wrap" style="padding:34px 20px 80px;max-width:60rem;">
+  <div class="dm-head">
+    <div class="eyebrow">Sem cadastro · 5 minutos</div>
+    <h1>Experimente o EduMath agora</h1>
+    <p class="lede">Quatro passos rápidos para ver o que a plataforma faz por você. Nada é enviado a lugar nenhum e você não precisa criar conta para testar.</p>
+  </div>
+
+  <div class="dm-prog"><div style="display:flex;justify-content:space-between;font-size:.82rem;color:var(--ink-soft);margin-bottom:6px;"><span id="dmTxt">0 de 4 passos</span><button type="button" id="dmZera" class="hint" style="border:0;background:transparent;cursor:pointer;text-decoration:underline;color:var(--ink-faint);">recomeçar</button></div><div class="dm-bar"><i id="dmBar"></i></div></div>
+
+  <ol class="dm-passos" id="passos">
+    <li class="dm-p" data-i="0"><span class="n">1</span><div><span class="t">1 min</span><h2>Veja uma prova pronta</h2><p>Abrimos o EduMath Provas com uma prova de exemplo: arraste questões, troque o cabeçalho, veja o gabarito e baixe em PDF ou Word.</p><a class="dm-btn" href="professor/prova.html?exemplo=1">Abrir a prova de exemplo</a></div></li>
+    <li class="dm-p" data-i="1"><span class="n">2</span><div><span class="t">2 min</span><h2>Planeje um trimestre (PTD)</h2><p>Um plano de trabalho docente já montado: escolha os módulos, deixe o planejador buscar os objetivos de cada aula, distribua as datas e baixe o documento.</p><a class="dm-btn" href="professor/planejador.html?demo=1">Abrir o planejador</a></div></li>
+    <li class="dm-p" data-i="2"><span class="n">3</span><div><span class="t">1 min</span><h2>Entre numa aula completa</h2><p>Uma aula grátis, do jeito que o aluno vê: abertura com imagem, exemplo passo a passo, prática, correção comentada e questão de saída.</p><a class="dm-btn" href="aulas/1-ano/1-tri/notacao-cientifica/aula-1-escrever-numeros.html">Abrir uma aula</a></div></li>
+    <li class="dm-p" data-i="3"><span class="n">4</span><div><span class="t">1 min</span><h2>Explore o catálogo</h2><p>Mais de 700 aulas organizadas por matéria, série e trimestre. Cada matéria libera uma aula por série e trimestre sem conta.</p><a class="dm-btn sec" href="catalogo.html#gratis">Ver as aulas grátis</a></div></li>
+  </ol>
+
+  <section class="dm-fim">
+    <h2>Gostou? Crie sua conta de professor(a)</h2>
+    <ul>
+      <li><b>14 dias de Pro grátis</b>, sem cartão: turmas, provas e questões sem limite</li>
+      <li>Turmas, atividades atribuídas e correção em um só painel</li>
+      <li>Banco com milhares de questões e gabaritos</li>
+      <li>Seus planos e provas ficam salvos e sincronizados</li>
+    </ul>
+    <a class="dm-btn" href="login.html?modo=cadastrar">Criar conta grátis</a> <a class="dm-btn sec" href="planos.html">Ver planos</a>
+  </section>
+</main>
+
+<script type="module">
+import { iniciarThemeToggle } from './app/theme-toggle.js';
+import { VENDA } from './app/config-venda.js';
+iniciarThemeToggle('theme-pref-app');
+var K = 'demo:feitos', $ = function(id){ return document.getElementById(id); };
+document.querySelector('.dm-fim li b').textContent = VENDA.diasDeTeste + ' dias de Pro grátis';
+function ler(){ try{ return JSON.parse(localStorage.getItem(K) || '[]'); }catch(e){ return []; } }
+function gravar(v){ try{ localStorage.setItem(K, JSON.stringify(v)); }catch(e){} }
+function pinta(){
+  var f = ler(); [].forEach.call(document.querySelectorAll('.dm-p'), function(li){ var ok = f.indexOf(+li.dataset.i) >= 0; li.classList.toggle('ok', ok); li.querySelector('.n').textContent = ok ? '✓' : String(+li.dataset.i + 1); });
+  $('dmTxt').textContent = f.length + ' de 4 passos' + (f.length === 4 ? ' — pronto!' : ''); $('dmBar').style.width = (f.length * 25) + '%';
+}
+[].forEach.call(document.querySelectorAll('.dm-p a'), function(a){ a.addEventListener('click', function(){ var i = +a.closest('.dm-p').dataset.i, f = ler(); if(f.indexOf(i) < 0){ f.push(i); gravar(f); } }); });
+$('dmZera').addEventListener('click', function(){ gravar([]); pinta(); });
+pinta();
+</script>
+<script type="module" src="app/sidebar.js"></script>
+</body>
+</html>

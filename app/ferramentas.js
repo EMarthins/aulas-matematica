@@ -9,6 +9,8 @@
   var SRC = (D.currentScript && D.currentScript.src) || '';
   var RAIZ = SRC ? SRC.replace(/app\/ferramentas\.js.*$/, '') : '';
   var EMBUTIDA = false; try{ EMBUTIDA = W.parent !== W; }catch(e){ EMBUTIDA = true; }
+  // monitoramento de erros/visitas (só liga no site publicado; ver app/monitor.js)
+  try{ if(SRC && !W.__eduMonitor && !EMBUTIDA){ var mon = D.createElement('script'); mon.src = SRC.replace(/ferramentas\.js.*$/, 'monitor.js'); mon.async = true; (D.head || R).appendChild(mon); } }catch(e){}
 
   // ---------- util ----------
   function lsGet(k){ try{ return W.localStorage.getItem(k); }catch(e){ return null; } }

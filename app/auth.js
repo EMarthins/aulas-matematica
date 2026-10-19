@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  onIdTokenChanged,
   updateProfile,
   sendPasswordResetEmail,
   reauthenticateWithCredential,
@@ -18,6 +19,14 @@ import {
   doc, setDoc, getDoc, updateDoc, increment, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import { auth, db } from "./firebase-init.js";
+
+// Trava de servidor das aulas (functions/_middleware.js): o token de identificação vai num cookie e o servidor confere a assinatura.
+// O token vale 1 h; renovamos o cookie a cada renovação do token. Se expirar com a aba fechada, a própria página de bloqueio renova.
+function gravaCookieSessao(token){
+  try{ document.cookie = "edu_t=" + (token || "") + "; Path=/; Max-Age=" + (token ? 3300 : 0) + "; SameSite=Lax" + (location.protocol === "https:" ? "; Secure" : ""); }catch(e){}
+}
+onIdTokenChanged(auth, (u) => { if(u) u.getIdToken().then(gravaCookieSessao).catch(() => {}); else gravaCookieSessao(""); });
+
 
 // Guarda nome e papel do usuário neste aparelho para a barra lateral (app/sidebar.js) montar o menu sem carregar o Firebase.
 export function lembrarUsuario(perfil){
@@ -78,6 +87,7 @@ export async function definirMateria(uid, materia){
 
 export function sair(){
   lembrarUsuario(null);
+  gravaCookieSessao("");
   return signOut(auth);
 }
 

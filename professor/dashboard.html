@@ -37,7 +37,7 @@
     <nav>
       <a href="../catalogo.html">Catálogo</a>
       <a href="prova.html" style="color:var(--primary);font-weight:700">EduMath Provas</a>
-      <a href="banco.html">Banco de questões</a>
+      <a href="banco.html">Banco de questões</a><a href="planejador.html">Planejador (PTD)</a>
       <span id="userNome" class="mono" style="color:var(--ink-faint);"></span>
       <a href="#" id="logoutBtn">Sair</a>
     </nav>
@@ -172,7 +172,7 @@ import { listarAulasParaSelecao } from '../app/catalog.js';
 import { TRILHAS, Trilhas, trilhaPorId } from '../app/trilhas.js';
 import { iniciarThemeToggle } from '../app/theme-toggle.js';
 import { escapeHtml, linkSeguro } from '../app/util.js';
-import { PLANOS, planoVigente, fmtData } from '../app/planos.js';
+import { PLANOS, planoVigente, fmtData, diasDeTesteRestantes } from '../app/planos.js';
 import { lerProfessor } from '../app/nuvem-firestore.js';
 import { VENDA } from '../app/config-venda.js';
 
@@ -206,8 +206,13 @@ async function mostrarPlano(id){
     info.textContent = 'Até ' + PLANO.turmas + ' turmas, ' + PLANO.provasNuvem + ' provas e ' + PLANO.questoesProprias + ' questões próprias na nuvem. Alunos e atividades ilimitados.';
     btn.textContent = 'Conhecer o Pro';
   }else{
-    info.textContent = 'Tudo liberado' + (doc && doc.planoAte ? ' até ' + fmtData(doc.planoAte) : '') + '.';
-    btn.textContent = 'Meu plano';
+    if(PLANO.teste){
+      info.textContent = 'Teste grátis do Pro: tudo liberado até ' + fmtData(PLANO.ate) + ' (' + diasDeTesteRestantes(PLANO) + ' dia(s)). Depois volta ao Gratuito — o que você criou continua salvo.';
+      btn.textContent = 'Conhecer o Pro';
+    }else{
+      info.textContent = 'Tudo liberado' + (doc && doc.planoAte ? ' até ' + fmtData(doc.planoAte) : '') + '.';
+      btn.textContent = 'Meu plano';
+    }
   }
 }
 

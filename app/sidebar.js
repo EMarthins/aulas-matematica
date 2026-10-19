@@ -29,6 +29,7 @@ const I = {
   conq: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5a3 3 0 0 1-3 3M12 13v4M8.5 20h7M10 17h4"/>',
   painel: '<rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 9h17M9 9v11"/>',
   prova: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/>',
+  ptd: '<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>',
   banco: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
   turmas: '<circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5a3 3 0 0 1 0 6M17.5 14.5A5.5 5.5 0 0 1 21 20"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
@@ -112,7 +113,8 @@ function montar() {
     nav += '<div class="sb-sec">Professor</div>' +
       itemLink('professor/dashboard.html', url('professor/dashboard.html'), 'painel', 'Painel e turmas') +
       itemLink('professor/prova.html', url('professor/prova.html'), 'prova', 'EduMath Provas · provas') +
-      itemLink('professor/banco.html', url('professor/banco.html'), 'banco', 'Banco de questões');
+      itemLink('professor/banco.html', url('professor/banco.html'), 'banco', 'Banco de questões') +
+      itemLink('professor/planejador.html', url('professor/planejador.html'), 'ptd', 'Planejador de aula (PTD)');
   }
 
   let foot = '';
@@ -270,5 +272,8 @@ function iniciar() {
   atualiza();
   window.__sidebar = { input: q, atualiza };
 }
+
+// monitoramento de erros/visitas (só liga no site publicado; ver app/monitor.js)
+try { const m = document.createElement('script'); m.src = url('app/monitor.js'); m.async = true; document.head.appendChild(m); } catch (e) {}
 
 if (document.body) iniciar(); else document.addEventListener('DOMContentLoaded', iniciar);
