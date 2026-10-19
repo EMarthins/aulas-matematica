@@ -24,6 +24,7 @@ for (const l of ler(/^gab.*\.txt$/)) {
     if (i < 0 || q.tipo === 'vf' || q.tipo === 'soma') { cont.ausentes.push(id + ' (não é mc)'); continue; }
     q.tipo = 'mc'; q.alternativas = Array.from({ length: n }, (_, k) => ({ t: 'ABCDE'[k], ok: false })); delete q.resposta; delete q.gabarito;
   }
+  while (q.soImagem && i >= q.alternativas.length && i < 5) q.alternativas.push({ t: 'ABCDE'[q.alternativas.length], ok: false }); // o recorte tem a letra, o importador só achou 4
   if (i < 0 || i >= q.alternativas.length) { cont.ausentes.push(id + ' letra ' + letra); continue; }
   q.alternativas.forEach((a, k) => { a.ok = k === i; }); delete q.semGabarito; cont.letra++;
 }
