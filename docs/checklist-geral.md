@@ -61,3 +61,9 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 - Teste no navegador (`testes.html`, só aulas): **387 páginas · 377 ok · 10 avisos · 0 falhas** (sem erro de JavaScript, sem rolagem horizontal).
 - Os 10 avisos são **slides que rolam um pouco na vertical** e **já eram assim antes da reestruturação** (conferi comparando com a versão antiga): Quiz/Exit ticket do 9º ano · operações com racionais (18 px, 3 aulas), "Teoria · fração de uma quantidade" (249 px) e "fração parte/razão/misto" (9 px) no módulo Números racionais, e 5 aulas do ENA (oculto). Ajuste fino de espaçamento = pendência de acabamento.
 - Pendência de acabamento anotada: 6 páginas compactas da Recomposição 2º tri (`aula-1-poligonos.html`…) **não são slides**, por isso não entraram na reestruturação.
+
+## 19/10/2026 — CD Educador carregado no site
+- [x] 46 módulos / 95 aulas de Matemática (6º ao 9º ano e Ensino Médio) a partir do CD, no padrão de 8 etapas (`scripts/gerador-padrao/p20…p62.js`).
+- [x] Banco de questões com gabaritos criados (4.314 questões).
+- [x] Backup do CD em `arquivo-cd-educador/` (DOCS, EXER, ANIM). VIDEO e TOOLS não foram copiados.
+- [ ] 2 mc de simulado sem gabarito; 7 listas não segmentadas; módulos extras do Matemática Essencial (vetores, Heron, amortização).

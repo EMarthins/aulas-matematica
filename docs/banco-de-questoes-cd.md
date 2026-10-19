@@ -30,3 +30,9 @@ As imagens ficam em `app/img-questoes/` (`cdb-…jpg`; as resoluções terminam 
 - Material de terceiros (banco comercial de vestibulares, listas de exercícios): conferir direitos antes de vender/publicar em massa. A origem de cada questão aparece no próprio recorte e, nas listas, em `topicos`.
 - Questões com figura que encobre as alternativas no original (B7-08, B7-11) foram deixadas de fora.
 - ~190 questões de múltipla escolha das listas ainda estão sem gabarito (a resolução está em imagem ou a lista não traz); o campo `correcoes.json` aceita `{ "cdb-l-…": { "gab": "C" } }`.
+
+## Atualização 19/10/2026 — gabaritos e módulos criados
+- Todas as questões **abertas** das listas EXER que vieram sem resposta ganharam gabarito (arquivos `scripts/banco-provas/listas/abertas-lote.txt`, `gab-lote.txt`); recortes defeituosos saíram (`excluir-lote.txt`); dúvidas ficam em `duvidosos-lote.txt`.
+- Fluxo: `fontes-nre/tools/publicar-listas.mjs` → `listas/montar.js` → `aplicar-gabaritos.js` → `validar-banco-provas.js`. `listas/pendentes.js` mostra o que ainda falta (hoje 0).
+- `lote-02.js`: 9 questões de nivelamento (álgebra e equações) do `.docx` do CD.
+- Total no banco: 4.314 questões. Restam 2 mc de simulado sem gabarito.
