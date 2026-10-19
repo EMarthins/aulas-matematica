@@ -108329,49 +108329,6 @@
    "resolucao": ""
   },
   {
-   "id": "cdb-sim-b4-04",
-   "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
-   "materia": "Matemática",
-   "serie": "Simulados",
-   "unidade": "Funções",
-   "topicos": [
-    "Funções",
-    "Simulado B4",
-    "simulado"
-   ],
-   "dificuldade": 2,
-   "fonte": "Simulado B4 (CD)",
-   "pontos": 1,
-   "enunciado": "",
-   "busca": "04. Um motorista coloca gasolina ou álcool no carro flex com o qual trabalha. Na semana que ele usa gasolina ele dispõe de R$ 100,00 para abastecer o carro, porém ele gasta esse valor antes de acabar a semana, e o litro de gasolina custa R$ 3,00. Quando ele coloca etanol no carro, ele recebe R$ 150,00, também não dá para a semana inteira e o litro de álcool custa R$ 2,20. O gráfico que melhor representa os gastos com combustíveis desse carro é a) c) b) d)",
-   "imagens": [
-    "img:cdb-sim-b4-04.jpg"
-   ],
-   "larguraMm": 86.6,
-   "alternativas": [
-    {
-     "t": "A",
-     "ok": false
-    },
-    {
-     "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
-     "ok": false
-    },
-    {
-     "t": "D",
-     "ok": false
-    }
-   ],
-   "resolucao": "",
-   "semGabarito": true
-  },
-  {
    "id": "cdb-sim-b4-05",
    "tipo": "mc",
    "soImagem": true,
@@ -108412,49 +108369,6 @@
     }
    ],
    "resolucao": ""
-  },
-  {
-   "id": "cdb-sim-b4-06",
-   "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
-   "materia": "Matemática",
-   "serie": "Simulados",
-   "unidade": "Questões variadas",
-   "topicos": [
-    "Questões variadas",
-    "Simulado B4",
-    "simulado"
-   ],
-   "dificuldade": 2,
-   "fonte": "Simulado B4 (CD)",
-   "pontos": 1,
-   "enunciado": "",
-   "busca": "06. Uma cidade do interior tem apenas uma praça, que é a diversão da garotada nos finais de semana. A praça está representada na figura abaixo. Cinco crianças resolveram brincar correndo no pela da praça. As setas representam os caminhos que eles podem percorrer. Um deles está no ponto A e pretende chegar ao ponto B. de quantas formas distintas ele pode fazer esse trajeto",
-   "imagens": [
-    "img:cdb-sim-b4-06.jpg"
-   ],
-   "larguraMm": 86.6,
-   "alternativas": [
-    {
-     "t": "A",
-     "ok": false
-    },
-    {
-     "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
-     "ok": false
-    },
-    {
-     "t": "D",
-     "ok": false
-    }
-   ],
-   "resolucao": "",
-   "semGabarito": true
   },
   {
    "id": "cdb-sim-b4-07",
@@ -114527,6 +114441,232 @@
     }
    ],
    "resolucao": ""
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp8-niv-01",
+   "tipo": "mc",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "termos semelhantes",
+    "expressão algébrica"
+   ],
+   "enunciado": "Simplifique a expressão $3x + 2x - 5x + 4$ e marque a alternativa correta:",
+   "alternativas": [
+    {
+     "t": "$0$",
+     "ok": false
+    },
+    {
+     "t": "$4$",
+     "ok": true
+    },
+    {
+     "t": "$3x$",
+     "ok": false
+    },
+    {
+     "t": "$0x + 4$",
+     "ok": false
+    },
+    {
+     "t": "$10x + 4$",
+     "ok": false
+    }
+   ],
+   "resolucao": "$3x + 2x - 5x = 0x = 0$. Sobra apenas o $4$. A forma $0x + 4$ vale o mesmo, mas a forma simplificada é $4$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 2,
+   "id": "bp8-niv-02",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "produtos notáveis",
+    "quadrado da soma",
+    "área"
+   ],
+   "enunciado": "Um arquiteto projetou um pequeno jardim quadrado, com um caminho de $3$ m de largura ao redor. A área total do espaço (jardim + caminho) pode ser representada por $(x + 3)^2$, em que $x$ é o lado do jardim. (a) Desenvolva a expressão da área total. (b) Que tipo de produto notável foi usado? Justifique. (c) Se o jardim tem $5$ m de lado, qual é a área total?",
+   "resposta": {
+    "modo": "linhas",
+    "n": 6
+   },
+   "gabarito": "(a) $x^2 + 6x + 9$; (b) quadrado da soma de dois termos; (c) $64$ m²",
+   "resolucao": "(a) $(x + 3)^2 = x^2 + 2 · x · 3 + 3^2 = x^2 + 6x + 9$. (b) Quadrado da soma: $(a + b)^2 = a^2 + 2ab + b^2$. (c) Com $x = 5$: $25 + 30 + 9 = 64$ m² (ou $(5 + 3)^2 = 8^2 = 64$)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp8-niv-03",
+   "tipo": "vf",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "equação do 1º grau",
+    "raiz"
+   ],
+   "enunciado": "Classifique como verdadeiro (V) ou falso (F):",
+   "afirmacoes": [
+    {
+     "t": "A equação $2x + 3 = 7$ tem como solução $x = 2$.",
+     "ok": true
+    },
+    {
+     "t": "A equação $5x = 0$ não possui solução.",
+     "ok": false
+    },
+    {
+     "t": "Toda equação do 1º grau ($ax + b = 0$, com $a ≠ 0$) possui exatamente uma raiz real.",
+     "ok": true
+    }
+   ],
+   "resolucao": "V ($2 · 2 + 3 = 7$); F ($5x = 0$ tem solução $x = 0$); V (a raiz é $x = -{b|a}$, única)."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp8-niv-04",
+   "tipo": "assoc",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "produtos notáveis"
+   ],
+   "enunciado": "Relacione cada produto notável da coluna A ao seu desenvolvimento, na coluna B.",
+   "colunaA": [
+    "$(a - b)^2$",
+    "$(x + y)^2$",
+    "$(m + n)(m - n)$"
+   ],
+   "colunaB": [
+    "$x^2 + 2xy + y^2$",
+    "$a^2 - 2ab + b^2$",
+    "$m^2 - n^2$",
+    "$a^2 + b^2$"
+   ],
+   "pares": [
+    1,
+    0,
+    2
+   ],
+   "resolucao": "Quadrado da diferença: $a^2 - 2ab + b^2$; quadrado da soma: $x^2 + 2xy + y^2$; soma pela diferença: $m^2 - n^2$. A opção $a^2 + b^2$ não corresponde a nenhum deles."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 1,
+   "pontos": 1,
+   "id": "bp8-niv-05",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "equação do 1º grau",
+    "problema"
+   ],
+   "enunciado": "Em uma lanchonete, um salgado custa R&#36; 5,00. João comprou alguns salgados e gastou R&#36; 35,00. (a) Monte a equação que representa essa situação. (b) Quantos salgados João comprou?",
+   "resposta": {
+    "modo": "linhas",
+    "n": 3
+   },
+   "gabarito": "(a) $5x = 35$; (b) $7$ salgados",
+   "resolucao": "Se $x$ é o número de salgados, $5x = 35$. Logo $x = 35 ÷ 5 = 7$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 2,
+   "id": "bp8-niv-06",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "sistema de equações",
+    "substituição"
+   ],
+   "enunciado": "Ana comprou $3$ ingressos de cinema e $2$ de teatro e pagou R&#36; 130,00. Bia comprou $2$ ingressos de cinema e $3$ de teatro e pagou R&#36; 145,00. (a) Monte o sistema de equações que representa a situação. (b) Resolva pelo método da substituição e dê o preço de cada ingresso.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 7
+   },
+   "gabarito": "(a) $3c + 2t = 130$ e $2c + 3t = 145$; (b) cinema R&#36; 20 e teatro R&#36; 35",
+   "resolucao": "(a) Com $c$ = cinema e $t$ = teatro: $3c + 2t = 130$ e $2c + 3t = 145$. (b) Da 1ª: $c = {130 - 2t|3}$. Na 2ª: $2 · {130 - 2t|3} + 3t = 145$ ⇒ $260 - 4t + 9t = 435$ ⇒ $5t = 175$ ⇒ $t = 35$ e $c = {130 - 70|3} = 20$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 2,
+   "id": "bp8-niv-07",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "sistema de equações",
+    "adição"
+   ],
+   "enunciado": "Dois amigos foram à feira. O primeiro pagou R&#36; 18,00 por $4$ kg de bananas e $2$ kg de maçãs. O segundo pagou R&#36; 24,00 por $3$ kg de bananas e $3$ kg de maçãs. (a) Monte o sistema de equações. (b) Resolva pelo método da adição para achar o preço do quilo de cada fruta.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 7
+   },
+   "gabarito": "(a) $4b + 2m = 18$ e $3b + 3m = 24$; (b) bananas R&#36; 1 e maçãs R&#36; 7 o quilo",
+   "resolucao": "(a) $4b + 2m = 18$ e $3b + 3m = 24$ (equivale a $b + m = 8$). (b) Dividindo a 1ª equação por $2$: $2b + m = 9$. A 2ª, dividida por $3$, é $b + m = 8$. Subtraindo, $b = 1$; então $m = 7$. Conferência: $4 · 1 + 2 · 7 = 18$ e $3 · 1 + 3 · 7 = 24$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 3,
+   "pontos": 2,
+   "id": "bp8-niv-08",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "sistema de equações",
+    "problema"
+   ],
+   "enunciado": "Uma prova tem $20$ questões: cada acerto vale $5$ pontos e cada erro desconta $2$ pontos. Um aluno fez $72$ pontos. Quantas questões ele acertou e quantas errou?",
+   "resposta": {
+    "modo": "linhas",
+    "n": 6
+   },
+   "gabarito": "$16$ acertos e $4$ erros",
+   "resolucao": "Acertos $a$ e erros $e$: $a + e = 20$ e $5a - 2e = 72$. De $e = 20 - a$: $5a - 2(20 - a) = 72$ ⇒ $7a = 112$ ⇒ $a = 16$ e $e = 4$. Conferência: $16 · 5 - 4 · 2 = 80 - 8 = 72$."
+  },
+  {
+   "materia": "Matemática",
+   "fonte": "Banco do professor",
+   "dificuldade": 2,
+   "pontos": 1,
+   "id": "bp8-niv-09",
+   "tipo": "aberta",
+   "serie": "8º Ano",
+   "unidade": "Nivelamento: álgebra e equações",
+   "topicos": [
+    "equação do 1º grau",
+    "análise de erro"
+   ],
+   "enunciado": "Um aluno disse que o resultado da equação $4x - 2 = 10$ é $x = 3$. Você concorda? Se não, identifique o erro e corrija; se sim, justifique conferindo.",
+   "resposta": {
+    "modo": "linhas",
+    "n": 4
+   },
+   "gabarito": "Concorda: $x = 3$ está correto, pois $4 · 3 - 2 = 10$",
+   "resolucao": "$4x - 2 = 10$ ⇒ $4x = 12$ ⇒ $x = 3$. Conferência: $4 · 3 - 2 = 12 - 2 = 10$. O resultado do aluno está correto."
   },
   {
    "id": "cdb-l-adicao-e-subtracao-de-matr-01",
@@ -168240,230 +168380,715 @@
    }
   },
   {
+   "id": "cdb-l-produtos-notaveis-01",
+   "soImagem": true,
+   "imgPrevia": true,
    "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 1,
-   "pontos": 1,
-   "id": "bp8-niv-01",
-   "tipo": "mc",
    "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
+   "unidade": "Equações e inequações",
    "topicos": [
-    "termos semelhantes",
-    "expressão algébrica"
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
    ],
-   "enunciado": "Simplifique a expressão $3x + 2x - 5x + 4$ e marque a alternativa correta:",
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Produtos notáveis: desenvolva (a–u) e simplifique (a–h)",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-01.jpg"
+   ],
+   "larguraMm": 176.4,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "1) a) $x^2 + 18x + 81$. b) $9 - 6a^2 + a^4$. c) $x^2 - 121$. d) $16x^2 - 8x + 1$. e) $4m^2 - 25$. f) $25 + 30y + 9y^2$. g) $25a^2 - 30ab + 9b^2$. h) $x^4 - 6x^2y + 9y^2$. i) $x^4 - 4$. j) $a^2 - 10a^2b + 25a^2b^2$. k) $a^6 - b^6$. l) $1 - a^2b^8$. m) ${1|4} + x^3 + x^6$. n) $4a^4 - {4a^5|3} + {a^6|9}$. o) $x^6 + {x^3mn|2} + {m^2n^2|16}$. p) ${a^4|9} - a^2b^2 + {9b^4|4}$. q) $4x^6 + 20x^3y^3 + 25y^6$. r) ${1|9} - {a^2m^2|4}$. s) $a^2b^2 + 6a^6b + 9a^{10}$. t) $x^6y^2 - 4x^4y^2 + 4x^2y^2$. u) ${m^2n^2|4} - 1$. 2) a) $-2ab + 2b^2$. b) $5x^2 - 4xy$. c) $2x^2$. d) $0$. e) $2n^2$. f) $-b^6 + b^4$. g) $4x^2 + 27y^2$. h) $2x^2 + x$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-02",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Produtos notáveis: simplifique e resolva problemas",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-02.jpg"
+   ],
+   "larguraMm": 90.8,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "3) a) $2x^2 + 6x + 5$. b) $5x^2 - 2x + 9$. c) $2a^2 + 2a - 16$. d) $5x^2 - 46x + 9$. e) $x^2 - 4$. 4) a) $8x$. b) $24xy$. c) $6a^2 - 2a + 1$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-03",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Fatoração: fator comum em evidência",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-03.jpg"
+   ],
+   "larguraMm": 86.4,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "1) a) $10(x + y)$. b) $a(4 - 3x)$. c) $a(a - 5b)$. d) $y(x + y - 1)$. e) $7c(5 + c)$. f) $8x^3(3x^2 - x - 7)$. g) $p(a^2 + ab + b^2)$. h) $y(1 + y^2 + y^4 + y^6)$. i) $xy(1 - x^2y^2)$. j) $20ax(6x^2 - 5x + 3)$. k) $b^2m(m + 4n)$. l) $(m + 1)(a - b)$. m) $(n + h)(x + y)$. n) ${2|3}a^3(a + 4)$. o) ${a|2}(1 + a^2 + a^4)$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-05",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Fatoração: agrupamento e diferença de quadrados",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-05.jpg"
+   ],
+   "larguraMm": 86.4,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "2) a) $(a + b + c)(x + y)$. b) $(x + 5)(y + 2)$. c) $(b - 3)(a - 4)$. d) $(a - 1)(a - x)$. e) $(x - y)(a + 1)$. 3) a) $(x + 9)(x - 9)$. b) $(10 + a)(10 - a)$. c) $(1 + mn)(1 - mn)$. d) $(4x + 3y)(4x - 3y)$. e) $(7h + 9p)(7h - 9p)$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-06",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Fatoração: diferença de quadrados (f a m)",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-06.jpg"
+   ],
+   "larguraMm": 81.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "3) f) $(x^2 + y^2)(x + y)(x - y)$. g) $(ab^2 + x)(ab^2 - x)$. h) $(a^3 + b^3)(a^3 - b^3)$. i) $(r + 9x^2)(r - 9x^2)$. l) $({1|3} + 2y)({1|3} - 2y)$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-07",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Fatoração: trinômios quadrados perfeitos e fatoração completa",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-07.jpg"
+   ],
+   "larguraMm": 81.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "4) a) $(2x - 3y)^2$. b) $(y + 5)^2$. c) $(9n - 1)^2$. d) $(2a + 4x)^2$. e) $(11xy + 2)^2$. f) $(10p - n)^2$. g) $(y + 7)^2$. h) $(a^3 - 6)^2$. i) $(2p - 7)^2$. j) $(4x^2 + y)^2$. k) $(m^5 + 2n^3)^2$. l) $(x - {1|5})^2$. m) $({m|2} - {1|3})^2$. 5) a) $x(x^2 + 1)$. b) $a^3(a + 2)(a - 2)$."
+  },
+  {
+   "id": "cdb-l-produtos-notaveis-04",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Equações e inequações",
+   "topicos": [
+    "Equações e inequações",
+    "Produtos Notáveis e Fatoração"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Fatoração completa (c a o)",
+   "imagens": [
+    "img:cdb-l-produtos-notaveis-04.jpg"
+   ],
+   "larguraMm": 75.8,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "5) c) $(a^2 + b^2)(a + b)(a - b)$. d) $(x^2 + 1)(x + 1)(x - 1)$. e) $(y^2 + 4)(y + 2)(y - 2)$. f) $x(x + 1)^2$. g) $5(x - 2)^2$. h) $2a(3b - 1)^2$. i) $a(x - 2)^2$. j) $x^2(x + 1)^2$. k) $2(x + 1)^2$. l) $x^4(3x + 1)^2$. m) $3(x + 1)^2$. n) $x(x - 5)^2$. o) $x^5(x + 3)^2$."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-01",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "rosas amarelas e vermelhas",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-01.jpg"
+   ],
+   "larguraMm": 151.7,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "Amarelas $A$ e vermelhas $V$: $A + V = 24$ e $A = V + 6$ ⇒ $2V + 6 = 24$ ⇒ $V = 9$. O ramo tem $9$ rosas vermelhas (e $15$ amarelas)."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-02",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "resolve as equações usando princípios de equivalência",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-02.jpg"
+   ],
+   "larguraMm": 148.2,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "2.1) $-8 - x = 5 + x$ ⇒ $-2x = 13$ ⇒ $x = -{13|2}$. 2.2) $2 - {x|4} = {x + 1|3}$ ⇒ $24 - 3x = 4x + 4$ ⇒ $x = {20|7}$. 2.3) ${4x|5} + {2(x + 7)|4} = 4$ ⇒ $16x + 10x + 70 = 80$ ⇒ $x = {5|13}$."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-03",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "equação equivalente à equação literal",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-03.jpg"
+   ],
+   "larguraMm": 107.6,
+   "resolucao": "",
+   "tipo": "mc",
    "alternativas": [
     {
-     "t": "$0$",
+     "t": "A",
      "ok": false
     },
     {
-     "t": "$4$",
-     "ok": true
-    },
-    {
-     "t": "$3x$",
+     "t": "B",
      "ok": false
     },
     {
-     "t": "$0x + 4$",
+     "t": "C",
      "ok": false
     },
     {
-     "t": "$10x + 4$",
-     "ok": false
-    }
-   ],
-   "resolucao": "$3x + 2x - 5x = 0x = 0$. Sobra apenas o $4$. A forma $0x + 4$ vale o mesmo, mas a forma simplificada é $4$."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 2,
-   "pontos": 2,
-   "id": "bp8-niv-02",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "produtos notáveis",
-    "quadrado da soma",
-    "área"
-   ],
-   "enunciado": "Um arquiteto projetou um pequeno jardim quadrado, com um caminho de $3$ m de largura ao redor. A área total do espaço (jardim + caminho) pode ser representada por $(x + 3)^2$, em que $x$ é o lado do jardim. (a) Desenvolva a expressão da área total. (b) Que tipo de produto notável foi usado? Justifique. (c) Se o jardim tem $5$ m de lado, qual é a área total?",
-   "resposta": {
-    "modo": "linhas",
-    "n": 6
-   },
-   "gabarito": "(a) $x^2 + 6x + 9$; (b) quadrado da soma de dois termos; (c) $64$ m²",
-   "resolucao": "(a) $(x + 3)^2 = x^2 + 2 · x · 3 + 3^2 = x^2 + 6x + 9$. (b) Quadrado da soma: $(a + b)^2 = a^2 + 2ab + b^2$. (c) Com $x = 5$: $25 + 30 + 9 = 64$ m² (ou $(5 + 3)^2 = 8^2 = 64$)."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 1,
-   "pontos": 1,
-   "id": "bp8-niv-03",
-   "tipo": "vf",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "equação do 1º grau",
-    "raiz"
-   ],
-   "enunciado": "Classifique como verdadeiro (V) ou falso (F):",
-   "afirmacoes": [
-    {
-     "t": "A equação $2x + 3 = 7$ tem como solução $x = 2$.",
-     "ok": true
-    },
-    {
-     "t": "A equação $5x = 0$ não possui solução.",
-     "ok": false
-    },
-    {
-     "t": "Toda equação do 1º grau ($ax + b = 0$, com $a ≠ 0$) possui exatamente uma raiz real.",
+     "t": "D",
      "ok": true
     }
-   ],
-   "resolucao": "V ($2 · 2 + 3 = 7$); F ($5x = 0$ tem solução $x = 0$); V (a raiz é $x = -{b|a}$, única)."
+   ]
   },
   {
+   "id": "cdb-l-mmc-e-mdc-2-04",
+   "soImagem": true,
+   "imgPrevia": true,
    "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 1,
-   "pontos": 1,
-   "id": "bp8-niv-04",
-   "tipo": "assoc",
    "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
+   "unidade": "Questões variadas",
    "topicos": [
-    "produtos notáveis"
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
    ],
-   "enunciado": "Relacione cada produto notável da coluna A ao seu desenvolvimento, na coluna B.",
-   "colunaA": [
-    "$(a - b)^2$",
-    "$(x + y)^2$",
-    "$(m + n)(m - n)$"
-   ],
-   "colunaB": [
-    "$x^2 + 2xy + y^2$",
-    "$a^2 - 2ab + b^2$",
-    "$m^2 - n^2$",
-    "$a^2 + b^2$"
-   ],
-   "pares": [
-    1,
-    0,
-    2
-   ],
-   "resolucao": "Quadrado da diferença: $a^2 - 2ab + b^2$; quadrado da soma: $x^2 + 2xy + y^2$; soma pela diferença: $m^2 - n^2$. A opção $a^2 + b^2$ não corresponde a nenhum deles."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 1,
-   "pontos": 1,
-   "id": "bp8-niv-05",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "equação do 1º grau",
-    "problema"
-   ],
-   "enunciado": "Em uma lanchonete, um salgado custa R&#36; 5,00. João comprou alguns salgados e gastou R&#36; 35,00. (a) Monte a equação que representa essa situação. (b) Quantos salgados João comprou?",
-   "resposta": {
-    "modo": "linhas",
-    "n": 3
-   },
-   "gabarito": "(a) $5x = 35$; (b) $7$ salgados",
-   "resolucao": "Se $x$ é o número de salgados, $5x = 35$. Logo $x = 35 ÷ 5 = 7$."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
    "dificuldade": 2,
-   "pontos": 2,
-   "id": "bp8-niv-06",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "sistema de equações",
-    "substituição"
-   ],
-   "enunciado": "Ana comprou $3$ ingressos de cinema e $2$ de teatro e pagou R&#36; 130,00. Bia comprou $2$ ingressos de cinema e $3$ de teatro e pagou R&#36; 145,00. (a) Monte o sistema de equações que representa a situação. (b) Resolva pelo método da substituição e dê o preço de cada ingresso.",
-   "resposta": {
-    "modo": "linhas",
-    "n": 7
-   },
-   "gabarito": "(a) $3c + 2t = 130$ e $2c + 3t = 145$; (b) cinema R&#36; 20 e teatro R&#36; 35",
-   "resolucao": "(a) Com $c$ = cinema e $t$ = teatro: $3c + 2t = 130$ e $2c + 3t = 145$. (b) Da 1ª: $c = {130 - 2t|3}$. Na 2ª: $2 · {130 - 2t|3} + 3t = 145$ ⇒ $260 - 4t + 9t = 435$ ⇒ $5t = 175$ ⇒ $t = 35$ e $c = {130 - 70|3} = 20$."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 2,
-   "pontos": 2,
-   "id": "bp8-niv-07",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "sistema de equações",
-    "adição"
-   ],
-   "enunciado": "Dois amigos foram à feira. O primeiro pagou R&#36; 18,00 por $4$ kg de bananas e $2$ kg de maçãs. O segundo pagou R&#36; 24,00 por $3$ kg de bananas e $3$ kg de maçãs. (a) Monte o sistema de equações. (b) Resolva pelo método da adição para achar o preço do quilo de cada fruta.",
-   "resposta": {
-    "modo": "linhas",
-    "n": 7
-   },
-   "gabarito": "(a) $4b + 2m = 18$ e $3b + 3m = 24$; (b) bananas R&#36; 1 e maçãs R&#36; 7 o quilo",
-   "resolucao": "(a) $4b + 2m = 18$ e $3b + 3m = 24$ (equivale a $b + m = 8$). (b) Dividindo a 1ª equação por $2$: $2b + m = 9$. A 2ª, dividida por $3$, é $b + m = 8$. Subtraindo, $b = 1$; então $m = 7$. Conferência: $4 · 1 + 2 · 7 = 18$ e $3 · 1 + 3 · 7 = 24$."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 3,
-   "pontos": 2,
-   "id": "bp8-niv-08",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "sistema de equações",
-    "problema"
-   ],
-   "enunciado": "Uma prova tem $20$ questões: cada acerto vale $5$ pontos e cada erro desconta $2$ pontos. Um aluno fez $72$ pontos. Quantas questões ele acertou e quantas errou?",
-   "resposta": {
-    "modo": "linhas",
-    "n": 6
-   },
-   "gabarito": "$16$ acertos e $4$ erros",
-   "resolucao": "Acertos $a$ e erros $e$: $a + e = 20$ e $5a - 2e = 72$. De $e = 20 - a$: $5a - 2(20 - a) = 72$ ⇒ $7a = 112$ ⇒ $a = 16$ e $e = 4$. Conferência: $16 · 5 - 4 · 2 = 80 - 8 = 72$."
-  },
-  {
-   "materia": "Matemática",
-   "fonte": "Banco do professor",
-   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "id": "bp8-niv-09",
-   "tipo": "aberta",
-   "serie": "8º Ano",
-   "unidade": "Nivelamento: álgebra e equações",
-   "topicos": [
-    "equação do 1º grau",
-    "análise de erro"
+   "enunciado": "",
+   "busca": "mmc e mdc de 90 e 84",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-04.jpg"
    ],
-   "enunciado": "Um aluno disse que o resultado da equação $4x - 2 = 10$ é $x = 3$. Você concorda? Se não, identifique o erro e corrija; se sim, justifique conferindo.",
+   "larguraMm": 148.2,
+   "resolucao": "",
+   "tipo": "aberta",
    "resposta": {
-    "modo": "linhas",
-    "n": 4
+    "modo": "branco",
+    "altura": 45
    },
-   "gabarito": "Concorda: $x = 3$ está correto, pois $4 · 3 - 2 = 10$",
-   "resolucao": "$4x - 2 = 10$ ⇒ $4x = 12$ ⇒ $x = 3$. Conferência: $4 · 3 - 2 = 12 - 2 = 10$. O resultado do aluno está correto."
+   "gabarito": "$mmc(90, 84) = 2^2 · 3^2 · 5 · 7 = 1 260$ e $mdc(90, 84) = 2 · 3 = 6$."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-05",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "verdadeiras ou falsas: equações",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-05.jpg"
+   ],
+   "larguraMm": 148.2,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "5.1) Falsa: as soluções de $x^2 = 100$ são $-10$ e $10$. 5.2) Verdadeira. 5.3) Falsa: $6x = 0$ tem solução $x = 0$ (é possível e determinada)."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-06",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "custo dos cartazes c = 105 + 1,5x",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-06.jpg"
+   ],
+   "larguraMm": 127.9,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "6.1) $c = 105 + 1,5 · 110 = 270$ euros. 6.2) $x = {c - 105|1,5}$. 6.3) $x = {327 - 105|1,5} = 148$ cartazes."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-07",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "o triplo da soma de um número com 5",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-07.jpg"
+   ],
+   "larguraMm": 164,
+   "resolucao": "",
+   "tipo": "mc",
+   "alternativas": [
+    {
+     "t": "A",
+     "ok": false
+    },
+    {
+     "t": "B",
+     "ok": true
+    },
+    {
+     "t": "C",
+     "ok": false
+    },
+    {
+     "t": "D",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-08",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "resolve a equação em ordem a y",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-08.jpg"
+   ],
+   "larguraMm": 112.9,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "$5x - 5y - {1 + y|2} = x$ ⇒ $-{11y|2} = -4x + {1|2}$ ⇒ $y = {8x - 1|11}$."
+  },
+  {
+   "id": "cdb-l-mmc-e-mdc-2-09",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Questões variadas",
+   "topicos": [
+    "Questões variadas",
+    "Avaliação: equações, MMC e MDC"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "terreno quadrado de 45 m2, arame",
+   "imagens": [
+    "img:cdb-l-mmc-e-mdc-2-09.jpg"
+   ],
+   "larguraMm": 164,
+   "resolucao": "",
+   "tipo": "mc",
+   "alternativas": [
+    {
+     "t": "A",
+     "ok": false
+    },
+    {
+     "t": "B",
+     "ok": false
+    },
+    {
+     "t": "C",
+     "ok": true
+    },
+    {
+     "t": "D",
+     "ok": false
+    }
+   ]
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-01",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "Classifique os segmentos da circunferência",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-01.jpg"
+   ],
+   "larguraMm": 89.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "a) corda. b) raio. c) diâmetro. d) corda. e) raio."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-03",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "diâmetro 34 cm e raio 2x - 13",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-03.jpg"
+   ],
+   "larguraMm": 89.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "O raio é $34 ÷ 2 = 17$: $2x - 13 = 17$ ⇒ $x = 15$."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-04",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "pontos A, O e B triângulo isósceles",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-04.jpg"
+   ],
+   "larguraMm": 89.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "Sim: $OA$ e $OB$ são raios da mesma circunferência, logo $OA = OB$ e o triângulo $AOB$ é isósceles."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-05",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "roda de bicicleta de 17 cm de raio, largura da caixa",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-05.jpg"
+   ],
+   "larguraMm": 87.3,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "A caixa deve ter largura de, no mínimo, o diâmetro da roda: $2 · 17 = 34$ cm."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-06",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "circunferência inscrita no quadrado",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-06.jpg"
+   ],
+   "larguraMm": 87.3,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "a) $r = {14,8|2} = 7,4$ cm. b) $ℓ = 2 · 12,3 = 24,6$ cm."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-10",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "posição de pontos e retas em relação à circunferência; verdadeiro ou falso",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-10.jpg"
+   ],
+   "larguraMm": 88.2,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "2) A: ponto interno; B: ponto da circunferência; C: ponto externo; reta $t$: tangente; reta $u$: externa; reta $r$: secante. 3) a) tangente ($d = r$). b) externa ($d > r$). c) secante ($d < r$). d) externa ($d > r$). 4) a) V. b) F. c) F. d) F."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-11",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "distâncias ao centro: ponto interno e reta tangente/secante",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-11.jpg"
+   ],
+   "larguraMm": 87.3,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "5) a) A distância de $A$ ao centro é menor que $5$ cm. b) O raio é maior que $2$ cm. 6) a) $3,74$ cm (reta tangente: $d = r$). b) Menor que $1,77$ cm. c) Sim: quando a reta passa pelo centro (é um diâmetro)."
+  },
+  {
+   "id": "cdb-l-circunferencia-circulo-12",
+   "soImagem": true,
+   "imgPrevia": true,
+   "materia": "Matemática",
+   "serie": "8º Ano",
+   "unidade": "Geometria analítica: circunferência",
+   "topicos": [
+    "Geometria analítica: circunferência",
+    "Circunferência e círculo (livro)"
+   ],
+   "dificuldade": 2,
+   "fonte": "Listas de exercícios (CD)",
+   "pontos": 1,
+   "enunciado": "",
+   "busca": "circunferências tangentes e pontos externos/internos",
+   "imagens": [
+    "img:cdb-l-circunferencia-circulo-12.jpg"
+   ],
+   "larguraMm": 89.1,
+   "resolucao": "",
+   "tipo": "aberta",
+   "resposta": {
+    "modo": "branco",
+    "altura": 45
+   },
+   "gabarito": "5) a) Tangentes interiores: $2x - x = 5$ ⇒ $x = 5$; raios de $10$ cm e $5$ cm. b) Concêntricas: $r_1 - r_2 = 1$ e $r_1 + r_2 = 5$ ⇒ $r_1 = 3$ cm e $r_2 = 2$ cm. c) Tangentes exteriores: $(3x + 1) + (5x - 2) = 55$ ⇒ $x = 7$; raios de $22$ cm e $33$ cm. 6) a) $x > 10$ cm. b) $y > 5$ cm. c) $x < 10$ cm. d) $y < 5$ cm."
   }
  ]
 }

@@ -1281,6 +1281,16 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Parábola: foco e diretriz', arquivo:'aulas/3-ano/2-tri/conicas/aula-2-parabola-foco-e-diretriz.html' }
                 ]
               },
+              {
+                titulo: 'Vetores no plano e área do triângulo',
+                accent: 'decay',
+                icon: 'triangle',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Vetores no plano: soma, módulo e produto escalar', arquivo:'aulas/3-ano/2-tri/vetores-e-area-do-triangulo/aula-1-vetores-no-plano.html' },
+                  { tipo:'Aula 2', titulo:'Área do triângulo: fórmula de Heron e determinante', arquivo:'aulas/3-ano/2-tri/vetores-e-area-do-triangulo/aula-2-area-do-triangulo-heron-e-determinante.html' }
+                ]
+              },
               // <<< cd-mat-3ano-2tri
             ]
           },

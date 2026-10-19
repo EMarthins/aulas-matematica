@@ -66,4 +66,4 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 - [x] 46 módulos / 95 aulas de Matemática (6º ao 9º ano e Ensino Médio) a partir do CD, no padrão de 8 etapas (`scripts/gerador-padrao/p20…p62.js`).
 - [x] Banco de questões com gabaritos criados (4.314 questões).
 - [x] Backup do CD em `arquivo-cd-educador/` (DOCS, EXER, ANIM). VIDEO e TOOLS não foram copiados.
-- [ ] 2 mc de simulado sem gabarito; 7 listas não segmentadas; módulos extras do Matemática Essencial (vetores, Heron, amortização).
+- [x] Fechado: gabaritos de todas as mc, listas não segmentadas recortadas à mão (3 listas; 2 eram duplicata/folha em branco), módulo de vetores e Heron (p63). Amortização já está em p62.

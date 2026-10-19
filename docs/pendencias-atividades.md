@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 122 módulos (282 aulas) aguardando atividades.**
+**Total: 123 módulos (284 aulas) aguardando atividades.**
 
 ### Matemática · 6° Ano · 1° Trimestre (4 módulos)
 
@@ -125,10 +125,11 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 
 - [ ] **Probabilidade** — 2 aulas (`aulas/3-ano/1-tri/probabilidade/`)
 
-### Matemática · 3° Ano · 2° Trimestre (2 módulos)
+### Matemática · 3° Ano · 2° Trimestre (3 módulos)
 
 - [ ] **Geometria analítica** — 2 aulas (`aulas/3-ano/2-tri/geometria-analitica/`)
 - [ ] **Cônicas: elipse, hipérbole e parábola** — 2 aulas (`aulas/3-ano/2-tri/conicas/`)
+- [ ] **Vetores no plano e área do triângulo** — 2 aulas (`aulas/3-ano/2-tri/vetores-e-area-do-triangulo/`)
 
 ### Matemática · 3° Ano · 3° Trimestre (14 módulos)
 

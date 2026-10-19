@@ -1,0 +1,53 @@
+// Matemática · 3ª série EM · 2º trimestre · Vetores e área do triângulo (base: "Matemática Essencial · Geometria" do CD: vetor2d e Heron)
+const { A, mod, co, sp, fig, tbl, callout } = require('./cd.js');
+
+module.exports = mod({
+  ano: '3° Ano', tri: 2, destino: 'mat-3ano-2tri', pasta: 'aulas/3-ano/2-tri/vetores-e-area-do-triangulo/', titulo: 'Vetores no plano e área do triângulo', accent: 'decay', icon: 'triangle', key: 'm3p63', area: 'Matemática · 3ª série',
+  aulas: [
+    A('vetores-no-plano', 'Vetores no plano: soma, módulo e produto escalar',
+      `Setas que ${co('primary')}carregam direção e intensidade</span>`,
+      'Um barco aponta para o leste a $6$ km/h e a correnteza o empurra para o norte a $8$ km/h. Qual é a velocidade resultante e para onde ele vai de fato?',
+      'plano', [['vetor'], ['soma e módulo', 'growth'], ['produto escalar', 'decay']],
+      ['Velocidade, força e deslocamento têm tamanho e direção: são grandezas vetoriais.', ['A distância entre $(0, 0)$ e $(3, 4)$ é:', ['$3$', '$4$', '$5$', '$7$'], 2, '$√{9 + 16}$.'], 'Andar $3$ m para o leste e depois $4$ m para o norte leva a que distância do ponto de partida?'],
+      ['<strong>Representar</strong> um vetor por coordenadas $v = (a, b)$.', '<strong>Somar</strong> vetores e calcular o módulo.', '<strong>Usar</strong> o produto escalar para decidir se dois vetores são perpendiculares.'],
+      'Operações com vetores são feitas <strong>coordenada a coordenada</strong>; o módulo vem de Pitágoras.',
+      [['O que é um vetor', ['Um <strong>vetor</strong> tem módulo (tamanho), direção e sentido. No plano: $v = (a, b)$.', 'O vetor de $A(x_1, y_1)$ a $B(x_2, y_2)$ é $B - A = (x_2 - x_1, y_2 - y_1)$.', 'Módulo: $|v| = √{a^2 + b^2}$.'],
+        fig('plano', 'Ilustração original: plano cartesiano.', '280px')],
+       ['Soma e multiplicação por número', ['Soma: $(a, b) + (c, d) = (a + c, b + d)$ (regra do paralelogramo).', 'Por um número $k$: $k · (a, b) = (ka, kb)$.', 'Barco: $(6, 0) + (0, 8) = (6, 8)$, de módulo $√{36 + 64} = 10$ km/h.'],
+        tbl(['Vetores', 'Resultado'], [['$(2, 1) + (3, 4)$', '$(5, 5)$'], ['$3 · (1, -2)$', '$(3, -6)$']])],
+       ['Produto escalar', ['$u · v = a_1 a_2 + b_1 b_2$ para $u = (a_1, b_1)$ e $v = (a_2, b_2)$.', 'Também vale $u · v = |u| |v| cos θ$, em que $θ$ é o ângulo entre eles.', '$u · v = 0$ ⇔ vetores <strong>perpendiculares</strong> (ângulo reto).'],
+        callout('Dica', 'Para saber se $(2, 3)$ e $(-3, 2)$ são perpendiculares: $-6 + 6 = 0$. São.', 'primary')]],
+      [['Soma e módulo', 'Calcule $|u + v|$ para $u = (3, 1)$ e $v = (1, 3)$.', [['Some', '$u + v = (4, 4)$.'], ['Módulo', '$√{16 + 16} = 4√2$.']], '$4√2 ≈ 5,66$'],
+       ['Perpendicular?', 'Os vetores $(4, 1)$ e $(-1, 4)$ são perpendiculares?', [['Produto escalar', '$4 · (-1) + 1 · 4 = 0$.']], 'Sim']],
+      ['O barco', 'Calcule o módulo da velocidade resultante do barco ($6$ km/h para o leste e $8$ km/h para o norte).', ['$v = (6, 8)$.', '$|v| = √{6^2 + 8^2}$.', 'Calcule.'], '$|v| = 10$ km/h, inclinado para o nordeste.'],
+      [['O módulo de $(5, 12)$ é:', ['$7$', '$13$', '$17$', '$60$'], 1, '$√{25 + 144}$.'],
+       ['$(1, 2) + (3, -5)$ é:', ['$(4, -3)$', '$(4, 7)$', '$(2, -3)$', '$(3, -10)$'], 0, 'Some coordenada a coordenada.'],
+       ['O produto escalar de $(2, 3)$ e $(4, -1)$ é:', ['$5$', '$11$', '$-5$', '$8$'], 0, '$8 - 3$.'],
+       ['Dois vetores são perpendiculares quando o produto escalar é:', ['$1$', '$0$', '$-1$', 'igual aos módulos'], 1, 'Cosseno de $90°$ é zero.']],
+      [[['Vetor', '$(a, b)$ com módulo $√{a^2 + b^2}$.'], ['Soma', 'Coordenada a coordenada.'], ['Escalar', '$u · v = 0$ ⇒ perpendiculares.']], 'Por que o produto escalar zero indica ângulo reto?', 'Voltando ao barco: velocidade resultante de $10$ km/h.'],
+      [['O módulo de $(3, 4)$ é:', ['$5$', '$7$', '$12$', '$25$'], 0], ['$2 · (3, -1)$ é:', ['$(6, -2)$', '$(5, 1)$', '$(6, 2)$', '$(3, -2)$'], 0], ['$(1, 0) · (0, 1)$ é:', ['$1$', '$0$', '$-1$', '$2$'], 1]]),
+
+    A('area-do-triangulo-heron-e-determinante', 'Área do triângulo: fórmula de Heron e determinante',
+      `Área ${co('primary')}só com os lados</span> ou só com as coordenadas`,
+      'Um terreno triangular tem lados de $13$ m, $14$ m e $15$ m. Como calcular a área sem conhecer a altura?',
+      'terreno', [['Heron'], ['semiperímetro', 'growth'], ['determinante', 'decay']],
+      ['A área do triângulo é ${b · h|2}$, mas nem sempre sabemos a altura. Há fórmulas para outros dados.', ['A área de um triângulo de base $10$ e altura $6$ é:', ['$16$', '$30$', '$60$', '$20$'], 1, '${10 · 6|2}$.'], 'Como você acharia a área de um triângulo cujos lados são $3$, $4$ e $5$?'],
+      ['<strong>Aplicar</strong> a fórmula de Heron.', '<strong>Calcular</strong> a área de um triângulo a partir das coordenadas dos vértices.', '<strong>Escolher</strong> o método mais adequado.'],
+      'Heron: $A = √{p(p - a)(p - b)(p - c)}$, com $p$ o semiperímetro.',
+      [['Fórmula de Heron', ['Semiperímetro: $p = {a + b + c|2}$.', '$A = √{p(p - a)(p - b)(p - c)}$.', 'Lados $13$, $14$ e $15$: $p = 21$ e $A = √{21 · 8 · 7 · 6} = √{7 056} = 84$ m².'],
+        fig('terreno', 'Ilustração original: terreno.', '280px')],
+       ['Por coordenadas', ['Para $A(x_1, y_1)$, $B(x_2, y_2)$ e $C(x_3, y_3)$: $A = {1|2} · |D|$.', '$D = x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)$.', 'Ex.: $A(0, 0)$, $B(4, 0)$, $C(0, 3)$: $D = 0 + 4(3 - 0) + 0 = 12$ e área $6$.'],
+        tbl(['Vértices', 'Área'], [['$(0,0)$, $(4,0)$, $(0,3)$', '$6$'], ['lados $3, 4, 5$ (Heron)', '$6$']])],
+       ['Quando usar cada uma', ['Conhece os três lados: Heron.', 'Conhece as coordenadas: determinante.', 'Conhece base e altura: ${b · h|2}$. Se os pontos são colineares, $D = 0$ (área nula).'],
+        callout('Dica', 'Confira com um caso conhecido: lados $3, 4, 5$ dão $p = 6$ e $A = √{6 · 3 · 2 · 1} = 6$.', 'primary')]],
+      [['Heron', 'Calcule a área do triângulo de lados $5$, $5$ e $6$.', [['Semiperímetro', '$p = 8$.'], ['Área', '$√{8 · 3 · 3 · 2} = √{144} = 12$.']], '$12$'],
+       ['Coordenadas', 'Calcule a área do triângulo $A(1, 1)$, $B(5, 1)$, $C(3, 4)$.', [['$D$', '$1(1 - 4) + 5(4 - 1) + 3(1 - 1) = -3 + 15 + 0 = 12$.'], ['Área', '${|12|2} = 6$.']], '$6$']],
+      ['O terreno', 'Calcule a área do terreno de lados $13$ m, $14$ m e $15$ m.', ['$p = {13 + 14 + 15|2}$.', '$A = √{p(p - 13)(p - 14)(p - 15)}$.', 'Simplifique.'], '$p = 21$ e $A = √{21 · 8 · 7 · 6} = 84$ m².'],
+      [['O semiperímetro de lados $6$, $8$ e $10$ é:', ['$12$', '$24$', '$10$', '$8$'], 0, '${24|2}$.'],
+       ['A área de lados $6$, $8$ e $10$ (Heron) é:', ['$24$', '$48$', '$12$', '$30$'], 0, '$√{12 · 6 · 4 · 2} = 24$.'],
+       ['Pontos colineares dão área:', ['maior que $0$', 'igual a $0$', 'negativa', 'infinita'], 1, '$D = 0$.'],
+       ['A área do triângulo de vértices $(0, 0)$, $(6, 0)$ e $(0, 4)$ é:', ['$24$', '$10$', '$12$', '$6$'], 2, '${6 · 4|2}$.']],
+      [[['Heron', 'Só com os três lados.'], ['Determinante', 'Só com as coordenadas.'], ['Colineares', 'Área zero.']], 'Por que o determinante pode dar negativo e usamos o módulo?', 'Voltando ao terreno: $84$ m².'],
+      [['O semiperímetro de $7$, $8$ e $9$ é:', ['$12$', '$24$', '$14$', '$8$'], 0], ['A área do triângulo equilátero de lado $2$ (Heron) é:', ['$√3$', '$2$', '$2√3$', '$4$'], 0], ['A área de $(0, 0)$, $(2, 0)$, $(0, 2)$ é:', ['$4$', '$2$', '$1$', '$8$'], 1]])
+  ]
+});
