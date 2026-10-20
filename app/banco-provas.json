@@ -110977,8 +110977,6 @@
   {
    "id": "cdb-sim-b8-08",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Probabilidade",
@@ -110990,41 +110988,91 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08) Os resultados de uma pesquisa sobre reforma agrária, feita com 740 alunos da 3a série do ensino médio, estão registrados na tabela a seguir. REFORMA AGRÁRIA Sem Periodo Sexo Contra A favor Total opinião 20 80 20 Diurno Fem. 120 Mas. 80 90 80 250 Noturno Fem. 40 80 20 140 Mas. 120 100 10 230 Total 260 350 130 740 A probabilidade de um aluno desse grupo, escolhido ao acaso, ser do sexo masculino e não ter opinião formada sobre a reforma agrária é de, aproximadamente: (A) 0,12. (B) 0,23. (C) 0,34. (D) 0,45. (E) 0,56.",
-   "imagens": [
-    "img:cdb-sim-b8-08.jpg"
-   ],
-   "larguraMm": 92.7,
+   "enunciado": "Os resultados de uma pesquisa sobre reforma agrária, feita com 740 alunos da 3ª série do ensino médio, estão registrados na tabela a seguir.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,12.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "0,23.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,34.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,45.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0,56.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A probabilidade de um aluno desse grupo, escolhido ao acaso, ser do sexo masculino e não ter opinião formada sobre a reforma agrária é de, aproximadamente:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Período",
+     "Sexo",
+     "Contra",
+     "A favor",
+     "Sem opinião",
+     "Total"
+    ],
+    "linhas": [
+     [
+      "Diurno",
+      "Fem.",
+      "20",
+      "80",
+      "20",
+      "120"
+     ],
+     [
+      "Diurno",
+      "Mas.",
+      "80",
+      "90",
+      "80",
+      "250"
+     ],
+     [
+      "Noturno",
+      "Fem.",
+      "40",
+      "80",
+      "20",
+      "140"
+     ],
+     [
+      "Noturno",
+      "Mas.",
+      "120",
+      "100",
+      "10",
+      "230"
+     ],
+     [
+      "Total",
+      "",
+      "260",
+      "350",
+      "130",
+      "740"
+     ]
+    ],
+    "largura": "90%",
+    "legenda": "Reforma agrária"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-09",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111036,41 +111084,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09) No plano cartesiano abaixo, o segmento AB é paralelo ao eixo y e tem medida 3, e o ponto A tem coordenadas A (1,-1) As coordenadas do ponto B são",
-   "imagens": [
-    "img:cdb-sim-b8-09.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "No plano cartesiano abaixo, o segmento AB é paralelo ao eixo y e tem medida 3, e o ponto A tem coordenadas A(1, −1).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (1, 2) $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ (1, 3) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (3, −1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (4, −1) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (4, 3) $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "As coordenadas do ponto B são",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-09-fig.jpg",
+    "alt": "Plano cartesiano com um segmento vertical, de A (embaixo) até B (em cima), à direita do eixo y",
+    "largura": "41mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-10",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -111082,35 +111131,38 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10) Os triângulos PQR e MNO abaixo são semelhantes e MN NO 12 cm o A razão de semelhança entre os dois triângulos é 1 3 1 2 2 3 3 2 2 1",
-   "imagens": [
-    "img:cdb-sim-b8-10.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "Os triângulos PQR e MNO abaixo são semelhantes e $ {PQ|MN} = {QR|NO} $",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|3} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {2|1} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A razão de semelhança entre os dois triângulos é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-10-fig.jpg",
+    "alt": "Dois triângulos: PQR, com PQ = 4 cm e QR = 6 cm, e o triângulo MNO, maior, com MN = 12 cm",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-11",
@@ -111161,8 +111213,6 @@
   {
    "id": "cdb-sim-b8-12",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -111174,35 +111224,39 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12) O mapa abaixo apresenta um quadriculado cujas colunas são indicadas pelas letras A, B, C, D e as linhas pelos números 1, 2, 3, 4. c D Rod. feuú• mos t Arcreana Ca 2 3 AMERC A LATINA 4 (www.eciencia.ugp.br) O círculo indica a localização do Memorial da América Latina, em São Paulo, que está no retângulo indicado pela (A) letra C e o número 1. (B) letra D e o número 2. (C) letra B e o número 3. (D) letra D e o número 3. (E) letra D e o número 4.",
-   "imagens": [
-    "img:cdb-sim-b8-12.jpg"
-   ],
-   "larguraMm": 92,
+   "enunciado": "O mapa abaixo apresenta um quadriculado cujas colunas são indicadas pelas letras A, B, C, D e as linhas pelos números 1, 2, 3, 4.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "letra C e o número 1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "letra D e o número 2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "letra B e o número 3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "letra D e o número 3.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "letra D e o número 4.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O círculo indica a localização do Memorial da América Latina, em São Paulo, que está no retângulo indicado pela",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-12-fig.jpg",
+    "alt": "Mapa de uma região de São Paulo dividido em quadriculado: colunas A a D e linhas 1 a 4; um círculo com uma seta marca o Memorial da América Latina",
+    "largura": "85mm",
+    "legenda": "www.eciencia.usp.br"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-13",
@@ -111247,8 +111301,6 @@
   {
    "id": "cdb-sim-b8-14",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -111260,41 +111312,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14) O garoto Ronaldinho é atleta da Escolinha de Futebol Primeiro Passo.Certo dia enquanto os demais colegas não chegavam, resolveu calcular a área do campo de futebol no qual treina.O campo de futebol tem 100m de comprimento por 73m de largura como mostar a figura abaixo. A área encontrada por Ronaldinho foi (A) 27 rn2 100 m (B) 173 m2 (C) 346 rn2 c (D) 3650 m2 (E) 7300 m2",
-   "imagens": [
-    "img:cdb-sim-b8-14.jpg"
-   ],
-   "larguraMm": 91.8,
+   "enunciado": "O garoto Ronaldinho é atleta da Escolinha de Futebol Primeiro Passo. Certo dia enquanto os demais colegas não chegavam, resolveu calcular a área do campo de futebol no qual treina. O campo de futebol tem 100 m de comprimento por 73 m de largura como mostra a figura abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "27 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "173 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "346 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3650 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "7300 m<sup>2</sup>",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A área encontrada por Ronaldinho foi",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-14-fig.jpg",
+    "alt": "Campo de futebol em forma de retângulo ABCD, desenhado inclinado, com 100 m de comprimento e 73 m de largura e o círculo central",
+    "largura": "42mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-15",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -111306,41 +111359,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15) Com o objetivo de trabalhar com seus alunos o conceito de volume de sólidos, um professor fez o seguinte experimento: pegou uma caixa de polietileno, na forma de um cubo com 1 metro de lado, e colocou nela 600 litros de água. Em seguida, colocou, dentro da caixa com água, um sólido que ficou completamente submerso. Considerando que, ao colocar o sólido dentro da caixa, a altura do nível da água passou a ser 80 cm, qual era o volume do sólido? (A) rn3 (B) 0,48 m3 (C) 4,8 rn3 (D) 20 m3 (E) 48 m3",
-   "imagens": [
-    "img:cdb-sim-b8-15.jpg"
-   ],
-   "larguraMm": 86.6,
+   "enunciado": "Com o objetivo de trabalhar com seus alunos o conceito de volume de sólidos, um professor fez o seguinte experimento: pegou uma caixa de polietileno, na forma de um cubo com 1 metro de lado, e colocou nela 600 litros de água. Em seguida, colocou, dentro da caixa com água, um sólido que ficou completamente submerso. Considerando que, ao colocar o sólido dentro da caixa, a altura do nível da água passou a ser 80 cm, qual era o volume do sólido?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,2 m<sup>3</sup>",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "0,48 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4,8 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "20 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "48 m<sup>3</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-16",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -111352,41 +111399,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16) De uma viga de madeira de seção quadrada de lado 10cm extrai-se uma cunha de altura h = 15cm, conforme a figura. O volume dessa cunha é (A) 15 cm3 (B) 10 cm3 (C) 35 cm3 (D) 75 cm3 (E) 750 cm3 15 10 10",
-   "imagens": [
-    "img:cdb-sim-b8-16.jpg"
-   ],
-   "larguraMm": 88.6,
+   "enunciado": "De uma viga de madeira de seção quadrada de lado 10 cm extrai-se uma cunha de altura h = 15 cm, conforme a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "15 cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "10 cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "35 cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "75 cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "750 cm<sup>3</sup>",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O volume dessa cunha é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-16-fig.jpg",
+    "alt": "Viga de seção quadrada de lado 10 cm e comprimento 10 cm, da qual se retira uma cunha de altura 15 cm",
+    "largura": "41mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-17",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111398,41 +111446,70 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17) A tabela abaixo mostra o número de passageiros transportados por um ônibus em uma certa semana. Número de Dia da semana ssa eiros Segunda-feira 250 Terça-feira 183 Quarta-feira 241 Quinta-feira 194 Sexta-feira 269 Sábado 124 Em que dia dessa semana ele transportou o maior número de passageiros? (A) Segunda-feira. (B) Terça-feira. (C) Quarta-feira. (D) Sexta-feira. (E) Sábado.",
-   "imagens": [
-    "img:cdb-sim-b8-17.jpg"
-   ],
-   "larguraMm": 83.3,
+   "enunciado": "A tabela abaixo mostra o número de passageiros transportados por um ônibus em uma certa semana.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Segunda-feira.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "Terça-feira.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Quarta-feira.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Sexta-feira.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Sábado.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em que dia dessa semana ele transportou o maior número de passageiros?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Dia da semana",
+     "Número de passageiros"
+    ],
+    "linhas": [
+     [
+      "Segunda-feira",
+      "250"
+     ],
+     [
+      "Terça-feira",
+      "183"
+     ],
+     [
+      "Quarta-feira",
+      "241"
+     ],
+     [
+      "Quinta-feira",
+      "194"
+     ],
+     [
+      "Sexta-feira",
+      "269"
+     ],
+     [
+      "Sábado",
+      "124"
+     ]
+    ],
+    "largura": "65%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-18",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -111444,41 +111521,72 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18) No varejo de alimentos no Brasil, os pequenos mercados de bairro têm crescido muito. Veja a seguir alguns dados comparativos entre as lojas de bairro e os hipermercados: lojas de bairro Hipermercados ÁREAOCUPADA 1.000 7.000 (em metros quadrados) REGULARIDADE DE I a cada 7 dias I a cada 33 dias VISITAS NÚMERO DE 800 FUNCIONARIOS CUSTO OPERACIONAL (em relação ao faturamento) 3,5% MARGEM DE LUCRO Com base nesses dados, foram feitas três afirmações: l. Tanto no quesito \"área ocupada\" quanto no quesito \"número de funcionários\", as lojas de bairro são aproximadamente 85% menores do que os hiperm",
-   "imagens": [
-    "img:cdb-sim-b8-18.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "No varejo de alimentos no Brasil, os pequenos mercados de bairro têm crescido muito. Veja a seguir alguns dados comparativos entre as lojas de bairro e os hipermercados:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "I e II.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "II e III.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com base nesses dados, foram feitas três afirmações:<br><span class=\"pb\"></span>I. Tanto no quesito “área ocupada” quanto no quesito “número de funcionários”, as lojas de bairro são aproximadamente 85% menores do que os hipermercados.<br>II. As visitas às lojas de bairro ocorrem com uma frequência 4,7 vezes maior do que as visitas aos hipermercados.<br>III. Nos hipermercados e nas lojas de bairro, o custo operacional é inversamente proporcional à margem de lucro.<br><span class=\"pb\"></span>Considerando as informações apresentadas nessa tabela, está correto o que se afirma apenas em",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Lojas de bairro",
+     "",
+     "Hipermercados"
+    ],
+    "linhas": [
+     [
+      "1.000",
+      "ÁREA OCUPADA (em metros quadrados)",
+      "7.000"
+     ],
+     [
+      "1 a cada 7 dias",
+      "REGULARIDADE DE VISITAS",
+      "1 a cada 33 dias"
+     ],
+     [
+      "20",
+      "NÚMERO DE FUNCIONÁRIOS",
+      "800"
+     ],
+     [
+      "12%",
+      "CUSTO OPERACIONAL (em relação ao faturamento)",
+      "18%"
+     ],
+     [
+      "3,5%",
+      "MARGEM DE LUCRO",
+      "1,5%"
+     ]
+    ],
+    "largura": "95%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-19",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -111490,41 +111598,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19) O gráfico abaixo mostra a quantidade de lixo reciclável descartado por uma família em uma semana. Quantidade 12 de lixo 10 8 6 4 2 Plástico Papel Alumínio Vidro O quadro que representa esses dados é A) papel Lixo reciclável Alumínio Plástico Vidro Quantidade de lixo (k ) 8 12 2 4 B) Lixo reoclável Alumínio Plástico Papel Vidro Quantidade de lixo (kg) 2 12 8 4 C) Lixo reciclável Alumínio Plástico Papel Vidro Quantidade de lixo 2 8 12 4 D) Lixo reciclável Alumínio Plástico Papel Vidro Quantidade de lixo (kg) 12 8 2 4 E) Lixo reciclável Alumínio Plástico Papel Vidro Quantidade de lixo (kg) 4",
-   "imagens": [
-    "img:cdb-sim-b8-19.jpg"
-   ],
-   "larguraMm": 92.7,
+   "enunciado": "O gráfico abaixo mostra a quantidade de lixo reciclável descartado por uma família em uma semana.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Alumínio 8; Plástico 12; Papel 2; Vidro 4 (quantidade de lixo, em kg)",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Alumínio 2; Plástico 4; Papel 12; Vidro 8 (quantidade de lixo, em kg)",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Alumínio 2; Plástico 4; Papel 8; Vidro 12 (quantidade de lixo, em kg)",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Alumínio 12; Plástico 8; Papel 2; Vidro 4 (quantidade de lixo, em kg)",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Alumínio 4; Plástico 2; Papel 12; Vidro 8 (quantidade de lixo, em kg)",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O quadro que representa esses dados é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-19-fig.jpg",
+    "alt": "Gráfico de colunas da quantidade de lixo (kg): alumínio 2, plástico 4, papel 12 e vidro 8",
+    "largura": "72mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-20",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -111536,35 +111645,58 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20) A tabela representa a distribuição do salário dos 24 funcionários de uma média empresa. Salários (em reais) Número de funcionári cs 2 3.000 4 2.500 8 1.500 10 BOO Com base nas informações da tabela, pode-se afirmar que o salário médio dessa empresa, em reais, é: (A) 1.500 1.530 (B) (C) 1.610 (D) 1.830 (E) 2.100",
-   "imagens": [
-    "img:cdb-sim-b8-20.jpg"
-   ],
-   "larguraMm": 90.8,
+   "enunciado": "A tabela representa a distribuição do salário dos 24 funcionários de uma média empresa.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.500",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1.530",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1.610",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1.830",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2.100",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com base nas informações da tabela, pode-se afirmar que o salário médio dessa empresa, em reais, é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Número de funcionários",
+     "Salários (em reais)"
+    ],
+    "linhas": [
+     [
+      "2",
+      "3.000"
+     ],
+     [
+      "4",
+      "2.500"
+     ],
+     [
+      "8",
+      "1.500"
+     ],
+     [
+      "10",
+      "800"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-01",
