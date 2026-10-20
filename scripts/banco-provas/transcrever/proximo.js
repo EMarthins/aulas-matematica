@@ -1,0 +1,31 @@
+// Próximo lote de questões em imagem para transcrever.   node scripts/banco-provas/transcrever/proximo.js <qtd=24> <porFolha=4> [filtro-de-id]
+// Pula o que já está em lote-*.jsonl ou em manter.txt. Gera as folhas em <TEMP>/transc e imprime o que ler.
+const fs = require('fs'), path = require('path'), { spawnSync } = require('child_process'), os = require('os');
+const raiz = path.resolve(__dirname, '../../..');
+const j = JSON.parse(fs.readFileSync(path.join(raiz, 'app/banco-provas.json'), 'utf8'));
+const feitos = new Set();
+fs.readdirSync(__dirname).filter(f => /^lote-.*\.jsonl$/.test(f)).forEach(f => fs.readFileSync(path.join(__dirname, f), 'utf8').split(/\r?\n/).filter(Boolean).forEach(l => { try { feitos.add(JSON.parse(l).id); } catch (e) {} }));
+const manter = new Set(fs.existsSync(path.join(__dirname, 'manter.txt')) ? fs.readFileSync(path.join(__dirname, 'manter.txt'), 'utf8').split(/\r?\n/).map(l => l.split('|')[0].trim()).filter(Boolean) : []);
+const qtd = +process.argv[2] || 24, por = +process.argv[3] || 4, filtro = process.argv[4];
+const ORD = id => (/^enem/.test(id) ? '0' : /^cdb-c\d/.test(id) ? '1' : /^cdb-sim/.test(id) ? '2' : '3') + id.replace(/(\d+)/g, m => m.padStart(5, '0'));
+const pend = j.questoes.filter(q => q.soImagem && !feitos.has(q.id) && !manter.has(q.id) && (!filtro || q.id.includes(filtro))).sort((a, b) => ORD(a.id).localeCompare(ORD(b.id)));
+console.log('pendentes:', pend.length, '| feitos:', feitos.size, '| mantidos como imagem:', manter.size);
+const ids = pend.slice(0, qtd).map(q => q.id);
+const out = path.join(os.tmpdir(), 'transc'); fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });
+fs.writeFileSync(path.join(out, 'ids.json'), JSON.stringify(ids));
+const FAx = fs.existsSync(path.join(__dirname, 'figuras-auto.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'figuras-auto.json'), 'utf8')) : {};
+fs.writeFileSync(path.join(out, 'caixas.json'), JSON.stringify(Object.fromEntries(ids.filter(i => FAx[i]).map(i => [i, FAx[i]]))));
+const r = spawnSync(process.execPath, [path.join(raiz, '../fontes-nre/tools/transcricao-folhas.mjs'), path.join(out, 'ids.json'), out, String(por), path.join(out, 'caixas.json')], { encoding: 'utf8' });
+console.log((r.stdout || '') + (r.stderr || ''));
+const ind = JSON.parse(fs.readFileSync(path.join(out, 'indice.json'), 'utf8'));
+Object.entries(ind).forEach(([f, l]) => console.log(path.join(out, f), '=>', l.map(i => { const q = j.questoes.find(x => x.id === i); return i + '[' + q.tipo + (q.gabarito ? ' g=' + q.gabarito : '') + ']'; }).join(' ')));
+const { rascunho, embaralhado } = require('./rascunho.js');
+const gar = ids.filter(id => embaralhado(j.questoes.find(x => x.id === id).busca));
+if (gar.length) spawnSync(process.execPath, [path.join(__dirname, 'ocr-lote.js'), ...gar], { stdio: 'ignore' });
+console.log('\n--- RASCUNHOS (confira com a imagem; só escreva o que precisa corrigir) ---');
+ids.forEach(id => { const q = j.questoes.find(x => x.id === id); if (embaralhado(q.busca) && !/^enem2018-/.test(id)) { console.log( '' + id + ' [' + q.tipo + (q.gabarito ? ' g=' + q.gabarito : '') + '] (texto embaralhado: digitar da imagem)'); return; } const r = rascunho(q); const cut = s => (s.length > 700 ? s.slice(0, 480) + ' […] ' + s.slice(-200) : s); const REV = fs.existsSync(path.join(__dirname, 'revisar-todas.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'revisar-todas.json'), 'utf8')) : {}; const FA = fs.existsSync(path.join(__dirname, 'figuras-auto.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'figuras-auto.json'), 'utf8')) : {};
+  console.log('\n' + id + ' [' + q.tipo + (q.gabarito ? ' g=' + q.gabarito : '') + '] ' + (REV[id] ? '{' + REV[id].slice(0, 50) + '} ' : '') + (FA[id] ? 'FIGauto=' + FA[id].join(',') + ' ' : '') + 'E: ' + cut(r.e));
+  if (r.a) r.a.forEach((a, k) => console.log('   ' + 'ABCDE'[k] + ') ' + cut(a)));
+  else if (q.tipo === 'mc') console.log('   (sem alternativas detectadas)');
+  if (r.af) r.af.forEach((a, k) => console.log('   · ' + cut(a)));
+});
