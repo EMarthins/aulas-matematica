@@ -14,7 +14,7 @@
 // "R$ 100" (cifrão seguido de número) é tratado como dinheiro, não como matemática.
 // Módulo puro (sem DOM): roda no navegador e no Node.
 // ============================================================
-const KEEP = new Set(['sen', 'cos', 'tg', 'tan', 'sin', 'log', 'ln', 'mmc', 'mdc', 'mod', 'min', 'max', 'det', 'lim', 'sec', 'csc', 'cot', 'cotg', 'rad']);
+const KEEP = new Set(['sen', 'cos', 'tg', 'tan', 'sin', 'log', 'ln', 'mmc', 'mdc', 'mod', 'min', 'max', 'det', 'lim', 'sec', 'csc', 'cot', 'cotg', 'rad', 'cossec', 'cosec', 'arcsen', 'arccos', 'arctg', 'arctan', 'senh', 'cosh', 'sen']);
 const esc1 = c => c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : c;
 function matching(s, i) { let d = 0; for (let j = i; j < s.length; j++) { if (s[j] === '{') d++; else if (s[j] === '}') { d--; if (d === 0) return j; } } return s.length - 1; }
 function topBar(s) { let d = 0; for (let j = 0; j < s.length; j++) { if (s[j] === '{') d++; else if (s[j] === '}') d--; else if (s[j] === '|' && d === 0) return j; } return -1; }
