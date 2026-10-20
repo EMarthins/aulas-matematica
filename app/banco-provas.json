@@ -75856,7 +75856,6 @@
   },
   {
    "id": "cdb-c10-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -75868,41 +75867,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. Mackenzie-SP Numa festa, a razão entre o número de moças e o de rapazes é 13 . A porcentagem de rapazes na festa é: a) 44% b) 45% c) 40% d) 48% e) 46% 12",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-027.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Numa festa, a razão entre o número de moças e o de rapazes é $ {13|12} $. A porcentagem de rapazes na festa é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "44%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "45%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "40%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "48%",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "46%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -75914,20 +75907,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. UFMT Com base na figura abaixo, julgue os itens. ( ) A metade dos diabéticos no Brasil não sabe que está doente. ( ) Dos que sabem que estão doentes 1,035 mi- lhões não se tratam. ( ) O número de óbitos por causa do diabetes, de 1985 para 1990, aumentou em 40%. ( ) O número de óbitos por causa do diabetes em 1995 foi 4 3 do número de óbitos em 1990. Fontes: Federação Nacional de Associações de Diabéticos e Ministério da Saúde. Revista VEJA - 22/07/98.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-028.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Com base na figura abaixo, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F – V"
+   "gabarito": "V – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "A metade dos diabéticos no Brasil não sabe que está doente.",
+     "ok": true
+    },
+    {
+     "t": "Dos que sabem que estão doentes 1,035 milhões não se tratam.",
+     "ok": true
+    },
+    {
+     "t": "O número de óbitos por causa do diabetes, de 1985 para 1990, aumentou em 40%.",
+     "ok": false
+    },
+    {
+     "t": "O número de óbitos por causa do diabetes em 1995 foi $ {4|3} $ do número de óbitos em 1990.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c10-028-fig.jpg",
+    "alt": "Infográfico “Muitos doentes, pouco tratamento”: no Brasil são 9 milhões de diabéticos; deles, 50% não sabem que estão doentes; dos que sabem, 23% não se tratam; cresce o número de óbitos por causa do diabetes: 14 000 em 1985, 18 000 em 1990 e 24 000 em 1995",
+    "largura": "46mm",
+    "legenda": "Fontes: Federação Nacional de Associações de Diabéticos e Ministério da Saúde. Revista VEJA - 22/07/98."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -75939,41 +75951,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. UFMS Um grupo de alunos fizeram uma pes- quisa sobre o tipo de sangue dos 540 alunos da escola. Os alunos, para resumirem os da- dos encontrados, construíram um gráfico de setores e, no lugar das porcentagens, eles in- dicaram os ângulos de alguns desses setores circulares, como mostra o gráfico. Pode-se que afirmar que o número de alunos que tem o tipo de sangue B é: a) 96 b) 81 c) 108 d) 124 e) 162",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-029.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um grupo de alunos fizeram uma pesquisa sobre o tipo de sangue dos 540 alunos da escola. Os alunos, para resumirem os dados encontrados, construíram um gráfico de setores e, no lugar das porcentagens, eles indicaram os ângulos de alguns desses setores circulares, como mostra o gráfico.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "96",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "81",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "108",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "124",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "162",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Pode-se que afirmar que o número de alunos que tem o tipo de sangue B é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c10-029-fig.jpg",
+    "alt": "Gráfico de setores dos tipos sanguíneos: Tipo O, 162°; Tipo A, 108°; Tipo AB, 36°; Tipo B, ângulo desconhecido (?)",
+    "largura": "46mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -75985,20 +75998,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. I.E. Superior de Brasília-DF Houve uma vez um verão no qual uma certa indústria sorveteira trocava 10 palitos de sorvete por um sorvete de palito. De acordo com tal fato, analise e julgue os itens seguintes, sabendo que o preço de cada sorvete de palito era de R$ 2,00. ( ) Com R$ 20,00 era possível comprar 11 sorvetes de palito. ( ) O preço de um palito era de R$ 0,20. ( ) Se uma pessoa tivesse R$ 2,00 e 9 palitos de sorvete poderia comprar dois sorvetes de palito. ( ) Para atender a tal promoção a indústria sorveteira foi obrigada a produzir 10% acima de suas vendas. ( ) Um aumento de 10%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-030.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Houve uma vez um verão no qual uma certa indústria sorveteira trocava 10 palitos de sorvete por um sorvete de palito. De acordo com tal fato, analise e julgue os itens seguintes, sabendo que o preço de cada sorvete de palito era de R&#36; 2,00.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – V – V"
+   "gabarito": "V – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "Com R&#36; 20,00 era possível comprar 11 sorvetes de palito.",
+     "ok": true
+    },
+    {
+     "t": "O preço de um palito era de R&#36; 0,20.",
+     "ok": false
+    },
+    {
+     "t": "Se uma pessoa tivesse R&#36; 2,00 e 9 palitos de sorvete poderia comprar dois sorvetes de palito.",
+     "ok": true
+    },
+    {
+     "t": "Para atender a tal promoção a indústria sorveteira foi obrigada a produzir 10% acima de suas vendas.",
+     "ok": true
+    },
+    {
+     "t": "Um aumento de 10% no preço de venda dos sorvetes seria exatamente o acréscimo necessário na receita da indústria para cobrir os custos dos sorvetes entregues pela promoção.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76010,16 +76039,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. UESE Use os dados seguintes para analisar as proposições que seguem. Em uma loja, o preço de tabela de um aparelho eletrodoméstico é R$ 1.000,00. A compra desse aparelho pode ser feita de duas maneiras: • à vista, com abatimento de 15% sobre o preço de tabela, desembolsando-se, neste caso, a quantia de A reais; • a prazo, com uma entrada correspondente a 30% do preço de tabela e o restante, com seus juros compostos à taxa de 3% ao mês, em uma única parcela de valor B reais, a ser paga ao completar 2 meses da data da compra. Nesse caso, o total pago é de C reais. a) A = 985 b) Na compra a p",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-031.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Use os dados seguintes para analisar as proposições que seguem.<br><span class=\"pb\"></span>Em uma loja, o preço de tabela de um aparelho eletrodoméstico é R&#36; 1.000,00. A compra desse aparelho pode ser feita de duas maneiras:<br>• à vista, com abatimento de 15% sobre o preço de tabela, desembolsando-se, neste caso, a quantia de A reais;<br>• a prazo, com uma entrada correspondente a 30% do preço de tabela e o restante, com seus juros compostos à taxa de 3% ao mês, em uma única parcela de valor B reais, a ser paga ao completar 2 meses da data da compra. Nesse caso, o total pago é de C reais.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F – F"
+   "gabarito": "V – F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "A = 985",
+     "ok": true
+    },
+    {
+     "t": "Na compra a prazo, a entrada é de R&#36; 30,00.",
+     "ok": false
+    },
+    {
+     "t": "B = 742,63",
+     "ok": true
+    },
+    {
+     "t": "C = 1060",
+     "ok": false
+    },
+    {
+     "t": "Se duas pessoas comprarem desse aparelho nessa loja, uma à vista e outra a prazo, uma delas desembolsará R&#36; 192,63 a mais do que a outra.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-032",
@@ -76063,7 +76109,6 @@
   },
   {
    "id": "cdb-c10-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76075,37 +76120,59 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. Unifor-CE Três laboratórios produzem certo medicamento. A tabela abaixo mostra, para certo mês, o número de unidades pro- duzidas desse medicamento e a porcentagem de venda dessa pro- dução. Se, nesse mês, os três laborató- rios venderam um total de 13900 unidades desse medicamento, então o valor de x é: a) 80 b) 75 c) 70 d) 65 e) 60 Laboratório Número de unidades produzidas Porcentagem de venda da produção Unilab Fortalab Riolab 5000 7000 8000 70 80 x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-033.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Três laboratórios produzem certo medicamento. A tabela abaixo mostra, para certo mês, o número de unidades produzidas desse medicamento e a porcentagem de venda dessa produção.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "75",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "70",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "65",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Se, nesse mês, os três laboratórios venderam um total de 13900 unidades desse medicamento, então o valor de x é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Laboratório",
+     "Número de unidades produzidas",
+     "Porcentagem de venda da produção"
+    ],
+    "linhas": [
+     [
+      "Unilab",
+      "5000",
+      "70"
+     ],
+     [
+      "Fortalab",
+      "7000",
+      "80"
+     ],
+     [
+      "Riolab",
+      "8000",
+      "x"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-034",
@@ -76145,7 +76212,6 @@
   },
   {
    "id": "cdb-c10-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76157,41 +76223,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. U. Santa Úrsula-RJ Seja W = xy z . Se x sofre um aumento de 25% e y sofre um aumen- to de 40%, a alteração que sofre z para que W não se altere é: a) aumentar de 65% d) diminuir de 75% b) diminuir de 65% e) z não deve sofrer nenhuma alteração c) aumentar de 75%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-035.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja $ W = {xy|z} $. Se $ x $ sofre um aumento de 25% e $ y $ sofre um aumento de 40%, a alteração que sofre $ z $ para que $ W $ não se altere é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "aumentar de 65%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "diminuir de 65%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "aumentar de 75%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "diminuir de 75%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "z não deve sofrer nenhuma alteração",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76203,37 +76263,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. UFMG Um funcionário recebe as seguintes informações sobre os empregados de certa firma: A)60% deles vão para o trabalho de ônibus, 30% vão de carro e os restantes 10%, a pé; B) 75% deles moram em casa alugada e os restantes 25%, em casa própria; Considerando-se apenas essas informações, a única conclusão correta a que esse funcio- nário pode chegar é a de que: a) nenhum dos empregados que moram em casa própria vai a pé para o trabalho. b) o conjunto formado por todos os empregados que moram em casa própria e por todos os que vão de carro para o trabalho engloba mais de 50% dos empregados d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-036.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um funcionário recebe as seguintes informações sobre os empregados de certa firma:<br><span class=\"pb\"></span>A) 60% deles vão para o trabalho de ônibus, 30% vão de carro e os restantes 10%, a pé;<br>B) 75% deles moram em casa alugada e os restantes 25%, em casa própria;<br><span class=\"pb\"></span>Considerando-se apenas essas informações, a <b>única</b> conclusão <b>correta</b> a que esse funcionário pode chegar é a de que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "nenhum dos empregados que moram em casa própria vai a pé para o trabalho.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "o conjunto formado por todos os empregados que moram em casa própria e por todos os que vão de carro para o trabalho engloba mais de 50% dos empregados dessa firma.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "pelo menos 5% dos empregados que vão de carro para o trabalho moram em casa própria.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "pelo menos 50% dos empregados que vão de ônibus para o trabalho moram em casa alugada.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76245,20 +76299,68 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. UFPR O imposto de renda (I.R.) a ser pago mensalmente é cal- culado com base na tabela da Receita Federal, da seguinte for- ma: sobre o rendimento-base aplica-se a alíquota correspon- dente; do valor obtido, subtraí- se a “parcela a deduzir”; o resultado é o valor do imposto a ser pago. Em relação ao I.R. do mês de agosto de 99, considerando apenas as informações da tabela, é correto afirmar: ( ) Sobre o rendimento-base de R$ 1.000,00, o valor do imposto é R$ 15,00. ( ) Para rendimentos-base maiores que R$ 900,00, ao se triplicar o rendimento-base triplica-se também o valor do imposto. ( )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-037.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O imposto de renda (I.R.) a ser pago mensalmente é calculado pela Receita Federal, da seguinte forma: sobre o rendimento-base aplica-se a alíquota correspondente; do valor obtido, subtrai-se a “parcela a deduzir”; o resultado é o valor do imposto a ser pago.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F"
+   "gabarito": "V – F – V – F",
+   "pergunta": "Em relação ao I.R. do mês de agosto de 99, considerando apenas as informações da tabela, é correto afirmar:",
+   "afirmacoes": [
+    {
+     "t": "Sobre o rendimento-base de R&#36; 1.000,00, o valor do imposto é R&#36; 15,00.",
+     "ok": true
+    },
+    {
+     "t": "Para rendimentos-base maiores que R&#36; 900,00, ao se triplicar o rendimento-base triplica-se também o valor do imposto.",
+     "ok": false
+    },
+    {
+     "t": "Sendo $ x $ o rendimento-base, com $ x > 1800 $, uma fórmula para o cálculo do imposto $ y $ é: $ y = 0,275x − 360 $, considerados $ x $ e $ y $ em reais.",
+     "ok": true
+    },
+    {
+     "t": "O valor do imposto em função do rendimento-base pode ser representado, em um sistema de coordenadas cartesianas ortogonais, pelo gráfico apresentado acima.",
+     "ok": false
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c10-037-fig1.jpg",
+     "alt": "Gráfico do I.R. em função do rendimento-base: reta nula até 900, depois uma reta que sobe até 135 em 1800 e outra mais inclinada que chega a 400 em 3000",
+     "largura": "92mm"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Rendimento-base (R$)",
+      "Alíquota",
+      "Parcela a deduzir (R$)"
+     ],
+     "linhas": [
+      [
+       "Até 900,00",
+       "Isento",
+       "—"
+      ],
+      [
+       "De 900,01 a 1.800,00",
+       "15%",
+       "135,00"
+      ],
+      [
+       "Acima de 1.800,00",
+       "27,5%",
+       "360,00"
+      ]
+     ],
+     "largura": "100%",
+     "legenda": "Tabela da Receita Federal para agosto de 1999"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76270,41 +76372,67 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. FATEC-SP Pelo quarto ano consecutivo, o Brasil bateu o seu próprio recorde de recicla- gem de latas de alumínio, mantendo-se entre os líderes mundiais do setor. Em 1999, foram coletadas e recicladas 86409 toneladas de latas de alumínio vazias, num total de 5,8 bilhões de unidades. A tabela abaixo apresenta, nos anos indicados, a taxa nacional de reciclagem de latas de alumínio, em porcentagem, em relação ao total fabricado. Ano 1991 1992 1993 1994 1995 1996 1997 1998 1999 Porcentagem 37 39 50 56 63 61 64 65 73 Fonte: ABAL – Associação Brasileira do Alumínio De acordo com esses dados, é cor",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-038.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Pelo quarto ano consecutivo, o Brasil bateu o seu próprio recorde de reciclagem de latas de alumínio, mantendo-se entre os líderes mundiais do setor. Em 1999, foram coletadas e recicladas 86409 toneladas de latas de alumínio vazias, num total de 5,8 bilhões de unidades. A tabela abaixo apresenta, nos anos indicados, a taxa nacional de reciclagem de latas de alumínio, em porcentagem, em relação ao total fabricado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "137157",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "135014",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "118368",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "84480",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "63079",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "De acordo com esses dados, é correto concluir que, dos números abaixo, o que mais se aproxima do número de toneladas de latas de alumínio fabricadas no Brasil em 1999 é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Ano",
+     "1991",
+     "1992",
+     "1993",
+     "1994",
+     "1995",
+     "1996",
+     "1997",
+     "1998",
+     "1999"
+    ],
+    "linhas": [
+     [
+      "Porcentagem",
+      "37",
+      "39",
+      "50",
+      "56",
+      "63",
+      "61",
+      "64",
+      "65",
+      "73"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Fonte: ABAL – Associação Brasileira do Alumínio"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76316,16 +76444,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. UFMT Observe a figura. A partir das informações dadas e utilizando a aproximação de duas casas decimais , jul- gue os itens. ( ) No período de janeiro/1999 a agosto/2000, a variação do menor valor do barril de petróleo para o maior foi de 193,92%. ( ) A média aritmética dos valores do barril de petróleo dos meses relativos ao 2º trimestre de 1999 é US$ 15,41. ( ) Se a variação do valor do barril de petróleo de julho de 2000 a agosto de 2000 se mantivesse constante para os meses seguintes, o valor do barril ultrapassaria US$ 40,00 em fevereiro de 2001. Adaptado do Jornal do Brasil de 07/09/",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-039.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe a figura.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F"
+   "gabarito": "V – V – F",
+   "pergunta": "A partir das informações dadas e utilizando a aproximação de <i>duas casas decimais</i>, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "No período de janeiro/1999 a agosto/2000, a variação do menor valor do barril de petróleo para o maior foi de 193,92%.",
+     "ok": true
+    },
+    {
+     "t": "A média aritmética dos valores do barril de petróleo dos meses relativos ao 2º trimestre de 1999 é US$ 15,41.",
+     "ok": true
+    },
+    {
+     "t": "Se a variação do valor do barril de petróleo de julho de 2000 a agosto de 2000 se mantivesse constante para os meses seguintes, o valor do barril ultrapassaria US$ 40,00 em fevereiro de 2001.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c10-039-fig.jpg",
+    "alt": "Gráfico “Ladeira acima — Barril de petróleo”: valores (médias mensais) em US$ do barril, de janeiro de 1999 a agosto de 2000: começa em 11,06 (fev/99: 10,20), passa por 15,25 e 15,77, chega a 25,59 no fim de 1999, oscila em torno de 27 em 2000 e termina em 29,98; destaque: fechamento de ontem, US$ 34,30",
+    "largura": "95mm",
+    "legenda": "Adaptado do Jornal do Brasil de 07/09/2000."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-040",
@@ -76369,7 +76514,6 @@
   },
   {
    "id": "cdb-c10-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76381,41 +76525,54 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. U. Católica de Salvador-BA Um turista bra- sileiro dispunha de R$ 3.000,00 para uma via- gem à Europa. Resolveu trocar 20% do que possuía em marcos e o restante em dólares, num dia em que a cotação das moedas estava de acor- do com a tabela: Depois de feita a troca, desprezando-se os centavos, ficou com X dólares e Y marcos. Nessas condições, X + Y é igual a: a) 1905 b) 2100 c) 2900 d) 4638 e) 4833 Dólar Marco Real 1,72 0,85",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-041.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um turista brasileiro dispunha de R&#36; 3.000,00 para uma viagem à Europa. Resolveu trocar 20% do que possuía em marcos e o restante em dólares, num dia em que a cotação das moedas estava de acordo com a tabela:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1905",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2100",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "2900",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4638",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4833",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Depois de feita a troca, desprezando-se os centavos, ficou com X dólares e Y marcos. Nessas condições, X + Y é igual a:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "Real"
+    ],
+    "linhas": [
+     [
+      "Dólar",
+      "1,72"
+     ],
+     [
+      "Marco",
+      "0,85"
+     ]
+    ],
+    "largura": "50%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76427,37 +76584,74 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. U. Uberaba-MG Os resultados das eleições para prefeito em Uberaba, no pleito reali- zado em 1/10/00 estão na tabela ao lado: Assinale a alternativa correta: a) Os dois primeiros colocados obtiveram mais de 95% dos votos apurados. b) Os votos brancos e nulos cor- respondem a 10% do total de votos apurados. c) A diferença entre o 1º e o 2º colocado é inferior a 1% dos votos apurados. d) A abstenção foi superior a 20%. Opções Adriano Espíndola Alaor Carlos Anderson Adauto Marcos Montes Nulos Brancos TOTAL DE VOTOS APURADOS TOTAL DE ELEITORES Nº de votos 892 2178 70552 71353 7809 2401 155185 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-042.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Os resultados das eleições para prefeito em Uberaba, no pleito realizado em 1/10/00 estão na tabela ao lado:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Os dois primeiros colocados obtiveram mais de 95% dos votos apurados.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Os votos brancos e nulos correspondem a 10% do total de votos apurados.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "A diferença entre o 1º e o 2º colocado é inferior a 1% dos votos apurados.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "A abstenção foi superior a 20%.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Assinale a alternativa correta.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Opções",
+     "Nº de votos"
+    ],
+    "linhas": [
+     [
+      "Adriano Espíndola",
+      "892"
+     ],
+     [
+      "Alaor Carlos",
+      "2178"
+     ],
+     [
+      "Anderson Adauto",
+      "70552"
+     ],
+     [
+      "Marcos Montes",
+      "71353"
+     ],
+     [
+      "Nulos",
+      "7809"
+     ],
+     [
+      "Brancos",
+      "2401"
+     ],
+     [
+      "TOTAL DE VOTOS APURADOS",
+      "155185"
+     ],
+     [
+      "TOTAL DE ELEITORES",
+      "180776"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c10-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76469,37 +76663,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. U. Salvador-BA Uma quantia de x reais foi aplicada a juros pré-fixados de 1% ao mês. Ao final de 10 meses, foi feito o resgate total da aplicação, obtendo-se y reais. A razão y x é igual a: a) (1,01) 9 b) (10,1) 9 c) (1,01) 10 d) (10,1) 10 e) (101) 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-043.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma quantia de $ x $ reais foi aplicada a juros pré-fixados de 1% ao mês. Ao final de 10 meses, foi feito o resgate total da aplicação, obtendo-se $ y $ reais.<br><span class=\"pb\"></span>A razão $ {y|x} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (1,01)^9 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (10,1)^9 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (1,01)^{10} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (10,1)^{10} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (101)^{10} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-044",
@@ -76543,7 +76732,6 @@
   },
   {
    "id": "cdb-c10-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Juros e porcentagem",
@@ -76555,20 +76743,48 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. UNICAMP-SP A tabela abaixo fornece as áreas, em hectares, ocupadas com transgêni- cos em alguns países do mundo, nos anos de 1997 e 1998: Considerando apenas o que consta nes- sa tabela, pergunta-se: a) Qual era a área total, em hectares, ocupada com transgênicos em 1997? b) Qual foi o crescimento, em porcen- tagem , da área total ocupada com transgênicos de 1997 para 1998? País 1997 1998 Estados Unidos 8,1 x 10 6 20,5 x 10 6 Argentina 1,4 x 10 6 4,3 x 10 6 Canadá 1,3 x 10 6 2,8 x 10 6 Outros países 2,0 x 10 5 3,4 x 10 5 Fonte: O Estado de S. Paulo , 18/07/1999.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c10-045.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A tabela abaixo fornece as áreas, em hectares, ocupadas com transgênicos em alguns países do mundo, nos anos de 1997 e 1998:",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) 1,1 x 10⁷ hectares b) 154%",
+   "gabarito": "a) 1,1 × 10^7 hectares; b) 154%",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Considerando apenas o que consta nessa tabela, pergunta-se:<br><span class=\"pb\"></span>a) Qual era a área total, em hectares, ocupada com transgênicos em 1997?<br>b) Qual foi o crescimento, <b>em porcentagem</b>, da área total ocupada com transgênicos de 1997 para 1998?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "País",
+     "1997",
+     "1998"
+    ],
+    "linhas": [
+     [
+      "Estados Unidos",
+      "8,1 × 10<sup>6</sup>",
+      "20,5 × 10<sup>6</sup>"
+     ],
+     [
+      "Argentina",
+      "1,4 × 10<sup>6</sup>",
+      "4,3 × 10<sup>6</sup>"
+     ],
+     [
+      "Canadá",
+      "1,3 × 10<sup>6</sup>",
+      "2,8 × 10<sup>6</sup>"
+     ],
+     [
+      "Outros países",
+      "2,0 × 10<sup>5</sup>",
+      "3,4 × 10<sup>5</sup>"
+     ]
+    ],
+    "largura": "80%",
+    "legenda": "Fonte: O Estado de S. Paulo, 18/07/1999."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c11-001",
