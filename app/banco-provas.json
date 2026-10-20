@@ -66284,7 +66284,6 @@
   },
   {
    "id": "cdb-c05-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66296,41 +66295,65 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. U.F. Pelotas-RS Seja | R o conjunto dos números reais; x 1 , x 2 , ... ∈ R + ∗ e y ≠ 1 um número real positivo. Observando a construção da tabela abaixo, podemos afirmar que o valor de y é: a) 3 2 3 b) 3 2 c) 3 d) 2 3 3 e) 2 3 x1 x2 x3 N log 3 x 1 = C 1 log 3 x 2 = C 2 log 3 x 3 = C 3 N log y x 1 = C 1 + D 1 log y x 2 = C 2 + D 2 log y x 3 = C 3 + D 3 N log 9 x 1 = D 1 log 9 x 2 = D 2 log 9 x 3 = D 3 N",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-039.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Seja ℝ o conjunto dos números reais; $ x_1, x_2, … ∈ ℝ_+^* $ e $ y ≠ 1 $ um número real positivo. Observando a construção da tabela abaixo, podemos afirmar que o valor de $ y $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3^{3/2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3^{2/3} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {2|3} $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "$ x_1 $",
+     "$ log_3 x_1 = C_1 $",
+     "$ log_9 x_1 = D_1 $",
+     "$ log_y x_1 = C_1 + D_1 $"
+    ],
+    "linhas": [
+     [
+      "$ x_2 $",
+      "$ log_3 x_2 = C_2 $",
+      "$ log_9 x_2 = D_2 $",
+      "$ log_y x_2 = C_2 + D_2 $"
+     ],
+     [
+      "$ x_3 $",
+      "$ log_3 x_3 = C_3 $",
+      "$ log_9 x_3 = D_3 $",
+      "$ log_y x_3 = C_3 + D_3 $"
+     ],
+     [
+      "N",
+      "N",
+      "N",
+      "N"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66342,41 +66365,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. Mackenzie-SP Se log α = 6 e log β = 4, então α 2 • β é igual a: a) β b) 24 c) 10 d) α + β e) 6 4 2 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-040.jpg"
-   ],
-   "larguraMm": 107.4,
+   "enunciado": "Se $ log α = 6 $ e $ log β = 4 $, então $ ∜{α^2 · β} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ β $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "24",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {α|2} + {β|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ √6 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66388,37 +66405,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. Fatec-SP A soma dos valores reais de x que satisfazem a equação 3 • log 2 8 x = log 2 x é: a) 0 b) 1 c) 3 d) 7 e) 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-041.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "A soma dos valores reais de <b>x</b> que satisfazem a equação $ 3 · log_8^2 x = log_2 x $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-042",
@@ -66462,7 +66474,6 @@
   },
   {
    "id": "cdb-c05-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66474,24 +66485,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. Vunesp Os átomos de um elemento químico radioativo possuem uma tendência natural a se desintegrar (emitindo partículas e se transformando em outro elemento). Assim sen- do, com o passar do tempo, a quantidade original desse elemento diminui. Suponhamos que certa quantidade de um elemento radioativo com inicialmente m 0 gramas de massa se decomponha segundo a equação matemática: m(t) = m 0 • 10 –t/70 , onde m(t) é a quanti- dade de massa radioativa no tempo t (em anos). Usando a aproximação log 2 = 0,3, determine: a) log 8; b) quantos anos demorará para que esse elemento se decomponha até a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-043.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Os átomos de um elemento químico radioativo possuem uma tendência natural a se desintegrar (emitindo partículas e se transformando em outro elemento). Assim sendo, com o passar do tempo, a quantidade original desse elemento diminui. Suponhamos que certa quantidade de um elemento radioativo com inicialmente $ m_0 $ gramas de massa se decomponha segundo a equação matemática: $ m(t) = m_0 · 10^{−t/70} $, onde $ m(t) $ é a quantidade de massa radioativa no tempo $ t $ (em anos). Usando a aproximação $ log 2 = 0,3 $, determine:<br><span class=\"pb\"></span>a) $ log 8 $;<br>b) quantos anos demorará para que esse elemento se decomponha até atingir um oitavo da massa inicial.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) 0,9 b) 63",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66503,41 +66508,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. Fatec-SP Sabendo que log a 18 = 2,890 e log 18 = 1,255, então log a 10 é igual a: a) 1 b) 1,890 c) 2,032 d) 2,302 e) 2,320",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-044.jpg"
-   ],
-   "larguraMm": 122.2,
+   "enunciado": "Sabendo que $ log_a 18 = 2,890 $ e $ log 18 = 1,255 $, então $ log_a 10 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,890",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,032",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,302",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "2,320",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66549,41 +66548,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. FEI-SP Sabendo-se que log 10 = 1 e log 2 = a, é válido afirmar-se que: a) log 5 = 1 + a d) log 5 = a – 1 b) log 5 = 2 – a e) log 40 = 2 + a c) log 40 = 1 + 2a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-045.jpg"
-   ],
-   "larguraMm": 110.2,
+   "enunciado": "Sabendo-se que $ log 10 = 1 $ e $ log 2 = a $, é válido afirmar-se que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ log 5 = 1 + a $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ log 5 = 2 − a $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ log 40 = 1 + 2a $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ log 5 = a − 1 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ log 40 = 2 + a $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66595,37 +66588,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. ITA-SP Sendo dado \u0001 n (2 4 6 8 … 2 n ) = a n e \u0001 n ( 2 3 4 … 2 n ) = b n então, \u0001 n 2 – \u0001 n 3 + \u0001 n 4 – \u0001 n 5 + … + \u0001 n 2 n é igual a: a) a n – 2b n d) b n – a n b) 2a n – b n e) a n + b n c) a n – b n 3 4 n 3 4 2n 2 3 4 5 2 n",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-046.jpg"
-   ],
-   "larguraMm": 91.5,
+   "enunciado": "Sendo dado<br><span class=\"pb\"></span>$ ln(2 √4 ∛6 ∜8 … ⁿ√{2n}) = a_n $ e $ ln(√2 ∛3 ∜4 … ²ⁿ√{2n}) = b_n $<br><span class=\"pb\"></span>então,<br><span class=\"pb\"></span>$ {ln 2|2} − {ln 3|3} + {ln 4|4} − {ln 5|5} + … + {ln 2n|2n} $<br><span class=\"pb\"></span>é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a_n − 2b_n $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2a_n − b_n $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a_n − b_n $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ b_n − a_n $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ a_n + b_n $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-047",
@@ -66669,7 +66657,6 @@
   },
   {
    "id": "cdb-c05-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66681,37 +66668,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. Mackenzie-SP Na figura, os gráficos I, II e III referem-se, respectivamente, às fun- ções y = a x , y = b x e y = c x . I II III y x 0 Então, está correto afirmar que: a) 0 < a < b < c d) 0 < a < c < b b) 0 < b < c < a e) a < 0 < c < b c) a < 0 < b < c",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-048.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Na figura, os gráficos I, II e III referem-se, respectivamente, às funções $ y = a^x $, $ y = b^x $ e $ y = c^x $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 0 < a < b < c $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 0 < b < c < a $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a < 0 < b < c $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 0 < a < c < b $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ a < 0 < c < b $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Então, está correto afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c05-048-fig.jpg",
+    "alt": "Plano cartesiano com três curvas que passam pelo ponto (0, 1): a curva I decrescente, a curva II (pontilhada) crescente e íngreme, e a curva III crescente mais suave",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c06-001",
