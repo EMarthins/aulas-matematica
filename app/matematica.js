@@ -8,6 +8,7 @@
 //   <=  >=  !=  =>  <=>  ->  +-  ~=     viram ≤ ≥ ≠ ⇒ ⇔ → ± ≈
 //   -  vira −   ·   *  vira ·           "texto reto"  fica sem itálico
 //   \{  \}  chaves literais              \␠  espaço largo
+//   @M{a&b;c&d}  matriz (colunas &, linhas ;)    @D{…} determinante    @S{eq1;eq2} sistema (chave à esquerda)
 //
 // Fora dos cifrões o texto é HTML normal (use &lt; para "<").
 // "R$ 100" (cifrão seguido de número) é tratado como dinheiro, não como matemática.
@@ -24,10 +25,18 @@ function atom(s, i) {
   if (/[A-Za-zα-ωΑ-Ω]/.test(s[j] || '')) return [s.slice(i, j + 1), j + 1];
   return [s.slice(i, j + 1), j + 1];
 }
+/** divide "a&b;c&d" em linhas e colunas respeitando chaves aninhadas */
+function splitTop(s, sep) { const r = []; let d = 0, ini = 0; for (let i = 0; i < s.length; i++) { const c = s[i]; if (c === '{') d++; else if (c === '}') d--; else if (c === sep && d === 0) { r.push(s.slice(ini, i)); ini = i + 1; } } r.push(s.slice(ini)); return r; }
+const rowsOf = s => splitTop(s, ';').filter(x => x.trim() !== '').map(r => splitTop(r, '&'));
 function conv(s) {
   let o = '', i = 0;
   while (i < s.length) {
     const c = s[i];
+    if (c === '@' && 'MDS'.includes(s[i + 1] || '#') && s[i + 2] === '{') { // @M{a&b;c&d} matriz · @D{…} determinante · @S{eq1;eq2} sistema
+      const j = matching(s, i + 2), L = rowsOf(s.slice(i + 3, j)), t = s[i + 1];
+      const lin = L.map(r => '<tr>' + r.map(x => '<td>' + conv(x.trim()) + '</td>').join('') + '</tr>').join('');
+      o += '<span class="mx mx-' + t + '"><table>' + lin + '</table></span>'; i = j + 1; continue;
+    }
     if (c === '{') { const j = matching(s, i); const inner = s.slice(i + 1, j); const b = topBar(inner); o += b >= 0 ? `<span class="fr"><span>${conv(inner.slice(0, b))}</span><span>${conv(inner.slice(b + 1))}</span></span>` : conv(inner); i = j + 1; continue; }
     if (c === '√' || c === '∛') {
       let idx = c === '∛' ? '3' : ''; i++;
@@ -70,4 +79,8 @@ export const MATH_CSS = `
 .fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 .2em .06em}
 .fr>span:last-child{padding:.06em .2em 0}
 .rt{white-space:nowrap}.rt .rr{border-top:1.5px solid currentColor;padding:0 .12em;margin-left:.02em}
-sup.sq{font-size:.7em}`;
+sup.sq{font-size:.7em}
+.mx{display:inline-block;vertical-align:middle;margin:0 .15em}.mx table{border-collapse:collapse}.mx td{padding:.06em .5em;text-align:center;line-height:1.25}
+.mx-M{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor;border-radius:.5em/45%}
+.mx-D{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+.mx-S{border-left:1.6px solid currentColor;border-radius:.6em 0 0 .6em/45% 0 0 45%}.mx-S td{text-align:left;padding:.06em .3em .06em .55em}`;

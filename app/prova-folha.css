@@ -150,3 +150,8 @@ sup.sq{font-size:.7em}
 .fr-o em{font:700 8.5pt Archivo,Arial,sans-serif;font-style:normal;margin-right:.5mm}
 .fr-ln{flex:1;max-width:125mm;height:6.4mm;border-bottom:.4mm solid #111;font:600 9.5pt/6mm Archivo,Arial,sans-serif;font-style:normal;padding-left:1.5mm;overflow:hidden;white-space:nowrap}
 .folha.fr-f .cols{align-items:flex-start}
+/* matrizes, determinantes e sistemas (@M{…} @D{…} @S{…}) */
+.mx{display:inline-block;vertical-align:middle;margin:0 .15em}.mx table{border-collapse:collapse}.mx td{padding:.06em .5em;text-align:center;line-height:1.25}
+.mx-M{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor;border-radius:.5em/45%}
+.mx-D{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
+.mx-S{border-left:1.6px solid currentColor;border-radius:.6em 0 0 .6em/45% 0 0 45%}.mx-S td{text-align:left;padding:.06em .3em .06em .55em}

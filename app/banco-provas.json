@@ -68580,7 +68580,6 @@
   },
   {
    "id": "cdb-c07-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68592,41 +68591,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFMS O sistema obtido da equa çã o matricial 2 3 3 1 3 2 7 2             =       y z é : a) Poss í vel e indeterminado. b) Imposs í vel. c) Poss í vel e determinado com solu çã o (2, 1, – 1). d) Poss í vel e determinado com solu çã o (1, 1, 2). e) Poss í vel e determinado com solu çã o ( – 1, 1, 2). 2x 2 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-002.jpg"
-   ],
-   "larguraMm": 103.9,
+   "enunciado": "O sistema obtido da equação matricial $ @M{2&3&3;3&1&2} @M{x;y;z} = @M{7;2} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Possível e indeterminado.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Impossível.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Possível e determinado com solução (2, 1, −1).",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Possível e determinado com solução (1, 1, 2).",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Possível e determinado com solução (−1, 1, 2).",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68638,41 +68631,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. F.I. Anápolis-GO Se o determinante da matriz for igual a 2, afirmamos que: a) xyz = 8 b) xz = 4 c) y = 6 d) xy = 4 e) xyz = 2 \u0001 \u0002 2x 2 0 4 y 1 1 0 z",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-003.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Se o determinante da matriz $ @M{2x&2&0;4&y&1;1&0&z} $ for igual a 2, afirmamos que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ xyz = 8 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ xz = 4 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y = 6 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ xy = 4 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ xyz = 2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68684,20 +68671,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. I.E. Superior de Brasília-DF Considere o sistema S dado abaixo no julgamento dos itens seguintes. S = x y z x y z x y kz + + = − − = − + = −      0 2 6 2 6 ( ) Se (2; 1; – 3) é uma solu çã o do sistema, ent ã o k = 2. ( ) O determinante da matriz dos coeficientes do sistema é igual a – 3k – 6, portanto k = – 2. ( ) Existe um ú nico valor de k para o qual o sistema n ã o possui uma ú nica solu çã o. ( ) É poss í vel escolher convenientemente o valor de k, de modo que S tenha pelo menos duas solu çõ es distintas. ( ) Se k = – 2, a ú nica solu çã o do sistema é a chamada solu çã o trivial",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-004.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considere o sistema $ S $ dado abaixo no julgamento dos itens seguintes.<br><span class=\"pb\"></span>$ S = @S{x + y + z = 0; 2x − y − z = 6; x − 2y + kz = −6} $",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F – F"
+   "gabarito": "V – F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Se $ (2; 1; −3) $ é uma solução do sistema, então $ k = 2 $.",
+     "ok": true
+    },
+    {
+     "t": "O determinante da matriz dos coeficientes do sistema é igual a $ −3k − 6 $, portanto $ k = −2 $.",
+     "ok": false
+    },
+    {
+     "t": "Existe um único valor de $ k $ para o qual o sistema não possui uma única solução.",
+     "ok": true
+    },
+    {
+     "t": "É possível escolher convenientemente o valor de $ k $, de modo que $ S $ tenha pelo menos duas soluções distintas.",
+     "ok": false
+    },
+    {
+     "t": "Se $ k = −2 $, a única solução do sistema é a chamada solução trivial $ (0; 0; 0) $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68709,20 +68712,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFMS Uma das t é cnicas usadas na an á lise de circuitos el é tricos é aquela conhecida como análise das malhas . Suponha, ent ã o, o circuito de 3 malhas representado na figura abaixo. Aplicando a lei das voltagens de Kirchoff a cada uma das malhas do circuito é poss í vel obter o seguinte sistema de equa çõ es lineares: S : 3 2 1 6 3 0 2 3 6 6 1 2 3 1 2 3 1 2 3 i i i i i i i i i − − = − + − = − − + =      , onde a matriz de coeficientes, R = 3 1 2 1 6 3 2 3 6 − − − − − −           , é denominada matriz resistência do circuito. Com base no sistema S e na matriz R , é correto",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-005.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Uma das técnicas usadas na análise de circuitos elétricos é aquela conhecida como <b>análise das malhas</b>. Suponha, então, o circuito de 3 malhas representado na figura abaixo. Aplicando a <b>lei das voltagens de Kirchoff</b> a cada uma das malhas do circuito é possível obter o seguinte sistema de equações lineares:<br><span class=\"pb\"></span>$ S: @S{3i_1 − i_2 − 2i_3 = 1; −i_1 + 6i_2 − 3i_3 = 0; −2i_1 − 3i_2 + 6i_3 = 6} $<br><span class=\"pb\"></span>onde a matriz de coeficientes, $ R = @M{3&−1&−2;−1&6&−3;−2&−3&6} $,",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "12"
+   "gabarito": "12",
+   "pergunta": "é denominada <b>matriz resistência</b> do circuito.<br><span class=\"pb\"></span>Com base no sistema <b>S</b> e na matriz <b>R</b>, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
+   "afirmacoes": [
+    {
+     "t": "$ det(R) = 70 $, onde $ det(R) $ representa o determinante da matriz <b>R</b>;",
+     "ok": false
+    },
+    {
+     "t": "a inversa da matriz <b>R</b> é a matriz $ @M{0&1&3;1&1&−5;1&2&0} $;",
+     "ok": false
+    },
+    {
+     "t": "a transposta da matriz <b>R</b> é a própria matriz <b>R</b>;",
+     "ok": true
+    },
+    {
+     "t": "se o valor das correntes $ i_1 $, $ i_2 $, $ i_3 $ é dado em ampères, então o valor da corrente $ i_1 $ é 3 ampères.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c07-005-fig.jpg",
+    "alt": "Circuito elétrico com três malhas (correntes i1, i2 e i3): fonte de 7 V na malha 1, fonte de 6 V entre as malhas 1 e 3, resistores de 1 Ω, 2 Ω, 3 Ω, 2 Ω e 1 Ω",
+    "largura": "108mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c07-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68734,41 +68756,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Unifor-CE Sejam as matrizes quadradas A = (a ij ), B = (b ij ) e C = (c ij ), de ordem 2, definidas por a ij = i j se se i j i j j i    = ≠ , b ij = i j i j se se i j i j + −    < ≥ e c ij = a b a b se se i j i j ij ij ij ij . . +    ≤ > A matriz C é : a) 0 2 6 0       c) 1 1 2 4       e) 2 0 0 6       b) 0 2 6 4       d) 1 2 6 4       x 0 2 1 2 1 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-006.jpg"
-   ],
-   "larguraMm": 124,
+   "enunciado": "Sejam as matrizes quadradas $ A = (a_{ij}) $, $ B = (b_{ij}) $ e $ C = (c_{ij}) $, de ordem 2, definidas por<br><span class=\"pb\"></span>$ a_{ij} = @S{i^j \"se\" i = j; j^i \"se\" i ≠ j} $, $ b_{ij} = @S{i + j \"se\" i < j; i − j \"se\" i ≥ j} $ e<br>$ c_{ij} = @S{a_{ij} · b_{ij} se i ≤ j; a_{ij} + b_{ij} se i > j} $.<br><span class=\"pb\"></span>A matriz $ C $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{0&6;2&0} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ @M{0&6;2&4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{1&2;1&4} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{1&6;2&4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{2&0;0&6} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68780,41 +68796,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Unifor-CE Sejam as matrizes A = x 2 0 1       , B = 2 1 0 y       e C = 2 3 1 z       . Se A . B = C, ent ã o é verdade que: a) x = y d) y + z = 0 b) z = 2y e) x . y = – 1 c) x + y = – 1 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-007.jpg"
-   ],
-   "larguraMm": 103.9,
+   "enunciado": "Sejam as matrizes $ A = @M{x&0;2&1} $, $ B = @M{2&1;y&0} $ e $ C = @M{2&1;3&z} $.<br><span class=\"pb\"></span>Se $ A · B = C $, então é verdade que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = y $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ z = 2y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x + y = −1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ y + z = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x · y = −1 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68826,41 +68836,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFCE Considere a matriz A = a x a 0 1 1       . O valor de a para o qual a equa çã o det A = 1 possui exatamente uma raiz real é : a) 5 b) 4 c) 3 d) 2 e) 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-008.jpg"
-   ],
-   "larguraMm": 130.5,
+   "enunciado": "Considere a matriz $ A = @D{a&1&a;0&x&1} $. O valor de $ a $ para o qual a equação $ det A = 1 $ possui exatamente uma raiz real é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68872,41 +68876,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. F.M. Itajubá-MG Dada a matriz A = (a ij ) 2x2 tal que: a ij = i para i j j i para i j − = − ≠    1 2 Calcular a matriz transposta de A: a) 0 1 3 1 −       b) 0 3 1 1 −       c) 0 1 2 1 −       d) 0 1 3 1 −       e) Nenhuma das respostas anteriores. \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-009.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Dada a matriz $ A = (a_{ij})_{2×2} $ tal que $ a_{ij} = @S{i − 1 \"para\" i = j; j^2 − i \"para\" i ≠ j} $.<br><span class=\"pb\"></span>Calcular a matriz transposta de $ A $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{0&1;3&−1} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ @M{0&3;−1&1} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{0&−1;2&1} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{0&−1;3&1} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Nenhuma das respostas anteriores.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68918,41 +68916,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. UFR-RJ Considere a matriz A = (a ij ) 2x2 = i j se i j i se i j + ≥ <    , , 2 Se A t é a matriz transposta da matriz A, ent ã o (A t ) 2 é igual a: a) 10 18 12 22       d) 12 22 18 10       b) 16 10 5 12       e) 12 22 10 18       c) 5 12 8 6       \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-010.jpg"
-   ],
-   "larguraMm": 94.5,
+   "enunciado": "Considere a matriz $ A = (a_{ij})_{2×2} = @S{i + j, \"se\" i ≥ j; 2i, \"se\" i < j} $.<br><span class=\"pb\"></span>Se $ A^t $ é a matriz transposta da matriz $ A $, então $ (A^t)^2 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{10&18;12&22} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ @M{16&10;5&12} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{5&12;8&6} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{12&22;18&10} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{12&22;10&18} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68964,20 +68956,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UFPR Dadas as matrizes A =       0 1 1 0 e B =       3 4 6 5 , é correto afirmar: ( ) B . A = B ( ) Todos os elementos da matriz A + B s ã o n ú meros impares. ( ) O conjunto formado pelos elementos da matriz A . B é igual ao conjunto formado pelos elementos da matriz B. ( ) det(3 . A) = detB ( ) A matriz inversa de A é a pr ó pria matriz de A. \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Dadas as matrizes $ A = @M{0&1;1&0} $ e $ B = @M{3&4;6&5} $, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – V"
+   "gabarito": "F – V – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "$ B · A = B $",
+     "ok": false
+    },
+    {
+     "t": "Todos os elementos da matriz $ A + B $ são números ímpares.",
+     "ok": true
+    },
+    {
+     "t": "O conjunto formado pelos elementos da matriz $ A · B $ é igual ao conjunto formado pelos elementos da matriz $ B $.",
+     "ok": true
+    },
+    {
+     "t": "$ det(3 · A) = det B $",
+     "ok": true
+    },
+    {
+     "t": "A matriz inversa de $ A $ é a própria matriz de $ A $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -68989,41 +68997,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. U. Caxias do Sul-RS Considere as matrizes. A = −       3 6 4 5 B = − −       1 4 5 1 C = − −         1 1 5 0 3 2 0 1 1 e as afirma çõ es: I. AB = −       3 24 20 5 II. det C = – 5 III. A B + =       2 5 14 14 3 É certo concluir que: a) apenas a I est á correta; b) apenas a II est á correta; c) apenas a III est á correta; d) apenas a I e a II est ã o corretas; e) apenas a I e a III est ã o corretas. \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-012.jpg"
-   ],
-   "larguraMm": 128.4,
+   "enunciado": "Considere as matrizes $ A = @M{3&−6;4&5} $, $ B = @M{1&−4;5&−1} $ e $ C = @M{1&−1&5;0&3&2;0&1&−1} $ e as afirmações:<br><span class=\"pb\"></span>I. $ AB = @M{3&24;20&−5} $<br>II. $ det C = −5 $<br>III. $ A + 2B = @M{5&14;14&3} $<br><span class=\"pb\"></span>É certo concluir que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas a I está correta;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas a II está correta;",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "apenas a III está correta;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "apenas a I e a II estão corretas;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "apenas a I e a III estão corretas.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69035,41 +69037,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. UFRS Se A = − −       1 1 1 1 , ent ã o A 2 é a matriz: a) 1 1 1 1 − −       b) 0 0 0 0       c) 1 1 1 1       d) − −       1 1 1 1 e) 2 2 2 2 − −       \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-013.jpg"
-   ],
-   "larguraMm": 120.1,
+   "enunciado": "Se $ A = @M{1&1;−1&−1} $, então $ A^2 $ é a matriz:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{1&1;−1&−1} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ @M{0&0;0&0} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ @M{1&1;1&1} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{−1&−1;1&1} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{2&2;−2&−2} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69081,41 +69077,71 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. FEI-SP A matriz M possui 3 linhas e 30 colunas. Os 30 componentes de cada linha s ã o as quantidades de multas di á rias lavradas por um ó r- g ã o estadual de controle ambiental. Cada uma das linhas da matriz re- presenta uma regi ã o industrial des- se estado. Veja o exemplo parcial: Multiplicando-se BxM, onde B = , a matriz obtida ter á : a) os componentes da primeira linha iguais aos triplos dos valores da primeira linha de M b) os componentes da primeira coluna iguais aos triplos dos valores da primeira coluna de M c) os componentes da segunda linha iguais aos triplos dos valores da s",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A matriz $ M $ possui 3 linhas e 30 colunas. Os 30 componentes de cada linha são quantidades de multas diárias lavradas por um órgão estadual de controle ambiental. Cada uma das linhas da matriz representa uma região industrial desse estado. Veja o exemplo parcial:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "os componentes da primeira linha iguais aos triplos dos valores da primeira linha de M",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "os componentes da primeira coluna iguais aos triplos dos valores da primeira coluna de M",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "os componentes da segunda linha iguais aos triplos dos valores da segunda linha de M",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "os componentes da segunda coluna iguais aos dobros dos valores da segunda coluna de M",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "os componentes da terceira linha iguais aos triplos dos valores da terceira linha de M",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Multiplicando-se $ B×M $, onde $ B = @M{3&0&0;0&1&0;0&0&2} $, a matriz obtida terá:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "região \\ dia",
+     "1",
+     "2",
+     "…",
+     "30"
+    ],
+    "linhas": [
+     [
+      "A",
+      "4",
+      "7",
+      "",
+      "0"
+     ],
+     [
+      "B",
+      "2",
+      "3",
+      "",
+      "1"
+     ],
+     [
+      "C",
+      "5",
+      "5",
+      "",
+      "8"
+     ]
+    ],
+    "largura": "70%",
+    "legenda": "Matriz M"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c07-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69127,41 +69153,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. Mackenzie-SP Se A = (a ij ) é uma matriz quadrada de terceira ordem tal que , ent ã o o determinante de A vale: a) – 27 b) 27 c) 1 d) – 1 e) zero 27 27 a ij = \u0004 – 3, se i = j 0, se i \u0001 j",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-015.jpg"
-   ],
-   "larguraMm": 116.6,
+   "enunciado": "Se $ A = (a_{ij}) $ é uma matriz quadrada de terceira ordem tal que $ a_{ij} = @S{−3, \"se\" i = j; 0, \"se\" i ≠ j} $, então o determinante de $ A $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−27",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "27",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|27} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {−1|27} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "zero",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69173,20 +69193,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFMS Considere a matriz A = (a ij ) 2x2 , com a ij = 3i – j. É correto afirmar que: 01. det(A) = 2 02. A = 2 5 1 4       04. A 2 = 4 25 1 16       08. det(A 2 ) = 9 16. 2A = 4 5 2 4       D ê , como resposta, a soma das alternativas corretas. 1 1 1 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-016.jpg"
-   ],
-   "larguraMm": 119.1,
+   "enunciado": "Considere a matriz $ A = (a_{ij})_{2×2} $, com $ a_{ij} = 3i − j $. É <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "10"
+   "gabarito": "10",
+   "afirmacoes": [
+    {
+     "t": "$ det(A) = 2 $",
+     "ok": false
+    },
+    {
+     "t": "$ A = @M{2&1;5&4} $",
+     "ok": true
+    },
+    {
+     "t": "$ A^2 = @M{4&1;25&16} $",
+     "ok": false
+    },
+    {
+     "t": "$ det(A^2) = 9 $",
+     "ok": true
+    },
+    {
+     "t": "$ 2A = @M{4&2;5&4} $",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69198,41 +69234,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. F.I. Anápolis-GO O maior n ú mero inteiro que é solu çã o da inequa çã o 2 3 2 1 2 − − − x x > 0 é : a) 1 b) 0 c) – 1 d) – 2 e) – 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-017.jpg"
-   ],
-   "larguraMm": 132.3,
+   "enunciado": "O maior número inteiro que é solução da inequação $ @D{1&1&1;−2&x&−2;3&x^2&−1} > 0 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "−3",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69244,37 +69274,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UFR-RJ Dadas as matrizes: A = 11 15 30 9 12 19 110 150 300 x x x −           e B = 1 3 0 0 1 1 5 2 x           O valor de x tal que det A = det B é : a) 0 b) 5 c) 1 d) – 1 e) 2 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-018.jpg"
-   ],
-   "larguraMm": 104.8,
+   "enunciado": "Dadas as matrizes $ A = @M{11x&15x&30x;−9&12&19;110&150&300} $ e $ B = @M{1&x&3;0&1&1;1&5&2} $.<br><span class=\"pb\"></span>O valor de $ x $ tal que $ det A = det B $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-019",

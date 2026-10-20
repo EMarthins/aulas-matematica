@@ -96,6 +96,14 @@ function ommlItens(nodes, it) {
     if (n.t === '#') { texto(n.s.replace(/\s+/g, ' '), false); continue; }
     if (n.t === 'i' || n.t === 'em') { texto(txt(n).replace(/\s+/g, ' '), true); continue; }
     if (n.t === 'span' && cls(n, 'fr')) { const ch = n.c.filter(c => c.t !== '#'); it.push({ x: `<m:f><m:num>${omml(ch[0] ? ch[0].c : [])}</m:num><m:den>${omml(ch[1] ? ch[1].c : [])}</m:den></m:f>`, s: '' }); continue; }
+    if (n.t === 'span' && cls(n, 'mx')) { // matriz / determinante / sistema
+      const tb = (n.c || []).find(c => c.t === 'table'), linhas = tb ? (tb.c || []).flatMap(r => r.t === 'tr' ? [r] : (r.c || []).filter(x => x.t === 'tr')) : [];
+      const cels = linhas.map(r => (r.c || []).filter(c => c.t === 'td').map(c => omml(c.c)));
+      const tipo = cls(n, 'mx-S') ? 'S' : cls(n, 'mx-D') ? 'D' : 'M';
+      const corpo = tipo === 'S' ? '<m:eqArr>' + cels.map(r => '<m:e>' + r.join('') + '</m:e>').join('') + '</m:eqArr>' : '<m:m>' + cels.map(r => '<m:mr>' + r.map(c => '<m:e>' + c + '</m:e>').join('') + '</m:mr>').join('') + '</m:m>';
+      const bc = tipo === 'S' ? ['{', ''] : tipo === 'D' ? ['|', '|'] : ['(', ')'];
+      it.push({ x: '<m:d><m:dPr><m:begChr m:val="' + bc[0] + '"/><m:endChr m:val="' + bc[1] + '"/></m:dPr><m:e>' + corpo + '</m:e></m:d>', s: '' }); continue;
+    }
     if (n.t === 'span' && cls(n, 'rt')) {
       const idx = n.c.find(c => c.t === 'sup'), rad = n.c.find(c => c.t === 'span' && cls(c, 'rr'));
       it.push({ x: `<m:rad>${idx ? '' : '<m:radPr><m:degHide m:val="1"/></m:radPr>'}<m:deg>${idx ? omml(idx.c) : ''}</m:deg><m:e>${omml(rad ? rad.c : [])}</m:e></m:rad>`, s: '' }); continue;
@@ -114,7 +122,7 @@ function omml(nodes) {
   while (it.length && it[it.length - 1].s === ' ') it.pop();
   return it.map(i => i.x).join('');
 }
-const temEstrutura = nodes => nodes.some(n => (n.t === 'span' && (cls(n, 'fr') || cls(n, 'rt'))) || (n.c && temEstrutura(n.c)));
+const temEstrutura = nodes => nodes.some(n => (n.t === 'span' && (cls(n, 'fr') || cls(n, 'rt') || cls(n, 'mx'))) || (n.c && temEstrutura(n.c)));
 
 // ---------- texto formatado ----------
 const rPr = st => {
