@@ -33359,7 +33359,6 @@
   {
    "id": "enem2022-172",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -33371,40 +33370,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A luminosidade L de uma estrela está relacionada com o raio R e com a temperatura T dessa estrela segundo a Lei de Stefan-Boltzmann: L = c ⋅ R 2 ⋅ T 4, em que c é uma constante igual para todas as estrelas. Disponível em: http://ciencia.hsw.uol.com.br. Acesso em: 22 nov. 2013 (adaptado). Considere duas estrelas E e F, sendo que a estrela E tem metade do raio da estrela F e o dobro da temperatura de F. Indique por LE e LF suas respectivas luminosidades. A relação entre as luminosidades dessas duas estrelas é dada por A LE = LF O*",
-   "imagens": [
-    "img:enem2022-172.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A luminosidade <i>L</i> de uma estrela está relacionada com o raio <i>R</i> e com a temperatura <i>T</i> dessa estrela segundo a Lei de Stefan-Boltzmann: <i>L</i> = <i>c</i> · <i>R</i><sup>2</sup> · <i>T</i><sup>4</sup>, em que <i>c</i> é uma constante igual para todas as estrelas.<br><span class=\"pb\"></span>Disponível em: http://ciencia.hsw.uol.com.br. Acesso em: 22 nov. 2013 (adaptado).<br><span class=\"pb\"></span>Considere duas estrelas <i>E</i> e <i>F</i>, sendo que a estrela <i>E</i> tem metade do raio da estrela <i>F</i> e o dobro da temperatura de <i>F</i>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ L_E = {L_F|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ L_E = {L_F|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "<i>L</i><sub><i>E</i></sub> = <i>L</i><sub><i>F</i></sub>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "<i>L</i><sub><i>E</i></sub> = 4<i>L</i><sub><i>F</i></sub>",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "<i>L</i><sub><i>E</i></sub> = 8<i>L</i><sub><i>F</i></sub>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Indique por <i>L</i><sub><i>E</i></sub> e <i>L</i><sub><i>F</i></sub> suas respectivas luminosidades.<br><span class=\"pb\"></span>A relação entre as luminosidades dessas duas estrelas é dada por",
+   "transcrita": true
   },
   {
    "id": "enem2022-173",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -33416,131 +33411,70 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma das informações que pode auxiliar no dimensionamento do número de pediatras que devem atender em uma Unidade Básica de Saúde (UBS) é o número que representa a mediana da quantidade de crianças por família existente na região sob sua responsabilidade. O quadro mostra a distribuição das frequências do número de crianças por família na região de responsabilidade de uma UBS. Número de crianças por família 0 1 2 3 4 5 Frequência 100 400 200 150 100 50 O número que representa a mediana da quantidade de crianças por família nessa região é A 1,0. B 1,5. C 1,9. D 2,1. E 2,5. 1,5 m 1,5 m 1,5 m x A equipe desse jogador participou de um torneio de voleibol no qual jogou cinco partidas, cada uma delas em um ginásio diferente. As alturas dos tetos desses ginásios, em relação aos pisos das quadras, são: • ginásio I: 17 m; • ginásio II: 18 m; • ginásio III: 19 m; • ginásio IV: 21 m; • ginásio V: 40 m. O saque desse atleta foi invalidado A apenas no ginásio I. B apenas nos ginásios I e II. C apenas nos ginásios I, II e III. D apenas nos ginásios I, II, III e IV. E em todos os ginásios. jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 29",
-   "imagens": [
-    "img:enem2022-173.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Uma das informações que pode auxiliar no dimensionamento do número de pediatras que devem atender em uma Unidade Básica de Saúde (UBS) é o número que representa a mediana da quantidade de crianças por família existente na região sob sua responsabilidade. O quadro mostra a distribuição das frequências do número de crianças por família na região de responsabilidade de uma UBS.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,0.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,5.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1,9.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,1.",
      "ok": false
     },
     {
-     "t": "E",
-     "ok": false
-    }
-   ],
-   "resolucao": ""
-  },
-  {
-   "id": "enem2022-174",
-   "tipo": "mc",
-   "soImagem": true,
-   "materia": "Matemática",
-   "serie": "ENEM",
-   "unidade": "Matemática · Funções",
-   "topicos": [
-    "Matemática",
-    "Funções",
-    "ENEM 2022"
-   ],
-   "dificuldade": 2,
-   "fonte": "ENEM 2022 (INEP)",
-   "pontos": 1,
-   "enunciado": "",
-   "busca": "Em jogos de voleibol, um saque é invalidado se a bola atingir o teto do ginásio onde ocorre o jogo. Um jogador de uma equipe tem um saque que atinge uma grande altura. Seu recorde foi quando a batida do saque se iniciou a uma altura de 1,5 m do piso da quadra, e a trajetória da bola foi descrita pela parábola y \u0010 x2 \u0010 7x \u000e12 , em 63 que y representa a altura da bola em relação ao eixo x (das abscissas) que está localizado a 1,5 m do piso da quadra, como representado na figura. Suponha que em todas as partidas algum saque desse jogador atinja a mesma altura do seu recorde. y B LE = LF 4 C LE = LF a=ib=Z=Qic* E LE = 8LF",
-   "imagens": [
-    "img:enem2022-174.jpg"
-   ],
-   "larguraMm": 91.4,
-   "alternativas": [
-    {
-     "t": "A",
-     "ok": false
-    },
-    {
-     "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
-     "ok": false
-    },
-    {
-     "t": "D",
-     "ok": true
-    },
-    {
-     "t": "E",
-     "ok": false
-    }
-   ],
-   "resolucao": ""
-  },
-  {
-   "id": "enem2022-175",
-   "tipo": "mc",
-   "soImagem": true,
-   "materia": "Matemática",
-   "serie": "ENEM",
-   "unidade": "Matemática · Funções",
-   "topicos": [
-    "Matemática",
-    "Funções",
-    "ENEM 2022"
-   ],
-   "dificuldade": 2,
-   "fonte": "ENEM 2022 (INEP)",
-   "pontos": 1,
-   "enunciado": "",
-   "busca": "O funcionário de uma loja tem seu salário mensal formado por uma parcela fixa de 675 reais mais uma comissão que depende da quantidade de peças vendidas por ele no mês. O cálculo do valor dessa comissão é feito de acordo com estes critérios: • até a quinquagésima peça vendida, paga-se 5 reais por peça; • a partir da quinquagésima primeira peça vendida, o valor pago é de 7 reais por peça. Represente por q a quantidade de peças vendidas no mês por esse funcionário, e por S(q) o seu salário mensal, em real, nesse mês. A expressão algébrica que descreve S(q) em função de q é A S(q) = 675 + 12q B S(q) = 325 + 12q C S(q) = 675 + 7q ­625 \u000e 5q, se q d 50 D S(q) ® ¯925 \u000e 7q, se q ! 50 ­625 \u000e 5q, se q d 50 E S(q) ® ¯575 \u000e 7q, se q ! 50",
-   "imagens": [
-    "img:enem2022-175.jpg"
-   ],
-   "larguraMm": 179.9,
-   "alternativas": [
-    {
-     "t": "A",
-     "ok": false
-    },
-    {
-     "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
-     "ok": false
-    },
-    {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "2,5.",
      "ok": false
     }
    ],
    "resolucao": "",
-   "anulada": true
+   "pergunta": "O número que representa a mediana da quantidade de crianças por família nessa região é",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Número de crianças por família",
+     "Frequência"
+    ],
+    "linhas": [
+     [
+      "0",
+      "100"
+     ],
+     [
+      "1",
+      "400"
+     ],
+     [
+      "2",
+      "200"
+     ],
+     [
+      "3",
+      "150"
+     ],
+     [
+      "4",
+      "100"
+     ],
+     [
+      "5",
+      "50"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
-   "id": "enem2022-176",
+   "id": "enem2022-174",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -33552,35 +33486,121 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Ao analisar os dados de uma epidemia em uma cidade, peritos obtiveram um modelo que avalia a quantidade de pessoas infectadas a cada mês, ao longo de um ano. O modelo é dado por p(t) = −t 2 + 10t + 24, sendo t um número natural, variando de 1 a 12, que representa os meses do ano, e p(t) a quantidade de pessoas infectadas no mês t do ano. Para tentar diminuir o número de infectados no próximo ano, a Secretaria Municipal de Saúde decidiu intensificar a propaganda oficial sobre os cuidados com a epidemia. Foram apresentadas cinco propostas (I, II, III, IV e V), com diferentes períodos de intensificação das propagandas: • I: 1 ≤ t ≤ 2; • II: 3 ≤ t ≤ 4; • III: 5 ≤ t ≤ 6; • IV: 7 ≤ t ≤ 9; • V: 10 ≤ t ≤ 12. A sugestão dos peritos é que seja escolhida a proposta cujo período de intensificação da propaganda englobe o mês em que, segundo o modelo, há a maior quantidade de infectados. A sugestão foi aceita. A proposta escolhida foi a A I. B II. C III. D IV. E V. QUESTÃO 177 Um atleta iniciou seu treinamento visando as competições de fim de ano. Seu treinamento consiste em cinco tipos diferentes de treinos: treino T1, treino T2, treino T3, treino T4 e treino T5. A sequência dos treinamentos deve seguir esta ordem: A letra R significa repouso. Após completar a sequência de treinamentos, o atleta começa novamente a sequência a partir do treino T1 e segue a ordem descrita. Após 24 semanas completas de treinamento, se dará o início das competições. A sequência de treinamentos que o atleta realizará na 24ª semana de treinos é ^=qP=o=qQ=o=o=qR=oK=_=o=qP=o=qQ=o=o=qRK=`=o=qQ=o=o=qR=o=qNK=a=o=o=qR=o=qN=o=oK=b=o=qR=o=qN=o=o=qOK* 30 jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 EN",
-   "imagens": [
-    "img:enem2022-176.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "Em jogos de voleibol, um saque é invalidado se a bola atingir o teto do ginásio onde ocorre o jogo. Um jogador de uma equipe tem um saque que atinge uma grande altura. Seu recorde foi quando a batida do saque se iniciou a uma altura de 1,5 m do piso da quadra, e a trajetória da bola foi descrita pela parábola $ y = −{x^2|6} − {7x|3} + 12 $, em que <i>y</i> representa a altura da bola em relação ao eixo <i>x</i> (das abscissas) que está localizado a 1,5 m do piso da quadra, como representado na figura. Suponha que em todas as partidas algum saque desse jogador atinja a mesma altura do seu recorde.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas no ginásio I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas nos ginásios I e II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "apenas nos ginásios I, II e III.",
+     "ok": false
+    },
+    {
+     "t": "apenas nos ginásios I, II, III e IV.",
      "ok": true
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "em todos os ginásios.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A equipe desse jogador participou de um torneio de voleibol no qual jogou cinco partidas, cada uma delas em um ginásio diferente. As alturas dos tetos desses ginásios, em relação aos pisos das quadras, são:<br>• ginásio I: 17 m;<br>• ginásio II: 18 m;<br>• ginásio III: 19 m;<br>• ginásio IV: 21 m;<br>• ginásio V: 40 m.<br><span class=\"pb\"></span>O saque desse atleta foi invalidado",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-174-fig.jpg",
+    "alt": "Trajetória parabólica da bola de vôlei sobre a quadra, com o eixo y vertical, o eixo x horizontal ao nível de 1,5 m acima do piso e a rede ao centro; a quadra tem marcações de 1,5 m",
+    "largura": "88mm"
+   },
+   "transcrita": true
+  },
+  {
+   "id": "enem2022-175",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Matemática · Funções",
+   "topicos": [
+    "Matemática",
+    "Funções",
+    "ENEM 2022"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2022 (INEP)",
+   "pontos": 1,
+   "enunciado": "O funcionário de uma loja tem seu salário mensal formado por uma parcela fixa de 675 reais mais uma comissão sobre a quantidade de peças vendidas por ele no mês. O cálculo do valor dessa comissão é feito de acordo com estes critérios:<br>• até a quinquagésima peça vendida, paga-se 5 reais por peça;<br>• a partir da quinquagésima primeira peça vendida, o valor pago é de 7 reais por peça.<br><span class=\"pb\"></span>Represente por <i>q</i> a quantidade de peças vendidas no mês por esse funcionário, e por <i>S</i>(<i>q</i>) o seu salário mensal, em real, nesse mês.",
+   "alternativas": [
+    {
+     "t": "<i>S</i>(<i>q</i>) = 675 + 12<i>q</i>",
+     "ok": false
+    },
+    {
+     "t": "<i>S</i>(<i>q</i>) = 325 + 12<i>q</i>",
+     "ok": false
+    },
+    {
+     "t": "<i>S</i>(<i>q</i>) = 675 + 7<i>q</i>",
+     "ok": false
+    },
+    {
+     "t": "<i>S</i>(<i>q</i>) = 625 + 5<i>q</i>, se <i>q</i> ≤ 50<br><i>S</i>(<i>q</i>) = 925 + 7<i>q</i>, se <i>q</i> &gt; 50",
+     "ok": false
+    },
+    {
+     "t": "<i>S</i>(<i>q</i>) = 625 + 5<i>q</i>, se <i>q</i> ≤ 50<br><i>S</i>(<i>q</i>) = 575 + 7<i>q</i>, se <i>q</i> &gt; 50",
+     "ok": false
+    }
+   ],
+   "resolucao": "",
+   "anulada": true,
+   "pergunta": "A expressão algébrica que descreve <i>S</i>(<i>q</i>) em função de <i>q</i> é",
+   "transcrita": true
+  },
+  {
+   "id": "enem2022-176",
+   "tipo": "mc",
+   "materia": "Matemática",
+   "serie": "ENEM",
+   "unidade": "Matemática · Funções",
+   "topicos": [
+    "Matemática",
+    "Funções",
+    "ENEM 2022"
+   ],
+   "dificuldade": 2,
+   "fonte": "ENEM 2022 (INEP)",
+   "pontos": 1,
+   "enunciado": "Ao analisar os dados de uma epidemia em uma cidade, peritos obtiveram um modelo que avalia a quantidade de pessoas infectadas a cada mês, ao longo de um ano. O modelo é dado por <i>p</i>(<i>t</i>) = −<i>t</i><sup>2</sup> + 10<i>t</i> + 24, sendo <i>t</i> um número natural, variando de 1 a 12, que representa os meses do ano, e <i>p</i>(<i>t</i>) a quantidade de pessoas infectadas no mês <i>t</i> do ano. Para tentar diminuir o número de infectados no próximo ano, a Secretaria Municipal de Saúde decidiu intensificar a propaganda oficial sobre os cuidados com a epidemia. Foram apresentadas cinco propostas (I, II, III, IV e V), com diferentes períodos de intensificação das propagandas:<br>• I: 1 ≤ <i>t</i> ≤ 2;<br>• II: 3 ≤ <i>t</i> ≤ 4;<br>• III: 5 ≤ <i>t</i> ≤ 6;<br>• IV: 7 ≤ <i>t</i> ≤ 9;<br>• V: 10 ≤ <i>t</i> ≤ 12.<br><span class=\"pb\"></span>A sugestão dos peritos é que seja escolhida a proposta cujo período de intensificação da propaganda englobe o mês em que, segundo o modelo, há a maior quantidade de infectados. A sugestão foi aceita.",
+   "alternativas": [
+    {
+     "t": "I.",
+     "ok": false
+    },
+    {
+     "t": "II.",
+     "ok": false
+    },
+    {
+     "t": "III.",
+     "ok": true
+    },
+    {
+     "t": "IV.",
+     "ok": false
+    },
+    {
+     "t": "V.",
+     "ok": false
+    }
+   ],
+   "resolucao": "",
+   "pergunta": "A proposta escolhida foi a",
+   "transcrita": true
   },
   {
    "id": "enem2022-177",
@@ -33675,7 +33695,6 @@
   {
    "id": "enem2022-179",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -33687,40 +33706,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa de engenharia projetou uma casa com a forma de um retângulo para um de seus clientes. Esse cliente solicitou a inclusão de uma varanda em forma de L. A figura apresenta a planta baixa desenhada pela empresa, já com a varanda incluída, cujas medidas, indicadas em centímetro, representam os valores das dimensões da varanda na escala de 1 : 50. 16 cm s^o^ka^* 5 cm 18,4 cm BANHO BANHO COZINHA SOCIAL SUÍTE SUÍTE SALA QUARTO QUARTO A projeção ortogonal do trajeto descrito por esse robô sobre o plano da base, após terminada sua movimentação, visualizada da posição em que se está enxergando esse cubo, é A B 4 cm ESCALA 1 : 50 A medida real da área da varanda, em metro quadrado, é A 33,40. B 66,80. C 89,24. D 133,60. E 534,40. nrbpq·l=NUM* Uma loja de roupas fixou uma meta de vendas de 77 000 reais para um determinado mês de 30 dias. O gráfico mostra o volume de vendas dessa loja, em real, nos dez primeiros dias do mês e entre o dia dez e o dia vinte desse mês, nos seus dois únicos setores (infantil e adulto). Suponha que a variação no volume de vendas, para o período registrado, tenha se dado de forma linear, como mostrado no gráfico, e que essa tendência se mantenha a mesma para os próximos dez dias. 18 000 Adulto 15 000 C 8 000 Infantil 7 000 a* 10 20 30 Dias Ao final do trigésimo dia, quanto faltará no volume de vendas, em real, para que a meta fixada para o mês seja alcançada? A 5 000 B 7 000 E C 11 000 a=NU=MMM* E 29 000 jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 31 01 32 OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 02",
-   "imagens": [
-    "img:enem2022-179.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Uma empresa de engenharia projetou uma casa com a forma de um retângulo para um de seus clientes. Esse cliente solicitou a inclusão de uma varanda em forma de L. A figura apresenta a planta baixa desenhada pela empresa, já com a varanda incluída, cujas medidas, indicadas em centímetro, representam os valores das dimensões da varanda na escala de 1 : 50.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "33,40.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "66,80.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "89,24.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "133,60.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "534,40.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A medida real da área da varanda, em metro quadrado, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-179-fig.jpg",
+    "alt": "Planta baixa da casa na escala 1 : 50: a varanda em forma de L (16 cm no topo, 18,4 cm de altura, 5 cm e 4 cm de largura dos braços) contorna a casa, que tem sala, cozinha, banho social, banho suíte, suíte e dois quartos",
+    "largura": "91mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-180",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -33732,35 +33753,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "",
-   "imagens": [
-    "img:enem2022-180.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Uma loja de roupas fixou uma meta de vendas de 77 000 reais para um determinado mês de 30 dias. O gráfico mostra o volume de vendas dessa loja, em real, nos dez primeiros dias do mês e entre o dia dez e o dia vinte desse mês, nos seus dois únicos setores (infantil e adulto). Suponha que a variação no volume de vendas, para o período registrado, tenha sido dado de forma linear, como mostrado no gráfico, e que essa tendência se mantenha a mesma para os próximos dez dias.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5 000",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "7 000",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "11 000",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "18 000",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "29 000",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Ao final do trigésimo dia, quanto faltará no volume de vendas, em real, para que a meta fixada para o mês seja alcançada?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-180-fig.jpg",
+    "alt": "Gráfico do volume de vendas (real) por dia: setor adulto cai de 18 000 (dia 10) a 15 000 (dia 20); setor infantil cai de 8 000 (dia 10) a 7 000 (dia 20), com variação linear",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-1e",
@@ -39672,7 +39696,6 @@
   {
    "id": "enem2023-136",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -39684,40 +39707,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Alguns estudos comprovam que os carboidratos fornecem energia ao corpo, preservam as proteínas estruturais dos músculos durante a prática de atividade física e ainda dão força para o cérebro coordenar os movimentos, o que de fato tem impacto positivo no desenvolvimento do praticante. O ideal é consumir 1 grama de carboidrato para cada minuto de caminhada. CIRINO, C. Boa pergunta: consumir carboidratos antes dos exercícios melhora o desempenho do atleta? Revista Saúde! É Vital , n. 330, nov. 2010 (adaptado). Um casal realizará diariamente 30 minutos de caminhada, ingerindo, antes dessa atividade, a quantidade ideal de carboidratos recomendada. Para ter o consumo ideal apenas por meio do consumo de pão de fôrma integral, o casal planeja garantir o suprimento de pães para um período de 30 dias ininterruptos. Sabe-se que cada pacote desse pão vem com 18 fatias, e que cada uma delas tem 15 gramas de carboidratos. A quantidade mínima de pacotes de pão de fôrma necessários para prover o suprimento a esse casal é A A 1. B B 4. C C 6. D D 7. E E 8.",
-   "imagens": [
-    "img:enem2023-136.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Alguns estudos comprovam que os carboidratos fornecem energia ao corpo, preservam as proteínas estruturais dos músculos durante a prática de atividade física e ainda dão força para o cérebro coordenar os movimentos, o que de fato tem impacto positivo no desenvolvimento do praticante. O ideal é consumir 1 grama de carboidrato para cada minuto de caminhada.<br><span class=\"pb\"></span>CIRINO, C. Boa pergunta: consumir carboidratos antes dos exercícios melhora o desempenho do atleta? <b>Revista Saúde! É Vital</b>, n. 330, nov. 2010 (adaptado).<br><span class=\"pb\"></span>Um casal realizará diariamente 30 minutos de caminhada, ingerindo, antes dessa atividade, a quantidade ideal de carboidratos recomendada. Para ter o consumo ideal apenas por meio do consumo de pão de fôrma integral, o casal planeja garantir o suprimento de pães para um período de 30 dias ininterruptos. Sabe-se que cada pacote desse pão vem com 18 fatias, e que cada uma delas tem 15 gramas de carboidratos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "8.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A quantidade mínima de pacotes de pão de fôrma necessários para prover o suprimento a esse casal é",
+   "transcrita": true
   },
   {
    "id": "enem2023-137",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Trigonometria",
@@ -39729,40 +39748,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O mast r o de uma ban de ir a fo i inst alad o perpendicularmente ao solo em uma região plana. Devido aos fortes ventos, três cabos de aço, de mesmo comprimento, serão instalados para dar sustentação ao mastro. Cada cabo de aço ficará perfeitamente esticado, com uma extremidade num ponto P do mastro, a uma altura h do solo, e a outra extremidade, num ponto no chão, como mostra a figura. P h α α α Os cabos de aço formam um ângulo a com o plano do chão. Por medida de segurança, há apenas três opções de instalação: • opção I: h = 11 m e a = 30° • opção II: h = 12 m e a = 45° • opção III: h = 18 m e a = 60° A opção a ser escolhida é aquela em que a medida dos cabos seja a menor possível. Qual será a medida, em metro, de cada um dos cabos a serem instalados? 22 3 A A 3 B B 11 2 C C 12 2 D D 12 3 E E 22",
-   "imagens": [
-    "img:enem2023-137.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "O mastro de uma bandeira foi instalado perpendicularmente ao solo em uma região plana. Devido aos fortes ventos, três cabos de aço, de mesmo comprimento, serão instalados para dar sustentação ao mastro. Cada cabo de aço ficará perfeitamente esticado, com uma extremidade num ponto <i>P</i> do mastro, a uma altura <i>h</i> do solo, e a outra extremidade, num ponto no chão, como mostra a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {22√3|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 11√2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 12√2 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 12√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "22",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Os cabos de aço formam um ângulo α com o plano do chão.<br><span class=\"pb\"></span>Por medida de segurança, há apenas três opções de instalação:<br>• opção I: <i>h</i> = 11 m e α = 30°;<br>• opção II: <i>h</i> = 12 m e α = 45°;<br>• opção III: <i>h</i> = 18 m e α = 60°.<br><span class=\"pb\"></span>A opção a ser escolhida é aquela em que a medida dos cabos seja a menor possível.<br><span class=\"pb\"></span>Qual será a medida, em metro, de cada um dos cabos a serem instalados?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-137-fig.jpg",
+    "alt": "Mastro vertical com uma bandeira; do ponto P, a uma altura h do solo, partem três cabos de aço que formam um ângulo α com o plano do chão",
+    "largura": "57mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-138",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -39774,35 +39795,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um controlador de voo dispõe de um instrumento que descreve a altitude de uma aeronave em voo, em função da distância em solo. Essa distância em solo é a medida na horizontal entre o ponto de origem do voo até o ponto que representa a projeção ortogonal da posição da aeronave, em voo, no solo. Essas duas grandezas são dadas numa mesma unidade de medida. A tela do instrumento representa proporcionalmente as dimensões reais das distâncias associadas ao voo. A figura apresenta a tela do instrumento depois de concluída a viagem de um avião, sendo a medida do lado de cada quadradinho da malha igual a 1 cm. Altitude Origem Destino Distância do voo Essa tela apresenta os dados de um voo cuja maior altitude alcançada foi de 5 km. A escala em que essa tela representa as medidas reais é A A 1 : 5. B B 1 : 11. C C 1 : 55. D D 1 : 5 000. E E 1 : 500 000.",
-   "imagens": [
-    "img:enem2023-138.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Um controlador de voo dispõe de um instrumento que descreve a altitude de uma aeronave em voo, em função da distância em solo. Essa distância em solo é a medida na horizontal entre o ponto de origem do voo até o ponto que representa a projeção ortogonal da posição da aeronave, em voo, no solo. Essas duas grandezas são dadas numa mesma unidade de medida.<br><span class=\"pb\"></span>A tela do instrumento representa proporcionalmente as dimensões reais das distâncias associadas ao voo. A figura apresenta a tela do instrumento depois de concluída a viagem de um avião, sendo a medida do lado de cada quadradinho da malha igual a 1 cm.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 : 5.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 : 11.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 : 55.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 : 5 000.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 : 500 000.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Essa tela apresenta os dados de um voo cuja maior altitude alcançada foi de 5 km.<br><span class=\"pb\"></span>A escala em que essa tela representa as medidas reais é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-138-fig.jpg",
+    "alt": "Tela do instrumento com malha quadriculada: eixo da altitude (vertical) e da distância (horizontal), da origem do voo ao destino; a linha sobe, mantém-se na altitude máxima e desce até o destino",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-139",
