@@ -109831,8 +109831,6 @@
   {
    "id": "cdb-sim-b6-19",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -109844,41 +109842,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B6 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19) O piso de entrada de um prédio está sendo reformado. Serão feitas duas jardineiras nas laterais, conforme indicado na figura, e o piso restante será revestido em cerâmica. Qual é a área do piso que será revestido com cerâmica? (B) 6m2 (D) 12 m2 (E) 15 m2",
-   "imagens": [
-    "img:cdb-sim-b6-19.jpg"
-   ],
-   "larguraMm": 83,
+   "enunciado": "O piso de entrada de um prédio está sendo reformado. Serão feitas duas jardineiras nas laterais, conforme indicado na figura, e o piso restante será revestido em cerâmica.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "9 m<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "12 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15 m<sup>2</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual é a área do piso que será revestido com cerâmica?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b6-19-fig.jpg",
+    "alt": "Piso em forma de retângulo de 3 m de altura; no lado de cima estão as medidas 1 m, 2 m e 1 m; nas laterais há dois triângulos sombreados (as jardineiras), um em cada lado",
+    "largura": "33mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b6-20",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -109890,41 +109889,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B6 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20) Um determinado vendedor de eletrodomésticos resolveu registrar em todo final de mês a quantidade de produtos vendidos por ele, e resultou nos seguintes resultados: Desempenho do Vendedor a 20 10 Mai O gráfico indicado acima pode ser representado pela tabela (A) (B) Jan 25 Jan 37 Fev 20 53 Mar Mar 53 Mai 37 Mai (C) (D) Jan 20 Jan 40 25 Fev 33 Mar 53 Var 25 Abr 37 Mai Mai 20 (E) Jan 25 Fev 53 Mar Abr 20 Mai 37 QUESTÃO DESCRITOR GABANTO 017 D18 019 D22 023 029 D34 11 035 D39 037 16 049 17 18 19 076",
-   "imagens": [
-    "img:cdb-sim-b6-20.jpg"
-   ],
-   "larguraMm": 87.5,
+   "enunciado": "Um determinado vendedor de eletrodomésticos resolveu registrar em todo final de mês a quantidade de produtos vendidos por ele, e resultou nos seguintes resultados:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Mês/Quantidade: Jan 25; Fev 20; Mar 40; Abr 53; Mai 37",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "Mês/Quantidade: Jan 37; Fev 53; Mar 40; Abr 20; Mai 25",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Mês/Quantidade: Jan 20; Fev 25; Mar 53; Abr 37; Mai 40",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Mês/Quantidade: Jan 40; Fev 53; Mar 25; Abr 37; Mai 20",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Mês/Quantidade: Jan 25; Fev 53; Mar 40; Abr 20; Mai 37",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O gráfico indicado acima pode ser representado pela tabela",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b6-20-fig.jpg",
+    "alt": "Gráfico de colunas “Desempenho do Vendedor”, quantidade por mês: janeiro 25, fevereiro 20, março 40, abril 53 e maio 37",
+    "largura": "71mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-01",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Números e operações",
@@ -109936,35 +109936,31 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "OI) O número decimal 4,25 pode também ser escrito através da fração 4 25 15 4 17 4 25 4 85 2",
-   "imagens": [
-    "img:cdb-sim-b7-01.jpg"
-   ],
-   "larguraMm": 78.3,
+   "enunciado": "O número decimal 4,25 pode também ser escrito através da fração",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|25} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {15|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {17|4} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {25|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {85|2} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-02",
@@ -110009,8 +110005,6 @@
   {
    "id": "cdb-sim-b7-03",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110022,41 +110016,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03) Mauro efetuou a operação indicada abaixo. O resultado que Mauro encontrou foi aproximadamente (C) 5,1 (D) 6,2 (E) 7,3",
-   "imagens": [
-    "img:cdb-sim-b7-03.jpg"
-   ],
-   "larguraMm": 82.1,
+   "enunciado": "Mauro efetuou a operação indicada abaixo.<br><span class=\"pb\"></span>$ 2 · √2 + √3 $<br><span class=\"pb\"></span>O resultado que Mauro encontrou foi aproximadamente",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3,1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4,5",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5,1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6,2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "7,3",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-04",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110068,41 +110056,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04) Observe os números que aparecem na reta abaixo. 0,5 0,6 O número indicado pela seta é (A) 54 (B) 09 (C) 0 55 (D) 08 (E) 056",
-   "imagens": [
-    "img:cdb-sim-b7-04.jpg"
-   ],
-   "larguraMm": 81.9,
+   "enunciado": "Observe os números que aparecem na reta abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,54.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "0,9.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,55.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,8.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0,56.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O número indicado pela seta é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b7-04-fig.jpg",
+    "alt": "Reta numérica de 0,5 a 0,6 dividida em partes iguais, com uma seta indicando um ponto entre eles",
+    "largura": "75mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-05",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110114,41 +110103,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05) Juliana resolveu comemorar seu aniversário e convidou 48 amigos da escola. Dos amigos convidados, o número de mulheres superou o número de homens em",
-   "imagens": [
-    "img:cdb-sim-b7-05.jpg"
-   ],
-   "larguraMm": 85.1,
+   "enunciado": "Juliana resolveu comemorar seu aniversário e convidou 48 amigos da escola. Dos amigos convidados, o número de mulheres superou o número de homens em 6. Assim, na hora de dançar, o número máximo de pares homem X mulher que poderá ser formado será de:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "21",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "24",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "42",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-06",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110160,41 +110143,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Assim, na hora de dançar, o número máximo de pares homem X mulher que poderá ser formado será de: (C) 21 (D) 24 (E) 42 06) A mãe de Roberta está preparando para o seu aniversário bolos deliciosos. Ela dispõe de quatro tipos de doces para o recheio, doce de leite, ameixa, leite condensado e goiabada. Para a cobertura apenas creme de chocolate e creme e baunilha. Quantos bolos diferentes com recheio e cobertura a mãe de Roberta poderá preparar? (D) 10 (E) 12",
-   "imagens": [
-    "img:cdb-sim-b7-06.jpg"
-   ],
-   "larguraMm": 85.2,
+   "enunciado": "A mãe de Roberta está preparando para o seu aniversário bolos deliciosos. Ela dispõe de quatro tipos de doces para o recheio, doce de leite, ameixa, leite condensado e goiabada. Para a cobertura apenas creme de chocolate e creme e baunilha. Quantos bolos diferentes com recheio e cobertura a mãe de Roberta poderá preparar?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "8",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "12",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-07",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Probabilidade",
@@ -110206,41 +110183,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07) Paulo está tentando se lembrar do número de telefone de um amigo, mas não se lembra do último dígito, sabe apenas que é um número ímpar. Sendo assim, resolve escolher um dígito ímpar qualquer como último dígito e tentar ligar. Qual a probabilidade de Paulo conseguir acertar o telefone de seu amigo nessa única tentativa? 1 10 1 5 1 2 3 4 3 2",
-   "imagens": [
-    "img:cdb-sim-b7-07.jpg"
-   ],
-   "larguraMm": 82.2,
+   "enunciado": "Paulo está tentando se lembrar do número de telefone de um amigo, mas não se lembra do último dígito, sabe apenas que é um número ímpar. Sendo assim, resolve escolher um dígito ímpar qualquer como último dígito e tentar ligar.<br><span class=\"pb\"></span>Qual a probabilidade de Paulo conseguir acertar o telefone de seu amigo nessa única tentativa?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|10} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|5} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|2} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-09",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -110252,41 +110223,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09) Observe o polígono abaixo, ela tem o formato de uma balão de festa junina. Quantas arestas que possui este pol ígono? (A) 16 (B) 12",
-   "imagens": [
-    "img:cdb-sim-b7-09.jpg"
-   ],
-   "larguraMm": 78.3,
+   "enunciado": "Observe o polígono abaixo, ela tem o formato de uma balão de festa junina.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "16",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "12",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Quantas arestas que possui este polígono?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b7-09-fig.jpg",
+    "alt": "Sólido com seis vértices e oito faces triangulares, formado por duas pirâmides coladas pela base (octaedro), com as arestas ocultas tracejadas",
+    "largura": "26mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-10",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110298,41 +110270,42 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10) Paulo deslizou em um tobogã de 8 metros de altura, atingindo 15 metros de distância, conforme desenho Qual a distância percorrida por Paulo ao deslizar pelo tobogã? (A) 13 m (B) 17 m (C) 120 m (D) 289 m 8M x (E) 320 m 15 M",
-   "imagens": [
-    "img:cdb-sim-b7-10.jpg"
-   ],
-   "larguraMm": 83.7,
+   "enunciado": "Paulo deslizou em um tobogã de 8 metros de altura, atingindo 15 metros de distância, conforme desenho",
    "alternativas": [
     {
-     "t": "A",
+     "t": "13 m",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "17 m",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "120 m",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "289 m",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "320 m",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual a distância percorrida por Paulo ao deslizar pelo tobogã?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b7-10-fig.jpg",
+    "alt": "Triângulo retângulo: o cateto vertical (a altura do tobogã) mede 8 m, o horizontal mede 15 m e a rampa, indicada por X, é a hipotenusa; o ângulo reto está embaixo, à esquerda",
+    "largura": "43mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-12",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -110344,35 +110317,38 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12) Num livro de matemática, Beto encontrou a figura de alguns pol ígonos regulares, conforme podemos ver na ilustração abaixo: Entre os polígonos que Beto encontrou no livro de matemática. Aquele que possui a soma dos ângulos internos igual a 9000 é o (A) pentágono. (B) hexágono. (C) heptágono. (D) octógono. (E) eneágono.",
-   "imagens": [
-    "img:cdb-sim-b7-12.jpg"
-   ],
-   "larguraMm": 84,
+   "enunciado": "Num livro de matemática, Beto encontrou a figura de alguns polígonos regulares, conforme podemos ver na ilustração abaixo:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "pentágono.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "hexágono.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "heptágono.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "octógono.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "eneágono.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Entre os polígonos que Beto encontrou no livro de matemática. Aquele que possui a soma dos ângulos internos igual a 900° é o",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b7-12-fig.jpg",
+    "alt": "Quatro polígonos regulares com os ângulos internos marcados: um pentágono, um hexágono, um heptágono e um octógono",
+    "largura": "81mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-13",
@@ -110423,8 +110399,6 @@
   {
    "id": "cdb-sim-b7-14",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -110436,35 +110410,31 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14) No plano cartesiano, uma reta passa pelo ponto (O, - I) e forma um ângulo de 300 com o eixo das abscissas. Quais as coordenadas do ponto de intersecção dessa reta com o eixo das abscissas, sabendo que ele não passa no 30 quadrante? A) (30, 0) B) (0, 30) 3",
-   "imagens": [
-    "img:cdb-sim-b7-14.jpg"
-   ],
-   "larguraMm": 83.6,
+   "enunciado": "No plano cartesiano, uma reta passa pelo ponto $ (0, −1) $ e forma um ângulo de 30° com o eixo das abscissas. Quais as coordenadas do ponto de intersecção dessa reta com o eixo das abscissas, sabendo que ele não passa no 3º quadrante?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (30, 0) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (0, 30) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (√3, 0) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (0, √3) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ ({√2|3}, 0) $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-15",
@@ -110549,8 +110519,6 @@
   {
    "id": "cdb-sim-b7-17",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -110562,41 +110530,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17) Um triângulo equilátero tem área igual a 8N\"fi cm2 Qual é a medida do lado desse triângulo? (A) cm (B) 4 cm (C) 16 cm (D) 32 cm (E) 32a cm",
-   "imagens": [
-    "img:cdb-sim-b7-17.jpg"
-   ],
-   "larguraMm": 81.6,
+   "enunciado": "Um triângulo equilátero tem área igual a $ 8√3 $ cm<sup>2</sup>. Qual é a medida do lado desse triângulo?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4√2 $ cm",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4 cm",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "16 cm",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "32 cm",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 32√3 $ cm",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-18",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -110608,41 +110570,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18) Seu Juca irá pintar a parede lateral externa de uma caixa d'água que tem a forma de um cilindro com 1m de raio e 2m de altura. A área, em m , a ser pintada por seu Juca é 2 2 (B) 2m",
-   "imagens": [
-    "img:cdb-sim-b7-18.jpg"
-   ],
-   "larguraMm": 83.4,
+   "enunciado": "Seu Juca irá pintar a parede lateral externa de uma caixa d’água que tem a forma de um cilindro com 1 m de raio e 2 m de altura. A área, em m<sup>2</sup>, a ser pintada por seu Juca é",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|3}π $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {π|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 4π $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 6π $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-19",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -110654,35 +110610,37 @@
    "dificuldade": 2,
    "fonte": "Simulado B7 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19) Um cubo de volume 512 cm 3 foi montado com 64 cubos iguais, conforme a figura ao lado. A medida do lado de cada um dos cubos menores, em centímetros, é",
-   "imagens": [
-    "img:cdb-sim-b7-19.jpg"
-   ],
-   "larguraMm": 83.4,
+   "enunciado": "Um cubo de volume 512 cm<sup>3</sup> foi montado com 64 cubos iguais, conforme a figura ao lado. A medida do lado de cada um dos cubos menores, em centímetros, é",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b7-19-fig.jpg",
+    "alt": "Cubo grande formado por cubos menores iguais, 4 em cada aresta",
+    "largura": "33mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b7-20",
@@ -110773,8 +110731,6 @@
   {
    "id": "cdb-sim-b8-02",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -110786,41 +110742,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02) Marta recebe um salário líquido de R$ 2.190,00 depois de descontados 4% de INSS, 15% de imposto de renda, 8% de FGTS. A partir de 10 de junho ela receberá um aumento de 15% sobre seu salário bruto. Assim, Marta poderá esperar: (A) praticamente o mesmo salário, pois esse aumento só vai cobrir os 15% do imposto de renda. (B) um aumento de aproximadamente 4%, pois tem de considerar que terá os descontos sobre os 15% de aumento. (C) um aumento de 15%, porque esse percentual incide proporcionalmente sobre o salário bruto e o líquido. (D) um aumento de 12%, que corresponde à diferença entre os d",
-   "imagens": [
-    "img:cdb-sim-b8-02.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Marta recebe um salário líquido de R&#36; 2.190,00 depois de descontados 4% de INSS, 15% de imposto de renda, 8% de FGTS. A partir de 1º de junho ela receberá um aumento de 15% sobre seu salário bruto.<br><span class=\"pb\"></span>Assim, Marta poderá esperar:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "praticamente o mesmo salário, pois esse aumento só vai cobrir os 15% do imposto de renda.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "um aumento de aproximadamente 4%, pois tem de considerar que terá os descontos sobre os 15% de aumento.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "um aumento de 15%, porque esse percentual incide proporcionalmente sobre o salário bruto e o líquido.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "um aumento de 12%, que corresponde à diferença entre os descontos e a porcentagem total de aumento.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "um aumento de 17,5%, porque os 15% devem ser calculados sobre o salário bruto, que é maior.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-03",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110832,35 +110782,31 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03) Juliana encontrou no seu livro de Matemática o seguinte desafio: A solução deste desafio tem o valor aproximado Dados: 1,7320 2,2360 (A) 1 ,000 (B) 1,228 (C) 3,764 (D) 5,700 (E) 11,00",
-   "imagens": [
-    "img:cdb-sim-b8-03.jpg"
-   ],
-   "larguraMm": 89.6,
+   "enunciado": "Juliana encontrou no seu livro de Matemática o seguinte desafio:<br><span class=\"pb\"></span>$ 2√3 − √5 $<br><span class=\"pb\"></span>A solução deste desafio tem o valor aproximado<br><span class=\"pb\"></span>Dados: $ √3 ≅ 1,7320 $ e $ √5 ≅ 2,2360 $",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,000",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,228",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3,764",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5,700",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "11,00",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-04",
@@ -110905,8 +110851,6 @@
   {
    "id": "cdb-sim-b8-05",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -110918,41 +110862,35 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05) A ONU aponta um consumo de 180 litros de água por dia como suficiente ao ser humano. No Brasil tem-se um consumo médio de 200 litros por pessoa. Uma residência em São Paulo com quatro moradores fixos tem um gasto médio mensal de 19 metros cúbicos de água. Pode-se afirmar que os moradores dessa casa têm um consumo médio diário que: A) está aproximadamente 22 litros abaixo do consumo recomendado pela ONU. (B) supera em aproximadamente 22 litros o consumo recomendado pela ONU. (C) está aproximadamente igual ao consumo recomendado pela ONU. (D) está aproximadamente 22 litros abaixo do consumo",
-   "imagens": [
-    "img:cdb-sim-b8-05.jpg"
-   ],
-   "larguraMm": 89.9,
+   "enunciado": "A ONU aponta um consumo de 180 litros de água por dia como suficiente ao ser humano. No Brasil tem-se um consumo médio de 200 litros por pessoa. Uma residência em São Paulo com quatro moradores fixos tem um gasto médio mensal de 19 metros cúbicos de água. Pode-se afirmar que os moradores dessa casa têm um consumo médio diário que:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "está aproximadamente 22 litros abaixo do consumo recomendado pela ONU.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "supera em aproximadamente 22 litros o consumo recomendado pela ONU.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "está aproximadamente igual ao consumo recomendado pela ONU.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "está aproximadamente 22 litros abaixo do consumo médio do país.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "supera em aproximadamente 22 litros o consumo médio do país.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-06",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -110964,41 +110902,41 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06) Qual é a equação do gráfico da função de 10 grau representado abaixo? - 2x + 4 = —0,5X+4 4 2",
-   "imagens": [
-    "img:cdb-sim-b8-06.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "Qual é a equação do gráfico da função de 1º grau representado abaixo?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ y = 4x + 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ y = 2x + 4 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y = −2x + 4 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ y = −0,5x + 4 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ y = −0,5x + 2 $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-b8-06-fig.jpg",
+    "alt": "Reta decrescente que corta o eixo y no ponto 4 e o eixo x no ponto 2",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-07",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111010,35 +110948,31 @@
    "dificuldade": 2,
    "fonte": "Simulado B8 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07) Juliana tem três saias: uma de couro, uma de jeans e uma de lycra. Para combinar com qualquer uma destas saias, ela tem duas blusas: uma preta e uma branca. Contou o número de combinações possíveis que pode fazer e obteve: (C) 10 (D) 12 (E) 15",
-   "imagens": [
-    "img:cdb-sim-b8-07.jpg"
-   ],
-   "larguraMm": 90.8,
+   "enunciado": "Juliana tem três saias: uma de couro, uma de jeans e uma de lycra. Para combinar com qualquer uma destas saias, ela tem duas blusas: uma preta e uma branca.<br><span class=\"pb\"></span>Contou o número de combinações possíveis que pode fazer e obteve:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b8-08",
