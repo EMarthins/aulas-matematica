@@ -91,6 +91,10 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
       const mm = Math.max(25, Math.min(170, Math.round(larg0 * (x1 - x0))));
       q.figura = { tipo: 'img', src: 'img:' + nome, alt: r.alt || 'Figura da questão', largura: mm + 'mm', ...(r.legenda ? { legenda: r.legenda } : {}) }; cont.figuras++;
     }
+    { // figura recortada + tabela na mesma questão: figura primeiro (ou a tabela, com tabprimeiro:true)
+      const T = (Array.isArray(r.tabs) ? r.tabs : r.tab ? [r.tab] : []).map(t => ({ tipo: 'tabela', cab: t.cab, linhas: t.linhas, largura: t.largura || '90%', ...(t.legenda ? { legenda: t.legenda } : {}) }));
+      if (T.length && (r.fig || r.figs)) { const F = [].concat(q.figura || [], q.figuras || []).filter(x => x && x.tipo === 'img'); delete q.figura; q.figuras = r.tabprimeiro ? T.concat(F) : F.concat(T); }
+    }
     if (r.base) { // figuras de apoio (imagem inteira da base, recorte ou tabelas) vêm antes das figuras da própria questão
       const extra = [];
       if (q.base && q.base.src) {

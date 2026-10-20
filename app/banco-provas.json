@@ -45637,7 +45637,6 @@
   {
    "id": "enem2024-103",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Termodinâmica",
@@ -45649,40 +45648,86 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O diagrama P-V a seguir representa o ciclo de Otto para um motor de combustão interna, como os motores a gasolina ou a etanol, utilizados nos automóveis. As etapas representadas no diagrama estão descritas no quadro. Etapa Processo Descrição Admissão isobárica da mistura I 0 a 1 ar-combustível no cilindro do motor. II 1 a 2 Compressão adiabática da mistura. Introdução de energia na forma III 2 a 3 de calor da combustão. IV 3 a 4 Expansão adiabática. Liberação de energia V 4 a 1 na forma de calor. Liberação dos gases VI 1 a 0 resultantes da combustão. Disponível em: www.mspc.eng.br. Acesso em: 24 fev. 2013 (adaptado). A transformação da energia térmica em energia útil ocorre na etapa A II. B III. C IV. D V. E VI.",
-   "imagens": [
-    "img:enem2024-103.jpg"
-   ],
-   "larguraMm": 100.5,
+   "enunciado": "O diagrama P-V a seguir representa o ciclo de Otto para um motor de combustão interna, como os motores a gasolina ou a etanol, utilizados nos automóveis. As etapas representadas no diagrama estão descritas no quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "II.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "IV.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "V.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "VI.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A transformação da energia térmica em energia útil ocorre na etapa",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2024-103-fig.jpg",
+     "alt": "Diagrama P-V do ciclo de Otto com os pontos 0, 1, 2, 3 e 4; a área entre as curvas de 2 a 3 e de 3 a 4 representa o trabalho W",
+     "largura": "71mm"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Etapa",
+      "Processo",
+      "Descrição"
+     ],
+     "linhas": [
+      [
+       "I",
+       "0 a 1",
+       "Admissão isobárica da mistura ar-combustível no cilindro do motor."
+      ],
+      [
+       "II",
+       "1 a 2",
+       "Compressão adiabática da mistura."
+      ],
+      [
+       "III",
+       "2 a 3",
+       "Introdução de energia na forma de calor da combustão."
+      ],
+      [
+       "IV",
+       "3 a 4",
+       "Expansão adiabática."
+      ],
+      [
+       "V",
+       "4 a 1",
+       "Liberação de energia na forma de calor."
+      ],
+      [
+       "VI",
+       "1 a 0",
+       "Liberação dos gases resultantes da combustão."
+      ]
+     ],
+     "largura": "100%",
+     "legenda": "Disponível em: www.mspc.eng.br. Acesso em: 24 fev. 2013 (adaptado)."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2024-104",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Hidrostática",
@@ -45694,40 +45739,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para os circuitos de maratonas aquáticas realizadas em mares calmos e próximos à praia, é montado um sistema de boias que determinam o trajeto a ser seguido pelos nadadores. Uma das dificuldades desse tipo de circuito é compensar os efeitos da corrente marinha. O diagrama contém o circuito em que deve ser realizada uma volta no sentido anti-horário. As quatro boias estão numeradas de → 1 a 4. Existe uma corrente marinha de velocidade υ , cujo c módulo é 30 metros por minuto, paralela à praia em toda a área do circuito. Nas arestas mais longas, o nadador → precisará nadar na direção apontada pelos vetores υ dos n pontos 1 até 2 e de 3 até 4. Considere que a velocidade do nadador é de 50 metros por minuto, em relação à água, durante todo o circuito. Nessa situação, em quantos minutos o nadador completará a prova? A 42 B 65 C 72 D 105 E 120",
-   "imagens": [
-    "img:enem2024-104.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Para os circuitos de maratonas aquáticas realizadas em mares calmos e próximos à praia, é montado um sistema de boias que determinam o trajeto a ser seguido pelos nadadores. Uma das dificuldades desse tipo de circuito é compensar os efeitos da corrente marinha. O diagrama contém o circuito em que deve ser realizada uma volta no sentido anti-horário. As quatro boias estão numeradas de 1 a 4. Existe uma corrente marinha de velocidade <i>v</i><sub>c</sub>, cujo módulo é 30 metros por minuto, paralela à praia em toda a área do circuito. Nas arestas mais longas, o nadador precisará nadar na direção apontada pelos vetores <i>v</i><sub>n</sub> dos pontos 1 até 2 e de 3 até 4. Considere que a velocidade do nadador é de 50 metros por minuto, em relação à água, durante todo o circuito.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "42",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "65",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "72",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "105",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "120",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessa situação, em quantos minutos o nadador completará a prova?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-104-fig.jpg",
+    "alt": "Retângulo de 800 m por 400 m com as boias 1 (inferior esquerda), 2 (inferior direita), 3 (superior direita) e 4 (superior esquerda); a corrente v_c aponta para baixo e as setas v_n indicam a direção do nado nos lados longos",
+    "largura": "73mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-105",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Virologia",
@@ -45739,35 +45786,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, os linfócitos T. A diferença entre eles é que o HTLV-1 estimula o aumento da produção desses linfócitos, enquanto o HIV causa destruição dessas células. ROMANELLI, L. C. F.; CARAMELLI, P.; PROIETTI, A. B. F. C. O vírus linfotrópico de células T humanas tipo 1 (HTLV-1): quando suspeitar da infecção? Revista da Associação Médica Brasileira , v. 56, 2010 (adaptado). Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de A aids. B câncer. C diabetes. D hepatite B. E hemorragia.",
-   "imagens": [
-    "img:enem2024-105.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, os linfócitos T. A diferença entre eles é que o HTLV-1 estimula o aumento da produção desses linfócitos, enquanto o HIV causa destruição dessas células.<br><span class=\"pb\"></span>ROMANELLI, L. C. F.; CARAMELLI, P.; PROIETTI, A. B. F. C. O vírus linfotrópico de células T humanas tipo 1 (HTLV-1): quando suspeitar da infecção? <b>Revista da Associação Médica Brasileira</b>, v. 56, 2010 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "aids.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "câncer.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "diabetes.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "hepatite B.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "hemorragia.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de",
+   "transcrita": true
   },
   {
    "id": "enem2024-106",
@@ -45817,7 +45861,6 @@
   {
    "id": "enem2024-107",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Ecologia",
@@ -45829,40 +45872,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A fitorremediação é uma técnica que utiliza plantas para a remediação de ambientes contaminados. A descontaminação de solos pode ocorrer por descarte, absorção e metabolização, imobilização, extração ou volatilização do poluente, conforme representado na figura. LUIZ, E. P. Avaliação dos métodos de fitorremediação [...] na remoção de chumbo, cobre e zinco . São Paulo: UFABC, 2016 (adaptado). O método que retira o mercúrio de uma área contaminada, impedindo sua entrada na cadeia alimentar, é a A fitoestabilização, ficando o mercúrio disponível sob a superfície das raízes das plantas. B fitovolatilização, permitindo a retirada do mercúrio por plantas e a sua transferência para uma forma volátil. C fitodegradação, com a degradação do mercúrio promovida por enzimas, contidas nas raízes, formando espécies menos tóxicas. D fitoestimulação, com a remoção do mercúrio pela ação de microrganismos presentes nas raízes que absorvem e imobilizam o metal. E fitoextração, em que as plantas que acumulam o mercúrio são cultivadas nesses locais, e a biomassa rica no metal é retirada após o crescimento.",
-   "imagens": [
-    "img:enem2024-107.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "A fitorremediação é uma técnica que utiliza plantas para a remediação de ambientes contaminados. A descontaminação de solos pode ocorrer por descarte, absorção e metabolização, imobilização, extração ou volatilização do poluente, conforme representado na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "fitoestabilização, ficando o mercúrio disponível sob a superfície das raízes das plantas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "fitovolatilização, permitindo a retirada do mercúrio por plantas e a sua transferência para uma forma volátil.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "fitodegradação, com a degradação do mercúrio promovida por enzimas, contidas nas raízes, formando espécies menos tóxicas.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "fitoestimulação, com a remoção do mercúrio pela ação de microrganismos presentes nas raízes que absorvem e imobilizam o metal.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "fitoextração, em que as plantas que acumulam o mercúrio são cultivadas nesses locais, e a biomassa rica no metal é retirada após o crescimento.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "<b>Fitoestabilização</b>: imobilização dos contaminantes através de sorção por raízes, precipitação, complexação ou redução de valência.<br><b>Fitovolatilização</b>: retirada de poluentes pelas plantas e transferência para uma forma volátil.<br><b>Fitodegradação</b>: degradação dos contaminantes orgânicos por ação enzimática.<br><b>Fitoestimulação</b>: estimulação dos microrganismos degradadores de contaminantes orgânicos.<br><b>Fitoextração</b>: remoção de poluentes pelas raízes e sua transferência e acúmulo na parte aérea das plantas.<br><span class=\"pb\"></span>LUIZ, E. P. <b>Avaliação dos métodos de fitorremediação [...] na remoção de chumbo, cobre e zinco</b>. São Paulo: UFABC, 2016 (adaptado).<br><span class=\"pb\"></span>O método que retira o mercúrio de uma área contaminada, impedindo sua entrada na cadeia alimentar, é a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-107-fig.jpg",
+    "alt": "Árvore com as setas dos processos de fitorremediação: fitovolatilização, fitoextração, fitodegradação, fitoestimulação e fitoestabilização, junto às folhas, raízes e solo",
+    "largura": "93mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-108",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Reciclagem",
@@ -45874,35 +45919,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Brasil fecha 2020 entre os maiores recicladores de latas de alumínio A bauxita contém alumina (Al O ), que é a matéria-prima para produção do alumínio (Al). De forma geral, são 2 3 necessários 50 kg de bauxita para produzir 10 kg de alumínio. O Brasil fechou 2020 como um dos principais líderes mundiais em reciclagem de latas de alumínio. De acordo com levantamento da Associação Brasileira dos Fabricantes 5 de Latas de Alumínio (Abralatas), o país obteve um índice de reciclagem de 97,4%, de um total de 4,0 × 10 toneladas de latas vendidas. Considere que a lata é constituída de alumínio puro. Disponível em: https://agenciabrasil.ebc.com.br. Acesso em: 30 nov. 2021 (adaptado). Levando em conta apenas a reciclagem de latas, qual é o valor mais próximo da massa de bauxita, em tonelada, que deixou de ser extraída da natureza em 2020 no Brasil? 4 A 1,0 × 10 ton 5 B 3,9 × 10 ton 5 C 5,0 × 10 ton 6 D 1,9 × 10 ton 7 E 2,0 × 10 ton",
-   "imagens": [
-    "img:enem2024-108.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "<b>Brasil fecha 2020 entre os maiores recicladores de latas de alumínio</b><br><span class=\"pb\"></span>A bauxita contém alumina (Al<sub>2</sub>O<sub>3</sub>), que é a matéria-prima para produção do alumínio (Al). De forma geral, são necessários 50 kg de bauxita para produzir 10 kg de alumínio. O Brasil fechou 2020 como um dos principais líderes mundiais em reciclagem de latas de alumínio. De acordo com levantamento da Associação Brasileira dos Fabricantes de Latas de Alumínio (Abralatas), o país obteve um índice de reciclagem de 97,4%, de um total de 4,0 × 10<sup>5</sup> toneladas de latas vendidas. Considere que a lata é constituída de alumínio puro.<br><span class=\"pb\"></span>Disponível em: https://agenciabrasil.ebc.com.br. Acesso em: 30 nov. 2021 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,0 × 10<sup>4</sup> ton",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3,9 × 10<sup>5</sup> ton",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5,0 × 10<sup>5</sup> ton",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,9 × 10<sup>6</sup> ton",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "2,0 × 10<sup>7</sup> ton",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Levando em conta apenas a reciclagem de latas, qual é o valor mais próximo da massa de bauxita, em tonelada, que deixou de ser extraída da natureza em 2020 no Brasil?",
+   "transcrita": true
   },
   {
    "id": "enem2024-109",
@@ -45952,7 +45994,6 @@
   {
    "id": "enem2024-110",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Eletricidade",
@@ -45964,12 +46005,7 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma caixa decorativa utiliza duas pequenas lâmpadas, L (6 V – 9 W) e L (12 V – 18 W), ligadas em série a 1 2 uma bateria de tensão V . Um fio resistivo QR , de QR 48 centímetros, está ligado em paralelo à bateria. Cinco pontos, A , B , C , D e E , dividem o fio QR em seis segmentos de comprimentos iguais. O circuito também tem um amperímetro com dois terminais. Um dos terminais ( P ) está ligado ao fio entre as duas lâmpadas. O outro terminal ( S ) está livre e será ligado ao fio QR . Dependendo do ponto em que esse terminal livre for conectado, ocorrerá a mudança na tensão à qual as lâmpadas são submetidas. Os demais fios do circuito têm resistências elétricas desprezíveis. A figura ilustra esse circuito. Em qual desses pontos o amperímetro deve ser conectado para que as lâmpadas acendam exatamente segundo as especificações de tensão e potência elétricas fornecidas? A A B B C C D D E E",
-   "imagens": [
-    "img:enem2024-110.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Uma caixa decorativa utiliza duas pequenas lâmpadas, L<sub>1</sub> (6 V – 9 W) e L<sub>2</sub> (12 V – 18 W), ligadas em série a uma bateria de tensão V<sub>QR</sub>. Um fio resistivo <i>QR</i>, de 48 centímetros, está ligado em paralelo à bateria. Cinco pontos, A, B, C, D e E, dividem o fio <i>QR</i> em seis segmentos de comprimentos iguais. O circuito também tem um amperímetro com dois terminais. Um dos terminais (<i>P</i>) está ligado ao fio entre as duas lâmpadas. O outro terminal (<i>S</i>) está livre e será ligado ao fio <i>QR</i>. Dependendo do ponto em que esse terminal livre for conectado, ocorrerá a mudança na tensão à qual as lâmpadas são submetidas. Os demais fios do circuito têm resistências elétricas desprezíveis. A figura ilustra esse circuito.",
    "alternativas": [
     {
      "t": "A",
@@ -45992,7 +46028,15 @@
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em qual desses pontos o amperímetro deve ser conectado para que as lâmpadas acendam exatamente segundo as especificações de tensão e potência elétricas fornecidas?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-110-fig.jpg",
+    "alt": "Circuito com as lâmpadas L1 e L2 em série, a bateria V_QR em paralelo com o fio resistivo QR (48 cm) dividido pelos pontos A, B, C, D e E, e o amperímetro A ligado ao ponto P entre as lâmpadas e ao terminal livre S",
+    "largura": "72mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-111",
