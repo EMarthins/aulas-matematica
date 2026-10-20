@@ -16234,7 +16234,6 @@
   {
    "id": "enem2020-122",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Cinemática",
@@ -16246,40 +16245,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "semáforos de uma avenida, indicados pelas letras O, A, B e C, conforme a figura. O A B C Os semáforos estão separados por uma distância de 500 m. Segundo os dados estatísticos da companhia controladora de trânsito, um veículo, que está inicialmente parado no semáforo O, tipicamente parte −2 com aceleração constante de 1 m s até atingir a −1 velocidade de 72 km h e, a partir daí, prossegue com velocidade constante. Você deve ajustar os semáforos A, B e C de modo que eles mudem para a cor verde quando o veículo estiver a 100 m de cruzá-los, para que ele não tenha que reduzir a velocidade em nenhum momento. Considerando essas condições, aproximadamente quanto tempo depois da abertura do semáforo O os semáforos A, B e C devem abrir, respectivamente? A 20 s, 45 s e 70 s. B 25 s, 50 s e 75 s. C 28 s, 42 s e 53 s. D 30 s, 55 s e 80 s. E 35 s, 60 s e 85 s.",
-   "imagens": [
-    "img:enem2020-122.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Você foi contratado para sincronizar os quatro semáforos de uma avenida, indicados pelas letras O, A, B e C, conforme a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "20 s, 45 s e 70 s.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "25 s, 50 s e 75 s.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "28 s, 42 s e 53 s.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "30 s, 55 s e 80 s.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "35 s, 60 s e 85 s.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Os semáforos estão separados por uma distância de 500 m. Segundo os dados estatísticos da companhia controladora de trânsito, um veículo, que está inicialmente parado no semáforo O, tipicamente parte com aceleração constante de 1 m s<sup>−2</sup> até atingir a velocidade de 72 km h<sup>−1</sup> e, a partir daí, prossegue com velocidade constante. Você deve ajustar os semáforos A, B e C de modo que eles mudem para a cor verde quando o veículo estiver a 100 m de cruzá-los, para que ele não tenha que reduzir a velocidade em nenhum momento.<br><span class=\"pb\"></span>Considerando essas condições, aproximadamente quanto tempo depois da abertura do semáforo O os semáforos A, B e C devem abrir, respectivamente?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-122-fig.jpg",
+    "alt": "Avenida representada por uma faixa horizontal com os semáforos O, A, B e C em sequência, indicados por setas",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-123",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Reciclagem",
@@ -16291,40 +16292,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Nos dias atuais, o amplo uso de objetos de plástico gera bastante lixo, que muitas vezes é eliminado pela população por meio da queima. Esse procedimento é prejudicial ao meio ambiente por lançar substâncias poluentes. Para constatar esse problema, um estudante analisou a decomposição térmica do policloreto de vinila (PVC), um tipo de plástico, cuja estrutura é representada na figura. Policloreto de vinila (PVC) Para realizar esse experimento, o estudante colocou uma amostra de filme de PVC em um tubo de ensaio e o aqueceu, promovendo a decomposição térmica. Houve a liberação majoritária de um gás diatômico heteronuclear que foi recolhido em um recipiente acoplado ao tubo de ensaio. Esse gás, quando borbulhado em solução alcalina diluída contendo indicador ácido-base, alterou a cor da solução. Além disso, em contato com uma solução aquosa de carbonato de sódio (Na CO ), liberou gás 2 3 carbônico. Qual foi o gás liberado majoritariamente na decomposição térmica desse tipo de plástico? A H 2 B Cl 2 C CO D CO 2 E HCl",
-   "imagens": [
-    "img:enem2020-123.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Nos dias atuais, o amplo uso de objetos de plástico gera bastante lixo, que muitas vezes é eliminado pela população por meio da queima. Esse procedimento é prejudicial ao meio ambiente por lançar substâncias poluentes. Para constatar esse problema, um estudante analisou a decomposição térmica do policloreto de vinila (PVC), um tipo de plástico, cuja estrutura é representada na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "H<sub>2</sub>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Cl<sub>2</sub>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "CO",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "CO<sub>2</sub>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "HCl",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para realizar esse experimento, o estudante colocou uma amostra de filme de PVC em um tubo de ensaio e o aqueceu, promovendo a decomposição térmica. Houve a liberação majoritária de um gás diatômico heteronuclear que foi recolhido em um recipiente acoplado ao tubo de ensaio. Esse gás, quando borbulhado em solução alcalina diluída contendo indicador ácido-base, alterou a cor da solução. Além disso, em contato com uma solução aquosa de carbonato de sódio (Na<sub>2</sub>CO<sub>3</sub>), liberou gás carbônico.<br><span class=\"pb\"></span>Qual foi o gás liberado majoritariamente na decomposição térmica desse tipo de plástico?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-123-fig.jpg",
+    "alt": "Fórmula estrutural do policloreto de vinila (PVC): unidade repetida –[CH2–CHCl]n–",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-124",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Evolução",
@@ -16336,40 +16339,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma população (momento A) sofre isolamento em duas subpopulações (momento B) por um fator de isolamento (I). Passado um tempo, essas subpopulações apresentam características fenotípicas e genotípicas que as distinguem (momento C), representadas na figura pelas tonalidades de cor. O posterior desaparecimento do fator de isolamento I pode levar, no momento D, às situações D1 e D2. B C D A D1 D2 Tempo A representação indica que, no momento D, na situação A D1 ocorre um novo fator de isolamento geográfico. B D1 existe uma única população distribuída em gradiente. C D1 ocorrem duas populações separadas por isolamento reprodutivo. D D2 coexistem duas populações com características fenotípicas distintas. E D2 foram preservadas as mesmas características fenotípicas da população original A.",
-   "imagens": [
-    "img:enem2020-124.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Uma população (momento A) sofre isolamento em duas subpopulações (momento B) por um fator de isolamento (I). Passado um tempo, essas subpopulações apresentam características fenotípicas e genotípicas que as distinguem (momento C), representadas na figura pelas tonalidades de cor. O posterior desaparecimento do fator de isolamento I pode levar, no momento D, às situações D1 e D2.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "D1 ocorre um novo fator de isolamento geográfico.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "D1 existe uma única população distribuída em gradiente.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "D1 ocorrem duas populações separadas por isolamento reprodutivo.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "D2 coexistem duas populações com características fenotípicas distintas.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "D2 foram preservadas as mesmas características fenotípicas da população original A.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A representação indica que, no momento D, na situação",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-124-fig.jpg",
+    "alt": "Esquema da população A que se divide em duas subpopulações (B), isoladas por um fator I, que se diferenciam (C) e, depois do desaparecimento do isolamento, originam as situações D1 e D2; seta do tempo abaixo",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-125",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Física geral",
@@ -16382,34 +16387,38 @@
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
    "enunciado": "",
-   "busca": "DAVIS, J. Disponível em: http://garfield.com. Acesso em: 10 fev. 2015. Por qual motivo ocorre a eletrização ilustrada na tirinha? A Troca de átomos entre a calça e os pelos do gato. B Diminuição do número de prótons nos pelos do gato. C Criação de novas partículas eletrizadas nos pelos do gato. D Movimentação de elétrons entre a calça e os pelos do gato. E Repulsão entre partículas elétricas da calça e dos pelos do gato.",
-   "imagens": [
-    "img:enem2020-125.jpg"
-   ],
-   "larguraMm": 179.9,
    "alternativas": [
     {
-     "t": "A",
+     "t": "Troca de átomos entre a calça e os pelos do gato.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Diminuição do número de prótons nos pelos do gato.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Criação de novas partículas eletrizadas nos pelos do gato.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Movimentação de elétrons entre a calça e os pelos do gato.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Repulsão entre partículas elétricas da calça e dos pelos do gato.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Por qual motivo ocorre a eletrização ilustrada na tirinha?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-125-fig.jpg",
+    "alt": "Tirinha do gato Garfield: o gato passa entre as pernas de uma pessoa, esfrega-se na calça e fica com os pelos arrepiados dizendo “Eu odeio eletricidade estática”",
+    "largura": "170mm",
+    "legenda": "DAVIS, J. Disponível em: http://garfield.com. Acesso em: 10 fev. 2015."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-126",
@@ -16494,7 +16503,6 @@
   {
    "id": "enem2020-128",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Enzimas",
@@ -16506,35 +16514,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A sacarase (ou invertase) é uma enzima que atua no intestino humano hidrolisando o dissacarídeo sacarose nos monossacarídeos glicose e frutose. Em um estudo cinético da reação de hidrólise da sacarose (C H O ), 12 22 11 foram dissolvidos 171 g de sacarose em 500 mL de água. Observou-se que, a cada 100 minutos de reação, a concentração de sacarose foi reduzida à metade, qualquer que fosse o momento escolhido como tempo inicial. As massas molares dos elementos H, C e O são −1 iguais a 1, 12 e 16 g mol , respectivamente. Qual é a concentração de sacarose depois de 400 minutos do início da reação de hidrólise? −3 −1 A 2,50 × 10 mol L −2 −1 B 6,25 × 10 mol L −1 −1 C 1,25 × 10 mol L −1 −1 D 2,50 × 10 mol L −1 −1 E 4,27 × 10 mol L",
-   "imagens": [
-    "img:enem2020-128.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A sacarase (ou invertase) é uma enzima que atua no intestino humano hidrolisando o dissacarídeo sacarose nos monossacarídeos glicose e frutose. Em um estudo cinético da reação de hidrólise da sacarose (C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>), foram dissolvidos 171 g de sacarose em 500 mL de água. Observou-se que, a cada 100 minutos de reação, a concentração de sacarose foi reduzida à metade, qualquer que fosse o momento escolhido como tempo inicial. As massas molares dos elementos H, C e O são iguais a 1, 12 e 16 g mol<sup>−1</sup>, respectivamente.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2,50 × 10<sup>−3</sup> mol L<sup>−1</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6,25 × 10<sup>−2</sup> mol L<sup>−1</sup>",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1,25 × 10<sup>−1</sup> mol L<sup>−1</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,50 × 10<sup>−1</sup> mol L<sup>−1</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4,27 × 10<sup>−1</sup> mol L<sup>−1</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual é a concentração de sacarose depois de 400 minutos do início da reação de hidrólise?",
+   "transcrita": true
   },
   {
    "id": "enem2020-129",
@@ -16619,7 +16624,6 @@
   {
    "id": "enem2020-131",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Termologia",
@@ -16631,12 +16635,7 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "de que maneira os raios coloridos contribuem para o aquecimento. Para isso, ele projetou sobre um anteparo o espectro solar obtido com um prisma, colocou termômetros nas diversas faixas de cores e verificou nos dados obtidos que um dos termômetros iluminados indicou um aumento de temperatura maior para uma determinada faixa de frequências. SAYURI, M.; GASPAR, M. B. Infravermelho na sala de aula. Disponível em: www.cienciamao.usp.br. Acesso em: 15 ago. 2016 (adaptado). Para verificar a hipótese de Herschel, um estudante montou o dispositivo apresentado na figura. Nesse aparato, cinco recipientes contendo água, à mesma temperatura inicial, e separados por um material isolante térmico e refletor são posicionados lado a lado (A, B, C, D e E) no interior de uma caixa de material isolante térmico e opaco. A luz solar, ao entrar na caixa, atravessa o prisma e incide sobre os recipientes. O estudante aguarda até que ocorra o aumento da temperatura e a afere em cada recipiente. Incidência de luz solar PRISMA Caixa isolada e opaca Luz solar decomposta Vermelho Violeta Espectro visível A B C D E Recipientes Em qual dos recipientes a água terá maior temperatura ao final do experimento? A A B B C C D D E E",
-   "imagens": [
-    "img:enem2020-131.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "Herschel, em 1880, começou a escrever sobre a condensação da luz solar no foco de uma lente e queria verificar de que maneira os raios coloridos contribuem para o aquecimento. Para isso, ele projetou sobre um anteparo o espectro solar obtido com um prisma, colocou termômetros nas diversas faixas de cores e verificou nos dados obtidos que um dos termômetros iluminados indicou um aumento de temperatura maior para uma determinada faixa de frequências.<br><span class=\"pb\"></span>SAYURI, M.; GASPAR, M. B. Infravermelho na sala de aula. Disponível em: www.cienciamao.usp.br. Acesso em: 15 ago. 2016 (adaptado).<br><span class=\"pb\"></span>Para verificar a hipótese de Herschel, um estudante montou o dispositivo apresentado na figura. Nesse aparato, cinco recipientes contendo água, à mesma temperatura inicial, e separados por um material isolante térmico e refletor são posicionados lado a lado (A, B, C, D e E) no interior de uma caixa de material isolante térmico e opaco. A luz solar, ao entrar na caixa, atravessa o prisma e incide sobre os recipientes. O estudante aguarda até que ocorra o aumento da temperatura e a afere em cada recipiente.",
    "alternativas": [
     {
      "t": "A",
@@ -16659,12 +16658,19 @@
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em qual dos recipientes a água terá maior temperatura ao final do experimento?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-131-fig.jpg",
+    "alt": "Caixa isolada e opaca em que a luz solar atravessa um prisma e se decompõe (do vermelho ao violeta), formando o espectro visível sobre cinco recipientes A, B, C, D e E",
+    "largura": "74mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-132",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química verde",
@@ -16676,35 +16682,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A Química Verde é um ramo da química que prega o desenvolvimento de processos eficientes, que transformem a maior parte do reagente em produto, de forma mais rápida e seletiva, que utilizem poucos reagentes, que produzam somente o produto desejado, evitando a formação de coprodutos, e que utilizem solventes não agressivos ao meio ambiente. Assim, as indústrias contornariam problemas relacionados à poluição ambiental e ao desperdício de água e energia. O perfil de um processo que segue todos os princípios desse ramo da química pode ser representado por: A A + B + C → D (a reação ocorre a altas pressões). B A + B → C + D (a reação é fortemente endotérmica). C A + 3B → C (a reação ocorre com uso de solvente orgânico). D 3A + 2B → 2C → 3D + 2E (a reação ocorrre sob pressão atmosférica). 1 E A + − B → C (a reação ocorre com o uso de um catalisador contendo um metal não tóxico). 2",
-   "imagens": [
-    "img:enem2020-132.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "A Química Verde é um ramo da química que prega o desenvolvimento de processos eficientes, que transformem a maior parte do reagente em produto, de forma mais rápida e seletiva, que utilizem poucos reagentes, que produzam somente o produto desejado, evitando a formação de coprodutos, e que utilizem solventes não agressivos ao meio ambiente. Assim, as indústrias contornariam problemas relacionados à poluição ambiental e ao desperdício de água e energia.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A + B + C → D (a reação ocorre a altas pressões).",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "A + B → C + D (a reação é fortemente endotérmica).",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "A + 3B → C (a reação ocorre com uso de solvente orgânico).",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3A + 2B → 2C → 3D + 2E (a reação ocorre sob pressão atmosférica).",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "A + $ {1|2} $B → C (a reação ocorre com o uso de um catalisador contendo um metal não tóxico).",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O perfil de um processo que segue todos os princípios desse ramo da química pode ser representado por:",
+   "transcrita": true
   },
   {
    "id": "enem2020-133",
@@ -16749,7 +16752,6 @@
   {
    "id": "enem2020-134",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Hidrostática",
@@ -16761,35 +16763,46 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "no oceano. Dentro da caverna formou-se um bolsão de ar, como mostrado na fi gura, onde o mergulhador se abrigou. Durante o resgate, para evitar danos a seu organismo, foi necessário que o mergulhador passasse por um processo de descompressão antes de retornar à superfície para que seu corpo fi casse novamente sob pressão atmosférica. O gráfico mostra a relação entre os tempos de descompressão recomendados para indivíduos nessa situação e a variação de pressão. 100 80 60 40 Tempo de 20 100 200 300 400 500 600 700 descompressão (min) Variação de pressão (kPa) Considere que a aceleração da gravidade seja −2 igual a 10 m s e que a densidade da água seja de −3 ρ = 1 000 kg m . Em minutos, qual é o tempo de descompressão a que o mergulhador deverá ser submetido? A 100 B 80 C 60 D 40 E 20",
-   "imagens": [
-    "img:enem2020-134.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Um mergulhador fica preso ao explorar uma caverna no oceano. Dentro da caverna formou-se um bolsão de ar, como mostrado na figura, onde o mergulhador se abrigou.<br><span class=\"pb\"></span>Durante o resgate, para evitar danos a seu organismo, foi necessário que o mergulhador passasse por um processo de descompressão antes de retornar à superfície para que seu corpo ficasse novamente sob pressão atmosférica. O gráfico mostra a relação entre os tempos de descompressão recomendados para indivíduos nessa situação e a variação de pressão.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "60",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "40",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "20",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere que a aceleração da gravidade seja igual a 10 m s<sup>−2</sup> e que a densidade da água seja de ρ = 1 000 kg m<sup>−3</sup>.<br><span class=\"pb\"></span>Em minutos, qual é o tempo de descompressão a que o mergulhador deverá ser submetido?",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2020-134-fig1.jpg",
+     "alt": "Esquema da caverna: bolsão de ar a 50 m de profundidade, com 30 m de largura, e pressão atmosférica de 1,0 x 10^5 Pa na superfície",
+     "largura": "77mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2020-134-fig2.jpg",
+     "alt": "Gráfico do tempo de descompressão (min) em função da variação de pressão (kPa): cerca de 20 min para 100 kPa, 40 min para 400 kPa e 100 min para 700 kPa",
+     "largura": "81mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2020-135",
