@@ -122704,7 +122704,7 @@
      "ok": false
     }
    ],
-   "pergunta": "Pode-se concluir que o número de pessoas que consomem ao menos duas marcas é:",
+   "pergunta": "(AB significa “A e B”, etc.; ABC, as três marcas.) Pode-se concluir que o número de pessoas que consomem ao menos duas marcas é:",
    "figura": {
     "tipo": "tabela",
     "cab": [
@@ -122712,15 +122712,15 @@
      "A",
      "B",
      "C",
-     "A e B",
-     "A e C",
-     "B e C",
-     "A, B e C",
-     "Nenhuma delas"
+     "AB",
+     "AC",
+     "BC",
+     "ABC",
+     "Nenhuma"
     ],
     "linhas": [
      [
-      "Número de consumidores",
+      "Consumidores",
       "109",
       "203",
       "162",
@@ -122756,7 +122756,7 @@
     "modo": "branco",
     "altura": 45
    },
-   "pergunta": "Determine:<br><span class=\"pb\"></span>a) O número de pessoas consultadas.<br>b) O número de pessoas que não consomem as marcas A ou C.<br>c) O número de pessoas que consomem pelo menos duas marcas.<br>d) A porcentagem de pessoas que consomem as marcas A e B mas não consomem a marca C.<br>e) A porcentagem de pessoas que consomem apenas a marca C.",
+   "pergunta": "(AB significa “A e B”, etc.; ABC, as três marcas.)<br><span class=\"pb\"></span>Determine:<br><span class=\"pb\"></span>a) O número de pessoas consultadas.<br>b) O número de pessoas que não consomem as marcas A ou C.<br>c) O número de pessoas que consomem pelo menos duas marcas.<br>d) A porcentagem de pessoas que consomem as marcas A e B mas não consomem a marca C.<br>e) A porcentagem de pessoas que consomem apenas a marca C.",
    "figura": {
     "tipo": "tabela",
     "cab": [
@@ -122764,15 +122764,15 @@
      "A",
      "B",
      "C",
-     "A e B",
-     "A e C",
-     "B e C",
-     "A, B e C",
-     "Nenhuma delas"
+     "AB",
+     "AC",
+     "BC",
+     "ABC",
+     "Nenhuma"
     ],
     "linhas": [
      [
-      "Número de consumidores",
+      "Consumidores",
       "109",
       "203",
       "162",
@@ -148063,7 +148063,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "(UNIFORM) Sejam as matrizes $ A = @M{−1&0&1;0&2&−2} $ e $ B = @M{2&−1;1&2;0&1} $. O determinante da matriz $ A · B $ é:",
+   "enunciado": "(UNIFORM) Sejam as matrizes<br><span class=\"pb\"></span>$ A = @M{−1&0&1;0&2&−2} $  e  $ B = @M{2&−1;1&2;0&1} $.<br><span class=\"pb\"></span>O determinante da matriz $ A · B $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
