@@ -71657,7 +71657,6 @@
   },
   {
    "id": "cdb-c08-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71669,20 +71668,21 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UFMS Considere a equação no campo complexo z 2 = – i z , onde i é a constante imagi- nária, isto é, i 2 = –1 e z é o conjugado de z. É correto afirmar que: 01. o número complexo – i é uma solução da equação dada; 02. se z ≠ 0 e z é uma solução da equação dada, então | z | = 1, onde | z | denota o módulo de z; 04. o número complexo w , representado no plano complexo abaixo, é solução da equa- ção dada; 08. o número 0 não é uma solução da equação dada; 16. a equação dada possui exatamente 4 soluções. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-021.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considere a equação no campo complexo $ z^2 = −i z̄ $, onde $ i $ é a constante imaginária, isto é, $ i^2 = −1 $ e $ z̄ $ é o conjugado de $ z $. É correto afirmar que:<br><span class=\"pb\"></span>01. o número complexo $ −i $ é uma solução da equação dada;<br>02. se $ z ≠ 0 $ e $ z $ é solução da equação dada, então $ |z| = 1 $, onde $ |z| $ denota o módulo de $ z $;<br>04. o número complexo $ w $, representado no plano complexo abaixo, é solução da equação dada;",
    "resolucao": "",
-   "tipo": "soma",
-   "gabarito": "22"
+   "tipo": "aberta",
+   "gabarito": "22",
+   "pergunta": "08. o número 0 não é uma solução da equação dada;<br>16. a equação dada possui exatamente 4 soluções.<br><span class=\"pb\"></span>Dê, como resposta, a soma das alternativas corretas.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c08-021-fig.jpg",
+    "alt": "Plano complexo com eixos Im e Re; o ponto w tem parte real √3/2 e parte imaginária −1/2, indicados por linhas tracejadas",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71694,41 +71694,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFSE Seja o número complexo z = 1 + i. O argumento principal de z 2 é: a) 30 ° d) 90 ° b) 45 ° e) 120 ° c) 60 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-022.jpg"
-   ],
-   "larguraMm": 110.8,
+   "enunciado": "Seja o número complexo $ z = 1 + i $. O argumento principal de $ z^2 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "45°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "60°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "90°",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "120°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71740,37 +71734,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. U.F. Uberlândia-MG Seja o número complexo z = cos15º + i sen15º, onde i 2 = –1. Se w é um outro número complexo tal que | w | = | z | = | z – w | , então pode-se afirmar que um valor possível para w nessas condições é: a) w = cos315º + i sen315º b) w = cos60º + i sen60º c) w = cos165º + i sen165º d) w = cos225º + i sen225º",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-023.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Seja o número complexo $ z = cos 15° + i sen 15° $, onde $ i^2 = −1 $. Se $ w $ é um outro número complexo tal que $ |w| = |z| = |z − w| $, então pode-se afirmar que um valor possível para $ w $ nessas condições é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ w = cos 315° + i sen 315° $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ w = cos 60° + i sen 60° $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ w = cos 165° + i sen 165° $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ w = cos 225° + i sen 225° $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71782,41 +71770,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. PUC-PR O complexo 1 – i é raiz da equação x 4 – 2x 3 – 2x 2 + 8x – 8 = 0. As outras raízes são: a) –2, 2 e i b) 2, 3 e 1 + i c) –2, 2 e 1 + i d) 0, 2 e 1 + i e) –i, i e 1 + i",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-024.jpg"
-   ],
-   "larguraMm": 75.1,
+   "enunciado": "O complexo $ 1 − i $ é raiz da equação $ x^4 − 2x^3 − 2x^2 + 8x − 8 = 0 $. As outras raízes são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−2, 2 e $ i $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2, 3 e $ 1 + i $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−2, 2 e $ 1 + i $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "0, 2 e $ 1 + i $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ −i $, $ i $ e $ 1 + i $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71828,41 +71810,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. FEI-SP Uma das raízes da equação x 2 – 2x + c = 0, onde c é um número real, é o número complexo z 0 = 1 + 2i. É válido afirmar-se que: a) c = 0 b) c = 1 c) c = 3 d) c = 5 e) c = 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-025.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Uma das raízes da equação $ x^2 − 2x + c = 0 $, onde $ c $ é um número real, é o número complexo $ z_0 = 1 + 2i $. É válido afirmar-se que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ c = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ c = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ c = 3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ c = 5 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ c = 7 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71874,20 +71850,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFMT Na figura o ponto P é o afixo de um número complexo z, no plano de Argand- Gauss. A partir das informações dadas, julgue os itens. ( ) A forma trigonométrica de z é 2 cos 5 3 5 3 π π +     i sen . ( ) Se Q é o afixo do número complexo w = z.i, sendo i a unidade imaginária, então o ângulo PÔQ é reto. ( ) Sendo z o conjugado de z, 4z z = ( z ) 2 .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-026.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Na figura o ponto $ P $ é o afixo de um número complexo $ z $, no plano de Argand-Gauss.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V"
+   "gabarito": "F – V – V",
+   "pergunta": "A partir das informações dadas, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "A forma trigonométrica de $ z $ é $ 2(cos {5π|3} + i sen {5π|3}) $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ Q $ é o afixo do número complexo $ w = z·i $, sendo $ i $ a unidade imaginária, então o ângulo $ PÔQ $ é reto.",
+     "ok": true
+    },
+    {
+     "t": "Sendo $ z̄ $ o conjugado de $ z $, $ {4z̄|z} = (z̄)^2 $.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c08-026-fig.jpg",
+    "alt": "Plano cartesiano com o ponto P de coordenadas (√3, −1) ligado à origem por um segmento",
+    "largura": "49mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71899,41 +71890,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. UESC-BA O número complexo z = 6i 25 + (2i) 6 + (i) –3 é igual a: a) 65 – 6i d) –64 + 7i b) 5 – 64i e) –65 + 6i c) –64 + 5i",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-027.jpg"
-   ],
-   "larguraMm": 95.8,
+   "enunciado": "O número complexo $ z = 6i^{25} + (2i)^6 + (i)^{−3} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "65 − 6i",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5 − 64i",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−64 + 5i",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−64 + 7i",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "−65 + 6i",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71945,37 +71930,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. U.F. Juiz de Fora-MG O número complexo z de módulo 3 está representado abaixo no plano complexo. Podemos afirmar que z é igual a: a) 3 3 2 − i b) − − 3 3 2 i c) − − 3 3 2 i d) 3 3 2 − i",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-028.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "O número complexo $ z $ de módulo $ √3 $ está representado abaixo no plano complexo.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3 − i√3|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {−3 − i√3|2} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {−√3 − 3i|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√3 − 3i|2} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Podemos afirmar que $ z $ é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c08-028-fig.jpg",
+    "alt": "Plano complexo com a reta tracejada que passa pela origem e forma um ângulo de π/6 com o eixo real; o ponto z está sobre a reta, no terceiro quadrante",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -71987,41 +71973,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. PUC-PR Se as imagens geométricas dos números complexos 0, z e z no plano de Ar- gand-Gauss são os vértices de um triângulo eqüilátero, então a medida do segmento que une as imagens de z e z é: a) z 2 d) 2 Re (z) b) z 2 e) Im (z) c) z",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-029.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Se as imagens geométricas dos números complexos 0, $ z $ e $ z̄ $ no plano de Argand-Gauss são os vértices de um triângulo eqüilátero, então a medida do segmento que une as imagens de $ z $ e $ z̄ $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {|z||2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {|z̄||2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ |z| $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 2 Re(z) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ Im(z) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -72033,20 +72013,15 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. ITA-SP Sendo 1 e 1 + 2 i raízes da equaçao x 3 + ax 2 + bx + c = 0, em que a , b e c são números reais, então: a) b + c = 4 b) b + c = 3 c) b + c = 2 d) b + c = 1 e) b + c = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-030.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Sendo 1 e $ 1 + 2i $ raízes da equação $ x^3 + ax^2 + bx + c = 0 $, em que $ a $, $ b $ e $ c $ são números reais, então:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "C 1 e sen α_(1) = . Daí α_(1) = 30º. 2 α_(1) = 30º, devemos ter α_(3) = 120º + 90º = 210º 3 i",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-031",
@@ -72073,7 +72048,6 @@
   },
   {
    "id": "cdb-c08-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -72085,37 +72059,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. FATEC-SP Uma equação do 2º grau que tem por raízes os números complexos 2 + i 109 e 2 – i 425 é: a) x 2 + 4x + 5 = 0 b) x 2 + 4x – 5 = 0 c) x 2 + 5x + 4 = 0 d) x 2 – 4x – 5 = 0 e) x 2 – 4x + 5 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-032.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Uma equação do 2º grau que tem por raízes os números complexos $ 2 + i^{109} $ e $ 2 − i^{425} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + 4x + 5 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + 4x − 5 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + 5x + 4 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 − 4x − 5 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x^2 − 4x + 5 = 0 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-033",
@@ -72205,7 +72174,6 @@
   },
   {
    "id": "cdb-c08-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -72217,20 +72185,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. UFPR Considerando o número complexo z = a + bi, em que a e b são números reais e i = − 1 , define-se z = − = + a bi e z a b 2 2 . Assim, é correto afirmar: ( ) Se z é número real, então z = z. ( ) Se z = i, então ( z ) 6 = z. ( ) Se z = 1 + i, então z = (1 + i) –1 . ( ) Se z = cos α + i sen α , então z . z = 1 , qualquer que seja o número real α . ( ) Se z + 2 z = 9 – 4i, então | z | = 5.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-035.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considerando o número complexo $ z = a + bi $, em que $ a $ e $ b $ são números reais e $ i = √{−1} $, define-se $ z̄ = a − bi $ e $ |z| = √{a^2 + b^2} $. Assim, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – V – V"
+   "gabarito": "V – F – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "Se $ z $ é número real, então $ z = z̄ $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ z = i $, então $ (z̄)^6 = z $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ z = 1 + i $, então $ z̄ = (1 + i)^{−1} $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ z = cos α + i sen α $, então $ z · z̄ = 1 $, qualquer que seja o número real $ α $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ z + 2z̄ = 9 − 4i $, então $ |z| = 5 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c08-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -72242,24 +72226,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. Vunesp Considere os números complexos z 1 = (2 + i) e z 2 = (x + 2i), onde i é a unidade imaginária e x é um número real. Determine: a) o número complexo z 1 • z 2 em função de x; b) os valores de x tais que Re (z 1 • z 2 ) ≤ Im (z 1 • z 2 ), onde Re denota a parte real e Im denota a parte imaginária do número complexo.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-036.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Considere os números complexos $ z_1 = (2 + i) $ e $ z_2 = (x + 2i) $, onde $ i $ é a unidade imaginária e $ x $ é um número real. Determine:<br><span class=\"pb\"></span>a) o número complexo $ z_1 · z_2 $ em função de $ x $;<br>b) os valores de $ x $ tais que $ Re(z_1 · z_2) ≤ Im(z_1 · z_2) $, onde $ Re $ denota a parte real e $ Im $ denota a parte imaginária do número complexo.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) (2x – 2) + (x + 4)i b) x ≤ 6",
+   "gabarito": "a) (2x − 2) + (x + 4)i; b) x ≤ 6",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Números complexos",
@@ -72271,37 +72249,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. ITA-SP Seja z 0 o número complexo 1 + i . Sendo S o conjunto solução no plano comple- xo de | z – z 0 | = | z + z 0 | = 2, então o produto dos elementos de S é igual a: a) 4 (1 – i ) b) 2 (1 + i ) c) 2 ( i – 1) d) –2 i e) 2 i",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c08-037.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Seja $ z_0 $ o número complexo $ 1 + i $. Sendo $ S $ o conjunto solução no plano complexo de $ |z − z_0| = |z + z_0| = 2 $, então o produto dos elementos de $ S $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4(1 − i) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2(1 + i) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2(i − 1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ −2i $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2i $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-001",
