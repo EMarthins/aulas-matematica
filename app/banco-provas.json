@@ -38887,7 +38887,6 @@
   {
    "id": "enem2023-130",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Eletricidade",
@@ -38899,35 +38898,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma equipe de segurança do transporte de uma empresa avalia o comportamento das tensões que aparecem em duas cordas, 1 e 2, usadas para prender uma carga de massa M = 200 kg na carroceria, conforme a ilustração. Quando o caminhão parte do repouso, sua aceleração é constante 2 e igual a 3 m/s e, quando ele é freado bruscamente, sua 2 frenagem é constante e igual a 5 m/s . Em ambas as situações, a carga encontra-se na iminência de movimento, e o sentido do movimento do caminhão está indicado na figura. O coeficiente de atrito estático entre a caixa e o assoalho da carroceria é igual a 0,2. Considere a aceleração 2 da gravidade igual a 10 m/s , as tensões iniciais nas cordas iguais a zero e as duas cordas ideais. 1 2 M V Nas situações de aceleração e frenagem do caminhão, as tensões nas cordas 1 e 2, em newton, serão A A aceleração: T = 0 e T = 200; frenagem: T = 600 e 1 2 1 T = 0. 2 B B aceleração: T = 0 e T = 200; frenagem: T = 1 400 e 1 2 1 T = 0. 2 C C aceleração: T = 0 e T = 600; frenagem: T = 600 e 1 2 1 T = 0. 2 D D aceleração: T = 560 e T = 0; frenagem: T = 0 e 1 2 1 T = 960. 2 E E aceleração: T = 640 e T = 0; frenagem: T = 0 e 1 2 1 T = 1 040. 2",
-   "imagens": [
-    "img:enem2023-130.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma equipe de segurança do transporte de uma empresa avalia o comportamento das tensões que aparecem em duas cordas, 1 e 2, usadas para prender uma carga de massa <b>M</b> = 200 kg na carroceria, conforme a ilustração. Quando o caminhão parte do repouso, sua aceleração é constante e igual a 3 m/s<sup>2</sup> e, quando ele é freado bruscamente, sua frenagem é constante e igual a 5 m/s<sup>2</sup>. Em ambas as situações, a carga encontra-se na iminência de movimento, e o sentido do movimento do caminhão está indicado na figura. O coeficiente de atrito estático entre a caixa e o assoalho da carroceria é igual a 0,2. Considere a aceleração da gravidade igual a 10 m/s<sup>2</sup>, as tensões iniciais nas cordas iguais a zero e as duas cordas ideais.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "aceleração: <i>T</i><sub>1</sub> = 0 e <i>T</i><sub>2</sub> = 200; frenagem: <i>T</i><sub>1</sub> = 600 e <i>T</i><sub>2</sub> = 0.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "aceleração: <i>T</i><sub>1</sub> = 0 e <i>T</i><sub>2</sub> = 200; frenagem: <i>T</i><sub>1</sub> = 1 400 e <i>T</i><sub>2</sub> = 0.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "aceleração: <i>T</i><sub>1</sub> = 0 e <i>T</i><sub>2</sub> = 600; frenagem: <i>T</i><sub>1</sub> = 600 e <i>T</i><sub>2</sub> = 0.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "aceleração: <i>T</i><sub>1</sub> = 560 e <i>T</i><sub>2</sub> = 0; frenagem: <i>T</i><sub>1</sub> = 0 e <i>T</i><sub>2</sub> = 960.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "aceleração: <i>T</i><sub>1</sub> = 640 e <i>T</i><sub>2</sub> = 0; frenagem: <i>T</i><sub>1</sub> = 0 e <i>T</i><sub>2</sub> = 1 040.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nas situações de aceleração e frenagem do caminhão, as tensões nas cordas 1 e 2, em newton, serão",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-130-fig.jpg",
+    "alt": "Caminhão com uma caixa de massa M presa por duas cordas (1 e 2) na carroceria; o vetor v indica o movimento para a direita",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-131",
@@ -38972,7 +38974,6 @@
   {
    "id": "enem2023-132",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Ecologia",
@@ -38984,40 +38985,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O ciclo do nitrogênio é composto por várias etapas, conforme a figura, sendo cada uma desempenhada por um grupo específico de microrganismos. Gás nitrogênio 1 2 Amônia Detritos 5 3 Nitrito 4 Nitrato Se o grupo dos microrganismos decompositores fosse exterminado, qual etapa não ocorreria? A A 1 B B 2 C C 3 D D 4 E E 5",
-   "imagens": [
-    "img:enem2023-132.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O ciclo do nitrogênio é composto por várias etapas, conforme a figura, sendo cada uma desempenhada por um grupo específico de microrganismos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Se o grupo dos microrganismos decompositores fosse exterminado, qual etapa não ocorreria?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-132-fig.jpg",
+    "alt": "Fluxograma: gás nitrogênio → (1) amônia; detritos → (2) amônia; amônia → (3) nitrito → (4) nitrato → (5) gás nitrogênio",
+    "largura": "56mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-133",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Radiação",
@@ -39029,40 +39032,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Os raios cósmicos são fontes de radiação ionizante potencialmente perigosas para o organismo humano. Para quantificar a dose de radiação recebida, utiliza-se o sievert (Sv), definido como a unidade de energia recebida por unidade de massa. A exposição à radiação proveniente de raios cósmicos aumenta com a altitude, o que pode representar um problema para as tripulações de aeronaves. Recentemente, foram realizadas medições acuradas das doses de radiação ionizante para voos entre Rio de Janeiro e Roma. Os resultados têm indicado que a dose média de radiação recebida na fase de cruzeiro (que geralmente representa 80% do tempo total de voo) desse trecho intercontinental é 2 μSv/h. As normas internacionais da aviação civil limitam em 1 000 horas por ano o tempo de trabalho para as tripulações que atuem em voos intercontinentais. Considere que a dose de radiação ionizante para uma radiografia torácica é estimada em 0,2 mSv. RUAS, A. C. O tripulante de aeronaves e a radiação ionizante . São Paulo: Edição do Autor, 2019 (adaptado). A quantas radiografias torácicas corresponde a dose de radiação ionizante à qual um tripulante que atue no trecho Rio de Janeiro−Roma é exposto ao longo de um ano? A A 8 B B 10 C C 80 D D 100 E E 1 000",
-   "imagens": [
-    "img:enem2023-133.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "Os raios cósmicos são fontes de radiação ionizante potencialmente perigosas para o organismo humano. Para quantificar a dose de radiação recebida, utiliza-se o sievert (Sv), definido como a unidade de energia recebida por unidade de massa. A exposição à radiação proveniente de raios cósmicos aumenta com a altitude, o que pode representar um problema para as tripulações de aeronaves. Recentemente, foram realizadas medições acuradas das doses de radiação ionizante para voos entre Rio de Janeiro e Roma. Os resultados têm indicado que a dose média de radiação recebida na fase de cruzeiro (que geralmente representa 80% do tempo total de voo) desse trecho intercontinental é 2 µSv/h. As normas internacionais da aviação civil limitam em 1 000 horas por ano o tempo de trabalho para as tripulações que atuem em voos intercontinentais. Considere que a dose de radiação ionizante para uma radiografia torácica é estimada em 0,2 mSv.<br><span class=\"pb\"></span>RUAS, A. C. <b>O tripulante de aeronaves e a radiação ionizante</b>. São Paulo: Edição do Autor, 2019 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "8",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 000",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A quantas radiografias torácicas corresponde a dose de radiação ionizante à qual um tripulante que atue no trecho Rio de Janeiro–Roma é exposto ao longo de um ano?",
+   "transcrita": true
   },
   {
    "id": "enem2023-134",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química orgânica",
@@ -39074,40 +39073,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Entre os medicamentos mais comuns consumidos para o alívio da dor está o ibuprofeno, um composto quiral com ação anti-inflamatória e efeito analgésico, que é comercializado como fármaco opticamente puro, ou seja, sem a mistura com outro isômero óptico. A fórmula estrutural plana do ibuprofeno é: OH O Ibuprofeno Além do ibuprofeno, destacam-se também os princípios ativos a seguir, presentes em outros medicamentos para o alívio da dor: H H N O N N N S − + N O Na O O O O HO O Fenacetina Paracetamol Dipirona sódica Cl + − N Br O NH Cl − + O Na O OH O H O Diclofenaco sódico Butilbrometo de escopolamina O princípio ativo que apresenta o mesmo tipo de isomeria espacial que o ibuprofeno é o(a) A A fenacetina. B B paracetamol. C C dipirona sódica. D D diclofenaco sódico. E E butilbrometo de escopolamina.",
-   "imagens": [
-    "img:enem2023-134.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Entre os medicamentos mais comuns consumidos para o alívio da dor está o ibuprofeno, um composto quiral com ação anti-inflamatória e efeito analgésico, que é comercializado como fármaco opticamente puro, ou seja, sem a mistura com outro isômero óptico. A fórmula estrutural plana do ibuprofeno é:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "fenacetina.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "paracetamol.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "dipirona sódica.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "diclofenaco sódico.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "butilbrometo de escopolamina.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Além do ibuprofeno, destacam-se também os princípios ativos a seguir, presentes em outros medicamentos para o alívio da dor:<br><span class=\"pb\"></span>O princípio ativo que apresenta o mesmo tipo de isomeria espacial que o ibuprofeno é o(a)",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2023-134-fig1.jpg",
+     "alt": "Fórmula estrutural plana do ibuprofeno",
+     "largura": "56mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2023-134-fig2.jpg",
+     "alt": "Fórmulas estruturais da fenacetina, do paracetamol, da dipirona sódica, do diclofenaco sódico e do butilbrometo de escopolamina",
+     "largura": "142mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2023-135",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Cinemática",
@@ -39119,35 +39128,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma concessionária é responsável por um trecho de 480 quilômetros de uma rodovia. Nesse trecho, foram construídas 10 praças de pedágio, onde funcionários recebem os pagamentos nas cabines de cobrança. Também existe o serviço automático, em que os veículos providos de um dispositivo passam por uma cancela, que se abre automaticamente, evitando filas e diminuindo o tempo de viagem. Segundo a concessionária, o tempo médio para efetuar a passagem em uma cabine é de 3 minutos, e as velocidades máximas permitidas na rodovia são 100 km/h, para veículos leves, e 80 km/h, para veículos de grande porte. Considere um carro e um caminhão viajando, ambos com velocidades constantes e iguais às máximas permitidas, e que somente o caminhão tenha o serviço automático de cobrança. Comparado ao caminhão, quantos minutos a menos o carro leva para percorrer toda a rodovia? A A 30 B B 42 C C 72 D D 288 E E 360",
-   "imagens": [
-    "img:enem2023-135.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Uma concessionária é responsável por um trecho de 480 quilômetros de uma rodovia. Nesse trecho, foram construídas 10 praças de pedágio, onde funcionários recebem os pagamentos nas cabines de cobrança. Também existe o serviço automático, em que os veículos providos de um dispositivo passam por uma cancela, que se abre automaticamente, evitando filas e diminuindo o tempo de viagem. Segundo a concessionária, o tempo médio para efetuar a passagem em uma cabine é de 3 minutos, e as velocidades máximas permitidas na rodovia são 100 km/h, para veículos leves, e 80 km/h, para veículos de grande porte.<br><span class=\"pb\"></span>Considere um carro e um caminhão viajando, ambos com velocidades constantes e iguais às máximas permitidas, e que somente o caminhão tenha o serviço automático de cobrança.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "42",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "72",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "288",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "360",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Comparado ao caminhão, quantos minutos a menos o carro leva para percorrer toda a rodovia?",
+   "transcrita": true
   },
   {
    "id": "enem2023-136",
@@ -45059,7 +45065,6 @@
   {
    "id": "enem2024-91",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Citologia",
@@ -45071,40 +45076,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "células do protozoário Amoeba proteus . Nele, um grupo de células foi tratado com a droga citocalasina B, enquanto outro grupo não foi tratado, servindo como controle. O formato e o movimento das células tratadas foram comprometidos. SADAVA, D. et al. Vida: a ciência da biologia — volume I: célula e hereditariedade. Porto Alegre: Artmed, 2009 (adaptado). Qual componente celular foi afetado pela droga utilizada no experimento? A Vacúolos. B Mitocôndrias. C Microfilamentos. D Material genético. E Membrana plasmática.",
-   "imagens": [
-    "img:enem2024-91.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O esquema representa um experimento feito com células do protozoário <i>Amoeba proteus</i>. Nele, um grupo de células foi tratado com a droga citocalasina B, enquanto outro grupo não foi tratado, servindo como controle. O formato e o movimento das células tratadas foram comprometidos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Vacúolos.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Mitocôndrias.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Microfilamentos.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "Material genético.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Membrana plasmática.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual componente celular foi afetado pela droga utilizada no experimento?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-91-fig.jpg",
+    "alt": "Duas amebas de formato irregular (grupo controle) mantêm o formato; a ameba tratada com citocalasina B fica arredondada",
+    "largura": "70mm",
+    "legenda": "SADAVA, D. et al. <b>Vida: a ciência da biologia</b> — volume I: célula e hereditariedade. Porto Alegre: Artmed, 2009 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-92",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Eletroquímica",
@@ -45116,35 +45124,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O magnésio metálico utilizado em ligas leves é produzido em um processo que envolve várias etapas e utiliza água do mar como matéria-prima. A primeira etapa 2 + desse processo consiste na reação entre o íon Mg e hidróxido de cálcio, Ca(OH) , obtendo uma mistura que 2 2 + contém hidróxido de magnésio, pouco solúvel, e íons Ca , de acordo com a equação química: 2 + 2 + Mg (aq) + Ca(OH) (aq) → Mg(OH) (s) + Ca (aq) 2 2 O método adequado para separar o Mg(OH) dessa 2 mistura é a A filtração. B catação. C destilação. D dissolução. E evaporação.",
-   "imagens": [
-    "img:enem2024-92.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O magnésio metálico utilizado em ligas leves é produzido em um processo que envolve várias etapas e utiliza água do mar como matéria-prima. A primeira etapa desse processo consiste na reação entre o íon Mg<sup>2+</sup> e hidróxido de cálcio, Ca(OH)<sub>2</sub>, obtendo uma mistura que contém hidróxido de magnésio, pouco solúvel, e íons Ca<sup>2+</sup>, de acordo com a equação química:<br><span class=\"pb\"></span>Mg<sup>2+</sup> (aq) + Ca(OH)<sub>2</sub> (aq) → Mg(OH)<sub>2</sub> (s) + Ca<sup>2+</sup> (aq)",
    "alternativas": [
     {
-     "t": "A",
+     "t": "filtração.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "catação.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "destilação.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "dissolução.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "evaporação.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O método adequado para separar o Mg(OH)<sub>2</sub> dessa mistura é a",
+   "transcrita": true
   },
   {
    "id": "enem2024-93",
