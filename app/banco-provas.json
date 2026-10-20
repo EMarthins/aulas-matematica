@@ -74182,7 +74182,6 @@
   },
   {
    "id": "cdb-c09-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74194,41 +74193,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. F.M. Itajubá-MG Na figura, os valores de x e y s ã o, respectivamente: a) 2 e 2 3 d) 3 e 3 3 b) 2 2 e 3 e) 4 e 3 c) 3 2 e 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-044.jpg"
-   ],
-   "larguraMm": 107.8,
+   "enunciado": "Na figura, os valores de $ x $ e $ y $ são, respectivamente:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 e $ 2√3 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 2√2 $ e $ √3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {√3|2} $ e $ 3√3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3 e $ 3√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4 e $ √3 $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-044-fig.jpg",
+    "alt": "Triângulo retângulo com ângulo reto à esquerda e lado vertical y; da extremidade inferior da vertical sai a base horizontal, com ponto a distância x desse vértice e o lado de comprimento 4 até a outra extremidade; os ângulos de 60° e 30° estão marcados nos dois pontos da base, e os segmentos ligam o topo da vertical a esses pontos",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74240,20 +74239,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. U.E. Ponta Grossa-PR Na figura abaixo, em que o ponto B localiza-se a leste de A, a dist â ncia AB = 5 km. Neste momento, um barco passa pelo ponto C, a norte de B, e leva meia hora para atingir o ponto D. A partir destes dados, assinale o que for correto. 01. AC = 10 km 02. AD = 2,5 km 04. BC = 5 3 km 08. O â ngulo B Â D mede 60 º 16. A velocidade m é dia do barco é de 15 km/h D ê , como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-045.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Na figura abaixo, em que o ponto B localiza-se a leste de A, a distância $ AB = 5 $ km. Neste momento, um barco passa pelo ponto C, a norte de B, e leva meia hora para atingir o ponto D.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "31"
+   "gabarito": "31",
+   "pergunta": "A partir destes dados, assinale o que for correto (dê, como resposta, a soma das alternativas corretas):",
+   "afirmacoes": [
+    {
+     "t": "$ AC = 10 $ km",
+     "ok": true
+    },
+    {
+     "t": "$ AD = 2,5 $ km",
+     "ok": true
+    },
+    {
+     "t": "$ BC = 5√3 $ km",
+     "ok": true
+    },
+    {
+     "t": "O ângulo $ BÂD $ mede 60°",
+     "ok": true
+    },
+    {
+     "t": "A velocidade média do barco é de 15 km/h",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-045-fig.jpg",
+    "alt": "Triângulo ABC com ângulo reto em B (A à esquerda, B à direita sobre a mesma horizontal, C acima de B); o ângulo em C mede 30°; D está sobre AC, com BD perpendicular a AC",
+    "largura": "35mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74265,41 +74287,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. FUVEST-SP Se tg θ = 2, ent ã o o valor de cos 2 θ é : a) – 3 b) – 1 c) 1 d) 2 e) 3 1 + sen 2 θ 3 3 3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-046.jpg"
-   ],
-   "larguraMm": 85.7,
+   "enunciado": "Se $ tg θ = 2 $, então o valor de $ {cos 2θ|1 + sen 2θ} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ −{1|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|4} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74311,41 +74327,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. FATEC-SP Se cos θ = 1, ent ã o todos os valores do cos θ pertencem ao conjunto: a) { – 1 , 0, 1 } b) { – 1 , 0, 1 } c) { – 2 , 0, 2 } d) { – 3 , 0, 3 } e) { – 1, 0, 1 } 4 4 4 2 2 2 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-047.jpg"
-   ],
-   "larguraMm": 124.5,
+   "enunciado": "Se $ cos θ = 1 $, então todos os valores do $ cos {θ|4} $ pertencem ao conjunto:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{−{1|4}, 0, {1|4}\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ \\{−{1|2}, 0, {1|2}\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{−{√2|2}, 0, {√2|2}\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{−{√3|2}, 0, {√3|2}\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ \\{−1, 0, 1\\} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74357,24 +74367,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. UFMT Para determinar a altura de um morro, um top ó grafo adotou o seguinte procedi- mento: • Escolheu dois pontos A e B, situados no mesmo plano vertical que passa por C; • Mediu a dist â ncia AB encontrando 162 m; • Com aux í lio de um teodolito mediu os â ngulos α , β e λ , encontrando, respectivamen- te, 60 º , 90 º e 30 º . A figura ilustra o procedimento descrito. Qual altura do morro (h), em metros, encontrada pelo top ó grafo?",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-048.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Para determinar a altura de um morro, um topógrafo adotou o seguinte procedimento:<br><span class=\"pb\"></span>• Escolheu dois pontos A e B, situados no mesmo plano vertical que passa por C;<br>• Mediu a distância AB encontrando 162 m;<br>• Com auxílio de um teodolito mediu os ângulos $ α $, $ β $ e $ λ $, encontrando, respectivamente, 60°, 90° e 30°.<br><span class=\"pb\"></span>A figura ilustra o procedimento descrito.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "81",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Qual altura do morro (h), em metros, encontrada pelo topógrafo?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-048-fig.jpg",
+    "alt": "Perfil de um morro com o topo C; os pontos A e B estão no mesmo plano vertical que passa por C; no ponto B o ângulo α está entre BC e a horizontal e o ângulo β entre BA e BC; no ponto A o ângulo λ está entre AB e AC; D é o pé da altura h do morro, sobre a linha horizontal",
+    "largura": "82mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74386,37 +74397,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. U. Potiguar-RN Sendo cotg O = 2, Com 0 ≤ O ≤ π /2. Logo, sen O é igual a: a) 3 5 c) 1 7 b) 5 5 d) 7 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-049.jpg"
-   ],
-   "larguraMm": 65.1,
+   "enunciado": "Sendo $ cotg θ = 2 $, com $ 0 ≤ θ ≤ π/2 $. Logo, $ sen θ $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {√3|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√5|5} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|7} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√7|9} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-050",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74428,24 +74433,24 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "50. Unicap-PE Determine o comprimento do lado AB, no tri â ngulo ret â ngulo representado pela figura abaixo, onde BC = 24 e cos α = 12 13 .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-050.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Determine o comprimento do lado $ AB $, no triângulo retângulo representado pela figura abaixo, onde $ BC = 24 $ e $ cos α = {12|13} $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "10",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-050-fig.jpg",
+    "alt": "Triângulo retângulo ABC com ângulo reto em B (A acima, B embaixo à esquerda, C embaixo à direita); o ângulo α está em C",
+    "largura": "31mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74457,37 +74462,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "51. UERJ Observe a figura: Depois de tirar as medidas de uma modelo, Jorge resolveu fazer uma brincadeira: 1 º .) esticou uma linha AB , cujo comprimento é metade da altura dela; 2 º .) ligou B ao seu p é no ponto C; 3 º .) fez uma rota çã o de BA com centro B, obtendo o ponto D sobre BC; 4 º .) fez uma rota çã o CD com centro C, determinando E sobre AC . Para surpresa da modelo, CE é a altura do seu umbigo. Tomando AB como unidade de comprimento e considerando 5 = 2,2, a medida CE da altura do umbigo da modelo é : a) 1,3 b) 1,2 c) 1,1 d) 1,0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-051.jpg"
-   ],
-   "larguraMm": 130.4,
+   "enunciado": "Observe a figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,2",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1,1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,0",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Depois de tirar as medidas de uma modelo, Jorge resolveu fazer uma brincadeira:<br><span class=\"pb\"></span>1º) esticou uma linha $ AB $, cujo comprimento é metade da altura dela;<br>2º) ligou B ao seu pé no ponto C;<br>3º) fez uma rotação de $ BA $ com centro B, obtendo o ponto D sobre $ BC $;<br>4º) fez uma rotação $ CD $ com centro C, determinando E sobre $ AC $.<br><span class=\"pb\"></span>Para surpresa da modelo, $ CE $ é a altura do seu umbigo.<br><span class=\"pb\"></span>Tomando $ AB $ como unidade de comprimento e considerando $ √5 = 2,2 $, a medida $ CE $ da altura do umbigo da modelo é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-051-fig.jpg",
+    "alt": "Figura sobre a silhueta de uma modelo em pé: o segmento AB, horizontal, parte do topo da cabeça A; C é o pé da modelo, diretamente abaixo de A; o arco de centro B passa por D sobre BC, e o arco de centro C passa por D e E, com E sobre AC",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-052",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74499,41 +74505,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "52. Cefet-PR Se na figura abaixo AB = 9 cm, o segmento DF mede, em cm: a) 5 b) 4 c) 8 d) 7 e) 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-052.jpg"
-   ],
-   "larguraMm": 113.6,
+   "enunciado": "Se na figura abaixo $ AB = 9 $ cm, o segmento $ DF $ mede, em cm:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-052-fig.jpg",
+    "alt": "Retângulo ABCD com A embaixo à esquerda, D embaixo à direita, B em cima à esquerda e C em cima à direita; E está sobre BC e F sobre CD; AE é perpendicular a EF; o ângulo EÂD mede 30° e o ângulo em F mede 60°; os ângulos retos estão marcados",
+    "largura": "41mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-053",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74545,41 +74551,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "53. ITA-SP Sabe-se que x é um n ú mero real pertencente ao intervalo ] 0, 2 π [ e que o triplo da sua secante, somado ao dobro da sua tangente, é igual a 3. Ent ã o, o cosseno de x é igual a: a) 3 b) 2 c) 5 d) 15 e) 13 4 7 13 26 49",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-053.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Sabe-se que $ x $ é um número real pertencente ao intervalo $ ]0, 2π[ $ e que o triplo da sua secante, somado ao dobro da sua tangente, é igual a 3. Então, o cosseno de $ x $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {√3|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {2|7} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {5|13} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {15|26} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {13|49} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-054",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74591,24 +74591,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "54. VUNESP Uma equipe de mergulhadores, dentre eles um estudante de ci ê ncias exatas, observou o fen ô meno das mar é s em determinado ponto da costa brasileira e concluiu que o mesmo era peri ó dico e podia ser aproximado pela express ã o: P(t) = 21 + 2 cos π t + 5 π , onde t é o tempo (em horas) decorrido ap ó s o in í cio da observa çã o (t = 0) e P(t) é a profundidade da á gua (em metros) no instante t. a) Resolva equa çã o cos π t + 5 π = 1, para t > 0. b) Determine quantas horas ap ó s o in í cio da observa çã o ocorreu a primeira mar é alta. 2 6 4 \u0001 \u0002 6 4 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-054.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Uma equipe de mergulhadores, dentre eles um estudante de ciências exatas, observou o fenômeno das marés em determinado ponto da costa brasileira e concluiu que o mesmo era periódico e podia ser aproximado pela expressão:<br><span class=\"pb\"></span>$ P(t) = {21|2} + 2 cos({π|6}t + {5π|4}) $,<br><span class=\"pb\"></span>onde $ t $ é o tempo (em horas) decorrido após o início da observação $ (t = 0) $ e $ P(t) $ é a profundidade da água (em metros) no instante $ t $.<br><span class=\"pb\"></span>a) Resolva equação $ cos({π|6}t + {5π|4}) = 1 $, para $ t > 0 $.<br><span class=\"pb\"></span>b) Determine quantas horas após o início da observação ocorreu a primeira maré alta.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) {t \u0001^(|) R / t = 9/2 + h • 12, h \u0001 N} b) 4,5 horas.",
+   "gabarito": "a) t = 9/2 + 12h, h ∈ ℕ; b) 4,5 horas.",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-055",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74620,24 +74614,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "55. UFMS Uma telha de um galinheiro quebrou. Em dias chuvosos, uma goteira produz no ch ã o, embaixo da telha quebrada, uma pequena po ç a d ’á gua, a 1,85 m de uma das paredes do galinheiro, conforme desenho abaixo . Considerando que a espessura dessa parede é 15 cm e que d é a dist â ncia entre o ponto mais alto do telhado e a quebra da telha, calcular, em metros, d 2 + 20.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-055.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Uma telha de um galinheiro quebrou. Em dias chuvosos, uma goteira produz no chão, embaixo da telha quebrada, uma pequena poça d’água, a 1,85 m de uma das paredes do galinheiro, conforme <b>desenho abaixo</b>.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "28",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Considerando que a espessura dessa parede é 15 cm e que <b>d</b> é a distância entre o ponto mais alto do telhado e a quebra da telha, calcular, em metros, $ d^2 + 20 $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-055-fig.jpg",
+    "alt": "Galinheiro em corte, com o telhado inclinado a 45°, chuva caindo, a distância d medida sobre o telhado do ponto mais alto até a quebra da telha, e a poça no chão a 1,85 m da parede",
+    "largura": "75mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-056",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74649,41 +74644,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "56. ITA-SP Considere f : | R → | R definida por f (x) = 2 sen 3x – cos x – π . Sobre f podemos afirmar que: a) é uma fun çã o par. b) é uma fun çã o í mpar e peri ó dica de per í odo fundamental 4 π . c) é uma fun çã o í mpar e peri ó dica de per í odo fundamental 4 π /3. d) é uma fun çã o peri ó dica de per í odo fundamental 2 π . e) n ã o é par, n ã o é í mpar e n ã o é peri ó dica. 2 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-056.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Considere $ f: ℝ → ℝ $ definida por $ f(x) = 2 sen 3x − cos({x − π|2}) $. Sobre $ f $ podemos afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "é uma função par.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "é uma função ímpar e periódica de período fundamental $ 4π $.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "é uma função ímpar e periódica de período fundamental $ {4π|3} $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "é uma função periódica de período fundamental $ 2π $.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "não é par, não é ímpar e não é periódica.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-057",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74695,37 +74684,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "57. UFPB O â ngulo, sob o qual um observador v ê o topo de um pr é dio de 88 m de altura, duplica quando esse observador se aproxima 110 m do pr é dio, e triplica quando ele se aproxima mais 50 m. Neste instante, a dist â ncia entre o observador e o pr é dio é : a) 50 m b) 22 m c) 176 m d) 16 m e) 18 m",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-057.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "O ângulo, sob o qual um observador vê o topo de um prédio de 88 m de altura, duplica quando esse observador se aproxima 110 m do prédio, e triplica quando ele se aproxima mais 50 m.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50 m",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "22 m",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "176 m",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "16 m",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "18 m",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Neste instante, a distância entre o observador e o prédio é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-057-fig.jpg",
+    "alt": "Observador em A, que vê o topo do prédio de 88 m sob o ângulo α; em B (a 110 m de A) o ângulo é 2α; em C (a 50 m de B) o ângulo é 3α; D é o pé do prédio",
+    "largura": "73mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-058",
@@ -74775,7 +74766,6 @@
   },
   {
    "id": "cdb-c09-059",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74787,41 +74777,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "59. ITA-SP Para x no intervalo [0, π /2], o conjunto de todas as solu çõ es da inequa çã o sen (2x) – sen (3x + π ) > 0 é o intervalo definido por: a) π < x < π b) π < x < π c) π < x < π d) π < x < π e) π < x < π 2 2 10 4 12 6 3 4 2 4 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-059.jpg"
-   ],
-   "larguraMm": 123.8,
+   "enunciado": "Para $ x $ no intervalo $ [0, π/2] $, o conjunto de todas as soluções da inequação<br><span class=\"pb\"></span>$ sen(2x) − sen(3x + {π|2}) > 0 $<br><span class=\"pb\"></span>é o intervalo definido por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|10} < x < {π|2} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {π|12} < x < {π|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {π|6} < x < {π|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {π|4} < x < {π|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {π|4} < x < {π|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-060",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74833,41 +74817,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "60. Cefet-PR Considere o ret â ngulo ABCD a seguir, com “ a ” , “ b ” e “ c ” ∈ | R. O â ngulo α mede: a) 30 º b) 45 º c) arctg 2/5 d) arctg 9/8 e) 60 º",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-060.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Considere o retângulo ABCD a seguir, com “a”, “b” e “c” ∈ ℝ.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "45°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "arctg 2/5",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "arctg 9/8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60°",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O ângulo $ α $ mede:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-060-fig.jpg",
+    "alt": "Plano cartesiano com um retângulo ABCD inclinado: A(−2; −1), B(8; a), C(b; c) e D(−4; 3); o ângulo α está entre a diagonal AC e o lado CB, em C",
+    "largura": "62mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-061",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74879,37 +74864,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "61. FEI-SP A express ã o f(t) = 2 – 2 cos π t , 0 ≤ t ≤ 12, representa a varia çã o da profundidade do trabalho de uma ferramenta de corte em rela- çã o ao tempo de opera çã o. Em que instante essa profundidade é m á xima? a) t = 9 b) t = 12 c) t = 6 d) t = 3 e) t = 2 \u0001 \u0002 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-061.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "A expressão $ f(t) = 2 − 2 cos({π|6}t) $, $ 0 ≤ t ≤ 12 $, representa a variação da profundidade do trabalho de uma ferramenta de corte em relação ao tempo de operação. Em que instante essa profundidade é máxima?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ t = 9 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ t = 12 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ t = 6 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ t = 3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ t = 2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-062",
@@ -74959,7 +74939,6 @@
   },
   {
    "id": "cdb-c09-063",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74971,24 +74950,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "63. VUNESP Uma equipe de agr ô nomos coletou dados da temperatura (em ° C) do solo em uma determinada regi ã o, durante tr ê s dias, a intervalos de 1 hora. A medi çã o da tempera- tura come ç ou a ser feita à s 3 horas da manh ã do primeiro dia (t = 0) e terminou 72 horas depois (t = 72). Os dados puderam ser aproximados pela fun çã o H (t) = 15 + 5 sen π t + 3 π , onde t indica o tempo (em horas) decorrido ap ó s o in í cio da observa çã o e H(t) a tempe- ratura (em ° C) no instante t. a) Resolva a equa çã o sen π t + 3 π = 1, para t \u0001 [0, 24]. b) Determine a temperatura m á xima atingida e",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-063.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Uma equipe de agrônomos coletou dados da temperatura (em °C) do solo em uma determinada região, durante três dias, a intervalos de 1 hora. A medição da temperatura começou a ser feita às 3 horas da manhã do primeiro dia (t = 0) e terminou 72 horas depois (t = 72). Os dados puderam ser aproximados pela função<br><span class=\"pb\"></span>$ H(t) = 15 + 5 sen({π|12}t + {3π|2}) $,<br><span class=\"pb\"></span>onde t indica o tempo (em horas) decorrido após o início da observação e H(t) a temperatura (em °C) no instante t.<br><span class=\"pb\"></span>a) Resolva a equação $ sen({π|12}t + {3π|2}) = 1 $, para $ t ∈ [0, 24] $.<br><span class=\"pb\"></span>b) Determine a temperatura máxima atingida e o horário em que essa temperatura ocorreu no primeiro dia de observação.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) S = {12} b) 20 ° C e 15 horas",
+   "gabarito": "a) t = 12; b) 20 °C, às 15 horas",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-064",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -75000,37 +74973,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "64. FEI-SP A seq üê ncia v 1 , v 2 , … , v 12 descreve os volumes mensais de um poluente despe- jados por uma usina em um curso de á gua, durante os 12 meses do ano passado. Os componentes dessa seq üê ncia s ã o definidos por: v m = 3 + sen π , m = 1, 2, … , 12. Pode-se afirmar que: a) a partir do terceiro m ê s (m = 3) os volumes s ã o crescentes; b) o maior volume mensal ocorreu em maio (m = 5); c) o menor volume mensal ocorreu em fevereiro (m = 2); d) os volumes de mar ç o e de abril (m = 3, m = 4) s ã o iguais; e) a partir do segundo m ê s (m = 2) os volumes s ã o decrescentes. \u0001 \u0002 m",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-064.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "A seqüência $ v_1, v_2, …, v_{12} $ descreve os volumes mensais de um poluente despejados por uma usina em um curso de água, durante os 12 meses do ano passado. Os componentes dessa seqüência são definidos por:<br><span class=\"pb\"></span>$ v_m = 3 + sen({π|m}) $, $ m = 1, 2, …, 12 $.<br><span class=\"pb\"></span>Pode-se afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "a partir do terceiro mês (m = 3) os volumes são crescentes;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "o maior volume mensal ocorreu em maio (m = 5);",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "o menor volume mensal ocorreu em fevereiro (m = 2);",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "os volumes de março e de abril (m = 3, m = 4) são iguais;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "a partir do segundo mês (m = 2) os volumes são decrescentes.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c10-001",
