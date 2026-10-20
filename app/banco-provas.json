@@ -17356,7 +17356,6 @@
   {
    "id": "enem2020-146",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -17368,40 +17367,78 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para chegar à universidade, um estudante utiliza um metrô e, depois, tem duas opções: • seguir num ônibus, percorrendo 2,0 km; • alugar uma bicicleta, ao lado da estação do metrô, seguindo 3,0 km pela ciclovia. O quadro fornece as velocidades médias do ônibus e da bicicleta, em km/h, no trajeto metrô−universidade. Velocidade média Dia da semana Ônibus (km/h) Bicicleta (km/h) Segunda-feira 9 15 Terça-feira 20 22 Quarta-feira 15 24 Quinta-feira 12 15 Sexta-feira 10 18 Sábado 30 16 A fim de poupar tempo no deslocamento para a universidade, em quais dias o aluno deve seguir pela ciclovia? A Às segundas, quintas e sextas-feiras. B Às terças e quintas-feiras e aos sábados. C Às segundas, quartas e sextas-feiras. D Às terças, quartas e sextas-feiras. E Às terças e quartas-feiras e aos sábados.",
-   "imagens": [
-    "img:enem2020-146.jpg"
-   ],
-   "larguraMm": 91.7,
+   "enunciado": "Para chegar à universidade, um estudante utiliza um metrô e, depois, tem duas opções:<br>• seguir num ônibus, percorrendo 2,0 km;<br>• alugar uma bicicleta, ao lado da estação do metrô, seguindo 3,0 km pela ciclovia.<br><span class=\"pb\"></span>O quadro fornece as velocidades médias do ônibus e da bicicleta, em km/h, no trajeto metrô–universidade.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Às segundas, quintas e sextas-feiras.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Às terças e quintas-feiras e aos sábados.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Às segundas, quartas e sextas-feiras.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "Às terças, quartas e sextas-feiras.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Às terças e quartas-feiras e aos sábados.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A fim de poupar tempo no deslocamento para a universidade, em quais dias o aluno deve seguir pela ciclovia?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Dia da semana",
+     "Ônibus (km/h)",
+     "Bicicleta (km/h)"
+    ],
+    "linhas": [
+     [
+      "Segunda-feira",
+      "9",
+      "15"
+     ],
+     [
+      "Terça-feira",
+      "20",
+      "22"
+     ],
+     [
+      "Quarta-feira",
+      "15",
+      "24"
+     ],
+     [
+      "Quinta-feira",
+      "12",
+      "15"
+     ],
+     [
+      "Sexta-feira",
+      "10",
+      "18"
+     ],
+     [
+      "Sábado",
+      "30",
+      "16"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Velocidade média"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-147",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -17413,40 +17450,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Pesquisadores da Universidade de Tecnologia de Viena, na Áustria, produziram miniaturas de objetos em impressoras 3D de alta precisão. Ao serem ativadas, tais impressoras lançam feixes de laser sobre um tipo de resina, esculpindo o objeto desejado. O produto final da impressão é uma escultura microscópica de três dimensões, como visto na imagem ampliada. A escultura apresentada é uma miniatura de um carro de Fórmula 1, com 100 micrômetros de comprimento. Um micrômetro é a milionésima parte de um metro. Usando notação científica, qual é a representação do comprimento dessa miniatura, em metro? − 1 A 1,0 × 10 − 3 B 1,0 × 10 − 4 C 1,0 × 10 − 6 D 1,0 × 10 − 7 E 1,0 × 10",
-   "imagens": [
-    "img:enem2020-147.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Pesquisadores da Universidade de Tecnologia de Viena, na Áustria, produziram miniaturas de objetos em impressoras 3D de alta precisão. Ao serem ativadas, tais impressoras lançam feixes de laser sobre um tipo de resina, esculpindo o objeto desejado. O produto final da impressão é uma escultura microscópica de três dimensões, como visto na imagem ampliada.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,0 × 10<sup>−1</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,0 × 10<sup>−3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,0 × 10<sup>−4</sup>",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1,0 × 10<sup>−6</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1,0 × 10<sup>−7</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A escultura apresentada é uma miniatura de um carro de Fórmula 1, com 100 micrômetros de comprimento. Um micrômetro é a milionésima parte de um metro.<br><span class=\"pb\"></span>Usando notação científica, qual é a representação do comprimento dessa miniatura, em metro?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-147-fig.jpg",
+    "alt": "Imagem ampliada de uma miniatura de um carro de Fórmula 1, vista lateral",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-148",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -17458,40 +17497,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A fabricação da Bandeira Nacional deve obedecer ao descrito na Lei n. 5.700, de 1º de setembro de 1971, que trata dos Símbolos Nacionais. No artigo que se refere às dimensões da Bandeira, observa-se: “Para cálculos das dimensões, será tomada por base a largura, dividindo-a em 14 (quatorze) partes iguais, sendo que cada uma das partes será considerada uma medida ou módulo (M). Os demais requisitos dimensionais seguem o critério abaixo: I. Comprimento será de vinte módulos (20 M); II. A distância dos vértices do losango amarelo ao quadro externo será de um módulo e sete décimos (1,7 M); III. O raio do círculo azul no meio do losango amarelo será de três módulos e meio (3,5 M).” BRASIL. Lei n. 5.700, de 1º de setembro de 1971.Disponível em: www.planalto.gov.br. Acesso em: 15 set. 2015. A figura indica as cores da bandeira do Brasil e localiza o quadro externo a que se refere a Lei n. 5.700. Largura do quadro externo Comprimento do quadro externo Um torcedor, preparando-se para a Copa do Mundo e dispondo de cortes de tecidos verde (180 cm x 150 cm) e amarelo (o quanto baste), deseja confeccionar a maior Bandeira Nacional possível a partir das medidas do tecido verde. Qual a medida, em centímetro, do lado do menor quadrado de tecido azul que deverá ser comprado para confecção do círculo da bandeira desejada? A 27 B 32 C 53 D 63 E 90",
-   "imagens": [
-    "img:enem2020-148.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A fabricação da Bandeira Nacional deve obedecer ao descrito na Lei n. 5.700, de 1º de setembro de 1971, que trata dos Símbolos Nacionais. No artigo que se refere às dimensões da Bandeira, observa-se:<br><span class=\"pb\"></span>“Para cálculos das dimensões, será tomada por base a largura, dividindo-a em 14 (quatorze) partes iguais, sendo que cada uma das partes será considerada uma medida ou módulo (M). Os demais requisitos dimensionais seguem o critério abaixo:<br>I. Comprimento será de vinte módulos (20 M);<br>II. A distância dos vértices do losango amarelo ao quadro externo será de um módulo e sete décimos (1,7 M);<br>III. O raio do círculo azul no meio do losango amarelo será de três módulos e meio (3,5 M).”<br><span class=\"pb\"></span>BRASIL. Lei n. 5.700, de 1º de setembro de 1971. Disponível em: www.planalto.gov.br. Acesso em: 15 set. 2015.<br><span class=\"pb\"></span>A figura indica as cores da bandeira do Brasil e localiza o quadro externo a que se refere a Lei n. 5.700.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "27",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "32",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "53",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "63",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "90",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Um torcedor, preparando-se para a Copa do Mundo e dispondo de cortes de tecidos verde (180 cm × 150 cm) e amarelo (o quanto baste), deseja confeccionar a maior Bandeira Nacional possível a partir das medidas do tecido verde.<br><span class=\"pb\"></span>Qual a medida, em centímetro, do lado do menor quadrado de tecido azul que deverá ser comprado para confecção do círculo da bandeira desejada?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-148-fig.jpg",
+    "alt": "Bandeira do Brasil esquematizada: retângulo (quadro externo) com um losango (verde nos cantos), o círculo azul no centro e o losango amarelo; indicadas a largura e o comprimento do quadro externo",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-149",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -17503,40 +17544,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa de ônibus utiliza um sistema de vendas de passagens que fornece a imagem de todos os assentos do ônibus, diferenciando os assentos já vendidos, por uma cor mais escura, dos assentos ainda disponíveis. A empresa monitora, permanentemente, o número de assentos já vendidos e compara-o com o número total de assentos do ônibus para avaliar a necessidade de alocação de veículos extras. Na imagem tem-se a informação dos assentos já vendidos e dos ainda disponíveis em um determinado instante. A razão entre o número de assentos já vendidos e o total de assentos desse ônibus, no instante considerado na imagem, é 16 A 42 16 B 26 26 C 42 42 D 26 42 E 16",
-   "imagens": [
-    "img:enem2020-149.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Uma empresa de ônibus utiliza um sistema de vendas de passagens que fornece a imagem de todos os assentos do ônibus, diferenciando os assentos já vendidos, por uma cor mais escura, dos assentos ainda disponíveis. A empresa monitora, permanentemente, o número de assentos já vendidos e compara-o com o número total de assentos do ônibus para avaliar a necessidade de alocação de veículos extras.<br><span class=\"pb\"></span>Na imagem tem-se a informação dos assentos já vendidos e dos ainda disponíveis em um determinado instante.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {16|42} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {16|26} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {26|42} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {42|26} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {42|16} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A razão entre o número de assentos já vendidos e o total de assentos desse ônibus, no instante considerado na imagem, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-149-fig.jpg",
+    "alt": "Planta dos 42 assentos de um ônibus, numerados de 01 a 42; os assentos já vendidos aparecem em cor mais escura (03, 07, 04, 08, 12, 23, 27, 14, 02, 06, 10, 13, 17, 01, 05, 09, 29, 33, entre outros)",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-150",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -17548,40 +17591,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A caixa-d’água de um edifício terá a forma de um paralelepípedo retângulo reto com volume igual a 28 080 litros. Em uma maquete que representa o edifício, a caixa-d’água tem dimensões 2 cm × 3,51 cm × 4 cm. Dado: 1 dm³ = 1 L. A escala usada pelo arquiteto foi A 1 : 10 B 1 : 100 C 1 : 1 000 D 1 : 10 000 E 1 : 100 000",
-   "imagens": [
-    "img:enem2020-150.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A caixa-d’água de um edifício terá a forma de um paralelepípedo retângulo reto com volume igual a 28 080 litros. Em uma maquete que representa o edifício, a caixa-d’água tem dimensões 2 cm × 3,51 cm × 4 cm.<br><span class=\"pb\"></span>Dado: 1 dm<sup>3</sup> = 1 L.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 : 10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 : 100",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1 : 1 000",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 : 10 000",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 : 100 000",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A escala usada pelo arquiteto foi",
+   "transcrita": true
   },
   {
    "id": "enem2020-151",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -17593,35 +17632,70 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Os gráficos representam a produção de peças em uma indústria e as horas trabalhadas dos funcionários no período de cinco dias. Em cada dia, o gerente de produção aplica uma metodologia diferente de trabalho. Seu objetivo é avaliar a metodologia mais eficiente para utilizá-la como modelo nos próximos períodos. Sabe-se que, neste caso, quanto maior for a razão entre o número de peças produzidas e o número de horas trabalhadas, maior será a eficiência da metodologia. Em qual dia foi aplicada a metodologia mais eficiente? A 1 B 2 C 3 D 4 E 5",
-   "imagens": [
-    "img:enem2020-151.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Os gráficos representam a produção de peças em uma indústria e as horas trabalhadas dos funcionários no período de cinco dias. Em cada dia, o gerente de produção aplica uma metodologia diferente de trabalho. Seu objetivo é avaliar a metodologia mais eficiente para utilizá-la como modelo nos próximos períodos. Sabe-se que, neste caso, quanto maior for a razão entre o número de peças produzidas e o número de horas trabalhadas, maior será a eficiência da metodologia.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em qual dia foi aplicada a metodologia mais eficiente?",
+   "figuras": [
+    {
+     "tipo": "barras",
+     "titulo": "Peças produzidas",
+     "rotulos": [
+      "Dia 1",
+      "Dia 2",
+      "Dia 3",
+      "Dia 4",
+      "Dia 5"
+     ],
+     "valores": [
+      800,
+      1000,
+      1100,
+      1800,
+      1400
+     ]
+    },
+    {
+     "tipo": "barras",
+     "titulo": "Horas trabalhadas",
+     "rotulos": [
+      "Dia 1",
+      "Dia 2",
+      "Dia 3",
+      "Dia 4",
+      "Dia 5"
+     ],
+     "valores": [
+      4,
+      8,
+      5,
+      9,
+      10
+     ]
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2020-152",
@@ -17706,7 +17780,6 @@
   {
    "id": "enem2020-154",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -17718,40 +17791,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O fenômeno das manifestações populares de massa traz à discussão como estimar o número de pessoas presentes nesse tipo de evento. Uma metodologia usada é: no momento do ápice do evento, é feita uma foto aérea da via pública principal na área ocupada, bem como das vias afluentes que apresentem aglomerações de pessoas que acessam a via principal. A foto é sobreposta por um mapa virtual das vias, ambos na mesma escala, fazendo-se um esboço geométrico da situação. Em seguida, subdivide-se o espaço total em trechos, quantificando a densidade, da seguinte forma: • 4 pessoas por metro quadrado, se elas estiverem andando em uma mesma direção; • 5 pessoas por metro quadrado, se elas estiverem se movimentando sem deixar o local; • 6 pessoas por metro quadrado, se elas estiverem paradas. É feito, então, o cálculo do total de pessoas, considerando os diversos trechos, e desconta-se daí 1 000 pessoas para cada carro de som fotografado. Com essa metodologia, procederam-se aos cálculos para estimar o número de participantes na manifestação cujo esboço geométrico é dado na fi gura. Há três trechos na via principal: MN , NO e OP , e um trecho numa via afluente da principal: QR . 30 m Legenda: Q Andando em uma ou mesma direção 100 m Movimentando sem M N R O P deixar o local Via 30 m Parado principal Carro de som 100 m 300 m 200 m Obs .: a figura não está em escala (considere as medidas dadas). Segundo a metodologia descrita, o número estimado de pessoas presentes a essa manifestação foi igual a A 110 000. B 104 000. C 93 000. D 92 000. E 87 000.",
-   "imagens": [
-    "img:enem2020-154.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "O fenômeno das manifestações populares de massa traz à discussão como estimar o número de pessoas presentes nesse tipo de evento. Uma metodologia usada é: no momento do ápice do evento, é feita uma foto aérea da via pública principal na área ocupada, bem como das vias afluentes que apresentem aglomerações de pessoas que acessam a via principal. A foto é sobreposta a um mapa virtual das vias, ambos na mesma escala, fazendo-se um esboço geométrico da situação. Em seguida, subdivide-se o espaço total em trechos, quantificando a densidade, da seguinte forma:<br>• 4 pessoas por metro quadrado, se elas estiverem andando em uma mesma direção;<br>• 5 pessoas por metro quadrado, se elas estiverem se movimentando sem deixar o local;<br>• 6 pessoas por metro quadrado, se elas estiverem paradas.<br><span class=\"pb\"></span>É feito, então, o cálculo do total de pessoas, considerando os diversos trechos, e desconta-se daí 1 000 pessoas para cada carro de som fotografado.<br><span class=\"pb\"></span>Com essa metodologia, procederam-se aos cálculos para estimar o número de participantes na manifestação cujo esboço geométrico é dado na figura. Há três trechos na via principal: <i>MN</i>, <i>NO</i> e <i>OP</i>, e um trecho numa via afluente da principal: <i>QR</i>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "110 000.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "104 000.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "93 000.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "92 000.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "87 000.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Segundo a metodologia descrita, o número estimado de pessoas presentes a essa manifestação foi igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-154-fig.jpg",
+    "alt": "Esboço da via principal com os pontos M, N, O e P (trechos de 100 m, 300 m e 200 m, largura de 30 m) e a via afluente QR (30 m de largura e 100 m de comprimento). No trecho MN as pessoas andam em uma mesma direção com um carro de som; em NO estão paradas; em OP movimentam-se sem deixar o local, com um carro de som; em QR andam em uma mesma direção. Legenda: andando em uma mesma direção; movimentando sem deixar o local; parado; carro de som",
+    "largura": "170mm",
+    "legenda": "Obs.: a figura não está em escala (considere as medidas dadas)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-155",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -17763,35 +17839,51 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Pnad) é uma pesquisa feita anualmente pelo IBGE, exceto nos anos em que há Censo. Em um ano, foram entrevistados 363 mil jovens para fazer um levantamento sobre suas atividades profissionais e/ou acadêmicas. Os resultados da pesquisa estão indicados no gráfico. Jovens em atividade entre 15 e 29 anos (%) 45,2 21,6 19,6 13,6 Somente estuda Trabalha e estuda Somente Não trabalha trabalha nem estuda Disponível em: http://noticias.uol.com.br. Acesso em: 20 ago. 2014. De acordo com as informações dadas, o número de jovens entrevistados que trabalha é A 114 708. B 164 076. C 213 444. D 284 592. E 291 582.",
-   "imagens": [
-    "img:enem2020-155.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A Pesquisa Nacional por Amostra de Domicílios (Pnad) é uma pesquisa feita anualmente pelo IBGE, exceto nos anos em que há Censo. Em um ano, foram entrevistados 363 mil jovens para fazer um levantamento sobre suas atividades profissionais e/ou acadêmicas. Os resultados da pesquisa estão indicados no gráfico.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "114 708.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "164 076.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "213 444.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "284 592.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "291 582.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "De acordo com as informações dadas, o número de jovens entrevistados que trabalha é",
+   "figuras": [
+    {
+     "tipo": "barras",
+     "titulo": "Jovens em atividade entre 15 e 29 anos (%)",
+     "rotulos": [
+      "Somente estuda",
+      "Trabalha e estuda",
+      "Somente trabalha",
+      "Não trabalha nem estuda"
+     ],
+     "valores": [
+      21.6,
+      13.6,
+      45.2,
+      19.6
+     ],
+     "legenda": "Disponível em: http://noticias.uol.com.br. Acesso em: 20 ago. 2014."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2020-156",
