@@ -87104,7 +87104,6 @@
   },
   {
    "id": "cdb-c16-060",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87116,20 +87115,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "60. U. E. Ponta Grossa-PR Assinale o que for correto. 01) n! . (n – 2)! = n 02) C n,n–1 = 1 04) Se P x–1 = 5040, então x é um número ímpar. 08) Desenvolvendo o binômio (3x – 5) 3n , obtém-se um polinômio de 13 termos. Logo, n é um número ímpar. 16) Considerando somente os divisores naturais e pares do número 12, é possível formar 4 produtos de três fatores distintos cada. Dê, como resposta, a soma das proposições corretas. (n – 1)! (n – 1)! n – 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-060.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Assinale o que for correto (dê, como resposta, a soma das proposições corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "17"
+   "gabarito": "17",
+   "afirmacoes": [
+    {
+     "t": "$ {n!|(n − 1)!} · {(n − 2)!|(n − 1)!} = {n|n − 1} $",
+     "ok": true
+    },
+    {
+     "t": "$ C_{n,n−1} = 1 $",
+     "ok": false
+    },
+    {
+     "t": "Se $ P_{x−1} = 5040 $, então $ x $ é um número ímpar.",
+     "ok": false
+    },
+    {
+     "t": "Desenvolvendo o binômio $ (3x − 5)^{3n} $, obtém-se um polinômio de 13 termos. Logo, $ n $ é um número ímpar.",
+     "ok": false
+    },
+    {
+     "t": "Considerando somente os divisores naturais e pares do número 12, é possível formar 4 produtos de três fatores distintos cada.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-061",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87141,41 +87156,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "61. Unifor-CE No triângulo aritmético de Pascal vale a seguinte propriedade na qual n e p são números naturais tais que n ≥ p. Usando-se essa propriedade, é possível calcular o valor da soma . Esse valor é a) 455 b) 462 c) 575 d) 584 e) 642 \u0001 \u0002 + n 0 \u0001 \u0002 + n + 1 1 \u0001 \u0002 + n + 2 2 \u0001 \u0002 + … + n + 3 3 \u0001 \u0002 = n + p p \u0001 \u0002 n + p +1 p \u0002 \u0001 \u0002 + 7 2 \u0001 \u0002 + 8 3 \u0001 \u0002 + 9 4 \u0001 10 5 n",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-061.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "No triângulo aritmético de Pascal vale a seguinte propriedade<br><span class=\"pb\"></span>$ @M{n;0} + @M{n+1;1} + @M{n+2;2} + @M{n+3;3} + … + @M{n+p;p} = @M{n+p+1;p} $<br><span class=\"pb\"></span>na qual $ n $ e $ p $ são números naturais tais que $ n ≥ p $. Usando-se essa propriedade, é possível calcular o valor da soma $ @M{7;2} + @M{8;3} + @M{9;4} + @M{10;5} $. Esse valor é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "455",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "462",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "575",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "584",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "642",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-062",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87187,41 +87196,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "62. PUC-PR Sabendo que o desenvolvimento de 2x 2 – 2 possui 7 termos e que um deles é 240ax 6 , acharemos para “a” o valor: a) 4 b) 2 c) 1 d) 2 e) 5 3x 9 9 9 3 3 n \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-062.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sabendo que o desenvolvimento de $ (2x^2 − {2|3x})^n $ possui 7 termos e que um deles é $ 240ax^6 $, acharemos para “a” o valor:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|9} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {2|9} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|9} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {5|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-063",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87233,41 +87236,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "63. UFRS Cada cartela de uma coleção é formada por seis quadrados coloridos, justapostos como indica a figura ao lado. Em cada cartela, dois quadrados foram coloridos de azul, dois de verde e dois de rosa. A coleção apresenta todas as possibilidades de distribuição dessas cores nas cartelas nas condições citadas e não existem cartelas com a mesma distribuição de cores. Retiran- do-se ao acaso uma cartela da coleção, a probabilidade de que somente uma coluna apre- sente os quadrados de mesma cor é de: a) 6% b) 36% c) 40% d) 48% e) 90%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-063.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Cada cartela de uma coleção é formada por seis quadrados coloridos, justapostos como indica a figura ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "36%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "40%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "48%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "90%",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Em cada cartela, dois quadrados foram coloridos de azul, dois de verde e dois de rosa. A coleção apresenta todas as possibilidades de distribuição dessas cores nas cartelas nas condições citadas e não existem cartelas com a mesma distribuição de cores. Retirando-se ao acaso uma cartela da coleção, a probabilidade de que somente uma coluna apresente os quadrados de mesma cor é de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c16-063-fig.jpg",
+    "alt": "Retângulo dividido em 6 quadrados, em duas linhas de três",
+    "largura": "31mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-064",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87279,41 +87283,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "64. UFRS Sendo A um ponto fixo de um círculo de raio r e escolhendo-se ao acaso um ponto B sobre o círculo, a probabilidade da corda AB ter comprimento maior que r está entre: a) 25% e 30% d) 55% e 60% b) 35% e 40% e) 65% e 70% c) 45% e 50%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-064.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sendo A um ponto fixo de um círculo de raio $ r $ e escolhendo-se ao acaso um ponto B sobre o círculo, a probabilidade da corda $ AB $ ter comprimento maior que $ r $ está entre:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25% e 30%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "35% e 40%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "45% e 50%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "55% e 60%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "65% e 70%",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-065",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87325,41 +87323,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "65. U. Caxias do Sul-RS Suponha que você tenha marcado aleatoriamente (isto é, “no chu- te”) as respostas das questões 63 e 64. A probabilidade de que você acerte, simultanea- mente, essas duas questões é: a) 1 b) 2 c) 2 d) 1 e) 2 5 5 10 25 25",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-065.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Suponha que você tenha marcado aleatoriamente (isto é, “no chute”) as respostas das questões 63 e 64. A probabilidade de que você acerte, simultaneamente, essas duas questões é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {2|5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {2|10} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|25} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {2|25} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-066",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87371,41 +87363,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "66. UFRS Para cada uma das 30 questões de uma prova objetiva são apresentadas 5 alternati- vas de respostas, das quais somente uma é correta. Considere as afirmações relativas à prova: I. Existem no máximo 150 maneiras diferentes de responder à prova. II. Respondendo aleatoriamente, a probabilidade de errar todas as questões é (0,8) 30 . III. Respondendo aleatoriamente, a probabilidade de exatamente 8 questões estarem corre- tas é (0,2) 8 (0,8) 22 . Analisando as afirmações, concluímos que: a) apenas III é verdadeira. d) apenas II e III são verdadeiras. b) apenas I e II são verdadeiras. e) I,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-066.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Para cada uma das 30 questões de uma prova objetiva são apresentadas 5 alternativas de respostas, das quais somente uma é correta.<br><span class=\"pb\"></span>Considere as afirmações relativas à prova:<br><span class=\"pb\"></span>I. Existem no máximo 150 maneiras diferentes de responder à prova.<br>II. Respondendo aleatoriamente, a probabilidade de errar todas as questões é $ (0,8)^{30} $.<br>III. Respondendo aleatoriamente, a probabilidade de exatamente 8 questões estarem corretas é $ @M{30;8} (0,2)^8 (0,8)^{22} $.<br><span class=\"pb\"></span>Analisando as afirmações, concluímos que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas III é verdadeira.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas I e II são verdadeiras.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "apenas I e III são verdadeiras.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "apenas II e III são verdadeiras.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "I, II e III são verdadeiras.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-067",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87417,20 +87403,59 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "67. UFPR Segundo dados do Con- curso Vestibular da UFPR de 1999, houve 45 412 candidatos inscritos e 3 474 vagas; destas, 38% destinavam-se aos cursos da área Tecnológica, 22% aos da área Biológica e 40% aos da área Humanística. Em cada uma das áreas, a distribuição dos candidatos aprovados, em relação ao sexo, é dada pela tabela: Considerando que só era aceita a inscrição para um curso e que todas as vagas foram preenchidas, é correto afirmar: ( ) A relação entre o número de candidatos e o número de vagas, 45412 , era a probabili- dade de um candidato ser aprovado. ( ) Escolhendo-se ao acaso",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-067.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Segundo dados do Concurso Vestibular da UFPR de 1999, houve 45412 candidatos inscritos e 3474 vagas; destas, 38% destinavam-se aos cursos da área Tecnológica, 22% aos da área Biológica e 40% aos da área Humanística. Em cada uma das áreas, a distribuição dos candidatos aprovados, em relação ao sexo, é dada pela tabela:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – F"
+   "gabarito": "F – V – V – F",
+   "pergunta": "Considerando que só era aceita a inscrição para um curso e que todas as vagas foram preenchidas, é correto afirmar que:",
+   "afirmacoes": [
+    {
+     "t": "A relação entre o número de candidatos e o número de vagas, $ {45412|3474} $, era a probabilidade de um candidato ser aprovado.",
+     "ok": false
+    },
+    {
+     "t": "Escolhendo-se ao acaso um candidato aprovado na área Biológica, a probabilidade de que ele seja do sexo feminino é de 55%.",
+     "ok": true
+    },
+    {
+     "t": "Escolhendo-se ao acaso um candidato aprovado, a probabilidade de que ele não seja da área Tecnológica é de 62%.",
+     "ok": true
+    },
+    {
+     "t": "Escolhendo-se ao acaso um candidato aprovado, a probabilidade de que ele seja do sexo masculino é de 55,24%.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "ÁREA",
+     "MASCULINO",
+     "FEMININO"
+    ],
+    "linhas": [
+     [
+      "Tecnológica",
+      "70%",
+      "30%"
+     ],
+     [
+      "Biológica",
+      "45%",
+      "55%"
+     ],
+     [
+      "Humanística",
+      "44%",
+      "56%"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-068",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87442,41 +87467,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "68. U. Caxias do Sul-RS Um usuário não lembra exatamente a ordem da senha de sua conta bancária, mas sabe que ela é formada por quatro dígitos: 3, 6, 8 e 9. A probabilidade de o usuário digitar a senha correta na primeira tentativa é: a) 1 b) 1 c) 1 d) 1 e) 1 4 24 64 96 256",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-068.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um usuário não lembra exatamente a ordem da senha de sua conta bancária, mas sabe que ela é formada por quatro dígitos: 3, 6, 8 e 9.<br><span class=\"pb\"></span>A probabilidade de o usuário digitar a senha correta na primeira tentativa é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|24} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|64} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|96} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|256} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-069",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -87488,37 +87507,82 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "69. U. E. Londrina-PR A tabela abaixo apresenta, em porcentagem, o nível de formação dos docentes do ensino fundamental, em 1998, no Brasil. 5 125 80 40 125 (INEP/MEC – Instituto Nacional de Estudos e Pesquisas Educacionais / Ministério da Educação e Cultura) Se for sorteado um desses indivíduos, ao acaso, a probabilidade de ele ser um professor leigo é igual a: a) 1 , se a população utilizada for a da Região Norte. b) 18 , se a população utilizada for a da Região Nordeste. c) 1 , se a população utilizada for a da Região Sudeste. d) 1 , se a população utilizada for a da Região Sul. e) 6 , se a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-069.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A tabela abaixo apresenta, em porcentagem, o nível de formação dos docentes do ensino fundamental, em 1998, no Brasil.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|5} $, se a população utilizada for a da Região Norte.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {18|125} $, se a população utilizada for a da Região Nordeste.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|80} $, se a população utilizada for a da Região Sudeste.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|40} $, se a população utilizada for a da Região Sul.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {6|125} $, se a população utilizada for a da Região Centro-Oeste.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se for sorteado um desses indivíduos, ao acaso, a probabilidade de ele ser um professor leigo é igual a:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "LEIGOS",
+     "NÍVEL MÉDIO",
+     "NÍVEL SUPERIOR"
+    ],
+    "linhas": [
+     [
+      "Brasil",
+      "7",
+      "46,8",
+      "46,2"
+     ],
+     [
+      "Região Norte",
+      "19,2",
+      "63,5",
+      "17,3"
+     ],
+     [
+      "Região Nordeste",
+      "14,3",
+      "61,6",
+      "24,1"
+     ],
+     [
+      "Região Sudeste",
+      "1",
+      "35,9",
+      "63,1"
+     ],
+     [
+      "Região Sul",
+      "2,5",
+      "36,3",
+      "61,2"
+     ],
+     [
+      "Região Centro-Oeste",
+      "4,6",
+      "47,8",
+      "47,6"
+     ]
+    ],
+    "largura": "85%",
+    "legenda": "INEP/MEC – Instituto Nacional de Estudos e Pesquisas Educacionais / Ministério da Educação e Cultura"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-001",
