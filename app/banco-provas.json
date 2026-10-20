@@ -104306,7 +104306,6 @@
   },
   {
    "id": "cdb-c25-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104318,20 +104317,68 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. U.Católica-DF Com base nas informações do texto e da tabela a seguir, julgue as afirma- tivas que se seguem com V ou F, conforme sejam Verdadeiras ou Falsas. Para uma vida moderna confortável, estima-se que cada pessoa precise de aproximadamente 60 m 2 de moradia, 40 m 2 para trabalhar, 50 m 2 para edifícios públicos e áreas de recreação, 90 m 2 para transportes (por exemplo, estradas) e 4000 m 2 para a produção de comida. (Adaptado de um problema de E. Batschelet, Introdução à Matemática para biocientistas, por L. Hoffmann & G. Bradley, Cálculo — um curso moderno e suas aplicações, Ed. LTC",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-001.jpg"
-   ],
-   "larguraMm": 133.4,
+   "enunciado": "Com base nas informações do texto e da tabela a seguir, julgue as afirmativas que se seguem com V ou F, conforme sejam Verdadeiras ou Falsas.<br><span class=\"pb\"></span><i>Para uma vida moderna confortável, estima-se que cada pessoa precise de aproximadamente 60 m² de moradia, 40 m² para trabalhar, 50 m² para edifícios públicos e áreas de recreação, 90 m² para transportes (por exemplo, estradas) e 4000 m² para a produção de comida.</i><br>(Adaptado de um problema de E. Batschelet, Introdução à Matemática para biocientistas, por L. Hoffmann &amp; G. Bradley, Cálculo — um curso moderno e suas aplicações, Ed. LTC)",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F"
+   "gabarito": "V – V – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Para os critérios utilizados no texto, dos 4 países apresentados, na tabela, a Austrália apresenta as melhores condições para oferecer uma vida moderna confortável aos seus habitantes.",
+     "ok": true
+    },
+    {
+     "t": "Em atendimento aos critérios citados no texto, o Japão deveria destinar uma área maior que todo o seu território somente para a produção de comida.",
+     "ok": true
+    },
+    {
+     "t": "O território indiano permite, para atender a todos os critérios apresentados no texto, oferecer uma vida moderna confortável para 746602000 habitantes.",
+     "ok": true
+    },
+    {
+     "t": "Pelos critérios apresentados no texto, o Japão necessita de mais espaço que o Brasil para a produção de comida.",
+     "ok": false
+    },
+    {
+     "t": "Dos 4 países apresentados, o Brasil apresentava a menor densidade demográfica.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "País",
+     "População",
+     "Área (em km²)"
+    ],
+    "linhas": [
+     [
+      "Austrália",
+      "18 700 000",
+      "7 682 300"
+     ],
+     [
+      "Brasil",
+      "164 000 000",
+      "8 547 403"
+     ],
+     [
+      "Índia",
+      "998 100 000",
+      "3 165 596"
+     ],
+     [
+      "Japão",
+      "126 500 000",
+      "377 835"
+     ]
+    ],
+    "largura": "85%",
+    "legenda": "Fonte: Almanaque Abril 2.000 — Editora Abril"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104343,20 +104390,72 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFMT A tabela abaixo apresenta dados do eleitorado do Município de Cuiabá, referentes à Eleição Municipal de 1996. Faixa Etária Número de eleitores Sexo Sexo Não Masculino Feminimo Informado 2686 2733 0 92628 96642 413 30150 29089 210 4833 3974 46 130297 132438 669 16 ou 17 anos 18 a 44 anos 45 a 69 anos mais de 69 anos TOTAL (Tribunal Superior Eleitoral – Seção de Estatística Eleitoral – Sistema de Estatística do Eleitorado) Com base nessas informações, julgue os itens. ( ) Sejam M e N os números de eleitores do sexo feminino com 16 e 17 anos, respectiva- mente. Se N é o triplo de M, mais",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "A tabela abaixo apresenta dados do eleitorado do Município de Cuiabá, referentes à Eleição Municipal de 1996.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F"
+   "gabarito": "F – V – F",
+   "pergunta": "Com base nessas informações, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "Sejam M e N os números de eleitores do sexo feminino com 16 e 17 anos, respectivamente. Se N é o triplo de M, mais 61, então pode-se afirmar que $ N < 2^{11} $.",
+     "ok": false
+    },
+    {
+     "t": "Tomando-se um eleitor do município de Cuiabá ao acaso, a probabilidade de ele pertencer à faixa etária de 18 a 44 anos é superior a 70%.",
+     "ok": true
+    },
+    {
+     "t": "Sendo 632 o número de seções eleitorais no município de Cuiabá, então o número médio de eleitores por seção é igual a 410.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Faixa etária",
+     "Sexo masculino",
+     "Sexo feminino",
+     "Não informado"
+    ],
+    "linhas": [
+     [
+      "16 ou 17 anos",
+      "2686",
+      "2733",
+      "0"
+     ],
+     [
+      "18 a 44 anos",
+      "92628",
+      "96642",
+      "413"
+     ],
+     [
+      "45 a 69 anos",
+      "30150",
+      "29089",
+      "210"
+     ],
+     [
+      "mais de 69 anos",
+      "4833",
+      "3974",
+      "46"
+     ],
+     [
+      "TOTAL",
+      "130297",
+      "132438",
+      "669"
+     ]
+    ],
+    "largura": "90%",
+    "legenda": "Número de eleitores (Tribunal Superior Eleitoral – Seção de Estatística Eleitoral – Sistema de Estatística do Eleitorado)"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104368,41 +104467,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 3 2 1 0 1990 3,22 3,56 2,24 2,34 2,86 1,49 1,23 1,17 1,76 1,66 1,62 2,54 1992 1994 1996 1998 2000 Brasil Capitais 3. UFPE O gráfico abaixo ilustra a variação do percentual de eleitores com idade de 16 e 17 anos que moram nas capitais e de eleitores do Brasil nesta faixa de idade, de junho de 1990 a junho de 2000. Percentual de eleitores com 16 e 17 anos Supondo que nestes 10 anos o número de eleitores aumentou 30% e o percentual de jovens com 16 e 17 anos se manteve em 3,56% da população, é correto afirmar que: a) em 2000, metade dos eleitores com 16 e 17 anos não estavam nas capitais. b) em",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "O gráfico abaixo ilustra a variação do percentual de eleitores com idade de 16 e 17 anos que moram nas capitais e de eleitores do Brasil nesta faixa de idade, de junho de 1990 a junho de 2000.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "em 2000, metade dos eleitores com 16 e 17 anos não estavam nas capitais.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "em 1992, todo jovem de 16 e 17 anos era eleitor.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "em 1998, 40% dos eleitores com 16 e 17 anos não estavam nas capitais.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o percentual médio de eleitores com 16 e 17 anos nas capitais neste período foi inferior ao percentual médio de eleitores nesta faixa de idade fora das capitais.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "o número de eleitores com 16 e 17 anos em 1990 foi menor que o número de eleitores com 16 e 17 anos em 2000.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Supondo que nestes 10 anos o número de eleitores aumentou 30% e o percentual de jovens com 16 e 17 anos se manteve em 3,56% da população, é <b>correto</b> afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-003-fig.jpg",
+    "alt": "Gráfico “Percentual de eleitores com 16 e 17 anos”, de 1990 a 2000. Brasil (tracejado): 3,22; 3,56; 2,24; 2,34; 1,76; 2,86. Capitais (contínuo): 2,54; 1,62; 1,66; 1,17; 1,23; 1,49",
+    "largura": "54mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104414,41 +104514,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. U. F. Lavras-MG Uma família dispõe de X reais para passar 30 dias de férias. Se esta família resolver ficar 20 dias, em vez dos 30 previstos, gastando todo o dinheiro previsto, o seu gasto médio diário será aumentado de: a) 25% b) 30% c) 50% d) 33% e) 40%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-004.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Uma família dispõe de X reais para passar 30 dias de férias. Se esta família resolver ficar 20 dias, em vez dos 30 previstos, gastando todo o dinheiro previsto, o seu gasto médio diário será aumentado de:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "50%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "33%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "40%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c25-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104460,41 +104554,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. U. F. Lavras-MG Uma pesquisa eleitoral estudou a intenção de votos nos candidatos A, B e C, obtendo os resultados apresentados na figura: A opção incorreta é: a) O candidato B pode se considerar eleito. b) O número de pessoas consultadas foi de 5400. c) O candidato B possui 30% das intenções de voto. d) Se o candidato C obtiver 70% dos votos dos indecisos e o restante dos indecisos opta- rem pelo candidato A, o candidato C assume a liderança. e) O candidato A ainda tem chance de vencer as eleições. Número de votos 1620 1500 1400 880 A B C Indecisos",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-005.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Uma pesquisa eleitoral estudou a intenção de votos nos candidatos A, B e C, obtendo os resultados apresentados na figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "O candidato B pode se considerar eleito.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "O número de pessoas consultadas foi de 5400.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "O candidato B possui 30% das intenções de voto.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Se o candidato C obtiver 70% dos votos dos indecisos e o restante dos indecisos optarem pelo candidato A, o candidato C assume a liderança.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "O candidato A ainda tem chance de vencer as eleições.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A opção <b>incorreta</b> é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-005-fig.jpg",
+    "alt": "Gráfico de colunas do número de votos: A = 1400, B = 1620, C = 880 e indecisos = 1500",
+    "largura": "73mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104506,41 +104601,57 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFR-RJ Em uma das partidas do final do campeonato brasileiro de basquete, realizada no dia 27 de junho de 2000, obtivemos os seguintes dados estatísticos: Na tabela acima, o número de arremessos convertidos por cada time é relativo aos totais de arremessos de 3 pontos, 2 pontos e 1 ponto (lance livre) somados. O cestinha do jogo, Oscar, converteu na faixa de 35 a 36% dos arremessos de três pontos convertidos em todo o jogo. Sabendo-se que o total de lances livres convertidos foi de 54, o número de arremessos de 3 pontos convertidos por Oscar foi igual a: a) 3 d) 7 b) 5 e) 8 c) 6 FLAMENGO VA",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-006.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Em uma das partidas do final do campeonato brasileiro de basquete, realizada no dia 27 de junho de 2000, obtivemos os seguintes dados estatísticos:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Na tabela acima, o número de arremessos convertidos por cada time é relativo aos totais de arremessos de 3 pontos, 2 pontos e 1 ponto (lance livre) somados.<br><span class=\"pb\"></span>O cestinha do jogo, Oscar, converteu na faixa de 35 a 36% dos arremessos de três pontos convertidos em todo o jogo. Sabendo-se que o total de lances livres convertidos foi de 54, o número de arremessos de 3 pontos convertidos por Oscar foi igual a:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "FLAMENGO",
+     "VASCO"
+    ],
+    "linhas": [
+     [
+      "PLACAR",
+      "115",
+      "103"
+     ],
+     [
+      "Número de arremessos convertidos",
+      "67",
+      "62"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104552,41 +104663,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Fei-SP Considerando-se a situação descrita na questão anterior e sabendo-se que o número de latas de alumínio coletadas dia a dia é proporcional à quantidade de lixo recolhido e que no dia 5 foram coletadas 330 latas, qual o número de latas coletadas no período de 5 dias? a) 1500 d) 1820 b) 1600 e) 1900 c) 1800",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-007.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Considerando-se a situação descrita na questão anterior e sabendo-se que o número de latas de alumínio coletadas dia a dia é proporcional à quantidade de lixo recolhido e que no dia 5 foram coletadas 330 latas, qual o número de latas coletadas no período de 5 dias?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1500",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1600",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1800",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1820",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1900",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c25-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104598,41 +104703,76 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. Fuvest-SP Considere os seguintes dados, obtidos em 1996 pelo censo do IBGE: I. A distribuição da população, por grupos de idade, é: idade número de pessoas de 4 a 14 anos 37.049.723 de 15 a 17 anos 10.368.618 de 18 a 49 anos 73.644.508 50 anos ou mais 23.110.079 II. As porcentagens de pessoas, maiores de 18 anos, filiadas, ou não, a sindicatos, órgãos comunitários, órgãos de classe, são: III. As porcentagens de pessoas, maiores de 18 anos, filiadas a sindicatos, órgãos comunitários e órgãos de classe são: A partir dos dados acima, pode-se afirmar que o número de pessoas, maiores de 18 anos,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-008.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Considere os seguintes dados, obtidos em 1996 pelo censo do IBGE:<br><span class=\"pb\"></span>I. A distribuição da população, por grupos de idade, é dada na tabela.<br><span class=\"pb\"></span>II. As porcentagens de pessoas, maiores de 18 anos, filiadas, ou não, a sindicatos, órgãos comunitários, órgãos de classe, são dadas no gráfico de setores.<br><span class=\"pb\"></span>III. As porcentagens de pessoas, maiores de 18 anos, filiadas a sindicatos, órgãos comunitários e órgãos de classe são dadas no gráfico de colunas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "12",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "21",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "31",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A partir dos dados acima, pode-se afirmar que o número de pessoas, maiores de 18 anos, filiadas a órgãos comunitários é, aproximadamente, em milhões:",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "idade",
+      "número de pessoas"
+     ],
+     "linhas": [
+      [
+       "de 4 a 14 anos",
+       "37.049.723"
+      ],
+      [
+       "de 15 a 17 anos",
+       "10.368.618"
+      ],
+      [
+       "de 18 a 49 anos",
+       "73.644.508"
+      ],
+      [
+       "50 anos ou mais",
+       "23.110.079"
+      ]
+     ],
+     "largura": "70%"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c25-008-fig1.jpg",
+     "alt": "Gráfico de setores: 69% não filiados e 31% filiados",
+     "largura": "57mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c25-008-fig2.jpg",
+     "alt": "Gráfico de colunas: sindicato 53%, órgão comunitário 39%, órgão de classe 8%",
+     "largura": "66mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c25-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104644,16 +104784,57 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. UEGO A tabela abaixo indica o número de acidentes de trabalho por grupo de pessoas. Em relação à tabela, assinale verdadeiro (V) ou falso (F). ( ) Em 1997, o número de acidentes graves foi maior do que o número de acidentes leves. ( ) Se a população trabalhadora em 1985 era N , o número de acidentes leves é dado por N . ( ) Para cada grupo de 10000 pessoas, o número de acidentes leves reduziu mais de 70% no período de 1985 a 1997. ( ) O número total de acidentes leves e graves no ano de 1997, para um grupo de 10000 pessoas, foi menor do que 15. Revista Veja , 16 set. 1998. p. 32 350 BRASIL",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-009.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A tabela abaixo indica o número de <b>acidentes de trabalho</b> por grupo de pessoas.<br><span class=\"pb\"></span><b>BRASIL EM NÚMEROS</b> — Pesquisa do INSS mostra que devido aos programas de treinamento o número absoluto de acidentes de trabalho caiu 60% nos últimos doze anos. Acompanhe abaixo quantos acidentes aconteceram por grupos de trabalhadores nesse período:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V"
+   "gabarito": "F – V – V – V",
+   "pergunta": "Em relação à tabela, assinale verdadeiro (V) ou falso (F).",
+   "afirmacoes": [
+    {
+     "t": "Em 1997, o número de acidentes graves foi maior do que o número de acidentes leves.",
+     "ok": false
+    },
+    {
+     "t": "Se a população trabalhadora em 1985 era $ N $, o número de acidentes leves é dado por $ {N|350} $.",
+     "ok": true
+    },
+    {
+     "t": "Para cada grupo de 10000 pessoas, o número de acidentes leves reduziu mais de 70% no período de 1985 a 1997.",
+     "ok": true
+    },
+    {
+     "t": "O número total de acidentes leves e graves no ano de 1997, para um grupo de 10000 pessoas, foi menor do que 15.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Mortes no trabalho",
+     "Acidentes graves",
+     "Acidentes leves"
+    ],
+    "linhas": [
+     [
+      "1985 - 1 em cada 12 200",
+      "1985 - 1 em cada 1 950",
+      "1985 - 1 em cada 350"
+     ],
+     [
+      "1991 - 1 em cada 13 700",
+      "1991 - 1 em cada 3 100",
+      "1991 - 1 em cada 550"
+     ],
+     [
+      "1997 - 1 em cada 26 500",
+      "1997 - 1 em cada 4 200",
+      "1997 - 1 em cada 1 300"
+     ]
+    ],
+    "largura": "95%",
+    "legenda": "Revista Veja, 16 set. 1998. p. 32"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-010",
@@ -104703,7 +104884,6 @@
   },
   {
    "id": "cdb-c25-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104715,37 +104895,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UERJ Observe o gráfico: 9 1994 4,5 1998 Os brasileiros est ã o trocando o vinho branco alem ã o por produto de melhor qualidade (em milh õ es de litros) Crepúsculo da garrafa azul 3,1 1999* *Estimativa Fontes: Product Audit /Expand ( Veja , 01/09/99) Se o consumo de vinho branco alemão, entre 1994 e 1998, sofreu um decréscimo linear, o volume total desse consumo em 1995, em milhões de litros, corresponde a: a) 6,585 b) 6,955 c) 7,575 d) 7,875",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Observe o gráfico:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6,585",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6,955",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "7,575",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7,875",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Se o consumo de vinho branco alemão, entre 1994 e 1998, sofreu um decréscimo linear, o volume total desse consumo em 1995, em milhões de litros, corresponde a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-011-fig.jpg",
+    "alt": "Gráfico “Crepúsculo da garrafa azul”: os brasileiros estão trocando o vinho branco alemão por produto de melhor qualidade (em milhões de litros): 9 em 1994, 4,5 em 1998 e 3,1 em 1999 (estimativa); a queda é representada por garrafas de tamanhos decrescentes",
+    "largura": "83mm",
+    "legenda": "Fontes: Product Audit/Expand (Veja, 01/09/99)."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104757,37 +104939,58 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. UERJ Analise o gráfico e a tabela: km 14 10 Gasolina Á lcool litro 1 7 7 8 10 Combustível Preço por litro (em reais) Gasolina 1,50 Álcool 0,75 De acordo com esses dados, a razão entre o custo do consumo, por km, dos carros a álcool e a gasolina é igual a: a) 4 b) 5 c) 7 d) 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-012.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Analise o gráfico e a tabela:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|7} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {5|7} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|8} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {7|10} $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "De acordo com esses dados, a razão entre o custo do consumo, por km, dos carros a álcool e a gasolina é igual a:",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c25-012-fig.jpg",
+     "alt": "Gráfico do percurso (km) em função do volume de combustível (litro): duas retas que saem da origem; com 1 litro, a gasolina percorre 10 km e o álcool percorre 14 km",
+     "largura": "56mm"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Combustível",
+      "Preço por litro (em reais)"
+     ],
+     "linhas": [
+      [
+       "Gasolina",
+       "1,50"
+      ],
+      [
+       "Álcool",
+       "0,75"
+      ]
+     ],
+     "largura": "60%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c25-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104799,41 +105002,58 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. Fei-SP A tabela abaixo mostra as quantidades diárias (em toneladas) de lixo recolhido em uma praia durante os 5 primeiros dias de janeiro. Se nesse período, a quantidade média diária foi 2,4 toneladas, qual o valor de a? a) 1,5 b) 1,1 c) 4,5 d) 0 e) 2,2 dia 1 2 3 4 5 quantidade 1,1 a 2,7 3a 2,2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-013.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A tabela abaixo mostra as quantidades diárias (em toneladas) de lixo recolhido em uma praia durante os 5 primeiros dias de janeiro.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,5",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1,1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,2",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se nesse período, a quantidade média diária foi 2,4 toneladas, qual o valor de a?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "dia",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "linhas": [
+     [
+      "quantidade",
+      "1,1",
+      "a",
+      "2,7",
+      "3a",
+      "2,2"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104845,41 +105065,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. U. F. São Carlos-SP Num curso de iniciação à informática, a distribuição das idades dos alunos, segundo o sexo, é dada pelo gráfico seguinte. Com base nos dados do gráfico, pode-se afirmar que: a) o número de meninas com, no máximo, 16 anos é maior que o número de meninos nesse mesmo intervalo de idades. b) o número total de alunos é 19. c) a média de idade das meninas é 15 anos. d) o número de meninos é igual ao número de meninas. e) o número de meninos com idade maior que 15 anos é maior que o número de meninas nesse mesmo intervalo de idades.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Num curso de iniciação à informática, a distribuição das idades dos alunos, segundo o sexo, é dada pelo gráfico seguinte.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "o número de meninas com, no máximo, 16 anos é maior que o número de meninos nesse mesmo intervalo de idades.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "o número total de alunos é 19.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "a média de idade das meninas é 15 anos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o número de meninos é igual ao número de meninas.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "o número de meninos com idade maior que 15 anos é maior que o número de meninas nesse mesmo intervalo de idades.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Com base nos dados do gráfico, pode-se afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-014-fig.jpg",
+    "alt": "Gráfico de colunas do número de alunos por idade (14 a 18 anos), meninas em branco e meninos em preto: 14 anos: 1 menina e 2 meninos; 15: 2 meninas e 1 menino; 16: 1 menina e 4 meninos; 17: 3 meninas e 2 meninos; 18: 3 meninas e 1 menino",
+    "largura": "33mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104891,20 +105112,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "F ∆ x 6 4 2 3 5 0 160,5 165,5 175,5 185,5 190,5 Estatura (cm) 15. UFBA O histograma acima apresenta o resultado de uma pesquisa sobre a distribuição das estatu- ras, em centímetros, de um grupo de pessoas. Com base nesse gráfico, pode-se afirmar: (01) Todas as classes têm a mesma amplitude. (02) O universo da pesquisa é composto por 113 pessoas. (04) Apenas dez pessoas têm estatura que varia de 165,5 cm a 175,5 cm. (08) A probabilidade de se escolher aleatoriamente uma pessoa com estatura maior que 175,5 cm é 56%. (16) A altura média do grupo é 175,6 cm. Dê, como resposta, a soma das alternati",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-015.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "O histograma acima apresenta o resultado de uma pesquisa sobre a distribuição das estaturas, em centímetros, de um grupo de pessoas.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "26 = 02 + 08 + 16"
+   "gabarito": "26 = 02 + 08 + 16",
+   "pergunta": "Com base nesse gráfico, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
+   "afirmacoes": [
+    {
+     "t": "Todas as classes têm a mesma amplitude.",
+     "ok": false
+    },
+    {
+     "t": "O universo da pesquisa é composto por 113 pessoas.",
+     "ok": true
+    },
+    {
+     "t": "Apenas dez pessoas têm estatura que varia de 165,5 cm a 175,5 cm.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de se escolher aleatoriamente uma pessoa com estatura maior que 175,5 cm é 56%.",
+     "ok": true
+    },
+    {
+     "t": "A altura média do grupo é 175,6 cm.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-015-fig.jpg",
+    "alt": "Histograma da estatura (cm) com as classes 160,5–165,5; 165,5–175,5; 175,5–185,5 e 185,5–190,5, de alturas 2, 4, 6 e 3/5 no eixo vertical",
+    "largura": "82mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -104916,37 +105160,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Freq üê ncia de mortes 40% 30% 20% 10% 0 10 20 30 Faixas de idades, em anos 40 50 60 70 16. Unifor-CE Um instrumento para analisar as condições de vida de um país são os gráficos de mortalidade. O gráfico ao lado mostra a fre- qüência relativa de mortes, no ano de 1998, dis- tribuída por faixa etária e reflete a situação de um país bastante pobre. De acordo com o gráfico, é verdade que: a) a maior quantidade de mortes referiu-se a pessoas com idade acima dos 70 anos. b) dentre as pessoas com mais de 60 anos, pou- cas morrem e a maioria sobrevive. c) mais de 50% da população morre após os 50 an",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-016.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um instrumento para analisar as condições de vida de um país são os gráficos de mortalidade. O gráfico a seguir mostra a freqüência relativa de mortes, no ano de 1998, distribuída por faixa etária e reflete a situação de um país bastante pobre.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "a maior quantidade de mortes referiu-se a pessoas com idade acima dos 70 anos.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "dentre as pessoas com mais de 60 anos, poucas morrem e a maioria sobrevive.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "mais de 50% da população morre após os 50 anos de idade.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o número de mortes aumenta com o aumento da idade.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "cerca de 30% das mortes atingiu crianças com até 10 anos de idade.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "De acordo com o gráfico, é verdade que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-016-fig.jpg",
+    "alt": "Histograma da frequência de mortes (10% a 40%) por faixas de idade, em anos: 0–10 com cerca de 30%, 10–20 e 20–30 com cerca de 3%, 30–40 com cerca de 10%, 40–50 com cerca de 20%, 50–60 com cerca de 34% e 60–70 com cerca de 1%",
+    "largura": "48mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-017",
@@ -105212,7 +105458,6 @@
   },
   {
    "id": "cdb-c25-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -105224,41 +105469,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "160 140 120 100 80 60 40 20 0 1975 1980 1985 1990 1995 1999 (tempo em anos) 19. U. Santa Úrsula-RJ Considere o gráfico abaixo que indica o crescimento da população brasileira durante os últimos 25 anos. POPULAÇÃO BRASILEIRA EM MILHÕES DE HABITANTES O número que melhor expressa o tempo em anos quando a população brasileira alcançou os 130 milhões de habitantes é: a) 1978 b) 1980 c) 1982 d) 1989 e) 1991",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere o gráfico abaixo que indica o crescimento da população brasileira durante os últimos 25 anos.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1978",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1980",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1982",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1989",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1991",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O número que melhor expressa o tempo em anos quando a população brasileira alcançou os 130 milhões de habitantes é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-019-fig.jpg",
+    "alt": "Gráfico “População brasileira em milhões de habitantes”: linha crescente, de cerca de 100 em 1975 a cerca de 160 em 1999 (valores de 0 a 160 no eixo vertical, anos de 1975 a 1999 no horizontal)",
+    "largura": "63mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -105270,37 +105516,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UERJ Observe o demonstrativo do consumo de energia elétrica: 235 ago98 set98 out98 nov98 dez98 jan99 fev99 mar99 372 341 310 279 248 217 186 155 124 93 62 31 150 182 215 248 268 158 257 kWh Para conhecimento, demostramos abaixo a evolu çã o do consumo de energia el é trica nos ú ltimos meses. Para conhecimento, demonstramos acima a evolução do consumo de energia elétrica nos últimos meses. Considere que o consumo médio, de agosto/98 a dezembro/98, foi igual ao que ocorreu de janeiro/99 a abril/99. O consumo no mês de abril de 99, em kWh, foi igual a: a) 141 b) 151 c) 161 d) 171",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-020.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe o demonstrativo do consumo de energia elétrica:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "141",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "151",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "161",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "171",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Para conhecimento, demonstramos acima a evolução do consumo de energia elétrica nos últimos meses.<br><span class=\"pb\"></span>Considere que o consumo médio, de agosto/98 a dezembro/98, foi igual ao que ocorreu de janeiro/99 a abril/99.<br><span class=\"pb\"></span>O consumo no mês de abril de 99, em kWh, foi igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-020-fig.jpg",
+    "alt": "Gráfico de colunas do consumo de energia elétrica (kWh) de agosto/98 a março/99: ago 235, set 150, out 182, nov 215, dez 248, jan 268, fev 158 e mar 257",
+    "largura": "54mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -105312,37 +105559,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. Vunesp O gráfico indica o resultado de uma pesquisa sobre o número de acidentes ocorri- dos com 42 motoristas de táxi em uma determinada cidade, no período de um ano. Com base nos dados apresentados no gráfico, e considerando que quaisquer dois motoris- tas não estão envolvidos num mesmo acidente, pode-se afirmar que: a) cinco motoristas sofreram pelo menos quatro acidentes. b) 30% dos motoristas sofreram exatamente dois acidentes. c) a média de acidentes por motorista foi igual a três. d) o número total de acidentes ocorridos foi igual a 72. e) trinta motoristas sofreram no máximo dois ac",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-021.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "O gráfico indica o resultado de uma pesquisa sobre o número de acidentes ocorridos com 42 motoristas de táxi em uma determinada cidade, no período de um ano.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "cinco motoristas sofreram pelo menos quatro acidentes.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30% dos motoristas sofreram exatamente dois acidentes.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "a média de acidentes por motorista foi igual a três.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o número total de acidentes ocorridos foi igual a 72.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "trinta motoristas sofreram no máximo dois acidentes.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Com base nos dados do gráfico, e considerando que quaisquer dois motoristas não estão envolvidos num mesmo acidente, pode-se afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c25-021-fig.jpg",
+    "alt": "Gráfico de colunas do número de motoristas pelo número de acidentes: 0 acidentes: 12; 1: 9; 2: 10; 3: 5; 4: 3; 5: 2; 6: 1",
+    "largura": "61mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c25-022",
@@ -105516,7 +105765,6 @@
   },
   {
    "id": "cdb-c25-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Estatística",
@@ -105528,16 +105776,70 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UnB-DF A tabela abaixo apresenta a evolução do número de indivíduos de uma popula- ção de Saccharomyces cerevisae em relação ao tempo, expresso em horas. A partir dos dados apresentados na tabela, julgue os itens abaixo. ( ) A curva que representa o crescimento dessa população em relação ao tempo no inter- valo [0, 10] comporta-se como ums função do tipo N = logt. ( ) Infere-se que a população estabilizou-se em um número aproximadamente igual a 670 indivíduos. ( ) A taxa média de crescimento dessa população no intervalo [4, 10] é superior àquela correspondente ao intervalo [10, 16]. ( ) Nã",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c25-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A tabela abaixo apresenta a evolução do número de indivíduos de uma população de <i>Saccharomyces cerevisae</i> em relação ao tempo, expresso em horas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – F"
+   "gabarito": "F – V – V – F",
+   "pergunta": "A partir dos dados apresentados na tabela, julgue os itens abaixo.",
+   "afirmacoes": [
+    {
+     "t": "A curva que representa o crescimento dessa população em relação ao tempo no intervalo $ [0, 10] $ comporta-se como uma função do tipo $ N = log t $.",
+     "ok": false
+    },
+    {
+     "t": "Infere-se que a população estabilizou-se em um número aproximadamente igual a 670 indivíduos.",
+     "ok": true
+    },
+    {
+     "t": "A taxa média de crescimento dessa população no intervalo $ [4, 10] $ é superior àquela correspondente ao intervalo $ [10, 16] $.",
+     "ok": true
+    },
+    {
+     "t": "Não existem populações naturais que apresentem crescimento como o relatado na tabela.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "tempo (t)",
+     "0",
+     "2",
+     "4",
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18",
+     "20",
+     "22",
+     "24",
+     "26"
+    ],
+    "linhas": [
+     [
+      "número (N)",
+      "10",
+      "30",
+      "70",
+      "170",
+      "350",
+      "510",
+      "600",
+      "640",
+      "660",
+      "665",
+      "670",
+      "670",
+      "675",
+      "670"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c26-001",
