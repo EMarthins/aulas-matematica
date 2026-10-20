@@ -48201,7 +48201,6 @@
   {
    "id": "enem2024-145",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -48213,35 +48212,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A prefeitura de uma cidade planeja construir três postos de saúde. Esses postos devem ser construídos em locais equidistantes entre si e de forma que as distâncias desses três postos ao hospital dessa cidade sejam iguais. Foram conseguidos três locais para a construção dos postos de saúde que apresentam as características desejadas, e que distam 10 km entre si, conforme o esquema, no qual o ponto H representa o local onde está construído o hospital; os pontos P , P e P , os postos de saúde; e esses quatro 1 2 3 pontos estão em um mesmo plano. A distância, em quilômetro, entre o hospital e cada um dos postos de saúde, é um valor entre A 2 e 3. B 4 e 5. C 5 e 6. D 7 e 8. E 8 e 9.",
-   "imagens": [
-    "img:enem2024-145.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A prefeitura de uma cidade planeja construir três postos de saúde. Esses postos devem ser construídos em locais equidistantes entre si e de forma a que as distâncias desses três postos ao hospital dessa cidade sejam iguais. Foram conseguidos três locais para a construção dos postos de saúde que apresentam as características desejadas, e que distam 10 km entre si, conforme o esquema, no qual o ponto <i>H</i> representa o local onde está construído o hospital; os pontos <i>P</i><sub>1</sub>, <i>P</i><sub>2</sub> e <i>P</i><sub>3</sub>, os postos de saúde; e esses quatro pontos estão em um mesmo plano.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 e 3.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4 e 5.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5 e 6.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "7 e 8.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8 e 9.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A distância, em quilômetro, entre o hospital e cada um dos postos de saúde, é um valor entre",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-145-fig.jpg",
+    "alt": "Esquema: o ponto H (hospital) no centro e os pontos P1, P2 e P3 nos vértices de um triângulo equilátero de lado 10 km; H é equidistante dos três postos",
+    "largura": "79mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-146",
@@ -48291,7 +48293,6 @@
   {
    "id": "enem2024-147",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -48303,40 +48304,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um jardineiro dispõe de k metros lineares de cerca baixa para fazer um jardim ornamental. O jardim, delimitado por essa cerca, deve ter a forma de um triângulo equilátero, um quadrado ou um hexágono regular. A escolha será pela forma que resulte na maior área. O jardineiro escolherá a forma de 2 k 3 A hexágono regular, pois a área do jardim, em metro quadrado, será . 24 2 3 k 3 B hexágono regular, pois a área do jardim, em metro quadrado, será . 2 2 k C quadrado, pois a área do jardim, em metro quadrado, será . 16 2 k 3 D triângulo equilátero, pois a área do jardim, em metro quadrado, será . 36 2 k 3 E triângulo equilátero, pois a área do jardim, em metro quadrado, será .",
-   "imagens": [
-    "img:enem2024-147.jpg"
-   ],
-   "larguraMm": 179.6,
+   "enunciado": "Um jardineiro dispõe de <i>k</i> metros lineares de cerca baixa para fazer um jardim ornamental. O jardim, delimitado por essa cerca, deve ter a forma de um triângulo equilátero, um quadrado ou um hexágono regular. A escolha será pela forma que resulte na maior área.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "hexágono regular, pois a área do jardim, em metro quadrado, será $ {k^2√3|24} $.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "hexágono regular, pois a área do jardim, em metro quadrado, será $ {3k^2√3|2} $.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "quadrado, pois a área do jardim, em metro quadrado, será $ {k^2|16} $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "triângulo equilátero, pois a área do jardim, em metro quadrado, será $ {k^2√3|36} $.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "triângulo equilátero, pois a área do jardim, em metro quadrado, será $ {k^2√3|4} $.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O jardineiro escolherá a forma de",
+   "transcrita": true
   },
   {
    "id": "enem2024-148",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Problemas e raciocínio",
@@ -48348,40 +48345,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um aeroporto disponibiliza o serviço de transporte gratuito entre seus dois terminais utilizando os ônibus A e B, que partem simultaneamente, de hora em hora, de terminais diferentes. A distância entre os terminais é de 9 000 metros, e o percurso total dos ônibus, de um terminal ao outro, é monitorado por um sistema de cinco câmeras que cobrem diferentes partes do trecho, conforme o esquema. O alcance de cada uma das cinco câmeras é: 1 • câmera I: do percurso; 5 3 • câmera II: do percurso; 10 1 • câmera III: do percurso; 10 1 • câmera IV: do percurso; 10 3 • câmera V: do percurso. 10 Em determinado horário, o ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 m/min; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 m/min. Qual câmera registra o momento em que os ônibus A e B se encontram? A I B II C III D IV E V",
-   "imagens": [
-    "img:enem2024-148.jpg"
-   ],
-   "larguraMm": 180.6,
+   "enunciado": "Um aeroporto disponibiliza o serviço de transporte gratuito entre seus dois terminais utilizando os ônibus A e B, que partem simultaneamente, de hora em hora, de terminais diferentes. A distância entre os terminais é de 9 000 metros, e o percurso total dos ônibus, de um terminal ao outro, é monitorado por um sistema de cinco câmeras que cobrem diferentes partes do trecho, conforme o esquema.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "V",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O alcance de cada uma das cinco câmeras é:<br>• câmera I: $ {1|5} $ do percurso;<br>• câmera II: $ {3|10} $ do percurso;<br>• câmera III: $ {1|10} $ do percurso;<br>• câmera IV: $ {1|10} $ do percurso;<br>• câmera V: $ {3|10} $ do percurso.<br><span class=\"pb\"></span>Em determinado horário, o ônibus A parte do terminal 1 e realiza o percurso total com velocidade constante de 250 m/min; enquanto o ônibus B, que parte do terminal 2, realiza o percurso total com velocidade constante de 150 m/min.<br><span class=\"pb\"></span>Qual câmera registra o momento em que os ônibus A e B se encontram?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-148-fig.jpg",
+    "alt": "Esquema da linha entre o Terminal 1 (esquerda) e o Terminal 2 (direita) com as áreas cobertas pelas câmeras I, II, III, IV e V, representadas por triângulos em azul ao longo do trecho",
+    "largura": "94mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-149",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Números e operações",
@@ -48393,40 +48392,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A criptografia refere-se à construção e análise de protocolos que impedem terceiros de lerem mensagens privadas. Júlio César, imperador romano, utilizava um código para proteger as mensagens enviadas a seus generais. Assim, se a mensagem caísse em mãos inimigas, a informação não poderia ser compreendida. Nesse código, cada letra do alfabeto era substituída pela letra três posições à frente, ou seja, o “A” era substituído pelo “D”, o “B” pelo “E”, o “C” pelo “F”, e assim sucessivamente. A B C D E F G H I J K L M N O P Q R S T U V W X Y Z A B C Letra do texto codificado A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Letra do texto original Disponível em: www.codifica.ibict.br. Acesso em: 15 out. 2019. Qualquer código que tenha um padrão de substituição de letras como o descrito é considerado uma Cifra de César ou um Código de César. Note que, para decifrar uma Cifra de César, basta descobrir por qual letra o “A” foi substituído, pois isso define todas as demais substituições a serem feitas. Uma mensagem, em um alfabeto de 26 letras, foi codificada usando uma Cifra de César. Considere a probabilidade de se descobrir, aleatoriamente, o padrão utilizado nessa codificação, e que uma tentativa frustrada deverá ser eliminada nas tentativas seguintes. A probabilidade de se descobrir o padrão dessa Cifra de César apenas na terceira tentativa é dada por 1 1 1 A + + 25 25 25 24 23 1 B + + 25 24 23 1 1 1 C × × 25 24 23 24 23 1 D × × 25 25 25 24 23 1 E × × 25 24 23",
-   "imagens": [
-    "img:enem2024-149.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "A criptografia refere-se à construção e análise de protocolos que impedem terceiros de lerem mensagens privadas. Júlio César, imperador romano, utilizava um código para proteger as mensagens enviadas a seus generais. Assim, se a mensagem caísse em mãos inimigas, a informação não poderia ser compreendida. Nesse código, cada letra do alfabeto era substituída pela letra três posições à frente, ou seja, o “A” era substituído pelo “D”, o “B” pelo “E”, o “C” pelo “F”, e assim sucessivamente.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|25} + {1|25} + {1|25} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {24|25} + {23|24} + {1|23} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|25} × {1|24} × {1|23} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {24|25} × {23|25} × {1|25} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {24|25} × {23|24} × {1|23} $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qualquer código que tenha um padrão de substituição de letras como o descrito é considerado uma Cifra de César ou um Código de César. Note que, para decifrar uma Cifra de César, basta descobrir por qual letra o “A” foi substituído, pois isso define todas as demais substituições a serem feitas.<br><span class=\"pb\"></span>Uma mensagem, em um alfabeto de 26 letras, foi codificada usando uma Cifra de César. Considere a probabilidade de se descobrir, aleatoriamente, o padrão utilizado nessa codificação, e que uma tentativa frustrada deverá ser eliminada nas tentativas seguintes.<br><span class=\"pb\"></span>A probabilidade de se descobrir o padrão dessa Cifra de César apenas na terceira tentativa é dada por",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-149-fig.jpg",
+    "alt": "Duas fileiras com o alfabeto: a de cima, “Letra do texto codificado”, começa por D, E, F… e termina em A, B, C; a de baixo, “Letra do texto original”, de A a Z; setas ligam cada letra original à letra codificada três posições à frente",
+    "largura": "170mm",
+    "legenda": "Disponível em: www.codifica.ibict.br. Acesso em: 15 out. 2019."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-150",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -48438,40 +48440,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma região com grande incidência de terremotos, observou-se que dois terremotos ocorridos apresentaram magnitudes M e M , medidos segundo a escala Richter, e liberaram energias iguais a E e E , respectivamente. Entre 1 2 1 2 os estudiosos do assunto, é conhecida uma expressão algébrica relacionando esses valores dada por 2 \u001d E \u001a 2 M 2 \u001f M 1 \u001e log \u001b \u0018 3 \u001c E 1 \u0019 Estudos mais abrangentes observaram que o primeiro terremoto apresentou a magnitude M = 6,9 e a energia 1 liberada foi um décimo da observada no segundo terremoto. O valor aproximado da magnitude M do segundo terremoto, expresso com uma casa decimal, é igual a 2 A 5,4. B 6,2. C 7,6. D 8,2. E 8,4.",
-   "imagens": [
-    "img:enem2024-150.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Em uma região com grande incidência de terremotos, observou-se que dois terremotos ocorridos apresentaram magnitudes <i>M</i><sub>1</sub> e <i>M</i><sub>2</sub>, medidos segundo a escala Richter, e liberaram energias iguais a <i>E</i><sub>1</sub> e <i>E</i><sub>2</sub>, respectivamente. Entre os estudiosos do assunto, é conhecida uma expressão algébrica relacionando esses valores dada por<br><span class=\"pb\"></span>$ M_2 − M_1 = {2|3} log ( {E_2|E_1} ) $<br><span class=\"pb\"></span>Estudos mais abrangentes observaram que o primeiro terremoto apresentou a magnitude <i>M</i><sub>1</sub> = 6,9 e a energia liberada foi um décimo da observada no segundo terremoto.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5,4.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6,2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "7,6.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "8,2.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8,4.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O valor aproximado da magnitude <i>M</i><sub>2</sub> do segundo terremoto, expresso com uma casa decimal, é igual a",
+   "transcrita": true
   },
   {
    "id": "enem2024-151",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -48483,40 +48481,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma indústria faz uma parceria com uma distribuidora de sucos para lançar no mercado dois tipos de embalagens. Para a fabricação dessas embalagens, a indústria dispõe de folhas de alumínio retangulares, de dimensões 10 cm por 20 cm. Cada uma dessas folhas é utilizada para formar a superfície lateral da embalagem, em formato de cilindro circular reto, que posteriormente recebe fundo e tampa circulares. A figura ilustra, dependendo de qual das duas extensões será utilizada como altura, as duas opções para formar a possível embalagem. Dentre essas duas embalagens, a de maior capacidade apresentará volume, em centímetro cúbico, igual a A 4 000 π B 2 000 π 4 000 C π 1000 D π 500 E π",
-   "imagens": [
-    "img:enem2024-151.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma indústria faz uma parceria com uma distribuidora de sucos para lançar no mercado dois tipos de embalagens. Para a fabricação dessas embalagens, a indústria dispõe de folhas de alumínio retangulares, de dimensões 10 cm por 20 cm. Cada uma dessas folhas é utilizada para formar a superfície lateral de uma embalagem, em formato de cilindro circular reto, que posteriormente recebe fundo e tampa circulares. A figura ilustra, dependendo de qual das duas extensões será utilizada como altura, as duas opções para formar a possível embalagem.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4 000π",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2 000π",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {4 000|π} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1 000|π} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {500|π} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Dentre essas duas embalagens, a de maior capacidade apresentará volume, em centímetro cúbico, igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-151-fig.jpg",
+    "alt": "Embalagem 1: folha de 10 cm de largura por 20 cm de altura, enrolada em um cilindro alto e fino. Embalagem 2: folha de 20 cm de largura por 10 cm de altura, enrolada em um cilindro mais largo e baixo",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-152",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -48528,35 +48528,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "As receitas anuais obtidas por uma indústria no período de 2014 a 2021, em milhão de reais, foram registradas, por pontos, em um gráfico. Nele, também está representada a reta que descreve a tendência de evolução das receitas. Essa reta pode ser utilizada para estimar as receitas dos anos seguintes. A estimativa da receita, em milhão de reais, dessa indústria, para o ano de 2026, obtida a partir dessa reta de tendência, é A 7. B 8. C 9. D 10. E 11.",
-   "imagens": [
-    "img:enem2024-152.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "As receitas anuais obtidas por uma indústria no período de 2014 a 2021, em milhão de reais, foram registradas, por pontos, em um gráfico. Nele, também está representada a reta que descreve a tendência de evolução das receitas. Essa reta pode ser utilizada para estimar as receitas dos anos seguintes.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "9.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "11.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A estimativa da receita, em milhão de reais, dessa indústria, para o ano de 2026, obtida a partir dessa reta de tendência, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-152-fig.jpg",
+    "alt": "Gráfico de dispersão da receita anual (milhão de reais), de 0 a 7, por ano, de 2014 a 2021, com uma reta crescente de tendência que vai de cerca de 3,7 em 2014 a cerca de 6,6 em 2021",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-153",
@@ -48606,7 +48609,6 @@
   {
    "id": "enem2024-154",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -48618,40 +48620,71 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo. O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais. Tipo de Tempo necessário para a leitura serviço completa do contrato (em minuto) A 36 B 17 C 27 D 13 E 13 F 13 ROMERO, L. Não li e concordo. Superinteressante , n. 307, ago. 2012 (adaptado). O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente, A 13,0. B 15,0. C 19,8. D 20,0. E 23,3.",
-   "imagens": [
-    "img:enem2024-154.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo.<br><span class=\"pb\"></span>O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "13,0.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "15,0.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "19,8.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "20,0.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "23,3.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Tipo de serviço",
+     "Tempo necessário para a leitura completa do contrato (em minuto)"
+    ],
+    "linhas": [
+     [
+      "A",
+      "36"
+     ],
+     [
+      "B",
+      "17"
+     ],
+     [
+      "C",
+      "27"
+     ],
+     [
+      "D",
+      "13"
+     ],
+     [
+      "E",
+      "13"
+     ],
+     [
+      "F",
+      "13"
+     ]
+    ],
+    "largura": "90%",
+    "legenda": "ROMERO, L. Não li e concordo. <b>Super Interessante</b>, n. 307, ago. 2012 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-155",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -48663,40 +48696,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um proprietário pretende instalar um sensor de presença para a proteção de seu imóvel. O sensor deverá detectar movimentos de objetos e pessoas numa determinada região plana. A figura ilustra a vista superior da área de cobertura (setor circular em azul) de um sensor colocado no ponto S . Essa área depende da medida do ângulo α , em grau, e do raio R , em metro. Ao aumentar o ângulo α ou o raio R aumenta-se a área de cobertura do sensor. Entretanto, quanto maior essa área, maior o preço do sensor. Para esse fim, há cinco tipos de sensores disponíveis no mercado, cada um com as seguintes características: • tipo I: α = 15 ° ° e R = 20 m; • tipo II: α = 30 ° ° e R = 22 m; • tipo III: α = 40 ° ° e R = 12 m; • tipo IV: α = 60 ° ° e R = 16 m; • tipo V: α = 90 ° ° e R = 10 m. Esse proprietário pretende adquirir um desses sensores que seja capaz de cobrir, no mínimo, uma área de medida 2 70 m , com o menor preço possível. Use 3 como valor aproximado para π . O proprietário do imóvel deverá adquirir o sensor do tipo A I. B II. C III. D IV. E V.",
-   "imagens": [
-    "img:enem2024-155.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Um proprietário pretende instalar um sensor de presença para a proteção de seu imóvel. O sensor deverá detectar movimentos de objetos e pessoas numa determinada região plana. A figura ilustra a vista superior da área de cobertura (setor circular em azul) de um sensor colocado no ponto <i>S</i>. Essa área depende da medida do ângulo α, em grau, e do raio <i>R</i>, em metro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Ao aumentar o ângulo α ou o raio <i>R</i> aumenta-se a área de cobertura do sensor. Entretanto, quanto maior essa área, maior o preço do sensor.<br><span class=\"pb\"></span>Para esse fim, há cinco tipos de sensores disponíveis no mercado, cada um com as seguintes características:<br>• tipo I: α = 15° e <i>R</i> = 20 m;<br>• tipo II: α = 30° e <i>R</i> = 22 m;<br>• tipo III: α = 40° e <i>R</i> = 12 m;<br>• tipo IV: α = 60° e <i>R</i> = 16 m;<br>• tipo V: α = 90° e <i>R</i> = 10 m.<br><span class=\"pb\"></span>Esse proprietário pretende adquirir um desses sensores que seja capaz de cobrir, no mínimo, uma área de medida 70 m<sup>2</sup>, com o menor preço possível.<br><span class=\"pb\"></span>Use 3 como valor aproximado para π.<br><span class=\"pb\"></span>O proprietário do imóvel deverá adquirir o sensor do tipo",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-155-fig.jpg",
+    "alt": "Vista superior: o sensor no ponto S, de onde partem dois raios de comprimento R que formam o ângulo α; a região em azul é o setor circular de cobertura",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-156",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -48708,35 +48743,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O uso de aplicativos de transporte tem sido uma alternativa à população que busca preços mais competitivos para se locomover, principalmente nas grandes cidades. As formas usadas para determinar o valor cobrado por cada viagem variam de um aplicativo para outro, mas, em geral, o valor V a ser pago, em real, varia em função de: • tarifa base F : valor fixo, em real, cobrado no início da viagem; • tempo T : tempo, em minuto, de duração da viagem; • distância D : distância percorrida, em quilômetro. Um desses aplicativos cobra R$ 2,00 de valor fixo, acrescido de R$ 0,26 por minuto de viagem e de R$ 1,40 por quilômetro rodado. Nessas condições, a expressão que fornece o valor V a ser pago por uma viagem desse aplicativo é A 2,00 F + 0,26 T + 1,40 D B 2,00 + 0,26 T + 1,40 D C 2,00 + 0,26 T + D D 0,26 T + 1,40 D E F + T + D",
-   "imagens": [
-    "img:enem2024-156.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O uso de aplicativos de transporte tem sido uma alternativa à população que busca preços mais competitivos para se locomover, principalmente nas grandes cidades. As formas usadas para determinar o valor cobrado por cada viagem variam de um aplicativo para outro, mas, em geral, o valor <i>V</i> a ser pago, em real, varia em função de:<br>• tarifa base <i>F</i>: valor fixo, em real, cobrado no início da viagem;<br>• tempo <i>T</i>: tempo, em minuto, de duração da viagem;<br>• distância <i>D</i>: distância percorrida, em quilômetro.<br><span class=\"pb\"></span>Um desses aplicativos cobra R&#36; 2,00 de valor fixo, acrescido de R&#36; 0,26 por minuto de viagem e de R&#36; 1,40 por quilômetro rodado.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2,00<i>F</i> + 0,26<i>T</i> + 1,40<i>D</i>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,00 + 0,26<i>T</i> + 1,40<i>D</i>",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "2,00 + 0,26<i>T</i> + <i>D</i>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,26<i>T</i> + 1,40<i>D</i>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "<i>F</i> + <i>T</i> + <i>D</i>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, a expressão que fornece o valor <i>V</i> a ser pago por uma viagem desse aplicativo é",
+   "transcrita": true
   },
   {
    "id": "enem2024-157",
