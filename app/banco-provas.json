@@ -106416,7 +106416,6 @@
   },
   {
    "id": "cdb-c26-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106428,41 +106427,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. ITA-SP Considere uma pirâmide regular com altura de 6 cm. Aplique a esta pirâmi- de dois cortes planos e paralelos à base de tal maneira que a nova pirâmide e os dois troncos obtidos tenham, os três, o mesmo volume. A altura do tronco cuja base é a base da pirâmide original é igual a: a) 2 \u0001 9 – 6 \u0002 cm d) 2 \u0001 3 – 2 \u0002 cm b) 2 \u0001 6 – 2 \u0002 cm e) 2 \u0001 9 – 3 \u0002 cm c) 2 \u0001 6 – 3 \u0002 cm 3 9 3 3 3 3 3 3 3 3 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere uma pirâmide regular com altura de $ {6|∛9} $ cm. Aplique a esta pirâmide dois cortes planos e paralelos à base de tal maneira que a nova pirâmide e os dois troncos obtidos tenham, os três, o mesmo volume. A altura do tronco cuja base é a base da pirâmide original é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2(∛9 − ∛6) $ cm",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2(∛6 − ∛2) $ cm",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2(∛6 − ∛3) $ cm",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 2(∛3 − ∛2) $ cm",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 2(∛9 − ∛3) $ cm",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c26-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106474,41 +106467,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. PUC-SP Na figura ao lado tem-se o prisma reto ABCDEF, no qual DE = 6 cm, EF = 8 cm e DE EF. Se o volume desse prisma é 120 cm 3 , a sua área total, em centímetros quadrados, é: a) 144 b) 156 c) 160 d) 168 e) 172 A B C D E F .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-012.jpg"
-   ],
-   "larguraMm": 130.2,
+   "enunciado": "Na figura ao lado tem-se o prisma reto ABCDEF, no qual $ DE = 6 $ cm, $ EF = 8 $ cm e $ DE ⊥ EF $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "144",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "156",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "160",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "168",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "172",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se o volume desse prisma é $ 120 $ cm<sup>3</sup>, a sua área total, em centímetros quadrados, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c26-012-fig.jpg",
+    "alt": "Prisma reto de bases triangulares, com os vértices A, B, C, D, E e F assinalados; A e D à esquerda, B no meio, C no alto à direita, E e F embaixo e à direita",
+    "largura": "35mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c26-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106520,41 +106514,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. ITA-SP Um cone circular reto com altura de 8 cm e raio da base de 2 cm está inscrito numa esfera que, por sua vez, está inscrita num cilindro. A razão entre as áreas das super- fícies totais do cilindro e do cone é igual a: a) 3 \u0001 2 – 1 \u0002 d) 27 \u0001 3 – 1 \u0002 b) 9 \u0001 2 – 1 \u0002 e) 27 \u0001 3 – 1 \u0002 c) 9 \u0001 6 – 1 \u0002 2 4 4 8 16",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-013.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Um cone circular reto com altura de $ √8 $ cm e raio da base de 2 cm está inscrito numa esfera que, por sua vez, está inscrita num cilindro. A razão entre as áreas das superfícies totais do cilindro e do cone é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|2}(√2 − 1) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {9|4}(√2 − 1) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {9|4}(√6 − 1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {27|8}(√3 − 1) $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {27|16}(√3 − 1) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c26-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106566,24 +106554,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. Unicamp-SP Seja P um ponto do espaço eqüidistante dos vértices A , B e C de um triân- gulo cujos lados medem 8 cm, 8 cm e 9,6 cm. Sendo d(P, A) = 10 cm, calcule: a) o raio da circunferência circunscrita ao triângulo ABC ; b) a altura do tetraedro, não regular , cujo vértice é o ponto P e cuja base é o triângulo ABC .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja <b>P</b> um ponto do espaço <b>eqüidistante</b> dos vértices <b>A</b>, <b>B</b> e <b>C</b> de um triângulo cujos lados medem 8 cm, 8 cm e 9,6 cm. Sendo $ d(P, A) = 10 $ cm, calcule:<br><span class=\"pb\"></span>a) o raio da circunferência circunscrita ao triângulo <b>ABC</b>;<br>b) a altura do tetraedro, <b>não regular</b>, cujo vértice é o ponto <b>P</b> e cuja base é o triângulo <b>ABC</b>.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) R = 5 cm b) 5 3 cm",
+   "gabarito": "a) R = 5 cm; b) 5√3 cm",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c26-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106595,41 +106577,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. ITA-SP O raio da base de um cone circular reto é igual à média aritmética da altura e a geratriz do cone. Sabendo-se que o volume do cone é 128 π m 3 , temos que o raio da base e a altura do cone medem, respectivamente, em metros: a) 9 e 8 b) 8 e 6 c) 8 e 7 d) 9 e 6 e) 10 e 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-015.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "O raio da base de um cone circular reto é igual à média aritmética da altura e a geratriz do cone. Sabendo-se que o volume do cone é $ 128π $ m<sup>3</sup>, temos que o raio da base e a altura do cone medem, respectivamente, em metros:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9 e 8",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8 e 6",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "8 e 7",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "9 e 6",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "10 e 8",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c26-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106641,41 +106617,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. Fatec-SP A geratriz de um cone circular reto tem 10 m e forma um ângulo de 30 ° com a base. O volume desse cone, em m 3 , é: a) 125 π b) 75 π c) 25 π d) 75 π 3 e) 125 π 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A geratriz de um cone circular reto tem 10 m e forma um ângulo de 30° com a base.<br><span class=\"pb\"></span>O volume desse cone, em m<sup>3</sup>, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 125π $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 75π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 25π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 75π√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 125π√3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c26-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106687,20 +106657,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. ITA-SP Um cilindro circular reto é seccionado por um plano paralelo ao seu eixo. A secção fica a 5 cm do eixo e separa na base um arco de 120 ° . Sendo de 30 3 cm 2 a área da secção plana retangular, então o volume da parte menor do cilindro seccionado mede, em cm 3 : a) 30 π – 10 3 d) 50 π – 25 3 b) 30 π – 20 3 e) 100 π – 75 3 c) 20 π – 10 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Um cilindro circular reto é seccionado por um plano paralelo ao seu eixo. A secção fica a 5 cm do eixo e separa na base um arco de 120°. Sendo de $ 30√3 $ cm<sup>2</sup> a área da secção plana retangular, então o volume da parte menor do cilindro seccionado mede, em cm<sup>3</sup>:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "E 2 2",
+   "tipo": "mc",
+   "gabarito": "E",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "alternativas": [
+    {
+     "t": "$ 30π − 10√3 $",
+     "ok": false
+    },
+    {
+     "t": "$ 30π − 20√3 $",
+     "ok": false
+    },
+    {
+     "t": "$ 20π − 10√3 $",
+     "ok": false
+    },
+    {
+     "t": "$ 50π − 25√3 $",
+     "ok": false
+    },
+    {
+     "t": "$ 100π − 75√3 $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c26-018",
@@ -106767,7 +106754,6 @@
   },
   {
    "id": "cdb-c26-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106779,41 +106765,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. Fuvest-SP No jogo de bocha, disputado num terreno plano, o objetivo é conseguir lançar uma bola de raio 8 o mais próximo possível de uma bola menor, de raio 4. Num lançamento, um jogador conseguiu fa- zer com que as duas bolas ficassem encostadas, con- forme ilustra a figura abaixo. A distância entre os pontos A e B, em que as bolas tocam o chão, é: a) 8 b) 6 2 c) 8 2 d) 4 3 e) 6 3 A B",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-020.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "No jogo de bocha, disputado num terreno plano, o objetivo é conseguir lançar uma bola de raio 8 o mais próximo possível de uma bola menor, de raio 4. Num lançamento, um jogador conseguiu fazer com que as duas bolas ficassem encostadas, conforme ilustra a figura abaixo.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 6√2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 8√2 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 4√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 6√3 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A distância entre os pontos A e B, em que as bolas tocam o chão, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c26-020-fig.jpg",
+    "alt": "Duas esferas encostadas sobre um plano, a maior (raio 8) à esquerda e a menor (raio 4) à direita; A e B são os pontos em que elas tocam o chão",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c26-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria espacial e analítica (revisão)",
@@ -106825,37 +106812,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. Vunesp Aumentando-se a diagonal de um cubo de aresta a em 50%, obtém-se a razão entre o novo volume (v’) e o volume do cubo original (v). Esta razão é igual a: a) 2 b) 1 c) 3 d) 5 e) 27 3 2 2 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c26-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Aumentando-se a diagonal de um cubo de aresta <b>a</b> em 50%, obtém-se a razão entre o novo volume $ (v') $ e o volume do cubo original $ (v) $. Esta razão é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {5|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {27|8} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b1-01",
