@@ -29231,7 +29231,6 @@
   {
    "id": "enem2022-95",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Ondulatória",
@@ -29243,40 +29242,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O sinal sonoro oriundo da queda de um grande bloco de gelo de uma geleira é detectado por dois dispositivos situados em um barco, sendo que o detector A está imerso em água e o B, na proa da embarcação. Sabe-se que a velocidade do som na água é de 1 540 m e no ar é de 340 m . s sL A distância L, em metro, entre o barco e a geleira é mais próxima de A 339 000. B 78 900. C 14 400. a=R=OQMK* E 100.",
-   "imagens": [
-    "img:enem2022-95.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O sinal sonoro oriundo da queda de um grande bloco de gelo de uma geleira é detectado por dois dispositivos situados em um barco, sendo que o detector A está imerso em água e o B, na proa da embarcação. Sabe-se que a velocidade do som na água é de 1 540 m/s e no ar é de 340 m/s.<br><span class=\"pb\"></span>Os gráficos indicam, em tempo real, o sinal sonoro detectado pelos dois dispositivos, os quais foram ligados simultaneamente em um instante anterior à queda do bloco de gelo. Ao comparar pontos correspondentes desse sinal em cada dispositivo, é possível obter informações sobre a onda sonora.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "339 000.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "78 900.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "14 400.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5 240.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "100.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A distância L, em metro, entre o barco e a geleira é mais próxima de",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2022-95-fig1.jpg",
+     "alt": "Barco com os detectores A (submerso) e B (na proa) a uma distância L da geleira, de onde cai um bloco de gelo",
+     "largura": "87mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2022-95-fig2.jpg",
+     "alt": "Dois gráficos do sinal em função do tempo (s), de 208 a 244 s: detector A e detector B, com o mesmo sinal registrado em instantes diferentes",
+     "largura": "87mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2022-96",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Combustíveis",
@@ -29288,35 +29297,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em 2002, um mecânico da cidade mineira de Uberaba (MG) teve uma ideia para economizar o consumo de energia elétrica e iluminar a própria casa num dia de sol. Para isso, ele utilizou garrafas plásticas PET com água e cloro, conforme ilustram as figuras. Cada garrafa foi fixada ao telhado de sua casa em um buraco com diâmetro igual ao da garrafa, muito maior que o comprimento de onda da luz. Nos últimos dois anos, sua ideia já alcançou diversas partes do mundo e deve atingir a marca de 1 milhão de casas utilizando a “luz engarrafada”. B A Os gráficos indicam, em tempo real, o sinal sonoro detectado pelos dois dispositivos, os quais foram ligados simultaneamente em um instante anterior à queda do bloco de gelo. Ao comparar pontos correspondentes desse sinal em cada dispositivo, é possível obter informações sobre a onda sonora. A B ZOBEL, G. Brasileiro inventor de “luz engarrafada” tem ideia espalhada pelo mundo. Disponível em: www.bbc.com. Acesso em: 23 jun. 2022 (adaptado). Que fenômeno óptico explica o funcionamento da “luz engarrafada”? A Difração. B Absorção. C Polarização. a=oÉÑäÉñãçK* E Refração. 208 220 232 244 Tempo (s) 208 220 232 244 Tempo (s) `k=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 3",
-   "imagens": [
-    "img:enem2022-96.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Em 2002, um mecânico da cidade mineira de Uberaba (MG) teve uma ideia para economizar o consumo de energia elétrica e iluminar a própria casa num dia de sol. Para isso, ele utilizou garrafas plásticas PET com água e cloro, conforme ilustram as figuras. Cada garrafa foi fixada ao telhado de sua casa em um buraco com diâmetro igual ao da garrafa, muito maior que o comprimento de onda da luz. Nos últimos dois anos, sua ideia já alcançou diversas partes do mundo e deve atingir a marca de 1 milhão de casas utilizando a “luz engarrafada”.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Difração.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Absorção.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Polarização.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Reflexão.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Refração.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Que fenômeno óptico explica o funcionamento da “luz engarrafada”?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-96-fig.jpg",
+    "alt": "Duas fotografias: uma garrafa PET com água iluminada e um galpão iluminado por garrafas no telhado, com o inventor sentado",
+    "largura": "88mm",
+    "legenda": "ZOBEL, G. <b>Brasileiro inventor de “luz engarrafada” tem ideia espalhada pelo mundo</b>. Disponível em: www.bbc.com. Acesso em: 23 jun. 2022 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-97",
@@ -29401,7 +29414,6 @@
   {
    "id": "enem2022-99",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Cinemática",
@@ -29413,40 +29425,62 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A fim de classificar as melhores rotas em um aplicativo de trânsito, um pesquisador propõe um modelo com base em circuitos elétricos. Nesse modelo, a corrente representa o número de carros que passam por um ponto da pista no intervalo de 1 s. A diferença de potencial (d.d.p.) corresponde à quantidade de energia por carro necessária para o deslocamento de 1 m. De forma análoga à lei de Ohm, cada via é classificada pela sua resistência, sendo a de maior resistência a mais congestionada. O aplicativo mostra as rotas em ordem crescente, ou seja, da rota de menor para a de maior resistência. Como teste para o sistema, são utilizadas três possíveis vias para uma viagem de A até B, com os valores de d.d.p. e corrente conforme a tabela. Rota N=O=P* d.d.p. §J· ¨ ¸ © carrom ¹ 510 608 575 § carro · Corrente ¨ ¸ ©s¹ 4 4 3 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 Nesse teste, a ordenação das rotas indicadas pelo aplicativo será: A 1, 2, 3. B 1, 3, 2. C 2, 1, 3. D 3, 1, 2. E 3, 2, 1.",
-   "imagens": [
-    "img:enem2022-99.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A fim de classificar as melhores rotas em um aplicativo de trânsito, um pesquisador propõe um modelo com base em circuitos elétricos. Nesse modelo, a corrente representa o número de carros que passam por um ponto da pista no intervalo de 1 s. A diferença de potencial (d.d.p.) corresponde à quantidade de energia por carro necessária para o deslocamento de 1 m. De forma análoga à lei de Ohm, cada via é classificada pela sua resistência, sendo a de maior resistência a mais congestionada. O aplicativo mostra as rotas em ordem crescente, ou seja, da rota de menor para a de maior resistência.<br><span class=\"pb\"></span>Como teste para o sistema, são utilizadas três possíveis vias para uma viagem de A até B, com os valores de d.d.p. e corrente conforme a tabela.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1, 2, 3.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1, 3, 2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2, 1, 3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3, 1, 2.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3, 2, 1.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nesse teste, a ordenação das rotas indicadas pelo aplicativo será:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Rota",
+     "d.d.p. ($ {J|carro·m} $)",
+     "Corrente ($ {carro|s} $)"
+    ],
+    "linhas": [
+     [
+      "1",
+      "510",
+      "4"
+     ],
+     [
+      "2",
+      "608",
+      "4"
+     ],
+     [
+      "3",
+      "575",
+      "3"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-100",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Ecologia",
@@ -29458,35 +29492,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O esquema representa o ciclo do nitrogênio: Plantas Assimilação Bactérias desnitrificantes Bactérias fixa- doras de N2 nos nódulos de raízes de leguminosas Decompositores (fungos e bactérias aeróbicas e anaeróbicas) Amonificação Nitrificação Nitratos (NO3−) Bactérias nitrificantes Amônia e Amônio − (NH3) (NH4+) Nitritos (NO2 ) Bactérias fixadoras de N2 no solo Bactérias nitrificantes A chuva ácida interfere no ciclo do nitrogênio, principalmente, por proporcionar uma diminuição do pH do solo e da atmosfera, alterando a concentração dos compostos presentes nesse ciclo. Disponível em: http://scienceprojectideasforkids.com. Acesso em: 6 ago. 2012 (adaptado). Em um solo de menor pH, será favorecida a formação de: A N2 B NH3 C NH + 4 D NO − 2 E NO − 3",
-   "imagens": [
-    "img:enem2022-100.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O esquema representa o ciclo do nitrogênio:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "N<sub>2</sub>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "NH<sub>3</sub>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "NH<sub>4</sub><sup>+</sup>",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "NO<sub>2</sub><sup>−</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "NO<sub>3</sub><sup>−</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A chuva ácida interfere no ciclo do nitrogênio, principalmente, por proporcionar uma diminuição do pH do solo e da atmosfera, alterando a concentração dos compostos presentes nesse ciclo.<br><span class=\"pb\"></span>Disponível em: http://scienceprojectideasforkids.com. Acesso em: 6 ago. 2012 (adaptado).<br><span class=\"pb\"></span>Em um solo de menor pH, será favorecida a formação de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-100-fig.jpg",
+    "alt": "Esquema do ciclo do nitrogênio: plantas (assimilação), decompositores (amonificação), amônia e amônio (NH3, NH4+), nitritos (NO2−) e nitratos (NO3−), com bactérias fixadoras de N2, nitrificantes e desnitrificantes",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-101",
@@ -29531,7 +29568,6 @@
   {
    "id": "enem2022-102",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Compostos aromáticos",
@@ -29543,35 +29579,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "De modo geral, a palavra “aromático” invoca associações agradáveis, como cheiro de café fresco ou de um pão doce de canela. Associações similares ocorriam no passado da história da química orgânica, quando os compostos ditos “aromáticos” apresentavam um odor agradável e foram isolados de óleos naturais. À medida que as estruturas desses compostos eram elucidadas, foi se descobrindo que vários deles continham uma unidade estrutural específica. Os compostos aromáticos que continham essa unidade estrutural tornaram-se parte de uma grande família, muito mais com base em suas estruturas eletrônicas do que nos seus cheiros, como as substâncias a seguir, encontradas em óleos vegetais. O e* O CH3 O CH3 OH H3C O Benzaldeído (no óleo de amêndoas) Salicilato de metila (no óleo de gaultéria) Anetol (no óleo de anis) O e* CH2 O HO e* O OH CH3 O H3C Vanilina (no óleo de baunilha) Eugenol (no óleo de cravos) Cinamaldeído (no óleo de canela) SOLOMONS, T. W. G.; FRYHLE, C. B. Química orgânica. Rio de Janeiro: LTC, 2009 (adaptado). A característica estrutural dessa família de compostos é a presença de A ramificações. B insaturações. C anel benzênico. D átomos de oxigênio. E carbonos assimétricos.",
-   "imagens": [
-    "img:enem2022-102.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "De modo geral, a palavra “aromático” invoca associações agradáveis, como cheiro de café fresco ou de um pão doce de canela. Associações similares ocorriam no passado da história da química orgânica, quando os compostos ditos “aromáticos” apresentavam um odor agradável e foram isolados de óleos naturais. À medida que as estruturas desses compostos eram elucidadas, foi se descobrindo que vários deles continham uma unidade estrutural específica. Os compostos aromáticos que continham essa unidade estrutural tornaram-se parte de uma grande família, muito mais com base em suas estruturas eletrônicas do que nos seus cheiros, como as substâncias a seguir, encontradas em óleos vegetais.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "ramificações.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "insaturações.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "anel benzênico.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "átomos de oxigênio.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "carbonos assimétricos.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A característica estrutural dessa família de compostos é a presença de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-102-fig.jpg",
+    "alt": "Fórmulas estruturais de seis compostos aromáticos: benzaldeído (óleo de amêndoas), salicilato de metila (óleo de gaultéria), anetol (óleo de anis), vanilina (óleo de baunilha), eugenol (óleo de cravos) e cinamaldeído (óleo de canela)",
+    "largura": "159mm",
+    "legenda": "SOLOMONS, T. W. G.; FRYHLE, C. B. <b>Química orgânica</b>. Rio de Janeiro: LTC, 2009 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-103",
@@ -29657,7 +29697,6 @@
   {
    "id": "enem2022-105",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Mecânica",
@@ -29669,40 +29708,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em um dia de calor intenso, dois colegas estão a brincar com a água da mangueira. Um deles quer saber até que altura o jato de água alcança, a partir da saída de água, quando a mangueira está posicionada totalmente na direção vertical. O outro colega propõe então o seguinte experimento: eles posicionarem a saída de água da mangueira na direção horizontal, a 1 m de altura em relação ao chão, e então medirem a distância horizontal entre a mangueira e o local onde a água atinge o chão. A medida dessa distância foi de 3 m, e a partir disso eles calcularam o alcance vertical do jato de água. Considere a aceleração da gravidade de 10 m s-2. O resultado que eles obtiveram foi de A 1,50 m. B 2,25 m. C 4,00 m. a=QIRM=ãK* E 5,00 m. ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022",
-   "imagens": [
-    "img:enem2022-105.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Em um dia de calor intenso, dois colegas estão a brincar com a água da mangueira. Um deles quer saber até que altura o jato de água alcança, a partir da saída de água, quando a mangueira está posicionada totalmente na direção vertical. O outro colega propõe então o seguinte experimento: eles posicionarem a saída de água da mangueira na direção horizontal, a 1 m de altura em relação ao chão, e então medirem a distância horizontal entre a mangueira e o local onde a água atinge o chão. A medida dessa distância foi de 3 m, e a partir disso eles calcularam o alcance vertical do jato de água. Considere a aceleração da gravidade de 10 m s<sup>−2</sup>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,50 m.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,25 m.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "4,00 m.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4,50 m.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5,00 m.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O resultado que eles obtiveram foi de",
+   "transcrita": true
   },
   {
    "id": "enem2022-106",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Combustíveis",
@@ -29714,40 +29749,66 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O etanol é um combustível produzido a partir da fermentação da sacarose presente no caldo de cana-de-açúcar. Um dos fatores que afeta a produção desse álcool é o grau de deterioração da sacarose, que se inicia após o corte, por causa da ação de microrganismos. Foram analisadas cinco amostras de diferentes tipos de cana-de-açúcar e cada uma recebeu um código de identificação. No quadro são apresentados os dados de concentração de sacarose e de microrganismos presentes nessas amostras. Amostra de cana-de-açúcar o_TO=o_UQ=o_VO=pmTV=pmUM* Concentração inicial de sacarose (g L-1) 13,0 18,0 16,0 14,0 17,0 Concentração de microrganismos 0,7 0,8 0,6 0,5 0,9 (mg L-1) Pretende-se escolher o tipo de cana-de-açúcar que conterá o maior teor de sacarose 10 horas após o corte e que, consequentemente, produzirá a maior quantidade de etanol por fermentação. Considere que existe uma redução de aproximadamente 50% da concentração de sacarose nesse tempo, para cada 1,0 mg L−1 de microrganismos presentes na cana-de-açúcar. Disponível em: www.inovacao.unicamp.br. Acesso em: 11 ago. 2012 (adaptado). Qual tipo de cana-de-açúcar deve ser escolhido? ^=o_TO=_=o_UQ=`=o_VO=a=pmTV=b=pmUM*",
-   "imagens": [
-    "img:enem2022-106.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O etanol é um combustível produzido a partir da fermentação da sacarose presente no caldo de cana-de-açúcar. Um dos fatores que afeta a produção desse álcool é o grau de deterioração da sacarose, que se inicia após o corte, por causa da ação de microrganismos. Foram analisadas cinco amostras de diferentes tipos de cana-de-açúcar e cada uma recebeu um código de identificação. No quadro são apresentados os dados de concentração de sacarose e de microrganismos presentes nessas amostras.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "RB72",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "RB84",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "RB92",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "SP79",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "SP80",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Pretende-se escolher o tipo de cana-de-açúcar que conterá o maior teor de sacarose 10 horas após o corte e que, consequentemente, produzirá a maior quantidade de etanol por fermentação. Considere que existe uma redução de aproximadamente 50% da concentração de sacarose nesse tempo, para cada 1,0 mg L<sup>−1</sup> de microrganismos presentes na cana-de-açúcar.<br><span class=\"pb\"></span>Disponível em: www.inovacao.unicamp.br. Acesso em: 11 ago. 2012 (adaptado).<br><span class=\"pb\"></span>Qual tipo de cana-de-açúcar deve ser escolhido?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Amostra de cana-de-açúcar",
+     "RB72",
+     "RB84",
+     "RB92",
+     "SP79",
+     "SP80"
+    ],
+    "linhas": [
+     [
+      "Concentração inicial de sacarose (g L<sup>−1</sup>)",
+      "13,0",
+      "18,0",
+      "16,0",
+      "14,0",
+      "17,0"
+     ],
+     [
+      "Concentração de microrganismos (mg L<sup>−1</sup>)",
+      "0,7",
+      "0,8",
+      "0,6",
+      "0,5",
+      "0,9"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-107",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Biologia molecular",
@@ -29759,35 +29820,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Entre as diversas técnicas para diagnóstico da covid-19, destaca-se o teste genético. Considerando as diferentes variantes e cargas virais, um exemplo é a PCR, reação efetuada por uma enzima do tipo polimerase. Essa técnica permite identificar, com confiabilidade, o material genético do SARS-CoV-2, um vírus de RNA. Para comprovação da infecção por esse coronavírus, são coletadas amostras de secreções do indivíduo. Uma etapa que antecede a reação de PCR precisa ser realizada para permitir a amplificação do material genético do vírus. Essa etapa deve ser realizada para A concentrar o RNA viral para otimizar a técnica. B identificar nas amostras anticorpos anti-SARS-CoV-2. C proliferar o vírus em culturas, aumentando a carga viral. D purificar ácidos nucleicos virais, facilitando a ação da enzima. E obter moléculas de cDNA viral por meio da transcrição reversa. 6 `k=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022",
-   "imagens": [
-    "img:enem2022-107.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Entre as diversas técnicas para diagnóstico da covid-19, destaca-se o teste genético. Considerando as diferentes variantes e cargas virais, um exemplo é a PCR, reação efetuada por uma enzima do tipo polimerase. Essa técnica permite identificar, com confiabilidade, o material genético do SARS-CoV-2, um vírus de RNA. Para comprovação da infecção por esse coronavírus, são coletadas amostras de secreções do indivíduo. Uma etapa que antecede a reação de PCR precisa ser realizada para permitir a amplificação do material genético do vírus.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "concentrar o RNA viral para otimizar a técnica.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "identificar nas amostras anticorpos anti-SARS-CoV-2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "proliferar o vírus em culturas, aumentando a carga viral.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "purificar ácidos nucleicos virais, facilitando a ação da enzima.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "obter moléculas de cDNA viral por meio da transcrição reversa.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Essa etapa deve ser realizada para",
+   "transcrita": true
   },
   {
    "id": "enem2022-108",
