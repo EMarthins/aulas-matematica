@@ -90073,7 +90073,6 @@
   },
   {
    "id": "cdb-c18-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90085,37 +90084,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. U.Católica-DF A equação da circunferência cujos extremos do diâmetro são A(2, 3) e B(6, 3) é: a) x 2 + y 2 – 8x – 6y + 21 = 0 d) x 2 + y 2 – 8x – 6y + 9 = 0 b) x 2 + y 2 – 8x – 9y + 21 = 0 e) x 2 + y 2 + 8x + 6y – 21 = 0 c) x 2 + y 2 – 16x – 9y + 21 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-001.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "A equação da circunferência cujos extremos do diâmetro são $ A(2, 3) $ e $ B(6, 3) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 − 8x − 6y + 21 = 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 − 8x − 9y + 21 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 − 16x − 9y + 21 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 − 8x − 6y + 9 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 + 8x + 6y − 21 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-002",
@@ -90142,7 +90136,6 @@
   },
   {
    "id": "cdb-c18-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90154,16 +90147,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. UFMS Num sistema cartesiano ortogonal xOy , considere C a circunferência definida pela equação x 2 + y 2 – 20x + 36 = 0 e r uma reta definida pela equação y = k x , k uma constante real. Então, é correto afirmar que: (01) O raio da circunferência C mede 6 unidades de comprimento. (02) O centro da circunferência C é um ponto do eixo Ox . (04) A circunferência C é tangente ao eixo Oy . (08) Se a reta r for tangente à circunferência C , então o triângulo cujos vértices são a origem do sistema xOy , o ponto de tangência e o centro da circunferência C , é um triângulo retângulo. (16) Se a reta r",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Num sistema cartesiano ortogonal <i>xOy</i>, considere <i>C</i> a circunferência definida pela equação $ x^2 + y^2 − 20x + 36 = 0 $ e <i>r</i> uma reta definida pela equação $ y = kx $, <i>k</i> uma constante real. Então, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "58"
+   "gabarito": "58",
+   "afirmacoes": [
+    {
+     "t": "O raio da circunferência <i>C</i> mede 6 unidades de comprimento.",
+     "ok": false
+    },
+    {
+     "t": "O centro da circunferência <i>C</i> é um ponto do eixo <i>Ox</i>.",
+     "ok": true
+    },
+    {
+     "t": "A circunferência <i>C</i> é tangente ao eixo <i>Oy</i>.",
+     "ok": false
+    },
+    {
+     "t": "Se a reta <i>r</i> for tangente à circunferência <i>C</i>, então o triângulo cujos vértices são a origem do sistema <i>xOy</i>, o ponto de tangência e o centro da circunferência <i>C</i>, é um triângulo retângulo.",
+     "ok": true
+    },
+    {
+     "t": "Se a reta <i>r</i> for tangente à circunferência <i>C</i>, então a distância da origem do sistema <i>xOy</i> ao ponto de tangência é 6 unidades de comprimento.",
+     "ok": true
+    },
+    {
+     "t": "Para $ −{4|3} < k < {4|3} $, a reta <i>r</i> intersecta a circunferência <i>C</i> em dois pontos distintos.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-004",
@@ -90190,7 +90204,6 @@
   },
   {
    "id": "cdb-c18-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90202,20 +90215,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFMS Considerando a circunferência de equação x 2 + y 2 – 4x = 0, é correto afirmar que: (01) O centro da circunferência é o ponto de coordenadas (–2; 0). (02) O ponto de coordenadas (2; 2) pertence à circunferência. (04) A reta de equação y = 2 é tangente à circunferência. (08) O raio da circunferência é igual a 4. (16) A reta de equação y = x – 2 passa pelo centro da circunferência. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-005.jpg"
-   ],
-   "larguraMm": 103.9,
+   "enunciado": "Considerando a circunferência de equação $ x^2 + y^2 − 4x = 0 $, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "22"
+   "gabarito": "22",
+   "afirmacoes": [
+    {
+     "t": "O centro da circunferência é o ponto de coordenadas $ (−2; 0) $.",
+     "ok": false
+    },
+    {
+     "t": "O ponto de coordenadas $ (2; 2) $ pertence à circunferência.",
+     "ok": true
+    },
+    {
+     "t": "A reta de equação $ y = 2 $ é tangente à circunferência.",
+     "ok": true
+    },
+    {
+     "t": "O raio da circunferência é igual a 4.",
+     "ok": false
+    },
+    {
+     "t": "A reta de equação $ y = x − 2 $ passa pelo centro da circunferência.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90227,41 +90256,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. U.F. Santa Maria-RS As retas r e s tangenciam a circunferência de equação x 2 + y 2 – 4x + 3 = 0, respectivamente, nos pontos P e Q e passam pelo ponto O (0,0). A medida do ângulo PÔQ vale: a) 15º d) 60º b) 30º e) 90º c) 45º",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-006.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "As retas $ r $ e $ s $ tangenciam a circunferência de equação $ x^2 + y^2 − 4x + 3 = 0 $, respectivamente, nos pontos $ P $ e $ Q $ e passam pelo ponto $ O (0,0) $. A medida do ângulo $ PÔQ $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "15°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "45°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "60°",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "90°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90273,20 +90296,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. AEU-DF Considere a reta de equação x + 2y = 9 e a circunferência dada pela equação x 2 + y 2 – 2x – 4y – 11 = 0. Em relação a tais elementos, analise e julgue os itens. ( ) A reta passa pela origem do sistema. ( ) O centro da circunferência é um ponto da reta. ( ) O raio da circunferência é maior do que a distância de seu centro à origem do sistema. ( ) A reta divide a região interna da circunferência em duas partes de áreas diferentes. ( ) Nenhum ponto da circunferência tem ordenada maior do que 5.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-007.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Considere a reta de equação $ x + 2y = 9 $ e a circunferência dada pela equação $ x^2 + y^2 − 2x − 4y − 11 = 0 $. Em relação a tais elementos, analise e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – F"
+   "gabarito": "F – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "A reta passa pela origem do sistema.",
+     "ok": false
+    },
+    {
+     "t": "O centro da circunferência é um ponto da reta.",
+     "ok": false
+    },
+    {
+     "t": "O raio da circunferência é maior do que a distância de seu centro à origem do sistema.",
+     "ok": true
+    },
+    {
+     "t": "A reta divide a região interna da circunferência em duas partes de áreas diferentes.",
+     "ok": true
+    },
+    {
+     "t": "Nenhum ponto da circunferência tem ordenada maior do que 5.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90298,37 +90337,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFMS A equação da circunferência de centro (3, 2) e tangente ao eixo das ordenadas é: a) (x – 2) 2 + (y – 3) 2 = 4 d) x 2 + y 2 – 6x – 4y + 9 = 0 b) (x – 2) 2 + (y – 3) 2 = 9 e) x 2 + y 2 – 6x – 4y = 0 c) x 2 + y 2 – 6x – 4y + 4 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-008.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "A equação da circunferência de centro $ (3, 2) $ e tangente ao eixo das ordenadas é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (x − 2)^2 + (y − 3)^2 = 4 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (x − 2)^2 + (y − 3)^2 = 9 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 − 6x − 4y + 4 = 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 − 6x − 4y + 9 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 − 6x − 4y = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-009",
@@ -90401,7 +90435,6 @@
   },
   {
    "id": "cdb-c18-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90413,20 +90446,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. U.Católica-DF Após analisar as afirmativas abaixo, escreva V para as afirmativas verda- deiras ou F para as afirmativas falsas. ( ) A circunferência de equação x 2 + y 2 – 4x + 2y + 3 = 0 intercepta o eixo das abscissas nos pontos A(a, 0) e B(b, 0). Sendo C o centro da circunferência, a área do triângulo ABC é 1 u.a. ( ) Sendo A = (1, 4) e B = (4, –1), a mediatriz do segmento AB passa pela origem. ( ) A região do plano cartesiano determinada pelo sistema é um triângulo isósce- les de vértices (0, 0),(–3, 3) e (–3, –3). ( ) No triângulo OPQ, representado na figura abaixo, OP ≡ PQ e PQ é par",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Após analisar as afirmativas abaixo, escreva V para as afirmativas verdadeiras ou F para as afirmativas falsas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F"
+   "gabarito": "V – V – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "A circunferência de equação $ x^2 + y^2 − 4x + 2y + 3 = 0 $ intercepta o eixo das abscissas nos pontos $ A(a, 0) $ e $ B(b, 0) $. Sendo $ C $ o centro da circunferência, a área do triângulo $ ABC $ é 1 u.a.",
+     "ok": true
+    },
+    {
+     "t": "Sendo $ A = (1, 4) $ e $ B = (4, −1) $, a mediatriz do segmento $ AB $ passa pela origem.",
+     "ok": true
+    },
+    {
+     "t": "A região do plano cartesiano determinada pelo sistema $ @S{y ≥ x; y ≤ −x; x ≥ −3} $ é um triângulo isósceles de vértices $ (0, 0) $, $ (−3, 3) $ e $ (−3, −3) $.",
+     "ok": true
+    },
+    {
+     "t": "No triângulo $ OPQ $, representado na figura, $ OP ≡ PQ $ e $ PQ $ é paralelo ao eixo $ Oy $. Se $ M $ é o ponto médio de $ OQ $, então suas coordenadas são $ ({3|2}, 3) $.",
+     "ok": false
+    },
+    {
+     "t": "A equação da reta que passa pela origem e pelo vértice da parábola $ x = y^2 − 4y + 3 $ é $ y = 2x $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c18-011-fig.jpg",
+    "alt": "Plano cartesiano com o triângulo OPQ: O na origem, P(3, 2) e Q acima de P, na mesma vertical; M é o ponto médio de OQ",
+    "largura": "63mm",
+    "legenda": "Figura referente à 4ª afirmativa."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c18-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90438,41 +90494,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. UEPI A reta de equação x + y + 1 = 0 intercepta o eixo das ordenadas no ponto P. A equação da circunferência de centro P e raio 2 é: a) x 2 + y 2 – 2y – 3 = 0 d) x 2 + y 2 + 2y – 3 = 0 b) x 2 + y 2 + 2y + 5 = 0 e) x 2 + y 2 – 3y – 2 = 0 c) x 2 + y 2 + 3y – 4 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-012.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A reta de equação $ x + y + 1 = 0 $ intercepta o eixo das ordenadas no ponto $ P $. A equação da circunferência de centro $ P $ e raio 2 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 − 2y − 3 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 + 2y + 5 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 + 3y − 4 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 + 2y − 3 = 0 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 − 3y − 2 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90484,41 +90534,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. UFR-RJ Determine os valores de m para que a reta de equação mx – y + 2 = 0 seja tangente à circunferência de equação x 2 + y 2 = 2. a) m = 3 ou m = –2 d) m = 1 ou m = –1 b) m = 3 ou m = 2 e) m = 2 ou m = – 2 c) m = 2 ou m = 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-013.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Determine os valores de $ m $ para que a reta de equação $ mx − y + 2 = 0 $ seja tangente à circunferência de equação $ x^2 + y^2 = 2 $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ m = 3 $ ou $ m = −2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ m = √3 $ ou $ m = √2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ m = 2 $ ou $ m = 3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ m = 1 $ ou $ m = −1 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ m = √2 $ ou $ m = −√2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90530,37 +90574,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFRN A circunferência de centro no ponto (–2, –2) e tangente aos eixos coordenados é interceptada pela bis- setriz do 3º quadrante, conforme a figura ao lado. O ponto P, assinalado na figura, tem coordenadas: a) x = –2 3; y = –2 3 b) x = –2 – 3; y = –2 – 3 c) x = –2 2; y = –2 2 d) x = –2 – 2; y = –2 – 2 – 2 – 2 x P y",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A circunferência de centro no ponto $ (−2, −2) $ e tangente aos eixos coordenados é interceptada pela bissetriz do 3º quadrante, conforme a figura ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = −2√3 $; $ y = −2√3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x = −2 − √3 $; $ y = −2 − √3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x = −2√2 $; $ y = −2√2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = −2 − √2 $; $ y = −2 − √2 $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "O ponto P, assinalado na figura, tem coordenadas:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c18-014-fig.jpg",
+    "alt": "Plano cartesiano com uma circunferência tangente aos eixos, no 3º quadrante, de centro (−2, −2), e a reta bissetriz do 3º quadrante, que a corta no ponto P, o mais afastado da origem",
+    "largura": "46mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c18-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90572,41 +90617,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. Unifor-CE Na circunferência de equação x 2 + y 2 – 4x – 2y – 4 = 0, o ponto que tem maior abscissa é: a) (5; 1) b) (5; 0) c) (2; 4) d) (2; 2) e) (2; 1)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-015.jpg"
-   ],
-   "larguraMm": 110.9,
+   "enunciado": "Na circunferência de equação $ x^2 + y^2 − 4x − 2y − 4 = 0 $, o ponto que tem maior abscissa é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (5; 1) $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ (5; 0) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (2; 4) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (2; 2) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (2; 1) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90618,20 +90657,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. Unicap-PE Seja a circunferência de equação x 2 + y 2 + 10x + 2y – 23 = 0. Julgue os seguintes itens: a) O ponto P(2, –1) está na região exterior à circunferência. b) O ponto C(5, 1) é o centro da circunferência. c) A reta que passa pelos pontos A(2, –1) e B(–5, –1) contém um diâmetro da circunferência. d) O comprimento da circunferência mede 14 π unidades de comprimento. e) Existe uma e somente uma reta r tangente à circunferência em questão.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja a circunferência de equação $ x^2 + y^2 + 10x + 2y − 23 = 0 $. Julgue os seguintes itens:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – F"
+   "gabarito": "F – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "O ponto $ P(2, −1) $ está na região exterior à circunferência.",
+     "ok": false
+    },
+    {
+     "t": "O ponto $ C(5, 1) $ é o centro da circunferência.",
+     "ok": false
+    },
+    {
+     "t": "A reta que passa pelos pontos $ A(2, −1) $ e $ B(−5, −1) $ contém um diâmetro da circunferência.",
+     "ok": true
+    },
+    {
+     "t": "O comprimento da circunferência mede $ 14π $ unidades de comprimento.",
+     "ok": true
+    },
+    {
+     "t": "Existe uma e somente uma reta $ r $ tangente à circunferência em questão.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90643,41 +90698,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. Unifor-CE Seja λ a circunferência de centro no ponto (– 4; 3) e tangente ao eixo das ordenadas. A equação de λ é: a) x 2 + y 2 – 8x + 6y + 9 = 0 d) x 2 + y 2 + 8x – 6y + 9 = 0 b) x 2 + y 2 – 8x + 6y + 16 = 0 e) x 2 + y 2 + 8x – 6y + 16 = 0 c) x 2 + y 2 + 8x – 6y – 9 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja $ λ $ a circunferência de centro no ponto $ (−4; 3) $ e tangente ao eixo das ordenadas. A equação de $ λ $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 − 8x + 6y + 9 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 − 8x + 6y + 16 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 + 8x − 6y − 9 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 + 8x − 6y + 9 = 0 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 + 8x − 6y + 16 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90689,37 +90738,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. U. F. Juiz de Fora-MG Consideremos as circunferências C 1 e C 2 de equações x 2 + y 2 – 4x – 2y + 1 = 0 e x 2 + y 2 – 4x – 2y – 4 = 0, respectivamente. É correto afirmar que: a) C 1 é tangente ao eixo das abscissas. b) C 1 e C 2 se intersectam em um único ponto. c) C 1 e C 2 se intersectam em dois pontos. d) C 1 e C 2 não se intersectam.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-018.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Consideremos as circunferências $ C_1 $ e $ C_2 $ de equações<br><span class=\"pb\"></span>$ x^2 + y^2 − 4x − 2y + 1 = 0 $ e $ x^2 + y^2 − 4x − 2y − 4 = 0 $, respectivamente.<br><span class=\"pb\"></span>É <b>correto</b> afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ C_1 $ é tangente ao eixo das abscissas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ C_1 $ e $ C_2 $ se intersectam em um único ponto.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ C_1 $ e $ C_2 $ se intersectam em dois pontos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ C_1 $ e $ C_2 $ não se intersectam.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90731,37 +90774,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UECE Num plano, munido de um sistema cartesiano ortogonal, o centro O da circunfe- rência que contém os pontos P(0, 0), Q(3, 3) e R(0, 8) é: a) O(–2, 5) b) O(1, 5) c) O(–1, 4) d) O(–3, 4)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-019.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Num plano, munido de um sistema cartesiano ortogonal, o centro $ O $ da circunferência que contém os pontos $ P(0, 0) $, $ Q(3, 3) $ e $ R(0, 8) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ O(−2, 5) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ O(1, 5) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ O(−1, 4) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ O(−3, 4) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90773,41 +90810,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. Unifor-CE A circunferência de equação x 2 + y 2 – 6x – 8y + 24 = 0 tem: a) centro no ponto (–3; 4). d) raio 2. b) raio 1. e) centro no ponto (3; 0). c) centro no ponto (4; 3).",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-020.jpg"
-   ],
-   "larguraMm": 108.7,
+   "enunciado": "A circunferência de equação $ x^2 + y^2 − 6x − 8y + 24 = 0 $ tem:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "centro no ponto $ (−3; 4) $.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "raio 1.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "centro no ponto $ (4; 3) $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "raio 2.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "centro no ponto $ (3; 0) $.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90819,24 +90850,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UFBA A circunferência, de centro na intersecção das retas 2x + 3y = 4 e 3x + 5y = 6 e tangente à reta 2x – y + 5 = 0, tem para equação Ax 2 + By 2 + Cx + Dy + E = 0. Calcule |A + B + C + D + E|.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A circunferência, de centro na intersecção das retas $ 2x + 3y = 4 $ e $ 3x + 5y = 6 $ e tangente à reta $ 2x − y + 5 = 0 $, tem para equação $ Ax^2 + By^2 + Cx + Dy + E = 0 $. Calcule $ |A + B + C + D + E| $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "71",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c18-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90848,37 +90873,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. U. Alfenas-MG Se x 2 + y 2 – 2x – 4y + k = 0 representa uma circunferência, então: a) 6 < k < 8 b) k = 8 c) k = 6 d) k < 5 e) k > 8 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-022.jpg"
-   ],
-   "larguraMm": 123.6,
+   "enunciado": "Se $ x^2 + y^2 − 2x − 4y + k = 0 $ representa uma circunferência, então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 6 < k < 8 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ k = 8 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ k = 6 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ k < 5 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ k > 8 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-023",
@@ -90928,7 +90948,6 @@
   },
   {
    "id": "cdb-c18-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90940,41 +90959,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. PUC-RS Uma circunferência tem centro na interseção da reta x = –2 com o eixo das abscissas e passa pelo ponto de interseção das retas y = –2x + 8 e y = x + 2. A equação dessa circunferência é: a) x 2 + y 2 = 20 d) (x – 2) 2 + y 2 = 32 b) x 2 + (y + 2) 2 = 32 e) (x – 2) 2 + (y – 2) 2 = 32 c) (x + 2) 2 + y 2 = 32",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-025.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma circunferência tem centro na interseção da reta $ x = −2 $ com o eixo das abscissas e passa pelo ponto de interseção das retas $ y = −2x + 8 $ e $ y = x + 2 $.<br><span class=\"pb\"></span>A equação dessa circunferência é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 = 20 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + (y + 2)^2 = 32 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (x + 2)^2 + y^2 = 32 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (x − 2)^2 + y^2 = 32 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (x − 2)^2 + (y − 2)^2 = 32 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -90986,20 +90999,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFSC Dados, num sistema de coordenadas cartesianas, o ponto P de coordenadas ( 1, 2 ), a reta s de equação x + y – 1 = 0 e a circunferência C de equação x 2 + y 2 + 4x + 4y + 4 = 0 . Determine a soma dos números associados à(s) proposição(ões) VERDADEIRA(S) . 01) A menor distância do ponto P à circunferência C é de 3 unidades de comprimento. 02) A equação da reta que passa pelo ponto P e é perpendicular à reta s é x + y – 3 = 0 04) Com relação à posição de C e s , pode-se afirmar que C e s são tangentes. 08) A área do triângulo, cujos vértices são o ponto P , o centro da circunferência C e",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Dados, num sistema de coordenadas cartesianas, o ponto <b>P</b> de coordenadas $ (1, 2) $, a reta <b>s</b> de equação $ x + y − 1 = 0 $ e a circunferência <b>C</b> de equação $ x^2 + y^2 + 4x + 4y + 4 = 0 $. Determine a soma dos números associados à(s) proposição(ões) <b>VERDADEIRA(S)</b>.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "09"
+   "gabarito": "09",
+   "afirmacoes": [
+    {
+     "t": "A <b>menor</b> distância do ponto <b>P</b> à circunferência <b>C</b> é de 3 unidades de comprimento.",
+     "ok": true
+    },
+    {
+     "t": "A equação da reta que passa pelo ponto <b>P</b> e é perpendicular à reta <b>s</b> é $ x + y − 3 = 0 $.",
+     "ok": false
+    },
+    {
+     "t": "Com relação à posição de <b>C</b> e <b>s</b>, pode-se afirmar que <b>C</b> e <b>s</b> são tangentes.",
+     "ok": false
+    },
+    {
+     "t": "A área do triângulo, cujos vértices são o ponto <b>P</b>, o centro da circunferência <b>C</b> e o ponto <b>Q</b> de coordenadas $ (1, −2) $, é de 6 unidades de área.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -91011,20 +91036,47 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. UFPR Na figura ao lado está representada uma cir- cunferência de raio 6 e centro na origem do sistema de coordenadas cartesianas. Dados A(6, 0), M(3, 0) e B(0, 6) e sendo P ponto de interseção da circunferên- cia com a reta que contém M e é perpendicular ao seg- mento OA, é correto afirmar: ( ) A equação da reta que contém A e B é x + y + 6 = 0. ( ) A equação da circunferência é x 2 + y 2 = 36. ( ) A área do triângulo OMP é igual a 9 3. ( ) A área da região destacada é igual a (12 π – 9 3) . ( ) A distância de P a M é menor que 6. ( ) Os segmentos OA e OP formam ângulo de 45 ° . y x 2 3 a+",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-027.jpg"
-   ],
-   "larguraMm": 133,
+   "enunciado": "Na figura ao lado está representada uma circunferência de raio 6 e centro na origem do sistema de coordenadas cartesianas. Dados $ A(6, 0) $, $ M(3, 0) $ e $ B(0, 6) $ e sendo $ P $ ponto de interseção da circunferência com a reta que contém $ M $ e é perpendicular ao segmento $ OA $, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V – V – F"
+   "gabarito": "F – V – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "A equação da reta que contém $ A $ e $ B $ é $ x + y + 6 = 0 $.",
+     "ok": false
+    },
+    {
+     "t": "A equação da circunferência é $ x^2 + y^2 = 36 $.",
+     "ok": true
+    },
+    {
+     "t": "A área do triângulo $ OMP $ é igual a $ 9√3 $.",
+     "ok": false
+    },
+    {
+     "t": "A área da região destacada é igual a $ {12π − 9√3|2} $.",
+     "ok": true
+    },
+    {
+     "t": "A distância de $ P $ a $ M $ é menor que 6.",
+     "ok": true
+    },
+    {
+     "t": "Os segmentos $ OA $ e $ OP $ formam ângulo de 45°.",
+     "ok": false
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 220 200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"11\"><rect width=\"220\" height=\"200\" fill=\"#fff\"/><path d=\"M140,100 L180,100 A80,80 0 0 0 140,30.8 Z\" fill=\"#c8c8c8\"/><circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"none\" stroke=\"#222\" stroke-width=\"1.3\"/><line x1=\"8\" y1=\"100\" x2=\"210\" y2=\"100\" stroke=\"#222\"/><polygon points=\"212,100 205,97 205,103\" fill=\"#222\"/><line x1=\"100\" y1=\"196\" x2=\"100\" y2=\"8\" stroke=\"#222\"/><polygon points=\"100,5 97,12 103,12\" fill=\"#222\"/><line x1=\"100\" y1=\"100\" x2=\"140\" y2=\"30.8\" stroke=\"#222\"/><line x1=\"140\" y1=\"100\" x2=\"140\" y2=\"30.8\" stroke=\"#222\" stroke-dasharray=\"4 3\"/><line x1=\"100\" y1=\"20\" x2=\"180\" y2=\"100\" stroke=\"#222\" stroke-width=\"0.8\"/><circle cx=\"140\" cy=\"30.8\" r=\"2.5\"/><text x=\"88\" y=\"113\">O</text><text x=\"140\" y=\"113\" text-anchor=\"middle\">M</text><text x=\"184\" y=\"114\">A</text><text x=\"86\" y=\"22\">B</text><text x=\"144\" y=\"28\">P</text><text x=\"212\" y=\"114\">x</text><text x=\"104\" y=\"9\">y</text></svg>",
+     "largura": "55%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -91036,41 +91088,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. PUC-PR A distância do ponto P (1; 8) ao centro da circunferência x 2 + y 2 – 8x – 8y + 24 = 0 é: a) 1 b) 2 c) 3 d) 5 e) 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-028.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A distância do ponto $ P(1; 8) $ ao centro da circunferência $ x^2 + y^2 − 8x − 8y + 24 = 0 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -91082,37 +91128,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. PUC-RS A equação da circunferência que tem centro na origem e tangencia as retas r: y = 3 x + 5 e s: y = 3 x – 5 é: a) x 2 + y 2 = 4 d) (x – 3) 2 + (y – 4) 2 = 25 b) x 2 + y 2 = 16 e) (x + 5) 2 + (y – 5) 2 = 9 c) x 2 + y 2 = 25 4 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c18-029.jpg"
-   ],
-   "larguraMm": 125.8,
+   "enunciado": "A equação da circunferência que tem centro na origem e tangencia as retas $ r: y = {3|4}x + 5 $ e $ s: y = {3|4}x − 5 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 = 4 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 = 16 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 = 25 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (x − 3)^2 + (y − 4)^2 = 25 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (x + 5)^2 + (y − 5)^2 = 9 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c18-030",
