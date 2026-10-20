@@ -83501,7 +83501,6 @@
   },
   {
    "id": "cdb-c15-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83513,41 +83512,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. U. E. Londrina-PR Sendo f : | R ➔ | R * + a função definida por f(x) = 2 x , então a expressão que define a função inversa de f é: a) x 2 b) 2 c) log 2 x d) x e) 2 –x x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sendo $ f: ℝ → ℝ_+^* $ a função definida por $ f(x) = 2^x $, então a expressão que define a função inversa de $ f $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {2|x} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ log_2 x $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ √x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2^{−x} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83559,41 +83552,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. PUC-PR O gráfico da função definida por f(x) = x 2 + bx + c, x \u0001 | R, onde c = cos 8 π : a) intercepta o eixo das abscissas em exatamente 2 pontos positivos. b) intercepta o eixo das abscissas em exatamente 2 pontos negativos. c) intercepta o eixo das abscissas em 2 pontos de sinais diferentes. d) intercepta o eixo das abscissas na origem. e) não intercepta o eixo das abscissas. 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-027.jpg"
-   ],
-   "larguraMm": 104.6,
+   "enunciado": "O gráfico da função definida por<br><span class=\"pb\"></span>$ f(x) = x^2 + bx + c $, $ x ∈ ℝ $, onde $ c = cos {8π|7} $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "intercepta o eixo das abscissas em exatamente 2 pontos positivos.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "intercepta o eixo das abscissas em exatamente 2 pontos negativos.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "intercepta o eixo das abscissas em 2 pontos de sinais diferentes.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "intercepta o eixo das abscissas na origem.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "não intercepta o eixo das abscissas.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83605,16 +83592,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. U. Salvador-BA Sobre funções reais, pode-se afirmar: a) ( ) Se f(x) = (m – 1)x + m – 2 é uma função estritamente crescente, cujo gráfico inter- cepta o eixo OY num ponto de ordenada negativa, então m \u0001 Z . b) ( ) Se f(x) = |x| + |x – 2|, então f(x) = 2, x \u0001 ]0, 1[. c) ( ) Se f(x) = nx 2 + nx + 1 tem valor mínimo igual a –1, então f(x – 1) = 8x 2 – 8x + 1. d) ( ) Se f(x) = 2 x + 1, então f –1 (65) = 2. e) ( ) Se f(x) = a + bcos (2x – π ), b > 0, tem por imagem o intervalo [–1, 0], então 2a + 4b = 1. A",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-028.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sobre funções reais, pode-se afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – F – V"
+   "gabarito": "F – V – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "Se $ f(x) = (m − 1)x + m − 2 $ é uma função estritamente crescente, cujo gráfico intercepta o eixo $ OY $ num ponto de ordenada negativa, então $ m ∈ ℤ $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ f(x) = |x| + |x − 2| $, então $ f(x) = 2, ∀ x ∈ ]0, 1[ $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ f(x) = nx^2 + nx + 1 $ tem valor mínimo igual a −1, então $ f(x − 1) = 8x^2 − 8x + 1 $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ f(x) = 2^x + 1 $, então $ f^{−1}(65) = 2 $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ f(x) = a + b cos(2x − π) $, $ b > 0 $, tem por imagem o intervalo $ [−1, 0] $, então $ 2a + 4b = 1 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-029",
@@ -83658,7 +83662,6 @@
   },
   {
    "id": "cdb-c15-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83670,20 +83673,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. UFMT Observe com atenção o gráfico abaixo. Nele está representado o número de mor- tes de mães a cada 100 mil bebês nascidos vivos anualmente, na cidade do Rio de Janeiro, entre 1990 e 1995. Evolução da Mortalidade Materna no Rio de Janeiro Padrão da OMS - 10 a 20 Considere agora que o esboço acima represente o gráfico de uma função real de variável real y = f(t), com t ∈ [1990, 1995]. Com base nessas informações, julgue os itens. ( ) A função f é crescente no intervalo [1992, 1993]. ( ) Em 1993 a função f assume seu valor máximo. ( ) A imagem de f é o conjunto {y ∈ | R / 48,1 ≤ y ≤ 70,8}.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-030.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe com atenção o gráfico abaixo. Nele está representado o número de mortes de mães a cada 100 mil bebês nascidos vivos anualmente, na cidade do Rio de Janeiro, entre 1990 e 1995.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F"
+   "gabarito": "V – V – V – F",
+   "pergunta": "Considere agora que o esboço acima represente o gráfico de uma função real de variável real $ y = f(t) $, com $ t ∈ [1990, 1995] $.<br><span class=\"pb\"></span>Com base nessas informações, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "A função $ f $ é crescente no intervalo $ [1992, 1993] $.",
+     "ok": true
+    },
+    {
+     "t": "Em 1993 a função $ f $ assume seu valor máximo.",
+     "ok": true
+    },
+    {
+     "t": "A imagem de $ f $ é o conjunto $ \\{y ∈ ℝ | 48,1 ≤ y ≤ 70,8\\} $.",
+     "ok": true
+    },
+    {
+     "t": "A função $ f $ é inversível.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-030-fig.jpg",
+    "alt": "Gráfico “Evolução da Mortalidade Materna no Rio de Janeiro — Padrão da OMS: 10 a 20”: 66,2 (1990), 53,3 (1991), 48,4 (1992), 70,8 (1993), 48,1 (1994) e 51,9 (1995)",
+    "largura": "77mm",
+    "legenda": "Adaptado do Jornal do Brasil - 29/09/96."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83695,20 +83718,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. UFMS Com base no estudo de funções reais, é correto afirmar que: (01) Se 0 ≤ x < 1 , então o conjunto imagem da função g , definida por g ( x ) = | x | + | x – 1 |, é { 1 }. (02) Se f é a função definida por f(x) = log 10 (x – 3) , então a função inversa de f , represen- tada por f –1 , é dada por f –1 (x) = 10 x + 3 . (04) Se h é a função definida por h ( x ) = 1 – x 2 , então h ( h ( x )) = x . (08) O domínio da função n , definida por n(x) = log 10 ( log 10 | x |), é o conjunto { x ∈ | R | x < –1 ou x >1 }. (16) Se m é a função definida por m(x) = ( 1 ) x , então o valor de x tal que m(",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-031.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Com base no estudo de funções reais, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "11"
+   "gabarito": "11",
+   "afirmacoes": [
+    {
+     "t": "Se $ 0 ≤ x < 1 $, então o conjunto imagem da função $ g $, definida por $ g(x) = |x| + |x − 1| $, é $ \\{1\\} $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ f $ é a função definida por $ f(x) = log_{10}(x − 3) $, então a função inversa de $ f $, representada por $ f^{−1} $, é dada por $ f^{−1}(x) = 10^x + 3 $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ h $ é a função definida por $ h(x) = √{1 − x^2} $, então $ h(h(x)) = x $.",
+     "ok": false
+    },
+    {
+     "t": "O domínio da função $ n $, definida por $ n(x) = log_{10}(log_{10}|x|) $, é o conjunto $ \\{x ∈ ℝ | x < −1 $ ou $ x > 1\\} $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ m $ é a função definida por $ m(x) = ({1|2})^x $, então o valor de $ x $ tal que $ m(x) = {2|m(x)} $ é $ {1|2} $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83720,41 +83759,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. Unifor-CE Considere a função de domínio | R – {–3} dada por f(x) = 3 – x . Essa função tem apenas valores positivos se x pertence ao intervalo: a) ]–3; 3[ b) ]– ∞ ; –3[ c) ]3; + ∞ [ d) ]– ∞ ; 3[ e) ]0; + ∞ [ x + 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-032.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere a função de domínio $ ℝ − \\{−3\\} $ dada por $ f(x) = {3 − x|x + 3} $. Essa função tem apenas valores positivos se $ x $ pertence ao intervalo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ]−3; 3[ $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ ]−∞; −3[ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ]3; +∞[ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ]−∞; 3[ $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ ]0; +∞[ $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83766,41 +83799,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. UEPI Se f e g são funções reais dadas por f(x) = 2x + 1 e g(x) = x 2 – 1, então (g o f)(–1) é igual a: a) –1 b) 0 c) 4 d) 8 e) 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-033.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se $ f $ e $ g $ são funções reais dadas por $ f(x) = 2x + 1 $ e $ g(x) = x^2 − 1 $, então $ (g∘f)(−1) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "10",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83812,41 +83839,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. Unifor-CE Considere as afirmações seguintes: I. A função f, de | R* em | R*, dada por f(x) = 1 , é igual à sua inversa. II. O domínio da função real definida por f(x) = 1 é o intervalo [1, + ∞ [. III. A função f, de | R em | R, dada por f(x) = x 3 , é ímpar. É verdade que SOMENTE: a) I é verdadeira. b) II é verdadeira. c) III é verdadeira. d) I e III são verdadeiras. e) II e III são verdadeiras. x x – 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-034.jpg"
-   ],
-   "larguraMm": 108.5,
+   "enunciado": "Considere as afirmações seguintes:<br><span class=\"pb\"></span>I. A função $ f $, de $ ℝ^* $ em $ ℝ^* $, dada por $ f(x) = {1|x} $, é igual à sua inversa.<br>II. O domínio da função real definida por $ f(x) = {1|√{x − 1}} $ é o intervalo $ [1, +∞[ $.<br>III. A função $ f $, de ℝ em ℝ, dada por $ f(x) = x^3 $, é ímpar.<br><span class=\"pb\"></span>É verdade que SOMENTE:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I é verdadeira.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II é verdadeira.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III é verdadeira.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "I e III são verdadeiras.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "II e III são verdadeiras.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83858,24 +83879,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. UFF-RJ Os gráficos da função polinominal p e da reta r estão representados na figura. a) Calcule o resto da divisão de p(x) por x – 3. b) Escreva a equação de r. c) Determine a expressão que define p, sabendo que as três únicas raízes de p são reais. y x 0 1 3 –3 4 2 4 – 4 p r",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-035.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Os gráficos da função polinomial $ p $ e da reta $ r $ estão representados na figura.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) 4 b) 3y – 2x = 6 1 c) p(x) = – (x – 1) (x + 3) (x – 4) 3",
+   "gabarito": "a) 4; b) 3y − 2x = 6; c) p(x) = −(1/3)(x − 1)(x + 3)(x − 4)",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "a) Calcule o resto da divisão de $ p(x) $ por $ x − 3 $.<br>b) Escreva a equação de $ r $.<br>c) Determine a expressão que define $ p $, sabendo que as três únicas raízes de $ p $ são reais.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-035-fig.jpg",
+    "alt": "Gráfico no plano cartesiano: a curva de p (de terceiro grau, decrescente, depois crescente, depois decrescente) corta o eixo x em −3, 1 e 4 e o eixo y em −4; a reta r passa por (−3, 0), (0, 2) e (3, 4)",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83887,37 +83909,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. Cefet-RJ Dada a função f(x) = 9 – x 2 , para qualquer número real, tal que  x  ≤ 3, tem- se: a) f(3x) = 3f(x) b) f(0) = f(3) c) f –1 (x) = f 1 , se x ≠ 0 d) f(–x) = f(x) e) f(x – 3) = f(x) – f(3) x \u0003 \u0003",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-036.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Dada a função $ f(x) = √{9 − x^2} $, para qualquer número real, tal que $ |x| ≤ 3 $, tem-se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(3x) = 3f(x) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(0) = f(3) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f^{−1}(x) = f({1|x}) $, se $ x ≠ 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ f(−x) = f(x) $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ f(x − 3) = f(x) − f(3) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-037",
@@ -84007,7 +84024,6 @@
   },
   {
    "id": "cdb-c15-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84019,20 +84035,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. UESE Use as funções f e g, de | R em | R, definidas por f(x) = x – 5 e g(x) = x 2 + x + k, com k \u0001 | R, para analisar as afirmativas abaixo. ( ) A raiz da equação f(g(x)) = g(f(x)) depende do valor da constante k. ( ) Se 4 é raiz da equação g(x) = 0, a outra raiz é 5. ( ) A função h, dada por h(x) = f(2x 2 + 5), é par. ( ) Para k = –6, o número de soluções inteiras e positivas da inequação f(x) < 0 é igual a 2. ( ) O gráfico da função dada por h(x) = |f(x)| – 1 é: g(x) 5 10 -1 0 4 x y",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-039.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Use as funções $ f $ e $ g $, de ℝ em ℝ, definidas por $ f(x) = x − 5 $ e $ g(x) = x^2 + x + k $, com $ k ∈ ℝ $, para analisar as afirmativas abaixo.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – V"
+   "gabarito": "F – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "A raiz da equação $ f(g(x)) = g(f(x)) $ depende do valor da constante $ k $.",
+     "ok": false
+    },
+    {
+     "t": "Se 4 é raiz da equação $ g(x) = 0 $, a outra raiz é 5.",
+     "ok": false
+    },
+    {
+     "t": "A função $ h $, dada por $ h(x) = f(2x^2 + 5) $, é par.",
+     "ok": true
+    },
+    {
+     "t": "Para $ k = −6 $, o número de soluções inteiras e positivas da inequação $ {f(x)|g(x)} < 0 $ é igual a 2.",
+     "ok": true
+    },
+    {
+     "t": "O gráfico da função dada por $ h(x) = |f(x)| − 1 $ é o da figura acima.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-039-fig.jpg",
+    "alt": "Gráfico de h(x) = |f(x)| − 1: duas semirretas em V com vértice em (5, −1), passando por (0, 4) e (10, 4)",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84044,20 +84082,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. UFBA Considere as funções reais f e g, tais que: • f(x) = ax 2 + bx + c, a ≠ 0, tem apenas uma raiz real, seu gráfico tem por eixo de simetria a reta x = 1 e passa pelo ponto (2, 1); • g(x) = mx + n e g(f(x)) = –x 2 + 2x. Nessas condições, pode-se afirmar: (01)O gráfico da função h(x) = f(x) é: (02) g –1 (x) = g(x) (04) A equação f(|x|) = 0 tem 4 raízes distintas. (08) O conjunto-solução da inequação f(x) – |g(x)| ≥ 0 é ]– \u0003 , 0] \u0004 [2, + \u0003 [. (16) A função r(x) = f(g(x)) é crescente para x ≤ 0. Dê, como resposta, a soma das alternativas corretas. 1 1 0 x y",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-040.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere as funções reais $ f $ e $ g $, tais que: • $ f(x) = ax^2 + bx + c $, $ a ≠ 0 $, tem apenas uma raiz real, seu gráfico tem por eixo de simetria a reta $ x = 1 $ e passa pelo ponto $ (2, 1) $;<br>• $ g(x) = mx + n $ e $ g(f(x)) = −x^2 + 2x $.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "11 = 01 + 02 + 08"
+   "gabarito": "11 = 01 + 02 + 08",
+   "pergunta": "Nessas condições, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
+   "afirmacoes": [
+    {
+     "t": "O gráfico da função $ h(x) = √{f(x)} $ é o da figura acima.",
+     "ok": true
+    },
+    {
+     "t": "$ g^{−1}(x) = g(x) $",
+     "ok": true
+    },
+    {
+     "t": "A equação $ f(|x|) = 0 $ tem 4 raízes distintas.",
+     "ok": false
+    },
+    {
+     "t": "O conjunto-solução da inequação $ f(x) − |g(x)| ≥ 0 $ é $ ]−∞, 0] ∪ [2, +∞[ $.",
+     "ok": true
+    },
+    {
+     "t": "A função $ r(x) = f(g(x)) $ é crescente para $ x ≤ 0 $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-040-fig.jpg",
+    "alt": "Gráfico de h(x) = √f(x): duas semirretas em V com vértice em (1, 0); à esquerda sobe até o eixo y em 1",
+    "largura": "33mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84069,20 +84130,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "y f x 0 1 1,32 g 41. UFMT Observe o gráfico abaixo e julgue os itens. ( ) f pode representar uma função do tipo f(x) = a x , com a > 1. ( ) g pode representar uma função do tipo g(x) = a x , com 0 < a < 1. ( ) O gráfico da função h(x) = senx passa pela interseção de f e g. ( ) f(x) = g –1 (x).",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-041.jpg"
-   ],
-   "larguraMm": 104.6,
+   "enunciado": "Observe o gráfico abaixo e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – F"
+   "gabarito": "V – F – F – F",
+   "afirmacoes": [
+    {
+     "t": "$ f $ pode representar uma função do tipo $ f(x) = a^x $, com $ a > 1 $.",
+     "ok": true
+    },
+    {
+     "t": "$ g $ pode representar uma função do tipo $ g(x) = a^x $, com $ 0 < a < 1 $.",
+     "ok": false
+    },
+    {
+     "t": "O gráfico da função $ h(x) = sen x $ passa pela interseção de $ f $ e $ g $.",
+     "ok": false
+    },
+    {
+     "t": "$ f(x) = g^{−1}(x) $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-041-fig.jpg",
+    "alt": "Gráfico das funções f (crescente, passa por (0, 1)) e g (decrescente), que se cruzam no ponto de ordenada 1,32",
+    "largura": "79mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84094,20 +84173,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. AEU-DF Chama-se função exponencial a toda função do tipo f(x) = a x , com a real, posi- tivo e diferente de 1. Em relação às funções desse tipo, analise e julgue os itens. ( ) f(0) = 1 ( ) f é uma função crescente. ( ) f(x + y) = f(x) x f(y). ( ) f(x) < 0 só se x < 0. ( ) Se 0 < a < 1, então existe um número real M > 10 12 , tal que f (M) = 0.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-042.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Chama-se função exponencial a toda função do tipo $ f(x) = a^x $, com $ a $ real, positivo e diferente de 1. Em relação às funções desse tipo, analise e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F – F"
+   "gabarito": "V – F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "$ f(0) = 1 $",
+     "ok": true
+    },
+    {
+     "t": "$ f $ é uma função crescente.",
+     "ok": false
+    },
+    {
+     "t": "$ f(x + y) = f(x) × f(y) $.",
+     "ok": true
+    },
+    {
+     "t": "$ f(x) < 0 $ só se $ x < 0 $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ 0 < a < 1 $, então existe um número real $ M > 10^{12} $, tal que $ f(M) = 0 $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84119,41 +84214,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. UEPI Sejam f : (0, + ∞ ) → (0, + ∞ ) a função dada por f(x) = 1 e f –1 a função inversa de f. Portanto o valor de (f –1 )(4) é igual a: a) 1 b) 1 c) 1 d) 2 e) 4 x2 4 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-043.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sejam $ f: (0, +∞) → (0, +∞) $ a função dada por $ f(x) = {1|x^2} $ e $ f^{−1} $ a função inversa de $ f $. Portanto o valor de $ (f^{−1})(4) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84165,16 +84254,44 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. U. Salvador-BA Sejam f e g funções reais tais que f(x + 1) = x – 1 e f(g(x)) = x 2 – 3x. Nessas condições, pode-se afirmar: a) ( ) f –1 (2) = 4 b) ( ) O gráfico de g tem como eixo de simetria a reta x = 3 . c) ( ) A função g tem um valor mínimo igual a 3 . d) ( ) O conjunto-solução da inequação g(x) > –3 é igual a ]–0 ∞ , –2[ ∪ ]2, + ∞ [. e) ( ) O conjunto-solução da inequação |f(x)| < x + 1 é igual a 1 , + ∞ . f) ( ) O gráfico da função f(|x – 2|) é: 2 1 2 3 4 – 1 – 2 y 0 x f(x) 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-044.jpg"
-   ],
-   "larguraMm": 128.8,
+   "enunciado": "Sejam $ f $ e $ g $ funções reais tais que $ f(x + 1) = x − 1 $ e $ f(g(x)) = x^2 − 3x $.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F – F – V – V"
+   "gabarito": "V – V – F – F – V – V",
+   "pergunta": "Nessas condições, pode-se afirmar:",
+   "afirmacoes": [
+    {
+     "t": "$ f^{−1}(2) = 4 $",
+     "ok": true
+    },
+    {
+     "t": "O gráfico de $ g $ tem como eixo de simetria a reta $ x = {3|2} $.",
+     "ok": true
+    },
+    {
+     "t": "A função $ g $ tem um valor mínimo igual a $ {3|2} $.",
+     "ok": false
+    },
+    {
+     "t": "O conjunto-solução da inequação $ {g(x)|f(x)} > −3 $ é igual a $ ]−∞, −2[ ∪ ]2, +∞[ $.",
+     "ok": false
+    },
+    {
+     "t": "O conjunto-solução da inequação $ |f(x)| < x + 1 $ é igual a $ ]{1|2}, +∞[ $.",
+     "ok": true
+    },
+    {
+     "t": "O gráfico da função $ f(|x − 2|) $ é o da figura acima.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-044-fig.jpg",
+    "alt": "Gráfico de f(|x − 2|): duas semirretas em V com vértice em (2, −2), passando pela origem e por (4, 0)",
+    "largura": "29mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-045",
