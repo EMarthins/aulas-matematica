@@ -38093,7 +38093,6 @@
   {
    "id": "enem2023-112",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química ambiental",
@@ -38105,35 +38104,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O descarte de detergentes comuns nos esgotos domésticos ocasiona a formação de uma camada de espuma que impede a entrada de oxigênio na água. Os microrganismos que vivem nessas águas não são capazes de quebrar moléculas ramificadas, ocorrendo assim um desequilíbrio ambiental nos rios. A fórmula a seguir representa a estrutura química de um tensoativo presente na composição de um detergente não biodegradável. O S O – + O Na Tensoativo não biodegradável Qual modificação química na estrutura desse tensoativo o tornaria um detergente biodegradável? A A Retirar a parte polar da molécula. B B Eliminar as insaturações do anel aromático. C C Trocar o grupo aniônico por um grupo neutro. D D Alterar o grupo aniônico por um grupo catiônico. E E Modificar a cadeia carbônica para cadeia normal.",
-   "imagens": [
-    "img:enem2023-112.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O descarte de detergentes comuns nos esgotos domésticos ocasiona a formação de uma camada de espuma que impede a entrada de oxigênio na água. Os microrganismos que vivem nessas águas não são capazes de quebrar moléculas ramificadas, ocorrendo assim um desequilíbrio ambiental nos rios. A fórmula a seguir representa a estrutura química de um tensoativo presente na composição de um detergente não biodegradável.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Retirar a parte polar da molécula.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Eliminar as insaturações do anel aromático.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Trocar o grupo aniônico por um grupo neutro.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Alterar o grupo aniônico por um grupo catiônico.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Modificar a cadeia carbônica para cadeia normal.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual modificação química na estrutura desse tensoativo o tornaria um detergente biodegradável?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-112-fig.jpg",
+    "alt": "Fórmula estrutural de um tensoativo: cadeia carbônica ramificada ligada a um anel benzênico com grupo sulfonato (SO3− Na+)",
+    "largura": "57mm",
+    "legenda": "Tensoativo não biodegradável"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-113",
@@ -38178,7 +38181,6 @@
   {
    "id": "enem2023-114",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Geofísica",
@@ -38190,35 +38192,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O petróleo é uma matéria-prima muito valiosa e métodos geofísicos são úteis na sua prospecção. É possível identificar a composição de materiais estratificados medindo-se a velocidade de propagação do som (onda mecânica) através deles. Considere que uma camada de 450 m de um líquido se encontra presa no subsolo entre duas camadas rochosas, conforme o esquema. Um pulso acústico (que gera uma vibração mecânica) é emitido a partir da superfície do solo, onde são posteriormente recebidas duas vibrações refletidas (ecos). A primeira corresponde à reflexão do pulso na interface superior do líquido com a camada rochosa. A segunda vibração deve-se à reflexão do pulso na interface inferior. O tempo entre a emissão do pulso e a chegada do primeiro eco é de 0,5 s. O segundo eco chega 1,1 s após a emissão do pulso. Emissor e detector de pulsos Rocha Líquido 450 m Rocha A velocidade do som na camada líquida, em metro por segundo, é A A 270. B B 540. C C 818. D D 1 500. E E 1 800.",
-   "imagens": [
-    "img:enem2023-114.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O petróleo é uma matéria-prima muito valiosa e métodos geofísicos são úteis na sua prospecção. É possível identificar a composição de materiais estratificados medindo-se a velocidade de propagação do som (onda mecânica) através deles. Considere que uma camada de 450 m de um líquido se encontra presa no subsolo entre duas camadas rochosas, conforme o esquema. Um pulso acústico (que gera uma vibração mecânica) é emitido a partir da superfície do solo, onde são posteriormente recebidas duas vibrações refletidas (ecos). A primeira corresponde à reflexão do pulso na interface superior do líquido com a camada rochosa. A segunda vibração deve-se à reflexão do pulso na interface inferior. O tempo entre a emissão do pulso e a chegada do primeiro eco é de 0,5 s. O segundo eco chega 1,1 s após a emissão do pulso.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "270.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "540.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "818.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 500.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1 800.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A velocidade do som na camada líquida, em metro por segundo, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-114-fig.jpg",
+    "alt": "Esquema: emissor e detector de pulsos na superfície; abaixo, camada de rocha, camada de líquido com 450 m de espessura e outra camada de rocha",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-115",
@@ -38263,7 +38268,6 @@
   {
    "id": "enem2023-116",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Propriedades das substâncias",
@@ -38275,35 +38279,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O Aldrin é um inseticida agrícola organoclorado sintético de baixa polaridade, cuja estrutura molecular simétrica, de fórmula C H Cl , está representada na 12 8 6 figura. Introduzido na agricultura a partir da década de 1950, esse composto apresenta alta persistência no meio ambiente e acumulação nos organismos, sendo danoso para a saúde. H C H Cl Cl C Cl Cl Cl Cl Aldrin VIEGAS JÚNIOR, C. Terpenos com atividade inseticida: uma alternativa para o controle químico de insetos. Química Nova , v. 26, n. 3, 2003 (adaptado). Um pesquisador coletou fluidos biológicos de indivíduos de uma população contaminada por esse inseticida agrícola. Ele analisou amostras de saliva, sangue, lágrima, urina e leite quanto à presença dessa substância. Em qual dos fluidos o pesquisador provavelmente encontrou a maior concentração dessa substância? A A Saliva, por consequência da atividade de enzimas. B B Sangue, em função das hemácias e leucócitos. C C Lágrima, em razão da concentração de sais. D D Urina, pela presença de moléculas de ureia. E E Leite, por causa do alto teor de gorduras.",
-   "imagens": [
-    "img:enem2023-116.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O Aldrin é um inseticida agrícola organoclorado sintético de baixa polaridade, cuja estrutura molecular simétrica, de fórmula C<sub>12</sub>H<sub>8</sub>Cl<sub>6</sub>, está representada na figura. Introduzido na agricultura a partir da década de 1950, esse composto apresenta alta persistência no meio ambiente e acumulação nos organismos, sendo danoso para a saúde.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Saliva, por consequência da atividade de enzimas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Sangue, em função das hemácias e leucócitos.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Lágrima, em razão da concentração de sais.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Urina, pela presença de moléculas de ureia.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Leite, por causa do alto teor de gorduras.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Um pesquisador coletou fluidos biológicos de indivíduos de uma população contaminada por esse inseticida agrícola. Ele analisou amostras de saliva, sangue, lágrima, urina e leite quanto à presença dessa substância.<br><span class=\"pb\"></span>Em qual dos fluidos o pesquisador provavelmente encontrou a maior concentração dessa substância?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-116-fig.jpg",
+    "alt": "Fórmula estrutural do Aldrin, com seis átomos de cloro",
+    "largura": "35mm",
+    "legenda": "Aldrin. VIEGAS JÚNIOR, C. Terpenos com atividade inseticida: uma alternativa para o controle químico de insetos. <b>Química Nova</b>, v. 26, n. 3, 2003 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-117",
@@ -38473,7 +38481,6 @@
   {
    "id": "enem2023-121",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química farmacêutica",
@@ -38485,40 +38492,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para que uma molécula dê origem a um medicamento de administração oral, além de apresentar atividade farmacológica, deve ser capaz de atingir o local de ação. Para tanto, essa molécula não deve se degradar no estômago (onde o meio é fortemente ácido e há várias enzimas que reagem mediante catálise ácida), deve ser capaz de atravessar as membranas celulares e ser solúvel no plasma sanguíneo (sistema aquoso). Para os fármacos cujas estruturas são formadas por cadeias carbônicas longas contendo pelo menos um grupamento amino, um recurso tecnológico empregado é sua conversão no cloridrato correspondente. Essa conversão é representada, de forma genérica, pela equação química: + – R N + HCl (R NH) Cl 3 3 O aumento da eficiência de circulação do fármaco no sangue, promovido por essa conversão, deve-se ao incremento de seu(sua) A A basicidade. B B lipofilicidade. C C caráter iônico. D D cadeia carbônica. E E estado de oxidação.",
-   "imagens": [
-    "img:enem2023-121.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "Para que uma molécula dê origem a um medicamento de administração oral, além de apresentar atividade farmacológica, deve ser capaz de atingir o local de ação. Para tanto, essa molécula não deve se degradar no estômago (onde o meio é fortemente ácido e há várias enzimas que reagem mediante catálise ácida), deve ser capaz de atravessar as membranas celulares e ser solúvel no plasma sanguíneo (sistema aquoso). Para os fármacos cujas estruturas são formadas por cadeias carbônicas longas contendo pelo menos um grupamento amino, um recurso tecnológico empregado é sua conversão no cloridrato correspondente. Essa conversão é representada, de forma genérica, pela equação química:<br><span class=\"pb\"></span>R<sub>3</sub>N + HCl → (R<sub>3</sub>NH)<sup>+</sup>Cl<sup>−</sup>",
    "alternativas": [
     {
-     "t": "A",
+     "t": "basicidade.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "lipofilicidade.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "caráter iônico.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "cadeia carbônica.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "estado de oxidação.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O aumento da eficiência de circulação do fármaco no sangue, promovido por essa conversão, deve-se ao incremento de seu(sua)",
+   "transcrita": true
   },
   {
    "id": "enem2023-122",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Bioquímica",
@@ -38530,35 +38533,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Toxicidade do cianeto A produção de ATP depende do gradiente de prótons gerado pela cadeia respiratória. Nessas reações, os elétrons + provenientes da oxidação do NADH em NAD percorrem a cadeia até chegarem à citocromo c oxidase reduzindo o 3+ 2+ Fe a Fe . O oxigênio atua como aceptor final desses elétrons formando água. O cianeto é uma espécie química 3+ altamente tóxica que tem grande afinidade pelo Fe . Quando células são expostas ao cianeto, ele se liga ao sítio de 3+ 2+ Fe da citocromo c oxidase, impedindo a sua conversão em Fe e bloqueando a cadeia respiratória. Substrato Forma Forma Forma proveniente + reduzida oxidada 3 + NAD reduzida Fe H O 2 do nutriente Transportador Transportador Transportador Citocromo c 1 2 3 oxidase Forma Forma Forma 2 + 1 CO O 2 NADH Fe 2 oxidada reduzida 2 oxidada ALBERTS, B. et al. Biologia molecular da célula . Porto Alegre: Artmed, 2010 (adaptado). Esse bloqueio aumenta a concentração celular de A A ATP. B B água. C C NADH. D D dióxido de carbono. E E citocromo c oxidase.",
-   "imagens": [
-    "img:enem2023-122.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "<b>Toxicidade do cianeto</b><br><span class=\"pb\"></span>A produção de ATP depende do gradiente de prótons gerado pela cadeia respiratória. Nessas reações, os elétrons provenientes da oxidação do NADH em NAD<sup>+</sup> percorrem a cadeia até chegarem à citocromo <i>c</i> oxidase reduzindo o Fe<sup>3+</sup> a Fe<sup>2+</sup>. O oxigênio atua como aceptor final desses elétrons formando água. O cianeto é uma espécie química altamente tóxica que tem grande afinidade pelo Fe<sup>3+</sup>. Quando células são expostas ao cianeto, ele se liga ao sítio de Fe<sup>3+</sup> da citocromo <i>c</i> oxidase, impedindo a sua conversão em Fe<sup>2+</sup> e bloqueando a cadeia respiratória.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "ATP.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "água.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "NADH.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "dióxido de carbono.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "citocromo <i>c</i> oxidase.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Esse bloqueio aumenta a concentração celular de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-122-fig.jpg",
+    "alt": "Esquema da cadeia respiratória: substrato proveniente do nutriente (CO2), NADH/NAD+, transportadores 1, 2 e 3, citocromo c oxidase (Fe3+/Fe2+) e ½ O2 formando H2O, com as formas reduzida e oxidada de cada componente",
+    "largura": "159mm",
+    "legenda": "ALBERTS, B. et al. <b>Biologia molecular da célula</b>. Porto Alegre: Artmed, 2010 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-123",
@@ -38683,7 +38690,6 @@
   {
    "id": "enem2023-126",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Dureza da água",
@@ -38695,35 +38701,62 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma indústria, o controle da dureza da água é importante quando ela é utilizada em caldeiras, uma vez que sais pouco solúveis, formados a partir de sulfatos e carbonatos, podem acumular-se no interior das tubulações, causando obstruções. Para avaliar a água utilizada nessa indústria, foram realizados testes de qualidade que consideraram os seguintes parâmetros: Teste Parâmetro medido 1 Cálcio 2 Cloreto 3 Turbidez 4 Coliformes totais 5 Sólidos sedimentáveis Qual teste deve ser considerado para controlar a formação desse tipo de obstrução de tubulações? A A 1 B B 2 C C 3 D D 4 E E 5",
-   "imagens": [
-    "img:enem2023-126.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Em uma indústria, o controle da dureza da água é importante quando ela é utilizada em caldeiras, uma vez que sais pouco solúveis, formados a partir de sulfatos e carbonatos, podem acumular-se no interior das tubulações, causando obstruções. Para avaliar a água utilizada nessa indústria, foram realizados testes de qualidade que consideraram os seguintes parâmetros:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual teste deve ser considerado para controlar a formação desse tipo de obstrução de tubulações?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Teste",
+     "Parâmetro medido"
+    ],
+    "linhas": [
+     [
+      "1",
+      "Cálcio"
+     ],
+     [
+      "2",
+      "Cloreto"
+     ],
+     [
+      "3",
+      "Turbidez"
+     ],
+     [
+      "4",
+      "Coliformes totais"
+     ],
+     [
+      "5",
+      "Sólidos sedimentáveis"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-127",
@@ -38768,7 +38801,6 @@
   {
    "id": "enem2023-128",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Propriedades das substâncias",
@@ -38780,35 +38812,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Existe no comércio um produto antimofo constituído por uma embalagem com tampa perfurada contendo cloreto de cálcio anidro, CaCl . Uma vez aberto o lacre, essa 2 substância absorve a umidade ambiente, transformando-se em cloreto de cálcio di-hidratado, CaCl ⋅ ⋅ 2H O. 2 2 −1 Considere a massa molar da água igual a 18 g mol , e a −1 massa molar do cloreto de cálcio anidro igual a 111 g mol . Na hidratação da substância presente no antimofo, o ganho percentual, em massa, é mais próximo de A A 14% B B 16% C C 24% D D 32% E E 75%",
-   "imagens": [
-    "img:enem2023-128.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Existe no comércio um produto antimofo constituído por uma embalagem com tampa perfurada contendo cloreto de cálcio anidro, CaCl<sub>2</sub>. Uma vez aberto o lacre, essa substância absorve a umidade ambiente, transformando-se em cloreto de cálcio di-hidratado, CaCl<sub>2</sub>·2H<sub>2</sub>O.<br><span class=\"pb\"></span>Considere a massa molar da água igual a 18 g mol<sup>−1</sup>, e a massa molar do cloreto de cálcio anidro igual a 111 g mol<sup>−1</sup>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "14%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "16%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "24%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "32%",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "75%",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Na hidratação da substância presente no antimofo, o ganho percentual, em massa, é mais próximo de",
+   "transcrita": true
   },
   {
    "id": "enem2023-129",
