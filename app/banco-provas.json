@@ -24656,7 +24656,6 @@
   {
    "id": "enem2021-128",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Eletricidade",
@@ -24668,35 +24667,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 128 FA BNnemzool Carros elétricos estão cada vez mais baratos, no entanto, os órgãos governamentais e a indústria se preocupam com o tempo de recarga das baterias, que é muito mais lento quando comparado ao tempo gasto para encher o tanque de combustível. Portanto, os usuários de transporte individual precisam se conscientizar dos ganhos ambientais dessa mudança e planejar com antecedência seus percursos, pensando em pausas necessárias para recargas. Após realizar um percurso de 110 km, um motorista pretende recarregar as baterias de seu carro elétrico, que tem um desempenho médio de 5,0 km/kWh, usando um carregador ideal que opera a uma tensão de 220 Ve é percorrido por uma corrente de 20 A. Quantas horas são necessárias para recarregar a energia utilizada nesse percurso? O 0,005 O 0,125 O 25 O 5,0 O so",
-   "imagens": [
-    "img:enem2021-128.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Carros elétricos estão cada vez mais baratos, no entanto, os órgãos governamentais e a indústria se preocupam com o tempo de recarga das baterias, que é muito mais lento quando comparado ao tempo gasto para encher o tanque de combustível. Portanto, os usuários de transporte individual precisam se conscientizar dos ganhos ambientais dessa mudança e planejar com antecedência seus percursos, pensando em pausas necessárias para recargas.<br><span class=\"pb\"></span>Após realizar um percurso de 110 km, um motorista pretende recarregar as baterias de seu carro elétrico, que tem um desempenho médio de 5,0 km/kWh, usando um carregador ideal que opera a uma tensão de 220 V e é percorrido por uma corrente de 20 A.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,005",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,125",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5,0",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "8,0",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Quantas horas são necessárias para recarregar a energia utilizada nesse percurso?",
+   "transcrita": true
   },
   {
    "id": "enem2021-129",
@@ -24741,7 +24737,6 @@
   {
    "id": "enem2021-130",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química orgânica",
@@ -24753,40 +24748,72 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 130 FA Bnemzool Com o objetivo de proporcionar aroma e sabor a diversos alimentos, a indústria alimentícia se utiliza de flavorizantes. Em geral, essas substâncias são ésteres, como as apresentadas no quadro. [| Neme | mes | aroma Benzoato de no CSHSCOLOs Acetato de CHLOL(OHaL HCO Acetato de \" CCO Hs Propanoato de | cy oH Co,CH,CH(CH,), | Rum isobutila SA SA ao iso à Antranilato de CSHLNHLCO2 OF O aroma do flavorizante derivado do ácido etanoico e que apresenta cadeia carbônica saturada é de O kiwi. O banana. O pêssego. O rum. O uva.",
-   "imagens": [
-    "img:enem2021-130.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Com o objetivo de proporcionar aroma e sabor a diversos alimentos, a indústria alimentícia se utiliza de flavorizantes. Em geral, essas substâncias são ésteres, como as apresentadas no quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "kiwi.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "banana.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "pêssego.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "rum.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "uva.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O aroma do flavorizante derivado do ácido etanoico e que apresenta cadeia carbônica saturada é de",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Nome",
+     "Fórmula",
+     "Aroma"
+    ],
+    "linhas": [
+     [
+      "Benzoato de metila",
+      "C<sub>6</sub>H<sub>5</sub>CO<sub>2</sub>CH<sub>3</sub>",
+      "Kiwi"
+     ],
+     [
+      "Acetato de isoamila",
+      "CH<sub>3</sub>CO<sub>2</sub>(CH<sub>2</sub>)<sub>2</sub>CH(CH<sub>3</sub>)<sub>2</sub>",
+      "Banana"
+     ],
+     [
+      "Acetato de benzila",
+      "CH<sub>3</sub>CO<sub>2</sub>CH<sub>2</sub>C<sub>6</sub>H<sub>5</sub>",
+      "Pêssego"
+     ],
+     [
+      "Propanoato de isobutila",
+      "CH<sub>3</sub>CH<sub>2</sub>CO<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)<sub>2</sub>",
+      "Rum"
+     ],
+     [
+      "Antranilato de metila",
+      "C<sub>6</sub>H<sub>4</sub>NH<sub>2</sub>CO<sub>2</sub>CH<sub>3</sub>",
+      "Uva"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-131",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Eletricidade",
@@ -24798,35 +24825,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 131 FA BNnemaool O eletrocardiograma é um exame cardíaco que mede a intensidade dos sinais elétricos advindos do coração. A imagem apresenta o resultado típico obtido em um paciente saudável e a intensidade do sinal (V.,) em função do tempo. mA... A. AA. T s | É | E > Í f f oa tempo (s) De acordo com o eletrocardiograma apresentado, qual foi o número de batimentos cardíacos por minuto desse paciente durante o exame? O 30 O 60 O 100 O 120 O 180",
-   "imagens": [
-    "img:enem2021-131.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O eletrocardiograma é um exame cardíaco que mede a intensidade dos sinais elétricos advindos do coração. A imagem apresenta o resultado típico obtido em um paciente saudável e a intensidade do sinal (V<sub>EC</sub>) em função do tempo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "60",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "120",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "180",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "De acordo com o eletrocardiograma apresentado, qual foi o número de batimentos cardíacos por minuto desse paciente durante o exame?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-131-fig.jpg",
+    "alt": "Traçado de eletrocardiograma (V_EC em mV em função do tempo em s) com vários batimentos; um retângulo tracejado delimita um ciclo e um pequeno intervalo marcado corresponde a 0,2 s",
+    "largura": "88mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-132",
@@ -24871,7 +24901,6 @@
   {
    "id": "enem2021-133",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Eletroquímica",
@@ -24883,40 +24912,72 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 133 FF BhONI202] O quadro lista alguns dispositivos eletrônicos que estão presentes no dia a dia, bem como a faixa de força eletromotriz necessária ao seu funcionamento. S Faixa de força Dispositivo eletrônico eletromotriz (V) EE Relógio de parede 1,2a1,5 | m | cCâmeradigital 7,5a7,8 Carrinho de controle 10,5 a 10,9 remoto Notebook/Laptop 19,5 a 20,0 Considere que uma bateria é construída pela associação em série de três pilhas de lítio-lodo, nas condições-padrão, conforme as semiequações de redução apresentadas. ,+2e6 21 Eº=+0,54 V Litre >L Eº=-3,05V Essa bateria é adequada para o funcionamento de qual dispositivo eletrônico? o: ol (CAN o ev",
-   "imagens": [
-    "img:enem2021-133.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O quadro lista alguns dispositivos eletrônicos que estão presentes no dia a dia, bem como a faixa de força eletromotriz necessária ao seu funcionamento.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "V",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere que uma bateria é construída pela associação em série de três pilhas de lítio-iodo, nas condições-padrão, conforme as semiequações de redução apresentadas.<br><span class=\"pb\"></span>I<sub>2</sub> + 2 e<sup>−</sup> → 2 I<sup>−</sup>    E° = +0,54 V<br>Li<sup>+</sup> + e<sup>−</sup> → Li    E° = −3,05 V<br><span class=\"pb\"></span>Essa bateria é adequada para o funcionamento de qual dispositivo eletrônico?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "Dispositivo eletrônico",
+     "Faixa de força eletromotriz (V)"
+    ],
+    "linhas": [
+     [
+      "I",
+      "Relógio de parede",
+      "1,2 a 1,5"
+     ],
+     [
+      "II",
+      "Celular",
+      "3,5 a 3,8"
+     ],
+     [
+      "III",
+      "Câmera digital",
+      "7,5 a 7,8"
+     ],
+     [
+      "IV",
+      "Carrinho de controle remoto",
+      "10,5 a 10,9"
+     ],
+     [
+      "V",
+      "Notebook/Laptop",
+      "19,5 a 20,0"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-134",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Soluções",
@@ -24928,35 +24989,66 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 134 FA Bnemzoo] O alcoolômetro Gay Lussac é um instrumento destinado a medir o teor de álcool, em porcentagem de volume (v/v), de soluções de água e álcool na faixa de O ºGL a 100 ºGL, com divisões de 0,1 ºGL. A concepção do alcoolômetro se baseia no princípio de flutuabilidade de Arquimedes, semelhante ao funcionamento de um densímetro. A escala do instrumento é aferida a 20 ºC, sendo necessária a correção da medida, caso a temperatura da solução não esteja na temperatura de aferição. E apresentada parte da tabela de correção de um alcoolômetro, com a temperatura. Tabela de correção do alcoolômetro com temperatura 20 ºC “GL Leitura da temperatura (ºC) 25 35 33,0 36 40 Manual alcoolômetro Gay Lussac. Disponível em: www.incoterm.com.br. . Acesso em: 4 dez. 2018 (adaptado). EÉ necessária a correção da medida do instrumento, pois um aumento na temperatura promove o(a) O aumento da dissociação da água. O aumento da densidade da água e do álcool. O mudança do volume dos materiais por dilatação. O aumento da concentração de álcool durante a medida. O alteração das propriedades químicas da mistura álcool e água.",
-   "imagens": [
-    "img:enem2021-134.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O alcoolômetro Gay Lussac é um instrumento destinado a medir o teor de álcool, em porcentagem de volume (v/v), de soluções de água e álcool na faixa de 0 °GL a 100 °GL, com divisões de 0,1 °GL. A concepção do alcoolômetro se baseia no princípio de flutuabilidade de Arquimedes, semelhante ao funcionamento de um densímetro. A escala do instrumento é aferida a 20 °C, sendo necessária a correção da medida, caso a temperatura da solução não esteja na temperatura de aferição. É apresentada parte da tabela de correção de um alcoolômetro, com a temperatura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "aumento da dissociação da água.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "aumento da densidade da água e do álcool.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "mudança do volume dos materiais por dilatação.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "aumento da concentração de álcool durante a medida.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "alteração das propriedades químicas da mistura álcool e água.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "É necessária a correção da medida do instrumento, pois um aumento na temperatura promove o(a)",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "°GL (leitura da temperatura, °C)",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25"
+    ],
+    "linhas": [
+     [
+      "35",
+      "35,0",
+      "34,6",
+      "34,2",
+      "33,8",
+      "33,4",
+      "33,0"
+     ],
+     [
+      "36",
+      "36,0",
+      "35,6",
+      "35,2",
+      "34,8",
+      "34,4",
+      "34,0"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Tabela de correção do alcoolômetro com temperatura 20 °C. <b>Manual alcoolômetro Gay Lussac</b>. Disponível em: www.incoterm.com.br. Acesso em: 4 dez. 2018 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-135",
