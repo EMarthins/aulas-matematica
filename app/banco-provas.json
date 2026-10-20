@@ -10632,7 +10632,6 @@
   {
    "id": "enem2018-175",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -10644,40 +10643,44 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A \u0003LQFOLQDomR\u0003GH\u0003XPD\u0003UDPSD\u0003p\u0003FDOFXODGD\u0003GD\u0003VHJXLQWH\u0003PDQHLUD\u001d\u0003SDUD\u0003FDGD\u0003PHWUR\u0003PHGLGR\u0003QD\u0003KRUL]RQWDO\u000f\u0003PHGH\u0010VH\u0003 FHQWtPHWURV\u0003QD\u0003YHUWLFDO\u0011\u0003'L]\u0010VH\u000f\u0003QHVVH\u0003FDVR\u000f\u0003TXH\u0003D\u0003UDPSD\u0003WHP\u0003LQFOLQDomR\u0003GH\u0003 20 cm 1 m $\u0003¿JXUD\u0003DSUHVHQWD\u0003XP\u0003SURMHWR\u0003GH\u0003XPD\u0003UDPSD\u0003GH\u0003DFHVVR\u0003D\u0003XPD\u0003JDUDJHP\u0003UHVLGHQFLDO\u0003FXMD\u0003EDVH\u000f\u0003VLWXDGD\u0003\u0015\u0003PHWURV\u0003 abaixo do nível da rua, tem 8 metros de comprimento. Portão Nível da rua 2 m Rampa Nível da base 8 m da garagem Depois de projetada a rampa, o responsável pela obra foi informado de que as normas técnicas do município onde HOD\u0003HVWi\u0003ORFDOL]DGD\u0003H[LJHP\u0003TXH\u0003D\u0003LQFOLQDomR\u0003Pi[LPD\u0003GH\u0003XPD\u0003UDPSD\u0003GH\u0003DFHVVR\u0003D\u0003XPD\u0003JDUDJHP\u0003UHVLGHQFLDO\u0003VHMD\u0003GH\u0003\u0015\u0013\b\u0011 6H\u0003 D\u0003 UDPSD\u0003 SURMHWDGD\u0003 WLYHU\u0003 LQFOLQDomR\u0003 VXSHULRU\u0003 D\u0003 \u0015\u0013\b\u000f\u0003 R\u0003 QtYHO\u0003 GD\u0003 JDUDJHP\u0003 GHYHUi\u0003 VHU\u0003 DOWHUDGR\u0003 SDUD\u0003 GLPLQXLU\u0003 R\u0003 SHUFHQWXDO\u0003GH\u0003LQFOLQDomR\u000f\u0003PDQWHQGR\u0003R\u0003FRPSULPHQWR\u0003GD\u0003EDVH\u0003GD\u0003UDPSD\u0011 Para atender às normas técnicas do município, o nível da garagem deverá ser A HOHYDGR\u0003HP\u0003\u0017\u0013\u0003FP\u0011 B elevado em 50 cm. C mantido no mesmo nível. D UHEDL[DGR\u0003HP\u0003\u0017\u0013\u0003FP\u0011 E rebaixado em 50 cm.",
-   "imagens": [
-    "img:enem2018-175.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "A inclinação de uma rampa é calculada da seguinte maneira: para cada metro medido na horizontal, mede-se <i>x</i> centímetros na vertical. Diz-se, nesse caso, que a rampa tem inclinação de <i>x</i>%. Por exemplo, uma rampa que sobe 20 cm na vertical para cada 1 m na horizontal tem inclinação de 20%.<br><span class=\"pb\"></span>A figura a seguir apresenta um projeto de uma rampa de acesso a uma garagem residencial cuja base, situada 2 metros abaixo do nível da rua, tem 8 metros de comprimento.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "elevado em 40 cm.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "elevado em 50 cm.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "mantido no mesmo nível.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "rebaixado em 40 cm.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "rebaixado em 50 cm.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Depois de projetada a rampa, o responsável pela obra foi informado de que as normas técnicas do município onde ela está localizada exigem que a inclinação máxima de uma rampa de acesso a uma garagem residencial seja de 20%.<br><span class=\"pb\"></span>Se a rampa projetada tiver inclinação superior a 20%, o nível da garagem deverá ser alterado para diminuir o percentual de inclinação, mantendo o comprimento da base da rampa.<br><span class=\"pb\"></span>Para atender às normas técnicas do município, o nível da garagem deverá ser",
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 300 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"11\"><rect width=\"300\" height=\"140\" fill=\"#fff\"/><rect x=\"12\" y=\"40\" width=\"70\" height=\"78\" fill=\"#d9d9d9\"/><polygon points=\"82,40 290,118 82,118\" fill=\"#8a8a8a\" stroke=\"#222\"/><rect x=\"80\" y=\"14\" width=\"4\" height=\"26\" fill=\"#555\"/><line x1=\"12\" y1=\"40\" x2=\"82\" y2=\"40\" stroke=\"#222\"/><line x1=\"12\" y1=\"118\" x2=\"290\" y2=\"118\" stroke=\"#222\" stroke-dasharray=\"4 3\"/><text x=\"50\" y=\"14\">Portão</text><text x=\"14\" y=\"35\">Nível da rua</text><text x=\"14\" y=\"134\">Nível da base da garagem</text><text x=\"150\" y=\"88\">Rampa</text><line x1=\"92\" y1=\"40\" x2=\"92\" y2=\"118\" stroke=\"#222\"/><text x=\"96\" y=\"82\">2 m</text><text x=\"215\" y=\"134\">8 m</text><line x1=\"82\" y1=\"124\" x2=\"290\" y2=\"124\" stroke=\"#222\"/></svg>",
+     "largura": "110mm",
+     "legenda": "Rampa de acesso à garagem: portão no nível da rua; a base da garagem fica 2 m abaixo, com 8 m de comprimento."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2018-176",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -10689,40 +10692,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para ganhar um prêmio, uma pessoa deverá retirar, VXFHVVLYDPHQWH\u0003 H\u0003 VHP\u0003 UHSRVLomR\u000f\u0003 GXDV\u0003 ERODV\u0003 SUHWDV\u0003 GH\u0003 uma mesma urna. ,QLFLDOPHQWH\u000f\u0003 DV\u0003 TXDQWLGDGHV\u0003 H\u0003 FRUHV\u0003 GDV\u0003 ERODV\u0003 VmR\u0003 como descritas a seguir: \u0003 Urna A – Possui três bolas brancas, duas bolas pretas e uma bola verde; \u0003 Urna B – Possui seis bolas brancas, três bolas pretas e uma bola verde; \u0003 Urna C – Possui duas bolas pretas e duas bolas verdes; \u0003 Urna D – Possui três bolas brancas e três bolas pretas. A pessoa deve escolher uma entre as cinco opções apresentadas: \u0003 2SomR\u0003\u0014\u0003±\u00035HWLUDU\u000f\u0003DOHDWRULDPHQWH\u000f\u0003GXDV\u0003ERODV\u0003GD\u0003XUQD\u0003$\u001e \u0003 2SomR\u0003 \u0015\u0003 ±\u0003 5HWLUDU\u000f\u0003 DOHDWRULDPHQWH\u000f\u0003 GXDV\u0003 ERODV\u0003 GD\u0003 urna B; \u0003 2SomR\u0003\u0016\u0003±\u00033DVVDU\u000f\u0003DOHDWRULDPHQWH\u000f\u0003XPD\u0003EROD\u0003GD\u0003XUQD\u0003 C para a urna A; após isso, retirar, aleatoriamente, duas bolas da urna A; \u0003 2SomR\u0003\u0017\u0003±\u00033DVVDU\u000f\u0003DOHDWRULDPHQWH\u000f\u0003XPD\u0003EROD\u0003GD\u0003XUQD\u0003 D para a urna C; após isso, retirar, aleatoriamente, duas bolas da urna C; \u0003 2SomR\u0003\u0018\u0003±\u00033DVVDU\u000f\u0003DOHDWRULDPHQWH\u000f\u0003XPD\u0003EROD\u0003GD\u0003XUQD\u0003 C para a urna D; após isso, retirar, aleatoriamente, duas bolas da urna D. Com o objetivo de obter a maior probabilidade possível de JDQKDU\u0003R\u0003SUrPLR\u000f\u0003D\u0003SHVVRD\u0003GHYH\u0003HVFROKHU\u0003D\u0003RSomR A 1. B \u0015\u0011 C 3. D \u0017\u0011 E 5.",
-   "imagens": [
-    "img:enem2018-176.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "Para ganhar um prêmio, uma pessoa deverá retirar, sucessivamente e sem reposição, duas bolas pretas de uma mesma urna.<br><span class=\"pb\"></span>Inicialmente, as quantidades e cores das bolas são como descritas a seguir:<br>• Urna A – Possui três bolas brancas, duas bolas pretas e uma bola verde;<br>• Urna B – Possui seis bolas brancas, três bolas pretas e uma bola verde;<br>• Urna C – Possui duas bolas pretas e duas bolas verdes;<br>• Urna D – Possui três bolas brancas e três bolas pretas.<br><span class=\"pb\"></span>A pessoa deve escolher uma entre as cinco opções apresentadas:<br>• Opção 1 – Retirar, aleatoriamente, duas bolas da urna A;<br>• Opção 2 – Retirar, aleatoriamente, duas bolas da urna B;<br>• Opção 3 – Passar, aleatoriamente, uma bola da urna C para a urna A; após isso, retirar, aleatoriamente, duas bolas da urna A;<br>• Opção 4 – Passar, aleatoriamente, uma bola da urna D para a urna C; após isso, retirar, aleatoriamente, duas bolas da urna C;<br>• Opção 5 – Passar, aleatoriamente, uma bola da urna C para a urna D; após isso, retirar, aleatoriamente, duas bolas da urna D.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com o objetivo de obter a maior probabilidade possível de ganhar o prêmio, a pessoa deve escolher a opção",
+   "transcrita": true
   },
   {
    "id": "enem2018-177",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -10734,40 +10733,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A Ecofont possui design baseado na velha fonte Vera Sans. Porém, ela tem um diferencial: pequenos buraquinhos circulares congruentes, e em todo o seu corpo, presentes em cada símbolo. Esses furos proporcionam um gasto de tinta menor na hora da i PSUHVVmR\u0011 'LVSRQtYHO\u0003HP\u001d\u0003ZZZ\u0011JRR\u0011JO\u0011\u0003$FHVVR\u0003HP\u001d\u0003\u0015\u0003GH]\u0011\u0003\u0015\u0013\u0014\u001a\u0003 DGDSWDGR \u0011 Suponha que a palavra ECO esteja escrita nessa fonte, FRP\u0003WDPDQKR\u0003\u0014\u001c\u0015\u000f\u0003H\u0003TXH\u0003VHMD\u0003FRPSRVWD\u0003SRU\u0003OHWUDV\u0003IRUPDGDV\u0003 por quadrados de lados x com furos circulares de raio x 1 r = . Para que a área a ser pintada seja reduzida a 3 16 da área inicial, preten GH\u0010VH\u0003 UHGX]LU\u0003 R\u0003 WDPDQKR\u0003 GD\u0003 IRQWH\u0011\u0003 6DEH\u0010VH\u0003TXH\u000f\u0003DR\u0003DOWHUDU\u0003R\u0003WDPDQKR\u0003GD\u0003IRQWH\u000f\u0003R\u0003WDPDQKR\u0003 da letra é alterado na m HVPD\u0003SURSRUomR\u0011 Nessas condições, o tamanho adequado da fonte será A \u0019\u0017\u0011 B \u0017\u001b\u0011 C \u0015\u0017\u0011 D \u0015\u0014\u0011 E \u0014\u0015\u0011",
-   "imagens": [
-    "img:enem2018-177.jpg"
-   ],
-   "larguraMm": 91.7,
+   "enunciado": "A Ecofont possui design baseado na velha fonte Vera Sans. Porém, ela tem um diferencial: pequenos buraquinhos circulares congruentes, e em todo o seu corpo, presentes em cada símbolo. Esses furos proporcionam um gasto de tinta menor na hora da impressão.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "64.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "48.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "24.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "21.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "12.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Suponha que a palavra ECO esteja escrita nessa fonte, com tamanho 192, e que seja composta por letras formadas por quadrados de lados <i>x</i> com furos circulares de raio <i>r</i> = $ {x|3} $. Para que a área a ser pintada seja reduzida a $ {1|16} $ da área inicial, pretende-se reduzir o tamanho da fonte. Sabe-se que, ao alterar o tamanho da fonte, o tamanho da letra é alterado na mesma proporção.<br><span class=\"pb\"></span>Nessas condições, o tamanho adequado da fonte será",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2018-177-fig.jpg",
+    "alt": "Palavra “ecofont” em letras com pequenos furos circulares; abaixo, as letras E, C e O ampliadas, formadas por quadrados de lado x com furos circulares",
+    "largura": "87mm",
+    "legenda": "Disponível em: www.goo.gl. Acesso em: 2 dez. 2017 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2018-178",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria analítica",
@@ -10779,40 +10781,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3DUD\u0003 FULDU\u0003 XP\u0003 ORJRWLSR\u000f\u0003 XP\u0003 SUR¿VVLRQDO\u0003 GD\u0003 iUHD\u0003 GH\u0003 design \u0003JUi¿FR\u0003GHVHMD\u0003FRQVWUXt\u0010OR\u0003XWLOL]DQGR\u0003R\u0003FRQMXQWR\u0003GH\u0003 pontos do plano na forma de um triângulo, exatamente como mostra a imagem. y 15 10 5 x \u0010 15 \u0010 10 \u0010 5 0 5 10 15 \u0010 5 \u0010 10 \u0010 15 Para construir tal imagem utilizando uma ferramenta JUi¿FD\u000f\u0003 VHUi\u0003 QHFHVViULR\u0003 HVFUHYHU\u0003 DOJHEULFDPHQWH\u0003 R\u0003 FRQMXQWR\u0003TXH\u0003UHSUHVHQWD\u0003RV\u0003SRQWRV\u0003GHVVH\u0003JUi¿FR\u0011 Esse conjunto é dado pelos pares ordenados (x ; y) \u0003 `\u0001 u\u0003 ` , tais que A 0 d x d y d 10 B 0 d y d x d 10 C 0 d x d 10, 0 d\u0003 y \u0003d\u0003\u0014\u0013 D 0 d x \u000e y d 10 E 0 d x \u000e y d \u0003\u0015\u0013",
-   "imagens": [
-    "img:enem2018-178.jpg"
-   ],
-   "larguraMm": 91.7,
+   "enunciado": "Para criar um logotipo, um profissional da área de design gráfico deseja construí-lo utilizando o conjunto de pontos do plano na forma de um triângulo, exatamente como mostra a imagem.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0 ≤ <i>x</i> ≤ <i>y</i> ≤ 10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0 ≤ <i>y</i> ≤ <i>x</i> ≤ 10",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "0 ≤ <i>x</i> ≤ 10, 0 ≤ <i>y</i> ≤ 10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0 ≤ <i>x</i> + <i>y</i> ≤ 10",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0 ≤ <i>x</i> + <i>y</i> ≤ 20",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para construir tal imagem utilizando uma ferramenta gráfica, será necessário escrever algebricamente o conjunto que representa os pontos desse gráfico.<br><span class=\"pb\"></span>Esse conjunto é dado pelos pares ordenados (<i>x</i> ; <i>y</i>) ∈ ℕ × ℕ, tais que",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2018-178-fig.jpg",
+    "alt": "Plano cartesiano com pontos de coordenadas inteiras formando um triângulo retângulo: vértices em (0, 0), (10, 0) e (10, 10); os pontos ocupam a região entre o eixo x, a reta x = 10 e a reta y = x",
+    "largura": "78mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2018-179",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -10824,40 +10828,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A figura mostra uma praça circular que contém um chafariz em seu centro e, em seu entorno, um passeio. Os círculos que definem a praça e o chafariz VmR\u0003FRQFrQWULFRV\u0011 s e o P a s i P a i o s e s s Chafariz e s o i a P o i e s a P s Praça O passeio terá seu piso revestido com ladrilhos. Sem condições de calcular os raios, pois o chafariz está cheio, XP\u0003 HQJHQKHLUR\u0003 IH]\u0003 D\u0003 VHJXLQWH\u0003 PHGLomR\u001d\u0003 HVWLFRX\u0003 XPD\u0003 trena tangente ao chafariz, medindo a distância entre dois pontos A e B \u000f\u0003FRQIRUPH\u0003D\u0003¿JXUD\u0011\u0003&RP\u0003LVVR\u000f\u0003REWHYH\u0003D\u0003 medida do segmento de reta AB : 16 m. A B 16 m Dispondo apenas dessa medida, o engenheiro calculou corretamente a medida da área do passeio, em metro quadrado. A medida encontrada pelo engenheiro foi A \u0017 S B 8 S C \u0017\u001b S D \u0019\u0017 S E \u0014\u001c\u0015 S",
-   "imagens": [
-    "img:enem2018-179.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "A figura mostra uma praça circular que contém um chafariz em seu centro e, em seu entorno, um passeio. Os círculos que definem a praça e o chafariz são concêntricos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4π",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8π",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "48π",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "64π",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "192π",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O passeio terá seu piso revestido com ladrilhos. Sem condições de calcular os raios, pois o chafariz está cheio, um engenheiro fez a seguinte medição: esticou uma trena tangente ao chafariz, medindo a distância entre dois pontos A e B, conforme a figura. Com isso, obteve a medida do segmento de reta AB: 16 m.<br><span class=\"pb\"></span>Dispondo apenas dessa medida, o engenheiro calculou corretamente a medida da área do passeio, em metro quadrado.<br><span class=\"pb\"></span>A medida encontrada pelo engenheiro foi",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2018-179-fig1.jpg",
+     "alt": "Praça circular com o chafariz no centro e o passeio ao redor",
+     "largura": "63mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2018-179-fig2.jpg",
+     "alt": "A mesma praça, com um segmento AB de 16 m tangente ao chafariz, com extremidades A e B na circunferência da praça",
+     "largura": "68mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2018-180",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -10869,35 +10883,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2018 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um designer de jogos planeja um jogo que faz uso GH\u0003XP\u0003WDEXOHLUR\u0003GH\u0003GLPHQVmR\u0003 n u n , com n t\u0003 \u0015\u000f\u0003QR\u0003TXDO\u0003 cada jogador, na sua vez, coloca uma peça sobre uma das casas vazias do tabuleiro. Quando uma peça é SRVLFLRQDGD\u000f\u0003D\u0003UHJLmR\u0003IRUPDGD\u0003SHODV\u0003FDVDV\u0003TXH\u0003HVWmR\u0003QD\u0003 mesma linha ou coluna dessa peça é chamada de zona GH\u0003FRPEDWH\u0003GHVVD\u0003SHoD\u0011\u00031D\u0003¿JXUD\u0003HVWi\u0003LOXVWUDGD\u0003D\u0003]RQD\u0003 de combate de uma peça colocada em uma das casas de XP\u0003WDEXOHLUR\u0003GH\u0003GLPHQVmR\u0003\u001b\u0003 u 8. O tabuleiro deve ser dimensionado de forma que a probabilidade de se posicionar a segunda peça DOHDWRULDPHQWH\u000f\u0003 VHJXLQGR\u0003 D\u0003 UHJUD\u0003 GR\u0003 MRJR\u000f\u0003 H\u0003 HVWD\u0003 ¿FDU\u0003 1 sobre a zona de combate da primeira, seja inferior a . 5 $\u0003 GLPHQVmR\u0003 PtQLPD\u0003 TXH\u0003 R\u0003 designer deve adotar para esse tabuleiro é A \u0017\u0003 u \u0003\u0017\u0011 B 6 u 6. C 9 u 9. D 10 u 10. E 11 u 11.",
-   "imagens": [
-    "img:enem2018-180.jpg"
-   ],
-   "larguraMm": 91.7,
+   "enunciado": "Um designer de jogos planeja um jogo que faz uso de um tabuleiro de dimensão <i>n</i> × <i>n</i>, com <i>n</i> ≥ 2, no qual cada jogador, na sua vez, coloca uma peça sobre uma das casas vazias do tabuleiro. Quando uma peça é posicionada, a região formada pelas casas que estão na mesma linha ou coluna dessa peça é chamada de zona de combate dessa peça. Na figura está ilustrada a zona de combate de uma peça colocada em uma das casas de um tabuleiro de dimensão 8 × 8.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4 × 4.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6 × 6.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "9 × 9.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10 × 10.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "11 × 11.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O tabuleiro deve ser dimensionado de forma que a probabilidade de se posicionar a segunda peça aleatoriamente, seguindo a regra do jogo, e esta ficar sobre a zona de combate da primeira, seja inferior a $ {1|5} $.<br><span class=\"pb\"></span>A dimensão mínima que o designer deve adotar para esse tabuleiro é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2018-180-fig.jpg",
+    "alt": "Tabuleiro 8 × 8 em xadrez com uma peça (ponto preto) e a sua zona de combate: toda a linha e toda a coluna da peça destacadas em cinza escuro",
+    "largura": "71mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-1e",

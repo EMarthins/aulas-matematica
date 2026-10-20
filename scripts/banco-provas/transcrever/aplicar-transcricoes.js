@@ -95,6 +95,7 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
       const T = (Array.isArray(r.tabs) ? r.tabs : r.tab ? [r.tab] : []).map(t => ({ tipo: 'tabela', cab: t.cab, linhas: t.linhas, largura: t.largura || '90%', ...(t.legenda ? { legenda: t.legenda } : {}) }));
       if (T.length && (r.fig || r.figs)) { const F = [].concat(q.figura || [], q.figuras || []).filter(x => x && x.tipo === 'img'); delete q.figura; q.figuras = r.tabprimeiro ? T.concat(F) : F.concat(T); }
     }
+    if (r.svg) { const sv = { tipo: 'svg', svg: r.svg, ...(r.svgLarg ? { largura: r.svgLarg } : {}), ...(r.legenda ? { legenda: r.legenda } : {}) }; q.figuras = [sv].concat(q.figuras || [], q.figura || []).filter(Boolean); delete q.figura; }
     if (r.base) { // figuras de apoio (imagem inteira da base, recorte ou tabelas) vêm antes das figuras da própria questão
       const extra = [];
       if (q.base && q.base.src) {
