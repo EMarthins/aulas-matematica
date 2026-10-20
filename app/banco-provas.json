@@ -116371,8 +116371,6 @@
   },
   {
    "id": "cdb-l-cone-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -116383,12 +116381,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "No cone reto a seguir, a geratriz (g) mede 20 cm e a altura mede 16 cm. Determine seu volume. Precisamos calcular a medida do raio da base, e para isso utilizaremos o teorema de Pitágoras. Observe",
-   "imagens": [
-    "img:cdb-l-cone-03.jpg"
-   ],
-   "larguraMm": 152.1,
+   "enunciado": "No cone reto a seguir, a geratriz (g) mede 20 cm e a altura mede 16 cm. Determine seu volume.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-cone-03-r.jpg",
@@ -116398,7 +116391,15 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Dica: precisamos calcular a medida do raio da base, e para isso utilizaremos o teorema de Pitágoras.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-cone-03-fig.jpg",
+    "alt": "Cone reto com a altura h, a geratriz g e o raio da base R indicados",
+    "largura": "36mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-cone-04",
@@ -116547,8 +116548,6 @@
   },
   {
    "id": "cdb-l-definicao-de-logaritmos-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -116559,24 +116558,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o número de soluções da equação logarítmica dada por",
-   "imagens": [
-    "img:cdb-l-definicao-de-logaritmos-01.jpg"
-   ],
-   "larguraMm": 106.6,
+   "enunciado": "Determine o número de soluções da equação logarítmica dada por<br><span class=\"pb\"></span>$ log_{10}(x + 1) + log_{10}(x + 3) = log_{10} 3 $",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "Condição: $x + 1 > 0$ e $x + 3 > 0$ ⇒ $x > -1$. $(x + 1)(x + 3) = 3$ ⇒ $x^2 + 4x = 0$ ⇒ $x = 0$ ou $x = -4$. Só $x = 0$ serve: a equação tem $1$ solução."
+   "gabarito": "Condição: $x + 1 > 0$ e $x + 3 > 0$ ⇒ $x > -1$. $(x + 1)(x + 3) = 3$ ⇒ $x^2 + 4x = 0$ ⇒ $x = 0$ ou $x = -4$. Só $x = 0$ serve: a equação tem $1$ solução.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-definicao-de-logaritmos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -116587,24 +116580,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Calcule os valores de x para que a equação seja verdadeira.",
-   "imagens": [
-    "img:cdb-l-definicao-de-logaritmos-02.jpg"
-   ],
-   "larguraMm": 138,
+   "enunciado": "Calcule os valores de $ x $ para que a equação<br><span class=\"pb\"></span>$ {1|log_x 8} + {1|log_{2x} 8} + {1|log_{4x} 8} = 2 $<br><span class=\"pb\"></span>seja verdadeira.",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "${1|log_x 8} = log_8 x$. A soma é $log_8 x + log_8 2x + log_8 4x = log_8(8x^3) = 2$ ⇒ $8x^3 = 64$ ⇒ $x = 2$."
+   "gabarito": "${1|log_x 8} = log_8 x$. A soma é $log_8 x + log_8 2x + log_8 4x = log_8(8x^3) = 2$ ⇒ $8x^3 = 64$ ⇒ $x = 2$.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-definicao-de-logaritmos-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -116616,12 +116603,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(FAAP - SP) Determine a solução da equação",
-   "imagens": [
-    "img:cdb-l-definicao-de-logaritmos-03.jpg"
-   ],
-   "larguraMm": 99.9,
+   "enunciado": "(FAAP-SP) Determine a solução da equação<br><span class=\"pb\"></span>$ log_x 2 · log_{x/16} 2 = log_{x/64} 2 $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-definicao-de-logaritmos-03-r.jpg",
@@ -116631,7 +116613,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-definicao-de-logaritmos-04",
@@ -116675,8 +116658,6 @@
   },
   {
    "id": "cdb-l-determinantes-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Determinantes e sistemas lineares",
@@ -116687,12 +116668,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Unicap - PE Calcule o valor de x, a fim de que o determinante da matriz A seja nulo.",
-   "imagens": [
-    "img:cdb-l-determinantes-01.jpg"
-   ],
-   "larguraMm": 115.4,
+   "enunciado": "(Unicap - PE) Calcule o valor de $ x $, a fim de que o determinante da matriz $ A $ seja nulo.<br><span class=\"pb\"></span>$ A = @M{1&2&1;4&9&4;6&x&x − 7} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-determinantes-01-r.jpg",
@@ -116702,7 +116678,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-determinantes-02",
@@ -116737,8 +116714,6 @@
   },
   {
    "id": "cdb-l-determinantes-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Determinantes e sistemas lineares",
@@ -116749,12 +116724,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o valor de x para que o determinante da matriz A seja igual a 8.",
-   "imagens": [
-    "img:cdb-l-determinantes-03.jpg"
-   ],
-   "larguraMm": 120.2,
+   "enunciado": "Determine o valor de $ x $ para que o determinante da matriz $ A $ seja igual a 8.<br><span class=\"pb\"></span>$ A = @M{x&−3;x + 2&x − 2} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-determinantes-03-r.jpg",
@@ -116764,12 +116734,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-determinantes-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Determinantes e sistemas lineares",
@@ -116780,12 +116749,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O determinante da matriz A é igual a - 2. Se B e C são as matrizes obtidas, respectivamente, pela substituição em A do menor e do maior valor de y encontrados, calcule a matriz transposta do produto de B por C.",
-   "imagens": [
-    "img:cdb-l-determinantes-04.jpg"
-   ],
-   "larguraMm": 146.5,
+   "enunciado": "O determinante da matriz $ A $ é igual a −2. Se $ B $ e $ C $ são as matrizes obtidas, respectivamente, pela substituição em $ A $ do menor e do maior valor de $ y $ encontrados, calcule a matriz transposta do produto de $ B $ por $ C $.<br><span class=\"pb\"></span>$ A = @M{2&3&1;−1&y&0;1&2&2y} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-determinantes-04-r.jpg",
@@ -116795,7 +116759,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-determinantes-05",
@@ -122402,8 +122367,6 @@
   },
   {
    "id": "cdb-l-conjuntos-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122414,41 +122377,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. Assinale a FALSA: a) Ø Ì{3} b) {3}Ì{3} c) Ø Ï{3} d) 3 Î{3} e) 3 = {3}",
-   "imagens": [
-    "img:cdb-l-conjuntos-01.jpg"
-   ],
-   "larguraMm": 45.4,
+   "enunciado": "Assinale a FALSA:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ∅ ⊂ \\{3\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ \\{3\\} ⊂ \\{3\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ∅ ∉ \\{3\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3 ∈ \\{3\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3 = \\{3\\} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122460,41 +122417,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. (PUC) Para os conjuntos A = {a} e B = {a, {A}} podemos afirmar: a) B Ì A b) A = B c) A ÎB d) a = A e) {A}ÎB",
-   "imagens": [
-    "img:cdb-l-conjuntos-02.jpg"
-   ],
-   "larguraMm": 130.6,
+   "enunciado": "(PUC) Para os conjuntos $ A = \\{a\\} $ e $ B = \\{a, \\{A\\}\\} $ podemos afirmar:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ B ⊂ A $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ A = B $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ A ∈ B $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a = A $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ \\{A\\} ∈ B $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122506,36 +122457,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. (FATEC) Sendo A = {2, 3, 5, 6, 9, 13} e B = {ab | a ÎA, b ÎA e a ¹ b}, o número de elementos de B que são números pares é: a) 5 b) 8 c) 10 d) 12 e) 13",
-   "imagens": [
-    "img:cdb-l-conjuntos-03.jpg"
-   ],
-   "larguraMm": 186.7,
+   "enunciado": "(FATEC) Sendo $ A = \\{2, 3, 5, 6, 9, 13\\} $ e $ B = \\{ab ∣ a ∈ A, b ∈ A $ e $ a ≠ b\\} $, o número de elementos de B que são números pares é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "13",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-04",
@@ -122619,8 +122566,6 @@
   },
   {
    "id": "cdb-l-conjuntos-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122631,19 +122576,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06. No último clássico Corinthians x Flamengo, realizado em São Paulo, verificou - se que só foram ao estádio paulistas e cariocas e que todos eles eram só corintianos ou só flamenguistas. Verificou - se também que, dos 100.000 torcedores, 85.000 eram corintiano s, 84.000 eram paulistas e que apenas 4.000 paulistas torciam para o Flamengo. Pergunta - se: a) Quantos paulistas corintianos foram ao estádio? b) Quantos cariocas foram ao estádio? c) Quantos não - flamenguistas foram ao estádio? d) Quantos flamenguistas foram ao estádio? e) Dos paulistas que foram ao estádio, quantos não eram flamenguistas? f) Dos cariocas que foram ao estádio, quantos eram corintianos? g) Quantos eram flamenguist",
-   "imagens": [
-    "img:cdb-l-conjuntos-06.jpg"
-   ],
-   "larguraMm": 183.4,
+   "enunciado": "No último clássico Corinthians x Flamengo, realizado em São Paulo, verificou-se que só foram ao estádio paulistas e cariocas e que todos eles eram só corintianos ou só flamenguistas. Verificou-se também que, dos 100.000 torcedores, 85.000 eram corintianos, 84.000 eram paulistas e que apenas 4.000 paulistas torciam para o Flamengo. Pergunta-se:<br><span class=\"pb\"></span>a) Quantos paulistas corintianos foram ao estádio?<br>b) Quantos cariocas foram ao estádio?<br>c) Quantos não-flamenguistas foram ao estádio?<br>d) Quantos flamenguistas foram ao estádio?<br>e) Dos paulistas que foram ao estádio, quantos não eram flamenguistas?<br>f) Dos cariocas que foram ao estádio, quantos eram corintianos?<br>g) Quantos eram flamenguistas ou cariocas?<br>h) Quantos eram corintianos ou paulistas?<br>i) Quantos torcedores eram não-paulistas ou não-flamenguistas?",
    "resolucao": "",
    "gabarito": "a) 80.000",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-07",
@@ -122687,8 +122628,6 @@
   },
   {
    "id": "cdb-l-conjuntos-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122700,41 +122639,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. (UF - Uberlândia) Num grupo de estudantes, 80% estudam Inglês, 40% estudam Francês e 1 0% não estudam nenhuma dessas duas línguas. Nesse grupo, a porcentagem de alunos que estudam ambas as línguas é: a) 25% b) 50% c) 15% d) 33% e) 30%",
-   "imagens": [
-    "img:cdb-l-conjuntos-08.jpg"
-   ],
-   "larguraMm": 181.8,
+   "enunciado": "(UF - Uberlândia) Num grupo de estudantes, 80% estudam Inglês, 40% estudam Francês e 10% não estudam nenhuma dessas duas línguas. Nesse grupo, a porcentagem de alunos que estudam ambas as línguas é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "50%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "15%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "33%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "30%",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122746,41 +122679,64 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09. (VUNESP) Uma população utiliza 3 marcas diferentes de detergente: A, B e C. Feita uma pesquisa de mercado colheram - se os resultados tabelados abaixo: Nenhuma Marcas A B C A e B A e C B e C A, B e C delas Número de 109 203 162 25 28 41 5 115 Consumidores Pode - se concluir que o número de pessoas que consomem ao menos duas marcas é: a) 99 b) 94 c) 9 0 d) 84 e) 79",
-   "imagens": [
-    "img:cdb-l-conjuntos-09.jpg"
-   ],
-   "larguraMm": 179.7,
+   "enunciado": "(VUNESP) Uma população utiliza 3 marcas diferentes de detergente: A, B e C. Feita uma pesquisa de mercado colheram-se os resultados tabelados abaixo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "99",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "94",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "90",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "84",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "79",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Pode-se concluir que o número de pessoas que consomem ao menos duas marcas é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Marcas",
+     "A",
+     "B",
+     "C",
+     "A e B",
+     "A e C",
+     "B e C",
+     "A, B e C",
+     "Nenhuma delas"
+    ],
+    "linhas": [
+     [
+      "Número de consumidores",
+      "109",
+      "203",
+      "162",
+      "25",
+      "28",
+      "41",
+      "5",
+      "115"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjuntos-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -122792,19 +122748,44 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. (UF - Viçosa) Fez - se em uma população, uma pesquisa de mercado sobre o consumo de sabão em pó de três marcas distintas A, B e C. Em relação à população consultada e com o auxílio dos resultados da pesquisa tabelados abaixo: Nenhuma Marcas A B C A e B A e C B e C A, B e C delas Número de 109 203 162 25 28 41 5 115 Consumidores Determine: a) O número de pessoas consultadas. b) O número de pessoas que não consomem as marcas A ou C. c) O número de pessoas que consomem pelo menos duas marcas. d) A porcentagem de pessoas que consomem as marcas A e B mas não consomem a marca C. e) A porcentagem de pessoas que consomem apenas a marca C.",
-   "imagens": [
-    "img:cdb-l-conjuntos-10.jpg"
-   ],
-   "larguraMm": 184.3,
+   "enunciado": "(UF - Viçosa) Fez-se em uma população, uma pesquisa de mercado sobre o consumo de sabão em pó de três marcas distintas A, B e C. Em relação à população consultada e com o auxílio dos resultados da pesquisa tabelados abaixo:",
    "resolucao": "",
    "gabarito": "a) 500",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine:<br><span class=\"pb\"></span>a) O número de pessoas consultadas.<br>b) O número de pessoas que não consomem as marcas A ou C.<br>c) O número de pessoas que consomem pelo menos duas marcas.<br>d) A porcentagem de pessoas que consomem as marcas A e B mas não consomem a marca C.<br>e) A porcentagem de pessoas que consomem apenas a marca C.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Marcas",
+     "A",
+     "B",
+     "C",
+     "A e B",
+     "A e C",
+     "B e C",
+     "A, B e C",
+     "Nenhuma delas"
+    ],
+    "linhas": [
+     [
+      "Número de consumidores",
+      "109",
+      "203",
+      "162",
+      "25",
+      "28",
+      "41",
+      "5",
+      "115"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-01",
@@ -134782,8 +134763,6 @@
   },
   {
    "id": "cdb-l-com-numeros-racionais-e-de-27",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -134794,32 +134773,28 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. Qual é a dízima periódica representada pela fração 10/3? I. a. 0,333... II. b. 1,111... III. c. 3,0303... IV. d. 3,333...",
-   "imagens": [
-    "img:cdb-l-com-numeros-racionais-e-de-27.jpg"
-   ],
-   "larguraMm": 133.9,
+   "enunciado": "Qual é a dízima periódica representada pela fração $ {10|3} $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,333...",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,111...",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3,0303...",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3,333...",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-facoes-algebricas-01",
@@ -136336,8 +136311,6 @@
   },
   {
    "id": "cdb-l-conjunto-dos-numeros-reais-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136348,12 +136321,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dados os números: 0; 144; – 144; 25; – 25; 2,45; – 2,45; 1 ; – 1 ; √7; – √7; √ – 7 4 4 a) Quais desses números pertencem ao conjunto dos números naturais? b) Quais desses números pertencem ao conjunto dos números inteiros? c) Quais desses números pertencem ao conjunto dos números racionais? d) Quais desses números pertencem ao conjunto dos números irracionais? e) Quais desses números pertencem ao conjunto dos números reais? f) Quais desses números não pertencem a nenhum dos conjuntos acima?",
-   "imagens": [
-    "img:cdb-l-conjunto-dos-numeros-reais-02.jpg"
-   ],
-   "larguraMm": 128.3,
+   "enunciado": "Dados os números:<br><span class=\"pb\"></span>$ 0;\\ 144;\\ −144;\\ 25;\\ −25;\\ 2,45;\\ −2,45;\\ {1|4};\\ −{1|4};\\ √7;\\ −√7;\\ √{−7} $<br><span class=\"pb\"></span>a) Quais desses números pertencem ao conjunto dos números naturais?<br>b) Quais desses números pertencem ao conjunto dos números inteiros?<br>c) Quais desses números pertencem ao conjunto dos números racionais?<br>d) Quais desses números pertencem ao conjunto dos números irracionais?<br>e) Quais desses números pertencem ao conjunto dos números reais?<br>f) Quais desses números não pertencem a nenhum dos conjuntos acima?",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-conjunto-dos-numeros-reais-02-r.jpg",
@@ -136364,7 +136332,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjunto-dos-numeros-reais-03",
@@ -148084,8 +148053,6 @@
   },
   {
    "id": "cdb-l-determinantes-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Determinantes e sistemas lineares",
@@ -148096,36 +148063,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questões: a) 64 b) 8 c) 0 d) - 8 e) - 64",
-   "imagens": [
-    "img:cdb-l-determinantes-2-01.jpg"
-   ],
-   "larguraMm": 168.6,
+   "enunciado": "(UNIFORM) Sejam as matrizes $ A = @M{−1&0&1;0&2&−2} $ e $ B = @M{2&−1;1&2;0&1} $. O determinante da matriz $ A · B $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "64",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−8",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "−64",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-retas-e-triangulos-06",
