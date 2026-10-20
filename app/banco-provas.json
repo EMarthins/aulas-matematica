@@ -118141,8 +118141,6 @@
   },
   {
    "id": "cdb-l-estatistica-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -118153,19 +118151,50 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A distribuição de salários de uma empresa é fornecido pela tabela a seguir: Calcule a média salarial dessa empresa.",
-   "imagens": [
-    "img:cdb-l-estatistica-02.jpg"
-   ],
-   "larguraMm": 121.2,
+   "enunciado": "A distribuição de salários de uma empresa é fornecida pela tabela a seguir:",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "Soma dos salários: $10 · 500 + 5 · 1 000 + 6 · 1 500 + 15 · 2 000 + 8 · 5 000 + 2 · 10 000 = 109 000$. Funcionários: $46$. Média $= {109 000|46} ≈ 2 369,57$ reais."
+   "gabarito": "Soma dos salários: $10 · 500 + 5 · 1 000 + 6 · 1 500 + 15 · 2 000 + 8 · 5 000 + 2 · 10 000 = 109 000$. Funcionários: $46$. Média $= {109 000|46} ≈ 2 369,57$ reais.",
+   "pergunta": "Calcule a média salarial dessa empresa.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Salários (R$)",
+     "Funcionários"
+    ],
+    "linhas": [
+     [
+      "500,00",
+      "10"
+     ],
+     [
+      "1 000,00",
+      "5"
+     ],
+     [
+      "1 500,00",
+      "6"
+     ],
+     [
+      "2 000,00",
+      "15"
+     ],
+     [
+      "5 000,00",
+      "8"
+     ],
+     [
+      "10 000,00",
+      "2"
+     ]
+    ],
+    "largura": "55%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-03",
@@ -118195,8 +118224,6 @@
   },
   {
    "id": "cdb-l-estatistica-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -118208,12 +118235,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Unifor - CE) Em certa eleição municipal foram obtidos os seguintes resultados: O número de votos obtido pelo candidato vencedor foi: a) 178 b) 182 c) 184 d) 188 e) 191",
-   "imagens": [
-    "img:cdb-l-estatistica-04.jpg"
-   ],
-   "larguraMm": 107.3,
+   "enunciado": "(Unifor-CE) Em certa eleição municipal foram obtidos os seguintes resultados:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-estatistica-04-r.jpg",
@@ -118222,31 +118244,62 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "178",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "182",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "184",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "188",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "191",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O número de votos obtido pelo candidato vencedor foi:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Candidato",
+     "Porcentagem do total de votos",
+     "Número de votos"
+    ],
+    "linhas": [
+     [
+      "A",
+      "26%",
+      ""
+     ],
+     [
+      "B",
+      "24%",
+      ""
+     ],
+     [
+      "C",
+      "22%",
+      ""
+     ],
+     [
+      "nulo ou em branco",
+      "",
+      "196"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -118258,36 +118311,63 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(FGV - SP) A tabela abaixo representa a distribuição de frequência dos salários de um grupo de 50 empregados de uma empresa, em certo mês. O salário médio desses empregados, nesse mês, foi de: a) R$ 2 637,00 b) R$ 2 520,00 c) R$ 2 500,00 d) R$ 2 420,00 e) R$ 2 400,00",
-   "imagens": [
-    "img:cdb-l-estatistica-05.jpg"
-   ],
-   "larguraMm": 151.2,
+   "enunciado": "(FGV-SP) A tabela abaixo representa a distribuição de frequência dos salários de um grupo de 50 empregados de uma empresa, em certo mês. O salário médio desses empregados, nesse mês, foi de:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "R&#36; 2 637,00",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "R&#36; 2 520,00",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "R&#36; 2 500,00",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "R&#36; 2 420,00",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "R&#36; 2 400,00",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Número da classe",
+     "Salário do mês – R$",
+     "Número de empregados"
+    ],
+    "linhas": [
+     [
+      "1",
+      "1 000 ⊢ 2 000",
+      "20"
+     ],
+     [
+      "2",
+      "2 000 ⊢ 3 000",
+      "18"
+     ],
+     [
+      "3",
+      "3 000 ⊢ 4 000",
+      "9"
+     ],
+     [
+      "4",
+      "4 000 ⊢ 5 000",
+      "3"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-eventos-independentes-01",
@@ -147677,8 +147757,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -147689,12 +147767,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Qual é a probabilidade de, no lançamento de 4 moedas, obtermos cara em todos os resultados? a) 2% b) 2,2% c) 6,2% e) 4% f) 4,2%",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-02.jpg"
-   ],
-   "larguraMm": 153.4,
+   "enunciado": "Qual é a probabilidade de, no lançamento de 4 moedas, obtermos cara em todos os resultados?",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-estatistica-e-probabilidad-02-r.jpg",
@@ -147703,22 +147776,27 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,2%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6,2%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "4%",
+     "ok": false
+    },
+    {
+     "t": "4,2%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-03",
@@ -147947,8 +148025,6 @@
   },
   {
    "id": "cdb-l-estatistica-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Estatística",
@@ -147959,24 +148035,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Num inquérito a 30 famílias, sobre o número de filhos, obtiveram - se os seguintes dados: 2 0 1 1 2 3 4 0 2 1 4 2 2 1 1 0 1 3 3 1 1 1 4 2 3 1 1 0 1 2 a) Constrói uma tabela de frequências. b) Qual é o número de filhos mais frequente? c) Quantas famílias não têm filhos? d) Qual a percentagem de famílias com dois filhos? e) Constrói um gráfico de barras.",
-   "imagens": [
-    "img:cdb-l-estatistica-2-01.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Num inquérito a 30 famílias, sobre o número de filhos, obtiveram-se os seguintes dados:<br><span class=\"pb\"></span>2 0 1 1 2 3 4 0 2 1<br>4 2 2 1 1 0 1 3 3 1<br>1 1 4 2 3 1 1 0 1 2<br><span class=\"pb\"></span>a) Constrói uma tabela de frequências.<br>b) Qual é o número de filhos mais frequente?<br>c) Quantas famílias não têm filhos?<br>d) Qual a percentagem de famílias com dois filhos?<br>e) Constrói um gráfico de barras.",
    "resolucao": "",
    "gabarito": "a) Filhos: 0 → 4 famílias; 1 → 12; 2 → 7; 3 → 4; 4 → 3 (total 30). b) 1 filho (12 famílias). c) 4 famílias. d) ${7|30} ≈ 23,3\\%$. e) gráfico de barras com as frequências 4, 12, 7, 4 e 3.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-2-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Estatística",
@@ -147987,24 +148057,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. Observa o seguinte gráfico, publicado na revista razão, de Agosto de 1991, sobre as espécies florestais do Conti nente. Espécie e área Outras espécies 10% Eucalipto Pinheiro 13% Bravo 41% Azinheira 15% Sobreiro 21% a) Qual a espécie mais predominante em Portugal? b) Quais são as espécies de árvores que existem em Portugal aproximadamente na mesma percentagem? c) Qual a fracção da floresta que é ocupado pelo pinheiro bravo?",
-   "imagens": [
-    "img:cdb-l-estatistica-2-02.jpg"
-   ],
-   "larguraMm": 146.8,
+   "enunciado": "Observa o seguinte gráfico, publicado na revista Razão, de Agosto de 1991, sobre as espécies florestais do Continente.",
    "resolucao": "",
    "gabarito": "a) Pinheiro bravo ($41%$). b) Azinheira ($15%$) e eucalipto ($13%$). c) $41%$, ou seja, ${41|100}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "a) Qual a espécie mais predominante em Portugal?<br>b) Quais são as espécies de árvores que existem em Portugal aproximadamente na mesma percentagem?<br>c) Qual a fracção da floresta que é ocupado pelo pinheiro bravo?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-2-02-fig.jpg",
+    "alt": "Gráfico de setores “Espécie e área”: Pinheiro bravo 41%, Sobreiro 21%, Azinheira 15%, Eucalipto 13%, Outras espécies 10%",
+    "largura": "122mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Estatística",
@@ -148015,19 +148086,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Determina a média e a moda dos seguintes conjuntos de dados: a) 1, 1, 2, 2, 2, 2, 3, 4, 3 b) 10, 10, 13, 13, 13, 18 c) 5, 3, 4, 2, 1, 12 4.Resolve os seguintes problemas: a) Comprei um casaco durante a época de saldos e paguei por ele € 45. Sabendo que o dono da loja me fez um desconto de 25 %, qual o preço inicial do casaco? 1 b) Num quadro uma figura está representada à escala de . Sabendo que no 500 quadro mede 4 cm, quanto mede a figura na vida real?",
-   "imagens": [
-    "img:cdb-l-estatistica-2-03.jpg"
-   ],
-   "larguraMm": 151.4,
+   "enunciado": "<b>3.</b> Determina a média e a moda dos seguintes conjuntos de dados:<br><span class=\"pb\"></span>a) 1, 1, 2, 2, 2, 2, 3, 4, 3<br>b) 10, 10, 13, 13, 13, 18<br>c) 5, 3, 4, 2, 1, 12<br><span class=\"pb\"></span><b>4.</b> Resolve os seguintes problemas:<br><span class=\"pb\"></span>a) Comprei um casaco durante a época de saldos e paguei por ele € 45. Sabendo que o dono da loja me fez um desconto de 25 %, qual o preço inicial do casaco?<br>b) Num quadro uma figura está representada à escala de $ {1|500} $. Sabendo que no quadro mede 4 cm, quanto mede a figura na vida real?",
    "resolucao": "",
    "gabarito": "3) a) Média $= {20|9} ≈ 2,22$; moda $= 2$. b) Média $= {77|6} ≈ 12,83$; moda $= 13$. c) Média $= {27|6} = 4,5$; não há moda (todos aparecem uma vez). 4) a) Preço inicial: $45 ÷ 0,75 = 60$ euros. b) $4 · 500 = 2 000$ cm $= 20$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-figuras-geometricas-e-angu-01",
@@ -150179,8 +150246,6 @@
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150191,41 +150256,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Antônio, José e Pedro tem juntos 520 figurinhas. Antônio tem 16 figurinhas a mais do que Pedro e José tem o dobro da quantidade de figurinhas de Pedro. Qual menino possui 252 figurinhas? o Antônio o José o Pedro o Nenhum deles",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-03.jpg"
-   ],
-   "larguraMm": 141.2,
+   "enunciado": "Antônio, José e Pedro têm juntos 520 figurinhas. Antônio tem 16 figurinhas a mais do que Pedro e José tem o dobro da quantidade de figurinhas de Pedro. Qual menino possui 252 figurinhas?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Antônio",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "José",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Pedro",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "Nenhum deles",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150236,41 +150291,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Determine o valor de x na inequação a seguir: 2x + 5 < x +10. o x < 5 o x < 6 o x < 7 o x < 8",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-04.jpg"
-   ],
-   "larguraMm": 114.5,
+   "enunciado": "Determine o valor de $ x $ na inequação a seguir: $ 2x + 5 < x + 10 $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x < 5 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ x < 6 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x < 7 $",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "$ x < 8 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150281,41 +150326,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Márcio comprou 1 chuteira e 1 camisa de futebol. Alguns dias depois, comprou mais 1 chuteira e 2 camisas, gastando R$220,00. Se na primeira compra ele gastou R$170,00, quanto custou cada produto? o Chuteira: R$112,00 e Camisa: R$55,00 o Chuteira: R$120,00 e Camisa: R$55,00 o Chuteira: R$120,00 e Camisa: R$50,00 o Chuteira: R$112,00 e Camisa: R$57,00",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-05.jpg"
-   ],
-   "larguraMm": 144.4,
+   "enunciado": "Márcio comprou 1 chuteira e 1 camisa de futebol. Alguns dias depois, comprou mais 1 chuteira e 2 camisas, gastando R&#36; 220,00. Se na primeira compra ele gastou R&#36; 170,00, quanto custou cada produto?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Chuteira: R&#36; 112,00 e Camisa: R&#36; 55,00",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Chuteira: R&#36; 120,00 e Camisa: R&#36; 55,00",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Chuteira: R&#36; 120,00 e Camisa: R&#36; 50,00",
      "ok": true
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "Chuteira: R&#36; 112,00 e Camisa: R&#36; 57,00",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150326,41 +150361,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Carolina comprou 2 cadernos e 1 estojo, pagando R$67,00. Se tivesse comprado 5 cadernos e 2 estojos, teria gasto R$159,00. Qual o preço de cada produto? o Caderno: R$25,00 e Estojo: R$19,00 o Caderno: R$25,00 e Estojo: R$18,00 o Caderno: R$25,00 e Estojo: R$20,00 o Caderno: R$25,00 e Estojo: R$17,00",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-06.jpg"
-   ],
-   "larguraMm": 145.6,
+   "enunciado": "Carolina comprou 2 cadernos e 1 estojo, pagando R&#36; 67,00. Se tivesse comprado 5 cadernos e 2 estojos, teria gasto R&#36; 159,00. Qual o preço de cada produto?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Caderno: R&#36; 25,00 e Estojo: R&#36; 19,00",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Caderno: R&#36; 25,00 e Estojo: R&#36; 18,00",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Caderno: R&#36; 25,00 e Estojo: R&#36; 20,00",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Caderno: R&#36; 25,00 e Estojo: R&#36; 17,00",
      "ok": true
-    },
-    {
-     "t": "E",
-     "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150371,41 +150396,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Qual o resultado que encontraremos ao resolver a seguinte inequação: 4m - 14+4m - 14+3m+5+3m+5<38 ? o m < 4 o m < 5 o m < 6 o m < 7",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-07.jpg"
-   ],
-   "larguraMm": 135.9,
+   "enunciado": "Qual o resultado que encontraremos ao resolver a seguinte inequação: $ 4m − 14 + 4m − 14 + 3m + 5 + 3m + 5 < 38 $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ m < 4 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ m < 5 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ m < 6 $",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "$ m < 7 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150416,41 +150431,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. Qual o resultado da equação x+2x - 1=8 ? o x= 2 o x= 3 o x= 4 o x= 5",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-08.jpg"
-   ],
-   "larguraMm": 78.4,
+   "enunciado": "Qual o resultado da equação $ x + 2x − 1 = 8 $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x = 3 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x = 4 $",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "$ x = 5 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150461,41 +150466,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. Pensei em um número e multipliquei - o por 5. Depois, somei o resultado com 3 e obtive 23. Pensei em qual número? o 3 o 4 o 5 o 6",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-09.jpg"
-   ],
-   "larguraMm": 145.9,
+   "enunciado": "Pensei em um número e multipliquei-o por 5. Depois, somei o resultado com 3 e obtive 23. Pensei em qual número?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "6",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacoes-e-inequacao-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Equações e inequações",
@@ -150506,36 +150501,28 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Qual o resultado da equação 6x = 2.(x - 4)? o x=2 o x= - 2 o x=3 o x= - 3",
-   "imagens": [
-    "img:cdb-l-equacoes-e-inequacao-10.jpg"
-   ],
-   "larguraMm": 80.5,
+   "enunciado": "Qual o resultado da equação $ 6x = 2 · (x − 4) $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x = −2 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x = 3 $",
      "ok": false
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "$ x = −3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-2-01",
@@ -154606,8 +154593,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154618,32 +154603,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Na escola da Rita, fez - se um estudo sobre o gosto dos alunos pela leitura. Um inquérito realizado incluía a questão seguinte. «Quantos livros leste desde o início do ano lectivo?» As respostas obtidas na turma da Rita, relativamente a esta pergunta, estão representadas no gráfico de barras ao lado. Escolhendo, ao acaso, um aluno da turma da Rita, qual dos seguintes acontecimentos é o mais provável? (A) Ter lido menos do que um livro. (B) Ter lido mais do que dois livros. (C) Ter lido menos do que três livros. (D) Ter lido mais do que quatro livros.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-01.jpg"
-   ],
-   "larguraMm": 189,
+   "enunciado": "Na escola da Rita, fez-se um estudo sobre o gosto dos alunos pela leitura. Um inquérito realizado incluía a questão seguinte.<br><span class=\"pb\"></span>\\{Quantos livros leste desde o início do ano lectivo?\\}<br><span class=\"pb\"></span>As respostas obtidas na turma da Rita, relativamente a esta pergunta, estão representadas no gráfico de barras ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Ter lido menos do que um livro.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Ter lido mais do que dois livros.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Ter lido menos do que três livros.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Ter lido mais do que quatro livros.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Escolhendo, ao acaso, um aluno da turma da Rita, qual dos seguintes acontecimentos é o mais provável?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-e-probabilidad-2-01-fig.jpg",
+    "alt": "Gráfico de barras da porcentagem de alunos da turma da Rita por número de livros lidos: 0 livros: 20%; 1: 16%; 2: 8%; 3: 12%; 4: 20%; 5: 24%",
+    "largura": "61mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-03",
@@ -154669,8 +154657,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154681,37 +154667,52 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Os alunos da turma da Marta combinaram encontrar - se no Parque das Nações. Cada um deles utilizou apenas um meio de transporte para chegar ao parque. Na tabela ao lado, podes observar os meios de transporte usados e o número de alunos que utilizou cada um deles. Escolhendo, ao acaso, um aluno da turma da Marta, qual dos seguintes valores é o da probabilidade de esse aluno não ter ido de autocarro? (A) 60% (B) 70% (C) 80% (D) 90% (",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-04.jpg"
-   ],
-   "larguraMm": 195,
+   "enunciado": "Os alunos da turma da Marta combinaram encontrar-se no Parque das Nações. Cada um deles utilizou apenas um meio de transporte para chegar ao parque. Na tabela, podes observar os meios de transporte usados e o número de alunos que utilizou cada um deles.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "70%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "80%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "90%",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Escolhendo, ao acaso, um aluno da turma da Marta, qual dos seguintes valores é o da probabilidade de esse aluno não ter ido de autocarro?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Transporte",
+     "Comboio",
+     "Metropolitano",
+     "Autocarro",
+     "Bicicleta"
+    ],
+    "linhas": [
+     [
+      "N.º de alunos",
+      "9",
+      "12",
+      "6",
+      "3"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154722,24 +154723,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. O Roberto tem nove primos. 5.1. Explica como farias para determinar a mediana das idades dos nove primos do Roberto. 1 /3 5.2. Escolhendo, ao acaso, um dos nove primos do Roberto, a probabilidade de ser um rapaz é de . Quantas são as raparigas? Justifica a tua resposta.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-05.jpg"
-   ],
-   "larguraMm": 167.9,
+   "enunciado": "O Roberto tem nove primos.<br><span class=\"pb\"></span>5.1. Explica como farias para determinar a mediana das idades dos nove primos do Roberto.<br><span class=\"pb\"></span>5.2. Escolhendo, ao acaso, um dos nove primos do Roberto, a probabilidade de ser um rapaz é de $ {1|3} $. Quantas são as raparigas? Justifica a tua resposta.",
    "resolucao": "",
    "gabarito": "5.1) Ordenar as nove idades do menor para o maior; a mediana é a idade que fica no meio (a $5ª$). 5.2) Se ${1|3}$ dos $9$ primos são rapazes, são $3$ rapazes; logo, $9 - 3 = 6$ raparigas.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154750,24 +154745,37 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Hoje em dia, é possível ver um programa de televisão através de um computador. Na tabela ao lado, podes observar o número de pessoas (em milhares) que viu televisão num computador, no primeiro trimestre de 2006, em Portugal. 6.1. De Janeiro para Fevereiro, o número de pessoas que viu televisão num computador diminuiu. Determina a percentagem correspondente a essa diminuição. Apresenta todos os cálculos que efetuares. 6.2. A média do número de pessoas que viu televisão, num computador, nos primeiros quatro meses de 2006, foi de 680 (em milhares). Tendo em conta os dados da tabela, quantas pessoas (em milhares) viram televisão num computador, durante o mês de Abril desse ano? Mostra como ob",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-06.jpg"
-   ],
-   "larguraMm": 199.8,
+   "enunciado": "Hoje em dia, é possível ver um programa de televisão através de um computador. Na tabela, podes observar o número de pessoas (em milhares) que viu televisão num computador, no primeiro trimestre de 2006, em Portugal.",
    "resolucao": "",
    "gabarito": "6.1) Diminuição: $680 - 663 = 17$ milhares; em percentagem: ${17|680} = 0,025 = 2,5%$. 6.2) Soma dos quatro meses: $4 · 680 = 2 720$; Janeiro a Março: $680 + 663 + 682 = 2 025$; Abril: $2 720 - 2 025 = 695$ milhares.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "6.1. De Janeiro para Fevereiro, o número de pessoas que viu televisão num computador diminuiu. Determina a percentagem correspondente a essa diminuição. Apresenta todos os cálculos que efetuares.<br><span class=\"pb\"></span>6.2. A média do número de pessoas que viu televisão, num computador, nos <b>primeiros quatro meses</b> de 2006, foi de 680 (em milhares). Tendo em conta os dados da tabela, quantas pessoas (em milhares) viram televisão num computador, durante o mês de Abril desse ano? Mostra como obtiveste a tua resposta.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Mês",
+     "Janeiro",
+     "Fevereiro",
+     "Março"
+    ],
+    "linhas": [
+     [
+      "N.º de pessoas (em milhares)",
+      "680",
+      "663",
+      "682"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154778,24 +154786,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. O Miguel verificou que mais de metade das vezes que vê televisão depois das 22 horas chega atrasado à escola, no dia seguinte. Considera a seguinte questão: «Escolhendo ao acaso um dia em que o Miguel vê televisão depois das 22 horas, qual é a probabilidade de ele chegar atrasado à escola, no dia seguinte?» Dos três valores que se seguem, dois nunca poderão ser a resposta correta a esta questão. Quais? 2 3 6 5 5 5 Justifica a tua resposta.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-07.jpg"
-   ],
-   "larguraMm": 191.8,
+   "enunciado": "O Miguel verificou que mais de metade das vezes que vê televisão depois das 22 horas chega atrasado à escola, no dia seguinte.<br><span class=\"pb\"></span>Considera a seguinte questão:<br><span class=\"pb\"></span>\\{Escolhendo ao acaso um dia em que o Miguel vê televisão depois das 22 horas, qual é a probabilidade de ele chegar atrasado à escola, no dia seguinte?\\}<br><span class=\"pb\"></span>Dos três valores que se seguem, dois nunca poderão ser a resposta correta a esta questão. Quais?<br><span class=\"pb\"></span>$ {2|5} $     $ {3|5} $     $ {6|5} $<br><span class=\"pb\"></span>Justifica a tua resposta.",
    "resolucao": "",
    "gabarito": "Mais de metade das vezes significa probabilidade maior que ${1|2}$. ${2|5} < {1|2}$ e ${6|5} > 1$: estes dois nunca poderão ser a resposta (uma probabilidade não pode ser maior que $1$). Apenas ${3|5}$ é possível.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154806,19 +154808,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. O Paulo tem dois dados, um branco e um preto, ambos equilibrados e com a forma de um cubo. As faces do dado branco estão numeradas de a , e as do dado preto estão numeradas de a . 1 6 6 1 O Paulo lançou uma vez os dois dados e adicionou os valores registados nas faces que ficaram voltadas para cima. Qual é a probabilidade de essa soma ser um número negativo? Apresenta o resultado na forma de fração. Mostra como obtiveste a tua resposta.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-08.jpg"
-   ],
-   "larguraMm": 183.6,
+   "enunciado": "O Paulo tem dois dados, um branco e um preto, ambos equilibrados e com a forma de um cubo. As faces do dado branco estão numeradas de 1 a 6, e as do dado preto estão numeradas de 6 a 1.<br><span class=\"pb\"></span>O Paulo lançou uma vez os dois dados e adicionou os valores registados nas faces que ficaram voltadas para cima. Qual é a probabilidade de essa soma ser um número negativo? Apresenta o resultado na forma de fração. Mostra como obtiveste a tua resposta.",
    "resolucao": "",
    "gabarito": "A soma de dois números positivos nunca é negativa: a probabilidade é $0$ (${0|36}$).",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-09",
@@ -154844,8 +154842,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154856,33 +154852,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. O João foi ao cinema com os amigos. Comprou os bilhetes com os números 5, 6, 7, 8, , 17, da fila S , isto é, todos os números entre 5 e 17, inclusive. O João tirou, aleatoriamente, um bilhete para ele, antes de distribuir os restantes pelos amigos. Qual é a probabilidade de o João ter tirado para ele um bilhete com um número par? 1 6 7 13 (A) (B) (C) (D) 2 13 13 7",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-10.jpg"
-   ],
-   "larguraMm": 179.3,
+   "enunciado": "O João foi ao cinema com os amigos. Comprou os bilhetes com os números 5, 6, 7, 8, …, 17, da fila S, isto é, todos os números entre 5 e 17, inclusive. O João tirou, aleatoriamente, um bilhete para ele, antes de distribuir os restantes pelos amigos. Qual é a probabilidade de o João ter tirado para ele um bilhete com um número par?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {6|13} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {7|13} $",
+     "ok": false
+    },
+    {
+     "t": "$ {13|7} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154893,24 +154887,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Numa escola com 1000 alunos, fez - se um estudo sobre o número de vezes que, em média, as raparigas e os rapazes da escola iam ao cinema por mês. 11.1. Qual dos gráficos que se seguem representa os dados da tabela? (A) (B) (C) (D) Legenda: 11.2. Vai sortear - se um bilhete de cinema entre todos os alunos da escola. Qual é a probabilidade de o bilhete sair a uma rapariga que, em média, vai ao cinema mais do que uma vez por mês? Apresenta o resultado na forma de fração irredutível.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-11.jpg"
-   ],
-   "larguraMm": 194.7,
+   "enunciado": "Numa escola com 1000 alunos, fez-se um estudo sobre o número de vezes que, em média, as raparigas e os rapazes da escola iam ao cinema por mês.",
    "resolucao": "",
    "gabarito": "11.1) Gráfico (C): raparigas $200$, $150$ e $100$; rapazes $300$, $200$ e $50$. 11.2) Raparigas que vão mais de uma vez: $150 + 100 = 250$; total $1 000$: ${250|1 000} = {1|4}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "11.1. Qual dos gráficos que se seguem representa os dados da tabela?<br><span class=\"pb\"></span>11.2. Vai sortear-se um bilhete de cinema entre todos os alunos da escola. Qual é a probabilidade de o bilhete sair a uma rapariga que, em média, vai ao cinema <b>mais do que uma vez</b> por mês? Apresenta o resultado na forma de fração irredutível.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-e-probabilidad-2-11-fig.jpg",
+    "alt": "Tabela do número de idas ao cinema por mês (1 vez, 2 vezes, 3 vezes): raparigas 200, 150 e 100; rapazes 300, 200 e 50; abaixo, quatro gráficos de barras (A, B, C e D) com legenda raparigas e rapazes",
+    "largura": "170mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-12",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154921,19 +154916,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. Numa Faculdade, realizou - se um estudo sobre o número de alunos da turma da Beatriz que já doaram sangue. O gráfico que se segue mostra o número de doações de sangue, por sexos. 12.1. Relativamente aos dados do gráfico, qual das seguintes afirmações é verdadeira? (A) 30% dos alunos nunca doaram sangue. (B) 30% dos alunos doaram sangue duas vezes. (C) 65% dos alunos doaram sangue mais do que uma vez. (D) 75% dos alunos doaram sangue menos do que duas vezes. 12.2. Escolhido ao acaso um aluno de entre todos os alunos da turma da Beatriz, qual é a probabilidade de essa escolha ser a de uma rapariga que doou sangue menos do que duas vezes ? Apresenta o resultado na forma de fração irredutíve",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-12.jpg"
-   ],
-   "larguraMm": 195.5,
+   "enunciado": "Numa Faculdade, realizou-se um estudo sobre o número de alunos da turma da Beatriz que já doaram sangue. O gráfico que se segue mostra o número de doações de sangue, por sexos.",
    "resolucao": "",
    "gabarito": "12.1) Total de alunos: $5 + 6 + 4 + 3 + 7 + 5 = 30$. Duas doações: $4 + 5 = 9$, ou seja, $30%$: afirmação (B). 12.2) Raparigas com menos de duas doações: $3 + 7 = 10$; probabilidade ${10|30} = {1|3}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "12.1. Relativamente aos dados do gráfico, qual das seguintes afirmações é verdadeira?<br>(A) 30% dos alunos nunca doaram sangue.<br>(B) 30% dos alunos doaram sangue duas vezes.<br>(C) 65% dos alunos doaram sangue mais do que uma vez.<br>(D) 75% dos alunos doaram sangue menos do que duas vezes.<br><span class=\"pb\"></span>12.2. Escolhido ao acaso um aluno de entre todos os alunos da turma da Beatriz, qual é a probabilidade de essa escolha ser a de uma rapariga que doou sangue <b>menos do que duas vezes</b>? Apresenta o resultado na forma de fração irredutível.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-e-probabilidad-2-12-fig.jpg",
+    "alt": "Gráfico de barras “Doações de sangue”: número de alunos por número de doações (0, 1 e 2), por sexo. Rapazes: 5, 6 e 4; raparigas: 3, 7 e 5",
+    "largura": "57mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-13",
@@ -154959,8 +154957,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-14",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154971,19 +154967,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. O André, o Bruno e o Carlos vão oferecer uma prenda à Maria e resolveram tirar à sorte quem vai entregá - la. Como tinham apenas uma moeda, decidiram atirá - la ao ar duas vezes e registar, em cada lançamento, a face que ficava voltada para cima. Na figura que se segue, podes ver as duas faces dessa moeda. Combinaram que: • se registassem «face europeia» em ambos os lançamentos, seria o André a entregar a prenda; • se registassem «face nacional» em ambos os lançamentos, seria o Bruno a entregar a prenda; • se registassem «face europeia» num dos lançamentos e «face nacional» no outro, seria o Carlos a entregar a prenda. Terá cada um dos rapazes a mesma probabilidade de vir a entregar a pr",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-14.jpg"
-   ],
-   "larguraMm": 191.5,
+   "enunciado": "O André e o Carlos vão oferecer uma prenda à Maria e resolveram tirar à sorte quem vai entregá-la. Como tinham apenas uma moeda, decidiram atirá-la ao ar duas vezes e registar, em cada lançamento, a face que ficava voltada para cima. Na figura que se segue, podes ver as duas faces dessa moeda.",
    "resolucao": "",
    "gabarito": "Não. Resultados possíveis: EE, EN, NE, NN. André (EE): ${1|4}$; Bruno (NN): ${1|4}$; Carlos (EN ou NE): ${2|4} = {1|2}$. Carlos tem maior probabilidade.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Combinaram que:<br>• se registassem \\{face europeia\\} em ambos os lançamentos, seria o André a entregar a prenda;<br>• se registassem \\{face nacional\\} em ambos os lançamentos, seria o Bruno a entregar a prenda;<br>• se registassem \\{face europeia\\} num dos lançamentos e \\{face nacional\\} no outro, seria o Carlos a entregar a prenda.<br><span class=\"pb\"></span>Terá cada um dos rapazes a mesma probabilidade de vir a entregar a prenda à Maria? Mostra como obtiveste a tua resposta.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-e-probabilidad-2-14-fig.jpg",
+    "alt": "Duas faces de uma moeda de 1 euro: face europeia (à esquerda) e face nacional (à direita)",
+    "largura": "43mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-15",
@@ -155009,8 +155008,6 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-16",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -155021,24 +155018,56 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. O Scrabble é um jogo em que os jogadores têm de retirar, ao acaso, peças de dentro de um saco. Em cada peça está inscrita uma letra. Os jogadores usam essas letras para tentar construir palavras. Num determinado momento de um jogo de Scrabble entre o Martim e a Leonor estavam, dentro do saco, 28 peças. Na tabela seguinte indica - se a frequência absoluta de cada letra. 16.1. Retirando, ao acaso, uma peça do saco, qual dos seguintes valores é a probabilidade de sair uma vogal ? 2 3 4 5 (A) (B) (C) (D) 7 7 7 7 16.2. Das vinte e oito peças que estavam no saco, o Martim retirou quatro com as quais é possível formar a palavra GATO. Se, imediatamente a seguir, o Martim retirar, ao acaso, outra",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-16.jpg"
-   ],
-   "larguraMm": 191.3,
+   "enunciado": "O Scrabble é um jogo em que os jogadores têm de retirar, ao acaso, peças de dentro de um saco. Em cada peça está inscrita uma letra. Os jogadores usam essas letras para tentar construir palavras. Num determinado momento de um jogo de Scrabble entre o Martim e a Leonor estavam, dentro do saco, 28 peças. Na tabela seguinte indica-se a frequência absoluta de cada letra.",
    "resolucao": "",
    "gabarito": "16.1) Vogais: $2 + 3 + 2 + 4 + 1 = 12$ de $28$: ${12|28} = {3|7}$, alternativa (B). 16.2) Depois de retirar G, A, T e O restam $24$ peças, das quais $2$ são T: ${2|24} = {1|12}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "16.1. Retirando, ao acaso, uma peça do saco, qual dos seguintes valores é a probabilidade de sair uma <b>vogal</b>?<br>(A) $ {2|7} $   (B) $ {3|7} $   (C) $ {4|7} $   (D) $ {5|7} $<br><span class=\"pb\"></span>16.2. Das vinte e oito peças que estavam no saco, o Martim retirou quatro com as quais é possível formar a palavra GATO. Se, imediatamente a seguir, ao acaso, retirar outra peça do saco, qual é a probabilidade de sair a letra T? Apresenta o resultado na forma de fracção. Não justifiques a tua resposta.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Letra",
+     "A",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "O",
+     "R",
+     "S",
+     "T",
+     "U",
+     "V"
+    ],
+    "linhas": [
+     [
+      "Frequência",
+      "2",
+      "3",
+      "2",
+      "1",
+      "3",
+      "2",
+      "4",
+      "3",
+      "2",
+      "3",
+      "1",
+      "2"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Tabela 1"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-17",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -155049,24 +155078,66 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. A agência de viagens ViajEuropa tem como destinos turísticos as capitais europeias. A Tabela 1 mostra o número de viagens vendidas pela agência nos primeiros três meses do ano. 17.1. Qual foi a média do número de viagens vendidas por mês, para Madrid, nos primeiros três meses do ano? 17.2. A ViajEuropa vai sortear um prémio entre os clientes que compraram viagens no mês de Março. Qual é a probabilidade de o prémio sair a um cliente que comprou uma viagem para Paris? Mostra como chegaste à tua resposta. Apresenta o resultado na forma de dízima.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-17.jpg"
-   ],
-   "larguraMm": 191.5,
+   "enunciado": "A agência de viagens ViajEuropa tem como destinos turísticos as capitais europeias. A Tabela 1 mostra o número de viagens vendidas pela agência nos primeiros três meses do ano.",
    "resolucao": "",
    "gabarito": "17.1) Madrid: ${382 + 523 + 508|3} = {1 413|3} = 471$ viagens por mês. 17.2) Março: total $2 400$, Paris $528$: ${528|2 400} = 0,22$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "17.1. Qual foi a média do número de viagens vendidas por mês, para Madrid, nos primeiros três meses do ano?<br><span class=\"pb\"></span>17.2. A ViajEuropa vai sortear um prémio entre os clientes que compraram viagens no mês de Março. Qual é a probabilidade de o prémio sair a um cliente que comprou uma viagem para Paris? Mostra como chegaste à tua resposta. Apresenta o resultado na forma de dízima.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Meses",
+     "Madrid",
+     "Paris",
+     "Londres",
+     "Outras capitais",
+     "Total"
+    ],
+    "linhas": [
+     [
+      "Janeiro",
+      "382",
+      "514",
+      "458",
+      "866",
+      "2220"
+     ],
+     [
+      "Fevereiro",
+      "523",
+      "462",
+      "342",
+      "1172",
+      "2499"
+     ],
+     [
+      "Março",
+      "508",
+      "528",
+      "356",
+      "1008",
+      "2400"
+     ],
+     [
+      "Total",
+      "1413",
+      "1504",
+      "1156",
+      "3046",
+      ""
+     ]
+    ],
+    "largura": "90%",
+    "legenda": "Capitais europeias"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-18",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -155077,24 +155148,19 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. A mãe, o pai e o filho mais velho da família Coelho ganharam três automóveis num concurso televisivo: um cinzento, um branco e um preto. Todos queriam o automóvel preto, por isso decidiram distribuir aleatoriamente os três automóveis. 18.1. Qual é a probabilidade de o automóvel preto não ser atribuído à mãe? Assinala a alternativa correcta. 1 2 1 5 (A) (B) (C) (D) 3 3 6 6 18.2. De quantas maneiras diferentes podem ser distribuídos os automóveis, um por cada um dos três elementos da família? Mostra como chegaste à tua resposta.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-18.jpg"
-   ],
-   "larguraMm": 199.8,
+   "enunciado": "A mãe, o pai e o filho mais velho da família Coelho ganharam três automóveis num concurso televisivo: um cinzento, um branco e um preto. Todos queriam o automóvel preto, por isso decidiram distribuir aleatoriamente os três automóveis.",
    "resolucao": "",
    "gabarito": "18.1) A probabilidade de o preto ser atribuído à mãe é ${1|3}$; de não ser: ${2|3}$, alternativa (B). 18.2) $3! = 3 · 2 · 1 = 6$ maneiras.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "18.1. Qual é a probabilidade de o automóvel preto <b>não</b> ser atribuído à mãe? Assinala a alternativa correcta.<br>(A) $ {1|3} $   (B) $ {2|3} $   (C) $ {1|6} $   (D) $ {5|6} $<br><span class=\"pb\"></span>18.2. De quantas maneiras diferentes podem ser distribuídos os automóveis, um por cada um dos três elementos da família? Mostra como chegaste à tua resposta.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-19",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -155105,24 +155171,37 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. A tabela seguinte representa os consumos de gasolina, em litros, de um automóvel da família Coelho, no primeiro trimestre do ano. Supõe que o consumo médio, por mês, nos 4 primeiros meses do ano foi igual ao dos 3 primeiros meses. Qual foi, em litros, o consumo de gasolina do automóvel, no mês de Abril? Mostra como chegaste à tua resposta.",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-19.jpg"
-   ],
-   "larguraMm": 192,
+   "enunciado": "A tabela seguinte representa os consumos de gasolina, em litros, de um automóvel da família Coelho, no primeiro trimestre do ano.",
    "resolucao": "",
    "gabarito": "A média dos $3$ primeiros meses é ${170 + 150 + 160|3} = 160$ litros. Se a média dos $4$ meses é a mesma, Abril consumiu $160$ litros.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Supõe que o consumo médio, por mês, nos 4 primeiros meses do ano foi igual ao dos 3 primeiros meses. Qual foi, em litros, o consumo de gasolina do automóvel, no mês de Abril? Mostra como chegaste à tua resposta.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "Janeiro",
+     "Fevereiro",
+     "Março"
+    ],
+    "linhas": [
+     [
+      "Consumo de gasolina (em litros)",
+      "170",
+      "150",
+      "160"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-20",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -155133,19 +155212,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. No clube desportivo Os Medalhados vai ser sorteada uma viagem aos próximos Jogos Olímpicos. As 90 rifas para o sorteio foram numeradas de 1 a 90 e foram todas vendidas. 20.1. O João tem 14 anos. Qual é a probabilidade de a rifa premiada ter um número múltiplo da sua idade? 1 2 1 1 (A) (B) (C) (D) 15 15 2 90 20.2. O pai da Ana e da Sara comprou uma rifa e ofereceu - a às filhas. A Ana e a Sara decidiram que iriam fazer um jogo para escolherem qual das duas iria fazer a viagem, no caso de a rifa ser a premiada. O jogo consistiria em lançar dois dados, como os representados nas figuras 1 e 2, com a forma de uma pirâmide com 4 faces geometricamente iguais, todas elas triângulos equiláteros e",
-   "imagens": [
-    "img:cdb-l-estatistica-e-probabilidad-2-20.jpg"
-   ],
-   "larguraMm": 191.7,
+   "enunciado": "No clube desportivo Os Medalhados vai ser sorteada uma viagem aos próximos Jogos Olímpicos. As 90 rifas para o sorteio foram numeradas de 1 a 90 e foram todas vendidas.",
    "resolucao": "",
    "gabarito": "20.1) Múltiplos de $14$ de $1$ a $90$: $14, 28, 42, 56, 70, 84$ ($6$ números): ${6|90} = {1|15}$, alternativa (A). 20.2) Dos $16$ pares de resultados, o produto é menor ou igual a $6$ em $10$ casos ($1·1$ a $1·4$; $2·1$, $2·2$, $2·3$; $3·1$, $3·2$; $4·1$) e maior que $6$ em $6$ casos. Ana: ${10|16}$; Sara: ${6|16}$. As probabilidades são diferentes: o jogo não é justo.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "20.1. O João tem 14 anos. Qual é a probabilidade de a rifa premiada ter um número múltiplo da sua idade?<br>(A) $ {1|15} $   (B) $ {2|15} $   (C) $ {1|2} $   (D) $ {1|90} $<br><span class=\"pb\"></span>20.2. O pai da Ana e da Sara comprou uma rifa e ofereceu-a às duas filhas. A Ana e a Sara decidiram que iriam fazer um jogo para escolherem qual das duas iria fazer a viagem, no caso de a rifa ser a premiada. O jogo consistiria em lançar dois dados, como os representados nas figuras 1 e 2, com a forma de uma pirâmide com 4 faces geometricamente iguais, todas elas triângulos equiláteros e numeradas de 1 a 4. Combinaram que, em cada lançamento, o número que sai é o que está na face voltada para baixo e que:<br>• se o produto dos números saídos for menor do que 6 ou igual a 6, vai a Ana fazer a viagem;<br>• se o produto dos números saídos for maior do que 6, vai a Sara fazer a viagem.<br><span class=\"pb\"></span>Se a rifa for a premiada, as duas irmãs terão a mesma probabilidade de fazer a viagem? Mostra como chegaste à tua resposta.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-estatistica-e-probabilidad-2-20-fig.jpg",
+    "alt": "Dois dados em forma de pirâmide de 4 faces triangulares, numeradas de 1 a 4",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-21",
