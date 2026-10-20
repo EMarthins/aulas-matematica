@@ -54424,7 +54424,6 @@
   {
    "id": "enem2025-120",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Ondas eletromagnéticas",
@@ -54436,35 +54435,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A figura ilustra as informações contidas no manual de um sistema de alarme que utiliza transmissores e receptores de radiação eletromagnética para a detecção de movimento. O receptor é regulado pelo tempo de resposta, que corresponde ao intervalo de tempo necessário para o corpo do invasor atravessar completamente o feixe, de diâmetro d = 15 cm. Considere que a menor porção do corpo de um invasor é a sua posição de perfil, cuja espessura típica é 20 cm. São indicados cinco possíveis movimentos de um invasor e suas velocidades típicas, que devem ser observadas para a escolha do tempo de resposta. Manual de referência e instalação : sensor de barreira ativo. Disponível em: cs.ind.br. Acesso em: 2 dez. 2021 (adaptado). Nesse sistema, o menor tempo de resposta, em milissegundo, que garante a detecção de um possível invasor é mais próximo de A 30 ms. B 70 ms. C 300 ms. D 400 ms. E 700 ms.",
-   "imagens": [
-    "img:enem2025-120.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "A figura ilustra as informações contidas no manual de um sistema de alarme que utiliza transmissores e receptores de radiação eletromagnética para a detecção de movimento. O receptor é regulado pelo tempo de resposta, que corresponde ao intervalo de tempo necessário para o corpo do invasor atravessar completamente o feixe, de diâmetro <i>d</i> = 15 cm. Considere que a menor porção do corpo de um invasor é a sua posição de perfil, cuja espessura típica é 20 cm. São indicados cinco possíveis movimentos de um invasor e suas velocidades típicas, que devem ser observadas para a escolha do tempo de resposta.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30 ms.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "70 ms.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "300 ms.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "400 ms.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "700 ms.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nesse sistema, o menor tempo de resposta, em milissegundo, que garante a detecção de um possível invasor é mais próximo de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-120-fig.jpg",
+    "alt": "Transmissor e receptor ligados por um feixe de diâmetro d; abaixo, cinco figuras de movimentos de um invasor com velocidades típicas: 0,5 m/s e 0,7 m/s (escalando, subindo e descendo), 1,0 m/s, 2,0 m/s e 5,0 m/s (caminhando e correndo)",
+    "largura": "86mm",
+    "legenda": "<b>Manual de referência e instalação</b>: sensor de barreira ativo. Disponível em: cs.ind.br. Acesso em: 2 dez. 2021 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-121",
@@ -54509,7 +54512,6 @@
   {
    "id": "enem2025-122",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Eletromagnetismo",
@@ -54521,35 +54523,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O aquecimento em fogões por indução utiliza bobinas para produzir um campo magnético variável. Essa bobina se localiza abaixo do vidro cerâmico sobre o qual a panela se apoia. O mecanismo aquece apenas a panela que se encontra na zona de cozimento, o que é uma das principais vantagens em relação ao uso do fogão a gás ou de resistência elétrica. PEREIRA, A. B. et al. Fogões de indução : montagem e testes de um circuito disponível. Disponível em: https://publicacoes.fatecsertaozinho.edu.br. Acesso em: 21 maio 2025 (adaptado). O uso do campo magnético variável tem a finalidade de A imantar o material da panela por indução. B movimentar os átomos de ferro concentrados no fundo da panela. C emitir radiação eletromagnética, aquecendo a panela através do vidro cerâmico. D induzir corrente elétrica na parte inferior da panela, aquecendo-a por efeito Joule. E gerar um fluxo de corrente de convecção no ar contido entre a região da bobina e o vidro cerâmico.",
-   "imagens": [
-    "img:enem2025-122.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "O aquecimento em fogões por indução utiliza bobinas para produzir um campo magnético variável. Essa bobina se localiza abaixo do vidro cerâmico sobre o qual a panela se apoia. O mecanismo aquece apenas a panela que se encontra na zona de cozimento, o que é uma das principais vantagens em relação ao uso do fogão a gás ou de resistência elétrica.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "imantar o material da panela por indução.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "movimentar os átomos de ferro concentrados no fundo da panela.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "emitir radiação eletromagnética, aquecendo a panela através do vidro cerâmico.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "induzir corrente elétrica na parte inferior da panela, aquecendo-a por efeito Joule.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "gerar um fluxo de corrente de convecção no ar contido entre a região da bobina e o vidro cerâmico.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O uso do campo magnético variável tem a finalidade de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-122-fig.jpg",
+    "alt": "Esquema de um fogão por indução: panela com o conteúdo aquecido e a transferência do calor gerado na panela, o vidro cerâmico e, abaixo, a bobina de indução com o campo magnético criado",
+    "largura": "89mm",
+    "legenda": "PEREIRA, A. B. et al. <b>Fogões de indução</b>: montagem e testes de um circuito disponível. Disponível em: https://publicacoes.fatecsertaozinho.edu.br. Acesso em: 21 maio 2025 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-123",
@@ -54675,7 +54681,6 @@
   {
    "id": "enem2025-126",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Mecânica",
@@ -54687,35 +54692,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Segundo o princípio da independência dos movimentos, de Galileu, sempre que a velocidade resultante de um corpo puder ser decomposta em duas ou mais componentes perpendiculares entre si, cada um desses movimentos poderá ser analisado separadamente como se os outros não existissem. Esse princípio é muito útil para a simplificação de alguns problemas reais, em três dimensões. Considere um avião que, ao decolar, é instruído pela torre a atingir, em 6 minutos, uma posição de 20 km a Leste, 20 km a Norte e 1 km de altitude em relação ao ponto de decolagem, conforme a figura (fora de escala). No entanto, no instante da decolagem, começa a soprar um vento cujo vetor velocidade tem componentes 30 km/h para Leste, 20 km/h para Sul e 1 km/h de cima para baixo. Durante a ação do vento, a velocidade v que o piloto deve estabelecer em relação ao ar para que o avião chegue à posição esperada no tempo indicado tem as componentes A 230 km/h para Leste, 180 km/h para Sul e 9 km/h para baixo. B 230 km/h para Leste, 180 km/h para Norte e 9 km/h para cima. C 200 km/h para Oeste, 200 km/h para Norte e 10 km/h para cima. D 170 km/h para Leste, 220 km/h para Norte e 11 km/h para cima. E 170 km/h para Leste, 180 km/h para Norte e 11 km/h para cima.",
-   "imagens": [
-    "img:enem2025-126.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Segundo o princípio da independência dos movimentos, de Galileu, sempre que a velocidade resultante de um corpo puder ser decomposta em duas ou mais componentes perpendiculares entre si, cada um desses movimentos poderá ser analisado separadamente como se os outros não existissem. Esse princípio é muito útil para a simplificação de alguns problemas reais, em três dimensões.<br><span class=\"pb\"></span>Considere um avião que, ao decolar, é instruído pela torre a atingir, em 6 minutos, uma posição de 20 km a Leste, 20 km a Norte e 1 km de altitude em relação ao ponto de decolagem, conforme a figura (fora de escala). No entanto, no instante da decolagem, começa a soprar um vento cujo vetor velocidade tem componentes 30 km/h para Leste, 20 km/h para Sul e 1 km/h de cima para baixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "230 km/h para Leste, 180 km/h para Sul e 9 km/h para baixo.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "230 km/h para Leste, 180 km/h para Norte e 9 km/h para cima.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "200 km/h para Oeste, 200 km/h para Norte e 10 km/h para cima.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "170 km/h para Leste, 220 km/h para Norte e 11 km/h para cima.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "170 km/h para Leste, 180 km/h para Norte e 11 km/h para cima.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Durante a ação do vento, a velocidade <i>v</i> que o piloto deve estabelecer em relação ao ar para que o avião chegue à posição esperada no tempo indicado tem as componentes",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-126-fig.jpg",
+    "alt": "Esquema em três dimensões com os eixos Norte, Sul, Leste, Oeste e vertical; o avião na origem, o vetor velocidade v e a posição a ser atingida, indicada por um ponto",
+    "largura": "83mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-127",
@@ -54765,7 +54773,6 @@
   {
    "id": "enem2025-128",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Termologia",
@@ -54777,40 +54784,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A resistência de um fio de platina pode ser usada para medir temperaturas entre 0 ° ° C e 100 ° ° C e já foi utilizada como referência para a escala internacional de temperatura. Para um sensor feito de platina, a relação entre a resistência e a temperatura pode ser descrita por uma equação do tipo R ( T ) = A + B T , em que T é a temperatura e A e B são constantes. O gráfico apresenta a dependência da resistência em função da temperatura para cinco diferentes sensores. Os sensores que apresentam maior sensibilidade são A 1 e 2. B 1 e 3. C 2 e 3. D 2 e 4. E 2 e 5.",
-   "imagens": [
-    "img:enem2025-128.jpg"
-   ],
-   "larguraMm": 92.8,
+   "enunciado": "A resistência de um fio de platina pode ser usada para medir temperaturas entre 0 °C e 100 °C e já foi utilizada como referência para a escala internacional de temperatura. Para um sensor feito de platina, a relação entre a resistência e a temperatura pode ser descrita por uma equação do tipo <i>R</i>(<i>T</i>) = A + B<i>T</i>, em que <i>T</i> é a temperatura e A e B são constantes. O gráfico apresenta a dependência da resistência em função da temperatura para cinco diferentes sensores.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 e 2.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 e 3.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 e 3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2 e 4.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2 e 5.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Os sensores que apresentam maior sensibilidade são",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-128-fig.jpg",
+    "alt": "Gráfico da resistência (ohm), de 50 a 250, em função da temperatura (°C), de −100 a 350, para cinco sensores: o 1 é quase constante em cerca de 225; o 2 cresce de cerca de 75 a 225; o 3 cresce de cerca de 145 a 170; o 4 de cerca de 90 a 150; o 5 de cerca de 65 a 145",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-129",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Microbiologia",
@@ -54822,35 +54831,62 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O ácido úsnico é retirado de liquens e foi testado contra diversas espécies, conforme o quadro. Teste Resultado Aedes aegypti (larvas) Baixa eficiência Bacilo de Koch Média eficiência Moluscos aquáticos (adultos) Alta eficiência Pernilongo (larvas) Média eficiência Vermes platelmintos Ineficiente O ácido úsnico mostrou-se mais indicado para o controle da A esquistossomose. B febre amarela. C coqueluche. D tuberculose. E dengue.",
-   "imagens": [
-    "img:enem2025-129.jpg"
-   ],
-   "larguraMm": 92.8,
+   "enunciado": "O ácido úsnico é retirado de liquens e foi testado contra diversas espécies, conforme o quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "esquistossomose.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "febre amarela.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "coqueluche.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "tuberculose.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "dengue.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O ácido úsnico mostrou-se mais indicado para o controle da",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Teste",
+     "Resultado"
+    ],
+    "linhas": [
+     [
+      "<i>Aedes aegypti</i> (larvas)",
+      "Baixa eficiência"
+     ],
+     [
+      "Bacilo de Koch",
+      "Média eficiência"
+     ],
+     [
+      "Moluscos aquáticos (adultos)",
+      "Alta eficiência"
+     ],
+     [
+      "Pernilongo (larvas)",
+      "Média eficiência"
+     ],
+     [
+      "Vermes platelmintos",
+      "Ineficiente"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-130",
@@ -54940,7 +54976,6 @@
   {
    "id": "enem2025-132",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Acústica",
@@ -54952,41 +54987,37 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O nível sonoro, em decibel (dB), é calculado pela expressão: \u001e I \u001b n \u001f 10 log 10 \u001c \u0019 \u001d I 0 \u001a Uma conversa normal entre duas pessoas gera sons de níveis sonoros entre 50 e 60 dB, enquanto pessoas gritando podem gerar sons de níveis superiores a 100 dB. Supondo que, no centro de um estádio de futebol, foram realizadas medidas para avaliar o ruído médio de uma pessoa gritando a palavra “gol” em diferentes posições das arquibancadas. O valor médio obtido, considerando um grande número de medidas, foi de 100 dB. Com esse dado, estimou-se o ruído sonoro produzido por 10 000 pessoas, distribuídas aleatoriamente nas arquibancadas, enquanto gritavam, simultaneamente, a palavra “gol”. O valor médio estimado para o ruído produzido por essas pessoas, na posição central desse estádio hipotético, foi de A 60 dB. B 104 dB. C 140 dB. D 400 dB. E 800 dB.",
-   "imagens": [
-    "img:enem2025-132.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O nível sonoro, em decibel (dB), é calculado pela expressão:<br><span class=\"pb\"></span><i>n</i> = 10 log<sub>10</sub> ( $ {I|I_0} $ )<br><span class=\"pb\"></span>Uma conversa normal entre duas pessoas gera sons de níveis sonoros entre 50 e 60 dB, enquanto pessoas gritando podem gerar sons de níveis superiores a 100 dB. Supondo que, no centro de um estádio de futebol, foram realizadas medidas para avaliar o ruído médio de uma pessoa gritando a palavra “gol” em diferentes posições das arquibancadas. O valor médio obtido, considerando um grande número de medidas, foi de 100 dB. Com esse dado, estimou-se o ruído sonoro produzido por 10 000 pessoas, distribuídas aleatoriamente nas arquibancadas, enquanto gritavam, simultaneamente, a palavra “gol”.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60 dB.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "104 dB.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "140 dB.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "400 dB.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "800 dB.",
      "ok": false
     }
    ],
    "resolucao": "",
-   "anulada": true
+   "anulada": true,
+   "pergunta": "O valor médio estimado para o ruído produzido por essas pessoas, na posição central desse estádio hipotético, foi de",
+   "transcrita": true
   },
   {
    "id": "enem2025-133",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química ambiental",
@@ -54998,40 +55029,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O despejo acidental de óleo nos oceanos tem ocasionado incontáveis prejuízos à vida marinha e à economia de regiões costeiras. Métodos tradicionais de tratamento do despejo geram resíduos de difícil descarte e nem sempre são eficazes. Por isso, pesquisadores desenvolveram um filtro capaz de separar óleo e água. O dispositivo é montado sobre uma malha de aço com uma sequência de camadas. A primeira camada é formada por um polímero de carga positiva, a segunda é composta por nanopartículas de sílica (SiO2), a terceira é formada pelo mesmo polímero e a última é um surfactante, conforme apresentado na figura. Representação esquemática do dispositivo BROWN, P. S.; BHUSHAN, B. Mechanically durable, superoleophobic coatings prepared by layer-by-layer technique for anti-smudge and oil-water separation. Scientific Reports , v. 5, mar. 2015 (adaptado). Na utilização desse dispositivo, a retenção do óleo ocorre A no surfactante. B na camada superior de polímero. C nas nanopartículas de sílica. D na camada inferior de polímero. E na malha de aço.",
-   "imagens": [
-    "img:enem2025-133.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O despejo acidental de óleo nos oceanos tem ocasionado incontáveis prejuízos à vida marinha e à economia de regiões costeiras. Métodos tradicionais de tratamento do despejo geram resíduos de difícil descarte e nem sempre são eficazes. Por isso, pesquisadores desenvolveram um filtro capaz de separar óleo e água. O dispositivo é montado sobre uma malha de aço com uma sequência de camadas. A primeira camada é formada por um polímero de carga positiva, a segunda é composta por nanopartículas de sílica (SiO<sub>2</sub>), a terceira é formada pelo mesmo polímero e a última é um surfactante, conforme apresentado na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "no surfactante.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "na camada superior de polímero.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "nas nanopartículas de sílica.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "na camada inferior de polímero.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "na malha de aço.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Na utilização desse dispositivo, a retenção do óleo ocorre",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-133-fig.jpg",
+    "alt": "Representação esquemática do dispositivo: de cima para baixo, surfactante, camada superior de polímero, nanopartículas de sílica, camada inferior de polímero e malha de aço",
+    "largura": "88mm",
+    "legenda": "BROWN, P. S.; BHUSHAN, B. Mechanically durable, superoleophobic coatings prepared by layer-by-layer technique for anti-smudge and oil-water separation. <b>Scientific Reports</b>, v. 5, mar. 2015 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-134",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Fisiologia",
@@ -55043,35 +55077,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2025 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Alguns hormônios sexuais têm ganhado notável atenção nos últimos anos por suas concentrações cada vez maiores no solo e na água em todo o mundo. O motivo da preocupação é porque, em níveis poluentes, eles têm sido associados ao câncer de mama e ao câncer de próstata, além de perturbarem a fisiologia dos peixes, podendo, ainda, afetarem o desenvolvimento reprodutivo de animais domésticos e selvagens. Assim, o descarte inadequado desses hormônios representa uma séria ameaça ao solo, plantas, recursos hídricos e humanos. De baixa polaridade, eles apresentam uma solubilidade pequena e variável em água, dependendo dos grupos presentes em suas estruturas, representando um grande risco para os ambientes aquáticos. As figuras a seguir apresentam as estruturas de alguns desses hormônios. MUHAMMAD, A. et al. Environmental Impact of Estrogens on Human, Animal and Plant Life: a Critical Review. Environment International , n. 99, 2017 (adaptado). Do ponto de vista das interações químicas, qual desses hormônios apresenta maior solubilidade em ambientes aquáticos? A Estradiol. B Estriol. C Estrona. D Novestrol. E Noretindrona.",
-   "imagens": [
-    "img:enem2025-134.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "Alguns hormônios sexuais têm ganhado notável atenção nos últimos anos por suas concentrações cada vez maiores no solo e na água em todo o mundo. O motivo da preocupação é porque, em níveis poluentes, eles têm sido associados ao câncer de mama e ao câncer de próstata, além de perturbarem a fisiologia dos peixes, podendo, ainda, afetarem o desenvolvimento reprodutivo de animais domésticos e selvagens. Assim, o descarte inadequado desses hormônios representa uma séria ameaça ao solo, plantas, recursos hídricos e humanos. De baixa polaridade, eles apresentam uma solubilidade pequena e variável em água, dependendo dos grupos presentes em suas estruturas, representando um grande risco para os ambientes aquáticos. As figuras a seguir apresentam as estruturas de alguns desses hormônios.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Estradiol.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Estriol.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Estrona.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Novestrol.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Noretindrona.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Do ponto de vista das interações químicas, qual desses hormônios apresenta maior solubilidade em ambientes aquáticos?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2025-134-fig.jpg",
+    "alt": "Fórmulas estruturais de cinco hormônios: Estradiol, Estriol, Estrona, Novestrol e Noretindrona",
+    "largura": "88mm",
+    "legenda": "MUHAMMAD, A. et al. <b>Environmental Impact of Estrogens on Human, Animal and Plant Life: a Critical Review</b>. Environment International, n. 99, 2017 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2025-135",
