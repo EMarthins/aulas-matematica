@@ -87420,7 +87420,6 @@
   },
   {
    "id": "cdb-c17-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87432,41 +87431,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. F.I.Anápolis-GO Uma das diagonais de um quadrado está contida na reta: x – y = 3. A equação da reta suporte da outra diagonal e que passa pelo ponto V(4, –2) é: a) x – y = 2 b) x + y = 2 c) x – y = – 6 d) x – y = 6 e) –x + y = –2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-001.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Uma das diagonais de um quadrado está contida na reta: $ x − y = 3 $. A equação da reta suporte da outra diagonal e que passa pelo ponto $ V(4, −2) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x − y = 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x + y = 2 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x − y = −6 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x − y = 6 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ −x + y = −2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87478,20 +87471,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. U.Católica-GO Julgue os itens abaixo: ( ) Se A, B e C são números inteiros positivos e consecutivos tais que A < B < C, então a expressão (A+B)(B+C) corresponde, necessariamente, a um número inteiro ímpar. ( ) O valor de x para que o ponto (x, 4) pertença à reta definida pelos pontos (1, 8) e (2, 1), é igual a 1 . ( ) Suponha-se que uma chamada telefônica de Goiânia para São Paulo custe R$ 0,50 o primeiro minuto e R$ 0,35 o minuto adicional. Com essa tarifa, a diferença entre o custo total de três chamadas de 5 minutos e o custo de uma chamada de 15 minutos é R$ 0,50. ( ) Suponha-se que a m",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – V – F – F"
+   "gabarito": "V – F – F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Se A, B e C são números inteiros positivos e consecutivos tais que $ A < B < C $, então a expressão $ (A + B)(B + C) $ corresponde, necessariamente, a um número inteiro ímpar.",
+     "ok": true
+    },
+    {
+     "t": "O valor de $ x $ para que o ponto $ (x, 4) $ pertença à reta definida pelos pontos $ (1, 8) $ e $ (2, 1) $, é igual a $ {1|2} $.",
+     "ok": false
+    },
+    {
+     "t": "Suponha-se que uma chamada telefônica de Goiânia para São Paulo custe R&#36; 0,50 o primeiro minuto e R&#36; 0,35 o minuto adicional. Com essa tarifa, a diferença entre o custo total de três chamadas de 5 minutos e o custo de uma chamada de 15 minutos é R&#36; 0,50.",
+     "ok": false
+    },
+    {
+     "t": "Suponha-se que a matriz $ @M{4&3&0;5&0&1} $ (colunas: vitaminas A, B e C; linhas: alimentos I e II) forneça a quantidade de vitaminas A, B e C contida em uma unidade dos alimentos I e II. Se uma pessoa ingerir 5 unidades do alimento I e 2 unidades do alimento II, usando multiplicação de matrizes, conclui-se que foram ingeridas 30 unidades de vitamina A, 15 de vitamina B e 2 de vitamina C.",
+     "ok": true
+    },
+    {
+     "t": "Se $ A $ for uma matriz tal que a inversa de $ 2A $ é $ @M{−2&8;0&4} $, pode-se concluir que a inversa de $ A $ é $ A^{−1} = @M{−1&4;0&2} $.",
+     "ok": false
+    },
+    {
+     "t": "Um avião se desloca numa trajetória descrita pela equação $ y = 2x − 3 $ enquanto a trajetória descrita por um outro avião é dada pela equação $ x + 2y + 4 = 0 $. Se os dois aviões partirem de dois pontos distintos e num mesmo instante, pode-se concluir que não existe qualquer possibilidade de esses aviões se interceptarem.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87503,20 +87516,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. UFMS Considerando a reta r que passa pelos pontos (1; 2) e (2; –1), é correto afirmar que: (01) A equação da reta r é 3x + y – 5 = 0. (02) A reta r é paralela à reta que passa pelos pontos (2; 4) e (3; 1). (04) A reta r é perpendicular à reta de equação x + 3y – 5 = 0. (08) A reta r e a reta de equação 2x + y = 3 se interceptam num único ponto. (16) O gráfico da reta r intercepta a região do plano em que x < 0 e y < 0. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Considerando a reta <b>r</b> que passa pelos pontos $ (1; 2) $ e $ (2; −1) $, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "11"
+   "gabarito": "11",
+   "afirmacoes": [
+    {
+     "t": "A equação da reta <b>r</b> é $ 3x + y − 5 = 0 $.",
+     "ok": true
+    },
+    {
+     "t": "A reta <b>r</b> é paralela à reta que passa pelos pontos $ (2; 4) $ e $ (3; 1) $.",
+     "ok": true
+    },
+    {
+     "t": "A reta <b>r</b> é perpendicular à reta de equação $ x + 3y − 5 = 0 $.",
+     "ok": false
+    },
+    {
+     "t": "A reta <b>r</b> e a reta de equação $ 2x + y = 3 $ se interceptam num único ponto.",
+     "ok": true
+    },
+    {
+     "t": "O gráfico da reta <b>r</b> intercepta a região do plano em que $ x < 0 $ e $ y < 0 $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87528,41 +87557,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Unirio A equação geral da reta ao lado representada é: a) 3 x – 3 y + 6 = 0 b) 3 x + 3 y + 6 = 0 c) 3 x – y – 2 = 0 d) y = 3 x – 2 3 e) y = 3 (x + 2) 3 120 ° -2 x y 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-004.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "A equação geral da reta ao lado representada é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3x − √3 y + 6 = 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 3x + √3 y + 6 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √3 x − y − 2 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ y = √3 x − 2√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ y = {√3|3}(x + 2) $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-004-fig.jpg",
+    "alt": "Reta crescente que corta o eixo x no ponto −2; o ângulo de 120° está marcado entre a reta e o eixo x, à esquerda do eixo y",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87574,41 +87603,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFMS Determinar “o pé da perpendicular” à reta (r) x – 2y – 9 = 0 que passa por P(4, 5). a) (7, –1) b) (–1, 7) c) ( 1 , –2) d) (–2, 1 ) e) (–1, –2) 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-005.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Determinar “o pé da perpendicular” à reta $ (r)\\ x − 2y − 9 = 0 $ que passa por $ P(4, 5) $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (7, −1) $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ (−1, 7) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ({1|2}, −2) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (−2, {1|2}) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (−1, −2) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87620,24 +87643,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFMS Sejam r e t as retas perpendiculares definidas no plano cartesiano xOy da figura abaixo. Considere A o ponto de interseção da reta r e do eixo Oy , B o ponto de interseção da reta t e do eixo Oy e P o ponto de interseção das retas r e t . Se S é a área, em unidades de área, do triângulo APB , calcular 10. S . y t x r 2 1 5 –2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-006.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Sejam <i>r</i> e <i>t</i> as retas perpendiculares definidas no plano cartesiano <i>xOy</i> da figura abaixo. Considere <b>A</b> o ponto de interseção da reta <i>r</i> e do eixo <i>Oy</i>, <b>B</b> o ponto de interseção da reta <i>t</i> e do eixo <i>Oy</i> e <b>P</b> o ponto de interseção das retas <i>r</i> e <i>t</i>.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "40",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Se <i>S</i> é a área, em unidades de área, do triângulo <b>APB</b>, calcular <b>10.S</b>.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-006-fig.jpg",
+    "alt": "Plano cartesiano com a reta r (decrescente, passa por (−2, 5)) e a reta t (crescente), que se cruzam no ponto P de coordenadas (2, 1)",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87649,41 +87673,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Uniderp-MS Considere a figura, em que a reta r é paralela ao eixo das abscissas. Nessas condições, a ordenada do ponto P é igual a: a) 3 d) 3 3 – 1 b) 3 e) 3 3 + 1 c) 3 y s P x 0 – 1 30 ° r 2 3 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-007.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Considere a figura, em que a reta <i>r</i> é paralela ao eixo das abscissas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {√3|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√3|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {√3|6} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3√3 − 1 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3√3 + 1 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Nessas condições, a ordenada do ponto P é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-007-fig.jpg",
+    "alt": "Plano cartesiano com a reta s passando por (−1, 0) e inclinada 30° em relação à reta r, que é horizontal e corta o eixo y; o ponto P está sobre r",
+    "largura": "40mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87695,24 +87720,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFMS Sejam r , s e t as retas definidas no plano cartesiano da figura abaixo. Se P = (a, b) é o ponto de interseção das retas s e t , calcular 10a + 2b. y r s t x 6 4 2 – 2 – 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-008.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Sejam <b>r</b>, <b>s</b> e <b>t</b> as retas definidas no plano cartesiano da figura abaixo.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "50",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Se $ P = (a, b) $ é o ponto de interseção das retas <b>s</b> e <b>t</b>, calcular $ 10a + 2b $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-008-fig.jpg",
+    "alt": "Plano cartesiano com três retas: r e s são paralelas e crescentes (r passa por (−2, 0) e (0, 4); s passa por (0, −3)); t é decrescente e perpendicular a elas; o ponto P tem abscissa 2 e ordenada 6 marcadas pelas linhas tracejadas",
+    "largura": "73mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87724,41 +87750,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. UESC-BA Considerando-se duas retas, r e s, e um plano a do espaço, pode-se afirmar: a) Se r e s não possuem pontos em comum, então são paralelas. b) Se r e s são ambas paralelas a a, então são paralelas entre si. c) Se r e s são ambas perpendiculares a a, então são paralelas entre si. d) Se r é paralela a a e s está contida em a, então r é paralela a s. e) Se r é perpendicular a a e s está contida em a, então r é perpendicular a s.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-009.jpg"
-   ],
-   "larguraMm": 128.8,
+   "enunciado": "Considerando-se duas retas, $ r $ e $ s $, e um plano $ α $ do espaço, pode-se afirmar:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Se $ r $ e $ s $ não possuem pontos em comum, então são paralelas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Se $ r $ e $ s $ são ambas paralelas a $ α $, então são paralelas entre si.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Se $ r $ e $ s $ são ambas perpendiculares a $ α $, então são paralelas entre si.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "Se $ r $ é paralela a $ α $ e $ s $ está contida em $ α $, então $ r $ é paralela a $ s $.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Se $ r $ é perpendicular a $ α $ e $ s $ está contida em $ α $, então $ r $ é perpendicular a $ s $.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87770,41 +87790,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. U.Católica Dom Bosco-DF Na figura, as retas r e s são perpendiculares, e as coordenadas do ponto P(x, y) são: a) (1, 1) b) (3, 0) c) (2, 0) d) (1, 0) e) (0, 1) y S P x r 0 (3,7) (0,1)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-010.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Na figura, as retas <i>r</i> e <i>s</i> são perpendiculares, e as coordenadas do ponto $ P(x, y) $ são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (1, 1) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (3, 0) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (2, 0) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (1, 0) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (0, 1) $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-010-fig.jpg",
+    "alt": "Plano cartesiano com a reta s, crescente, passando por (0, 1) e (3, 7), e a reta r, decrescente e perpendicular a s, que corta o eixo x no ponto P",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87816,41 +87836,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Unifor-CE A reta de equação 3x – 3y + 3 = 0 forma, com o eixo das abscissas, um ângulo de medida: a) 15 ° b) 30 ° c) 45 ° d) 60 ° e) 75 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A reta de equação $ √3 x − 3y + 3 = 0 $ forma, com o eixo das abscissas, um ângulo de medida:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "15°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30°",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "45°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "60°",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "75°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87862,37 +87876,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. F. M. Triângulo Mineiro-MG A condição para que o ponto P(2; y) não esteja alinhado com os pontos A(–4; 6) e B(0; 3) é a) y = 1,5 b) y = 3,5 c) x < 2,5 d) x = 7,5 e) y > 2,5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-012.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A condição para que o ponto $ P(2; y) $ não esteja alinhado com os pontos $ A(−4; 6) $ e $ B(0; 3) $ é",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ y = 1,5 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ y = 3,5 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x < 2,5 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = 7,5 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ y > 2,5 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-013",
@@ -87936,7 +87945,6 @@
   },
   {
    "id": "cdb-c17-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87948,41 +87956,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. U. Católica de Salvador-BA Considerando-se os pontos A(0, 1), B(0, 3) e C(2, 3), a equa- ção da reta que contém a altura do triângulo ABC relativa ao lado AC é igual a: a) x + y – 3 = 0 d) x + y + 1 = 0 b) x – y – 3 = 0 e) x + y – 1 = 0 c) y – x + 3 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-014.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Considerando-se os pontos $ A(0, 1) $, $ B(0, 3) $ e $ C(2, 3) $, a equação da reta que contém a altura do triângulo $ ABC $ relativa ao lado $ AC $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x + y − 3 = 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ x − y − 3 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y − x + 3 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x + y + 1 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x + y − 1 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -87994,41 +87996,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. PUC-RJ O valor de x para que os pontos (1, 3), (–2, 4) e (x, 0) do plano sejam colinea- res é: a) 8 b) 9 c) 11 d) 10 e) 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-015.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "O valor de $ x $ para que os pontos $ (1, 3) $, $ (−2, 4) $ e $ (x, 0) $ do plano sejam colineares é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "9",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88040,41 +88036,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UEPI A equação da reta perpendicular à reta y = –x + 1 e que passa pela intersecção das retas 2x – 3y – 1 = 0 e 3x – y – 2 = 0 é: a) 2x + 2y + 7 = 0 b) 5x – 5y + 1 = 0 c) 7x – 7y – 4 = 0 d) 7x + 7y – 6 = 0 e) –2x + 2y – 5 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A equação da reta perpendicular à reta $ y = −x + 1 $ e que passa pela intersecção das retas $ 2x − 3y − 1 = 0 $ e $ 3x − y − 2 = 0 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2x + 2y + 7 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 5x − 5y + 1 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 7x − 7y − 4 = 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 7x + 7y − 6 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ −2x + 2y − 5 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88086,41 +88076,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. Unifor-CE Se as retas de equações y = –5x + 4 e y = 2x + 5m são concorrentes em um ponto do eixo das abscissas, então o valor de m é: a) – 8 b) – 8 c) 2 d) 4 e) 1 25 5 5 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Se as retas de equações $ y = −5x + 4 $ e $ y = 2x + 5m $ são concorrentes em um ponto do eixo das abscissas, então o valor de $ m $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ −{8|25} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ −{8|5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {2|5} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {4|5} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88132,41 +88116,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UEPI Há dois pontos sobre a reta y = 2 que distam 4 unidades da reta 12y = 5x + 2. A soma das abscissas desses pontos é: a) 44 b) –2 c) 6 d) 42 e) 43 5 5 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-018.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Há dois pontos sobre a reta $ y = 2 $ que distam 4 unidades da reta $ 12y = 5x + 2 $. A soma das abscissas desses pontos é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {44|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {42|5} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {43|5} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88178,41 +88156,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. U. F. Santa Maria-RS Na figura, a reta r passa pelos pontos O e A, e a reta s é perpen- dicular à reta r pelo ponto A. Sendo D = (p, 0) o ponto médio entre os pontos (1, 0) e C, a área do polígono determinado pelos pontos O, D, B e A é, em unida- des de área, igual a a) 3 d) 8 b) 1 e) 3 c) 7 8 2 8 7 2 A B C D x=p 1 1 O y r s x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-019.jpg"
-   ],
-   "larguraMm": 136.3,
+   "enunciado": "Na figura, a reta $ r $ passa pelos pontos $ O $ e $ A $, e a reta $ s $ é perpendicular à reta $ r $ pelo ponto $ A $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|8} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|8} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {8|7} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|2} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Sendo $ D = (p, 0) $ o ponto médio entre os pontos $ (1, 0) $ e $ C $, a área do polígono determinado pelos pontos $ O $, $ D $, $ B $ e $ A $ é, em unidades de área, igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c17-019-fig.jpg",
+    "alt": "Plano cartesiano: a reta r passa pela origem O e por A (1, 1); a reta s, perpendicular a r em A, corta o eixo x em C; a reta vertical x = p corta s em B e o eixo x em D",
+    "largura": "79mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c17-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88224,37 +88203,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. U. Potiguar-RN A área de triângulo formado pelo ponto A (4, 5) e pelos pontos B e C, em que a reta x + y = 2 encontra os eixos coordenados é: a) 10 b) 3 c) 5 d) 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-020.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A área de triângulo formado pelo ponto $ A (4, 5) $ e pelos pontos $ B $ e $ C $, em que a reta $ x + y = 2 $ encontra os eixos coordenados é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88266,41 +88239,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UEPI Considere a reta dada por suas equações paramétricas x = 2t – 1 e y = t + 2, t ∈ | R. O coeficiente angular dessa reta é igual a: a) –2 b) 2 c) 1 d) – 1 e) –1 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-021.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere a reta dada por suas equações paramétricas $ x = 2t − 1 $ e $ y = t + 2 $, $ t ∈ ℝ $. O coeficiente angular dessa reta é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|2} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ −{1|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "−1",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88312,37 +88279,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFMG A reta r passa pelo ponto (16, 11) e não intercepta a reta de equação y = x – 5 Considerando-se os seguintes pontos, o único que pertence à reta r é: a) (7, 6) b) (7, 13 ) c) (7, 7) d) (7, 15 ) 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-022.jpg"
-   ],
-   "larguraMm": 128.8,
+   "enunciado": "A reta <b>r</b> passa pelo ponto $ (16, 11) $ e <b>não</b> intercepta a reta de equação $ y = {x|2} − 5 $.<br><span class=\"pb\"></span>Considerando-se os seguintes pontos, o <b>único</b> que pertence à reta <b>r</b> é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (7, 6) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (7, {13|2}) $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ (7, 7) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (7, {15|2}) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88354,41 +88315,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. UESC-BA Se o ponto A (x 1 , y 1 ) é o pé da perpendicular baixada de B (0, –5) até a reta y = –x + 3, então x 1 + y 1 é igual a: a) –4 b) –2 c) 0 d) 2 e) 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-023.jpg"
-   ],
-   "larguraMm": 130,
+   "enunciado": "Se o ponto $ A (x_1, y_1) $ é o pé da perpendicular baixada de $ B (0, −5) $ até a reta $ y = −x + 3 $, então $ x_1 + y_1 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−4",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88400,41 +88355,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. Unifor-CE Seja 4x + 3y = 1 a equação da reta suporte do lado BC de um triângulo ABC. Se A = (–2; 1), o comprimento da altura desse triângulo, relativa ao lado BC, é: a) 1,2 b) 1,5 c) 1,6 d) 1,8 e) 2,4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-024.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja $ 4x + 3y = 1 $ a equação da reta suporte do lado $ BC $ de um triângulo $ ABC $. Se $ A = (−2; 1) $, o comprimento da altura desse triângulo, relativa ao lado $ BC $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,2",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1,5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: retas",
@@ -88446,37 +88395,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. Unifor-CE Os gráficos das retas de equações 3x + 2y – 3 = 0, 5x + 2y – 7 = 0, x = 2 e y = – 3 : a) não se interceptam. b) interceptam-se em mais de três pontos. c) interceptam-se em apenas três pontos. d) interceptam-se em apenas dois pontos. e) interceptam-se em um único ponto. 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c17-025.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Os gráficos das retas de equações $ 3x + 2y − 3 = 0 $, $ 5x + 2y − 7 = 0 $, $ x = 2 $ e $ y = −{3|2} $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "não se interceptam.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "interceptam-se em mais de três pontos.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "interceptam-se em apenas três pontos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "interceptam-se em apenas dois pontos.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "interceptam-se em um único ponto.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c17-026",
