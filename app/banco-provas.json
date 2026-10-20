@@ -106922,8 +106922,6 @@
   {
    "id": "cdb-sim-b1-03",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -106935,35 +106933,31 @@
    "dificuldade": 2,
    "fonte": "Simulado B1 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03) Um homem de 1,65 m de altura projeta uma sombra de 1,2 m de comprimento. No mesmo instante um mastro usado para hastear bandeiras projeta uma sombra de 4 metros. Qual a altura do mastro? (A) 5,2 m (D) 5,5 m (E) 10,25 m",
-   "imagens": [
-    "img:cdb-sim-b1-03.jpg"
-   ],
-   "larguraMm": 84,
+   "enunciado": "Um homem de 1,65 m de altura projeta uma sombra de 1,2 m de comprimento. No mesmo instante um mastro usado para hastear bandeiras projeta uma sombra de 4 metros. Qual a altura do mastro?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5,2 m",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5,4 m",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4,2 m",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5,5 m",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "10,25 m",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-b1-04",
@@ -113155,8 +113149,6 @@
   {
    "id": "cdb-sim-a02-17",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -113168,41 +113160,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17) Uma parede de uma escola, com formato retangular, tem 4 m de comprimento e 3 m de altura. A diretora quer pintá-la utilizando duas cores de tinta acrílica. A cinza será utilizada ao longo de todo seu comprimento, mas até a altura de 2 m. O restante da parede será pintado com tinta branca. A medida da área, em rn2, a ser pintada de branco (E) 12",
-   "imagens": [
-    "img:cdb-sim-a02-17.jpg"
-   ],
-   "larguraMm": 86.9,
+   "enunciado": "Uma parede de uma escola, com formato retangular, tem 4 m de comprimento e 3 m de altura. A diretora quer pintá-la utilizando duas cores de tinta acrílica. A cinza será utilizada ao longo de todo seu comprimento, mas até a altura de 2 m. O restante da parede será pintado com tinta branca. A medida da área, em m<sup>2</sup>, a ser pintada de branco é:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "12",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-18",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113214,41 +113200,70 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18) Um prédio residencial possui 3 blocos. A tabela abaixo mostra, para cada bloco, o valor do condomínio, o número de apartamentos e o número de apartamentos que não pagaram a última cota condominial. Bloco Pr o/Condominio A tos em dia A tos em atraso Total RSIOO,OO 68 12 80 RS150,OO 50 45 5 RS200,OO C 57 3 O percentual total de moradores em atraso é aproximadamente de:",
-   "imagens": [
-    "img:cdb-sim-a02-18.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um prédio residencial possui 3 blocos. A tabela abaixo mostra, para cada bloco, o valor do condomínio, o número de apartamentos e o número de apartamentos que não pagaram a última cota condominial.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "10%",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "15%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "20%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "25%",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O percentual total de moradores em atraso é aproximadamente de:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Bloco",
+     "Preço/Condomínio",
+     "Apt<sup>os</sup> em dia",
+     "Apt<sup>os</sup> em atraso",
+     "Total"
+    ],
+    "linhas": [
+     [
+      "A",
+      "R$100,00",
+      "68",
+      "12",
+      "80"
+     ],
+     [
+      "B",
+      "R$150,00",
+      "45",
+      "5",
+      "50"
+     ],
+     [
+      "C",
+      "R$200,00",
+      "57",
+      "3",
+      "60"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-19",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -113260,35 +113275,74 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19) A densidade de um material é a razão entre sua massa e seu volume. A tabela abaixo fornece a densidade de alguns materiais. Densidade (g/tmY) Material a 25 't Bambu 0,31 a Couro seco 0,86 Borracha 0,91 a 1,19 Osso 1,7a2 Giz Porcelana Bola de gude Granito Em um recipiente graduado, colocam-se 860 mililitros de água, a 250C. A seguir, mergulha-se nesse recipiente um objeto de 705 gramas e verifica-se que o volume de água atingiu a marcação de 1 litro e meio. Usando a tabela, podemos afirmar que o objeto utilizado no experimento descrito é feito de: (A) Borracha. (B) Osso. (C) Couro seco. (D)",
-   "imagens": [
-    "img:cdb-sim-a02-19.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A densidade de um material é a razão entre sua massa e seu volume. A tabela abaixo fornece a densidade de alguns materiais.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Borracha.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "Osso.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Couro seco.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Bambu.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Porcelana.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em um recipiente graduado, colocam-se 860 mililitros de água, a 25 °C. A seguir, mergulha-se nesse recipiente um objeto de 705 gramas e verifica-se que o volume de água atingiu a marcação de 1 litro e meio. Usando a tabela, podemos afirmar que o objeto utilizado no experimento descrito é feito de:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Material",
+     "Densidade (g/cm³) a 25 °C"
+    ],
+    "linhas": [
+     [
+      "Bambu",
+      "0,31 a 0,4"
+     ],
+     [
+      "Couro seco",
+      "0,86"
+     ],
+     [
+      "Borracha",
+      "0,91 a 1,19"
+     ],
+     [
+      "Osso",
+      "1,7 a 2"
+     ],
+     [
+      "Giz",
+      "1,9 a 2,8"
+     ],
+     [
+      "Porcelana",
+      "2,3 a 2,5"
+     ],
+     [
+      "Bola de gude",
+      "2,6 a 2,84"
+     ],
+     [
+      "Granito",
+      "2,64 a 2,76"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-20",
@@ -113339,8 +113393,6 @@
   {
    "id": "cdb-sim-a03-01",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -113352,41 +113404,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01) Júlia fez compras no valor de 80 reais. Como ela pagou à vista, o valor dessas compras caiu para 72 reais. Qual foi o percentual de desconto obtido por Júlia? (A) 7,2% (E) 15,2%",
-   "imagens": [
-    "img:cdb-sim-a03-01.jpg"
-   ],
-   "larguraMm": 88.4,
+   "enunciado": "Júlia fez compras no valor de 80 reais. Como ela pagou à vista, o valor dessas compras caiu para 72 reais. Qual foi o percentual de desconto obtido por Júlia?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7,2%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8,0%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10,0%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "11,1%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15,2%",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-02",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -113398,41 +113444,41 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02) O gráfico abaixo mostra uma reta que corta o eixo X no ponto 8, e o eixo Y no ponto 6. A equação dessa reta é 3 4 6 (C) Y - -6X+8 x (D) Y=6X+8 8",
-   "imagens": [
-    "img:cdb-sim-a03-02.jpg"
-   ],
-   "larguraMm": 88.8,
+   "enunciado": "O gráfico abaixo mostra uma reta que corta o eixo X no ponto 8, e o eixo Y no ponto 6. A equação dessa reta é",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ Y = −{3|4}X + 6 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ Y = {3|4}X + 6 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ Y = −6X + 8 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ Y = 6X + 8 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ Y = −8X + 6 $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-02-fig.jpg",
+    "alt": "Reta decrescente que corta o eixo Y no ponto 6 e o eixo X no ponto 8",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-03",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -113444,35 +113490,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03) Dada a função -x +2 se x<0, x2-l se (Ex<2; f(x) — x -2 se x > 2; o valor mínimo de f(x) é:",
-   "imagens": [
-    "img:cdb-sim-a03-03.jpg"
-   ],
-   "larguraMm": 57.8,
+   "enunciado": "Dada a função<br><span class=\"pb\"></span>$ f(x) = @S{−x + 2, \"se\" x < 0; x^2 − 1, \"se\" 0 ≤ x < 2; x − 2, \"se\" x ≥ 2} $<br><span class=\"pb\"></span>o valor mínimo de $ f(x) $ é:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−2",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-04",
@@ -113523,8 +113565,6 @@
   {
    "id": "cdb-sim-a03-05",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -113536,41 +113576,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05) A figura abaixo mostra o gráfico da função f(x) = cos(x) . O número a assinalado no eixo das abcissas é: 2 3m 2 (D) 2TT",
-   "imagens": [
-    "img:cdb-sim-a03-05.jpg"
-   ],
-   "larguraMm": 88.1,
+   "enunciado": "A figura abaixo mostra o gráfico da função $ f(x) = cos(x) $.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3π|2} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 2π $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3π $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O número $ a $ assinalado no eixo das abscissas é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-05-fig.jpg",
+    "alt": "Gráfico da função cosseno, com valor máximo no eixo y; o ponto a está sobre o eixo x, na terceira passagem da curva pelo zero à direita da origem",
+    "largura": "65mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-06",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113582,41 +113623,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06) Em uma prova de matemática, a soma das notas de Marcos e Paulo foi 12. Se o dobro da nota de Marcos mais o triplo da nota de Paulo resultam 32. Qual foi então a nota que Paulo tirou?",
-   "imagens": [
-    "img:cdb-sim-a03-06.jpg"
-   ],
-   "larguraMm": 89.1,
+   "enunciado": "Em uma prova de matemática, a soma das notas de Marcos e Paulo foi 12. Se o dobro da nota de Marcos mais o triplo da nota de Paulo resultam 32. Qual foi então a nota que Paulo tirou?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "7",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-07",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Sequências e progressões",
@@ -113628,41 +113663,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07) Uma possível expressão para o termo geral da sequência 1,3,7,15,.... é: (A) an = 2n 1 n -1 2",
-   "imagens": [
-    "img:cdb-sim-a03-07.jpg"
-   ],
-   "larguraMm": 89.1,
+   "enunciado": "Uma possível expressão para o termo geral da sequência 1, 3, 7, 15, … é:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a_n = 2n − 1 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ a_n = 2^n − 1 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ a_n = {n|2} − 1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a_n = 2^{n−1} − 1 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ a_n = 2^{n+1} + 1 $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-08",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113674,41 +113703,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08) No final de um programa de televisão ficaram 5 candidatos. Um será escolhido campeão e outro será o vice-campeão. O número de resultados possíveis para os dois premiados é: (C) 10 (D) 20 (E) 25",
-   "imagens": [
-    "img:cdb-sim-a03-08.jpg"
-   ],
-   "larguraMm": 89.1,
+   "enunciado": "No final de um programa de televisão ficaram 5 candidatos. Um será escolhido campeão e outro será o vice-campeão. O número de resultados possíveis para os dois premiados é:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "9",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "20",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "25",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-09",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Probabilidade",
@@ -113720,41 +113743,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09) Em uma rifa, os bilhetes são numerados de 1 a 100 e apenas um número será sorteado. Pedro comprou todos os números que são múltiplos de 7. A probabilidade de Pedro ganhar o prêmio é de: (B) 12% (D) 18%",
-   "imagens": [
-    "img:cdb-sim-a03-09.jpg"
-   ],
-   "larguraMm": 89.3,
+   "enunciado": "Em uma rifa, os bilhetes são numerados de 1 a 100 e apenas um número será sorteado. Pedro comprou todos os números que são múltiplos de 7. A probabilidade de Pedro ganhar o prêmio é de:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "12%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "14%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "18%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "20%",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-10",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Trigonometria",
@@ -113766,41 +113783,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10) No círculo trigonométrico abaixo podemos ver a indicação de alguns ângulos. 450 1350 (0,1) (1,0) 2250 3150 (0,4) Em quais destes ângulos obtemos seno igual a 2 (A) 450 e 1350 (B) 1350 e 2250 (C) 450 e 3150 (D) 2250 e 3150 (E) 450 e 2250",
-   "imagens": [
-    "img:cdb-sim-a03-10.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "No círculo trigonométrico abaixo podemos ver a indicação de alguns ângulos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "45° e 135°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "135° e 225°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "45° e 315°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "225° e 315°",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "45° e 225°",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em quais destes ângulos obtemos seno igual a $ −{√2|2} $?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-10-fig.jpg",
+    "alt": "Círculo trigonométrico com um quadrado inscrito: os pontos (1, 0), (0, 1), (−1, 0) e (0, −1) nos eixos e os ângulos de 45°, 135°, 225° e 315° nos vértices do quadrado; um triângulo está sombreado no primeiro quadrante",
+    "largura": "41mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-11",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -113812,41 +113830,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11) O gráfico a seguir mostra o resultado do reflorestamento de uma área. No eixo horizontal, da variável t (anos), t = 0 = 1996; t = 1 = 1997; t = 1998; e assim por diante. No eixo vertical, da variável y (mil), y = número de árvores plantadas (os valores de y são dados em unidades de mil). g (mil) 6.0 4.5 3.0 2 t(anos) Se a taxa de reflorestamento anual se mantiver constante, pode-se afirmar que o número de árvores plantadas atingirá 46.500 no ano de (A) 2021. (B) 2023. (C) 2025. (D) 2028. (E) 2030.",
-   "imagens": [
-    "img:cdb-sim-a03-11.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "O gráfico a seguir mostra o resultado do reflorestamento de uma área. No eixo horizontal, da variável t (anos), t = 0 = 1996; t = 1 = 1997; t = 2 = 1998; e assim por diante. No eixo vertical, da variável y (mil), y = número de árvores plantadas (os valores de y são dados em unidades de mil).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2021.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2023.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2025.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2028.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2030.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Se a taxa de reflorestamento anual se mantiver constante, pode-se afirmar que o número de árvores plantadas atingirá 46.500 no ano de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-11-fig.jpg",
+    "alt": "Gráfico de colunas do número de árvores plantadas (em mil) por ano: t = 0 com 3,0; t = 1 com 4,5; t = 2 com 6,0",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-12",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113858,12 +113877,7 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12) De acordo com as coordenadas abaixo, Marcos partiu do pondo X, andou 20 m para cima, 20 m para direita e 20 m para baixo. Ao final do trajeto, em que ponto Marcos parou?",
-   "imagens": [
-    "img:cdb-sim-a03-12.jpg"
-   ],
-   "larguraMm": 84.6,
+   "enunciado": "De acordo com as coordenadas abaixo, Marcos partiu do ponto X, andou 20 m para cima, 20 m para direita e 20 m para baixo.",
    "alternativas": [
     {
      "t": "A",
@@ -113880,19 +113894,21 @@
     {
      "t": "D",
      "ok": false
-    },
-    {
-     "t": "E",
-     "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Ao final do trajeto, em que ponto Marcos parou?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-12-fig.jpg",
+    "alt": "Plano cartesiano (em metros, de 0 a 40) com os pontos A (20, 0), D (0, 20), X (20, 20), B (40, 20) e C (20, 40)",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-13",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -113904,41 +113920,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13) Sobre o poliedro representado na figura abaixo, podemos a firmar que: l) o número de vértices(V), faces(F) e arestas(A), satisfaz à relação F + V = A + 2 II) o poliedro possui 8 vértices III) o poliedro possui 16 arestas (A) apenas I é verdadeira. (B) apenas I e III são verdadeiras. (C) apenas II e III são verdadeiras. (D) apenas I e II são verdadeiras. (E) Todas as afirmativas estão verdadeiras.",
-   "imagens": [
-    "img:cdb-sim-a03-13.jpg"
-   ],
-   "larguraMm": 87,
+   "enunciado": "Sobre o poliedro representado na figura abaixo, podemos afirmar que:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas I é verdadeira.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas I e III são verdadeiras.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "apenas II e III são verdadeiras.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "apenas I e II são verdadeiras.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Todas as afirmativas estão verdadeiras.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "I) o número de vértices (V), faces (F) e arestas (A), satisfaz à relação F + V = A + 2<br>II) o poliedro possui 8 vértices<br>III) o poliedro possui 16 arestas",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-13-fig.jpg",
+    "alt": "Poliedro em forma de tronco, com duas faces retangulares paralelas (a de baixo maior) ligadas por faces laterais em trapézio",
+    "largura": "48mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-14",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -113950,35 +113967,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14) Ampliando-se o triângulo ABC obtém-se um novo triângulo A'B'C', em que cada lado é o dobro do seu correspondente em ABC. C' c",
-   "imagens": [
-    "img:cdb-sim-a03-14.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "Ampliando-se o triângulo ABC obtém-se um novo triângulo A’B’C’, em que cada lado é o dobro do seu correspondente em ABC.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "as áreas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "os perímetros.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "os lados.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "os ângulos.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "as faces.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em figuras ampliadas ou reduzidas os elementos que conservam a mesma medida são",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-14-fig.jpg",
+    "alt": "Triângulo ABC e sua ampliação A’B’C’ a partir do ponto O: as retas partem de O e passam pelos vértices correspondentes; cada lado de A’B’C’ é o dobro do lado correspondente de ABC",
+    "largura": "61mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-15",
@@ -114029,8 +114049,6 @@
   {
    "id": "cdb-sim-a03-16",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -114042,41 +114060,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16) Na figura abaixo encontram-se representados no plano cartesiano os pontos M, N, P e Q. 2 -2 Dentre esses quatro pontos, o único que apresenta ambas as coordenadas negativas é",
-   "imagens": [
-    "img:cdb-sim-a03-16.jpg"
-   ],
-   "larguraMm": 88.6,
+   "enunciado": "Na figura abaixo encontram-se representados no plano cartesiano os pontos M, N, P e Q.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "M.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "N.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "P.",
      "ok": true
     },
     {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "Q.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Dentre esses quatro pontos, o único que apresenta ambas as coordenadas negativas é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-16-fig.jpg",
+    "alt": "Plano cartesiano com M (1, 2), N (−1, 1), P (−2, −2) e Q (2, −1)",
+    "largura": "56mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-17",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -114088,41 +114103,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17) A prefeitura vai reformar uma praça quadrada de 16 metros de lado e foi aprovado o seguinte projeto: calçada calçada judim O construtor que ganhou a licitação faz apenas a parte da calçada e seu orçamento foi de R$ 53,00 0 metro quadrado. O jardim será feito por funcionários da própria prefeitura, e esse custo para a Secretaria de Parques e Jardins será de R$ 25,00 0 metro quadrado. Usando IT = 3, 1, podemos concluir que o valor total da obra será de: (A) R$ 6.400,00. (B) R$ 8.310,40. (C) R$ 10.790,40. (D) R$ 11.480, 00. (E) R$ 13.568,00.",
-   "imagens": [
-    "img:cdb-sim-a03-17.jpg"
-   ],
-   "larguraMm": 88.6,
+   "enunciado": "A prefeitura vai reformar uma praça quadrada de 16 metros de lado e foi aprovado o seguinte projeto:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "R&#36; 6.400,00.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "R&#36; 8.310,40.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "R&#36; 10.790,40.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "R&#36; 11.480,00.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "R&#36; 13.568,00.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O construtor que ganhou a licitação faz apenas a parte da calçada e seu orçamento foi de R&#36; 53,00 o metro quadrado. O jardim será feito por funcionários da própria prefeitura, e esse custo para a Secretaria de Parques e Jardins será de R&#36; 25,00 o metro quadrado.<br><span class=\"pb\"></span>Usando $ π = 3,1 $, podemos concluir que o valor total da obra será de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-17-fig.jpg",
+    "alt": "Praça quadrada com um jardim em forma de lua (limitado por dois arcos de circunferência) e duas regiões de calçada, uma de cada lado do jardim",
+    "largura": "34mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-18",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria espacial",
@@ -114134,35 +114150,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18) A embalagem de certo chocolate tem a forma de um prisma triangular reto, e as medidas em centímetros de suas arestas estão na figura a seguir:",
-   "imagens": [
-    "img:cdb-sim-a03-18.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "A embalagem de certo chocolate tem a forma de um prisma triangular reto, e as medidas em centímetros de suas arestas estão na figura a seguir:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "210 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "236 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "254 cm<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "75 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "284 cm<sup>2</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A área total dessa embalagem é, aproximadamente:<br><span class=\"pb\"></span>Dado: a área de um triângulo equilátero de lado $ l $ é igual a $ {l^2 √3|4} $",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a03-18-fig.jpg",
+    "alt": "Prisma triangular reto deitado; a base é um triângulo isósceles de lados 4, 4 e 4 (equilátero) e o comprimento do prisma é 20",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a03-19",
@@ -114207,8 +114226,6 @@
   {
    "id": "cdb-sim-a03-20",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -114220,35 +114237,54 @@
    "dificuldade": 2,
    "fonte": "Atividade 03 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20) A quantidade de livros de matemática que uma papelaria vendeu durante uma semana está representada na tabela abaixo. 6 sábado feira feira feira feira feira 15 23 22 27 22 25 Nessa semana, a média diária de livros de matemática vendidos foi, aproximadamente, (A) 19,1 (B) 22,3 (C) 24,5 (D) 26,4 (E) 28,6",
-   "imagens": [
-    "img:cdb-sim-a03-20.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "A quantidade de livros de matemática que uma papelaria vendeu durante uma semana está representada na tabela abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "19,1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "22,3",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "24,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "26,4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "28,6",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessa semana, a média diária de livros de matemática vendidos foi, aproximadamente,",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "2ª feira",
+     "3ª feira",
+     "4ª feira",
+     "5ª feira",
+     "6ª feira",
+     "sábado"
+    ],
+    "linhas": [
+     [
+      "15",
+      "23",
+      "22",
+      "27",
+      "22",
+      "25"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "materia": "Matemática",
