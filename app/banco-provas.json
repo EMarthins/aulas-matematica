@@ -39831,7 +39831,6 @@
   {
    "id": "enem2023-139",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -39843,35 +39842,88 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma pessoa pratica quatro atividades físicas — caminhar, correr, andar de bicicleta e jogar futebol — como parte de seu programa de emagrecimento. Essas atividades são praticadas semanalmente de acordo com o quadro, que apresenta o número de horas diárias por atividade. Dias da semana Caminhar Correr Andar de bicicleta Jogar futebol Segunda-feira 1,0 0,5 0,0 2,0 Terça-feira 0,5 1,0 0,5 1,0 Quarta-feira 0,0 1,5 1,0 0,5 Quinta-feira 0,0 2,0 0,0 0,0 Sexta-feira 0,0 0,5 0,0 2,5 Ela deseja comemorar seu aniversário e escolhe o dia da semana em que o gasto calórico com as atividades físicas praticadas for o maior. Para tanto, considera que os valores dos gastos calóricos das atividades por hora (cal/h) são os seguintes: Atividade física Caminhar Correr Andar de bicicleta Jogar futebol Gasto calórico (cal/h) 248 764 356 492 O dia da semana em que será comemorado o aniversário é A A segunda-feira. B B terça-feira. C C quarta-feira. D D quinta-feira. E E sexta-feira.",
-   "imagens": [
-    "img:enem2023-139.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Uma pessoa pratica quatro atividades físicas — caminhar, correr, andar de bicicleta e jogar futebol — como parte de seu programa de emagrecimento. Essas atividades são praticadas semanalmente de acordo com o quadro, que apresenta o número de horas diárias por atividade. Ela deseja comemorar seu aniversário e escolhe o dia da semana em que o gasto calórico com as atividades físicas praticadas for o maior. Para tanto, considera que os valores dos gastos calóricos das atividades por hora (cal/h) são os da última linha do quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "segunda-feira.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "terça-feira.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "quarta-feira.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "quinta-feira.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "sexta-feira.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O dia da semana em que será comemorado o aniversário é",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Dias da semana",
+     "Caminhar",
+     "Correr",
+     "Andar de bicicleta",
+     "Jogar futebol"
+    ],
+    "linhas": [
+     [
+      "Segunda-feira",
+      "1,0",
+      "0,5",
+      "0,0",
+      "2,0"
+     ],
+     [
+      "Terça-feira",
+      "0,5",
+      "1,0",
+      "0,5",
+      "1,0"
+     ],
+     [
+      "Quarta-feira",
+      "0,0",
+      "1,5",
+      "1,0",
+      "0,5"
+     ],
+     [
+      "Quinta-feira",
+      "0,0",
+      "2,0",
+      "0,0",
+      "0,0"
+     ],
+     [
+      "Sexta-feira",
+      "0,0",
+      "0,5",
+      "0,0",
+      "2,5"
+     ],
+     [
+      "Gasto calórico (cal/h)",
+      "248",
+      "764",
+      "356",
+      "492"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Horas diárias por atividade"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-140",
@@ -39916,7 +39968,6 @@
   {
    "id": "enem2023-141",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Números e operações",
@@ -39928,40 +39979,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O calendário maia apresenta duas contagens simultâneas de anos, o chamado ano Tzolkim, composto por 260 dias e que determinava o calendário religioso, e o ano Haab, composto por 365 dias e que determinava o calendário agrícola. Um historiador encontrou evidências de que gerações de uma mesma família governaram certa comunidade maia pelo período de 20 ciclos, sendo cada ciclo formado por 52 anos Haab. Disponível em: www.suapesquisa.com. Acesso em: 20 ago. 2014. De acordo com as informações fornecidas, durante quantos anos Tzolkim aquela comunidade maia foi governada por tal família? A A 741 B B 1 040 C C 1 460 D D 2 100 E E 5 200",
-   "imagens": [
-    "img:enem2023-141.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O calendário maia apresenta duas contagens simultâneas de anos, o chamado ano Tzolkim, composto por 260 dias e que determinava o calendário religioso, e o ano Haab, composto por 365 dias e que determinava o calendário agrícola. Um historiador encontrou evidências de que gerações de uma mesma família governaram certa comunidade maia pelo período de 20 ciclos, sendo cada ciclo formado por 52 anos Haab.<br><span class=\"pb\"></span>Disponível em: www.suapesquisa.com. Acesso em: 20 ago. 2014.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "741",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 040",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 460",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2 100",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5 200",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "De acordo com as informações fornecidas, durante quantos anos Tzolkim aquela comunidade maia foi governada por tal família?",
+   "transcrita": true
   },
   {
    "id": "enem2023-142",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -39973,40 +40020,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Sejam a , b e c as medidas dos lados de um triângulo retângulo, tendo a como medida da hipotenusa. Esses valores a , b e c são, respectivamente, os diâmetros dos círculos C , C e C , como apresentados na figura. 1 2 3 Círculo C 1 a c Círculo C 3 b Círculo C 2 Observe que essa construção assegura, pelo teorema de Pitágoras, que área ( C ) = área ( C ) + área ( C ). 1 2 3 Um professor de matemática era conhecedor dessa construção e, confraternizando com dois amigos em uma pizzaria onde são vendidas pizzas somente em formato de círculo, lançou um desafio: mesmo sem usar um instrumento de medição, poderia afirmar com certeza se a área do círculo correspondente à pizza que ele pedisse era maior, igual ou menor do que a soma das áreas das pizzas dos dois amigos. Assim, foram pedidas três pizzas. O professor as dividiu ao meio e formou um triângulo com os diâmetros das pizzas, conforme indicado na figura. Meia pizza do professor de matemática Meia pizza do amigo 1 α Meia pizza do amigo 2 A partir da medida do ângulo a , o professor afirmou que a área de sua pizza é maior do que a soma das áreas das outras duas pizzas. A área da pizza do professor de matemática é maior do que a soma das áreas das outras duas pizzas, pois A A 0° < a < 90° B B a = 90° C C 90° < a < 180° D D a = 180° E E 180° < a < 360°",
-   "imagens": [
-    "img:enem2023-142.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "Sejam <i>a</i>, <i>b</i> e <i>c</i> as medidas dos lados de um triângulo retângulo, tendo <i>a</i> como medida da hipotenusa. Esses valores <i>a</i>, <i>b</i> e <i>c</i> são, respectivamente, os diâmetros dos círculos <i>C</i><sub>1</sub>, <i>C</i><sub>2</sub> e <i>C</i><sub>3</sub>, como apresentados na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0° &lt; α &lt; 90°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "α = 90°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "90° &lt; α &lt; 180°",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "α = 180°",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "180° &lt; α &lt; 360°",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Observe que essa construção assegura, pelo teorema de Pitágoras, que área (<i>C</i><sub>1</sub>) = área (<i>C</i><sub>2</sub>) + área (<i>C</i><sub>3</sub>).<br><span class=\"pb\"></span>Um professor de matemática era conhecedor dessa construção e, confraternizando com dois amigos em uma pizzaria onde são vendidas pizzas somente em formato de círculo, lançou um desafio: mesmo sem usar um instrumento de medição, poderia afirmar com certeza se a área do círculo correspondente à pizza que ele pedisse era maior, igual ou menor do que a soma das áreas das pizzas dos dois amigos. Assim, foram pedidas três pizzas. O professor as dividiu ao meio e formou um triângulo com os diâmetros das pizzas, conforme indicado na figura.<br><span class=\"pb\"></span>A partir da medida do ângulo α, o professor afirmou que a área de sua pizza é maior do que a soma das áreas das outras duas pizzas.<br><span class=\"pb\"></span>A área da pizza do professor de matemática é maior do que a soma das áreas das outras duas pizzas, pois",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2023-142-fig1.jpg",
+     "alt": "Triângulo retângulo com hipotenusa a e catetos b e c; sobre cada lado está um círculo de diâmetro igual a esse lado: C1 (diâmetro a), C2 (diâmetro b) e C3 (diâmetro c)",
+     "largura": "78mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2023-142-fig2.jpg",
+     "alt": "Três meias pizzas (semicírculos) sobre os lados de um triângulo, com o ângulo α no vértice entre as meias pizzas dos amigos 1 e 2: meia pizza do professor de matemática, meia pizza do amigo 1 e meia pizza do amigo 2",
+     "largura": "85mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2023-143",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -40018,40 +40075,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Entre maratonistas, um parâmetro utilizado é o de economia de corrida (EC). O valor desse parâmetro é calculado pela razão entre o consumo de oxigênio, em mililitro (mL) por minuto (min), e a massa, em quilograma (kg), do atleta correndo a uma velocidade constante. Disponível em: www.treinamentoonline.com.br. Acesso em: 23 out. 2019 (adaptado). Um maratonista, visando melhorar sua performance, auxiliado por um médico, mensura o seu consumo de oxigênio por minuto a velocidade constante. Com base nesse consumo e na massa do atleta, o médico calcula o EC do atleta. A unidade de medida da grandeza descrita pelo parâmetro EC é min A A mL kg ⋅ mL B B min kg ⋅ min mL ⋅ C C kg min kg ⋅ D D mL mL kg ⋅ E E min",
-   "imagens": [
-    "img:enem2023-143.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "Entre maratonistas, um parâmetro utilizado é o de economia de corrida (EC). O valor desse parâmetro é calculado pela razão entre o consumo de oxigênio, em mililitro (mL) por minuto (min), e a massa, em quilograma (kg), do atleta correndo a uma velocidade constante.<br><span class=\"pb\"></span>Disponível em: www.treinamentoonline.com.br. Acesso em: 23 out. 2019 (adaptado).<br><span class=\"pb\"></span>Um maratonista, visando melhorar sua performance, auxiliado por um médico, mensura o seu consumo de oxigênio por minuto a velocidade constante. Com base nesse consumo e na massa do atleta, o médico calcula o EC do atleta.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {min|mL·kg} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {mL|min·kg} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {min·mL|kg} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {min·kg|mL} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {mL·kg|min} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A unidade de medida da grandeza descrita pelo parâmetro EC é",
+   "transcrita": true
   },
   {
    "id": "enem2023-144",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -40063,40 +40116,60 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O gerente de uma fábrica pretende comparar a evolução das vendas de dois produtos similares (I e II). Para isso, passou a verificar o número de unidades vendidas de cada um desses produtos em cada mês. Os resultados dessa verificação, para os meses de abril a junho, são apresentados na tabela. Vendas Vendas Vendas Produto em abril em maio em junho (unidade) (unidade) (unidade) l 80 90 100 ll 190 170 150 O gerente estava decidido a cessar a produção do produto II no mês seguinte àquele em que as vendas do produto I superassem as do produto II. Suponha que a variação na quantidade de unidades vendidas dos produtos I e II se manteve, mês a mês, como no período representado na tabela. Em qual mês o produto II parou de ser produzido? A A Junho. B B Julho. C C Agosto. D D Setembro. E E Outubro.",
-   "imagens": [
-    "img:enem2023-144.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "O gerente de uma fábrica pretende comparar a evolução das vendas de dois produtos similares (I e II). Para isso, passou a verificar o número de unidades vendidas de cada um desses produtos em cada mês. Os resultados dessa verificação, para os meses de abril a junho, são apresentados na tabela.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Junho.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Julho.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Agosto.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Setembro.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Outubro.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O gerente estava decidido a cessar a produção do produto II no mês seguinte àquele em que as vendas do produto I superassem as do produto II.<br><span class=\"pb\"></span>Suponha que a variação na quantidade de unidades vendidas dos produtos I e II se manteve, mês a mês, como no período representado na tabela.<br><span class=\"pb\"></span>Em qual mês o produto II parou de ser produzido?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Produto",
+     "Vendas em abril (unidade)",
+     "Vendas em maio (unidade)",
+     "Vendas em junho (unidade)"
+    ],
+    "linhas": [
+     [
+      "I",
+      "80",
+      "90",
+      "100"
+     ],
+     [
+      "II",
+      "190",
+      "170",
+      "150"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-145",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -40108,40 +40181,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa de transporte faz regularmente um levantamento do número de viagens realizadas durante o dia por todos os 160 motoristas cadastrados em seu aplicativo. Em um certo dia, foi gerado um relatório, por meio de um gráfico de barras, no qual se relacionaram a quantidade de motoristas com a quantidade de viagens realizadas até aquele instante do dia. 7 6 5 4 3 2 1 0 5 10 15 20 25 30 35 40 45 50 55 Quantidade de viagens realizadas Quantidade de motoristas Comparando os valores da média, da mediana e da moda da distribuição das quantidades de viagens realizadas pelos motoristas cadastrados nessa empresa, obtém-se A A mediana = média < moda. B B mediana = moda < média. C C mediana < média < moda. D D moda < média < mediana. E E moda < mediana < média.",
-   "imagens": [
-    "img:enem2023-145.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Uma empresa de transporte faz regularmente um levantamento do número de viagens realizadas durante o dia por todos os 160 motoristas cadastrados em seu aplicativo. Em um certo dia, foi gerado um relatório, por meio de um gráfico de barras, no qual se relacionaram a quantidade de motoristas com a quantidade de viagens realizadas até aquele instante do dia.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "mediana = média &lt; moda.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "mediana = moda &lt; média.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "mediana &lt; média &lt; moda.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "moda &lt; média &lt; mediana.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "moda &lt; mediana &lt; média.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Comparando os valores da média, da mediana e da moda da distribuição das quantidades de viagens realizadas pelos motoristas cadastrados nessa empresa, obtém-se",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-145-fig.jpg",
+    "alt": "Gráfico de barras horizontais: quantidade de viagens realizadas (1 a 7) em função da quantidade de motoristas (0 a 55)",
+    "largura": "101mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-146",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -40153,40 +40228,71 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A foto mostra a construção de uma cisterna destinada ao armazenamento de água. Uma cisterna como essa, na forma de cilindro circular reto com 3 m² de área da base, foi abastecida por um curso-d’água com vazão constante. O seu proprietário registrou a altura do nível da água no interior da cisterna durante o abastecimento em diferentes momentos de um mesmo dia, conforme o quadro. Horário (h) Nível da água (m) 6:00 0,5 8:00 1,1 12:00 2,3 15:00 3,2 Disponível em: www.paraibamix.com. Acesso em: 3 dez. 2012. Qual foi a vazão, em metro cúbico por hora, do curso-d’água que abasteceu a cisterna? A A 0,3 B B 0,5 C C 0,9 D D 1,8 E E 2,7",
-   "imagens": [
-    "img:enem2023-146.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A foto mostra a construção de uma cisterna destinada ao armazenamento de água. Uma cisterna como essa, na forma de cilindro circular reto com 3 m<sup>2</sup> de área da base, foi abastecida por um curso-d’água com vazão constante. O seu proprietário registrou a altura do nível da água no interior da cisterna durante o abastecimento em diferentes momentos de um mesmo dia, conforme o quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,9",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1,8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,7",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual foi a vazão, em metro cúbico por hora, do curso-d’água que abasteceu a cisterna?",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Horário (h)",
+      "Nível da água (m)"
+     ],
+     "linhas": [
+      [
+       "6:00",
+       "0,5"
+      ],
+      [
+       "8:00",
+       "1,1"
+      ],
+      [
+       "12:00",
+       "2,3"
+      ],
+      [
+       "15:00",
+       "3,2"
+      ]
+     ],
+     "largura": "60%"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2023-146-fig.jpg",
+     "alt": "Fotografia da construção de uma cisterna circular, escavada no chão, ao lado de uma casa de alvenaria",
+     "largura": "86mm",
+     "legenda": "Disponível em: www.paraibamix.com. Acesso em: 3 dez. 2012."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2023-147",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -40198,40 +40304,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Num certo momento de um jogo digital, a tela apresenta a imagem representada na figura. O ponto Q 1 representa a posição de um jogador que está com a bola, os pontos Q , Q , Q , Q e Q também indicam posições 2 3 4 5 6 de jogadores da mesma equipe, e os pontos A e B indicam os dois pés da trave mais próxima deles. No momento da partida retratado, o jogador Q tem a posse da bola, que 1 será passada para um dos outros jogadores das posições Q , n ∈ {2, 3, 4, 5, 6}, cujo ângulo tenha a mesma n AQ B n medida do ângulo AQ B 1 . Q 3 A Q 4 Q 2 B α Q 5 Q 1 Q 6 Qual é o jogador que receberá a bola? A A Q 2 B B Q 3 C C Q 4 D D Q 5 E E Q 6",
-   "imagens": [
-    "img:enem2023-147.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Num certo momento de um jogo digital, a tela apresenta a imagem representada na figura. O ponto <i>Q</i><sub>1</sub> representa a posição de um jogador que está com a bola, os pontos <i>Q</i><sub>2</sub>, <i>Q</i><sub>3</sub>, <i>Q</i><sub>4</sub>, <i>Q</i><sub>5</sub> e <i>Q</i><sub>6</sub> também indicam posições de jogadores da mesma equipe, e os pontos <i>A</i> e <i>B</i> indicam os dois pés da trave mais próxima deles. No momento da partida retratado, o jogador <i>Q</i><sub>1</sub> tem a posse da bola, que será passada para um dos outros jogadores das posições <i>Q</i><sub><i>n</i></sub>, <i>n</i> ∈ {2, 3, 4, 5, 6}, cujo ângulo <i>A</i><i>Q</i><sub><i>n</i></sub><i>B</i> tenha a mesma medida do ângulo α = <i>A</i><i>Q</i><sub>1</sub><i>B</i>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "<i>Q</i><sub>2</sub>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "<i>Q</i><sub>3</sub>",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "<i>Q</i><sub>4</sub>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "<i>Q</i><sub>5</sub>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "<i>Q</i><sub>6</sub>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual é o jogador que receberá a bola?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-147-fig.jpg",
+    "alt": "Campo de futebol visto de cima: a trave da esquerda com os pés A e B; os jogadores Q1 a Q6 em posições diferentes; circunferências tracejadas que passam por A e B",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-148",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Números e operações",
@@ -40243,40 +40351,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O triângulo da figura é denominado triângulo mágico. Nos círculos, escrevem-se os números de 1 a 6, sem repetição, com um número em cada círculo. O objetivo é distribuir os números de forma que as somas dos números em cada lado do triângulo sejam iguais. Considere que os números colocados nos vértices do triângulo estejam em progressão aritmética de razão igual a 2. Nas condições propostas, quais as possíveis soluções para as somas dos números que formam os lados do triângulo? A A Há somente uma solução possível, e as somas em cada lado do triângulo são iguais a 7. B B Há somente uma solução possível, e as somas em cada lado do triângulo são iguais a 9. C C Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 7 e outra em que as somas são iguais a 9. D D Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 9 e outra em que as somas são iguais a 12. E E Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 10 e outra em que as somas são iguais a 11.",
-   "imagens": [
-    "img:enem2023-148.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "O triângulo da figura é denominado triângulo mágico. Nos círculos, escrevem-se os números de 1 a 6, sem repetição, com um número em cada círculo. O objetivo é distribuir os números de forma que as somas dos números em cada lado do triângulo sejam iguais.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Há somente uma solução possível, e as somas em cada lado do triângulo são iguais a 7.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Há somente uma solução possível, e as somas em cada lado do triângulo são iguais a 9.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 7 e outra em que as somas são iguais a 9.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 9 e outra em que as somas são iguais a 12.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Há somente duas soluções possíveis, uma em que as somas em cada lado do triângulo são iguais a 10 e outra em que as somas são iguais a 11.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere que os números colocados nos vértices do triângulo estejam em progressão aritmética de razão igual a 2.<br><span class=\"pb\"></span>Nas condições propostas, quais as possíveis soluções para as somas dos números que formam os lados do triângulo?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-148-fig.jpg",
+    "alt": "Triângulo com seis círculos vazios: um em cada vértice e um no meio de cada lado",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-149",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -40288,40 +40398,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "No alojamento de uma universidade, há alguns quartos com o padrão superior ao dos demais. Um desses quartos ficou disponível, e muitos estudantes se candidataram para morar no local. Para escolher quem ficará com o quarto, um sorteio será realizado. Para esse sorteio, cartões individuais com os nomes de todos os estudantes inscritos serão depositados em uma urna, sendo que, para cada estudante de primeiro ano, será depositado um único cartão com seu nome; para cada estudante de segundo ano, dois cartões com seu nome; e, para cada estudante de terceiro ano, três cartões com seu nome. Foram inscritos 200 estudantes de primeiro ano, 150 de segundo ano e 100 de terceiro ano. Todos os cartões têm a mesma probabilidade de serem sorteados. Qual a probabilidade de o vencedor do sorteio ser um estudante de terceiro ano? 1 A A 2 1 B B 3 1 C C 8 2 D D 9 3 E E 8",
-   "imagens": [
-    "img:enem2023-149.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "No alojamento de uma universidade, há alguns quartos com o padrão superior ao dos demais. Um desses quartos ficou disponível, e muitos estudantes se candidataram para morar no local. Para escolher quem ficará com o quarto, um sorteio será realizado. Para esse sorteio, cartões individuais com os nomes de todos os estudantes inscritos serão depositados em uma urna, sendo que, para cada estudante de primeiro ano, será depositado um único cartão com seu nome; para cada estudante de segundo ano, dois cartões com seu nome; e, para cada estudante de terceiro ano, três cartões com seu nome. Foram inscritos 200 estudantes de primeiro ano, 150 de segundo ano e 100 de terceiro ano. Todos os cartões têm a mesma probabilidade de serem sorteados.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|8} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {2|9} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|8} $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual a probabilidade de o vencedor do sorteio ser um estudante de terceiro ano?",
+   "transcrita": true
   },
   {
    "id": "enem2023-150",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -40333,40 +40439,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A água utilizada pelos 75 moradores de um vilarejo provém de um reservatório de formato cilíndrico circular reto cujo raio da base mede 5 metros, sempre abastecido no primeiro dia de cada mês por caminhões-pipa. Cada morador desse vilarejo consome, em média, 200 litros de água por dia. No mês de junho de um determinado ano, o vilarejo festejou o dia do seu padroeiro e houve um gasto extra de água nos primeiros 20 dias. Passado esse período, as pessoas verificaram a quantidade de água presente no reservatório e constataram que o nível da coluna de água estava em 1,5 metro. Decidiram, então, fazer um racionamento de água durante os 10 dias seguintes. Considere 3 como aproximação para π . Qual é a quantidade mínima de água, em litro, que cada morador, em média, deverá economizar por dia, de modo que o reservatório não fique sem água nos próximos 10 dias? A A 50 B B 60 C C 80 D D 140 E E 150",
-   "imagens": [
-    "img:enem2023-150.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "A água utilizada pelos 75 moradores de um vilarejo provém de um reservatório de formato cilíndrico circular reto cujo raio da base mede 5 metros, sempre abastecido no primeiro dia de cada mês por caminhões-pipa. Cada morador desse vilarejo consome, em média, 200 litros de água por dia.<br><span class=\"pb\"></span>No mês de junho de um determinado ano, o vilarejo festejou o dia do seu padroeiro e houve um gasto extra de água nos primeiros 20 dias. Passado esse período, as pessoas verificaram a quantidade de água presente no reservatório e constataram que o nível da coluna de água estava em 1,5 metro. Decidiram, então, fazer um racionamento de água durante os 10 dias seguintes. Considere 3 como aproximação para π.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "60",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "140",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "150",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual é a quantidade mínima de água, em litro, que cada morador, em média, deverá economizar por dia, de modo que o reservatório não fique sem água nos próximos 10 dias?",
+   "transcrita": true
   },
   {
    "id": "enem2023-151",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -40378,35 +40480,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em janeiro do ano passado, a direção de uma fábrica abriu uma creche para os filhos de seus funcionários, com 10 salas, cada uma com capacidade para atender 10 crianças a cada ano. As vagas são sorteadas entre os filhos dos funcionários inscritos, enquanto os não contemplados pelo sorteio formam uma lista de espera. No ano passado, a lista de espera teve 400 nomes e, neste ano, esse número cresceu 10%. A direção da fábrica realizou uma pesquisa e constatou que a lista de espera para o próximo ano terá a mesma quantidade de nomes da lista de espera deste ano. Decidiu, então, construir, ao longo desse ano, novas salas para a creche, também com capacidade de atendimento para 10 crianças cada, de modo que o número de nomes na lista de espera no próximo ano seja 25% menor que o deste ano. O número mínimo de salas que deverão ser construídas é A A 10. B B 11. C C 13. D D 30. E E 33.",
-   "imagens": [
-    "img:enem2023-151.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Em janeiro do ano passado, a direção de uma fábrica abriu uma creche para os filhos de seus funcionários, com 10 salas, cada uma com capacidade para atender 10 crianças a cada ano. As vagas são sorteadas entre os filhos dos funcionários inscritos, enquanto os não contemplados pelo sorteio formam uma lista de espera. No ano passado, a lista de espera teve 400 nomes e, neste ano, esse número cresceu 10%.<br><span class=\"pb\"></span>A direção da fábrica realizou uma pesquisa e constatou que a lista de espera para o próximo ano terá a mesma quantidade de nomes da lista de espera deste ano. Decidiu, então, construir, ao longo desse ano, novas salas para a creche, também com capacidade de atendimento para 10 crianças cada, de modo que o número de nomes na lista de espera no próximo ano seja 25% menor que o deste ano.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "11.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "13.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "30.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "33.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O número mínimo de salas que deverão ser construídas é",
+   "transcrita": true
   },
   {
    "id": "enem2023-152",
