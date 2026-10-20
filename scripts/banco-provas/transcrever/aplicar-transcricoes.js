@@ -12,9 +12,9 @@ let canvas = null;
 try { canvas = require(path.join(raiz, '../fontes-nre/tools/node_modules/@napi-rs/canvas')); } catch (e) { console.log('aviso: sem @napi-rs/canvas — figuras não serão recortadas'); }
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // escapa HTML só fora de $…$ (dentro, a matemática já escapa sozinha); depois converte quebras de linha
-const html = t => String(t == null ? '' : t).split(/(\$[^$]*\$)/).map((p, i) => i % 2 ? p : esc(p)).join('')
+const html = t => String(t == null ? '' : t).replace(/R\$/g, 'R\u0001').replace(/&#36;/g, '\u0001').split(/(\$[^$]*\$)/).map((p, i) => i % 2 ? p : esc(p)).join('')
   .replace(/&lt;(\/?)(sub|sup|i|b|u)&gt;/g, '<$1$2>') // permite subscrito/sobrescrito/itálico/negrito/sublinhado
-  .replace(/\n\n+/g, '<br><span class="pb"></span>').replace(/\n/g, '<br>');
+  .replace(/\n\n+/g, '<br><span class="pb"></span>').replace(/\n/g, '<br>').replace(/\u0001/g, '&#36;');
 const SOMA = [1, 2, 4, 8, 16, 32, 64];
 const FIGAUTO = fs.existsSync(path.join(__dirname, 'figuras-auto.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'figuras-auto.json'), 'utf8')) : {};
 const normc = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
