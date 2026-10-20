@@ -63452,7 +63452,6 @@
   },
   {
    "id": "cdb-c04-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63464,41 +63463,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UEMS Considere as fun çõ es f(x) = 2 3 x + b e g(x) = 6x + 3, sendo f(0) + g(0) = – 2. O valor de g(4) + 6f 5 ser á : a) 27 b) 23 c) – 3 d) 2 e) 7 4 \u0002 \u0003",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-020.jpg"
-   ],
-   "larguraMm": 125.9,
+   "enunciado": "Considere as funções $ f(x) = {2|3}x + b $ e $ g(x) = 6x + 3 $, sendo $ f(0) + g(0) = −2 $.<br><span class=\"pb\"></span>O valor de $ g(4) + 6f({5|4}) $ será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "27",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "23",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "7",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63510,20 +63503,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. AEU-DF Uma companhia telef ô nica tem como pol í tica promocional, oferecer a seus clientes a redu çã o de pre ç os a partir de certos n í veis de utiliza çã o dos servi ç os da compa- nhia. Essa companhia cobra de seus usu á rios o valor de R$ 0,22 por minuto de liga çã o. Dentro da pol í tica mencionada, a companhia passa a cobrar R$ 0,18/min. a partir de 12 horas de liga çõ es efetuadas por um aparelho e R$ 0,12/min. por liga çõ es do mesmo aparelho que excedam ao ac ú mulo de 30 horas. Todas as horas devem ser computadas dentro de um mesmo m ê s do calend á rio. Em rela çã o ao custo d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-021.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Uma companhia telefônica tem como política promocional, oferecer a seus clientes a redução de preços a partir de certos níveis de utilização dos serviços da companhia. Essa companhia cobra de seus usuários o valor de R&#36; 0,22 por minuto de ligação. Dentro da política mencionada, a companhia passa a cobrar R&#36; 0,18/min. a partir de 12 horas de ligações efetuadas por um aparelho e R&#36; 0,12/min. por ligações do mesmo aparelho que excedam ao acúmulo de 30 horas. Todas as horas devem ser computadas dentro de um mesmo mês do calendário.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F – F"
+   "gabarito": "V – F – V – F – F",
+   "pergunta": "Em relação ao custo do serviço telefônico da citada companhia, analise e julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "Uma ligação efetuada na madrugada do dia 1º de um certo mês, com duração de 120 minutos terá um custo de R&#36; 26,40.",
+     "ok": true
+    },
+    {
+     "t": "O custo de uma ligação só pode ser reduzido a partir do terceiro dia de cada mês.",
+     "ok": false
+    },
+    {
+     "t": "O gráfico que representa o custo das ligações feitas de um mesmo aparelho por essa companhia, em relação ao número de horas de utilização, é o da figura acima.",
+     "ok": true
+    },
+    {
+     "t": "Para quem precisa usar o telefone por muitas horas a cada dia, utilizar os serviços dessa companhia é o ideal, dentro do mercado atual.",
+     "ok": false
+    },
+    {
+     "t": "Com essa política da empresa, o cliente que mais utilizar o telefone ao longo de um mês terá um valor menor a pagar no final do período.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-021-fig.jpg",
+    "alt": "Gráfico do custo (R$) em função das horas de utilização h: segmento crescente de (0, 0) a (12, 158,40), segmento menos inclinado até (30, 352,80) e outro menos inclinado ainda depois de 30 horas",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63535,41 +63551,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFSE Se f é a fun çã o de | R em | R definida por: f(x) = − + −          < − − ≤ < − − ≤ < ≤ < ≥ 2 0 1 2 3 3 1 1 1 1 3 3 2 x x x se se se se se x x x x x , ent ã o: a) f π π 2 2     = b) f − ( ) 2 = – 2 c) f(1 100 ) = 2 d) f(log 3 2) = 1 + log 3 2 e) f −     17 3 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-022.jpg"
-   ],
-   "larguraMm": 74.3,
+   "enunciado": "Se $ f $ é a função de ℝ em ℝ definida por<br><span class=\"pb\"></span>$ f(x) = \\{−2 $ se $ x < −3 $;  $ 0 $ se $ −3 ≤ x < −1 $;  $ x + 1 $ se $ −1 ≤ x < 1 $;  $ x^2 − 2 $ se $ 1 ≤ x < 3 $;  $ x $ se $ x ≥ 3\\} $,<br><span class=\"pb\"></span>então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f({π|2}) = {π|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(−√2) = −2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f(1^{100}) = 2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ f(log_3 2) = 1 + log_3 2 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ f(−{17|3}) = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63581,41 +63591,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. UFSE Se f é uma fun çã o do primeiro grau tal que f(12) = 45 e f(15) = 54, ent ã o f(18) é igual a: a) 60 b) 61 c) 62 d) 63 e) 65",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-023.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Se $ f $ é uma função do primeiro grau tal que $ f(12) = 45 $ e $ f(15) = 54 $, então $ f(18) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "61",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "62",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "63",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "65",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63627,37 +63631,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFR-RJ O matem á tico Mathias levou seu filho a um parque de divers õ es. Enquanto o menino se divertia nos brinquedos, Mathias passava o tempo fazendo tentativas de repre- sentar graficamente os movimentos de seu filho. Tentando representar: I. a altura de seu filho em fun çã o do tempo na roda gigante; II. a velocidade de seu filho em fun çã o do tempo no escorrega; III. a velocidade de seu filho em fun çã o do tempo na gangorra; IV. a dist â ncia de seu filho at é o centro do carrossel, em fun çã o do tempo no carrossel. O matem á tico Mathias fez os seguintes gr á ficos: 1. 4. 2. 5. 3.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-024.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "O matemático Mathias levou seu filho a um parque de diversões. Enquanto o menino se divertia nos brinquedos, Mathias passava o tempo fazendo tentativas de representar graficamente os movimentos de seu filho. Tentando representar:<br><span class=\"pb\"></span>I. a altura de seu filho em função do tempo na roda gigante;<br>II. a velocidade de seu filho em função do tempo no escorrega;<br>III. a velocidade de seu filho em função do tempo na gangorra;<br>IV. a distância de seu filho até o centro do carrossel, em função do tempo no carrossel.<br><span class=\"pb\"></span>O matemático Mathias fez os seguintes gráficos:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ R = \\{(I, 2), (II, 1), (III, 4), (IV, 6)\\} $.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ R = \\{(I, 1), (II, 2), (III, 3), (IV, 4)\\} $.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ R = \\{(I, 3), (II, 5), (III, 2), (IV, 1)\\} $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ R = \\{(I, 2), (II, 3), (III, 5), (IV, 6)\\} $.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ R = \\{(I, 3), (II, 4), (III, 5), (IV, 6)\\} $.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O conjunto que melhor representa as relações entre movimentos e gráficos é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-024-fig.jpg",
+    "alt": "Seis pequenos gráficos numerados: 1, uma curva que sobe e cai abruptamente; 2, uma onda repetida acima do eixo; 3, uma circunferência; 4, uma onda que oscila em torno do eixo; 5, degraus crescentes seguidos de uma queda suave; 6, uma reta horizontal",
+    "largura": "66mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-025",
@@ -63753,7 +63759,6 @@
   },
   {
    "id": "cdb-c04-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63765,37 +63770,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. ITA-SP O conjunto de todos os valores de m para os quais a fun çã o f ( x ) = x 2 + (2 m + 3) x + ( m 2 + 3) est á definida e é n ã o-negativa para todo x real é : a) 1 , 7 b) 1 , \u0001 c) 0, 7 d) – \u0001 , 1 e) 1 , 7 x 2 + (2 m + 1) x + ( m 2 + 2) \u0004 4 4 \u0004 4 \u0006 \u0004 4 \u0006 \u0004 4 \u0006 \u0006 4 4 \u0006 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-027.jpg"
-   ],
-   "larguraMm": 103.7,
+   "enunciado": "O conjunto de todos os valores de $ m $ para os quais a função<br><span class=\"pb\"></span>$ f(x) = {x^2 + (2m + 3)x + (m^2 + 3)|√{x^2 + (2m + 1)x + (m^2 + 2)}} $<br><span class=\"pb\"></span>está definida e é não-negativa para todo $ x $ real é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ [{1|4}, {7|4}[ $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ]{1|4}, ∞[ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ]0, {7|4}[ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ]−∞, {1|4}] $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ ]{1|4}, {7|4}[ $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-028",
@@ -63845,7 +63845,6 @@
   },
   {
    "id": "cdb-c04-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63857,20 +63856,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. UFMS Considere as fun çõ es reais f(x) = a x 2 + b x + 4 e g(x) = a x 2 + b x – 12, onde a e b s ã o n ú meros reais com a ≠ 0. Se f( p ) = 16, sendo p um n ú mero real, é correto afirmar que: 01. f(0) – g(0) = – 8; 02. o gr á fico de g(x) passa pelo ponto de coordenadas (0;0); 04. o gr á fico de f(x) é uma reta que passa pelo ponto (0;4); 08. g(p) = 0; 16. f(x) – g(x) = 16, para todo n ú mero real x. D ê , como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-029.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considere as funções reais $ f(x) = ax^2 + bx + 4 $ e $ g(x) = ax^2 + bx − 12 $, onde <b>a</b> e <b>b</b> são números reais com $ a ≠ 0 $. Se $ f(p) = 16 $, sendo <b>p</b> um número real, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "24"
+   "gabarito": "24",
+   "afirmacoes": [
+    {
+     "t": "$ f(0) − g(0) = −8 $;",
+     "ok": false
+    },
+    {
+     "t": "o gráfico de $ g(x) $ passa pelo ponto de coordenadas $ (0; 0) $;",
+     "ok": false
+    },
+    {
+     "t": "o gráfico de $ f(x) $ é uma reta que passa pelo ponto $ (0; 4) $;",
+     "ok": false
+    },
+    {
+     "t": "$ g(p) = 0 $;",
+     "ok": true
+    },
+    {
+     "t": "$ f(x) − g(x) = 16 $, para todo número real $ x $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63882,37 +63897,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. Unifor-CE No gr á fico abaixo tem-se a evolu çã o do PIB (Produto Interno Bruto) brasi- leiro nos anos 80 e 90 do s é culo XX, tomando como base o valor de 100 unidades, em 1979. A partir desse gr á fico, é correto concluir que: a) os valores do PIB foram crescentes no per í odo de 1980 a 1989; b) os valores do PIB foram decrescentes no per í odo de 1987 a 1992; c) a diferen ç a entre os valores do PIB dos anos 1989 e 1987 foi igual à dos anos 1992 e 1990; d) os valores do PIB s ã o sempre crescentes; e) o crescimento dos valores do PIB foi maior no per í odo de 1983 a 1986 do que no per í",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-030.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "No gráfico abaixo tem-se a evolução do PIB (Produto Interno Bruto) brasileiro nos anos 80 e 90 do século XX, tomando como base o valor de 100 unidades, em 1979.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "os valores do PIB foram crescentes no período de 1980 a 1989;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "os valores do PIB foram decrescentes no período de 1987 a 1992;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "a diferença entre os valores do PIB dos anos 1989 e 1987 foi igual à dos anos 1992 e 1990;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "os valores do PIB são sempre crescentes;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "o crescimento dos valores do PIB foi maior no período de 1983 a 1986 do que no período de 1986 a 1989.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "A partir desse gráfico, é correto concluir que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-030-fig.jpg",
+    "alt": "Gráfico de linha do PIB de 1979 a 1998 (base 100 em 1979): sobe até cerca de 110 em 1980, oscila em torno de 105, cresce até cerca de 133 em 1989, oscila entre 127 e 130 até 1992 e sobe até cerca de 157 em 1997-98",
+    "largura": "77mm",
+    "legenda": "Fonte: IBGE, Folha de S. Paulo."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-031",
@@ -63958,7 +63976,6 @@
   },
   {
    "id": "cdb-c04-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63970,37 +63987,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. UFMG Observe o gr á fico, em que o segmento AB é paralelo ao eixo das abscissas. Esse gr á fico representa a rela çã o entre a ingest ã o de certo composto, em mg/dia, e sua absor çã o pelo organismo, tamb é m em mg/dia. A ú nica afirmativa falsa relativa ao gr á fico é : a) A raz ã o entre a quantidade absorvida e a quantidade ingerida é constante. b) A absor çã o resultante da ingest ã o de mais de 20 mg/dia é igual à absor çã o resultante da ingest ã o de 20 mg/dia. c) Para ingest õ es acima de 20 mg/dia, quanto maior a ingest ã o, menor a porcentagem absorvida do composto ingerido. d)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-032.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Observe o gráfico, em que o segmento AB é paralelo ao eixo das abscissas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A razão entre a quantidade absorvida e a quantidade ingerida é constante.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "A absorção resultante da ingestão de mais de 20 mg/dia é igual à absorção resultante da ingestão de 20 mg/dia.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Para ingestões acima de 20 mg/dia, quanto maior a ingestão, menor a porcentagem absorvida do composto ingerido.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Para ingestões de até 20 mg/dia, a absorção é proporcional à quantidade ingerida.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Esse gráfico representa a relação entre a ingestão de certo composto, em mg/dia, e sua absorção pelo organismo, também em mg/dia.<br><span class=\"pb\"></span>A única afirmativa <b>falsa</b> relativa ao gráfico é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-032-fig.jpg",
+    "alt": "Gráfico da absorção (mg/dia) em função da ingestão (mg/dia): segmento crescente da origem ao ponto A (20, 18) e segmento horizontal de A até B",
+    "largura": "67mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64012,37 +64030,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. Cefet-PR A fun çã o f: [ – 1; 1] → [0, 1], definida por y x = − 1 2 : a) é impar; b) n ã o é par e nem impar; c) é injetora; d) é sobrejetora; e) é bijetora.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-033.jpg"
-   ],
-   "larguraMm": 103.7,
+   "enunciado": "A função $ f: [−1; 1] → [0, 1] $, definida por $ y = √{1 − x^2} $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "é ímpar;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "não é par e nem ímpar;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "é injetora;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "é sobrejetora;",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "é bijetora.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-034",
@@ -64092,7 +64105,6 @@
   },
   {
    "id": "cdb-c04-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64104,41 +64116,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. Mackenzie-SP Na figura temos os gr á ficos das fun çõ es f e g . Se f( x ) = 2x 2 , ent ã o g(3) vale: a) 6 b) 8 c) 10 d) 12 e) 14 3 y g f -1 0 x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-035.jpg"
-   ],
-   "larguraMm": 94.5,
+   "enunciado": "Na figura temos os gráficos das funções $ f $ e $ g $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "14",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ f(x) = 2x^2 $, então $ g(3) $ vale:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-035-fig.jpg",
+    "alt": "Gráficos: a parábola f (de vértice na origem) e a reta g, que corta o eixo y em 3 e cruza a parábola no ponto de abscissa −1",
+    "largura": "46mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64150,20 +64163,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. I.E. Superior de Brasília-DF Considere a fun çã o f(x) = x 3 + 2x 2 – x – 2 e julgue os itens seguintes. ( ) O gr á fico da fun çã o n ã o intercepta o eixo das abscissas. ( ) O gr á fico da fun çã o intercepta o eixo das ordenadas em um ponto de ordenada nega- tiva. ( ) f(x) > 0 somente se – 2 < x < – 1. ( ) Todas as solu çõ es da equa çã o f(x) = 0 s ã o inteiras. ( ) A fun çã o f(x) é equivalente a fun çã o g(x) = x x x 2 3 2 1 + + − .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-036.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considere a função $ f(x) = x^3 + 2x^2 − x − 2 $ e julgue os itens seguintes.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V – F"
+   "gabarito": "F – V – F – V – F",
+   "afirmacoes": [
+    {
+     "t": "O gráfico da função não intercepta o eixo das abscissas.",
+     "ok": false
+    },
+    {
+     "t": "O gráfico da função intercepta o eixo das ordenadas em um ponto de ordenada negativa.",
+     "ok": true
+    },
+    {
+     "t": "$ f(x) > 0 $ somente se $ −2 < x < −1 $.",
+     "ok": false
+    },
+    {
+     "t": "Todas as soluções da equação $ f(x) = 0 $ são inteiras.",
+     "ok": true
+    },
+    {
+     "t": "A função $ f(x) $ é equivalente à função $ g(x) = {x^2 + 3x + 2|x − 1} $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64175,16 +64204,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. UFMT Se f: | R ∗ + → | R ∗ + e g: | R ∗ + → | R ∗ + s ã o fun çõ es definidas, respectivamente, por f(x) = 1 x + 1 e g(x) = x 2 , julgue os itens. ( ) (g o f)(x) = g (f(x)) = 1 2 x + 2 x + 1. ( ) A fun çã o g admite inversa. ( ) O esbo ç o do gr á fico de f é",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-037.jpg"
-   ],
-   "larguraMm": 124.2,
+   "enunciado": "Se $ f: ℝ_+^* → ℝ_+^* $ e $ g:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V"
+   "gabarito": "V – V – V",
+   "pergunta": "ℝ_+^* → ℝ_+^* $ são funções definidas, respectivamente, por $ f(x) = {1|x} + 1 $ e $ g(x) = x^2 $, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "$ (g ∘ f)(x) = g(f(x)) = {1|x^2} + {2|x} + 1 $.",
+     "ok": true
+    },
+    {
+     "t": "A função $ g $ admite inversa.",
+     "ok": true
+    },
+    {
+     "t": "O esboço do gráfico de $ f $ é o da figura acima.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-037-fig.jpg",
+    "alt": "Esboço de um gráfico no plano cartesiano, com uma reta horizontal tracejada em y = 1 e o ponto −1 marcado no eixo x",
+    "largura": "54mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-038",
