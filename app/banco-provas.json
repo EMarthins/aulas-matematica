@@ -84684,7 +84684,6 @@
   },
   {
    "id": "cdb-c16-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84696,41 +84695,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UEMS Em uma gaiola estão vinte coelhos. Seis deles possuem uma mutação sangüínea letal e três outros uma mutação óssea. Se um coelho for selecionado ao acaso, qual a probabilidade de que não seja mutante? a) 20 b) 11 c) 6 d) 3 e) 11 11 20 20 20 40",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-001.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Em uma gaiola estão vinte coelhos. Seis deles possuem uma mutação sangüínea letal e três outros uma mutação óssea. Se um coelho for selecionado ao acaso, qual a probabilidade de que não seja mutante?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {20|11} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {11|20} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {6|20} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|20} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {11|40} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84742,20 +84735,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFGO Uma senha, a ser digitada em um computador, é formada por três algarismos, a 1 , a 2 e c, dos quais c é o algarismo de controle. A senha é válida, se c é o resto da divisão do número a 1 + 2a 2 por 2; por exemplo, 090 é uma senha válida. Assim, julgue os itens: ( ) A senha 310 é uma senha válida. ( ) O maior número de senhas válidas que podem ser formadas é 100. ( ) A probabilidade de uma senha válida, tomada ao acaso, possuir o segundo algarismo igual a 3 é 1 . ( ) A probabilidade de uma senha válida, tomada ao acaso, possuir algarismo de controle igual a 1 é 1 . 3 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Uma senha, a ser digitada em um computador, é formada por três algarismos, $ a_1 $, $ a_2 $ e $ c $, dos quais $ c $ é o algarismo de controle. A senha é válida, se $ c $ é o resto da divisão do número $ a_1 + 2a_2 $ por 2; por exemplo, 090 é uma senha válida. Assim, julgue os itens:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – F"
+   "gabarito": "F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "A senha 310 é uma senha válida.",
+     "ok": false
+    },
+    {
+     "t": "O maior número de senhas válidas que podem ser formadas é 100.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de uma senha válida, tomada ao acaso, possuir o segundo algarismo igual a 3 é $ {1|3} $.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de uma senha válida, tomada ao acaso, possuir algarismo de controle igual a 1 é $ {1|10} $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84767,20 +84772,67 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. U. E. Maringá-PR Uma pesquisa foi realizada com um grupo de 55 moças e 45 rapazes quanto à preferência de um ídolo esportivo, sendo permitida a escolha de apenas um nome. A tabela seguinte apresenta o resultado para os três mais votados. Escolhidas ao acaso três pessoas (uma pessoa A do gru- po todo pesquisado; um rapaz R do grupo de rapazes pesquisados; uma moça M do grupo de moças pesquisadas), assinale o que for correto. (01) A probabilidade de o ídolo de A ser Guga é 0,6. (02) A probabilidade de A não ter citado qualquer um dos três nomes da tabela é 0,07. (04) A probabilidade de A ser",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Uma pesquisa foi realizada com um grupo de 55 moças e 45 rapazes quanto à preferência de um ídolo esportivo, sendo permitida a escolha de apenas um nome. A tabela seguinte apresenta o resultado para os três mais votados.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "39"
+   "gabarito": "39",
+   "pergunta": "Escolhidas ao acaso três pessoas (uma pessoa A do grupo todo pesquisado; um rapaz R do grupo de rapazes pesquisados; uma moça M do grupo de moças pesquisadas), assinale o que for correto (dê, como resposta, a soma das alternativas corretas):",
+   "afirmacoes": [
+    {
+     "t": "A probabilidade de o ídolo de A ser Guga é 0,6.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de A não ter citado qualquer um dos três nomes da tabela é 0,07.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de A ser rapaz e ter escolhido Xuxa é 10%.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de R ter Guga como ídolo é igual à probabilidade de M também tê-lo escolhido.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de A ter citado um dos três nomes da tabela é 0,90.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de A ser rapaz ou ter escolhido Xuxa é $ {3|5} $.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "Moças",
+     "Rapazes"
+    ],
+    "linhas": [
+     [
+      "Guga",
+      "30",
+      "30"
+     ],
+     [
+      "Xuxa",
+      "15",
+      "10"
+     ],
+     [
+      "Popó",
+      "5",
+      "3"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84792,41 +84844,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. U.Católica Dom Bosco-DF No desenvolvimento de 1 + 2x 2 6 , o termo independente de x é: a) 20 b) 32 c) 60 d) 64 e) 172 \u0001 \u0002 x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-004.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "No desenvolvimento de $ ({1|x} + 2x^2)^6 $, o termo independente de $ x $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "32",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "60",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "64",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "172",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84838,20 +84884,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFMT Suponha que o número de inscrição no cadastro de um órgão público seja forma- do por nove algarismos. Admita que os dois primeiros algarismos do número de inscrição, da esquerda para a direita, pertençam ao conjunto {3, 4, 5, 6, 7} e os demais ao conjunto {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. A partir dessas informações, julgue os itens. ( ) Se no censo 2000 a população brasileira atingir 200 milhões, não haverá números suficientes para cadastrar todos os brasileiros nesse órgão. ( ) A probabilidade de um número de inscrição tomado ao acaso ter os dois primeiros algarismos da esquerda para a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-005.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Suponha que o número de inscrição no cadastro de um órgão público seja formado por nove algarismos. Admita que os dois primeiros algarismos do número de inscrição, da esquerda para a direita, pertençam ao conjunto $ \\{3, 4, 5, 6, 7\\} $ e os demais ao conjunto $ \\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\\} $.<br><span class=\"pb\"></span>A partir dessas informações, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V"
+   "gabarito": "F – V – V",
+   "afirmacoes": [
+    {
+     "t": "Se no censo 2000 a população brasileira atingir 200 milhões, não haverá números suficientes para cadastrar todos os brasileiros nesse órgão.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de um número de inscrição tomado ao acaso ter os dois primeiros algarismos da esquerda para a direita repetidos é $ {1|5} $.",
+     "ok": true
+    },
+    {
+     "t": "Podem ser gerados 20.8! números de inscrição com todos os algarismos distintos.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84863,20 +84917,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. U. E. Ponta Grossa-PR Considerando o Binômio x 2 + 1 n , assinale o que for correto. 01) Se n é um número par, o desenvolvimento desse Binômio tem um número ímpar de termos. 02) Se a soma dos coeficientes do desenvolvimento desse Binômio é 256, então n ! = 24. 04) Se o desenvolvimento desse Binômio possui seis termos, a soma de seus coeficientes é 32. 08) Se n = 4, o termo médio desse Binômio é independente de x. 16) O produto do primeiro termo do desenvolvimento desse Binômio pelo seu último termo é x n , para qualquer valor de n \u0001 N*. Dê, como resposta, a soma das alternativas corretas. 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-006.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Considerando o Binômio $ (x^2 + {1|x})^n $, assinale o que for correto (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "23"
+   "gabarito": "23",
+   "afirmacoes": [
+    {
+     "t": "Se $ n $ é um número par, o desenvolvimento desse Binômio tem um número ímpar de termos.",
+     "ok": true
+    },
+    {
+     "t": "Se a soma dos coeficientes do desenvolvimento desse Binômio é 256, então $ ({n|2})! = 24 $.",
+     "ok": true
+    },
+    {
+     "t": "Se o desenvolvimento desse Binômio possui seis termos, a soma de seus coeficientes é 32.",
+     "ok": true
+    },
+    {
+     "t": "Se $ n = 4 $, o termo médio desse Binômio é independente de $ x $.",
+     "ok": false
+    },
+    {
+     "t": "O produto do primeiro termo do desenvolvimento desse Binômio pelo seu último termo é $ x^n $, para qualquer valor de $ n ∈ ℕ^* $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84888,24 +84958,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UnB-DF Se duas bolas são retiradas ao acaso, sem reposição, de uma caixa contendo somente bolas pretas e vermelhas, a probabilidade de que sejam ambas vermelhas é 1 . Recolocando essas bolas na caixa, se três bolas são retiradas ao acaso, também sem reposi- ção, a probabilidade de que todas sejam vermelhas é 1 . Nessas condições, calcule a quantidade de bolas que há nessa caixa. 3 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-007.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Se duas bolas são retiradas ao acaso, sem reposição, de uma caixa contendo somente bolas pretas e vermelhas, a probabilidade de que sejam ambas vermelhas é $ {1|3} $. Recolocando essas bolas na caixa, se três bolas são retiradas ao acaso, também sem reposição, a probabilidade de que todas sejam vermelhas é $ {1|6} $. Nessas condições, calcule a quantidade de bolas que há nessa caixa.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "10",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84917,41 +84981,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFMS Numa certa cidade, 40% da população tem cabelos castanhos, 25% olhos casta- nhos e 15% cabelos e olhos castanhos. Uma pessoa tem cabelos castanhos, a probabilida- de de ter também olhos castanhos é: a) 2 b) 3 c) 1 n d) 4 e) 3 5 8 6 9 5 20",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-008.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Numa certa cidade, 40% da população tem cabelos castanhos, 25% olhos castanhos e 15% cabelos e olhos castanhos. Uma pessoa tem cabelos castanhos, a probabilidade de ter também olhos castanhos é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|8} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|6} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {4|9} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -84963,41 +85021,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. ITA-SP Seja f ( x ) = Σ 20! x n uma função real de variável real em que n ! indica o fatorial de n . Considere as afirmações: I. f (1) = 2 II. f (–1) = 0 III. f (–2) = 1 Podemos concluir que a) Somente as afirmações I e II são verdadeiras. b) Somente as afirmações II e III são verdadeiras. c) Apenas a afirmação I é verdadeira. d) Apenas a afirmação II é verdadeira. e) Apenas a afirmação III é verdadeira. 20 n = 0 n!(20 – n)!",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-009.jpg"
-   ],
-   "larguraMm": 131.4,
+   "enunciado": "Seja $ f(x) = ∑_{n=0}^{20} {20!·x^n|n!(20 − n)!} $ uma função real de variável real em que $ n! $ indica o fatorial de $ n $. Considere as afirmações:<br><span class=\"pb\"></span>I. $ f(1) = 2 $<br>II. $ f(−1) = 0 $<br>III. $ f(−2) = 1 $<br><span class=\"pb\"></span>Podemos concluir que",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Somente as afirmações I e II são verdadeiras.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Somente as afirmações II e III são verdadeiras.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Apenas a afirmação I é verdadeira.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Apenas a afirmação II é verdadeira.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Apenas a afirmação III é verdadeira.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85009,20 +85061,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. I.E.Superior de Brasília-DF Uma secretária deve providenciar envelopes para cinco car- tas diferentes, destinadas a pessoas distintas, com endereços diversos. Após preencher corretamente os endereços das cinco pessoas em cinco envelopes distintos a secretária vai distribuir as cartas em seu respectivos envelopes. Em relação à situação descrita acima, analise e julgue os itens seguintes. ( ) Se a secretária distribuir as cartas nos envelopes de maneira aleatória, a probabilida- de de uma certa carta ser colocada em seu envelope correto é de 20%. ( ) Se não tiver o devido cuidado, a secretár",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-010.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma secretária deve providenciar envelopes para cinco cartas diferentes, destinadas a pessoas distintas, com endereços diversos. Após preencher corretamente os endereços das cinco pessoas em cinco envelopes distintos a secretária vai distribuir as cartas em seus respectivos envelopes. Em relação à situação descrita acima, analise e julgue os itens seguintes.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F"
+   "gabarito": "V – V – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Se a secretária distribuir as cartas nos envelopes de maneira aleatória, a probabilidade de uma certa carta ser colocada em seu envelope correto é de 20%.",
+     "ok": true
+    },
+    {
+     "t": "Se não tiver o devido cuidado, a secretária corre o risco de enviar todas as cartas a destinatários errados.",
+     "ok": true
+    },
+    {
+     "t": "Se uma das cartas for acondicionada em um envelope errado, uma outra carta vai estar em um envelope também errado.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de que a secretária distribua exatamente duas das cartas em envelopes errados é de 40%.",
+     "ok": false
+    },
+    {
+     "t": "É possível que a secretária envie de modo errado apenas uma das cartas.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85034,37 +85102,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UFMS A testemunha de um assalto deve identificar 2 suspeitos que estão entre as 10 pessoas apresentadas para a identificação e não consegue reconhecê-los. De maneira irres- ponsável a testemunha aponta duas pessoas. A probabilidade de serem identificadas duas pessoas inocentes é de, aproximadamente: a) 50% b) 80% c) 37% d) 62% e) 23%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-011.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "A testemunha de um assalto deve identificar 2 suspeitos que estão entre as 10 pessoas apresentadas para a identificação e não consegue reconhecê-los. De maneira irresponsável a testemunha aponta duas pessoas.<br><span class=\"pb\"></span>A probabilidade de serem identificadas duas pessoas inocentes é de, aproximadamente:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "80%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "37%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "62%",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "23%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-012",
@@ -85108,7 +85171,6 @@
   },
   {
    "id": "cdb-c16-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85120,41 +85182,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. ITA-SP Sabendo que é de 1024 a soma dos coeficientes do polinômio em x e y , obtido pelo desenvolvimento do binômio ( x + y ) m , temos que o número de arranjos sem repetição de m elementos, tomados 2 a 2, é: a) 80 b) 90 c) 70 d) 100 e) 60",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-013.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sabendo que é de 1024 a soma dos coeficientes do polinômio em $ x $ e $ y $, obtido pelo desenvolvimento do binômio $ (x + y)^m $, temos que o número de arranjos sem repetição de $ m $ elementos, tomados 2 a 2, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "90",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "70",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85166,20 +85222,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFMT Após vários dias de observação, um fiscal de uma empresa de transportes coleti- vos notou que um determinado motorista chegava na estação central às 11h55, ou 12h ou 12h05, cumprindo uma de suas viagens. Admitindo que ele jamais chegará em outro horá- rio além dos citados, e que 12h é o horário correto para sua chegada, julgue os itens. ( ) A probabilidade de que, em 5 observações, ele chegue 3 vezes às 12h, é 3 . ( ) A probabilidade de o motorista NÃO chegar no horário certo, em uma determinada observação, é 2 . ( ) Os eventos chegar na hora certa e não chegar na hora certa são compl",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Após vários dias de observação, um fiscal de uma empresa de transportes coletivos notou que um determinado motorista chegava na estação central às 11h55, ou 12h ou 12h05, cumprindo uma de suas viagens. Admitindo que ele jamais chegará em outro horário além dos citados, e que 12h é o horário correto para sua chegada, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V"
+   "gabarito": "F – V – V",
+   "afirmacoes": [
+    {
+     "t": "A probabilidade de que, em 5 observações, ele chegue 3 vezes às 12h, é $ {3|5} $.",
+     "ok": false
+    },
+    {
+     "t": "A probabilidade de o motorista NÃO chegar no horário certo, em uma determinada observação, é $ {2|3} $.",
+     "ok": true
+    },
+    {
+     "t": "Os eventos <i>chegar na hora certa</i> e <i>não chegar na hora certa</i> são complementares.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85191,20 +85255,24 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. UFMT Com base nas propriedades dos números binomiais, julgue os itens. ( ) 10 + 10 + 10 + … + 10 = 2 10 ( ) 3 + 4 + 5 + … + 8 = 9 1 2 3 10 3 3 3 3 4 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-015.jpg"
-   ],
-   "larguraMm": 113.9,
+   "enunciado": "Com base nas propriedades dos números binomiais, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V"
+   "gabarito": "F – V",
+   "afirmacoes": [
+    {
+     "t": "$ @M{10;1} + @M{10;2} + @M{10;3} + … + @M{10;10} = 2^{10} $",
+     "ok": false
+    },
+    {
+     "t": "$ @M{3;3} + @M{4;3} + @M{5;3} + … + @M{8;3} = @M{9;4} $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85216,20 +85284,24 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFMT Julgue os itens. ( ) Com os números 2, 3, 5 e 7, pode-se formar, com algarismos distintos, a mesma quantidade de centenas e de milhares. ( ) O antepenúltimo termo do desenvolvimento do Binômio de Newton é é 40a – 6 / 7 . \u0001 \u0002 11 2 a 3 a 3 11 –",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V"
+   "gabarito": "F – V",
+   "afirmacoes": [
+    {
+     "t": "Com os números 2, 3, 5 e 7, pode-se formar, com algarismos distintos, a mesma quantidade de centenas e de milhares.",
+     "ok": false
+    },
+    {
+     "t": "O antepenúltimo termo do desenvolvimento do Binômio de Newton $ (√{{∛{a}|11}} − ∛{{2|√a}})^{11} $ é $ 40a^{−6/7} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85241,20 +85313,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. UnB-DF Uma empresa realiza um processo seletivo de entrevistas para selecionar um único candidato para nela ocupar uma certa posição estratégica. Apresentam-se para a seleção n concorrentes, sendo n ≥ 3. Três entrevistadores deverão classificar os candidatos de acordo com a sua adequação para a função. Cada entrevistador deverá listar os n candi- datos em ordem decrescente de adequação, sendo o primeiro listado aquele que possuir o melhor perfil para exercer a função. As três listas elaboradas pelos entrevistadores, nelas devidamente identificados, constituirão o relatório a ser encaminhad",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma empresa realiza um processo seletivo de entrevistas para selecionar um único candidato para nela ocupar uma certa posição estratégica. Apresentam-se para a seleção $ n $ concorrentes, sendo $ n ≥ 3 $. Três entrevistadores deverão classificar os candidatos de acordo com a sua adequação para a função. Cada entrevistador deverá listar os $ n $ candidatos em ordem decrescente de adequação, sendo o primeiro listado aquele que possuir o melhor perfil para exercer a função. As três listas elaboradas pelos entrevistadores, nelas devidamente identificados, constituirão o relatório a ser encaminhado à direção da empresa, que adota o seguinte critério: um candidato será contratado se for classificado em primeiro lugar por pelo menos dois dos entrevistadores. Com base nessas informações, julgue os itens que se seguem.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V"
+   "gabarito": "F – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "A probabilidade de se ter dois candidatos distintos selecionados para possível contratação é igual a 0,5.",
+     "ok": false
+    },
+    {
+     "t": "A quantidade total de possíveis relatórios diferentes que poderão ser encaminhados à direção da empresa é igual a $ n! $.",
+     "ok": false
+    },
+    {
+     "t": "A quantidade total de possíveis relatórios diferentes em que seriam listados em primeiro lugar candidatos distintos pelos entrevistadores é igual a $ n(n − 1)(n − 2)[(n − 1)!]^3 $.",
+     "ok": true
+    },
+    {
+     "t": "A quantidade total de possíveis relatórios diferentes que conduziriam a contratação de um dos candidatos é igual a $ (n!)^3 − n(n − 1)(n − 2)[(n − 1)!]^3 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85266,41 +85350,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. Fatec-SP Seja K = 3x 3 + 2 5 – 243x 15 + 810x 10 + 1080x 5 + 240 + 32 com x real e não nulo. Então K é igual a: a) 660 b) 320 c) 185 d) 820x e) 720 x 5 x 10 x x 3 x 6 x 2 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-018.jpg"
-   ],
-   "larguraMm": 115.9,
+   "enunciado": "Seja $ K = (3x^3 + {2|x^2})^5 − (243x^{15} + 810x^{10} + 1080x^5 + {240|x^5} + {32|x^{10}}) $ com $ x $ real e não nulo.<br><span class=\"pb\"></span>Então $ K $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {660|x} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {320|x^3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {185|x^6} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 820x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "720",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85312,20 +85390,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. U.Católica-DF Analise as afirmativas, colocando V ou F, conforme sejam verdadeiras ou falsas. ( ) A receita para se fazer um boa caipirinha é usar limão, água e pinga na seguinte propor- ção: 200 mL de suco de limão para 1 litro de água para 300 mL de cachaça, além de açúcar a gosto. Para se fazer 50 litros dessa bebida, sem açúcar, deve-se usar 40 dm 3 de cachaça. ( ) A figura abaixo é uma circunferência de raio 7 cm, onde AB é o diâmetro e CD uma corda perpendicular ao mesmo em E. Sabendo que a medida de EB é um número inteiro diferente de zero e que EB < AE conclui-se que a medida de CD",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Analise as afirmativas, colocando V ou F, conforme sejam verdadeiras ou falsas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V – F"
+   "gabarito": "F – V – F – V – F",
+   "afirmacoes": [
+    {
+     "t": "A receita para se fazer um boa caipirinha é usar limão, água e pinga na seguinte proporção: 200 mL de suco de limão para 1 litro de água para 300 mL de cachaça, além de açúcar a gosto. Para se fazer 50 litros dessa bebida, sem açúcar, deve-se usar 40 dm<sup>3</sup> de cachaça.",
+     "ok": false
+    },
+    {
+     "t": "A figura acima é uma circunferência de raio 7 cm, onde AB é o diâmetro e CD uma corda perpendicular ao mesmo em E. Sabendo que a medida de EB é um número inteiro diferente de zero e que EB &lt; AE conclui-se que a medida de CD pode ser igual a $ 4√{10} $ cm.",
+     "ok": true
+    },
+    {
+     "t": "Efetuando-se $ (436781)^2 − (436779)^2 $, obtém-se 1747220.",
+     "ok": false
+    },
+    {
+     "t": "Uma loja vende um produto por R&#36; 2.400,00 com 30 dias de prazo para pagamento ou à vista com 20% de desconto. A taxa de juros, efetivamente cobrada pela loja, é de 25% ao mês.",
+     "ok": true
+    },
+    {
+     "t": "A probabilidade de que um número inteiro, sorteado ao acaso entre 60 e 200, inclusive, seja múltiplo de 12 ou 15 é igual a $ {20|141} $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c16-019-fig.jpg",
+    "alt": "Circunferência de centro O e raio 7 cm; AB é um diâmetro e CD uma corda perpendicular a AB no ponto E",
+    "largura": "25mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85337,41 +85437,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. Unifor-CE A soma é igual a: a) 4 840 b) 4 845 c) 5 980 d) 5 985 e) 6 640 + 5 3 \u0003 \u0004 \u0003 \u0004 6 3 + … + \u0003 \u0004 20 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-020.jpg"
-   ],
-   "larguraMm": 110.9,
+   "enunciado": "A soma $ @M{5;3} + @M{6;3} + … + @M{20;3} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4 840",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4 845",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5 980",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "5 985",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6 640",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85383,20 +85477,44 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UEGO Julgue os itens abaixo: ( ) A fórmula do binômio de Newton dá o desenvolvimento de (x + a) n , cujo termo genérico é dado por T p+1 = n x n – p . a p O coeficiente de x 15 no desenvolvimento do binômio x 3 – 1 10 é –150. ( ) A matriz A = , é inversível para qualquer número real x. ( ) Considere a matriz A = , onde F(x) = 12, G(x) = log x 16, x > 0 e x ≠ 1. A equação det A = 0 (determinante da matriz A) admite uma única raiz real. ( ) O Teorema de D’Alembert diz que o resto da divisão de um polinômio p(x) por d(x) = x – a é p(a). O resto da divisão de p(x) = 3 n .x n – b n + 1 por 3x –",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – F"
+   "gabarito": "F – V – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "A fórmula do binômio de Newton dá o desenvolvimento de $ (x + a)^n $, cujo termo genérico é dado por $ T_{p+1} = @M{n;p} x^{n−p} · a^p $. O coeficiente de $ x^{15} $ no desenvolvimento do binômio $ (x^3 − {1|x^2})^{10} $ é −150.",
+     "ok": false
+    },
+    {
+     "t": "A matriz $ A = @M{−1&x;x&1} $ é inversível para qualquer número real $ x $.",
+     "ok": true
+    },
+    {
+     "t": "Considere a matriz $ A = @M{1&3;G(x)&F(x)} $, onde $ F(x) = 12 $, $ G(x) = log_x 16 $, $ x > 0 $ e $ x ≠ 1 $. A equação $ det A = 0 $ (determinante da matriz $ A $) admite uma única raiz real.",
+     "ok": true
+    },
+    {
+     "t": "O Teorema de D’Alembert diz que o resto da divisão de um polinômio $ p(x) $ por $ d(x) = x − a $ é $ p(a) $. O resto da divisão de $ p(x) = 3^n x^n − b^n + 1 $ por $ 3x − b $ é igual a 1.",
+     "ok": true
+    },
+    {
+     "t": "A figura (ao lado) representa uma semicircunferência de diâmetro AB cuja medida é 10 cm e um segmento MN perpendicular a AB, M pertence ao arco AB. Se a medida de AN for um número inteiro, a probabilidade da medida de MN ser também um número inteiro é de $ {2|5} $ ou 40%.",
+     "ok": false
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c16-021-fig1.jpg",
+     "alt": "Semicircunferência de diâmetro AB com o ponto M sobre o arco e o segmento MN perpendicular a AB (N em AB)",
+     "largura": "25mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85408,24 +85526,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. Unicamp-SP Para representar um número natural positivo na base 2, escreve-se esse núme- ro como soma de potências de 2. Por exemplo: 13 = 1 · 2 3 + 1 · 2 2 + 0 · 2 1 + 1 · 2 0 = 1101. a) Escreva o número 2 6 + 13 na base 2. b) Quantos números naturais positivos podem ser escritos na base 2 usando-se exatamente cinco algarismos? c) Escolhendo-se ao acaso um número natural n tal que 1 < n < 2 50 , qual a probabilidade de que sejam usados exatamente quarenta e cinco algarismos para representar o número n na base 2? 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-022.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Para representar um número natural positivo na base 2, escreve-se esse número como soma de potências de 2. Por exemplo: $ 13 = 1 · 2^3 + 1 · 2^2 + 0 · 2^1 + 1 · 2^0 = 1101 $.<br><span class=\"pb\"></span>a) Escreva o número $ 2^6 + 13 $ na base 2.<br>b) Quantos números naturais positivos podem ser escritos na base 2 usando-se exatamente cinco algarismos?<br>c) Escolhendo-se ao acaso um número natural $ n $ tal que $ 1 < n < 2^{50} $, qual a probabilidade de que sejam usados exatamente quarenta e cinco algarismos para representar o número $ n $ na base 2?",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) 1001101_(2) b) 16 1 c) 64",
+   "gabarito": "a) 1000001₂... ver resolução",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c16-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85437,41 +85549,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. UEPI O termo independente de x, no desenvolvimento de , é igual a: a) 252 b) 262 c) 272 d) 282 e) 292 \u0003 \u0004 x + 1 x 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-023.jpg"
-   ],
-   "larguraMm": 118.2,
+   "enunciado": "O termo independente de $ x $, no desenvolvimento de $ (x + {1|x})^{10} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "252",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "262",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "272",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "282",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "292",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85483,20 +85589,44 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFBA Sobre a análise combinatória e binômio de Newton, é verdade: (01) Se x 1 e x 2 são raízes da equação (10x – 7)! = 1, então x 1 + x 2 = 5 . (02) Com todas as letras da palavra EXAME podem-se formar 60 anagramas. (04) Com os algarismos 0, 1, 2, 3, 4, podem-se formar 60 centenas, com algarismos não repetidos. (08) Num campeonato de futebol, cada time joga apenas uma vez com cada adversário; se são 10 times inscritos, o número total de partidas realizadas no campeonato é igual a 90. (16) Considerando-se 6 pontos distintos em uma circunferência, podem-se construir 42 polígonos convexos ins",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sobre a análise combinatória e binômio de Newton, é verdade (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "82 = 02 + 16 + 64"
+   "gabarito": "82 = 02 + 16 + 64",
+   "afirmacoes": [
+    {
+     "t": "Se $ x_1 $ e $ x_2 $ são raízes da equação $ (10x − 7)! = 1 $, então $ x_1 + x_2 = {5|2} $.",
+     "ok": false
+    },
+    {
+     "t": "Com todas as letras da palavra EXAME podem-se formar 60 anagramas.",
+     "ok": true
+    },
+    {
+     "t": "Com os algarismos 0, 1, 2, 3, 4, podem-se formar 60 centenas, com algarismos não repetidos.",
+     "ok": false
+    },
+    {
+     "t": "Num campeonato de futebol, cada time joga apenas uma vez com cada adversário; se são 10 times inscritos, o número total de partidas realizadas no campeonato é igual a 90.",
+     "ok": false
+    },
+    {
+     "t": "Considerando-se 6 pontos distintos em uma circunferência, podem-se construir 42 polígonos convexos inscritos, com vértices nesses pontos.",
+     "ok": true
+    },
+    {
+     "t": "Se o 5º termo do desenvolvimento de $ (x + {2|x})^n $, segundo as potências decrescentes de $ x $, é $ T_5 = 3360x^2 $, então $ n = 11 $.",
+     "ok": false
+    },
+    {
+     "t": "Para todo $ n ∈ ℕ^* $, tem-se $ C_{n,0} + C_{n,1} + C_{n,2} + … + C_{n,n−1} + C_{n,n} = 2^n $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton e probabilidade",
@@ -85508,37 +85638,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. Mackenzie-SP Sorteado ao acaso um número natural n, 1 ≤ n ≤ 99, a probabilidade de ele ser divisível por 3 é: a) 2 b) 1 c) 1 d) 1 e) 2 3 3 9 2 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c16-025.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sorteado ao acaso um número natural $ n $, $ 1 ≤ n ≤ 99 $, a probabilidade de ele ser divisível por 3 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {1|9} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {2|9} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c16-026",
