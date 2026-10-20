@@ -94383,13 +94383,13 @@
      "tipo": "img",
      "src": "img:cdb-c20-038-fig1.jpg",
      "alt": "Figura 1: triângulo ABC, com D e E pontos médios dos lados AB e BC e o segmento DE traçado",
-     "largura": "26mm"
+     "largura": "25mm"
     },
     {
      "tipo": "img",
      "src": "img:cdb-c20-038-fig2.jpg",
      "alt": "Figura 2: cone de luz que sai do ponto A (observador) e passa pela moeda B e pelo disco voador C",
-     "largura": "52mm"
+     "largura": "56mm"
     }
    ],
    "transcrita": true
@@ -94929,13 +94929,13 @@
      "tipo": "img",
      "src": "img:cdb-c20-052-fig1.jpg",
      "alt": "Tirinha Hagar, o horrível (Chris Browne, O Globo, março de 2000): Hagar diz que levou 20 anos para economizar o bastante para comprar o pedacinho de terra que queria; ao lado, um personagem empurra um carrinho de mão cheio de terra e pergunta “É pra colocar onde?”",
-     "largura": "93mm"
+     "largura": "99mm"
     },
     {
      "tipo": "img",
      "src": "img:cdb-c20-052-fig2.jpg",
      "alt": "Sólido formado por uma pirâmide reta sobreposta a um paralelepípedo retângulo, com arestas da base de 100 cm e 60 cm, altura do paralelepípedo 40 cm e altura da pirâmide 70 cm",
-     "largura": "83mm"
+     "largura": "90mm"
     }
    ],
    "transcrita": true
@@ -95393,7 +95393,6 @@
   },
   {
    "id": "cdb-c21-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95405,20 +95404,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UFMT A figura ao lado mostra um esboço do gráfico de uma função trigonométrica y = f(x), definida para todo x real. Com base nestas informações, julgue os itens. ( ) O esboço mostrado na figura representa o gráfico da função f(x) = 2.senx.cosx. ( ) O período da função f é π . ( ) Os valores de x, tais que f(x) = 0 são da forma x = k π , k ∈ Z . y x 1 4 4 2 0 -1 3 π π π π 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-001.jpg"
-   ],
-   "larguraMm": 132.1,
+   "enunciado": "A figura ao lado mostra um esboço do gráfico de uma função trigonométrica $ y = f(x) $, definida para todo $ x $ real.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V"
+   "gabarito": "V – F – V",
+   "pergunta": "Com base nestas informações, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "O esboço mostrado na figura representa o gráfico da função $ f(x) = 2 · sen x · cos x $.",
+     "ok": true
+    },
+    {
+     "t": "O período da função $ f $ é $ {π|2} $.",
+     "ok": false
+    },
+    {
+     "t": "Os valores de $ x $, tais que $ f(x) = 0 $ são da forma $ x = {kπ|2} $, $ k ∈ ℤ $.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-001-fig.jpg",
+    "alt": "Gráfico que parte da origem, atinge o valor 1 em x = π/4, volta a zero em π/2, atinge −1 em 3π/4 e volta a zero em π",
+    "largura": "40mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95430,20 +95444,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFMT Dadas as funções f e g de | R em | R, definidas por f(x) = sen3x e g(x) = 3senx – 4sen 3 x, julgue os itens. ( ) f(x) = g(x) ( ) f –1 (x) = cos3x ( ) f é não injetora e não sobrejetora.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-002.jpg"
-   ],
-   "larguraMm": 106.5,
+   "enunciado": "Dadas as funções $ f $ e $ g $ de ℝ em ℝ, definidas por $ f(x) = sen 3x $ e $ g(x) = 3 sen x − 4 sen^3 x $, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V"
+   "gabarito": "V – F – V",
+   "afirmacoes": [
+    {
+     "t": "$ f(x) = g(x) $",
+     "ok": true
+    },
+    {
+     "t": "$ f^{−1}(x) = cos 3x $",
+     "ok": false
+    },
+    {
+     "t": "$ f $ é não injetora e não sobrejetora.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95455,24 +95477,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "\u0001 \u0002 π + k π , k \u0001 \u0002 2 4 3. UESE Analise as afirmativas seguintes. a) ( ) Se sen x = – 1 e π < x < 3 π , então sen 2x = – 1 . b) ( ) O domínio da função real definida por f(x) = tg 2x é o conjunto | R – . c) ( ) No triângulo ABC, retângulo em A, se AC = 4 e o ângulo ACB mede 60 ° , então AB 2 + BC 2 = 112. d) ( ) Se θ = arc cos – 3 , então θ = 7 π . e) ( ) Se x é um número real tal que cos x = 2a – 1 , então –1 ≤ a ≤ 1. ˆ 2 \u0003 \u0004 3 2 2 4 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Analise as afirmativas seguintes.",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "FVVFF",
+   "tipo": "vf",
+   "gabarito": "F – V – V – F – F",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "afirmacoes": [
+    {
+     "t": "Se $ sen x = −{1|4} $ e $ π < x < {3π|2} $, então $ sen 2x = −{1|2} $.",
+     "ok": false
+    },
+    {
+     "t": "O domínio da função real definida por $ f(x) = tg 2x $ é o conjunto $ ℝ − \\{{π|4} + {kπ|2}, k ∈ ℤ\\} $.",
+     "ok": true
+    },
+    {
+     "t": "No triângulo ABC, retângulo em A, se $ AC = 4 $ e o ângulo ACB mede 60°, então $ AB^2 + BC^2 = 112 $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ θ = arc cos(−{√3|2}) $, então $ θ = {7π|6} $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ x $ é um número real tal que $ cos x = {2a − 1|3} $, então $ −1 ≤ a ≤ 1 $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95484,37 +95522,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. UECE Resolva a equação tg 2 x + sen 2 x = 3cos 2 x no intervalo [0, 2 π ]. A soma de todas as suas raízes nesse intervalo é igual a: a) 4 π b) 3 π c) 2 π d) π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-004.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Resolva a equação $ tg^2 x + sen^2 x = 3 cos^2 x $ no intervalo $ [0, 2π] $. A soma de todas as suas raízes nesse intervalo é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4π $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 3π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ π $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95526,41 +95558,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UEPI O número de soluções reais, distintas, da equação cos(x) = |x| é igual a: a) 0 b) 1 c) 2 d) 3 e) 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-005.jpg"
-   ],
-   "larguraMm": 116.4,
+   "enunciado": "O número de soluções reais, distintas, da equação $ cos(x) = |x| $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95572,24 +95598,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFF-RJ Considere os pontos P e Q pertencentes à circunferência de centro na origem e raio 1, conforme representação abaixo: y Q P O 60 ° 30 ° x Determine a distância entre P e Q.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-006.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Considere os pontos P e Q pertencentes à circunferência de centro na origem e raio 1, conforme representação abaixo:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "PQ = 2 + 3 u. c. 2",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine a distância entre P e Q.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-006-fig.jpg",
+    "alt": "Circunferência de centro O na origem e raio 1; o ponto Q está no 2º quadrante, com um ângulo de 60° marcado entre OQ e o eixo x (à esquerda de O), e o ponto P está no 4º quadrante, com um ângulo de 30° abaixo do eixo x",
+    "largura": "45mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95601,24 +95628,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UFR-RJ Na figura abaixo, o ponto “A” dista 4 cm do centro da circunferência e as semi- retas AB e AC formam um ângulo de 60º e são tangentes à circunferência. Calcule a área do triângulo ABC. → → B C A 60 ° 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-007.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Na figura abaixo, o ponto “A” dista 4 cm do centro da circunferência e as semi-retas $ AB $ e $ AC $ formam um ângulo de 60° e são tangentes à circunferência.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "Área = 3 3 cm = 2",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Calcule a área do triângulo $ ABC $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-007-fig.jpg",
+    "alt": "Circunferência de centro O, com duas semi-retas AB e AC que partem do ponto A (à esquerda) formando 60° e tangentes à circunferência em B e C; o segmento BC é vertical e passa pelo interior da circunferência",
+    "largura": "64mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95630,13 +95658,7 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFR-RJ Determine o valor de p na equação sen x – p cos 2 x – 2 sen x = – p + sen x , sendo x ≠ k π e k ∈ Z. sen x sen x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-008.jpg"
-   ],
-   "larguraMm": 72.8,
+   "enunciado": "Determine o valor de <b>p</b> na equação<br><span class=\"pb\"></span>$ {sen x − p cos^2 x|sen x} − 2 sen x = {−p + sen x|sen x} $,<br><span class=\"pb\"></span>sendo $ x ≠ kπ $ e $ k ∈ ℤ $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "",
@@ -95644,7 +95666,8 @@
     "modo": "branco",
     "altura": 45
    },
-   "semGabarito": true
+   "semGabarito": true,
+   "transcrita": true
   },
   {
    "id": "cdb-c21-009",
@@ -95671,7 +95694,6 @@
   },
   {
    "id": "cdb-c21-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95683,41 +95705,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Cefet-PR Se f(x) = 3.cossec(2x) + cos(8x), f( π ) é igual a: a) 3 b) 0 c) 1 d) 5 e) 2 6 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-010.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Se $ f(x) = √3 · cossec(2x) + cos(8x) $, $ f({π|6}) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|2} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {5|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95729,41 +95745,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UFRS Analisando os gráficos das funções definidas por f(x) = 2 –x e g(x) = sen(2x), repre- sentadas no mesmo sistema de coordenadas cartesianas, podemos afirmar que a equação 2 –x = sen(2x), para x \u0001 [0, 12 π ], possui: a) 2 raízes. b) 4 raízes. c) 6 raízes. d) 12 raízes. e) 24 raízes.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-011.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Analisando os gráficos das funções definidas por $ f(x) = 2^{−x} $ e $ g(x) = sen(2x) $, representadas no mesmo sistema de coordenadas cartesianas, podemos afirmar que a equação $ 2^{−x} = sen(2x) $, para $ x ∈ [0, 12π] $, possui:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 raízes.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4 raízes.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6 raízes.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12 raízes.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "24 raízes.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95775,41 +95785,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. PUC-RS Se α \u0001 (0; π ) e se y = log sen α + log tan( π – α ), então y está necessariamente no intervalo: a) (0;1) b) (0; 1 ) c) (- ∞ ;0) d) (0;2) e) (–1;1) 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-012.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Se $ α ∈ (0; {π|2}) $ e se $ y = log sen α + log tan({π|2} − α) $, então $ y $ está necessariamente no intervalo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (0; 1) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (0; {1|2}) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (−∞; 0) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (0; 2) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (−1; 1) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95821,41 +95825,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. UEPI É correto afirmar que: a) sen(3x) = 3 sen(x) cos(x); b) 2 a + b = 2 a + 2 b ; c) log c (a + b) = (log c a) (log c b); d) cos(a + b) = cos(a) cos(b) + sen(a) sen(b); e) tg 2 (x) = sec 2 (x) – 1;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-013.jpg"
-   ],
-   "larguraMm": 70.7,
+   "enunciado": "É correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ sen(3x) = 3 sen(x) cos(x) $;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2^{a+b} = 2^a + 2^b $;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ log_c(a + b) = (log_c a)(log_c b) $;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ cos(a + b) = cos(a) cos(b) + sen(a) sen(b) $;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ tg^2(x) = sec^2(x) − 1 $;",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95867,16 +95865,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFBA Sobre funções reais, pode-se afirmar: (01) As funções f : [0, 1] → | R; f(x) = |x| – |x – 1| e g : [0, 1] → | R; g(x) = 2x – 1 são iguais. (02) Se f é uma função ímpar e f(1) = 2, então o ponto (–1, –2) pertence ao gráfico de f. (04) Se o ponto (3, –1) pertence ao gráfico da inversa da função f(x) = A + 2 –x , A ∈ | R, então f (–3) = 9 . (08) O conjunto-solução da inequação log 1 – x ≤ 0 é ]– \u0002 , –1[ \u0003 [0, + \u0002 [. (16) Se f(x) = e g(x) = x – 1, então f(g(x)) = (32) π + arcsen(– 1 ) + cos(arctg3) = 10 Dê, como resposta, a soma das alternativas corretas. 8 1 + x \u0005 \u0006 x + 1 , x ≤ 1 1 , x >",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sobre funções reais, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "51 = 01 + 02 + 16 + 32"
+   "gabarito": "51 = 01 + 02 + 16 + 32",
+   "afirmacoes": [
+    {
+     "t": "As funções $ f: [0, 1] → ℝ $; $ f(x) = |x| − |x − 1| $ e $ g: [0, 1] → ℝ $; $ g(x) = 2x − 1 $ são iguais.",
+     "ok": true
+    },
+    {
+     "t": "Se $ f $ é uma função ímpar e $ f(1) = 2 $, então o ponto $ (−1, −2) $ pertence ao gráfico de $ f $.",
+     "ok": true
+    },
+    {
+     "t": "Se o ponto $ (3, −1) $ pertence ao gráfico da inversa da função $ f(x) = A + 2^{−x} $, $ A ∈ ℝ $, então $ f(−3) = {9|8} $.",
+     "ok": false
+    },
+    {
+     "t": "O conjunto-solução da inequação $ log({1 − x|1 + x}) ≤ 0 $ é $ ]−∞, −1[ ∪ [0, +∞[ $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ f(x) = @S{x + 1, x ≤ 1; {1|x + 1}, x > 1} $ e $ g(x) = x − 1 $, então $ f(g(x)) = @S{x, x ≤ 2; {1|x}, x > 2} $.",
+     "ok": true
+    },
+    {
+     "t": "$ {π|6} + arcsen(−{1|2}) + cos(arctg 3) = {√{10}|10} $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-015",
@@ -95920,7 +95939,6 @@
   },
   {
    "id": "cdb-c21-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95932,41 +95950,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. PUC-RS Se f e g são funções definidas por f(x) = 2 tg(x) e g(x) = sen(2x), o conjunto A = {x \u0001 | R | f(x) = g(x)} é: a) | R b) | R + c) {x \u0001 | R | tg(x) ≠ 0} d) {x \u0001 | R | cos(x) ≠ 0} e) {x \u0001 | R | sen(x) ≠ 0} 1 + tg 2 (x)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Se $ f $ e $ g $ são funções definidas por $ f(x) = {2 tg(x)|1 + tg^2(x)} $ e $ g(x) = sen(2x) $, o conjunto $ A = \\{x ∈ ℝ | f(x) = g(x)\\} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "ℝ",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ℝ_+ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{x ∈ ℝ | tg(x) ≠ 0\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{x ∈ ℝ | cos(x) ≠ 0\\} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ \\{x ∈ ℝ | sen(x) ≠ 0\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -95978,20 +95990,47 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. U.Católica-GO Julgue os itens abaixo: ( ) Dois arcos de medidas α e β são tais que α – β = 180 ° . Se os arcos tiverem origem no eixo das abscissas, as extremidades desses arcos são simétricas em relação ao eixo das ordenadas. ( ) Se x e y são as medidas de dois arcos suplementares não-nulos, ou seja x + y = 180 ° , então: a) sen x = sen y b) cos x = cos y c) tg x = tg y Apenas as alternativas (a) e (e) são verdadeiras. ( ) A pista de um aeroporto tem 500 m de comprimento. Após 100 m do final da pista e na mesma direção existe um prédio cuja altura é de 40 m. Um avião que levanta vôo em li",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – F – F"
+   "gabarito": "F – V – V – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Dois arcos de medidas $ α $ e $ β $ são tais que $ α − β = 180° $. Se os arcos tiverem origem no eixo das abscissas, as extremidades desses arcos são simétricas em relação ao eixo das ordenadas.",
+     "ok": false
+    },
+    {
+     "t": "Se $ x $ e $ y $ são as medidas de dois arcos suplementares não-nulos, ou seja $ x + y = 180° $, então:<br><span class=\"pb\"></span>a) $ sen x = sen y $<br>b) $ cos x = cos y $<br>c) $ tg x = tg y $<br>d) $ sec x = sec y $<br>e) $ cossec x = cossec y $<br>f) $ cotg x = cotg y $<br><span class=\"pb\"></span>Apenas as alternativas (a) e (e) são verdadeiras.",
+     "ok": true
+    },
+    {
+     "t": "A pista de um aeroporto tem 500 m de comprimento. Após 100 m do final da pista e na mesma direção existe um prédio cuja altura é de 40 m. Um avião que levanta vôo em linha reta formando um ângulo $ α $ com a horizontal, cuja tangente é $ {1|3} $, deve levantar vôo a 80 m do final da pista a fim de passar 20 m acima do prédio.",
+     "ok": true
+    },
+    {
+     "t": "As duas rodas dentadas de uma bicicleta estão ligadas por uma corrente. A roda de diâmetro maior tem 40 dentes e a de diâmetro menor tem 10 dentes. Quando a roda maior girar $ 16π $ radianos, a menor terá dado 32 voltas.",
+     "ok": true
+    },
+    {
+     "t": "Um móvel desloca-se no plano segundo a trajetória descrita pelo gráfico da figura. A referida trajetória pode constituir o gráfico da função $ f(x) = sen x $.",
+     "ok": false
+    },
+    {
+     "t": "Observando a função $ f(x) = cos x $ na circunferência trigonométrica, pode-se dizer que $ f(x) $ é a ordenada do ponto extremidade do arco $ x $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-017-fig.jpg",
+    "alt": "Gráfico de f(x): parte do valor 1 em x = 0, cruza o eixo x em π/2, atinge o mínimo −1 perto de π, volta a subir e cruza o eixo em 3π/2",
+    "largura": "53mm",
+    "legenda": "Figura referente ao 5º item."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96003,41 +96042,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UFMA Dada a equação sen 2 x + a cosx – cos 2 x = 3, x ∈ [0, 2 π ] e a ∈ | R, pode-se afirmar que: a) se a = – 4 ou a = 4, a equação possui uma única raiz. b) se a < – 4 ou a > 4, a equação possui uma única raiz. c) se a < – 4, a equação possui duas raízes. d) se – 4 < a < 4, a equação possui duas raízes. e) se a = 4, a equação possui duas raízes.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-018.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Dada a equação $ sen^2 x + a cos x − cos^2 x = 3 $, $ x ∈ [0, 2π] $ e $ a ∈ ℝ $, pode-se afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "se $ a = −4 $ ou $ a = 4 $, a equação possui uma única raiz.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "se $ a < −4 $ ou $ a > 4 $, a equação possui uma única raiz.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "se $ a < −4 $, a equação possui duas raízes.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "se $ −4 < a < 4 $, a equação possui duas raízes.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "se $ a = 4 $, a equação possui duas raízes.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96049,24 +96082,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UESC-BA O conjunto-solução da inequação (1 – senx)cosx ≥ 0, para x ∈ [0, 2 π ] é: a) [0, π ] ∪ 3 π b) 0, π ∪ 3 π , 2 π c) [0, π ] d) 0, π e) 0, π , π , 3 π , 2 π \u0001 2 \u0002 \b 2 2 \b \b 2 2 2 \u0002 \u0007",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-019.jpg"
-   ],
-   "larguraMm": 70.9,
+   "enunciado": "O conjunto-solução da inequação $ (1 − sen x) cos x ≥ 0 $, para $ x ∈ [0, 2π] $ é:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "B 3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96078,24 +96105,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UERJ Observe a figura abaixo: D C A M B θ Ela representa um papel quadrado ABCD, com 10 cm de lado, que foi dobrado na linha AM, em que M é o ponto médio do lado BC. Se, após a dobra, A, B, C, D e M são coplanares, determine: a) a distância entre o ponto B e o segmento CD. b) o valor de tg θ .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-020.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe a figura abaixo.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) 2 cm b) tg θ = 4",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Ela representa um papel quadrado $ ABCD $, com 10 cm de lado, que foi dobrado na linha $ AM $, em que $ M $ é o ponto médio do lado $ BC $.<br><span class=\"pb\"></span>Se, após a dobra, A, B, C, D e M são coplanares, determine:<br><span class=\"pb\"></span>a) a distância entre o ponto B e o segmento $ CD $.<br>b) o valor de $ tg θ $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-020-fig.jpg",
+    "alt": "Quadrado ABCD de lado 10 cm, com M no lado BC (à direita); o papel foi dobrado na linha AM e o ponto B aparece dentro do quadrado, ligado a A e a M; o ângulo θ está marcado em A, entre AB e AM",
+    "largura": "46mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96107,41 +96135,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "^ θ A B C D E 21. Unirio Na figura seguinte, E é o ponto de intersecção das diagonais do quadrilátero ABCD e θ é o ângulo agudo BEC. Se EA = 1, EB = 4, EC = 3 e ED = 2, então a área do quadrilá- tero ABCD será: a) 12 sen θ b) 8 sen θ c) 6 sen θ d) 10 cos θ e) 8 cos θ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Na figura seguinte, E é o ponto de intersecção das diagonais do quadrilátero ABCD e $ θ $ é o ângulo agudo $ BÊC $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 12 sen θ $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 8 sen θ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 6 sen θ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 10 cos θ $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 8 cos θ $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ EA = 1 $, $ EB = 4 $, $ EC = 3 $ e $ ED = 2 $, então a área do quadrilátero ABCD será:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-021-fig.jpg",
+    "alt": "Quadrilátero ABCD com as diagonais AC e BD cruzando-se em E; o ângulo θ está marcado entre EB e EC",
+    "largura": "63mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96153,20 +96182,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFSC Determine a soma dos números associados à(s) proposição(ões) VERDADEIRA(S) . 01) O domínio da função f (x) = tg (x – π ) é D = {x \u0001 | R | x ≠ 2 π + k π , k \u0001 | R}. 02) O período da função g(x) = 2sen3x é 2 π . 04) O número de raízes da equação cos3x = 3 , compreendidas entre [0, 2 π ] é 4. 08) O gráfico abaixo representa a função sen2x. 6 3 3 2 16) Se , então o valor de x + y é 6. logx – logy = log2 9 x – y = 81",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-022.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Determine a soma dos números associados à(s) proposição(ões) <b>VERDADEIRA(S)</b>.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "19 = 01 + 02 + 16"
+   "gabarito": "19 = 01 + 02 + 16",
+   "afirmacoes": [
+    {
+     "t": "O domínio da função $ f(x) = tg(x − {π|6}) $ é $ D = \\{x ∈ ℝ | x ≠ {2π|3} + kπ, k ∈ ℝ\\} $.",
+     "ok": true
+    },
+    {
+     "t": "O período da função $ g(x) = 2 sen 3x $ é $ {2π|3} $.",
+     "ok": true
+    },
+    {
+     "t": "O número de raízes da equação $ cos 3x = {√3|2} $, compreendidas entre $ [0, 2π] $ é 4.",
+     "ok": false
+    },
+    {
+     "t": "O gráfico apresentado na figura representa a função $ sen 2x $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ @S{log x − log y = log 2; 9^{x−y} = 81} $, então o valor de $ x + y $ é 6.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-022-fig.jpg",
+    "alt": "Gráfico de uma função senoidal que passa pela origem, com valores entre −1 e 1 e zeros espaçados de π/2; marcas −π/2, π/2, 3π/4, π e 3π/2 no eixo x",
+    "largura": "80mm",
+    "legenda": "Figura referente ao 4º item (08)."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96178,20 +96230,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. U. E. Ponta Grossa-PR Assinale o que for correto. 01) Se senx = 2k – 4, então k \u0001 | R / 1 \u0003 k \u0003 3 . 02) O domínio da função f(x) = secx é D = {x \u0001 | R / x ≠ k π , com k \u0001 Z}. 04) O valor mínimo da função f(x) = 2 + 5cos3x é –3. 08) O período da função f(x) = cos é 5 π rad. 16) A imagem da função f(x) = cossecx é o intervalo (– ∞ , –1] ∪ [1,+ ∞ ). Dê, como resposta, a soma das alternativas corretas. 2 2 4x 5 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-023.jpg"
-   ],
-   "larguraMm": 84,
+   "enunciado": "Assinale o que for correto (dê, como resposta, a soma das alternativas corretas).",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "20 = 04 + 16"
+   "gabarito": "20 = 04 + 16",
+   "afirmacoes": [
+    {
+     "t": "Se $ sen x = 2k − 4 $, então $ \\{k ∈ ℝ | {1|2} ≤ k ≤ {3|2}\\} $.",
+     "ok": false
+    },
+    {
+     "t": "O domínio da função $ f(x) = sec x $ é $ D = \\{x ∈ ℝ | x ≠ kπ, com k ∈ ℤ\\} $.",
+     "ok": false
+    },
+    {
+     "t": "O valor mínimo da função $ f(x) = 2 + 5 cos 3x $ é −3.",
+     "ok": true
+    },
+    {
+     "t": "O período da função $ f(x) = cos({4x|5}) $ é $ {5π|4} $ rad.",
+     "ok": false
+    },
+    {
+     "t": "A imagem da função $ f(x) = cossec x $ é o intervalo $ (−∞, −1] ∪ [1, +∞) $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96203,37 +96271,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. U. F. Uberlândia-MG Na equação 1 + sen 2 x = sen x , em que a é um número real não nulo e 0 ≤ x ≤ π , o maior valor positivo de a para que essa equação admita solução é igual a: a) 1 b) 1 c) 1 d) 2 a \u0005 \u0006 4 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-024.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Na equação $ 1 + sen^2({x|a}) = sen x $, em que $ a $ é um número real não nulo e $ 0 ≤ x ≤ π $, o maior valor positivo de $ a $ para que essa equação admita solução é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96245,41 +96307,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "α 2α m n z x y 25. U. Passo Fundo-RS Se, conforme mostra a figura, α = 30 ° e o cateto x mede 18 cm, então é correta a alternativa: a) z = 3y b) m = 2y c) y = m + n d) z = 2y + m e) m = 2n",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-025.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se, conforme mostra a figura, $ α = 30° $ e o cateto $ x $ mede 18 cm, então é correta a alternativa:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ z = 3y $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ m = 2y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y = m + n $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ z = 2y + m $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ m = 2n $",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c21-025-fig.jpg",
+    "alt": "Triângulo retângulo com o ângulo reto no vértice inferior direito; o cateto x é vertical, à direita; a base está dividida em m (à esquerda) e n (à direita) por um segmento y que parte do vértice superior; z é a hipotenusa, α é o ângulo no vértice esquerdo e 2α o ângulo formado por y com a base",
+    "largura": "43mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c21-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria (aprofundamento)",
@@ -96291,16 +96353,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "\u0006 12 \u0005 \u0006 52 \u0005 26. U.Católica-DF Admitindo que em um determinado lugar a temperatura média diária T (em ° C) e a intensidade média diária I da radiação solar, num período de s semanas, a partir de 1º de janeiro de um determinado ano, possam ser expressas por T = 10 + 12.sen 2 π s – 15 e I = 400 + 200.sen 2 π s – 11 . Analise as afirmativas abaixo, colocando V ou F, conforme sejam verdadeiras ou falsas. ( ) Num período de 16 semanas, contadas a partir de 1º de janeiro, a temperatura média diária é igual a 16 ° C. ( ) Num período de 11 semanas, a intensidade média diária da radiação vale 400. ( )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c21-026.jpg"
-   ],
-   "larguraMm": 133.2,
+   "enunciado": "Admitindo que em um determinado lugar a temperatura média diária <i>T</i> (em °C) e a intensidade média diária <i>I</i> da radiação solar, num período de <i>s</i> semanas, a partir de 1º de janeiro de um determinado ano, possam ser expressas por<br><span class=\"pb\"></span>$ T = 10 + 12 · sen[2π({s − 15|12})] $<br><span class=\"pb\"></span>e $ I = 400 + 200 · sen[2π({s − 11|52})] $.<br><span class=\"pb\"></span>Analise as afirmativas abaixo, colocando V ou F, conforme sejam verdadeiras ou falsas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – V – F"
+   "gabarito": "V – V – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "Num período de 16 semanas, contadas a partir de 1º de janeiro, a temperatura média diária é igual a 16°C.",
+     "ok": true
+    },
+    {
+     "t": "Num período de 11 semanas, a intensidade média diária da radiação vale 400.",
+     "ok": true
+    },
+    {
+     "t": "Num período de 18 semanas, contadas a partir de 1º de janeiro, a temperatura média diária atinge seu valor máximo.",
+     "ok": true
+    },
+    {
+     "t": "Nesse ano a intensidade média da radiação solar assume seu menor valor quando <i>s</i> for igual a 50.",
+     "ok": true
+    },
+    {
+     "t": "Se <b>Im(<i>T</i>)</b> e <b>Im(<i>I</i>)</b> indicam o conjunto imagem de <i>T</i> e o conjunto imagem de <i>I</i>, respectivamente, então <b>Im(<i>I</i>) ⊂ Im(<i>T</i>)</b>.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c21-027",
