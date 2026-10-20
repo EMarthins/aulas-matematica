@@ -64814,7 +64814,6 @@
   },
   {
    "id": "cdb-c05-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -64826,20 +64825,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. AEU-DF Analise e julgue os itens. ( ) O crescimento da função f(x) = 3x – 8 é linear. ( ) No M.U., da física, a “função horária dos espaços” é da forma S = So + Vt, pois o ganho espacial é linear com o tempo. ( ) A função F(x) = 3x 2 – 4x + 9, tem crescimento exponencial. ( ) Para representar a “função horária dos espaços” no M.U.V., a física lança mão da função S = So + Vot + at 2 2 , pois seu crescimento deve ser “aumentado” ao longo do tempo pela aceleração “a”. ( ) A expressão popular: “quanto mais dinheiro se tem, mais se ganha”, pode significar, segundo o texto, que “tem exponencial n",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-001.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Analise e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F – V – V"
+   "gabarito": "V – V – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "O crescimento da função $ f(x) = 3x − 8 $ é linear.",
+     "ok": true
+    },
+    {
+     "t": "No M.U., da física, a “função horária dos espaços” é da forma $ S = S_0 + Vt $, pois o ganho espacial é linear com o tempo.",
+     "ok": true
+    },
+    {
+     "t": "A função $ F(x) = 3x^2 − 4x + 9 $, tem crescimento exponencial.",
+     "ok": false
+    },
+    {
+     "t": "Para representar a “função horária dos espaços” no M.U.V., a física lança mão da função $ S = S_0 + V_0 t + {at^2|2} $, pois seu crescimento deve ser “aumentado” ao longo do tempo pela aceleração “a”.",
+     "ok": true
+    },
+    {
+     "t": "A expressão popular: “quanto mais dinheiro se tem, mais se ganha”, pode significar, segundo o texto, que “tem exponencial no pedaço!”.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -64851,20 +64866,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. AEU-DF O crescimento exponencial aparece em toda parte. No crescimento de popula- ções, no cálculo de juros compostos, no decaimento de substâncias radioativas, etc. A função exponencial pode ser enunciada por uma lei do tipo: N(t) = N 0 . e kt onde N 0 é o número inicial, N é o número no instante t, e k é o percentual de crescimento do fenôme- no em estudo. ( ) Para N 0 = 200 e k = 2, teremos N(3) = 603,43. ( ) Se uma substância radioativa tem sua massa reduzida em 25% a cada milhão de anos, então a massa de tal substância é dada por uma expressão da forma M(t) = M 0 . e 0,25t , onde t é o",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-002.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "O crescimento exponencial aparece em toda parte. No crescimento de populações, no cálculo de juros compostos, no decaimento de substâncias radioativas, etc. A função exponencial pode ser enunciada por uma lei do tipo: $ N(t) = N_0 · e^{kt} $ onde $ N_0 $ é o número inicial, $ N $ é o número no instante $ t $, e $ k $ é o percentual de crescimento do fenômeno em estudo.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – F – V"
+   "gabarito": "F – F – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "Para $ N_0 = 200 $ e $ k = 2 $, teremos $ N(3) = 603,43 $.",
+     "ok": false
+    },
+    {
+     "t": "Se uma substância radioativa tem sua massa reduzida em 25% a cada milhão de anos, então a massa de tal substância é dada por uma expressão da forma $ M(t) = M_0 · e^{0,25t} $, onde $ t $ é o tempo medido em milhões de anos.",
+     "ok": false
+    },
+    {
+     "t": "Para que a função $ N(t) $ represente um “decaimento” é necessário que $ k $ seja um número negativo.",
+     "ok": true
+    },
+    {
+     "t": "Uma aplicação de R&#36; 403,43 a juros compostos, em 4 anos produziu um montante de R&#36; 1.096,64. Então a taxa de juros dessa aplicação era menor do que 2% ao ano.",
+     "ok": false
+    },
+    {
+     "t": "Considere uma aplicação que remunere o capital investido à taxa de 5% ao final de cada mês. Um capital de R&#36; 3.600,00, investido e reinvestido ao longo de três anos e quatro meses, geraria um montante maior do que R&#36; 25.000,00.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -64876,20 +64907,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. UFBA É subconjunto do conjunto A = {1, 2, 3, 4, 5, 6, 7}: 01. o conjunto solução da equação 1 + log 3 (x – 1) = log 3 (x 2 – 3); 02. o conjunto dos x tais que x log 3 x = 27x 2 ; 04. o conjunto dos x ∈ Z tais que f(x) = − + − x x 2 7 10 ; 08. o conjunto solução da equação 5 x2 + 5x + 6 = 1; 16. o conjunto dos x tais que 3 . 2 x + 3 = 192 . 3 x–3 . Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-003.jpg"
-   ],
-   "larguraMm": 81,
+   "enunciado": "É subconjunto do conjunto $ A = \\{1, 2, 3, 4, 5, 6, 7\\} $ (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "21"
+   "gabarito": "21",
+   "afirmacoes": [
+    {
+     "t": "o conjunto solução da equação $ 1 + log_3(x − 1) = log_3(x^2 − 3) $;",
+     "ok": true
+    },
+    {
+     "t": "o conjunto dos $ x $ tais que $ x^{log_3 x} = 27x^2 $;",
+     "ok": false
+    },
+    {
+     "t": "o conjunto dos $ x ∈ ℤ $ tais que $ f(x) = √{−x^2 + 7x − 10} $;",
+     "ok": true
+    },
+    {
+     "t": "o conjunto solução da equação $ 5^{x^2 + 5x + 6} = 1 $;",
+     "ok": false
+    },
+    {
+     "t": "o conjunto dos $ x $ tais que $ 3 · 2^{x+3} = 192 · 3^{x−3} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -64901,41 +64948,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Unifor-CE Se x e y são números reais positivos tais que y = 16 log 2 x , então x é igual a: a) 4y b) 2y c) y 4 d) y 4 2 e) y 2 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-004.jpg"
-   ],
-   "larguraMm": 128.4,
+   "enunciado": "Se $ x $ e $ y $ são números reais positivos tais que $ y = 16^{log_2 x} $, então $ x $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4y $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ∜y $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {∜y|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ √y $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -64947,33 +64988,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UEMG O valor da expressão − − ( ) − − − + ( ) − 3 125 3 5 27 2 0 3 log é: a) 1 b) –2 c) –4 d) 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-005.jpg"
-   ],
-   "larguraMm": 85.4,
+   "enunciado": "O valor da expressão $ {−(−3)^2 − ∛{−125}|(−3 + 5^2)^0 − log_3 27} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-006",
@@ -65023,7 +65059,6 @@
   },
   {
    "id": "cdb-c05-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65035,41 +65070,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UFF-RJ Considere p = log 3 2, q = log 3 4 e r = log 1 3 2 . É correto afirmar que: a) p < q < r b) r < q < p c) q < r < p d) p < r < q e) r < p < q",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-007.jpg"
-   ],
-   "larguraMm": 129.6,
+   "enunciado": "Considere $ p = log_3 2 $, $ q = log_{√3} 4 $ e $ r = log_{{1|3}} √2 $.<br><span class=\"pb\"></span>É correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ p < q < r $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ r < q < p $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ q < r < p $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ p < r < q $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ r < p < q $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65081,20 +65110,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. U.E. Ponta Grossa-PR Sendo a ∈ | R, com a > 1, é correto afirmar que: 01. log a 5 = 5 log a 02. log a 3 . log 3 a = 1 04. log a 4 + log a 9 = 2 log a 6 08. 10 log3 = 3 16. quando A = log a 5 e B = log a 2 5 , então B = 2A Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-008.jpg"
-   ],
-   "larguraMm": 108.1,
+   "enunciado": "Sendo $ a ∈ ℝ $, com $ a > 1 $, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "14"
+   "gabarito": "14",
+   "afirmacoes": [
+    {
+     "t": "$ log ∛[5]{a} = 5 log a $",
+     "ok": false
+    },
+    {
+     "t": "$ log_a 3 · log_3 a = 1 $",
+     "ok": true
+    },
+    {
+     "t": "$ log_a 4 + log_a 9 = 2 log_a 6 $",
+     "ok": true
+    },
+    {
+     "t": "$ 10^{log 3} = 3 $",
+     "ok": true
+    },
+    {
+     "t": "quando $ A = log_a 5 $ e $ B = log_a 5^2 $, então $ B = 2A $",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65106,20 +65151,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. UFPR Sendo a, b e c números reais tais que 3 a = 2 b , 9 b = 4 c e a ≠ 0, é correto afirmar: ( ) b = c log 2 3 ( ) Se a = 2, então b < 3 ( ) a, b e c, nesta ordem, estão em progressão geométrica ( ) a + b = a log 2 6 ( ) 3 a + 2b = 2 b + 2c",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-009.jpg"
-   ],
-   "larguraMm": 128.4,
+   "enunciado": "Sendo $ a $, $ b $ e $ c $ números reais tais que $ 3^a = 2^b $, $ 9^b = 4^c $ e $ a ≠ 0 $, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – V"
+   "gabarito": "F – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "$ b = c log_2 3 $",
+     "ok": false
+    },
+    {
+     "t": "Se $ a = 2 $, então $ b < 3 $",
+     "ok": false
+    },
+    {
+     "t": "$ a $, $ b $ e $ c $, nesta ordem, estão em progressão geométrica",
+     "ok": true
+    },
+    {
+     "t": "$ a + b = a log_2 6 $",
+     "ok": true
+    },
+    {
+     "t": "$ 3^{a + 2b} = 2^{b + 2c} $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65131,41 +65192,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. UFRS Para valores reais de x, 3 x < 2 x se e só se: a) x < 0 b) 0 < x < 1 c) x < 1 d) x < –1 e) 2 < x < 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-010.jpg"
-   ],
-   "larguraMm": 129.6,
+   "enunciado": "Para valores reais de $ x $, $ 3^x < 2^x $ se e só se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x < 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 0 < x < 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x < 1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x < −1 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2 < x < 3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65177,16 +65232,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UnB-DF A escala de um aparelho para medir ruídos é definida da seguinte forma: R = 12 + log 10 (I) , em que R é a medida do ruído, em bels, e I é a intensidade sonora, em W/m 2 . No Brasil, a unidade utilizada é o decibel (1/10 do bel). Por exemplo, o ruído dos motores de um avião a jato é de 160 decibéis, enquanto o ruído do tráfego em uma esquina movimentada de uma grande cidade é de 80 decibéis, sendo este o limite a partir do qual o ruído passa a ser nocivo ao ouvido humano. Com base nessas informações, julgue os itens que se seguem. ( ) A intensidade sonora de um ruído de zero decibel",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A escala de um aparelho para medir ruídos é definida da seguinte forma: $ R = 12 + log_{10}(I) $, em que $ R $ é a medida do ruído, em bels, e $ I $ é a intensidade sonora, em W/m<sup>2</sup>. No Brasil, a unidade utilizada é o decibel (1/10 do bel). Por exemplo, o ruído dos motores de um avião a jato é de 160 decibéis, enquanto o ruído do tráfego em uma esquina movimentada de uma grande cidade é de 80 decibéis, sendo este o limite a partir do qual o ruído passa a ser nocivo ao ouvido humano. Com base nessas informações, julgue os itens que se seguem.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V"
+   "gabarito": "V – F – V",
+   "afirmacoes": [
+    {
+     "t": "A intensidade sonora de um ruído de zero decibel é de $ 10^{−12} $ W/m<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "A intensidade sonora dos motores de um avião a jato é o dobro da intensidade sonora do tráfego em uma esquina movimentada de uma grande cidade.",
+     "ok": false
+    },
+    {
+     "t": "Uma intensidade sonora maior que $ 10^{−4} $ W/m<sup>2</sup> produz um ruído que é nocivo ao ouvido humano.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-012",
@@ -65227,7 +65291,6 @@
   },
   {
    "id": "cdb-c05-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65239,41 +65302,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. U. Católica de Salvador-BA Sendo log 2 a = x e log 4 b = y, então log 2 a b 3 2     é igual a: a) 3x + y d) 3x – y b) 3x + 4y e) 3x – 4y c) y – 3x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-013.jpg"
-   ],
-   "larguraMm": 128.9,
+   "enunciado": "Sendo $ log_2 a = x $ e $ log_4 b = y $, então $ log_2 ({a^3|b^2}) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3x + y $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 3x + 4y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y − 3x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3x − y $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3x − 4y $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65285,41 +65342,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFPB Sabe-se que log m 10 = 1,6610 e que log m 160 = 3,6610, m ≠ 1. Assim, o valor correto de m corresponde a: a) 4 b) 2 c) 3 d) 9 e) 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sabe-se que $ log_m 10 = 1,6610 $ e que $ log_m 160 = 3,6610 $, $ m ≠ 1 $. Assim, o valor correto de $ m $ corresponde a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "9",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65331,41 +65382,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. U. Santa Úrsula-RJ A equação log 2 (10x + 21) = 2 log 2 (x + 2): a) possui mais de duas soluções; d) possui duas soluções; b) possui infinitas soluções; e) possui uma única solução. c) não possui solução;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-015.jpg"
-   ],
-   "larguraMm": 108.5,
+   "enunciado": "A equação $ log_2(10x + 21) = 2 log_2(x + 2) $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "possui mais de duas soluções;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "possui infinitas soluções;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "não possui solução;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "possui duas soluções;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "possui uma única solução.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65377,41 +65422,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFF-RJ A figura representa o gráfico da função f definida por f(x) = log2 x. A medida do segmento PQ é igual a: a) 6 d) 2 b) 5 e) log2 c) log 2 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-016.jpg"
-   ],
-   "larguraMm": 132.3,
+   "enunciado": "A figura representa o gráfico da função $ f $ definida por $ f(x) = log_2 x $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ √6 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ √5 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ log_2 5 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ log 2 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A medida do segmento $ \\overline{PQ} $ é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c05-016-fig.jpg",
+    "alt": "Gráfico de f(x) = log2 x: curva crescente que passa por (1, 0); os pontos P (x = 2) e Q (x = 4) estão sobre a curva, ligados por um segmento",
+    "largura": "64mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65423,24 +65469,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. F.M. Itajubá-MG Resolvendo a inequação log 1/2 (x – 1) – log 1/2 (x + 1) < log 1/2 (x – 2) + 1 encontramos: a) {x ∈ | R / 0 ≤ x ≤ 3} d) {x ∈ | R / 2 ≤ x ≤ 3} b) {x ∈ | R / 0 < x < 3} e) Nenhuma das respostas anteriores. c) {x ∈ | R / 2 < x < 3}",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-017.jpg"
-   ],
-   "larguraMm": 115.2,
+   "enunciado": "Resolvendo a inequação $ log_{1/2}(x − 1) − log_{1/2}(x + 1) < log_{1/2}(x − 2) + 1 $ encontramos:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "C 1 1 + log_(a) x log a x",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65452,24 +65492,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UFF-RJ São dados os números reais positivos a, b e x tais que a ≠ 1 e b ≠ 1. Sabe-se que log a x = 2 e log b x = 4. Calcule log ab a x .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-018.jpg"
-   ],
-   "larguraMm": 118.2,
+   "enunciado": "São dados os números reais positivos $ a $, $ b $ e $ x $ tais que $ a ≠ 1 $ e $ b ≠ 1 $. Sabe-se que $ log_a x = 2 $ e $ log_b x = 4 $.<br><span class=\"pb\"></span>Calcule $ log_{ab} a√x $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "log_(ab) a x = = = = log_(a) ab 1 + log_(a) b ² = x e b⁴ = x. Assim a² = b⁴ e b² = a ⇒ b = a 1 1 + ⋅ 2 2 1 + 1 2 4 _(ab) a x = = = = 1 + log_(a) a 1 3 3 1 + 2 2",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65481,33 +65515,51 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UERJ Pelos programas de controle de tuberculose, sabe-se que o risco de infecção R depende do tempo t, em anos, do seguinte modo: R = R 0 e –kt , em que R 0 é o risco de infecção no início da contagem do tempo t e k é o coeficiente de declínio. O risco de infecção atual em Salvador foi estimado em 2%. Suponha que, com a implan- tação de um programa nesta cidade, fosse obtida uma redução no risco de 10% ao ano, isto é, k = 10%. Use a tabela abaixo para os cálculos necessários: O tempo, em anos, para que o risco de infecção se torne igual a 0,2%, é de: a) 21 b) 22 c) 23 d) 24 1   e x 8,2 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Pelos programas de controle de tuberculose, sabe-se que o risco de infecção $ R $ depende do tempo $ t $, em anos, do seguinte modo: $ R = R_0 e^{−kt} $, em que $ R_0 $ é o risco de infecção no início da contagem do tempo $ t $ e $ k $ é o coeficiente de declínio.<br><span class=\"pb\"></span>O risco de infecção atual em Salvador foi estimado em 2%. Suponha que, com a implantação de um programa nesta cidade, fosse obtida uma redução no risco de 10% ao ano, isto é, $ k = 10% $.<br><span class=\"pb\"></span>Use a tabela abaixo para os cálculos necessários:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "21",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "22",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "23",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "24",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O tempo, em anos, para que o risco de infecção se torne igual a 0,2%, é de:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "$ e^x $",
+     "8,2",
+     "9,0",
+     "10,0",
+     "11,0",
+     "12,2"
+    ],
+    "linhas": [
+     [
+      "$ x $",
+      "2,1",
+      "2,2",
+      "2,3",
+      "2,4",
+      "2,5"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-020",
