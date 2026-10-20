@@ -59937,7 +59937,6 @@
   },
   {
    "id": "cdb-c02-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -59949,20 +59948,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. U.E. Ponta Grossa-PR Dada a equação 3 2x – 4 . 3 x + 3 = 0, assinale o que for correto. 01. A soma entre suas raízes é 4 e o produto é 3. 02. A soma entre suas raízes é nula. 04. Se s é a soma entre suas raízes, então 10 s = 10 08. Se p é o produto entre suas raízes, então 3 p = 1 16. O produto entre suas raízes é um número ímpar. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-021.jpg"
-   ],
-   "larguraMm": 81.3,
+   "enunciado": "Dada a equação $ 3^{2x} − 4 · 3^x + 3 = 0 $, assinale o que for correto (dê, como resposta, a soma das alternativas corretas).",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "12"
+   "gabarito": "12",
+   "afirmacoes": [
+    {
+     "t": "A soma entre suas raízes é 4 e o produto é 3.",
+     "ok": false
+    },
+    {
+     "t": "A soma entre suas raízes é nula.",
+     "ok": false
+    },
+    {
+     "t": "Se $ s $ é a soma entre suas raízes, então $ 10^s = 10 $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ p $ é o produto entre suas raízes, então $ 3^p = 1 $.",
+     "ok": true
+    },
+    {
+     "t": "O produto entre suas raízes é um número ímpar.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -59974,41 +59989,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. FEI-SP A quantidade de partículas poluentes emitidas por uma indústria varia conforme o seu grau de atividade. Considerando-se que o grau de atividade é medido em uma escala de 0 a 100, a variação da quantidade de partículas é descrita pela expressão: q = 10g (172 – g), onde g é o grau de atividade da indústria. Para que grau de atividade observa-se a maior quantidade de partículas? a) 17,2 d) 86,0 b) 34,4 e) 100,0 c) 68,8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-022.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "A quantidade de partículas poluentes emitidas por uma indústria varia conforme o seu grau de atividade. Considerando-se que o grau de atividade é medido em uma escala de 0 a 100, a variação da quantidade de partículas é descrita pela expressão: $ q = 10g(172 − g) $, onde $ g $ é o grau de atividade da indústria. Para que grau de atividade observa-se a maior quantidade de partículas?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "17,2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "34,4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "68,8",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "86,0",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "100,0",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60020,20 +60029,14 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. Vunesp Durante um evento, o organizador pretende distribuir, como brindes, a alguns dos participantes, caixas (kits), com o mesmo conteúdo, formado de camisetas e chavei- ros. Sabe-se que ele possui exatamente 200 camisetas e 120 chaveiros. a) Decomponha os números 200 e 120 em fatores primos. b) Determine o número máximo de caixas, com o mesmo conteúdo, que o organizador conseguirá formar utilizando todos os chaverios e camisetas disponíveis.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-023.jpg"
-   ],
-   "larguraMm": 131.4,
+   "enunciado": "Durante um evento, o organizador pretende distribuir, como brindes, a alguns dos participantes, caixas (kits), com o mesmo conteúdo, formado de camisetas e chaveiros. Sabe-se que ele possui exatamente 200 camisetas e 120 chaveiros.<br><span class=\"pb\"></span>a) Decomponha os números 200 e 120 em fatores primos.<br>b) Determine o número máximo de caixas, com o mesmo conteúdo, que o organizador conseguirá formar utilizando todos os chaveiros e camisetas disponíveis.",
    "resolucao": "",
-   "tipo": "soma",
-   "gabarito": "a) 200 = 2³ . 5² e 120 = 2³ . 3 . 5 b) 40 caixas."
+   "tipo": "aberta",
+   "gabarito": "a) 200 = 2³ · 5² e 120 = 2³ · 3 · 5; b) 40 caixas",
+   "transcrita": true
   },
   {
    "id": "cdb-c02-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60045,41 +60048,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. U. Católica-DF A solução da equação 3 x–2 + 3 x+1 = 84 em | R é: a) 2 b) 3 c) 4 d) 0 e) 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-024.jpg"
-   ],
-   "larguraMm": 93.5,
+   "enunciado": "A solução da equação $ 3^{x−2} + 3^{x+1} = 84 $ em ℝ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60091,41 +60088,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. Unifor-CE Os números reais A e B que satisfazem à igualdade 4 5 1 2 1 2 x x x A x B x − − ( ) − ( ) = − + − . são tais que: a) B = 3 . A d) A B = 3 b) B – A = 1 e) A > B c) A + B = 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-025.jpg"
-   ],
-   "larguraMm": 97.5,
+   "enunciado": "Os números reais $ A $ e $ B $ que satisfazem à igualdade $ {4x − 5|(x − 1)·(x − 2)} = {A|x − 1} + {B|x − 2} $ são tais que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ B = 3 · A $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ B − A = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ A + B = 9 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ A^B = 3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ A > B $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60137,37 +60128,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFMG Suponha que a equação: 8 ax 2 + bx + c = 4 3x + 5 . 2 5x 2 –x + 8 seja válida para todo número real x , em que a , b e c são números reais. Então, a soma a + b + c é igual a: a) 5 3 c) 28 3 b) 17 3 d) 12",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-026.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Suponha que a equação $ 8^{ax^2+bx+c} = 4^{3x+5} · 2^{5x^2−x+8} $ seja válida para todo número real $ x $, em que $ a $, $ b $ e $ c $ são números reais. Então, a soma $ a + b + c $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {5|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {17|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {28|3} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60179,41 +60164,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. Cefet-PR Se “a”, “b” e “c” são raízes da equação x 3 – 3x 2 + 4x + 7 = 0, o valor de a 3 + b 3 + c 3 será: a) –30 d) 30 b) 20 e) 15 c) –10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-027.jpg"
-   ],
-   "larguraMm": 78.5,
+   "enunciado": "Se “a”, “b” e “c” são raízes da equação $ x^3 − 3x^2 + 4x + 7 = 0 $, o valor de $ a^3 + b^3 + c^3 $ será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−30",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60225,41 +60204,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. Mackenzie-SP Um conjunto de soluções da inequação π x 2 – π 4 > 0 é: a) ] –1, 1 [ d) [ 3, 10 ] b) [ 1, 4 ] e) [ 0, 1 ] c) ] –4, –1 [",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-028.jpg"
-   ],
-   "larguraMm": 105.8,
+   "enunciado": "Um conjunto de soluções da inequação $ π^{x^2} − π^4 > 0 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ]−1, 1[ $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ [1, 4] $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ]−4, −1[ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ [3, 10] $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ [0, 1] $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60271,37 +60244,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. F.I. Anápolis-GO A equação x + 7 + 5 = x tem como solução: a) uma raiz inteira negativa; b) uma raiz natural; c) duas raízes reais; d) conjunto vazio; e) uma raiz fracionária.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-029.jpg"
-   ],
-   "larguraMm": 99.8,
+   "enunciado": "A equação $ √{x + 7} + 5 = x $ tem como solução:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "uma raiz inteira negativa;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "uma raiz natural;",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "duas raízes reais;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "conjunto vazio;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "uma raiz fracionária.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-030",
@@ -60341,7 +60309,6 @@
   },
   {
    "id": "cdb-c02-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60353,37 +60320,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. UFMG Considere a desigualdade ax 2 + bx + c > 0, em que a , b e c são números reais. Sabe-se que: • x = – 62 7 e x = 7 25 satisfazem essa desigualdade; e • x = – 42 e x = 26 25 não a satisfazem. Assim sendo, é correto afirmar que: a) a > 0 c) b 2 – 4ac > 0 b) b > 0 d) c < 0 n ! − 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-031.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Considere a desigualdade $ ax^2 + bx + c > 0 $, em que <b>a</b>, <b>b</b> e <b>c</b> são números reais. Sabe-se que:<br>• $ x = −{62|7} $ e $ x = {7|25} $ satisfazem essa desigualdade; e<br>• $ x = −42 $ e $ x = {26|25} $ <b>não</b> a satisfazem.<br><span class=\"pb\"></span>Assim sendo, é correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a > 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ b > 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ b^2 − 4ac > 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ c < 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60395,41 +60356,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. PUC-RS Se n n n ! ! ! − ( ) + ( ) − = 1 1 1 81 , então n é igual a: a) 13 b) 11 c) 9 d) 8 e) 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-032.jpg"
-   ],
-   "larguraMm": 83.1,
+   "enunciado": "Se $ {(n − 1)!|(n + 1)! − n!} = {1|81} $, então $ n $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "13",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "9",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60441,41 +60396,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. ITA-SP Seja S = [ –2, 2 ] e considere as afirmações: I. 1 ≤ 1 x < 6, para todo x \u0001 S. II. 1 < 1 , para todo x \u0001 S. III. 2 2x – 2 x ≤ 0, para todo x \u0001 S. Então, podemos dizer que: a) apenas I é verdadeira. b) apenas III é verdadeira. c) somente I e II são verdadeiras. d) apenas II é falsa. e) todas as afirmações são falsas. 4 2 \u0002 32 – 2 x 32 \u0001",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-033.jpg"
-   ],
-   "larguraMm": 81.8,
+   "enunciado": "Seja $ S = [−2, 2] $ e considere as afirmações:<br><span class=\"pb\"></span>I. $ {1|4} ≤ ({1|2})^x < 6 $, para todo $ x ∈ S $.<br>II. $ {1|√{32 − 2^x}} < {1|√{32}} $, para todo $ x ∈ S $.<br>III. $ 2^{2x} − 2^x ≤ 0 $, para todo $ x ∈ S $.<br><span class=\"pb\"></span>Então, podemos dizer que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas I é verdadeira.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "apenas III é verdadeira.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "somente I e II são verdadeiras.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "apenas II é falsa.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "todas as afirmações são falsas.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60487,20 +60436,21 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. UFMS Um comerciante adquiriu um suporte para moedas para que a pessoa que trabalha como caixa em seu estabelecimento comercial possa organizar as moedas de 5, 10, 25 e 50 centavos e de 1 real. Num determinado momento, a soma dos valores das 355 moedas que estão no suporte, das quais 45 são moedas de 1 real, corresponde a 91 reais. Sabendo- se que, neste mesmo momento, o número de moedas de 5 centavos é o dobro do número de moedas de 25 centavos e que o valor em reais do total de moedas de 50 centavos e do total de moedas de 25 centavos é o mesmo, calcular o número de moedas de 50 centavos.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-034.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Um comerciante adquiriu um suporte para moedas para que a pessoa que trabalha como caixa em seu estabelecimento comercial possa organizar as moedas de 5, 10, 25 e 50 centavos e de 1 real. Num determinado momento, a soma dos valores das 355 moedas que estão no suporte, das quais 45 são moedas de 1 real, corresponde a 91 reais.",
    "resolucao": "",
-   "tipo": "soma",
-   "gabarito": "30"
+   "tipo": "aberta",
+   "gabarito": "30",
+   "pergunta": "Sabendo-se que, neste mesmo momento, o número de moedas de 5 centavos é o dobro do número de moedas de 25 centavos e que o valor em reais do total de moedas de 50 centavos e do total de moedas de 25 centavos é o mesmo, calcular o número de moedas de 50 centavos.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c02-034-fig.jpg",
+    "alt": "Suporte de moedas com cinco colunas, da mais larga à mais estreita: 1 real, 50 centavos, 25 centavos, 10 centavos e 5 centavos",
+    "largura": "66mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c02-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60512,20 +60462,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. Unicap-PE Analise detidamente as proposições: ( ) 2 1 3 x x − + > 1 ⇔ 2x – 1 > x + 3 ⇒ x > 4 ( ) x x − + 1 3 > 0 ⇔ x – 1 > 0 e x + 3 > 0 ( ) f x g x ( ) ( ) > 0 ⇔ f(x) . g(x) > 0 ( ) (5x – 10) 5 > 0 ⇒ 5x – 10 > 0 ( ) (3x – 12) 4 < 0 ⇒ 3x – 12 < 0 ⇒ x < 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-035.jpg"
-   ],
-   "larguraMm": 77.3,
+   "enunciado": "Analise detidamente as proposições:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – F"
+   "gabarito": "F – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "$ {2x − 1|x + 3} > 1 ⇔ 2x − 1 > x + 3 ⇒ x > 4 $",
+     "ok": false
+    },
+    {
+     "t": "$ {x − 1|x + 3} > 0 ⇔ x − 1 > 0 $ e $ x + 3 > 0 $",
+     "ok": false
+    },
+    {
+     "t": "$ {f(x)|g(x)} > 0 ⇔ f(x) · g(x) > 0 $",
+     "ok": true
+    },
+    {
+     "t": "$ (5x − 10)^5 > 0 ⇒ 5x − 10 > 0 $",
+     "ok": true
+    },
+    {
+     "t": "$ (3x − 12)^4 < 0 ⇒ 3x − 12 < 0 ⇒ x < 4 $",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60537,37 +60503,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. Unifor-CE O número de soluções inteiras da inequação x 2 < 6 – x é: a) 1 b) 2 c) 3 d) 4 e) 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-036.jpg"
-   ],
-   "larguraMm": 105.3,
+   "enunciado": "O número de soluções inteiras da inequação $ x^2 < 6 − x $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-037",
@@ -60607,7 +60568,6 @@
   },
   {
    "id": "cdb-c02-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60619,20 +60579,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. UFSC Determine a soma dos números associados à(s) proposição(ões) verdadeira(s). 01. Sejam x e y o máximo divisor comum e o mínimo múltiplo comum de 15 e 18, respectivamente. Então o produto xy = 270. 02. Se A = {1, 4, 9, 16, 25, 36, 49}, então, A é equivalente a {x 2 / x ∈ N e 1 < x < 7}. 04. Numa divisão, cujo resto não é nulo, o menor número que se deve adicionar ao dividendo para que ela se torne exata é (d – r), sendo d o divisor e r o resto. 08. O conjunto solução da inequação x x − − ≤ 3 2 1, para x ≠ 2, é {x ∈ | R / 1 ≤ x < 2}. 16. Sejam A e B dois conjuntos finitos disjuntos. Entã",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-038.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Determine a soma dos números associados à(s) proposição(ões) verdadeira(s).",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "21"
+   "gabarito": "21",
+   "afirmacoes": [
+    {
+     "t": "Sejam $ x $ e $ y $ o máximo divisor comum e o mínimo múltiplo comum de 15 e 18, respectivamente. Então o produto $ xy = 270 $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ A = \\{1, 4, 9, 16, 25, 36, 49\\} $, então, $ A $ é equivalente a $ \\{x^2 / x ∈ ℕ $ e $ 1 < x < 7\\} $.",
+     "ok": false
+    },
+    {
+     "t": "Numa divisão, cujo resto não é nulo, o menor número que se deve adicionar ao dividendo para que ela se torne exata é $ (d − r) $, sendo $ d $ o divisor e $ r $ o resto.",
+     "ok": true
+    },
+    {
+     "t": "O conjunto solução da inequação $ {x − 3|x − 2} ≤ 1 $, para $ x ≠ 2 $, é $ \\{x ∈ ℝ / 1 ≤ x < 2\\} $.",
+     "ok": false
+    },
+    {
+     "t": "Sejam $ A $ e $ B $ dois conjuntos finitos disjuntos. Então $ n(A ∪ B) = n(A) + n(B) $, onde $ n(X) $ representa o número de elementos de um conjunto $ X $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60644,41 +60620,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. ITA-SP Sendo I um intervalo de números reais com extremidades em a e b , com a < b , o número real b – a é chamado de comprimento de I. Considere a inequação 6x 4 – 5x 3 – 7x 2 + 4x < 0. A soma dos comprimentos dos intervalos nos quais ela é verdadeira é igual a: a) 3 b) 3 c) 7 d) 11 e) 7 4 2 3 6 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-039.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Sendo $ I $ um intervalo de números reais com extremidades em $ a $ e $ b $, com $ a < b $, o número real $ b − a $ é chamado de comprimento de $ I $.<br><span class=\"pb\"></span>Considere a inequação<br><span class=\"pb\"></span>$ 6x^4 − 5x^3 − 7x^2 + 4x < 0 $.<br><span class=\"pb\"></span>A soma dos comprimentos dos intervalos nos quais ela é verdadeira é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {11|6} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {7|6} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Equações e inequações",
@@ -60690,37 +60660,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. Unifor-CE O número de soluções inteiras e não nulas da inequação 2 2 2 2 2 2 n n n n −     <     + é: a) 4 b) 3 c) 2 d) 1 e) 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c02-040.jpg"
-   ],
-   "larguraMm": 104.4,
+   "enunciado": "O número de soluções inteiras e não nulas da inequação $ ({2|n} − {n|2})^2 < ({2|n})^2 + {n|2} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-041",
