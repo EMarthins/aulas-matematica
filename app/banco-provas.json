@@ -100374,7 +100374,6 @@
   },
   {
    "id": "cdb-c23-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100386,24 +100385,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UFMT O método dos mínimos quadrados é utilizado para determinar a equação da reta y = ax + b que melhor se ajusta a um conjunto de pontos. Considerando os pontos (x 1 , y 1 ) , (x 2 , y 2 ) , (x 3 , y 3 ) , (x 4, , y 4 ) e (x 5 , y 5 ) , o problema é solucionado resolvendo-se o sistema de duas equações com duas incógnitas a e b , obtido a partir da equação matricial A T .A.X = A T .Y na qual, x 1 1 x 2 1 A = x 3 1 x 4 1 x 5 1 X = y 1 y 2 Y = y 3 y 4 y 5 sendo A T a transposta da matriz A. A partir da determinação da equação da reta que melhor se ajusta aos pontos (0, 1), (1, 3), (2, 2), (3,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-001.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "O método dos mínimos quadrados é utilizado para determinar a equação da reta $ y = ax + b $ que melhor se ajusta a um conjunto de pontos. Considerando os pontos $ (x_1, y_1) $, $ (x_2, y_2) $, $ (x_3, y_3) $, $ (x_4, y_4) $ e $ (x_5, y_5) $, o problema é solucionado resolvendo-se o sistema de duas equações com duas incógnitas <b>a</b> e <b>b</b>, obtido a partir da equação matricial<br><span class=\"pb\"></span>$ A^T · A · X = A^T · Y $ na qual,<br><span class=\"pb\"></span>$ A = @M{x_1&1;x_2&1;x_3&1;x_4&1;x_5&1} $,  $ X = @M{a;b} $  e  $ Y = @M{y_1;y_2;y_3;y_4;y_5} $<br><span class=\"pb\"></span>sendo $ A^T $ a transposta da matriz $ A $.<br><span class=\"pb\"></span>A partir da determinação da equação da reta que melhor se ajusta aos pontos $ (0, 1) $, $ (1, 3) $, $ (2, 2) $, $ (3, 4) $ e $ (4, 5) $, calcule o valor de <b>y</b> para <b>x</b> = 12.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "12",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c23-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100415,20 +100408,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. AEU-DF Sejam as matrizes: A = (a ij ) 3x3 | a ij = 2i – j e B = (b ij ) 3x3 | b ij = i 2 – j. Em relação a tais matrizes e a seus elementos julgue os itens. ( ) a 22 = 2 ( ) Se a matriz C é tal que C = A x B, então c 23 = –2. ( ) det A x det B = det (A + B). ( ) O determinante da matriz A + B é nulo. ( ) det (A x B) > 16",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Sejam as matrizes: $ A = (a_{ij})_{3×3} $ | $ a_{ij} = 2i − j $ e $ B = (b_{ij})_{3×3} $ | $ b_{ij} = i^2 − j $. Em relação a tais matrizes e a seus elementos julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – V – F"
+   "gabarito": "V – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "$ a_{22} = 2 $",
+     "ok": true
+    },
+    {
+     "t": "Se a matriz $ C $ é tal que $ C = A × B $, então $ c_{23} = −2 $.",
+     "ok": false
+    },
+    {
+     "t": "$ det A × det B = det(A + B) $.",
+     "ok": true
+    },
+    {
+     "t": "O determinante da matriz $ A + B $ é nulo.",
+     "ok": true
+    },
+    {
+     "t": "$ det(A × B) > 16 $",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100440,41 +100449,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. AEU-DF O sistema tem solução determinada se e somente se: a) a ≠ b b) 2a ≠ 5b c) 2a = 5b d) a ≠ –5b e) a ≠ 5b ax – 5y = 2 2bx + 2y = 3 \u0001",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-003.jpg"
-   ],
-   "larguraMm": 65.8,
+   "enunciado": "O sistema $ @S{ax − 5y = 2; 2bx + 2y = 3} $ tem solução determinada se e somente se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a ≠ b $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2a ≠ 5b $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2a = 5b $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a ≠ −5b $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ a ≠ 5b $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100486,41 +100489,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. U. Católica de Salvador-BA Sendo A = , B = (b ij ) 3 × 2 , b ij = e C = AB, então a matriz inversa de C é igual a: a) b) c) d) e) 1 0 1 1 0 0 \u0005 \u0006 \u0005 \u0006 0 –1 2 –1 \u0005 \u0006 0 1 1 –2 \u0005 \u0006 1 2 1 1 \u0005 \u0006 2 1 –1 0 \u0005 \u0006 –1 0 –2 1 \u0007 1; i ≥ j 0; i < j",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-004.jpg"
-   ],
-   "larguraMm": 115.7,
+   "enunciado": "Sendo $ A = @M{1&0&1;1&0&0} $, $ B = (b_{ij})_{3×2} $, $ b_{ij} = @S{1, i ≥ j; 0, i < j} $ e $ C = AB $, então a matriz inversa de $ C $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{0&−1;2&−1} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ @M{0&1;1&−2} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ @M{1&2;1&1} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{2&1;−1&0} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{−1&0;−2&1} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100532,41 +100529,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UEPI Considere as matrizes: 1) A = (a ij ), 4 × 7, dada por a ij = i – j; 2) B = (b ij ), 7 × 9, dada por b ij = i; 3) C = (c ij ), C = AB; Sobre o elemento c 63 é correto afirmar que: a) c 63 = –112 b) c 63 = –18 c) c 63 = –9 d) c 63 = 112 e) não existe. 1 1 1 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-005.jpg"
-   ],
-   "larguraMm": 70.2,
+   "enunciado": "Considere as matrizes:<br><span class=\"pb\"></span>1) $ A = (a_{ij}) $, $ 4 × 7 $, dada por $ a_{ij} = i − j $;<br>2) $ B = (b_{ij}) $, $ 7 × 9 $, dada por $ b_{ij} = i $;<br>3) $ C = (c_{ij}) $, $ C = AB $;<br><span class=\"pb\"></span>Sobre o elemento $ c_{63} $ é correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ c_{63} = −112 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ c_{63} = −18 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ c_{63} = −9 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ c_{63} = 112 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "não existe.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100578,41 +100569,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UEPI A matriz não admite inversa, se: a) a = 2 b) a = 3 c) a = 4 d) a = 5 e) a = 6 a a 2 a -1 5 a 2 a 4 a –2 25 a 3 a 6 a –3 125 –3 0 \u0004 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-006.jpg"
-   ],
-   "larguraMm": 104.2,
+   "enunciado": "A matriz $ @M{1&1&1&1;a&a^2&a^{−1}&5;a^2&a^4&a^{−2}&25;a^3&a^6&a^{−3}&125} $ não admite inversa, se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a = 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ a = 3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a = 4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a = 5 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ a = 6 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100624,41 +100609,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UFF-RJ Considere a matriz M = . Os valores de k que tornam nulo o determinante da matriz M – kI, sendo I a matriz identi- dade, são: a) 0 e 4 b) 4 e 5 c) –3 e 5 d) –3 e 4 e) 0 e 5 –3 0 4 5 \u0004 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-007.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Considere a matriz $ M = @M{−3&0;4&5} $.<br><span class=\"pb\"></span>Os valores de $ k $ que tornam nulo o determinante da matriz $ M − kI $, sendo $ I $ a matriz identidade, são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0 e 4",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4 e 5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−3 e 5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−3 e 4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0 e 5",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100670,37 +100649,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. U. F. Uberlândia-MG Se A e B são matrizes inversíveis de mesma ordem, então det( A –1 BA ) é igual a: a) 1 b) –1 c) det A + det B d) det ( AB ) det B",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-008.jpg"
-   ],
-   "larguraMm": 86.4,
+   "enunciado": "Se $ A $ e $ B $ são matrizes inversíveis de mesma ordem, então $ {det(A^{−1}BA)|det B} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ det A + det B $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ det(AB) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100712,37 +100685,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. U. F. Juiz de Fora-MG Considerando a equação matricial = , onde a, b e c são números reais, podemos afirmar que: a) c + b = 4. b) a é um número positivo. c) não existem números reais a, b e c que satisfaçam à equação matricial dada. d) c não é um número inteiro. a 2 –3 5 1 4 b c 4 – 6 12 –7 . \u0002 \u0004\u0002 \u0004 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-009.jpg"
-   ],
-   "larguraMm": 128.2,
+   "enunciado": "Considerando a equação matricial<br><span class=\"pb\"></span>$ @M{a&2;−3&5} · @M{1&4;b&c} = @M{4&−6;12&−7} $,<br><span class=\"pb\"></span>onde $ a $, $ b $ e $ c $ são números reais, podemos afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ c + b = 4 $.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ a $ é um número positivo.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "não existem números reais $ a $, $ b $ e $ c $ que satisfaçam à equação matricial dada.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ c $ não é um número inteiro.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100754,41 +100721,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Fempar Considere as matrizes Se AB + 2.C = D, então x . y é igual a: a) 1 b) –2 c) –1 d) 0 e) 2 A = , B = , C = e D = x – 1 2 3y + 2 4 –1 0 1 –1 2 3 –1 4 2 –1 3 –2 10 –1 8 –11 \u0004 \u0002 \u0002 \u0004 \u0004 \u0002 \u0004 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-010.jpg"
-   ],
-   "larguraMm": 116.1,
+   "enunciado": "Considere as matrizes<br><span class=\"pb\"></span>$ A = @M{x − 1&2&3y + 2;4&−1&0} $, $ B = @M{1&−1;2&3;−1&4} $, $ C = @M{2&−1;3&−2} $ e $ D = @M{10&−1;8&−11} $<br><span class=\"pb\"></span>Se $ AB + 2·C = D $, então $ x · y $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−2",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100800,41 +100761,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. U. F. Santa Maria-RS As afirmações a seguir referem-se a matrizes e determinantes. Assinale V nas verdadeiras e F nas falsas. ( ) A solução da equação = 8 é 4. x 0 0 0 1 x 1 2 2 0 x 3 0 0 0 1 ( ) Se A e B são matrizes quadradas de ordem n e A = k B, com k número real, então det A = k n det B. ( ) Se A é uma matriz de ordem m x p e B é uma matriz de ordem q x n, o produto A.B é definido se p = q e, nesse caso, a ordem da matriz produto A.B será m x n. A seqüência correta é: a) V – F – V b) V – F – F c) F – V – F d) F – V – V e) F – F – V",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-011.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "As afirmações a seguir referem-se a matrizes e determinantes. Assinale V nas verdadeiras e F nas falsas.<br><span class=\"pb\"></span>(   ) A solução da equação $ @D{x&0&0&0;1&x&1&2;2&0&x&3;0&0&0&1} = 8 $ é 4.<br>(   ) Se A e B são matrizes quadradas de ordem n e A = k B, com k número real, então det A = k<sup>n</sup> det B.<br>(   ) Se A é uma matriz de ordem m <b>x</b> p e B é uma matriz de ordem q <b>x</b> n, o produto A.B é definido se p = q e, nesse caso, a ordem da matriz produto A.B será m <b>x</b> n.<br><span class=\"pb\"></span>A seqüência correta é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "V − F − V",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "V − F − F",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "F − V − F",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "F − V − V",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "F − F − V",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100846,41 +100801,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. U. F. Santa Maria-RS A matriz quadrada A = (a ij ) de ordem 2, onde a ij = sen – 1 se i ≤ j cos se i > j, i . π j i . π j tem como inversa a matriz A -1 igual a: a) b) c) d) e) \u0002 \u0004 \u0002 \u0004 1 0 0 1 –1 1 0 –1 –1 –1 0 –1 –1 0 1 –1 –1 0 –1 –1 \u0002 \u0004 \u0002 \u0004 \u0002 \u0004 \u0002 \u0004 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-012.jpg"
-   ],
-   "larguraMm": 104.1,
+   "enunciado": "A matriz quadrada $ A = (a_{ij}) $ de ordem 2, onde<br><span class=\"pb\"></span>$ a_{ij} = @S{sen({i|j} · π) − 1, \"se\" i ≤ j; cos({i|j} · π), \"se\" i > j} $<br><span class=\"pb\"></span>tem como inversa a matriz $ A^{−1} $ igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{1&0;0&1} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ @M{−1&1;0&−1} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{−1&−1;0&−1} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{−1&0;1&−1} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{−1&0;−1&−1} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100892,41 +100841,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. U. Caxias do Sul-RS Se uma matriz inversível A é tal que detA = x + 3 e detA –1 = x – 9 , então a soma e o produto dos possíveis valores de x são, respectivamente: a) – 6 e – 32 b) – 32 e – 6 c) 6 e –32 d) –32 e 6 e) 2 e – 16 5 5 5 5 5 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-013.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Se uma matriz inversível <b>A</b> é tal que $ det A = x + 3 $ e $ det A^{−1} = x − {9|5} $, então a <b>soma</b> e o <b>produto</b> dos possíveis valores de <b>x</b> são, respectivamente:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ −{6|5} $ e $ −{32|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ −{32|5} $ e $ −{6|5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6 e −32",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−32 e 6",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2 e $ −{16|5} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100938,20 +100881,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFGO Seja k um número real. Considerando-se o sistema linear nas variáveis x e y , dado por 4kx + (k – 1)y = 1 k 3 x + (k – 1)y = 2, julgue os itens: ( ) uma solução para o sistema é x = 0 e y = 3. ( ) se k = –2, o sistema não tem solução. ( ) se k = 2, o sistema tem infinitas soluções. ( ) existem infinitos valores de k , para os quais o sistema possui solução única. \u0001",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Seja $ k $ um número real. Considerando-se o sistema linear nas variáveis $ x $ e $ y $, dado por<br><span class=\"pb\"></span>$ @S{4kx + (k − 1)y = 1; k^3 x + (k − 1)y = 2} $,<br><span class=\"pb\"></span>julgue os itens:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V"
+   "gabarito": "F – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "uma solução para o sistema é $ x = 0 $ e $ y = 3 $.",
+     "ok": false
+    },
+    {
+     "t": "se $ k = −2 $, o sistema não tem solução.",
+     "ok": true
+    },
+    {
+     "t": "se $ k = 2 $, o sistema tem infinitas soluções.",
+     "ok": false
+    },
+    {
+     "t": "existem infinitos valores de $ k $, para os quais o sistema possui solução única.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100963,20 +100918,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. UFMT Considere a matriz A = , com θ ∈ | R, e julgue os itens. ( ) A matriz A é inversível se θ ≠ π + k π , k ∈ Z. ( ) Se θ = 0, então A = I 2 , onde I 2 é a matriz identidade de ordem 2. ( ) Sendo A t a matriz transposta de A, então A + A t ≠ 2A. ( ) Sendo detA o determinante da matriz A, então detA ≥ 0 qualquer que seja o valor de θ . 2 z 2 x+2 log(2z – 4) 1 sen θ sen θ 1 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-015.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere a matriz $ A = @M{1&sen θ;sen θ&1} $, com $ θ ∈ ℝ $, e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V"
+   "gabarito": "V – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "A matriz $ A $ é inversível se $ θ ≠ {π|2} + kπ $, $ k ∈ ℤ $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ θ = 0 $, então $ A = I_2 $, onde $ I_2 $ é a matriz identidade de ordem 2.",
+     "ok": true
+    },
+    {
+     "t": "Sendo $ A^t $ a matriz transposta de $ A $, então $ A + A^t ≠ 2A $.",
+     "ok": false
+    },
+    {
+     "t": "Sendo $ det A $ o determinante da matriz $ A $, então $ det A ≥ 0 $ qualquer que seja o valor de $ θ $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -100988,41 +100955,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFSE Se a matriz M = é simétrica, então a soma dos elementos de sua diagonal principal é igual a: a) 13 d) 10 b) 12 e) 9 c) 11 z 2 log(2z – 4) 4 x x (z + 1)! log y y! y \u0004 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Se a matriz $ M = @M{z&2^{x+2}&log(2z − 4);4^x&x&(z + 1)!;log y&y!&y} $ é simétrica, então a soma dos elementos de sua diagonal principal é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "13",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101034,24 +100995,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. UFBA Sabendo-se que o determinante da matriz inversa de é igual a – 1 , calcule x. 4 1 1 1 1 x + 1 2 1 1 x – 3 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-017.jpg"
-   ],
-   "larguraMm": 87.1,
+   "enunciado": "Sabendo-se que o determinante da matriz inversa de $ @M{1&1&1;1&x + 1&2;1&1&x − 3} $ é igual a $ −{1|4} $, calcule $ x $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "02",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c23-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101063,24 +101018,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UEPI O valor determinante da matriz A = é igual a: a) 15 b) 20 c) 38 d) 40 e) 42 5 4 2 1 2 3 1 –2 –5 –7 –3 9 1 –2 –1 4 \u0002 \u0004 1 a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-018.jpg"
-   ],
-   "larguraMm": 60.9,
+   "enunciado": "O valor determinante da matriz $ A = @M{5&4&2&1;2&3&1&−2;−5&−7&−3&9;1&−2&−1&4} $ é igual a:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "C 1 20a",
+   "tipo": "mc",
+   "gabarito": "C",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "alternativas": [
+    {
+     "t": "15",
+     "ok": false
+    },
+    {
+     "t": "20",
+     "ok": false
+    },
+    {
+     "t": "38",
+     "ok": true
+    },
+    {
+     "t": "40",
+     "ok": false
+    },
+    {
+     "t": "42",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101092,24 +101063,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. PUC-RJ Calcule a vigésima potência da matriz . 1 a 0 1 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-019.jpg"
-   ],
-   "larguraMm": 91.5,
+   "enunciado": "Calcule a vigésima potência da matriz $ @M{1&a;0&1} $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "\u0002_(0)_(1) \u0001",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c23-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101121,37 +101086,96 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UERJ João comeu uma salada de frutas com a, m e p porções de 100 g de abacaxi, manga e pêra, respectivamente, conforme a matriz X. A matriz A representa as quantidades de calorias, vitamina C e cálcio, em mg, e a matriz B indica os preços, em reais, dessas frutas em 3 diferentes supermercados. A matriz C mostra que João ingeriu 295,6 cal, 143,9 mg de vitamina C e 93 mg de cálcio. Considerando que as matrizes inversas de A e B são A –1 e B –1 , o custo dessa salada de frutas, em cada supermercado, é determinado pelas seguintes operações: a) B . A –1 . C b) C . A –1 . B c) A –1 . B –1 . C d)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-020.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "João comeu uma salada de frutas com <i>a</i>, <i>m</i> e <i>p</i> porções de 100 g de abacaxi, manga e pêra, respectivamente, conforme a matriz X. A matriz <b>A</b> representa as quantidades de calorias, vitamina C e cálcio, em mg, e a matriz <b>B</b> indica os preços, em reais, dessas frutas em 3 diferentes supermercados. A matriz <b>C</b> mostra que João ingeriu 295,6 cal, 143,9 mg de vitamina C e 93 mg de cálcio.<br><span class=\"pb\"></span><b>Matriz X</b> (porções de 100 g de abacaxi, manga e pêra): $ X = @M{a;m;p} $<br><span class=\"pb\"></span><b>Matriz C</b> (calorias; vitamina C, em mg; cálcio, em mg): $ C = @M{295,6;143,9;93} $",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ B · A^{−1} · C $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ C · A^{−1} · B $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ A^{−1} · B^{−1} · C $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ B^{−1} · A^{−1} · C $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Considerando que as matrizes inversas de A e B são $ A^{−1} $ e $ B^{−1} $, o custo dessa salada de frutas, em cada supermercado, é determinado pelas seguintes operações:",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "",
+      "Abacaxi",
+      "Manga",
+      "Pêra"
+     ],
+     "linhas": [
+      [
+       "Calorias",
+       "52",
+       "64,3",
+       "63,3"
+      ],
+      [
+       "Vitamina C",
+       "27,2",
+       "43",
+       "3,5"
+      ],
+      [
+       "Cálcio",
+       "18",
+       "21",
+       "15"
+      ]
+     ],
+     "largura": "70%",
+     "legenda": "Matriz A (por cada 100 g)"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "",
+      "Abacaxi",
+      "Manga",
+      "Pêra"
+     ],
+     "linhas": [
+      [
+       "Coma bem",
+       "0,15",
+       "0,30",
+       "0,40"
+      ],
+      [
+       "Compre mais",
+       "0,16",
+       "0,25",
+       "0,45"
+      ],
+      [
+       "Boa compra",
+       "0,20",
+       "0,27",
+       "0,35"
+      ]
+     ],
+     "largura": "70%",
+     "legenda": "Matriz B (por cada 100 g)"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101163,41 +101187,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. Fempar Se A = e B = o valor do determinante da diferença entre AB e (A.B) t será: a) –55 b) 25 c) –80 d) –30 e) 4 2 –1 0 3 4 –2 1 –2 0 –1 4 5 \u0002 \u0004 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-021.jpg"
-   ],
-   "larguraMm": 94.4,
+   "enunciado": "Se $ A = @M{2&−1&0;3&4&−2} $ e $ B = @M{1&−2;0&−1;4&5} $<br><span class=\"pb\"></span>o valor do determinante da diferença entre $ AB $ e $ (A·B)^t $ será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−55",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "25",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−80",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−30",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101209,41 +101227,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. PUC-PR O valor de y no sistema de equações a) 1 b) 2 c) 3 d) 4 e) 5 x – 5z = 2 3x – y – 5z = 3 4x – 4y – 3z = – 4 é:",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-022.jpg"
-   ],
-   "larguraMm": 75.1,
+   "enunciado": "O valor de $ y $ no sistema de equações<br><span class=\"pb\"></span>$ @S{x − 5z = 2; 3x − y − 5z = 3; 4x − 4y − 3z = −4} $<br><span class=\"pb\"></span>é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101255,41 +101267,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. U. F. Santa Maria-RS Analise as afirmações a seguir. I. A matriz é invertível se x = 2b. II. Se det(AB) = m, pode-se garantir que existe det A e det B. III. Se det A = m ≠ 0 e det B = 1/m, então det (AB) = 1. Está(ão) correta(s): a) apenas I. b) apenas II. c) apenas III. d) apenas II e III. e) I, II e III. a 2 2(a – 1) b 0 x c 4 2(c – 2) \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-023.jpg"
-   ],
-   "larguraMm": 95.8,
+   "enunciado": "Analise as afirmações a seguir.<br><span class=\"pb\"></span>I. A matriz $ @M{a&2&2(a − 1);b&0&x;c&4&2(c − 2)} $ é invertível se $ x = 2b $.<br>II. Se $ det(AB) = m $, pode-se garantir que existe $ det A $ e $ det B $.<br>III. Se $ det A = m ≠ 0 $ e $ det B = 1/m $, então $ det(AB) = 1 $.<br><span class=\"pb\"></span>Está(ão) correta(s):",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "apenas III.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "apenas II e III.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "I, II e III.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101301,37 +101307,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. U. E. Londrina-PR Seja a seqüência (A, A 2 , A 3 , …, A n , …), cujos termos são matrizes quadradas de ordem n. Se o primeiro termo dessa seqüência é A = , a soma de seus 100 primeiros termos é igual à matriz: a) b) c) d) e) 0 0 0 2 \u0002 \u0004 0 2 0 5.2 100 \u0002 \u0004 0 0 2 100.2 100 \u0002 \u0004 0 0 0 2 101 – 2 \u0002 \u0004 0 0 0 2 100 \u0002 \u0004 0 0 0 2 100 – 1 \u0002 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Seja a seqüência $ (A, A^2, A^3, …, A^n, …) $, cujos termos são matrizes quadradas de ordem $ n $. Se o primeiro termo dessa seqüência é $ A = @M{0&0;0&2} $, a soma de seus 100 primeiros termos é igual à matriz:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{0&2;0&5 · 2^{100}} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ @M{0&0;2&100 · 2^{100}} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{0&0;0&2^{101} − 2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{0&0;0&2^{100}} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ @M{0&0;0&2^{100} − 1} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-025",
