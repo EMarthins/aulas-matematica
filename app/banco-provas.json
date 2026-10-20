@@ -40510,7 +40510,6 @@
   {
    "id": "enem2023-152",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Sequências",
@@ -40522,35 +40521,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Os números figurados pentagonais provavelmente foram introduzidos pelos pitagóricos por volta do século V a.C. As figuras ilustram como obter os seis primeiros deles, sendo os demais obtidos seguindo o mesmo padrão geométrico. 1 5 12 22 35 51 O oitavo número pentagonal é A A 59. B B 83. C C 86. D D 89. E E 92.",
-   "imagens": [
-    "img:enem2023-152.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Os números figurados pentagonais provavelmente foram introduzidos pelos pitagóricos por volta do século V a.C. As figuras ilustram como obter os seis primeiros deles, sendo os demais obtidos seguindo o mesmo padrão geométrico.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "59.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "83.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "86.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "89.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "92.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O oitavo número pentagonal é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-152-fig.jpg",
+    "alt": "Seis figuras formadas por pontos dispostos em pentágonos concêntricos, que representam os números pentagonais 1, 5, 12, 22, 35 e 51",
+    "largura": "80mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-153",
@@ -40600,7 +40602,6 @@
   {
    "id": "enem2023-154",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -40612,40 +40613,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um professor, para promover a aprendizagem dos estudantes em estatística, propôs uma atividade. O objetivo era verificar o percentual de estudantes com massa corporal abaixo da média e altura acima da média de um grupo de estudantes. Para isso, usando uma balança e uma fita métrica, avaliou uma amostra de dez estudantes, anotando as medidas observadas. O gráfico apresenta a massa corporal, em quilograma, e a altura, em metro, obtidas na atividade. Massa corporal e altura de estudantes Altura (m) 1,8 1,75 1,7 1,65 1,6 1,55 1,5 1,45 0 20 40 60 80 100 120 140 Massa corporal (kg) Após a coleta dos dados, os estudantes calcularam a média dos valores obtidos, referentes à massa corporal e à altura, obtendo, respectivamente, 80 kg e 1,65 m. Qual é o percentual de estudantes dessa amostra com massa corporal abaixo da média e altura acima da média? A A 10 B B 20 C C 30 D D 50 E E 70",
-   "imagens": [
-    "img:enem2023-154.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um professor, para promover a aprendizagem dos estudantes em estatística, propôs uma atividade. O objetivo era verificar o percentual de estudantes com massa corporal abaixo da média e altura acima da média de um grupo de estudantes. Para isso, usando uma balança e uma fita métrica, avaliou uma amostra de dez estudantes, anotando as medidas observadas. O gráfico apresenta a massa corporal, em quilograma, e a altura, em metro, obtidas na atividade.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "20",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "50",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "70",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Após a coleta dos dados, os estudantes calcularam a média dos valores obtidos, referentes à massa corporal e à altura, obtendo, respectivamente, 80 kg e 1,65 m.<br><span class=\"pb\"></span>Qual é o percentual de estudantes dessa amostra com massa corporal abaixo da média e altura acima da média?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-154-fig.jpg",
+    "alt": "Gráfico de dispersão “Massa corporal e altura de estudantes”: altura (m) em função da massa corporal (kg); os dez pontos têm massas entre 50 e 120 kg e alturas entre 1,5 e 1,75 m",
+    "largura": "84mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-155",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -40657,40 +40660,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um pescador tem um custo fixo diário de R$ 900,00 com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por R$ 5,00. Sua meta é obter um lucro mínimo de R$ 800,00 por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 kg de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um R$ 250,00 por dia de trabalho. Além desse valor, 4% da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 kg e que, a partir do segundo ajudante contratado, aumenta-se em 100 kg a quantidade de peixe pescada por ajudante em um dia de trabalho. A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é A A 1. B B 2. C C 3. D D 4. E E 5.",
-   "imagens": [
-    "img:enem2023-155.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um pescador tem um custo fixo diário de R&#36; 900,00 com combustível, iscas, manutenção de seu barco e outras pequenas despesas. Ele vende cada quilograma de peixe por R&#36; 5,00. Sua meta é obter um lucro mínimo de R&#36; 800,00 por dia. Sozinho, ele consegue, ao final de um dia de trabalho, pescar 180 kg de peixe, o que é suficiente apenas para cobrir o custo fixo diário. Portanto, precisa contratar ajudantes, pagando para cada um R&#36; 250,00 por dia de trabalho. Além desse valor, 4% da receita obtida pela venda de peixe é repartida igualmente entre os ajudantes. Considerando o tamanho de seu barco, ele pode contratar até 5 ajudantes. Ele sabe que com um ajudante a pesca diária é de 300 kg e que, a partir do segundo ajudante contratado, aumenta-se em 100 kg a quantidade de peixe pescada por ajudante em um dia de trabalho.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "5.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A quantidade mínima de ajudantes que esse pescador precisa contratar para conseguir o lucro diário pretendido é",
+   "transcrita": true
   },
   {
    "id": "enem2023-156",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -40702,40 +40701,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um agricultor é informado sobre um método de proteção para sua lavoura que consiste em inserir larvas específicas, de rápida reprodução. A reprodução dessas larvas faz com que sua população multiplique-se por 10 a cada 3 dias e, para evitar eventuais desequilíbrios, é possível cessar essa reprodução aplicando-se um produto X. O agricultor decide iniciar esse método com 100 larvas e dispõe de 5 litros do produto X, cuja aplicação recomendada é de exatamente 1 litro para cada população de 200 000 larvas. A quantidade total do produto X de que ele dispõe deverá ser aplicada de uma única vez. Quantos dias após iniciado esse método o agricultor deverá aplicar o produto X? A A 2 B B 4 C C 6 D D 12 E E 18",
-   "imagens": [
-    "img:enem2023-156.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Um agricultor é informado sobre um método de proteção para sua lavoura que consiste em inserir larvas específicas, de rápida reprodução. A reprodução dessas larvas faz com que sua população multiplique-se por 10 a cada 3 dias e, para evitar eventuais desequilíbrios, é possível cessar essa reprodução aplicando-se um produto X. O agricultor decide iniciar esse método com 100 larvas e dispõe de 5 litros do produto X, cuja aplicação recomendada é de exatamente 1 litro para cada população de 200 000 larvas. A quantidade total do produto X de que ele dispõe deverá ser aplicada de uma única vez.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "18",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Quantos dias após iniciado esse método o agricultor deverá aplicar o produto X?",
+   "transcrita": true
   },
   {
    "id": "enem2023-157",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -40747,40 +40742,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Ao realizar o cadastro em um aplicativo de investimentos, foi solicitado ao usuário que criasse uma senha, sendo permitido o uso somente dos seguintes caracteres: • algarismos de 0 a 9; • 26 letras minúsculas do alfabeto; • 26 letras maiúsculas do alfabeto; • 6 caracteres especiais !, @, #, $, , &. Três tipos de estruturas para senha foram apresentadas ao usuário: • tipo I: formada por quaisquer quatro caracteres distintos, escolhidos dentre os permitidos; • tipo II: formada por cinco caracteres distintos, iniciando por três letras, seguidas por um algarismo e, ao final, um caractere especial; • tipo III: formada por seis caracteres distintos, iniciando por duas letras, seguidas por dois algarismos e, ao final, dois caracteres especiais. Considere p , p e p as probabilidades de se 1 2 3 descobrirem ao acaso, na primeira tentativa, as senhas dos tipos I, II e III, respectivamente. Nessas condições, o tipo de senha que apresenta a menor probabilidade de ser descoberta ao acaso, na primeira tentativa, é o A A tipo I, pois p < p < p . 1 2 3 B B tipo I, pois tem menor quantidade de caracteres. C C tipo II, pois tem maior quantidade de letras. D D tipo III, pois p < p < p . 3 2 1 E E tipo III, pois tem maior quantidade de caracteres.",
-   "imagens": [
-    "img:enem2023-157.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "Ao realizar o cadastro em um aplicativo de investimentos, foi solicitado ao usuário que criasse uma senha, sendo permitido o uso somente dos seguintes caracteres:<br>• algarismos de 0 a 9;<br>• 26 letras minúsculas do alfabeto;<br>• 26 letras maiúsculas do alfabeto;<br>• 6 caracteres especiais !, @, #, &#36;, *, &amp;.<br><span class=\"pb\"></span>Três tipos de estruturas para senha foram apresentadas ao usuário:<br>• tipo I: formada por quaisquer quatro caracteres distintos, escolhidos dentre os permitidos;<br>• tipo II: formada por cinco caracteres distintos, iniciando por três letras, seguidas por um algarismo e, ao final, um caractere especial;<br>• tipo III: formada por seis caracteres distintos, iniciando por duas letras, seguidas por dois algarismos e, ao final, dois caracteres especiais.<br><span class=\"pb\"></span>Considere <i>p</i><sub>1</sub>, <i>p</i><sub>2</sub> e <i>p</i><sub>3</sub> as probabilidades de se descobrirem ao acaso, na primeira tentativa, as senhas dos tipos I, II e III, respectivamente.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "tipo I, pois <i>p</i><sub>1</sub> &lt; <i>p</i><sub>2</sub> &lt; <i>p</i><sub>3</sub>.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "tipo I, pois tem menor quantidade de caracteres.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "tipo II, pois tem maior quantidade de letras.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "tipo III, pois <i>p</i><sub>3</sub> &lt; <i>p</i><sub>2</sub> &lt; <i>p</i><sub>1</sub>.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "tipo III, pois tem maior quantidade de caracteres.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, o tipo de senha que apresenta a menor probabilidade de ser descoberta ao acaso, na primeira tentativa, é o",
+   "transcrita": true
   },
   {
    "id": "enem2023-158",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -40792,40 +40783,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em um colégio público, a admissão no primeiro ano se dá por sorteio. Neste ano há 55 candidatos, cujas inscrições são numeradas de 01 a 55. O sorteio de cada número de inscrição será realizado em etapas, utilizando-se duas urnas. Da primeira urna será sorteada uma bola, dentre bolas numeradas de 0 a 9, que representará o algarismo das unidades do número de inscrição a ser sorteado e, em seguida, da segunda urna, será sorteada uma bola para representar o algarismo das dezenas desse número. Depois do primeiro sorteio, e antes de se sortear o algarismo das dezenas, as bolas que estarão presentes na segunda urna serão apenas aquelas cujos números formam, com o algarismo já sorteado, um número de 01 a 55. As probabilidades de os candidatos de inscrição número 50 e 02 serem sorteados são, respectivamente, 1 1 A A e 50 60 1 1 B B e 50 50 1 1 C C e 50 10 1 1 D D e 55 54 1 1 E E e 100 100",
-   "imagens": [
-    "img:enem2023-158.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Em um colégio público, a admissão no primeiro ano se dá por sorteio. Neste ano há 55 candidatos, cujas inscrições são numeradas de 01 a 55. O sorteio de cada número de inscrição será realizado em etapas, utilizando-se duas urnas. Da primeira urna será sorteada uma bola, dentre bolas numeradas de 0 a 9, que representará o algarismo das unidades do número de inscrição a ser sorteado e, em seguida, da segunda urna, será sorteada uma bola para representar o algarismo das dezenas desse número. Depois do primeiro sorteio, e antes de se sortear o algarismo das dezenas, as bolas que estarão presentes na segunda urna serão apenas aquelas cujos números formam, com o algarismo já sorteado, um número de 01 a 55.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|50} $ e $ {1|60} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {1|50} $ e $ {1|50} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|50} $ e $ {1|10} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|55} $ e $ {1|54} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|100} $ e $ {1|100} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "As probabilidades de os candidatos de inscrição número 50 e 02 serem sorteados são, respectivamente,",
+   "transcrita": true
   },
   {
    "id": "enem2023-159",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -40837,40 +40824,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O esquema mostra como a intensidade luminosa decresce com o aumento da profundidade em um rio, sendo L a intensidade na sua superfície. 0 Profundidade Intensidade luminosa 0 m L 0 2 1 m L 0 3 4 2 m L 0 9 8 3 m L 0 27 Considere que a intensidade luminosa diminui, a cada metro acrescido na profundidade, segundo o mesmo padrão do esquema. A intensidade luminosa correspondente à profundidade de 6 m é igual a 1 A A L 0 9 16 B B L 0 27 32 C C L 0 243 64 D D L 0 729 128 E E L 0 2 187",
-   "imagens": [
-    "img:enem2023-159.jpg"
-   ],
-   "larguraMm": 90.7,
+   "enunciado": "O esquema mostra como a intensidade luminosa decresce com o aumento da profundidade em um rio, sendo <i>L</i><sub>0</sub> a intensidade na sua superfície.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|9}L_0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {16|27}L_0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {32|243}L_0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {64|729}L_0 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {128|2 187}L_0 $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere que a intensidade luminosa diminui, a cada metro acrescido na profundidade, segundo o mesmo padrão do esquema.<br><span class=\"pb\"></span>A intensidade luminosa correspondente à profundidade de 6 m é igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-159-fig.jpg",
+    "alt": "Esquema da luz penetrando na água: a 0 m a intensidade é L0; a 1 m, 2/3 de L0; a 2 m, 4/9 de L0; a 3 m, 8/27 de L0 (setas cada vez mais curtas)",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-160",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -40882,40 +40871,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Analisando as vendas de uma empresa, o gerente concluiu que o montante diário arrecadado, em milhar de real, 2 x poderia ser calculado pela expressão V \u001f x \u001e \u001d \u001c 10 x \u001b 105 , 4 em que os valores de x representam os dias do mês, variando de 1 a 30. Um dos fatores para avaliar o desempenho mensal da empresa é verificar qual é o menor montante diário V 0 arrecadado ao longo do mês e classificar o desempenho conforme as categorias apresentadas a seguir, em que as quantidades estão expressas em milhar de real. • Ótimo: V ≥ 24 0 • Bom: 20 ≤ V < 24 0 • Normal: 10 ≤ V < 20 0 • Ruim: 4 ≤ V < 10 0 • Péssimo: V < 4 0 No caso analisado, qual seria a classificação do desempenho da empresa? A A Ótimo. B B Bom. C C Normal. D D Ruim. E E Péssimo.",
-   "imagens": [
-    "img:enem2023-160.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Analisando as vendas de uma empresa, o gerente concluiu que o montante diário arrecadado, em milhar de real, poderia ser calculado pela expressão $ V(x) = {x^2|4} − 10x + 105 $, em que os valores de <i>x</i> representam os dias do mês, variando de 1 a 30.<br><span class=\"pb\"></span>Um dos fatores para avaliar o desempenho mensal da empresa é verificar qual é o menor montante diário <i>V</i><sub>0</sub> arrecadado ao longo do mês e classificar o desempenho conforme as categorias apresentadas a seguir, em que as quantidades estão expressas em milhar de real.<br>• Ótimo: <i>V</i><sub>0</sub> ≥ 24<br>• Bom: 20 ≤ <i>V</i><sub>0</sub> &lt; 24<br>• Normal: 10 ≤ <i>V</i><sub>0</sub> &lt; 20<br>• Ruim: 4 ≤ <i>V</i><sub>0</sub> &lt; 10<br>• Péssimo: <i>V</i><sub>0</sub> &lt; 4",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Ótimo.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Bom.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Normal.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Ruim.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Péssimo.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "No caso analisado, qual seria a classificação do desempenho da empresa?",
+   "transcrita": true
   },
   {
    "id": "enem2023-161",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -40927,40 +40912,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dirigir após ingerir bebidas alcoólicas é uma atitude extremamente perigosa, uma vez que, a partir da primeira dose, a pessoa já começa a ter perda de sensibilidade de movimentos e de reflexos. Apesar de a eliminação e absorção do álcool depender de cada pessoa e de como o organismo consegue metabolizar a substância, ao final da primeira hora após a ingestão, a concentração de álcool ( C ) no sangue corresponde a aproximadamente 90% da quantidade ( q ) de álcool ingerida, e a eliminação total dessa concentração pode demorar até 12 horas. Disponível em: http://g1.globo.com. Acesso em: 1 dez. 2018 (adaptado). Nessas condições, ao final da primeira hora após a ingestão da quantidade q de álcool, a concentração C dessa substância no sangue é expressa algebricamente por A A C = 0,9 q B B C = 0,1 q C C C = 1 − 0,1 q D D C = 1 − 0,9 q E E C = q − 10",
-   "imagens": [
-    "img:enem2023-161.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Dirigir após ingerir bebidas alcoólicas é uma atitude extremamente perigosa, uma vez que, a partir da primeira dose, a pessoa já começa a ter perda de sensibilidade de movimentos e de reflexos. Apesar de a eliminação e absorção do álcool depender de cada pessoa e de como o organismo consegue metabolizar a substância, ao final da primeira hora após a ingestão, a concentração de álcool (<i>C</i>) no sangue corresponde a aproximadamente 90% da quantidade (<i>q</i>) de álcool ingerida, e a eliminação total dessa concentração pode demorar até 12 horas.<br><span class=\"pb\"></span>Disponível em: http://g1.globo.com.br. Acesso em: 1 dez. 2018 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "<i>C</i> = 0,9<i>q</i>",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "<i>C</i> = 0,1<i>q</i>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "<i>C</i> = 1 − 0,1<i>q</i>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "<i>C</i> = 1 − 0,9<i>q</i>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "<i>C</i> = <i>q</i> − 10",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, ao final da primeira hora após a ingestão da quantidade <i>q</i> de álcool, a concentração <i>C</i> dessa substância no sangue é expressa algebricamente por",
+   "transcrita": true
   },
   {
    "id": "enem2023-162",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -40972,40 +40953,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um investidor iniciante observou o gráfico que apresenta a evolução dos valores de duas criptomoedas A e B em relação ao tempo. Criptomoeda B (milhar de real) Criptomoeda A (milhar de real) Durante horas consecutivas, esses valores foram observados em nove instantes, representados por horas exatas. Em quantos desses instantes a criptomoeda A estava mais valorizada do que a criptomoeda B? A A 3 B B 4 C C 6 D D 7 E E 9",
-   "imagens": [
-    "img:enem2023-162.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um investidor iniciante observou o gráfico que apresenta a evolução dos valores de duas criptomoedas A e B em relação ao tempo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Durante horas consecutivas, esses valores foram observados em nove instantes, representados por horas exatas.<br><span class=\"pb\"></span>Em quantos desses instantes a criptomoeda A estava mais valorizada do que a criptomoeda B?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-162-fig.jpg",
+    "alt": "Trajetória no plano: eixo vertical da criptomoeda B (milhar de real) e eixo horizontal da criptomoeda A (milhar de real); a curva passa pelos pontos rotulados 9 h, 10 h, 11 h, 12 h, 13 h, 14 h, 15 h, 16 h e 17 h",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-163",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -41017,35 +41000,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A exposição a alguns níveis sonoros pode causar lesões auditivas. Por isso, em uma indústria, são adotadas medidas preventivas de acordo com a máquina que o funcionário opera e o nível N de intensidade do som, medido em decibel (dB), a que o operário é exposto, 10 10 sendo N = log I − log I , I a intensidade do som e 10 10 0 − 12 2 I = 10 W/m . 0 Disponível em: www.sofisica.com.br. Acesso em: 8 jul. 2015 (adaptado). Quando o som é considerado baixo, ou seja, N = 48 dB ou menos, deve ser utilizada a medida preventiva I. No caso de o som ser moderado, quando N está no intervalo (48 dB, 55 dB), deve ser utilizada a medida preventiva II. Quando o som é moderado alto, que equivale a N no intervalo (55 dB, 80 dB), a medida preventiva a ser usada é a III. Se N estiver no intervalo (80 dB, 115 dB), quando o som é considerado alto, deve ser utilizada a medida preventiva IV. E se o som é considerado muito alto, com N maior que 115 dB , deve-se utilizar a medida preventiva V. − 8 2 Uma nova máquina, com I = 8 × 10 W/m , foi adquirida e será classificada de acordo com o nível de ruído que produz. Considere 0,3 como aproximação para log 2. 10 O funcionário que operará a nova máquina deverá adotar a medida preventiva A A I. B B II. C C III. D D IV. E E V.",
-   "imagens": [
-    "img:enem2023-163.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "A exposição a alguns níveis sonoros pode causar lesões auditivas. Por isso, em uma indústria, são adotadas medidas preventivas de acordo com a máquina que o funcionário opera e o nível <i>N</i> de intensidade do som, medido em decibel (dB), a que o operário é exposto, sendo <i>N</i> = log<sub>10</sub><i>I</i><sup>10</sup> − log<sub>10</sub><i>I</i><sub>0</sub><sup>10</sup>, <i>I</i> a intensidade do som e <i>I</i><sub>0</sub> = 10<sup>−12</sup> W/m<sup>2</sup>.<br><span class=\"pb\"></span>Disponível em: www.sofisica.com.br. Acesso em: 8 jul. 2015 (adaptado).<br><span class=\"pb\"></span>Quando o som é considerado baixo, ou seja, <i>N</i> = 48 dB ou menos, deve ser utilizada a medida preventiva I. No caso de o som ser moderado, quando <i>N</i> está no intervalo (48 dB, 55 dB), deve ser utilizada a medida preventiva II. Quando o som é moderado alto, que equivale a <i>N</i> no intervalo (55 dB, 80 dB), a medida preventiva a ser usada é a III. Se <i>N</i> estiver no intervalo (80 dB, 115 dB), quando o som é considerado alto, deve ser utilizada a medida preventiva IV. E se o som é considerado muito alto, com <i>N</i> maior que 115 dB, deve-se utilizar a medida preventiva V.<br><span class=\"pb\"></span>Uma nova máquina, com <i>I</i> = 8 × 10<sup>−8</sup> W/m<sup>2</sup>, foi adquirida e será classificada de acordo com o nível de ruído que produz.<br><span class=\"pb\"></span>Considere 0,3 como aproximação para log<sub>10</sub>2.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O funcionário que operará a nova máquina deverá adotar a medida preventiva",
+   "transcrita": true
   },
   {
    "id": "enem2023-164",
