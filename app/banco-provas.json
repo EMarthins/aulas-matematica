@@ -41621,7 +41621,6 @@
   {
    "id": "enem2023-177",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -41633,41 +41632,44 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O gráfico expõe alguns números da gripe A-H1N1. Entre as categorias que estão em processo de imunização, uma já está completamente imunizada, a dos trabalhadores da saúde. Números da campanha contra a gripe A-H1N1 Adultos entre 20 e 29 anos Gestantes Doentes crônicos Indígenas Crianças de 6 meses a 2 anos Trabalhadores da saúde 0,0% 10,0% 20,0% 30,0% 40,0% 50,0% 60,0% 70,0% 80,0% 90,0% 100,0% Época , 26 abr. 2010 (adaptado). De acordo com o gráfico, entre as demais categorias, a que está mais exposta ao vírus da gripe A-H1N1 é a categoria de A A indígenas. B B gestantes. C C doentes crônicos. D D adultos entre 20 e 29 anos. E E crianças de 6 meses a 2 anos.",
-   "imagens": [
-    "img:enem2023-177.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "O gráfico expõe alguns números da campanha contra a gripe A-H1N1. Entre as categorias que estão em processo de imunização, uma já está completamente imunizada, a dos trabalhadores da saúde.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "indígenas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "gestantes.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "doentes crônicos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "adultos entre 20 e 29 anos.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "crianças de 6 meses a 2 anos.",
      "ok": false
     }
    ],
    "resolucao": "",
-   "anulada": true
+   "anulada": true,
+   "pergunta": "De acordo com o gráfico, entre as demais categorias, a que está mais exposta ao vírus da gripe A-H1N1 é a categoria de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-177-fig.jpg",
+    "alt": "Gráfico de barras horizontais “Números da campanha contra a gripe A-H1N1” (de 0% a 100%): Adultos entre 20 e 29 anos, Gestantes, Doentes crônicos, Indígenas, Crianças de 6 meses a 2 anos e Trabalhadores da saúde",
+    "largura": "170mm",
+    "legenda": "Época, 26 abr. 2010 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-178",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -41679,40 +41681,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A figura representa uma escada com três degraus, construída em concreto maciço, com suas medidas especificadas. Nessa escada, pisos e espelhos têm formato retangular, e as paredes laterais têm formato de um polígono cujos lados adjacentes são perpendiculares. Pisos, espelhos e paredes laterais serão revestidos em cerâmica. A área a ser revestida em cerâmica, em metro quadrado, mede A A 1,20. B B 1,35. C C 1,65. D D 1,80. E E 1,95.",
-   "imagens": [
-    "img:enem2023-178.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "A figura representa uma escada com três degraus, construída em concreto maciço, com suas medidas especificadas.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,20.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,35.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,65.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,80.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1,95.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessa escada, pisos e espelhos têm formato retangular, e as paredes laterais têm formato de um polígono cujos lados adjacentes são perpendiculares. Pisos, espelhos e paredes laterais serão revestidos em cerâmica.<br><span class=\"pb\"></span>A área a ser revestida em cerâmica, em metro quadrado, mede",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-178-fig.jpg",
+    "alt": "Escada de três degraus encostada em uma parede lateral: cada piso tem 0,25 m de profundidade, cada espelho tem 0,20 m de altura e a largura da escada é de 1,0 m",
+    "largura": "99mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-179",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria analítica",
@@ -41724,40 +41728,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma pessoa comprou um ingresso para o cinema em cuja entrada está afixado um mapa com a representação bidimensional do posicionamento das poltronas, conforme a figura. Essa pessoa, após consultar o mapa, começou a subir uma das escadas e parou na posição indicada pela estrela, direcionada para o norte. Ela conferiu seu bilhete e observou que, para encontrar sua poltrona, deveria partir do ponto onde estava, continuar subindo a escada na direção norte por mais quatro fileiras e olhar à sua direita, e sua poltrona será a terceira. J I H G N F Escada Escada O L E Fileiras S D C B A Poltrona 1 2 3 4 5 6 7 8 9 10 11 12 Posições Entrada Tela Nesse cinema, as poltronas são identificadas por uma letra, que indica a fileira, e um número, que fornece a posição da poltrona na fileira, respectivamente. A poltrona dessa pessoa é a identificada por A A A6. B B H1. C C H6. D D I1. E E I6.",
-   "imagens": [
-    "img:enem2023-179.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "Uma pessoa comprou um ingresso para o cinema em cuja entrada está afixado um mapa com a representação bidimensional do posicionamento das poltronas, conforme a figura. Essa pessoa, após consultar o mapa, começou a subir uma das escadas e parou na posição indicada pela estrela, direcionada para o norte. Ela conferiu seu bilhete e observou que, para encontrar sua poltrona, deveria partir do ponto onde estava, continuar subindo a escada na direção norte por mais quatro fileiras e olhar à sua direita, e sua poltrona será a terceira.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A6.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "H1.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "H6.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "I1.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "I6.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nesse cinema, as poltronas são identificadas por uma letra, que indica a fileira, e um número, que fornece a posição da poltrona na fileira, respectivamente.<br><span class=\"pb\"></span>A poltrona dessa pessoa é a identificada por",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2023-179-fig.jpg",
+    "alt": "Mapa da sala de cinema visto de cima: fileiras A a J (de baixo para cima) e posições 1 a 12 (da esquerda para a direita), duas escadas verticais, a entrada no canto inferior esquerdo, a tela na parte de baixo e a rosa dos ventos; a estrela está na escada da esquerda, na altura da fileira E",
+    "largura": "140mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2023-180",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -41769,35 +41775,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2023 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O metrô de um município oferece dois tipos de tíquetes com colorações diferentes, azul e vermelha, sendo vendidos em cartelas, cada qual com nove tíquetes da mesma cor e mesmo valor unitário. Duas cartelas de tíquetes azuis e uma cartela de tíquetes vermelhos são vendidas por R$ 32,40. Sabe-se que o preço de um tíquete azul menos o preço de um tíquete vermelho é igual ao preço de um tíquete vermelho mais cinco centavos. Qual o preço, em real, de uma cartela de tíquetes vermelhos? A A 4,68 B B 6,30 C C 9,30 D D 10,50 E E 10,65",
-   "imagens": [
-    "img:enem2023-180.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "O metrô de um município oferece dois tipos de tíquetes com coloração diferentes, azul e vermelha, sendo vendidos em cartelas, cada qual com nove tíquetes da mesma cor e mesmo valor unitário. Duas cartelas de tíquetes azuis e uma cartela de tíquetes vermelhos são vendidas por R&#36; 32,40. Sabe-se que o preço de um tíquete azul menos o preço de um tíquete vermelho é igual ao preço de um tíquete vermelho mais cinco centavos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4,68",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6,30",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "9,30",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10,50",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "10,65",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual o preço, em real, de uma cartela de tíquetes vermelhos?",
+   "transcrita": true
   },
   {
    "id": "enem2024-1e",
@@ -47775,7 +47778,6 @@
   {
    "id": "enem2024-136",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -47787,40 +47789,54 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa produz mochilas escolares sob encomenda. Essa empresa tem um custo total de produção, composto por um custo fixo, que não depende do número de mochilas, mais um custo variável, que é proporcional ao número de mochilas produzidas. O custo total cresce de forma linear, e a tabela apresenta esse custo para três quantidades de mochilas produzidas. Quantidade de 30 50 100 mochilas Custo total (R$) 1 050,00 1 650,00 3 150,00 O custo total, em real, para a produção de 80 mochilas será A 2 400,00. B 2 520,00. C 2 550,00. D 2 700,00. E 2 800,00.",
-   "imagens": [
-    "img:enem2024-136.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma empresa produz mochilas escolares sob encomenda. Essa empresa tem um custo total de produção, composto por um custo fixo, que não depende do número de mochilas, mais um custo variável, que é proporcional ao número de mochilas produzidas. O custo total cresce de forma linear, e a tabela apresenta esse custo para três quantidades de mochilas produzidas.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 400,00.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2 520,00.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 550,00.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2 700,00.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2 800,00.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O custo total, em real, para a produção de 80 mochilas será",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Quantidade de mochilas",
+     "30",
+     "50",
+     "100"
+    ],
+    "linhas": [
+     [
+      "Custo total (R&#36;)",
+      "1 050,00",
+      "1 650,00",
+      "3 150,00"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-137",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -47832,40 +47848,60 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade. Meses Maio Jun. Jul. Ago. Set. Out. Média mensal da umidade relativa 66 64 54 46 60 64 do ar (%) Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi A 56. B 58. C 59. D 60. E 62.",
-   "imagens": [
-    "img:enem2024-137.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "56.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "58.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "59.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "60.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "62.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Meses",
+     "Maio",
+     "Jun.",
+     "Jul.",
+     "Ago.",
+     "Set.",
+     "Out."
+    ],
+    "linhas": [
+     [
+      "Média mensal da umidade relativa do ar (%)",
+      "66",
+      "64",
+      "54",
+      "46",
+      "60",
+      "64"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-138",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -47877,40 +47913,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa de engenharia foi contratada para realizar um serviço no valor de R$ 71 250,00. Os sócios da empresa decidiram que 40% desse valor seria destinado ao pagamento de três engenheiros que gerenciaram o serviço. O pagamento para cada um deles será feito de forma diretamente proporcional ao total de horas trabalhadas. O número de dias e o número de horas diárias trabalhadas pelos engenheiros foram, respectivamente: • engenheiro I: 4 dias, numa jornada de 5 horas e meia por dia; • engenheiro II: 5 dias, numa jornada de 4 horas por dia; • engenheiro III: 6 dias, numa jornada de 2 horas e meia por dia. Qual a maior diferença, em real, entre os valores recebidos por esse serviço entre dois desses engenheiros? A 1 000 B 1 500 C 3 500 D 3 800 E 5 250",
-   "imagens": [
-    "img:enem2024-138.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Uma empresa de engenharia foi contratada para realizar um serviço no valor de R&#36; 71 250,00. Os sócios da empresa decidiram que 40% desse valor seria destinado ao pagamento de três engenheiros que gerenciaram o serviço. O pagamento para cada um deles será feito de forma diretamente proporcional ao total de horas trabalhadas. O número de dias e o número de horas diárias trabalhadas pelos engenheiros foram, respectivamente:<br>• engenheiro I: 4 dias, numa jornada de 5 horas e meia por dia;<br>• engenheiro II: 5 dias, numa jornada de 4 horas por dia;<br>• engenheiro III: 6 dias, numa jornada de 2 horas e meia por dia.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 000",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 500",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3 500",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3 800",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5 250",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual a maior diferença, em real, entre os valores recebidos por esse serviço entre dois desses engenheiros?",
+   "transcrita": true
   },
   {
    "id": "enem2024-139",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -47922,40 +47954,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um hospital tem 7 médicos cardiologistas e 6 médicos neurologistas em seu quadro de funcionários. Para executar determinada atividade, a direção desse hospital formará uma equipe com 5 médicos, sendo, pelo menos, 3 cardiologistas. A expressão numérica que representa o número máximo de maneiras distintas de formar essa equipe é 7 ! 6 ! A × 4 ! 4 ! 7 ! 6 ! B × 3 ! × 4 ! 2 ! × 4 ! 7 ! 6 ! 5 ! C \u001e \u001e 3 ! \u001f 4 ! 2 ! \u001f 4 ! 1 ! \u001f 4 ! \u001d 7 ! 6 ! \u001a \u001d 7 ! 6 ! \u001a \u001d 7 ! 6 ! \u001a D \u001b \u001e \u0018 \u001f \u001b \u001e \u0018 \u001f \u001b \u001e \u0018 \u001c 3 ! \u001f 4 ! 2 ! \u001f 4 ! \u0019 \u001c 4 ! \u001f 3 ! 1 ! \u001f 5 ! \u0019 \u001c 5 ! \u001f 2 ! 0 ! \u001f 6 ! ! \u0019 \u001e 7 ! 6 ! \u001b \u001e 7 ! 6 ! \u001b \u001e 7 ! 6 ! \u001b E \u001c \u001f \u0019 \u0018 \u001c \u001f \u0019 \u0018 \u001c \u001f \u0019 \u001d 3 ! \u001f 4 ! 2 ! \u001f 4 ! \u001a \u001d 4 ! \u001f 3 ! 1 ! \u001f 5 ! \u001a \u001d 5 ! \u001f 2 ! 0 ! \u001f 6 ! ! \u001a",
-   "imagens": [
-    "img:enem2024-139.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Um hospital tem 7 médicos cardiologistas e 6 médicos neurologistas em seu quadro de funcionários. Para executar determinada atividade, a direção desse hospital formará uma equipe com 5 médicos, sendo, pelo menos, 3 cardiologistas.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {7!|4!} × {6!|4!} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {7!|3! × 4!} × {6!|2! × 4!} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7!|3! × 4!} + {6!|2! × 4!} + {5!|1! × 4!} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ( {7!|3! × 4!} + {6!|2! × 4!} ) × ( {7!|4! × 3!} + {6!|1! × 5!} ) × ( {7!|5! × 2!} + {6!|0! × 6!} ) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ ( {7!|3! × 4!} × {6!|2! × 4!} ) + ( {7!|4! × 3!} × {6!|1! × 5!} ) + ( {7!|5! × 2!} × {6!|0! × 6!} ) $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A expressão numérica que representa o número máximo de maneiras distintas de formar essa equipe é",
+   "transcrita": true
   },
   {
    "id": "enem2024-140",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Números e operações",
@@ -47967,40 +47995,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para melhorar o fluxo de ônibus em uma avenida que tem dois semáforos, a prefeitura reduzirá o tempo em que cada sinal ficará vermelho, que atualmente é de 15 segundos a cada 60 segundos. Admita que o instante de chegada de um ônibus a cada semáforo é aleatório. O engenheiro de tráfego da prefeitura calculou a probabilidade de um ônibus encontrar cada um deles 15 vermelho, obtendo . A partir daí, estabeleceu uma 60 mesma redução na quantidade do tempo, em segundo, em que cada sinal ficará vermelho, de maneira que a probabilidade de um ônibus encontrar ambos os 4 sinais vermelhos numa mesma viagem seja igual a , 100 considerando os eventos independentes. Para isso, a redução do tempo em que o sinal ficará vermelho, em segundo, estabelecida pelo engenheiro foi de A 1,35. B 3,00. C 9,00. D 12,60. E 13,80.",
-   "imagens": [
-    "img:enem2024-140.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Para melhorar o fluxo de ônibus em uma avenida que tem dois semáforos, a prefeitura reduzirá o tempo em que cada sinal ficará vermelho, que atualmente é de 15 segundos a cada 60 segundos. Admita que o instante de chegada de um ônibus a cada semáforo é aleatório.<br><span class=\"pb\"></span>O engenheiro de tráfego da prefeitura calculou a probabilidade de um ônibus encontrar cada um deles vermelho, obtendo $ {15|60} $. A partir daí, estabeleceu uma mesma redução na quantidade do tempo, em segundo, em que cada sinal ficará vermelho, de maneira que a probabilidade de um ônibus encontrar ambos os sinais vermelhos numa mesma viagem seja igual a $ {4|100} $, considerando os eventos independentes.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,35.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3,00.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "9,00.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12,60.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "13,80.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para isso, a redução do tempo em que o sinal ficará vermelho, em segundo, estabelecida pelo engenheiro foi de",
+   "transcrita": true
   },
   {
    "id": "enem2024-141",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -48012,40 +48036,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A densidade demográfica de uma região é definida como sendo a razão entre o número de habitantes dessa região e sua área, expressa na unidade habitantes por quilômetro quadrado. Uma região R é subdividida em várias outras, sendo uma delas a região Q . A área de Q é igual a três quartos da área de R, e o número de habitantes de Q é igual à metade do número de habitantes de R. As densidades demográficas correspondentes a essas regiões são denotadas por d ( Q ) e d ( R ). A expressão que relaciona d ( Q ) e d ( R ) é 1 A d Q \u001f \u001e \u001d d R \u001f \u001e 4 1 B d Q \u001f \u001e \u001d d R \u001f \u001e 2 3 C d Q \u001f \u001e \u001d d R \u001f \u001e 4 3 D d Q \u001f \u001e \u001d d R \u001f \u001e 2 2 E d Q \u001f \u001e \u001d d R \u001f \u001e 3",
-   "imagens": [
-    "img:enem2024-141.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "A densidade demográfica de uma região é definida como sendo a razão entre o número de habitantes dessa região e sua área, expressa na unidade habitantes por quilômetro quadrado.<br><span class=\"pb\"></span>Uma região <i>R</i> é subdividida em várias outras, sendo uma delas a região <i>Q</i>. A área de <i>Q</i> é igual a três quartos da área de <i>R</i>, e o número de habitantes de <i>Q</i> é igual à metade do número de habitantes de <i>R</i>. As densidades demográficas correspondentes a essas regiões são denotadas por <i>d</i>(<i>Q</i>) e <i>d</i>(<i>R</i>).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ d(Q) = {1|4} d(R) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ d(Q) = {1|2} d(R) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ d(Q) = {3|4} d(R) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ d(Q) = {3|2} d(R) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ d(Q) = {2|3} d(R) $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A expressão que relaciona <i>d</i>(<i>Q</i>) e <i>d</i>(<i>R</i>) é",
+   "transcrita": true
   },
   {
    "id": "enem2024-142",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -48057,35 +48077,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Atualmente, há telefones celulares com telas de diversos tamanhos e em formatos retangulares. Alguns 1 deles apresentam telas medindo 3 polegadas, com 2 determinadas especificações técnicas. Além disso, em muitos modelos, com a inclusão de novas funções no celular, suas telas ficaram maiores, sendo muito comum 5 encontrarmos atualmente telas medindo 4 polegadas, 6 conforme a figura. Disponível em: www.tecmundo.com.br. Acesso em: 5 nov. 2014 (adaptado). A diferença de tamanho, em valor absoluto, entre as medidas, em polegada, das telas do celular 2 e do celular 1, representada apenas com uma casa decimal, é A 0,1. B 0,5. C 1,0. D 1,3. E 1,8.",
-   "imagens": [
-    "img:enem2024-142.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Atualmente, há telefones celulares com telas de diversos tamanhos e em formatos retangulares. Alguns deles apresentam telas medindo $ 3{1|2} $ polegadas, com determinadas especificações técnicas. Além disso, em muitos modelos, com a inclusão de novas funções no celular, suas telas ficaram maiores, sendo muito comum encontrarmos atualmente telas medindo $ 4{5|6} $ polegadas, conforme a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,5.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,0.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,3.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1,8.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A diferença de tamanho, em valor absoluto, entre as medidas, em polegada, das telas do celular 2 e do celular 1, representada apenas com uma casa decimal, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-142-fig.jpg",
+    "alt": "Dois celulares lado a lado: o Celular 1, com tela de 3 1/2 polegadas na diagonal, e o Celular 2, maior, com tela de 4 5/6 polegadas na diagonal",
+    "largura": "72mm",
+    "legenda": "Disponível em: www.tecmundo.com.br. Acesso em: 5 nov. 2014 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-143",
@@ -48130,7 +48154,6 @@
   {
    "id": "enem2024-144",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -48142,35 +48165,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um sistema de polias circulares e correias é um dos mecanismos responsáveis pela transmissão de movimento em máquinas rotativas. O manual de um motor traz uma figura representando um sistema composto por duas polias e uma correia de transmissão, tensionada e perfeitamente ajustada sobre as polias, de modo a não apresentar folgas nos contatos com as polias. Considere que as partes dessa correia que não ficam em contato com as polias são representadas por segmentos de reta tangentes às polias. Para substituição dessa correia, é necessária a especificação de seu comprimento. Considere 3 como valor aproximado para π . A medida do comprimento dessa correia, em centímetro, é A 54. B 60. C 66. D 68. E 72.",
-   "imagens": [
-    "img:enem2024-144.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um sistema de polias circulares e correias é um dos mecanismos responsáveis pela transmissão de movimento em máquinas rotativas. O manual de um motor traz uma figura representando um sistema composto por duas polias e uma correia de transmissão, tensionada e perfeitamente ajustada sobre as polias, de modo a não apresentar folgas nos contatos com as polias. Considere que as partes dessa correia que não ficam em contato com as polias são representadas por segmentos de reta tangentes às polias.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "54.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "60.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "66.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "68.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "72.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para substituição dessa correia, é necessária a especificação de seu comprimento.<br><span class=\"pb\"></span>Considere 3 como valor aproximado para π.<br><span class=\"pb\"></span>A medida do comprimento dessa correia, em centímetro, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-144-fig.jpg",
+    "alt": "Duas polias circulares ligadas por uma correia: a polia menor, de centro A e raio r = 4 cm, e a polia maior, de centro B e raio R = 8 cm; os segmentos retos da correia medem 15 cm cada e o arco da correia na polia menor mede 150°",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-145",
