@@ -32678,7 +32678,6 @@
   {
    "id": "enem2022-159",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -32690,40 +32689,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Cada número que identifica uma agência bancária tem quatro dígitos: N1, N2, N3, N4 mais um dígito verificador N5. N1 N2 N3 N4 N5 Todos esses dígitos são números naturais pertencentes ao conjunto {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. Para a determinação de N5, primeiramente multiplica-se ordenadamente os quatro primeiros dígitos do número da agência por 5, 4, 3 e 2, respectivamente, somam-se os resultados e obtém-se S = 5 N1 + 4 N2 + 3 N3 + 2 N4. Posteriormente, encontra-se o resto da divisão de S por 11, denotando por R esse resto. Dessa forma, N5 é a diferença 11 − R. Considere o número de uma agência bancária cujos quatro primeiros dígitos são 0100. Qual é o dígito verificador N5 dessa agência bancária? A 0 B 6 C 7 D 8 E 9 jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 23 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022",
-   "imagens": [
-    "img:enem2022-159.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Cada número que identifica uma agência bancária tem quatro dígitos: <i>N</i><sub>1</sub>, <i>N</i><sub>2</sub>, <i>N</i><sub>3</sub>, <i>N</i><sub>4</sub> mais um dígito verificador <i>N</i><sub>5</sub>, escrito depois de um hífen: <i>N</i><sub>1</sub><i>N</i><sub>2</sub><i>N</i><sub>3</sub><i>N</i><sub>4</sub> – <i>N</i><sub>5</sub>.<br><span class=\"pb\"></span>Todos esses dígitos são números naturais pertencentes ao conjunto {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. Para a determinação de <i>N</i><sub>5</sub>, primeiramente multiplica-se ordenadamente os quatro primeiros dígitos do número da agência por 5, 4, 3 e 2, respectivamente, somam-se os resultados e obtém-se <i>S</i> = 5<i>N</i><sub>1</sub> + 4<i>N</i><sub>2</sub> + 3<i>N</i><sub>3</sub> + 2<i>N</i><sub>4</sub>.<br><span class=\"pb\"></span>Posteriormente, encontra-se o resto da divisão de <i>S</i> por 11, denotando por <i>R</i> esse resto. Dessa forma, <i>N</i><sub>5</sub> é a diferença 11 − <i>R</i>.<br><span class=\"pb\"></span>Considere o número de uma agência bancária cujos quatro primeiros dígitos são 0100.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "7",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual é o dígito verificador <i>N</i><sub>5</sub> dessa agência bancária?",
+   "transcrita": true
   },
   {
    "id": "enem2022-160",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -32735,40 +32730,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um casal está reformando a cozinha de casa e decidiu comprar um refrigerador novo. Observando a planta da nova cozinha, desenhada na escala de 1 : 50, notaram que o espaço destinado ao refrigerador tinha 3,8 cm de altura e 1,6 cm de largura. Eles sabem que os fabricantes de refrigeradores indicam que, para um bom funcionamento e fácil manejo na limpeza, esses eletrodomésticos devem ser colocados em espaços que permitam uma distância de, pelo menos, 10 cm de outros móveis ou paredes, tanto na parte superior quanto nas laterais. O casal comprou um refrigerador que caberia no local a ele destinado na nova cozinha, seguindo as instruções do fabricante. Esse refrigerador tem altura e largura máximas, em metro, respectivamente, iguais a A 1,80 e 0,60. B 1,80 e 0,70. C 1,90 e 0,80. a=OIMM=É=MIVMK* E 2,00 e 1,00.",
-   "imagens": [
-    "img:enem2022-160.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um casal está reformando a cozinha de casa e decidiu comprar um refrigerador novo. Observando a planta da nova cozinha, desenhada na escala de 1 : 50, notaram que o espaço destinado ao refrigerador tinha 3,8 cm de altura e 1,6 cm de largura. Eles sabem que os fabricantes de refrigeradores indicam que, para um bom funcionamento e fácil manejo na limpeza, esses eletrodomésticos devem ser colocados em espaços que permitam uma distância de, pelo menos, 10 cm de outros móveis ou paredes, tanto na parte superior quanto nas laterais. O casal comprou um refrigerador que caberia no local a ele destinado na nova cozinha, seguindo as instruções do fabricante.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,80 e 0,60.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1,80 e 0,70.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,90 e 0,80.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,00 e 0,90.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,00 e 1,00.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Esse refrigerador tem altura e largura máximas, em metro, respectivamente, iguais a",
+   "transcrita": true
   },
   {
    "id": "enem2022-161",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -32780,40 +32771,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Foram convidadas 32 equipes para um torneio de futebol, que foram divididas em 8 grupos com 4 equipes, sendo que, dentro de um grupo, cada equipe disputa uma única partida contra cada uma das demais equipes de seu grupo. A primeira e a segunda colocadas de cada grupo seguem para realizar as 8 partidas da próxima fase do torneio, chamada oitavas de final. Os vencedores das partidas das oitavas de final seguem para jogar as 4 partidas das quartas de final. Os vencedores das quartas de final disputam as 2 partidas das semifinais, e os vencedores avançam para a grande final, que define a campeã do torneio. Pelas regras do torneio, cada equipe deve ter um período de descanso de, no mínimo, 3 dias entre dois jogos por ela disputados, ou seja, se um time disputar uma partida, por exemplo, num domingo, só poderá disputar a partida seguinte a partir da quinta-feira da mesma semana. O número mínimo de dias necessários para a realização desse torneio é A 22. B 25. C 28. a=QUK* E 64.",
-   "imagens": [
-    "img:enem2022-161.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Foram convidadas 32 equipes para um torneio de futebol, que foram divididas em 8 grupos com 4 equipes, sendo que, dentro de um grupo, cada equipe disputa uma única partida contra cada uma das demais equipes de seu grupo. A primeira e a segunda colocadas de cada grupo seguem para realizar as 8 partidas da próxima fase do torneio, chamada oitavas de final. Os vencedores das partidas das oitavas de final seguem para jogar as 4 partidas das quartas de final. Os vencedores das quartas de final disputam as 2 partidas das semifinais, e os vencedores avançam para a grande final, que define a campeã do torneio.<br><span class=\"pb\"></span>Pelas regras do torneio, cada equipe deve ter um período de descanso de, no mínimo, 3 dias entre dois jogos por ela disputados, ou seja, se um time disputar uma partida, por exemplo, num domingo, só poderá disputar a partida seguinte a partir da quinta-feira da mesma semana.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "22.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "25.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "28.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "48.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "64.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O número mínimo de dias necessários para a realização desse torneio é",
+   "transcrita": true
   },
   {
    "id": "enem2022-162",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -32825,35 +32812,71 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em um jogo de bingo, as cartelas contêm 16 quadrículas dispostas em linhas e colunas. Cada quadrícula tem impresso um número, dentre os inteiros de 1 a 50, sem repetição de número. Na primeira rodada, um número é sorteado, aleatoriamente, dentre os 50 possíveis. Em todas as rodadas, o número sorteado é descartado e não participa dos sorteios das rodadas seguintes. Caso o jogador tenha em sua cartela o número sorteado, ele o assinala na cartela. Ganha o jogador que primeiro conseguir preencher quatro quadrículas que formam uma linha, uma coluna ou uma diagonal, conforme os tipos de situações ilustradas na Figura 1. Preenchimento em linha Preenchimento em coluna Preenchimento em diagonal Figura 1 O jogo inicia e, nas quatro primeiras rodadas, foram sorteados os seguintes números: 03, 27, 07 e 48. Ao final da quarta rodada, somente Pedro possuía uma cartela que continha esses quatro números sorteados, sendo que todos os demais jogadores conseguiram assinalar, no máximo, um desses números em suas cartelas. Observe na Figura 2 o cartão de Pedro após as quatro primeiras rodadas. MP=QU=NO=OT* 49 11 22 05 29 50 19 45 PP=OP=PU=MT=cáÖìê~=O* A probabilidade de Pedro ganhar o jogo em uma das duas próximas rodadas é A 1+1 46 45 _=N+=O=QS=QSì=QR* C 1\u000e 8 46 46u 45 a=N=+=QP=QS=QSì=QR* E 1 \u000e 49 46 46u 45 24 jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç*",
-   "imagens": [
-    "img:enem2022-162.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Em um jogo de bingo, as cartelas contêm 16 quadrículas dispostas em linhas e colunas. Cada quadrícula tem impresso um número, dentre os inteiros de 1 a 50, sem repetição de número. Na primeira rodada, um número é sorteado, aleatoriamente, dentre os 50 possíveis. Em todas as rodadas, o número sorteado é descartado e não participa dos sorteios das rodadas seguintes. Caso o jogador tenha em sua cartela o número sorteado, ele o assinala na cartela. Ganha o jogador que primeiro conseguir preencher quatro quadrículas que formam uma linha, uma coluna ou uma diagonal, conforme os tipos de situações ilustradas na Figura 1.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|46} + {1|45} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|46} + {2|46×45} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|46} + {8|46×45} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {1|46} + {43|46×45} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|46} + {49|46×45} $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O jogo inicia e, nas quatro primeiras rodadas, foram sorteados os seguintes números: 03, 27, 07 e 48. Ao final da quarta rodada, somente Pedro possuía uma cartela que continha esses quatro números sorteados, sendo que todos os demais jogadores conseguiram assinalar, no máximo, um desses números em suas cartelas. Observe na Figura 2 o cartão de Pedro após as quatro primeiras rodadas.<br><span class=\"pb\"></span>A probabilidade de Pedro ganhar o jogo em uma das duas próximas rodadas é",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2022-162-fig.jpg",
+     "alt": "Figura 1: três cartelas 4 × 4 com quatro quadrículas preenchidas (pontos) em linha, em coluna e em diagonal",
+     "largura": "78mm"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "03*",
+      "48*",
+      "12",
+      "27*"
+     ],
+     "linhas": [
+      [
+       "49",
+       "11",
+       "22",
+       "05"
+      ],
+      [
+       "29",
+       "50",
+       "19",
+       "45"
+      ],
+      [
+       "33",
+       "23",
+       "38",
+       "07*"
+      ]
+     ],
+     "largura": "60%",
+     "legenda": "Figura 2: cartão de Pedro após as quatro primeiras rodadas (os números marcados com * foram assinalados)."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2022-163",
@@ -32903,7 +32926,6 @@
   {
    "id": "enem2022-164",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -32915,35 +32937,39 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A esperança de vida ao nascer é o número médio de anos que um indivíduo tende a viver a partir de seu nascimento, considerando dados da população. No Brasil, esse número vem aumentando consideravelmente, como mostra o gráfico. Esperança de vida ao nascer 75",
-   "imagens": [
-    "img:enem2022-164.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A esperança de vida ao nascer é o número médio de anos que um indivíduo tende a viver a partir de seu nascimento, considerando dados da população. No Brasil, esse número vem aumentando consideravelmente, como mostra o gráfico.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "74,23.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "74,51.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "75,07.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "75,23.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "78,49.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Pode-se observar que a esperança de vida ao nascer em 2012 foi exatamente a média dos registrados nos anos de 2011 e 2013. Suponha que esse fato também ocorreu com a esperança de vida ao nascer em 2013, em relação às esperanças de vida de 2012 e de 2014.<br><span class=\"pb\"></span>Caso a suposição feita tenha sido confirmada, a esperança de vida ao nascer no Brasil no ano de 2014 terá sido, em ano, igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-164-fig.jpg",
+    "alt": "Gráfico de linha da esperança de vida ao nascer (anos): 2008, 72,78; 2009, 73,09; 2010, 73,4; 2011, 73,67; 2012, 73,95; 2013, 74,23",
+    "largura": "82mm",
+    "legenda": "Disponível em: http://cod.ibge.gov.br. Acesso em: 6 mar. 2014 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-165",
@@ -32993,7 +33019,6 @@
   {
    "id": "enem2022-166",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -33005,40 +33030,84 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Nos cinco jogos finais da última temporada, com uma média de 18 pontos por jogo, um jogador foi eleito o melhor do campeonato de basquete. Na atual temporada, cinco jogadores têm a chance de igualar ou melhorar essa média. No quadro estão registradas as pontuações desses cinco jogadores nos quatro primeiros jogos das finais deste ano. Jogadores I II III IV V gçÖç=N=NO=NO=NQ=NR=OO* gçÖç=O=OR=NO=NQ=NU=NR* gçÖç=P=OM=OT=NT=ON=OP* gçÖç=Q=OM=OM=OS=ON=NR* O quinto e último jogo será realizado para decidir a equipe campeã e qual o melhor jogador da temporada. O jogador que precisa fazer a menor quantidade de pontos no quinto jogo, para igualar a média de pontos do melhor jogador da temporada passada, é o A I. B II. C III. D IV. E V.",
-   "imagens": [
-    "img:enem2022-166.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Nos cinco jogos finais da última temporada, com uma média de 18 pontos por jogo, um jogador foi eleito o melhor do campeonato de basquete. Na atual temporada, cinco jogadores têm a chance de igualar ou melhorar essa média. No quadro estão registradas as pontuações desses cinco jogadores nos quatro primeiros jogos das finais deste ano.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O quinto e último jogo será realizado para decidir a equipe campeã e qual o melhor jogador da temporada.<br><span class=\"pb\"></span>O jogador que precisa fazer a menor quantidade de pontos no quinto jogo, para igualar a média de pontos do melhor jogador da temporada passada, é o",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Jogadores",
+     "Jogo 1",
+     "Jogo 2",
+     "Jogo 3",
+     "Jogo 4"
+    ],
+    "linhas": [
+     [
+      "I",
+      "12",
+      "25",
+      "20",
+      "20"
+     ],
+     [
+      "II",
+      "12",
+      "12",
+      "27",
+      "20"
+     ],
+     [
+      "III",
+      "14",
+      "14",
+      "17",
+      "26"
+     ],
+     [
+      "IV",
+      "15",
+      "18",
+      "21",
+      "21"
+     ],
+     [
+      "V",
+      "22",
+      "15",
+      "23",
+      "15"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-167",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -33050,40 +33119,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um casal planeja construir em sua chácara uma piscina com o formato de um paralelepípedo reto retângulo com capacidade para 90 000 L de água. O casal contratou uma empresa de construções que apresentou cinco projetos com diferentes combinações nas dimensões internas de profundidade, largura e comprimento. A piscina a ser construída terá revestimento interno em suas paredes e fundo com uma mesma cerâmica, e o casal irá escolher o projeto que exija a menor área de revestimento. As dimensões internas de profundidade, largura e comprimento, respectivamente, para cada um dos projetos, são: • projeto I: 1,8 m, 2,0 m e 25,0 m; • projeto II: 2,0 m, 5,0 m e 9,0 m; • projeto III: 1,0 m, 6,0 m e 15,0 m; • projeto IV: 1,5 m, 15,0 m e 4,0 m; • projeto V: 2,5 m, 3,0 m e 12,0 m. O projeto que o casal deverá escolher será o A I. B II. C III. a=fsK* E V. ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022",
-   "imagens": [
-    "img:enem2022-167.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Um casal planeja construir em sua chácara uma piscina com o formato de um paralelepípedo reto retângulo com capacidade para 90 000 L de água. O casal contratou uma empresa de construções que apresentou cinco projetos com diferentes combinações nas dimensões internas de profundidade, largura e comprimento. A piscina a ser construída terá revestimento interno em suas paredes e fundo com uma mesma cerâmica, e o casal irá escolher o projeto que exija a menor área de revestimento.<br><span class=\"pb\"></span>As dimensões internas de profundidade, largura e comprimento, respectivamente, para cada um dos projetos, são:<br>• projeto I: 1,8 m, 2,0 m e 25,0 m;<br>• projeto II: 2,0 m, 5,0 m e 9,0 m;<br>• projeto III: 1,0 m, 6,0 m e 15,0 m;<br>• projeto IV: 1,5 m, 15,0 m e 4,0 m;<br>• projeto V: 2,5 m, 3,0 m e 12,0 m.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O projeto que o casal deverá escolher será o",
+   "transcrita": true
   },
   {
    "id": "enem2022-168",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -33095,40 +33160,77 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma instituição de ensino superior ofereceu vagas em um processo seletivo de acesso a seus cursos. Finalizadas as inscrições, foi divulgada a relação do número de candidatos por vaga em cada um dos cursos oferecidos. Esses dados são apresentados no quadro. Curso Número de vagas oferecidas Número de candidatos por vaga Administração 30 6 Ciências Contábeis 40 6 Engenharia Elétrica 50 7 História 30 8 Letras OR* 4 Pedagogia OR* 5 Qual foi o número total de candidatos inscritos nesse processo seletivo? A 200 B 400 C 1 200 D 1 235 E 7 200",
-   "imagens": [
-    "img:enem2022-168.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Uma instituição de ensino superior ofereceu vagas em um processo seletivo de acesso a seus cursos. Finalizadas as inscrições, foi divulgada a relação do número de candidatos por vaga em cada um dos cursos oferecidos. Esses dados são apresentados no quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "200",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "400",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 200",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 235",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "7 200",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual foi o número total de candidatos inscritos nesse processo seletivo?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Curso",
+     "Número de vagas oferecidas",
+     "Número de candidatos por vaga"
+    ],
+    "linhas": [
+     [
+      "Administração",
+      "30",
+      "6"
+     ],
+     [
+      "Ciências Contábeis",
+      "40",
+      "6"
+     ],
+     [
+      "Engenharia Elétrica",
+      "50",
+      "7"
+     ],
+     [
+      "História",
+      "30",
+      "8"
+     ],
+     [
+      "Letras",
+      "25",
+      "4"
+     ],
+     [
+      "Pedagogia",
+      "25",
+      "5"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-169",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -33140,35 +33242,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Peças metálicas de aeronaves abandonadas em aeroportos serão recicladas. Uma dessas peças é maciça e tem o formato cilíndrico, com a medida do raio da base igual a 4 cm e a da altura igual a 50 cm. Ela será derretida, e o volume de metal resultante será utilizado para a fabricação de esferas maciças com diâmetro de 1 cm, a serem usadas para confeccionar rolamentos. Para estimar a quantidade de esferas que poderão ser produzidas a partir de cada uma das peças cilíndricas, admite-se que não ocorre perda de material durante o processo de derretimento. Quantas dessas esferas poderão ser obtidas a partir de cada peça cilíndrica? A 800 B 1 200 C 2 400 D 4 800 E 6 400 jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* 27",
-   "imagens": [
-    "img:enem2022-169.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Peças metálicas de aeronaves abandonadas em aeroportos serão recicladas. Uma dessas peças é maciça e tem o formato cilíndrico, com a medida do raio da base igual a 4 cm e a da altura igual a 50 cm. Ela será derretida, e o volume de metal resultante será utilizado para a fabricação de esferas maciças com diâmetro de 1 cm, a serem usadas para confeccionar rolamentos. Para estimar a quantidade de esferas que poderão ser produzidas a partir de cada uma das peças cilíndricas, admite-se que não ocorre perda de material durante o processo de derretimento.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "800",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 200",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 400",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4 800",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "6 400",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Quantas dessas esferas poderão ser obtidas a partir de cada peça cilíndrica?",
+   "transcrita": true
   },
   {
    "id": "enem2022-170",
@@ -33213,7 +33312,6 @@
   {
    "id": "enem2022-171",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Trigonometria",
@@ -33225,35 +33323,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma sala de cinema, para garantir que os espectadores vejam toda a imagem projetada na tela, a disposição das poltronas deve obedecer à norma técnica da Associação Brasileira de Normas Técnicas (ABNT), que faz as seguintes indicações: • Distância mínima (Dmín) entre a tela de projeção e o encosto da poltrona da primeira fileira deve ser de, pelo menos, 60% da largura (L) da tela. • Distância máxima (Dmáx) entre a tela de projeção e o encosto da poltrona da última fileira deve ser o dobro da largura (L) da tela, sendo aceitável uma distância de até 2,9 vezes a largura (L) da tela. Para o espaçamento entre as fileiras de poltronas, é considerada a distância de 1 metro entre os encostos de poltronas em duas fileiras consecutivas. Disponível em: www.ctav.gov.br. Acesso em: 14 nov. 2013. Uma sala de cinema, cuja largura da tela mede 12 m, está montada em conformidade com as normas da ABNT e tem suas dimensões especificadas na figura. Área de instalação de novas poltronas Fileira 1m Dmáx = 2L D= aceitável 2,9L 1m Fileira Dmín= 0,6L Tela L Fileira Pretende-se ampliar essa sala, mantendo-se na mesma posição a tela e todas as poltronas já instaladas, ampliando-se ao máximo a sala para os fundos (área de instalação de novas poltronas), respeitando-se o limite aceitável da norma da ABNT. A intenção é aumentar, ao máximo, a quantidade de poltronas da sala, instalando-se novas unidades, iguais às já instaladas. Quantas fileiras de poltronas a sala comportará após essa ampliação? ^=OS=_=OT=`=OU=a=OV=b=PR* OU* jq=J=OŒ=Çá~=ö=`~ÇÉêåç=R=J=^j^obil=J=N»=^éäáÅ~çãç* ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2022 ENEM 2",
-   "imagens": [
-    "img:enem2022-171.jpg"
-   ],
-   "larguraMm": 180.3,
+   "enunciado": "Em uma sala de cinema, para garantir que os espectadores vejam toda a imagem projetada na tela, a disposição das poltronas deve obedecer à norma técnica da Associação Brasileira de Normas Técnicas (ABNT), que faz as seguintes indicações:<br>• Distância mínima (<i>D</i><sub>mín</sub>) entre a tela de projeção e o encosto da poltrona da primeira fileira deve ser de, pelo menos, 60% da largura (<i>L</i>) da tela.<br>• Distância máxima (<i>D</i><sub>máx</sub>) entre a tela de projeção e o encosto da poltrona da última fileira deve ser o dobro da largura (<i>L</i>) da tela, sendo aceitável uma distância de até 2,9 vezes a largura (<i>L</i>) da tela.<br><span class=\"pb\"></span>Para o espaçamento entre as fileiras de poltronas, é considerada a distância de 1 metro entre os encostos de poltronas em duas fileiras consecutivas.<br><span class=\"pb\"></span>Disponível em: www.ctav.gov.br. Acesso em: 14 nov. 2013.<br><span class=\"pb\"></span>Uma sala de cinema, cuja largura da tela mede 12 m, está montada em conformidade com as normas da ABNT e tem suas dimensões especificadas na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "26",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "27",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "28",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "29",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "35",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Pretende-se ampliar essa sala, mantendo-se na mesma posição a tela e todas as poltronas já instaladas, ampliando-se ao máximo a sala para os fundos (área de instalação de novas poltronas), respeitando-se o limite aceitável da norma da ABNT. A intenção é aumentar, ao máximo, a quantidade de poltronas da sala, instalando-se novas unidades, iguais às já instaladas.<br><span class=\"pb\"></span>Quantas fileiras de poltronas a sala comportará após essa ampliação?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2022-171-fig.jpg",
+    "alt": "Planta da sala: tela de largura L; a primeira fileira a D_mín = 0,6L da tela, a última a D_máx = 2L; a distância aceitável chega a 2,9L (área de instalação de novas poltronas); ao lado, três fileiras de poltronas separadas por 1 m",
+    "largura": "160mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-172",
