@@ -18458,7 +18458,6 @@
   {
    "id": "enem2020-166",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -18470,40 +18469,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "criou belíssimas obras nas quais as imagens se repetiam, com diferentes tamanhos, induzindo ao raciocínio de repetição infinita das imagens. Inspirado por ele, um artista fez um rascunho de uma obra na qual propunha a ideia de construção de uma sequência de infinitos quadrados, cada vez menores, uns sob os outros, conforme indicado na figura. P R 1 S T 1/2 1/4 O quadrado PRST , com lado de medida 1, é o ponto de partida. O segundo quadrado é construído sob ele tomando-se o ponto médio da base do quadrado anterior e criando-se um novo quadrado, cujo lado corresponde à metade dessa base. Essa sequência de construção se repete recursivamente. Qual é a medida do lado do centésimo quadrado construído de acordo com esse padrão? 100 \u001f 1 \u001c A \u001d \u001a \u001e 2 \u001b 99 \u001f 1 \u001c B \u001d \u001a \u001e 2 \u001b 97 \u001f 1 \u001c C \u001d \u001a \u001e 2 \u001b \u0019 98 \u001f 1 \u001c D \u001d \u001a \u001e 2 \u001b \u0019 99 \u001f 1 \u001c E \u001d \u001a \u001e 2 \u001b",
-   "imagens": [
-    "img:enem2020-166.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "O artista gráfico holandês Maurits Cornelius Escher criou belíssimas obras nas quais as imagens se repetiam, com diferentes tamanhos, induzindo ao raciocínio de repetição infinita das imagens. Inspirado por ele, um artista fez um rascunho de uma obra na qual propunha a ideia de construção de uma sequência de infinitos quadrados, cada vez menores, uns sob os outros, conforme indicado na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ({1|2})^{100} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ({1|2})^{99} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ ({1|2})^{97} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ({1|2})^{−98} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ ({1|2})^{−99} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O quadrado <i>PRST</i>, com lado de medida 1, é o ponto de partida. O segundo quadrado é construído sob ele tomando-se o ponto médio da base do quadrado anterior e criando-se um novo quadrado, cujo lado corresponde à metade dessa base. Essa sequência de construção se repete recursivamente.<br><span class=\"pb\"></span>Qual é a medida do lado do centésimo quadrado construído de acordo com esse padrão?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-166-fig.jpg",
+    "alt": "Quadrado PRST de lado 1 e, sob ele, quadrados cada vez menores, com lados 1/2, 1/4 e assim por diante; cada novo quadrado é construído a partir do ponto médio da base do anterior",
+    "largura": "60mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-167",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -18515,40 +18516,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "cinco diferentes tipos de perfume, tendo em estoque na loja as mesmas quantidades de cada um deles. O setor de controle de estoque encaminhou ao gerente registros gráficos descrevendo os preços unitários de cada perfume, em real, e a quantidade vendida de cada um deles, em percentual, ocorrida no mês de novembro. Preço do perfume por unidade (R$) 200 170 150 100 80 Perfume I Perfume II Perfume III Perfume IV Perfume V Porcentagem da quantidade vendida de cada perfume Perfume I 13% Perfume II Perfume V 10% 32% Perfume III 16% Perfume IV 29% Dados a chegada do final de ano e o aumento das vendas, a gerência pretende aumentar a quantidade estocada do perfume do tipo que gerou a maior arrecadação em espécie, em real, no mês de novembro. Nessas condições, qual o tipo de perfume que deverá ter maior reposição no estoque? A I B II C III D IV E V",
-   "imagens": [
-    "img:enem2020-167.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O gerente de uma loja de cosméticos colocou à venda cinco diferentes tipos de perfume, tendo em estoque na loja as mesmas quantidades de cada um deles. O setor de controle de estoque encaminhou ao gerente registros gráficos descrevendo os preços unitários de cada perfume, em real, e a quantidade vendida de cada um deles, em percentual, ocorrida no mês de novembro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "V",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Dados a chegada do final de ano e o aumento das vendas, a gerência pretende aumentar a quantidade estocada do perfume do tipo que gerou a maior arrecadação em espécie, em real, no mês de novembro.<br><span class=\"pb\"></span>Nessas condições, qual o tipo de perfume que deverá ter maior reposição no estoque?",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2020-167-fig1.jpg",
+     "alt": "Gráfico de colunas do preço do perfume por unidade (R$): Perfume I, 200; Perfume II, 170; Perfume III, 150; Perfume IV, 100; Perfume V, 80",
+     "largura": "83mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:enem2020-167-fig2.jpg",
+     "alt": "Gráfico de setores da porcentagem da quantidade vendida de cada perfume: I, 13%; II, 10%; III, 16%; IV, 29%; V, 32%",
+     "largura": "83mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2020-168",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -18560,40 +18571,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "caixas-d’água: tipo A e tipo B. Ambas têm formato cilíndrico e possuem o mesmo volume, e a altura da caixa-d’água do tipo B é igual a 25% da altura da caixa-d’água do tipo A. Se R denota o raio da caixa-d’água do tipo A, então o raio da caixa-d’água do tipo B é R A 2 B 2 R C 4 R D 5 R E 16 R",
-   "imagens": [
-    "img:enem2020-168.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma loja de materiais de construção vende dois tipos de caixas-d’água: tipo A e tipo B. Ambas têm formato cilíndrico e possuem o mesmo volume, e a altura da caixa-d’água do tipo B é igual a 25% da altura da caixa-d’água do tipo A.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {R|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2<i>R</i>",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "4<i>R</i>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5<i>R</i>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "16<i>R</i>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Se <i>R</i> denota o raio da caixa-d’água do tipo A, então o raio da caixa-d’água do tipo B é",
+   "transcrita": true
   },
   {
    "id": "enem2020-169",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -18605,40 +18612,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "de uma cidade determina que sejam obedecidos os seguintes critérios: • afastamento mínimo de 4 m da rua; • afastamento mínimo de 1 m da divisa com outro lote; • área total construída da casa entre 40% e 50% da área total do lote. Um construtor submeteu para aprovação na prefeitura dessa cidade uma planta com propostas para a construção de casas em seus 5 lotes. Cada lote tem área medindo 200 m². A imagem apresenta um esquema, sem escala, no qual estão representados os lotes, as ruas e os afastamentos considerados nos projetos entre as casas e as divisas dos lotes. As medidas indicadas no esquema estão expressas em metro. 1 1 4 1 1 1 20 Casa 1 Casa 2 Lote 4 4 10 10 Rua 10 10 4 2 4 Casa 3 1 2 Casa 4 2 Lote 20 Rua 4 2 1 4 1 20 Casa 5 Lote 1 Lote A prefeitura aprovará apenas a planta da casa A 1. B 2. C 3. D 4. E 5.",
-   "imagens": [
-    "img:enem2020-169.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A lei municipal para a edificação de casas em lotes de uma cidade determina que sejam obedecidos os seguintes critérios:<br>• afastamento mínimo de 4 m da rua;<br>• afastamento mínimo de 1 m da divisa com outro lote;<br>• área total construída da casa entre 40% e 50% da área total do lote.<br><span class=\"pb\"></span>Um construtor submeteu para aprovação na prefeitura dessa cidade uma planta com propostas para a construção de casas em seus 5 lotes. Cada lote tem área medindo 200 m<sup>2</sup>.<br><span class=\"pb\"></span>A imagem apresenta um esquema, sem escala, no qual estão representados os lotes, as ruas e os afastamentos considerados nos projetos entre as casas e as divisas dos lotes. As medidas indicadas no esquema estão expressas em metro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A prefeitura aprovará apenas a planta da casa",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-169-fig.jpg",
+    "alt": "Esquema dos lotes, de 20 m de largura cada: Casa 1 e Casa 2 (quadras de 10 m) em lotes lado a lado, Casa 3 e Casa 4 abaixo e Casa 5 mais abaixo; as medidas dos afastamentos das casas em relação à rua e às divisas estão indicadas (4, 1, 2 m, entre outras)",
+    "largura": "65mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-170",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -18650,40 +18659,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "personagem “TOM MARVOLO RIDDLE” gerou a frase “I AM LORD VOLDEMORT”. Suponha que Harry quisesse formar todos os anagramas da frase “I AM POTTER”, de tal forma que as vogais e consoantes aparecessem sempre intercaladas, e sem considerar o espaçamento entre as letras. Nessas condições, o número de anagramas formados é dado por A 9! B 4! 5! C 2 × 4! 5! 9! D 2 4! 5! E 2",
-   "imagens": [
-    "img:enem2020-170.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Nos livros <i>Harry Potter</i>, um anagrama do nome do personagem “TOM MARVOLO RIDDLE” gerou a frase “I AM LORD VOLDEMORT”.<br><span class=\"pb\"></span>Suponha que Harry quisesse formar todos os anagramas da frase “I AM POTTER”, de tal forma que as vogais e consoantes aparecessem sempre intercaladas, e sem considerar o espaçamento entre as letras.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9!",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4! 5!",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 × 4! 5!",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {9!|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4! 5!|2} $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, o número de anagramas formados é dado por",
+   "transcrita": true
   },
   {
    "id": "enem2020-171",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -18695,40 +18700,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A exposição a barulhos excessivos, como os que percebemos em geral em trânsitos intensos, casas noturnas e espetáculos musicais, podem provocar insônia, estresse, infarto, perda de audição, entre outras enfermidades. De acordo com a Organização Mundial da Saúde, todo e qualquer som que ultrapasse os 55 decibéis (unidade de intensidade do som) já pode ser considerado nocivo para a saúde. O gráfico foi elaborado a partir da medição do ruído produzido, durante um dia, em um canteiro de obras. Decibel 55 0 Hora 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 Disponível em: www.revistaencontro.com.br. Acesso em: 12 ago. 2020 (adaptado). Nesse dia, durante quantas horas o ruído esteve acima de 55 decibéis? A 5 B 8 C 10 D 11 E 13",
-   "imagens": [
-    "img:enem2020-171.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A exposição a barulhos excessivos, como os que percebemos em geral em trânsitos intensos, casas noturnas e espetáculos musicais, podem provocar insônia, estresse, infarto, perda de audição, entre outras enfermidades. De acordo com a Organização Mundial da Saúde, todo e qualquer som que ultrapasse os 55 decibéis (unidade de intensidade do som) já pode ser considerado nocivo para a saúde. O gráfico foi elaborado a partir da medição do ruído produzido, durante um dia, em um canteiro de obras.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "13",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nesse dia, durante quantas horas o ruído esteve acima de 55 decibéis?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-171-fig.jpg",
+    "alt": "Gráfico do nível de ruído em decibel ao longo das horas do dia (de 0 a 24); a reta de 55 dB é cruzada pela curva, que tem vários picos acima dessa marca",
+    "largura": "85mm",
+    "legenda": "Disponível em: www.revistaencontro.com.br. Acesso em: 12 ago. 2020 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-172",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -18740,35 +18748,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O técnico de um time de basquete pretende aumentar a estatura média de sua equipe de 1,93 m para, no mínimo, 1,99 m. Para tanto, dentre os 15 jogadores que fazem parte de sua equipe, irá substituir os quatro mais baixos, de estaturas: 1,78 m, 1,82 m, 1,84 m e 1,86 m. Para isso, o técnico contratou um novo jogador de 2,02 m. Os outros três jogadores que ele ainda precisa contratar devem satisfazer à sua necessidade de aumentar a média das estaturas da equipe. Ele fi xará a média das estaturas para os três jogadores que ainda precisa contratar dentro do critério inicialmente estabelecido. Qual deverá ser a média mínima das estaturas, em metro, que ele deverá fi xar para o grupo de três novos jogadores que ainda irá contratar? A 1,96 B 1,98 C 2,05 D 2,06 E 2,08",
-   "imagens": [
-    "img:enem2020-172.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O técnico de um time de basquete pretende aumentar a estatura média de sua equipe de 1,93 m para, no mínimo, 1,99 m. Para tanto, dentre os 15 jogadores que fazem parte de sua equipe, irá substituir os quatro mais baixos, de estaturas: 1,78 m, 1,82 m, 1,84 m e 1,86 m. Para isso, o técnico contratou um novo jogador de 2,02 m. Os outros três jogadores que ele ainda precisa contratar devem satisfazer à sua necessidade de aumentar a média das estaturas da equipe. Ele fixará a média das estaturas para os três jogadores que ainda precisa contratar dentro do critério inicialmente estabelecido.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,96",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,98",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,05",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,06",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "2,08",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual deverá ser a média mínima das estaturas, em metro, que ele deverá fixar para o grupo de três novos jogadores que ainda irá contratar?",
+   "transcrita": true
   },
   {
    "id": "enem2020-173",
