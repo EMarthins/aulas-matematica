@@ -18823,7 +18823,6 @@
   {
    "id": "enem2020-174",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -18835,40 +18834,52 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "de uma família com internet, mensalidade escolar e mesada do filho. Internet Mensalidade escolar Mesada do filho 120 700 400 No início do ano, a internet e a mensalidade escolar tiveram acréscimos, respectivamente, de 20% e 10%. Necessitando manter o valor da despesa mensal total com os itens citados, a família reduzirá a mesada do fi lho. Qual será a porcentagem da redução da mesada? A 15,0 B 23,5 C 30,0 D 70,0 E 76,5",
-   "imagens": [
-    "img:enem2020-174.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O quadro representa os gastos mensais, em real, de uma família com internet, mensalidade escolar e mesada do filho.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "15,0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "23,5",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "30,0",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "70,0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "76,5",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "No início do ano, a internet e a mensalidade escolar tiveram acréscimos, respectivamente, de 20% e 10%. Necessitando manter o valor da despesa mensal total com os itens citados, a família reduzirá a mesada do filho.<br><span class=\"pb\"></span>Qual será a porcentagem da redução da mesada?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Internet",
+     "Mensalidade escolar",
+     "Mesada do filho"
+    ],
+    "linhas": [
+     [
+      "120",
+      "700",
+      "400"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-175",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -18880,35 +18891,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "reto-retângulo, colocou-se água até a altura de 8 cm e um objeto, que ficou flutuando na superfície da água. Para retirar o objeto de dentro do recipiente, a altura da coluna de água deve ser de, pelo menos, 15 cm. Para a coluna de água chegar até essa altura, é necessário colocar dentro do recipiente bolinhas de volume igual a 6 cm³ cada, que ficarão totalmente submersas. 17 cm 8 cm 3 cm 4 cm O número mínimo de bolinhas necessárias para que se possa retirar o objeto que flutua na água, seguindo as instruções dadas, é de A 14. B 16. C 18. D 30.",
-   "imagens": [
-    "img:enem2020-175.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Num recipiente com a forma de paralelepípedo reto-retângulo, colocou-se água até a altura de 8 cm e um objeto, que ficou flutuando na superfície da água.<br><span class=\"pb\"></span>Para retirar o objeto de dentro do recipiente, a altura da coluna de água deve ser de, pelo menos, 15 cm. Para a coluna de água chegar até essa altura, é necessário colocar dentro do recipiente bolinhas de volume igual a 6 cm<sup>3</sup> cada, que ficarão totalmente submersas.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "14.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "16.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "18.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "30.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "34.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O número mínimo de bolinhas necessárias para que se possa retirar o objeto que flutua na água, seguindo as instruções dadas, é de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-175-fig.jpg",
+    "alt": "Recipiente em forma de paralelepípedo reto-retângulo com 17 cm de altura e base de 4 cm por 3 cm; a água chega a 8 cm de altura e um objeto flutua na superfície",
+    "largura": "46mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-176",
@@ -18953,7 +18967,6 @@
   {
    "id": "enem2020-177",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -18965,40 +18978,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "empresa cujo capital é dividido, entre os três, em partes proporcionais a: 4, 6 e 6, respectivamente. Com a intenção de igualar a participação dos três sócios no capital da empresa, Antônio pretende adquirir uma fração do capital de cada um dos outros dois sócios. A fração do capital de cada sócio que Antônio deverá adquirir é 1 A 2 1 B 3 1 C 9 2 D 3 4 E 3",
-   "imagens": [
-    "img:enem2020-177.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Antônio, Joaquim e José são sócios de uma empresa cujo capital é dividido, entre os três, em partes proporcionais a: 4, 6 e 6, respectivamente. Com a intenção de igualar a participação dos três sócios no capital da empresa, Antônio pretende adquirir uma fração do capital de cada um dos outros dois sócios.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|9} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4|3} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A fração do capital de cada sócio que Antônio deverá adquirir é",
+   "transcrita": true
   },
   {
    "id": "enem2020-178",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -19010,40 +19019,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "esmaltada usada, sobretudo, no revestimento de paredes. A origem das técnicas de fabricação de azulejos é oriental, mas sua expansão pela Europa traz consigo uma diversificação de estilos, padrões e usos, que podem ser decorativos, utilitários e arquitetônicos. Disponível em: www.itaucultural.org.br. Acesso em: 31 jul. 2012. Azulejos no formato de octógonos regulares serão utilizados para cobrir um painel retangular conforme ilustrado na figura. Entre os octógonos e na borda lateral dessa área, será necessária a colocação de 15 azulejos de outros formatos para preencher os 15 espaços em branco do painel. Uma loja oferece azulejos nos seguintes formatos: 1 – Triângulo retângulo isósceles; 2 – Triângulo equilátero; 3 – Quadrado. Os azulejos necessários para o devido preenchimento das áreas em branco desse painel são os de formato A 1. B 3. C 1 e 2. D 1 e 3. E 2 e 3.",
-   "imagens": [
-    "img:enem2020-178.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Azulejo designa peça de cerâmica vitrificada e/ou esmaltada usada, sobretudo, no revestimento de paredes. A origem das técnicas de fabricação de azulejos é oriental, mas sua expansão pela Europa traz consigo uma diversificação de estilos, padrões e usos, que podem ser decorativos, utilitários e arquitetônicos.<br><span class=\"pb\"></span>Disponível em: www.itaucultural.org.br. Acesso em: 31 jul. 2012.<br><span class=\"pb\"></span>Azulejos no formato de octógonos regulares serão utilizados para cobrir um painel retangular conforme ilustrado na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 e 2.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 e 3.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "2 e 3.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Entre os octógonos e na borda lateral dessa área, será necessária a colocação de 15 azulejos de outros formatos para preencher os 15 espaços em branco do painel. Uma loja oferece azulejos nos seguintes formatos:<br>1 – Triângulo retângulo isósceles;<br>2 – Triângulo equilátero;<br>3 – Quadrado.<br><span class=\"pb\"></span>Os azulejos necessários para o devido preenchimento das áreas em branco desse painel são os de formato",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-178-fig.jpg",
+    "alt": "Painel retangular coberto por oito azulejos octogonais regulares em duas fileiras de quatro; entre os octógonos e nas bordas ficam 15 espaços em branco",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-179",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -19055,40 +19066,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "No período de fi m de ano, o síndico de um condomínio resolveu colocar, em um poste, uma iluminação natalina em formato de cone, lembrando uma árvore de Natal, conforme as figuras 1 e 2. Poste h = 3 m c Figura 1 Figura 2 A árvore deverá ser feita colocando-se mangueiras de iluminação, consideradas segmentos de reta de mesmo comprimento, a partir de um ponto situado a 3 m de altura no poste até um ponto de uma circunferência de fi xação, no chão, de tal forma que esta fique dividida em 20 arcos iguais. O poste está fi xado no ponto C (centro da circunferência) perpendicularmente ao plano do chão. Para economizar, ele utilizará mangueiras de iluminação aproveitadas de anos anteriores, que juntas totalizaram pouco mais de 100 m de comprimento, dos quais ele decide usar exatamente 100 m e deixar o restante como reserva. Para que ele atinja seu objetivo, o raio, em metro, da circunferência deverá ser de A 4,00. B 4,87. C 5,00. D 5,83. E 6,26.",
-   "imagens": [
-    "img:enem2020-179.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "No período de fim de ano, o síndico de um condomínio resolveu colocar, em um poste, uma iluminação natalina em formato de cone, lembrando uma árvore de Natal, conforme as figuras 1 e 2.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4,00.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "4,87.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5,00.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5,83.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6,26.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A árvore deverá ser feita colocando-se mangueiras de iluminação, consideradas segmentos de reta de mesmo comprimento, a partir de um ponto situado a 3 m de altura no poste até um ponto de uma circunferência de fixação, no chão, de tal forma que esta fique dividida em 20 arcos iguais. O poste está fixado no ponto <i>C</i> (centro da circunferência) perpendicularmente ao plano do chão.<br><span class=\"pb\"></span>Para economizar, ele utilizará mangueiras de iluminação aproveitadas de anos anteriores, que juntas totalizaram pouco mais de 100 m de comprimento, dos quais ele decide usar exatamente 100 m e deixar o restante como reserva.<br><span class=\"pb\"></span>Para que ele atinja seu objetivo, o raio, em metro, da circunferência deverá ser de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-179-fig.jpg",
+    "alt": "Figura 1: fotografia de uma árvore de Natal luminosa em forma de cone. Figura 2: esquema do cone com o poste de altura h = 3 m no centro C da circunferência da base",
+    "largura": "83mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-180",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -19100,35 +19113,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "projetada por arquitetos, comumente em praças e jardins, para criar um ambiente para pessoas ou plantas, no qual há uma quebra da quantidade de luz, dependendo da posição do sol. É feito como um estrado de vigas iguais, postas paralelas e perfeitamente em fi la, como ilustra a fi gura. 30 cm 30 cm Um arquiteto projeta um pergolado com vãos de 30 cm de distância entre suas vigas, de modo que, no solstício de verão, a trajetória do sol durante o dia seja realizada num plano perpendicular à direção das vigas, e que o sol da tarde, no momento em que seus raios fi zerem 30° com a posição a pino, gere a metade da luz que passa no pergolado ao meio-dia. Para atender à proposta do projeto elaborado pelo arquiteto, as vigas do pergolado devem ser construídas de maneira que a altura, em centímetro, seja a mais próxima possível de A 9. B 15. C 26. D 52. E 60.",
-   "imagens": [
-    "img:enem2020-180.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Pergolado é o nome que se dá a um tipo de cobertura projetada por arquitetos, comumente em praças e jardins, para criar um ambiente para pessoas ou plantas, no qual há uma quebra da quantidade de luz, dependendo da posição do sol. É feito como um estrado de vigas iguais, postas paralelas e perfeitamente em fila, como ilustra a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "15.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "26.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "52.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Um arquiteto projeta um pergolado com vãos de 30 cm de distância entre suas vigas, de modo que, no solstício de verão, a trajetória do sol durante o dia seja realizada num plano perpendicular à direção das vigas, e que o sol da tarde, no momento em que seus raios fizerem 30° com a posição a pino, gere a metade da luz que passa no pergolado ao meio-dia.<br><span class=\"pb\"></span>Para atender à proposta do projeto elaborado pelo arquiteto, as vigas do pergolado devem ser construídas de maneira que a altura, em centímetro, seja a mais próxima possível de",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-180-fig.jpg",
+    "alt": "Pergolado formado por vigas paralelas dispostas em fila, com vãos de 30 cm entre elas (detalhe ampliado)",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-1e",
@@ -25376,7 +25392,6 @@
   {
    "id": "enem2021-138",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -25388,36 +25403,120 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 138. FA A AFF E FF DRA Bhennnool A Copa do Brasil teve, até a edição de 2018, 15 times diferentes como campeões da competição, conforme apresentado na imagem. Suponha que, como homenagem aos times campeões, a Confederação Brasileira de Futebol (CBF) pretenda colocar um painel na sua sede. Esse painel teria 6 linhas e, em cada uma delas, 5 placas, referentes a cada edição da competição, com o nome do time vencedor, o brasão e o ano do título. O painel deve ser fabricado de modo que a primeira linha só tenha clubes gaúchos (Internacional, Grêmio e Juventude); a segunda, apenas times cariocas (Flamengo, Vasco e Fluminense); a terceira, somente times mineiros (Cruzeiro e Atlético Mineiro); a quarta, exclusivamente clubes paulistas (Corinthians, Palmeiras, Santos, Paulista FC, Santo André), e as duas últimas sem nenhuma restrição. Q OZE, 2 A E/ FAS so ABS O: ESASEAV-S UA. 0: ee O Ie) FBPA TRY, Suas Cc MEN Cruzeiro Grêmio Corinthians Flamengo Palmeiras (Minas Gerais) (Rio Grande do Sul) (São Paulo) (Rio de Janeiro) (São Paulo) 06 Títulos 05 Títulos 03 Títulos 03 Títulos 03 Títulos FER AAA TH À 2 A , WWW SO W á) 2120? CRICIÚMA E.C. Internacional Criciúma Vasco da Gama Atlético Mineiro Santos (Rio Grande do Sul) (Santa Catarina) (Rio de Janeiro) (Minas Gerais) (São Paulo) 01 Título 01 Título 01 Título 01 Título 01 Título dd * 2 BE CLA EM Fluminense Sport Paulista FC Santo André",
-   "imagens": [
-    "img:enem2021-138.jpg"
-   ],
-   "larguraMm": 179.9,
+   "enunciado": "A Copa do Brasil teve, até a edição de 2018, 15 times diferentes como campeões da competição, conforme apresentado na imagem. Suponha que, como homenagem aos times campeões, a Confederação Brasileira de Futebol (CBF) pretenda colocar um painel na sua sede. Esse painel teria 6 linhas e, em cada uma delas, 5 placas, referentes a cada edição da competição, com o nome do time vencedor, o brasão e o ano do título. O painel deve ser fabricado de modo que a primeira linha só tenha clubes gaúchos (Internacional, Grêmio e Juventude); a segunda, apenas times cariocas (Flamengo, Vasco e Fluminense); a terceira, somente times mineiros (Cruzeiro e Atlético Mineiro); a quarta, exclusivamente clubes paulistas (Corinthians, Palmeiras, Santos, Paulista FC, Santo André), e as duas últimas sem nenhuma restrição.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {7!|5!}·{5!|3!}·{7!|6!}·{9!|3!·3!}·10! $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "7! · 5! · 7! · 9! · 10!",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "30!",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {7!|5!·5!}·{7!|5!·2!}·{9!|5!·4!} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {9!|3!}·5!·{7!|2!}·{9!|4!}·10! $",
      "ok": false
     }
    ],
    "resolucao": "",
-   "anulada": true
+   "anulada": true,
+   "pergunta": "Qual expressão determina a quantidade de painéis diferentes que a CBF poderá montar?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Time",
+     "Estado",
+     "Títulos"
+    ],
+    "linhas": [
+     [
+      "Cruzeiro",
+      "Minas Gerais",
+      "06"
+     ],
+     [
+      "Grêmio",
+      "Rio Grande do Sul",
+      "05"
+     ],
+     [
+      "Corinthians",
+      "São Paulo",
+      "03"
+     ],
+     [
+      "Flamengo",
+      "Rio de Janeiro",
+      "03"
+     ],
+     [
+      "Palmeiras",
+      "São Paulo",
+      "03"
+     ],
+     [
+      "Internacional",
+      "Rio Grande do Sul",
+      "01"
+     ],
+     [
+      "Criciúma",
+      "Santa Catarina",
+      "01"
+     ],
+     [
+      "Vasco da Gama",
+      "Rio de Janeiro",
+      "01"
+     ],
+     [
+      "Atlético Mineiro",
+      "Minas Gerais",
+      "01"
+     ],
+     [
+      "Santos",
+      "São Paulo",
+      "01"
+     ],
+     [
+      "Fluminense",
+      "Rio de Janeiro",
+      "01"
+     ],
+     [
+      "Sport",
+      "Pernambuco",
+      "01"
+     ],
+     [
+      "Paulista FC",
+      "São Paulo",
+      "01"
+     ],
+     [
+      "Santo André",
+      "São Paulo",
+      "01"
+     ],
+     [
+      "Juventude",
+      "Rio Grande do Sul",
+      "01"
+     ]
+    ],
+    "largura": "80%",
+    "legenda": "Disponível em: http://campeoesdofutebol.com.br. Acesso em: 1 nov. 2018 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2022-1e",
@@ -31518,7 +31617,6 @@
   {
    "id": "enem2022-136",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -31530,35 +31628,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2022 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma universidade, atuam professores que estão enquadrados funcionalmente pela sua maior titulação: mestre ou doutor. Nela há, atualmente, 60 mestres e 40 doutores. Os salários mensais dos professores mestres e dos doutores são, respectivamente, R$ 8 000,00 e R$ 12 000,00. A diretoria da instituição pretende proporcionar um aumento salarial diferenciado para o ano seguinte, de tal forma que o salário médio mensal dos professores dessa instituição não ultrapasse R$ 12 240,00. A universidade já estabeleceu que o aumento salarial será de 25% para os mestres e precisa ainda definir o percentual de reajuste para os doutores. Mantido o número atual de professores com suas atuais titulações, o aumento salarial, em porcentagem, a ser concedido aos doutores deverá ser de, no máximo, A 14,4. B 20,7. C 22,0. D 30,0. E 37,5.",
-   "imagens": [
-    "img:enem2022-136.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Em uma universidade, atuam professores que estão enquadrados funcionalmente pela sua maior titulação: mestre ou doutor. Nela há, atualmente, 60 mestres e 40 doutores. Os salários mensais dos professores mestres e dos doutores são, respectivamente, R&amp;#36; 8 000,00 e R&amp;#36; 12 000,00.<br><span class=\"pb\"></span>A diretoria da instituição pretende proporcionar um aumento salarial diferenciado para o ano seguinte, de tal forma que o salário médio mensal dos professores dessa instituição não ultrapasse R&amp;#36; 12 240,00. A universidade já estabeleceu que o aumento salarial será de 25% para os mestres e precisa ainda definir o percentual de reajuste para os doutores.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "14,4.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "20,7.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "22,0.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "30,0.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "37,5.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Mantido o número atual de professores com suas atuais titulações, o aumento salarial, em porcentagem, a ser concedido aos doutores deverá ser, no máximo,",
+   "transcrita": true
   },
   {
    "id": "enem2022-137",
