@@ -84341,7 +84341,6 @@
   },
   {
    "id": "cdb-c15-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84353,41 +84352,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. Unirio Considere a função real definida por f(x) = 1 + 18 – 2x 2 e um ponto A (2, 1). Sabe-se que a distância de um ponto P do gráfico de f ao ponto A é 10. O ponto P encontra-se no: a) 1º quadrante. b) 2º quadrante. c) 3º quadrante. d) 4º quadrante. e) ponto origem do sistema x 0 y.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-046.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a função real definida por $ f(x) = 1 + √{18 − 2x^2} $ e um ponto $ A(2, 1) $. Sabe-se que a distância de um ponto $ P $ do gráfico de $ f $ ao ponto $ A $ é $ √{10} $. O ponto $ P $ encontra-se no:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1º quadrante.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2º quadrante.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3º quadrante.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4º quadrante.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "ponto origem do sistema $ x 0 y $.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84399,20 +84392,44 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. UFSC Sejam f e g funções de | R em | R definidas por: f(x) = –x + 3 e g(x) = x 2 – 1 . Determine a soma dos números associados à(s) proposição(ões) VERDADEIRA(S) . 01) A reta que representa a função f intercepta o eixo das ordenadas em (0, 3). 02) f é uma função crescente. 04) –1 e +1 são os zeros da função g. 08) Im(g) = {y \u0001 | R / y \u0002 –1}. 16) A função inversa da f é definida por f –1 (x) = –x + 3. 32) O valor de g(f(1)) é 3. 64) O vértice do gráfico de g é o ponto (0, 0).",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-047.jpg"
-   ],
-   "larguraMm": 127.4,
+   "enunciado": "Sejam $ f $ e $ g $ funções de ℝ em ℝ definidas por: $ f(x) = −x + 3 $ e $ g(x) = x^2 − 1 $.<br><span class=\"pb\"></span>Determine a soma dos números associados à(s) proposição(ões) <b>VERDADEIRA(S)</b>.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "61"
+   "gabarito": "61",
+   "afirmacoes": [
+    {
+     "t": "A reta que representa a função $ f $ intercepta o eixo das ordenadas em $ (0, 3) $.",
+     "ok": true
+    },
+    {
+     "t": "$ f $ é uma função crescente.",
+     "ok": false
+    },
+    {
+     "t": "−1 e +1 são os zeros da função $ g $.",
+     "ok": true
+    },
+    {
+     "t": "$ Im(g) = \\{y ∈ ℝ | y ≥ −1\\} $.",
+     "ok": true
+    },
+    {
+     "t": "A função inversa da $ f $ é definida por $ f^{−1}(x) = −x + 3 $.",
+     "ok": true
+    },
+    {
+     "t": "O valor de $ g(f(1)) $ é 3.",
+     "ok": true
+    },
+    {
+     "t": "O vértice do gráfico de $ g $ é o ponto $ (0, 0) $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84424,41 +84441,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. Fempar O conjunto imagem da função f ( x ) = | x – 1| – | x + 2| é: a) [– 3 ; 3] b) [– 3 ; + ∞ [ c) ]– ∞ ; 3] d) | R + e) | R",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-048.jpg"
-   ],
-   "larguraMm": 65.4,
+   "enunciado": "O conjunto imagem da função $ f(x) = |x − 1| − |x + 2| $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ [−3; 3] $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ [−3; +∞[ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ]−∞; 3] $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ℝ_+ $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "ℝ",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84470,41 +84481,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. Unifor-CE Na figura abaixo têm-se os gráficos da função exponencial f e de sua inversa g. O valor de k tal que g(k) = 3 é: a) 2 b) 3 c) 4 d) 6 e) 8 g x f 1 2 -1 1 y 1 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-049.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Na figura abaixo têm-se os gráficos da função exponencial $ f $ e de sua inversa $ g $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "O valor de $ k $ tal que $ g(k) = 3 $ é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-049-fig.jpg",
+    "alt": "Gráficos de f (exponencial crescente, passando por (−1, 1/2), (0, 1) e (1, 2)) e de g (logarítmica, passando por (1/2, −1), (1, 0) e (2, 1))",
+    "largura": "75mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-050",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84516,37 +84528,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2x – 3 50. UEMG O domínio da função f(x) = 1 é o intervalo real: a) x ≥ 2 b) x < 3 c) x ≥ 0 d) x > 3 3 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-050.jpg"
-   ],
-   "larguraMm": 70.4,
+   "enunciado": "O domínio da função $ f(x) = {1|√{2x − 3}} $ é o intervalo real:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x ≥ {2|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x < {3|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x ≥ 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x > {3|2} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -84558,33 +84564,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A B x y 51. UFMG Observe esta figura: Nessa figura, estão representados o ponto A, cuja abscissa é 1, e o ponto B, cuja ordenada é 5. Esses dois pontos pertencem ao gráfico da função f(x) = (x + 1)(x 3 + ax + b), em que a e b são números reais. Assim sendo, o valor de f(4) é: a) 65 c) 170 b) 115 d) 225",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-051.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe esta figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "65",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "115",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "170",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "225",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Nessa figura, estão representados o ponto A, cuja abscissa é 1, e o ponto B, cuja ordenada é 5. Esses dois pontos pertencem ao gráfico da função $ f(x) = (x + 1)(x^3 + ax + b) $, em que $ a $ e $ b $ são números reais.<br><span class=\"pb\"></span>Assim sendo, o valor de $ f(4) $ é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c15-051-fig.jpg",
+    "alt": "Plano cartesiano com o ponto A de abscissa 1 sobre o eixo x e o ponto B de ordenada 5 sobre o eixo y",
+    "largura": "45mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-052",
