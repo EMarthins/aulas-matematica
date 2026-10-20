@@ -96993,7 +96993,7 @@
     "tipo": "img",
     "src": "img:cdb-c22-001-fig.jpg",
     "alt": "Tirinha “Os Bichos”, de Fred Wagner (O Globo, 16/03/2001): o leão diz que já convidou a Lana para sair 492 vezes e que em todas ela disse “não”; no quadro seguinte pergunta “O que significa isso?” e a resposta é “Que ela tem uma paciência de santa!”",
-    "largura": "126mm"
+    "largura": "131mm"
    },
    "transcrita": true
   },
@@ -98123,7 +98123,6 @@
   },
   {
    "id": "cdb-c22-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98135,41 +98134,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. U.Católica-DF Um atleta está se preparando para disputar a maratona nos jogos de Sid- ney. No último treino, a planilha do cronometrista mostrou que, nos primeiros 10 minutos, o atleta havia percorrido 3,5 km. Nos 10 minutos seguintes, 3,4 km; nos 10 minutos a seguir, 3,3 km e assim sucessivamente; 100 metros a menos a cada 10 minutos de corrida. É correto afirmar que: a) O atleta levará 3 horas para percorrer 42 km. b) Nesse último treino, o atleta percorrerá 20 km em 2 horas. c) O atleta completará os 22 km em 2 horas e 20 minutos. d) O atleta percorrerá 30 km em 2 horas e 20 minutos. e)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-031.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um atleta está se preparando para disputar a maratona nos jogos de Sidney. No último treino, a planilha do cronometrista mostrou que, nos primeiros 10 minutos, o atleta havia percorrido 3,5 km. Nos 10 minutos seguintes, 3,4 km; nos 10 minutos a seguir, 3,3 km e assim sucessivamente; 100 metros a menos a cada 10 minutos de corrida.<br><span class=\"pb\"></span>É correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "O atleta levará 3 horas para percorrer 42 km.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Nesse último treino, o atleta percorrerá 20 km em 2 horas.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "O atleta completará os 22 km em 2 horas e 20 minutos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "O atleta percorrerá 30 km em 2 horas e 20 minutos.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "O atleta percorrerá 42 km em 2 horas e 30 minutos.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98181,20 +98174,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. UnB-DF Se uma seqüência de números reais { a n }, n = 1, 2, 3, … é uma progressão aritmé- tica (PA) de razão r , então a n = a 1 + (n – 1) r . Dessa forma, os pontos do plano cartesiano que têm coordenadas (1, a 1 ), (2, a 2 ), (3, a 3 ), … estão alinhados. Para essa seqüência, a soma de seus k primeiros termos é igual a ( a 1 + a k )k . Suponha, agora, que a seqüência de números reais { b n }, n = 1, 2, 3, … não constitua uma PA, mas que a seqüência { c n }, formada pelas diferenças de seus termos consecutivos, isto é, c n = b n + 1 – b n , seja uma PA. Nesse caso, { b n } é denominada pr",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-032.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se uma seqüência de números reais $ \\{a_n\\} $, $ n = 1, 2, 3, … $ é uma progressão aritmética (PA) de razão $ r $, então $ a_n = a_1 + (n − 1)r $. Dessa forma, os pontos do plano cartesiano que têm coordenadas $ (1, a_1) $, $ (2, a_2) $, $ (3, a_3) $, … estão alinhados. Para essa seqüência, a soma de seus $ k $ primeiros termos é igual a $ {(a_1 + a_k)k|2} $.<br><span class=\"pb\"></span>Suponha, agora, que a seqüência de números reais $ \\{b_n\\} $, $ n = 1, 2, 3, … $ não constitua uma PA, mas que a seqüência $ \\{c_n\\} $, formada pelas diferenças de seus termos consecutivos, isto é, $ c_n = b_{n+1} − b_n $, seja uma PA. Nesse caso, $ \\{b_n\\} $ é denominada <b>progressão aritmética de ordem 2</b>.<br><span class=\"pb\"></span>Com base nesses conceitos e considerando $ \\{b_n\\} $, $ n = 1, 2, 3, … $ uma PA de ordem 2 e $ \\{c_n\\} $ a seqüência formada pelas diferenças de seus termos consecutivos, como definido acima, julgue os itens que se seguem.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – V"
+   "gabarito": "F – V – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "A seqüência 1, 4, 11, 22, 36, 53, 73 é exemplo de uma PA de ordem 2.",
+     "ok": false
+    },
+    {
+     "t": "A seqüência cuja fórmula do termo geral é $ d_n = n^2 − n $, para $ n = 1, 2, 3, … $, é uma PA de ordem 2.",
+     "ok": true
+    },
+    {
+     "t": "$ b_n = b_1 + c_1 + c_2 + … + c_{n−1} $.",
+     "ok": true
+    },
+    {
+     "t": "$ c_k = c_1 + (k − 1)r $, em que $ r = b_3 − 2b_2 + b_1 $.",
+     "ok": true
+    },
+    {
+     "t": "Os pontos do plano cartesiano que têm coordenadas $ (1, b_1) $, $ (2, b_2) $, $ (3, b_3) $, $ (4, b_4) $, … estão sobre uma parábola.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98206,41 +98215,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. UEPI A seqüência de termo geral x n = 3n + 2, para todo n ∈ N*, é uma: a) progressão geométrica crescente; b) progressão aritmética decrescente; c) progressão aritmética crescente; d) progressão geométrica cujo 3 o termo é 11; e) progressão aritmética de razão 2.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-033.jpg"
-   ],
-   "larguraMm": 109.2,
+   "enunciado": "A seqüência de termo geral $ x_n = 3n + 2 $, para todo $ n ∈ ℕ^* $, é uma:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "progressão geométrica crescente;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "progressão aritmética decrescente;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "progressão aritmética crescente;",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "progressão geométrica cujo 3º termo é 11;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "progressão aritmética de razão 2.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98252,41 +98255,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. U. Católica de Salvador-BA Num triângulo retângulo de lados em progressão aritmética, a tangente do menor ângulo agudo é igual a: a) 4 b) 5 c) 4 d) 3 e) 3 3 4 5 4 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-034.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Num triângulo retângulo de lados em progressão aritmética, a tangente do menor ângulo agudo é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {5|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {4|5} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|4} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {3|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98298,41 +98295,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. UEPI Sobre o 5º termo de uma P.A. na qual a soma dos n primeiros termos é dada por n(n – 2), podemos afirmar que é: a) impossível calcular por falta de dados. d) 7 b) 7 e) 9 c) 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-035.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sobre o 5º termo de uma P.A. na qual a soma dos $ n $ primeiros termos é dada por $ n(n − 2) $, podemos afirmar que é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "impossível calcular por falta de dados.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {7|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98344,37 +98335,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. Unifor-CE Em um triângulo, as medidas dos ângulos internos estão em progressão arit- mética. Se a menor dessas medidas é 10 ° , a maior delas é: a) 90 ° b) 100 ° c) 110 ° d) 120 ° e) 130 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-036.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Em um triângulo, as medidas dos ângulos internos estão em progressão aritmética. Se a menor dessas medidas é 10°, a maior delas é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "90°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "100°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "110°",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "120°",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "130°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-037",
@@ -98418,7 +98404,6 @@
   },
   {
    "id": "cdb-c22-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98430,41 +98415,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. UFRS As medidas do lado, do perímetro e da área de um triângulo eqüilátero são, nessa ordem, números em progressão aritmética. A razão dessa progressão é: a) 20 3 b) 20 c) 40 3 d) 20 3 e) 40 3 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-038.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "As medidas do lado, do perímetro e da área de um triângulo eqüilátero são, nessa ordem, números em progressão aritmética. A razão dessa progressão é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 20{√3|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 40{√3|3} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 20√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 40√3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98476,41 +98455,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. PUC-PR O 4º e o 9º termos de uma progressão aritmética crescente são as raízes de x 2 – 8x – 9 = 0. O 1º termo desta progressão é: a) –1 b) –5 c) –3 d) –9 e) –7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-039.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O 4º e o 9º termos de uma progressão aritmética crescente são as raízes de $ x^2 − 8x − 9 = 0 $.<br><span class=\"pb\"></span>O 1º termo desta progressão é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−9",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "−7",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98522,20 +98495,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. UnB-DF Considere a constru- ção de escadas, em diversos es- tágios, efetuada empilhando-se cubos de mesmas dimensões, como mostrado na figura se- guinte, na qual os cubos que servem de apoio para os apa- rentes estão ocultos. Com referência à situação des- crita e representando por a n o número total de cubos empregados no n -ésimo estágio, julgue os seguintes itens. ( ) a 6 > 60 ( ) No n-ésimo estágio, existem n ( n + 1) cubos na escada n . ( ) a 10 = (10 x 11) + a 9 ( ) Se e n representa o número de cubos da escada n no n -ésimo estágio, então a seqüência das diferenças d n = e n – e n –",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-040.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a construção de escadas, em diversos estágios, efetuada empilhando-se cubos de mesmas dimensões, como mostrado na figura seguinte, na qual os cubos que servem de apoio para os aparentes estão ocultos.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V"
+   "gabarito": "F – V – V – V",
+   "pergunta": "Com referência à situação descrita e representando por $ a_n $ o número total de cubos empregados no $ n $-ésimo estágio, julgue os seguintes itens.",
+   "afirmacoes": [
+    {
+     "t": "$ a_6 > 60 $",
+     "ok": false
+    },
+    {
+     "t": "No $ n $-ésimo estágio, existem $ n{(n + 1)|2} $ cubos na escada $ n $.",
+     "ok": true
+    },
+    {
+     "t": "$ a_{10} = {10 × 11|2} + a_9 $",
+     "ok": true
+    },
+    {
+     "t": "Se $ e_n $ representa o número de cubos da escada $ n $ no $ n $-ésimo estágio, então a seqüência das diferenças $ d_n = e_n − e_{n−1} $, para $ n ≥ 2 $, forma uma progressão aritmética.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c22-040-fig.jpg",
+    "alt": "Três estágios de empilhamento de cubos em forma de escada: o 1º estágio tem 1 cubo (escada 1); o 2º estágio tem 3 cubos (escadas 1 e 2); o 3º estágio tem 6 cubos (escadas 1, 2 e 3)",
+    "largura": "78mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98547,20 +98539,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. UFMT Relativamente à função real f, definida para todo x real positivo através de f(x) = 1 + log 2 x, julgue os itens. ( ) O gráfico de f intercepta o eixo x no ponto de coordenadas 1 , 0 . ( ) Os números f(1), f(2), f(4) e f(8) formam, nesta ordem, uma progressão aritmética de razão 2. ( ) f(x) ≥ –1, se x ≥ 1 . 2 4 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-041.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Relativamente à função real $ f $, definida para todo $ x $ real positivo através de $ f(x) = 1 + log_2 x $, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F"
+   "gabarito": "V – F – V",
+   "afirmacoes": [
+    {
+     "t": "O gráfico de $ f $ intercepta o eixo $ x $ no ponto de coordenadas $ ({1|2}, 0) $.",
+     "ok": true
+    },
+    {
+     "t": "Os números $ f(1) $, $ f(2) $, $ f(4) $ e $ f(8) $ formam, nesta ordem, uma progressão aritmética de razão 2.",
+     "ok": false
+    },
+    {
+     "t": "$ f(x) ≥ −1 $, se $ x ≥ {1|4} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98572,41 +98572,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. UEPI Considere uma P.A. cuja soma dos n primeiros termos é dada pela fórmula n 2 + 4n, para todo n ∈ N. Então, a razão dessa P.A. é: a) r = 1 b) r = 2 c) r = 3 d) r = 4 e) r = 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-042.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere uma P.A. cuja soma dos $ n $ primeiros termos é dada pela fórmula $ n^2 + 4n $, para todo $ n ∈ ℕ $. Então, a razão dessa P.A. é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ r = 1 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ r = 2 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ r = 3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ r = 4 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ r = 5 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98618,16 +98612,11 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. U. E. Ponta Grossa-PR Uma herança de 105 alqueires deve ser dividida entre cinco pes- soas, de tal forma que as cinco partes estejam em progressão aritmética. Saben- do-se que 1 da soma das três maiores partes equivale à soma das duas menores, de quantos alqueires será a parte maior? 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-043.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma herança de 105 alqueires deve ser dividida entre cinco pessoas, de tal forma que as cinco partes estejam em progressão aritmética. Sabendo-se que $ {1|4} $ da soma das três maiores partes equivale à soma das duas menores, de quantos alqueires será a parte maior?",
    "resolucao": "",
-   "tipo": "soma",
-   "gabarito": "35"
+   "tipo": "aberta",
+   "gabarito": "35",
+   "transcrita": true
   },
   {
    "id": "cdb-c22-044",
@@ -98671,7 +98660,6 @@
   },
   {
    "id": "cdb-c22-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98683,41 +98671,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. U. F. Santa Maria-RS Tisiu ficou sem parceiro para jogar bolita (bola de gude); então pegou sua coleção de bolitas e formou uma seqüência de “T” (a inicial de seu nome), conforme a fi- gura: Supondo que o guri conseguiu formar 10 “T” completos, pode-se, seguindo o mesmo padrão, afirmar que ele possuía: a) mais de 300 bolitas. d) exatamente 300 bolitas. b) pelo menos 230 bolitas. e) exatamente 41 bolitas. c) menos de 220 bolitas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-045.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Tisiu ficou sem parceiro para jogar bolita (bola de gude); então pegou sua coleção de bolitas e formou uma seqüência de “T” (a inicial de seu nome), conforme a figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "mais de 300 bolitas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "pelo menos 230 bolitas.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "menos de 220 bolitas.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "exatamente 300 bolitas.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "exatamente 41 bolitas.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Supondo que o guri conseguiu formar 10 “T” completos, pode-se, seguindo o mesmo padrão, afirmar que ele possuía:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c22-045-fig.jpg",
+    "alt": "Sequência de letras T formadas por bolinhas pretas: a barra superior e a haste vertical ficam maiores a cada T (o primeiro tem 3 bolinhas na barra e 2 na haste)",
+    "largura": "56mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98729,41 +98718,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. PUC-PR Se dividirmos o décimo primeiro termo de uma progressão aritmética pelo seu terceiro termo, obtemos 4, enquanto, se dividirmos o nono termo da progressão pelo seu quarto termo, obtemos 2 e o resto 4. A soma dos 20 primeiros termos dessa progressão é: a) 250 b) 430 c) 610 d) 590 e) 820",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-046.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se dividirmos o décimo primeiro termo de uma progressão aritmética pelo seu terceiro termo, obtemos 4, enquanto, se dividirmos o nono termo da progressão pelo seu quarto termo, obtemos 2 e o resto 4. A soma dos 20 primeiros termos dessa progressão é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "250",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "430",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "610",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "590",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "820",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98775,41 +98758,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. U. E. Londrina-PR Sabendo-se que as raízes da equação x 3 – 3x 2 – 6x + 8 = 0 formam uma progressão aritmética, é correto concluir que a: a) menor delas é –2. d) maior delas é 2. b) menor delas é –1. e) maior delas é 3. c) maior delas é 1.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-047.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sabendo-se que as raízes da equação $ x^3 − 3x^2 − 6x + 8 = 0 $ formam uma progressão aritmética, é correto concluir que a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "menor delas é −2.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "menor delas é −1.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "maior delas é 1.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "maior delas é 2.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "maior delas é 3.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98821,20 +98798,22 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. U.Católica-DF Observe a seqüência de triângulos A n B n C n , em que n = 1, 2, 3, … 3 B 1 C 1 A 1 B 2 C 2 A 2 B 3 C 3 A 3 B 4 C 4 A 4 No vigésimo triângulo da seqüência acima, triângulo A 20 B 20 C 20 , teremos x triângulos não hachurados. Com base nessas informações, determine o valor da expressão x – 40.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-048.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe a seqüência de triângulos $ A_nB_nC_n $, em que $ n = 1, 2, 3, … $",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "87",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "No vigésimo triângulo da seqüência acima, triângulo $ A_{20}B_{20}C_{20} $, teremos <b>x</b> triângulos não hachurados. Com base nessas informações, determine o valor da expressão $ {x|3} − 40 $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c22-048-fig.jpg",
+    "alt": "Quatro triângulos equiláteros divididos em triângulos menores: o 1º (A1B1C1) não é dividido; o 2º tem 4 triângulos, um hachurado; o 3º tem 9 triângulos, três hachurados; o 4º tem 16 triângulos, seis hachurados",
+    "largura": "96mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-049",
@@ -98878,7 +98857,6 @@
   },
   {
    "id": "cdb-c22-050",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98890,16 +98868,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "50. AEU-DF Uma seqüência numérica que apresenta a diferença entre termos consecutivos constante é denominada Progressão Aritmética (PA). Em relação a tal seqüência analise e julgue os itens. ( ) Numa PA cujos termos são a n temos: a 11 – a 9 = a 23 – a 21 . ( ) Se uma PA tem primeiro termo positivo e razão também positiva, então todos os termos dessa seqüência são positivos. ( ) É possível calcular a soma dos 25 primeiros termos de uma PA conhecendo apenas o valor de seu décimo-terceiro termo. ( ) De uma PA sabe-se que a 1 = 3 e a razão vale 12, logo é correto concluir que exata- mente 24 term",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-050.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma seqüência numérica que apresenta a diferença entre termos consecutivos constante é denominada Progressão Aritmética (PA). Em relação a tal seqüência analise e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F"
+   "gabarito": "V – V – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "Numa PA cujos termos são $ a_n $ temos: $ a_{11} − a_9 = a_{23} − a_{21} $.",
+     "ok": true
+    },
+    {
+     "t": "Se uma PA tem primeiro termo positivo e razão também positiva, então todos os termos dessa seqüência são positivos.",
+     "ok": true
+    },
+    {
+     "t": "É possível calcular a soma dos 25 primeiros termos de uma PA conhecendo apenas o valor de seu décimo-terceiro termo.",
+     "ok": true
+    },
+    {
+     "t": "De uma PA sabe-se que $ a_1 = 3 $ e a razão vale 12, logo é correto concluir que exatamente 24 termos dessa PA são menores do que 72.",
+     "ok": false
+    },
+    {
+     "t": "O vigésimo termo de uma PA é 26, portanto sua razão é positiva.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-051",
@@ -98926,7 +98921,6 @@
   },
   {
    "id": "cdb-c22-052",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -98938,37 +98932,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "52. U. Caxias do Sul-RS Fenômenos cíclicos estudados nas mais diferentes áreas, como na Engenharia (oscilações), na Biologia (batimentos cardíacos, respiração), na Economia (variações sazonais), quando modelados matematicamente originam funções periódicas, entre as quais as funções definidas por f(x) = sen(x) e g(x) = cos(x), cujo período é 2 π . Assim, se x 1 , x 2 , …, x 100 são os 100 primeiros termos de uma progressão aritmética de razão π cujo primeiro terno é π , então o valor de cos (x 1 + x 2 + … + x 100 ) é igual a: a) cos π b) sen π c) cos 4 π d) sen 4 π e) cos 5 π 3 3 3 3 3 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-052.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Fenômenos cíclicos estudados nas mais diferentes áreas, como na Engenharia (oscilações), na Biologia (batimentos cardíacos, respiração), na Economia (variações sazonais), quando modelados matematicamente originam funções periódicas, entre as quais as funções definidas por $ f(x) = sen(x) $ e $ g(x) = cos(x) $, cujo período é $ 2π $.<br><span class=\"pb\"></span>Assim, se $ x_1, x_2, …, x_{100} $ são os 100 primeiros termos de uma progressão aritmética de razão $ {π|3} $ cujo primeiro termo é $ {π|3} $, então o valor de $ cos(x_1 + x_2 + … + x_{100}) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ cos {π|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ sen {π|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ cos {4π|3} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ sen {4π|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ cos {5π|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-053",
@@ -98995,7 +98984,6 @@
   },
   {
    "id": "cdb-c22-054",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99007,20 +98995,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "54. UFMS Em uma progressão aritmética, a soma dos n primeiros termos vale 2 n – n 2 para todo número natural positivo n . Então, é correto afirmar que: (01) o segundo termo da progressão é igual a – 1. (02) a soma dos três primeiros termos da progressão é igual a – 1. (04) o primeiro termo da progressão é igual a 1. (08) o terceiro termo da progressão é igual a –3. (16) a razão da progressão é igual a 2. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-054.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Em uma progressão aritmética, a soma dos <b>n</b> primeiros termos vale $ 2n − n^2 $ para todo número natural positivo <b>n</b>. Então, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "13"
+   "gabarito": "13",
+   "afirmacoes": [
+    {
+     "t": "o segundo termo da progressão é igual a −1.",
+     "ok": true
+    },
+    {
+     "t": "a soma dos três primeiros termos da progressão é igual a −1.",
+     "ok": false
+    },
+    {
+     "t": "o primeiro termo da progressão é igual a 1.",
+     "ok": true
+    },
+    {
+     "t": "o terceiro termo da progressão é igual a −3.",
+     "ok": true
+    },
+    {
+     "t": "a razão da progressão é igual a 2.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-055",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99032,41 +99036,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "55. UFMS A interpolação de 5 meios aritméticos entre os números –8 e 22 resulta na PA: a) (–8, –2, 4, …) d) (–8, –3, –1, 3, …) b) (–8, –3, 2, 7, 12, …) e) Os dados são insuficientes para calcular. c) (–8, –4, 0, 4, …)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-055.jpg"
-   ],
-   "larguraMm": 128.6,
+   "enunciado": "A interpolação de 5 meios aritméticos entre os números −8 e 22 resulta na PA:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (−8, −2, 4, …) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (−8, −3, 2, 7, 12, …) $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ (−8, −4, 0, 4, …) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (−8, −3, −1, 3, …) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Os dados são insuficientes para calcular.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-056",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99078,37 +99076,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "56. F.I.Anápolis-GO As medidas dos ângulos internos de um triângulo estão em P.A. e o maior ângulo é o triplo do menor. Então, a diferença entre o maior e o menor ângulo desse triângulo é: a) π b) π c) 2 π d) π e) 3 π 3 6 9 2 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-056.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "As medidas dos ângulos internos de um triângulo estão em P.A. e o maior ângulo é o triplo do menor. Então, a diferença entre o maior e o menor ângulo desse triângulo é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|3} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {π|6} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {2π|9} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {π|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3π|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-057",
@@ -99181,7 +99174,6 @@
   },
   {
    "id": "cdb-c22-059",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99193,41 +99185,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "59. F.I.Anápolis-GO Interpolando cinco meios geométricos entre 2 e 8 2, o termo médio obtido será: a) 2 b) 2 2 c) 4 d) 4 2 e) 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-059.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Interpolando cinco meios geométricos entre $ √2 $ e $ 8√2 $, o termo médio obtido será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2√2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 4√2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-060",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99239,41 +99225,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "60. UEPI O valor da soma 1 – 3 + 6 + 12 + … é igual a: a) 1 b) 2 c) 4 d) 21 e) 46 5 35 245 \u0004 \u0005 25 25 25 25 25",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-060.jpg"
-   ],
-   "larguraMm": 107.8,
+   "enunciado": "O valor da soma $ 1 − ({3|5} + {6|35} + {12|245} + …) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|25} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {2|25} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {4|25} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {21|25} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {46|25} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-061",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99285,16 +99265,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "61. UFBA Sobre seqüências com n termos, sendo n > 1, pode-se afirmar: (01) Numa P.A., se a 1 = 1 + n e S n = 1 + 3 n , então a n = 2. (02) Se, numa P.A., a soma de três termos consecutivos é 24 e o seu produto é 440, então a razão é 8. (04) Para que 2x, 3x e x 2 sejam termos consecutivos de uma P.A. crescente, x deve ser um número natural. (08) Na P.G. em que a 1 = 1 + n , a razão é 2, e o segundo termo é 8 , o número de termos é 3. (16) A soma dos quatro primeiros termos da P.G. em que a 1 = 1 + 3n e q = 2 é 97,5. Dê, como resposta, a soma das alternativas corretas. 2 n 2 n 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-061.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sobre seqüências com $ n $ termos, sendo $ n > 1 $, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "29 = 01 + 04 + 08 + 16"
+   "gabarito": "29 = 01 + 04 + 08 + 16",
+   "afirmacoes": [
+    {
+     "t": "Numa P.A., se $ a_1 = {1 + n|n} $ e $ S_n = {1 + 3n|2} $, então $ a_n = 2 $.",
+     "ok": true
+    },
+    {
+     "t": "Se, numa P.A., a soma de três termos consecutivos é 24 e o seu produto é 440, então a razão é 8.",
+     "ok": false
+    },
+    {
+     "t": "Para que $ 2x $, $ 3x $ e $ x^2 $ sejam termos consecutivos de uma P.A. crescente, $ x $ deve ser número natural.",
+     "ok": true
+    },
+    {
+     "t": "Na P.G. em que $ a_1 = {1 + n|n} $, a razão é 2, e o segundo termo é $ {8|3} $, o número de termos é 3.",
+     "ok": true
+    },
+    {
+     "t": "A soma dos quatro primeiros termos da P.G. em que $ a_1 = {1 + 3n|2} $ e $ q = 2 $ é 97,5.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-062",
