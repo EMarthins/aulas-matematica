@@ -99625,7 +99625,6 @@
   },
   {
    "id": "cdb-c22-069",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99637,20 +99636,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "69. U.Católica-GO Julgue os itens abaixo: ( ) Um vendedor de melancias conseguiu um ponto para comercializar suas 1210 peças. No primeiro dia vendeu 10 melancias e no segundo 30. Se continuar assim, isto é, a cada dia vendendo o triplo do dia imediatamente anterior, levará exatamente 5 dias para vender todo o seu estoque de melancias. ( ) Ao comprar 3 quilos de lombo e 4 quilos de toucinho, uma senhora pagou ao açou- gueiro a quantia de 23 reais. Mantidos os preços, será possível a uma pessoa comprar 1 quilo de lombo e 9 quilos de toucinho e desembolsar a mesma importância. ( ) Três irmãos, Pe",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-069.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F – V"
+   "gabarito": "V – V – V – F – F – V",
+   "afirmacoes": [
+    {
+     "t": "Um vendedor de melancias conseguiu um ponto para comercializar suas 1210 peças. No primeiro dia vendeu 10 melancias e no segundo 30. Se continuar assim, isto é, a cada dia vendendo o triplo do dia imediatamente anterior, levará exatamente 5 dias para vender todo o seu estoque de melancias.",
+     "ok": true
+    },
+    {
+     "t": "Ao comprar 3 quilos de lombo e 4 quilos de toucinho, uma senhora pagou ao açougueiro a quantia de 23 reais. Mantidos os preços, será possível a uma pessoa comprar 1 quilo de lombo e 9 quilos de toucinho e desembolsar a mesma importância.",
+     "ok": true
+    },
+    {
+     "t": "Três irmãos, Pedro, Carla e Tereza moram em um mesmo apartamento e resolveram dividir as despesas mensais, que somam 900 reais, em partes diretamente proporcionais aos seus salários, que são de 10, 6 e 4 salários mínimos, respectivamente. Assim, Pedro contribui com 450 reais por mês.",
+     "ok": true
+    },
+    {
+     "t": "Suponha que você investiu X reais na bolsa de valores e teve um prejuízo de 15% no primeiro mês. No segundo mês, você recuperou o prejuízo e ainda teve um lucro de 20% sobre X, transformando seu capital inicial em 300 mil reais. Conclui-se, assim, que o valor de X é de 260 mil reais.",
+     "ok": false
+    },
+    {
+     "t": "O montante (M) do capital (C) aplicado a juros compostos a uma taxa de 5% ao mês, durante três meses é calculado pela fórmula $ M = C(1 + 0,5)^3 $.",
+     "ok": false
+    },
+    {
+     "t": "Numa entrevista realizada pelo Departamento de Ciências Econômicas da UCG com 50 pessoas, da classe média de Goiânia, acerca de suas preferências por aplicações de seus excedentes financeiros, obteve-se o seguinte resultado: 21 pessoas disseram que aplicam em fundos de renda fixa; 34 em cadernetas de poupança e 5 não aplicam em nenhuma das modalidades. Deste modo, 10 pessoas aplicam nas duas modalidades (obs: uma mesma pessoa pode aplicar em mais de uma modalidade).",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-070",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99662,20 +99681,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "70. AEU-DF Na figura abaixo sabe-se que as circunferências têm raios iguais e cada uma passa pelos centros de outras duas, exceto a primeira delas. \u0001 \u0002 O ângulo β assinalado na figura é construído a partir do ângulo α , da seguinte forma: unindo-se por um segmento de reta o ponto extremo de α ao centro da circunferência seguinte, obtém-se β na interseção do segmento com a segunda circunferência. Os de- mais ângulos da figura são construídos de forma análoga. Considere que o processo possa repetir-se por n circunferências e julgue os itens. ( ) Se α = 90 ° , então uma das retas que formam o âng",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-070.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Na figura abaixo sabe-se que as circunferências têm raios iguais e cada uma passa pelos centros de outras duas, exceto a primeira delas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – V – V"
+   "gabarito": "V – V – V – V – V",
+   "pergunta": "O ângulo β assinalado na figura é construído a partir do ângulo α, da seguinte forma: unindo-se por um segmento de reta o ponto extremo de α ao centro da circunferência seguinte, obtém-se β na interseção do segmento com a segunda circunferência. Os demais ângulos da figura são construídos de forma análoga. Considere que o processo possa repetir-se por n circunferências e julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "Se $ α = 90° $, então uma das retas que formam o ângulo α é tangente à segunda circunferência.",
+     "ok": true
+    },
+    {
+     "t": "Se $ α = 90° $, então $ β = 45° $",
+     "ok": true
+    },
+    {
+     "t": "$ β = {1|2} × α $ para qualquer valor de α.",
+     "ok": true
+    },
+    {
+     "t": "Os ângulos construídos na figura têm suas medidas em Progressão Geométrica de razão 0,5.",
+     "ok": true
+    },
+    {
+     "t": "A soma das medidas de todos os infinitos ângulos que se pode obter na figura é igual a 2α.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c22-070-fig.jpg",
+    "alt": "Quatro circunferências de mesmo raio enfileiradas, cada uma passando pelo centro da seguinte, e uma quinta, tracejada, indicando a continuação; um segmento vertical sai do centro da primeira, e os ângulos α e β estão marcados nos centros da primeira e da segunda circunferência",
+    "largura": "98mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-071",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99687,41 +99729,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "71. Unifor-CE O décimo termo da seqüência 1 , 1 , 2 , … é: a) 1 b) 2 c) 1 d) 2 e) 1 8 2 \u0004 2 4 \u0005 16 32 32 16",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-071.jpg"
-   ],
-   "larguraMm": 107.2,
+   "enunciado": "O décimo termo da seqüência $ ({1|√2}, {1|2}, {√2|4}, …) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|8} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√2|16} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|16} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√2|32} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|32} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-072",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99733,41 +99769,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "72. Unifor-CE Para todo número inteiro n, n > 0, a seqüência cujo termo geral é a n = –2 1– n é uma progressão: a) aritmética de razão – 3 . b) aritmética de razão – 1 . c) geométrica de razão – 1 . d) geométrica de razão 1 . e) geométrica de razão 2. 2 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-072.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Para todo número inteiro $ n $, $ n > 0 $, a seqüência cujo termo geral é $ a_n = −2^{1−n} $ é uma progressão:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "aritmética de razão $ −{3|2} $.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "aritmética de razão $ −{1|2} $.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "geométrica de razão $ −{1|2} $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "geométrica de razão $ {1|2} $.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "geométrica de razão 2.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-073",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99779,41 +99809,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "73. PUC-RS Se o valor de um automóvel novo é P 0 e sofre uma desvalorização de 12% ao ano, o preço do veículo após x anos de uso é: a) P = P 0 + 12 x d) P = P 0 + (0,88) x b) P = P 0 + (1,2) x e) P = P 0 (0,88) x c) P = P 0 (0,12) x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-073.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se o valor de um automóvel novo é $ P_0 $ e sofre uma desvalorização de 12% ao ano, o preço do veículo após $ x $ anos de uso é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ P = P_0 + 12x $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ P = P_0 + (1,2)^x $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ P = P_0 (0,12)^x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ P = P_0 + (0,88)^x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ P = P_0 (0,88)^x $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-074",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99825,20 +99849,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "74. U. E. Maringá-PR Os comprimentos, em centímetros, de uma seqüência infinita de cir- cunferências, são dados pela P.G. (8 π , 4 π , 2 π , π , π , ...). Assinale a(s) alternativa(s) correta(s): 01) Os raios das circunferências decrescem segundo uma P.G de razão 1 . 02) Os diâmetros das circunferências decrescem segundo uma P.G. de razão 1. 04) A soma das áreas dos círculos correspondentes às circunferências é 64 π cm 2 . 08) O termo geral da P.G. dada é a n = π 2 4 –n . 16) A circunferência de comprimento π 2 –50 cm é o 54º elemento da P.G. dada. 32) O volume da esfera de raio igual ao raio",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-074.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Os comprimentos, em centímetros, de uma seqüência infinita de circunferências, são dados pela P.G.<br><span class=\"pb\"></span>$ (8π, 4π, 2π, π, {π|2}, …) $.<br><span class=\"pb\"></span>Assinale a(s) alternativa(s) correta(s) (dê, como resposta, a soma das proposições corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "29 = 01 + 04 + 08 + 16"
+   "gabarito": "29 = 01 + 04 + 08 + 16",
+   "afirmacoes": [
+    {
+     "t": "Os raios das circunferências decrescem segundo uma P.G de razão $ {1|2} $.",
+     "ok": true
+    },
+    {
+     "t": "Os diâmetros das circunferências decrescem segundo uma P.G. de razão 1.",
+     "ok": false
+    },
+    {
+     "t": "A soma das áreas dos círculos correspondentes às circunferências é $ {64π|3} $ cm<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "O termo geral da P.G. dada é $ a_n = π2^{4−n} $.",
+     "ok": true
+    },
+    {
+     "t": "A circunferência de comprimento $ π2^{−50} $ cm é o 54º elemento da P.G. dada.",
+     "ok": true
+    },
+    {
+     "t": "O volume da esfera de raio igual ao raio da 3ª circunferência da P.G. dada é $ {4|3} $ cm<sup>3</sup>.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-075",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99850,41 +99894,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "75. Uniderp-MS Se (a n ) = (1, a 2 , a 3 , …) é uma progressão aritmética de razão igual a 2 e (b n ) = (2, b 2 , b 3 , –54, …) é uma progressão geométrica, então b 8 é igual a: a) –162 b) –81 c) –27 d) 81 e) 162 a 14",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-075.jpg"
-   ],
-   "larguraMm": 127.5,
+   "enunciado": "Se $ (a_n) = (1, a_2, a_3, …) $ é uma progressão aritmética de razão igual a 2 e $ (b_n) = (2, b_2, b_3, −54, …) $ é uma progressão geométrica, então $ {b_8|a_{14}} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−162",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "−81",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−27",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "81",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "162",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-076",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99896,41 +99934,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "76. Unifor-CE Um turista anotou diariamente, por 5 dias, seus gastos na compra de artesana- to e percebeu que essas quantias formavam uma progressão geométrica de razão 2. Se o gasto total foi de R$ 465,00, a maior quantia gasta em um dia na compra de artesanato foi: a) R$ 202,00 d) R$ 225,00 b) R$ 208,00 e) R$ 240,00 c) R$ 210,00",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-076.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um turista anotou diariamente, por 5 dias, seus gastos na compra de artesanato e percebeu que essas quantias formavam uma progressão geométrica de razão 2. Se o gasto total foi de R&#36; 465,00, a maior quantia gasta em um dia na compra de artesanato foi:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "R&#36; 202,00",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "R&#36; 208,00",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "R&#36; 210,00",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "R&#36; 225,00",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "R&#36; 240,00",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-077",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99942,41 +99974,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "77. U.Católica Dom Bosco-DF Na segunda-feira, uma garota conta um segredo a três ami- gas. Na terça-feira, cada uma dessas amigas conta esse segredo a três outras amigas. E assim, a cada dia, no decorrer da semana, as garotas que ouviram o segredo no dia anterior, contam-no a três outras amigas. No final da sexta-feira dessa semana, o número de garotas que conhecem o segredo é igual a: a) 82 b) 121 c) 244 d) 364 e) 1090",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-077.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Na segunda-feira, uma garota conta um segredo a três amigas. Na terça-feira, cada uma dessas amigas conta esse segredo a três outras amigas. E assim, a cada dia, no decorrer da semana, as garotas que ouviram o segredo no dia anterior, contam-no a três outras amigas.<br><span class=\"pb\"></span>No final da sexta-feira dessa semana, o número de garotas que conhecem o segredo é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "82",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "121",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "244",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "364",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1090",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-078",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -99988,20 +100014,64 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "78. UEGO Julgue os itens seguintes: ( ) Um supermercado oferece cestas A e B contendo embalagens de: — 5 kg de arroz, — 1 kg de feijão, — 2 kg de açúcar, com os seguintes preços: Pode-se fazer uma cesta C contendo 1 embalagem de arroz, 1 de feijão e 1 de açúcar por R$ 5,40. ( ) No século passado, o matemático francês Edouard Lucas deu à função (f n ) = (1, 1, 2, 3, 5, 8, …) o nome de seqüência de Fibonacci. Os termos dessa seqüência são chamados números de Fibonacci, definidos de forma recursiva: f 1 = f 2 = 1 e f n + 1 = f n – 1 + f n , (n ≥ 2). Assim f 11 = 89 . ( ) A seqüência (1024, 512, 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-078.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Julgue os itens seguintes:<br><span class=\"pb\"></span>(   ) Um supermercado oferece cestas A e B contendo embalagens de:<br>— 5 kg de arroz,<br>— 1 kg de feijão,<br>— 2 kg de açúcar,<br>com os seguintes preços:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F – V – V"
+   "gabarito": "V – V – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "Pode-se fazer uma cesta C contendo 1 embalagem de arroz, 1 de feijão e 1 de açúcar por R&#36; 5,40.",
+     "ok": true
+    },
+    {
+     "t": "No século passado, o matemático francês Edouard Lucas deu à função $ (f_n) = (1, 1, 2, 3, 5, 8, …) $ o nome de seqüência de Fibonacci. Os termos dessa seqüência são chamados de números de Fibonacci, definidos de forma recursiva: $ f_1 = f_2 = 1 $ e $ f_{n+1} = f_{n−1} + f_n $, $ (n ≥ 2) $. Assim $ f_{11} = 89 $.",
+     "ok": true
+    },
+    {
+     "t": "A seqüência $ (1024, 512, 256, 128, …) $ é uma progressão geométrica cuja taxa de crescimento de cada termo para o seguinte é de 0,5 ou 50%.",
+     "ok": false
+    },
+    {
+     "t": "Seja $ S_n = {1|2} + {1|4} + {1|8} + … $. Então, $ lim_{n→∞} S_n = 1 $",
+     "ok": true
+    },
+    {
+     "t": "As progressões aritméticas $ PA_1 = (7, 14, 21, …, 252) $ e $ PA_2 = (9, 18, …, 396) $ possuem 4 termos em comum.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "CESTAS",
+     "ARROZ",
+     "FEIJÃO",
+     "AÇÚCAR",
+     "PREÇO"
+    ],
+    "linhas": [
+     [
+      "A",
+      "3",
+      "4",
+      "2",
+      "R$ 16,50"
+     ],
+     [
+      "B",
+      "2",
+      "3",
+      "1",
+      "R$ 11,10"
+     ]
+    ],
+    "largura": "80%",
+    "legenda": "Embalagens (por cesta)"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-079",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100013,24 +100083,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "79. Unifor-CE O número real x que satisfaz a sentença 1 + 2 + 4 + 8 + ... = 1 é: a) 1 b) 2 c) 3 d) 4 e) 5 x x 2 x 3 x 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-079.jpg"
-   ],
-   "larguraMm": 125.9,
+   "enunciado": "O número real $ x $ que satisfaz a sentença $ {1|x} + {2|x^2} + {4|x^3} + {8|x^4} + … = 1 $ é:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "C n (10 + 2)",
+   "tipo": "mc",
+   "gabarito": "C",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "alternativas": [
+    {
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "2",
+     "ok": false
+    },
+    {
+     "t": "3",
+     "ok": true
+    },
+    {
+     "t": "4",
+     "ok": false
+    },
+    {
+     "t": "5",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-080",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100042,24 +100128,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "80. UFCE Seja x = 1 + 10 + 10 2 + ... + 10 n–1 e y = 10 n + 5. Determine xy + 1.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-080.jpg"
-   ],
-   "larguraMm": 112.9,
+   "enunciado": "Seja $ x = 1 + 10 + 10^2 + … + 10^{n−1} $ e $ y = 10^n + 5 $. Determine $ √{xy + 1} $.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "xy + 1 = 3",
+   "gabarito": "(10ⁿ + 2)/3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c22-081",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100071,41 +100151,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "81. U. Católica de Salvador-BA Uma pessoa tem determinada quantia depositada em um ban- co e faz retiradas regulares correspondendo sempre a 25% do saldo existente. Nessas condições, supondo-se que nenhum depósito foi feito, o percentual do seu saldo, em relação à quantia original, depois do quinto saque, corresponde, aproximadamente, a: a) 9,7% b) 12,1% c) 23,7% d) 25% e) 27,8%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-081.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Uma pessoa tem determinada quantia depositada em um banco e faz retiradas regulares correspondendo sempre a 25% do saldo existente.<br><span class=\"pb\"></span>Nessas condições, supondo-se que nenhum depósito foi feito, o percentual do seu saldo, em relação à quantia original, depois do quinto saque, corresponde, aproximadamente, a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9,7%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "12,1%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "23,7%",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "25%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "27,8%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-082",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100117,41 +100191,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "82. U. Passo Fundo-RS Dadas as seqüências: A = (2, 5, 8, ...) e B = 2 n , n \u0001 N * , pode-se afirmar que: a) A e B têm 3 termos em comum, quando a seqüência A tiver 15 termos. b) A e B têm apenas o primeiro termo em comum para qualquer n. c) os termos de A e B não admitem relações matemáticas entre si. d) a soma dos 8 primeiros termos da seqüência A é igual ao dobro da soma dos 5 primeiros termos da seqüência B. e) o décimo segundo termo da seqüência A é igual ao sexto termo da seqüência B.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-082.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Dadas as seqüências: $ A = (2, 5, 8, …) $ e $ B = 2^n $, $ n ∈ ℕ^* $, pode-se afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A e B têm 3 termos em comum, quando a seqüência A tiver 15 termos.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "A e B têm apenas o primeiro termo em comum para qualquer n.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "os termos de A e B não admitem relações matemáticas entre si.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "a soma dos 8 primeiros termos da seqüência A é igual ao dobro da soma dos 5 primeiros termos da seqüência B.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "o décimo segundo termo da seqüência A é igual ao sexto termo da seqüência B.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-083",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100163,41 +100231,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "83. U. F. Santa Maria-RS Assinale verdadeira (V) ou falsa (F) em cada afirmativa. ( ) No primeiro semestre do ano 2000, a produção mensal de uma fábrica de sapatos cresceu em progressão geométrica. Em janeiro, a produção foi de 3000 pares e, em junho, foi de 96000 pares. Então, pode-se afirmar que a produção do mês de março e abril foi de 12000 e 18000 pares, respectivamente. ( ) A seqüência (x n-4 , x n-2 , x n , x n+2 ), x ≠ 0, é uma progressão geométrica de razão x 2 . ( ) Uma progressão geométrica de razão q, com 0 < q < 1 e a 1 > 0, é uma progressão geométrica crescente. A seqüência corre",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-083.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Assinale verdadeira (V) ou falsa (F) em cada afirmativa.<br><span class=\"pb\"></span>(   ) No primeiro semestre do ano 2000, a produção mensal de uma fábrica de sapatos cresceu em progressão geométrica. Em janeiro, a produção foi de 3000 pares e, em junho, foi de 96000 pares. Então, pode-se afirmar que a produção do mês de março e abril foi de 12000 e 18000 pares, respectivamente.<br>(   ) A seqüência $ (x^{n−4}, x^{n−2}, x^n, x^{n+2}) $, $ x ≠ 0 $, é uma progressão geométrica de razão $ x^2 $.<br>(   ) Uma progressão geométrica de razão q, com $ 0 < q < 1 $ e $ a_1 > 0 $, é uma progressão geométrica crescente.<br><span class=\"pb\"></span>A seqüência correta é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "V − F − F",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "F − V − F",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "F − V − V",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "V − V − F",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V − F − V",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-084",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100209,41 +100271,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "84. Cefet-PR Nas seqüências: a n = (log1; log0,001; log 1/3 729; …) e b n = (– 1 ; – 1 ; –1; …), a diferença entre o décimo termo de “a n ” e o nono termo de “b n ” é: a) –756 b) –270 c) +702 d) +756 e) +270 9 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-084.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Nas seqüências<br><span class=\"pb\"></span>$ a_n = (log 1; log 0,001; log_{1/3} 729; …) $ e<br>$ b_n = (−{1|9}; −{1|3}; −1; …) $,<br><span class=\"pb\"></span>a diferença entre o décimo termo de “$ a_n $” e o nono termo de “$ b_n $” é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−756",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−270",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "+702",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "+756",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "+270",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-085",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100255,41 +100311,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "85. UFPB Considere a P.A. (2, 5, 8, 11, …) e a P.G. (3, 6, 12, 24, …). Na seqüência (2, 3, 5, 6, 8, 12, 11, 24, 14, 48, …), onde os termos da P. A. ocupam as posições ímpares e os da P.G., as posições pares, o seu 25 ° termo é: a) 602 b) 38 c) 3 x 2 24 d) 49 e) 25",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-085.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere a P.A. $ (2, 5, 8, 11, …) $ e a P.G. $ (3, 6, 12, 24, …) $. Na seqüência $ (2, 3, 5, 6, 8, 12, 11, 24, 14, 48, …) $, onde os termos da P. A. ocupam as posições ímpares e os da P.G., as posições pares, o seu 25º termo é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "602",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "38",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ 3 × 2^{24} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "49",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "25",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-086",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100301,41 +100351,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "86. PUC-PR Calcular a soma das duas maiores raízes da equação x 3 + 7x 2 + 14x + 8 = 0, sabendo-se que estão em progressão geométrica: a) –2 b) –3 c) –4 d) –5 e) –6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-086.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Calcular a soma das duas maiores raízes da equação $ x^3 + 7x^2 + 14x + 8 = 0 $, sabendo-se que estão em progressão geométrica:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−3",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "−4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "−6",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-087",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100347,20 +100391,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "87. UFSC Determine a soma dos números associados à(s) proposição(ões) VERDADEIRA(S) . 01) Existem 64 múltiplos de 7 entre 50 e 500. 02) O valor de x que satisfaz a equação (x + 1) + (x + 4) + (x + 7) + ... + (x + 28) = 155 é x = 1. 04) O oitavo termo da P.G. ( 2, 2, ...) é a 8 = 16. 08) A soma dos termos da P.G. ( 1 , 2 , 4 ,...) é igual a 1. 27 9 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-087.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Determine a soma dos números associados à(s) proposição(ões) <b>VERDADEIRA(S)</b>.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "15"
+   "gabarito": "15",
+   "afirmacoes": [
+    {
+     "t": "Existem 64 múltiplos de 7 entre 50 e 500.",
+     "ok": true
+    },
+    {
+     "t": "O valor de $ x $ que satisfaz a equação $ (x + 1) + (x + 4) + (x + 7) + … + (x + 28) = 155 $ é $ x = 1 $.",
+     "ok": true
+    },
+    {
+     "t": "O oitavo termo da P.G. $ (√2, 2, …) $ é $ a_8 = 16 $.",
+     "ok": true
+    },
+    {
+     "t": "A soma dos termos da P.G. $ ({1|3}, {2|9}, {4|27}, …) $ é igual a 1.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-088",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100372,41 +100428,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "88. PUC-PR Em uma progressão geométrica infinitamente decrescente, cuja soma é igual a 9 e a soma dos quadrados de todos os seus termos é 40,5, o seu 4º termo vale: a) 3 b) 1 c) 5 d) 2 e) 4 8 27 32 9 27",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-088.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Em uma progressão geométrica infinitamente decrescente, cuja soma é igual a 9 e a soma dos quadrados de todos os seus termos é 40,5, o seu 4º termo vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|8} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|27} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {5|32} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {2|9} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {4|27} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-089",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100418,41 +100468,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "89. PUC-RS A seqüência numérica ( x 1 , x 2 , x 3 , …, x 2n + 1 ), onde n é um número natural, é uma progressão geométrica de razão q = –1. A soma de seus termos é: a) –1 b) 0 c) 1 d) x 2n e) x 2n + 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-089.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A seqüência numérica $ (x_1, x_2, x_3, …, x_{2n+1}) $, onde $ n $ é um número natural, é uma progressão geométrica de razão $ q = −1 $. A soma de seus termos é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x_{2n} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x_{2n+1} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c22-090",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Sequências, PA e PG",
@@ -100464,16 +100508,29 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "90. UFPR A sentença “a função f transforma uma progressão em outra progressão” significa que, ao se aplicar a função aos termos de uma progressão (a 1 , a 2 , a 3 , …), resulta nova progressão (f(a 1 ), f(a 2 ), f(a 3 ), …). Assim, é correto afirmar: ( ) A função f(x) = 2x + 5 transforma qualquer progressão aritmética de razão r em outra progressão aritmética, esta de razão 5. ( ) A função f(x) = 3x transforma qualquer progressão aritmética de razão r em outra progressão aritmética, esta de razão 3r. ( ) A função f(x) = 2 x transforma qualquer progressão aritmética de razão r em uma progressão",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c22-090.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A sentença “a função f transforma uma progressão em outra progressão” significa que, ao se aplicar a função aos termos de uma progressão $ (a_1, a_2, a_3, …) $, resulta nova progressão $ (f(a_1), f(a_2), f(a_3), …) $. Assim, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V"
+   "gabarito": "F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "A função $ f(x) = 2x + 5 $ transforma qualquer progressão aritmética de razão r em outra progressão aritmética, esta de razão 5.",
+     "ok": false
+    },
+    {
+     "t": "A função $ f(x) = 3x $ transforma qualquer progressão aritmética de razão r em outra progressão aritmética, esta de razão 3r.",
+     "ok": true
+    },
+    {
+     "t": "A função $ f(x) = 2^x $ transforma qualquer progressão aritmética de razão r em uma progressão geométrica de razão $ 2^r $.",
+     "ok": true
+    },
+    {
+     "t": "A função $ f(x) = log_3 x $ transforma qualquer progressão geométrica de termos positivos e razão 9 em uma progressão aritmética de razão 2.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-001",
@@ -101439,7 +101496,6 @@
   },
   {
    "id": "cdb-c23-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101451,20 +101507,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. AEU-DF Considere o sistema S = , e julgue os itens. ( ) Para a = –3 e b = –1, o conjunto solução de S é {(2; 1)} ( ) S é possível para quaisquer valores positivos de a e b. ( ) Se b = 3a, então S tem infinitas soluções. ( ) Representando as equações de S no plano cartesiano teremos duas retas concorrentes. ( ) Representando todos os pontos que atendem a cada uma das equações de S num plano cartesiano, é possível conseguir um par de retas paralelas para algum valor de a. x + 3y = 5 ax + by = –7 \u0001",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-025.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere o sistema $ S = @S{x + 3y = 5; ax + by = −7} $ e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – F – V"
+   "gabarito": "V – F – F – F – V",
+   "afirmacoes": [
+    {
+     "t": "Para $ a = −3 $ e $ b = −1 $, o conjunto solução de S é $ \\{(2; 1)\\} $.",
+     "ok": true
+    },
+    {
+     "t": "S é possível para quaisquer valores positivos de $ a $ e $ b $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ b = 3a $, então S tem infinitas soluções.",
+     "ok": false
+    },
+    {
+     "t": "Representando as equações de S no plano cartesiano teremos duas retas concorrentes.",
+     "ok": false
+    },
+    {
+     "t": "Representando todos os pontos que atendem a cada uma das equações de S num plano cartesiano, é possível conseguir um par de retas paralelas para algum valor de $ a $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes e sistemas (aprofundamento)",
@@ -101476,16 +101548,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. U.Católica-DF Analise as afirmativas, colocando V ou F, conforme sejam verdadeiras ou falsas. ( ) Se A é uma matriz anti-simétrica de ordem n (isto é, A t = –A) e I a matriz identidade de ordem n , então a matriz I – A é inversível se, e somente se, a matriz I + A for inversível. ( ) Se I é a matriz identidade de ordem n e A é uma matriz anti-simétrica também de ordem n , então a matriz B = (I + A).(I – A) –1 satisfaz a relação B.B t = I. ( ) Se A, B e C são matrizes quadradas de mesma ordem tais que C = B –1 .A.B, então, C n = B –1 .A n .B para todo inteiro positivo n. ( ) O sistema linea",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c23-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Analise as afirmativas, colocando V ou F, conforme sejam verdadeiras ou falsas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – V – F"
+   "gabarito": "V – V – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "Se $ A $ é uma matriz anti-simétrica de ordem $ n $ (isto é, $ A^t = −A $) e $ I $ a matriz identidade de ordem $ n $, então a matriz $ I − A $ é inversível se, e somente se, a matriz $ I + A $ for inversível.",
+     "ok": true
+    },
+    {
+     "t": "Se $ I $ é a matriz identidade de ordem $ n $ e $ A $ é uma matriz anti-simétrica também de ordem $ n $, então a matriz $ B = (I + A) · (I − A)^{−1} $ satisfaz a relação $ B · B^t = I $.",
+     "ok": true
+    },
+    {
+     "t": "Se A, B e C são matrizes quadradas de mesma ordem tais que $ C = B^{−1} · A · B $, então, $ C^n = B^{−1} · A^n · B $ para todo inteiro positivo $ n $.",
+     "ok": true
+    },
+    {
+     "t": "O sistema linear homogêneo $ A · X = 0 $ admite como soluções as matrizes $ X_1 $ e $ X_2 $. Então, para todo número real $ α $, a matriz $ X_1 + α · X_2 $ também é solução desse sistema.",
+     "ok": true
+    },
+    {
+     "t": "No sistema de três equações lineares com três incógnitas $ x $, $ y $ e $ z $, $ @S{a_1 x + b_1 y + c_1 z = d_1; a_2 x + b_2 y + c_2 z = d_2; a_3 x + b_3 y + c_3 z = d_3} $ são nulos os determinantes:<br><span class=\"pb\"></span>$ @D{a_1&b_1&c_1;a_2&b_2&c_2;a_3&b_3&c_3} $, $ @D{a_1&b_1&d_1;a_2&b_2&d_2;a_3&b_3&d_3} $, $ @D{a_1&d_1&c_1;a_2&d_2&c_2;a_3&d_3&c_3} $ e $ @D{d_1&b_1&c_1;d_2&b_2&c_2;d_3&b_3&c_3} $.<br><span class=\"pb\"></span>Sendo assim, segue, da regra de Cramer, que tal sistema é, necessariamente, possível e indeterminado.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c23-027",
