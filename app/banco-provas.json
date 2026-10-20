@@ -62693,7 +62693,6 @@
   },
   {
    "id": "cdb-c04-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62705,20 +62704,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. AEU-DF Julgue os itens. ( ) Atualmente é comum representar-se relações entre grandezas por meio de um gráfico no plano cartesiano. Isso é feito por matemáticos desde os tempos de Aristóteles. ( ) Usando um eixo para a velocidade e outro para o tempo, o gráfico citado corres- ponde ao de uma função polinomial do primeiro grau. ( ) Se o corpo em estudo tem aceleração positiva, a função correspondente ao gráfico é crescente. ( ) Nicole Oresme usou as grandezas velocidade e tempo na construção de seu gráfico primordial por que tais grandezas já eram objeto de estudo de seus predecessores. ( ) A",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-001.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – V"
+   "gabarito": "F – V – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "Atualmente é comum representar-se relações entre grandezas por meio de um gráfico no plano cartesiano. Isso é feito por matemáticos desde os tempos de Aristóteles.",
+     "ok": false
+    },
+    {
+     "t": "Usando um eixo para a velocidade e outro para o tempo, o gráfico citado corresponde ao de uma função polinomial do primeiro grau.",
+     "ok": true
+    },
+    {
+     "t": "Se o corpo em estudo tem aceleração positiva, a função correspondente ao gráfico é crescente.",
+     "ok": true
+    },
+    {
+     "t": "Nicole Oresme usou as grandezas velocidade e tempo na construção de seu gráfico primordial por que tais grandezas já eram objeto de estudo de seus predecessores.",
+     "ok": true
+    },
+    {
+     "t": "A evolução do pensamento matemático, assim como do conhecimento humano, é viabilizada pelos estudos científicos de gerações passadas.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62730,20 +62745,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. AEU-DF Para que Nicole Oresme lançasse mão de um gráfico espaço-tempo, na análise do mesmo movimento por ele representado graficamente, seria necessário aplicar conceitos que talvez não fossem conhecidos à época. Segundo tais conceitos a posição do corpo no espaço a cada instante de tempo é dada por uma lei do tipo: f(x) = ax 2 + bx + c com a, b e c reais, onde a corresponde à metade da aceleração do corpo em estudo. Em relação ao gráfico de tal função, analise e julgue os itens. ( ) O gráfico da posição do corpo em relação ao tempo no plano cartesiano é uma reta. ( ) O valor máximo da posi",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-002.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Para que Nicole Oresme lançasse mão de um gráfico espaço-tempo, na análise do mesmo movimento por ele representado graficamente, seria necessário aplicar conceitos que talvez não fossem conhecidos à época.<br><span class=\"pb\"></span>Segundo tais conceitos a posição do corpo no espaço a cada instante de tempo é dada por uma lei do tipo: $ f(x) = ax^2 + bx + c $ com $ a $, $ b $ e $ c $ reais, onde $ a $ corresponde à metade da aceleração do corpo em estudo.<br><span class=\"pb\"></span>Em relação ao gráfico de tal função, analise e julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – V"
+   "gabarito": "F – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "O gráfico da posição do corpo em relação ao tempo no plano cartesiano é uma reta.",
+     "ok": false
+    },
+    {
+     "t": "O valor máximo da posição do corpo é dado por $ x = −{b|a} $.",
+     "ok": false
+    },
+    {
+     "t": "No instante inicial da observação o corpo está numa posição a $ c $ unidades da origem dos espaços.",
+     "ok": true
+    },
+    {
+     "t": "Se os conceitos de função quadrática não eram conhecidos por Oresme, o mesmo não poderia analisar o movimento uniformemente variado da maneira como isso é feito atualmente.",
+     "ok": true
+    },
+    {
+     "t": "Sabe-se que a álgebra, desenvolvida pelos povos do Oriente Médio, só foi introduzida na Europa depois do renascimento. Durante a Idade Média os cientistas europeus usavam a maneira clássica de representar grandezas por meio de segmentos de reta e arcos. Dessa forma é justo concluir que Oresme tenha usado na construção de seu gráfico conceitos de geometria plana e não de álgebra como atualmente é feito.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62755,37 +62786,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. UFMG A soma de todas as raízes de f(x) = (2x 2 + 4x – 30)(3x – 1) é: a) 5 3 c) – 3 5 b) 3 5 d) – 5 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-003.jpg"
-   ],
-   "larguraMm": 60.9,
+   "enunciado": "A soma de todas as raízes de $ f(x) = (2x^2 + 4x − 30)(3x − 1) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {5|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ −{3|5} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ −{5|3} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62797,41 +62822,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. PUC-PR Dos gráficos abaixo, os que representam uma única função são: 1 4 2 5 3 a) 1, 2, 5 d) 1, 2, 4 b) 2, 3, 5 e) 1, 4, 5 c) 2, 4, 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-004.jpg"
-   ],
-   "larguraMm": 110.8,
+   "enunciado": "Dos gráficos abaixo, os que representam uma única função são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1, 2, 5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2, 3, 5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2, 4, 5",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1, 2, 4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1, 4, 5",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-004-fig.jpg",
+    "alt": "Cinco gráficos numerados: 1, uma circunferência; 2, uma curva ondulada contínua; 3, segmentos com pontos abertos e fechados em x = 0; 4, um arco seguido de segmento horizontal e curva, com bolinhas abertas e fechadas; 5, um segmento, um ponto e segmentos com bolinhas abertas e fechadas",
+    "largura": "71mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62843,41 +62868,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Fatec-SP Para uma certa máquina, o custo total na produção de um lote de x peças é de y unidades monetárias, com y = 100 + 0,01x + 0,001x 2 . A diferença de custo entre a produção de um lote de 500 peças e um de 498 peças, em unidades monetárias, é de: a) 0,024 d) 129,7804 b) 2,016 e) 507,984 c) 100,024",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-005.jpg"
-   ],
-   "larguraMm": 129.5,
+   "enunciado": "Para uma certa máquina, o custo total na produção de um lote de <b>x</b> peças é de <b>y</b> unidades monetárias, com $ y = 100 + 0,01x + 0,001x^2 $.<br><span class=\"pb\"></span>A diferença de custo entre a produção de um lote de 500 peças e um de 498 peças, em unidades monetárias, é de:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,024",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,016",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "100,024",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "129,7804",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "507,984",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62889,41 +62908,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Unifor-CE Na figura abaixo têm-se os gráficos das funções quadráticas f e g. Se P é um dos pontos de interseção de f e g, então as suas coordenadas são: a) −     3 4 57 16 ; d) −     1 4 17 16 ; b) −     1 2 9 4 ; e) − −     1 4 17 16 ; c) − −     1 2 9 4 ;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-006.jpg"
-   ],
-   "larguraMm": 116.4,
+   "enunciado": "Na figura abaixo têm-se os gráficos das funções quadráticas $ f $ e $ g $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (−{3|4}; {57|16}) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (−{1|2}; {9|4}) $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ (−{1|2}; −{9|4}) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (−{1|4}; {17|16}) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (−{1|4}; −{17|16}) $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ P $ é um dos pontos de interseção de $ f $ e $ g $, então as suas coordenadas são:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-006-fig.jpg",
+    "alt": "Gráficos das funções quadráticas f e g: uma parábola voltada para cima e outra voltada para baixo, que se cruzam em dois pontos, um deles P; os eixos estão graduados com −1, 0, 4, 25/4 e −4",
+    "largura": "55mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -62935,37 +62955,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Unifor-CE Quantos pontos em comum têm os gráficos das funções de | R em | R defini- das por y = x 3 – 6x e y = –x 2 ? a) 0 b) 1 c) 2 d) 3 e) 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-007.jpg"
-   ],
-   "larguraMm": 130.5,
+   "enunciado": "Quantos pontos em comum têm os gráficos das funções de ℝ em ℝ definidas por $ y = x^3 − 6x $ e $ y = −x^2 $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-008",
@@ -63009,7 +63024,6 @@
   },
   {
    "id": "cdb-c04-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63021,41 +63035,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. UFF-RJ O gráfico da função f está representado na figura: Sobre a função f é falso afirmar que: a) f(1) + f(2) = f(3) b) f(2) = f(7) c) f(3) = 3f(1) d) f(4) – f(3) = f(1) e) f(2) + f(3) = f(5)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-009.jpg"
-   ],
-   "larguraMm": 102.1,
+   "enunciado": "O gráfico da função $ f $ está representado na figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(1) + f(2) = f(3) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(2) = f(7) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f(3) = 3f(1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ f(4) − f(3) = f(1) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ f(2) + f(3) = f(5) $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Sobre a função $ f $ é <b>falso</b> afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-009-fig.jpg",
+    "alt": "Gráfico de f: parte da origem e sobe em linha reta até (4, 4); segue horizontal até x = 6; depois desce em linha reta até (8, 0)",
+    "largura": "72mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63067,41 +63082,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Cefet-RJ Uma função f(x), de domínio | R, está representada no plano XOY, como mostra a figura. Então: a) f(–3) = f(2) b) f(x) = x, para x < –3 c) a função é inversível d) f(x) = x + 6, para x < – 4 e) f(0) = 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-010.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Uma função $ f(x) $, de domínio ℝ, está representada no plano XOY, como mostra a figura. Então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(−3) = f(2) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(x) = x $, para $ x < −3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "a função é inversível",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ f(x) = x + 6 $, para $ x < −4 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ f(0) = 3 $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-010-fig.jpg",
+    "alt": "Gráfico: à esquerda, uma semirreta crescente que forma 45° com o eixo x e chega ao ponto (−3, 3); depois, uma curva em forma de U que passa por (−3, 3), cruza o eixo x perto de −2, tem mínimo abaixo do eixo e cruza o eixo x em 2, subindo em seguida",
+    "largura": "84mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63113,24 +63128,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UFPR Considere a seguinte definição: “A variação de uma função F em um intervalo I é o módulo da diferença entre o maior e o menor valor de F(x), com x ∈ I .” Analisando os gráficos das funções f , g e h , é correto afirmar: ( ) A variação da função g é maior no intervalo [0, 1] que no intervalo [2, 3]. ( ) No intervalo [0, 1], a variação de f é maior que a variação de h. ( ) Das três funções, aquela que tem a menor variação no intervalo [4, 5] é a função f. ( ) Das três funções, aquela que tem maior variação no intervalo [2, 3] é a função g.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-011.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Considere a seguinte definição: “A variação de uma função $ F $ em um intervalo $ I $ é o módulo da diferença entre o maior e o menor valor de $ F(x) $, com $ x ∈ I $.” Analisando os gráficos das funções $ f $, $ g $ e $ h $, é correto afirmar:",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "V-V-V-F 5",
+   "gabarito": "V-V-V-F",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "( ) A variação da função g é maior no intervalo [0, 1] que no intervalo [2, 3].<br>( ) No intervalo [0, 1], a variação de f é maior que a variação de h.<br>( ) Das três funções, aquela que tem a menor variação no intervalo [4, 5] é a função f.<br>( ) Das três funções, aquela que tem maior variação no intervalo [2, 3] é a função g.",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c04-011-fig1.jpg",
+     "alt": "Gráfico de f no intervalo [0, 5]: curva crescente de concavidade para baixo, de (0, 0) a cerca de (5, 4,8)",
+     "largura": "67mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c04-011-fig2.jpg",
+     "alt": "Gráfico de g no intervalo [0, 5]: curva crescente que sobe devagar no meio e rápido nas pontas, de (0, 0) a (5, 5)",
+     "largura": "67mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c04-011-fig3.jpg",
+     "alt": "Gráfico de h no intervalo [0, 5]: reta crescente passando por (1, 1) e (5, 5)",
+     "largura": "67mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63142,24 +63172,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. VUNESP Apresentamos a seguir o gráfico do volume do álcool em função de sua massa, a uma temperatura fixa de 0 ° C. Baseado nos dados do gráfico, determine: a) a lei da função apresentada no gráfico; b) qual é a massa (em gramas) de 30 cm 3 de álcool. massa (g) 40 (0, 0) (40, 50) 50 volume (cm 3 )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-012.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Apresentamos a seguir o gráfico do volume do álcool em função de sua massa, a uma temperatura fixa de 0 °C.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) v = m 4 b) 24 g",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Baseado nos dados do gráfico, determine:<br><span class=\"pb\"></span>a) a lei da função apresentada no gráfico;<br>b) qual é a massa (em gramas) de 30 cm³ de álcool.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-012-fig.jpg",
+    "alt": "Gráfico do volume (cm³) em função da massa (g): reta que parte de (0, 0) e passa por (40, 50)",
+    "largura": "60mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63171,20 +63202,50 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. UEGO Julgue os itens abaixo: ( ) a b a b a b a b − + + + − − = a a b b + + 2 2 , a ≠ ± b, b ≠ 0. ( ) A expressão correspondente ao perímetro (P) da região sombreada é P = x(4 + π ). ( ) Se f(x – 1) = x x x 2 1 2 + − − , x ≠ 2, o domínio de f(x) é dado por | R – {2}. ( ) Sabemos que f(x) = | x | = x x se se x x −    ≥ < 0 0 desta forma | x 2 – 3x + 2 | = x x x x se se x ou x x 2 2 3 2 3 2 1 2 1 2 − + − − + ( )    ≤ ≥ < < ( ) Dizemos que um função f: A → B é ímpar se, para qualquer x ∈ A, f(–x) = –f(x). A função f: | R → | R representada no gráfico abaixo é ímpar.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-013.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Julgue os itens abaixo.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – F – V – V"
+   "gabarito": "F – F – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "$ {√{a − b} + √{a + b}|√{a + b} − √{a − b}} = {a + √{a^2 + b^2}|b} $, $ a ≠ ± b $, $ b ≠ 0 $",
+     "ok": false
+    },
+    {
+     "t": "A expressão correspondente ao perímetro ($ P $) da região sombreada (primeira figura) é $ P = x(4 + π) $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ f(x − 1) = {x^2 + x − 1|x − 2} $, $ x ≠ 2 $, o domínio de $ f(x) $ é dado por $ ℝ − \\{2\\} $.",
+     "ok": false
+    },
+    {
+     "t": "Sabemos que $ f(x) = |x| = \\{x $ se $ x ≥ 0 $; $ −x $ se $ x < 0\\} $, desta forma $ |x^2 − 3x + 2| = \\{x^2 − 3x + 2 $ se $ x ≤ 1 $ ou $ x ≥ 2 $; $ −(x^2 − 3x + 2) $ se $ 1 < x < 2\\} $.",
+     "ok": true
+    },
+    {
+     "t": "Dizemos que uma função $ f: A → B $ é ímpar se, para qualquer $ x ∈ A $, $ f(−x) = −f(x) $. A função $ f: ℝ → ℝ $ representada no gráfico (segunda figura) é ímpar.",
+     "ok": true
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c04-013-fig1.jpg",
+     "alt": "Retângulo ABCD de largura 2x e altura x, com uma semicircunferência de diâmetro AD; está sombreada a região entre a semicircunferência e o canto B (parte superior esquerda)",
+     "largura": "61mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c04-013-fig2.jpg",
+     "alt": "Gráfico de uma função ímpar que passa pela origem, com os pontos (−2, −2) e (2, 2)",
+     "largura": "71mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63196,41 +63257,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": ", se x < 0 , se x > 0 14. Unifor-CE Se uma fun çã o f, de | R em | R, é definida por: f(x) = , se x = 0, ent ã o é verdade que: a) f( – 1) = – 1 2 d) f(5) = – 10 b) f( 3 ) = – 3 2 e) f( – 4) = 8 c) f( π ) = π 2 \u0001 2x 0 x 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-014.jpg"
-   ],
-   "larguraMm": 83.8,
+   "enunciado": "Se uma função $ f $, de ℝ em ℝ, é definida por<br><span class=\"pb\"></span>$ f(x) = \\{2x $, se $ x < 0 $;  $ 0 $, se $ x = 0 $;  $ {x|2} $, se $ x > 0\\} $,<br><span class=\"pb\"></span>então é verdade que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(−1) = −{1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(√3) = −{√3|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f(π) = {π|2} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ f(5) = −10 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ f(−4) = 8 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63242,41 +63297,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. UESC-BA Se f(x) = − −     k 2 5 6 x 2 + (k 2 – 5)x + 2 possui valor m á ximo em x = 3, ent ã o k é igual a: a) – 5 d) 0 b) – 2 e) 5 c) – − 5 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-015.jpg"
-   ],
-   "larguraMm": 77.6,
+   "enunciado": "Se $ f(x) = (−{k|2} − {5|6})x^2 + (k^2 − 5)x + 2 $ possui valor máximo em $ x = 3 $, então $ k $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ −{5|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63288,41 +63337,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFF-RJ Uma fun çã o real de vari á vel real f é tal que f 1 2       = π e f(x + 1) = x . f(x) para todo x ∈ | R. O valor de f 7 2       é : a) π d) 15 8 π b) 7 π e) π 7 15 c) π 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-016.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Uma função real de variável real $ f $ é tal que $ f({1|2}) = √π $ e $ f(x + 1) = x · f(x) $ para todo $ x ∈ ℝ $.<br><span class=\"pb\"></span>O valor de $ f({7|2}) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "π",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 7√π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {√π|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {15√π|8} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {π√7|15} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63334,41 +63377,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. U. Caxias do Sul-RS Considere a fun çã o f: | R → |R, definida por f(x) = x 2 – 3x + 2. O conjunto A, no qual a fun çã o f é crescente e f(x) ≥ 0, qualquer que seja x ∈ A, é : a) 1 3 2 ,       b) 3 2 , ∞       c) 2 , ∞ [ ) d) −∞ ( ] ∪ ∞ [ ) , , 1 2 e) −∞       ∪ ∞ [ ) , , 3 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-017.jpg"
-   ],
-   "larguraMm": 125.9,
+   "enunciado": "Considere a função $ f: ℝ → ℝ $, definida por $ f(x) = x^2 − 3x + 2 $. O conjunto $ A $, no qual a função $ f $ é crescente e $ f(x) ≥ 0 $, qualquer que seja $ x ∈ A $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ [1, {3|2}] $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ [{3|2}, ∞) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ [2, ∞) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ (−∞, 1] ∪ [2, ∞) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (−∞, {3|2}] ∪ [2, ∞) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63380,24 +63417,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. PUC-RS O dom í nio da fun çã o real f definido por f(x) = x x é : a) | R * b) | R + c) [1; + ∞) d) (1; + ∞ ) e) (0; + ∞ )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-018.jpg"
-   ],
-   "larguraMm": 101.1,
+   "enunciado": "O domínio da função real $ f $ definida por $ f(x) = {√{|x|}|x} $ é:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "A 1",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -63409,20 +63440,15 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. Unicamp-SP Suponha que o n ú mero de indiv í duos de uma determinada popula çã o seja dado pela fun çã o: F(t) = a • 2 – bt , onde a vari á vel t é dada em anos e a e b s ã o constantes. a) Encontre as constantes a e b de modo que a popula çã o inicial (t = 0) seja igual a 1024 indiv í duos e a popula çã o ap ó s 10 anos seja a metade da popula çã o inicial. b) Qual o tempo m í nimo para que a popula çã o se reduza a 1/8 da popula çã o inicial? c) Esboce o gr á fico da fun çã o F(t) para t ∈ [0, 40].",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-019.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Suponha que o número de indivíduos de uma determinada população seja dado pela função: $ F(t) = a · 2^{−bt} $, onde a variável $ t $ é dada em anos e $ a $ e $ b $ são constantes.<br><span class=\"pb\"></span>a) Encontre as constantes $ a $ e $ b $ de modo que a população inicial ($ t = 0 $) seja igual a 1024 indivíduos e a população após 10 anos seja a metade da população inicial.<br>b) Qual é o tempo mínimo para que a população se reduza a 1/8 da população inicial?<br>c) Esboce o gráfico da função $ F(t) $ para $ t ∈ [0, 40] $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) a = 1024; b = 10 b) 30 anos c) F(t) 1024 512 128 64 10 30 40 t (anos)",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-020",
