@@ -73601,7 +73601,6 @@
   },
   {
    "id": "cdb-c09-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73613,41 +73612,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. FEI-SP Na figura abaixo o raio da circunfer ê ncia maior é o triplo do raio da menor. A reta s é tangente à s duas circunfer ê ncias. A reta t é tangente à s duas circunfer ê ncias, no mesmo ponto. Quanto vale cos α ? 2 \u0001 \u0002 3 2 2 2 3 α t s a) 1 b) 1 c) 2 d) 3 e) 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-032.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Na figura abaixo o raio da circunferência maior é o triplo do raio da menor. A reta $ s $ é tangente às duas circunferências. A reta $ t $ é tangente às duas circunferências, no mesmo ponto.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {√2|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√3|2} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {√2|3} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Quanto vale $ cos({α|2}) $?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-032-fig.jpg",
+    "alt": "Duas circunferências tangentes entre si, a maior (à esquerda) com o triplo do raio da menor; a reta s (horizontal) é tangente às duas por baixo; a reta t, tangente às duas no ponto de contato, forma o ângulo α com a reta s",
+    "largura": "84mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73659,41 +73659,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. ITA-SP Num tri â ngulo acut â ngulo ABC , o lado oposto ao â ngulo Â mede 5 cm . Sabendo que Â = arccos 3 e C = arcsen 2 , ent ã o a á rea do tri â ngulo ABC é igual a: a) 5 cm 2 d) 2 5 cm 2 b) 12 cm 2 e) 25 cm 2 c) 15 cm 2 ^ 5 5 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-033.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Num triângulo acutângulo $ ABC $, o lado oposto ao ângulo $ Â $ mede 5 cm. Sabendo que<br><span class=\"pb\"></span>$ Â = arccos {3|5} $ e $ Ĉ = arcsen {2|√5} $,<br><span class=\"pb\"></span>então a área do triângulo $ ABC $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {5|2} $ cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "12 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "15 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 2√5 $ cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {25|2} $ cm<sup>2</sup>",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73705,20 +73699,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. U. Católica-GO Analise e julgue os itens abaixo: ( ) Sabendo que sen(a + b) = sena.cosb + senb.cosa e que cos(a + b) = cosa.cosb – sena.senb, deduz-se que tg(a + b) = tga tgb tga tgb + + 1 . ( ) Simplificando-se a express ã o sen sen π α α π α π α − ( ) − ( ) + ( ) − ( ) .cos . cos , obt é m-se sen 2 α ( ) Sabendo-se que – 1 ≤ cos x ≤ 1, conclui-se que | sec x | ≤ 1. ( ) Se x e y forem arcos do primeiro quadrante tais que senx = 3/5 e seny = 4/5, ent ã o cossec(x + y) = 1. (Lembre-se de que a cossecante de um arco é o inverso do seno desse arco. Voc ê vai precisar usar uma das f ó rmulas d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-034.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Analise e julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V – V – V"
+   "gabarito": "F – V – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "Sabendo que $ sen(a + b) = sen a · cos b + sen b · cos a $ e que $ cos(a + b) = cos a · cos b − sen a · sen b $, deduz-se que $ tg(a + b) = {tg a + tg b|1 + tg a · tg b} $.",
+     "ok": false
+    },
+    {
+     "t": "Simplificando-se a expressão $ {sen(π − α) · cos(−α) · sen(π + α)|cos(π − α)} $, obtém-se $ sen^2 α $.",
+     "ok": true
+    },
+    {
+     "t": "Sabendo-se que $ −1 ≤ cos x ≤ 1 $, conclui-se que $ |sec x| ≤ 1 $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ x $ e $ y $ forem arcos do primeiro quadrante tais que $ sen x = 3/5 $ e $ sen y = 4/5 $, então $ cossec(x + y) = 1 $. (Lembre-se de que a cossecante de um arco é o inverso do seno desse arco. Você vai precisar usar uma das fórmulas do 1º item desta questão, bem como a expressão $ sen^2 x + cos^2 x = 1 $).",
+     "ok": true
+    },
+    {
+     "t": "Sabendo-se que a função tangente não é definida para arcos congruentes com $ {π|2} $ e $ {3π|2} $ radianos, conclui-se que o domínio da função $ f(x) = tg x $ é todo $ x $ real tal que $ x ≠ kπ + {π|2} $ radianos, em que $ k $ é um número inteiro.",
+     "ok": true
+    },
+    {
+     "t": "Reduzindo-se o arco de 1545° ao primeiro quadrante, obtém-se 75°.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73730,37 +73744,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. UFRN Na figura abaixo, o â ngulo θ mede: a) 94 ° b) 93 ° c) 91 ° d) 92 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-035.jpg"
-   ],
-   "larguraMm": 90.1,
+   "enunciado": "Na figura abaixo, o ângulo $ θ $ mede:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "94°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "93°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "91°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "92°",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-035-fig.jpg",
+    "alt": "Duas retas inclinadas que se cruzam num vértice inferior formando um ângulo de 33°; uma reta vertical e uma reta horizontal cortam as inclinadas; um ângulo de 31° e um ângulo reto estão marcados à direita; θ é o ângulo entre a reta inclinada da esquerda e a horizontal",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73772,37 +73786,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. U.F. Juiz de Fora-MG A express ã o sen θ π +       6 + cos θ π +       3 , onde θ é um n ú mero real, é igual a: a) 1 c) cos θ b) tg θ π +       2 d) sen(2 θ )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-036.jpg"
-   ],
-   "larguraMm": 98.6,
+   "enunciado": "A expressão $ sen(θ + {π|6}) + cos(θ + {π|3}) $, onde $ θ $ é um número real, é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ tg(θ + {π|2}) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ cos θ $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ sen(2θ) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73814,41 +73822,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. UFR-RJ Dentre os conjuntos abaixo, o que est á contido no conjunto solu çã o da equa- çã o abaixo é : sen 2 (x 3 + 7x 2 + x + 1) + cos 2 (x 3 + 5x 2 + 2) = 1 a) S = −       1 2 1 , d) S = −       2 1 2 , b) S = 1 2 1 ,       e) S = −       1 1 2 , c) S = − −       1 1 2 ,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-037.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Dentre os conjuntos abaixo, o que está contido no conjunto solução da equação abaixo é:<br><span class=\"pb\"></span>$ sen^2(x^3 + 7x^2 + x + 1) + cos^2(x^3 + 5x^2 + 2) = 1 $",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ S = \\{−{1|2}, 1\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ S = \\{{1|2}, 1\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ S = \\{−1, −{1|2}\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ S = \\{−2, {1|2}\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ S = \\{−1, {1|2}\\} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73860,41 +73862,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. U.E. Londrina-PR Com respeito aos pontos A, B, C, D e E, representados na figura abaixo, sabe-se que CD = 2 . BC e que a dist â ncia de D a E é 12 m. Ent ã o, a dist â ncia de A a C, em metros, é : a) 6 b) 4 c) 3 d) 2 e) 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-038.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Com respeito aos pontos A, B, C, D e E, representados na figura abaixo, sabe-se que $ CD = 2 · BC $ e que a distância de D a E é 12 m.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Então, a distância de A a C, em metros, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-038-fig.jpg",
+    "alt": "Figura: A e D estão em uma reta horizontal, com C entre eles; B está acima de C e E abaixo de C, com BC e CE perpendiculares à horizontal; o ângulo em A mede 60° e o ângulo em D mede 30°",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73906,41 +73909,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. FUVEST-SP Os v é rtices de um tri â ngulo ABC, no plano cartesiano, s ã o: A = (1, 0), B = (0, 1) e C = (0, 3). Ent ã o, o â ngulo B Â C mede: a) 60 ° b) 45 ° c) 30 ° d) 18 ° e) 15 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-039.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Os vértices de um triângulo ABC, no plano cartesiano, são: $ A = (1, 0) $, $ B = (0, 1) $ e $ C = (0, √3) $.<br><span class=\"pb\"></span>Então, o ângulo $ BÂC $ mede:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "45°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "30°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "18°",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15°",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73952,41 +73949,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. Mackenzie-SP I. cos 225 ° < cos 215 ° II. tg 5 π > sen 5 π III. sen 160 ° > sen 172 ° Das afirma çõ es acima: a) todas s ã o verdadeiras. b) todas s ã o falsas. c) somente II e III s ã o verdadeiras. d) somente II é verdadeira. e) somente I e II s ã o verdadeiras. 12 12",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-040.jpg"
-   ],
-   "larguraMm": 57.3,
+   "enunciado": "Considere as afirmações:<br><span class=\"pb\"></span>I. $ cos 225° < cos 215° $<br>II. $ tg {5π|12} > sen {5π|12} $<br>III. $ sen 160° > sen 172° $<br><span class=\"pb\"></span>Das afirmações acima:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "todas são verdadeiras.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "todas são falsas.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "somente II e III são verdadeiras.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "somente II é verdadeira.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "somente I e II são verdadeiras.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73998,41 +73989,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. F.I.Anápolis-GO O valor de sen 80 2 ° (tg40 º + cotg40 º ) é : a) 1 4 b) 1 2 c) 1 d) 2 e) 3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-041.jpg"
-   ],
-   "larguraMm": 82,
+   "enunciado": "O valor de $ {sen 80°|2}(tg 40° + cotg 40°) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|4} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|4} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74044,41 +74029,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. Unifor-CE A soma de todas as ra í zes da equa çã o 2 . 2 sen x = 2 , no intervalo [0, 2 π ], é : a) π b) 2 π c) 3 π d) 4 π e) 5 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-042.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "A soma de todas as raízes da equação $ 2 · 2^{sen x} = √2 $, no intervalo $ [0, 2π] $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ π $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 3π $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 4π $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 5π $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -74090,37 +74069,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. Unifor-CE O n ú mero real m que satisfaz a senten ç a m m + − 1 2 = cos 3015 ° é : a) 4 – 3 2 d) 4 2 + 3 b) 3 2 – 4 e) 3 2 + 4 c) 3 – 4 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-043.jpg"
-   ],
-   "larguraMm": 114.1,
+   "enunciado": "O número real $ m $ que satisfaz a sentença $ {m + 1|m − 2} = cos 3015° $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4 − 3√2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 3√2 − 4 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ 3 − 4√2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 4√2 + 3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3√2 + 4 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-044",
