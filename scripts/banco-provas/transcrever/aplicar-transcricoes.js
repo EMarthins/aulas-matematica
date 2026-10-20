@@ -25,8 +25,10 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
   for (const r0 of linhas) {
     const q = por[r0.id]; if (!q) { cont.ausentes.push(r0.id); continue; }
     if (!q.soImagem) continue; // já é texto (idempotente: depois da 1ª aplicação o soImagem sai)
-    const r = Object.assign({}, rascunho(q), r0); // rascunho automático + correções manuais
+    const base0 = r0.ocr ? require('./ocr-rascunho.js').ocrCompleto(q, Array.isArray(r0.fig) ? r0.fig : (r0.fig === 'auto' ? FIGAUTO[r0.id] : null)) || rascunho(q) : rascunho(q);
+    const r = Object.assign({}, base0, r0); // rascunho automático + correções manuais
     if (r.fig === 'auto') r.fig = FIGAUTO[r.id] || null;
+    if (r0.tudo && base0 && base0.p) { r.e = base0.e + String.fromCharCode(10,10) +base0.p; if (r0.p === undefined) r.p = ''; } // tudo: junta e+p do rascunho (o corte é feito por e_ate / p_de)
     if ((r.e_ate || r.p_de) && r.e) { // e_ate: o enunciado termina nesta frase (descarta rótulos da figura que vieram no texto); p_de: a pergunta começa nesta frase
       const idx = [], ne = []; for (let i = 0; i < r.e.length; i++) { const c = normc(r.e[i]); if (c) { ne.push(c); idx.push(i); } }
       const N = ne.join(''), achar = f => { const k = N.indexOf(normc(f)); if (k < 0) return null; let fim = idx[k + normc(f).length - 1] + 1; while (fim < r.e.length && /[).”"»]/.test(r.e[fim])) fim++; return [idx[k], fim]; };

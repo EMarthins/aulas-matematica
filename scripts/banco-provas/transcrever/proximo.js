@@ -22,6 +22,7 @@ Object.entries(ind).forEach(([f, l]) => console.log(path.join(out, f), '=>', l.m
 const { rascunho, embaralhado } = require('./rascunho.js');
 const gar = ids.filter(id => embaralhado(j.questoes.find(x => x.id === id).busca));
 if (gar.length) spawnSync(process.execPath, [path.join(__dirname, 'ocr-lote.js'), ...gar], { stdio: 'ignore' });
+if (process.env.OCRMODE) process.exit(0);
 console.log('\n--- RASCUNHOS (confira com a imagem; só escreva o que precisa corrigir) ---');
 ids.forEach(id => { const q = j.questoes.find(x => x.id === id); if (embaralhado(q.busca) && !/^enem2018-/.test(id)) { console.log( '' + id + ' [' + q.tipo + (q.gabarito ? ' g=' + q.gabarito : '') + '] (texto embaralhado: digitar da imagem)'); return; } const r = rascunho(q); const cut = s => (s.length > 700 ? s.slice(0, 480) + ' […] ' + s.slice(-200) : s); const REV = fs.existsSync(path.join(__dirname, 'revisar-todas.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'revisar-todas.json'), 'utf8')) : {}; const FA = fs.existsSync(path.join(__dirname, 'figuras-auto.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'figuras-auto.json'), 'utf8')) : {};
   console.log('\n' + id + ' [' + q.tipo + (q.gabarito ? ' g=' + q.gabarito : '') + '] ' + (REV[id] ? '{' + REV[id].slice(0, 50) + '} ' : '') + (FA[id] ? 'FIGauto=' + FA[id].join(',') + ' ' : '') + 'E: ' + cut(r.e));

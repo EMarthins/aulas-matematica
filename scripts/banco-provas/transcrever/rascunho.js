@@ -242,7 +242,17 @@ function juntaPartidas(t) {
   const R1 = new RegExp('(\\p{L}{2,}) ([a-zà-ú]{2,5})(?= |[.,;:!?)”"]|$)', 'gu'), R2 = new RegExp('(\\p{L}{4,}) (s)(?= |[.,;:!?)”"]|$)', 'gu');
   return String(t).replace(R1, (m, a, b) => { const j = (a + b).toLowerCase(); if (V.conhecida(j) && !(V.conhecida(a.toLowerCase()) && V.conhecida(b.toLowerCase()))) return a + b; if (!V.conhecida(a.toLowerCase()) && (a + b).length >= 8 && a.length >= 5 && V.desconhecidas(a).length) return a + b; return m; }).replace(R2, '$1$2');
 }
-function altsDoOcr(q) {
+/** separa as linhas em exatamente 5 grupos pelos maiores espaços verticais (alternativas) */
+function agrupa5(ls) {
+  if (ls.length < 5) return null;
+  const gaps = ls.slice(1).map((l, i) => l.y - ls[i].y);
+  const idx = gaps.map((g, i) => [g, i]).sort((a, b) => b[0] - a[0]).slice(0, 4).map(x => x[1]).sort((a, b) => a - b);
+  const menorEscolhido = Math.min(...idx.map(i => gaps[i])), maiorNaoEscolhido = Math.max(0, ...gaps.filter((g, i) => !idx.includes(i)));
+  if (menorEscolhido <= maiorNaoEscolhido) return null; // sem separação clara
+  const gr = []; let ini = 0; idx.forEach(i => { gr.push(ls.slice(ini, i + 1)); ini = i + 1; }); gr.push(ls.slice(ini));
+  return gr;
+}
+function altsDoOcr0(q) {
   const o = ocrDe(q.id); if (!o) return null;
   const L = o.filter(l => l.t && l.t.trim()).sort((a, b) => a.y - b.y || a.x - b.x);
   const mk = []; L.forEach((l, i) => { if (MARC.test(l.t.trim())) mk.push(i); });
@@ -258,11 +268,12 @@ function altsDoOcr(q) {
     const gaps = resto.slice(1).map((l, i) => l.y - resto[i].y), base = [...gaps].sort((p, q) => p - q)[Math.floor(gaps.length / 2)] || 1;
     let grupos = [[resto[0]]]; resto.slice(1).forEach((l, i) => { if (gaps[i] > base * 1.25) grupos.push([l]); else grupos[grupos.length - 1].push(l); });
     if (resto.length === 5) grupos = resto.map(l => [l]);
+    if (grupos.length !== 5) grupos = agrupa5(resto) || grupos;
     if (grupos.length !== 5) return null;
     const alts = grupos.map(g => limpa(g.map(l => l.t.trim()).join(' ')));
     if (alts.some(t => t.length < 3 || t.length > 450)) return null;
     const stemLines = L.slice(0, ult[0]);
-    return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/s+/g, ' ') };
+    return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/\s+/g, ' ') };
   }
   const u = mk.slice(-5), x0 = L[u[0]].x;
   if (u.some(i => Math.abs(L[i].x - x0) > 14)) return null;
@@ -305,3 +316,26 @@ function o2(id) { return ocrDe(id) || []; }
 module.exports.altsEmConflito = altsEmConflito;
 
 module.exports.altsDoOcr = altsDoOcr; module.exports.altsEmConflito = altsEmConflito; module.exports.juntaPartidas = juntaPartidas;
+
+// fallback: só alguns marcadores foram lidos pelo OCR; as alternativas são separadas pelo espaçamento vertical entre as linhas
+const MARC0 = /^(?:OQ|O|Q|@|©|®|0)(?:s+|$)/;
+function altsDoOcr(q) {
+  const r = altsDoOcr0(q); if (r) return r;
+  const o = ocrDe(q.id); if (!o) return null;
+  const L = o.filter(l => l.t && l.t.trim() && l.w).sort((a, b) => a.y - b.y || a.x - b.x);
+  if (L.length < 8) return null;
+  const ps = L.slice(1).map((l, i) => l.y - L[i].y).filter(v => v > 0).sort((a, b) => a - b), pitch = ps[Math.floor(ps.length / 3)] || 28;
+  const cand = []; L.forEach((l, i) => { if (i > 1 && MARC0.test(l.t.trim())) cand.push(i); });
+  for (let c = cand.length - 1; c >= 0; c--) {
+    const i0 = cand[c], bl = L.slice(i0), gr = [[bl[0]]];
+    for (let k = 1; k < bl.length; k++) { if (MARC0.test(bl[k].t.trim()) || bl[k].y - bl[k - 1].y > 1.3 * pitch) gr.push([bl[k]]); else gr[gr.length - 1].push(bl[k]); }
+    if (gr.length < 5) continue;
+    if (gr.length > 5) break;
+    const alts = gr.map(g => limpa(g.map(l => l.t.trim()).join(' ').replace(MARC0, '')));
+    if (alts.some(t => t.length < 3 || t.length > 450)) continue;
+    const stemLines = L.slice(0, i0);
+    return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/\s+/g, ' ') };
+  }
+  return null;
+}
+module.exports.altsDoOcr = altsDoOcr;
