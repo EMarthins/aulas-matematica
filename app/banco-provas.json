@@ -63419,12 +63419,34 @@
    "pontos": 1,
    "enunciado": "O domínio da função real $ f $ definida por $ f(x) = {√{|x|}|x} $ é:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "A 1",
+   "tipo": "mc",
+   "gabarito": "A",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "$ ℝ^* $",
+     "ok": true
+    },
+    {
+     "t": "$ ℝ_+ $",
+     "ok": false
+    },
+    {
+     "t": "$ [1; +∞) $",
+     "ok": false
+    },
+    {
+     "t": "$ (1; +∞) $",
+     "ok": false
+    },
+    {
+     "t": "$ (0; +∞) $",
+     "ok": false
+    }
+   ],
    "transcrita": true
   },
   {
@@ -65471,12 +65493,34 @@
    "pontos": 1,
    "enunciado": "Resolvendo a inequação $ log_{1/2}(x − 1) − log_{1/2}(x + 1) < log_{1/2}(x − 2) + 1 $ encontramos:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "C 1 1 + log_(a) x log a x",
+   "tipo": "mc",
+   "gabarito": "C",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "$ \\{x ∈ ℝ | 0 ≤ x ≤ 3\\} $",
+     "ok": false
+    },
+    {
+     "t": "$ \\{x ∈ ℝ | 0 < x < 3\\} $",
+     "ok": false
+    },
+    {
+     "t": "$ \\{x ∈ ℝ | 2 < x < 3\\} $",
+     "ok": true
+    },
+    {
+     "t": "$ \\{x ∈ ℝ | 2 ≤ x ≤ 3\\} $",
+     "ok": false
+    },
+    {
+     "t": "Nenhuma das respostas anteriores.",
+     "ok": false
+    }
+   ],
    "transcrita": true
   },
   {
@@ -69492,12 +69536,30 @@
    "pontos": 1,
    "enunciado": "A solução da equação $ @D{1&x&2;x&x&−1;x&x&3} = 0 $ é:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "A  2 x = 0",
+   "tipo": "mc",
+   "gabarito": "A",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "0 e 1",
+     "ok": true
+    },
+    {
+     "t": "0 e 0",
+     "ok": false
+    },
+    {
+     "t": "1 e 1",
+     "ok": false
+    },
+    {
+     "t": "1 e 2",
+     "ok": false
+    }
+   ],
    "transcrita": true
   },
   {
@@ -72098,12 +72160,34 @@
    "pontos": 1,
    "enunciado": "Sendo 1 e $ 1 + 2i $ raízes da equação $ x^3 + ax^2 + bx + c = 0 $, em que $ a $, $ b $ e $ c $ são números reais, então:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "C 1 e sen α_(1) = . Daí α_(1) = 30º. 2 α_(1) = 30º, devemos ter α_(3) = 120º + 90º = 210º 3 i",
+   "tipo": "mc",
+   "gabarito": "C",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "$ b + c = 4 $",
+     "ok": false
+    },
+    {
+     "t": "$ b + c = 3 $",
+     "ok": false
+    },
+    {
+     "t": "$ b + c = 2 $",
+     "ok": true
+    },
+    {
+     "t": "$ b + c = 1 $",
+     "ok": false
+    },
+    {
+     "t": "$ b + c = 0 $",
+     "ok": false
+    }
+   ],
    "transcrita": true
   },
   {
@@ -82771,12 +82855,34 @@
    "pontos": 1,
    "enunciado": "Seja $ f: ℝ → ℝ $ uma função definida por $ f(x) = ax + b $. Se o gráfico da função $ f $ passa pelos pontos $ A(1, 2) $ e $ B(2, 3) $, a função $ f^{−1} $ (inversa de $ f $) é:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "C 1",
+   "tipo": "mc",
+   "gabarito": "C",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "$ f^{−1}(x) = x + 1 $",
+     "ok": false
+    },
+    {
+     "t": "$ f^{−1}(x) = −x + 1 $",
+     "ok": false
+    },
+    {
+     "t": "$ f^{−1}(x) = x − 1 $",
+     "ok": true
+    },
+    {
+     "t": "$ f^{−1}(x) = x + 2 $",
+     "ok": false
+    },
+    {
+     "t": "$ f^{−1}(x) = −x + 2 $",
+     "ok": false
+    }
+   ],
    "transcrita": true
   },
   {
@@ -92107,12 +92213,34 @@
    "pontos": 1,
    "enunciado": "Uma reta intercepta a parábola da figura abaixo nos pontos de abscissas 1 e 2.",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "E 1 –2 22",
+   "tipo": "mc",
+   "gabarito": "E",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
+   "alternativas": [
+    {
+     "t": "$ {1|2} $",
+     "ok": false
+    },
+    {
+     "t": "$ {3|4} $",
+     "ok": false
+    },
+    {
+     "t": "$ {4|5} $",
+     "ok": false
+    },
+    {
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "2",
+     "ok": true
+    }
+   ],
    "pergunta": "Se $ (0; α) $ é o ponto de intersecção dessa reta com o eixo $ y $, então $ α $ é igual a:",
    "figura": {
     "tipo": "img",
@@ -93867,7 +93995,6 @@
   },
   {
    "id": "cdb-c20-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93879,37 +94006,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. UEPI Determine a altura de um cone reto onde a área da secção meridiana é igual à área de sua base e o raio desta é 1. a) π b) 3 π c) 2 π d) π e) π 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-029.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Determine a altura de um cone reto onde a área da secção meridiana é igual à área de sua base e o raio desta é 1.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3π|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ π $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ √π $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-030",
@@ -93953,7 +94075,6 @@
   },
   {
    "id": "cdb-c20-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93965,41 +94086,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. UFR-RJ Sendo S uma esfera de raio r , o valor pelo qual deveríamos multiplicar r , a fim de obtermos uma nova esfera S’, cujo volume seja o dobro do volume de S, é: a) 2 b) 2 2 c) 2 d) 3 e) 3 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-031.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sendo $ S $ uma esfera de raio <b>r</b>, o valor pelo qual deveríamos multiplicar <b>r</b>, a fim de obtermos uma nova esfera $ S' $, cujo volume seja o dobro do volume de $ S $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ∛{2} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 2∛{2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ √3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94011,41 +94126,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. UFR-RJ Considere a figura: 3 2 2 3 3 y x Se girarmos a parte hachurada da circunferência de raio 4 em torno do eixo y, formaremos um sólido de revolução. O volume deste sólido é: a) 128 π b) 64 π c) 128 π d) 64 π e) 32 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-032.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {128|3}π $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {64|2}π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {128|2}π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {64|3}π $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {32|3}π $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se girarmos a parte hachurada da circunferência de raio 4 em torno do eixo $ y $, formaremos um sólido de revolução. O volume deste sólido é:",
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"11\"><rect width=\"200\" height=\"200\" fill=\"#fff\"/><path d=\"M100,30 L170,100 A70,70 0 0 0 100,30 Z\" fill=\"#c4c4c4\"/><circle cx=\"100\" cy=\"100\" r=\"70\" fill=\"none\" stroke=\"#222\" stroke-width=\"1.2\"/><line x1=\"100\" y1=\"30\" x2=\"170\" y2=\"100\" stroke=\"#222\"/><line x1=\"20\" y1=\"100\" x2=\"186\" y2=\"100\" stroke=\"#222\"/><polygon points=\"192,100 184,97 184,103\" fill=\"#222\"/><line x1=\"100\" y1=\"190\" x2=\"100\" y2=\"12\" stroke=\"#222\"/><polygon points=\"100,6 97,14 103,14\" fill=\"#222\"/><text x=\"106\" y=\"14\">y</text><text x=\"190\" y=\"116\">x</text></svg>",
+     "largura": "45%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94057,24 +94174,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. UFR-RJ Determine o volume da região compreendida por uma esfera de raio 3 e por um cubo circunscrito à esfera. 4 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-033.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Determine o volume da região compreendida por uma esfera de raio $ ∛{{3|4}} $ e por um cubo circunscrito à esfera.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "V = 6 – π",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94086,41 +94197,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. UFRS O volume de uma esfera A é 1 do volume de uma esfera B. Se o raio da esfera B mede 10, então o raio da esfera A mede: a) 5 d) 2 b) 4 e) 1,25 c) 2,5 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-034.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "O volume de uma esfera A é $ {1|8} $ do volume de uma esfera B. Se o raio da esfera B mede 10, então o raio da esfera A mede:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1,25",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94132,41 +94237,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. Cefet-PR Em uma esfera de volume 8 6 π cm 3 , há um fuso de área igual a 5 π cm 2 . O ângulo desse fuso, em graus, é igual a: a) 75 d) 60 b) 30 e) 90 c) 45",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-035.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Em uma esfera de volume $ 8√6π $ cm<sup>3</sup>, há um fuso de área igual a $ 5π $ cm<sup>2</sup>. O ângulo desse fuso, em graus, é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "75",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "45",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "60",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "90",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94178,20 +94277,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. U. E. Ponta Grossa-PR A relação entre o volume e a área de uma esfera é 1. Então, é correto afirmar que: 01) a área dessa esfera é igual a três vezes a área de uma esfera de 1 u.c. de raio. 02) o raio dessa esfera vale 3 u.c. 04) a aresta de um cubo circunscrito a essa esfera vale 6 u.c. 08) essa esfera pode ser inscrita num cilindro eqüilátero de altura 6 u.c. 16) a geratriz de um cone cujo raio da base tem a mesma medida do raio dessa esfera e cuja altura é 4 u.c. vale 5 u.c. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-036.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A relação entre o volume e a área de uma esfera é 1. Então, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "30 = 02 + 04 + 08 + 16"
+   "gabarito": "30 = 02 + 04 + 08 + 16",
+   "afirmacoes": [
+    {
+     "t": "a área dessa esfera é igual a três vezes a área de uma esfera de 1 u.c. de raio.",
+     "ok": false
+    },
+    {
+     "t": "o raio dessa esfera vale 3 u.c.",
+     "ok": true
+    },
+    {
+     "t": "a aresta de um cubo circunscrito a essa esfera vale 6 u.c.",
+     "ok": true
+    },
+    {
+     "t": "essa esfera pode ser inscrita num cilindro eqüilátero de altura 6 u.c.",
+     "ok": true
+    },
+    {
+     "t": "a geratriz de um cone cujo raio da base tem a mesma medida do raio dessa esfera e cuja altura é 4 u.c. vale 5 u.c.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94203,24 +94318,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. UFMT De um bloco de metal com a forma de um cubo de aresta 4, corta-se uma peça no formato da região sombreada na figura abaixo. Na figura, a superfície BCFG é cilíndrica circular reta e, BC e FG são arcos de circunferência de raio 4 e centros, respectivamente, nos pontos D e H. Sendo V o volume da peça, calcule V . 4 – π B D C G H F A E C",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-037.jpg"
-   ],
-   "larguraMm": 133,
+   "enunciado": "De um bloco de metal com a forma de um cubo de aresta 4, corta-se uma peça no formato da região sombreada na figura abaixo. Na figura, a superfície $ BCFG $ é cilíndrica circular reta e os arcos $ BC $ e $ FG $ são arcos de circunferência de raio 4 e centros, respectivamente, nos pontos $ D $ e $ H $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "16",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Sendo $ V $ o volume da peça, calcule $ {V|4 − π} $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-037-fig.jpg",
+    "alt": "Cubo ABCDEFGH desenhado em perspectiva, com a peça sombreada: uma região limitada pelas faces do cubo e pela superfície cilíndrica BCFG",
+    "largura": "44mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94232,20 +94348,54 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. U.Católica-GO Julgue os seguintes itens: ( ) Na figura ao lado, D e E são pontos médios dos lados AB e BC , respectivamente. Pode-se então afirmar que AC é paralelo a DE , e AC = 2 DE . ( ) Na figura abaixo, A é um ponto de observação, B é uma moeda que tem 2 cm de diâmetro e C um disco voador. Sabendo-se que a distância de A a B é 5 m e que a distância de A a C é 20 km, pode-se concluir que o diâmetro do disco voador é 80 m. B E A D A B C 27 3 ( ) Em uma placa metálica homogênea de forma triangular, deseja-se fazer um furo de modo que ela possa ficar em equilíbrio quando suspensa por um d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-038.jpg"
-   ],
-   "larguraMm": 133.2,
+   "enunciado": "Julgue os seguintes itens (as figuras 1 e 2 referem-se aos dois primeiros itens):",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – F – F"
+   "gabarito": "V – V – V – F – F – F",
+   "afirmacoes": [
+    {
+     "t": "Na figura 1, D e E são pontos médios dos lados $ AB $ e $ BC $, respectivamente. Pode-se então afirmar que $ AC $ é paralelo a $ DE $, e $ AC = 2DE $.",
+     "ok": true
+    },
+    {
+     "t": "Na figura 2, A é um ponto de observação, B é uma moeda que tem 2 cm de diâmetro e C um disco voador. Sabendo-se que a distância de A a B é 5 m e que a distância de A a C é 20 km, pode-se concluir que o diâmetro do disco voador é 80 m.",
+     "ok": true
+    },
+    {
+     "t": "Em uma placa metálica homogênea de forma triangular, deseja-se fazer um furo de modo que ela possa ficar em equilíbrio quando suspensa por um dispositivo acoplado ao furo. Esse ponto será o encontro das medianas desse triângulo, chamado baricentro.",
+     "ok": true
+    },
+    {
+     "t": "Suponha-se que uma esfera tenha volume igual a $ 36π $ cm<sup>3</sup>. Uma outra esfera cujo volume seja $ {1|27} $ do anterior, deverá ter um raio igual a 0,01 mm. $ (V = {4|3}πR^3) $.",
+     "ok": false
+    },
+    {
+     "t": "Se uma reta $ r $ é paralela a um plano $ α $, pode-se calcular a distância de $ r $ a $ α $ tomando-se qualquer ponto de $ r $ e qualquer ponto de $ α $ e calculando-se a distância entre eles.",
+     "ok": false
+    },
+    {
+     "t": "Diz-se que uma reta é perpendicular a um plano quando ela é perpendicular a uma reta do plano.",
+     "ok": false
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-038-fig1.jpg",
+     "alt": "Figura 1: triângulo ABC, com D e E pontos médios dos lados AB e BC e o segmento DE traçado",
+     "largura": "26mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-038-fig2.jpg",
+     "alt": "Figura 2: cone de luz que sai do ponto A (observador) e passa pela moeda B e pelo disco voador C",
+     "largura": "52mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94257,41 +94407,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. UFPB A figura ao lado mostra um sólido que foi obtido seccio- nando-se um cubo de aresta 2 cm com um plano, contendo as diagonais de três das suas faces. O valor da área total deste sóli- do em cm 2 é: a) 18 + 3 2 b) 18 + 2 3 c) 24 3 d) 28 3 e) 36 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-039.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A figura ao lado mostra um sólido que foi obtido seccionando-se um cubo de aresta 2 cm com um plano, contendo as diagonais de três das suas faces.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 18 + 3√2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 18 + 2√3 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ 24√3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 28√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 36√2 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O valor da área total deste sólido em cm<sup>2</sup> é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-039-fig.jpg",
+    "alt": "Cubo cortado por um plano que passa pelas diagonais de três faces que concorrem num vértice; o sólido restante está sombreado",
+    "largura": "32mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94303,41 +94454,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. Unifor-CE A aresta de um cubo maciço de madeira mede x cm. Um sólido, com duas faces opostas em forma de F, é construído a partir do cubo e as medidas de suas arestas são tais que b = 1 x, c = 1 x e d = 1 x, como mostram as figuras abaixo. b b b b b c d d d c c c x x 5 4 3 O volume desse sólido, em centímetros cúbicos, é igual a: a) 23 x 3 b) 127 x 3 c) 11 x 3 d) 23 x 2 e) 1 x 60 60 60 12 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-040.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A aresta de um cubo maciço de madeira mede $ x $ cm. Um sólido, com duas faces opostas em forma de F, é construído a partir do cubo e as medidas de suas arestas são tais que $ b = {1|5}x $, $ c = {1|4}x $ e $ d = {1|3}x $, como mostram as figuras abaixo.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {23|60}x^3 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {127|60}x^3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {11|60}x^3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {23|12}x^2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|3}x $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O volume desse sólido, em centímetros cúbicos, é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-040-fig.jpg",
+    "alt": "À esquerda, o cubo em perspectiva com o sólido em forma de F; à direita, a face em forma de F com as medidas b (na vertical), c e d (na horizontal) indicadas",
+    "largura": "80mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94349,20 +94501,22 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "C H A B PISTA 3 m 0,50 cm 41. UFR-RJ Uma pista de skate foi construída conforme a figura abaixo, onde AB representa uma semicircunferência. Em um torneio realizado nesta pista, após uma sensacional ma- nobra, um dos participantes despencou do ponto C , estatelando-se no chão. Se a área da pista sombreada é 75,36 m 2 , qual foi a altura da queda? (Obs: π = 3,14)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-041.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma pista de skate foi construída conforme a figura abaixo, onde o arco $ AB $ representa uma semicircunferência. Em um torneio realizado nesta pista, após uma sensacional manobra, um dos participantes despencou do ponto C, estatelando-se no chão.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "8,005 m 2 3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Se a área da pista sombreada é 75,36 m<sup>2</sup>, qual foi a altura da queda? (Obs: π = 3,14)",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-041-fig.jpg",
+    "alt": "Pista de skate em forma de meia-calha semicilíndrica de 3 m de largura, com a parte sombreada, o ponto C na borda e a altura H da queda; o fundo da pista fica 0,50 cm acima do chão",
+    "largura": "83mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-042",
@@ -94412,7 +94566,6 @@
   },
   {
    "id": "cdb-c20-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94424,41 +94577,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. U. Alfenas-MG Seja V o volume de um cilindro reto. Se a área de secção transversal reta desse cilindro diminui de 20% e a altura aumenta de 50%, então o volume do novo cilin- dro é: a) 0,20 V b) 0,50 V c) 0,80 V d) V e) 1,20 V",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-044.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Seja $ V $ o volume de um cilindro reto. Se a área de secção transversal reta desse cilindro diminui de 20% e a altura aumenta de 50%, então o volume do novo cilindro é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,20 $ V $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,50 $ V $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,80 $ V $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ V $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1,20 $ V $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94470,41 +94617,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. Fempar Uma bola de sorvete tem 6 cm de diâmetro. Ao ingerir 20 bolas de sorvete, uma pessoa consumirá, em litros, aproximadamente: (Obs.: Considerar que: 1) a bola de sorvete é perfeitamente esférica. 2) π = 3,14 3) o volume fundido é 50% menor que o volume da bola do sorvete) a) 9,04 b) 0,904 c) 3,4 d) 1,13 e) 0,0113",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-045.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma bola de sorvete tem 6 cm de diâmetro. Ao ingerir 20 bolas de sorvete, uma pessoa consumirá, em litros, aproximadamente:<br><span class=\"pb\"></span>(Obs.: Considerar que:<br>1) a bola de sorvete é perfeitamente esférica.<br>2) π = 3,14<br>3) o volume fundido é 50% menor que o volume da bola do sorvete)",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9,04",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,904",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3,4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,13",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "0,0113",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-045-fig.jpg",
+    "alt": "Casquinha de sorvete cônica com uma bola de sorvete esférica em cima",
+    "largura": "25mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94516,41 +94663,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. UFRS A figura abaixo representa um cilindro circunscrito a uma esfera. R 3 2 V 2 – V 1 Se V 1 é o volume da esfera e V 2 é o volume do cilindro, então a razão V 1 é: a) 1 b) 1 c) 1 d) 2 e) 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-046.jpg"
-   ],
-   "larguraMm": 121.7,
+   "enunciado": "A figura abaixo representa um cilindro circunscrito a uma esfera.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ V_1 $ é o volume da esfera e $ V_2 $ é o volume do cilindro, então a razão $ {V_1|V_2 − V_1} $ é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-046-fig.jpg",
+    "alt": "Esfera de raio R inscrita num cilindro reto, tangente às bases e à superfície lateral",
+    "largura": "26mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94562,20 +94710,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. UFGO A figura abaixo representa um tronco de cone, cujas bases são círculos de raios 5 cm e 10 cm, respectivamente, e altura 12 cm. Considerando-se esse sólido, julgue os itens abaixo: ( ) a área da base maior é o dobro da área da base menor. ( ) o volume é menor que 2000 cm 3 . ( ) o comprimento da geratriz AB é 13 cm. ( ) a medida da área da superfície lateral é 195 π cm 2 . A B",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-047.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A figura abaixo representa um tronco de cone, cujas bases são círculos de raios 5 cm e 10 cm, respectivamente, e altura 12 cm.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V"
+   "gabarito": "F – F – V – V",
+   "pergunta": "Considerando-se esse sólido, julgue os itens abaixo:",
+   "afirmacoes": [
+    {
+     "t": "a área da base maior é o dobro da área da base menor.",
+     "ok": false
+    },
+    {
+     "t": "o volume é menor que 2000 cm<sup>3</sup>.",
+     "ok": false
+    },
+    {
+     "t": "o comprimento da geratriz $ AB $ é 13 cm.",
+     "ok": true
+    },
+    {
+     "t": "a medida da área da superfície lateral é $ 195π $ cm<sup>2</sup>.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-047-fig.jpg",
+    "alt": "Tronco de cone com a base maior em cima; a altura e o segmento AB (geratriz) estão assinalados",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94587,20 +94754,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. U.Católica Dom Bosco-MS Considere o sólido que se obtém ao girar o hexágono regular, de lado 6 cm, apresentado a seguir, em torno de um de seus lados AB. Sobre o sólido obtido, escreva V para as afirmativas verdadeiras ou F para as afirmativas falsas. ( ) Os raios da base do cilindro e dos cones que formam o sólido têm como medidas números racionais. ( ) O sólido tem volume maior que 2 400 cm 3 . ( ) A interseção do sólido com um plano que passa pelos vértices dos dois cones do sólido gerado é um hexágono regular. ( ) A área lateral do cilindro que constitui o sólido é menor que 380 cm 2 .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-048.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere o sólido que se obtém ao girar o hexágono regular, de lado 6 cm, apresentado a seguir, em torno de um de seus lados $ AB $.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – F – F"
+   "gabarito": "F – V – F – F – F",
+   "pergunta": "Sobre o sólido obtido, escreva V para as afirmativas verdadeiras ou F para as afirmativas falsas.",
+   "afirmacoes": [
+    {
+     "t": "Os raios da base do cilindro e dos cones que formam o sólido têm como medidas números racionais.",
+     "ok": false
+    },
+    {
+     "t": "O sólido tem volume maior que 2 400 cm<sup>3</sup>.",
+     "ok": true
+    },
+    {
+     "t": "A interseção do sólido com um plano que passa pelos vértices dos dois cones do sólido gerado é um hexágono regular.",
+     "ok": false
+    },
+    {
+     "t": "A área lateral do cilindro que constitui o sólido é menor que 380 cm<sup>2</sup>.",
+     "ok": false
+    },
+    {
+     "t": "O sólido obtido ao girar o hexágono regular em torno do segmento $ CB $ tem o mesmo volume que o sólido que se obtém girando o hexágono regular em torno de $ AB $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-048-fig.jpg",
+    "alt": "Hexágono regular com os vértices A (no topo), B (à direita) e C (à esquerda) assinalados",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94612,37 +94802,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. UFPE Um cone reto tem altura 12 2 cm e está cheio de sorvete. Dois amigos vão dividir o sorvete em duas partes de mesmo volume, usando um plano paralelo à base do cone. Qual deverá ser a altura do cone menor assim obtido? a) 12 cm b) 12 2 cm c) 12 3 cm d) 10 2 cm e) 10 3 cm 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-049.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um cone reto tem altura $ 12∛{2} $ cm e está cheio de sorvete. Dois amigos vão dividir o sorvete em duas partes de mesmo volume, usando um plano paralelo à base do cone. Qual deverá ser a altura do cone menor assim obtido?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "12 cm",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 12√2 $ cm",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 12√3 $ cm",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 10√2 $ cm",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 10√3 $ cm",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-050",
@@ -94676,7 +94861,6 @@
   },
   {
    "id": "cdb-c20-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94688,24 +94872,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Figura 1 Figura 2 h 10 10 5 5 3 51. UFR-RJ Uma taça em forma de cone tem raio da base igual a 5 cm e altura 10 cm. Coloca-se champanhe em seu interior até que a altura, a partir do vértice da taça, atinja 5 cm, conforme mostra a figura 1. Tampando-se a taça e virando-a para baixo, conforme mostra a figura 2, pergunta-se: Em que altura ( h ), a partir da base do cone, ficará o nível do champanhe nessa nova posi- ção? Considere 7 = 1,91",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-051.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma taça em forma de cone tem raio da base igual a 5 cm e altura 10 cm. Coloca-se champanhe em seu interior até que a altura, a partir do vértice da taça, atinja 5 cm, conforme mostra a figura 1. Tampando-se a taça e virando-a para baixo, conforme mostra a figura 2, pergunta-se:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "h = (10 – 5 7) cm ou 0,44 cm",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Em que altura (<b>h</b>), a partir da base do cone, ficará o nível do champanhe nessa nova posição?<br><span class=\"pb\"></span>Considere $ ∛{7} = 1,91 $",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-051-fig.jpg",
+    "alt": "Figura 1: taça cônica com o champanhe até a altura 5 cm a partir do vértice, taça de altura 10 cm e raio da base 5 cm. Figura 2: a taça virada para baixo, com o nível do champanhe a uma altura h da base",
+    "largura": "61mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-052",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94717,37 +94902,46 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "52. UERJ Leia os quadrinhos: 70 cm 100 cm 60 cm 40 cm Suponha que o volume da terra acumulada no carrinho-de-mão do personagem seja igual ao do sólido esquematizado na figura abaixo, formado por uma pirâmide reta sobreposta a um paralelepípedo retângulo. Assim, o volume médio de terra que Hagar acumulou em cada ano de trabalho é, em dm 3 , igual a: a) 12 b) 13 c) 14 d) 15 HAGAR, o horrível Chris Browne ( O Globo , março 2000)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-052.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Leia os quadrinhos:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "13",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "14",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "15",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Suponha que o volume da terra acumulada no carrinho-de-mão do personagem seja igual ao do sólido esquematizado na segunda figura, formado por uma pirâmide reta sobreposta a um paralelepípedo retângulo.<br><span class=\"pb\"></span>Assim, o volume médio de terra que Hagar acumulou em cada ano de trabalho é, em dm<sup>3</sup>, igual a:",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-052-fig1.jpg",
+     "alt": "Tirinha Hagar, o horrível (Chris Browne, O Globo, março de 2000): Hagar diz que levou 20 anos para economizar o bastante para comprar o pedacinho de terra que queria; ao lado, um personagem empurra um carrinho de mão cheio de terra e pergunta “É pra colocar onde?”",
+     "largura": "93mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-052-fig2.jpg",
+     "alt": "Sólido formado por uma pirâmide reta sobreposta a um paralelepípedo retângulo, com arestas da base de 100 cm e 60 cm, altura do paralelepípedo 40 cm e altura da pirâmide 70 cm",
+     "largura": "83mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-053",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94759,41 +94953,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "53. Cefet-PR Para se encher com água um reservatório em forma de cilindro, com 30 cm de raio e 91 cm de altura, utiliza-se um balde em forma de tronco de cone com raios das bases iguais a 12 cm e 10 cm, respectivamente, e altura de 30 cm. O número de baldes necessários, levando-se em consideração que o balde carrega cada vez 3 do seu volume total, é: a) 10 b) 22,5 c) 30 d) 45,5 e) 60 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-053.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Para se encher com água um reservatório em forma de cilindro, com 30 cm de raio e 91 cm de altura, utiliza-se um balde em forma de tronco de cone com raios das bases iguais a 12 cm e 10 cm, respectivamente, e altura de 30 cm. O número de baldes necessários, levando-se em consideração que o balde carrega cada vez $ {3|4} $ do seu volume total, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "22,5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "30",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "45,5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-054",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94805,24 +94993,47 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "54. Fempar A fábrica de abajures “Queluz” produz um modelo de cúpula com formato tronco – cônico, utilizando, para fechamento lateral do quebra-luz, um tecido especial chamado “isolex”. Essa cúpula tem 10 cm e 40 cm como medidas dos raios das bases e 40 cm de altura. Se a produ- ção diária é de 20 unidades, a quantidade de “isolex”, em m 2 , que a fábrica gasta em uma semana de 5 dias úteis, é: a) 2500 π b) 200000 π c) 250000 π d) 20 π e) 25 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-054.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A fábrica de abajures “Queluz” produz um modelo de cúpula com formato tronco – cônico, utilizando, para fechamento lateral do quebra-luz, um tecido especial chamado “isolex”. Essa cúpula tem 10 cm e 40 cm como medidas dos raios das bases e 40 cm de altura.",
    "resolucao": "",
-   "tipo": "aberta",
+   "tipo": "mc",
    "gabarito": "E 3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "alternativas": [
+    {
+     "t": "$ 2500π $",
+     "ok": false
+    },
+    {
+     "t": "$ 200000π $",
+     "ok": false
+    },
+    {
+     "t": "$ 250000π $",
+     "ok": false
+    },
+    {
+     "t": "$ 20π $",
+     "ok": false
+    },
+    {
+     "t": "$ 25π $",
+     "ok": true
+    }
+   ],
+   "pergunta": "Se a produção diária é de 20 unidades, a quantidade de “isolex”, em m<sup>2</sup>, que a fábrica gasta em uma semana de 5 dias úteis, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-054-fig.jpg",
+    "alt": "Abajur com cúpula em forma de tronco de cone sobre uma haste e uma base circular",
+    "largura": "35mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-055",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94834,24 +95045,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "55. UnB-DF O G C B A D F H E 25 m 45 m 6,3 m 35 m 36 m 5 9 5 9 \u0001 \u0001 \u0001 \u0001 Figura I — Teatro Nacional Cláudio Santoro, Brasília-DF. A figura II abaixo ilustra o modo pelo qual o Teatro Nacional Cláudio Santoro, mostrado na figura I, pode ser considerado como o tronco de uma pirâmide imaginária que se obtém prolongando-se suas arestas laterais. Figura II A figura III representa uma planificação aproximada da parte aparente do Teatro, des- considerando-se a sua cobertura. Sabendo que a altura do tronco de pirâmide da figura II é de 16 m e que as pirâmides OEFGH e OABCD são semelhantes, calcule, em d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-055.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "<b>Figura I</b> — Teatro Nacional Cláudio Santoro, Brasília-DF.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "19,3 dam",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "A figura II ilustra o modo pelo qual o Teatro Nacional Cláudio Santoro, mostrado na figura I, pode ser considerado como o tronco de uma pirâmide imaginária que se obtém prolongando-se suas arestas laterais.<br><span class=\"pb\"></span>A figura III representa uma planificação aproximada da parte aparente do Teatro, desconsiderando-se a sua cobertura. Sabendo que a altura do tronco de pirâmide da figura II é de 16 m e que as pirâmides $ OEFGH $ e $ OABCD $ são semelhantes, calcule, <b>em decâmetros cúbicos</b>, o volume da parte aparente do Teatro Nacional. Despreze a parte fracionária de seu resultado, caso exista.",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-055-fig1.jpg",
+     "alt": "Fotografia do Teatro Nacional Cláudio Santoro, em Brasília: construção em forma de tronco de pirâmide",
+     "largura": "85mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-055-fig2.jpg",
+     "alt": "Figura II: tronco de pirâmide ABCDEFGH obtido ao prolongar as arestas laterais até o vértice O da pirâmide imaginária",
+     "largura": "63mm"
+    },
+    {
+     "tipo": "img",
+     "src": "img:cdb-c20-055-fig3.jpg",
+     "alt": "Figura III: planificação aproximada da parte aparente do Teatro, com as medidas 25 m, 45 m, 36 m, 6,3 m, 35 m e os lados ℓ e 5ℓ/9",
+     "largura": "63mm"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-056",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -94863,33 +95089,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "56. UFMG Observe esta figura: A D B F C E 3 Nessa figura, ABC é um quadrante de círculo de raio 3 cm e ADEF é um quadrado, cujo lado mede 1 cm. Considere o sólido gerado pela rotação de 360º , em torno da reta AB, da região hachurada na figura. Sabe-se que o volume de uma esfera de raio r é igual a 4 π r 3 . Assim sendo, esse sólido tem um volume de: a) 14 π cm 3 c) 16 π cm 3 b) 15 π cm 3 d) 17 π cm 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-056.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe esta figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 14π $ cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 15π $ cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 16π $ cm<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 17π $ cm<sup>3</sup>",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Nessa figura, $ ABC $ é um quadrante de círculo de raio 3 cm e $ ADEF $ é um quadrado, cujo lado mede 1 cm.<br><span class=\"pb\"></span>Considere o sólido gerado pela rotação de 360°, em torno da reta $ AB $, da região hachurada na figura.<br><span class=\"pb\"></span>Sabe-se que o volume de uma esfera de raio $ r $ é igual a $ {4πr^3|3} $.<br><span class=\"pb\"></span>Assim sendo, esse sólido tem um volume de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-056-fig.jpg",
+    "alt": "Quadrante de círculo ABC de centro A e raio 3 cm, com B no topo e C na base à direita; o quadrado ADEF de lado 1 cm no canto A; a região entre o quadrado e o arco está hachurada",
+    "largura": "26mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-057",
