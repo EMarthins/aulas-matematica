@@ -51,6 +51,9 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
     if (r0.fig && r0.p === undefined && !r.corte && r.e) { const ps = r.e.split(/(?<=[.!?:])\s+/); const u = ps[ps.length - 1]; if (ps.length > 1 && u.length > 12 && /[?:.]$/.test(u)) { r.p = u; r.e = ps.slice(0, -1).join(' '); } }
     const orig = (q.imagens || [])[0] ? path.join(imgDir, q.imagens[0].replace(/^img:/, '')) : null;
     const larg0 = q.larguraMm || 90;
+    if (r.base) { // texto/figura de apoio compartilhado por um grupo de questões (antes numa imagem "base")
+      if (r.base.txt) r.e = r.base.txt + (r.e ? '\n\n' + r.e : '');
+    }
     q.enunciado = html(r.e); if (r.p) q.pergunta = html(r.p); else delete q.pergunta;
     if (q.tipo === 'mc') {
       const velho = q.alternativas || [];
@@ -86,7 +89,23 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
       const mm = Math.max(25, Math.min(170, Math.round(larg0 * (x1 - x0))));
       q.figura = { tipo: 'img', src: 'img:' + nome, alt: r.alt || 'Figura da questão', largura: mm + 'mm' }; cont.figuras++;
     }
-    delete q.soImagem; delete q.imagens; delete q.imgPrevia; delete q.larguraMm; delete q.busca; q.transcrita = true;
+    if (r.base) { // figuras de apoio (imagem inteira da base, recorte ou tabelas) vêm antes das figuras da própria questão
+      const extra = [];
+      if (q.base && q.base.src) {
+        const bf = path.join(imgDir, q.base.src.replace(/^img:/, ''));
+        if (r.base.img === 'inteira') extra.push({ tipo: 'img', src: q.base.src, alt: 'Texto de apoio', largura: Math.min(170, Math.round(q.base.larguraMm || 170)) + 'mm' });
+        else if (Array.isArray(r.base.img) && canvas && fs.existsSync(bf)) {
+          const im = await canvas.loadImage(fs.readFileSync(bf)), [a, b, c, d] = r.base.img, sx = Math.round(a * im.width), sy = Math.round(b * im.height), w = Math.round((c - a) * im.width), h = Math.round((d - b) * im.height);
+          const cv = canvas.createCanvas(w, h), g = cv.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, w, h); g.drawImage(im, sx, sy, w, h, 0, 0, w, h);
+          const nome = r.id + '-base.jpg'; fs.writeFileSync(path.join(imgDir, nome), cv.toBuffer('image/jpeg', 90));
+          extra.push({ tipo: 'img', src: 'img:' + nome, alt: r.base.alt || 'Figura de apoio', largura: Math.max(25, Math.min(170, Math.round((q.base.larguraMm || 120) * (c - a)))) + 'mm' });
+        }
+      }
+      (r.base.tabs || []).forEach(t => extra.push({ tipo: 'tabela', cab: t.cab, linhas: t.linhas, largura: t.largura || '90%', ...(t.legenda ? { legenda: t.legenda } : {}) }));
+      const proprias = [].concat(q.figura || [], q.figuras || []).filter(Boolean);
+      delete q.figura; q.figuras = extra.concat(proprias); delete q.base;
+    }
+    delete q.base; delete q.soImagem; delete q.imagens; delete q.imgPrevia; delete q.larguraMm; delete q.busca; q.transcrita = true;
     cont.ok++;
   }
   j.gerado = new Date().toISOString().slice(0, 10);

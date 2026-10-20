@@ -108,7 +108,12 @@ function estruturar(e, linhas) {
   const N = ne.join('');
   const L = linhas.filter(l => l.w && l.t && normC(l.t).length >= 4);
   const ach = []; let pos = 0;
-  for (const l of L) { const pre = [...l.t].map(normC).join('').slice(0, 14); if (pre.length < 6) continue; const k = N.indexOf(pre, pos); if (k < 0 || k - pos > 400) continue; ach.push({ l, ini: k }); pos = k + pre.length; }
+  for (const l of L) {
+    const full = [...l.t].map(normC).join(''); if (full.length < 6) continue;
+    let k = -1, usado = 0; // o OCR erra letras (l→I, o→0): tenta o início e, se falhar, trechos do meio da linha
+    for (const [off, len] of [[0, 14], [0, 9], [4, 9], [8, 8], [12, 8]]) { if (off + len > full.length && off > 0) continue; const pre = full.slice(off, off + len); if (pre.length < 6) continue; const f = N.indexOf(pre, pos); if (f >= 0 && f - off - pos <= 400 && f >= pos) { k = Math.max(pos, f - off); usado = off + pre.length; break; } }
+    if (k < 0) continue; ach.push({ l, ini: k }); pos = k + Math.min(usado, 6);
+  }
   if (ach.length < 3) return e;
   const ls = ach.map(a => a.l), esq = Math.min(...ls.map(l => l.x)), dir = Math.max(...ls.map(l => l.x + l.w));
   const curtas = ls.filter(l => l.x + l.w < esq + 0.78 * (dir - esq)).length / ls.length;
@@ -119,7 +124,7 @@ function estruturar(e, linhas) {
     const a = ach[k - 1].l, b = ach[k].l, gap = b.y - (a.y + a.h), curta = a.x + a.w < esq + 0.82 * (dir - esq);
     const jan = ach.slice(Math.max(0, k - 2), k + 3).map(z => z.l), poema = jan.filter(ehCurta).length / jan.length > 0.6 && ehCurta(a);
     let q = null;
-    if (gap > 0.55 * med && (curta || poema)) q = '\n\n';
+    if (poema ? gap > 1.0 * med : (gap > 0.55 * med && curta)) q = '\n\n';
     else if (poema) q = '\n';
     else if (curta && b.x > esq + 12) q = '\n\n';
     else if (curta && gap > 0.25 * med) q = '\n\n';
