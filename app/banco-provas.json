@@ -115683,8 +115683,6 @@
   },
   {
    "id": "cdb-l-binomio-de-newton-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -115695,12 +115693,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Utilizando o desenvolvimento do binômio de Newton, calcule o desenvolvimento da expressão 4 (2x + 1) .",
-   "imagens": [
-    "img:cdb-l-binomio-de-newton-01.jpg"
-   ],
-   "larguraMm": 152.6,
+   "enunciado": "Utilizando o desenvolvimento do binômio de Newton, calcule o desenvolvimento da expressão $ (2x + 1)^4 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-binomio-de-newton-01-r.jpg",
@@ -115710,7 +115703,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-binomio-de-newton-02",
@@ -115761,8 +115755,6 @@
   },
   {
    "id": "cdb-l-binomio-de-newton-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -115773,24 +115765,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O binômio de Newton foi desenvolvido para facilitar as adições e subtrações de termos algébricos elevados a expoentes maiores que 3. Com base nas técnicas apresentadas pelo binômio, calcule o desenvolvimento da expressão .",
-   "imagens": [
-    "img:cdb-l-binomio-de-newton-04.jpg"
-   ],
-   "larguraMm": 144.7,
+   "enunciado": "O binômio de Newton foi desenvolvido para facilitar as adições e subtrações de termos algébricos elevados a expoentes maiores que 3. Com base nas técnicas apresentadas pelo binômio, calcule o desenvolvimento da expressão $ (x + {2|3}y)^6 $.",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "$x^6 + 4x^5y + {20|3}x^4y^2 + {160|27}x^3y^3 + {80|27}x^2y^4 + {64|81}xy^5 + {64|729}y^6$."
+   "gabarito": "$x^6 + 4x^5y + {20|3}x^4y^2 + {160|27}x^3y^3 + {80|27}x^2y^4 + {64|81}xy^5 + {64|729}y^6$.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-cilindro-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -115801,12 +115787,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um reservatório em formato cilíndrico possui 6 metros de altura e raio da base igual a 2 metros. Determine o volume e a capacidade desse reservatório.",
-   "imagens": [
-    "img:cdb-l-cilindro-01.jpg"
-   ],
-   "larguraMm": 141.7,
+   "enunciado": "Um reservatório em formato cilíndrico possui 6 metros de altura e raio da base igual a 2 metros.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-cilindro-01-r.jpg",
@@ -115816,12 +115797,18 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine o volume e a capacidade desse reservatório.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-cilindro-01-fig.jpg",
+    "alt": "Cilindro com altura de 6 m e raio da base de 2 m",
+    "largura": "36mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-cilindro-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -115832,12 +115819,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Cefet – SP) A figura indica o tambor cilíndrico de um aquecedor solar com capacidade de 1 570 litros. Sabendo que 1 000 litros de água ocupam um volume de 1 m³ e adotado π = 3,14, determine a medida do raio r do cilindro.",
-   "imagens": [
-    "img:cdb-l-cilindro-02.jpg"
-   ],
-   "larguraMm": 152.5,
+   "enunciado": "(Cefet – SP) A figura indica o tambor cilíndrico de um aquecedor solar com capacidade de 1 570 litros.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-cilindro-02-r.jpg",
@@ -115847,12 +115829,18 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Sabendo que 1 000 litros de água ocupam um volume de 1 m³ e adotado π = 3,14, determine a medida do raio r do cilindro.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-cilindro-02-fig.jpg",
+    "alt": "Cilindro de altura 2 m e raio r",
+    "largura": "31mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-cilindro-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -115864,12 +115852,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Vunesp – SP) Um tanque subterrâneo, que tem o formato de um cilindro circular reto na posição vertical, está completamente cheio com 30 m³ de água e 42 m³ de petróleo. Considerando que a altura do tanque é de 12 metros, calcule a altura da camada de petróleo.",
-   "imagens": [
-    "img:cdb-l-cilindro-03.jpg"
-   ],
-   "larguraMm": 150.5,
+   "enunciado": "(Vunesp – SP) Um tanque subterrâneo, que tem o formato de um cilindro circular reto na posição vertical, está completamente cheio com 30 m³ de água e 42 m³ de petróleo.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-cilindro-03-r.jpg",
@@ -115879,7 +115862,15 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Considerando que a altura do tanque é de 12 metros, calcule a altura da camada de petróleo.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-cilindro-03-fig.jpg",
+    "alt": "Tanque cilíndrico vertical de 12 m de altura, com a camada de petróleo em cima e a de água embaixo",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-cilindro-04",
@@ -116527,8 +116518,6 @@
   },
   {
    "id": "cdb-l-calculo-numerico-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -116539,12 +116528,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Resolva a seguinte expressão numérica envolvendo números racionais.",
-   "imagens": [
-    "img:cdb-l-calculo-numerico-04.jpg"
-   ],
-   "larguraMm": 115.3,
+   "enunciado": "Resolva a seguinte expressão numérica envolvendo números racionais.<br><span class=\"pb\"></span>$ [(−{1|2})^4 : (−{1|2})^3] · (−{1|2})^6 + 2^{−7} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-calculo-numerico-04-r.jpg",
@@ -116554,12 +116538,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-calculo-numerico-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -116570,19 +116553,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Qual o valor da expressão",
-   "imagens": [
-    "img:cdb-l-calculo-numerico-05.jpg"
-   ],
-   "larguraMm": 59.5,
+   "enunciado": "Qual o valor da expressão<br><span class=\"pb\"></span>$ {−{3|4}|4 − {1|2} : {3|2}} $",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "O denominador vale $4 - {1|2} ÷ {3|2} = 4 - {1|3} = {11|3}$. Então $-{3|4} ÷ {11|3} = -{9|44}$."
+   "gabarito": "O denominador vale $4 - {1|2} ÷ {3|2} = 4 - {1|3} = {11|3}$. Então $-{3|4} ÷ {11|3} = -{9|44}$.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-definicao-de-logaritmos-01",
@@ -121950,8 +121929,6 @@
   },
   {
    "id": "cdb-l-binomio-de-newton-2-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -121962,24 +121939,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 02. (x + y)",
-   "imagens": [
-    "img:cdb-l-binomio-de-newton-2-02.jpg"
-   ],
-   "larguraMm": 23.8,
+   "enunciado": "Desenvolva o binômio $ (x + y)^3 $.",
    "resolucao": "",
    "gabarito": "x + 3x y + 3xy + y",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-binomio-de-newton-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -121990,19 +121961,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 03. (x - y) 5 04 . (2x + 1) 6 05. (x - 2) 2 10 06. Calcular o quarto termo do desenvolvimento de (x + 2) , feito segundo os expoentes decrescentes de x. 4 6 07. (CESGRANRIO) O coeficiente de x no polinômio P(x) = (x + 2) é: a) 64 b) 60 c) 12 d) 4 e) 24 5 08. Calcular a soma dos coeficientes dos termos do desenvolvimento de (3x + 2y) . 104 09. A soma dos coeficientes numéricos dos termos do desenvolvimento de (x - y) é: a) 1 b) - 1 c) 0 d) 104 e) 2 n 10. A soma dos coeficientes numéricos dos termos do desenvolvimen to de (3x - 2y) é: a) 1 b) - 1 c) 2 d) 2n e) - 2n",
-   "imagens": [
-    "img:cdb-l-binomio-de-newton-2-03.jpg"
-   ],
-   "larguraMm": 171,
+   "enunciado": "Desenvolva e resolva:<br><span class=\"pb\"></span>03. $ (x − y)^4 $<br>04. $ (2x + 1)^5 $<br>05. $ (x − 2)^6 $<br>06. Calcular o quarto termo do desenvolvimento de $ (x^2 + 2)^{10} $, feito segundo os expoentes decrescentes de $ x $.<br>07. (CESGRANRIO) O coeficiente de $ x^4 $ no polinômio $ P(x) = (x + 2)^6 $ é: a) 64 b) 60 c) 12 d) 4 e) 24<br>08. Calcular a soma dos coeficientes dos termos do desenvolvimento de $ (3x + 2y)^5 $.<br>09. A soma dos coeficientes numéricos dos termos do desenvolvimento de $ (x − y)^{104} $ é: a) 1 b) −1 c) 0 d) 104 e) 2<br>10. A soma dos coeficientes numéricos dos termos do desenvolvimento de $ (3x − 2y)^n $ é: a) 1 b) −1 c) 2 d) 2n e) −2n",
    "resolucao": "",
    "gabarito": "x - 4x y + 6x y - 4xy + y",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-01",
@@ -136231,8 +136198,6 @@
   },
   {
    "id": "cdb-l-calculo-algebrico-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136243,12 +136208,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o valor da expressão algébrica , com x = 3.",
-   "imagens": [
-    "img:cdb-l-calculo-algebrico-01.jpg"
-   ],
-   "larguraMm": 129.7,
+   "enunciado": "Determine o valor da expressão algébrica $ 2x^4 + 4x − 5 $, com $ x = 3 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-calculo-algebrico-01-r.jpg",
@@ -136258,12 +136218,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-calculo-algebrico-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136274,12 +136233,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Na expressão algébrica a seguir considera os seguintes valores: x = – 2 e y = 4.",
-   "imagens": [
-    "img:cdb-l-calculo-algebrico-04.jpg"
-   ],
-   "larguraMm": 136.9,
+   "enunciado": "Na expressão algébrica a seguir considera os seguintes valores: $ x = −2 $ e $ y = 4 $.<br><span class=\"pb\"></span>$ {x^2 + 2xy + y^2|x^2 + xy − 3x − 3y} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-calculo-algebrico-04-r.jpg",
@@ -136289,7 +136243,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-01",
@@ -149576,8 +149531,6 @@
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149588,38 +149541,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Nesta malha triangular, o lado de cada triângulo equilátero mede 1,5 cm. O polígono destacado tem perímetro igual a a) 24,5 cm. b) 15 cm. c) 12 cm. d) 10 cm.",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-06.jpg"
-   ],
-   "larguraMm": 143.1,
+   "enunciado": "Nesta malha triangular, o lado de cada triângulo equilátero mede 1,5 cm.",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "24,5 cm.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "15 cm.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "12 cm.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "10 cm.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O polígono destacado tem perímetro igual a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-avaliacao-diagnostica-de-m-06-fig.jpg",
+    "alt": "Malha de triângulos equiláteros com um hexágono destacado em cinza, formado por seis triângulos",
+    "largura": "76mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149630,38 +149584,69 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Um combustível polui mais o meio ambiente quando emite maior quantidade de mo - nóxido de carbono, enxofre e fuligem. Veja o que sai dos escapamentos dos veículos numa cidade, de acordo com o combustível utilizado. Monóxido Enxofre (g) Fuligem (g) Combustível de Carbono gasolina 27,7 1,3 0,2 álcool 16,7 1,3 0,0 diesel 17,8 14,0 0,9 gás natural 6,0 1,1 0,0 6 Analisando a tabela, o combustível que menos polui é a) gasolina. b) gás natural. c) diesel. d) álcool.",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-07.jpg"
-   ],
-   "larguraMm": 173.8,
+   "enunciado": "Um combustível polui mais o meio ambiente quando emite maior quantidade de monóxido de carbono, enxofre e fuligem. Veja o que sai dos escapamentos dos veículos numa cidade, de acordo com o combustível utilizado.",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "gasolina.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "gás natural.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "diesel.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "álcool.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Analisando a tabela, o combustível que menos polui é",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Combustível",
+     "Monóxido de Carbono",
+     "Enxofre (g)",
+     "Fuligem (g)"
+    ],
+    "linhas": [
+     [
+      "gasolina",
+      "27,7",
+      "1,3",
+      "0,2"
+     ],
+     [
+      "álcool",
+      "16,7",
+      "1,3",
+      "0,0"
+     ],
+     [
+      "diesel",
+      "17,8",
+      "14,0",
+      "0,9"
+     ],
+     [
+      "gás natural",
+      "6,0",
+      "1,1",
+      "0,0"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149672,38 +149657,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Ao conferir os cálculos feitos em uma nota fiscal, o contador de uma empresa de computadores derramou tinta sobre a nota fiscal. Eis como ela ficou: Qual é o preço do freezer cobrado na nota fiscal? a) 629,50 reais. b) 729,50 reais. c) 829,50 reais. d) 929,50 reais. 8 )",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-11.jpg"
-   ],
-   "larguraMm": 173.8,
+   "enunciado": "Ao conferir os cálculos feitos em uma nota fiscal, o contador de uma empresa de computadores derramou tinta sobre a nota fiscal. Eis como ela ficou:",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "629,50 reais.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "729,50 reais.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "829,50 reais.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "929,50 reais.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Qual é o preço do freezer cobrado na nota fiscal?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-avaliacao-diagnostica-de-m-11-fig.jpg",
+    "alt": "Nota fiscal nº 012 da Tele-Info, de 12/01/2000: 1 TV 29\" a R$ 740,00; 1 DVD a R$ 415,00; 1 freezer com o preço manchado de tinta (termina em 29,50); preço total R$ 1.984,50",
+    "largura": "66mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-13",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149714,33 +149700,36 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. Abaixo, temos o mapa de um clube. Veja o comprimento de cada trilha entre um local e outro do clube. 1,4 km 1 km 1,5 km 2,2 km 2 km 1,8 km 1,5 km Para ir do restaurante até o pomar, passando primeiro pelo campo de futebol e depois pelo parque de diversão, quantos quilômetros serão percorridos? a) 3,9 km. b) 5,2 km. c) 5,5 km. d) 8,2 km. 9",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-13.jpg"
-   ],
-   "larguraMm": 174.4,
+   "enunciado": "Abaixo, temos o mapa de um clube. Veja o comprimento de cada trilha entre um local e outro do clube.",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3,9 km.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5,2 km.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5,5 km.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8,2 km.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Para ir do restaurante até o pomar, passando primeiro pelo campo de futebol e depois pelo parque de diversão, quantos quilômetros serão percorridos?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-avaliacao-diagnostica-de-m-13-fig.jpg",
+    "alt": "Mapa de um clube com restaurante, campo de futebol e lago/parque de diversões/pomar ligados por trilhas: 1,4 km (restaurante–campo, na trilha de cima), 1 km (campo–trilha seguinte), 2,2 km, 2 km, 1,5 km, 1,5 km e 1,8 km",
+    "largura": "147mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-17",
@@ -149780,8 +149769,6 @@
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-19",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149792,38 +149779,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. Este é o botão de um aparelho de ar condicionado. Para ligar o ar condicionado direto no aquecimento,em quantos graus o botão deve ser girado para direita? a) 90º. b) 45º. c) 30º. d) 15º.",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-19.jpg"
-   ],
-   "larguraMm": 161.8,
+   "enunciado": "Este é o botão de um aparelho de ar condicionado.",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "90°.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "45°.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "30°.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "15°.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Para ligar o ar condicionado direto no aquecimento, em quantos graus o botão deve ser girado para direita?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-avaliacao-diagnostica-de-m-19-fig.jpg",
+    "alt": "Botão giratório de ar condicionado, com o ponteiro em “Desligado” (em cima), “Pause” à esquerda, “Aquecimento” à direita e “Refrigeração” embaixo",
+    "largura": "108mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-avaliacao-diagnostica-de-m-20",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -149834,33 +149822,36 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. Observe a figura abaixo. A figura acima representa o mapa de uma estrada. Nesse mapa, cada cm corresponde a 200km de estrada. Quantos km o carro percorrerá até chegar ao posto de gasolina? a) 350. b) 450. c) 600. d) 700. 13",
-   "imagens": [
-    "img:cdb-l-avaliacao-diagnostica-de-m-20.jpg"
-   ],
-   "larguraMm": 175.8,
+   "enunciado": "Observe a figura abaixo.",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "350.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "450.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "600.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "700.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "A figura acima representa o mapa de uma estrada. Nesse mapa, cada cm corresponde a 200 km de estrada. Quantos km o carro percorrerá até chegar ao posto de gasolina?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-avaliacao-diagnostica-de-m-20-fig.jpg",
+    "alt": "Mapa de uma estrada: um carro à esquerda, uma régua graduada de 0 a 10 cm e, acima dela, árvore (1 cm), posto de gasolina (5 cm) e restaurante (6 cm)",
+    "largura": "148mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-matematica-potencias-raiz-01",
