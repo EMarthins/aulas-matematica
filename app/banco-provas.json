@@ -70255,7 +70255,6 @@
   },
   {
    "id": "cdb-c07-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70267,20 +70266,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. UFMT Dadas as matrizes A = 1 3 1 3 9 3 10 30 10 − − −           e B = 1 3 2 1 0 4 −       Julgue os itens. ( ) A 2 ≠ 0 ( 0 é a matriz nula). ( ) Uma matriz S é sim é trica se S t = S. Portanto, a matriz M = B t . B é sim é trica. (Obs.: S t e B t s ã o as matrizes transpostas de S e B , respectivamente). ( ) A admite inversa. \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-043.jpg"
-   ],
-   "larguraMm": 121.5,
+   "enunciado": "Dadas as matrizes $ A = @M{1&3&10;3&9&30;−1&−3&−10} $ e $ B = @M{1&2&0;3&−1&4} $. Julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F"
+   "gabarito": "F – V – F",
+   "afirmacoes": [
+    {
+     "t": "$ A^2 ≠ 0 $ (0 é a matriz nula).",
+     "ok": false
+    },
+    {
+     "t": "Uma matriz $ S $ é simétrica se $ S^t = S $. Portanto, a matriz $ M = B^t · B $ é simétrica. (Obs.: $ S^t $ e $ B^t $ são as matrizes transpostas de $ S $ e $ B $, respectivamente).",
+     "ok": true
+    },
+    {
+     "t": "$ A $ admite inversa.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70292,20 +70299,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. U. Católica-GO Analise e julgue os itens abaixo: ( ) Se A, B e C s ã o matrizes de ordem 2 x n, 4 x p e 2 x 5, respectivamente, tais que AB = C, conclui-se que n = 4 e p = 5. ( ) Dadas as matrizes A n x n e B n x n , pode-se afirmar que AB = BA. ( ) Seja A uma matriz quadrada de ordem n tal que a transposta de A é igual a sua inversa, pode-se concluir que AA t = I n , na qual I n é a matriz identidade de ordem n. ( ) Dadas as matrizes A = − − − −             1 3 2 1 2 2 3 0 3 0 7 8 4 1 4 5 e B = − − − −             1 2 3 4 3 2 0 1 2 3 7 4 1 0 8 5 pode-se dizer que d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-044.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Analise e julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – V – V – F"
+   "gabarito": "V – F – V – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "Se $ A $, $ B $ e $ C $ são matrizes de ordem $ 2 × n $, $ 4 × p $ e $ 2 × 5 $, respectivamente, tais que $ AB = C $, conclui-se que $ n = 4 $ e $ p = 5 $.",
+     "ok": true
+    },
+    {
+     "t": "Dadas as matrizes $ A_{n×n} $ e $ B_{n×n} $, pode-se afirmar que $ AB = BA $.",
+     "ok": false
+    },
+    {
+     "t": "Seja $ A $ uma matriz quadrada de ordem $ n $ tal que a transposta de $ A $ é igual a sua inversa, pode-se concluir que $ AA^t = I_n $, na qual $ I_n $ é a matriz identidade de ordem $ n $.",
+     "ok": true
+    },
+    {
+     "t": "Dadas as matrizes $ A = @M{−1&−2&−3&−4;3&2&0&1;2&3&7&4;1&0&8&5} $ e $ B = @M{−1&3&2&1;−2&2&3&0;−3&0&7&8;−4&1&4&5} $ pode-se dizer que $ det(A) = det(B) $.",
+     "ok": true
+    },
+    {
+     "t": "Um sistema de equações lineares cujos termos independentes são todos nulos, é chamado sistema linear homogêneo. Pode-se afirmar que todo sistema homogêneo é compatível, ou seja, admite solução.",
+     "ok": true
+    },
+    {
+     "t": "Todo sistema de equações lineares cujo número de incógnitas é maior que o número de equações, é compatível indeterminado.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70317,37 +70344,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. Unifor-CE O sistema 2 2 x x y y z kz k + +     + + = = nas vari á veis x, y, z, admite uma ú nica solu çã o se, e somente se, k satisfizer à condi çã o: a) k ≠ ± 2 b) k = 1 c) k ≠ 1 2 d) k ≠ 2 3 e) k ≠ 1 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-045.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "O sistema $ @S{2x + y + z = 3; x + 2y + z = k; x + y + kz = 2} $ nas variáveis $ x $, $ y $, $ z $, admite uma única solução se, e somente se, $ k $ satisfizer à condição:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ k ≠ ±2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ k = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ k ≠ {1|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ k ≠ {2|3} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ k ≠ {1|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-046",
@@ -70397,7 +70419,6 @@
   },
   {
    "id": "cdb-c07-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70409,20 +70430,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. UFBA Sobre determinantes, matrizes e sistemas de equa çõ es lineares, é verdade: 01. Se A = 2 0 1 2       e X = A – 1 + A 2 , ent ã o det X t = 65. 02. Se A = 2 1 1 3 1 2 1 1 0 −           e f(x) = x 2 – x + 1, ent ã o f[(det A) – 1 ] = 3 4 . 04. Se A = 1 1 1 0 0 cos cos sen x sen x x x −           , ent ã o det A + sen 2x = 0. 08. As retas 2x – 3y = 1 e x – y = 3 interceptam-se no ponto (4, 5). 16. O sistema 2 3 2 1 3 x x x y y y z z z + − + − + − = = =      admite uma infinidade de solu çõ es. 32. O conjunto de valores de m para os quais o sistema x mx x mz",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-047.jpg"
-   ],
-   "larguraMm": 124.9,
+   "enunciado": "Sobre determinantes, matrizes e sistemas de equações lineares, é verdade (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "38"
+   "gabarito": "38",
+   "afirmacoes": [
+    {
+     "t": "Se $ A = @M{2&1;0&2} $ e $ X = A^{−1} + A^2 $, então $ det X^t = 65 $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ A = @M{2&3&1;1&1&−1;1&2&0} $ e $ f(x) = x^2 − x + 1 $, então $ f[(det A)^{−1}] = {3|4} $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ A = @M{1&sen x&cos x;1&0&0;1&−sen x&cos x} $, então $ det A + sen 2x = 0 $.",
+     "ok": true
+    },
+    {
+     "t": "As retas $ 2x − 3y = 1 $ e $ x − y = 3 $ interceptam-se no ponto $ (4, 5) $.",
+     "ok": false
+    },
+    {
+     "t": "O sistema $ @S{2x + 3y − z = 2; x − y + z = 1; x + y − z = 3} $ admite uma infinidade de soluções.",
+     "ok": false
+    },
+    {
+     "t": "O conjunto de valores de $ m $ para os quais o sistema $ @S{x + mz = 0; mx + y = 0; x + my = 0} $ admite solução não-nula é $ \\{−1, 0, 1\\} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70434,24 +70475,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. UFF-RJ Um biscoito é composto por a çú car, farinha de trigo e manteiga, sendo a quan- tidade de farinha o dobro da quantidade de a çú car. Os pre ç os por quilograma do a çú car, da farinha e da manteiga s ã o, respectivamente, R$ 0,50, R$ 0,80 e R$ 5,00. O custo por quilograma de massa do biscoito, considerando apenas esses ingredientes, é R$ 2,42. Calcule a quantidade, em gramas, de cada ingrediente presente em 1 kg de massa do biscoito.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-048.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um biscoito é composto por açúcar, farinha de trigo e manteiga, sendo a quantidade de farinha o dobro da quantidade de açúcar. Os preços por quilograma do açúcar, da farinha e da manteiga são, respectivamente, R&#36; 0,50, R&#36; 0,80 e R&#36; 5,00. O custo por quilograma de massa do biscoito, considerando apenas esses ingredientes, é R&#36; 2,42.<br><span class=\"pb\"></span>Calcule a quantidade, em gramas, de cada ingrediente presente em 1 kg de massa do biscoito.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "x → quantidade de açúcar por kg de biscoito y → quantidade de farinha por kg de biscoito z → quantidade de manteiga por kg de biscoito  x + y + z = 1   y = 2 x  0 50 , x + 0 80 , y + 5 00 , z = 2 ",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c07-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70463,41 +70498,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. ITA-SP Seja m ∈ | R, m > 0. Considere o sistema 2 x – (log 4 m ) y + 5 z = 0 (log 2 m ) x + y – 2 z = 0 x + y – (log 2 m 2 ) z = 0 O produto dos valores de m para os quais o sistema admite solu çã o n ã o-trivial é : a) 1 b) 2 c) e d) 8 e) 2 log 2 5 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-049.jpg"
-   ],
-   "larguraMm": 122.8,
+   "enunciado": "Seja $ m ∈ ℝ $, $ m > 0 $. Considere o sistema<br><span class=\"pb\"></span>$ @S{2x − (log_4 m)y + 5z = 0; (log_2 m)x + y − 2z = 0; x + y − (log_2 m^2)z = 0} $<br><span class=\"pb\"></span>O produto dos valores de $ m $ para os quais o sistema admite solução não-trivial é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ e $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2 log_2 5 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-050",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70509,20 +70538,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "50. UFPR O sistema formado pelas equa çõ es x + 5y + 10z = 500, x + y + z = 92 e x – z = 0 é a representa çã o alg é brica do seguinte problema: totalizar R$ 500,00 com c é dulas de um, cinco e dez reais, num total de 92 c é dulas, de modo que as quantidades de c é dulas de um e de dez reais sejam iguais. Assim, é correto afirmar: ( ) No sistema, a inc ó gnita x representa a quantidade de c é dulas de dez reais. ( ) O sistema formado pelas tr ê s equa çõ es é poss í vel e determinado. ( ) A equa çã o x – z = 0 representa a condi çã o de serem iguais as quantidades de c é dulas de um e de dez r",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-050.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O sistema formado pelas equações $ x + 5y + 10z = 500 $, $ x + y + z = 92 $ e $ x − z = 0 $ é a representação algébrica do seguinte problema: totalizar R&#36; 500,00 com cédulas de um, cinco e dez reais, num total de 92 cédulas, de modo que as quantidades de cédulas de um e de dez reais sejam iguais. Assim, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – V – V"
+   "gabarito": "F – V – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "No sistema, a incógnita $ x $ representa a quantidade de cédulas de dez reais.",
+     "ok": false
+    },
+    {
+     "t": "O sistema formado pelas três equações é possível e determinado.",
+     "ok": true
+    },
+    {
+     "t": "A equação $ x − z = 0 $ representa a condição de serem iguais as quantidades de cédulas de um e de dez reais.",
+     "ok": true
+    },
+    {
+     "t": "Se fosse imposta a condição de serem iguais as quantidades de cédulas de um, cinco e dez reais, então seria impossível totalizar R&#36; 500,00.",
+     "ok": true
+    },
+    {
+     "t": "Se fosse retirada a condição de serem iguais as quantidades de cédulas de um e de dez reais, então haveria infinitas maneiras de totalizar R&#36; 500,00 com cédulas de um, cinco e dez reais, num total de 92 cédulas.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70534,41 +70579,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "0 log 1/3 x 2 1 0 – 3 log 1/3 x – 4 51. ITA-SP Sendo x um n ú mero real positivo, considere as matrizes A = e B = A soma de todos os valores de x para os quais (AB) = (AB) T é igual a a) 25 b) 28 c) 32 d) 27 e) 25 \u0001 \u0002 log 1/3 x log 1/3 x 2 1 0 – log 3 x 1 \u0001 \u0002 3 3 3 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-051.jpg"
-   ],
-   "larguraMm": 109.4,
+   "enunciado": "Sendo $ x $ um número real positivo, considere as matrizes<br><span class=\"pb\"></span>$ A = @M{log_{1/3} x&log_{1/3} x^2&1;0&−log_3 x&1} $ e $ B = @M{0&log_{1/3} x^2;1&0;−3 log_{1/3} x&−4} $<br><span class=\"pb\"></span>A soma de todos os valores de $ x $ para os quais $ (AB) = (AB)^T $ é igual a",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {25|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {28|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {32|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {27|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {25|2} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-052",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70580,41 +70619,110 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "52. UFPB As mensagens entre duas ag ê ncias de espionagem, Gama e Rapa, s ã o trocadas usando uma linguagem de c ó digos, onde cada n ú mero inteiro entre 0 e 25 representa uma letra, conforme mostra a tabela abaixo: A ag ê ncia Gama enviou para o Rapa o nome de um espi ã o codificado na matriz A = 11 1 0 0 2                 . Para decodificar uma palavra de cinco letras, dada por uma matriz A, de ordem 5 x 1, formada por inteiros entre 0 e 25, deve-se multiplic á -la pela matriz de convers ã o C = 1 9 0 0 0 0 3 5 20 2 0 0 0 0 7 0 1 0 0 0 0 2 0 0 3               ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-052.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "As mensagens entre duas agências de espionagem, Gama e Rapa, são trocadas usando uma linguagem de códigos, onde cada número inteiro entre 0 e 25 representa uma letra, conforme mostra a tabela abaixo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Diego",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Shume",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Sadan",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Renan",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Ramon",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "A agência Gama enviou para o Rapa o nome de um espião codificado na matriz<br><span class=\"pb\"></span>$ A = @M{11;1;0;0;2} $.<br><span class=\"pb\"></span>Para decodificar uma palavra de cinco letras, dada por uma matriz $ A $, de ordem $ 5 × 1 $, formada por inteiros entre 0 e 25, deve-se multiplicá-la pela matriz de conversão<br><span class=\"pb\"></span>$ C = @M{1&9&0&0&0;0&3&5&20&2;0&0&0&0&7;0&1&0&0&0;0&2&0&0&3} $,<br><span class=\"pb\"></span>e, usando-se a tabela dada, converter os números em letras. Utilizando-se esse processo, conclui-se que o nome do espião é:",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R"
+     ],
+     "linhas": [
+      [
+       "7",
+       "10",
+       "22",
+       "9",
+       "5",
+       "4",
+       "18",
+       "2",
+       "17",
+       "25",
+       "23",
+       "12",
+       "14",
+       "8",
+       "1",
+       "19",
+       "15",
+       "20"
+      ]
+     ],
+     "largura": "100%"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z"
+     ],
+     "linhas": [
+      [
+       "21",
+       "11",
+       "3",
+       "16",
+       "24",
+       "6",
+       "13",
+       "0"
+      ]
+     ],
+     "largura": "50%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-053",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70626,41 +70734,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "53. Vunesp Considere a matriz A = (a ij ) 2x2 , definida por a ij = – 1 + 2i + j, para 1 ≤ i ≤ 2, 1 ≤ j ≤ 2. O determinante de A é : a) 22 b) 2 c) 4 d) – 2 e) – 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-053.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a matriz $ A = (a_{ij})_{2×2} $, definida por $ a_{ij} = −1 + 2i + j $, para $ 1 ≤ i ≤ 2 $, $ 1 ≤ j ≤ 2 $.<br><span class=\"pb\"></span>O determinante de $ A $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "22",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−2",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "−4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-054",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70672,41 +70774,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "54. ITA-SP Considere as matrizes reais M = e I = em que a ≠ 0 e a , b e c formam, nesta ordem, uma progress ã o geom é trica de raz ã o q > 0. Sejam λ 1 , λ 2 e λ 3 as ra í zes da equa çã o det ( M – λ I ) = 0. Se λ 1 λ 2 λ 3 = a e λ 1 + λ 2 + λ 3 = 7 a , ent ã o a 2 + b 2 + c 2 é igual a: a) 21 b) 91 c) 36 d) 21 e) 91 \u0001 \u0002 a 0 0 0 b 1 0 0 c \u0001 \u0002 1 0 0 0 1 0 0 0 1 8 9 9 16 36",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-054.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Considere as matrizes reais<br><span class=\"pb\"></span>$ M = @M{a&0&0;0&b&1;0&0&c} $ e $ I = @M{1&0&0;0&1&0;0&0&1} $<br><span class=\"pb\"></span>em que $ a ≠ 0 $ e $ a $, $ b $ e $ c $ formam, nesta ordem, uma progressão geométrica de razão $ q > 0 $. Sejam $ λ_1 $, $ λ_2 $ e $ λ_3 $ as raízes da equação $ det(M − λI) = 0 $. Se $ λ_1 λ_2 λ_3 = a $ e $ λ_1 + λ_2 + λ_3 = 7a $, então $ a^2 + b^2 + c^2 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {21|8} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {91|9} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {36|9} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {21|16} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {91|36} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-055",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70718,41 +70814,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "55. ITA-SP Considere as matrizes M = , N = , P = e X = . Se X é solu çã o de M – 1 NX = P , ent ã o x 2 + y 2 + z 2 é igual: a) 35 b) 17 c) 38 d) 14 e) 29 1 – 1 3 0 1 0 2 3 1 \u0001 \u0002 1 0 2 3 2 0 1 1 1 \u0001 \u0002 \u0001 \u0002 0 1 0 \u0001 \u0002 x y z",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-055.jpg"
-   ],
-   "larguraMm": 126.5,
+   "enunciado": "Considere as matrizes<br><span class=\"pb\"></span>$ M = @M{1&−1&3;0&1&0;2&3&1} $, $ N = @M{1&0&2;3&2&0;1&1&1} $, $ P = @M{0;1;0} $ e $ X = @M{x;y;z} $.<br><span class=\"pb\"></span>Se $ X $ é solução de $ M^{−1} N X = P $, então $ x^2 + y^2 + z^2 $ é igual:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "35",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "17",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "38",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "14",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "29",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-056",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70764,41 +70854,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "56. Fatec-SP O sistema linear de tr ê s equa çõ es nas vari á veis x, y e z x – y = k! 12x – k!y + z = 1 36x + k!z = 2 é poss í vel e determinado se, e somente se: a) k ≠ 2 b) k ≠ 3 c) k ≠ 4 d) k ≠ 5 e) k ≠ 6 \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-056.jpg"
-   ],
-   "larguraMm": 110.6,
+   "enunciado": "O sistema linear de três equações nas variáveis $ x $, $ y $ e $ z $<br><span class=\"pb\"></span>$ @S{x − y = k!; 12x − k!y + z = 1; 36x + k!z = 2} $<br><span class=\"pb\"></span>é possível e determinado se, e somente se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ k ≠ 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ k ≠ 3 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ k ≠ 4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ k ≠ 5 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ k ≠ 6 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-057",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70810,41 +70894,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "57. Mackenzie-SP Com rela çã o ao sistema , k \u0001 | R, considere as afirma- çõ es: I. É indeterminado para um ú nico valor de k. II. Sempre admite solu çã o, qualquer que seja k. III. Tem solu çã o ú nica, para um ú nico valor de k. Das afirma çõ es acima: a) somente I est á correta. d) nenhuma est á correta. b) somente I e II est ã o corretas. e) todas est ã o corretas. c) somente II e III est ã o corretas. kx + 7 = 1 – k \u0004 x + ky = 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-057.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Com relação ao sistema $ @S{x + ky = 1; kx + 7 = 1 − k} $, $ k ∈ ℝ $, considere as afirmações:<br><span class=\"pb\"></span>I. É indeterminado para um único valor de $ k $.<br>II. Sempre admite solução, qualquer que seja $ k $.<br>III. Tem solução única, para um único valor de $ k $.<br><span class=\"pb\"></span>Das afirmações acima:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "somente I está correta.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "somente I e II estão corretas.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "somente II e III estão corretas.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "nenhuma está correta.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "todas estão corretas.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-058",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -70856,20 +70934,15 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "58. Unicamp-SP Seja A a matriz formada pelos coeficientes do sistema linear abaixo: λ x + y + z = λ + 2 x + λ y + z = λ + 2 x + y + λ z = λ + 2 a) Ache as ra í zes da equa çã o: detA = 0. b) Ache a solu çã o geral desse sistema para λ = – 2. \u0004",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-058.jpg"
-   ],
-   "larguraMm": 125.8,
+   "enunciado": "Seja $ A $ a matriz formada pelos coeficientes do sistema linear abaixo:<br><span class=\"pb\"></span>$ @S{λx + y + z = λ + 2; x + λy + z = λ + 2; x + y + λz = λ + 2} $<br><span class=\"pb\"></span>a) Ache as raízes da equação: $ det A = 0 $.<br>b) Ache a solução geral desse sistema para $ λ = −2 $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) 1 e –2 b) V = {(a; a; a) ∈^(|) R³ | a ∈^(|) R}",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c08-001",
