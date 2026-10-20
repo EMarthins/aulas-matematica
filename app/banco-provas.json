@@ -82560,7 +82560,6 @@
   },
   {
    "id": "cdb-c15-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82572,20 +82571,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UFGO Seja | R o conjunto dos números reais. Considere a função f : | R → | R, definida por f(x) = |1 – | x ||. Assim, julgue os itens abaixo: ( ) f(– 4) = 5. ( ) o valor mínimo de f é zero. ( ) f é crescente para x no intervalo [0, 1]. ( ) a equação f(x) = 1 possui três soluções reais distintas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-001.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Seja ℝ o conjunto dos números reais. Considere a função $ f: ℝ → ℝ $, definida por $ f(x) = |1 − |x|| $. Assim, julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V"
+   "gabarito": "F – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "$ f(−4) = 5 $.",
+     "ok": false
+    },
+    {
+     "t": "o valor mínimo de $ f $ é zero.",
+     "ok": true
+    },
+    {
+     "t": "$ f $ é crescente para $ x $ no intervalo $ [0, 1] $.",
+     "ok": false
+    },
+    {
+     "t": "a equação $ f(x) = 1 $ possui três soluções reais distintas.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82597,20 +82608,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. U.Católica-GO Julgue os itens: ( ) Diz-se que uma função f de A em B é injetora se, para quaisquer x 1 , x 2 ∈ A , com x 1 ≠ x 2 , implicar f(x 1 ) = f(x 2 ) em B. ( ) O pH de uma solução é definido por pH = log 10 ( 1 ), em que H + é a concentração de hidrogênio em íons-grama por litro de solução. Portan- to, o pH será negativo se H + for maior que 1. ( ) Os valores de x que satisfazem a inequação 5 log 2 (x 2 – 3x + 2) < 1 são x < 1 ou x > 2. ( ) Na função f(x) = x , a variável x pode assumir qualquer valor real. ( ) Admita-se que a probabilidade de um menino ser daltônico é de 8%. Se doi",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Julgue os itens:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – V – V – V"
+   "gabarito": "F – V – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "Diz-se que uma função $ f $ de $ A $ em $ B $ é injetora se, para quaisquer $ x_1, x_2 ∈ A $, com $ x_1 ≠ x_2 $, implicar $ f(x_1) = f(x_2) $ em $ B $.",
+     "ok": false
+    },
+    {
+     "t": "O pH de uma solução é definido por $ pH = log_{10}({1|H^+}) $, em que $ H^+ $ é a concentração de hidrogênio em íons-grama por litro de solução. Portanto, o pH será negativo se $ H^+ $ for maior que 1.",
+     "ok": true
+    },
+    {
+     "t": "Os valores de $ x $ que satisfazem a inequação $ 5^{log_2(x^2 − 3x + 2)} < 1 $ são $ x < 1 $ ou $ x > 2 $.",
+     "ok": false
+    },
+    {
+     "t": "Na função $ f(x) = {x|∣x − 1∣ + 2} $, a variável $ x $ pode assumir qualquer valor real.",
+     "ok": true
+    },
+    {
+     "t": "Admita-se que a probabilidade de um menino ser daltônico é de 8%. Se dois meninos se apresentaram para o exame oftalmológico, a probabilidade de que o primeiro deles seja daltônico e o outro não, é inferior a 8%.",
+     "ok": true
+    },
+    {
+     "t": "O número de maneiras de se distribuir $ n $ objetos distintos por 2 caixas distintas, de modo que nenhuma caixa fique vazia, é $ 2^n − 2 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82622,37 +82653,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. U. Potiguar-RN O domínio da função f(x) = 2x + x – 1 é igual a: a) {x ∈ | R / x ≤ 0} b) {x ∈ | R / x ≥ 0} c) {x ∈ | R / x ≤ –1} d) {x ∈ | R / x ≥ 1} 4 + x x 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-003.jpg"
-   ],
-   "larguraMm": 81.5,
+   "enunciado": "O domínio da função $ f(x) = {2x|√{4 + x}} + {√{x − 1}|x^3} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{x ∈ ℝ | x ≤ 0\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ \\{x ∈ ℝ | x ≥ 0\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{x ∈ ℝ | x ≤ −1\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{x ∈ ℝ | x ≥ 1\\} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82664,41 +82689,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. UEPI O domínio da função real de variável real definida por f(x) = log (x – 1) (–x 2 + x + 6) é igual a: a) {x ∈ | R / 1 < x < 3} b) {x ∈ | R / 1 < x < 2 ou 2 < x < 3} c) {x ∈ | R / –2 < x < 3} d) {x ∈ | R / –2 ≤ x ≤ 3} e) {x ∈ | R / x > 1}",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-004.jpg"
-   ],
-   "larguraMm": 87.1,
+   "enunciado": "O domínio da função real de variável real definida por $ f(x) = log_{(x−1)}(−x^2 + x + 6) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{x ∈ ℝ | 1 < x < 3\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ \\{x ∈ ℝ | 1 < x < 2 $ ou $ 2 < x < 3\\} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ \\{x ∈ ℝ | −2 < x < 3\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{x ∈ ℝ | −2 ≤ x ≤ 3\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ \\{x ∈ ℝ | x > 1\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82710,41 +82729,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Unifor-CE Se f é uma função de | R em | R tal que f(x) = x 2 + 3x, então o conjunto imagem da função definida por y = f(x – 1) é o intervalo: a) [– 9 , + ∞ [ b) [– 9 , + ∞ [ c) [–9, + ∞ [ d) [ 9 , + ∞ [ e) [ 9 , + ∞ [ 4 2 2 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-005.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Se $ f $ é uma função de ℝ em ℝ tal que $ f(x) = x^2 + 3x $, então o conjunto imagem da função definida por $ y = f(x − 1) $ é o intervalo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ [−{9|4}, +∞[ $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ [−{9|2}, +∞[ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ [−9, +∞[ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ [{9|2}, +∞[ $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ [{9|4}, +∞[ $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82756,24 +82769,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFR-RJ Seja f: | R → | R uma função definida por f(x) = ax + b. Se o gráfico da função f passa pelos pontos A (1, 2) e B (2, 3), a função f –1 (inversa de f) é: a) f –1 (x) = x + 1 b) f –1 (x) = –x + 1 c) f –1 (x) = x – 1 d) f –1 (x) = x + 2 e) f –1 (x) = –x + 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-006.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Seja $ f: ℝ → ℝ $ uma função definida por $ f(x) = ax + b $. Se o gráfico da função $ f $ passa pelos pontos $ A(1, 2) $ e $ B(2, 3) $, a função $ f^{−1} $ (inversa de $ f $) é:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "C 1",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82785,24 +82792,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UFF-RJ Considere a função f definida por: f(x) = Pede-se: a) f(0) b) (fof)(–2) c) o valor de m tal que f(m) = –125 d) f –1 ( 1 ) 4 4x,  x  < 4 x 3 ,  x  ≥ 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-007.jpg"
-   ],
-   "larguraMm": 68.1,
+   "enunciado": "Considere a função $ f $ definida por:<br><span class=\"pb\"></span>$ f(x) = @S{4x, \"se\" |x| < 4; x^3, \"se\" |x| ≥ 4} $<br><span class=\"pb\"></span>Pede-se:<br><span class=\"pb\"></span>a) $ f(0) $<br>b) $ (f∘f)(−2) $<br>c) o valor de $ m $ tal que $ f(m) = −125 $<br>d) $ f^{−1}({1|4}) $",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "a) 0 b) –512 c) m = –5 d) 16",
+   "gabarito": "a) 0; b) −512; c) m = −5; d) 16",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82814,24 +82815,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFF-RJ Considere a função real de variável real f definida por: f(x) = log 1 – x 2 Determine o domínio de f. 2 – x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-008.jpg"
-   ],
-   "larguraMm": 96.8,
+   "enunciado": "Considere a função real de variável real $ f $ definida por:<br><span class=\"pb\"></span>$ f(x) = log √{{1 − x^2|2 − x}} $<br><span class=\"pb\"></span>Determine o domínio de $ f $.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "Dom f = (–1 ; 1) U (2 ; + ∞ )",
+   "gabarito": "Dom f = (−1; 1) ∪ (2; +∞)",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82843,37 +82838,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. U. Passo Fundo-RS Dadas as funções: f(x) = 2 x – 3 , g(x) = x 2 + 4x – 8, e h(x) = 2 x , a alternativa incorreta é: a) f –1 ( x ) = 5 x + 3 . b) As três funções são crescentes para qualquer x \u0001 | R. c) O vértice de g(x) é o ponto V(–2, –12). d) A imagem de h(x) é | R > 0. e) O domínio das três funções é | R. 5 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-009.jpg"
-   ],
-   "larguraMm": 85.9,
+   "enunciado": "Dadas as funções: $ f(x) = {2x − 3|5} $, $ g(x) = x^2 + 4x − 8 $, e $ h(x) = 2^x $, a alternativa incorreta é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f^{−1}(x) = {5x + 3|2} $.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "As três funções são crescentes para qualquer $ x ∈ ℝ $.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "O vértice de $ g(x) $ é o ponto $ V(−2, −12) $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "A imagem de $ h(x) $ é $ ℝ > 0 $.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "O domínio das três funções é ℝ.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-010",
@@ -82917,7 +82907,6 @@
   },
   {
    "id": "cdb-c15-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82929,20 +82918,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. UFSC Determine a soma dos números associados à(s) proposição(ões) VERDADEIRA(S). 01) O domínio da função f : D ➔ | R, definida por f (x) = x 2 – 3x – 10 é D = {x \u0001 | R | x \u0001 – 2 ou x \u0002 5} – {6}. 02) A função inversa da função g(x) = 2x – 1 é definida por g –1 (x) = 3x – 1 . 04) Sejam h e k, duas funções, dadas por h(x) = 2x – 1 e k(x) = 3x + 2. Então h(k(1)) é igual a 9. 08) A função f : | R ➔ | R definida por f (x) = x + 2, é uma função decrescente. 16) A função g: | R ➔ | R definida por g(x) = x 2 + 1, é uma função par. 32) O conjunto-imagem da função h: | R ➔ | R, definida por h(x) = |",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Determine a soma dos números associados à(s) proposição(ões) <b>VERDADEIRA(S)</b>.",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "23"
+   "gabarito": "23",
+   "afirmacoes": [
+    {
+     "t": "O domínio da função $ f: D → ℝ $, definida por $ f(x) = {√{x^2 − 3x − 10}|x − 6} $ é $ D = \\{x ∈ ℝ | x ≤ −2 $ ou $ x ≥ 5\\} − \\{6\\} $.",
+     "ok": true
+    },
+    {
+     "t": "A função inversa da função $ g(x) = {2x − 1|x − 3} $ é definida por $ g^{−1}(x) = {3x − 1|x − 2} $.",
+     "ok": true
+    },
+    {
+     "t": "Sejam $ h $ e $ k $, duas funções, dadas por $ h(x) = 2x − 1 $ e $ k(x) = 3x + 2 $. Então $ h(k(1)) $ é igual a 9.",
+     "ok": true
+    },
+    {
+     "t": "A função $ f: ℝ → ℝ $ definida por $ f(x) = x + 2 $, é uma função decrescente.",
+     "ok": false
+    },
+    {
+     "t": "A função $ g: ℝ → ℝ $ definida por $ g(x) = x^2 + 1 $, é uma função par.",
+     "ok": true
+    },
+    {
+     "t": "O conjunto-imagem da função $ h: ℝ → ℝ $, definida por $ h(x) = |x^2 − 4x + 3| $ é $ Im(h) = \\{y ∈ ℝ | y ≥ −1\\} $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -82954,41 +82963,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. UEPI Dentre as funções abaixo, a única bijetora de [0, 2 π ] em [0, 1] é: a) y = sen x b) y = sen x c) y = sen(x) d) y = sen(2x) e) y = sen(3x) 2 \u0001 \u0002 4 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-012.jpg"
-   ],
-   "larguraMm": 107.6,
+   "enunciado": "Dentre as funções abaixo, a única bijetora de $ [0, 2π] $ em $ [0, 1] $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ y = sen({x|4}) $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ y = sen({x|2}) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ y = sen(x) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ y = sen(2x) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ y = sen(3x) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83000,37 +83003,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. Unifor-CE Seja f a função de |R em |R * definida por f(x) = 3 –x . É verdade que: a) f é crescente em | R b) f é ímpar c) f(x) < 0, para todo x \u0001 | R d) a função inversa de f é dada por f –1 (x) = log 3 1 e) f –1 (x) > 0, para todo x \u0001 | R * + x +",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-013.jpg"
-   ],
-   "larguraMm": 117.5,
+   "enunciado": "Seja $ f $ a função de ℝ em $ ℝ_+^* $, definida por $ f(x) = 3^{−x} $. É verdade que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f $ é crescente em ℝ",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f $ é ímpar",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f(x) < 0 $, para todo $ x ∈ ℝ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "a função inversa de $ f $ é dada por $ f^{−1}(x) = log_3 {1|x} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ f^{−1}(x) > 0 $, para todo $ x ∈ ℝ_+^* $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-014",
@@ -83080,7 +83078,6 @@
   },
   {
    "id": "cdb-c15-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83092,37 +83089,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. U. F. Santa Maria-RS Considere f : | R → | R, dada por f(x) = 4x 2 – 4x – tg 2 θ , onde 0 < θ < 2 π . Os valores de θ , para os quais f assume o valor mínimo – 4, são: a) { π , 2 π , 4 π , 5 π } b) { π , 3 π , 5 π , 7 π } c) { π , 2 π , 3 π , 4 π } d) { π , 4 π , 5 π , 4 π } e) { π , 2 π , 3 π , 5 π } 3 3 3 3 4 4 4 4 5 5 5 5 6 6 6 3 7 7 7 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-015.jpg"
-   ],
-   "larguraMm": 123.1,
+   "enunciado": "Considere $ f: ℝ → ℝ $, dada por $ f(x) = 4x^2 − 4x − tg^2 θ $, onde $ 0 < θ < 2π $. Os valores de $ θ $, para os quais $ f $ assume o valor mínimo −4, são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{{π|3}, {2π|3}, {4π|3}, {5π|3}\\} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ \\{{π|4}, {3π|4}, {5π|4}, {7π|4}\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{{π|5}, {2π|5}, {3π|5}, {4π|5}\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{{π|6}, {4π|6}, {5π|6}, {4π|3}\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ \\{{π|7}, {2π|7}, {3π|7}, {5π|7}\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-016",
@@ -83172,7 +83164,6 @@
   },
   {
    "id": "cdb-c15-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83184,20 +83175,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. UFMS Considere a função f(x) = x – 1 . Podemos afirmar que: (01) f( 1 ) = 0 (02) O domínio de f é o conjunto dos números reais diferentes de zero. (04) f(x) > 0 se x < –1 (08) O gráfico de f(x) é uma reta que passa pelo ponto de coordenadas (1; 0). (16) Se –1 < x < 0, então f(x) > 0. Dê, como resposta, a soma das alternativas corretas. x 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-017.jpg"
-   ],
-   "larguraMm": 116.2,
+   "enunciado": "Considere a função $ f(x) = x − {1|x} $. Podemos afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "18"
+   "gabarito": "18",
+   "afirmacoes": [
+    {
+     "t": "$ f({1|2}) = 0 $",
+     "ok": false
+    },
+    {
+     "t": "O domínio de $ f $ é o conjunto dos números reais diferentes de zero.",
+     "ok": true
+    },
+    {
+     "t": "$ f(x) > 0 $ se $ x < −1 $",
+     "ok": false
+    },
+    {
+     "t": "O gráfico de $ f(x) $ é uma reta que passa pelo ponto de coordenadas $ (1; 0) $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ −1 < x < 0 $, então $ f(x) > 0 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83209,20 +83216,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UFMS Dada a função f(x) = 1 – x 2 , podemos afirmar que: (01) O domínio de f é o conjunto dos números reais x tais que x ≤ – 1 ou x ≥ 1. (02) O domínio de f é o conjunto dos números reais x tais que –1 ≤ x ≤ 1. (04) O conjunto imagem de f é o intervalo de números reais [0; 1]. (08) O conjunto imagem de f é o conjunto de números reais y tais que y ≤ 1. (16) A área da figura compreendida entre o gráfico da função y = f(x) e o eixo Ox vale π . Dê, como resposta, a soma das alternativas corretas. 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-018.jpg"
-   ],
-   "larguraMm": 119.1,
+   "enunciado": "Dada a função $ f(x) = √{1 − x^2} $, podemos afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "22"
+   "gabarito": "22",
+   "afirmacoes": [
+    {
+     "t": "O domínio de $ f $ é o conjunto dos números reais $ x $ tais que $ x ≤ −1 $ ou $ x ≥ 1 $.",
+     "ok": false
+    },
+    {
+     "t": "O domínio de $ f $ é o conjunto dos números reais $ x $ tais que $ −1 ≤ x ≤ 1 $.",
+     "ok": true
+    },
+    {
+     "t": "O conjunto imagem de $ f $ é o intervalo de números reais $ [0; 1] $.",
+     "ok": true
+    },
+    {
+     "t": "O conjunto imagem de $ f $ é o conjunto de números reais $ y $ tais que $ y ≤ 1 $.",
+     "ok": false
+    },
+    {
+     "t": "A área da figura compreendida entre o gráfico da função $ y = f(x) $ e o eixo $ Ox $ vale $ {π|2} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83234,41 +83257,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UFMS Sendo f(x) = 3x + –( x 2 – 5 x + 6) 2 , então a imagem da função é: a) {6, 9} b) {2, 3} c) {0, 2} d) {0, 3} e) {3, 0}",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-019.jpg"
-   ],
-   "larguraMm": 108.3,
+   "enunciado": "Sendo $ f(x) = 3x + √{(x^2 − 5x + 6)^2} $, então a imagem da função é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{6, 9\\} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ \\{2, 3\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{0, 2\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{0, 3\\} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ \\{3, 0\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83280,37 +83297,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UECE A função f : | R → | R satisfaz a igualdade de f(2x + 1) = 10 ⋅ f(x) – 3, para todo x real. Se f(31) = 0, então o valor de f(0) é igual a: a) 0,33333 b) 0,3333 c) 0,333 d) 0,33",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-020.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A função $ f: ℝ → ℝ $ satisfaz a igualdade de $ f(2x + 1) = 10 · f(x) − 3 $, para todo $ x $ real. Se $ f(31) = 0 $, então o valor de $ f(0) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,33333",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "0,3333",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,333",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,33",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83322,41 +83333,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. Unifor-CE Sejam f e g funções de | R em | R tais que g(x) = 1 – 2x e g(f(x)) = 4x 2 – 1. O conjunto imagem de f é: a) | R b) | R – c) | R + d) ]– ∞ , 1] e) [1, + ∞ [",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sejam $ f $ e $ g $ funções de ℝ em ℝ tais que $ g(x) = 1 − 2x $ e $ g(f(x)) = 4x^2 − 1 $. O conjunto imagem de $ f $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "ℝ",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ℝ_− $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ℝ_+ $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ]−∞, 1] $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ [1, +∞[ $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83368,41 +83373,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UEPI Considere a função f: | R → | R tal que para todo x real se tem f(5x) = 5f(x). Se f(15) = 20, então o valor de f(75) é igual a: a) 50 d) 200 b) 100 e) 250 c) 150",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-022.jpg"
-   ],
-   "larguraMm": 125.6,
+   "enunciado": "Considere a função $ f: ℝ → ℝ $ tal que para todo $ x $ real se tem $ f(5x) = 5f(x) $. Se $ f(15) = 20 $, então o valor de $ f(75) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "100",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "150",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "200",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "250",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83414,37 +83413,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. UFCE Seja f: | R → | R a função tal que f(1) = 4 e f(x + 1) = 4 ⋅ f(x), para todo x real. Nestas condições, f(10) é igual a: a) 2 –10 c) 2 10 b) 4 –10 d) 4 10",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-023.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Seja $ f: ℝ → ℝ $ a função tal que $ f(1) = 4 $ e $ f(x + 1) = 4 · f(x) $, para todo $ x $ real. Nestas condições, $ f(10) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2^{−10} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 4^{−10} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2^{10} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 4^{10} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83456,24 +83449,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFR-RJ Determine o valor real de a para que f(x) = x + 1 possua como inversa a função f –1 (x) = 1 – 3x . 2x + a 2x – 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-024.jpg"
-   ],
-   "larguraMm": 72.8,
+   "enunciado": "Determine o valor real de <b>a</b> para que $ f(x) = {x + 1|2x + a} $ possua como inversa a função $ f^{−1}(x) = {1 − 3x|2x − 1} $.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a = 3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c15-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções (aprofundamento)",
@@ -83485,37 +83472,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. PUC-RJ A função f(x) = 1 – 1 : a) é sempre positiva. b) nunca assume o valor – 1 . c) apresenta gráfico que não intercepta o eixo dos x . d) é sempre crescente. e) assume todos os valores reais. 1 + x 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c15-025.jpg"
-   ],
-   "larguraMm": 81.1,
+   "enunciado": "A função $ f(x) = {1|1 + x^2} − {1|2} $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "é sempre positiva.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "nunca assume o valor $ −{1|2} $.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "apresenta gráfico que não intercepta o eixo dos $ x $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "é sempre crescente.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "assume todos os valores reais.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c15-026",
