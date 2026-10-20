@@ -65563,7 +65563,6 @@
   },
   {
    "id": "cdb-c05-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65575,41 +65574,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. PUC-RS Se f(x) = logx, então f x 1       + f(x) é igual a: a) 10 b) f(x 2 ) c) –f(x) d) 1 e) 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-020.jpg"
-   ],
-   "larguraMm": 105.1,
+   "enunciado": "Se $ f(x) = log x $, então $ f({1|x}) + f(x) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(x^2) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ −f(x) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65621,41 +65614,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. PUC-RS A solução real para a equação a x+1 = b a , com a > 0, a ≠ 1 e b > 0, é dada por: a) log a (b) b) log a (b + 1) d) log a (b) + 2 c) log a (b) + 1 e) log a (b) – 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-021.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "A solução real para a equação $ a^{x+1} = {b|a} $, com $ a > 0 $, $ a ≠ 1 $ e $ b > 0 $, é dada por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ log_a(b) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ log_a(b + 1) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ log_a(b) + 1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ log_a(b) + 2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ log_a(b) − 2 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65667,20 +65654,24 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFMT Considerando que x pertença ao conjunto dos números reais, julgue as afirmativas. ( ) Se tg φ = e e x x − − 2 , \u0001 n (sec φ + tg φ ) = 1 ( ) O conjunto solução da equação e 2x + e x – 6 = 0 é unitário.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-022.jpg"
-   ],
-   "larguraMm": 132.3,
+   "enunciado": "Considerando que $ x $ pertença ao conjunto dos números reais, julgue as afirmativas.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V"
+   "gabarito": "F – V",
+   "afirmacoes": [
+    {
+     "t": "Se $ tg φ = {e^x − e^{−x}|2} $, $ ln(sec φ + tg φ) = 1 $",
+     "ok": false
+    },
+    {
+     "t": "O conjunto solução da equação $ e^{2x} + e^x − 6 = 0 $ é unitário.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65692,20 +65683,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. UFMS Sobre as raízes da equação (log 10 x) 2 – 5 log 10 x + 6 = 0, é correto afirmar que: 01. não são reais; 02. são potências de dez; 04. são números inteiros consecutivos; 08. são opostas; 16. o quociente da maior raiz pela menor raiz é igual a dez. Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-023.jpg"
-   ],
-   "larguraMm": 93.7,
+   "enunciado": "Sobre as raízes da equação $ (log_{10} x)^2 − 5 log_{10} x + 6 = 0 $, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "18"
+   "gabarito": "18",
+   "afirmacoes": [
+    {
+     "t": "não são reais;",
+     "ok": false
+    },
+    {
+     "t": "são potências de dez;",
+     "ok": true
+    },
+    {
+     "t": "são números inteiros consecutivos;",
+     "ok": false
+    },
+    {
+     "t": "são opostas;",
+     "ok": false
+    },
+    {
+     "t": "o quociente da maior raiz pela menor raiz é igual a dez.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65717,37 +65724,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. F.I. Anápolis-GO Na equação y = 3 log 2 (x–1) , se y = 1 3 , o valor de x será: a) 3 2 b) 2 c) 3 d) 4 e) 1 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-024.jpg"
-   ],
-   "larguraMm": 109.9,
+   "enunciado": "Na equação $ y = 3^{log_2(x−1)} $, se $ y = {1|3} $, o valor de $ x $ será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|2} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|2} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-025",
@@ -65797,7 +65799,6 @@
   },
   {
    "id": "cdb-c05-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65809,37 +65810,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFRN Sendo V = {x ∈ | R | 81 x logx 3 – 3 x logx 9 = 0}, tem-se: a) V \u0001 1 2 1 3 4 , , ,       c) V \u0001 1 3 1 2 2 5 , , ,       b) V \u0001 1 3 1 2 1 4 , , ,       d) V \u0001 1 3 2 3 5 , , ,      ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-026.jpg"
-   ],
-   "larguraMm": 95.1,
+   "enunciado": "Sendo $ V = \\{x ∈ ℝ | 81^x log x^3 − 3^x log x^9 = 0\\} $, tem-se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ V ⊂ \\{{1|2}, 1, 3, 4\\} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ V ⊂ \\{{1|3}, {1|2}, 1, 4\\} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ V ⊂ \\{{1|3}, {1|2}, 2, 5\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ V ⊂ \\{{1|3}, 2, 3, 5\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65851,41 +65846,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. UFSE Se S é o conjunto solução da inequação 0 < log 2 (3x + 1) < 8, então: a) S \u0001 [0, 3] d) ] – 1 3 , 2[ \u0003 S b) S \u0001 ] – 1 3 , 3] e) S = ] – 1 3 , 5[ c) ] – 1 3 , + \u0001 [ \u0003 S",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-027.jpg"
-   ],
-   "larguraMm": 84.8,
+   "enunciado": "Se $ S $ é o conjunto solução da inequação $ 0 < log_{√2}(3x + 1) < 8 $, então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ S ⊂ [0, 3] $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ S ⊂ ]−{1|3}, 3] $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ]−{1|3}, +∞[ ⊃ S $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ ]−{1|3}, 2[ ⊃ S $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ S = ]−{1|3}, 5[ $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65897,41 +65886,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. U.E. Londrina-PR Quaisquer que sejam os números reais positivos a, b, c, d, x e y, a expressão log log log log 2 2 2 2 a b b c c d ay dx         +         +         −         pode ser reduzida a: a) log 2 y x       b) log 2 x y       c) 1 d) 0 e) log 2 2 2 a y d x      ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-028.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Quaisquer que sejam os números reais positivos $ a $, $ b $, $ c $, $ d $, $ x $ e $ y $, a expressão $ log_2({a|b}) + log_2({b|c}) + log_2({c|d}) − log_2({ay|dx}) $ pode ser reduzida a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ log_2({y|x}) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ log_2({x|y}) $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ log_2({a^2 y|d^2 x}) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65943,41 +65926,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. PUC-PR Se log (3x + 23) – log (2x – 3) = log4, encontrar x: a) 7 b) 6 c) 5 d) 4 e) 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-029.jpg"
-   ],
-   "larguraMm": 105,
+   "enunciado": "Se $ log(3x + 23) − log(2x − 3) = log 4 $, encontrar $ x $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -65989,20 +65966,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. I.E. Superior de Brasília-DF Sabendo que log b a = c ⇔ b c = a, com a > 0, b > 0 e, ainda, b ≠ 1, para a, b e c reais. Julgue os itens. ( ) log 27 3 = 0,333... ( ) log b a + log b c = log b (a + c). ( ) (log b a) –1 = log a b, para todo a > 0. ( ) Se log b a + log b c = 2, então b 2 = ac. ( ) Se a > 1, temos log log b b c a = log a c.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-030.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sabendo que $ log_b a = c ⇔ b^c = a $, com $ a > 0 $, $ b > 0 $ e, ainda, $ b ≠ 1 $, para $ a $, $ b $ e $ c $ reais. Julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – V – V"
+   "gabarito": "V – F – F – V – V",
+   "afirmacoes": [
+    {
+     "t": "$ log_{27} 3 = 0,333… $",
+     "ok": true
+    },
+    {
+     "t": "$ log_b a + log_b c = log_b(a + c) $.",
+     "ok": false
+    },
+    {
+     "t": "$ (log_b a)^{−1} = log_a b $, para todo $ a > 0 $.",
+     "ok": false
+    },
+    {
+     "t": "Se $ log_b a + log_b c = 2 $, então $ b^2 = ac $.",
+     "ok": true
+    },
+    {
+     "t": "Se $ a > 1 $, temos $ {log_b c|log_b a} = log_a c $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66014,13 +66007,7 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. UFMT (...) A vantagem de lidar com os logarit- mos é que eles são números mais curtos do que as potências. Imagine que elas indiquem a altura de um foguete que, depois de lançado, atinge 10 metros em l segundo, 100 metros em 2 segundos e assim por diante. Nesse caso, o tempo (t) em segundos é sempre o logaritmo decimal da altura (h) em metros. A partir das informações dadas, julgue os itens. ( ) Pode-se representar a relação descrita por meio da função h = log t . ( ) Se o foguete pudesse ir tão longe, atingiria 1 bilhão de metros em 9 segundos. ( ) Em 2,5 segundos o foguete atinge 550 me-",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-031.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "(...) A vantagem de lidar com os logaritmos é que eles são números mais curtos do que as potências. Imagine que elas indiquem a altura de um foguete que, depois de lançado, atinge 10 metros em 1 segundo, 100 metros em 2 segundos e assim por diante. Nesse caso, o tempo ($ t $) em segundos é sempre o logaritmo decimal da altura ($ h $) em metros.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "",
@@ -66028,11 +66015,19 @@
     "modo": "branco",
     "altura": 45
    },
-   "semGabarito": true
+   "semGabarito": true,
+   "pergunta": "A partir das informações dadas, julgue os itens.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c05-031-fig.jpg",
+    "alt": "Ilustração de um foguete subindo em etapas: 10^1 = 10 metros, 10^2 = 100 metros, 10^3 = 1 000 metros e 10^4 = 10 000 metros, com os segundos após o lançamento marcados no chão",
+    "largura": "50mm",
+    "legenda": "Adaptado da Revista Super Interessante, maio de 2000, p. 86."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c05-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66044,41 +66039,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. UFCE Se log 7 875 = a, então log 35 245 é igual a: a) a a + + 2 7 b) a a + + 2 5 c) a a + + 5 2 d) a a + + 7 2 e) a a + + 5 7",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-032.jpg"
-   ],
-   "larguraMm": 132.3,
+   "enunciado": "Se $ log_7 875 = a $, então $ log_{35} 245 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {a + 2|a + 7} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {a + 2|a + 5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {a + 5|a + 2} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {a + 7|a + 2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {a + 5|a + 7} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66090,37 +66079,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. UFMG A intensidade de um terremoto na escala Richter é definida por I = 2 3 log 10 E E O       , em que E é a energia liberada pelo terremoto, em quilowatt-hora (kwh), e E O = 10 –3 kwh. A cada aumento de uma unidade no valor de I, o valor de E fica multiplicado por: a) 10 b) 20 3 c) 10 3 2 d) 10 1 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-033.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A intensidade de um terremoto na escala Richter é definida por $ I = {2|3} log_{10}({E|E_0}) $, em que $ E $ é a energia liberada pelo terremoto, em quilowatt-hora (kwh), e $ E_0 = 10^{−3} $ kwh.<br><span class=\"pb\"></span>A cada aumento de uma unidade no valor de $ I $, o valor de $ E $ fica multiplicado por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {20|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 10^{3/2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 10^{1/2} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66132,33 +66115,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. UFRN Sendo N um número real positivo e b um número real positivo diferente de 1, diz-se que x é o logaritmo de N na base b se, e somente se, b x = N. Assinale a opção na qual x é o logaritmo de N na base b. a) N = 0,5 b = 2 x = –2 b) N = 0,5 b = 2 x = 1 c) N = 0,125 b = 2 x = –4 d) N = 0,125 b = 2 x = –3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-034.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sendo $ N $ um número real positivo e $ b $ um número real positivo diferente de 1, diz-se que $ x $ é o logaritmo de $ N $ na base $ b $ se, e somente se, $ b^x = N $.<br><span class=\"pb\"></span>Assinale a opção na qual $ x $ é o logaritmo de $ N $ na base $ b $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ N = 0,5 $; $ b = 2 $; $ x = −2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ N = 0,5 $; $ b = 2 $; $ x = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ N = 0,125 $; $ b = 2 $; $ x = −4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ N = 0,125 $; $ b = 2 $; $ x = −3 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-035",
@@ -66185,7 +66163,6 @@
   },
   {
    "id": "cdb-c05-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66197,41 +66174,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 x – 16.logy = 0 36. PUC-RS Se o par (x 1 , y 1 ) é solução do sistema de equações 3.2 x – 10.logy = 19 , então x y 1 1 é igual a: a) 3 10 10 b) 10 3 3 3 10 5 3 e) 3 5 5   3    d) c)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-036.jpg"
-   ],
-   "larguraMm": 128.4,
+   "enunciado": "Se o par $ (x_1, y_1) $ é solução do sistema de equações<br><span class=\"pb\"></span>$ 2^x − 16 · log y = 0 $<br>$ 3 · 2^x − 10 · log y = 19 $,<br><span class=\"pb\"></span>então $ {x_1|y_1} $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3√{10}|10} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {10√3|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 3√{10} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 5√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3√5|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66243,41 +66214,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. PUC-PR A solução da equação – log y = log y +       3 2 , está no intervalo: a) 0 < y ≤ 1 b) 1 ≤ y ≤ 3 c) 2 ≤ y ≤ 8 d) –2 ≤ y < 0,5 e) 3 ≤ y ≤ 27",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-037.jpg"
-   ],
-   "larguraMm": 115.7,
+   "enunciado": "A solução da equação $ −log y = log(y + {3|2}) $, está no intervalo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 0 < y ≤ 1 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 1 ≤ y ≤ 3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2 ≤ y ≤ 8 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ −2 ≤ y < 0,5 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3 < y ≤ 27 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Exponencial e logaritmo",
@@ -66289,16 +66254,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. U.E. Ponta Grossa-PR Considerando que p é o produto das raízes da equação log 2 x – logx – 6 = 0 e que m p p p = ( ) ⋅ − − − 2 4 8 3 7 , assinale o que for correto. 01. p é um número primo 02. p é um múltiplo de três 04. p m Z ∈ 08. 60 < m < 70 16. m > p Dê, como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c05-038.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considerando que $ p $ é o produto das raízes da equação $ log^2 x − log x − 6 = 0 $ e que $ m = {(2^{−3})^p · 4^{p−7}|8^{−p}} $, assinale o que for correto (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "24"
+   "gabarito": "24",
+   "afirmacoes": [
+    {
+     "t": "$ p $ é um número primo",
+     "ok": false
+    },
+    {
+     "t": "$ p $ é um múltiplo de três",
+     "ok": false
+    },
+    {
+     "t": "$ {p|m} ∈ ℤ $",
+     "ok": false
+    },
+    {
+     "t": "$ 60 < m < 70 $",
+     "ok": true
+    },
+    {
+     "t": "$ m > p $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-039",
