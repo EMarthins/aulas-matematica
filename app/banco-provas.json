@@ -64232,7 +64232,6 @@
   },
   {
    "id": "cdb-c04-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64244,20 +64243,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. UFBA Sobre a fun çã o real, de vari á vel real, f(x) = x x 2 1 3 − + , pode-se afirmar: 01. O dom í nio da f é | R. 02. O gr á fico da f intercepta o eixo Ox no ponto ( – 1, 0). 04. 2 2 1 f f − ( ) ( ) = 6 08. Se f(x) = 3, ent ã o x ∈ { – 2, 2, 5}. 16. f(x) e g(x) = x x x x 3 2 3 − + s ã o fun çõ es iguais. 32. Sendo g(x) = 3x + 1, g(f(x)) = xg x x ( ) + 3 . D ê , como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-038.jpg"
-   ],
-   "larguraMm": 83.6,
+   "enunciado": "Sobre a função real, de variável real, $ f(x) = {x^2 − 1|x + 3} $, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "42"
+   "gabarito": "42",
+   "afirmacoes": [
+    {
+     "t": "O domínio da $ f $ é ℝ.",
+     "ok": false
+    },
+    {
+     "t": "O gráfico da $ f $ intercepta o eixo $ Ox $ no ponto $ (−1, 0) $.",
+     "ok": true
+    },
+    {
+     "t": "$ {2f(−2)|f(1)} = 6 $",
+     "ok": false
+    },
+    {
+     "t": "Se $ f(x) = 3 $, então $ x ∈ \\{−2, 2, 5\\} $.",
+     "ok": true
+    },
+    {
+     "t": "$ f(x) $ e $ g(x) = {x^3 − x|x^2 + 3x} $ são funções iguais.",
+     "ok": false
+    },
+    {
+     "t": "Sendo $ g(x) = 3x + 1 $, $ g(f(x)) = {xg(x)|x + 3} $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64269,41 +64288,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. Unifor-CE Sejam j e g fun çõ es de | R em | R dadas por f(x) = – 2x e g(x) = x 2 – 1. Relativa- mente à fun çã o composta definida por (fog)(x), é correto afirmar que: a) seu gr á fico é uma reta; b) tem um valor m á ximo, quando x = 0; c) tem um valor m í nimo, quando x = 0; d) seu conjunto imagem é o intervalo ] – ∞ , 1]; e) admite duas ra í zes reais e iguais.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-039.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Sejam $ f $ e $ g $ funções de ℝ em ℝ dadas por $ f(x) = −2x $ e $ g(x) = x^2 − 1 $. Relativamente à função composta definida por $ (f∘g)(x) $, é correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "seu gráfico é uma reta;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "tem um valor máximo, quando $ x = 0 $;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "tem um valor mínimo, quando $ x = 0 $;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "seu conjunto imagem é o intervalo $ ]−∞, 1] $;",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "admite duas raízes reais e iguais.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64315,41 +64328,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. F.M. Itajubá-MG Dadas as fun çõ es abaixo: g(x) = 3x + 2 (g o f)(x) = 6x – 4 h(x + 1) = h(x) + x t(2x) = 2 t(x) t(6) = 18 Calcular o valor da express ã o f(4) + h(6) – h(4) + t(3) a) 18 b) 24 c) 22 d) 16 e) Nenhuma das respostas anteriores.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-040.jpg"
-   ],
-   "larguraMm": 81.7,
+   "enunciado": "Dadas as funções abaixo:<br><span class=\"pb\"></span>$ g(x) = 3x + 2 $<br>$ (g∘f)(x) = 6x − 4 $<br>$ h(x + 1) = h(x) + x $<br>$ t(2x) = 2 t(x) $<br>$ t(6) = 18 $<br><span class=\"pb\"></span>Calcular o valor da expressão $ f(4) + h(6) − h(4) + t(3) $",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "18",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "24",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "22",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "16",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Nenhuma das respostas anteriores.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64361,37 +64368,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. U.F. Pelotas-RS Observando-se a varia çã o da alonga çã o A (acr é scimo de comprimento em cm) de uma mola, em fun çã o de uma for ç a F (em N) aplicada sobre a mola, obtive- ram-se os resultados que podem ser representados pela fun çã o linear abaixo: Nessas condi çõ es, se θ = arctan 5, pode-se afirmar que cada aumento de 0,25 N na for ç a corresponde a um aumento na alonga çã o de: a) 0,50 cm b) 2,00 cm c) 1,25 cm d) 3,75 cm e) 2,25 cm",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-041.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Observando-se a variação da alongação <b>A</b> (acréscimo de comprimento em cm) de uma mola, em função de uma força <b>F</b> (em N) aplicada sobre a mola, obtiveram-se os resultados que podem ser representados pela função linear abaixo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,50 cm",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,00 cm",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1,25 cm",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3,75 cm",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,25 cm",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Nessas condições, se θ = arctan 5, pode-se afirmar que cada aumento de 0,25 N na força corresponde a um aumento na alongação de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-041-fig.jpg",
+    "alt": "Gráfico da elongação (cm) em função da força (N): reta que parte da origem, com ângulo θ com o eixo da força; marcadas as forças 0,1; 0,2; 0,3; 0,4 e 0,5 N e as elongações A1 a A5",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-042",
@@ -64435,7 +64444,6 @@
   },
   {
    "id": "cdb-c04-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64447,20 +64455,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. UFMT Observe a figura. . Adaptado de Revista Veja . 24/05/2000, p.134. Admita que o gr á fico representativo do desempenho da bolsa de T ó quio é uma fun çã o real f(t), da bolsa de Nova Iorque uma fun çã o real g(t) e da bolsa de S ã o Paulo é uma fun çã o real h(t), com t ∈ [15, 19]. A partir dessas informa çõ es, julgue os itens. ( ) h(t) ≥ g(t), qualquer que seja t pertencente ao intervalo considerado. ( ) A equa çã o f(t) = h(t) admite uma raiz. ( ) A partir do ponto associado ao dia 16 a fun çã o g(t) é estritamente decrescente.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-043.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Observe a figura.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – F"
+   "gabarito": "F – F – F",
+   "pergunta": "Admita que o gráfico representativo do desempenho da bolsa de Tóquio é uma função real $ f(t) $, da bolsa de Nova Iorque uma função real $ g(t) $ e da bolsa de São Paulo é uma função real $ h(t) $, com $ t ∈ [15, 19] $.<br><span class=\"pb\"></span>A partir dessas informações, julgue os itens.<br>( ) $ h(t) ≥ g(t) $, qualquer que seja $ t $ pertencente ao intervalo considerado.<br>( ) A equação $ f(t) = h(t) $ admite uma raiz.<br>( ) A partir do ponto associado ao dia 16 a função $ g(t) $ é estritamente decrescente.",
+   "afirmacoes": [
+    {
+     "t": "h(t) ≥ g(t), qualquer que seja t pertencente ao intervalo considerado.",
+     "ok": false
+    },
+    {
+     "t": "A equa çã o f(t) = h(t) admite uma raiz.",
+     "ok": false
+    },
+    {
+     "t": "A partir do ponto associado ao dia 16 a fun çã o g(t) é estritamente decrescente.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-043-fig.jpg",
+    "alt": "Gráfico “As bolsas de valores no mundo — variação diária em relação ao dia anterior, em %”, de 15 a 19 de maio: três linhas (Tóquio, Nova Iorque e São Paulo) com os valores 0,25; 1,87; 3,43 no dia 15 e −1,02; −1,40; −2,05 no dia 19",
+    "largura": "76mm",
+    "legenda": "Adaptado de Revista Veja, 24/05/2000, p.134."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64472,41 +64496,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. Unifor-CE Sejam f e g fun çõ es de | R em | R definidas por f(x) = 2x – 1 e g(x) = 1 – 2x. Qual dos pontos seguintes pertence ao gr á fico da fun çã o g o f? a) ( – 1; 5) d) (1; – 1) b) ( – 1; 9) e) (1; – 3) c) ( 1 2 ; – 1)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-044.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Sejam $ f $ e $ g $ funções de ℝ em ℝ definidas por $ f(x) = 2x − 1 $ e $ g(x) = 1 − 2x $. Qual dos pontos seguintes pertence ao gráfico da função $ g∘f $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (−1; 5) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (−1; 9) $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ ({1|2}; −1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (1; −1) $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ (1; −3) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64518,37 +64536,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. UFMG Observe a figura: Ela representa o gr á fico da fun çã o y = f (x), que est á definida no intervalo [ – 3, 6]. A respeito dessa fun çã o, é incorreto afirmar que: a) f (3) > f (4) b) f (f (2)) > 1,5 c) f (x) < 5,5 para todo x no intervalo [ – 3, 6] d) o conjunto { – 3 ≤ x ≤ 6 | f (x) = 1,6} cont é m exatamente dois elementos.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-045.jpg"
-   ],
-   "larguraMm": 122.8,
+   "enunciado": "Observe a figura:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(3) > f(4) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(f(2)) > 1,5 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f(x) < 5,5 $ para todo $ x $ no intervalo $ [−3, 6] $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o conjunto $ \\{−3 ≤ x ≤ 6 | f(x) = 1,6\\} $ contém exatamente dois elementos.",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Ela representa o gráfico da função $ y = f(x) $, que está definida no intervalo $ [−3, 6] $. A respeito dessa função, é <b>incorreto</b> afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-045-fig.jpg",
+    "alt": "Gráfico de y = f(x), definida no intervalo [−3, 6]: parte de (−3, 2), desce até um mínimo perto de (−2, −1), cruza o eixo y em 4, sobe até um máximo de 5,5 perto de x = 2 e desce até (6, 0)",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64560,41 +64579,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. UFRS A taxa de crescimento natural de uma popula çã o é igual à diferen ç a entre as taxas de natalidade e mortalidade, cujas evolu çõ es est ã o representadas no gr á fico abaixo. EVOLU ÇÃ O DAS TAXAS DE NATALIDADE E MORTALIDADE (POR MIL) BRASIL, 1881-1993 Fontes: Censos Demográficos e PNADs. UNICEF: A Infância Brasileira nos Anos 90 . Brasília, nov. 1998. Dentre as op çõ es abaixo, a maior taxa de crescimento natural da popula çã o ocorreu no ano de: a) 1881 d) 1955 b) 1900 e) 1993 c) 1930",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-046.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "A taxa de crescimento natural de uma população é igual à diferença entre as taxas de natalidade e mortalidade, cujas evoluções estão representadas no gráfico abaixo.<br><span class=\"pb\"></span><b>EVOLUÇÃO DAS TAXAS DE NATALIDADE E MORTALIDADE (POR MIL) — BRASIL, 1881-1993</b>",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1881",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1900",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1930",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1955",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1993",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Dentre as opções abaixo, a maior taxa de crescimento natural da população ocorreu no ano de:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c04-046-fig.jpg",
+    "alt": "Gráfico de duas curvas (natalidade, linha contínua; mortalidade, linha tracejada) em função do ano, de 1881 a 1993, com taxas por mil de 0 a 50: a natalidade parte de cerca de 45 e cai para cerca de 20; a mortalidade parte de cerca de 32 e cai para cerca de 7",
+    "largura": "78mm",
+    "legenda": "Fontes: Censos Demográficos e PNADs. UNICEF: A Infância Brasileira nos Anos 90. Brasília, nov. 1998."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c04-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64606,41 +64627,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. ITA-SP Considere as fun çõ es f ( x ) = 5 + 7 x , g ( x ) = 5 – 7 x e h ( x ) = arctg x Se a é tal que h ( f ( a )) + h(g(a)) = π , ent ã o f ( a ) – g ( a ) vale: a) 0 b) 1 c) 7 d) 7 e) 7 4 4 4 2 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-047.jpg"
-   ],
-   "larguraMm": 95.4,
+   "enunciado": "Considere as funções $ f(x) = {5 + 7^x|4} $, $ g(x) = {5 − 7^x|4} $ e $ h(x) = arctg x $.<br><span class=\"pb\"></span>Se $ a $ é tal que $ h(f(a)) + h(g(a)) = {π|4} $, então $ f(a) − g(a) $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|4} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {7|2} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "7",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64652,37 +64667,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. U. Potiguar-RN Sendo f(x) = 3x + 5 e g(x) = 2 5 x + k duas fun çõ es de | R → | R, se f(2) = g (10), ent ã o f(g(15)) vale: a) 44 c) 50 b) 36 d) 63",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-048.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Sendo $ f(x) = 3x + 5 $ e $ g(x) = {2|5}x + k $ duas funções de ℝ → ℝ, se $ f(2) = g(10) $, então $ f(g(15)) $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "44",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "36",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "50",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "63",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64694,37 +64703,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. UESC-BA Se f(x) = x 2 + 3 e (f – 1 og)(x) = 2x 2 + x – 6, ent ã o g(x) é dada por: a) 2x 2 + x – 1 b) x 2 + 6 c) x 2 – x + 3 2 d) x 2 + x 2 e) x 2 + x 2 – 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-049.jpg"
-   ],
-   "larguraMm": 115.5,
+   "enunciado": "Se $ f(x) = {x|2} + 3 $ e $ (f^{−1}∘g)(x) = 2x^2 + x − 6 $, então $ g(x) $ é dada por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2x^2 + x − 1 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + 6 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 − x + {3|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 + {x|2} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ x^2 + {x|2} − 2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c04-050",
@@ -64770,7 +64774,6 @@
   },
   {
    "id": "cdb-c04-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Funções e funções compostas",
@@ -64782,37 +64785,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "51. ITA-SP Sejam f , g : | R → | R definidas por f ( x ) = x 3 e g ( x ) = 10 3 cos 5x . Podemos afirmar que: a) f é injetora e par e g é í mpar. b) g é sobrejetora e g o f é par. c) f é bijetora e g o f é í mpar. d) g é par e g o f é í mpar. e) f é í mpar e g o f é par.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c04-051.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Sejam $ f, g: ℝ → ℝ $ definidas por $ f(x) = x^3 $ e $ g(x) = 10^{3 cos 5x} $. Podemos afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f $ é injetora e par e $ g $ é ímpar.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ g $ é sobrejetora e $ g∘f $ é par.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ f $ é bijetora e $ g∘f $ é ímpar.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ g $ é par e $ g∘f $ é ímpar.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ f $ é ímpar e $ g∘f $ é par.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c05-001",
