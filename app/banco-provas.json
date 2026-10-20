@@ -91567,7 +91567,6 @@
   },
   {
    "id": "cdb-c19-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91579,20 +91578,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFMT A 1ª lei de Kepler estabelece que qualquer planeta gira em torno do Sol, descre- vendo uma órbita elíptica, da qual o Sol ocupa um dos focos. Admitindo que O se encontra na origem do plano cartesiano e que o eixo focal está sobre o eixo x, julgue os itens. ( ) A soma da distância do centro do planeta ao centro do Sol com a distância do centro do planeta a F 2 é igual à distância de A 1 e A 2 . ( ) A distância de A 1 a O é igual à distância do centro do Sol a B 1 . ( ) Sendo a e b os semi-eixos maior e menor da elipse, respectivamente, sua equação é dada por x 2 – y 2 = 1. Planeta Sol O",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "A 1ª lei de Kepler estabelece que qualquer planeta gira em torno do Sol, descrevendo uma órbita elíptica, da qual o Sol ocupa um dos focos.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – F"
+   "gabarito": "V – V – F",
+   "pergunta": "Admitindo que $ O $ se encontra na origem do plano cartesiano e que o eixo focal está sobre o eixo $ x $, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "A soma da distância do centro do planeta ao centro do Sol com a distância do centro do planeta a $ F_2 $ é igual à distância de $ A_1 $ e $ A_2 $.",
+     "ok": true
+    },
+    {
+     "t": "A distância de $ A_1 $ a $ O $ é igual à distância do centro do Sol a $ B_1 $.",
+     "ok": true
+    },
+    {
+     "t": "Sendo <i>a</i> e <i>b</i> os semi-eixos maior e menor da elipse, respectivamente, sua equação é dada por $ {x^2|a^2} − {y^2|b^2} = 1 $.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-002-fig.jpg",
+    "alt": "Elipse horizontal de centro O; A1 e A2 são as extremidades do eixo maior, B1 e B2 as do eixo menor; o Sol está no foco F1, o outro foco é F2 e o planeta está sobre a órbita",
+    "largura": "63mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91604,24 +91618,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Unicap-PE No plano cartesiano xy, a parábola y = x 2 – 3 e a reta y = 6x – k têm um e somente um ponto de intersecção. Qual é o valor de k?",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "No plano cartesiano $ xy $, a parábola $ y = x^2 − 3 $ e a reta $ y = 6x − k $ têm um e somente um ponto de intersecção. Qual é o valor de $ k $?",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "12",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91633,41 +91641,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Unifor-CE Se o vértice da parábola definida por y = 1 x 2 – 6x + k é um ponto da reta dada por y = –1, então o valor de k é igual a: a) –17 d) 17 b) –16 e) 18 c) 16 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-004.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Se o vértice da parábola definida por $ y = {1|2}x^2 − 6x + k $ é um ponto da reta dada por $ y = −1 $, então o valor de $ k $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−17",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−16",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "16",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "17",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "18",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91679,41 +91681,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Unifor-CE Na figura abaixo tem-se uma região hachurada, delimitada por algumas curvas. Essa região pode ser descrita como o conjunto dos pontos (x; y) de | R × | R tais que: a) x 2 + y 2 ≤ 25, y ≥ x 2 – x – 2 e y ≤ x + 5 b) x 2 + y 2 ≤ 16, y ≤ – x 2 + x + 2 e y ≥ x + 5 c) x 2 + y 2 ≤ 25, y ≤ – x 2 + x + 2 e y ≥ x + 5 d) x 2 + y 2 ≤ 25, y ≤ x 2 – x – 2 e y ≥ x + 5 e) x 2 + y 2 ≤ 25, y ≤ x 2 – x – 2 e y ≥ x + 5 y 4 –2 – 5 –1 0 2 3 5 x 2 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-005.jpg"
-   ],
-   "larguraMm": 131.6,
+   "enunciado": "Na figura abaixo tem-se uma região hachurada, delimitada por algumas curvas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 ≤ 25 $, $ y ≥ x^2 − x − 2 $ e $ y ≤ {x + 5|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 ≤ 16 $, $ y ≤ −x^2 + x + 2 $ e $ y ≥ x + 5 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 ≤ 25 $, $ y ≤ −x^2 + x + 2 $ e $ y ≥ {x + 5|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 ≤ 25 $, $ y ≤ x^2 − x − 2 $ e $ y ≥ x + 5 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 ≤ 25 $, $ y ≤ x^2 − x − 2 $ e $ y ≥ {x + 5|2} $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Essa região pode ser descrita como o conjunto dos pontos $ (x; y) $ de ℝ × ℝ tais que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-005-fig.jpg",
+    "alt": "Plano cartesiano com uma circunferência de centro na origem e raio 5, uma parábola passando por (−1, 0), (0, −2) e (2, 0), e uma reta passando por (−5, 0) e (3, 4); a região hachurada fica no interior da circunferência, na parte superior esquerda",
+    "largura": "60mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91725,41 +91728,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFF-RJ Uma reta r é paralela ao eixo x e contém a interseção das parábolas y = (x – 1) 2 e y = (x – 5) 2 . A equação de r é: a) x = 3 d) x = 4y b) y = 4 e) y = x c) y = 3x 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-006.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Uma reta $ r $ é paralela ao eixo $ x $ e contém a interseção das parábolas $ y = (x − 1)^2 $ e $ y = (x − 5)^2 $.<br><span class=\"pb\"></span>A equação de $ r $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = 3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ y = 4 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ y = 3x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = 4y $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ y = {x|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91771,41 +91768,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. PUC-RJ O número de pontos de intersecção das duas parábolas y = x 2 e y = 2x 2 – 1 é: a) 0 d) 3 b) 1 e) 4 c) 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-007.jpg"
-   ],
-   "larguraMm": 128.6,
+   "enunciado": "O número de pontos de intersecção das duas parábolas $ y = x^2 $ e $ y = 2x^2 − 1 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91817,37 +91808,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFMG A reta r é paralela à reta de equação 3x – y – 10 = 0. Um dos pontos de interseção de r com a parábola de equação y = x 2 – 4 tem abscissa 1. A equação de r é: a) 3x – y + 6 = 0 c) 3x – y – 6 = 0 b) x – 3y – 10 = 0 d) x + 3y + 8 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-008.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "A reta $ r $ é paralela à reta de equação $ 3x − y − 10 = 0 $. Um dos pontos de interseção de $ r $ com a parábola de equação $ y = x^2 − 4 $ tem abscissa 1.<br><span class=\"pb\"></span>A equação de $ r $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3x − y + 6 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x − 3y − 10 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 3x − y − 6 = 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ x + 3y + 8 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91859,41 +91844,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. U. F. Santa Maria-RS 1 300 900 700 C(R$) 10 40 x 0 Na produção de x unidades mensais de um certo produto, uma fábrica tem um custo, em reais, descrito pela função de 2º grau, repre- sentada parcialmente na figura. O custo mí- nimo é, em reais: a) 500 b) 645 c) 660 d) 675 e) 690",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-009.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Na produção de $ x $ unidades mensais de um certo produto, uma fábrica tem um custo, em reais, descrito pela função de 2º grau, representada parcialmente na figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "500",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "645",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "660",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "675",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "690",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O custo mínimo, em reais:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-009-fig.jpg",
+    "alt": "Gráfico do custo C (em R$) em função de x: curva em forma de U que passa pelos pontos (0, 900), (10, 700) e (40, 1300)",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91905,41 +91891,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "D O C A B x y 10. Unifor-CE Na figura tem-se uma elipse. 16 4 4 16 4 2 2 4 12 4 Se OB = 2 cm e OC = 4 cm, a equação dessa elipse é: a) x 2 + y 2 = 1 b) x 2 + y 2 = 1 c) x 2 + y 2 = 1 d) x 2 + y 2 = 1 e) x 2 + y 2 = 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-010.jpg"
-   ],
-   "larguraMm": 119.4,
+   "enunciado": "Na figura tem-se uma elipse.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {x^2|16} + {y^2|4} = 1 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {x^2|4} + {y^2|16} = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {x^2|4} + {y^2|2} = 1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {x^2|2} + {y^2|4} = 1 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {x^2|12} + {y^2|4} = 1 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ OB = 2 $ cm e $ OC = 4 $ cm, a equação dessa elipse é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-010-fig.jpg",
+    "alt": "Elipse horizontal centrada na origem O; A e C são as extremidades do eixo maior (A à esquerda, C à direita) e B é a extremidade superior do eixo menor",
+    "largura": "60mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91951,24 +91938,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Vunesp Um ônibus de 40 lugares transporta diariamente turistas de um determinado hotel para um passeio ecológico pela cidade. Se todos os lugares estão ocupados, o preço de cada passagem é R$ 20,00. Caso contrário, para cada lugar vago será acrescida a impor- tância de R$ 1,00 ao preço de cada passagem. Assim, o faturamento da empresa de ônibus, em cada viagem, é dada pela função f(x) = (40 – x)(20 + x), onde x indica o número de lugares vagos (0 ≤ x ≤ 40). Determine: a) quantos devem ser os lugares vagos no ônibus, em cada viagem, para que a empresa obtenha faturamento máximo; b) qual é o",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Um ônibus de 40 lugares transporta diariamente turistas de um determinado hotel para um passeio ecológico pela cidade. Se todos os lugares estão ocupados, o preço de cada passagem é R&#36; 20,00. Caso contrário, para cada lugar vago será acrescida a importância de R&#36; 1,00 ao preço de cada passagem. Assim, o faturamento da empresa de ônibus, em cada viagem, é dado pela função $ f(x) = (40 − x)(20 + x) $, onde $ x $ indica o número de lugares vagos $ (0 ≤ x ≤ 40) $. Determine:<br><span class=\"pb\"></span>a) quantos devem ser os lugares vagos no ônibus, em cada viagem, para que a empresa obtenha faturamento máximo;<br><span class=\"pb\"></span>b) qual é o faturamento máximo obtido em cada viagem.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a) 10 b) R$ 900,00",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -91980,20 +91961,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "y ≤ x y ≥ – x x ≤ 2 \u0001 y 1 0 – 2 – 3 – 4 – 5 – 1 – 1 1 2 3 x C1 C2 12. UEGO Julgue os itens abaixo: ( ) Os pontos A(x A , 2), B(x B , – 3) e C(3, –1) pertencem à reta r, paralela ao eixo Oy. Então, x A = x B = 3. ( ) A região do plano cartesiano determinada pelo sistema é um triângulo isósceles de vértices (0, 0), (2, 2) e (2, –2). ( ) A equação da circunferência de centro (a, b) e raio r é dada por (x – a) 2 + (y – b) 2 = r 2 . Desta forma as circunferências concêntricas C 1 e C 2 a seguir possuem equações: C 1 : 2x – 6y – x 2 – y 2 = 9 C 2 : (x – 1) 2 + (y + 3) 2 = 4 ( ) Uma hipérbole é chama",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-012.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – V"
+   "gabarito": "V – V – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "Os pontos $ A(x_A, 2) $, $ B(x_B, −√3) $ e $ C(3, −1) $ pertencem à reta $ r $, paralela ao eixo $ Oy $. Então, $ x_A = x_B = 3 $.",
+     "ok": true
+    },
+    {
+     "t": "A região do plano cartesiano determinada pelo sistema $ @S{y ≤ x; y ≥ −x; x ≤ 2} $ é um triângulo isósceles de vértices $ (0, 0) $, $ (2, 2) $ e $ (2, −2) $.",
+     "ok": true
+    },
+    {
+     "t": "A equação da circunferência de centro $ (a, b) $ e raio <b>r</b> é dada por $ (x − a)^2 + (y − b)^2 = r^2 $. Desta forma as circunferências concêntricas $ C_1 $ e $ C_2 $ da figura possuem equações:<br><span class=\"pb\"></span>$ C_1: 2x − 6y − x^2 − y^2 = 9 $<br>$ C_2: (x − 1)^2 + (y + 3)^2 = 4 $",
+     "ok": true
+    },
+    {
+     "t": "Uma hipérbole é chamada eqüilátera quando as medidas dos semi-eixos real e imaginário são iguais. A hipérbole de equação $ x^2 + y^2 = 8 $ é <b>eqüilátera</b>.",
+     "ok": false
+    },
+    {
+     "t": "Os pontos $ (x, y) $, pertencentes ao plano cartesiano e que satisfazem a inequação $ 4x^2 + 9y^2 − 8x < 32 $, estão no interior de uma <b>elipse</b>.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-012-fig.jpg",
+    "alt": "Plano cartesiano com duas circunferências concêntricas de centro (1, −3): a menor C1 e a maior C2",
+    "largura": "44mm",
+    "legenda": "Figura referente ao 3º item."
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92005,20 +92009,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. AEU-DF A função f(x) = –x 2 + 3x + 4 tem seu gráfico esboçado na figura abaixo. Em relação a essa função e seu gráfico analise e julgue os itens seguintes. ( ) f(0) > 0. ( ) O gráfico da função intercepta o eixo das abscissas nos pontos tais que x = 1 e x = –4. ( ) A função f(x) é equivalente à função g(x) = x 3 – 3x 2 – 4x ( ) A interseção do gráfico com o eixo das ordenadas se dá num ponto tal que y = 4. ( ) O vértice da parábola do gráfico é um ponto de ordenada menor do que 3. y x – x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-013.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A função $ f(x) = −x^2 + 3x + 4 $ tem seu gráfico esboçado na figura abaixo.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – V – F"
+   "gabarito": "V – F – F – V – F",
+   "pergunta": "Em relação a essa função e seu gráfico analise e julgue os itens seguintes.",
+   "afirmacoes": [
+    {
+     "t": "$ f(0) > 0 $.",
+     "ok": true
+    },
+    {
+     "t": "O gráfico da função intercepta o eixo das abscissas nos pontos tais que $ x = 1 $ e $ x = −4 $.",
+     "ok": false
+    },
+    {
+     "t": "A função $ f(x) $ é equivalente à função $ g(x) = {x^3 − 3x^2 − 4x|−x} $",
+     "ok": false
+    },
+    {
+     "t": "A interseção do gráfico com o eixo das ordenadas se dá num ponto tal que $ y = 4 $.",
+     "ok": true
+    },
+    {
+     "t": "O vértice da parábola do gráfico é um ponto de ordenada menor do que 3.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-013-fig.jpg",
+    "alt": "Parábola com concavidade para baixo, que corta o eixo x em dois pontos, um de cada lado do eixo y, e o eixo y acima da origem",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92030,41 +92057,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. Unifor-CE Na figura abaixo tem-se o gráfico da função quadrática definida por y = ax 2 + bx + c. Se S e P são, respectivamente, a soma e o produto das raízes dessa função, e ∆ = b 2 – 4ac, então: a) ∆ < 0, S > 0 e P > 0 b) ∆ = 0, S = 0 e P < 0 c) ∆ > 0, S < 0 e P < 0 d) ∆ > 0, S > 0 e P < 0 e) ∆ > 0, S = 0 e P > 0 y x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-014.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Na figura abaixo tem-se o gráfico da função quadrática definida por $ y = ax^2 + bx + c $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ Δ < 0 $, $ S > 0 $ e $ P > 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ Δ = 0 $, $ S = 0 $ e $ P < 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ Δ > 0 $, $ S < 0 $ e $ P < 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ Δ > 0 $, $ S > 0 $ e $ P < 0 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ Δ > 0 $, $ S = 0 $ e $ P > 0 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se $ S $ e $ P $ são, respectivamente, a soma e o produto das raízes dessa função, e $ Δ = b^2 − 4ac $, então:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-014-fig.jpg",
+    "alt": "Parábola com concavidade para cima, que corta o eixo x em dois pontos, o primeiro muito próximo do eixo y",
+    "largura": "57mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92076,24 +92104,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. Unifor-CE Uma reta intercepta a parábola da figura abaixo nos pontos de abscissas 1 e 2. Se (0; α ) é o ponto de intersecção dessa reta com o eixo y, então α é igual a: a) 1 d) 1 b) 3 e) 2 c) 4 y x 4 0 4 2 4 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-015.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Uma reta intercepta a parábola da figura abaixo nos pontos de abscissas 1 e 2.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "E 1 –2 22",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Se $ (0; α) $ é o ponto de intersecção dessa reta com o eixo $ y $, então $ α $ é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-015-fig.jpg",
+    "alt": "Parábola com concavidade para baixo que passa pela origem e por (4, 0), com vértice no ponto (2, 4)",
+    "largura": "43mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92105,24 +92134,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFMG Observe a figura: Essa figura representa uma parábola, seu foco F = (4, 9) e sua diretriz r, cuja equação é y = 3. Sabe-se que uma parábola é o lugar geométrico dos pontos do plano que estão à mesma distância de um ponto fixo (o foco) e de uma reta fixa (a diretriz). Calcule os valores de a, b e c de modo que a equação da parábola da figura seja y = ax 2 + bx + c. F y r x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Observe a figura.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "a = , b = e c = 12 3 3",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Essa figura representa uma parábola, seu foco $ F = (4, 9) $ e sua diretriz $ r $, cuja equação é $ y = 3 $. Sabe-se que uma parábola é o lugar geométrico dos pontos do plano que estão à mesma distância de um ponto fixo (o foco) e de uma reta fixa (a diretriz).<br><span class=\"pb\"></span>Calcule os valores de $ a $, $ b $ e $ c $ de modo que a equação da parábola da figura seja $ y = ax^2 + bx + c $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-016-fig.jpg",
+    "alt": "Parábola com concavidade para cima, com o foco F acima do vértice, e uma reta horizontal r abaixo dela, acima do eixo x",
+    "largura": "64mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92134,37 +92164,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. U. Uberaba-MG Se o gráfico abaixo representa a parábola y = ax 2 + bx + c, podemos afirmar que: a) a > 0, b < 0 e c < 0. b) a < 0, b > 0 e c > 0. c) a < 0, b > 0 e c < 0. d) a < 0, b < 0 e c < 0. y x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Se o gráfico abaixo representa a parábola $ y = ax^2 + bx + c $, podemos afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a > 0 $, $ b < 0 $ e $ c < 0 $.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ a < 0 $, $ b > 0 $ e $ c > 0 $.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a < 0 $, $ b > 0 $ e $ c < 0 $.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ a < 0 $, $ b < 0 $ e $ c < 0 $.",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-017-fig.jpg",
+    "alt": "Parábola com concavidade para baixo, vértice à direita do eixo y e acima do eixo x, que corta o eixo y abaixo da origem",
+    "largura": "57mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92176,41 +92206,58 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. U. Caxias do Sul-RS Em uma experiência de laboratório um estudante de Biologia cole- tou os seguintes dados: Assumindo que os dados podem ser representados por um gráfico que é uma parábola, o valor de s(t), uma hora e meia após o início do experimento, é: a) 1 b) 1,5 c) 2,4 d) 2,5 e) 3 t (tempo em horas) s(t) 1 1 2 1,5 3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-018.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Em uma experiência de laboratório um estudante de Biologia coletou os seguintes dados:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1,5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Assumindo que os dados podem ser representados por um gráfico que é uma parábola, o valor de $ s(t) $, uma hora e meia após o início do experimento, é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "t (tempo em horas)",
+     "s(t)"
+    ],
+    "linhas": [
+     [
+      "1",
+      "1"
+     ],
+     [
+      "2",
+      "1,5"
+     ],
+     [
+      "3",
+      "4"
+     ]
+    ],
+    "largura": "60%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92222,41 +92269,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. U. F. Santa Maria-RS A figura indica a trajetória parabólica do salto de uma rã e destaca a distância horizontal máxima (8 dm) e altura máxima (2 dm) atingidas. A função quadrática que expressa a altura em relação à distância horizontal é dada por: a) f(x) = 0,125 x 2 + x b) f(x) = –0,125 x 2 + x c) f(x) = –0,25 x 2 + 1,5 x d) f(x) = –x 2 + 4,5 x e) f(x) = –0,5 x 2 + 2,5 x f(x) (dm) x (dm) 2 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A figura indica a trajetória parabólica do salto de uma rã e destaca a distância horizontal máxima (8 dm) e altura máxima (2 dm) atingidas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ f(x) = 0,125x^2 + x $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ f(x) = −0,125x^2 + x $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ f(x) = −0,25x^2 + 1,5x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ f(x) = −x^2 + 4,5x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ f(x) = −0,5x^2 + 2,5x $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A função quadrática que expressa a altura em relação à distância horizontal é dada por:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-019-fig.jpg",
+    "alt": "Gráfico de f(x) (em dm) em função de x (em dm): arco de parábola que sai da origem, atinge altura máxima 2 e volta ao eixo x em x = 8",
+    "largura": "74mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92268,33 +92316,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UFCE A área do quadrilátero cujos vértices são as interseções da elipse 9x 2 + 25y 2 = 225 com os eixos coordenados é igual, em unidades de área, a: a) 30 b) 32 c) 34 d) 36",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-020.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A área do quadrilátero cujos vértices são as interseções da elipse $ 9x^2 + 25y^2 = 225 $ com os eixos coordenados é igual, em unidades de área, a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "32",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "34",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "36",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-021",
@@ -92321,7 +92364,6 @@
   },
   {
    "id": "cdb-c19-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92333,41 +92375,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. PUC-SP Um veículo foi submetido a um teste para a verificação do consumo de combus- tível. O teste consistia em fazer o veículo percorrer, várias vezes, em velocidade constante, uma distância de 100 km em estrada plana, cada vez a uma velocidade diferente. Obser- vou-se então que, para velocidades entre 20 km/h e 120 km/h, o consumo de gasolina, em litros, era função da velocidade, conforme mostra o gráfico seguinte. Se esse gráfico é parte de uma parábola, quantos litros de combustível esse veículo deve ter consumido no teste feito à velocidade de 120 km/h? a) 20 d) 26 b) 22 e) 28 c) 24 c",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-022.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um veículo foi submetido a um teste para a verificação do consumo de combustível. O teste consistia em fazer o veículo percorrer, várias vezes, em velocidade constante, uma distância de 100 km em estrada plana, cada vez a uma velocidade diferente. Observou-se então que, para velocidades entre 20 km/h e 120 km/h, o consumo de gasolina, em litros, era função da velocidade, conforme mostra o gráfico seguinte.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "22",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "24",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "26",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "28",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se esse gráfico é parte de uma parábola, quantos litros de combustível esse veículo deve ter consumido no teste feito à velocidade de 120 km/h?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-022-fig.jpg",
+    "alt": "Gráfico do consumo (litros) em função da velocidade (km/h): arco de parábola com valor 16 em 20 km/h, mínimo 8 em 60 km/h e 16 em 100 km/h, continuando a subir até 120 km/h",
+    "largura": "54mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92379,41 +92422,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. F.I.Anápolis-GO Sobre a parábola de equação (y – 5) 2 = –2(x + 1), podemos afirmar que: a) Seu foco é o ponto f( – 3 , 5). b) Seu vértice é o ponto V (1, 5). c) A equação da reta diretriz é x – 1 = 0 d) Seu eixo de simetria é vertical. e) Sua concavidade é para a direita. 2 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-023.jpg"
-   ],
-   "larguraMm": 73.9,
+   "enunciado": "Sobre a parábola de equação $ (y − 5)^2 = −2(x + 1) $, podemos afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Seu foco é o ponto $ f(−{3|2}, 5) $.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "Seu vértice é o ponto $ V(1, 5) $.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "A equação da reta diretriz é $ x − {1|2} = 0 $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Seu eixo de simetria é vertical.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Sua concavidade é para a direita.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92425,20 +92462,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFMS Em um laboratório, três tipos de bactérias, tipo A , tipo B e tipo C , estão sendo pes- quisadas. Para uma das experiências, foram preparadas três lâminas, que ficaram em obser- vação por um período de 3 dias. Em cada lâmina, no mesmo instante, foram colocadas culturas dos três tipos de bactéria, de acordo com o seguinte quadro: lâmina 1 : cultura de bactérias do tipo A lâmina 2 : cultura de bactérias do tipo B lâmina 3 : cultura de bactérias do tipo C Sabe-se que o número de bactérias em cada lâmina, em função do tempo t , em horas, durante o período da experiência é dado pelas funçõ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Em um laboratório, três tipos de bactérias, <i>tipo A</i>, <i>tipo B</i> e <i>tipo C</i>, estão sendo pesquisadas. Para uma das experiências, foram preparadas três lâminas, que ficaram em observação por um período de 3 dias. Em cada lâmina, no mesmo instante, foram colocadas culturas dos três tipos de bactéria, de acordo com o seguinte quadro:<br><span class=\"pb\"></span><i>lâmina 1</i>: cultura de bactérias do <i>tipo A</i><br><i>lâmina 2</i>: cultura de bactérias do <i>tipo B</i><br><i>lâmina 3</i>: cultura de bactérias do <i>tipo C</i><br><span class=\"pb\"></span>Sabe-se que o número de bactérias em cada lâmina, em função do tempo <i>t</i>, em horas, durante o período da experiência é dado pelas funções definidas por:<br><span class=\"pb\"></span>bactérias do <i>tipo A</i>: $ a(t) = −10t^2 + 800t + 2000 $;<br>bactérias do <i>tipo B</i>: $ b(t) = −10t^2 + 900t + 100 $;<br>bactérias do <i>tipo C</i>: $ c(t) = 50(mt + 60) $, onde <i>m</i> é um número real fixo.<br><span class=\"pb\"></span>Então, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "20"
+   "gabarito": "20",
+   "afirmacoes": [
+    {
+     "t": "Foram colocadas 900 bactérias do <i>tipo B</i> na <i>lâmina 2</i>.",
+     "ok": false
+    },
+    {
+     "t": "Desconhecendo o valor do número real <i>m</i>, não é possível determinar o número de bactérias do <i>tipo C</i> que foram colocadas na <i>lâmina 3</i>.",
+     "ok": false
+    },
+    {
+     "t": "Antes de completar 24 horas de experiência, a cultura da <i>lâmina 1</i> e a cultura da <i>lâmina 2</i> apresentaram, num mesmo instante, o mesmo número de bactérias.",
+     "ok": true
+    },
+    {
+     "t": "A população máxima da cultura da <i>lâmina 1</i> foi de 16 000 bactérias.",
+     "ok": false
+    },
+    {
+     "t": "Se o valor de <i>m</i> é negativo, então a cultura da <i>lâmina 3</i> sempre teve uma população menor do que a inicial.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c19-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92450,41 +92503,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. UFMA A reta r é tangente à elipse de equação 3x 2 + y 2 = 1 e intercepta o eixo Oy no ponto (0, k) formando um ângulo de 150 ° , conforme figura abaixo. Então, pode-se afirmar que k 2 é igual a: a) 1 b) 2 c) 2 d) 3 e) 4 150 ° x y O k",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-025.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "A reta <b>r</b> é tangente à elipse de equação $ 3x^2 + y^2 = 1 $ e intercepta o eixo <i>Oy</i> no ponto $ (0, k) $ formando um ângulo de 150°, conforme figura abaixo.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ √2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Então, pode-se afirmar que $ k^2 $ é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-025-fig.jpg",
+    "alt": "Plano cartesiano com uma elipse vertical centrada na origem e a reta r, decrescente, tangente à elipse e cortando o eixo y no ponto (0, k), abaixo da origem; o ângulo de 150° está marcado nesse ponto",
+    "largura": "48mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Cônicas",
@@ -92496,16 +92550,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. U.Católica-DF Uma companhia de TV a cabo estima que com x milhares de assinantes, a receita R (total arrecadado, em reais, com o pagamento das assinaturas) e o custo C (gasto total mensal, em reais, da companhia de TV), em milhares de reais, são dados pelas sen- tenças: R = 5,6x – 0,02x 2 e C = 128 + 1,6x A seguir, são apresentados, num mesmo plano cartesiano, parte dos esboços dos gráficos dessas sentenças. De acordo com as informações dadas, escreva V para as afirmativas verdadeiras ou F para as afirmativas falsas. ( ) Quando o número de assinantes for 40 000 ou 160 000, o custo mensal e",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c19-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma companhia de TV a cabo estima que com $ x $ milhares de assinantes, a receita $ R $ (total arrecadado, em reais, com o pagamento das assinaturas) e o custo $ C $ (gasto total mensal, em reais, da companhia de TV), em milhares de reais, são dados pelas sentenças:<br><span class=\"pb\"></span>$ R = 5,6x − 0,02x^2 $ e $ C = 128 + 1,6x $<br><span class=\"pb\"></span>A seguir, são apresentados, num mesmo plano cartesiano, parte dos esboços dos gráficos dessas sentenças.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – F – V"
+   "gabarito": "V – F – F – F – V",
+   "pergunta": "De acordo com as informações dadas, escreva V para as afirmativas verdadeiras ou F para as falsas.",
+   "afirmacoes": [
+    {
+     "t": "Quando o número de assinantes for 40 000 ou 160 000, o custo mensal e a receita serão iguais.",
+     "ok": true
+    },
+    {
+     "t": "A receita máxima ocorre com um número de assinantes igual a 145 000.",
+     "ok": false
+    },
+    {
+     "t": "Para a receita máxima, o custo mensal é de R&#36; 392.000,00.",
+     "ok": false
+    },
+    {
+     "t": "A receita sempre aumentará à medida que o número de assinantes aumentar.",
+     "ok": false
+    },
+    {
+     "t": "O custo sempre aumentará à medida que o número de assinantes aumentar.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c19-026-fig.jpg",
+    "alt": "Gráfico com valor (até 400) no eixo vertical e assinantes (0 a 200 milhares) no horizontal: a parábola R, com máximo próximo de 400, e a reta C, que parte de cerca de 130 e cresce; as duas se cruzam em dois pontos",
+    "largura": "78mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c19-027",
