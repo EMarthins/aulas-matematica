@@ -17888,7 +17888,6 @@
   {
    "id": "enem2020-156",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -17900,40 +17899,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "americano George Zipf, é uma lei empírica que relaciona a frequência ( f ) de uma palavra em um dado texto com o seu ranking ( r ) . Ela é dada por A . f = B r O ranking da palavra é a sua posição ao ordenar as palavras por ordem de frequência. Ou seja, r = 1 para a palavra mais frequente, r = 2 para a segunda palavra mais frequente e assim sucessivamente. A e B são constantes positivas. Diponível em: http://klein.sbm.org.br. Acesso em: 12 ago. 2020 (adatpado). Com base nos valores de X = log ( r ) e Y = log ( f ) , é possível estimar valores para A e B . No caso hipotético em que a lei é verificada exatamente, a relação entre Y e X é A Y = log A − B X log A B Y = X + log B log A C Y = − X B log A D Y = B X log A E Y = B X",
-   "imagens": [
-    "img:enem2020-156.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A Lei de Zipf, batizada com o nome do linguista americano George Zipf, é uma lei empírica que relaciona a frequência (<i>f</i>) de uma palavra em um dado texto com o seu ranking (<i>r</i>). Ela é dada por<br><span class=\"pb\"></span>$ f = {A|r^B} $<br><span class=\"pb\"></span>O ranking da palavra é a sua posição ao ordenar as palavras por ordem de frequência. Ou seja, <i>r</i> = 1 para a palavra mais frequente, <i>r</i> = 2 para a segunda palavra mais frequente e assim sucessivamente. <i>A</i> e <i>B</i> são constantes positivas.<br><span class=\"pb\"></span>Disponível em: http://klein.sbm.org.br. Acesso em: 12 ago. 2020 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "<i>Y</i> = log (<i>A</i>) − <i>B</i> · <i>X</i>",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ Y = {log (A)|X + log (B)} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ Y = {log (A)|B} − X $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ Y = {log (A)|B · X} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ Y = {log (A)|X^B} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com base nos valores de <i>X</i> = log (<i>r</i>) e <i>Y</i> = log (<i>f</i>), é possível estimar valores para <i>A</i> e <i>B</i>.<br><span class=\"pb\"></span>No caso hipotético em que a lei é verificada exatamente, a relação entre <i>Y</i> e <i>X</i> é",
+   "transcrita": true
   },
   {
    "id": "enem2020-157",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -17945,35 +17940,68 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Enquanto um ser está vivo, a quantidade de carbono 14 nele existente não se altera. Quando ele morre, essa quantidade vai diminuindo. Sabe-se que a meia-vida do carbono 14 é de 5 730 anos, ou seja, num fóssil de um organismo que morreu há 5 730 anos haverá metade do carbono 14 que existia quando ele estava vivo. Assim, cientistas e arqueólogos usam a seguinte fórmula para t − saber a idade de um fóssil encontrado: Q t = Q 0 ∙ 2 5730 em que t é o tempo, medido em ano, Q t é a quantidade de carbono 14 medida no instante t e Q é a quantidade 0 de carbono 14 no ser vivo correspondente. Um grupo de arqueólogos, numa de suas expedições, encontrou 5 fósseis de espécies conhecidas e mediram a quantidade de carbono 14 neles existente. Na tabela temos esses valores juntamente com a quantidade de carbono 14 nas referidas espécies vivas. Fóssil Q Q ( t ) 0 1 128 32 2 256 8 3 512 64 4 1 024 512 5 2 048 128 O fóssil mais antigo encontrado nessa expedição foi A 1. B 2. C 3. D 4.",
-   "imagens": [
-    "img:enem2020-157.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Enquanto um ser está vivo, a quantidade de carbono 14 nele existente não se altera. Quando ele morre, essa quantidade vai diminuindo. Sabe-se que a meia-vida do carbono 14 é de 5 730 anos, ou seja, num fóssil de um organismo que morreu há 5 730 anos haverá metade do carbono 14 que existia quando ele estava vivo. Assim, cientistas e arqueólogos usam a seguinte fórmula para saber a idade de um fóssil encontrado: $ Q(t) = Q_0 · 2^{−{t|5730}} $, em que <i>t</i> é o tempo, medido em ano, <i>Q</i>(<i>t</i>) é a quantidade de carbono 14 medida no instante <i>t</i> e <i>Q</i><sub>0</sub> é a quantidade de carbono 14 no ser vivo correspondente.<br><span class=\"pb\"></span>Um grupo de arqueólogos, numa de suas expedições, encontrou 5 fósseis de espécies conhecidas e mediram a quantidade de carbono 14 neles existente. Na tabela temos esses valores juntamente com a quantidade de carbono 14 nas referidas espécies vivas.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O fóssil mais antigo encontrado nessa expedição foi",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Fóssil",
+     "<i>Q</i><sub>0</sub>",
+     "<i>Q</i>(<i>t</i>)"
+    ],
+    "linhas": [
+     [
+      "1",
+      "128",
+      "32"
+     ],
+     [
+      "2",
+      "256",
+      "8"
+     ],
+     [
+      "3",
+      "512",
+      "64"
+     ],
+     [
+      "4",
+      "1 024",
+      "512"
+     ],
+     [
+      "5",
+      "2 048",
+      "128"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-158",
@@ -18103,7 +18131,6 @@
   {
    "id": "enem2020-161",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Razão e proporção",
@@ -18115,40 +18142,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "rende, em média, 20 mil folhas de papel A4. A densidade superficial do papel A4, medida pela razão da massa de uma folha desse papel por sua área, é de 75 gramas por metro quadrado, e a área de uma folha de A4 é 0,062 metro quadrado. Disponível em: http://revistagalileu.globo.com. Acesso em: 28 fev. 2013 (adaptado). Nessas condições, quantos quilogramas de papel rende, em média, um pé de eucalipto? A 4 301 B 1 500 C 930 D 267 E 93",
-   "imagens": [
-    "img:enem2020-161.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Um pé de eucalipto em idade adequada para o corte rende, em média, 20 mil folhas de papel A4. A densidade superficial do papel A4, medida pela razão da massa de uma folha desse papel por sua área, é de 75 gramas por metro quadrado, e a área de uma folha de A4 é 0,062 metro quadrado.<br><span class=\"pb\"></span>Disponível em: http://revistagalileu.globo.com. Acesso em: 28 fev. 2013 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "4 301",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 500",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "930",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "267",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "93",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, quantos quilogramas de papel rende, em média, um pé de eucalipto?",
+   "transcrita": true
   },
   {
    "id": "enem2020-162",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -18160,40 +18183,79 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "pelo serviço de atendimento ao público, os executivos de uma agência bancária realizaram uma pesquisa de satisfação envolvendo cinco empresas especializadas nesse segmento. Os procedimentos analisados (com pesos que medem sua importância para a agência) e as respectivas notas que cada empresa recebeu estão organizados no quadro. Notas da empresa Procedimento Peso X Y Z W T Rapidez no 3 5 1 4 3 4 atendimento Clareza nas informações 5 1 4 3 3 2 passadas aos clientes Cortesia no 2 2 2 2 3 4 atendimento A agência bancária contratará a empresa com a maior média ponderada das notas obtidas nos procedimentos analisados. Após a análise dos resultados da pesquisa de satisfação, os executivos da agência bancária contrataram a empresa A X. B Y. C Z. D W. E T.",
-   "imagens": [
-    "img:enem2020-162.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Com o objetivo de contratar uma empresa responsável pelo serviço de atendimento ao público, os executivos de uma agência bancária realizaram uma pesquisa de satisfação envolvendo cinco empresas especializadas nesse segmento. Os procedimentos analisados (com pesos que medem sua importância para a agência) e as respectivas notas que cada empresa recebeu estão organizados no quadro.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "X.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Y.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Z.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "W.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "T.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A agência bancária contratará a empresa com a maior média ponderada das notas obtidas nos procedimentos analisados.<br><span class=\"pb\"></span>Após a análise dos resultados da pesquisa de satisfação, os executivos da agência bancária contrataram a empresa",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Procedimento",
+     "Peso",
+     "Nota X",
+     "Nota Y",
+     "Nota Z",
+     "Nota W",
+     "Nota T"
+    ],
+    "linhas": [
+     [
+      "Rapidez no atendimento",
+      "3",
+      "5",
+      "1",
+      "4",
+      "3",
+      "4"
+     ],
+     [
+      "Clareza nas informações passadas aos clientes",
+      "5",
+      "1",
+      "4",
+      "3",
+      "3",
+      "2"
+     ],
+     [
+      "Cortesia no atendimento",
+      "2",
+      "2",
+      "2",
+      "2",
+      "3",
+      "4"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Notas de cada empresa (X, Y, Z, W e T) em cada procedimento"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-163",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -18205,40 +18267,94 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O Estatuto do Idoso, no Brasil, prevê certos direitos às pessoas com idade avançada, concedendo a estas, entre outros benefícios, a restituição de imposto de renda antes dos demais contribuintes. A tabela informa os nomes e as idades de 12 idosos que aguardam suas restituições de imposto de renda. Considere que, entre os idosos, a restituição seja concedida em ordem decrescente de idade e que, em subgrupos de pessoas com a mesma idade, a ordem seja decidida por sorteio. Nome Idade (em ano) Orlando 89 Gustavo 86 Luana 86 Teresa 85 Márcia 84 Roberto 82 Heloisa 75 Marisa 75 Pedro 75 João 75 Antônio 72 Fernanda 70 Nessas condições, a probabilidade de João ser a sétima pessoa do grupo a receber sua restituição é igual a 1 A 12 7 B 12 1 C 8 5 D 6 1 E 4",
-   "imagens": [
-    "img:enem2020-163.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "O Estatuto do Idoso, no Brasil, prevê certos direitos às pessoas com idade avançada, concedendo a estas, entre outros benefícios, a restituição de imposto de renda antes dos demais contribuintes. A tabela informa os nomes e as idades de 12 idosos que aguardam suas restituições de imposto de renda. Considere que, entre os idosos, a restituição seja concedida em ordem decrescente de idade e que, em subgrupos de pessoas com a mesma idade, a ordem seja decidida por sorteio.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|12} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {7|12} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|8} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {5|6} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|4} $",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nessas condições, a probabilidade de João ser a sétima pessoa do grupo a receber sua restituição é igual a",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Nome",
+     "Idade (em ano)"
+    ],
+    "linhas": [
+     [
+      "Orlando",
+      "89"
+     ],
+     [
+      "Gustavo",
+      "86"
+     ],
+     [
+      "Luana",
+      "86"
+     ],
+     [
+      "Teresa",
+      "85"
+     ],
+     [
+      "Márcia",
+      "84"
+     ],
+     [
+      "Roberto",
+      "82"
+     ],
+     [
+      "Heloisa",
+      "75"
+     ],
+     [
+      "Marisa",
+      "75"
+     ],
+     [
+      "Pedro",
+      "75"
+     ],
+     [
+      "João",
+      "75"
+     ],
+     [
+      "Antônio",
+      "72"
+     ],
+     [
+      "Fernanda",
+      "70"
+     ]
+    ],
+    "largura": "70%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-164",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Estatística",
@@ -18250,40 +18366,57 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "No Brasil, o tempo necessário para um estudante realizar sua formação até a diplomação em um curso superior, considerando os 9 anos de ensino fundamental, os 3 anos do ensino médio e os 4 anos de graduação (tempo médio), é de 16 anos. No entanto, a realidade dos brasileiros mostra que o tempo médio de estudo de pessoas acima de 14 anos é ainda muito pequeno, conforme apresentado na tabela. Tempo médio de estudo de pessoas acima de 14 anos Ano da Pesquisa 1995 1999 2003 2007 Tempo de estudo (em ano) 5,2 5,8 6,4 7,0 Disponível em: www.ibge.gov.br. Acesso em: 19 dez. 2012 (adaptado). Considere que o incremento no tempo de estudo, a cada período, para essas pessoas, se mantenha constante até o ano 2050, e que se pretenda chegar ao patamar de 70% do tempo necessário à obtenção do curso superior dado anteriormente. O ano em que o tempo médio de estudo de pessoas acima de 14 anos atingirá o percentual pretendido será A 2018. B 2023. C 2031. D 2035. E 2043.",
-   "imagens": [
-    "img:enem2020-164.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "No Brasil, o tempo necessário para um estudante realizar sua formação até a diplomação em um curso superior, considerando os 9 anos de ensino fundamental, os 3 anos do ensino médio e os 4 anos de graduação (tempo médio), é de 16 anos. No entanto, a realidade dos brasileiros mostra que o tempo médio de estudo de pessoas acima de 14 anos é ainda muito pequeno, conforme apresentado na tabela.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2018.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2023.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2031.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2035.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "2043.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere que o incremento no tempo de estudo, a cada período, para essas pessoas, se mantenha constante até o ano 2050, e que se pretenda chegar ao patamar de 70% do tempo necessário à obtenção do curso superior dado anteriormente.<br><span class=\"pb\"></span>O ano em que o tempo médio de estudo de pessoas acima de 14 anos atingirá o percentual pretendido será",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Ano da Pesquisa",
+     "1995",
+     "1999",
+     "2003",
+     "2007"
+    ],
+    "linhas": [
+     [
+      "Tempo de estudo (em ano)",
+      "5,2",
+      "5,8",
+      "6,4",
+      "7,0"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "Tempo médio de estudo de pessoas acima de 14 anos. Disponível em: www.ibge.gov.br. Acesso em: 19 dez. 2012 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-165",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -18295,35 +18428,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma torneira está gotejando água em um balde com capacidade de 18 litros. No instante atual, o balde se encontra com ocupação de 50% de sua capacidade. A cada segundo caem 5 gotas de água da torneira, e uma gota é formada, em média, por −2 5 × 10 mL de água. Quanto tempo, em hora, será necessário para encher completamente o balde, partindo do instante atual? 1 A 2 × 10 1 B 1 × 10 −2 C 2 × 10 −2 D 1 × 10 −3 E 1 × 10",
-   "imagens": [
-    "img:enem2020-165.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Uma torneira está gotejando água em um balde com capacidade de 18 litros. No instante atual, o balde se encontra com ocupação de 50% de sua capacidade. A cada segundo caem 5 gotas de água da torneira, e uma gota é formada, em média, por 5 × 10<sup>−2</sup> mL de água.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 × 10<sup>1</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 × 10<sup>1</sup>",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "2 × 10<sup>−2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 × 10<sup>−2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 × 10<sup>−3</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Quanto tempo, em hora, será necessário para encher completamente o balde, partindo do instante atual?",
+   "transcrita": true
   },
   {
    "id": "enem2020-166",
