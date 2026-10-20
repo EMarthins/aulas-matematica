@@ -336,6 +336,6 @@ function altsDoOcr(q) {
     const stemLines = L.slice(0, i0);
     return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/\s+/g, ' ') };
   }
-  return null;
+  return require('./alts-fallback.js')(L, limpa);
 }
 module.exports.altsDoOcr = altsDoOcr;
