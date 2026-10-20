@@ -77745,7 +77745,6 @@
   },
   {
    "id": "cdb-c12-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77757,24 +77756,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UFMT A etiqueta do CD mostrado na figura tem a forma de uma coroa circular cujo diâmetro da circunferência ex- terna mede 11,8 cm e da circunferência interna 3,6 cm. Considerando π = 3,14, determine o número inteiro mais próximo da medida (em cm 2 ) da área da etiqueta.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-001.jpg"
-   ],
-   "larguraMm": 129.1,
+   "enunciado": "A etiqueta do CD mostrado na figura tem a forma de uma coroa circular cujo diâmetro da circunferência externa mede 11,8 cm e da circunferência interna 3,6 cm.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "99",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Considerando $ π = 3,14 $, determine o número inteiro mais próximo da medida (em cm<sup>2</sup>) da área da etiqueta.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-001-fig.jpg",
+    "alt": "Fotografia de um CD com a etiqueta (coroa circular) e as medidas 3,6 cm (diâmetro interno) e 11,8 cm (diâmetro externo)",
+    "largura": "36mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77786,20 +77786,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UnB-DF No sistema de coordenadas xOy , considere a circunferência de centro na ori- gem e de raio igual a 1. A cada ângulo cen- tral α no intervalo [0, π ], represente por A( α ) a área delimitada pelo arco da cir- cunferência e o segmento de reta que liga os pontos P e Q , como ilustrado na figura ao lado. Com base nessas informações, julgue os itens seguintes. ( ) A área A é uma função crescente do ân- gulo central α . ( ) 1 4 < A π 2     < 1 2 ( ) A( α ) = 1 2 ( α – sen α )",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-002.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "No sistema de coordenadas $ xOy $, considere a circunferência de centro na origem e de raio igual a 1. A cada ângulo central $ α $ no intervalo $ [0, π] $, represente por $ A(α) $ a área delimitada pelo arco da circunferência e o segmento de reta que liga os pontos $ P $ e $ Q $, como ilustrado na figura ao lado.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V"
+   "gabarito": "V – V – V",
+   "pergunta": "Com base nessas informações, julgue os itens seguintes.",
+   "afirmacoes": [
+    {
+     "t": "A área $ A $ é uma função crescente do ângulo central $ α $.",
+     "ok": true
+    },
+    {
+     "t": "$ {1|4} < A({π|2}) < {1|2} $",
+     "ok": true
+    },
+    {
+     "t": "$ A(α) = {1|2}(α − sen α) $",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-002-fig.jpg",
+    "alt": "Circunferência de centro O e raio 1, com os pontos P (à direita sobre o eixo x) e Q na circunferência e o ângulo central α entre OP e OQ; o segmento circular entre a corda PQ e o arco é hachurado e representa A(α)",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77811,24 +77826,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Unicap-PE A área da região hachurada, ao lado, é de 54 m 2 . Determine, em metro, o comprimento do segmento de reta EC.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-003.jpg"
-   ],
-   "larguraMm": 129.5,
+   "enunciado": "A área da região hachurada, ao lado, é de 54 m<sup>2</sup>.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "12",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine, em metro, o comprimento do segmento de reta $ EC $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-003-fig.jpg",
+    "alt": "Região hachurada formada por um retângulo e um triângulo retângulo lado a lado, com os pontos E, D e C na base e segmentos iguais marcados com x",
+    "largura": "30mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77840,41 +77856,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Unifor-CE Considere as seguintes proposições: I. Duplicando-se a base de um retângulo, a área torna-se o dobro da área do retângulo original. II. Duplicando-se a altura de um triângulo, a área torna-se o dobro da área do triângulo original. III. Duplicando-se o raio de um círculo, a área torna-se o dobro da área do círculo original. É correto afirmar que: a) somente I e II são verdadeiras; d) somente uma das proposições é verdadeira; b) somente I e III são verdadeiras; e) I, II e III são verdadeiras. c) somente II e III são verdadeiras;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-004.jpg"
-   ],
-   "larguraMm": 129.8,
+   "enunciado": "Considere as seguintes proposições:<br><span class=\"pb\"></span>I. Duplicando-se a base de um retângulo, a área torna-se o dobro da área do retângulo original.<br>II. Duplicando-se a altura de um triângulo, a área torna-se o dobro da área do triângulo original.<br>III. Duplicando-se o raio de um círculo, a área torna-se o dobro da área do círculo original.<br><span class=\"pb\"></span>É correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "somente I e II são verdadeiras;",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "somente I e III são verdadeiras;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "somente II e III são verdadeiras;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "somente uma das proposições é verdadeira;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "I, II e III são verdadeiras.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c12-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77886,41 +77896,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFR-RJ Na figura abaixo, sabendo-se que os ângulos Â e Ê são ângulos retos, a área do quadrilátero ACED vale: a) 25,2 cm 2 b) 30,5 cm 2 c) 40,5 cm 2 d) 52,5 cm 2 e) 65,5 cm 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-005.jpg"
-   ],
-   "larguraMm": 129.8,
+   "enunciado": "Na figura abaixo, sabendo-se que os ângulos $ Â $ e $ Ê $ são ângulos retos, a área do quadrilátero $ ACED $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25,2 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30,5 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "40,5 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "52,5 cm<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "65,5 cm<sup>2</sup>",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-005-fig.jpg",
+    "alt": "Triângulo retângulo ABC com ângulo reto em A (AC = 12 cm, AB = 20 cm, CB = 25 cm no total); o ponto E está sobre CB, com CE = 10 cm e EB = 15 cm; o ponto D está sobre AB e DE é perpendicular a CB",
+    "largura": "75mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -77932,37 +77942,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFR-RJ Sendo S 1 e S 2 as áreas das figuras I e II, respectivamente, I. II. podemos afirmar que: a) S 1 = S 2 b) S 1 = 3 4 S 2 c) S 1 = 3 S 2 d) S 1 = 2 S 2 e) S 1 = 4 3 S 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-006.jpg"
-   ],
-   "larguraMm": 121.7,
+   "enunciado": "Sendo $ S_1 $ e $ S_2 $ as áreas das figuras I e II, respectivamente,",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ S_1 = S_2 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ S_1 = {3|4} S_2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ S_1 = 3 S_2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ S_1 = 2 S_2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ S_1 = {4|3} S_2 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "podemos afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-006-fig.jpg",
+    "alt": "Dois triângulos isósceles: I, com lados iguais de 10 e base de 12; II, com lados iguais de 10 e base de 16",
+    "largura": "97mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-007",
@@ -78006,7 +78018,6 @@
   },
   {
    "id": "cdb-c12-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78018,41 +78029,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. UFRS Na figura abaixo, AC = 5, BC = 6 e DE = 3. A área do triângulo ADE é: a) 15 8 b) 15 4 c) 15 2 d) 10 e) 15",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-008.jpg"
-   ],
-   "larguraMm": 100.5,
+   "enunciado": "Na figura abaixo, $ AC = 5 $, $ BC = 6 $ e $ DE = 3 $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {15|8} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {15|4} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {15|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A área do triângulo $ ADE $ é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-008-fig.jpg",
+    "alt": "Triângulo retângulo ABC com ângulo reto em C; o ponto D está sobre AB e o ponto E sobre AC, com DE perpendicular a AB (ângulo reto em D)",
+    "largura": "71mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78064,41 +78076,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. PUC-PR Sendo O o centro da circunferência de raio unitário, a área do triângulo retân- gulo ABC que tem o cateto AC no diâmetro, vale: a) 3 2 d) 3 4 b) 3 3 4 e) 3 3 8 c) 3 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-009.jpg"
-   ],
-   "larguraMm": 129.6,
+   "enunciado": "Sendo $ O $ o centro da circunferência de raio unitário, a área do triângulo retângulo $ ABC $ que tem o cateto $ AC $ no diâmetro, vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {√3|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3√3|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√3|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3√3|8} $",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-009-fig.jpg",
+    "alt": "Circunferência de centro O e raio 1, com o diâmetro horizontal; o triângulo ABC tem A na extremidade esquerda do diâmetro, ângulo de 30° em A, B na circunferência e C o pé da perpendicular de B ao diâmetro",
+    "largura": "34mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78110,41 +78122,41 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. PUC-PR A área do retângulo DEFB é: a) 120 d) 24 b) 20 e) 160 c) 180",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-010.jpg"
-   ],
-   "larguraMm": 132.1,
+   "enunciado": "A área do retângulo $ DEFB $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "120",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "180",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "24",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "160",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-010-fig.jpg",
+    "alt": "Triângulo retângulo ABC com ângulo reto em B (AB = 18, BC = 30); o retângulo DEFB está inscrito, com D em AB (AD = 6), E em AC e F em BC",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78156,41 +78168,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. VUNESP Na figura, a medida do ângulo A ^ BC é igual à medida do ângulo A ^ DE. O valor de y, em metros, é: 5 m E A C D B 10 m y (5y – 18)m a) 8,0 b) 7,2 c) 7,0 d) 6,0 e) 4,0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-011.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Na figura, a medida do ângulo $ ABC $ é igual à medida do ângulo $ ADE $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "8,0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "7,2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "7,0",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6,0",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "4,0",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O valor de $ y $, em metros, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-011-fig.jpg",
+    "alt": "Triângulo ABC com D sobre AC e E sobre AB, DE perpendicular a AC (DE = 5 m); AB = (5y − 18) m, BC = 10 m e AD = y",
+    "largura": "65mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78202,41 +78215,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. FEI-SP Na figura ao lado, ABCD é um retângulo e M é ponto médio de AD. Considerando-se x a me- dida da área do triângulo AEM e y a medida da área do triângulo AEB, é válido afirmar-se que: a) 2x = y b) 3x = y c) 4x = y d) x = y e) 3x = 2y E B A C D M",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-012.jpg"
-   ],
-   "larguraMm": 132.1,
+   "enunciado": "Na figura ao lado, $ ABCD $ é um retângulo e $ M $ é ponto médio de $ AD $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2x = y $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 3x = y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 4x = y $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = y $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3x = 2y $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Considerando-se $ x $ a medida da área do triângulo $ AEM $ e $ y $ a medida da área do triângulo $ AEB $, é válido afirmar-se que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-012-fig.jpg",
+    "alt": "Retângulo ABCD com M no meio de AD e as diagonais/segmentos BM e AC cruzando-se no ponto E",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78248,37 +78262,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. FATEC-SP Na figura abaixo, além das medidas dos ângulos in- dicados, sabe-se que B é ponto médio de AC e AC = 2 cm. A medida de DE, em centímetros, é igual a: a) 1 b) 1 c) 2 d) 1,5 e) 3 A B C D E 60 ° 60 ° 30 ° 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-013.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Na figura abaixo, além das medidas dos ângulos indicados, sabe-se que <b>B</b> é ponto médio de $ \\overline{AC} $ e $ AC = 2 $ cm.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ √3 $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "A medida de $ DE $, em centímetros, é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-013-fig.jpg",
+    "alt": "Triângulo ABE com ângulos de 60° em A e em E, apoiado na base AC; B é o ponto médio de AC; do ponto B parte um segmento até D, com o ângulo de 30° em D e ângulo reto em C",
+    "largura": "55mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-014",
@@ -78305,7 +78321,6 @@
   },
   {
    "id": "cdb-c12-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78317,20 +78332,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. UFGO A figura ao lado contém um quadrado e um círculo, ambos de área igual a 4 cm 2 . O ponto E indica o centro do círculo e a interseção das diagonais do qua- drado. Observe a figura e julgue as afirmações a seguir. ( ) O círculo e o quadrado têm o mesmo perímetro. ( ) A área do polígono ACDE mede 1 cm 2 . ( ) A área das partes do círculo, externas ao quadrado, é a mesma que a das partes do quadrado, externas ao círculo. ( ) O ângulo AÊB mede 60º.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-015.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A figura ao lado contém um quadrado e um círculo, ambos de área igual a 4 cm<sup>2</sup>. O ponto $ E $ indica o centro do círculo e a interseção das diagonais do quadrado.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – F"
+   "gabarito": "F – V – V – F",
+   "pergunta": "Observe a figura e julgue as afirmações a seguir.",
+   "afirmacoes": [
+    {
+     "t": "O círculo e o quadrado têm o mesmo perímetro.",
+     "ok": false
+    },
+    {
+     "t": "A área do polígono $ ACDE $ mede 1 cm<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "A área das partes do círculo, externas ao quadrado, é a mesma que a das partes do quadrado, externas ao círculo.",
+     "ok": true
+    },
+    {
+     "t": "O ângulo $ AÊB $ mede 60°.",
+     "ok": false
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-015-fig.jpg",
+    "alt": "Quadrado ABCD e círculo de mesmo centro E; A e B são vértices do quadrado, C e D estão no círculo; os segmentos EA, EB e ED partem do centro E",
+    "largura": "42mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78342,41 +78376,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UEMS Na figura ao lado, ABC é um triângulo equilátero de lado λ = 2. Os arcos de circunferên- cia têm centro em A e B e ambos têm raio r = 1. A área da região destacada é: a) 3 + π 3 d) 3 + 2 3 π b) 2 – π 3 e) 3 – π 3 c) 3 – 2 3 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-016.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Na figura ao lado, ABC é um triângulo equilátero de lado $ λ = 2 $. Os arcos de circunferência têm centro em A e B e ambos têm raio $ r = 1 $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ √3 + {π|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ √2 − {π|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √3 − {2π|3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ √3 + {2π|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ √3 − {π|3} $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "A área da região destacada é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-016-fig.jpg",
+    "alt": "Triângulo equilátero ABC com vértice A no alto; dois arcos de raio 1 com centros em A e B limitam, dentro do triângulo, a região destacada em cinza",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78388,24 +78423,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. UFMS Numa vidraçaria há um pedaço de espelho com o formato de um triângulo retân- gulo, cujos catetos AB e AC medem, respectivamente, 80 cm e 60 cm. Para aproveitar esse pedaço de espelho, o vidraceiro quer, a partir dele, recortar um outro espelho, na forma de um retângulo, de modo que dois de seus lados devam estar sobre os catetos do triângulo e o quarto vértice sobre a sua hipotenusa, conforme esboçado na figura abaixo. Sabendo-se que o espelho retangu- lar deve ser recortado de forma que tenha a maior área possível, e sendo S tal área em cm 2 , determinar 7 100 S .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Numa vidraçaria há um pedaço de espelho com o formato de um triângulo retângulo, cujos catetos $ AB $ e $ AC $ medem, respectivamente, 80 cm e 60 cm. Para aproveitar esse pedaço de espelho, o vidraceiro quer, a partir dele, recortar outro espelho, na forma de um retângulo, de modo que dois de seus lados devem estar sobre os catetos do triângulo e o quarto vértice sobre a sua hipotenusa, conforme esboçado na figura abaixo.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "84  2",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Sabendo-se que o espelho retangular deve ser recortado de forma que tenha a maior área possível, e sendo $ S $ tal área em cm<sup>2</sup>, determinar $ {7|100} S $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-017-fig.jpg",
+    "alt": "Triângulo retângulo ABC com o ângulo reto em A (cateto AB horizontal, AC vertical); dentro dele, um retângulo hachurado com um vértice em A, dois lados sobre os catetos e o vértice oposto sobre a hipotenusa",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78417,20 +78453,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. UFMT Três circunferências C 1 , C 2 e C 3 , todas com raios medindo R metros, estão dispostas de tal modo que cada uma passa pelo centro das outras duas, conforme figura. Com base nessas informações, julgue os itens. ( ) A área da região sombreada mede R 2 2 3 π − ( ) m 2 . ( ) O perímetro da região sombreada mede π R m.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-018.jpg"
-   ],
-   "larguraMm": 132.1,
+   "enunciado": "Três circunferências $ C_1 $, $ C_2 $ e $ C_3 $, todas com raios medindo $ R $ metros, estão dispostas de tal modo que cada uma passa pelo centro das outras duas, conforme figura.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V"
+   "gabarito": "V – V",
+   "pergunta": "Com base nessas informações, julgue os itens.",
+   "afirmacoes": [
+    {
+     "t": "A área da região sombreada mede $ {R^2|2}(π − √3) $ m<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "O perímetro da região sombreada mede $ π R $ m.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-018-fig.jpg",
+    "alt": "Três circunferências de mesmo raio C1, C2 e C3, cada uma passando pelo centro das outras duas; a região central comum às três está sombreada",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78442,41 +78489,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. Unifor-CE Em dois triângulos semelhantes, a medida de um lado de um deles é igual a um quarto da medida do lado correspondente do outro. Se a área do triângulo menor é 5 m 2 , então a área do triângulo maior, em metros quadrados, é igual a: a) 80 b) 40 c) 20 d) 10 e) 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Em dois triângulos semelhantes, a medida de um lado de um deles é igual a um quarto da medida do lado correspondente do outro. Se a área do triângulo menor é 5 m<sup>2</sup>, então a área do triângulo maior, em metros quadrados, é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "80",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "40",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c12-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78488,41 +78529,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UFSE Na figura ao lado têm-se as circunferências C 1 e C 2 , respectivamente inscrita e circunscrita a um hexágono regular. Se o raio de C 2 é 3 cm, a área de C 1 , em centímetros quadra- dos, é igual a: a) 27 4 π b) 6 π c) 21 4 π d) 9 4 π e) 15 4 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-020.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Na figura ao lado têm-se as circunferências $ C_1 $ e $ C_2 $, respectivamente inscrita e circunscrita a um hexágono regular.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {27π|4} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 6π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {21π|4} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {9π|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {15π|4} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se o raio de $ C_2 $ é 3 cm, a área de $ C_1 $, em centímetros quadrados, é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-020-fig.jpg",
+    "alt": "Hexágono regular com a circunferência C1 inscrita nele e a circunferência C2 circunscrita a ele, de mesmo centro",
+    "largura": "36mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78534,41 +78576,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. Unifor-CE Na figura abaixo têm-se dois círculos concên- tricos, de raios iguais a 4 cm e 8 cm, e a medida de um ângulo central, em radianos. A área da superfície sombreada, em centímetros quadra- dos, é igual a: a) 16 5 π b) 3 π c) 12 5 π d) 9 5 π e) 4 5 π",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-021.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Na figura abaixo têm-se dois círculos concêntricos, de raios iguais a 4 cm e 8 cm, e a medida de um ângulo central, em radianos.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {16π|5} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 3π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {12π|5} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {9π|5} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4π|5} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A área da superfície sombreada, em centímetros quadrados, é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-021-fig.jpg",
+    "alt": "Dois círculos concêntricos de centro O, de raios 4 cm e 8 cm; um ângulo central de π/10 delimita o setor sombreado entre as duas circunferências",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78580,41 +78623,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UFR-RJ Os símbolos abaixo foram encontrados em uma caverna em Machu Pichu, no Peru, e cientistas julgam que extraterrestres os desenharam. Tais cientistas descobriram algumas relações trigonométricas entre os lados das figuras, como é mostrado acima. Se a + b = π 6 , pode-se afirmar que a soma das áreas das figuras é igual a: a) π b) 3 c) 2 d) 1 e) π 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-022.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Os símbolos abaixo foram encontrados em uma caverna em Machu Pichu, no Peru, e cientistas julgam que extraterrestres os desenharam.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ π $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ {π|2} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Tais cientistas descobriram algumas relações trigonométricas entre os lados das figuras, como é mostrado acima. Se $ a + b = {π|6} $, pode-se afirmar que a soma das áreas das figuras é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-022-fig.jpg",
+    "alt": "Quatro figuras: duas formadas por dois triângulos ligados pelo vértice (ampulhetas) com bases cos a e alturas sen b, e dois retângulos de lados sen a e cos b",
+    "largura": "76mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78626,41 +78670,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. Cefet-RJ As retas ϕ e λ são paralelas. No triângulo retângulo ABC, o cateto AC mede 8 cm e a hipotenusa AB mede 17 cm. A área do triângulo escaleno ACD, cujo lado CD mede 20 cm é: a) 60 cm 2 b) 80 cm 2 c) 120 cm 2 d) 186 cm 2 e) 340 cm 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-023.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "As retas $ φ $ e $ λ $ são paralelas. No triângulo retângulo $ ABC $, o cateto $ AC $ mede 8 cm e a hipotenusa $ AB $ mede 17 cm.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60 cm<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "80 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "120 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "186 cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "340 cm<sup>2</sup>",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A área do triângulo escaleno $ ACD $, cujo lado $ CD $ mede 20 cm é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-023-fig.jpg",
+    "alt": "Duas retas paralelas φ (em cima) e λ (embaixo); o triângulo retângulo ABC com A e C sobre λ e B sobre φ; o ponto D sobre φ; os segmentos tracejados ligam D a A e a C",
+    "largura": "77mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78672,41 +78717,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFF-RJ Na figura, MNPQ é um retângulo, MNUV é um paralelogramo, as medidas de MQ e MV são iguais e 0º < α < 45º. Indicando-se por S a área de MNPQ e por S’ a área de MNUV, conclui-se: a) S = S’ sen α d) S = S’ cos α b) S’ = S e) S’ = S sen α c) S’ = S cos α",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Na figura, $ MNPQ $ é um retângulo, $ MNUV $ é um paralelogramo, as medidas de $ \\overline{MQ} $ e $ \\overline{MV} $ são iguais e $ 0° < α < 45° $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ S = S' sen α $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ S' = S $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ S' = S cos α $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ S = S' cos α $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ S' = S sen α $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Indicando por $ S $ a área de $ MNPQ $ e por $ S' $ a área de $ MNUV $, conclui-se:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-024-fig.jpg",
+    "alt": "Retângulo MNPQ (vertical, à esquerda) e paralelogramo MNUV (inclinado, à direita) com o mesmo lado MN na base; o ângulo α está em N",
+    "largura": "35mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78718,41 +78764,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. PUC-PR ABCD é um retângulo, no qual AB = 20 m e BC = 15 m; M é um ponto de AB tal que MA = 4 m. Calcular a área do paralelogramo inscrito no retângulo ABCD, sabendo que tem um vértice no ponto M e que os seus lados são paralelos às diagonais do retângulo ABCD. a) 72 m 2 d) 96 m 2 b) 80 m 2 e) 104 m 2 c) 88 m 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-025.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "$ ABCD $ é um retângulo, no qual $ AB = 20 $ m e $ BC = 15 $ m; $ M $ é um ponto de $ AB $ tal que $ MA = 4 $ m.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "72 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "80 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "88 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "96 m<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "104 m<sup>2</sup>",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Calcular a área do paralelogramo inscrito no retângulo $ ABCD $, sabendo que tem um vértice no ponto $ M $ e que os seus lados são paralelos às diagonais do retângulo $ ABCD $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c12-025-fig.jpg",
+    "alt": "Retângulo ABCD com o ponto M sobre o lado AB; o paralelogramo sombreado, com um vértice em M, está inscrito no retângulo, com os lados paralelos às diagonais tracejadas",
+    "largura": "39mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c12-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria plana: triângulos, áreas e círculos",
@@ -78764,16 +78811,37 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. U.E. Maringá-PR Considere A, B, C e D vértices consecutivos de um retângulo, sendo J o seu centro e AC uma diagonal. Se os pontos F, E, H e I são, respectivamente, os pontos médios dos segmentos AB, AF, AD e BC, é correto afirmar que: 01. os triângulos ACE e CEF têm perímetros iguais; 02. os triângulos ACE e CEF têm áreas iguais; 04. os triângulos ACE e CEF são semelhantes; 08. a área do triângulo AHJ é igual à metade da área do triângulo BCF. 16. os trapézios AFLJ e FBIL têm áreas iguais, onde L é o ponto médio do segmento JI. 32. a área do triângulo CEF é 1 8 da área do retângulo ABCD. D",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c12-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere A, B, C e D vértices consecutivos de um retângulo, sendo J o seu centro e AC uma diagonal. Se os pontos F, E, H e I são, respectivamente, os pontos médios dos segmentos AB, AF, AD e BC, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "58"
+   "gabarito": "58",
+   "afirmacoes": [
+    {
+     "t": "os triângulos ACE e CEF têm perímetros iguais;",
+     "ok": false
+    },
+    {
+     "t": "os triângulos ACE e CEF têm áreas iguais;",
+     "ok": true
+    },
+    {
+     "t": "os triângulos ACE e CEF são semelhantes;",
+     "ok": false
+    },
+    {
+     "t": "a área do triângulo AHJ é igual à metade da área do triângulo BCF.",
+     "ok": true
+    },
+    {
+     "t": "os trapézios AFLJ e FBIL têm áreas iguais, onde L é o ponto médio do segmento JI.",
+     "ok": true
+    },
+    {
+     "t": "a área do triângulo CEF é $ {1|8} $ da área do retângulo ABCD.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c12-027",
