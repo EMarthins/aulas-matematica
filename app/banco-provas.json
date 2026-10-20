@@ -91917,12 +91917,13 @@
     }
    ],
    "pergunta": "Se $ OB = 2 $ cm e $ OC = 4 $ cm, a equação dessa elipse é:",
-   "figura": {
-    "tipo": "img",
-    "src": "img:cdb-c19-010-fig.jpg",
-    "alt": "Elipse horizontal centrada na origem O; A e C são as extremidades do eixo maior (A à esquerda, C à direita) e B é a extremidade superior do eixo menor",
-    "largura": "62mm"
-   },
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 260 130\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"11\"><rect width=\"260\" height=\"130\" fill=\"#fff\"/><line x1=\"10\" y1=\"65\" x2=\"244\" y2=\"65\" stroke=\"#222\"/><polygon points=\"250,65 243,62 243,68\" fill=\"#222\"/><line x1=\"120\" y1=\"126\" x2=\"120\" y2=\"8\" stroke=\"#222\"/><polygon points=\"120,3 117,10 123,10\" fill=\"#222\"/><ellipse cx=\"120\" cy=\"65\" rx=\"70\" ry=\"30\" fill=\"none\" stroke=\"#222\" stroke-width=\"1.2\"/><text x=\"124\" y=\"30\">B</text><text x=\"196\" y=\"57\">C</text><text x=\"40\" y=\"78\">A</text><text x=\"124\" y=\"102\">D</text><text x=\"108\" y=\"78\">O</text><text x=\"252\" y=\"78\">x</text><text x=\"126\" y=\"10\">y</text></svg>",
+     "largura": "55%"
+    }
+   ],
    "transcrita": true
   },
   {
@@ -92707,7 +92708,6 @@
   },
   {
    "id": "cdb-c20-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92719,41 +92719,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. U.Católica-DF Em um poliedro convexo, o número de arestas é 30 e o número de faces é 20. O número de vértices desse poliedro é: a) 12 d) 5 b) 10 e) 7 c) 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-001.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Em um poliedro convexo, o número de arestas é 30 e o número de faces é 20. O número de vértices desse poliedro é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "12",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "7",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92765,20 +92759,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. AEU-DF Um prisma é um poliedro convexo que apresenta duas faces congruentes, dis- postas em planos paralelos. Tais faces são chamadas bases do prisma. As demais faces de tal poliedro são paralelogramos que apresentam arestas comuns com as bases. De um certo prisma regular sabe-se que 12 de suas arestas medem 6 cm cada e suas outras 6 arestas têm medidas iguais a 20 cm. Em relação a tal prisma analise e julgue os itens seguintes. ( ) As arestas que medem 20 cm podem ser as arestas das bases do prisma. ( ) O prisma é triangular, ou seja, sua base é um triângulo. ( ) Cada face lateral do prism",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-002.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Um prisma é um poliedro convexo que apresenta duas faces congruentes, dispostas em planos paralelos. Tais faces são chamadas bases do prisma. As demais faces de tal poliedro são paralelogramos que apresentam arestas comuns com as bases. De um certo prisma regular sabe-se que 12 de suas arestas medem 6 cm cada e suas outras 6 arestas têm medidas iguais a 20 cm.<br><span class=\"pb\"></span>Em relação a tal prisma analise e julgue os itens seguintes.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – V"
+   "gabarito": "F – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "As arestas que medem 20 cm podem ser as arestas das bases do prisma.",
+     "ok": false
+    },
+    {
+     "t": "O prisma é triangular, ou seja, sua base é um triângulo.",
+     "ok": false
+    },
+    {
+     "t": "Cada face lateral do prisma é um retângulo cuja área vale 120 cm<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "A área da base do prisma corresponde à área de seis triângulos eqüiláteros de lado 6 cm.",
+     "ok": true
+    },
+    {
+     "t": "O volume do prisma é igual a $ 20 · A_b $, onde $ A_b $ é a medida da área de sua base.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-003",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92790,41 +92800,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Unifor-CE Reduzindo-se a medida do raio de uma esfera em 20% de seu valor, o volume será reduzido em: a) 48,8% d) 56,4% b) 51,2% e) 62,8% c) 54,6%",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-003.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Reduzindo-se a medida do raio de uma esfera em 20% de seu valor, o volume será reduzido em:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "48,8%",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "51,2%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "54,6%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "56,4%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "62,8%",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92836,41 +92840,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. UFSE Cada vértice de um cubo de aresta x é centro de uma esfera de raio x . O volume da parte comum ao cubo e às esferas é: a) π x 3 b) π x 3 c) π x 3 d) π x 3 e) π x 3 2 12 8 6 4 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-004.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Cada vértice de um cubo de aresta $ x $ é centro de uma esfera de raio $ {x|2} $. O volume da parte comum ao cubo e às esferas é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|12}x^3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {π|8}x^3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {π|6}x^3 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {π|4}x^3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {π|2}x^3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92882,41 +92880,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UEPI A soma de todas as arestas de um cubo mede 24 m. O volume da esfera inscrita nesse cubo é igual a: a) 2 π m 3 b) 3 π m 3 c) π m 3 d) 3 π m 3 e) 4 π m 3 3 4 2 2 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-005.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "A soma de todas as arestas de um cubo mede 24 m. O volume da esfera inscrita nesse cubo é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2π|3} $ m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3π|4} $ m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {π|2} $ m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3π|2} $ m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4π|3} $ m<sup>3</sup>",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92928,41 +92920,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. UFF-RJ No tetraedro regular representado na figura, R e S são, respectivamente, os pon- tos médios de NP e OM. A razão RS é igual a: a) 3 b) 3 c) 2 d) 2 e) 3 2 P R N M S O 2 2 MN",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-006.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "No tetraedro regular representado na figura, R e S são, respectivamente, os pontos médios de $ NP $ e $ OM $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ √3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√3|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√2|2} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 3√2 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A razão $ {RS|MN} $ é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-006-fig.jpg",
+    "alt": "Tetraedro regular de vértices P (no alto), N (à esquerda), M (à direita) e O (vértice oculto no interior, ligado por tracejado); R é o ponto médio de NP, S o ponto médio de OM, e o segmento RS está traçado",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -92974,37 +92967,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. UERJ Um icosaedro regular tem 20 faces e 12 vértices, a partir dos quais retiram-se 12 pirâmides congruentes. As medidas das arestas dessas pirâmides são iguais a 1 da aresta do icosaedro. O que resta é um tipo de poliedro usado na fabricação de bolas. Observe as figuras. 3 Para confeccionar uma bola de futebol, um artesão usa esse novo poliedro, no qual cada gomo é uma face. Ao costurar dois gomos para unir duas faces do poliedro, ele gasta 7 cm de linha. Depois de pronta a bola, o artesão gastou, no mínimo, um comprimento de linha igual a: a) 7,0 m c) 4,9 m b) 6,3 m d) 2,1 m",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-007.jpg"
-   ],
-   "larguraMm": 131.9,
+   "enunciado": "Um icosaedro regular tem 20 faces e 12 vértices, a partir dos quais retiram-se 12 pirâmides congruentes.<br><span class=\"pb\"></span>As medidas das arestas dessas pirâmides são iguais a $ {1|3} $ da aresta do icosaedro. O que resta é um tipo de poliedro usado na fabricação de bolas. Observe as figuras.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7,0 m",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "6,3 m",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "4,9 m",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,1 m",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Para confeccionar uma bola de futebol, um artesão usa esse novo poliedro, no qual cada gomo é uma face. Ao costurar dois gomos para unir duas faces do poliedro, ele gasta 7 cm de linha. Depois de pronta a bola, o artesão gastou, no mínimo, um comprimento de linha igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-007-fig.jpg",
+    "alt": "À esquerda, um icosaedro com as pirâmides dos vértices tracejadas; à direita, uma bola de futebol, com faces pentagonais pretas e hexagonais brancas",
+    "largura": "80mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93016,41 +93010,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. U. F. Santa Maria–RS Um poliedro convexo tem três faces triangulares, uma quadrangu- lar, uma pentagonal e duas hexagonais. A soma dos ângulos de todas as faces desse polie- dro é: a) 2880 ° b) 2890 ° c) 3000 ° d) 4000 ° e) 4320 °",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-008.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Um poliedro convexo tem três faces triangulares, uma quadrangular, uma pentagonal e duas hexagonais. A soma dos ângulos de todas as faces desse poliedro é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2880°",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2890°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3000°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4000°",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4320°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93062,41 +93050,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. PUC-RS Quantas arestas tem um poliedro convexo de faces triangulares em que o núme- ro de vértices é 3 do número de faces? a) 60 b) 30 c) 25 d) 20 e) 15 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-009.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Quantas arestas tem um poliedro convexo de faces triangulares em que o número de vértices é $ {3|5} $ do número de faces?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "60",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "30",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "25",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93108,37 +93090,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Cefet-PR Sobre as faces de um icosaedro regular de aresta 4 cm, constroem-se 20 prismas triangulares regulares, com base nessas faces. As alturas desses prismas estão em progressão aritmética com o primeiro termo medindo 2 cm e com razão igual a 3 cm. Com base nesses dados, pode-se afirmar que a soma dos volumes, em cm 3 , é: a) 1200 3 b) 4010 3 c) 4240 3 d) 6000 3 e) 2440 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-010.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sobre as faces de um icosaedro regular de aresta 4 cm, constroem-se 20 prismas triangulares regulares, com base nessas faces. As alturas desses prismas estão em progressão aritmética com o primeiro termo medindo 2 cm e com razão igual a 3 cm. Com base nesses dados, pode-se afirmar que a soma dos volumes, em cm<sup>3</sup>, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 1200√3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 4010√3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 4240√3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 6000√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2440√3 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-011",
@@ -93222,7 +93199,6 @@
   },
   {
    "id": "cdb-c20-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93234,20 +93210,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. I.E.Superior de Brasília-DF O poliedro da figura ao lado é obtido a partir da secção de um cubo por planos perpendi- culares às suas diagonais. Considere que cada plano seccio- na as três arestas que convergem em um dos vértices a um quarto de seu comprimento. O comprimento de cada aresta do cubo é de 12 cm. Analise e julgue os itens seguintes. ( ) O poliedro tem faces triangulares que são triângulos eqüiláteros. ( ) Cada um dos triângulos que são faces do poliedro tem área maior do que 5 cm 2 . ( ) O poliedro tem 14 faces e 24 vértices. ( ) A área total do poliedro apresentado na figura é",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-013.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O poliedro da figura ao lado é obtido a partir da secção de um cubo por planos perpendiculares às suas diagonais. Considere que cada plano secciona as três arestas que convergem em um dos vértices a um quarto de seu comprimento. O comprimento de cada aresta do cubo é de 12 cm.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F – V"
+   "gabarito": "V – V – V – F – V",
+   "pergunta": "Analise e julgue os itens seguintes.",
+   "afirmacoes": [
+    {
+     "t": "O poliedro tem faces triangulares que são triângulos eqüiláteros.",
+     "ok": true
+    },
+    {
+     "t": "Cada um dos triângulos que são faces do poliedro tem área maior do que 5 cm<sup>2</sup>.",
+     "ok": true
+    },
+    {
+     "t": "O poliedro tem 14 faces e 24 vértices.",
+     "ok": true
+    },
+    {
+     "t": "A área total do poliedro apresentado na figura é igual à área total do cubo que o gerou.",
+     "ok": false
+    },
+    {
+     "t": "O volume do poliedro da figura é menor do que 1 700 cm<sup>3</sup>.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-013-fig.jpg",
+    "alt": "Poliedro obtido ao cortar os vértices de um cubo: faces triangulares nos cantos e faces maiores (quadradas e octogonais) no restante",
+    "largura": "39mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93259,20 +93258,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UFGO Um cubo de aresta l e uma esfera E estão dispostos de modo que cada aresta do cubo intercepta a superfície esférica de E em um único ponto. Com base nessas informações, julgue os itens abaixo. ( ) A interseção da esfera E com cada face do cubo determina um círculo de raio r = l 2 . ( ) O volume da esfera E é maior que o volume da esfera inscrita no cubo. ( ) A medida do diâmetro da esfera E é igual a 2 da medida da diagonal do cubo. ( ) A área da superfície da esfera E é igual à área da superfície do cubo. 2 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-014.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Um cubo de aresta $ l $ e uma esfera $ E $ estão dispostos de modo que cada aresta do cubo intercepta a superfície esférica de $ E $ em um único ponto.<br><span class=\"pb\"></span>Com base nessas informações, julgue os itens abaixo:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – F – F"
+   "gabarito": "F – V – F – F",
+   "afirmacoes": [
+    {
+     "t": "A interseção da esfera $ E $ com cada face do cubo determina um círculo de raio $ r = l{√2|2} $.",
+     "ok": false
+    },
+    {
+     "t": "O volume da esfera $ E $ é maior que o volume da esfera inscrita no cubo.",
+     "ok": true
+    },
+    {
+     "t": "A medida do diâmetro da esfera $ E $ é igual a $ {2|3} $ da medida da diagonal do cubo.",
+     "ok": false
+    },
+    {
+     "t": "A área da superfície da esfera $ E $ é igual à área da superfície do cubo.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93284,20 +93295,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. UFBA Com base no estudo da Geometria Espacial, pode-se afirmar: (01) Três retas concorrentes duas a duas, não passando pelo mesmo ponto, determinam um plano e duas retas paralelas a um mesmo plano são paralelas entre si. (02) A área lateral do sólido gerado pela revolução completa do triângulo retângulo isós- celes, de hipotenusa medindo 6 u.c., em torno de um dos catetos mede 18 2 π u.a. (04) A área da secção plana feita a 8 u.c. do centro de uma esfera de raio igual a 10 u.c. mede 36 π u.a. (08) Num paralelepípedo retângulo de dimensões diretamente proporcionais aos núme- ros 3, 4 e 12,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-015.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Com base no estudo da Geometria Espacial, pode-se afirmar (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "22 = 02 + 04 + 16"
+   "gabarito": "22 = 02 + 04 + 16",
+   "afirmacoes": [
+    {
+     "t": "Três retas concorrentes duas a duas, não passando pelo mesmo ponto, determinam um plano e duas retas paralelas a um mesmo plano são paralelas entre si.",
+     "ok": false
+    },
+    {
+     "t": "A área lateral do sólido gerado pela revolução completa do triângulo retângulo isósceles, de hipotenusa medindo 6 u.c., em torno de um dos catetos mede $ 18√2π $ u.a.",
+     "ok": true
+    },
+    {
+     "t": "A área da secção plana feita a 8 u.c. do centro de uma esfera de raio igual a 10 u.c. mede $ 36π $ u.a.",
+     "ok": true
+    },
+    {
+     "t": "Num paralelepípedo retângulo de dimensões diretamente proporcionais aos números 3, 4 e 12, a diagonal mede 130 u.c. e a maior dimensão mede 100 u.c.",
+     "ok": false
+    },
+    {
+     "t": "Num vaso aberto, em forma de cubo de aresta igual a 20 cm e contendo 4 000 cm<sup>3</sup> de água, se for colocada uma esfera que tangencia todas as faces do vaso, o volume de água que transbordará será de, aproximadamente, 186 cm<sup>3</sup>.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93309,41 +93336,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UEPI O volume de uma esfera é 36 π m 3 . O volume do cubo circunscrito à esfera é de: a) 76 π m 3 b) 27 m 3 c) 180 m 3 d) 36 m 3 e) 216 m 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-016.jpg"
-   ],
-   "larguraMm": 129.3,
+   "enunciado": "O volume de uma esfera é $ 36π $ m<sup>3</sup>. O volume do cubo circunscrito à esfera é de:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 76π $ m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "27 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "180 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "36 m<sup>3</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "216 m<sup>3</sup>",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93355,37 +93376,38 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. UERJ A figura abaixo representa o brinquedo Piramix. 3 9 9 9 9 Ele tem a forma de um tetraedro regular, com cada face dividida em 9 triângulos equiláte- ros congruentes. Se, a partir de cada vértice, for retirada uma pirâmide regular cuja aresta é 1 da aresta do brinquedo, restará um novo sólido. A razão entre as superfícies totais desse sólido e do Piramix equivale a: a) 4 b) 5 c) 7 d) 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-017.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A figura abaixo representa o brinquedo Piramix.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|9} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {5|9} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|9} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {8|9} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Ele tem a forma de um tetraedro regular, com cada face dividida em 9 triângulos eqüiláteros congruentes.<br><span class=\"pb\"></span>Se, a partir de cada vértice, for retirada uma pirâmide regular cuja aresta é $ {1|3} $ da aresta do brinquedo, restará um novo sólido.<br><span class=\"pb\"></span>A razão entre as superfícies totais desse sólido e do Piramix equivale a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-017-fig.jpg",
+    "alt": "Fotografia do brinquedo Piramix: sólido com a forma de um tetraedro regular, cada face dividida em 9 triângulos",
+    "largura": "34mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93397,41 +93419,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. U. Santa Úrsula-RJ Duas esferas têm, respectivamente, raios r e 4 r. A razão entre os volumes da menor para a maior é: a) 4 b) 9 c) 27 d) 16 e) 64 3 3 16 64 4 27",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-018.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Duas esferas têm, respectivamente, raios $ r $ e $ {4|3}r $. A razão entre os volumes da menor para a maior é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {4|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {9|16} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {27|64} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {16|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {64|27} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93443,37 +93459,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. F. M. Itajubá-MG A razão entre os volumes da esfera inscrita e circunscrita a um mesmo cubo de aresta a é: a) 2 2 b) 2 c) 2 d) 0,5 e) Nenhuma das respostas anteriores. 2 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A razão entre os volumes da esfera inscrita e circunscrita a um mesmo cubo de aresta $ a $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2√2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√2|2} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {√2|4} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Nenhuma das respostas anteriores.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-020",
@@ -93517,7 +93528,6 @@
   },
   {
    "id": "cdb-c20-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93529,41 +93539,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UFRS Um octaedro tem seus vértices localizados nos centros das faces de um cubo de aresta 2. O volume do octaedro é: a) 2 b) 4 c) 2 d) 8 e) 10 3 3 3 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um octaedro tem seus vértices localizados nos centros das faces de um cubo de aresta 2.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {4|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {8|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {10|3} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O volume do octaedro é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-021-fig.jpg",
+    "alt": "Cubo desenhado em linhas finas, com um octaedro sombreado inscrito, cujos seis vértices estão nos centros das faces do cubo",
+    "largura": "40mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93575,37 +93586,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. Fempar Uma pirâmide quadrangular regular está inscrita num octaedro regular conforme mostra a figura a seguir. Os vértices da base da pirâmide são os pontos médios das arestas do octaedro. Se as arestas do octaedro medem 4 cm, o volume da pirâmide, em cm 3 , é: a) 4 2 b) 2 2 c) 2 d) 8 2 e) 16 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-022.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Uma pirâmide quadrangular regular está inscrita num octaedro regular conforme mostra a figura a seguir. Os vértices da base da pirâmide são os pontos médios das arestas do octaedro.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4√2 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 2√2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 8√2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 16√2 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se as arestas do octaedro medem 4 cm, o volume da pirâmide, em cm<sup>3</sup>, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-022-fig.jpg",
+    "alt": "Octaedro regular com uma pirâmide quadrangular regular inscrita, cujo vértice é o vértice superior do octaedro e cuja base fica nos pontos médios das arestas",
+    "largura": "49mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-023",
@@ -93649,7 +93662,6 @@
   },
   {
    "id": "cdb-c20-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93661,41 +93673,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFCE Um poliedro convexo de nove vértices possui quatro ângulos triédricos e cinco ângulos tetraédricos. Então o número de faces deste poliedro é: a) 12 b) 11 c) 10 d) 9 e) 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-024.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Um poliedro convexo de nove vértices possui quatro ângulos triédricos e cinco ângulos tetraédricos. Então o número de faces deste poliedro é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "9",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "8",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93707,41 +93713,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. U.Católica Dom Bosco-MS Um cilindro eqüilátero de volume V m 3 encontra-se cheio de água, quando uma esfera, cujo raio coincide com o raio da base do cilindro, é mergulhada completamente no cilindro fa- zendo transbordar certa quantidade de água. Nessas condições, o volume, em m 3 , de água restante no cilin- dro é igual a: a) 0 d) V b) V e) 3V c) V 2 4 3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-025.jpg"
-   ],
-   "larguraMm": 133,
+   "enunciado": "Um cilindro eqüilátero de volume $ V $ m<sup>3</sup> encontra-se cheio de água, quando uma esfera, cujo raio coincide com o raio da base do cilindro, é mergulhada completamente no cilindro fazendo transbordar certa quantidade de água.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {V|4} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {V|3} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {V|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3V|4} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Nessas condições, o volume, em m<sup>3</sup>, de água restante no cilindro é igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-025-fig.jpg",
+    "alt": "Cilindro com uma esfera no interior, tangente às bases e à superfície lateral",
+    "largura": "35mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93753,24 +93760,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFMT Deseja-se encher de água um reservatório em forma de um hemisfério, utilizando- se um outro recipiente menor de forma cilíndrica circular reta, conforme figuras abaixo. A partir de suas medidas internas, constatou-se que a razão entre os seus raios é 1 e que a altura do recipiente menor é o triplo do seu raio. Sendo assim, para que o reservatório fique completamente cheio, quantas vezes o recipiente menor deve também ser completa- mente enchido e derramado no maior? 6 R R r h",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Deseja-se encher de água um reservatório em forma de um hemisfério, utilizando-se um outro recipiente menor de forma cilíndrica circular reta, conforme figuras abaixo.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "48",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "A partir de suas medidas internas, constatou-se que a razão entre os seus raios é $ {1|6} $ e que a altura do recipiente menor é o triplo do seu raio. Sendo assim, para que o reservatório fique completamente cheio, quantas vezes o recipiente menor deve também ser completamente enchido e derramado no maior?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c20-026-fig.jpg",
+    "alt": "À esquerda, um hemisfério de raio R; à direita, um cilindro circular reto de raio r e altura h",
+    "largura": "74mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c20-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93782,20 +93790,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. UFMS Na figura ao lado ABC é um triângulo de altura AD = 6 e base BC = 6. EF é o diâmetro de uma semi-circunferência tangente a BC no ponto D e é perpendicular ao segmento AD. Então, é correto afirmar que: (01) O diâmetro EF é igual a 3. (02) A área do triângulo AEF vale 9. (04) A área do trapézio BCFE vale 10. (08) O volume do sólido gerado pela rotação completa da região sombreada em torno do eixo AD é igual a 32 π . (16) A área do semi-círculo vale 9 π . Dê, como resposta, a soma das alternativas corretas. B C F E A D 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-027.jpg"
-   ],
-   "larguraMm": 133,
+   "enunciado": "Na figura ao lado $ ABC $ é um triângulo de altura $ AD = 6 $ e base $ BC = 6 $. $ EF $ é o diâmetro de uma semi-circunferência tangente a $ BC $ no ponto $ D $ e é perpendicular ao segmento $ AD $. Então, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "12"
+   "gabarito": "12",
+   "afirmacoes": [
+    {
+     "t": "O diâmetro $ EF $ é igual a 3.",
+     "ok": false
+    },
+    {
+     "t": "A área do triângulo $ AEF $ vale 9.",
+     "ok": false
+    },
+    {
+     "t": "A área do trapézio $ BCFE $ vale 10.",
+     "ok": true
+    },
+    {
+     "t": "O volume do sólido gerado pela rotação completa da região sombreada em torno do eixo $ AD $ é igual a $ {32π|3} $.",
+     "ok": true
+    },
+    {
+     "t": "A área do semi-círculo vale $ 9π $.",
+     "ok": false
+    }
+   ],
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 200 190\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"sans-serif\" font-size=\"11\"><rect width=\"200\" height=\"190\" fill=\"#fff\"/><polygon points=\"100,10 46.7,116.7 153.3,116.7\" fill=\"#d4d4d4\"/><path d=\"M46.7,116.7 A53.3,53.3 0 0 0 153.3,116.7 Z\" fill=\"#d4d4d4\"/><polygon points=\"100,10 20,170 180,170\" fill=\"none\" stroke=\"#222\" stroke-width=\"1.3\"/><line x1=\"46.7\" y1=\"116.7\" x2=\"153.3\" y2=\"116.7\" stroke=\"#222\"/><path d=\"M46.7,116.7 A53.3,53.3 0 0 0 153.3,116.7\" fill=\"none\" stroke=\"#222\"/><line x1=\"100\" y1=\"10\" x2=\"100\" y2=\"170\" stroke=\"#222\" stroke-dasharray=\"4 3\"/><text x=\"96\" y=\"8\">A</text><text x=\"8\" y=\"176\">B</text><text x=\"182\" y=\"176\">C</text><text x=\"96\" y=\"184\">D</text><text x=\"34\" y=\"114\">E</text><text x=\"156\" y=\"114\">F</text></svg>",
+     "largura": "50%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial: poliedros, esferas e troncos",
@@ -93807,37 +93838,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. UEPI O volume do sólido gerado pela revolução de um triângulo equilátero de lado a em torno de um de seus lados é igual a: a) π a 3 b) π a 3 c) π a 2 d) 3 π a 3 e) 4 π a 3 4 3 2 4 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c20-028.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O volume do sólido gerado pela revolução de um triângulo eqüilátero de lado $ a $ em torno de um de seus lados é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|4}a^3 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {π|3}a^3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {π|2}a^2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3π|4}a^3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4π|3}a^3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c20-029",
