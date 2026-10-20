@@ -111616,8 +111616,6 @@
   {
    "id": "cdb-sim-a01-02",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111629,12 +111627,7 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02) Juca nasceu no ano de 1998. Durante a aula de matemática a professora desenhou na lousa uma linha do tempo e pediu para Juca marcar nesta linha o ano em que nasceu. 1992 c 2002 Que ponto da linha do tempo Juca deve marcar para acertar a tarefa pedida?",
-   "imagens": [
-    "img:cdb-sim-a01-02.jpg"
-   ],
-   "larguraMm": 91.1,
+   "enunciado": "Juca nasceu no ano de 1998. Durante a aula de matemática a professora desenhou na lousa uma linha do tempo e pediu para Juca marcar nesta linha o ano em que nasceu.",
    "alternativas": [
     {
      "t": "A",
@@ -111651,19 +111644,21 @@
     {
      "t": "D",
      "ok": false
-    },
-    {
-     "t": "E",
-     "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Que ponto da linha do tempo Juca deve marcar para acertar a tarefa pedida?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-02-fig.jpg",
+    "alt": "Linha do tempo graduada, de 1992 a 2002, com os pontos B e D à esquerda e os pontos A e C à direita",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-03",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111675,41 +111670,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03) Efetuando (+3)2 ( obtemos: (A) +63. (B) -73. (C) +210. (D) -315. (E) +325",
-   "imagens": [
-    "img:cdb-sim-a01-03.jpg"
-   ],
-   "larguraMm": 75.5,
+   "enunciado": "Efetuando $ (+3)^2 · (−5)^0 · (+7)^1 $ obtemos:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "+63.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "−73.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "+210.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−315.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "+325.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-04",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Números e operações",
@@ -111721,35 +111710,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04) A fração geratriz correspondente à dízima periódica 2,333... é (B) 2/3 (C) 7/3 (D) 23/9 (E) 23/3",
-   "imagens": [
-    "img:cdb-sim-a01-04.jpg"
-   ],
-   "larguraMm": 78,
+   "enunciado": "A fração geratriz correspondente à dízima periódica 2,333... é",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|9} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {7|3} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {23|9} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {23|3} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-05",
@@ -111874,8 +111859,6 @@
   {
    "id": "cdb-sim-a01-08",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -111887,35 +111870,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08) Mauro efetuou a operação indicada abaixo. O resultado que Mauro encontrou foi aproximadamente (A) 3,1 (B) 4,5 (C) 5,1 (D) 6,2 (E) 7,3",
-   "imagens": [
-    "img:cdb-sim-a01-08.jpg"
-   ],
-   "larguraMm": 78.9,
+   "enunciado": "Mauro efetuou a operação indicada abaixo.<br><span class=\"pb\"></span>$ 2 · √2 + √3 $<br><span class=\"pb\"></span>O resultado que Mauro encontrou foi aproximadamente",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3,1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4,5",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5,1",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6,2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "7,3",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-09",
@@ -112043,8 +112022,6 @@
   {
    "id": "cdb-sim-a01-12",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -112056,41 +112033,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12) Marcos ganha um salário mais uma comissão vendendo televisores em uma loja. A relação entre o salário semanal de Marcos (S) e o total, em reais, de suas vendas no período (v) está representada pela reta no gráfico a seguir. 387 noz 383 azo 379 375 o 100 200 300 Nesta relação, o número 375 representa (A) o salário de Marcos para cada televisor vendido. (B) o salário de Marcos se ele vende apenas 375 televisores. (C) o valor que deve ser somado ao preço de cada televisor. (D) o salário de Marcos se ele não vende nenhum televisor. (E) quanto aumenta o salário de Marcos em cada venda.",
-   "imagens": [
-    "img:cdb-sim-a01-12.jpg"
-   ],
-   "larguraMm": 86.9,
+   "enunciado": "Marcos ganha um salário mais uma comissão vendendo televisores em uma loja. A relação entre o salário semanal de Marcos (S) e o total, em reais, de suas vendas no período (v) está representada pela reta no gráfico a seguir.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "o salário de Marcos para cada televisor vendido.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "o salário de Marcos se ele vende apenas 375 televisores.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "o valor que deve ser somado ao preço de cada televisor.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "o salário de Marcos se ele não vende nenhum televisor.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "quanto aumenta o salário de Marcos em cada venda.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Nesta relação, o número 375 representa",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-12-fig.jpg",
+    "alt": "Gráfico do salário S em função das vendas V: reta crescente que parte do ponto (0, 375) e passa por (100, 379), (200, 383) e (300, 387)",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-13",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -112102,41 +112080,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13) Observe os triângulos abaixo. Os triângulos têm tem ângulo obtusângulo é:",
-   "imagens": [
-    "img:cdb-sim-a01-13.jpg"
-   ],
-   "larguraMm": 88.6,
+   "enunciado": "Observe os triângulos abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "M.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "N.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "P.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Q.",
      "ok": true
-    },
-    {
-     "t": "E",
-     "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O triângulo que tem ângulo obtuso é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-13-fig.jpg",
+    "alt": "Quatro triângulos: M (retângulo, com ângulo reto no canto inferior esquerdo), N (isósceles, de ponta para cima), P (isósceles, de ponta para a esquerda) e Q (muito aberto, com um ângulo obtuso no vértice de baixo)",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-14",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -112148,41 +112123,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14) Abaixo, estão representados quatro polígonos. Polígono 1 Polígono 2 Polígono 3 Polígono 4 Qual dos polígonos mostrados possui exatamente 1 ângulo agudo, 1 ângulo obtuso e 2 ângulos retos? (A) Polígono 1 (B) Polígono 2 (C) Polígono 3 (D) Polígono 4",
-   "imagens": [
-    "img:cdb-sim-a01-14.jpg"
-   ],
-   "larguraMm": 87.8,
+   "enunciado": "Abaixo, estão representados quatro polígonos.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Polígono 1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Polígono 2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Polígono 3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Polígono 4",
      "ok": true
-    },
-    {
-     "t": "E",
-     "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual dos polígonos mostrados possui exatamente 1 ângulo agudo, 1 ângulo obtuso e 2 ângulos retos?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-14-fig.jpg",
+    "alt": "Quatro quadriláteros rotulados de Polígono 1 a Polígono 4: três trapézios e um quadrado (Polígono 3)",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-15",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -112194,35 +112166,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15) Observe os triângulos 1 e 2 representados abaixo. 00 3cr Triângulo I Triângulo 2 O triângulo 1 tem 6 m2 de área, quanto mede a área do triângulo 2? (A) 12 m2 (B) 18 m2 (C) 20 m2 (D) 24 m2 (E) 28 m2",
-   "imagens": [
-    "img:cdb-sim-a01-15.jpg"
-   ],
-   "larguraMm": 88.2,
+   "enunciado": "Observe os triângulos 1 e 2 representados abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "12 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "18 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "20 m<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "24 m<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "28 m<sup>2</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O triângulo 1 tem 6 m<sup>2</sup> de área, quanto mede a área do triângulo 2?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-15-fig.jpg",
+    "alt": "Dois triângulos retângulos com ângulos de 60° e 30°: o triângulo 1 tem um cateto de 3 m; o triângulo 2 é maior e tem um cateto de 6 m",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-16",
@@ -112267,8 +112242,6 @@
   {
    "id": "cdb-sim-a01-17",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -112280,41 +112253,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17) Para cercar 3 lados de um terreno quadrado, necessitamos de 96 m de arame. A área do terreno 1021 m2 (A) 1022 m2 (B) (C) 1023 m2 1024 m2 (D) 1200 M2. (E)",
-   "imagens": [
-    "img:cdb-sim-a01-17.jpg"
-   ],
-   "larguraMm": 85.1,
+   "enunciado": "Para cercar 3 lados de um terreno quadrado, necessitamos de 96 m de arame. A área do terreno é de",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1021 m<sup>2</sup>.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1022 m<sup>2</sup>.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1023 m<sup>2</sup>.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1024 m<sup>2</sup>.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1200 m<sup>2</sup>.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-18",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -112326,41 +112293,74 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18) Uma embalagem de biscoitos traz uma tabela com as seguintes informações: NUTRIENTES PORCENTAGEM EM 30G Açúcar 80/0 Leite em pó Fibra 2% alimentar Amido de 15% milho Gorduras 9% saturadas Malte 2% Fermento 1% Em 30g desse biscoito, a porcentagem de: (A) açúcar é o quádruplo da porcentagem de malte. (B) açúcar é maior que a porcentagem de gorduras saturadas. (C) amido é igual à soma das porcentagens de gorduras saturadas, leite em pó e fermento. (D) leite em pó é igual à soma da porcentagem de fibras alimentares, malte e fermento. (E) fibra é maior que à soma das porcentagens do fermento e d",
-   "imagens": [
-    "img:cdb-sim-a01-18.jpg"
-   ],
-   "larguraMm": 85.1,
+   "enunciado": "Uma embalagem de biscoitos traz uma tabela com as seguintes informações:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "açúcar é o quádruplo da porcentagem de malte.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "açúcar é maior que a porcentagem de gorduras saturadas.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "amido é igual à soma das porcentagens de gorduras saturadas, leite em pó e fermento.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "leite em pó é igual à soma da porcentagem de fibras alimentares, malte e fermento.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "fibra é maior que à soma das porcentagens do fermento e do malte.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em 30g desse biscoito, a porcentagem de:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "NUTRIENTES",
+     "PORCENTAGEM EM 30G"
+    ],
+    "linhas": [
+     [
+      "Açúcar",
+      "8%"
+     ],
+     [
+      "Leite em pó",
+      "6%"
+     ],
+     [
+      "Fibra alimentar",
+      "2%"
+     ],
+     [
+      "Amido de milho",
+      "15%"
+     ],
+     [
+      "Gorduras saturadas",
+      "9%"
+     ],
+     [
+      "Malte",
+      "2%"
+     ],
+     [
+      "Fermento",
+      "1%"
+     ]
+    ],
+    "largura": "75%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-19",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -112372,35 +112372,38 @@
    "dificuldade": 2,
    "fonte": "Atividade 01 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19) O professor de Educação Física perguntou aos alunos do 10 ano médio qual era seu esporte preferido. Todos os alunos responderam indicando um esporte apenas. O resultado dessa consulta pode ser visto no gráfico a seguir: 12 10 8 6 0 4 E 2 Basquete Vôlei Futebol Natação Esportes preferidos Observando o gráfico, é correto afirma que: (A) Doze alunos escolheram basquete. (B) Dez alunos escolheram natação. (C) Seis alunos escolheram vôlei (D) A metade da classe indicou futebol. (E) Nessa classe há um total de 34 alunos.",
-   "imagens": [
-    "img:cdb-sim-a01-19.jpg"
-   ],
-   "larguraMm": 89.3,
+   "enunciado": "O professor de Educação Física perguntou aos alunos do 1º ano médio qual era seu esporte preferido. Todos os alunos responderam indicando um esporte apenas. O resultado dessa consulta pode ser visto no gráfico a seguir:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Doze alunos escolheram basquete.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Dez alunos escolheram natação.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Seis alunos escolheram vôlei",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "A metade da classe indicou futebol.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Nessa classe há um total de 34 alunos.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Observando o gráfico, é correto afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a01-19-fig.jpg",
+    "alt": "Gráfico de colunas do número de escolhas por esporte preferido: basquete 10, futebol 12, natação 8 e vôlei 4",
+    "largura": "84mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a01-20",
@@ -112491,8 +112494,6 @@
   {
    "id": "cdb-sim-a02-02",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Números e operações",
@@ -112504,35 +112505,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6 02) A fração — corresponde ao número decimal 200 (B) 0,3. (C) 0,03 (D) 0,003. (E) 0,0003.",
-   "imagens": [
-    "img:cdb-sim-a02-02.jpg"
-   ],
-   "larguraMm": 86,
+   "enunciado": "A fração $ {6|200} $ corresponde ao número decimal",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,3.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,03",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "0,003.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0,0003.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-03",
@@ -112577,8 +112574,6 @@
   {
    "id": "cdb-sim-a02-04",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Equações e inequações",
@@ -112590,35 +112585,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04) Existem dois sistemas de medidas importantes na informática, um tem como unidade o bit e o outro, o byte — 1 byte é igual a 8 bits. Esses dois sistemas possuem os múltiplos: kilo, mega e giga. As transformações entre eles são feitas com a seguinte relação: 1 kilobit = 1.024 bits ou 1 kilobyte = 1.024 bytes 1 megabit = 1.024 kilobits ou 1 megabyte = 1.024 kilobytes 1 gigabit = 1.024 megabits ou 1 gigabyte = 1.024 megabytes",
-   "imagens": [
-    "img:cdb-sim-a02-04.jpg"
-   ],
-   "larguraMm": 87.8,
+   "enunciado": "Existem dois sistemas de medidas importantes na informática, um tem como unidade o bit e o outro, o byte – 1 byte é igual a 8 bits. Esses dois sistemas possuem os múltiplos: kilo, mega e giga. As transformações entre eles são feitas com a seguinte relação:<br><span class=\"pb\"></span>1 kilobit = 1.024 bits ou 1 kilobyte = 1.024 bytes<br>1 megabit = 1.024 kilobits ou 1 megabyte = 1.024 kilobytes<br>1 gigabit = 1.024 megabits ou 1 gigabyte = 1.024 megabytes<br><span class=\"pb\"></span>Uma pessoa utilizando uma conexão de “5 megas” cuja taxa de transferência se manteve em 640 kilobytes por segundo fez o “download” de um arquivo A em 15 minutos. Com uma conexão de “12 megas”, sempre com a taxa máxima de transferência, baixou um arquivo B em 8 minutos. Então, podemos afirmar que os arquivos A e B medem, respectivamente:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "432,7 megabytes e 640 megabytes.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "432,7 megabits e 640 megabits.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "562,5 megabytes e 720 megabytes.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "562,5 megabits e 720 megabits.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "432,7 megabytes e 562,5 megabytes.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-05",
@@ -112663,8 +112654,6 @@
   {
    "id": "cdb-sim-a02-06",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Números e operações",
@@ -112676,41 +112665,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06) Ao efetuar —+ 0,85 , um aluno encontrou 20 5 como resultado — . Seu colega encontrou 1,25. 4 Então, podemos afirmar que: (A) 1,25 é uma resposta errada, pois o resultado tinha de ser registrado com uma fração. 5 é uma resposta errada, pois o resultado 4 tinha de ser representado na forma decimal. (C) Só o resultado 1,25 está correto. 5 (D) Só o resultado está correto. 4 (E) As duas respostas estão corretas.",
-   "imagens": [
-    "img:cdb-sim-a02-06.jpg"
-   ],
-   "larguraMm": 81.8,
+   "enunciado": "Ao efetuar $ {8|20} + 0,85 $, um aluno encontrou como resultado $ {5|4} $. Seu colega encontrou 1,25. Então, podemos afirmar que:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,25 é uma resposta errada, pois o resultado tinha de ser registrado com uma fração.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {5|4} $ é uma resposta errada, pois o resultado tinha de ser representado na forma decimal.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Só o resultado 1,25 está correto.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Só o resultado $ {5|4} $ está correto.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "As duas respostas estão corretas.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-07",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -112722,35 +112705,37 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07) Na reta numérica abaixo, o número está e n tre -2 o 1 2 3 4 (A) Oe 1.",
-   "imagens": [
-    "img:cdb-sim-a02-07.jpg"
-   ],
-   "larguraMm": 86.6,
+   "enunciado": "Na reta numérica abaixo, o número $ √7 $ está entre",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0 e 1.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−1 e 0.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 e 2.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "−2 e −1.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2 e 3.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a02-07-fig.jpg",
+    "alt": "Reta numérica graduada de −4 a 4",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-08",
@@ -112795,8 +112780,6 @@
   {
    "id": "cdb-sim-a02-09",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -112808,35 +112791,58 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09) Um Professor de Educação Física sugeriu a um nadador que adotasse o programa de condicionamento para o Estilo Livre (sua especialidade de competição), conforme ilustrado na tabela abaixo, durante 10 dias seguidos sempre acrescentando 200m a cada dia. Quantos quilômetros terá o atleta nadado, ao final desses 10 dias? Dia Estilo Livre (A) 15 km 600 metros (B) 10 km 20 800 metros (C) 5,4 km 30 1 000 metros (D) km Dado. 2",
-   "imagens": [
-    "img:cdb-sim-a02-09.jpg"
-   ],
-   "larguraMm": 89,
+   "enunciado": "Um Professor de Educação Física sugeriu a um nadador que adotasse o programa de condicionamento para o Estilo Livre (sua especialidade de competição), conforme ilustrado na tabela abaixo, durante 10 dias seguidos sempre acrescentando 200m a cada dia. Quantos quilômetros terá o atleta nadado, ao final desses 10 dias?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "15 km",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "10 km",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5,4 km",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3,6 km",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "2,4 km",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Dia",
+     "Estilo Livre"
+    ],
+    "linhas": [
+     [
+      "1º",
+      "600 metros"
+     ],
+     [
+      "2º",
+      "800 metros"
+     ],
+     [
+      "3º",
+      "1 000 metros"
+     ],
+     [
+      "⋮",
+      "⋮"
+     ]
+    ],
+    "largura": "55%",
+    "legenda": "Dado: $ S_n = {a_1 + a_n|2} · n $"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-10",
@@ -112881,8 +112887,6 @@
   {
    "id": "cdb-sim-a02-11",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Funções",
@@ -112894,41 +112898,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11) Considere os gráficos que se seguem. Idade Idade II Idade Idade IV Entre esses gráficos, a relação entre a altura de uma pessoa e a sua idade pode ser representada apenas por (B) III. (C) IV. (E) le III.",
-   "imagens": [
-    "img:cdb-sim-a02-11.jpg"
-   ],
-   "larguraMm": 83.1,
+   "enunciado": "Considere os gráficos que se seguem.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "I e II.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "I e III.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Entre esses gráficos, a relação entre a altura de uma pessoa e a sua idade pode ser representada apenas por",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a02-11-fig.jpg",
+    "alt": "Quatro gráficos da altura em função da idade: I cresce rapidamente e se estabiliza; II cresce mais devagar e se estabiliza; III é uma reta crescente; IV sobe e depois desce",
+    "largura": "63mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-12",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -112940,41 +112945,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12) A professora Lúcia desenhou no quadro os quadriláteros abaixo. RETÂNGULO QUADRADO LOSANGO Uma das propriedades comuns desses quadriláteros é (A) Os quatro ângulos são retos. (B) Os quatro lados têm mesma medida. (C) As diagonais são perpendiculares. (D) Os lados opostos são paralelos. (B) Os quatro ângulos iguais.",
-   "imagens": [
-    "img:cdb-sim-a02-12.jpg"
-   ],
-   "larguraMm": 86,
+   "enunciado": "A professora Lúcia desenhou no quadro os quadriláteros abaixo.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Os quatro ângulos são retos.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Os quatro lados têm mesma medida.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "As diagonais são perpendiculares.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Os lados opostos são paralelos.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "Os quatro ângulos iguais.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Uma das propriedades comuns desses quadriláteros é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a02-12-fig.jpg",
+    "alt": "Três quadriláteros: um retângulo, um losango e um quadrado",
+    "largura": "83mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-13",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Porcentagem e matemática financeira",
@@ -112986,41 +112992,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13) A figura abaixo apresenta o desempenho das vendas obtidas pela Companhia Delta entre os anos de 1995 e 2001. Movimento Anual de vendas da Companhia Delta RS 1.000,00 500 400 300 200 100 1995 1996 1997 1998 1999 2000 2001 Com base nessas informações, qual o percentual (aproximado) a mais nas vendas, obtido pela Companhia Delta em 1998 em relação a 1995? (A) 43% (E) 100%",
-   "imagens": [
-    "img:cdb-sim-a02-13.jpg"
-   ],
-   "larguraMm": 85.6,
+   "enunciado": "A figura abaixo apresenta o desempenho das vendas obtidas pela Companhia Delta entre os anos de 1995 e 2001.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "43%",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "60%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "75%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "80%",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "100%",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com base nessas informações, qual o percentual (aproximado) a mais nas vendas, obtido pela Companhia Delta em 1998 em relação a 1995?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a02-13-fig.jpg",
+    "alt": "Gráfico de linha “Movimento Anual de Vendas da Companhia Delta” (R$ 1.000,00): cerca de 210 em 1995, 260 em 1996, 390 em 1997, 300 em 1998, 350 em 1999, 400 em 2000 e 450 em 2001",
+    "largura": "74mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-14",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113032,41 +113039,35 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14) Duas pessoas partindo de um mesmo local caminham em direções ortogonais. Uma pessoa caminhou 12 metros para o sul, a outra, 5 metros para o leste. Qual a distância que separa essas duas pessoas? B) 13 m. C) 17 m. D) 60 m. E) 119 m.",
-   "imagens": [
-    "img:cdb-sim-a02-14.jpg"
-   ],
-   "larguraMm": 84.3,
+   "enunciado": "Duas pessoas partindo de um mesmo local caminham em direções ortogonais. Uma pessoa caminhou 12 metros para o sul, a outra, 5 metros para o leste. Qual a distância que separa essas duas pessoas?",
    "alternativas": [
     {
-     "t": "A",
+     "t": "7 m.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "13 m.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "17 m.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "60 m.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "119 m.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-15",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Geometria plana",
@@ -113078,41 +113079,42 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15) O professor Gilberto mora na Rua das Rosas, que forma ângulo com a Rua das Orquídeas, conforme a figura: Qual o valor do ângulo formado entre as duas ruas, ou seja, o valor de â? (A) 36 0 (B) 440 (C) 72 0 (D) 1440. (E) 1800",
-   "imagens": [
-    "img:cdb-sim-a02-15.jpg"
-   ],
-   "larguraMm": 89.3,
+   "enunciado": "O professor Gilberto mora na Rua das Rosas, que forma ângulo com a Rua das Orquídeas, conforme a figura:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "36°",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "44°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "72°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "144°.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "180°",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Qual o valor do ângulo formado entre as duas ruas, ou seja, o valor de â?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-sim-a02-15-fig.jpg",
+    "alt": "Duas ruas que se cruzam: a Rua das Orquídeas, inclinada, e a Rua das Rosas, quase horizontal; um dos ângulos entre elas mede 144° e o outro está marcado como â",
+    "largura": "44mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-16",
    "tipo": "mc",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "Simulados",
    "unidade": "Questões variadas",
@@ -113124,35 +113126,31 @@
    "dificuldade": 2,
    "fonte": "Atividade 02 (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16) Dois moradores de sítios vizinhos utilizam a água de um mesmo reservatório para irrigar sua plantação. Eles combinaram que o consumo de água deveria ser o mesmo para os dois. Assim, as torneiras de cada um ficam abertas por duas horas. Para levar a água até sua plantação, o morador A instalou um cano com 2 polegadas de diâmetro. O morador B instalou dois canos com 1 polegada de diâmetro cada um. De acordo com as informações acima, podemos afirmar que: (A) O consumo de água é o mesmo para os dois porque as condições de uso são as mesmas. (B) O consumo de água é o mesmo porque tanto faz usar",
-   "imagens": [
-    "img:cdb-sim-a02-16.jpg"
-   ],
-   "larguraMm": 86.6,
+   "enunciado": "Dois moradores de sítios vizinhos utilizam a água de um mesmo reservatório para irrigar sua plantação. Eles combinaram que o consumo de água deveria ser o mesmo para os dois. Assim, as torneiras de cada um ficam abertas por duas horas. Para levar a água até sua plantação, o morador A instalou um cano com 2 polegadas de diâmetro. O morador B instalou dois canos com 1 polegada de diâmetro cada um.<br><span class=\"pb\"></span>De acordo com as informações acima, podemos afirmar que:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "O consumo de água é o mesmo para os dois porque as condições de uso são as mesmas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "O consumo de água é o mesmo porque tanto faz usar um cano de 2 polegadas ou usar dois canos de 1 polegada cada um.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "O consumo de água do morador B é maior porque dois canos de 1 polegada de diâmetro cada um proporciona maior vazão de água do que um cano de 2 polegadas de diâmetro.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "O consumo de água do morador A é maior porque um cano de 2 polegadas de diâmetro proporciona maior vazão de água do que dois canos de 1 polegada cada um.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "O consumo de água do morador A é menor porque ele usou apenas um cano.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "transcrita": true
   },
   {
    "id": "cdb-sim-a02-17",
