@@ -70,7 +70,7 @@ export function normalizar(q) {
 export function validar(q) {
   const e = [];
   if (q.soImagem) { if (!(q.imagens || []).length) e.push('questão em imagem sem arquivo de imagem'); }
-  else if (!q.enunciado || !String(q.enunciado).replace(/<[^>]+>/g, '').trim()) e.push('enunciado vazio');
+  else if ((!q.enunciado || !String(q.enunciado).replace(/<[^>]+>/g, '').trim()) && !(q.pergunta && String(q.pergunta).replace(/<[^>]+>/g, '').trim() && (q.figura || (q.figuras || []).length))) e.push('enunciado vazio');
   if (!q.materia) e.push('matéria vazia'); if (!q.serie) e.push('série/turma vazia'); if (!q.unidade) e.push('conteúdo (unidade) vazio');
   if (q.tipo === 'mc') {
     const a = q.alternativas || [];

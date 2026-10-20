@@ -70,7 +70,8 @@ const simples = (q, o) => { const med = o.l.map(l => l.h).filter(Boolean).sort((
     if (/\p{L} [çãõ]\s?\p{L}|\p{L} [çãõ]$/u.test(textoBase)) motivos.push('acentos quebrados no texto do PDF');
     if (/\b(planos?|ângulos?|retas?)\s+[a-zθφ]\b(?!\.)/i.test(textoBase) && /(plano|espaço|diedro|poliedro)/i.test(textoBase)) motivos.push('letra grega possivelmente trocada');
     if (q.tipo === 'mc' && !(rb.a && rb.a.length >= 4)) motivos.push('alternativas não detectadas');
-    const tOcr = tri(o.l.map(l => l.t).join(' ')), tPdf = tri(textoBase);
+    if (rb.avisos && rb.avisos.length) motivos.push('OCR com palavras suspeitas: ' + rb.avisos.slice(0, 40).join(','));
+    const tOcr = tri(o.l.map(l => l.t).join(' ')), tPdf = tri(rb.a && rb.a.length >= 4 && rb.e ? rb.e + ' ' + rb.a.join(' ') : textoBase);
     const c1 = cobertura(tOcr, tPdf), c2 = cobertura(tPdf, tOcr);
     if (!embaralhado(q.busca) && (c1 < 0.93 || c2 < 0.9)) motivos.push('texto do PDF diverge do OCR (' + c1.toFixed(2) + '/' + c2.toFixed(2) + ')');
     if (q.tipo === 'mc' && rb.a && rb.a.length !== 5 && /^enem/.test(q.id)) motivos.push('alternativas != 5');
@@ -83,9 +84,23 @@ const simples = (q, o) => { const med = o.l.map(l => l.h).filter(Boolean).sort((
     }
     // alternativas em figura? (alternativas detectadas como texto mas tinta grande abaixo do último texto)
     if (fig) FIGS[q.id] = [fig.x0 / f.W, fig.y0 / f.H, fig.x1 / f.W, fig.y1 / f.H].map(v => +v.toFixed(4));
+    const humanas = /^enem/.test(q.id) && !/Matem|Natureza/.test(area(q)) && q.tipo === 'mc' && rb.a && rb.a.length === 5 && !embaralhado(q.busca) && !fig;
+    if (humanas && c1 >= 0.8 && c2 >= 0.8) { const lm = motivos.filter(m => !/fórmula|diverge/.test(m)); motivos.length = 0; motivos.push(...lm); }
+    const poster = fig && /^enem/.test(q.id) && !/Matem|Natureza/.test(area(q)) && q.tipo === 'mc' && rb.a && rb.a.length === 5 && !embaralhado(q.busca) && !motivos.some(m => /acentos|figura ocupa|alternativas/.test(m));
+    if (poster) { // fica só o aviso de figura; o resto é esperado (texto dentro da figura confunde o OCR)
+      const lm = motivos.filter(m => !/fórmula|diverge|tem figura/.test(m)); motivos.length = 0; motivos.push(...lm);
+    }
     if (motivos.length) { revisar[q.id] = motivos.join('; '); stat[motivos[0]] = (stat[motivos[0]] || 0) + 1; continue; }
     // monta e/p separados pela figura
     let e = rb.e, p;
+    if (fig && poster && fig.y0 < 0.1 * f.H) {
+      let leg = '', resto = rb.e;
+      const m = rb.e.match(/^(.*?Acesso em:[^]*?\d{4}\.(?:\s*\(adaptado\)\.)?)\s+/);
+      if (m && m[1].length < 230) { leg = m[1].trim(); resto = rb.e.slice(m[0].length); }
+      const lin0 = { id: q.id, e: '', p: estruturar(resto, o.l), a: rb.a, auto: 1, fig: [fig.x0 / f.W, fig.y0 / f.H, fig.x1 / f.W, fig.y1 / f.H].map(v => +v.toFixed(4)), alt: 'Imagem da questão' };
+      if (leg) lin0.legenda = leg;
+      aceitas.push(lin0); continue;
+    }
     if (fig) {
       const abaixo = o.l.filter(l => l.y >= fig.y1 - 4 && l.w).map(l => l.t.trim());
       const ancora = norm(abaixo.find(t => norm(t).length >= 14) || '').slice(0, 24);

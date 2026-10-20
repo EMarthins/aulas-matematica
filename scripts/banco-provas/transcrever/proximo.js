@@ -8,7 +8,7 @@ fs.readdirSync(__dirname).filter(f => /^lote-.*\.jsonl$/.test(f)).forEach(f => f
 const manter = new Set(fs.existsSync(path.join(__dirname, 'manter.txt')) ? fs.readFileSync(path.join(__dirname, 'manter.txt'), 'utf8').split(/\r?\n/).map(l => l.split('|')[0].trim()).filter(Boolean) : []);
 const qtd = +process.argv[2] || 24, por = +process.argv[3] || 4, filtro = process.argv[4];
 const ORD = id => (/^enem/.test(id) ? '0' : /^cdb-c\d/.test(id) ? '1' : /^cdb-sim/.test(id) ? '2' : '3') + id.replace(/(\d+)/g, m => m.padStart(5, '0'));
-const pend = j.questoes.filter(q => q.soImagem && !feitos.has(q.id) && !manter.has(q.id) && (!filtro || q.id.includes(filtro))).sort((a, b) => ORD(a.id).localeCompare(ORD(b.id)));
+const pend = j.questoes.filter(q => q.soImagem && !feitos.has(q.id) && !manter.has(q.id) && (!filtro || q.id.includes(filtro)) && (!process.env.AREA || new RegExp(process.env.AREA).test(q.materia))).sort((a, b) => ORD(a.id).localeCompare(ORD(b.id)));
 console.log('pendentes:', pend.length, '| feitos:', feitos.size, '| mantidos como imagem:', manter.size);
 const ids = pend.slice(0, qtd).map(q => q.id);
 const out = path.join(os.tmpdir(), 'transc'); fs.rmSync(out, { recursive: true, force: true }); fs.mkdirSync(out, { recursive: true });

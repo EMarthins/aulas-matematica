@@ -29,7 +29,7 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
     if (r.fig === 'auto') r.fig = FIGAUTO[r.id] || null;
     if ((r.e_ate || r.p_de) && r.e) { // e_ate: o enunciado termina nesta frase (descarta rótulos da figura que vieram no texto); p_de: a pergunta começa nesta frase
       const idx = [], ne = []; for (let i = 0; i < r.e.length; i++) { const c = normc(r.e[i]); if (c) { ne.push(c); idx.push(i); } }
-      const N = ne.join(''), achar = f => { const k = N.indexOf(normc(f)); return k < 0 ? null : [idx[k], idx[k + normc(f).length - 1] + 1]; };
+      const N = ne.join(''), achar = f => { const k = N.indexOf(normc(f)); if (k < 0) return null; let fim = idx[k + normc(f).length - 1] + 1; while (fim < r.e.length && /[).”"»]/.test(r.e[fim])) fim++; return [idx[k], fim]; };
       const orig = r.e;
       if (r.p_de) { const z = achar(r.p_de); if (z) r.p = orig.slice(z[0]).trim(); else cont.avisos.push(r.id + ': p_de não achado: ' + r.p_de); }
       if (r.e_ate) { const z = achar(r.e_ate); if (z) r.e = orig.slice(0, z[1]).trim(); else cont.avisos.push(r.id + ': e_ate não achado: ' + r.e_ate); }
@@ -87,7 +87,7 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
       const cv = canvas.createCanvas(w, h), g = cv.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, w, h); g.drawImage(im, sx, sy, w, h, 0, 0, w, h);
       const nome = r.id + '-fig.jpg'; fs.writeFileSync(path.join(imgDir, nome), cv.toBuffer('image/jpeg', 90));
       const mm = Math.max(25, Math.min(170, Math.round(larg0 * (x1 - x0))));
-      q.figura = { tipo: 'img', src: 'img:' + nome, alt: r.alt || 'Figura da questão', largura: mm + 'mm' }; cont.figuras++;
+      q.figura = { tipo: 'img', src: 'img:' + nome, alt: r.alt || 'Figura da questão', largura: mm + 'mm', ...(r.legenda ? { legenda: r.legenda } : {}) }; cont.figuras++;
     }
     if (r.base) { // figuras de apoio (imagem inteira da base, recorte ou tabelas) vêm antes das figuras da própria questão
       const extra = [];

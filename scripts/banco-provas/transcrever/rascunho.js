@@ -64,7 +64,7 @@ function rascunho(q) {
 module.exports = { rascunho, limpa };
 
 // ---------- texto embaralhado (fonte trocada no PDF): usa o OCR das linhas ----------
-const embaralhado = t => /[\u0000-\u001f]/.test(t || '') || ((String(t || '').match(/\b[A-Z]{5,}\b/g) || []).length > 6);
+const embaralhado = t => /[\u0000-\u0008\u000b-\u001f]/.test(t || '') || ((String(t || '').match(/\b[B-DF-HJ-NP-TV-Z]{5,}\b/g) || []).length > 2);
 const fs = require('fs'), path = require('path');
 let OCR = null;
 const ocrDe = id => { if (!OCR) { const a = path.join(__dirname, 'ocr.json'); OCR = fs.existsSync(a) ? JSON.parse(fs.readFileSync(a, 'utf8')) : {}; } return OCR[id] && OCR[id].l; };
@@ -152,3 +152,156 @@ module.exports.rascunho = function (q) {
   }
   return rascunho5(q);
 };
+
+// ---------- busca truncada em 1800 caracteres: completa com o final do texto lido pelo OCR ----------
+const rascunho6 = module.exports.rascunho;
+function completaBusca(q) {
+  const b = String(q.busca || ''); if (b.length < 1790) return null;
+  const o = ocrDe(q.id); if (!o) return null;
+  const txt = o.map(l => l.t).join(' ').replace(/\s+/g, ' '), idx = [], N = []; for (let i = 0; i < txt.length; i++) { const c = normC(txt[i]); if (c) { N.push(c); idx.push(i); } }
+  const NS = N.join(''), nb = [...b].map(normC).join('');
+  for (const len of [30, 20, 14, 9, 7]) { const a = nb.slice(-len); const k = NS.lastIndexOf(a); if (k >= 0) { const ini = idx[k + len - 1] + 1; return b + ' ' + txt.slice(ini).trim(); } }
+  return null;
+}
+module.exports.rascunho = function (q) { const nb = completaBusca(q); return rascunho6(nb ? Object.assign({}, q, { busca: nb }) : q); };
+module.exports.completaBusca = completaBusca;
+
+// as letras circuladas das alternativas aparecem no OCR como @, O, © ou ®: troca pela letra certa (continuando de onde a busca parou)
+const completaBusca0 = module.exports.completaBusca;
+function completaBusca2(q) {
+  const b = String(q.busca || ''); if (b.length < 1790) return null;
+  const o = ocrDe(q.id); if (!o) return null;
+  const base = completaBusca0(q); if (!base) return null;
+  const tail = base.slice(b.length).trim(); if (!tail) return base;
+  const ult = [...b.slice(-600).matchAll(/(?:^|\s)([A-E])\s(?=\S)/g)].map(m => m[1]); const last = ult.length ? ult[ult.length - 1] : null;
+  let prox = last ? 'ABCDE'.indexOf(last) + 1 : 0, out = tail;
+  out = out.replace(/(^|\s)([@O©®])\s(?=[A-Za-zÀ-ú0-9"“(])/g, (m, pre, mk) => { if (prox > 4) return m; return pre + 'ABCDE'[prox++] + ' '; });
+  return b + ' ' + out;
+}
+module.exports.completaBusca = completaBusca2;
+module.exports.rascunho = function (q) { const nb = completaBusca2(q); return rascunho6(nb ? Object.assign({}, q, { busca: nb }) : q); };
+
+// ---------- formatos extras de alternativas: letras dobradas ("A A texto"), bolinhas "OQ", e busca sem as alternativas (completa pelo OCR) ----------
+const rascunho7 = module.exports.rascunho;
+function completaForcada(q) {
+  const o = ocrDe(q.id); if (!o) return null;
+  const b = String(q.busca || '');
+  const txt = o.map(l => l.t).join(' ').replace(/\s+/g, ' '), idx = [], N = []; for (let i = 0; i < txt.length; i++) { const c = normC(txt[i]); if (c) { N.push(c); idx.push(i); } }
+  const NS = N.join(''), nb = [...b].map(normC).join('');
+  for (const len of [30, 20, 14, 9]) { const a = nb.slice(-len); if (a.length < len) continue; const k = NS.lastIndexOf(a); if (k >= 0 && k > NS.length * 0.3) { const ini = idx[k + len - 1] + 1; let tail = txt.slice(ini).trim(); if (tail.length < 20) return null;
+      const ult = [...b.slice(-600).matchAll(/(?:^|\s)([A-E])\s(?=\S)/g)].map(m => m[1]); let prox = ult.length ? 'ABCDE'.indexOf(ult[ult.length - 1]) + 1 : 0;
+      tail = tail.replace(/(^|\s)(?:OQ|O|Q|@|©|®)\s(?=[A-Za-zÀ-ú0-9"“(])/g, (m, pre) => (prox > 4 ? m : pre + 'ABCDE'[prox++] + ' '));
+      return b + ' ' + tail; } }
+  return null;
+}
+module.exports.rascunho = function (q) {
+  let q2 = q;
+  if (q.tipo === 'mc' && q.busca) {
+    let b = q.busca.replace(/(^|\s)([A-E]) \2(?=\s)/g, '$1$2');
+    b = b.replace(/(?:^|\s)(?:OQ|Q)\s(?=[a-zà-ú])/g, ' O ');            // "OQ ironizar" → bolinha O
+    if (b !== q.busca) q2 = Object.assign({}, q, { busca: b });
+    const r0 = rascunho7(q2);
+    if (!(r0.a && r0.a.length >= 4)) { const c = completaForcada(q2); if (c) { const r1 = rascunho7(Object.assign({}, q2, { busca: c })); if (r1.a && r1.a.length >= 4) return r1; } }
+    return r0;
+  }
+  return rascunho7(q2);
+};
+
+// ---------- alternativas lidas das linhas do OCR (marcador "O"/"@"/"©"/"®" na margem, continuação recuada) ----------
+const rascunho8 = module.exports.rascunho;
+const MARC = /^(?:OQ|O|Q|@|©|®|0|\(\s?[A-E]\s?\)|[A-E][).])\s+(?=\S)/;
+const nzA = t => String(t || '').replace(/<[^>]+>/g, ' ').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9,]/g, '');
+const tolA = t => nzA(t).replace(/[ilo01]/g, '*');
+/** alternativas lidas do PDF x do OCR: iguais (tolerando l/I/0/O), uma prefixo da outra (truncada) → sem conflito */
+function altsEmConflito(pdf, ocr) {
+  if (pdf.length !== ocr.length) return true;
+  return pdf.some((p, i) => { const x = tolA(p), y = tolA(ocr[i]); if (x === y) return false; return !(x.length > 6 && y.length > 6 && (x.startsWith(y) || y.startsWith(x)) && false); });
+}
+const MK1 = /\s(?:OQ|O|Q|@|©|®)\s(?=\S)/g;
+/** tira do fim do enunciado as alternativas coladas (bolinhas O/@): corta no primeiro dos últimos 5 marcadores */
+function cortaMarcadores(e) {
+  const ps = []; let m; MK1.lastIndex = 0; while ((m = MK1.exec(e))) ps.push(m.index);
+  if (ps.length < 4) return e;
+  const u = ps.slice(-5), c = e.slice(u[0]);
+  return c.length < 900 ? e.slice(0, u[0]).trim() : e;
+}
+const subseq = (a, b) => { let i = 0; for (const c of b) if (c === a[i]) i++; return i === a.length; }; // a é subsequência de b
+/** escolhe, alternativa por alternativa, entre o texto do PDF e o do OCR */
+function melhorAlt(pdf, ocr) {
+  const V = require('./vocab.js'), x = tolA(ocr), y = tolA(pdf);
+  if (x === y) return pdf;
+  const susP = V.desconhecidas(pdf).length, susO = V.desconhecidas(ocr).length;
+  if (x.length > 3 && y.length > 3 && subseq(x, y) && !susP) return pdf;      // o OCR perdeu letras/palavras
+  if (susP && !susO) return ocr;
+  if (y.length > 3 && subseq(y, x) && !susO) return ocr;                      // o PDF perdeu o final / caracteres
+  return susO <= susP ? ocr : pdf;
+}
+/** junta pedaços de palavra separados pelo OCR ("antropológi cos", "fu tu ro") quando a união é palavra conhecida */
+function juntaPartidas(t) {
+  const V = require('./vocab.js');
+  const R1 = new RegExp('(\\p{L}{2,}) ([a-zà-ú]{2,5})(?= |[.,;:!?)”"]|$)', 'gu'), R2 = new RegExp('(\\p{L}{4,}) (s)(?= |[.,;:!?)”"]|$)', 'gu');
+  return String(t).replace(R1, (m, a, b) => { const j = (a + b).toLowerCase(); if (V.conhecida(j) && !(V.conhecida(a.toLowerCase()) && V.conhecida(b.toLowerCase()))) return a + b; if (!V.conhecida(a.toLowerCase()) && (a + b).length >= 8 && a.length >= 5 && V.desconhecidas(a).length) return a + b; return m; }).replace(R2, '$1$2');
+}
+function altsDoOcr(q) {
+  const o = ocrDe(q.id); if (!o) return null;
+  const L = o.filter(l => l.t && l.t.trim()).sort((a, b) => a.y - b.y || a.x - b.x);
+  const mk = []; L.forEach((l, i) => { if (MARC.test(l.t.trim())) mk.push(i); });
+  if (mk.length < 5) {
+    // marcadores soltos ("O" sozinhos em linhas seguidas) e as alternativas recuadas logo abaixo
+    const so = []; L.forEach((l, i) => { if (/^[O@©®0Q]$/.test(l.t.trim())) so.push(i); });
+    let ult, xm, resto;
+    if (so.length >= 2) { // marcadores soltos (alguns o OCR não leu): pega o bloco recuado logo depois do último
+      const k0 = so[so.length - 1], k1 = so[Math.max(0, so.length - 5)]; xm = L[k0].x; resto = L.slice(k1).filter(l => l.x >= xm + 25 && !/^[O@©®0Q]$/.test(l.t.trim())); ult = [k1, 0, 0, 0, k0];
+    } else return null;
+    if (resto.length < 5) return null;
+    if (resto.length === 5) resto.forEach(l => (l.__um = 1));
+    const gaps = resto.slice(1).map((l, i) => l.y - resto[i].y), base = [...gaps].sort((p, q) => p - q)[Math.floor(gaps.length / 2)] || 1;
+    let grupos = [[resto[0]]]; resto.slice(1).forEach((l, i) => { if (gaps[i] > base * 1.25) grupos.push([l]); else grupos[grupos.length - 1].push(l); });
+    if (resto.length === 5) grupos = resto.map(l => [l]);
+    if (grupos.length !== 5) return null;
+    const alts = grupos.map(g => limpa(g.map(l => l.t.trim()).join(' ')));
+    if (alts.some(t => t.length < 3 || t.length > 450)) return null;
+    const stemLines = L.slice(0, ult[0]);
+    return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/s+/g, ' ') };
+  }
+  const u = mk.slice(-5), x0 = L[u[0]].x;
+  if (u.some(i => Math.abs(L[i].x - x0) > 14)) return null;
+  const fim = L.length, alts = [];
+  for (let k = 0; k < 5; k++) {
+    const a = u[k], b = k < 4 ? u[k + 1] : fim, bl = L.slice(a, b);
+    if (bl.some((l, j) => j > 0 && (l.x > x0 + 110 || l.x < x0 - 6))) return null;
+    alts.push(limpa(bl.map(l => l.t.trim()).join(' ').replace(MARC, '')));
+  }
+  if (alts.some(t => t.length < 3 || t.length > 450)) return null;
+  const stemLines = L.slice(0, u[0]);
+  return { alts, stemLines, stem: stemLines.map(l => l.t.trim()).join(' ').replace(/\s+/g, ' ') };
+}
+module.exports.rascunho = function (q) {
+  const r = rascunho8(q);
+  if (q.tipo !== 'mc' || !q.busca) return r;
+  const d = altsDoOcr(q); if (!d) return r;
+  if (r.a && r.a.length >= 4 && !altsEmConflito(r.a, d.alts)) return r;
+  let b = limpa(q.busca).replace(/^\d{1,3}\.\s+/, '').replace(/^Quest[ãa]o\s*\d+\s*/i, '');
+  const nb = [...b].map(normC), idx = []; nb.forEach((c, i) => { if (c) idx.push(i); });
+  const NB = nb.filter(Boolean).join('');
+  const pre = [...d.alts[0]].map(normC).join('').slice(0, 14);
+  let e = null;
+  const f = pre.length >= 8 ? NB.indexOf(pre) : -1;
+  if (f > 0) { e = b.slice(0, idx[f]).replace(/\s+(?:OQ|O|Q|@|©|®|[A-E])\s*$/, '').trim(); }
+  else {
+    const S = d.stem, sN = [], sI = []; for (let i = 0; i < S.length; i++) { const c = normC(S[i]); if (c) { sN.push(c); sI.push(i); } }
+    const NS = sN.join('');
+    for (const len of [30, 20, 14, 9]) { const a = NB.slice(-len); if (a.length < len) continue; const k = NS.lastIndexOf(a); if (k >= 0) { e = (b + ' ' + S.slice(sI[k + len - 1] + 1).trim()).trim(); break; } }
+    if (e === null && NB.length > 200) e = b;
+  }
+  if (e === null) return r;
+  e = cortaMarcadores(e.replace(/\s+(?:OQ|O|Q|@|©|®)\s*$/, '').trim()).replace(/\s+(?:OQ|O|Q|@|©|®)\s*$/, '').trim();
+  const rr = Object.assign({}, r, { e: juntaPartidas(fixU(estruturar(e, o2(q.id)))), a: d.alts.map((x, i) => juntaPartidas(fixU(r.a && r.a.length === d.alts.length ? melhorAlt(r.a[i], x) : x))) });
+  const sus = require('./vocab.js').desconhecidas([rr.e, ...rr.a].join(' ')); if (sus.length) rr.avisos = sus;
+  return rr;
+};
+function o2(id) { return ocrDe(id) || []; }
+
+module.exports.altsEmConflito = altsEmConflito;
+
+module.exports.altsDoOcr = altsDoOcr; module.exports.altsEmConflito = altsEmConflito; module.exports.juntaPartidas = juntaPartidas;
