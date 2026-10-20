@@ -69303,7 +69303,6 @@
   },
   {
    "id": "cdb-c07-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69315,20 +69314,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UESE Analise as sentan ç as que seguem. ( ) A matriz 5 1 2 0 −       é a inversa da matriz 1 3 0 1 3 1           . ( ) Se 2 4 5 0 x −       – 4 9 3 − −       y = 1 4 2 z       , ent ã o z y + x é igual a 47 18 . ( ) Seja a matriz A = (a ij ) 3x3 definida por 2 2 i j se i j i j se i j       = + ( ) ≠      ! . O elemento da terceira linha e segunda coluna da matriz transposta de A é 8. ( ) A equa çã o x x x 2 2 3 3 1 7 = 6 – 8x admite duas ra í zes reais de sinais contr á rios, uma das quais é igual a 2. ( ) Uma pessoa gastou R$ 300,00 na compra d",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-019.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Analise as sentenças que seguem.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – V"
+   "gabarito": "F – F – V – V – V",
+   "afirmacoes": [
+    {
+     "t": "A matriz $ @M{5&−2;1&0} $ é a inversa da matriz $ @M{{1|3}&0;{1|3}&1} $",
+     "ok": false
+    },
+    {
+     "t": "Se $ @M{2x&4;−5&0} − @M{4&−y;−9&3} = @M{1&2;4&z} $, então $ z^y + x $ é igual a $ {47|18} $.",
+     "ok": false
+    },
+    {
+     "t": "Seja a matriz $ A = (a_{ij})_{3×3} $ definida por $ a_{ij} = @S{{2i|j} \"se\" i = j; i + 2j \"se\" i ≠ j} $. O elemento da terceira linha e segunda coluna da matriz transposta de $ A $ é 8.",
+     "ok": true
+    },
+    {
+     "t": "A equação $ @D{x&x&1;2&3&7;2&3&x} = 6 − 8x $ admite duas raízes reais de sinais contrários, uma das quais é igual a 2.",
+     "ok": true
+    },
+    {
+     "t": "Uma pessoa gastou R&#36; 300,00 na compra de 17 peças de dois tipos de blusas. Se os preços unitários de cada tipo eram R&#36; 15,00 e R&#36; 20,00, então ela comprou 9 unidades da blusa mais barata.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69340,41 +69355,90 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. UESC-BA Na 1 a tabela, tem-se o pre ç o, por unidade, dos livros A, B e C e, na 2 a , o n ú mero de unidades des- ses livros que foram vendidos por uma livraria nos 3 primeiros meses do ano. Representando-se essas tabelas pelas matrizes: X = 20 30 25         e Y = 2000 3000 5000 1000 2500 3000 1000 1800 3200         e por X t e (1 1 1) t as matrizes transpostas de X e de (1 1 1), conclui-se que a quantia total obtida pela venda dos livros, nesses 3 meses, pode ser representada pelo produto das matrizes: a) (X . Y) . (1 1 1) d) (1 1 1) t . (X . Y) b) (X t . Y) . (1 1 1) t e)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-020.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Na 1ª tabela, tem-se o preço, por unidade, dos livros A, B e C e, na 2ª, o número de unidades desses livros que foram vendidos por uma livraria nos 3 primeiros meses do ano.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (X · Y) · (1 1 1) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ (X^t · Y) · (1 1 1)^t $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (Y · X) · (1 1 1) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ (1 1 1)^t · (X · Y) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (1 1 1) · (Y · X) $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Representando-se essas tabelas pelas matrizes:<br><span class=\"pb\"></span>$ X = @M{20;30;25} $ e $ Y = @M{2000&3000&5000;1000&2500&3000;1000&1800&3200} $<br><span class=\"pb\"></span>e por $ X^t $ e $ (1 1 1)^t $ as matrizes transpostas de $ X $ e de $ (1 1 1) $, conclui-se que a quantia total obtida pela venda dos livros, nesses 3 meses, pode ser representada pelo produto das matrizes:",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "",
+      "R$"
+     ],
+     "linhas": [
+      [
+       "A",
+       "20,00"
+      ],
+      [
+       "B",
+       "30,00"
+      ],
+      [
+       "C",
+       "25,00"
+      ]
+     ],
+     "largura": "45%"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "",
+      "A",
+      "B",
+      "C"
+     ],
+     "linhas": [
+      [
+       "Janeiro",
+       "2000",
+       "3000",
+       "5000"
+      ],
+      [
+       "Fevereiro",
+       "1000",
+       "2500",
+       "3000"
+      ],
+      [
+       "Março",
+       "1000",
+       "1800",
+       "3200"
+      ]
+     ],
+     "largura": "70%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69386,41 +69450,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UFR-RJ Dadas as matrizes A = (a ij ) 2x2 , onde, a ij = i j j + 2 , B = 1 0 1 1       pode-se afirmar que a matriz X t , onde B 2 + X = 2A é : a) 5 6 5 5       d) 2 3 5 6       b) 5 5 6 5       e) 3 6 5 5       c) 2 5 3 0       1 2 x \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-021.jpg"
-   ],
-   "larguraMm": 120.3,
+   "enunciado": "Dadas as matrizes $ A = (a_{ij})_{2×2} $, onde $ a_{ij} = {i + 2j|j} $, $ B = @M{1&0;1&1} $, pode-se afirmar que a matriz $ X^t $, onde $ B^2 + X = 2A $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ @M{5&6;5&5} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ @M{5&5;6&5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ @M{2&5;3&0} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ @M{2&3;5&6} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ @M{3&6;5&5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-022",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69432,24 +69490,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "22. UEMG A solu çã o da equa çã o 1 3 x x x x − = 0 é : a) 0 e 1 b) 0 e 0 c) 1 e 1 d) 1 e 2",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-022.jpg"
-   ],
-   "larguraMm": 89.3,
+   "enunciado": "A solução da equação $ @D{1&x&2;x&x&−1;x&x&3} = 0 $ é:",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "A  2 x = 0",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c07-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69461,24 +69513,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. PUC-RJ Resolva o sistema: x y z x y z + − = − + =    0 0 Descreva geometricamente o seu conjunto de solu çõ es. −     3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-023.jpg"
-   ],
-   "larguraMm": 85.5,
+   "enunciado": "Resolva o sistema:<br><span class=\"pb\"></span>$ @S{x + y − z = 0; x − y + z = 0} $<br><span class=\"pb\"></span>Descreva geometricamente o seu conjunto de soluções.",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "O sistema equivale a  , ou seja, x = 0, y = z.  y − z = 0 O conjunto de soluções é a reta y = z no plano x =",
+   "gabarito": "O sistema é equivalente a x = 0 e y = z: o conjunto de soluções é a reta y = z no plano x = 0.",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c07-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69490,41 +69536,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. PUC-RS Se A =           5 5 4 5 3 5 e B = − −       1 1 2 3 , ent ã o: det (A 2 B 2 ) é igual a: a) – 1 b) 1 c) 5 d) − 7 5 e) 7 5 x 2 9 3 log \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-024.jpg"
-   ],
-   "larguraMm": 106,
+   "enunciado": "Se $ A = @M{−{3|5}&{4|5};{4|5}&{3|5}} $ e $ B = @M{−1&1;−2&3} $, então $ det(A^2 B^2) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ −{7|5} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {7|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69536,41 +69576,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. PUC-PR O valor de x no determinante: 3 4 1 2 1 3 5 9 log − = a) 1 b) 2 c) 3 d) 4 e) 5 1 1 1   0 0 0  ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-025.jpg"
-   ],
-   "larguraMm": 105,
+   "enunciado": "O valor de $ x $ no determinante $ @D{x&2&log_3 9;log_9 √3&4&−1;2&1&3} = 5 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69582,20 +69616,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. UFSC Considere as matrizes: A 1 1 1 1 2 2 1 4 4 =         , B 0 0 0 1 2 3 1 2 3 = − − −       , C = (–1) . A e determine a soma dos n ú meros associados à (s) proposi çã o( õ es) verdadeira(s). 01. A matriz A é invers í vel. 02. (A . B) t = B t . A t , onde A t significa a matriz transposta de A . 04. O sistema homog ê neo, cuja matriz dos coeficientes é a matriz A , é determinado. 08. A + C é a matriz nula de ordem 3. 16. A . C = C . A . \u0001 \u0002 \u0001 \u0002",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-026.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere as matrizes: $ A = @M{1&1&1;1&2&2;1&4&4} $, $ B = @M{0&0&0;1&2&3;−1&−2&−3} $, $ C = (−1) · A $ e determine a soma dos números associados à(s) proposição(ões) verdadeira(s).",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "26"
+   "gabarito": "26",
+   "afirmacoes": [
+    {
+     "t": "A matriz <b>A</b> é inversível.",
+     "ok": false
+    },
+    {
+     "t": "$ (A · B)^t = B^t · A^t $, onde $ A^t $ significa a matriz transposta de <b>A</b>.",
+     "ok": true
+    },
+    {
+     "t": "O sistema homogêneo, cuja matriz dos coeficientes é a matriz <b>A</b>, é determinado.",
+     "ok": false
+    },
+    {
+     "t": "$ A + C $ é a matriz nula de ordem 3.",
+     "ok": true
+    },
+    {
+     "t": "$ A · C = C · A $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69607,20 +69657,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. U.E. Ponta Grossa-PR Assinale o que for correto. 01. Se o sistema linear (k + 1)x + y = 0 x + ky = 3 admite conjunto solu çã o para x e y, com y = 0, ent ã o o valor de k é − 1 3 . 02. Seja a matriz B = A – A t , onde A é uma matriz quadrada de ordem n. Ent ã o, a diagonal principal de B é nula. 04. Dadas as matrizes A = ( – 3 1) e B = (1 – 4), ent ã o AB t = ( – 7). 08. Sendo a matriz A =       1 1 3 4 , ent ã o det(2A) = 4. 16. O sistema linear x y z x z x y + + = − = + =      3 2 1 3 0 é poss í vel e determinado. D ê , como resposta, a soma das alternativas corretas. 2 3 8 x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-027.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Assinale o que for correto (dê, como resposta, a soma das alternativas corretas).",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "14"
+   "gabarito": "14",
+   "afirmacoes": [
+    {
+     "t": "Se o sistema linear $ @S{(k + 1)x + y = 0; x + ky = 3} $ admite conjunto solução para $ x $ e $ y $, com $ y = 0 $, então o valor de $ k $ é $ −{1|3} $.",
+     "ok": false
+    },
+    {
+     "t": "Seja a matriz $ B = A − A^t $, onde $ A $ é uma matriz quadrada de ordem $ n $. Então, a diagonal principal de $ B $ é nula.",
+     "ok": true
+    },
+    {
+     "t": "Dadas as matrizes $ A = (−3 \"  \" 1) $ e $ B = (1 \"  \" −4) $, então $ AB^t = (−7) $.",
+     "ok": true
+    },
+    {
+     "t": "Sendo a matriz $ A = @M{1&1;3&4} $, então $ det(2A) = 4 $.",
+     "ok": true
+    },
+    {
+     "t": "O sistema linear $ @S{x + y + z = 3; 2x − z = 1; 3x + y = 0} $ é possível e determinado.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-028",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69632,41 +69698,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. UEMS Considere o seguinte sistema linear: 2 3 5 3 1 x y x y + = − + = −     Assinale a alternativa correta: a) o sistema é indeterminado; d) x + y = 3; b) x – y = – 1; e) 2x + y = 0. c) o sistema é imposs í vel;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-028.jpg"
-   ],
-   "larguraMm": 93.1,
+   "enunciado": "Considere o seguinte sistema linear:<br><span class=\"pb\"></span>$ @S{2x − 3y = 8; x + 2y = −3; 5x + 3y = −1} $<br><span class=\"pb\"></span>Assinale a alternativa correta:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "o sistema é indeterminado;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x − y = −1 $;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "o sistema é impossível;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x + y = 3 $;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2x + y = 0 $.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-029",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69678,41 +69738,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "29. UEMS O gr á fico da fun çã o definida por 3 1 5 2 1 − y = 0 a) determina com os eixos coordenados, uma regi ã o triangular de á rea 9 16 ; b) intercepta o eixo y no ponto de ordenada 3 2 ; c) intercepta o eixo x no ponto de abcissa 3 8 ; d) passa pela origem do sistema cartesiano; e) n ã o admite raiz real.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-029.jpg"
-   ],
-   "larguraMm": 115.5,
+   "enunciado": "O gráfico da função definida por $ @D{1&−1&x;3&5&−1;1&2&y} = 0 $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "determina com os eixos coordenados, uma região triangular de área $ {9|16} $;",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "intercepta o eixo $ y $ no ponto de ordenada $ {3|2} $;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "intercepta o eixo $ x $ no ponto de abscissa $ {3|8} $;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "passa pela origem do sistema cartesiano;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "não admite raiz real.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes, determinantes e sistemas lineares",
@@ -69724,16 +69778,33 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. AEU-DF Considere a matriz M = (a ij ) 2x3 | a ij = 2i + 3j. Analise e julgue os itens seguin- tes, onde M t é a matriz transposta da matriz M. ( ) O elemento da segunda linha, segunda coluna de M é negativo. ( ) É correto concluir que det M = det M t . ( ) Os elementos de M tais que i = j est ã o numa raz ã o de dois para um. ( ) A matriz 2M apresenta algum elemento maior do que 25. ( ) O determinante da matriz M x M t pode ser calculado como a diferen ç a entre o pro- duto dos elementos da diagonal principal e o produto dos elementos da diagonal secund á ria da matriz M x M t . 2 4 8 x x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c07-030.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a matriz $ M = (a_{ij})^{2×3} | a_{ij} = 2i + 3j $. Analise e julgue os itens seguintes, onde $ M^t $ é a matriz transposta da matriz $ M $.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – V – V – F"
+   "gabarito": "F – F – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "O elemento da segunda linha, segunda coluna de $ M $ é negativo.",
+     "ok": false
+    },
+    {
+     "t": "É correto concluir que $ det M = det M^t $.",
+     "ok": false
+    },
+    {
+     "t": "Os elementos de $ M $ tais que $ i = j $ estão numa razão de dois para um.",
+     "ok": true
+    },
+    {
+     "t": "A matriz $ 2M $ apresenta algum elemento maior do que 25.",
+     "ok": true
+    },
+    {
+     "t": "O determinante da matriz $ M × M^t $ pode ser calculado como a diferença entre o produto dos elementos da diagonal principal e o produto dos elementos da diagonal secundária da matriz $ M × M^t $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c07-031",
