@@ -56497,7 +56497,6 @@
   },
   {
    "id": "cdb-c01-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56509,41 +56508,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. UEMS A navegação da sentença ∀ x, x + a ≠ b é: a) ∃ x, x + a ≠ b d) ∃ x, x – a ≠ b b) ∃ x, x + a = b e) ∀ x, x – a ≠ b c) ∀ x, x + a = b",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-014.jpg"
-   ],
-   "larguraMm": 79.6,
+   "enunciado": "A negação da sentença $ ∀x, x + a ≠ b $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ∃x, x + a ≠ b $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ∃x, x + a = b $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ ∀x, x + a = b $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ ∃x, x − a ≠ b $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ ∀x, x − a ≠ b $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56555,41 +56548,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. Unifor-CE Se x = 2 24 – 54 , então x é tal que: a) x < 0 d) 3 ≤ x < 6 b) 0 ≤ x < 2 e) 6 ≤ x < 10 c) 2 ≤ x < 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-015.jpg"
-   ],
-   "larguraMm": 82.9,
+   "enunciado": "Se $ x = 2√{24} − √{54} $, então $ x $ é tal que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x < 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 0 ≤ x < 2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2 ≤ x < 3 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 3 ≤ x < 6 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 6 ≤ x < 10 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56601,20 +56588,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UnB-DF A figura abaixo ilustra uma representação usual do conjunto dos números reais como uma reta numerada, em que alguns números racionais foram representados pelas letras M, N, R, S, T, U e V. Com base nessas informações, julgue os itens a seguir. ( ) T poderia ser o produto de R por S. ( ) N M < U M ( ) M – N > S – R ( ) V 2 – T 2 > 3 ( ) O resultado da expressão M + N(R – S – T) – UV é um número racional negativo. M N R S 0 T 1 U 2 V",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-016.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "A figura abaixo ilustra uma representação usual do conjunto dos números reais como uma reta numerada, em que alguns números racionais foram representados pelas letras M, N, R, S, T, U e V.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – F – F – V – V"
+   "gabarito": "F – F – F – V – V",
+   "pergunta": "Com base nessas informações, julgue os itens a seguir.",
+   "afirmacoes": [
+    {
+     "t": "T poderia ser o produto de R por S.",
+     "ok": false
+    },
+    {
+     "t": "$ {N|M} < {U|M} $",
+     "ok": false
+    },
+    {
+     "t": "$ M − N > S − R $",
+     "ok": false
+    },
+    {
+     "t": "$ V^2 − T^2 > 3 $",
+     "ok": true
+    },
+    {
+     "t": "O resultado da expressão $ M + N(R − S − T) − UV $ é um número racional negativo.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c01-016-fig.jpg",
+    "alt": "Reta numerada com os pontos 0, 1 e 2 marcados e os pontos M, N, R, S, T, U e V indicados sobre ela",
+    "largura": "97mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c01-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56626,41 +56636,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. Unifor-CE Sejam x, y e z números reais tais que x = 0 3 0 025 , , , y = 512 3 e z = 8 –0,666... . É correto afirmar que: a) x < y < z; b) z < y < x; c) x é um número racional não inteiro; d) y é um número irracional maior do que 3; e) z é um número racional negativo.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-017.jpg"
-   ],
-   "larguraMm": 94,
+   "enunciado": "Sejam $ x $, $ y $ e $ z $ números reais tais que $ x = {0,3|0,025} $, $ y = ∛{√{512}} $ e $ z = 8^{−0,666…} $. É correto afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x < y < z $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ z < y < x $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x $ é um número racional não inteiro;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ y $ é um número irracional maior do que 3;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ z $ é um número racional negativo.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56672,41 +56676,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. Unifor-CE Se o máximo divisor comum dos números inteiros A = 2 3 \u0001 3 3 , B = 2 3 \u0001 3 s \u0001 7 e C = 2 t \u0001 3 4 é igual a 12, então: a) s = 0 b) t = 1 c) s = 2 d) t = 2 e) t = 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-018.jpg"
-   ],
-   "larguraMm": 115.4,
+   "enunciado": "Se o máximo divisor comum dos números inteiros $ A = 2^3 × 3^3 $, $ B = 2^3 × 3^s × 7 $ e $ C = 2^t × 3^4 $ é igual a 12, então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ s = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ t = 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ s = 2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ t = 2 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ t = 3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56718,37 +56716,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UFRN Considere x 1 = 9, x 2 = 4, x 3 = –8, α = 7 1 3 2 3 x x x x + ( ) − , β = x x x 1 3 2 + e γ = 2 3 1 2 1 x x x − . Calcule os valores de α , β , γ e, em seguida, assinale a opção verdadeira. a) α < γ < β c) β < γ < α b) α < β < γ d) β < α < y",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-019.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Considere $ x_1 = 9 $, $ x_2 = 4 $, $ x_3 = −8 $, $ α = {7(x_1 + x_3)|x_2 − x_3} $, $ β = √{{x_1 + x_3|x_2}} $ e $ γ = {2x_1 − 3x_2|x_1} $.<br><span class=\"pb\"></span>Calcule os valores de α, β, γ e, em seguida, assinale a opção verdadeira.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ α < γ < β $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ α < β < γ $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ β < γ < α $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ β < α < γ $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-020",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56760,41 +56752,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. PUC-RJ O valor de 2 777 , ... é: a) 1,2 b) 1,666... c) 1,5 d) um número entre 1 2 e 1 e) 3,49",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-020.jpg"
-   ],
-   "larguraMm": 119.6,
+   "enunciado": "O valor de $ √{2,777…} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,666…",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "1,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "um número entre $ {1|2} $ e 1",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3,49",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-021",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56806,37 +56792,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "21. UFF-RJ Considere p, q ∈ \u0001 * tais que p e q são números pares. Se p > q, pode-se afirmar que: a) (pq + 1) é múltiplo de 4; d) p 2 – q 2 é par; b) p – q é impar; e) p(q + 1) é impar. c) p + q é primo;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-021.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere $ p, q ∈ ℕ^* $ tais que $ p $ e $ q $ são números pares. Se $ p > q $, pode-se afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (pq + 1) $ é múltiplo de 4;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ p − q $ é ímpar;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ p + q $ é primo;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ p^2 − q^2 $ é par;",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ p(q + 1) $ é ímpar.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-022",
@@ -56876,7 +56857,6 @@
   },
   {
    "id": "cdb-c01-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56888,41 +56868,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. PUC-PR Na adição abaixo, os algarismos dentro dos quadrados foram omitidos: 3[ ]76 + 2[ ][ ][ ] + 5[ ]28 = 12838 A soma dos algarismos omitidos é: a) 34 b) 35 c) 36 d) 37 e) 38",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-023.jpg"
-   ],
-   "larguraMm": 124.5,
+   "enunciado": "Na adição abaixo, os algarismos dentro dos quadrados foram omitidos:<br><span class=\"pb\"></span>3□76 + 2□□□ + 5□28 = 12838<br><span class=\"pb\"></span>A soma dos algarismos omitidos é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "34",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "35",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "36",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "37",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "38",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56934,41 +56908,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. UFRS Se a x y b x y e c x y , = + = − = ⋅ 2 2 , onde x e y são números reais tais que x . y > 0, então uma relação entre a 2 , b 2 e c 2 é: a) a 2 + b 2 – c 2 = 0 d) a 2 – b 2 + c 2 = 0 b) a 2 – b 2 – c 2 = 0 e) a 2 = b 2 = c 2 c) a 2 + b 2 + c 2 = 0",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-024.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Se $ a = {x + y|2} $, $ b = {x − y|2} $ e $ c = √{x · y} $, onde $ x $ e $ y $ são números reais tais que $ x · y > 0 $, então uma relação entre $ a^2 $, $ b^2 $ e $ c^2 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a^2 + b^2 − c^2 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ a^2 − b^2 − c^2 = 0 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ a^2 + b^2 + c^2 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a^2 − b^2 + c^2 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ a^2 = b^2 = c^2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -56980,41 +56948,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. PUC-PR Numa divisão o quociente é 3 e o resto 6. A soma do dividendo, do divisor, do quociente e do resto é 107. Qual a diferença entre o dividendo e o divisor? a) 23 b) 75 c) 52 d) 58 e) 79 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-025.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Numa divisão o quociente é 3 e o resto é 6. A soma do dividendo, do divisor, do quociente e do resto é 107.<br><span class=\"pb\"></span>Qual a diferença entre o dividendo e o divisor?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "23",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "75",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "52",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "58",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "79",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57026,37 +56988,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. Vunesp A expressão 0,25 + 16 equivale a: a) 1,65 b) 1,065 c) 0,825 d) 0,625 e) 0,525 – 3 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-026.jpg"
-   ],
-   "larguraMm": 111.1,
+   "enunciado": "A expressão $ √{0,25} + 16^{−{3|4}} $ equivale a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,65",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1,065",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,825",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,625",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "0,525",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-027",
