@@ -72278,7 +72278,6 @@
   },
   {
    "id": "cdb-c09-001",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72290,20 +72289,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. UFGO Considere segmentos de reta AE e BD , interceptando-se no ponto C, os triângu- los retângulos ABC e CDE , e o triângulo BCE, conforme a figura abaixo. Sabendo-se que as medidas dos segmentos ED , BC e AC são, respectivamente, 3 cm, 2 cm e 4 cm, ( ) o segmento AE mede 5 cm; ( ) a área do triângulo CDE é 3 cm 2 ; ( ) o ângulo CÂB mede 30º; ( ) o perímetro de triângulo BCE é menor que 6 cm.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-001.jpg"
-   ],
-   "larguraMm": 130.5,
+   "enunciado": "Considere segmentos de reta $ AE $ e $ BD $, interceptando-se no ponto $ C $, os triângulos retângulos $ ABC $ e $ CDE $, e o triângulo $ BCE $, conforme a figura abaixo.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – V"
+   "gabarito": "V – F – V – V",
+   "pergunta": "Sabendo-se que as medidas dos segmentos $ ED $, $ BC $ e $ AC $ são, respectivamente, $ √3 $ cm, 2 cm e 4 cm,",
+   "afirmacoes": [
+    {
+     "t": "o segmento $ AE $ mede 5 cm;",
+     "ok": true
+    },
+    {
+     "t": "a área do triângulo $ CDE $ é $ √3 $ cm<sup>2</sup>;",
+     "ok": false
+    },
+    {
+     "t": "o ângulo $ CÂB $ mede 30°;",
+     "ok": true
+    },
+    {
+     "t": "o perímetro de triângulo $ BCE $ é menor que 6 cm.",
+     "ok": true
+    }
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-001-fig.jpg",
+    "alt": "Figura: os segmentos AE e BD se cruzam em C; o triângulo ABC tem ângulo reto em B; o triângulo CDE tem ângulo reto em E, junto do triângulo BCE (ângulo reto em E também indicado)",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-002",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72315,33 +72333,28 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. UFCE Se um ângulo é igual ao seu complemento, então o seno deste ângulo é igual a: a) 1 2 b) 2 2 c) 3 2 d) 1",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-002.jpg"
-   ],
-   "larguraMm": 130,
+   "enunciado": "Se um ângulo é igual ao seu complemento, então o seno deste ângulo é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√2|2} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {√3|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-003",
@@ -72385,7 +72398,6 @@
   },
   {
    "id": "cdb-c09-004",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72397,24 +72409,18 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. PUC-RJ Para que valores de x vale: (cos(x) + sen(x)) 4 – (cos(x) – sen(x)) 4 = 2 [(cos(x) + sen(x)) 2 – (cos(x) – sen(x)) 2 ]?",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-004.jpg"
-   ],
-   "larguraMm": 124.4,
+   "enunciado": "Para que valores de $ x $ vale:<br><span class=\"pb\"></span>$ (cos(x) + sen(x))^4 − (cos(x) − sen(x))^4 = 2 [(cos(x) + sen(x))^2 − (cos(x) − sen(x))^2] $?",
    "resolucao": "",
    "tipo": "aberta",
-   "gabarito": "Temos (cos(x) + sen(x))⁴ – (cos(x) – sen(x))⁴ = ((cos(x) + sen(x))² + (cos(x) – sen(x))² )((cos(x) + sen(x))² – (cos(x) – sen(x))² ). Como (cos(x) + sen(x))² + (cos(x) – sen(x))² = 2(cos² (x) + sen² (",
+   "gabarito": "Para todo x real (a igualdade é uma identidade).",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-005",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72426,41 +72432,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. UFRS Na figura, o círculo é unitário e BC é tangente ao círculo no ponto P. Se o arco AP ∩ mede α , BCvale: a) tan α + cotg α ; b) sen α + cos α ; c) sec α + cossec α ; d) tan α + sen α ; e) cotg α + cos α .",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-005.jpg"
-   ],
-   "larguraMm": 116.2,
+   "enunciado": "Na figura, o círculo é unitário e $ BC $ é tangente ao círculo no ponto $ P $.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ tan α + cotg α $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ sen α + cos α $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ sec α + cossec α $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ tan α + sen α $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ cotg α + cos α $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Se o arco $ AP $ mede $ α $, $ BC $ vale:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-005-fig.jpg",
+    "alt": "Círculo unitário com centro 0; A é o ponto (1, 0) e P está no círculo, com o arco AP de medida α; a reta tangente ao círculo em P corta o eixo x em B e o eixo y em C",
+    "largura": "40mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-006",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72472,41 +72479,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. U.E. Londrina-PR Para qualquer número real x, sen x −       π 2 é igual a: a) – sen x d) 2 cos x b) 2 sen x e) – cos x c) (sen x)(cos x)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-006.jpg"
-   ],
-   "larguraMm": 110.2,
+   "enunciado": "Para qualquer número real $ x $, $ sen(x − {π|2}) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ −sen x $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2 sen x $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ (sen x)(cos x) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 2 cos x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ −cos x $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-007",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72518,41 +72519,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. VUNESP Um pequeno avião deveria partir de uma cidade A rumo a uma cidade B ao norte, distante 60 quilômetros de A. Por um problema de orientação, o piloto seguiu erradamente rumo ao oeste. Ao perceber o erro, ele corrigiu a rota, fazendo um giro de 120 ° à direita em um ponto C, de modo que o seu trajeto, juntamente com o trajeto que deveria ter sido seguido, formaram, aproximadamente, um triângulo retângulo ABC, como mostra a figura. 120 B (norte) (Oeste) C A Com base na figura, a distância em quilômetros que o avião voou partindo de A até chegar a B é: a) 30 3 b) 40 3 c) 60 3 d) 80 3 e) 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-007.jpg"
-   ],
-   "larguraMm": 129.5,
+   "enunciado": "Um pequeno avião deveria partir de uma cidade A rumo a uma cidade B ao norte, distante 60 quilômetros de A. Por um problema de orientação, o piloto seguiu erradamente rumo ao oeste. Ao perceber o erro, ele corrigiu a rota, fazendo um giro de 120° à direita em um ponto C, de modo que o seu trajeto, juntamente com o trajeto que deveria ter sido seguido, formaram, aproximadamente, um triângulo retângulo ABC, como mostra a figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 30√3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 40√3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 60√3 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 80√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 90√3 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Com base na figura, a distância em quilômetros que o avião voou partindo de A até chegar a B é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-007-fig.jpg",
+    "alt": "Triângulo retângulo ABC: A no canto inferior direito (ângulo reto), B ao norte de A, e C a oeste de A; em C o giro de 120° é indicado",
+    "largura": "29mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-008",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72564,41 +72566,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. FEI-SP Se sen x = 1 e 0 < x < π então sen 2x vale: a) 2 b) 1 c) 2 2 d) 2 e) 4 2 3 2 3 3 9 3 9",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-008.jpg"
-   ],
-   "larguraMm": 81.5,
+   "enunciado": "Se $ sen x = {1|3} $ e $ 0 < x < {π|2} $ então $ sen 2x $ vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {2√2|9} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√2|3} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {4√2|9} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-009",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72610,24 +72606,25 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. UFMS Uma caixa d’água está localizada num ponto P de um terreno plano, conforme representada ao lado. A mesma é avistada do pon- to A sob um ângulo de 30º e do ponto B sob um ângulo de 45º. Sabendo-se que a medida do ângulo A ˆ PB é 90º e a distância entre os pon- tos A e B é 100 m, calcule, em me- tros, a altura da caixa d’água.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-009.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Uma caixa d’água está localizada num ponto <b>P</b> de um terreno plano, conforme representada ao lado. A mesma é avistada do ponto <b>A</b> sob um ângulo de 30° e do ponto <b>B</b> sob um ângulo de 45°.",
    "resolucao": "",
    "tipo": "aberta",
    "gabarito": "50",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Sabendo-se que a medida do ângulo $ APB $ é 90° e a distância entre os pontos <b>A</b> e <b>B</b> é 100 m, calcule, em metros, a altura da caixa d’água.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-009-fig.jpg",
+    "alt": "Caixa d’água (reservatório alto, “ÁGUAS LIMPAS”) no ponto P de um terreno plano; os pontos A e B estão no terreno, vistos do alto da caixa por linhas",
+    "largura": "81mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-010",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72639,37 +72636,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. U.F. Juiz de Fora-MG O número de soluções da equação sen θ = 4 5 no intervalo [0, 2 π ] é: a) 0 c) 2 b) 1 d) 4",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-010.jpg"
-   ],
-   "larguraMm": 130.5,
+   "enunciado": "O número de soluções da equação $ sen θ = {4|5} $ no intervalo $ [0, 2π] $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-011",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72681,41 +72672,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. F.M. Itajubá-MG A expressão A = cotg π π + ( ) ⋅ − ( ) +       x tg x sen x 3 2 onde 0 2 < <       x π , depois de simplificada, tem como solução: a) sec x b) – cossec x c) cossec x d) – sec x e) Nenhuma das respostas anteriores.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-011.jpg"
-   ],
-   "larguraMm": 96.5,
+   "enunciado": "A expressão $ A = {cotg(π + x) · tg(−x)|sen[{3π|2} + x]} $, onde $ 0 < x < {π|2} $, depois de simplificada, tem como solução:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ sec x $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ −cossec x $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ cossec x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ −sec x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Nenhuma das respostas anteriores.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-012",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72727,41 +72712,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. PUC-RS A expressão cos 4 α – sen 4 α + cos 2 α – sen 2 α é idêntica a: a) 2 . cos 2 α d) sen2 α b) 2 . sen 2 α e) cos2 α – sen2 α c) cos2 α",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-012.jpg"
-   ],
-   "larguraMm": 101.6,
+   "enunciado": "A expressão $ cos^4 α − sen^4 α + cos^2 α − sen^2 α $ é idêntica a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2 · cos 2α $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 2 · sen 2α $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ cos 2α $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ sen 2α $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ cos 2α − sen 2α $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-013",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72773,20 +72752,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13. UFPR Dadas as matrizes A senx senx e B = − −       = −       1 1 0 1 1 0 é correto afirmar: ( ) O determinante de A nunca é negativo, qualquer que seja o valor de x. ( ) A – B = – A ( ) Sempre que o valor de x est á no intervalo aberto (0, π /2), a matriz A tem inversa. ( ) A matriz A . B é a transposta de A.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-013.jpg"
-   ],
-   "larguraMm": 127.4,
+   "enunciado": "Dadas as matrizes $ A = @M{sen x&1;−1&−sen x} $ e $ B = @M{0&1;−1&0} $ é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – V – F"
+   "gabarito": "V – F – V – F",
+   "afirmacoes": [
+    {
+     "t": "O determinante de $ A $ nunca é negativo, qualquer que seja o valor de $ x $.",
+     "ok": true
+    },
+    {
+     "t": "$ A − B = −A $",
+     "ok": false
+    },
+    {
+     "t": "Sempre que o valor de $ x $ está no intervalo aberto $ (0, π/2) $, a matriz $ A $ tem inversa.",
+     "ok": true
+    },
+    {
+     "t": "A matriz $ A · B $ é a transposta de $ A $.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-014",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72798,41 +72789,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "14. FATEC-SP A express ã o (sen x + cos x) 2 • [cos 2 x + (1 + tg 2 x) • cos 2 x – cotg 2 x • sen 2 x] , para x = 30 ° , é igual a: a) 1 b) 2 c) 3 d) 2 e) 3 2 1 + sen 2x 3",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-014.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "A expressão $ {(sen x + cos x)^2 · [cos^2 x + (1 + tg^2 x) · cos^2 x − cotg^2 x · sen^2 x]|1 + sen 2x} $, para $ x = 30° $, é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ √2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ √3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√2|2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {√3|3} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-015",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72844,41 +72829,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. VUNESP Dado um paralelogramo de lados medindo 4 e 6, com â ngulos internos que medem 30 ° e 150 ° , a medida da diagonal maior desse paralelogramo é : a) 13 2 + 3 b) 2 13 – 6 3 c) 2 13 + 3 3 d) 2 13 + 6 3 e) 26 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-015.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Dado um paralelogramo de lados medindo 4 e 6, com ângulos internos que medem 30° e 150°, a medida da diagonal maior desse paralelogramo é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 13√{2 + √3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 2√{13 − 6√3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 2√{13 + 3√3} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 2√{13 + 6√3} $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 26√6 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-016",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72890,20 +72869,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "16. UFMS A express ã o (cos x) 4 – (sen x) 4 é equivalente a: 01. 1 – (sen x) 2 02. (cos x) 2 – (sen x) 2 04. 1 2 + 1 2 (cos x) 4 08. 2(cos x) 2 – 1 16. cos 2x D ê , como resposta, a soma das alternativas corretas.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-016.jpg"
-   ],
-   "larguraMm": 83.6,
+   "enunciado": "A expressão $ (cos x)^4 − (sen x)^4 $ é equivalente a (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "26"
+   "gabarito": "26",
+   "afirmacoes": [
+    {
+     "t": "$ 1 − (sen x)^2 $",
+     "ok": false
+    },
+    {
+     "t": "$ (cos x)^2 − (sen x)^2 $",
+     "ok": true
+    },
+    {
+     "t": "$ {1|2} + {1|2}(cos x)^4 $",
+     "ok": false
+    },
+    {
+     "t": "$ 2(cos x)^2 − 1 $",
+     "ok": true
+    },
+    {
+     "t": "$ cos 2x $",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-017",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72915,41 +72910,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "17. Unifor-CE Qual das identidades seguintes é verdadeira para todo n ú mero real x? a) cos ( π – x) = cos x b) sen ( π – x) = – sen x c) cos ( π + x) = cos x d) sen ( π 2 + x) = – cos x e) cos ( π 2 + x) = – sen x",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-017.jpg"
-   ],
-   "larguraMm": 123.8,
+   "enunciado": "Qual das identidades seguintes é verdadeira para todo número real $ x $?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ cos(π − x) = cos x $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ sen(π − x) = −sen x $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ cos(π + x) = cos x $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ sen({π|2} + x) = −cos x $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ cos({π|2} + x) = −sen x $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-018",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -72961,41 +72950,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. U. Santa Úrsula-RJ A solu çã o da equa çã o 10 10 2 2 cos s x en x = 0,1 é dada por: a) x = 2k π , k inteiro b) x = (2k + 1) π 2 , k inteiro c) x = k π , k inteiro d) x = (2k + 1) π , k inteiro e) x = k π 2 , k inteiro",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-018.jpg"
-   ],
-   "larguraMm": 69.7,
+   "enunciado": "A solução da equação $ {10^{cos^2 x}|10^{sen^2 x}} = 0,1 $ é dada por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = 2kπ $, $ k $ inteiro",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x = (2k + 1){π|2} $, $ k $ inteiro",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x = kπ $, $ k $ inteiro",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = (2k + 1)π $, $ k $ inteiro",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x = k{π|2} $, $ k $ inteiro",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c09-019",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -73007,37 +72990,39 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. UFF-RJ Considere os â ngulos α , β e γ conforme representados no c í rculo. Pode-se afirmar que: a) cos α < cos β b) cos γ > cos α c) sen α > sen β d) sen β < cos γ e) cos β < cos γ",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c09-019.jpg"
-   ],
-   "larguraMm": 117.5,
+   "enunciado": "Considere os ângulos $ α $, $ β $ e $ γ $ conforme representados no círculo.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ cos α < cos β $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ cos γ > cos α $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ sen α > sen β $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ sen β < cos γ $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ cos β < cos γ $",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Pode-se afirmar que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c09-019-fig.jpg",
+    "alt": "Círculo trigonométrico com os ângulos α (no 1º quadrante), β (no 2º/3º quadrante) e γ (no 4º quadrante), medidos a partir do eixo x positivo",
+    "largura": "47mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c09-020",
