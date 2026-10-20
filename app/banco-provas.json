@@ -154603,7 +154603,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "Na escola da Rita, fez-se um estudo sobre o gosto dos alunos pela leitura. Um inquérito realizado incluía a questão seguinte.<br><span class=\"pb\"></span>\\{Quantos livros leste desde o início do ano lectivo?\\}<br><span class=\"pb\"></span>As respostas obtidas na turma da Rita, relativamente a esta pergunta, estão representadas no gráfico de barras ao lado.",
+   "enunciado": "Na escola da Rita, fez-se um estudo sobre o gosto dos alunos pela leitura. Um inquérito realizado incluía a questão seguinte.<br><span class=\"pb\"></span>“Quantos livros leste desde o início do ano lectivo?”<br><span class=\"pb\"></span>As respostas obtidas na turma da Rita, relativamente a esta pergunta, estão representadas no gráfico de barras ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
@@ -154877,6 +154877,8 @@
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-11",
+   "soImagem": true,
+   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Probabilidade",
@@ -154887,22 +154889,19 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "Numa escola com 1000 alunos, fez-se um estudo sobre o número de vezes que, em média, as raparigas e os rapazes da escola iam ao cinema por mês.",
+   "enunciado": "",
+   "busca": "11. Numa escola com 1000 alunos, fez - se um estudo sobre o número de vezes que, em média, as raparigas e os rapazes da escola iam ao cinema por mês. 11.1. Qual dos gráficos que se seguem representa os dados da tabela? (A) (B) (C) (D) Legenda: 11.2. Vai sortear - se um bilhete de cinema entre todos os alunos da escola. Qual é a probabilidade de o bilhete sair a uma rapariga que, em média, vai ao cinema mais do que uma vez por mês? Apresenta o resultado na forma de fração irredutível.",
+   "imagens": [
+    "img:cdb-l-estatistica-e-probabilidad-2-11.jpg"
+   ],
+   "larguraMm": 194.7,
    "resolucao": "",
    "gabarito": "11.1) Gráfico (C): raparigas $200$, $150$ e $100$; rapazes $300$, $200$ e $50$. 11.2) Raparigas que vão mais de uma vez: $150 + 100 = 250$; total $1 000$: ${250|1 000} = {1|4}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   },
-   "pergunta": "11.1. Qual dos gráficos que se seguem representa os dados da tabela?<br><span class=\"pb\"></span>11.2. Vai sortear-se um bilhete de cinema entre todos os alunos da escola. Qual é a probabilidade de o bilhete sair a uma rapariga que, em média, vai ao cinema <b>mais do que uma vez</b> por mês? Apresenta o resultado na forma de fração irredutível.",
-   "figura": {
-    "tipo": "img",
-    "src": "img:cdb-l-estatistica-e-probabilidad-2-11-fig.jpg",
-    "alt": "Tabela do número de idas ao cinema por mês (1 vez, 2 vezes, 3 vezes): raparigas 200, 150 e 100; rapazes 300, 200 e 50; abaixo, quatro gráficos de barras (A, B, C e D) com legenda raparigas e rapazes",
-    "largura": "170mm"
-   },
-   "transcrita": true
+   }
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-12",
@@ -154929,7 +154928,7 @@
     "tipo": "img",
     "src": "img:cdb-l-estatistica-e-probabilidad-2-12-fig.jpg",
     "alt": "Gráfico de barras “Doações de sangue”: número de alunos por número de doações (0, 1 e 2), por sexo. Rapazes: 5, 6 e 4; raparigas: 3, 7 e 5",
-    "largura": "57mm"
+    "largura": "89mm"
    },
    "transcrita": true
   },
@@ -154975,7 +154974,7 @@
     "modo": "branco",
     "altura": 45
    },
-   "pergunta": "Combinaram que:<br>• se registassem \\{face europeia\\} em ambos os lançamentos, seria o André a entregar a prenda;<br>• se registassem \\{face nacional\\} em ambos os lançamentos, seria o Bruno a entregar a prenda;<br>• se registassem \\{face europeia\\} num dos lançamentos e \\{face nacional\\} no outro, seria o Carlos a entregar a prenda.<br><span class=\"pb\"></span>Terá cada um dos rapazes a mesma probabilidade de vir a entregar a prenda à Maria? Mostra como obtiveste a tua resposta.",
+   "pergunta": "Combinaram que:<br>• se registassem “face europeia” em ambos os lançamentos, seria o André a entregar a prenda;<br>• se registassem “face nacional” em ambos os lançamentos, seria o Bruno a entregar a prenda;<br>• se registassem “face europeia” num dos lançamentos e “face nacional” no outro, seria o Carlos a entregar a prenda.<br><span class=\"pb\"></span>Terá cada um dos rapazes a mesma probabilidade de vir a entregar a prenda à Maria? Mostra como obtiveste a tua resposta.",
    "figura": {
     "tipo": "img",
     "src": "img:cdb-l-estatistica-e-probabilidad-2-14-fig.jpg",
@@ -155225,7 +155224,7 @@
     "tipo": "img",
     "src": "img:cdb-l-estatistica-e-probabilidad-2-20-fig.jpg",
     "alt": "Dois dados em forma de pirâmide de 4 faces triangulares, numeradas de 1 a 4",
-    "largura": "59mm"
+    "largura": "61mm"
    },
    "transcrita": true
   },
