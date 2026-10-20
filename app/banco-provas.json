@@ -57492,7 +57492,6 @@
   },
   {
    "id": "cdb-c01-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57504,24 +57503,40 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. UFMS Sendo o conjunto A = {1, 2, 3, 4, 5} e o conjunto B = {2, 4, 5, 6, 7} então, A ∩ B é: a) {2, 4, 5} d) {1, 3, 5} b) {1, 2, 3, 6} e) {1, 2, 3, 4, 5, 6} c) {2, 4, 6}",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-039.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Sendo o conjunto $ A = \\{1, 2, 3, 4, 5\\} $ e o conjunto $ B = \\{2, 4, 5, 6, 7\\} $, então $ A ∩ B $ é:",
    "resolucao": "",
-   "tipo": "aberta",
-   "gabarito": "A ² e 5² são divisores de",
+   "tipo": "mc",
+   "gabarito": "A",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "alternativas": [
+    {
+     "t": "$ \\{2, 4, 5\\} $",
+     "ok": true
+    },
+    {
+     "t": "$ \\{1, 2, 3, 6\\} $",
+     "ok": false
+    },
+    {
+     "t": "$ \\{2, 4, 6\\} $",
+     "ok": false
+    },
+    {
+     "t": "$ \\{1, 3, 5\\} $",
+     "ok": false
+    },
+    {
+     "t": "$ \\{1, 2, 3, 4, 5, 6\\} $",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57533,16 +57548,11 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. UFCE Determine o número inteiro n que satisfaz simultaneamente às seguintes condi- ções: i) n está compreendido entre 6 000 e 7 000; ii) n dividido por 35, ou por 45, ou por 50 deixa sempre resto 11.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-040.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Determine o número inteiro $ n $ que satisfaz simultaneamente às seguintes condições:<br><span class=\"pb\"></span>i) $ n $ está compreendido entre 6 000 e 7 000;<br>ii) $ n $ dividido por 35, ou por 45, ou por 50 deixa sempre resto 11.",
    "resolucao": "",
-   "tipo": "soma",
-   "gabarito": "Pela informação (ii) temos: n = 35k + 11 ∴ n – 11 = 7.5.k n = 45k + 11 ∴ n – 11 = 3² .5.q n = 50k + 11 ∴ n – 11 = 2.5² .p Daí concluímos que n – 11 possui 2, 3, 5 e 7 como fatores primos e 3 n – 11. Logo n – 11 = 2.3² .5² .7.A = 3150.A Como 6000 < n < 7000, temos 5989 < n – 11 < 6989. Assim n – 11 é múltiplo de 3150 e 5989 < n – 11 < 6989. Como o único múltiplo de 3150 entre 5989 e 6989 é 6300, temos n – 11 = 6300 e daí n = 6300 + 11 = 6311."
+   "tipo": "aberta",
+   "gabarito": "6311",
+   "transcrita": true
   },
   {
    "id": "cdb-c01-041",
@@ -57582,7 +57592,6 @@
   },
   {
    "id": "cdb-c01-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57594,20 +57603,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. UFMS “O que se sabe com certeza é que Pitágoras estabeleceu um sistema que mudou o rumo da matemática. A Irmandade era realmente uma comunidade religiosa e um de seus ídolos era o Número. Eles acreditavam que se entendessem as relações entre os números poderiam descobrir os segredos espirituais do universo, tornando-se, assim próximos dos deuses. Em especial, a Ir- mandade voltou sua atenção para os números inteiros (1, 2, 3 ...) e as frações. Os números inteiros e as frações (proporções entre números inteiros) são conhecidos, tecnicamente, como números racionais. E entre a infinidade de n",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-042.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "<b>“O que se sabe com certeza é que Pitágoras estabeleceu um sistema que mudou o rumo da matemática. A Irmandade era realmente uma comunidade religiosa e um de seus ídolos era o Número. Eles acreditavam que se entendessem as relações entre os números poderiam descobrir os segredos espirituais do universo, tornando-se, assim próximos dos deuses. Em especial, a Irmandade voltou sua atenção para os números inteiros (1, 2, 3 …) e as frações. Os números inteiros e as frações (proporções entre números inteiros) são conhecidos, tecnicamente, como números racionais. E entre a infinidade de números, a Irmandade buscava alguns com significado especial, e entre os mais importantes estavam os chamados números “perfeitos”.”</b><br><span class=\"pb\"></span><i>O Último Teorema de Fermat</i> – SINGH, Simon – Tradução Jorge Luiz Calife – Editora Record – Rio de Janeiro – 3ª edição 1997 – Página 32.<br><span class=\"pb\"></span>Os <b>números perfeitos</b> referidos no texto são números naturais iguais à metade da soma dos seus divisores positivos. Por exemplo, 28 é um número perfeito pois a soma dos seus divisores positivos é 1 + 2 + 4 + 7 + 14 + 28 = 56 e $ 28 = {56|2} $.<br><span class=\"pb\"></span>Com base no conceito de número perfeito, dado acima, e nas propriedades dos números inteiros, é correto afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "25"
+   "gabarito": "25",
+   "afirmacoes": [
+    {
+     "t": "6 é um número perfeito.",
+     "ok": true
+    },
+    {
+     "t": "todo número primo é perfeito.",
+     "ok": false
+    },
+    {
+     "t": "$ 2^3 $ é um número perfeito.",
+     "ok": false
+    },
+    {
+     "t": "10 não é um número perfeito.",
+     "ok": true
+    },
+    {
+     "t": "se $ p $ é um número inteiro, $ p ≥ 1 $, então a soma dos divisores positivos de $ 2^p $ é $ 2^{p+1} − 1 $.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-043",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57619,41 +57644,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "43. Cefet-RJ A soma de dois números é 6. O valor máximo do produto entre eles é: a) um múltiplo de 2; d) um divisor de 20; b) um número primo; e) um múltiplo de 7. c) um múltiplo de 3;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-043.jpg"
-   ],
-   "larguraMm": 123.6,
+   "enunciado": "A soma de dois números é 6. O valor máximo do produto entre eles é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "um múltiplo de 2;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "um número primo;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "um múltiplo de 3;",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "um divisor de 20;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "um múltiplo de 7.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-044",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57665,41 +57684,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "44. UFRS O resto da divisão do produto 123456 × 654321 por 6 é: a) 0 b) 2 c) 4 d) 6 e) 8",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-044.jpg"
-   ],
-   "larguraMm": 97.7,
+   "enunciado": "O resto da divisão do produto $ 123456 × 654321 $ por 6 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "8",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-045",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57711,37 +57724,31 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "45. UFMG Considere a seqüência de operações aritméticas na qual cada uma atua sobre o resultado anterior: Comece com um número x . Subtraia 2, multiplique por 3 5 , some 1, multiplique por 2, subtraia 1 e finalmente multiplique por 3 para obter o número 21. O número x pertence ao conjunto: a) {–3, –2, –1, 0} b) {–7, –6, –5, –4} c) {5, 6, 7, 8} d) {1, 2, 3, 4}",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-045.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Considere a seqüência de operações aritméticas na qual cada uma atua sobre o resultado anterior:<br><span class=\"pb\"></span>Comece com um número <b>x</b>. Subtraia 2, multiplique por $ {3|5} $, some 1, multiplique por 2, subtraia 1 e finalmente multiplique por 3 para obter o número 21.<br><span class=\"pb\"></span>O número <b>x</b> pertence ao conjunto:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ \\{−3, −2, −1, 0\\} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ \\{−7, −6, −5, −4\\} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ \\{5, 6, 7, 8\\} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ \\{1, 2, 3, 4\\} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-046",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57753,41 +57760,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "46. UFRS Considerando que um dia equivale a 24 horas, 1,8 dias equivale a: a) 1 dia e 8 horas; d) 1 dia, 19 horas e 2 minutos; b) 1 dia e 18 horas; e) 1 dia, 19 horas e 12 minutos. c) 1 dia e 19 horas;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-046.jpg"
-   ],
-   "larguraMm": 113.6,
+   "enunciado": "Considerando que um dia equivale a 24 horas, 1,8 dias equivale a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 dia e 8 horas;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 dia e 18 horas;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1 dia e 19 horas;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 dia, 19 horas e 2 minutos;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 dia, 19 horas e 12 minutos.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-047",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57799,41 +57800,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "47. PUC-RJ Para a, b, c distintos, o valor da expressão 1 1 1 a b a c b a b c c a c b − ( ) − ( ) + − ( ) − ( ) + − ( ) − ( ) é: a) a + b + c d) 3(a + b + c) b) sempre 0 e) 1 a b c + + c) abc",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-047.jpg"
-   ],
-   "larguraMm": 83.3,
+   "enunciado": "Para $ a $, $ b $, $ c $ distintos, o valor da expressão $ {1|(a − b)(a − c)} + {1|(b − a)(b − c)} + {1|(c − a)(c − b)} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a + b + c $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "sempre 0",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ abc $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3(a + b + c) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|a + b + c} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-048",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57845,41 +57840,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "48. UFRS 0,3 semanas corresponde a: a) 2 dias e 1 hora; d) 2 dias e 12 horas; b) 2 dias, 2 horas e 4 minutos; e) 3 dias. c) 2 dias, 2 horas e 24 minutos;",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-048.jpg"
-   ],
-   "larguraMm": 96.3,
+   "enunciado": "0,3 semanas corresponde a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 dias e 1 hora;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2 dias, 2 horas e 4 minutos;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 dias, 2 horas e 24 minutos;",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "2 dias e 12 horas;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3 dias.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-049",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57891,41 +57880,42 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "49. Fatec-SP Um certo tipo de vírus tem diâmetro de 0,02 x 10 3 mm. Admita que uma colônia desses vírus pudesse ocupar totalmente uma superfície plana de 1 cm 2 de área, numa única camada, com a disposição mostrada na figura ao lado. O número máximo de indivíduos dessa colônia é: a) 4 x 10 6 b) 25 x 10 6 c) 25 x 10 10 d) 25 x 10 12 e) 50 x 10 12",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-049.jpg"
-   ],
-   "larguraMm": 132.5,
+   "enunciado": "Um certo tipo de vírus tem diâmetro de $ 0,02 × 10^3 $ mm. Admita que uma colônia desses vírus pudesse ocupar totalmente uma superfície plana de 1 cm<sup>2</sup> de área, numa única camada, com a disposição mostrada na figura ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 4 × 10^6 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 25 × 10^6 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 25 × 10^{10} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ 25 × 10^{12} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 50 × 10^{12} $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O número máximo de indivíduos dessa colônia é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-c01-049-fig.jpg",
+    "alt": "Fileiras de círculos iguais, lado a lado, ocupando uma superfície (disposição dos vírus)",
+    "largura": "34mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c01-050",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57937,41 +57927,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "50. PUC-PR O valor da expressão 103 4 – 4 . 103 3 . 3 + 6 . 103 2 . 3 2 – 4 . 103 . 3 3 + 3 4 é igual a: a) 10 14 b) 10 12 c) 10 10 d) 10 8 e) 10 6",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-050.jpg"
-   ],
-   "larguraMm": 108,
+   "enunciado": "O valor da expressão $ 103^4 − 4 · 103^3 · 3 + 6 · 103^2 · 3^2 − 4 · 103 · 3^3 + 3^4 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 10^{14} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 10^{12} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 10^{10} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 10^8 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 10^6 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-051",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -57983,37 +57967,55 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "51. U.E. Londrina-PR O percurso de Londrina a Floresta, passando por Arapongas e Man- daguari, será feito em um automóvel cujo consumo médio é de 1 litro de gasolina para cada 10 km. Considere o preço de R$ 1,30 por litro de gasolina e as informações contidas na ta- bela ao lado. Então, uma expressão para o cálculo do total de despesas, em reais, com combustível e pedá- gios, para fazer essa viagem, é: a) (40 + 2,30) . 0,13 + (38 + 2,30) . 0,13 + (60 + 3,60) . 0,13 b) 138 . 0,13 + 2,30 + 2,30 + 3,60 c) 138 . 10 ÷ 1,30 + 8,20 d) 40 . 1,30 + 2,30 + 38 . 1,30 + 2,30 + 60 . 1,30 + 3,60 e) 138 . 1,",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-051.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "O percurso de Londrina a Floresta, passando por Arapongas e Mandaguari, será feito em um automóvel cujo consumo médio é de 1 litro de gasolina para cada 10 km. Considere o preço de R&#36; 1,30 por litro de gasolina e as informações contidas na tabela ao lado.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ (40 + 2,30)·0,13 + (38 + 2,30)·0,13 + (60 + 3,60)·0,13 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 138·0,13 + 2,30 + 2,30 + 3,60 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ 138·10 ÷ 1,30 + 8,20 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 40·1,30 + 2,30 + 38·1,30 + 2,30 + 60·1,30 + 3,60 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 138·1,30 + 2,30 + 3,60 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Então, uma expressão para o cálculo do total de despesas, em reais, com combustível e pedágios, para fazer essa viagem, é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Distância entre as cidades (km)",
+     "Tarifa do pedágio no trecho (R$)"
+    ],
+    "linhas": [
+     [
+      "Londrina — Arapongas: 40",
+      "2,30"
+     ],
+     [
+      "Arapongas — Mandaguari: 38",
+      "2,30"
+     ],
+     [
+      "Mandaguari — Floresta: 60",
+      "3,60"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c01-052",

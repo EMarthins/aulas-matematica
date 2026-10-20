@@ -56,6 +56,9 @@ const cont = { ok: 0, ausentes: [], figuras: 0, avisos: [] };
     if (r.base) { // texto/figura de apoio compartilhado por um grupo de questões (antes numa imagem "base")
       if (r.base.txt) r.e = r.base.txt + (r.e ? '\n\n' + r.e : '');
     }
+    if (r0.tipo) { q.tipo = r0.tipo; if (r0.tipo === 'mc') q.alternativas = (r.a || []).map((t, i) => ({ t, ok: i === (r0.ok || 0) })); delete q.afirmacoes; }
+    if (r0.gabarito !== undefined) q.gabarito = r0.gabarito;
+    if (r0.resolucao !== undefined) q.resolucao = r0.resolucao;
     q.enunciado = html(r.e); if (r.p) q.pergunta = html(r.p); else delete q.pergunta;
     if (q.tipo === 'mc') {
       const velho = q.alternativas || [];
