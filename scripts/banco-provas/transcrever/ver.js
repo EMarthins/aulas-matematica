@@ -28,4 +28,5 @@ for (const { id, q, r } of res) {
   if (r.p) console.log('P: ' + cur(r.p, 100, 170).split(String.fromCharCode(10)).join('⏎'));
   if (r.a) r.a.forEach((a, k) => console.log('  ' + 'ABCDE'[k] + ') ' + (a.length > 70 ? a.slice(0, 40) + '…' + a.slice(-25) : a))); else if (q.tipo === 'mc') console.log('  (sem alternativas detectadas)');
   if (r.avisos.length) console.log('  ?? ' + r.avisos.join(' '));
+  { const tudo = [r.e, r.p, ...(r.a || [])].join(' '); const re = new RegExp('\\S*[A-Za-z]\\d\\S*|\\S*\\d[A-Za-z]\\S*|\\S*[-−]\\d\\S*|\\S*[^\\s\\wà-úÀ-Ú.,;:()“”‘’—–%/ºª°$?!-]\\S*', 'g'); const t = [...new Set((tudo.match(re) || []).filter(x => !/^(19|20)\\d\\d\\W*$/.test(x)))].slice(0, 14); if (t.length) console.log('  FORM: ' + t.join(' | ')); }
 }

@@ -16807,7 +16807,6 @@
   {
    "id": "enem2020-135",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Mecânica",
@@ -16819,35 +16818,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "A Torre Eiffel, com seus 324 metros de altura, feita com treliças de ferro, pesava 7 300 toneladas quando terminou de ser construída em 1889. Um arquiteto resolve construir um protótipo dessa torre em escala 1:100, usando os mesmos materiais (cada dimensão linear em escala de 1:100 do monumento real). Considere que a torre real tenha uma massa M torre e exerça na fundação sobre a qual foi erguida uma pressão P . O modelo construído pelo arquiteto terá torre uma massa M e exercerá uma pressão P . modelo modelo Como a pressão exercida pela torre se compara com a pressão exercida pelo protótipo? Ou seja, qual é a razão entre as pressões (P )/(P ) ? torre modelo 0 A 10 1 B 10 2 C 10 4 D 10 6 E 10",
-   "imagens": [
-    "img:enem2020-135.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A Torre Eiffel, com seus 324 metros de altura, feita com treliças de ferro, pesava 7 300 toneladas quando terminou de ser construída em 1889. Um arquiteto resolve construir um protótipo dessa torre em escala 1:100, usando os mesmos materiais (cada dimensão linear em escala de 1:100 do monumento real). Considere que a torre real tenha uma massa M<sub>torre</sub> e exerça na fundação sobre a qual foi erguida uma pressão P<sub>torre</sub>. O modelo construído pelo arquiteto terá uma massa M<sub>modelo</sub> e exercerá uma pressão P<sub>modelo</sub>.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10<sup>0</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "10<sup>1</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "10<sup>2</sup>",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "10<sup>4</sup>",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "10<sup>6</sup>",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Como a pressão exercida pela torre se compara com a pressão exercida pelo protótipo? Ou seja, qual é a razão entre as pressões (P<sub>torre</sub>)/(P<sub>modelo</sub>) ?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-135-fig.jpg",
+    "alt": "Desenho da Torre Eiffel",
+    "largura": "49mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-136",
@@ -22777,7 +22779,6 @@
   {
    "id": "enem2021-91",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Botânica",
@@ -22789,40 +22790,91 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 11º FA Bnemaool No cultivo por hidroponia, são utilizadas soluções nutritivas contendo macronutrientes e micronutrientes essenciais. Além dos nutrientes, o pH é um parâmetro de extrema importância, uma vez que ele afeta a preparação da solução nutritiva e a absorção dos nutrientes pelas plantas. Para o cultivo de alface, valores de pH entre 5,5 e 6,5 são ideais para o seu desenvolvimento. As correções de pH são feitas pela adição de compostos ácidos ou básicos, mas não devem introduzir elementos nocivos às plantas. Na tabela, são apresentados alguns dados da composição da solução nutritiva de referência para esse cultivo. Também é apresentada a composição de uma solução preparada por um produtor de cultivo hidropônico. Concentração, mmol/L Espécies químicas Composição [Solução nutritiva à a de referência) — preparada G5<pH<65)) (pH=4,3) Micronutrientes LENZI, E.; FAVERO, L. O. B.; LUCHESE, E. B. Introdução à química da água: ciência, vida e sobrevivência. Rio de Janeiro: LTC, 2012 (adaptado). Para correção do pH da solução nutritiva preparada, esse produtor pode empregar uma solução de O ácido fosfórico, H,PO,. O sulfato de cálcio, CaSO,. O óxido de alumínio, ALO,. O cloreto de ferro(l!), FeCl,. O hidróxido de potássio, KOH.",
-   "imagens": [
-    "img:enem2021-91.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "No cultivo por hidroponia, são utilizadas soluções nutritivas contendo macronutrientes e micronutrientes essenciais. Além dos nutrientes, o pH é um parâmetro de extrema importância, uma vez que ele afeta a preparação da solução nutritiva e a absorção dos nutrientes pelas plantas. Para o cultivo de alface, valores de pH entre 5,5 e 6,5 são ideais para o seu desenvolvimento. As correções de pH são feitas pela adição de compostos ácidos ou básicos, mas não devem introduzir elementos nocivos às plantas. Na tabela, são apresentados alguns dados da composição da solução nutritiva de referência para esse cultivo. Também é apresentada a composição de uma solução preparada por um produtor de cultivo hidropônico.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "ácido fosfórico, H<sub>3</sub>PO<sub>4</sub>.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "sulfato de cálcio, CaSO<sub>4</sub>.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "óxido de alumínio, Al<sub>2</sub>O<sub>3</sub>.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "cloreto de ferro(II), FeCl<sub>2</sub>.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "hidróxido de potássio, KOH.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para correção do pH da solução nutritiva preparada, esse produtor pode empregar uma solução de",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Tipo",
+     "Espécie química",
+     "Composição de referência, mmol/L (5,5 < pH < 6,5)",
+     "Solução nutritiva preparada, mmol/L (pH = 4,3)"
+    ],
+    "linhas": [
+     [
+      "Macronutrientes",
+      "N (NH<sub>4</sub><sup>+</sup>)",
+      "1,0",
+      "0,8"
+     ],
+     [
+      "Macronutrientes",
+      "P (H<sub>2</sub>PO<sub>4</sub><sup>−</sup>)",
+      "1,0",
+      "1,0"
+     ],
+     [
+      "Macronutrientes",
+      "K<sup>+</sup>",
+      "6,0",
+      "3,5"
+     ],
+     [
+      "Macronutrientes",
+      "Ca<sup>2+</sup>",
+      "4,0",
+      "3,0"
+     ],
+     [
+      "Macronutrientes",
+      "SO<sub>4</sub><sup>2−</sup>",
+      "2,0",
+      "1,0"
+     ],
+     [
+      "Micronutrientes",
+      "Fe<sup>2+</sup>",
+      "90 × 10<sup>−3</sup>",
+      "70 × 10<sup>−3</sup>"
+     ],
+     [
+      "Micronutrientes",
+      "Cl<sup>−</sup>",
+      "-",
+      "4,5 × 10<sup>−3</sup>"
+     ]
+    ],
+    "largura": "100%",
+    "legenda": "LENZI, E.; FAVERO, L. O. B.; LUCHESE, E. B. <b>Introdução à química da água</b>: ciência, vida e sobrevivência. Rio de Janeiro: LTC, 2012 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-92",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Ondulatória",
@@ -22834,40 +22886,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 92º Fr Bhem2oa O sino dos ventos é composto por várias barras metálicas de mesmo material e espessura, mas de comprimentos diferentes, conforme a figura. Í | Comprimento 1 “se | Comprimento “se Considere f, e v,, respectivamente, como a frequência fundamental e a velocidade de propagação do som emitido pela barra de menor comprimento, e f, e v, são essas mesmas grandezas para o som emitido pela barra de maior comprimento. As relações entre as frequências fundamentais e entre as velocidades de propagação são, respectivamente, O f<fh ev<v, O f<f,ev=v, O f<fev>v, O f>fev=v, O f>fev>v.",
-   "imagens": [
-    "img:enem2021-92.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "O sino dos ventos é composto por várias barras metálicas de mesmo material e espessura, mas de comprimentos diferentes, conforme a figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "f<sub>1</sub> &lt; f<sub>2</sub> e v<sub>1</sub> &lt; v<sub>2</sub>.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "f<sub>1</sub> &lt; f<sub>2</sub> e v<sub>1</sub> = v<sub>2</sub>.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "f<sub>1</sub> &lt; f<sub>2</sub> e v<sub>1</sub> &gt; v<sub>2</sub>.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "f<sub>1</sub> &gt; f<sub>2</sub> e v<sub>1</sub> = v<sub>2</sub>.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "f<sub>1</sub> &gt; f<sub>2</sub> e v<sub>1</sub> &gt; v<sub>2</sub>.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considere f<sub>1</sub> e v<sub>1</sub>, respectivamente, como a frequência fundamental e a velocidade de propagação do som emitido pela barra de menor comprimento, e f<sub>2</sub> e v<sub>2</sub> são essas mesmas grandezas para o som emitido pela barra de maior comprimento.<br><span class=\"pb\"></span>As relações entre as frequências fundamentais e entre as velocidades de propagação são, respectivamente,",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-92-fig.jpg",
+    "alt": "Fotografia de um sino dos ventos com barras metálicas de comprimentos diferentes; setas indicam “Comprimento 1” (barra menor) e “Comprimento 2” (barra maior)",
+    "largura": "37mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-93",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Adaptação",
@@ -22879,40 +22933,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 93 FF BhONI2O2] O polvo mimético apresenta padrões cromáticos e comportamentos muito curiosos. Frequentemente, muda a orientação de seus tentáculos, assemelhando-se a alguns animais. As imagens 1, 3 e 5 apresentam polvos mimetizando, respectivamente, um peixe-linguado (2), um peixe-leão (4) e uma serpente-marinha (6). eo a E AIDS TE AREA MEaARCa SEDA MDA, ES) NATE 722, MAOS AAA CESINIDA o LE DNA NOS RE RIAA SOS TN A ÇA ha EA) AR ESSA NT EZA |U Tra E CE STRASS oo nao SaSo A oo JRR OSSEC RAR SOS RSA o AO ONA o E D OE DN £ RSARIISIDAA IAADA Pe é ST SERENA Pr o DRAW IASes A ASo Time ATE AS Ee sad ASS ARE ESSE Ro ERREI ÚN fi) SNI p S eee o Roo AA A DAME rá URNA DIS Z Da ] \"O IR GEINSTA TONY INENATR RS FANOESTIS: [ SCTESAÇ ARO NADA o . SIA ERRADAS qa AVSRIRA Sd -\". e AOS a CEEE CISSA BETE RÓRNAS IZA o: Lad LTS DS o AR RECO ; Se BORA TAÇA TA OC C PRETOS: MENA 1 ' Sá EE aaa POA ao NORMAN, M. D.; FINN, J.; TREGENZA, T. Dynamic mimicry in an Indo-Malayan octopus. In: Proceedings of the Royal Society B: Biological Sciences, n. 268, out. 2001. Disponível em: www.researchgate.net. Acesso em: 15 mar. 2014 (adaptado). Do ponto de vista evolutivo, a capacidade apresentada se estabeleceu porque os polvos O originaram-se do mesmo ancestral que esses animais. O passaram por mutações similares a esses organismos. O observaram esses animais em seus nichos ecológicos. O resultaram de converg",
-   "imagens": [
-    "img:enem2021-93.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O polvo mimético apresenta padrões cromáticos e comportamentos muito curiosos. Frequentemente, muda a orientação de seus tentáculos, assemelhando-se a alguns animais. As imagens 1, 3 e 5 apresentam polvos mimetizando, respectivamente, um peixe-linguado (2), um peixe-leão (4) e uma serpente-marinha (6).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "originaram-se do mesmo ancestral que esses animais.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "passaram por mutações similares a esses organismos.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "observaram esses animais em seus nichos ecológicos.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "resultaram de convergência adaptativa com essas espécies.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "sobreviveram às pressões seletivas com esses comportamentos.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Do ponto de vista evolutivo, a capacidade apresentada se estabeleceu porque os polvos",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-93-fig.jpg",
+    "alt": "Seis fotografias numeradas: polvos (1, 3 e 5) imitando um peixe-linguado (2), um peixe-leão (4) e uma serpente-marinha (6)",
+    "largura": "88mm",
+    "legenda": "NORMAN, M. D.; FINN, J.; TREGENZA, T. Dynamic mimicry in an Indo-Malayan octopus. In: <b>Proceedings of the Royal Society B</b>: Biological Sciences, n. 268, out. 2001. Disponível em: www.researchgate.net. Acesso em: 15 mar. 2014 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-94",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Mecânica",
@@ -22924,35 +22981,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão A Fr BeMIDO2l A figura foi extraída de um antigo jogo para computadores, chamado Bang! Bang! CS R * O Y As ea H 35 m| ” : o | É 9: É Ss Bom 78 No jogo, dois competidores controlam os canhões A e B, disparando balas alternadamente com o objetivo de atingir o canhão do adversário; para isso, atribuem valores estimados para o módulo da velocidade inicial de disparo (|ugl) e para o ângulo de disparo (0). Em determinado momento de uma partida, o competidor B deve disparar; ele sabe que a bala disparada anteriormente, 0 = 53º, passou tangenciando o ponto P. No jogo, | | é igual a 10 m/s?. Considere sen 53º= 0,8, cos 53º= 0,6 e desprezível a ação de forças dissipativas. Disponível em: http://mebdownloads.butzke.net.br. Acesso em: 18 abr. 2015 (adaptado). Com base nas distâncias dadas e mantendo o último ângulo de disparo, qual deveria ser, aproximadamente, o menor valor de |ug| que permitiria ao disparo efetuado pelo canhão B atingir o canhão A? O 30ms. O 35ms. O 40ms. O 45ms. O 50m/s.",
-   "imagens": [
-    "img:enem2021-94.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "A figura foi extraída de um antigo jogo para computadores, chamado <i>Bang! Bang!</i>",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30 m/s.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "35 m/s.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "40 m/s.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "45 m/s.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "50 m/s.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "No jogo, dois competidores controlam os canhões <b>A</b> e <b>B</b>, disparando balas alternadamente com o objetivo de atingir o canhão do adversário; para isso, atribuem valores estimados para o módulo da velocidade inicial de disparo (|v<sub>0</sub>|) e para o ângulo de disparo (θ).<br><span class=\"pb\"></span>Em determinado momento de uma partida, o competidor <b>B</b> deve disparar; ele sabe que a bala disparada anteriormente, θ = 53°, passou tangenciando o ponto <i>P</i>.<br><span class=\"pb\"></span>No jogo, |g| é igual a 10 m/s<sup>2</sup>. Considere sen 53° = 0,8, cos 53° = 0,6 e desprezível a ação de forças dissipativas.<br><span class=\"pb\"></span>Disponível em: http://mebdownloads.butzke.net.br. Acesso em: 18 abr. 2015 (adaptado).<br><span class=\"pb\"></span>Com base nas distâncias dadas e mantendo o último ângulo de disparo, qual deveria ser, aproximadamente, o menor valor de |v<sub>0</sub>| que permitiria ao disparo efetuado pelo canhão B atingir o canhão A?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-94-fig.jpg",
+    "alt": "Ilustração do jogo: canhão A no alto de um penhasco, 35 m acima do canhão B; o ponto P fica 10 m acima do topo; a distância horizontal entre os canhões é 120 m; o canhão B dispara com velocidade v0 e ângulo θ",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-95",
@@ -22997,7 +23057,6 @@
   {
    "id": "enem2021-96",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Genética molecular",
@@ -23009,35 +23068,56 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 96 FA Bnemzool A sequência de nucleotídeos do RNA mensageiro presentes em um gene de um fungo, constituída de sete códons, está escrita a seguir. l1 2] 3 a | 5 6] 7] Pesquisadores submeteram a sequência a mutações independentes. Sabe-se que os códons UAG e UAA são terminais, ou seja, indicam a interrupção da tradução. Qual mutação produzirá a menor proteína? O Deleção de G no códon 3. O Substituição de C por U no códon 4. O Substituição de G por C no códon 6. O Substituição de A por G no códon 7. O Deleção dos dois primeiros nucleotídeos no códon 5.",
-   "imagens": [
-    "img:enem2021-96.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A sequência de nucleotídeos do RNA mensageiro presentes em um gene de um fungo, constituída de sete códons, está escrita a seguir.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Deleção de G no códon 3.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Substituição de C por U no códon 4.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "Substituição de G por C no códon 6.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Substituição de A por G no códon 7.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Deleção dos dois primeiros nucleotídeos no códon 5.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Pesquisadores submeteram a sequência a mutações independentes. Sabe-se que os códons <b>UAG</b> e <b>UAA</b> são terminais, ou seja, indicam a interrupção da tradução.<br><span class=\"pb\"></span>Qual mutação produzirá a menor proteína?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "linhas": [
+     [
+      "AUG",
+      "UUU",
+      "GUU",
+      "CAA",
+      "UGU",
+      "AGU",
+      "UAG"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-97",
@@ -23122,7 +23202,6 @@
   {
    "id": "enem2021-99",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Física · Termologia",
@@ -23134,35 +23213,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 99º FA BNnemzoo] Na cidade de São Paulo, as ilhas de calor são responsáveis pela alteração da direção do fluxo da brisa marítima que deveria atingir a região de mananciais. Mas, ao cruzar a ilha de calor, a brisa marítima agora encontra um fluxo de ar vertical, que transfere para ela energia térmica absorvida das superfícies quentes da cidade, deslocando-a para altas altitudes. Dessa maneira, há condensação e chuvas fortes no centro da cidade, em vez de na região de mananciais. A imagem apresenta os três subsistemas que trocam energia nesse fenômeno. Sol Brisa ANE Ilha de calor No processo de fortes chuvas no centro da cidade de São Paulo, há dois mecanismos dominantes de transferência de calor: entre o Sol e a ilha de calor, e entre a ilha de calor e a brisa marítima. VIVEIROS, M. Ilhas de calor afastam chuvas de represas. Disponível em: www2.feis.unesp.br. Acesso em: 3 dez. 2019 (adaptado). Esses mecanismos são, respectivamente, O irradiação e convecção. O irradiação e irradiação. O condução e irradiação. O convecção e irradiação. O convecção e convecção.",
-   "imagens": [
-    "img:enem2021-99.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Na cidade de São Paulo, as ilhas de calor são responsáveis pela alteração da direção do fluxo da brisa marítima que deveria atingir a região de mananciais. Mas, ao cruzar a ilha de calor, a brisa marítima agora encontra um fluxo de ar vertical, que transfere para ela energia térmica absorvida das superfícies quentes da cidade, deslocando-a para altas altitudes. Dessa maneira, há condensação e chuvas fortes no centro da cidade, em vez de na região de mananciais. A imagem apresenta os três subsistemas que trocam energia nesse fenômeno.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "irradiação e convecção.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "irradiação e irradiação.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "condução e irradiação.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "convecção e irradiação.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "convecção e convecção.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "No processo de fortes chuvas no centro da cidade de São Paulo, há dois mecanismos dominantes de transferência de calor: entre o Sol e a ilha de calor, e entre a ilha de calor e a brisa marítima.<br><span class=\"pb\"></span>VIVEIROS, M. <b>Ilhas de calor afastam chuvas de represas</b>. Disponível em: www2.feis.unesp.br. Acesso em: 3 dez. 2019 (adaptado).<br><span class=\"pb\"></span>Esses mecanismos são, respectivamente,",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2021-99-fig.jpg",
+    "alt": "Esquema com o Sol, as linhas de fluxo da brisa marítima e a ilha de calor (edifícios da cidade)",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2021-100",
@@ -23207,7 +23289,6 @@
   {
    "id": "enem2021-101",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química orgânica",
@@ -23219,35 +23300,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2021 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Questão 101 FA Bhnemanol A obtenção de etanol utilizando a cana-de-açúcar envolve a fermentação dos monossacarídeos formadores da sacarose contida no melaço. Um desses formadores é a glicose (C,H,,O,), cuja fermentação produz cerca de 50 g de etanol a partir de 100 g de glicose, conforme a equação química descrita. CH,O, Fermentação alcoólica 2 CH,CH,OH + 2 CO, Em uma condição específica de fermentação, obtém-se 80% de conversão em etanol que, após sua purificação, apresenta densidade igual a 0,80 g/mL. O melaço utilizado apresentou 50 kg de monossacarídeos na forma de glicose. O volume de etanol, em litro, obtido nesse processo é mais próximo de O 6. O 20. OQ 25. O 6a. O 100.",
-   "imagens": [
-    "img:enem2021-101.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "A obtenção de etanol utilizando a cana-de-açúcar envolve a fermentação dos monossacarídeos formadores da sacarose contida no melaço. Um desses formadores é a glicose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>), cuja fermentação produz cerca de 50 g de etanol a partir de 100 g de glicose, conforme a equação química descrita.<br><span class=\"pb\"></span>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> —(fermentação alcoólica)→ 2 CH<sub>3</sub>CH<sub>2</sub>OH + 2 CO<sub>2</sub><br><span class=\"pb\"></span>Em uma condição específica de fermentação, obtém-se 80% de conversão em etanol que, após sua purificação, apresenta densidade igual a 0,80 g/mL. O melaço utilizado apresentou 50 kg de monossacarídeos na forma de glicose.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "16.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "20.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "25.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "64.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "100.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O volume de etanol, em litro, obtido nesse processo é mais próximo de",
+   "transcrita": true
   },
   {
    "id": "enem2021-102",
