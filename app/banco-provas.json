@@ -58866,7 +58866,6 @@
   },
   {
    "id": "cdb-c01-072",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -58878,41 +58877,43 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "72. Cefet-PR A parte escura do diagrama representa o conjunto: a) U – (M ∩ N – R) d)U ∩ M ∪ N ∪ R b) U – (M ∪ N ∪ R) e)U – (M ∩ N) – R c) U – (M ∪ N – R)",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-072.jpg"
-   ],
-   "larguraMm": 102.1,
+   "enunciado": "A parte escura do diagrama representa o conjunto:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ U − (M ∩ N − R) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ U − (M ∪ N ∪ R) $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ U − (M ∪ N − R) $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ U ∩ M ∪ N ∪ R $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ U − (M ∩ N) − R $",
      "ok": false
     }
-   ]
+   ],
+   "figuras": [
+    {
+     "tipo": "svg",
+     "svg": "<svg viewBox=\"0 0 360 170\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"serif\" font-size=\"14\"><rect x=\"20\" y=\"10\" width=\"330\" height=\"150\" fill=\"#e6e6e6\" stroke=\"#222\"/><text x=\"332\" y=\"30\">U</text><ellipse cx=\"95\" cy=\"85\" rx=\"32\" ry=\"42\" fill=\"#fff\" stroke=\"#222\"/><ellipse cx=\"125\" cy=\"85\" rx=\"32\" ry=\"42\" fill=\"#fff\" stroke=\"#222\"/><text x=\"72\" y=\"50\">M</text><text x=\"140\" y=\"50\">N</text><ellipse cx=\"270\" cy=\"85\" rx=\"26\" ry=\"36\" fill=\"#fff\" stroke=\"#222\"/><text x=\"280\" y=\"125\">R</text></svg>",
+     "largura": "80%",
+     "legenda": "Diagrama: universo U (em cinza) com os conjuntos M e N, que se intersectam, e R, separado deles; as elipses de M, N e R estão em branco."
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-073",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -58924,41 +58925,58 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "73. Cefet-PR Num colégio de segundo grau com 2000 alunos, foi realizada uma pesquisa sobre o gosto dos alunos pelas disciplinas de Física e Matemática. Os resultados da pesquisa se encontram na tabela a seguir: O número de alunos que gostam de Matemática e Física simultaneamente, é: a) 700 b) 500 d) 200 e) 100 c)300 Gostam de Matemática Gostam de Física Não gostam de Matemática nem de Física Número de alunos 1000 800 500",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-073.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Num colégio de segundo grau com 2000 alunos, foi realizada uma pesquisa sobre o gosto dos alunos pelas disciplinas de Física e Matemática. Os resultados da pesquisa se encontram na tabela a seguir:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "700",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "500",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "200",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "300",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O número de alunos que gostam de Matemática e Física simultaneamente, é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "",
+     "Número de alunos"
+    ],
+    "linhas": [
+     [
+      "Gostam de Matemática",
+      "1000"
+     ],
+     [
+      "Gostam de Física",
+      "800"
+     ],
+     [
+      "Não gostam de Matemática nem de Física",
+      "500"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-c01-074",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -58970,41 +58988,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "74. PUC-PR Sejam A, B e C três conjuntos finitos. Sabendo-se que: A ∩ B tem 20 elementos, B ∩ C tem 15 elementos e A ∩ B ∩ C tem 8 elementos, então o número de elementos de (A ∪ C) ∩ B é: a) 28 b) 25 c) 23 d) 27 e) 13",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-074.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Sejam $ A $, $ B $ e $ C $ três conjuntos finitos. Sabendo-se que $ A ∩ B $ tem 20 elementos, $ B ∩ C $ tem 15 elementos e $ A ∩ B ∩ C $ tem 8 elementos, então o número de elementos de $ (A ∪ C) ∩ B $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "28",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "25",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "23",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "27",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "13",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-075",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -59016,41 +59028,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "75. Vunesp Em um colégio foi realizada uma pesquisa sobre as atividades extracurricu- lares de seus alunos. Dos 500 alunos entrevistados, 240 praticavam um tipo de es- porte, 180 freqüentavam um curso de idiomas e 120 realizavam estas duas ativida- des, ou seja, praticavam um tipo de esporte e freqüentavam um curso de idiomas. Se, nesse grupo de 500 estudantes um é escolhido ao acaso, a probabilidade de que ele realize pelo menos uma dessas duas atividades, isto é, pratique um tipo de esporte ou freqüente um curso de idiomas, é: a) 18 b) 3 c) 12 d) 6 e) 2 25 5 25 25 5",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-075.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Em um colégio foi realizada uma pesquisa sobre as atividades extracurriculares de seus alunos. Dos 500 alunos entrevistados, 240 praticavam um tipo de esporte, 180 freqüentavam um curso de idiomas e 120 realizavam estas duas atividades, ou seja, praticavam um tipo de esporte e freqüentavam um curso de idiomas. Se, nesse grupo de 500 estudantes um é escolhido ao acaso, a probabilidade de que ele realize pelo menos uma dessas duas atividades, isto é, pratique um tipo de esporte ou freqüente um curso de idiomas, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {18|25} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|5} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {12|25} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {6|25} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {2|5} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-076",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -59062,41 +59068,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "76. FEI-SP Um programa de proteção e preservação de tartarugas marinhas, observan- do dois tipos de contaminação dos animais, constatou em um de seus postos de pes- quisa, que: 88 tartarugas apresentavam sinais de contaminação por óleo mineral, 35 não apresentavam sinais de contaminação por radioatividade, 77 apresentavam si- nais de contaminação tanto por óleo mineral como por radioatividade e 43 apresen- tavam sinais de apenas um dos dois tipos de contaminação. Quantas tartarugas foram observadas? a) 144 d) 160 b) 154 e) 168 c) 156",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-076.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Um programa de proteção e preservação de tartarugas marinhas, observando dois tipos de contaminação dos animais, constatou em um de seus postos de pesquisa, que: 88 tartarugas apresentavam sinais de contaminação por óleo mineral, 35 não apresentavam sinais de contaminação por radioatividade, 77 apresentavam sinais de contaminação tanto por óleo mineral como por radioatividade e 43 apresentavam sinais de apenas um dos dois tipos de contaminação. Quantas tartarugas foram observadas?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "144",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "154",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "156",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "160",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "168",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-077",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -59108,41 +59108,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "77. ITA-SP Denotemos por n (X) o número de elementos de um conjunto finito X. Sejam A, B e C conjuntos tais que n (A \u0002 B) = 8, n (A \u0002 C) = 9, n (B \u0002 C) = 10, n (A \u0002 B \u0002 C) = 11 e n (A \u0003 B \u0003 C) = 2. Então, n (A) + n (B) + n (C) é igual a: a)11 b) 14 c)15 d) 18 e) 25",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-077.jpg"
-   ],
-   "larguraMm": 132.8,
+   "enunciado": "Denotamos por $ n(X) $ o número de elementos de um conjunto finito $ X $. Sejam $ A $, $ B $ e $ C $ conjuntos tais que $ n(A ∪ B) = 8 $, $ n(A ∪ C) = 9 $, $ n(B ∪ C) = 10 $, $ n(A ∪ B ∪ C) = 11 $ e $ n(A ∩ B ∩ C) = 2 $. Então, $ n(A) + n(B) + n(C) $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "14",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "15",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "18",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "25",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-078",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -59154,41 +59148,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "78. FEI-SP Várias pessoas, respondendo a um anúncio de oferta de empregos, comparece- ram para uma entrevista de seleção. Sabendo-se que: — foram entrevistados 33 homens alfabetizados — foram entrevistadas 58 mulheres analfabetas — 70% dos entrevistados são homens e — 80% dos entrevistados são analfabetos, quantas entrevistas foram realizadas? a) 300 d) 280 b) 320 e) 200 c) 250",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-078.jpg"
-   ],
-   "larguraMm": 132.6,
+   "enunciado": "Várias pessoas, respondendo a um anúncio de oferta de empregos, compareceram para uma entrevista de seleção. Sabendo-se que:<br>— foram entrevistados 33 homens alfabetizados<br>— foram entrevistadas 58 mulheres analfabetas<br>— 70% dos entrevistados são homens e<br>— 80% dos entrevistados são analfabetos,<br><span class=\"pb\"></span>quantas entrevistas foram realizadas?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "300",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "320",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "250",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "280",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "200",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c01-079",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos e conceitos básicos",
@@ -59200,37 +59188,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "79. ITA-SP Sejam X , Y e Z subconjuntos próprios de R, não-vazios. Com respeito às afirmações: I. X \u0003 {[ Y \u0003 ( X \u0002 Y ) C ] < [ X \u0002 ( X C \u0003 Y C ) C ]} = X . II. Se Z , X então ( Z \u0002 Y ) \u0002 [ X \u0002 ( Z C \u0003 Y )] = X \u0002 Y . III. Se ( X \u0002 Y ) C \u0001 Z então Z C \u0001 X . temos que: a) ( ) apenas I é verdadeira. b) ( ) apenas I e II são verdadeiras. c) ( ) apenas I e III são verdadeiras. d) ( ) apenas II e III são verdadeiras. e) ( ) todas são verdadeiras.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c01-079.jpg"
-   ],
-   "larguraMm": 99.7,
+   "enunciado": "Sejam $ X $, $ Y $ e $ Z $ subconjuntos próprios de ℝ, não-vazios. Com respeito às afirmações:<br><span class=\"pb\"></span>I. $ X ∩ \\{[Y ∩ (X ∪ Y)^C] ∪ [X ∪ (X^C ∩ Y^C)^C]\\} = X $.<br>II. Se $ Z ⊂ X $ então $ (Z ∪ Y) ∪ [X ∪ (Z^C ∩ Y)] = X ∪ Y $.<br>III. Se $ (X ∪ Y)^C ⊂ Z $ então $ Z^C ⊂ X $.<br><span class=\"pb\"></span>temos que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "apenas I é verdadeira.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "apenas I e II são verdadeiras.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "apenas I e III são verdadeiras.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "apenas II e III são verdadeiras.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "todas são verdadeiras.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c02-001",
