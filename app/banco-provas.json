@@ -15785,7 +15785,6 @@
   {
    "id": "enem2020-113",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Materiais",
@@ -15797,35 +15796,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "As moedas despertam o interesse de colecionadores, numismatas e investidores há bastante tempo. Uma moeda de 100% cobre, circulante no período do Brasil Colônia, pode ser bastante valiosa. O elevado valor gera a necessidade de realização de testes que validem a procedência da moeda, bem como a veracidade de sua composição. Sabendo que a densidade do cobre metálico − é próxima de 9 g cm ³, um investidor negocia a aquisição de um lote de quatro moedas A, B, C e D fabricadas supostamente de 100% cobre e massas 26 g, 27 g, 10 g e 36 g, respectivamente. Com o objetivo de testar a densidade das moedas, foi realizado um procedimento em que elas foram sequencialmente inseridas em uma proveta contendo 5 mL de água, conforme esquematizado. 16 14 12 10 8 D 6 C C 4 B B B Volume de água (mL) 2 A A A A Proveta Proveta Proveta Proveta Proveta Com base nos dados obtidos, o investidor adquiriu as moedas A A e B. B A e C. C B e C. D B e D. E C e D.",
-   "imagens": [
-    "img:enem2020-113.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "As moedas despertam o interesse de colecionadores, numismatas e investidores há bastante tempo. Uma moeda de 100% cobre, circulante no período do Brasil Colônia, pode ser bastante valiosa. O elevado valor gera a necessidade de realização de testes que validem a procedência da moeda, bem como a veracidade de sua composição. Sabendo que a densidade do cobre metálico é próxima de 9 g cm<sup>−3</sup>, um investidor negocia a aquisição de um lote de quatro moedas A, B, C e D fabricadas supostamente de 100% cobre e massas 26 g, 27 g, 10 g e 36 g, respectivamente. Com o objetivo de testar a densidade das moedas, foi realizado um procedimento em que elas foram sequencialmente inseridas em uma proveta contendo 5 mL de água, conforme esquematizado.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A e B.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "A e C.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "B e C.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "B e D.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "C e D.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Com base nos dados obtidos, o investidor adquiriu as moedas",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-113-fig.jpg",
+    "alt": "Cinco provetas em sequência, com o volume de água (mL): inicial ≈ 5; com a moeda A ≈ 7; com A e B ≈ 10; com A, B e C ≈ 12; com A, B, C e D ≈ 16",
+    "largura": "82mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-114",
@@ -15871,7 +15873,6 @@
   {
    "id": "enem2020-115",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Química ambiental",
@@ -15883,40 +15884,43 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "rio em pontos diferentes, distantes alguns quilômetros um do outro. Ao longo do rio, há locais de águas limpas, como também locais que recebem descarga de esgoto de área urbana, e locais onde há decomposição ativa com ausência de peixes. Os pesquisadores analisaram dois parâmetros: oxigênio dissolvido (OD) e demanda bioquímica de oxigênio (DBO) em cada ponto de coleta de água, obtendo o gráfico: 14 12 + ) − 1 10 Legenda: 8 ∗ OD + + DBO 6 ∗ 4 + ∗ + ∗ OD e DBO (mg L ∗ 2 + ∗ 1 2 3 4 5 Pontos de amostragem Valores limites permitidos para águas doces destinadas ao abastecimento para o consumo humano após tratamento convencional, segundo Resolução Conama n. 357/2005: OD ≥ 5 mg L − 1 e DBO ≤ 5 mg L − 1 . O OD é proveniente da atmosfera e da fotossíntese que ocorre no curso-d’água e sua concentração é função das variáveis físicas, químicas e bioquímicas locais. A DBO é a quantidade de oxigênio consumido por microrganismos em condições aeróbicas para degradar uma determinada quantidade de matéria orgânica, durante um período de tempo, numa temperatura de incubação específica. Disponível em: www.programaaguaazul.rn.gov.br. Acesso em: 16 ago. 2014 (adaptado). Qual ponto de amostragem da água do rio está mais próximo ao local em que o rio recebe despejo de esgoto? A 1 B 2 C 3 D 4 E 5",
-   "imagens": [
-    "img:enem2020-115.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Pesquisadores coletaram amostras de água de um rio em pontos diferentes, distantes alguns quilômetros um do outro. Ao longo do rio, há locais de águas limpas, como também locais que recebem descarga de esgoto de área urbana, e locais onde há decomposição ativa com ausência de peixes. Os pesquisadores analisaram dois parâmetros: oxigênio dissolvido (OD) e demanda bioquímica de oxigênio (DBO) em cada ponto de coleta de água, obtendo o gráfico:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O OD é proveniente da atmosfera e da fotossíntese que ocorre no curso-d’água e sua concentração é função das variáveis físicas, químicas e bioquímicas locais. A DBO é a quantidade de oxigênio consumido por microrganismos em condições aeróbicas para degradar uma determinada quantidade de matéria orgânica, durante um período de tempo, numa temperatura de incubação específica.<br><span class=\"pb\"></span>Disponível em: www.programaaguaazul.rn.gov.br. Acesso em: 16 ago. 2014 (adaptado).<br><span class=\"pb\"></span>Qual ponto de amostragem da água do rio está mais próximo ao local em que o rio recebe despejo de esgoto?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-115-fig.jpg",
+    "alt": "Gráfico de dispersão do OD (asterisco) e da DBO (cruz), em mg/L, nos pontos de amostragem 1 a 5. OD ≈ 3,8; 2,7; 1,0; 3,5; 5,8. DBO ≈ 12,5; 6,5; 1,7; 4,3; 3,8",
+    "largura": "76mm",
+    "legenda": "Valores limites permitidos para águas doces destinadas ao abastecimento para o consumo humano após tratamento convencional, segundo Resolução Conama n. 357/2005: OD ≥ 5 mg L<sup>−1</sup> e DBO ≤ 5 mg L<sup>−1</sup>."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-116",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Tecnologias de energia",
@@ -15928,40 +15932,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "no mundo tem levado à busca e desenvolvimento de tecnologias que permitam minimizar emissões de poluentes atmosféricos. O uso de veículos elétricos é uma das propostas mais propagandeadas por serem de emissão zero. Podemos comparar a emissão de carbono −1 na forma de CO (massa molar igual a 44 g mol ) para os 2 dois tipos de carros (a combustão e elétrico). Considere que os veículos tradicionais a combustão, movidos a −1 etanol (massa molar igual a 46 g mol ), emitem uma média de 2,6 mol de CO por quilômetro rodado, e os 2 elétricos emitem o equivalente a 0,45 mol de CO por 2 quilômetro rodado (considerando as emissões na geração e transmissão da eletricidade). A reação de combustão do etanol pode ser representada pela equação química: C H OH (l) + 3 O (g) → 2 CO (g) + 3 H O (g) 2 5 2 2 2 Foram analisadas as emissões de CO envolvidas 2 em dois veículos, um movido a etanol e outro elétrico, em um mesmo trajeto de 1 000 km. CHIARADIA, C. A. Estudo da viabilidade da implantação de frotas de veículos elétricos e híbridos elétricos no atual cenário econômico, político, energético e ambiental brasileiro. Guaratinguetá: Unesp, 2015 (adaptado). A quantidade equivalente de etanol economizada, em quilograma, com o uso do veículo elétrico nesse trajeto, é mais próxima de A 50. B 60. C 95. D 99. E 120.",
-   "imagens": [
-    "img:enem2020-116.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "O crescimento da frota de veículos em circulação no mundo tem levado à busca e desenvolvimento de tecnologias que permitam minimizar emissões de poluentes atmosféricos. O uso de veículos elétricos é uma das propostas mais propagandeadas por serem de emissão zero. Podemos comparar a emissão de carbono na forma de CO<sub>2</sub> (massa molar igual a 44 g mol<sup>−1</sup>) para os dois tipos de carros (a combustão e elétrico). Considere que os veículos tradicionais a combustão, movidos a etanol (massa molar igual a 46 g mol<sup>−1</sup>), emitem uma média de 2,6 mol de CO<sub>2</sub> por quilômetro rodado, e os elétricos emitem o equivalente a 0,45 mol de CO<sub>2</sub> por quilômetro rodado (considerando as emissões na geração e transmissão da eletricidade). A reação de combustão do etanol pode ser representada pela equação química:<br><span class=\"pb\"></span>C<sub>2</sub>H<sub>5</sub>OH (l) + 3 O<sub>2</sub> (g) → 2 CO<sub>2</sub> (g) + 3 H<sub>2</sub>O (g)<br><span class=\"pb\"></span>Foram analisadas as emissões de CO<sub>2</sub> envolvidas em dois veículos, um movido a etanol e outro elétrico, em um mesmo trajeto de 1 000 km.<br><span class=\"pb\"></span>CHIARADIA, C. A. Estudo da viabilidade da implantação de frotas de veículos elétricos e híbridos elétricos no atual cenário econômico, político, energético e ambiental brasileiro. Guaratinguetá: Unesp, 2015 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "60.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "95.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "99.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "120.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A quantidade equivalente de etanol economizada, em quilograma, com o uso do veículo elétrico nesse trajeto, é mais próxima de",
+   "transcrita": true
   },
   {
    "id": "enem2020-117",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Metabolismo",
@@ -15973,40 +15973,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma aula sobre metabolismo energético, foi apresentado um experimento clássico realizado por Engelmann. Um recipiente contendo bactérias aeróbias e uma alga verde filamentosa foi submetido à iluminação de uma fonte de luz, representada pelo microespectro. Após a explicação, um aluno esquematizou na lousa o resultado do referido experimento. Bactérias aeróbias Filamento de alga verde Vermelho Amarelo Verde Azul Anil Violeta Microespectro Considerando a figura, a faixa do microespectro em que a alga possui maior taxa de realização fotossintética é a do: A Anil. B Verde. C Violeta. D Amarelo. E Vermelho.",
-   "imagens": [
-    "img:enem2020-117.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Em uma aula sobre metabolismo energético, foi apresentado um experimento clássico realizado por Engelmann. Um recipiente contendo bactérias aeróbias e uma alga verde filamentosa foi submetido à iluminação de uma fonte de luz, representada pelo microespectro. Após a explicação, um aluno esquematizou na lousa o resultado do referido experimento.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Anil.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "Verde.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Violeta.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Amarelo.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Vermelho.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considerando a figura, a faixa do microespectro em que a alga possui maior taxa de realização fotossintética é a do:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2020-117-fig.jpg",
+    "alt": "Esquema do experimento de Engelmann: filamento de alga verde sob o microespectro (vermelho, amarelo, verde, azul, anil, violeta), com bactérias aeróbias concentradas em algumas faixas",
+    "largura": "82mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-118",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Parasitologia",
@@ -16018,40 +16020,67 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "detectar ovos de parasitos. Um dos métodos utilizados, denominado de centrífugo-flutuação, considera a densidade dos ovos em relação a uma solução de −1 densidade 1,15 g mL . Assim, ovos que flutuam na superfície dessa solução são detectados. Os dados de densidade dos ovos de alguns parasitos estão apresentados na tabela. - 1 Parasito Densidade (g mL ) Ancylostoma 1,06 Ascaris lumbricoides 1,11 Ascaris suum 1,13 Schistosoma mansoni 1,18 Taenia saginata 1,30 ZERBINI, A. M. Identificação e análise de viabilidade de ovos de helmintos em um sistema de tratamento de esgotos domésticos constituídos de reatores anaeróbios e rampas de escoamento superficial . Belo Horizonte: Prosab, 2001 (adaptado). Considerando-se a densidade dos ovos e da solução, ovos de quais parasitos podem ser detectados por esse método? A A. lumbricoides, A. suum e S. mansoni. B S. mansoni, T. saginata e Ancylostoma. C Ancylostoma, A. lumbricoides e A. suum. D T. saginata, S. mansoni e A. lumbricoides. E A. lumbricoides, A. suum e T. saginata.",
-   "imagens": [
-    "img:enem2020-118.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "O exame parasitológico de fezes é utilizado para detectar ovos de parasitos. Um dos métodos utilizados, denominado de centrífugo-flutuação, considera a densidade dos ovos em relação a uma solução de densidade 1,15 g mL<sup>−1</sup>. Assim, ovos que flutuam na superfície dessa solução são detectados. Os dados de densidade dos ovos de alguns parasitos estão apresentados na tabela.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "<i>A. lumbricoides</i>, <i>A. suum</i> e <i>S. mansoni</i>.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "<i>S. mansoni</i>, <i>T. saginata</i> e <i>Ancylostoma</i>.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "<i>Ancylostoma</i>, <i>A. lumbricoides</i> e <i>A. suum</i>.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "<i>T. saginata</i>, <i>S. mansoni</i> e <i>A. lumbricoides</i>.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "<i>A. lumbricoides</i>, <i>A. suum</i> e <i>T. saginata</i>.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Considerando-se a densidade dos ovos e da solução, ovos de quais parasitos podem ser detectados por esse método?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Parasito",
+     "Densidade (g mL<sup>−1</sup>)"
+    ],
+    "linhas": [
+     [
+      "<i>Ancylostoma</i>",
+      "1,06"
+     ],
+     [
+      "<i>Ascaris lumbricoides</i>",
+      "1,11"
+     ],
+     [
+      "<i>Ascaris suum</i>",
+      "1,13"
+     ],
+     [
+      "<i>Schistosoma mansoni</i>",
+      "1,18"
+     ],
+     [
+      "<i>Taenia saginata</i>",
+      "1,30"
+     ]
+    ],
+    "largura": "80%",
+    "legenda": "ZERBINI, A. M. Identificação e análise de viabilidade de ovos de helmintos em um sistema de tratamento de esgotos domésticos constituídos de reatores anaeróbios e rampas de escoamento superficial. Belo Horizonte: Prosab, 2001 (adaptado)."
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-119",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Química · Tratamento de resíduos",
@@ -16063,35 +16092,32 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em seu laboratório, um técnico em química foi incumbido de tratar um resíduo, evitando seu descarte direto no meio ambiente. Ao encontrar o frasco, observou a seguinte informação: “ Resíduo: mistura de acetato de etila e água ”. Considere os dados do acetato de etila: • Baixa solubilidade em água; −3 • Massa específica = 0,9 g cm ; • Temperatura de fusão = −83 °C; • Pressão de vapor maior que a da água. A fim de tratar o resíduo, recuperando o acetato de etila, o técnico deve A evaporar o acetato de etila sem alterar o conteúdo de água. B filtrar a mistura utilizando um funil comum e um papel de filtro. C realizar uma destilação simples para separar a água do acetato de etila. D proceder a uma centrifugação da mistura para remover o acetato de etila. E decantar a mistura separando os dois componentes em um funil adequado.",
-   "imagens": [
-    "img:enem2020-119.jpg"
-   ],
-   "larguraMm": 90.3,
+   "enunciado": "Em seu laboratório, um técnico em química foi incumbido de tratar um resíduo, evitando seu descarte direto no meio ambiente. Ao encontrar o frasco, observou a seguinte informação: “<i>Resíduo: mistura de acetato de etila e água</i>”.<br><span class=\"pb\"></span>Considere os dados do acetato de etila:<br>• Baixa solubilidade em água;<br>• Massa específica = 0,9 g cm<sup>−3</sup>;<br>• Temperatura de fusão = −83 °C;<br>• Pressão de vapor maior que a da água.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "evaporar o acetato de etila sem alterar o conteúdo de água.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "filtrar a mistura utilizando um funil comum e um papel de filtro.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "realizar uma destilação simples para separar a água do acetato de etila.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "proceder a uma centrifugação da mistura para remover o acetato de etila.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "decantar a mistura separando os dois componentes em um funil adequado.",
      "ok": true
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A fim de tratar o resíduo, recuperando o acetato de etila, o técnico deve",
+   "transcrita": true
   },
   {
    "id": "enem2020-120",
@@ -16136,7 +16162,6 @@
   {
    "id": "enem2020-121",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Ciências da Natureza",
    "serie": "ENEM",
    "unidade": "Biologia · Genética",
@@ -16148,35 +16173,63 @@
    "dificuldade": 2,
    "fonte": "ENEM 2020 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "quanto ao sistema ABO, em que 25% dos indivíduos pertencem ao grupo O e 16%, ao grupo A homozigotos. A Considerando que: p = frequência de I ; q = frequência B de I ; e r = frequência de i, espera-se encontrar: Grupo Genótipos Frequências A A A 2 A I I e I i p + 2pr B B B 2 B I I e I i q + 2qr A B AB I I 2pq 2 O ii r A porcentagem de doadores compatíveis para alguém do grupo B nessa população deve ser de A 11%. B 19%. C 26%. D 36%. E 60%.",
-   "imagens": [
-    "img:enem2020-121.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Uma população encontra-se em equilíbrio genético quanto ao sistema ABO, em que 25% dos indivíduos pertencem ao grupo O e 16%, ao grupo A homozigotos. Considerando que: p = frequência de I<sup>A</sup>; q = frequência de I<sup>B</sup>; e r = frequência de i, espera-se encontrar:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "11%.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "19%.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "26%.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "36%.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "60%.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A porcentagem de doadores compatíveis para alguém do grupo B nessa população deve ser de",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Grupo",
+     "Genótipos",
+     "Frequências"
+    ],
+    "linhas": [
+     [
+      "A",
+      "I<sup>A</sup>I<sup>A</sup> e I<sup>A</sup>i",
+      "p<sup>2</sup> + 2pr"
+     ],
+     [
+      "B",
+      "I<sup>B</sup>I<sup>B</sup> e I<sup>B</sup>i",
+      "q<sup>2</sup> + 2qr"
+     ],
+     [
+      "AB",
+      "I<sup>A</sup>I<sup>B</sup>",
+      "2pq"
+     ],
+     [
+      "O",
+      "ii",
+      "r<sup>2</sup>"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2020-122",
