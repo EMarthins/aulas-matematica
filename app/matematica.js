@@ -80,7 +80,7 @@ export const MATH_CSS = `
 .fr>span:last-child{padding:.06em .2em 0}
 .rt{white-space:nowrap}.rt .rr{border-top:1.5px solid currentColor;padding:0 .12em;margin-left:.02em}
 sup.sq{font-size:.7em}
-.mx{display:inline-block;vertical-align:middle;margin:0 .15em}.mx table{border-collapse:collapse}.mx td{padding:.06em .5em;text-align:center;line-height:1.25}
+.mx{display:inline-block;vertical-align:middle;margin:.35em .15em}.mx table{border-collapse:collapse}.mx td{padding:.06em .5em;text-align:center;line-height:1.25}
 .mx-M{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor;border-radius:.5em/45%}
 .mx-D{border-left:1.4px solid currentColor;border-right:1.4px solid currentColor}
 .mx-S{border-left:1.6px solid currentColor;border-radius:.6em 0 0 .6em/45% 0 0 45%}.mx-S td{text-align:left;padding:.06em .3em .06em .55em}`;
