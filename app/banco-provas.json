@@ -56485,7 +56485,7 @@
      "ok": false
     },
     {
-     "t": "Se $ a, b ∈ ℝ_+^* $, então $ {a|b}(1 − {a|a + b}) + {b|a}(1 − {b|a + b}) = 1 $",
+     "t": "Se $ a, b ∈ ℝ_{+}^{*} $, então $ {a|b}(1 − {a|a + b}) + {b|a}(1 − {b|a + b}) = 1 $",
      "ok": true
     },
     {
@@ -63927,8 +63927,7 @@
     "tipo": "img",
     "src": "img:cdb-c04-030-fig.jpg",
     "alt": "Gráfico de linha do PIB de 1979 a 1998 (base 100 em 1979): sobe até cerca de 110 em 1980, oscila em torno de 105, cresce até cerca de 133 em 1989, oscila entre 127 e 130 até 1992 e sobe até cerca de 157 em 1997-98",
-    "largura": "77mm",
-    "legenda": "Fonte: IBGE, Folha de S. Paulo."
+    "largura": "77mm"
    },
    "transcrita": true
   },
@@ -64013,7 +64012,7 @@
     "tipo": "img",
     "src": "img:cdb-c04-032-fig.jpg",
     "alt": "Gráfico da absorção (mg/dia) em função da ingestão (mg/dia): segmento crescente da origem ao ponto A (20, 18) e segmento horizontal de A até B",
-    "largura": "67mm"
+    "largura": "80mm"
    },
    "transcrita": true
   },
@@ -64204,11 +64203,11 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "Se $ f: ℝ_+^* → ℝ_+^* $ e $ g:",
+   "enunciado": "Se $ f: ℝ_{+}^{*} → ℝ_{+}^{*} $ e $ g:",
    "resolucao": "",
    "tipo": "vf",
    "gabarito": "V – V – V",
-   "pergunta": "ℝ_+^* → ℝ_+^* $ são funções definidas, respectivamente, por $ f(x) = {1|x} + 1 $ e $ g(x) = x^2 $, julgue os itens.",
+   "pergunta": "ℝ_{+}^{*} → ℝ_{+}^{*} $ são funções definidas, respectivamente, por $ f(x) = {1|x} + 1 $ e $ g(x) = x^2 $, julgue os itens.",
    "afirmacoes": [
     {
      "t": "$ (g ∘ f)(x) = g(f(x)) = {1|x^2} + {2|x} + 1 $.",
