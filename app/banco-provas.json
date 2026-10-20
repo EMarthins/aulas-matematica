@@ -121973,8 +121973,6 @@
   },
   {
    "id": "cdb-l-circunferencia-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -121985,41 +121983,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 2 01. (USP) Os lugar geométrico dos pontos de coordenadas (x; y) tais que y + (x - 1) = 0 é: a) a origem b) duas retas concorrentes c) um ponto que não é a origem d) conjunto vazio e) uma reta.",
-   "imagens": [
-    "img:cdb-l-circunferencia-01.jpg"
-   ],
-   "larguraMm": 174.7,
+   "enunciado": "(USP) O lugar geométrico dos pontos de coordenadas $ (x; y) $ tais que $ y^2 + (x − 1)^2 = 0 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "a origem",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "duas retas concorrentes",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "um ponto que não é origem",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "conjunto vazio",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "uma reta.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122031,41 +122023,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. (USP) A equação da reta perpendicular ao eixo das abscissas que passa pelo ponto médio do 2 2 segmento AB, onde A(2, 3) e B é o centro da circunferência de equação x + y - 8x - 6y + 24 = 0, é: a) y = 3 b) y = 4 c) x = 4 d) x = 3 e) 3x + 4y = 0",
-   "imagens": [
-    "img:cdb-l-circunferencia-02.jpg"
-   ],
-   "larguraMm": 187.1,
+   "enunciado": "(USP) A equação da reta perpendicular ao eixo das abscissas que passa pelo ponto médio do segmento AB, onde $ A(2, 3) $ e B é o centro da circunferência de equação $ x^2 + y^2 − 8x − 6y + 24 = 0 $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ y = 3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ y = 4 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x = 4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = 3 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 3x + 4y = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122077,24 +122063,24 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. (USP) Se M é o ponto médio do segmento AB e P é o ponto médio do segmento OM, determinar a equação da circunferência de centro P e raio OP.",
-   "imagens": [
-    "img:cdb-l-circunferencia-03.jpg"
-   ],
-   "larguraMm": 170.7,
+   "enunciado": "(USP) Se M é o ponto médio do segmento AB e P é o ponto médio do segmento OM, determinar a equação da circunferência de centro P e raio OP.",
    "resolucao": "",
    "gabarito": "(x -",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circunferencia-03-fig.jpg",
+    "alt": "Plano cartesiano com A (0, 4) no eixo y e B (4, 0) no eixo x; M é o ponto médio de AB; P é o ponto médio de OM, centro de uma circunferência que passa pela origem O",
+    "largura": "72mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122105,24 +122091,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 2 04. Determinar a equação da tangente à circunferência x + y - 2x - 4y + 1 = 0 pelo ponto P( - 1; 2).",
-   "imagens": [
-    "img:cdb-l-circunferencia-04.jpg"
-   ],
-   "larguraMm": 182.1,
+   "enunciado": "Determinar a equação da tangente à circunferência $ x^2 + y^2 − 2x − 4y + 1 = 0 $ pelo ponto $ P(−1; 2) $.",
    "resolucao": "",
    "gabarito": "x + 1 = 0",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122133,24 +122113,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 2 05. Determinar as equações das retas (t) tangentes à circunferência x + y + 2x - 3 = 0 e que passam pel o ponto P(5, 2).",
-   "imagens": [
-    "img:cdb-l-circunferencia-05.jpg"
-   ],
-   "larguraMm": 178.8,
+   "enunciado": "Determinar as equações das retas (t) tangentes à circunferência $ x^2 + y^2 + 2x − 3 = 0 $ e que passam pelo ponto $ P(5, 2) $.",
    "resolucao": "",
    "gabarito": "y - 2 = 0 e 3x - 4y - 7 = 0",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122161,37 +122135,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 2 06. (UEMT) Dada a circunferência C da equação (x - 1) + y = 1 e considerando o ponto P(2, 1), então as retas tangentes a C passando por P: a) Têm equações y = 1 e x = 2. b) não existem pois P é interno a C. c) são ambas paralelas à reta y =1 d) Têm equações y = 1 (e só uma porque P está em C). c) Têm equações x = 1 e y = 2.",
-   "imagens": [
-    "img:cdb-l-circunferencia-06.jpg"
-   ],
-   "larguraMm": 184.3,
+   "enunciado": "(UEMT) Dada a circunferência C da equação $ (x − 1)^2 + y^2 = 1 $ e considerando o ponto $ P(2, 1) $, então as retas tangentes a C passando por P:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Têm equações $ y = 1 $ e $ x = 2 $.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "não existem pois P é interno a C.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "são ambas paralelas à reta $ y = 1 $.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Têm equações $ y = 1 $ (e só uma porque P está em C).",
+     "ok": false
+    },
+    {
+     "t": "Têm equações $ x = 1 $ e $ y = 2 $.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122202,41 +122174,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. A equação da circunferência que passa pelo ponto (2,0) e que tem centro no ponto (2, 3) é dada por: 2 2 a) x + y - 4x - 6y + 4 = 0 2 2 b) x + y - 4x - 9y - 4 = 0 2 2 c) x + y - 2x - 3y + 4 = 0 2 2 d) 3x + 2y - 2x - 3y - 4 = 0 2 2 e) (x - 2) + y = 9",
-   "imagens": [
-    "img:cdb-l-circunferencia-07.jpg"
-   ],
-   "larguraMm": 180.6,
+   "enunciado": "A equação da circunferência que passa pelo ponto $ (2, 0) $ e que tem centro no ponto $ (2, 3) $ é dada por:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 − 4x − 6y + 4 = 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 − 4x − 9y − 4 = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 − 2x − 3y + 4 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 3x^2 + 2y^2 − 2x − 3y − 4 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ (x − 2)^2 + y^2 = 9 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122247,41 +122213,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. A equação da circunferência que passa pelo ponto A = (0; 2) e é tangente na origem a reta r y + 2x = 0, é: 2 2 a) x + y - 2x - y = 0 2 2 b) x + y + 4x - 2y = 0 2 2 c) x + y - 4x - 2y = 0 2 2 d) x + y + 4x + 2y = 0 2 2 e) x + y + 4x + 2y = 0",
-   "imagens": [
-    "img:cdb-l-circunferencia-08.jpg"
-   ],
-   "larguraMm": 186.9,
+   "enunciado": "A equação da circunferência que passa pelo ponto $ A = (0; 2) $ e é tangente na origem à reta $ r $: $ y + 2x = 0 $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^2 + y^2 − 2x − y = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 + 4x − 2y = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 − 4x − 2y = 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 + 4x + 2y = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ x^2 + y^2 + 4x + 2y = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122292,41 +122252,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09. A equação da circunferência que tangencia as retas x + y = 0 e x + y = 8 e que passa pelo ponto (0; 0) é: 2 2 a) 2 . x + 2y - 4x - 4y = 0 2 2 b) x + y - 2x - 6y = 0 2 2 c) x + y - 4x - 4y = 0 2 2 d) x + y + 4x + 4y = 0 e) n.d.a.",
-   "imagens": [
-    "img:cdb-l-circunferencia-09.jpg"
-   ],
-   "larguraMm": 179.7,
+   "enunciado": "A equação da circunferência que tangencia as retas $ x + y = 0 $ e $ x + y = 8 $ e que passa pelo ponto $ (0; 0) $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2 · x^2 + 2y^2 − 4x − 4y = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + y^2 − 2x − 6y = 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 + y^2 − 4x − 4y = 0 $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ x^2 + y^2 + 4x + 4y = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "n.d.a.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -122337,36 +122291,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 2 10. A equação da reta tangente à circunferência (x - 4) + (y - 5) = 20 e que a tangencia no ponto de abscissa 2 é: a) x - 2y - 4 = 0 b) x + 2y - 4 = 0 e x - 2y + 16 = 0 c) x + y - 2 = 0 e x - y + 16 = 0 d) x + 2y - 4 = 0 e x - 2y + 4 = 0 e) n.d.a.",
-   "imagens": [
-    "img:cdb-l-circunferencia-10.jpg"
-   ],
-   "larguraMm": 186.7,
+   "enunciado": "A equação da reta tangente à circunferência $ (x − 4)^2 + (y − 5)^2 = 20 $ e que tangencia no ponto de abscissa 2 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x − 2y − 4 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x + 2y − 4 = 0 $ e $ x − 2y + 16 = 0 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ x + y − 2 = 0 $ e $ x − y + 16 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x + 2y − 4 = 0 $ e $ x − 2y + 4 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "n.d.a.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-comprimento-e-area-da-circ-01",
@@ -129574,8 +129524,6 @@
   },
   {
    "id": "cdb-l-circunferencia-2-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -129586,12 +129534,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um terreno tem formato retangular e seu dono resolveu colocar grama no setor circular cujo raio é igual a uma das laterais do terreno, conforme mostra a imagem. Sabendo que o perímetro do terreno é de 80 metros e que o lado menor é igual a 60% do lado maio r, qual é a área do terreno que receberá grama? 2 a) 25 m 2 b) 15 m 2 c) 173,6 m 2 d) 179,6 m 2 e) 176,6 m",
-   "imagens": [
-    "img:cdb-l-circunferencia-2-04.jpg"
-   ],
-   "larguraMm": 153.5,
+   "enunciado": "Um terreno tem formato retangular e seu dono resolveu colocar grama no setor circular cujo raio é igual a uma das laterais do terreno, conforme mostra a imagem.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-circunferencia-2-04-r.jpg",
@@ -129600,26 +129543,34 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25 m²",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "15 m²",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "173,6 m²",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "179,6 m²",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "176,6 m²",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Sabendo que o perímetro do terreno é de 80 metros e que o lado menor é igual a 60% do lado maior, qual é a área do terreno que receberá grama?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circunferencia-2-04-fig.jpg",
+    "alt": "Terreno retangular com um setor circular (quarto de círculo) verde no canto direito, de raio igual ao lado menor",
+    "largura": "70mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-criterios-de-divisibilidad-01",
@@ -136393,8 +136344,6 @@
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -136406,12 +136355,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Furb - SC) “Lixo é basicamente todo e qualquer resíduo sólido proveniente das atividades humanas ou gerado pela natureza em aglomerados urbanos. O lixo faz parte de nossa vida e tratá - lo bem é uma questão de bom senso, cidadania e bem - estar agora e principalmente no futuro.”(www.loucosporlixo.com.br). Pensando nisso, um grupo teatral quer representar uma peça sobre a importância da reciclagem do lixo. Eles querem montar um cenário no qual 3 paredes de 4 m de altura por 5 m de comprimento deverão ser revestidas de CDs defeituosos. Sabendo - se que cada CD possui 12 cm de diâmetro, quantos Cds, aproximadamente, serão necessários para revestir essas paredes? (Use π = 3,14.) a) 5200. b) 530",
-   "imagens": [
-    "img:cdb-l-circulo-e-circunferencia-06.jpg"
-   ],
-   "larguraMm": 152.8,
+   "enunciado": "(Furb - SC) “Lixo é basicamente todo e qualquer resíduo sólido proveniente das atividades humanas ou gerado pela natureza em aglomerados urbanos. O lixo faz parte de nossa vida e tratá-lo bem é uma questão de bom senso, cidadania e bem-estar agora e principalmente no futuro.” (www.loucosporlixo.com.br). Pensando nisso, um grupo teatral quer representar uma peça sobre a importância da reciclagem do lixo. Eles querem montar um cenário no qual 3 paredes de 4 m de altura por 5 m de comprimento deverão ser revestidas de CDs defeituosos. Sabendo-se que cada CD possui 12 cm de diâmetro, quantos CDs, aproximadamente, serão necessários para revestir essas paredes? (Use π = 3,14.)",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-circulo-e-circunferencia-06-r.jpg",
@@ -136420,26 +136364,27 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "5200.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "5300.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5400.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5500.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5600.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-conjunto-dos-numeros-reais-01",
@@ -148333,8 +148278,6 @@
   },
   {
    "id": "cdb-l-cilindros-e-circulos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Geometria espacial",
@@ -148345,19 +148288,21 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2) Calcule o perímetro das figuras seguintes: a) b) c) d)",
-   "imagens": [
-    "img:cdb-l-cilindros-e-circulos-02.jpg"
-   ],
-   "larguraMm": 119.5,
+   "enunciado": "Calcule o perímetro das figuras seguintes:",
    "resolucao": "",
    "gabarito": "(usando $π ≈ 3,14$) a) $C = 2π · 15 = 30π ≈ 94,2$ m. b) Semicircunferência $π · 10 = 10π$ mais o diâmetro de $20$: $P = 10π + 20 ≈ 51,4$ dm. c) Dois raios mais um quarto da circunferência: $P = 3 + 3 + {2π · 3|4} = 6 + 1,5π ≈ 10,71$ cm. d) Dois lados do quadrado ($8 + 8$) mais duas semicircunferências de diâmetro $8$ ($4π$ cada): $P = 16 + 8π ≈ 41,12$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-cilindros-e-circulos-02-fig.jpg",
+    "alt": "Quatro figuras: a) círculo de raio 15 m; b) semicírculo de diâmetro 20 dm; c) quarto de círculo de raio 3 cm; d) quadrado de lado 8 m com uma semicircunferência sobre o lado de cima e outra sobre o lado direito",
+    "largura": "112mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-2-01",
@@ -154809,8 +154754,6 @@
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -154821,36 +154764,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. Um inseto vai se deslocar sobre uma superfície esférica de raio 50 cm, desde um ponto A até um ponto B, diametralme nte opostos, conforme a figura. O menor trajeto possível que o inseto pode percor rer tem comprimento igual a:  a) /2 m.  b) m.  c) 3 /2 m.  d) 2 m.  e) 3 m.",
-   "imagens": [
-    "img:cdb-l-circulo-e-circunferencia-2-03.jpg"
-   ],
-   "larguraMm": 198.4,
+   "enunciado": "Um inseto vai se deslocar sobre uma superfície esférica de raio 50 cm, desde um ponto A até um ponto B, diametralmente opostos, conforme a figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {π|2} $ m.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ π $ m.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3π|2} $ m.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 2π $ m.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3π $ m.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "O menor trajeto possível que o inseto pode percorrer tem comprimento igual a:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circulo-e-circunferencia-2-03-fig.jpg",
+    "alt": "Esfera com o centro O e os pontos A e B diametralmente opostos",
+    "largura": "38mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-04",
@@ -154920,8 +154866,6 @@
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -154932,24 +154876,24 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. Calcule a área hachurada na figura abaixo sabendo que o raio do círculo mede 2 cm.",
-   "imagens": [
-    "img:cdb-l-circulo-e-circunferencia-2-07.jpg"
-   ],
-   "larguraMm": 198.4,
+   "enunciado": "Calcule a área hachurada na figura abaixo sabendo que o raio do círculo mede 2 cm.",
    "resolucao": "",
    "gabarito": "A = 2(  -",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circulo-e-circunferencia-2-07-fig.jpg",
+    "alt": "Semicírculo de diâmetro AB e centro O, com C no topo do arco; os segmentos AC e BC formam um triângulo; as regiões entre o triângulo e o arco estão hachuradas",
+    "largura": "77mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -154960,36 +154904,38 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. A área da região hachurada vale:  a) 12 - 2  b) 16 - 2  c) 9 -  d) 8 - 2  e) 4 -",
-   "imagens": [
-    "img:cdb-l-circulo-e-circunferencia-2-08.jpg"
-   ],
-   "larguraMm": 198.4,
+   "enunciado": "A área da região hachurada vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 12π − 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 16 − 2π $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 9 − π $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 8 − 2π $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ 4 − π $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circulo-e-circunferencia-2-08-fig.jpg",
+    "alt": "Retângulo de 2 por 4 (dois trechos de 2 de altura) com um semicírculo de raio 2 retirado do lado direito; a parte restante está hachurada",
+    "largura": "27mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-09",
@@ -155032,8 +154978,6 @@
   },
   {
    "id": "cdb-l-circulo-e-circunferencia-2-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -155044,36 +154988,38 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. No futebol de salão, a área de meta é delimitada por dois segmentos de reta (de comprimento de 11 m e 3 m) e dois quadrantes de círculos (de raio 4 m), conforme a figura. A superfície da áre a de meta mede,  aproximadamente: (use = 3,14) a) 25 m² b) 34 m² c) 37 m² d) 41 m² e) 61 m²",
-   "imagens": [
-    "img:cdb-l-circulo-e-circunferencia-2-10.jpg"
-   ],
-   "larguraMm": 197,
+   "enunciado": "No futebol de salão, a área de meta é delimitada por dois segmentos de reta (de comprimento de 11 m e 3 m) e dois quadrantes de círculos (de raio 4 m), conforme a figura. A superfície da área de meta mede, aproximadamente: (use $ π = 3,14 $)",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "25 m²",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "34 m²",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "37 m²",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "41 m²",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "61 m²",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circulo-e-circunferencia-2-10-fig.jpg",
+    "alt": "Área de meta de futebol de salão: segmentos de 3 m e 4 m e dois quadrantes de círculo de raio 4 m",
+    "largura": "85mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-estatistica-e-probabilidad-2-01",
@@ -164033,8 +163979,6 @@
   },
   {
    "id": "cdb-l-circunferencia-circulo-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Geometria analítica: circunferência",
@@ -164045,19 +163989,21 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Classifique os segmentos da circunferência",
-   "imagens": [
-    "img:cdb-l-circunferencia-circulo-01.jpg"
-   ],
-   "larguraMm": 89.1,
+   "enunciado": "Classifique os segmentos.<br><span class=\"pb\"></span>a) segmento AC<br>b) segmento OA<br>c) segmento BD<br>d) segmento AD<br>e) segmento OE",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "a) corda. b) raio. c) diâmetro. d) corda. e) raio."
+   "gabarito": "a) corda. b) raio. c) diâmetro. d) corda. e) raio.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-circunferencia-circulo-01-fig.jpg",
+    "alt": "Circunferência de centro O com os pontos A, B, C, D e E sobre ela e vários segmentos traçados (cordas e raios)",
+    "largura": "65mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-circunferencia-circulo-03",
