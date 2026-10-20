@@ -48813,7 +48813,6 @@
   {
    "id": "enem2024-158",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -48825,40 +48824,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma tubulação despeja sempre o mesmo volume de água por unidade de tempo em uma caixa-d’água, o que significa dizer que a vazão de água nessa tubulação é constante. Na junção dessa tubulação com a caixa-d’água, está instalada uma membrana de filtragem cujo objetivo é filtrar eventuais impurezas presentes na água, combinado a um bom fluxo de água. O fluxo ( φ ) de água através da superfície da membrana é diretamente proporcional à vazão de água na tubulação, medida em mililitro por segundo, e inversamente proporcional à área da superfície da membrana, medida em centímetro quadrado. A unidade de medida adequada para descrever o fluxo ( φ ) de água que atravessa a superfície da membrana é 2 A mL ⋅ s cm ⋅ mL 2 B ⋅ cm s mL C 2 cm ⋅ s 2 cm ⋅ s D mL 2 cm E mL ⋅ s",
-   "imagens": [
-    "img:enem2024-158.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma tubulação despeja sempre o mesmo volume de água por unidade de tempo em uma caixa-d’água, o que significa dizer que a vazão de água nessa tubulação é constante. Na junção dessa tubulação com a caixa-d’água, está instalada uma membrana de filtragem cujo objetivo é filtrar eventuais impurezas presentes na água, combinado a um bom fluxo de água. O fluxo (ϕ) de água através da superfície da membrana é diretamente proporcional à vazão de água na tubulação, medida em mililitro por segundo, e inversamente proporcional à área da superfície da membrana, medida em centímetro quadrado.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "mL · s · cm<sup>2</sup>",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {mL|s} · cm^2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {mL|cm^2·s} $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ {cm^2·s|mL} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {cm^2|mL·s} $",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A unidade de medida adequada para descrever o fluxo (ϕ) de água que atravessa a superfície da membrana é",
+   "transcrita": true
   },
   {
    "id": "enem2024-159",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Porcentagem e juros",
@@ -48870,35 +48865,50 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Em uma loja de defensivos agrícolas, os preços de alguns produtos foram divulgados em um cartaz. Sabe-se que 1 litro de defensivo do Tipo A é suficiente para aplicação em 0,5 hectare (ha), enquanto que 1 litro de defensivo do Tipo B é suficiente para aplicação em 0,4 ha. Um agricultor precisa comprar, nessa loja, uma quantidade de litros de defensivo suficiente para aplicar em uma área de 20 ha, além de levar uma máscara para aplicação. O valor mínimo, em real, a ser gasto pelo agricultor é A 147,00. B 150,00. C 162,50. D 165,75. E 168,00.",
-   "imagens": [
-    "img:enem2024-159.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Em uma loja de defensivos agrícolas, os preços de alguns produtos foram divulgados em um cartaz.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "147,00.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "150,00.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "162,50.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "165,75.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "168,00.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Sabe-se que 1 litro de defensivo do Tipo A é suficiente para aplicação em 0,5 hectare (ha), enquanto que 1 litro de defensivo do Tipo B é suficiente para aplicação em 0,4 ha. Um agricultor precisa comprar, nessa loja, uma quantidade de litros de defensivo suficiente para aplicar em uma área de 20 ha, além de levar uma máscara para aplicação.<br><span class=\"pb\"></span>O valor mínimo, em real, a ser gasto pelo agricultor é",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "PROMOÇÃO: Compre pelo menos 35 litros de defensivos do TIPO A e ganhe a máscara para aplicação."
+    ],
+    "linhas": [
+     [
+      "Defensivo Tipo A – R&#36; 4,20/litro"
+     ],
+     [
+      "Defensivo Tipo B – R&#36; 3,00/litro"
+     ],
+     [
+      "Máscara para aplicação – R&#36; 12,50"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-160",
@@ -48943,7 +48953,6 @@
   {
    "id": "enem2024-161",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -48955,35 +48964,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma empresa tem 400 funcionários, distribuídos em três setores: administrativo, logística e produção. O gráfico apresenta a distribuição quantitativa desses funcionários, por setor e por faixa etária. Uma viagem de férias será sorteada entre esses funcionários, de forma que todos terão igual probabilidade de serem sorteados. A maior probabilidade é que o funcionário sorteado esteja na faixa etária A entre 25 e 45 anos, pois é a faixa etária com maior quantidade de funcionários. B entre 25 e 45 anos, pois é a única faixa etária cujas porcentagens são maiores do que as porcentagens mínimas de cada setor. C até 25 anos, pois é a única faixa etária cujos percentuais associados aos setores aumentam com o aumento da quantidade de funcionários por setor. D até 25 anos, pois é a faixa etária que apresenta maior quantidade de funcionários no setor de produção, que é o setor que emprega metade dos funcionários dessa empresa. E a partir de 45 anos, pois a soma das porcentagens associadas a essa faixa etária é 110%, que é maior do que as respectivas somas associadas às outras faixas etárias, que são 105% e 85%.",
-   "imagens": [
-    "img:enem2024-161.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma empresa tem 400 funcionários, distribuídos em três setores: administrativo, logística e produção. O gráfico apresenta a distribuição quantitativa desses funcionários, por setor e por faixa etária.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "entre 25 e 45 anos, pois é a faixa etária com maior quantidade de funcionários.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "entre 25 e 45 anos, pois é a única faixa etária cujas porcentagens são maiores do que as porcentagens mínimas de cada setor.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "até 25 anos, pois é a única faixa etária cujos percentuais associados aos setores aumentam com o aumento da quantidade de funcionários por setor.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "até 25 anos, pois é a faixa etária que apresenta maior quantidade de funcionários no setor de produção, que é o setor que emprega metade dos funcionários dessa empresa.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "a partir de 45 anos, pois a soma das porcentagens associadas a essa faixa etária é 110%, que é maior do que as respectivas somas associadas às outras faixas etárias, que são 105% e 85%.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Uma viagem de férias será sorteada entre esses funcionários, de forma que todos terão igual probabilidade de serem sorteados.<br><span class=\"pb\"></span>A maior probabilidade é que o funcionário sorteado esteja na faixa etária",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-161-fig.jpg",
+    "alt": "Gráfico de colunas empilhadas da quantidade de funcionários por setor (Administrativo, 80; Logística, 120; Produção, 200), em porcentagens por faixa etária: a partir de 45 anos, entre 25 e 45 anos e até 25 anos",
+    "largura": "86mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-162",
@@ -49033,7 +49045,6 @@
   {
    "id": "enem2024-163",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Números e operações",
@@ -49045,35 +49056,38 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O tamanho mínimo que a visão humana é capaz de visualizar sem o uso de equipamento auxiliar é equivalente − 3 a 100 micrômetros (1 micrômetro = 10 milímetros). Uma estudante pretende visualizar e analisar hemácias do sangue humano, que medem 0,007 mm de diâmetro. Ela adquiriu um microscópio óptico que tem uma lente ocular que amplia em 10 vezes a imagem do objeto em observação, e um conjunto de lentes objetivas com estas capacidades de ampliação: • lente I: 2 vezes; • lente II: 10 vezes; • lente III: 15 vezes; • lente IV: 1,1 vez; • lente V: 1,4 vez. O funcionamento desse microscópio permite o uso da lente ocular sozinha ou a combinação dela com uma de suas lentes objetivas, proporcionando, nesse caso, um aumento de sua capacidade de ampliação final, que é dada pelo produto entre as capacidades de ampliação da ocular e da objetiva. Essa estudante pretende selecionar a lente objetiva de menor capacidade de ampliação que permita, na combinação com a ocular, visualizar hemácias do sangue humano. A lente objetiva a ser selecionada pela estudante é a A I. B II. C III. D IV. E V.",
-   "imagens": [
-    "img:enem2024-163.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "O tamanho mínimo que a visão humana é capaz de visualizar sem o uso de equipamento auxiliar é equivalente a 100 micrômetros (1 micrômetro = 10<sup>−3</sup> milímetros). Uma estudante pretende analisar hemácias do sangue humano, que medem 0,007 mm de diâmetro. Ela adquiriu um microscópio óptico que tem uma lente ocular que amplia em 10 vezes a imagem do objeto em observação, e um conjunto de lentes objetivas com estas capacidades de ampliação:<br>• lente I: 2 vezes;<br>• lente II: 10 vezes;<br>• lente III: 15 vezes;<br>• lente IV: 1,1 vez;<br>• lente V: 1,4 vez.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O funcionamento desse microscópio permite o uso da lente ocular sozinha ou a combinação dela com uma de suas lentes objetivas, proporcionando, nesse caso, um aumento de sua capacidade de ampliação final, que é dada pelo produto entre as capacidades de ampliação da ocular e da objetiva.<br><span class=\"pb\"></span>Essa estudante pretende selecionar a lente objetiva de menor capacidade de ampliação que permita, na combinação com a ocular, visualizar hemácias do sangue humano.<br><span class=\"pb\"></span>A lente objetiva a ser selecionada pela estudante é a",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-163-fig.jpg",
+    "alt": "Microscópio óptico com a lente ocular no alto e as lentes objetivas na parte inferior",
+    "largura": "59mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-164",
@@ -49118,7 +49132,6 @@
   {
    "id": "enem2024-165",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Análise combinatória",
@@ -49130,40 +49143,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para abrir a porta de uma empresa, cada funcionário deve cadastrar uma senha utilizando um teclado alfanumérico como o representado na figura. Por exemplo: a tecla que contém o número 2 traz as letras correlacionadas A, B e C. Cada toque nessa tecla mostra, sequencialmente, os seguintes caracteres: 2, A, B e C. Para os próximos toques, essa sequência se repete. As demais teclas funcionam da mesma maneira. As senhas a serem cadastradas pelos funcionários devem conter 5 caracteres, sendo 2 algarismos distintos seguidos de 3 letras diferentes, nessa ordem. Um funcionário irá cadastrar a sua primeira senha, podendo escolher entre as teclas que apresentam os números 1, 2, 5, 7 e 0 e as respectivas letras correlacionadas, quando houver. O número de possibilidades diferentes que esse funcionário tem para cadastrar sua senha é A 11 520. B 14 400. C 18 000. D 312 000. E 390 000.",
-   "imagens": [
-    "img:enem2024-165.jpg"
-   ],
-   "larguraMm": 100.5,
+   "enunciado": "Para abrir a porta de uma empresa, cada funcionário deve cadastrar uma senha utilizando um teclado alfanumérico como o representado na figura.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "11 520.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "14 400.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "18 000.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "312 000.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "390 000.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Por exemplo, a tecla que contém o número 2 traz as letras correlacionadas A, B e C. Cada toque nessa tecla mostra, sequencialmente, os seguintes caracteres: 2, A, B e C. Para os próximos toques, essa sequência se repete. As demais teclas funcionam da mesma maneira.<br><span class=\"pb\"></span>As senhas a serem cadastradas pelos funcionários devem conter 5 caracteres, sendo 2 algarismos distintos seguidos de 3 letras diferentes, nessa ordem. Um funcionário irá cadastrar a sua primeira senha, podendo escolher entre as teclas que apresentam os números 1, 2, 5, 7 e 0 e as respectivas letras correlacionadas, quando houver.<br><span class=\"pb\"></span>O número de possibilidades diferentes que esse funcionário tem para cadastrar sua senha é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-165-fig.jpg",
+    "alt": "Teclado numérico de telefone: 1; 2 (ABC); 3 (DEF); 4 (GHI); 5 (JKL); 6 (MNO); 7 (PQRS); 8 (TUV); 9 (WXYZ); e o 0 na última linha",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-166",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -49175,35 +49190,53 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Um artesão utiliza dois tipos de componentes, X e Y, nos enfeites que produz. Ele sempre compra todos os componentes em uma mesma loja. O quadro apresenta os preços dos dois tipos de componentes nas lojas I e II. Preços dos componentes (R$) Lojas X Y I 3,00 1,00 II 2,00 4,00 Ele confeccionará enfeites formados por duas unidades do componente X e uma unidade do componente Y e efetuará a compra na loja que oferecer o menor valor total para a confecção de um enfeite. O artesão efetuará a compra na loja A I, pois o valor é R$ 7,00. B I, pois o valor é R$ 4,00. C II, pois o valor é R$ 6,00. D I, pois anuncia o componente com o menor preço. E II, pois o componente X, que é o mais utilizado, tem menor preço.",
-   "imagens": [
-    "img:enem2024-166.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Um artesão utiliza dois tipos de componentes, X e Y, nos enfeites que produz. Ele sempre compra todos os componentes numa mesma loja. O quadro apresenta os preços dos dois tipos de componentes nas lojas I e II.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I, pois o valor é R&#36; 7,00.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "I, pois o valor é R&#36; 4,00.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "II, pois o valor é R&#36; 6,00.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "I, pois anuncia o componente com o menor preço.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "II, pois o componente X, que é o mais utilizado, tem menor preço.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Ele confeccionará enfeites formados por duas unidades do componente X e uma unidade do componente Y e efetuará a compra na loja que oferecer o menor valor total para a confecção de um enfeite.<br><span class=\"pb\"></span>O artesão efetuará a compra na loja",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Lojas",
+     "Preço do componente X (R&#36;)",
+     "Preço do componente Y (R&#36;)"
+    ],
+    "linhas": [
+     [
+      "I",
+      "3,00",
+      "1,00"
+     ],
+     [
+      "II",
+      "2,00",
+      "4,00"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-167",
@@ -49248,7 +49281,6 @@
   {
    "id": "enem2024-168",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Funções",
@@ -49260,40 +49292,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Três grandezas (I, II e III) se relacionam entre si. Os gráficos a seguir, formados por segmentos de reta, descrevem as relações de dependência existentes entre as grandezas I e II, e entre as grandezas II e III. O valor máximo assumido pela grandeza III, quando a grandeza I varia de 1 a 3, é A 1,0. B 2,5. C 3,0. D 3,5. E 4,0.",
-   "imagens": [
-    "img:enem2024-168.jpg"
-   ],
-   "larguraMm": 91.4,
+   "enunciado": "Três grandezas (I, II e III) se relacionam entre si. Os gráficos a seguir, formados por segmentos de reta, descrevem as relações de dependência existentes entre as grandezas I e II, e entre as grandezas II e III.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1,0.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,5.",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3,0.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3,5.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "4,0.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "O valor máximo assumido pela grandeza III, quando a grandeza I varia de 1 a 3, é",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-168-fig.jpg",
+    "alt": "Dois gráficos de segmentos de reta. Grandeza II em função da Grandeza I: passa pelos pontos (0, 0), (2, 3) e (4, 4). Grandeza III em função da Grandeza II: passa pelos pontos (0, 4), (3, 1) e (4, 3)",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-169",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Probabilidade",
@@ -49305,35 +49339,54 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma criança, utilizando um aplicativo, escreveu uma mensagem para enviar a um amigo. Essa mensagem foi escrita seguindo estas etapas: Etapas Visor de escrita 1 ª etapa: inseriu três figuras do tipo no visor de escrita da mensagem; 2 ª etapa: copiou o que havia inserido anteriormente e colou (inseriu o que havia copiado) ao lado; 3 ª etapa: copiou o que tinha no visor na 2 ª etapa e colou ao lado. A criança seguiu copiando e colando, em cada etapa, o que tinha no visor na etapa imediatamente anterior, até concluir a 20 ª etapa. Em seguida, enviou a mensagem. Qual foi o total de figuras contidas na mensagem enviada? 19 A 3 × 2 20 B 3 × 2 21 C 3 × 2 20 D 3 × 2 − 1 20 E 3 × 2 − 3",
-   "imagens": [
-    "img:enem2024-169.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma criança, utilizando um aplicativo, escreveu uma mensagem para enviar a um amigo. Essa mensagem foi escrita seguindo estas etapas:",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3 × 2<sup>19</sup>",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "3 × 2<sup>20</sup>",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3 × 2<sup>21</sup>",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "3 × 2<sup>20</sup> − 1",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "3 × 2<sup>20</sup> − 3",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "A criança seguiu copiando e colando, em cada etapa, o que tinha no visor na etapa imediatamente anterior, até concluir a 20ª etapa. Em seguida, enviou a mensagem.<br><span class=\"pb\"></span>Qual foi o total de figuras contidas na mensagem enviada?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Etapas",
+     "Visor de escrita"
+    ],
+    "linhas": [
+     [
+      "1ª etapa: inseriu três figuras do tipo ☺ no visor da mensagem;",
+      "☺☺☺"
+     ],
+     [
+      "2ª etapa: copiou o que havia inserido anteriormente e colou (inseriu o que havia copiado) ao lado;",
+      "☺☺☺☺☺☺"
+     ],
+     [
+      "3ª etapa: copiou o que tinha no visor na 2ª etapa e colou ao lado.",
+      "☺☺☺☺☺☺☺☺☺☺☺☺"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-170",
@@ -49378,7 +49431,6 @@
   {
    "id": "enem2024-171",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria espacial",
@@ -49390,40 +49442,42 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Para obter um sólido de revolução (rotação de 360 ° ° em torno de um eixo fixo), uma professora realizou as seguintes etapas: • recortou o trapézio retângulo PQRS de um material rígido; • afixou o lado PS do trapézio em uma vareta fixa retilínea (eixo de rotação); • girou o trapézio 360 ° ° em torno da vareta e obteve um sólido de revolução. Observe a figura que apresenta o trapézio afixado na vareta e o sentido de giro. O sólido obtido foi um(a) A cone. B cilindro. C pirâmide. D tronco de cone. E tronco de pirâmide.",
-   "imagens": [
-    "img:enem2024-171.jpg"
-   ],
-   "larguraMm": 91,
+   "enunciado": "Para obter um sólido de revolução (rotação de 360° em torno de um eixo fixo), uma professora realizou as seguintes etapas:<br>• recortou o trapézio retângulo <i>PQRS</i> de um material rígido;<br>• afixou o lado <i>PS</i> do trapézio em uma vareta fixa retilínea (eixo de rotação);<br>• girou o trapézio 360° em torno da vareta e obteve um sólido de revolução.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "cone.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "cilindro.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "pirâmide.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "tronco de cone.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "tronco de pirâmide.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Observe a figura que apresenta o trapézio afixado na vareta e o sentido de giro.<br><span class=\"pb\"></span>O sólido obtido foi um(a)",
+   "figura": {
+    "tipo": "img",
+    "src": "img:enem2024-171-fig.jpg",
+    "alt": "Trapézio retângulo PQRS (com ângulos retos em P e S) afixado pelo lado PS a uma vareta vertical, o eixo de rotação, com uma seta indicando o sentido de giro; Q fica acima à esquerda e R abaixo à esquerda",
+    "largura": "33mm"
+   },
+   "transcrita": true
   },
   {
    "id": "enem2024-172",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -49435,40 +49489,36 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "O estádio do Maracanã passou por algumas modificações estruturais para a realização da Copa do Mundo de 2014, como, por exemplo, as dimensões do campo retangular. Para se adaptar aos padrões da Fifa, as dimensões do campo foram reduzidas de 110 m × 75 m para 105 m × 68 m. Disponível em: http://virgula.uol.com.br. Acesso em: 14 ago. 2013 (adaptado). Em quantos metros quadrados a área do campo do Maracanã foi reduzida? A 24 B 35 C 555 D 1 110 E 1 145 ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024ENEM2024",
-   "imagens": [
-    "img:enem2024-172.jpg"
-   ],
-   "larguraMm": 100.5,
+   "enunciado": "O estádio do Maracanã passou por algumas modificações estruturais para a realização da Copa do Mundo de 2014, como, por exemplo, as dimensões do campo retangular. Para se adaptar aos padrões da Fifa, as dimensões do campo foram reduzidas de 110 m × 75 m para 105 m × 68 m.<br><span class=\"pb\"></span>Disponível em: http://virgula.uol.com.br. Acesso em: 14 ago. 2013 (adaptado).",
    "alternativas": [
     {
-     "t": "A",
+     "t": "24",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "35",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "555",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1 110",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "1 145",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Em quantos metros quadrados a área do campo do Maracanã foi reduzida?",
+   "transcrita": true
   },
   {
    "id": "enem2024-173",
    "tipo": "mc",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "ENEM",
    "unidade": "Matemática · Geometria plana",
@@ -49480,35 +49530,77 @@
    "dificuldade": 2,
    "fonte": "ENEM 2024 (INEP)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Uma sala com piso no formato retangular, com lados de medidas 3 m e 6 m, será dividida em dois ambientes. Para isso, serão utilizadas colunas em formato cilíndrico, dispostas perpendicularmente ao piso e representadas na figura pelos círculos de cor azul. Os centros desses círculos estarão sobre uma reta paralela aos lados de menor medida do piso da sala. Os vãos entre duas colunas e entre uma coluna e a parede não poderão ser superiores a 15 cm. Para efetuar a compra dessas colunas, foram feitos orçamentos com base em dados fornecidos por cinco lojas. Preço por Loja Raio (cm) unidade (R$) I 5 60 II 10 70 III 12 75 IV 15 90 V 20 120 A compra será realizada na loja cujo orçamento resulte no menor valor total possível. A compra será realizada na loja A I. B II. C III. D IV. E V.",
-   "imagens": [
-    "img:enem2024-173.jpg"
-   ],
-   "larguraMm": 90,
+   "enunciado": "Uma sala com piso no formato retangular, com lados de medidas 3 m e 6 m, será dividida em dois ambientes. Para isso, serão utilizadas colunas em formato cilíndrico, dispostas perpendicularmente ao piso e representadas na figura pelos círculos de cor azul. Os centros desses círculos estarão sobre uma reta paralela aos lados de menor medida do piso da sala. Os vãos entre duas colunas e entre uma coluna e a parede não poderão ser superiores a 15 cm.",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "II.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "III.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "IV.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "V.",
      "ok": false
     }
    ],
-   "resolucao": ""
+   "resolucao": "",
+   "pergunta": "Para efetuar a compra dessas colunas, foram feitos orçamentos com base em dados fornecidos por cinco lojas.<br><span class=\"pb\"></span>A compra será realizada na loja cujo orçamento resulte no menor valor total possível.<br><span class=\"pb\"></span>A compra será realizada na loja",
+   "figuras": [
+    {
+     "tipo": "img",
+     "src": "img:enem2024-173-fig.jpg",
+     "alt": "Piso retangular de 6 m por 3 m, com uma fileira de colunas circulares (círculos azuis) alinhadas sobre uma reta paralela aos lados menores",
+     "largura": "67mm"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "Loja",
+      "Raio (cm)",
+      "Preço por unidade (R&#36;)"
+     ],
+     "linhas": [
+      [
+       "I",
+       "5",
+       "60"
+      ],
+      [
+       "II",
+       "10",
+       "70"
+      ],
+      [
+       "III",
+       "12",
+       "75"
+      ],
+      [
+       "IV",
+       "15",
+       "90"
+      ],
+      [
+       "V",
+       "20",
+       "120"
+      ]
+     ],
+     "largura": "80%",
+     "legenda": "Orçamentos das colunas"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "enem2024-174",
