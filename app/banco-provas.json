@@ -116764,8 +116764,6 @@
   },
   {
    "id": "cdb-l-determinantes-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Determinantes e sistemas lineares",
@@ -116777,12 +116775,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Unicamp - SP) Seja a um número real e seja: a) Para a=1, encontre todas as raízes da equação p(x)=0 b) Encontre os valores de a para os quais a equação p(x)=0 tem uma única raiz real.",
-   "imagens": [
-    "img:cdb-l-determinantes-05.jpg"
-   ],
-   "larguraMm": 133.9,
+   "enunciado": "(Unicamp - SP) Seja $ a $ um número real e seja:<br><span class=\"pb\"></span>$ p(x) = det @M{3 − x&−1&√2;0&a − x&−1;0&4&1 − x} $<br><span class=\"pb\"></span>a) Para $ a = 1 $, encontre todas as raízes da equação $ p(x) = 0 $.<br>b) Encontre os valores de $ a $ para os quais a equação $ p(x) = 0 $ tem uma única raiz real.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-determinantes-05-r.jpg",
@@ -116792,7 +116785,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diagramas-de-venn-na-estat-01",
@@ -116821,8 +116815,6 @@
   },
   {
    "id": "cdb-l-diagramas-de-venn-na-estat-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -116834,12 +116826,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(PUC – RJ) Uma população consome 3 marcas de sabão em pó: A, B e C. Feita uma pesquisa de mercado, colheram - se os resultados tabelados abaixo. Determine o número de pessoas consultadas.",
-   "imagens": [
-    "img:cdb-l-diagramas-de-venn-na-estat-02.jpg"
-   ],
-   "larguraMm": 150.9,
+   "enunciado": "(PUC – RJ) Uma população consome 3 marcas de sabão em pó: A, B e C. Feita uma pesquisa de mercado, colheram-se os resultados tabelados abaixo:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-diagramas-de-venn-na-estat-02-r.jpg",
@@ -116849,7 +116836,51 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine o número de pessoas consultadas.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Marca",
+     "Número de consumidores"
+    ],
+    "linhas": [
+     [
+      "A",
+      "105"
+     ],
+     [
+      "B",
+      "200"
+     ],
+     [
+      "C",
+      "160"
+     ],
+     [
+      "A e B",
+      "25"
+     ],
+     [
+      "B e C",
+      "40"
+     ],
+     [
+      "A e C",
+      "25"
+     ],
+     [
+      "A, B e C",
+      "5"
+     ],
+     [
+      "Nenhuma das 3",
+      "120"
+     ]
+    ],
+    "largura": "60%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diagramas-de-venn-na-estat-03",
@@ -117423,8 +117454,6 @@
   },
   {
    "id": "cdb-l-equacao-com-fatorial-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -117435,19 +117464,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Resolva as seguintes equações fatoriais:",
-   "imagens": [
-    "img:cdb-l-equacao-com-fatorial-01.jpg"
-   ],
-   "larguraMm": 69,
+   "enunciado": "Resolva as seguintes equações fatoriais:<br><span class=\"pb\"></span>a) $ {(x + 2)!|x!} = 0 $<br>b) $ {x!|(x − 1)!} = 5! $",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "a) ${(x + 2)!|x!} = (x + 2)(x + 1) = 0$ daria $x = -1$ ou $x = -2$, que não são naturais: sem solução ($S = ∅$). b) ${x!|(x - 1)!} = x$, então $x = 5! = 120$."
+   "gabarito": "a) ${(x + 2)!|x!} = (x + 2)(x + 1) = 0$ daria $x = -1$ ou $x = -2$, que não são naturais: sem solução ($S = ∅$). b) ${x!|(x - 1)!} = x$, então $x = 5! = 120$.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-do-1-grau-com-uma-01",
@@ -117527,8 +117552,6 @@
   },
   {
    "id": "cdb-l-equacao-do-1-grau-com-uma-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -117540,12 +117563,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFG – 2010 – 2ª Fase) Segundo uma reportagem publicada na Folha on - line (31/08/2009), a chamada camada pré - sal é uma faixa que se estende, abaixo do leito do mar, ao longo dos estados de Espírito Santo e Santa Catarina e engloba três bacias sedimentares. O petróleo encontrado nessa área está a profundidades que superam os 7.000 m, abaixo de uma extensa camada de sal, e sua extração colocaria o Brasil entre os dez maiores produtores do mundo. Para extrair petróleo da camada pré - sal, a Petrobras já perfurou poços de petróleo a uma profundidade de 7.000 m, o que representa um aumento de 582% em relação à profundidade máxima dos poços perfurados em 1994. De acordo com essas informações, c",
-   "imagens": [
-    "img:cdb-l-equacao-do-1-grau-com-uma-04.jpg"
-   ],
-   "larguraMm": 152.5,
+   "enunciado": "(UFG – 2010 – 2ª Fase) Segundo uma reportagem publicada na Folha on-line (31/08/2009), a chamada camada pré-sal é uma faixa que se estende, abaixo do leito do mar, ao longo dos estados de Espírito Santo e Santa Catarina e engloba três bacias sedimentares. O petróleo encontrado nessa área está a profundidades que superam os 7.000 m, abaixo de uma extensa camada de sal, e sua extração colocaria o Brasil entre os dez maiores produtores do mundo. Para extrair petróleo da camada pré-sal, a Petrobras já perfurou poços de petróleo a uma profundidade de 7.000 m, o que representa um aumento de 582% em relação à profundidade máxima dos poços perfurados em 1994. De acordo com essas informações, calcule a profundidade máxima de um poço de petróleo perfurado pela Petrobras, no ano de 1994.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-do-1-grau-com-uma-04-r.jpg",
@@ -117555,12 +117573,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-do-1-grau-com-duas-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -117571,12 +117588,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Nos itens que se seguem, determine duas soluções distintas para as equações: a) 5x - 2y=9 b)",
-   "imagens": [
-    "img:cdb-l-equacao-do-1-grau-com-duas-01.jpg"
-   ],
-   "larguraMm": 126.7,
+   "enunciado": "Nos itens que se seguem, determine duas soluções distintas para as equações:<br><span class=\"pb\"></span>a) $ 5x − 2y = 9 $<br>b) $ {x|3} + {4|7y} = {2|7} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-do-1-grau-com-duas-01-r.jpg",
@@ -117586,7 +117598,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-do-1-grau-com-duas-02",
@@ -117665,8 +117678,6 @@
   },
   {
    "id": "cdb-l-equacao-do-2-grau-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações do 2º grau",
@@ -117677,12 +117688,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Aplicando a fórmula de Bhaskara, resolva as seguintes equações do 2º grau. a) 3x² – 7x + 4 = 0 b) 9y² – 12y + 4 = 0 c) 5x² + 3x + 5 = 0",
-   "imagens": [
-    "img:cdb-l-equacao-do-2-grau-01.jpg"
-   ],
-   "larguraMm": 122.7,
+   "enunciado": "Aplicando a fórmula de Bhaskara, resolva as seguintes equações do 2º grau.<br><span class=\"pb\"></span>a) $ 3x^2 − 7x + 4 = 0 $<br>b) $ 9y^2 − 12y + 4 = 0 $<br>c) $ 5x^2 + 3x + 5 = 0 $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-do-2-grau-01-r.jpg",
@@ -117692,12 +117698,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-do-2-grau-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações do 2º grau",
@@ -117708,12 +117713,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine quais os valores de k para que a equação 2x² + 4x + 5k = 0 tenha raízes reais e distintas.",
-   "imagens": [
-    "img:cdb-l-equacao-do-2-grau-02.jpg"
-   ],
-   "larguraMm": 142.8,
+   "enunciado": "Determine quais os valores de $ k $ para que a equação $ 2x^2 + 4x + 5k = 0 $ tenha raízes reais e distintas.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-do-2-grau-02-r.jpg",
@@ -117723,12 +117723,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-do-2-grau-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações do 2º grau",
@@ -117739,12 +117738,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Calcule o valor de p na equação x² – (p + 5)x + 36 = 0, de modo que as raízes reais sejam iguais. Para essa condição, o valor de ∆ precisa ser igual a 0.",
-   "imagens": [
-    "img:cdb-l-equacao-do-2-grau-03.jpg"
-   ],
-   "larguraMm": 152.1,
+   "enunciado": "Calcule o valor de $ p $ na equação $ x^2 − (p + 5)x + 36 = 0 $, de modo que as raízes reais sejam iguais.<br><span class=\"pb\"></span>Para essa condição, o valor de Δ precisa ser igual a 0.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-do-2-grau-03-r.jpg",
@@ -117754,7 +117748,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-modular-01",
@@ -122833,8 +122828,6 @@
   },
   {
    "id": "cdb-l-diedros-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -122845,24 +122838,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. Não existe o triedro cujas faces medem 120°, 75° e 45°.",
-   "imagens": [
-    "img:cdb-l-diedros-03.jpg"
-   ],
-   "larguraMm": 115.3,
+   "enunciado": "Não existe o triedro cujas faces medem 120°, 75° e 45°.",
    "resolucao": "",
    "gabarito": "Certo",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -122873,24 +122860,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04. A terceira face do triedro, cujas duas outras medem 50° e 130° devem ser maior que 60° e menor que 160°.",
-   "imagens": [
-    "img:cdb-l-diedros-04.jpg"
-   ],
-   "larguraMm": 180.4,
+   "enunciado": "A terceira face do triedro, cujas duas outras medem 50° e 130° devem ser maior que 60° e menor que 160°.",
    "resolucao": "",
    "gabarito": "Errado",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -122901,19 +122882,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05. O terceiro died ro do triedro, cujos outros dois medem 70° e 130° só podem ser maior que 20° e menor que 120°.",
-   "imagens": [
-    "img:cdb-l-diedros-05.jpg"
-   ],
-   "larguraMm": 185.5,
+   "enunciado": "O terceiro diedro do triedro, cujos outros dois medem 70° e 130° só podem ser maior que 20° e menor que 120°.",
    "resolucao": "",
    "gabarito": "Certo",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-06",
@@ -122939,8 +122916,6 @@
   },
   {
    "id": "cdb-l-diedros-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -122951,24 +122926,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. Qual o polígono regular cuja soma dos ângulos internos é igual à soma dos ângulos das faces de um tetraedro regular? Considere a figura e responda as questões 08 a 10.",
-   "imagens": [
-    "img:cdb-l-diedros-07.jpg"
-   ],
-   "larguraMm": 187.1,
+   "enunciado": "Qual o polígono regular cuja soma dos ângulos internos é igual à soma dos ângulos das faces de um tetraedro regular?",
    "resolucao": "",
    "gabarito": "Hexágono",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -122979,36 +122948,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. Seja A = área do polígono (ABCDE) B = área do polígono (GHIJF) C = área do polígono (KLMNP), então podemos afirmar: a) A + B = C b) C - A = 2B c) A - C = B d) B + C = 10A e) B - C = A",
-   "imagens": [
-    "img:cdb-l-diedros-08.jpg"
-   ],
-   "larguraMm": 188,
+   "enunciado": "Seja A = área do polígono (ABCDE), B = área do polígono (GHIJF) e C = área do polígono (KLMNP), então podemos afirmar:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ A + B = C $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ C − A = 2B $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ A − C = B $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ B + C = 10A $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ B − C = A $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-diedros-09",
@@ -123056,8 +123021,6 @@
   },
   {
    "id": "cdb-l-equacao-algebrica-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123069,41 +123032,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. (VUNESP) Assinale a alternativa que indica o polinômio que possui os números 0 e 1 como raízes, sendo 0 uma raiz de multiplicidade 3: 3 a) p(x) = x (x - 1) 3 b) p(x) = x (x - 1) 3 c) p(x) = x (x - 1) 3 d) p(x) = (x - x) (x - 1) 3 2 e) p(x) = x (x + x - 2)",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-01.jpg"
-   ],
-   "larguraMm": 182.3,
+   "enunciado": "(VUNESP) Assinale a alternativa que indica o polinômio que possui os números 0 e 1 como raízes, sendo 0 uma raiz de multiplicidade 3:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ p(x) = x(x^3 − 1) $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ p(x) = x(x − 1)^3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ p(x) = x^3(x − 1) $",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ p(x) = (x^3 − x)(x − 1) $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ p(x) = x(x^3 + x^2 − 2) $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123114,41 +123071,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 2 02. (PUCCAMP) Sabe - se que a equação 2x + x - 6x - 3 = 0 admite uma única raiz racional e não inteira. As demais raízes dessa equação são: a) int eiras e positivas; b) inteiras e de sinais contrários; c) não reais; d) irracionais e positivas; e) irracionais e de sinais contrários.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-02.jpg"
-   ],
-   "larguraMm": 179.8,
+   "enunciado": "(PUCCAMP) Sabe-se que a equação $ 2x^3 + x^2 − 6x − 3 = 0 $ admite uma única raiz racional e não inteira. As demais raízes dessa equação são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "inteiras e positivas;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "inteiras e de sinais contrários;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "não reais;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "irracionais e positivas;",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "irracionais e de sinais contrários.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123159,41 +123110,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. O polinômio de coeficientes inteiros, de menor grau possível, que tem como raízes 2 e i, pode ser: 3 2 a) x - 2x - x + 2 2 b) x + (2 - i) x - 2 2 c) x - (2 + i) x + 2i 3 2 d) x - 2x + x - 2 3 2 e) x + x - x - 2",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-03.jpg"
-   ],
-   "larguraMm": 186.4,
+   "enunciado": "O polinômio de coeficientes inteiros, de menor grau possível, que tem como raízes 2 e $ i $, pode ser:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x^3 − 2x^2 − x + 2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x^2 + (2 − i)x − 2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x^2 − (2 + i)x + 2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x^3 − 2x^2 + x − 2 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ x^3 + x^2 − x − 2 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123204,41 +123149,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 2 04. (FUVEST) A equação x + mx + 2x + n = 0, em que m e n são números reais, admite 1 + i (i sendo a unidade imaginária) como a raiz. Então m e n valem, respe ctivamente: a) 2 e 2 b) 2 e 0 c) 0 e 2 d) 2 e - 2 e) - 2 e 0",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-04.jpg"
-   ],
-   "larguraMm": 183.7,
+   "enunciado": "(FUVEST) A equação $ x^3 + mx^2 + 2x + n = 0 $, em que $ m $ e $ n $ são números reais, admite $ 1 + i $ ($ i $ sendo a unidade imaginária) como a raiz. Então $ m $ e $ n $ valem, respectivamente:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 e 2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2 e 0",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0 e 2",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2 e −2",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "−2 e 0",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123249,41 +123188,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 2 05. Sabe - se que o número complexo i é solução da equação x - 3x - 4 = 0. Então: a) essa equação tem uma solução de multiplicidade 2; b) as soluções dessa equação formam uma progressão; c) a equação tem duas soluções reais irracionais; d) a equação tem 2 soluções reais racionais; e) a equação não tem soluções reais.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-05.jpg"
-   ],
-   "larguraMm": 159.3,
+   "enunciado": "Sabe-se que o número complexo $ i $ é solução da equação $ x^4 − 3x^2 − 4 = 0 $. Então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "essa equação tem uma solução de multiplicidade 2;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "as soluções dessa equação formam uma progressão;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "a equação tem duas soluções reais irracionais;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "a equação tem 2 soluções reais racionais;",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "a equação não tem soluções reais.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123294,24 +123227,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 3 2 06. Determinar a sabendo - se que 2 é raiz da equação x - 3x + 2x + ax - 3 = 0.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-06.jpg"
-   ],
-   "larguraMm": 153.7,
+   "enunciado": "Determinar $ a $ sabendo-se que 2 é raiz da equação $ x^4 − 3x^3 + 2x^2 + ax − 3 = 0 $.",
    "resolucao": "",
    "gabarito": "a = 3/2",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123322,24 +123249,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 2 07. Resolver a equação x - 5x - 10x - 6 = 0, sabendo - se que duas de suas raízes são - 1 e 3.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-07.jpg"
-   ],
-   "larguraMm": 179.3,
+   "enunciado": "Resolver a equação $ x^4 − 5x^2 − 10x − 6 = 0 $, sabendo-se que duas de suas raízes são −1 e 3.",
    "resolucao": "",
    "gabarito": "V = { - 1; 3; - 1 + 1; - 1 - i}",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123350,24 +123271,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 2 08. Resolver a equação x - 3x - x + 3 = 0, sabendo - se que a soma de duas raízes é zero.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-08.jpg"
-   ],
-   "larguraMm": 173.5,
+   "enunciado": "Resolver a equação $ x^3 − 3x^2 − x + 3 = 0 $, sabendo-se que a soma de duas raízes é zero.",
    "resolucao": "",
    "gabarito": "O conjunto - verdade da equação é { - 1; 1; 3}",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -123378,19 +123293,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 2 09. Sabendo - se que 1 é a raiz da equação x - 2x + ax + 6 = 0 , determinar a e as demais raízes da equação.",
-   "imagens": [
-    "img:cdb-l-equacao-algebrica-09.jpg"
-   ],
-   "larguraMm": 184.3,
+   "enunciado": "Sabendo-se que 1 é a raiz da equação $ x^3 − 2x^2 + ax + 6 = 0 $, determinar $ a $ e as demais raízes da equação.",
    "resolucao": "",
    "gabarito": "a = - 5 e as demais raízes são - 2 e 3.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-algebrica-10",
@@ -123533,8 +123444,6 @@
   },
   {
    "id": "cdb-l-equacao-elementar-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -123545,41 +123454,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 04. Na equação do 2º grau ax + bx + c = 0, os números a e c têm sinais contrários. Pode - se afirmar que: a) A equação tem duas r aízes reais de sinais contrários. b) A equação tem duas raízes reais positivas. c) A equação tem duas raízes reais negativas. d) A equação pode não ter raízes reais. e) n.d.a.",
-   "imagens": [
-    "img:cdb-l-equacao-elementar-04.jpg"
-   ],
-   "larguraMm": 177.2,
+   "enunciado": "Na equação do 2º grau $ ax^2 + bx + c = 0 $, os números $ a $ e $ c $ têm sinais contrários. Pode-se afirmar que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "A equação tem duas raízes reais de sinais contrários.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "A equação tem duas raízes reais positivas.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "A equação tem duas raízes reais negativas.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "A equação pode não ter raízes reais.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "n.d.a.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-elementar-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -123590,41 +123493,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05. Uma equação do 2º grau, cujo conjunto - verdade é {a, - b}, é: 2 a) 3x + x – 2 = 0 2 b) 9x + 3x – 2 = 0 2 c) 9x – 3x + 2 = 0 2 d) 9x – 3x – 2 = 0 2 e) 2x – 9x – 3 = 0",
-   "imagens": [
-    "img:cdb-l-equacao-elementar-05.jpg"
-   ],
-   "larguraMm": 123,
+   "enunciado": "Uma equação do 2º grau, cujo conjunto-verdade é $ \\{a, −b\\} $, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3x^2 + x − 2 = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ 9x^2 + 3x − 2 = 0 $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ 9x^2 − 3x + 2 = 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 9x^2 − 3x − 2 = 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 2x^2 − 9x − 3 = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-elementar-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -123635,36 +123532,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 06. A equação mx + 4x + m = 0 não admite raízes reais se: a) m = 0 b) – 2 < m < 2 c) – 4 < m < 4 d) m < - 2 e m > 2 e) m < - 2 ou m > 2",
-   "imagens": [
-    "img:cdb-l-equacao-elementar-06.jpg"
-   ],
-   "larguraMm": 115.6,
+   "enunciado": "A equação $ mx^2 + 4x + m = 0 $ não admite raízes reais se:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ m = 0 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ −2 < m < 2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ −4 < m < 4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ m < −2 $ e $ m > 2 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ m < −2 $ ou $ m > 2 $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-elementar-07",
@@ -128619,8 +128512,6 @@
   },
   {
    "id": "cdb-l-do-6-ano-revisao-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -128631,19 +128522,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Sara e Estela trabalham juntas, em um escritório. Estela ganha um salário de R$ 1 650 e Sara ganha o salário de Estela mais R$ 600,00. Qual é o salário de Sara?",
-   "imagens": [
-    "img:cdb-l-do-6-ano-revisao-04.jpg"
-   ],
-   "larguraMm": 153,
+   "enunciado": "Sara e Estela trabalham juntas, em um escritório. Estela ganha um salário de R&#36; 1 650 e Sara ganha o salário de Estela mais R&#36; 600,00. Qual é o salário de Sara?",
    "resolucao": "",
    "gabarito": "$1 650 + 600 = 2 250$: o salário de Sara é R&#36; 2 250,00.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-do-6-ano-revisao-05",
@@ -128713,8 +128600,6 @@
   },
   {
    "id": "cdb-l-do-6-ano-revisao-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -128725,19 +128610,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. Determine a soma entre 1 999 e o seu sucessor.",
-   "imagens": [
-    "img:cdb-l-do-6-ano-revisao-08.jpg"
-   ],
-   "larguraMm": 94.6,
+   "enunciado": "Determine a soma entre 1 999 e o seu sucessor.",
    "resolucao": "",
    "gabarito": "O sucessor de $1 999$ é $2 000$: $1 999 + 2 000 = 3 999$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-do-6-ano-revisao-09",
@@ -129977,8 +129858,6 @@
   },
   {
    "id": "cdb-l-divisores-de-um-numero-nat-15",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -129989,19 +129868,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15) Uma pessoa comprou um carro em 4 prestações a 1ª no valor de R$ 750,00, a 2ª no valor de R$ 620,00, a 3ª no valor de R$ 580,00, a 4ª no valor de R$ 1250,00. Qual o preço pago pelo carro?",
-   "imagens": [
-    "img:cdb-l-divisores-de-um-numero-nat-15.jpg"
-   ],
-   "larguraMm": 150.9,
+   "enunciado": "Uma pessoa comprou um carro em 4 prestações: a 1ª no valor de R&#36; 750,00, a 2ª no valor de R&#36; 620,00, a 3ª no valor de R&#36; 580,00, a 4ª no valor de R&#36; 1250,00. Qual o preço pago pelo carro?",
    "resolucao": "",
    "gabarito": "3200",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-divisores-de-um-numero-nat-16",
@@ -136463,8 +136338,6 @@
   },
   {
    "id": "cdb-l-equacao-de-1-grau-com-1-ic-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Equações e inequações",
@@ -136476,12 +136349,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFG – 2010 – 2ª Fase) Segundo uma reportagem publicada na Folha on - line (31/08/2009), a chamada camada pré - sal é uma faixa que se estende, abaixo do leito do mar, ao longo dos estados de Espírito Santo e Santa Catarina e engloba três bacias sedimentares. O petróleo encontrado n essa área está a profundidades que superam os 7.000 m, abaixo de uma extensa camada de sal, e sua extração colocaria o Brasil entre os dez maiores produtores do mundo. Para extrair petróleo da camada pré - sal, a Petrobras já perfurou poços de petróleo a uma profundidade de 7.000 m, o que representa um aumento de 582% em relação à profundidade máxima dos poços perfurados em 1994. De acordo com essas informações,",
-   "imagens": [
-    "img:cdb-l-equacao-de-1-grau-com-1-ic-04.jpg"
-   ],
-   "larguraMm": 152.6,
+   "enunciado": "(UFG – 2010 – 2ª Fase) Segundo uma reportagem publicada na Folha on-line (31/08/2009), a chamada camada pré-sal é uma faixa que se estende, abaixo do leito do mar, ao longo dos estados de Espírito Santo e Santa Catarina e engloba três bacias sedimentares. O petróleo encontrado nessa área está a profundidades que superam os 7.000 m, abaixo de uma extensa camada de sal, e sua extração colocaria o Brasil entre os dez maiores produtores do mundo. Para extrair petróleo da camada pré-sal, a Petrobras já perfurou poços de petróleo a uma profundidade de 7.000 m, o que representa um aumento de 582% em relação à profundidade máxima dos poços perfurados em 1994. De acordo com essas informações, calcule a profundidade máxima de um poço de petróleo perfurado pela Petrobras, no ano de 1994.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-equacao-de-1-grau-com-1-ic-04-r.jpg",
@@ -136491,7 +136359,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-de-1-grau-com-2-in-01",
@@ -152732,8 +152601,6 @@
   },
   {
    "id": "cdb-l-equacao-de-segundo-grau-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Equações e inequações",
@@ -152744,19 +152611,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Aplicando a fórmula de Bhaskara, resolva as seguintes equações do 2º grau. a) 3x² – 7x + 4 = 0 b) 9y² – 12y + 4 = 0 c) 5x² + 3x + 5 = 0",
-   "imagens": [
-    "img:cdb-l-equacao-de-segundo-grau-01.jpg"
-   ],
-   "larguraMm": 131.8,
+   "enunciado": "Aplicando a fórmula de Bhaskara, resolva as seguintes equações do 2º grau.<br><span class=\"pb\"></span>a) $ 3x^2 − 7x + 4 = 0 $<br>b) $ 9y^2 − 12y + 4 = 0 $<br>c) $ 5x^2 + 3x + 5 = 0 $",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "a) $Δ = 49 - 48 = 1$; $x = {7 ± 1|6}$: $x = {4|3}$ ou $x = 1$. b) $Δ = 144 - 144 = 0$; $y = {2|3}$ (raiz dupla). c) $Δ = 9 - 100 = -91 < 0$: não há raízes reais."
+   "gabarito": "a) $Δ = 49 - 48 = 1$; $x = {7 ± 1|6}$: $x = {4|3}$ ou $x = 1$. b) $Δ = 144 - 144 = 0$; $y = {2|3}$ (raiz dupla). c) $Δ = 9 - 100 = -91 < 0$: não há raízes reais.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-equacao-de-segundo-grau-02",
