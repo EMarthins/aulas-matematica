@@ -67499,7 +67499,6 @@
   },
   {
    "id": "cdb-c06-023",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67511,41 +67510,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. ITA-SP Quantos números de seis algarismos distintos podemos formar usando os dígi- tos 1, 2, 3, 4, 5 e 6, nos quais o 1 e o 2 nunca ocupam posições adjacentes, mas o 3 e o 4 sempre ocupam posições adjacentes? a) 144 b) 180 c) 240 d) 288 e) 360",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-023.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Quantos números de seis algarismos distintos podemos formar usando os dígitos 1, 2, 3, 4, 5 e 6, nos quais o 1 e o 2 nunca ocupam posições adjacentes, mas o 3 e o 4 sempre ocupam posições adjacentes?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "144",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "180",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "240",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "288",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "360",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-024",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67557,20 +67550,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "24. AEU-DF Um número de telefone fixo é formado por 7 algarismos, se não considerar- mos o código de área da região onde o mesmo se encontra. Em relação às linhas designa- das por tais números, em uma região cujo código de área é único, julgue os itens. ( ) Existem mais do que 1 000 000 de números de telefone disponíveis para a região, nesse sistema. ( ) Se cada telefone atender a 4 moradores da região será possível disponibilizar tele- fones para mais do que 50 000 000 de pessoas. ( ) A região atendida será dividida em áreas e a cada área será atribuído um prefixo de 3 dos algarismos do númer",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-024.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Um número de telefone fixo é formado por 7 algarismos, se não considerarmos o código de área da região onde o mesmo se encontra. Em relação às linhas designadas por tais números, em uma região cujo código de área é único, julgue os itens.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – F – F – F – F"
+   "gabarito": "V – F – F – F – F",
+   "afirmacoes": [
+    {
+     "t": "Existem mais do que 1 000 000 de números de telefone disponíveis para a região, nesse sistema.",
+     "ok": true
+    },
+    {
+     "t": "Se cada telefone atender a 4 moradores da região será possível disponibilizar telefones para mais do que 50 000 000 de pessoas.",
+     "ok": false
+    },
+    {
+     "t": "A região atendida será dividida em áreas e a cada área será atribuído um prefixo de 3 dos algarismos do número do telefone, dessa forma cada área poderá contar com mais do que 100 000 telefones de números distintos.",
+     "ok": false
+    },
+    {
+     "t": "Por razões comerciais a empresa que presta o serviço de telefonia da região reserva para hospitais e clínicas os números terminados em triplo zero (ex. 342 5000), dessa forma poderão ser disponibilizados mais do que 10 000 telefones com números distintos para tais instituições, em toda a região.",
+     "ok": false
+    },
+    {
+     "t": "Existem mais do que 100 números de telefone distintos, disponíveis na região, formados por sete dígitos idênticos.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-025",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67582,41 +67591,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "25. U. Católica de Salvador-BA Os organizadores de um Congresso convidaram 5 confe- rencistas para proferirem palestras nos 5 dias do evento. Sabendo-se que a programação previa 1 palestra por dia, o número de maneiras distintas que as palestras podem ser programadas, nesses cinco dias, é igual a: a) 20 d) 90 b) 25 e) 120 c) 50",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-025.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Os organizadores de um Congresso convidaram 5 conferencistas para proferirem palestras nos 5 dias do evento.<br><span class=\"pb\"></span>Sabendo-se que a programação previa 1 palestra por dia, o número de maneiras distintas que as palestras podem ser programadas, nesses cinco dias, é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "25",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "50",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "90",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "120",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-026",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67628,41 +67631,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "26. PUC-RJ De um pelotão com 10 soldados, quantas equipes de cinco soldados podem ser formadas se em cada equipe um soldado é destacado como líder? a) 1260 d) 1840 b) 1444 e) 1936 c) 1520",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-026.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "De um pelotão com 10 soldados, quantas equipes de cinco soldados podem ser formadas se em cada equipe um soldado é destacado como líder?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1260",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "1444",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "1520",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1840",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1936",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-027",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67674,37 +67671,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. PUC-PR Uma faculdade dispõe de 66 computadores para serem utilizados em aulas práticas por seus 108 alunos. Qual o maior número de equipes que podemos formar de tal modo que cada uma tenha o mesmo número de computadores? a) 11 d) 8 b) 18 e) 6 c) 21",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-027.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Uma faculdade dispõe de 66 computadores para serem utilizados em aulas práticas por seus 108 alunos. Qual o maior número de equipes que podemos formar de tal modo que cada uma tenha o mesmo número de computadores?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "18",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "21",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-028",
@@ -67771,7 +67763,6 @@
   },
   {
    "id": "cdb-c06-030",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67783,20 +67774,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. UFMS Na cidade de Campo Grande/MS, os telefones são identificados por um número constituído de sete algarismos. Os três primeiros algarismos constituem um número de- nominado prefixo . Na região próxima ao Campus da UFMS o prefixo é 787. Nessa região, é correto afirmar que: 01. o número máximo possível de telefones é igual a 10 4 ; 02. o número máximo de telefones que terminam por um algarismo par é igual a 3600; 04. o número máximo de telefones que, exceto os algarismos do prefixo, têm todos os algarismos distintos é igual a 10 6 ! ! ; 08. é possível ter 8 4 ! ! telefones que não possuem",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-030.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Na cidade de Campo Grande/MS, os telefones são identificados por um número constituído de sete algarismos. Os três primeiros algarismos constituem um número denominado <b>prefixo</b>. Na região próxima ao Campus da UFMS o prefixo é 787. Nessa região, é <b>correto</b> afirmar que (dê, como resposta, a soma das alternativas corretas):",
    "resolucao": "",
    "tipo": "soma",
-   "gabarito": "13"
+   "gabarito": "13",
+   "afirmacoes": [
+    {
+     "t": "o número máximo possível de telefones é igual a $ 10^4 $;",
+     "ok": true
+    },
+    {
+     "t": "o número máximo de telefones que terminam por um algarismo par é igual a 3600;",
+     "ok": false
+    },
+    {
+     "t": "o número máximo de telefones que, exceto os algarismos do prefixo, têm todos os algarismos distintos é igual a $ {10!|6!} $;",
+     "ok": true
+    },
+    {
+     "t": "é possível ter $ {8!|4!} $ telefones que não possuem o algarismo zero;",
+     "ok": true
+    },
+    {
+     "t": "é possível ter 1000 (mil) telefones que, exceto o prefixo, têm o número com o primeiro algarismo igual a 2 e o último algarismo par.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-031",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67808,41 +67815,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "31. Unifor-CE Siga as seguintes instruções: I. Considere o maior número inteiro de três algarismos distintos. II. Considere todos os números de três algarismos obtidos pela permutação dos três algarismos do número do item I. III. Coloque em ordem crescente os números obtidos no item II. Na seqüência obtida no item III, o número que ocupa a quarta posição é: a) 999 d) 897 b) 987 e) 887 c) 978",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-031.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Siga as seguintes instruções:<br><span class=\"pb\"></span>I. Considere o maior número inteiro de três algarismos distintos.<br>II. Considere todos os números de três algarismos obtidos pela permutação dos três algarismos do número do item I.<br>III. Coloque em ordem crescente os números obtidos no item II.<br><span class=\"pb\"></span>Na seqüência obtida no item III, o número que ocupa a quarta posição é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "999",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "987",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "978",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "897",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "887",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-032",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67854,41 +67855,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "32. UFR-RJ Em uma sala estão 6 rapazes e 5 moças. Quantas comissões podemos formar, tendo em cada comissão 3 rapazes e 2 moças? a) 50 d) 200 b) 100 e) 250 c) 150",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-032.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Em uma sala estão 6 rapazes e 5 moças. Quantas comissões podemos formar, tendo em cada comissão 3 rapazes e 2 moças?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "50",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "150",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "200",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "250",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-033",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67900,41 +67895,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "33. U.F. Pelotas-RS Pelotas tem, no calçadão da rua XV de Novembro, um relógio digital que marca horas e minutos, variando de 00:00 até 23:59. O número de vezes, num dia, em que os algarismos 1, 2, 3 e 6 aparecem, ao mesmo tempo, no visor desse relógio é: a) C 4,3 d) A 4,2 b) P 4 e) 4.P 3 c) 3!",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-033.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Pelotas tem, no calçadão da rua XV de Novembro, um relógio digital que marca horas e minutos, variando de 00:00 até 23:59. O número de vezes, num dia, em que os algarismos 1, 2, 3 e 6 aparecem, ao mesmo tempo, no visor desse relógio é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ C_{4,3} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ P_4 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3!",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "$ A_{4,2} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 4 · P_3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-034",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67946,41 +67935,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "34. U. Caxias do Sul-RS Um estudante precisa selecionar, entre as disciplinas A, B, C, D, E e F, quatro disciplinas para cursar no próximo semestre letivo, sendo que uma necessaria- mente precisa ser a disciplina E. O número que indica de quantas maneiras o estudante pode escolher as quatro disciplinas é: a) 6 d) 20 b) 10 e) 24 c) 15",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-034.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Um estudante precisa selecionar, entre as disciplinas A, B, C, D, E e F, quatro disciplinas para cursar no próximo semestre letivo, sendo que uma necessariamente precisa ser a disciplina E. O número que indica de quantas maneiras o estudante pode escolher as quatro disciplinas é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "10",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "15",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "24",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-035",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -67992,41 +67975,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "35. ITA-SP Considere os números de 2 a 6 algarismos distintos formados utilizando-se ape- nas 1, 2, 4, 5, 7 e 8. Quantos destes números são ímpares e começam com um dígito par? a) 375 b) 465 c) 545 d) 585 e) 625",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-035.jpg"
-   ],
-   "larguraMm": 131.1,
+   "enunciado": "Considere os números de 2 a 6 algarismos distintos formados utilizando-se apenas 1, 2, 4, 5, 7 e 8. Quantos destes números são ímpares e começam com um dígito par?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "375",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "465",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "545",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "585",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "625",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-036",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68038,41 +68015,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "36. U.F. São Carlos-SP Num acampamento, estão 14 jovens, sendo 6 paulistas, 4 cariocas e 4 mineiros. Para fazer a limpeza do acampamento, será formada uma equipe com 2 pau- listas, 1 carioca e 1 mineiro, escolhidos ao acaso. O número de maneiras possíveis para se formar essa equipe de limpeza é: a) 96 b) 182 c) 212 d) 240 e) 256",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-036.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Num acampamento, estão 14 jovens, sendo 6 paulistas, 4 cariocas e 4 mineiros. Para fazer a limpeza do acampamento, será formada uma equipe com 2 paulistas, 1 carioca e 1 mineiro, escolhidos ao acaso. O número de maneiras possíveis para se formar essa equipe de limpeza é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "96",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "182",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "212",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "240",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "256",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-037",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68084,20 +68055,36 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "37. AEU-DF Dentre os jogos criados pela humanidade, um dos mais antigos é o de “da- dos”. Os dados mais usados têm a forma cúbica e apresentam suas faces numeradas de 1 a 6. Considere apenas dados comuns, honestos, de seis faces, onde o número de pontos obtidos em um lançamento corresponde ao número da face voltada para cima quando o dado finaliza seu movimento. Julgue os itens seguintes. ( ) No lançamento de dois dados a soma dos pontos obtidos será um número par. ( ) No lançamento de três dados é impossível obter um múltiplo natural de 19 como soma dos pontos. ( ) Lançando-se um único dado a",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-037.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Dentre os jogos criados pela humanidade, um dos mais antigos é o de “dados”. Os dados mais usados têm a forma cúbica e apresentam suas faces numeradas de 1 a 6. Considere apenas dados comuns, honestos, de seis faces, onde o número de pontos obtidos em um lançamento corresponde ao número da face voltada para cima quando o dado finaliza seu movimento. Julgue os itens seguintes.",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "F – V – V – F – V"
+   "gabarito": "F – V – V – F – V",
+   "afirmacoes": [
+    {
+     "t": "No lançamento de dois dados a soma dos pontos obtidos será um número par.",
+     "ok": false
+    },
+    {
+     "t": "No lançamento de três dados é impossível obter um múltiplo natural de 19 como soma dos pontos.",
+     "ok": true
+    },
+    {
+     "t": "Lançando-se um único dado a chance de se obter um número primo é a mesma de se obter um número ímpar.",
+     "ok": true
+    },
+    {
+     "t": "Se forem feitos dois lançamentos distintos de dados, o primeiro com dois dados e o segundo com três, então a soma dos pontos obtidos no segundo será superior à soma dos pontos obtidos no primeiro.",
+     "ok": false
+    },
+    {
+     "t": "Lançando-se seis dados, simultaneamente, a soma dos pontos obtidos nos seis dados não pode ser menor do que 6.",
+     "ok": true
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-038",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68109,41 +68096,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "38. Unifor-CE Considere todos os anagramas da palavra DIPLOMATA que começam e terminam pela letra A. Quantos desses anagramas têm todas as consoantes juntas? a) 180 d) 1 080 b) 360 e) 1 440 c) 720",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-038.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Considere todos os anagramas da palavra DIPLOMATA que começam e terminam pela letra A. Quantos desses anagramas têm todas as consoantes juntas?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "180",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "360",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "720",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1 080",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1 440",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-039",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68155,41 +68136,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "39. F.M. Triângulo Mineiro-MG O primeiro robô resultado de filmes de ficção científi- ca chamava-se “TOBOR”, nome este originado pela inversão da palavra “ROBOT”. Seguindo os princípios da contagem, o número de anagramas distintos, utilizando as cinco letras que formam estas palavras, é: a) 30 d) 120 b) 40 e) 240 c) 60",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-039.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "O primeiro robô resultado de filmes de ficção científica chamava-se “TOBOR”, nome este originado pela inversão da palavra “ROBOT”. Seguindo os princípios da contagem, o número de anagramas distintos, utilizando as cinco letras que formam estas palavras, é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "40",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "60",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "120",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "240",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-040",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68201,20 +68176,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "40. UFPR Para formar uma comissão de três membros, apresentaram-se três jornalistas, quatro advogados e cinco professores. Indicando-se por N o número de possibilidades para formar tal comissão, é correto afirmar: ( ) N = 136, se for exigido que pelo menos um membro da comissão seja jornalista. ( ) N = 60, se a comissão for formada por um jornalista, um advogado e um professor. ( ) N = 70, se for exigido que somente dois membros da comissão sejam professores. ( ) N = 1320, se não houver outra condição além da quantidade de pessoas na comissão.",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-040.jpg"
-   ],
-   "larguraMm": 130.9,
+   "enunciado": "Para formar uma comissão de três membros, apresentaram-se três jornalistas, quatro advogados e cinco professores. Indicando-se por N o número de possibilidades para formar tal comissão, é correto afirmar:",
    "resolucao": "",
    "tipo": "vf",
-   "gabarito": "V – V – V – F"
+   "gabarito": "V – V – V – F",
+   "afirmacoes": [
+    {
+     "t": "N = 136, se for exigido que pelo menos um membro da comissão seja jornalista.",
+     "ok": true
+    },
+    {
+     "t": "N = 60, se a comissão for formada por um jornalista, um advogado e um professor.",
+     "ok": true
+    },
+    {
+     "t": "N = 70, se for exigido que somente dois membros da comissão sejam professores.",
+     "ok": true
+    },
+    {
+     "t": "N = 1320, se não houver outra condição além da quantidade de pessoas na comissão.",
+     "ok": false
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-041",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68226,41 +68213,35 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "41. FEI-SP Na inspeção de qualidade de produção de um tipo de peça, adota-se o seguinte procedimento: de cada lote com 20 peças produzidas são separadas aleatoriamente 2 peças; depois essas 2 peças são testadas e se pelo menos uma delas apresentar algum defeito, o lote é rejeitado. Sabendo-se que num determinado lote há 6 peças defeituosas e 14 peças perfeitas, qual a probabilidade desse lote ser aprovado? a) 1 b) 3 c) 3 d) 6 e) 91 2 10 20 91 190",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-041.jpg"
-   ],
-   "larguraMm": 131.2,
+   "enunciado": "Na inspeção de qualidade de produção de um tipo de peça, adota-se o seguinte procedimento: de cada lote com 20 peças produzidas são separadas aleatoriamente 2 peças; depois essas peças são testadas e se pelo menos uma delas apresentar algum defeito, o lote é rejeitado. Sabendo-se que num determinado lote há 6 peças defeituosas e 14 peças perfeitas, qual a probabilidade desse lote ser aprovado?",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {3|10} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3|20} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {6|91} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {91|190} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-042",
-   "soImagem": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -68272,37 +68253,32 @@
    "dificuldade": 2,
    "fonte": "Vestibulares (banco do CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "42. UFMS Na seleção brasileira de futebol, existem 8 jogadores de ataque, 6 de meio-cam- po, 6 defensores e 3 goleiros. Quantos times diferentes podem ser formados utilizando 1 goleiro, 4 defensores, 3 meio-campistas e 3 atacantes? A resposta correta é: a) 94 b) 50 400 c) 445 525 d) 45 525 e) 504",
-   "imgPrevia": true,
-   "imagens": [
-    "img:cdb-c06-042.jpg"
-   ],
-   "larguraMm": 130.7,
+   "enunciado": "Na seleção brasileira de futebol, existem 8 jogadores de ataque, 6 de meio-campo, 6 defensores e 3 goleiros. Quantos times diferentes podem ser formados utilizando 1 goleiro, 4 defensores, 3 meio-campistas e 3 atacantes? A resposta correta é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "94",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "50 400",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "445 525",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "45 525",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "504",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-c06-043",
