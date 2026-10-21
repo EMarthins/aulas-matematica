@@ -132743,8 +132743,6 @@
   },
   {
    "id": "cdb-l-poliedros-e-solidos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Geometria espacial",
@@ -132755,41 +132753,41 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Observe o sólido geométrico a seguir e assinale a alternativa correta: a) É um prisma, pois possui duas bases e faces laterais planas. b) É uma pirâmide, pois afunila em sua parte superior. c) É um cilindro, pois possui uma parte arredondada. d) É um corpo redondo, pois possui uma parte arredondada. e) Nenhuma das alternativas anteriores está correta.",
-   "imagens": [
-    "img:cdb-l-poliedros-e-solidos-02.jpg"
-   ],
-   "larguraMm": 119.5,
+   "enunciado": "Observe o sólido geométrico a seguir e assinale a alternativa correta.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "É um prisma, pois possui duas bases e faces laterais planas.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "É uma pirâmide, pois afunila em sua parte superior.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "É um cilindro, pois possui uma parte arredondada.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "É um corpo redondo, pois possui uma parte arredondada.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Nenhuma das alternativas anteriores está correta.",
      "ok": true
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poliedros-e-solidos-02-fig.jpg",
+    "alt": "Sólido em forma de bloco retangular alto, do qual foi retirada uma parte em arco de quarto de círculo numa das arestas superiores",
+    "largura": "55mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poliedros-e-solidos-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Geometria espacial",
@@ -132801,36 +132799,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(ENEM - 2012) Maria quer inovar em sua loja de embalagens e decidiu vender caixas com diferentes formatos. Nas imagens apresentadas estão as planificações dessas caixas. Quais serão os sólidos geométricos que Maria obterá a partir dessas planificações? a) Cilindro, prisma de base pentagonal e pirâmide. b) Cone, prisma de base pentagonal e pirâmide. c) Cone, tronco de pirâmide e pirâmide. d) Cilindro, tronco de pirâmide e prisma. e) Cilindro, prisma e tronco de cone.",
-   "imagens": [
-    "img:cdb-l-poliedros-e-solidos-03.jpg"
-   ],
-   "larguraMm": 153.4,
+   "enunciado": "(ENEM-2012) Maria quer inovar na sua loja de embalagens e decidiu vender caixas com diferentes formatos. Nas imagens apresentadas estão as planificações dessas caixas.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "Cilindro, prisma de base pentagonal e pirâmide.",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "Cone, prisma de base pentagonal e pirâmide.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "Cone, tronco de pirâmide e pirâmide.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "Cilindro, tronco de pirâmide e prisma.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "Cilindro, prisma e tronco de cone.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Quais serão os sólidos geométricos que Maria obterá a partir dessas planificações?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poliedros-e-solidos-03-fig.jpg",
+    "alt": "Três planificações: a primeira com dois círculos e um retângulo; a segunda com cinco retângulos em fileira e dois pentágonos (um em cima e outro embaixo); a terceira com triângulos formando uma pirâmide",
+    "largura": "119mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poliedros-e-solidos-04",
@@ -132884,8 +132885,6 @@
   },
   {
    "id": "cdb-l-poligono-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132896,24 +132895,24 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Calcule o valor de cada ângulo do quadrilátero seguinte:",
-   "imagens": [
-    "img:cdb-l-poligono-02.jpg"
-   ],
-   "larguraMm": 127.4,
+   "enunciado": "Calcule o valor de cada ângulo do quadrilátero seguinte:",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "$4x + 2x + 4x + 2x = 360°$ ⇒ $12x = 360°$ ⇒ $x = 30°$. Os ângulos medem $120°$ (os dois de $4x$) e $60°$ (os dois de $2x$)."
+   "gabarito": "$4x + 2x + 4x + 2x = 360°$ ⇒ $12x = 360°$ ⇒ $x = 30°$. Os ângulos medem $120°$ (os dois de $4x$) e $60°$ (os dois de $2x$).",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poligono-02-fig.jpg",
+    "alt": "Paralelogramo com os ângulos 2x e 4x alternados: 4x em cima à esquerda, 2x em cima à direita, 2x embaixo à esquerda e 4x embaixo à direita",
+    "largura": "98mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligono-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132925,36 +132924,39 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UNIFESP - 2003) Pentágonos regulares congruentes podem ser conectados lado a lado, formando uma estrela de cinco pontas, conforme destacado na figura a seguir Nessas condições, o ângulo θ mede: a) 108°. b) 72°. c) 54°. d) 36°. e) 18°.",
-   "imagens": [
-    "img:cdb-l-poligono-03.jpg"
-   ],
-   "larguraMm": 153.2,
+   "enunciado": "(UNIFESP - 2003) Pentágonos regulares congruentes podem ser conectados lado a lado, formando uma estrela de cinco pontas, conforme destacado na figura a seguir.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "108°.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "72°.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "54°.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "36°.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "18°.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Nessas condições, o ângulo θ mede:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poligono-03-fig.jpg",
+    "alt": "Anel de dez pentágonos regulares unidos lado a lado, formando no centro uma estrela de cinco pontas; o ângulo θ está marcado numa das pontas da estrela",
+    "largura": "92mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-01",
@@ -137303,8 +137305,6 @@
   },
   {
    "id": "cdb-l-operacoes-com-conjuntos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -137315,12 +137315,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dados os conjuntos A = {0, 1}, B = {0, 1, 2} e C = {2, 3}, determine (A U B) ∩ (B U C).",
-   "imagens": [
-    "img:cdb-l-operacoes-com-conjuntos-02.jpg"
-   ],
-   "larguraMm": 132.4,
+   "enunciado": "Dados os conjuntos $ A = \\{0, 1\\} $, $ B = \\{0, 1, 2\\} $ e $ C = \\{2, 3\\} $, determine $ (A ∪ B) ∩ (B ∪ C) $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-operacoes-com-conjuntos-02-r.jpg",
@@ -137330,12 +137325,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-conjuntos-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Conjuntos",
@@ -137346,12 +137340,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Considerando os conjuntos U = {0, 1, 2, 3, 4, 5, 6}, A = {1, 2}, B = {2, 3, 4}, C = {4, 5} determine (U – A) ∩ (B U C).",
-   "imagens": [
-    "img:cdb-l-operacoes-com-conjuntos-03.jpg"
-   ],
-   "larguraMm": 149.1,
+   "enunciado": "Considerando os conjuntos $ U = \\{0, 1, 2, 3, 4, 5, 6\\} $, $ A = \\{1, 2\\} $, $ B = \\{2, 3, 4\\} $, $ C = \\{4, 5\\} $ determine $ (U − A) ∩ (B ∪ C) $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-operacoes-com-conjuntos-03-r.jpg",
@@ -137361,7 +137350,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-conjuntos-04",
@@ -137737,8 +137727,6 @@
   },
   {
    "id": "cdb-l-permutacao-simples-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Análise combinatória",
@@ -137750,12 +137738,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(U.F.Pelotas - RS) Tomando como base a palavra UFPEL, resolva as questões a seguir. a. Quantos anagramas podem ser formados de modo que as vogais estejam sempre juntas? b. Quantos anagramas podem ser formados com as letras UF juntas? c. Quantos anagramas podem ser formados com as letras PEL juntas e nessa ordem?",
-   "imagens": [
-    "img:cdb-l-permutacao-simples-03.jpg"
-   ],
-   "larguraMm": 144.9,
+   "enunciado": "(U.F. Pelotas-RS) Tomando como base a palavra UFPEL, resolva as questões a seguir.<br><span class=\"pb\"></span>a. Quantos anagramas podem ser formados de modo que as vogais estejam sempre juntas?<br>b. Quantos anagramas podem ser formados com as letras UF juntas?<br>c. Quantos anagramas podem ser formados com as letras PEL juntas e nessa ordem?",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-permutacao-simples-03-r.jpg",
@@ -137765,7 +137748,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-permutacao-simples-04",
@@ -142735,8 +142719,6 @@
   },
   {
    "id": "cdb-l-piramides-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142748,41 +142730,41 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. (EUMT - LONDRINA) O volume de ar contido em um galpão com a forma e as dimensões dadas pela figura abaixo é: a) 300 b) 240 c) 225 d) 210 e) 180",
-   "imagens": [
-    "img:cdb-l-piramides-01.jpg"
-   ],
-   "larguraMm": 188,
+   "enunciado": "(EUMT - LONDRINA) O volume de ar contido em um galpão com a forma e as dimensões dadas pela figura abaixo é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "300",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "240",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "225",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "210",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "180",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-piramides-01-fig.jpg",
+    "alt": "Galpão em forma de prisma de base pentagonal (um retângulo de 6 por 3 com um triângulo em cima, de altura total 5) e comprimento 10",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142794,19 +142776,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. (FEI - MAUÁ) Secciona - se uma pirâmide regular de altura h por um plano paralelo à base, a uma distância x do vértice. Pede - se x de modo que a áreas laterai s da pirâmide se altura x e do tronco de pirâmide de altura h - x sejam iguais.",
-   "imagens": [
-    "img:cdb-l-piramides-02.jpg"
-   ],
-   "larguraMm": 188,
+   "enunciado": "(FEI - MAUÁ) Secciona-se uma pirâmide regular de altura $ h $ por um plano paralelo à base, a uma distância $ x $ do vértice. Pede-se $ x $ de modo que as áreas laterais da pirâmide de altura $ x $ e do tronco de pirâmide de altura $ h − x $ sejam iguais.",
    "resolucao": "",
    "gabarito": "A pirâmide menor (altura $x$) é semelhante à inteira, com razão ${x|h}$; sua área lateral é $A · ({x|h})^2$. A área do tronco é $A - A · ({x|h})^2$. Igualando: $1 - ({x|h})^2 = ({x|h})^2$ ⇒ $({x|h})^2 = {1|2}$ ⇒ $x = {h|√2} = {h√2|2}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-03",
@@ -142833,8 +142811,6 @@
   },
   {
    "id": "cdb-l-piramides-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142846,24 +142822,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04. (MAUÁ) Dado um Tetraedro regular de aresta L, determine, em função de L, a área lateral A do cilindro reto circunscrito, isto é, do cilindro que tem uma base circunscrevendo uma face do Tetraedro e altura igual à altura do Tet raedro.",
-   "imagens": [
-    "img:cdb-l-piramides-04.jpg"
-   ],
-   "larguraMm": 188,
+   "enunciado": "(MAUÁ) Dado um Tetraedro regular de aresta $ L $, determine, em função de $ L $, a área lateral $ A $ do cilindro reto circunscrito, isto é, do cilindro que tem uma base circunscrevendo uma face do Tetraedro e altura igual à altura do Tetraedro.",
    "resolucao": "",
    "gabarito": "Raio da base $R = {L√3|3}$ e altura $H = {L√6|3}$. $A_{lateral} = 2πRH = 2π · {L√3|3} · {L√6|3} = {2π L^2 √{18}|9} = {2√2 π L^2|3}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142875,41 +142845,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05. (LONDRINA) O tetraedro regular ABCD tem centro O. O ângulo diedro de faces OAB e OAC mede: a) 30° b) 60° c) 120° d) 135° e) 150°",
-   "imagens": [
-    "img:cdb-l-piramides-05.jpg"
-   ],
-   "larguraMm": 187.8,
+   "enunciado": "(LONDRINA) O tetraedro regular ABCD tem centro O. O ângulo diedro de faces OAB e OAC mede:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "30°",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "60°",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "120°",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "135°",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "150°",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142921,41 +142885,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06. (SJRP - JUNDIAI) Os vértices de um tetraedro regular de volume 1m³ são centros das faces de outro tetraedro regular. O volume deste outro tetraedro vale: a) 1 m³ b) 3m³ c) 9m³ d) 27m³ e) 81m³",
-   "imagens": [
-    "img:cdb-l-piramides-06.jpg"
-   ],
-   "larguraMm": 188,
+   "enunciado": "(SJRP - JUNDIAÍ) Os vértices de um tetraedro regular de volume 1 m³ são centros das faces de outro tetraedro regular. O volume deste outro tetraedro vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1 m³",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3 m³",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "9 m³",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "27 m³",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "81 m³",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142967,24 +142925,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. (MAUÁ) Na pirâmide VABC os ângulos AVB, BVC e CVA são retos. Calcular a distância de V ao Plano ABC sabendo - se que VA = VB = VC = 1m.",
-   "imagens": [
-    "img:cdb-l-piramides-07.jpg"
-   ],
-   "larguraMm": 187.8,
+   "enunciado": "(MAUÁ) Na pirâmide VABC os ângulos AVB, BVC e CVA são retos. Calcular a distância de V ao Plano ABC sabendo-se que VA = VB = VC = 1 m.",
    "resolucao": "",
    "gabarito": "$VA$, $VB$ e $VC$ são perpendiculares dois a dois e iguais a $1$ m: o triângulo $ABC$ é equilátero de lado $√2$ e o volume da pirâmide é ${1|6}$. Com área de $ABC$ igual a ${√3|2}$: ${1|3} · {√3|2} · d = {1|6}$ ⇒ $d = {1|√3} = {√3|3}$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -142996,41 +142948,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. (OSEC) Um pr isma e uma pirâmide tem bases com a mesma área. Se o volume do prisma é o dobro do volume da pirâmide, a altura da pirâmide será: a) O triplo da do prisma. b) O dobro da do prisma. c) O triplo da metade da do prisma. d) O dobro da terça parte da do prisma. e) n.d.a",
-   "imagens": [
-    "img:cdb-l-piramides-08.jpg"
-   ],
-   "larguraMm": 187.8,
+   "enunciado": "(OSEC) Um prisma e uma pirâmide têm bases com a mesma área. Se o volume do prisma é o dobro do volume da pirâmide, a altura da pirâmide será:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "O triplo da do prisma.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "O dobro da do prisma.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "O triplo da metade da do prisma.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "O dobro da terça parte da do prisma.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "n.d.a",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-piramides-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Geometria espacial",
@@ -143042,32 +142988,28 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09. (UnB) Sejam Pi e P2 duas pirâmides de mesma altura. A base de Pi é um quadrado e a de P2 um triângulo de área igual a do quadrado. Então, a área lateral de Pi é: a) sempre maior do que a de P2; b) sempre menor do que a de P2; c) semp re igual a de P2; d) n.d.a.",
-   "imagens": [
-    "img:cdb-l-piramides-09.jpg"
-   ],
-   "larguraMm": 187.6,
+   "enunciado": "(UnB) Sejam $ P_1 $ e $ P_2 $ duas pirâmides de mesma altura. A base de $ P_1 $ é um quadrado e a de $ P_2 $, um triângulo de área igual à do quadrado. Então, a área lateral de $ P_1 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "sempre maior do que a de $ P_2 $;",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "sempre menor do que a de $ P_2 $;",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "sempre igual a de $ P_2 $;",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "n.d.a.",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-polinomios-3-01",
@@ -147934,8 +147876,6 @@
   },
   {
    "id": "cdb-l-poligonos-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -147946,14 +147886,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2) Classifique os polígonos em côncavos ou convexos. a) _______________ b) _______________ c) _______________ d) _______________ e) _______________ f) _______________",
-   "imagens": [
-    "img:cdb-l-poligonos-02.jpg"
-   ],
-   "larguraMm": 118.4,
+   "enunciado": "Classifique os polígonos em côncavos ou convexos.",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -147975,12 +147910,17 @@
      "t": "E",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poligonos-02-fig.jpg",
+    "alt": "Seis polígonos: a) uma cruz; b) um polígono irregular com reentrância; c) um pentágono com um canto cortado; d) uma estrela irregular; e) um octógono; f) um hexágono",
+    "largura": "112mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -147991,14 +147931,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3) Deternime o número de lados, vértices e ângulos internos de cada polígono abaixo. a) ________ _________ _________ b) _________ _________ _________ c) ________ ________ ________",
-   "imagens": [
-    "img:cdb-l-poligonos-03.jpg"
-   ],
-   "larguraMm": 148.4,
+   "enunciado": "Determine o número de lados, vértices e ângulos internos de cada polígono abaixo.",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -148012,7 +147947,14 @@
      "t": "C",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poligonos-03-fig.jpg",
+    "alt": "Três polígonos regulares: a) um pentágono; b) um octógono; c) um eneágono",
+    "largura": "134mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-04",
@@ -149798,8 +149740,6 @@
   },
   {
    "id": "cdb-l-poligonos-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -149810,24 +149750,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Calcule o perímetro de um triângulo eqüilátero de lado 3cm.",
-   "imagens": [
-    "img:cdb-l-poligonos-2-01.jpg"
-   ],
-   "larguraMm": 96,
+   "enunciado": "Calcule o perímetro de um triângulo equilátero de lado 3 cm.",
    "resolucao": "",
    "gabarito": "$3 · 3 = 9$ cm.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-2-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -149838,19 +149772,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. O perímetro de um quadrilátero de lados iguais mede 20 cm, determine o valor do lado.",
-   "imagens": [
-    "img:cdb-l-poligonos-2-02.jpg"
-   ],
-   "larguraMm": 127.6,
+   "enunciado": "O perímetro de um quadrilátero de lados iguais mede 20 cm, determine o valor do lado.",
    "resolucao": "",
    "gabarito": "$20 ÷ 4 = 5$ cm.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-2-03",
@@ -149876,8 +149806,6 @@
   },
   {
    "id": "cdb-l-poligonos-2-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -149888,24 +149816,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. Observe a figura abaixo, e determine: a) O valor de cada ângulo interno b) O valor de cada ângulo externo c) O valor de x",
-   "imagens": [
-    "img:cdb-l-poligonos-2-08.jpg"
-   ],
-   "larguraMm": 56.7,
+   "enunciado": "Observe a figura.",
    "resolucao": "",
    "gabarito": "Interno em $P$: $180° - 125° = 55°$; interno em $M$: $180° - 100° = 80°$; $x = 180° - 55° - 80° = 45°$. a) Internos: $45°$, $80°$ e $55°$. b) Externos: $135°$, $100°$ e $125°$ (somam $360°$). c) $x = 45°$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "a) O valor de cada ângulo interno<br>b) O valor de cada ângulo externo<br>c) O valor de x",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-poligonos-2-08-fig.jpg",
+    "alt": "Triângulo PMx: o vértice P à direita na base, com o ângulo externo de 125°; M no topo, com o ângulo externo de 100°; o ângulo interno x está no vértice da esquerda",
+    "largura": "51mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-2-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -149916,24 +149845,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "9. De um decágono regular, determine: a) Quantidade de lados b) Quantidade de vértices c) Quantidade de diagonais d) Soma dos ângulos internos e externos de um vértice. e) Cada ângulo externo mede 36º, qual o valor de cada ângulo interno.",
-   "imagens": [
-    "img:cdb-l-poligonos-2-09.jpg"
-   ],
-   "larguraMm": 113.1,
+   "enunciado": "De um decágono regular, determine:<br><span class=\"pb\"></span>a) Quantidade de lados<br>b) Quantidade de vértices<br>c) Quantidade de diagonais<br>d) Soma dos ângulos internos e externos de um vértice.<br>e) Cada ângulo externo mede 36°, qual o valor de cada ângulo interno.",
    "resolucao": "",
    "gabarito": "a) $10$ lados. b) $10$ vértices. c) ${10 · (10 - 3)|2} = 35$ diagonais. d) $180°$. e) $180° - 36° = 144°$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-poligonos-2-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -149944,19 +149867,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Em um polígono o ângulo interno mede 15º, determine: a) A medida de cada ângulo externo b) O nome do polígono c) A quantidade de diagonais d) A soma de todos os ângulos externos e) A soma de todos os ângulos internos",
-   "imagens": [
-    "img:cdb-l-poligonos-2-10.jpg"
-   ],
-   "larguraMm": 88.6,
+   "enunciado": "Em um polígono o ângulo interno mede 15°, determine:<br><span class=\"pb\"></span>a) A medida de cada ângulo externo<br>b) O nome do polígono<br>c) A quantidade de diagonais<br>d) A soma de todos os ângulos externos<br>e) A soma de todos os ângulos internos",
    "resolucao": "",
    "gabarito": "O enunciado traz $15°$ (um ângulo interno de $15°$ não existe em polígono convexo; provável erro de digitação de $150°$). Com $150°$: a) externo $30°$. b) dodecágono ($360° ÷ 30° = 12$ lados). c) $54$ diagonais. d) $360°$. e) $1\\,800°$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-raiz-exata-02",
@@ -156371,8 +156290,6 @@
   },
   {
    "id": "cdb-l-numeros-reais-2-18",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -156383,19 +156300,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. Das expressões seguintes indica quais são inequações: 3x + 4 = 6 5x < 2 2x + 1 ¹ x",
-   "imagens": [
-    "img:cdb-l-numeros-reais-2-18.jpg"
-   ],
-   "larguraMm": 151.6,
+   "enunciado": "Das expressões seguintes indica quais são inequações:<br><span class=\"pb\"></span>$ 3x + 4 = 6 $     $ 5x < 2 $     $ 2x + 1 ≥ x $<br><span class=\"pb\"></span>$ {x + 4|3} ≥ −x − 1 $     $ {x|3} > {3x|5} $",
    "resolucao": "",
    "gabarito": "São inequações: $5x < 2$; ${x + 4|3} ≥ -x - 1$; e ${x|3} > {3x|5}$. A expressão $3x + 4 = 6$ é uma equação.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-numeros-reais-2-19",
@@ -159256,8 +159169,6 @@
   },
   {
    "id": "cdb-l-operacoes-com-fracao-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159268,38 +159179,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1 • Qual é a alternativa que representa a fração 9/2 em números decimais? a. 3,333 b. 4,25 c. 5,01 d. 4,5",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-01.jpg"
-   ],
-   "larguraMm": 128.8,
+   "enunciado": "Qual é a alternativa que representa a fração $ {9|2} $ em números decimais?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3,333",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "4,25",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "5,01",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4,5",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159310,38 +159215,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 • Qual é a alternativa que representa a fração 35/1000 em números decimais? a. 0,35 b. 3,5 c. 0,035 d. 35",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-02.jpg"
-   ],
-   "larguraMm": 137.3,
+   "enunciado": "Qual é a alternativa que representa a fração $ {35|1000} $ em números decimais?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,35",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "3,5",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "0,035",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "35",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159352,38 +159251,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 • Qual é a alternativa que representa o número 0,65 na forma de fração? a. 65/10 b. 65/100 c. 65/1000 d. 65/10000",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-03.jpg"
-   ],
-   "larguraMm": 128.5,
+   "enunciado": "Qual é a alternativa que representa o número <b>0,65</b> na forma de fração?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {65|10} $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {65|100} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {65|1000} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {65|10000} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159394,38 +159287,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 • Observe as frações e suas respectivas representações decimais. I. 3/1000 = 0,003 II. 2367/100 = 23,67 III. 129/10000 = 0,0129 IV. 267/10 = 2,67 Utilizando as igualdades acima, escolha a alternativa correta? a. I e II b. I e IV c. I, II e III d. I, II, III e IV",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-04.jpg"
-   ],
-   "larguraMm": 115.6,
+   "enunciado": "Observe as frações e suas respectivas representações decimais.<br><span class=\"pb\"></span>I. $ {3|1000} = 0,003 $<br>II. $ {2367|100} = 23,67 $<br>III. $ {129|10000} = 0,0129 $<br>IV. $ {267|10} = 2,67 $<br><span class=\"pb\"></span>Utilizando as igualdades acima, escolha a alternativa correta?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "I e II",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "I e IV",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "I, II e III",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "I, II, III e IV",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159436,38 +159323,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5 • Qual é a alternativa que representa a soma dos números decimais 0,65 e 0,15? a. 0,70 b. 0,77 c. 0,67 d. 1,00",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-05.jpg"
-   ],
-   "larguraMm": 141.4,
+   "enunciado": "Qual é a alternativa que representa a soma dos números decimais 0,65 e 0,15?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,70",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,77",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "0,67",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,00",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Números racionais e proporção",
@@ -159478,33 +159359,29 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6 • Qual é a alternativa que representa a soma 4,013+10,182? a. 14,313 b. 13,920 c. 14,213 d. 14,083",
-   "imagens": [
-    "img:cdb-l-operacoes-com-fracao-06.jpg"
-   ],
-   "larguraMm": 107.5,
+   "enunciado": "Qual é a alternativa que representa a soma 4,013 + 10,182?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "14,313",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "13,920",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "14,213",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "14,083",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-sistemas-de-equacoes-ii-01",
