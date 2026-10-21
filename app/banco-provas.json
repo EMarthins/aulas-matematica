@@ -131599,8 +131599,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-directa-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131611,19 +131609,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Observa os cilindros e escreva :  a razão dos raios da base;  a razão das alturas.",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-01.jpg"
-   ],
-   "larguraMm": 99.4,
+   "enunciado": "Observa os cilindros e escreve:",
    "resolucao": "",
    "gabarito": "Razão dos raios: ${4|6} = {2|3}$. Razão das alturas: ${9|15} = {3|5}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "• a razão dos raios da base;<br>• a razão das alturas.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-proporcionalidade-directa-01-fig.jpg",
+    "alt": "Dois cilindros: o menor, azul, com raio da base 4 e altura 9; o maior, rosa, com raio da base 6 e altura 15",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-04",
@@ -131649,8 +131650,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-directa-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131661,24 +131660,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Num campeonato de futebol, as equipas e marcaram golos na A B razão 1 : 3 . A equipa marcou 2 golos. Quantos golos marcou a A equipa ? B",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-05.jpg"
-   ],
-   "larguraMm": 149.3,
+   "enunciado": "Num campeonato de futebol, as equipas A e B marcaram golos na razão 1 : 3. A equipa A marcou 2 golos. Quantos golos marcou a equipa B?",
    "resolucao": "",
    "gabarito": "${A|B} = {1|3}$ com $A = 2$: $B = 6$ golos.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131689,37 +131682,106 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Observa as tabelas: 1 2 3 1 3 4 5 3 4 4 13 12 A A A 5 15 20 10 6 4 2 6,5 6 B B B A tabela que representa uma proporcionalidade directa é: (A) 2 ; (B) 1 e 3 ; (C) 3 ; (D) nenhuma.",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-06.jpg"
-   ],
-   "larguraMm": 150.2,
+   "enunciado": "Observa as tabelas:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 e 3",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "nenhuma.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A tabela que representa uma proporcionalidade directa é:",
+   "figuras": [
+    {
+     "tipo": "tabela",
+     "cab": [
+      "1",
+      "",
+      "",
+      ""
+     ],
+     "linhas": [
+      [
+       "A",
+       "1",
+       "3",
+       "4"
+      ],
+      [
+       "B",
+       "5",
+       "15",
+       "20"
+      ]
+     ],
+     "largura": "55%"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "2",
+      "",
+      "",
+      ""
+     ],
+     "linhas": [
+      [
+       "A",
+       "5",
+       "3",
+       "4"
+      ],
+      [
+       "B",
+       "10",
+       "6",
+       "4"
+      ]
+     ],
+     "largura": "55%"
+    },
+    {
+     "tipo": "tabela",
+     "cab": [
+      "3",
+      "",
+      "",
+      ""
+     ],
+     "linhas": [
+      [
+       "A",
+       "4",
+       "13",
+       "12"
+      ],
+      [
+       "B",
+       "2",
+       "6,5",
+       "6"
+      ]
+     ],
+     "largura": "55%"
+    }
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131730,32 +131792,47 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7. Sabendo que a tabela traduz uma proporcionalidade directa 2 7 A a 5 6 B b podemos dizer que os valores de e são respectivamente: a b (A) 2 , 4 e 0,06 ; (B) 0,4 e 0,06 ; (C) 2,4 e 17,5 ; (D) 0,4 e 17,5 .",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-07.jpg"
-   ],
-   "larguraMm": 146.6,
+   "enunciado": "Sabendo que a tabela traduz uma proporcionalidade directa",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2,4 e 0,06",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,4 e 0,06",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2,4 e 17,5",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "0,4 e 17,5",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "podemos dizer que os valores de $ a $ e $ b $ são respectivamente:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "A",
+     "2",
+     "a",
+     "7"
+    ],
+    "linhas": [
+     [
+      "B",
+      "5",
+      "6",
+      "b"
+     ]
+    ],
+    "largura": "55%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-08",
@@ -131803,8 +131880,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-directa-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131815,24 +131890,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. é directamente proporcional a . Sabendo que para = 5, = 20 A B A B Escreve uma expressão que relaciona e .  A B Quando = 15, qual o valor de ?  A B Quando = 2,1, qual o valor de ?  A B",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-10.jpg"
-   ],
-   "larguraMm": 148.2,
+   "enunciado": "$ A $ é directamente proporcional a $ B $. Sabendo que para $ A = 5 $, $ B = 20 $:<br><span class=\"pb\"></span>• Escreve uma expressão que relaciona $ A $ e $ B $.<br>• Quando $ A = 15 $, qual o valor de $ B $?<br>• Quando $ A = 2,1 $, qual o valor de $ B $?",
    "resolucao": "",
    "gabarito": "A constante é ${B|A} = {20|5} = 4$. Expressão: $B = 4A$. Para $A = 15$: $B = 60$. Para $A = 2,1$: $B = 8,4$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131843,24 +131912,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. A sombra de uma árvore e a sua altura são directamente proporcionais. Às três horas, a árvore com 6 m tem uma sombra de 8 m.  Escreve a expressão que relaciona a altura com a sombra às 3 horas;  Às três horas uma outra árvore tinha uma sombra de 7m.  Qual a altura da árvore?  Às três horas qual a sombra de uma árvore com 10 m de altura?",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-11.jpg"
-   ],
-   "larguraMm": 151.6,
+   "enunciado": "A sombra de uma árvore e a sua altura são directamente proporcionais. Às três horas, a árvore com 6 m tem uma sombra de 8 m.<br><span class=\"pb\"></span>• Escreve a expressão que relaciona a altura com a sombra às 3 horas;<br>• Às três horas uma outra árvore tinha uma sombra de 7 m. Qual a altura da árvore?<br>• Às três horas qual a sombra de uma árvore com 10 m de altura?",
    "resolucao": "",
    "gabarito": "A razão altura ÷ sombra é ${6|8} = {3|4}$: altura $= {3|4} · $ sombra. Sombra de $7$ m: altura $= {3|4} · 7 = 5,25$ m. Árvore de $10$ m: sombra $= 10 ÷ {3|4} = {40|3} ≈ 13,3$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-12",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131871,19 +131934,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. Observa a figura: O rectângulo [ ] está dividido em 80 quadrados. ABCD Pinta:  de cinza 25% do rectângulo;  de amarelo 50% do rectângulo;  de azul 15% do rectângulo. As cores não devem sobrepor - se. Que percentagem do rectângulo [ ] ficou por colorir? ABCD",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-12.jpg"
-   ],
-   "larguraMm": 144.4,
+   "enunciado": "Observa a figura:",
    "resolucao": "",
    "gabarito": "Colorido: $25% + 50% + 15% = 90%$. Ficou por colorir $10%$ (isto é, $8$ quadrados).",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "O retângulo [ABCD] está dividido em 80 quadrados.<br><span class=\"pb\"></span>Pinta:<br>• de cinza 25% do retângulo;<br>• de amarelo 50% do retângulo;<br>• de azul 15% do retângulo.<br><span class=\"pb\"></span>As cores não devem sobrepor-se. Que percentagem do retângulo [ABCD] ficou por colorir?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-proporcionalidade-directa-12-fig.jpg",
+    "alt": "Retângulo ABCD dividido em quadrados: 10 colunas por 8 linhas (80 quadrados)",
+    "largura": "48mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-13",
@@ -131931,8 +131997,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-directa-15",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -131943,32 +132007,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "15. Observa a figura. A figura é uma imagem da figura à escala: (A) 3: 1 ; (B) 1 : 3 ; B A (C) 2 : 1 ; (D) 1 : 2 .",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-15.jpg"
-   ],
-   "larguraMm": 147.7,
+   "enunciado": "Observa a figura.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3 : 1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1 : 3",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 : 1",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "1 : 2",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A figura B é uma imagem da figura A à escala:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-proporcionalidade-directa-15-fig.jpg",
+    "alt": "Malha de pontos com duas figuras laranja em forma de ponta de seta: a figura A, pequena, e a figura B, maior, que é uma ampliação de A",
+    "largura": "58mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-16",
@@ -132016,8 +132083,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-directa-18",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132028,37 +132093,37 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. Indica qual dos gráficos traduz uma situação de proporcionalidade directa. (A) ; (B) ; (C) ; (D) . B A D C",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-18.jpg"
-   ],
-   "larguraMm": 152.1,
+   "enunciado": "Indica qual dos gráficos traduz uma situação de proporcionalidade directa.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
-    {
-     "t": "A",
-     "ok": false
-    },
     {
      "t": "B",
      "ok": false
     },
     {
-     "t": "C",
-     "ok": true
+     "t": "A",
+     "ok": false
     },
     {
      "t": "D",
+     "ok": true
+    },
+    {
+     "t": "C",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-proporcionalidade-directa-18-fig.jpg",
+    "alt": "Quatro gráficos de y em função de x: A, uma reta crescente que não passa pela origem; B, uma reta vertical; C, uma curva crescente que se achata; D, uma reta crescente que passa pela origem",
+    "largura": "134mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-19",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132069,37 +132134,37 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "19. O gráfico que representa uma situação de proporcionalidade de razão 2 é: (A) ; (B) ; (C) ; (D) . C A B D",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-19.jpg"
-   ],
-   "larguraMm": 146.6,
+   "enunciado": "O gráfico que representa uma situação de proporcionalidade de razão 2 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
+    {
+     "t": "C",
+     "ok": false
+    },
     {
      "t": "A",
      "ok": false
     },
     {
      "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
      "ok": true
     },
     {
      "t": "D",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-proporcionalidade-directa-19-fig.jpg",
+    "alt": "Quatro gráficos de retas que passam pela origem, A, B, C e D, com declives diferentes (A suave, B muito inclinada, C com declive 1 e D com declive 1/2)",
+    "largura": "134mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-directa-20",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132110,19 +132175,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "20. Para o lanche de uma cerimónia de inauguração de uma empresa, os hotéis e apresentam os seguintes preços: A B - hotel 10 euros por pessoa; A  - hotel o custo é dado pela fórmula 1,5 + 600 ( - B  C = N N representa o n.º de convidados).  Completa a tabela. N.º convidados 0 10 20 30 40 50 60 70 80 90 Hotel 0 A Hotel 600 B  Constrói no mesmo referencial os gráficos correspondentes aos dados das tabelas obtidas. Quantos devem ser os convidados para que o hotel seja a  B melhor escolha?  Qual dos gráficos traduz uma situação de proporcionalidade directa?",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-directa-20.jpg"
-   ],
-   "larguraMm": 154.1,
+   "enunciado": "Para o lanche de uma cerimónia de inauguração de uma empresa, os hotéis A e B apresentam os seguintes preços:<br><span class=\"pb\"></span>– hotel A: 10 euros por pessoa;<br>– hotel B: o custo é dado pela fórmula $ C = 1,5N + 600 $ ($ N $ representa o n.º de convidados).<br><span class=\"pb\"></span>Completa a tabela para N.º convidados = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90 (hotel A: custo; hotel B: custo).<br><span class=\"pb\"></span>• Constrói no mesmo referencial os gráficos correspondentes aos dados das tabelas obtidas.<br>• Quantos devem ser os convidados para que o hotel B seja a melhor escolha?<br>• Qual dos gráficos traduz uma situação de proporcionalidade directa?",
    "resolucao": "",
    "gabarito": "Hotel A ($10N$): $0, 100, 200, 300, 400, 500, 600, 700, 800, 900$. Hotel B ($1,5N + 600$): $600, 615, 630, 645, 660, 675, 690, 705, 720, 735$. O hotel B é melhor quando $1,5N + 600 < 10N$, isto é, $N > 70,6$: a partir de $71$ convidados. O gráfico do hotel A (reta pela origem) traduz proporcionalidade direta.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-01",
@@ -134775,8 +134836,6 @@
   },
   {
    "id": "cdb-l-quadrilateros-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -134788,12 +134847,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UNEMAT MT/2015) Na figura plana abaixo, ABCD é um paralelogramo; ABDE é 2 um retângulo de área 24 cm e D é um ponto do segmento EC. Qual é a área da figura ABCE ? 2 a) 36 cm . 2 b) 48 cm . 2 c) 52 cm . 2 d) 44 cm . 2 e) 30 cm .",
-   "imagens": [
-    "img:cdb-l-quadrilateros-03.jpg"
-   ],
-   "larguraMm": 147.9,
+   "enunciado": "(UNEMAT MT/2015) Na figura plana abaixo, ABCD é um paralelogramo; ABDE é um retângulo de área 24 cm² e D é um ponto do segmento EC.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-quadrilateros-03-r.jpg",
@@ -134802,26 +134856,34 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "36 cm²",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "48 cm²",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "52 cm²",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "44 cm²",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "30 cm²",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "Qual é a área da figura ABCE?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-quadrilateros-03-fig.jpg",
+    "alt": "Retângulo ABDE (A e B em cima, E e D embaixo) e, à direita, o paralelogramo ABCD: C está embaixo, à direita de D; os segmentos AD e BC são diagonais",
+    "largura": "54mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-quadrilateros-04",
@@ -139216,8 +139278,6 @@
   },
   {
    "id": "cdb-l-progressao-geometrica-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -139229,12 +139289,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Vunesp – SP – Adaptado) Várias tábuas iguais estão em uma madeireira. Elas deverão ser empilhadas respeitando a seguinte ordem: uma tábua na primeira vez e, em cada uma das vezes seguintes, tantas quantas já estejam na pilha. Por exemplo: Determine a quantidade de tábuas empilhadas na 12ª pilha.",
-   "imagens": [
-    "img:cdb-l-progressao-geometrica-02.jpg"
-   ],
-   "larguraMm": 144.9,
+   "enunciado": "(Vunesp – SP – Adaptado) Várias tábuas iguais estão em uma madeireira. Elas deverão ser empilhadas respeitando a seguinte ordem: uma tábua na primeira vez e, em cada uma das vezes seguintes, tantas quantas já estejam na pilha. Por exemplo:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-progressao-geometrica-02-r.jpg",
@@ -139244,7 +139299,27 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine a quantidade de tábuas empilhadas na 12ª pilha.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "1ª pilha",
+     "2ª pilha",
+     "3ª pilha",
+     "4ª pilha"
+    ],
+    "linhas": [
+     [
+      "uma tábua",
+      "duas tábuas",
+      "quatro tábuas",
+      "oito tábuas"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-geometrica-03",
@@ -139295,8 +139370,6 @@
   },
   {
    "id": "cdb-l-progressoes-aritmeticas-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Progressões",
@@ -139307,12 +139380,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o 20º elemento e a soma dos termos da seguinte progressão aritmética: (2, 7, 12, 17,...).",
-   "imagens": [
-    "img:cdb-l-progressoes-aritmeticas-01.jpg"
-   ],
-   "larguraMm": 148.9,
+   "enunciado": "Determine o 20º elemento e a soma dos termos da seguinte progressão aritmética: $ (2, 7, 12, 17, …) $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-progressoes-aritmeticas-01-r.jpg",
@@ -139322,7 +139390,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressoes-aritmeticas-02",
@@ -139553,8 +139622,6 @@
   },
   {
    "id": "cdb-l-propriedades-do-binomio-de-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -139565,12 +139632,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o 6º termo do desenvolvimento do binômio",
-   "imagens": [
-    "img:cdb-l-propriedades-do-binomio-de-02.jpg"
-   ],
-   "larguraMm": 105.7,
+   "enunciado": "Determine o 6º termo do desenvolvimento do binômio $ (x − {1|2})^9 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-propriedades-do-binomio-de-02-r.jpg",
@@ -139580,7 +139642,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-propriedades-do-binomio-de-03",
@@ -139635,8 +139698,6 @@
   },
   {
    "id": "cdb-l-propriedades-do-binomio-de-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -139648,12 +139709,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(PUC - MG) No desenvolvimento do binômio , o coeficiente do termo em x4 é 12. Qual o valor de a?",
-   "imagens": [
-    "img:cdb-l-propriedades-do-binomio-de-05.jpg"
-   ],
-   "larguraMm": 150.5,
+   "enunciado": "(PUC-MG) No desenvolvimento do binômio $ (x + {a|x})^6 $, o coeficiente do termo em $ x^4 $ é 12. Qual o valor de $ a $?",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-propriedades-do-binomio-de-05-r.jpg",
@@ -139663,12 +139719,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-propriedades-do-binomio-de-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Binômio de Newton",
@@ -139680,12 +139735,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(USJT - SP) Qual é o termo independente de x no desenvolvimento do binômio de Newton ?",
-   "imagens": [
-    "img:cdb-l-propriedades-do-binomio-de-06.jpg"
-   ],
-   "larguraMm": 143.5,
+   "enunciado": "(USJT-SP) Qual é o termo independente de $ x $ no desenvolvimento do binômio de Newton $ (x + {1|x})^6 $?",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-propriedades-do-binomio-de-06-r.jpg",
@@ -139695,12 +139745,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-propriedades-operatorias-d-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -139712,12 +139761,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(FUVEST – 2010) Determine a solução (x,y, y > 1), para o sistema de equações:",
-   "imagens": [
-    "img:cdb-l-propriedades-operatorias-d-01.jpg"
-   ],
-   "larguraMm": 99.2,
+   "enunciado": "(FUVEST – 2010) Determine a solução $ (x, y) $, $ y > 1 $, para o sistema de equações:<br><span class=\"pb\"></span>$ @S{log_y(9x − 35) = 6; log_{3y}(27x − 81) = 3} $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-propriedades-operatorias-d-01-r.jpg",
@@ -139727,7 +139771,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-propriedades-operatorias-d-02",
@@ -144009,8 +144054,6 @@
   },
   {
    "id": "cdb-l-progressao-aritmetica-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144021,24 +144064,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06. Determinar x tal que 2x - 3; 2x + 1; 3x + 1 sejam três números em P. A. nesta ordem.",
-   "imagens": [
-    "img:cdb-l-progressao-aritmetica-06.jpg"
-   ],
-   "larguraMm": 169.6,
+   "enunciado": "Determinar $ x $ tal que $ 2x − 3 $; $ 2x + 1 $; $ 3x + 1 $ sejam três números em P.A. nesta ordem.",
    "resolucao": "",
    "gabarito": "x = 4",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-aritmetica-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144049,19 +144086,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. Em uma P. A. são dados a1 = 2, r = 3 e Sn = 57. Calcular an e n.",
-   "imagens": [
-    "img:cdb-l-progressao-aritmetica-07.jpg"
-   ],
-   "larguraMm": 132.2,
+   "enunciado": "Em uma P.A. são dados $ a_1 = 2 $, $ r = 3 $ e $ S_n = 57 $. Calcular $ a_n $ e $ n $.",
    "resolucao": "",
    "gabarito": "n = 6 e a6 = 17",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-aritmetica-08",
@@ -144145,8 +144178,6 @@
   },
   {
    "id": "cdb-l-progressao-aritmetica-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144157,41 +144188,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 10. (UE - PONTA GROSSA) A soma dos termos de P. A. é dada por Sn = n - n, n = 1, 2, 3, ... Então o 10° termo da P. A vale: a) 18 b) 90 c) 8 d) 100 e) 9",
-   "imagens": [
-    "img:cdb-l-progressao-aritmetica-10.jpg"
-   ],
-   "larguraMm": 180.2,
+   "enunciado": "(UE - PONTA GROSSA) A soma dos termos de P.A. é dada por $ S_n = n^2 − n $, $ n = 1, 2, 3, … $ Então o 10º termo da P.A. vale:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "18",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "90",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "100",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "9",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-geometrica-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144202,19 +144227,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. Determine a P. G. (an) em que a1 = 3 e an + 1 = 2 . an.",
-   "imagens": [
-    "img:cdb-l-progressao-geometrica-2-01.jpg"
-   ],
-   "larguraMm": 114.2,
+   "enunciado": "Determine a P.G. $ (a_n) $ em que $ a_1 = 3 $ e $ a_{n+1} = 2 · a_n $.",
    "resolucao": "",
    "gabarito": "(an) = (3, 6, 12, 24, 48, 96, ...)",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-geometrica-2-02",
@@ -144324,8 +144345,6 @@
   },
   {
    "id": "cdb-l-progressao-geometrica-2-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144336,36 +144355,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06. O segundo termo de uma P. G. crescente tal que a1 = 8 e a3 = 18 é igual a: a) 10 b) 11 c) 12 d) 14 e) 15",
-   "imagens": [
-    "img:cdb-l-progressao-geometrica-2-06.jpg"
-   ],
-   "larguraMm": 152.6,
+   "enunciado": "O segundo termo de uma P.G. crescente tal que $ a_1 = 8 $ e $ a_3 = 18 $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "11",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "12",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "14",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "15",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-geometrica-2-07",
@@ -144408,8 +144423,6 @@
   },
   {
    "id": "cdb-l-progressao-geometrica-2-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Questões variadas",
@@ -144420,19 +144433,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. Calcule o valor de k para que a soma dos k primeiros termos da progressão geométrica (1, 3, 9, ...) seja igual a 79716 1.",
-   "imagens": [
-    "img:cdb-l-progressao-geometrica-2-08.jpg"
-   ],
-   "larguraMm": 185.3,
+   "enunciado": "Calcule o valor de $ k $ para que a soma dos $ k $ primeiros termos da progressão geométrica $ (1, 3, 9, …) $ seja igual a 797161.",
    "resolucao": "",
    "gabarito": "K=13",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-progressao-geometrica-2-09",
@@ -152970,8 +152979,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-inversa-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -152982,24 +152989,43 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. A tabela seguinte representa o comprimento e a largura de vários rectângulos, todos com o mesmo perímetro, em cm. Comprimento (x) 31 18 12 6 Largura (y) 1 14 28 31 a) Qual o perímetro dos rectângulos? b) Completa a tabela. c) A tabela representa uma proporcionalidade inversa? Justifica. d) Indica qual das expressões representa a função indicada na tabela: A) x.y =31 B) 31y = x C) y = x - 32 D) y = 32 - x e) Representa graficamente a função apresentada na tabela.",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-inversa-01.jpg"
-   ],
-   "larguraMm": 159.3,
+   "enunciado": "A tabela seguinte representa o comprimento e a largura de vários retângulos, todos com o mesmo perímetro, em cm.",
    "resolucao": "",
    "gabarito": "a) $2(31 + 1) = 64$ cm. b) Comprimento $12$ → largura $20$; comprimento $6$ → largura $26$; largura $28$ → comprimento $4$; largura $31$ → comprimento $1$. c) Não: o produto $x · y$ não é constante ($31 · 1 ≠ 18 · 14$); o que é constante é a soma $x + y = 32$. d) D) $y = 32 - x$. e) gráfico: pontos alinhados numa reta decrescente.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "a) Qual o perímetro dos retângulos?<br>b) Completa a tabela.<br>c) A tabela representa uma proporcionalidade inversa? Justifica.<br>d) Indica qual das expressões representa a função indicada na tabela:<br>A) $ x · y = 31 $   B) $ 31y = x $   C) $ y = x − 32 $   D) $ y = 32 − x $<br>e) Representa graficamente a função apresentada na tabela.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Comprimento (x)",
+     "31",
+     "18",
+     "12",
+     "6",
+     "",
+     ""
+    ],
+    "linhas": [
+     [
+      "Largura (y)",
+      "1",
+      "14",
+      "",
+      "",
+      "28",
+      "31"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-inversa-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -153010,19 +153036,41 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2. Verifica se os valores apresentados na tabela representam uma proporcionalidade inversa entre v e t: v - 1 - 2 0,5 - 36 3 - 4,8 10 t 12 6 - 24 1/3 - 4 2,5 - 1,2",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-inversa-02.jpg"
-   ],
-   "larguraMm": 159.3,
+   "enunciado": "Verifica se os valores apresentados na tabela representam uma proporcionalidade inversa entre v e t:",
    "resolucao": "",
    "gabarito": "Os produtos $v · t$ são todos iguais a $-12$ ($-1 · 12$, $-2 · 6$, $0,5 · (-24)$, $-36 · {1|3}$, $3 · (-4)$, $-4,8 · 2,5$, $10 · (-1,2)$). Logo há proporcionalidade inversa, com constante $-12$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "v",
+     "−1",
+     "−2",
+     "0,5",
+     "−36",
+     "3",
+     "−4,8",
+     "10"
+    ],
+    "linhas": [
+     [
+      "t",
+      "12",
+      "6",
+      "−24",
+      "1/3",
+      "−4",
+      "2,5",
+      "−1,2"
+     ]
+    ],
+    "largura": "100%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-inversa-03",
@@ -153048,8 +153096,6 @@
   },
   {
    "id": "cdb-l-proporcionalidade-inversa-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -153060,19 +153106,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4. Indica os objectos cuja imagem é - 4 nas funções a seguir definidas. a) x . y = 20 b) y = - 2 / x c) y = - 1 / 3x d) Resolve cada uma das expressões em ordem a x.",
-   "imagens": [
-    "img:cdb-l-proporcionalidade-inversa-04.jpg"
-   ],
-   "larguraMm": 159.3,
+   "enunciado": "Indica os objectos cuja imagem é −4 nas funções a seguir definidas.<br><span class=\"pb\"></span>a) $ x · y = 20 $   b) $ y = −{2|x} $   c) $ y = −{1|3x} $<br>d) Resolve cada uma das expressões em ordem a $ x $.",
    "resolucao": "",
    "gabarito": "a) $x = -5$ ($x · (-4) = 20$). b) $x = {1|2}$. c) $x = {1|12}$. d) a) $x = {20|y}$; b) $x = -{2|y}$; c) $x = -{1|3y}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-proporcionalidade-inversa-05",
@@ -156039,8 +156081,6 @@
   },
   {
    "id": "cdb-l-radiciacao-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -156051,19 +156091,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 1) A área de um quadrado v çl,monjiu ale 36 m . Então, podemos calcular a medida do seu lado, em metros,que vale ____________________.",
-   "imagens": [
-    "img:cdb-l-radiciacao-01.jpg"
-   ],
-   "larguraMm": 196.6,
+   "enunciado": "A área de um quadrado vale 36 m². Então, podemos calcular a medida do seu lado, em metros, que vale ______.",
    "resolucao": "",
    "gabarito": "6 metros",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-radiciacao-02",
