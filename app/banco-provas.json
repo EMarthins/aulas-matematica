@@ -132960,8 +132960,6 @@
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Números racionais e proporção",
@@ -132972,24 +132970,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01) Identifique a base e o expoente da potência: a) ( + 21 )³ = 8 b) ( - 1 ) = c) ( + 83 )² = 4 d) ( - 195 ) =",
-   "imagens": [
-    "img:cdb-l-potencia-com-numeros-intei-01.jpg"
-   ],
-   "larguraMm": 84,
+   "enunciado": "Identifique a base e o expoente da potência:<br><span class=\"pb\"></span>a) $ (+21)^3 = $<br>b) $ (−1)^8 = $<br>c) $ (+83)^2 = $<br>d) $ (−195)^4 = $",
    "resolucao": "",
    "gabarito": "a) base $+21$, expoente $3$ (resultado $9\\,261$). b) base $-1$, expoente $8$ (resultado $1$). c) base $+83$, expoente $2$ (resultado $6\\,889$). d) base $-195$, expoente $4$ (resultado $1\\,445\\,900\\,625$).",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Números racionais e proporção",
@@ -133000,19 +132992,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8 02) O sinal da potência ( - 41 ) é :",
-   "imagens": [
-    "img:cdb-l-potencia-com-numeros-intei-02.jpg"
-   ],
-   "larguraMm": 61.6,
+   "enunciado": "O sinal da potência $ (−41)^8 $ é:",
    "resolucao": "",
    "gabarito": "Positivo: expoente par ($8$), então $(-41)^8 > 0$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-03",
@@ -133038,8 +133026,6 @@
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Números racionais e proporção",
@@ -133050,19 +133036,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1001 04) A potência ( - 10 ) é um número inteiro positivo ou negativo?",
-   "imagens": [
-    "img:cdb-l-potencia-com-numeros-intei-04.jpg"
-   ],
-   "larguraMm": 119.8,
+   "enunciado": "A potência $ (−10)^{1001} $ é um número inteiro positivo ou negativo?",
    "resolucao": "",
    "gabarito": "Negativo: $(-10)^{1001}$ tem expoente ímpar, logo é $-10^{1001} < 0$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potencia-com-numeros-intei-05",
@@ -138150,8 +138132,6 @@
   },
   {
    "id": "cdb-l-porcentagem-utilizando-reg-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Porcentagem",
@@ -138163,36 +138143,59 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Unifor – CE) Três laboratórios produzem certo medicamento. A tabela abaixo mostra, para um certo mês, o número de unidades produzidas desse medicamento e a porcentagem de vendas dessa produção. Se, nesse mês, os três laboratórios venderam um total de 13.900 unidades desse medicamento, então o valor de x é: a) 80 b) 75 c) 70 d) 65 e) 60",
-   "imagens": [
-    "img:cdb-l-porcentagem-utilizando-reg-06.jpg"
-   ],
-   "larguraMm": 152.6,
+   "enunciado": "(Unifor–CE) Três laboratórios produzem certo medicamento. A tabela abaixo mostra, para um certo mês, o número de unidades produzidas desse medicamento e a porcentagem de vendas dessa produção.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "80",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "75",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "70",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "65",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "60",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Se, nesse mês, os três laboratórios venderam um total de 13.900 unidades desse medicamento, então o valor de x é:",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Laboratórios",
+     "Número de unidades produzidas",
+     "Porcentagem de venda da produção"
+    ],
+    "linhas": [
+     [
+      "Unilab",
+      "5.000",
+      "70"
+     ],
+     [
+      "Fotolab",
+      "7.000",
+      "80"
+     ],
+     [
+      "Riolab",
+      "8.000",
+      "x"
+     ]
+    ],
+    "largura": "85%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-porcentagem-2-01",
@@ -138297,8 +138300,6 @@
   },
   {
    "id": "cdb-l-posicoes-relativas-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138309,12 +138310,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Verifique o posicionamento da reta r, dada pela equação 2x + y – 1 = 0 em relação à circunferência de equação x² + y² + 6x – 8y = 0.",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-01.jpg"
-   ],
-   "larguraMm": 135.2,
+   "enunciado": "Verifique o posicionamento da reta $ r $, dada pela equação $ 2x + y − 1 = 0 $ em relação à circunferência de equação $ x^2 + y^2 + 6x − 8y = 0 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-01-r.jpg",
@@ -138324,12 +138320,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-posicoes-relativas-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138340,12 +138335,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dada a reta s representada pela equação 2x – y + 1 = 0 e a circunferência de equação x² + y² – 2x = 0, determine a posição relativa entre elas.",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-02.jpg"
-   ],
-   "larguraMm": 137.3,
+   "enunciado": "Dada a reta $ s $ representada pela equação $ 2x − y + 1 = 0 $ e a circunferência de equação $ x^2 + y^2 − 2x = 0 $, determine a posição relativa entre elas.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-02-r.jpg",
@@ -138355,12 +138345,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-posicoes-relativas-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138371,12 +138360,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine o valor de w sabendo que a reta de equação x – y + w = 0 é tangente à circunferência de equação x² + y² = 9.",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-03.jpg"
-   ],
-   "larguraMm": 131.3,
+   "enunciado": "Determine o valor de $ w $ sabendo que a reta de equação $ x − y + w = 0 $ é tangente à circunferência de equação $ x^2 + y^2 = 9 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-03-r.jpg",
@@ -138386,12 +138370,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-posicoes-relativas-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138403,12 +138386,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFBA) Determine o comprimento da corda determinada pela intersecção da reta r, de equação x + y – 1 = 0, com a circunferência de equação x² + y² + 2x + 2y – 3 = 0.",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-04.jpg"
-   ],
-   "larguraMm": 153.4,
+   "enunciado": "(UFBA) Determine o comprimento da corda determinada pela intersecção da reta $ r $, de equação $ x + y − 1 = 0 $, com a circunferência de equação $ x^2 + y^2 + 2x + 2y − 3 = 0 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-04-r.jpg",
@@ -138418,12 +138396,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-posicoes-relativas-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138435,12 +138412,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(ITA - SP) A distância entre os pontos de intersecção da reta com a circunferência x² + y² = 400 é: a) 16√5 b) 4√5 c) 3√3 d) 4√3 e) 5√7",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-05.jpg"
-   ],
-   "larguraMm": 141.7,
+   "enunciado": "(ITA-SP) A distância entre os pontos de intersecção da reta $ {x|10} + {y|20} = 1 $ com a circunferência $ x^2 + y^2 = 400 $ é:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-05-r.jpg",
@@ -138449,31 +138421,30 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 16√5 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 4√5 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 3√3 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 4√3 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 5√7 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-posicoes-relativas-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -138485,12 +138456,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFRS) O valor de k que transforma a equação x² + y² – 8x + 10y + k = 0 na equação de uma circunferência de raio 7 é: a) – 4 b) – 8 c) 5 d 7 e) – 5",
-   "imagens": [
-    "img:cdb-l-posicoes-relativas-06.jpg"
-   ],
-   "larguraMm": 134.7,
+   "enunciado": "(UFRS) O valor de $ k $ que transforma a equação $ x^2 + y^2 − 8x + 10y + k = 0 $ na equação de uma circunferência de raio 7 é:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-posicoes-relativas-06-r.jpg",
@@ -138499,22 +138465,27 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−4",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−8",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "7",
+     "ok": false
+    },
+    {
+     "t": "−5",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-prisma-01",
@@ -143327,8 +143298,6 @@
   },
   {
    "id": "cdb-l-potenciacao-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -143339,24 +143308,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 3 3 01. Calcular: 2 ; ( - 2) ; ; - 2",
-   "imagens": [
-    "img:cdb-l-potenciacao-01.jpg"
-   ],
-   "larguraMm": 50,
+   "enunciado": "Calcular: $ 2^3 $;  $ (−2)^3 $;  $ −2^3 $",
    "resolucao": "",
    "gabarito": "2 = 8; ( -",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -143367,24 +143330,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4 3 02. Calcular: (0,2) ; (0,1)",
-   "imagens": [
-    "img:cdb-l-potenciacao-02.jpg"
-   ],
-   "larguraMm": 60,
+   "enunciado": "Calcular: $ (0,2)^4 $;  $ (0,1)^3 $",
    "resolucao": "",
    "gabarito": "= - 8; - 2 = - 8",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -143395,24 +143352,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "- 3 - 3 - 3 03. Calcular: 2 ; ( - 2) ; - 2",
-   "imagens": [
-    "img:cdb-l-potenciacao-03.jpg"
-   ],
-   "larguraMm": 66,
+   "enunciado": "Calcular: $ 2^{−3} $;  $ (−2)^{−3} $;  $ −2^{−3} $",
    "resolucao": "",
    "gabarito": "2 = 0,125; ( -",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Números racionais e proporção",
@@ -143423,37 +143374,33 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "0 4 04. O valor da expressão ( - 1) + ( - 6) : ( - 2) – 2 é: a) 20 b) - 12 c) 19,5 d) 12 e) 10",
-   "imagens": [
-    "img:cdb-l-potenciacao-04.jpg"
-   ],
-   "larguraMm": 118.8,
+   "enunciado": "O valor da expressão $ (−1)^0 + (−6) : (−2) − 2^4 $ é:",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "20",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "−12",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "19,5",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "12",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "10",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-05",
@@ -157488,8 +157435,6 @@
   },
   {
    "id": "cdb-l-potenciacao-2-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157500,24 +157445,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. Potenciação : Calcule: 3 a) 2 5 b) 3 6 c) 0 n d) 1 , n E N 4 e) 2 4 f) ( – 2) 4 g) – 2 41 h) ( – 1) 1 i) ( – 6) 0 j) 23",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-01.jpg"
-   ],
-   "larguraMm": 36.9,
+   "enunciado": "<b>Potenciação:</b> Calcule:<br><span class=\"pb\"></span>a) $ 2^3 $<br>b) $ 3^5 $<br>c) $ 0^6 $<br>d) $ 1^n $, $ n ∈ ℕ $<br>e) $ 2^4 $<br>f) $ (−2)^4 $<br>g) $ −2^4 $<br>h) $ (−1)^{41} $<br>i) $ (−6)^1 $<br>j) $ 23^0 $",
    "resolucao": "",
    "gabarito": "a) 8",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157528,37 +157467,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. UECE. Potenciação: 2 2 Se a = 3 e b = a , então o valor do produto ab é igual a: 6 a) 3 8 b) 3 6 c) 9 8 d) 9",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-02.jpg"
-   ],
-   "larguraMm": 98.7,
+   "enunciado": "(UECE) Se $ a = 3^2 $ e $ b = a^2 $, então o valor do produto $ ab $ é igual a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 3^6 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ 3^8 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 9^6 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ 9^8 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157569,37 +157502,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. PUC - MG n p n – p+3 Se 2 = 15 e 2 = 20, o valor de 2 é: a) 6 b) 8 c) 14 d) 16",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-03.jpg"
-   ],
-   "larguraMm": 81.5,
+   "enunciado": "(PUC-MG) Se $ 2^n = 15 $ e $ 2^p = 20 $, o valor de $ 2^{n−p+3} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "6",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "8",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "14",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "16",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157610,24 +157537,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "04. – 3 - 2 Calcule: ( - 2/5) – ( - 5/2)",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-04.jpg"
-   ],
-   "larguraMm": 52.4,
+   "enunciado": "Calcule: $ (−{2|5})^{−3} − (−{5|2})^{−2} $",
    "resolucao": "",
    "gabarito": "-",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157638,37 +157559,31 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "05. UFMG. Potenciação: – 1 – 1 – 2 O valor da expressão (a + b ) é: 2 a) ab/(a+b) 2 2 2 b) ab/( a + b ) 2 2 c) a + b 2 2 2 d) a . b / (a+b)",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-05.jpg"
-   ],
-   "larguraMm": 75.2,
+   "enunciado": "(UFMG) O valor da expressão $ (a^{−1} + b^{−1})^{−2} $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ ({ab|a + b})^2 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ ({ab|a^2 + b^2})^2 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a^2 + b^2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {a^2 · b^2|(a + b)^2} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157679,41 +157594,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "06. Inatel - MG. Potenciação: – 1 O valor da expressão 0,05 . 0,75 . 0,5/ 0,125 . (0,25) é equivalente a: a) 0,5 b) 1/5 2 c) 5 d) 3/5 e) 3/10",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-06.jpg"
-   ],
-   "larguraMm": 142.4,
+   "enunciado": "(Inatel-MG) O valor da expressão $ {0,05 · 0,75 · 0,5|0,125} · (0,25)^{−1} $ é equivalente a:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,5",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {1|5} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ 5^2 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|5} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {3|10} $",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157724,19 +157633,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "07. Simplifique a expressão: X+3 X+1 X – 2 A= 5 – 5 / 5",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-07.jpg"
-   ],
-   "larguraMm": 60,
+   "enunciado": "Simplifique a expressão:<br><span class=\"pb\"></span>$ A = {5^{x+3} − 5^{x+1}|5^{x−2}} $",
    "resolucao": "",
    "gabarito": "3.000",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-08",
@@ -157785,8 +157690,6 @@
   },
   {
    "id": "cdb-l-potenciacao-2-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157797,41 +157700,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09. Fuvest - SP . Potenciação: 3 2 O valor de (0,2) + (0,16) é: a) 0,0264 b) 0,0336 c) 0,1056 d) 0,2568 e) 0,6256",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-09.jpg"
-   ],
-   "larguraMm": 59.5,
+   "enunciado": "(Fuvest-SP) O valor de $ (0,2)^3 + (0,16)^2 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,0264",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,0336",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "0,1056",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,2568",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0,6256",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Números racionais e proporção",
@@ -157842,32 +157739,28 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Fatec - SP . Potenciação: 0,25 Se x e y são números reais tais que x = (0,25) e – 0,125 y = 16 , é verdade que: a) x = y b) x > y c) x – y é um número irracional. d) x + y é um número racional não inteiro.",
-   "imagens": [
-    "img:cdb-l-potenciacao-2-10.jpg"
-   ],
-   "larguraMm": 99,
+   "enunciado": "(Fatec-SP) Se $ x $ e $ y $ são números reais tais que $ x = (0,25)^{0,25} $ e $ y = 16^{−0,125} $, é verdade que:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = y $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ x > y $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x − y $ é um número irracional.",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x + y $ é um número racional não inteiro.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-radiciacao-2-01",
@@ -158880,8 +158773,6 @@
   },
   {
    "id": "cdb-l-porcentagem-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Porcentagem",
@@ -158892,38 +158783,36 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Exercício 2 : Em um viveiro há várias araras. • N 60% das araras são azuis, • N 40% das araras são vermelhas, • N 40% das araras azuis têm bico branco, • N 30% das araras vermelhas têm bico branco. Que porcentagem das araras do viveiro tem bico branco? 10% A) 12% B) 24% C) 36% D) 40% E)",
-   "imagens": [
-    "img:cdb-l-porcentagem-02.jpg"
-   ],
-   "larguraMm": 99.7,
+   "enunciado": "Em um viveiro há várias araras.<br><span class=\"pb\"></span>• 60% das araras são azuis,<br>• 40% das araras são vermelhas,<br>• 40% das araras azuis têm bico branco,<br>• 30% das araras vermelhas têm bico branco.<br><span class=\"pb\"></span>Que porcentagem das araras do viveiro tem bico branco?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "10%",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "12%",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "24%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "36%",
      "ok": true
+    },
+    {
+     "t": "40%",
+     "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-porcentagem-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Porcentagem",
@@ -158934,38 +158823,36 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Exercício 3 : João recebeu um aumento de 10% e com isso seu salário chegou a R$1.320,00. O salário de João antes do aumento era igual a? R$1.188,00 A) R$1.200,00 B) R$1.220,00 C) R$1.310,00 D) R$1.452,00 E)",
-   "imagens": [
-    "img:cdb-l-porcentagem-03.jpg"
-   ],
-   "larguraMm": 141.5,
+   "enunciado": "João recebeu um aumento de 10% e com isso seu salário chegou a R&#36; 1.320,00. O salário de João antes do aumento era igual a?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "R&#36; 1.188,00",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "R&#36; 1.200,00",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "R&#36; 1.220,00",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "R&#36; 1.310,00",
+     "ok": false
+    },
+    {
+     "t": "R&#36; 1.452,00",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-porcentagem-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Porcentagem",
@@ -158976,38 +158863,36 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Exercício 4 : Que número deve ser somado ao numerador e ao denominador da fração 2/3 para que ela tenha um aumento de 25%? 3 A) 1/3 B) 3/4 C) 1 D) 1/2 E)",
-   "imagens": [
-    "img:cdb-l-porcentagem-04.jpg"
-   ],
-   "larguraMm": 148.1,
+   "enunciado": "Que número deve ser somado ao numerador e ao denominador da fração $ {2|3} $ para que ela tenha um aumento de 25%?",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {1|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {3|4} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1",
+     "ok": false
+    },
+    {
+     "t": "$ {1|2} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-porcentagem-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Porcentagem",
@@ -159018,37 +158903,33 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Exercício 5 : 30% de 30% são: 3000%. A) 300%. B) 900% C) 9%. D) 0,3%. E)",
-   "imagens": [
-    "img:cdb-l-porcentagem-05.jpg"
-   ],
-   "larguraMm": 37.3,
+   "enunciado": "30% de 30% são:",
    "resolucao": "",
    "gabarito": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "3000%.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "300%.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "900%",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "9%.",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "0,3%.",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-operacoes-com-fracao-01",
@@ -160611,8 +160492,6 @@
   },
   {
    "id": "cdb-l-polinomios-12",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Polinômios",
@@ -160623,24 +160502,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12 - Dadas as expressões algébricas A, B e C : 2 A = y - 3y 2 B = 2 y – y 2 C = y – 2y Efetue essas operações algébricas e escreva o resultado na forma reduzida: a) A + B b) A + B + C c) A . B d) A . B . C",
-   "imagens": [
-    "img:cdb-l-polinomios-12.jpg"
-   ],
-   "larguraMm": 138,
+   "enunciado": "Dadas as expressões algébricas A, B e C:<br><span class=\"pb\"></span>$ A = y^2 − 3y $<br>$ B = 2y^2 − y $<br>$ C = y^2 − 2y $<br><span class=\"pb\"></span>Efetue essas operações algébricas e escreva o resultado na forma reduzida:<br><span class=\"pb\"></span>a) $ A + B $<br>b) $ A + B + C $<br>c) $ A · B $<br>d) $ A · B · C $",
    "resolucao": "",
    "gabarito": "a) $A + B = 3y^2 - 4y$. b) $A + B + C = 4y^2 - 6y$. c) $A · B = 2y^4 - 7y^3 + 3y^2$. d) $A · B · C = 2y^6 - 11y^5 + 17y^4 - 6y^3$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-polinomios-13",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Polinômios",
@@ -160651,19 +160524,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "13 - Reduza os termos semelhantes nas expressões algébricas e classifique a expressão reduzida em monômio, binômio ou trinômio. 2 3 2 3 2 3 a) 5xy + 7x + 9y x – 9x + y x + 2x 2 2 b) - 7a b + ( - 5a) + 7ab – ( - 3a) c) 8 – 9m + 7mp + 13m – 16mp + 7 2 2 2 2 2 d) 4xy – 7x y – xy + 2xy – 3x y 1 4 - Reduza os termos semelhantes efetuando as operações indicadas. 2 3 3 a) 7ax + (a – 3ax ) – (5ª + ax ) 2 2 b) (13ab + 5ª) – (15ab + 7a – 3a) – ( - 2ab + a ) 2 2 2 c) (x + 3) + ( - x + 2) – (x – 1) + ( - 7x + 2x – 2) d) (x + 4) – (x – 2) + (4x – 5) – (7x + 10) e) 2x – (y + 1 – 3x) – (2xy + 7y – 2) + ( - 5y + 7x + 2xy) 15 - Efetue as divisões a seguir : 4 5 3 4 2 2 a) (x z + x z ) : x z 3 6 2 5 3 4 3 4 b",
-   "imagens": [
-    "img:cdb-l-polinomios-13.jpg"
-   ],
-   "larguraMm": 153.2,
+   "enunciado": "<b>13 -</b> Reduza os termos semelhantes nas expressões algébricas e classifique a expressão reduzida em monômio, binômio ou trinômio.<br><span class=\"pb\"></span>a) $ 5xy^2 + 7x^3 + 9y^2 x − 9x^3 + y^2 x + 2x^3 $<br>b) $ −7a^2 b + (−5a) + 7ab^2 − (−3a) $<br>c) $ 8 − 9m + 7mp + 13m − 16mp + 7 $<br>d) $ 4xy^2 − 7x^2 y − xy^2 + 2xy^2 − 3x^2 y $<br><span class=\"pb\"></span><b>14 -</b> Reduza os termos semelhantes efetuando as operações indicadas.<br><span class=\"pb\"></span>a) $ 7ax^2 + (a − 3ax^3) − (5a + ax^3) $<br>b) $ (13ab + 5a) − (15ab + 7a^2 − 3a) − (−2ab + a^2) $<br>c) $ (x^2 + 3) + (−x + 2) − (x^2 − 1) + (−7x^2 + 2x − 2) $<br>d) $ (x + 4) − (x − 2) + (4x − 5) − (7x + 10) $<br>e) $ 2x − (y + 1 − 3x) − (2xy + 7y − 2) + (−5y + 7x + 2xy) $<br><span class=\"pb\"></span><b>15 -</b> Efetue as divisões a seguir:<br><span class=\"pb\"></span>a) $ (x^4 z^5 + x^3 z^4) : x^2 z^2 $<br>b) $ (a^3 b^6 + a^2 b^5 − a^3 b^4) : a^3 b^4 $<br>c) $ (12x^2 y^3 + 8x^3 y^5) : 4xy $<br><span class=\"pb\"></span><b>16 -</b> Efetue os produtos a seguir:<br><span class=\"pb\"></span>a) $ −3x · 2y · 4x^2 $<br>b) $ 3x · (x + 2)(x − 1) $<br>c) $ (x + 2y − 3)(2 + y − 3x) $",
    "resolucao": "",
    "gabarito": "13) a) $15xy^2$ (monômio). b) $-7a^2b + 7ab^2 - 2a$ (trinômio). c) $15 + 4m - 9mp$ (trinômio). d) $5xy^2 - 10x^2y$ (binômio). 14) a) $7ax^2 - 4ax^3 - 4a$. b) $8a - 8a^2$. c) $-7x^2 + x + 4$. d) $-3x - 9$. e) $12x - 13y + 1$. 15) a) $x^2z^3 + xz^2$. b) $b^2 + {b|a} - 1$. c) $3xy^2 + 2x^2y^4$. 16) a) $-24x^3y$. b) $3x^3 + 3x^2 - 6x$. c) $-3x^2 - 5xy + 2y^2 + 11x + y - 6$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-teste-pronto-geometria-6-a-02",
