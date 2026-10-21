@@ -132187,8 +132187,6 @@
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132199,17 +132197,12 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Uma ampliação da figura é: X (A) e ; (B) ; (C) e ; (D) . B D B A C D",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-01.jpg"
-   ],
-   "larguraMm": 78.5,
+   "enunciado": "Uma ampliação da figura X é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "B e D",
      "ok": false
     },
     {
@@ -132217,19 +132210,24 @@
      "ok": true
     },
     {
-     "t": "C",
+     "t": "A e C",
      "ok": false
     },
     {
      "t": "D",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-figuras-i-01-fig.jpg",
+    "alt": "Malha quadriculada com cinco triângulos: X (azul, o menor), A (laranja), B (rosa), C (amarelo) e D (verde)",
+    "largura": "74mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132240,24 +132238,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. As figuras seguintes são semelhantes. Calcula os comprimentos indicados (a unidade usada é o cm).",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-05.jpg"
-   ],
-   "larguraMm": 142.9,
+   "enunciado": "As figuras seguintes são semelhantes.",
    "resolucao": "",
    "gabarito": "A razão de semelhança (menor para maior) é ${7,5|5} = 1,5$. O lado de $6$ cm da figura menor corresponde a $c$: ${6|c} = 1,5$ ⇒ $c = 4$ cm. E $d = 6 · 1,5 = 9$ cm.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Calcula os comprimentos indicados (a unidade usada é o cm).",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-figuras-i-05-fig.jpg",
+    "alt": "Dois trapézios retângulos semelhantes: o menor, com lados 6 (à esquerda), c (à direita) e base 5; o maior, com lado d (à esquerda), 6 (à direita) e base 7,5",
+    "largura": "70mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132268,24 +132267,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Na figura tens três rectângulos semelhantes. Escreve a razão de semelhança (redução) entre estes rectângulos.  Escreve a razão entre as suas áreas, tomando o rectângulo para unidade.  A Verifica que a razão das áreas é igual ao quadrado da razão de semelhança. ",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-06.jpg"
-   ],
-   "larguraMm": 136.8,
+   "enunciado": "Na figura tens três retângulos semelhantes.",
    "resolucao": "",
    "gabarito": "Tomando o retângulo $A$ ($2 × 1$ quadrículas): o segundo mede $4 × 2$ e o terceiro $6 × 3$. Razões de semelhança de $A$ para eles: ${1|2}$ e ${1|3}$. Razões entre as áreas (com $A = 1$): $4$ e $9$, que são $2^2$ e $3^2$, o quadrado das razões de semelhança (ampliação).",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "• Escreve a razão de semelhança (redução) entre estes retângulos.<br>• Escreve a razão entre as suas áreas, tomando o retângulo A para unidade.<br>• Verifica que a razão das áreas é igual ao quadrado da razão de semelhança.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-figuras-i-06-fig.jpg",
+    "alt": "Malha quadriculada com três retângulos azuis semelhantes: um pequeno A (2 por 1 quadrados), um intermédio (4 por 2) e um grande (6 por 3)",
+    "largura": "103mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132296,24 +132296,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8. Sabe - se que: e são quadrados; ~ ; é uma redução de ; a razão de semelhança é A B A B A B o lado de mede 4 cm . A Determina, com aproximação às décimas por defeito: o comprimento do lado de ;  B o perímetro de ;  B o perímetro de ;  A a razão dos perímetros;  a área de .  A",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-08.jpg"
-   ],
-   "larguraMm": 140.1,
+   "enunciado": "Sabe-se que:<br><span class=\"pb\"></span>A e B são quadrados; A ~ B; A é uma redução de B; a razão de semelhança é $ {3|2} $; o lado de A mede 4 cm.<br><span class=\"pb\"></span>Determina, com aproximação às décimas por defeito:<br><span class=\"pb\"></span>• o comprimento do lado de B;<br>• o perímetro de B;<br>• o perímetro de A;<br>• a razão dos perímetros;<br>• a área de A.",
    "resolucao": "",
    "gabarito": "Lado de $B$: $4 · {3|2} = 6$ cm. Perímetro de $B$: $24$ cm. Perímetro de $A$: $16$ cm. Razão dos perímetros ($B$ para $A$): ${24|16} = {3|2}$ (igual à razão de semelhança). Área de $A$: $4^2 = 16$ cm².",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132324,24 +132318,24 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10. Justifica a semelhança dos triângulos e escreve a correspondência entre os lados proporcionais.",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-10.jpg"
-   ],
-   "larguraMm": 138.4,
+   "enunciado": "Justifica a semelhança dos triângulos e escreve a correspondência entre os lados proporcionais.",
    "resolucao": "",
    "gabarito": "Os triângulos têm dois ângulos iguais ($75°$ e $75°$; logo o terceiro é $30°$ em ambos): são semelhantes (critério AA). Correspondência $A ↔ D$, $C ↔ F$, $B ↔ E$: ${c|f} = {a|d} = {b|e}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-figuras-i-10-fig.jpg",
+    "alt": "Dois triângulos: ABC, de lados a, b, c, com um ângulo de 30° em B e um de 75° em A; e DEF, de lados d, e, f, com ângulos de 75° em D e em F",
+    "largura": "87mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-figuras-i-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Questões variadas",
@@ -132352,19 +132346,21 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Justifica a semelhança dos triângulos [ ] e [ ] e escreve a correspondência entre ABC ACD os lados proporcionais.",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-figuras-i-11.jpg"
-   ],
-   "larguraMm": 148.8,
+   "enunciado": "Justifica a semelhança dos triângulos [ABC] e [ACD] e escreve a correspondência entre os lados proporcionais.",
    "resolucao": "",
    "gabarito": "Os triângulos $ABC$ e $ACD$ têm ângulo reto em $C$ e ângulos de $60°$ e $30°$: ângulo $B = 60°$ ($ABC$) e $D = 30°$ ($ACD$), logo $\\hat{A}$ em $ABC$ vale $30°$ e em $ACD$ vale $60°$. São semelhantes (AA), com $A ↔ D$, $B ↔ A$, $C ↔ C$: ${h|m} = {n|h} = {d|b}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-figuras-i-11-fig.jpg",
+    "alt": "Triângulo retângulo DAB, com ângulo reto em A, e a altura h = AC sobre a hipotenusa DB; D está à esquerda, com 30°, e B à direita, com 60°; DC = m, CB = n, DB = a, AD = b e AB = d",
+    "largura": "91mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-temas-variados-7-ano-2-01",
@@ -140915,8 +140911,6 @@
   },
   {
    "id": "cdb-l-relacoes-derivadas-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -140927,12 +140921,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Demonstre que",
-   "imagens": [
-    "img:cdb-l-relacoes-derivadas-03.jpg"
-   ],
-   "larguraMm": 55.1,
+   "enunciado": "Demonstre que $ {tg x|1 + tg^2 x} = {sen x|sec x} $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-relacoes-derivadas-03-r.jpg",
@@ -140942,12 +140931,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-relacoes-derivadas-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Trigonometria",
@@ -140958,12 +140946,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Demonstre que a identidade sec²x – sen²x = tg²x + cos²x.",
-   "imagens": [
-    "img:cdb-l-relacoes-derivadas-04.jpg"
-   ],
-   "larguraMm": 93.5,
+   "enunciado": "Demonstre que a identidade $ sec^2 x − sen^2 x = tg^2 x + cos^2 x $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-relacoes-derivadas-04-r.jpg",
@@ -140973,7 +140956,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-retas-perpendiculares-01",
@@ -140998,8 +140982,6 @@
   },
   {
    "id": "cdb-l-retas-perpendiculares-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -141010,12 +140992,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Considere no plano cartesiano uma reta r de equação 3x + 5y +1 =0 e um ponto Q de coordenadas (5,5). Determine a equação da resta s perpendicular a r passando por Q.",
-   "imagens": [
-    "img:cdb-l-retas-perpendiculares-02.jpg"
-   ],
-   "larguraMm": 137.8,
+   "enunciado": "Considere no plano cartesiano uma reta $ r $ de equação $ 3x + 5y + 1 = 0 $ e um ponto $ Q $ de coordenadas $ (5, 5) $. Determine a equação da reta $ s $ perpendicular a $ r $ passando por $ Q $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-retas-perpendiculares-02-r.jpg",
@@ -141025,12 +141002,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-retas-perpendiculares-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -141041,19 +141017,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Prove que as retas s: x + 2y – 1 = 0 e r: 4x – 2y +12 = 0 são perpendiculares.",
-   "imagens": [
-    "img:cdb-l-retas-perpendiculares-03.jpg"
-   ],
-   "larguraMm": 120.7,
+   "enunciado": "Prove que as retas $ s: x + 2y − 1 = 0 $ e $ r: 4x − 2y + 12 = 0 $ são perpendiculares.",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "$s$: $x + 2y - 1 = 0$ tem $m_s = -{1|2}$. $r$: $4x - 2y + 12 = 0$ tem $m_r = 2$. Como $m_s · m_r = -{1|2} · 2 = -1$, as retas são perpendiculares."
+   "gabarito": "$s$: $x + 2y - 1 = 0$ tem $m_s = -{1|2}$. $r$: $4x - 2y + 12 = 0$ tem $m_r = 2$. Como $m_s · m_r = -{1|2} · 2 = -1$, as retas são perpendiculares.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-retas-perpendiculares-04",
@@ -146730,8 +146702,6 @@
   },
   {
    "id": "cdb-l-retas-e-triangulos-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Geometria plana",
@@ -146742,19 +146712,21 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Sem uso de transferidor, calcula a amplitude dos ângulos assinalados por ( ? ) ? 53º 76º 38º ?",
-   "imagens": [
-    "img:cdb-l-retas-e-triangulos-06.jpg"
-   ],
-   "larguraMm": 155.8,
+   "enunciado": "Sem uso de transferidor, calcula a amplitude dos ângulos assinalados por (?).",
    "resolucao": "",
    "gabarito": "À esquerda: $180° - 90° - 38° = 52°$. À direita: $? + 53° + 76° = 180°$ ⇒ $? = 51°$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-retas-e-triangulos-06-fig.jpg",
+    "alt": "À esquerda, um triângulo retângulo com ângulo reto embaixo à esquerda e um ângulo de 38° embaixo à direita, com o ângulo (?) em cima; à direita, uma semirreta sobre uma reta formando um ângulo (?) com a reta à esquerda e, ao lado, ângulos de 53° e 76°",
+    "largura": "127mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-retas-e-triangulos-08",
@@ -156250,8 +156222,6 @@
   },
   {
    "id": "cdb-l-semelhanca-de-triangulos-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria plana",
@@ -156263,24 +156233,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4) (Unicamp) Uma rampa de inclinação constante, como a que dá acesso ao Palácio do Planalto em Brasília, tem 4 metros de altura na sua parte mais alta. Uma pessoa, tendo começado a subi - la, nota que após caminhar 12,3 metros sobre a rampa está a 1,5 metros de altura em relação ao solo. a) Faça uma figura ilustrativa da situação descrita. b) Calcule quantos metros a pessoa ainda deve caminhar para atingir o ponto mais alto da rampa.",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-triangulos-04.jpg"
-   ],
-   "larguraMm": 196.8,
+   "enunciado": "(Unicamp) Uma rampa de inclinação constante, como a que dá acesso ao Palácio do Planalto em Brasília, tem 4 metros de altura na sua parte mais alta. Uma pessoa, tendo começado a subi-la, nota que após caminhar 12,3 metros sobre a rampa está a 1,5 metros de altura em relação ao solo. a) Faça uma figura ilustrativa da situação descrita.",
    "resolucao": "",
    "gabarito": "Triângulos $ABD$ e $ACE$ semelhantes: ${AC|12,3} = {4|1,5}$ ⇒ $AC = 32,8$ m. Faltam $32,8 - 12,3 = 20,5$ m para atingir o ponto mais alto.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "b) Calcule quantos metros a pessoa ainda deve caminhar para atingir o ponto mais alto da rampa.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-triangulos-04-fig.jpg",
+    "alt": "Triângulo retângulo ACE com a rampa AC, o ponto B sobre ela, 12,3 de A até B, altura 1,5 em B (ponto D no chão), altura 4 em C (ponto E no chão) e x de B até C",
+    "largura": "65mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-triangulos-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria plana",
@@ -156292,19 +156263,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5) (Puccamp) Os triângulos ABC e AED, representados na figura a seguir, são semelhantes, sendo o ângulo ADE congruente ao ângulo ACB Se BC = 16 cm, AC = 20 cm, AD = 10 cm e AE = 10,4 cm, o perímetro do quadrilátero BCED, em centímetros, é",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-triangulos-05.jpg"
-   ],
-   "larguraMm": 196.8,
+   "enunciado": "(Puccamp) Os triângulos ABC e AED, representados na figura a seguir, são semelhantes, sendo o ângulo ADE congruente ao ângulo ACB.",
    "resolucao": "",
    "gabarito": "Razão de semelhança ($AED$ para $ABC$): ${AD|AC} = {10|20} = {1|2}$. Então $DE = 8$ cm, $AB = 2 · 10,4 = 20,8$ cm. $CE = 20 - 10,4 = 9,6$ e $DB = 20,8 - 10 = 10,8$. Perímetro de $BCED$: $16 + 9,6 + 8 + 10,8 = 44,4$ cm.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Se BC = 16 cm, AC = 20 cm, AD = 10 cm e AE = 10,4 cm, o perímetro do quadrilátero BCED, em centímetros, é:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-triangulos-05-fig.jpg",
+    "alt": "Triângulo ABC com o ponto D sobre AB e o ponto E sobre AC; o ângulo ADE e o ângulo ACB estão assinalados",
+    "largura": "50mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-triangulos-06",
@@ -156330,8 +156304,6 @@
   },
   {
    "id": "cdb-l-semelhanca-de-triangulos-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Geometria plana",
@@ -156343,19 +156315,21 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7) (Enem) Na figura acima, que representa o projeto de uma escada com 5 degraus de mesma altura, o comprimento total do corrimão é igual a",
-   "imagens": [
-    "img:cdb-l-semelhanca-de-triangulos-07.jpg"
-   ],
-   "larguraMm": 196.8,
+   "enunciado": "(Enem) Na figura, que representa o projeto de uma escada com 5 degraus de mesma altura, o comprimento total do corrimão é igual a:",
    "resolucao": "",
    "gabarito": "Percurso horizontal: $5 · 24 = 120$ cm; desnível: $90$ cm. Trecho inclinado: $√{120^2 + 90^2} = 150$ cm. Total do corrimão: $30 + 150 + 30 = 210$ cm $= 2,1$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-semelhanca-de-triangulos-07-fig.jpg",
+    "alt": "Escada com 5 degraus; o corrimão tem trecho horizontal de 30 cm no alto, trecho inclinado e trecho horizontal de 30 cm embaixo; a altura total é 90 cm e cada degrau tem 24 cm de largura",
+    "largura": "84mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-semelhanca-de-triangulos-08",
@@ -157657,8 +157631,6 @@
   },
   {
    "id": "cdb-l-relacoes-trigonometricas-t-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Trigonometria",
@@ -157669,12 +157641,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine os valores de x , y , w e z em cada caso:",
-   "imagens": [
-    "img:cdb-l-relacoes-trigonometricas-t-01.jpg"
-   ],
-   "larguraMm": 87.3,
+   "enunciado": "Determine os valores de <b>x</b>, <b>y</b>, <b>w</b> e <b>z</b> em cada caso:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-relacoes-trigonometricas-t-01-r.jpg",
@@ -157684,7 +157651,14 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-relacoes-trigonometricas-t-01-fig.jpg",
+    "alt": "Quatro triângulos retângulos: a) cateto horizontal 16, ângulo de 30° e hipotenusa x; b) hipotenusa 26, cateto vertical 13 e o ângulo y no vértice da esquerda; c) hipotenusa 18, ângulo de 60° e cateto horizontal w; d) cateto vertical 20, ângulo de 45° e hipotenusa z",
+    "largura": "68mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-relacoes-trigonometricas-t-02",
@@ -157757,8 +157731,6 @@
   },
   {
    "id": "cdb-l-relacoes-trigonometricas-t-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Trigonometria",
@@ -157770,12 +157742,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFAM) Se um cateto e a hipotenusa de um triângulo retângulo medem 2a e 4a , respectivamente, então a tangente do ângulo oposto ao menor lado é: a) 2√3 b) √3 3 c) √3 6 d) √20 20 e) 3√3",
-   "imagens": [
-    "img:cdb-l-relacoes-trigonometricas-t-04.jpg"
-   ],
-   "larguraMm": 153.5,
+   "enunciado": "(UFAM) Se um cateto e a hipotenusa de um triângulo retângulo medem $ 2a $ e $ 4a $, respectivamente, então a tangente do ângulo oposto ao menor lado é:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-relacoes-trigonometricas-t-04-r.jpg",
@@ -157784,26 +157751,27 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ 2√3 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ {√3|3} $",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "$ {√3|6} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {√{20}|20} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ 3√3 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-segmentos-proporcionais-01",
@@ -157850,8 +157818,6 @@
   },
   {
    "id": "cdb-l-segmentos-proporcionais-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157862,12 +157828,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Os segmentos a seguir são proporcionais seguindo a ordem em que foram apresentados. A razão de proporcionalidade e o comprimento de x, em milímetros, são: a) 2 e 30 milímetros. b) 0,5 e 30 milímetros. c) 2 e 300 milímetros. d) 0,5 e 300 milímetros. e) 30 e 300 milímetros.",
-   "imagens": [
-    "img:cdb-l-segmentos-proporcionais-02.jpg"
-   ],
-   "larguraMm": 151.9,
+   "enunciado": "Os segmentos a seguir são proporcionais seguindo a ordem em que foram apresentados.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-segmentos-proporcionais-02-r.jpg",
@@ -157876,31 +157837,37 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2 e 30 milímetros.",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,5 e 30 milímetros.",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2 e 300 milímetros.",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "0,5 e 300 milímetros.",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "30 e 300 milímetros.",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "A razão de proporcionalidade e o comprimento de x, em milímetros, são:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-segmentos-proporcionais-02-fig.jpg",
+    "alt": "Quatro segmentos: AB de 22 cm, CD de 11 cm, EF de 60 cm e GH de comprimento x",
+    "largura": "104mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-segmentos-proporcionais-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157911,12 +157878,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Os polígonos na imagem abaixo são semelhantes. Isso significa que seus lados correspondentes são proporcionais. Dadas essas informações, encontre a razão de proporcionalidade entre os lados do polígono ABCD e os lados do polígono EFGH e descubra os comprim entos de x e de y. a) 2, 100 cm e 20 cm b) 2, 20 cm e 100 cm c) 2, 50 cm e 40 cm d) 0,5; 20 cm e 100 cm e) 0,5; 100 cm e 20 cm",
-   "imagens": [
-    "img:cdb-l-segmentos-proporcionais-03.jpg"
-   ],
-   "larguraMm": 147,
+   "enunciado": "Os polígonos na imagem abaixo são semelhantes. Isso significa que seus lados correspondentes são proporcionais.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-segmentos-proporcionais-03-r.jpg",
@@ -157925,26 +157887,34 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2, 100 cm e 20 cm",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2, 20 cm e 100 cm",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2, 50 cm e 40 cm",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "0,5; 20 cm e 100 cm",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "0,5; 100 cm e 20 cm",
      "ok": true
     }
-   ]
+   ],
+   "pergunta": "Dadas essas informações, encontre a razão de proporcionalidade entre os lados do polígono ABCD e os lados do polígono EFGH e descubra os comprimentos de x e de y.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-segmentos-proporcionais-03-fig.jpg",
+    "alt": "Quadrilátero ABCD, com AB = 40 cm, AD = 50 cm, CD = 50 cm e BC = y, e quadrilátero maior EFGH, com FG = 80 cm, GH = 40 cm, EH = 100 cm e EF = x",
+    "largura": "93mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-segmentos-proporcionais-04",
