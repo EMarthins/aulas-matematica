@@ -120325,8 +120325,6 @@
   },
   {
    "id": "cdb-l-matriz-inversa-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes",
@@ -120337,12 +120335,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "U.F. Viçosa – MG Sejam as matrizes Onde x e y são números reais e M é a matriz inversa de A. Então o produto xy é: a) 3/2 b) 2/3 c) 1/2 d) 3/4 e) 1/4",
-   "imagens": [
-    "img:cdb-l-matriz-inversa-01.jpg"
-   ],
-   "larguraMm": 128.8,
+   "enunciado": "(U.F. Viçosa – MG) Sejam as matrizes<br><span class=\"pb\"></span>$ A = @M{1&2;2&6} $  e  $ M = @M{x&−1;−1&y} $.<br><span class=\"pb\"></span>Onde $ x $ e $ y $ são números reais e $ M $ é a matriz inversa de $ A $. Então o produto $ xy $ é:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-matriz-inversa-01-r.jpg",
@@ -120351,31 +120344,30 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ {3|2} $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ {2|3} $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ {1|2} $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ {3|4} $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ {1|4} $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-matriz-inversa-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes",
@@ -120386,12 +120378,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Multiplicando - se a matriz pela matriz ,obtém - se a matriz . Então o valor de x é: a) - 1 b) 0 c) 2 d) 3",
-   "imagens": [
-    "img:cdb-l-matriz-inversa-02.jpg"
-   ],
-   "larguraMm": 137.7,
+   "enunciado": "Multiplicando-se a matriz $ A = @M{1&−1;−1&{3|2}} $ pela matriz $ B = @M{3&2;2&x} $, obtém-se a matriz $ I = @M{1&0;0&1} $. Então o valor de $ x $ é:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-matriz-inversa-02-r.jpg",
@@ -120400,27 +120387,26 @@
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "−1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "2",
      "ok": true
     },
     {
-     "t": "D",
+     "t": "3",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-matriz-inversa-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes",
@@ -120431,12 +120417,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Caso exista, encontre a inversa da matriz .",
-   "imagens": [
-    "img:cdb-l-matriz-inversa-03.jpg"
-   ],
-   "larguraMm": 92.1,
+   "enunciado": "Caso exista, encontre a inversa da matriz $ B = @M{2&1;1&3} $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-matriz-inversa-03-r.jpg",
@@ -120446,7 +120427,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-multiplicacao-de-matrizes-01",
@@ -120750,8 +120732,6 @@
   },
   {
    "id": "cdb-l-media-aritmetica-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -120763,19 +120743,46 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(FGV – SP) A tabela abaixo representa a distribuição de frequências dos salários de um grupo de 50 empregados de uma empresa, em certo mês. Determine o salário médio dos empregados nesse mês.",
-   "imagens": [
-    "img:cdb-l-media-aritmetica-02.jpg"
-   ],
-   "larguraMm": 144.5,
+   "enunciado": "(FGV – SP) A tabela abaixo representa a distribuição de frequências dos salários de um grupo de 50 empregados de uma empresa, em certo mês. Determine o salário médio dos empregados nesse mês.",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "Pontos médios $1 500$, $2 500$, $3 500$ e $4 500$: ${1 500 · 20 + 2 500 · 18 + 3 500 · 9 + 4 500 · 3|50} = {120 000|50} = 2 400$ reais."
+   "gabarito": "Pontos médios $1 500$, $2 500$, $3 500$ e $4 500$: ${1 500 · 20 + 2 500 · 18 + 3 500 · 9 + 4 500 · 3|50} = {120 000|50} = 2 400$ reais.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Número da classe",
+     "Salário do mês R$",
+     "Número de empregados"
+    ],
+    "linhas": [
+     [
+      "1",
+      "1 000 ⊢ 2 000",
+      "20"
+     ],
+     [
+      "2",
+      "2 000 ⊢ 3 000",
+      "18"
+     ],
+     [
+      "3",
+      "3 000 ⊢ 4 000",
+      "9"
+     ],
+     [
+      "4",
+      "4 000 ⊢ 5 000",
+      "3"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-media-aritmetica-03",
@@ -120804,8 +120811,6 @@
   },
   {
    "id": "cdb-l-media-aritmetica-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -120816,19 +120821,52 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Observe os valores das frequências das faixas salariais numa pequena empresa, dispostos na tabela a seguir: Determine a média desses salários.",
-   "imagens": [
-    "img:cdb-l-media-aritmetica-04.jpg"
-   ],
-   "larguraMm": 149.1,
+   "enunciado": "Observe os valores das frequências das faixas salariais numa pequena empresa, dispostos na tabela a seguir:",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "Média ponderada pelos pontos médios: ${250 · 14 + 750 · 4 + 1 250 · 2 + 1 750 · 2 + 2 250 · 6|28} = {26 000|28} ≈ 928,57$ reais."
+   "gabarito": "Média ponderada pelos pontos médios: ${250 · 14 + 750 · 4 + 1 250 · 2 + 1 750 · 2 + 2 250 · 6|28} = {26 000|28} ≈ 928,57$ reais.",
+   "pergunta": "Determine a média desses salários.",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Salário",
+     "Média dos salários",
+     "Frequência"
+    ],
+    "linhas": [
+     [
+      "0 ⊢ 500",
+      "250",
+      "14"
+     ],
+     [
+      "500 ⊢ 1 000",
+      "750",
+      "4"
+     ],
+     [
+      "1000 ⊢ 1500",
+      "1 250",
+      "2"
+     ],
+     [
+      "1500 ⊢ 2000",
+      "1 750",
+      "2"
+     ],
+     [
+      "2000 ⊢ 2500",
+      "2 250",
+      "6"
+     ]
+    ],
+    "largura": "80%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-trigonometria-no-triangulo-01",
@@ -125619,8 +125657,6 @@
   },
   {
    "id": "cdb-l-lugar-geometrico-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -125632,41 +125668,41 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. (OSEC) No triângulo ao lado, AC = 1, então: a) AB = 2 b) AB = 3 c) AB = 4 d) AB = 5 e) AB = 6",
-   "imagens": [
-    "img:cdb-l-lugar-geometrico-01.jpg"
-   ],
-   "larguraMm": 93.3,
+   "enunciado": "(OSEC) No triângulo ao lado, $ AC = 1 $, então:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ AB = 2 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ AB = 3 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ AB = 4 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ AB = 5 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ AB = 6 $",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lugar-geometrico-01-fig.jpg",
+    "alt": "Triângulo ABC com os ângulos α em B, 3α em C e 2α em A; o lado AC mede 1",
+    "largura": "52mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lugar-geometrico-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Geometria analítica",
@@ -125678,19 +125714,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. (MAPOFEI) Na figura abaixo, AB = 4 cm, Â = 30º e ângulo C = 45°. Calcular BH.",
-   "imagens": [
-    "img:cdb-l-lugar-geometrico-02.jpg"
-   ],
-   "larguraMm": 161.1,
+   "enunciado": "(MAPOFEI) Na figura abaixo, $ AB = 4 $ cm, $ Â = 30° $ e ângulo $ C = 45° $.",
    "resolucao": "",
    "gabarito": "2 cm",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Calcular $ BH $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lugar-geometrico-02-fig.jpg",
+    "alt": "Triângulo ABC; H é o pé da altura traçada de B sobre AC",
+    "largura": "42mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lugar-geometrico-03",
@@ -125934,8 +125973,6 @@
   },
   {
    "id": "cdb-l-matrizes-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Matrizes",
@@ -125946,19 +125983,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "T 03. (UNIV. CATÓLICA DE GOIÁS) Uma matriz quadrada A é dita simétrica se A = A e é dita anti - T T simétrica se A = - A, onde A é a matriz transposta de A. Sendo A uma matriz quadrada, classifique em verdadeira ou falsa as duas afirmações: T (01) A + A é uma matriz simétrica T (02) A - A é uma matriz anti - simétrica",
-   "imagens": [
-    "img:cdb-l-matrizes-2-03.jpg"
-   ],
-   "larguraMm": 187.6,
+   "enunciado": "(UNIV. CATÓLICA DE GOIÁS) Uma matriz quadrada A é dita simétrica se $ A = A^T $ e é dita anti-simétrica se $ A^T = −A $, onde $ A^T $ é a matriz transposta de A. Sendo A uma matriz quadrada, classifique em verdadeira ou falsa as duas afirmações:<br><span class=\"pb\"></span>(01) $ A + A^T $ é uma matriz simétrica<br>(02) $ A − A^T $ é uma matriz anti-simétrica",
    "resolucao": "",
    "gabarito": "(01) verdadeira",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-media-aritmetica-2-01",
@@ -125984,8 +126017,6 @@
   },
   {
    "id": "cdb-l-media-aritmetica-2-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Estatística",
@@ -125996,19 +126027,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. a) Calcular a média aritmética M , a média geométrica M e a média harmônica M dos a g h números 2 e 8 . b) Compare os três resultados",
-   "imagens": [
-    "img:cdb-l-media-aritmetica-2-03.jpg"
-   ],
-   "larguraMm": 175.1,
+   "enunciado": "a) Calcular a média aritmética $ M_a $, a média geométrica $ M_g $ e a média harmônica $ M_h $ dos números 2 e 8.<br><span class=\"pb\"></span>b) Compare os três resultados",
    "resolucao": "",
    "gabarito": "a) $M_a = {2 + 8|2} = 5$; $M_g = √{2 · 8} = 4$; $M_h = {2|{1|2} + {1|8}} = {16|5} = 3,2$. b) $M_a > M_g > M_h$ (para números positivos e diferentes, vale sempre $M_a > M_g > M_h$).",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-media-aritmetica-2-04",
@@ -130537,8 +130564,6 @@
   },
   {
    "id": "cdb-l-medida-de-volume-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -130549,24 +130574,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2.Minha caixa d´água de 600 litros está cheia. No fim de semana foram 7 gastos 12 desse volume. Quantos litros de água sobraram na caixa d´água?",
-   "imagens": [
-    "img:cdb-l-medida-de-volume-02.jpg"
-   ],
-   "larguraMm": 153.2,
+   "enunciado": "Minha caixa d’água de 600 litros está cheia. No fim de semana foram gastos $ {7|12} $ desse volume. Quantos litros de água sobraram na caixa d’água?",
    "resolucao": "",
    "gabarito": "Gastos: ${7|12} · 600 = 350$ L. Sobraram $600 - 350 = 250$ litros.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medida-de-volume-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -130577,19 +130596,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. Daniela distribuiu o conteúdo de 8 embalagens de 750 m ℓ de suco de laranja em copos de 200 m ℓ . Quantos copos foram utilizados por Daniela?",
-   "imagens": [
-    "img:cdb-l-medida-de-volume-03.jpg"
-   ],
-   "larguraMm": 153.5,
+   "enunciado": "Daniela distribuiu o conteúdo de 8 embalagens de 750 mℓ de suco de laranja em copos de 200 mℓ. Quantos copos foram utilizados por Daniela?",
    "resolucao": "",
    "gabarito": "$8 · 750 = 6 000$ ml; $6 000 ÷ 200 = 30$ copos.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medida-de-volume-04",
@@ -130615,8 +130630,6 @@
   },
   {
    "id": "cdb-l-medida-de-volume-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -130627,24 +130640,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5. Pense: Com uma garrafa de 1 litro de água, quantos copinhos de 200 m ℓ podemos encher?",
-   "imagens": [
-    "img:cdb-l-medida-de-volume-05.jpg"
-   ],
-   "larguraMm": 153.5,
+   "enunciado": "Pense:<br><span class=\"pb\"></span>Com uma garrafa de 1 litro de água, quantos copinhos de 200 mℓ podemos encher?",
    "resolucao": "",
    "gabarito": "$1 000 ÷ 200 = 5$ copinhos.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medida-de-volume-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -130655,19 +130662,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6. Agora substitua os espaços em branco pelo número adequado: 1 a) ℓ = ____ mℓ 4 1 b) ℓ = ____ mℓ 2 c) 1 ℓ = ____ mℓ d)1,5 ℓ = ____ mℓ",
-   "imagens": [
-    "img:cdb-l-medida-de-volume-06.jpg"
-   ],
-   "larguraMm": 141.7,
+   "enunciado": "Agora substitua os espaços em branco pelo número adequado:<br><span class=\"pb\"></span>a) $ {1|4} $ ℓ = ____ mℓ<br>b) $ {1|2} $ ℓ = ____ mℓ<br>c) 1 ℓ = ____ mℓ<br>d) 1,5 ℓ = ____ mℓ",
    "resolucao": "",
    "gabarito": "a) $250$ ml. b) $500$ ml. c) $1 000$ ml. d) $1 500$ ml.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medidas-de-massa-01",
@@ -146552,8 +146555,6 @@
   },
   {
    "id": "cdb-l-medidas-area-perimetro-e-v-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -146564,24 +146565,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2) Agora converta as unidades de área: 2 2 a) 8,37 dm em mm e) 125,8 m² em km² 2 2 b) 3,1416 m em cm f) 12,9 km² em m² 2 2 c) 2,14 m em mm g) 15,3 m² em mm² d) Calcule 40m x 25m e, depois transforme em km²",
-   "imagens": [
-    "img:cdb-l-medidas-area-perimetro-e-v-02.jpg"
-   ],
-   "larguraMm": 121.6,
+   "enunciado": "Agora converta as unidades de área:<br><span class=\"pb\"></span>a) 8,37 dm² em mm²<br>b) 3,1416 m² em cm²<br>c) 2,14 m² em mm²<br>d) Calcule 40 m × 25 m e, depois transforme em km²<br>e) 125,8 m² em km²<br>f) 12,9 km² em m²<br>g) 15,3 m² em mm²",
    "resolucao": "",
    "gabarito": "a) $83\\,700$ mm². b) $31\\,416$ cm². c) $2\\,140\\,000$ mm². d) $1\\,000$ m² $= 0,001$ km². e) $0,0001258$ km². f) $12\\,900\\,000$ m². g) $15\\,300\\,000$ mm².",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medidas-area-perimetro-e-v-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -146592,24 +146587,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3) Depois converta as de volume: 3 3 a) 8,132 km em m d) 5 cm³ em m³ g) 139 mm³ em m³ 3 b) 180 m em km³ e) 78,5 m³ em km³ 3 3 c) 1 m em mm f) 12 m³ em cm³",
-   "imagens": [
-    "img:cdb-l-medidas-area-perimetro-e-v-03.jpg"
-   ],
-   "larguraMm": 138.2,
+   "enunciado": "Depois converta as de volume:<br><span class=\"pb\"></span>a) 8,132 km³ em m³<br>b) 180 m³ em km³<br>c) 1 m³ em mm³<br>d) 5 cm³ em m³<br>e) 78,5 m³ em km³<br>f) 12 m³ em cm³<br>g) 139 mm³ em m³",
    "resolucao": "",
    "gabarito": "a) $8,132 · 10^9$ m³. b) $1,8 · 10^{-7}$ km³. c) $10^9$ mm³. d) $5 · 10^{-6}$ m³. e) $7,85 · 10^{-8}$ km³. f) $12\\,000\\,000$ cm³. g) $1,39 · 10^{-7}$ m³.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medidas-area-perimetro-e-v-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -146620,24 +146609,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "4) Converta em litros: a) 3,5 dm³= d) 3,4 m³= g) 13 dm³= b) 5 m³= e) 28 cm³= c) 2,6 dm³= f) 4,3 m³=",
-   "imagens": [
-    "img:cdb-l-medidas-area-perimetro-e-v-04.jpg"
-   ],
-   "larguraMm": 132.4,
+   "enunciado": "Converta em litros:<br><span class=\"pb\"></span>a) 3,5 dm³ =<br>b) 5 m³ =<br>c) 2,6 dm³ =<br>d) 3,4 m³ =<br>e) 28 cm³ =<br>f) 4,3 m³ =<br>g) 13 dm³ =",
    "resolucao": "",
    "gabarito": "a) $3,5$ L. b) $5\\,000$ L. c) $2,6$ L. d) $3\\,400$ L. e) $0,028$ L. f) $4\\,300$ L. g) $13$ L.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medidas-area-perimetro-e-v-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -146648,19 +146631,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5) Expresse em metros cúbicos o valor da expressão: 3 3 3540dm + 340.000cm =",
-   "imagens": [
-    "img:cdb-l-medidas-area-perimetro-e-v-05.jpg"
-   ],
-   "larguraMm": 104,
+   "enunciado": "Expresse em metros cúbicos o valor da expressão:<br><span class=\"pb\"></span>3540 dm³ + 340.000 cm³ =",
    "resolucao": "",
    "gabarito": "$3 540$ dm³ $= 3,54$ m³ e $340 000$ cm³ $= 0,34$ m³. Soma: $3,88$ m³.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-medidas-area-perimetro-e-v-06",
@@ -149086,8 +149065,6 @@
   },
   {
    "id": "cdb-l-matematica-potencias-raiz-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Números racionais e proporção",
@@ -149098,32 +149075,34 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1. Dos números representados na estrela identifica aqueles que são primos. (A) 2, 10 e 24 (B) 2, 3 e 13 (C) 3, 13 e 21 (D) 1, 2, 3 e 13",
-   "imagens": [
-    "img:cdb-l-matematica-potencias-raiz-01.jpg"
-   ],
-   "larguraMm": 135.2,
+   "enunciado": "Dos números representados na estrela identifica aqueles que são primos.",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2, 10 e 24",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2, 3 e 13",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "3, 13 e 21",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1, 2, 3 e 13",
      "ok": false
     }
-   ]
+   ],
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-matematica-potencias-raiz-01-fig.jpg",
+    "alt": "Estrela verde com os números 1, 3, 10, 21, 13, 47, 2 e 24",
+    "largura": "68mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-matematica-potencias-raiz-02",
@@ -149168,8 +149147,6 @@
   },
   {
    "id": "cdb-l-matematica-potencias-raiz-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "7º Ano",
    "unidade": "Números racionais e proporção",
@@ -149180,32 +149157,28 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3. O valor aproximado por defeito às centésimas de √5 é: 2 (A) 2,22 (B) 2,23 (C) 2,24 (D) 2,26",
-   "imagens": [
-    "img:cdb-l-matematica-potencias-raiz-03.jpg"
-   ],
-   "larguraMm": 150.9,
+   "enunciado": "O valor aproximado por defeito às centésimas de $ √5 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "2,22",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2,23",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "2,24",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "2,26",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-matematica-potencias-raiz-05",
@@ -157628,8 +157601,6 @@
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157640,24 +157611,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11. Determine as raízes das seguintes equações do 2º grau abaixo. a) 5x( x + 4 ) = 10x 8 x b) x + 10 = ( x≠ 2) x − 2 c) x ² + 4x = - 3 d) ( x + 4 )² = 9x + 22",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-11.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "Determine as raízes das seguintes equações do 2º grau abaixo.<br><span class=\"pb\"></span>a) $ 5x(x + 4) = 10x $<br>b) $ x + 10 = {8x|x − 2} $  ($ x ≠ 2 $)<br>c) $ x^2 + 4x = −3 $<br>d) $ (x + 4)^2 = 9x + 22 $",
    "resolucao": "",
    "gabarito": "a) $x = 0$ ou $x = -2$. b) $x = ±2√5$ (de $x^2 = 20$). c) $x = -1$ ou $x = -3$. d) $x = 3$ ou $x = -2$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-12",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157668,19 +157633,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "12. O retângulo e o quadrado das figuras seguintes têm a mesma área. Nessas condições, determine: a área do retângulo e o perímetro do quadrado . x + 1 x + 5 2x + 4",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-12.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "O retângulo e o quadrado das figuras seguintes têm a mesma área. Nessas condições, determine:",
    "resolucao": "",
    "gabarito": "$(x + 1)(2x + 4) = (x + 5)^2$ ⇒ $2x^2 + 6x + 4 = x^2 + 10x + 25$ ⇒ $x^2 - 4x - 21 = 0$ ⇒ $x = 7$. Retângulo: $8 · 18 = 144$ (área). Quadrado de lado $12$: perímetro $48$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "<b>a área do retângulo e o perímetro do quadrado</b>.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lista-de-revisao-de-matema-12-fig.jpg",
+    "alt": "Um retângulo de lados x + 1 e 2x + 4 e um quadrado de lado x + 5",
+    "largura": "89mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-13",
@@ -157772,8 +157740,6 @@
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-17",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157784,24 +157750,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1 5 17. Qual é o conjunto solução da equação x + = ? x 2",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-17.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "Qual é o conjunto solução da equação $ x + {1|x} = {5|2} $?",
    "resolucao": "",
    "gabarito": "$x + {1|x} = {5|2}$ ⇒ $2x^2 - 5x + 2 = 0$ ⇒ $x = 2$ ou $x = {1|2}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-18",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157812,19 +157772,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "18. A maior raiz da equação - 2x² + 3x + 5 = 0 vale:",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-18.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "A maior raiz da equação $ −2x^2 + 3x + 5 = 0 $ vale:",
    "resolucao": "",
    "gabarito": "$Δ = 9 + 40 = 49$; $x = {-3 ± 7|-4}$: $x = -1$ ou $x = {5|2}$. A maior raiz é ${5|2}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-20",
@@ -157894,8 +157850,6 @@
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-23",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -157906,19 +157860,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "23. Na figura abaixo, tem - se MP // AB. AM = y cm , BP = 16 cm , PC = x cm , MC = 30 cm , AB = 42 cm e MP = 30 cm. Determine as medidas x , y e o perímetro do triângulo ABC. A M C B P",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-23.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "Na figura abaixo, tem-se $ MP // AB $. $ AM = y $ cm, $ BP = 16 $ cm, $ PC = x $ cm, $ MC = 30 $ cm, $ AB = 42 $ cm e $ MP = 30 $ cm.",
    "resolucao": "",
    "gabarito": "Os triângulos $CMP$ e $CAB$ são semelhantes, com razão ${MP|AB} = {30|42} = {5|7}$. ${x|16 + x} = {5|7}$ ⇒ $x = 40$. ${30|30 + y} = {5|7}$ ⇒ $y = 12$. Lados de $ABC$: $AB = 42$, $BC = 56$, $CA = 42$: perímetro $140$ cm.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Determine as medidas $ x $, $ y $ e o perímetro do triângulo ABC.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lista-de-revisao-de-matema-23-fig.jpg",
+    "alt": "Triângulo ABC com o ponto M sobre AC e o ponto P sobre BC; o segmento MP é paralelo a AB",
+    "largura": "97mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-24",
@@ -157988,8 +157945,6 @@
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-27",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -158000,24 +157955,25 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "27. No triângulo seguinte DE//BC. Calcular os valores de x e y. 6 cm y D E 4 cm x 4 cm B C 6 cm",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-27.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "No triângulo seguinte $ DE // BC $.",
    "resolucao": "",
    "gabarito": "Pelo Teorema de Tales: ${6|6 + x} = {4|6}$ ⇒ $x = 3$. ${y|y + 4} = {4|6}$ ⇒ $3y = 2y + 8$ ⇒ $y = 8$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Calcular os valores de $ x $ e $ y $.",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lista-de-revisao-de-matema-27-fig.jpg",
+    "alt": "Triângulo retângulo com ângulo reto em B; D está sobre o lado vertical e E sobre a hipotenusa, com DE paralelo a BC; as medidas são: 6 cm, 4 cm (DE), 4 cm (EC) e 6 cm (BC); x e y são os segmentos a determinar",
+    "largura": "56mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-28",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -158028,24 +157984,24 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "28. De acordo com a figura dada, calcule x sabendo que r // s // t. r x + 2 4 s x + 5 x + 2 t",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-28.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "De acordo com a figura dada, calcule $ x $ sabendo que $ r // s // t $.",
    "resolucao": "",
    "gabarito": "${x + 2|x + 5} = {4|x + 2}$ ⇒ $(x + 2)^2 = 4(x + 5)$ ⇒ $x^2 = 16$ ⇒ $x = 4$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lista-de-revisao-de-matema-28-fig.jpg",
+    "alt": "Três retas paralelas r, s e t cortadas por duas transversais; em uma delas os segmentos medem x + 2 e x + 5, na outra 4 e x + 2",
+    "largura": "63mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-30",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Questões variadas",
@@ -158056,19 +158012,22 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "30. A plant a mostra dois terrenos. As divisas laterais são perpendiculares à rua. Quais as medidas das frentes dos terrenos que dão para a avenida. Sabendo - se que a frente para essa avenida é de 91 metros ? Rua 25 m 40 m 1 2 y x Avenida",
-   "imagens": [
-    "img:cdb-l-lista-de-revisao-de-matema-30.jpg"
-   ],
-   "larguraMm": 176.8,
+   "enunciado": "A planta mostra dois terrenos. As divisas laterais são perpendiculares à rua. Quais as medidas das frentes dos terrenos que dão para a avenida.",
    "resolucao": "",
    "gabarito": "As frentes para a rua ($25$ m e $40$ m) são proporcionais às frentes para a avenida: ${x|25} = {y|40}$ e $x + y = 91$. Com $x = 25k$ e $y = 40k$: $65k = 91$ ⇒ $k = 1,4$. Assim $x = 35$ m e $y = 56$ m.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "Sabendo-se que a frente para essa avenida é de 91 metros?",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-lista-de-revisao-de-matema-30-fig.jpg",
+    "alt": "Planta de terrenos entre a Rua (em cima) e a Avenida (embaixo, inclinada); as frentes para a rua medem 25 m e 40 m e as frentes para a avenida medem x e y",
+    "largura": "78mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-potenciacao-2-01",
