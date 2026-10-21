@@ -34,7 +34,7 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 - [ ] 👤 **Definir a 3ª estrutura (aula de revisão para avaliações)** — Exatas e Humanas já estão definidas, a de revisão ainda não.
 - [ ] 🤖 **Humanas com a estrutura completa** (fonte/evidência + análise/comparação): hoje só o Português 6º ano tem; História, Geografia, Filosofia, Sociologia e demais receberam a adaptação (rótulo "Atividade de aplicação").
 - [ ] 🤖 "Toque brilhante": polimento visual (suas observações de acabamento) — as 43 cenas são genéricas por assunto; dá para criar figuras mais específicas nas aulas mais usadas.
-- [ ] 🤖 CD Educador Interativo: ~190 questões de múltipla escolha sem gabarito e 17 listas não segmentadas; aulas e turmas do CD ainda não importadas.
+- [x] 🤖 CD Educador Interativo: gabaritos e listas fechados em 19/10; em 20/10 as questões em imagem foram transcritas para texto (4.036 de 4.336; 146 ficam como imagem por dependerem de figura). Falta só decidir sobre VIDEO/TOOLS do CD.
 
 ### Decisões de organização (ver `docs/auditoria-trimestres.md`)
 - [ ] 👤 **3ª série · 3º tri**: 5 módulos antigos compactos (Sequências Numéricas, PA, PG, Trig. no Triângulo Retângulo, Trig. no Ciclo — 41 aulas) **repetem** os 10 módulos novos (37 aulas). Escolher: manter só um conjunto ou juntar os antigos num módulo "versão compacta" (como na Recomposição).

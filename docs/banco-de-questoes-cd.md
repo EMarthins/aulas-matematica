@@ -36,3 +36,13 @@ As imagens ficam em `app/img-questoes/` (`cdb-…jpg`; as resoluções terminam 
 - Fluxo: `fontes-nre/tools/publicar-listas.mjs` → `listas/montar.js` → `aplicar-gabaritos.js` → `validar-banco-provas.js`. `listas/pendentes.js` mostra o que ainda falta (hoje 0).
 - `lote-02.js`: 9 questões de nivelamento (álgebra e equações) do `.docx` do CD.
 - Total no banco: 4.314 questões. Todas as mc têm gabarito (2 de simulado foram excluídas por figura ambígua). Listas recortadas à mão: `fontes-nre/tools/manual-recortes.mjs` (+ `listas/manual-spec-*.json`).
+
+## Atualização 20/10/2026 — questões em imagem → texto (padrão da prova em 2 colunas)
+**Pedido:** transcrever tudo o que não é figura. Só ficam como imagem as questões em que o desenho é o próprio enunciado ou as alternativas.
+
+- **Resultado:** 4.036 das 4.336 questões estão transcritas (`transcrita: true`): enunciado em HTML com a mini-linguagem de fórmulas, alternativas/afirmações em texto, figuras recortadas só quando necessárias (`figura/figuras`: img, tabela, svg…). **146 continuam como imagem** (`soImagem`): 52 ENEM + 28 cdb-c + 13 cdb-sim + 53 cdb-l. A lista com o motivo de cada uma está em `scripts/banco-provas/transcrever/manter.txt`.
+- **Mini-linguagem (app/matematica.js):** `$…$`, `{a|b}` frações, `√{x}`, `^`, `_`, e novas estruturas `@M{a&b;c&d}` (matriz/binomial), `@D{…}` (determinante), `@S{eq1;eq2}` (sistema/chaves). Dinheiro: `R$` vira `R&#36;` automaticamente. O Word (`app/docx.js`) exporta as estruturas como equações OMML.
+- **Fluxo (`scripts/banco-provas/transcrever/`):** `proximo.js <qtd> <porFolha> <filtro>` gera folhas de contato; escrever os dados num `.js`, converter em `lote-NNN-….jsonl`; `aplicar-transcricoes.js` aplica todos os lotes (campos `e,p,a,af,fig,figs,alts,tab,tabs,svg,extra,tipo,ok,gabarito…`); `reabrir.js <ids>` devolve ao estado-imagem para refazer; `transcritas.js salvar|restaurar` guarda/recupera o estado; `node scripts/validar-banco-provas.js` valida tudo.
+- **Gabaritos:** preservados das entradas antigas (letra `ok`, soma, V/F). Onde o gabarito antigo era só “texto” de questão que na verdade é múltipla escolha, foi corrigido para `mc`.
+- **Conferência:** cada lote foi visto em pré-visualização de duas colunas (Chrome headless). Figuras de página escaneada (ex.: Teorema de Tales) vêm do recorte original.
+- **Limites honestos:** parte das ~1.700 questões aceitas automaticamente no início (texto do PDF/OCR sem revisão linha a linha) foi só conferida por amostragem; erros de digitação podem existir. Alts de figura (`alt`) são descrições para acessibilidade escritas à mão.
