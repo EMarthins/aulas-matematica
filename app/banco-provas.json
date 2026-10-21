@@ -1,6 +1,6 @@
 {
  "versao": 2,
- "gerado": "2026-10-20",
+ "gerado": "2026-10-21",
  "nota": "Banco autoral do fazedor de prova. Veja docs/fazedor-de-prova.md para o esquema.",
  "questoes": [
   {
@@ -119082,8 +119082,6 @@
   },
   {
    "id": "cdb-l-funcao-exponencial-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Função exponencial",
@@ -119094,12 +119092,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Na função exponencial a seguir calcule o valor de k, considerando uma função crescente.",
-   "imagens": [
-    "img:cdb-l-funcao-exponencial-01.jpg"
-   ],
-   "larguraMm": 142.9,
+   "enunciado": "Na função exponencial a seguir calcule o valor de $ k $, considerando uma função crescente.<br><span class=\"pb\"></span>$ f(x) = (12 − 2k)^x $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-exponencial-01-r.jpg",
@@ -119109,7 +119102,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-exponencial-02",
@@ -119138,8 +119132,6 @@
   },
   {
    "id": "cdb-l-funcao-exponencial-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Função exponencial",
@@ -119150,12 +119142,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dada a função exponencial, calcule o valor de m que a torne decrescente.",
-   "imagens": [
-    "img:cdb-l-funcao-exponencial-03.jpg"
-   ],
-   "larguraMm": 119,
+   "enunciado": "Dada a função exponencial, calcule o valor de $ m $ que a torne decrescente.<br><span class=\"pb\"></span>$ f(x) = ({2|4m − 10})^x $",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-exponencial-03-r.jpg",
@@ -119165,12 +119152,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-exponencial-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Função exponencial",
@@ -119181,24 +119167,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "bx Dada uma função f : R → R, definida por f(x) = a * 3 , onde a e b são constantes reais. Dado que f(0) = 900 e f(10) = 300, determine k de modo que f(k) = 100.",
-   "imagens": [
-    "img:cdb-l-funcao-exponencial-04.jpg"
-   ],
-   "larguraMm": 147.4,
+   "enunciado": "Dada uma função $ f: ℝ → ℝ $, definida por $ f(x) = a · 3^{bx} $, onde $ a $ e $ b $ são constantes reais. Dado que $ f(0) = 900 $ e $ f(10) = 300 $, determine $ k $ de modo que $ f(k) = 100 $.",
    "resolucao": "",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
    },
-   "gabarito": "$f(0) = a = 900$. $f(10) = 900 · 3^{10b} = 300$ ⇒ $3^{10b} = {1|3}$ ⇒ $b = -{1|10}$. Para $f(k) = 100$: $900 · 3^{-k/10} = 100$ ⇒ $3^{-k/10} = {1|9}$ ⇒ $k = 20$."
+   "gabarito": "$f(0) = a = 900$. $f(10) = 900 · 3^{10b} = 300$ ⇒ $3^{10b} = {1|3}$ ⇒ $b = -{1|10}$. Para $f(k) = 100$: $900 · 3^{-k/10} = 100$ ⇒ $3^{-k/10} = {1|9}$ ⇒ $k = 20$.",
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-de-1-grau-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Função afim",
@@ -119209,12 +119189,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine a função afim f(x) = ax + b, sabendo que f(1) = 5 e f( – 3) = – 7.",
-   "imagens": [
-    "img:cdb-l-funcao-de-1-grau-01.jpg"
-   ],
-   "larguraMm": 115.1,
+   "enunciado": "Determine a função afim $ f(x) = ax + b $, sabendo que $ f(1) = 5 $ e $ f(−3) = −7 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-de-1-grau-01-r.jpg",
@@ -119224,7 +119199,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-de-1-grau-02",
@@ -119254,8 +119230,6 @@
   },
   {
    "id": "cdb-l-funcao-de-1-grau-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "1º Ano",
    "unidade": "Função afim",
@@ -119267,12 +119241,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(U. F. Viçosa - MG) Uma função f é dada por f(x) = ax + b, em que a e b são números reais. Se f( – 1) = 3 e f(1) = – 1, determine o valor de f(3).",
-   "imagens": [
-    "img:cdb-l-funcao-de-1-grau-03.jpg"
-   ],
-   "larguraMm": 150.4,
+   "enunciado": "(U. F. Viçosa-MG) Uma função $ f $ é dada por $ f(x) = ax + b $, em que $ a $ e $ b $ são números reais. Se $ f(−1) = 3 $ e $ f(1) = −1 $, determine o valor de $ f(3) $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-de-1-grau-03-r.jpg",
@@ -119282,7 +119251,8 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-de-1-grau-04",
@@ -124255,8 +124225,6 @@
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -124267,41 +124235,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3 - x 2 - x 01. (U. E. FEIRA DE SANTANA - BA) O produto das soluções da equação (4 ) = 1 é: a) 0 b) 1 c) 4 d) 5 e) 6",
-   "imagens": [
-    "img:cdb-l-funcao-logaritmica-e-expon-01.jpg"
-   ],
-   "larguraMm": 172.1,
+   "enunciado": "(U. E. FEIRA DE SANTANA - BA) O produto das soluções da equação $ (4^{3 − x})^{2 − x} = 1 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "5",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "6",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -124312,36 +124274,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2x + 3 8 02. (PUCCAMP) Considere a sentença a > a , na qual x é uma variável real e a é uma constante real positiva. Essa sentença é verdadeira se, por exemplo: a) x = 3 e a = 1 b) x = - 3 e a > 1 c) x = 3 e a < 1 d) x = - 2 e a < 1 e) x = 2 e a > 1",
-   "imagens": [
-    "img:cdb-l-funcao-logaritmica-e-expon-02.jpg"
-   ],
-   "larguraMm": 173.1,
+   "enunciado": "(PUCCAMP) Considere a sentença $ a^{2x + 3} > a^8 $, na qual $ x $ é uma variável real e $ a $ é uma constante real positiva. Essa sentença é verdadeira se, por exemplo:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ x = 3 $ e $ a = 1 $",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "$ x = −3 $ e $ a > 1 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ x = 3 $ e $ a < 1 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ x = −2 $ e $ a < 1 $",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "$ x = 2 $ e $ a > 1 $",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-03",
@@ -124384,8 +124342,6 @@
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -124396,36 +124352,33 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 04. (U. E. FEIRA DE SANTANA - BA) O gráfico da função real f(x) = x - 2: a) intercepta o eixo dos x no ponto (1, 0); b) intercepta o eixo dos x no ponto (0, 1); c) intercepta o eixo dos x no ponto (2, 0); d) intercepta o eixo dos x no ponto (0, - 2); e) não intercepta o eixo dos x.",
-   "imagens": [
-    "img:cdb-l-funcao-logaritmica-e-expon-04.jpg"
-   ],
-   "larguraMm": 143.7,
+   "enunciado": "(U. E. FEIRA DE SANTANA - BA) O gráfico da função real $ f(x) = x^2 − 2 $:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "intercepta o eixo dos x no ponto $ (1, 0) $;",
+     "ok": false
+    },
+    {
+     "t": "intercepta o eixo dos x no ponto $ (0, 1) $;",
+     "ok": false
+    },
+    {
+     "t": "intercepta o eixo dos x no ponto $ (2, 0) $;",
+     "ok": false
+    },
+    {
+     "t": "intercepta o eixo dos x no ponto $ (0, −2) $;",
      "ok": true
     },
     {
-     "t": "B",
-     "ok": false
-    },
-    {
-     "t": "C",
-     "ok": false
-    },
-    {
-     "t": "D",
-     "ok": false
-    },
-    {
-     "t": "E",
+     "t": "não intercepta o eixo dos x.",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "D",
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-05",
@@ -124549,8 +124502,6 @@
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -124562,41 +124513,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "08. (CESGRANRIO) Se log10123 = 2,09, o valor de log101,23 é: a) 0,0209 b) 0,09 c) 0,209 d) 1,09 e) 1,209",
-   "imagens": [
-    "img:cdb-l-funcao-logaritmica-e-expon-08.jpg"
-   ],
-   "larguraMm": 124.8,
+   "enunciado": "(CESGRANRIO) Se $ log 123 = 2,09 $, o valor de $ log 1,23 $ é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "0,0209",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "0,09",
      "ok": true
     },
     {
-     "t": "C",
+     "t": "0,209",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "1,09",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "1,209",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "2º Ano",
    "unidade": "Logaritmos",
@@ -124607,36 +124552,32 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "09. Os valores de x que satisfazem log x + log (x - 5) = log 36 são: a) 9 e - 4 b) 9 e 4 c) - 4 d) 9 e) 5 e - 4",
-   "imagens": [
-    "img:cdb-l-funcao-logaritmica-e-expon-09.jpg"
-   ],
-   "larguraMm": 127.6,
+   "enunciado": "Os valores de $ x $ que satisfazem $ log x + log(x − 5) = log 36 $ são:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "9 e −4",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "9 e 4",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "−4",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "9",
      "ok": true
     },
     {
-     "t": "E",
+     "t": "5 e −4",
      "ok": false
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-logaritmica-e-expon-10",
@@ -124680,8 +124621,6 @@
   },
   {
    "id": "cdb-l-funcao-polinomial-do-prime-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -124693,41 +124632,35 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "01. (UNIFOR) A função f, do 1° grau, é definida por f(x) = 3x + k. O valor de k para que o gráfico de f corte o eixo das ordenadas no ponto de ordenada 5 é: a) 1 b) 2 c) 3 d) 4 e) 5",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-do-prime-01.jpg"
-   ],
-   "larguraMm": 183.4,
+   "enunciado": "(UNIFOR) A função $ f $, do 1º grau, é definida por $ f(x) = 3x + k $. O valor de $ k $ para que o gráfico de $ f $ corte o eixo das ordenadas no ponto de ordenada 5 é:",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "1",
      "ok": false
     },
     {
-     "t": "B",
+     "t": "2",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "3",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "4",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "5",
      "ok": true
     }
-   ]
+   ],
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-do-prime-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -124739,41 +124672,42 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "02. (EDSON QUEIROZ - CE) O gráfico abaixo representa a função de ℝ em ℝ dada por f(x) = ax + b (a, b Î ℝ ). De acordo com o gráfico conclui - se que: a) a < 0 e b >0 b) a < 0 e b < 0 c) a > 0 e b > 0 d) a > 0 e b < 0 e) a > o e b = 0 Resolva, em R, as inequações de 03 a 05",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-do-prime-02.jpg"
-   ],
-   "larguraMm": 185.3,
+   "enunciado": "(EDSON QUEIROZ - CE) O gráfico abaixo representa a função de ℝ em ℝ dada por $ f(x) = ax + b $ ($ a, b ∈ ℝ $).",
    "resolucao": "",
    "tipo": "mc",
    "alternativas": [
     {
-     "t": "A",
+     "t": "$ a < 0 $ e $ b > 0 $",
      "ok": true
     },
     {
-     "t": "B",
+     "t": "$ a < 0 $ e $ b < 0 $",
      "ok": false
     },
     {
-     "t": "C",
+     "t": "$ a > 0 $ e $ b > 0 $",
      "ok": false
     },
     {
-     "t": "D",
+     "t": "$ a > 0 $ e $ b < 0 $",
      "ok": false
     },
     {
-     "t": "E",
+     "t": "$ a > 0 $ e $ b = 0 $",
      "ok": false
     }
-   ]
+   ],
+   "pergunta": "De acordo com o gráfico conclui-se que:",
+   "figura": {
+    "tipo": "img",
+    "src": "img:cdb-l-funcao-polinomial-do-prime-02-fig.jpg",
+    "alt": "Plano cartesiano com uma reta decrescente que corta o eixo y acima da origem e o eixo x à direita da origem",
+    "largura": "56mm"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-do-prime-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "3º Ano",
    "unidade": "Polinômios",
@@ -124784,19 +124718,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "03. 2x - 10 < 4",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-do-prime-03.jpg"
-   ],
-   "larguraMm": 30.3,
+   "enunciado": "Resolva, em ℝ, as inequações de 03 a 05.<br><span class=\"pb\"></span>03. $ 2x − 10 < 4 $",
    "resolucao": "",
    "gabarito": "V = (x Î R| x < 7)",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-do-prime-04",
@@ -136288,8 +136218,6 @@
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136300,14 +136228,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "1) Simplifique as expressões algébricas abaixo: 25 x a ² x ² + ² 30 − − ab 9 + 4 9 b ² a) b) c) x 2 ² 25 x + a 6 ² + − x 9 b + ² 4 9",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-01.jpg"
-   ],
-   "larguraMm": 201.2,
+   "enunciado": "Simplifique as expressões algébricas abaixo:<br><span class=\"pb\"></span>a) $ {x^2 − 4|2x + 4} $<br>b) $ {x^2 − 9|x^2 + 6x + 9} $<br>c) $ {25a^2 + 30ab + 9b^2|25a^2 − 9b^2} $",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -136317,12 +136240,12 @@
      "t": "B",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "a) (x − 2)/2; b) (x − 3)/(x + 3); c) (5a + 3b)/(5a − 3b)",
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136333,14 +136256,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2) Simplifique as frações algébricas abaixo: m 1 m ² − n ² a ² − b ² a   −  a ) b)    m − n 2 n ab a + b   5 x 3 x − 3 y x ² − 1 x ² + 2 x + 1 c) d)  : x ² − 2 xy + y ² 2 x ² − 2 x + 1 x − 1",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-02.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Simplifique as frações algébricas abaixo:<br><span class=\"pb\"></span>a) $ ({m|m − n} − {1|2}) · {m^2 − mn|n} $<br>b) $ {a^2 − b^2|ab} · {a|a + b} $<br>c) $ {5x|x^2 − 2xy + y^2} · {3x − 3y|2} $<br>d) $ {x^2 − 1|x^2 − 2x + 1} : {x^2 + 2x + 1|x − 1} $",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -136350,12 +136268,12 @@
      "t": "B",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "",
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136366,24 +136284,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "2 a x a 2 ax 3) Calcule o produto de por + − x − 2 3 x a x ² − 3 x",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-03.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Calcule o produto de $ {2a|x − 3} + {a|x} − {2ax|x^2 − 3x} $ por $ {x|2a} $.",
    "resolucao": "",
    "gabarito": "A soma é ${2a|x - 3} + {a|x} - {2ax|x(x - 3)} = {2ax + a(x - 3) - 2ax|x(x - 3)} = {a(x - 3)|x(x - 3)} = {a|x}$. Multiplicando por ${x|2a}$: ${a|x} · {x|2a} = {1|2}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136394,24 +136306,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "x ³ − 25 x 15 y xy + 5 y 4) Ao simplificar a expressão algébrica , Paulo obteve um número primo  : 3 x − 15 4 x 4 menor que 10. Qual foi o número encontrado por Paulo?",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-04.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Ao simplificar a expressão algébrica $ {x^3 − 25x|3x − 15} · {15y|4x} : {xy + 5y|4} $, Paulo obteve um número primo menor que 10. Qual foi o número encontrado por Paulo?",
    "resolucao": "",
    "gabarito": "5",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136422,24 +136328,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5) Resolva as equações fracionárias abaixo. 1 a 3 2 a) b) + 2 = = x a − + 3 6 x − 5 3 3 x + 2 11 4 6 − 2 − 5 x c) d) − = − − = 2 3 x 6 x x + 2 x − 2 x ² − 4 4 5 3 2 x x e) f) + − = = 3 x x − 3 x x + − 3 2 x ² − 9 3 4 1 2 x − 8 3 x 3 x g) h) − = = − x 5 x 10 x ² − 25 x + 5 x − 5",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-05.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Resolva as equações fracionárias abaixo.<br><span class=\"pb\"></span>a) $ {a|a + 6} = {2|5} $<br>b) $ {1|x − 3} + 2 = {3|x − 3} $<br>c) $ {4|x + 2} − {6|x − 2} = {−2 − 5x|x^2 − 4} $<br>d) $ {3|2} − {x + 2|3x} = {11|6x} $<br>e) $ {4|x} + {3x|x − 2} = 3 $<br>f) $ {5|x − 3} − {2|x + 3} = {x|x^2 − 9} $<br>g) $ {2x − 8|x^2 − 25} = {3x|x + 5} − {3x|x − 5} $<br>h) $ {3|x} − {4|5x} = {1|10} $",
    "resolucao": "",
    "gabarito": "a) $a = 4$. b) $x = 4$. c) $x = 6$. d) $x = -1$. e) $x = {4|5}$. f) $x = -{21|2}$. g) $x = {1|4}$. h) $x = 22$. (Em todos os casos a solução respeita as condições de existência dos denominadores.)",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-06",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136450,14 +136350,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "6) Efetue as adições e subtrações entre frações algébricas: 2 3 1 3 a 5 a 7 a 3 2 + + − + − a) b) c) x + 1 x ² + x x x 4 x 2 x x x + 1 a + b 2 a + b 3 a + b a + 2 b a − 2 b 4 bx − 2 a ² + − − − d) e) a ² b a ² b a ² b x + a x − a x ² − a ²",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-06.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Efetue as adições e subtrações entre frações algébricas:<br><span class=\"pb\"></span>a) $ {2|x + 1} + {3|x^2 + x} + {1|x} $<br>b) $ {3a|x} − {5a|4x} + {7a|2x} $<br>c) $ {3|x} − {2|x + 1} $<br>d) $ {a + b|a^2 b} + {2a + b|a^2 b} − {3a + b|a^2 b} $<br>e) $ {a + 2b|x + a} − {a − 2b|x − a} − {4bx − 2a^2|x^2 − a^2} $",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -136471,12 +136366,12 @@
      "t": "C",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "",
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-07",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136487,14 +136382,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "7) Efetue as multiplicações abaixo: 5 a ² − 5 2 a − 1 2 x − 2 y x ² + 2 xy + y ² . . a) b) 6 a − 3 10 a ² − 10 x ² − y ² 4 x + 4 y 5 x ² + x ³ x ² − x 6 a ³ b ² 4 x ³ y 2 b c) d) . . . x − 1 x + 1 8 x ² y ³ 3 ab ³ ay x + y a − 3 . e) a ² − 6 a + 9 x ² − y ²",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-07.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Efetue as multiplicações abaixo:<br><span class=\"pb\"></span>a) $ {2x − 2y|x^2 − y^2} · {x^2 + 2xy + y^2|4x + 4y} $<br>b) $ {5a^2 − 5|6a − 3} · {2a − 1|10a^2 − 10} $<br>c) $ {x^2 + x^3|x − 1} · {x^2 − x|x + 1} $<br>d) $ {6a^3 b^2|8x^2 y^3} · {4x^3 y^5|3ab^3} · {2b|ay} $<br>e) $ {x + y|a^2 − 6a + 9} · {a − 3|x^2 − y^2} $",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -136508,12 +136398,12 @@
      "t": "C",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "",
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-08",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136524,14 +136414,9 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "8) Efetue as divisões abaixo: a ² − b ² a ² + 2 ab + b ² x ² − xy xy − y ² : : a) b) 3 ab ² 6 a ² b xy + y x ² + x x ² − 4 x x ² − 16 x + 1 x − 3 2 x ² − 2 x + 8   : c) d) + :   x ² + 1 2 x ² + 2 x − 2 x + 2 x − 2   c + d dc + d + c ² + c : e) d ² − 1 d ² + d",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-08.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Efetue as divisões abaixo:<br><span class=\"pb\"></span>a) $ {a^2 − b^2|3ab^2} : {a^2 + 2ab + b^2|6a^2 b} $<br>b) $ {x^2 − xy|xy + y} : {xy − y^2|x^2 + x} $<br>c) $ ({x + 1|x − 2} + {x − 3|x + 2}) : {2x^2 − 2x + 8|x − 2} $<br>d) $ {x^2 − 4x|x^2 + 1} : {x^2 − 16|2x^2 + 2} $<br>e) $ {c + d|d^2 − 1} : {dc + d + c^2 + c|d^2 + d} $",
    "resolucao": "",
-   "tipo": "mc",
+   "tipo": "aberta",
    "alternativas": [
     {
      "t": "A",
@@ -136545,12 +136430,12 @@
      "t": "C",
      "ok": false
     }
-   ]
+   ],
+   "gabarito": "",
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-09",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136561,24 +136446,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "a − b   9) Considere um retângulo cujos lados medem, respectivamente, e . ( ) a ² b + ab ²   a ² + ab   a) Escreva, na forma mais simplificada possível, uma expressão algébrica que represente a área desse retângulo. b)Calcule a área desse retângulo quando a=5 e b = 3",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-09.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Considere um retângulo cujos lados medem, respectivamente, $ (a^2 b + ab^2) $ e $ {a^2 − b^2|a^2 + ab} $.<br><span class=\"pb\"></span>a) Escreva, na forma mais simplificada possível, uma expressão algébrica que represente a área desse retângulo.<br>b) Calcule a área desse retângulo quando $ a = 5 $ e $ b = 3 $.",
    "resolucao": "",
    "gabarito": "a)",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-10",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136589,24 +136468,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "10) Que fração, na forma mais simples, você obtém ao dividir por a a ² ² − − 4 ab 4 b + ² 4 b ? ²",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-10.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Que fração, na forma mais simples, você obtém ao dividir $ a^2 − 4ab + 4b^2 $ por $ a^2 − 4b^2 $?",
    "resolucao": "",
    "gabarito": "$a^2 - 4ab + 4b^2 = (a - 2b)^2$ e $a^2 - 4b^2 = (a - 2b)(a + 2b)$. A fração simplificada é ${a - 2b|a + 2b}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-11",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "8º Ano",
    "unidade": "Questões variadas",
@@ -136617,19 +136490,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "11) Ao simplificar a expressão algébrica x ³ − 25 x 15 y xy + 5 y . : , Lucas obteve um número primo menor que 10. Qual foi o número 3 x − 15 4 x 4 encontrado por Lucas? 5",
-   "imagens": [
-    "img:cdb-l-fracoes-algebricas-operaco-11.jpg"
-   ],
-   "larguraMm": 192.4,
+   "enunciado": "Ao simplificar a expressão algébrica<br><span class=\"pb\"></span>$ {x^3 − 25x|3x − 15} · {15y|4x} : {xy + 5y|4} $,<br><span class=\"pb\"></span>Lucas obteve um número primo menor que 10. Qual foi o número encontrado por Lucas?",
    "resolucao": "",
    "gabarito": "5",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-algebricas-operaco-12",
@@ -148109,8 +147978,6 @@
   },
   {
    "id": "cdb-l-fracoes-3-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -148121,24 +147988,18 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "3) Um sexto de uma pizza custa 3 reais, quanto custa: a) da pizza b) da pizza c) a pizza toda",
-   "imagens": [
-    "img:cdb-l-fracoes-3-03.jpg"
-   ],
-   "larguraMm": 111.5,
+   "enunciado": "Um sexto de uma pizza custa 3 reais, quanto custa:<br><span class=\"pb\"></span>a) $ {3|6} $ da pizza<br>b) $ {5|6} $ da pizza<br>c) a pizza toda",
    "resolucao": "",
    "gabarito": "Se ${1|6}$ custa $3$ reais: a) ${3|6}$ custam $9$ reais. b) ${5|6}$ custam $15$ reais. c) A pizza toda custa $18$ reais.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-fracoes-3-05",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "6º Ano",
    "unidade": "Questões variadas",
@@ -148149,19 +148010,15 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "5) Encontre o resultado dos cálculos abaixo: a) b) c)",
-   "imagens": [
-    "img:cdb-l-fracoes-3-05.jpg"
-   ],
-   "larguraMm": 119,
+   "enunciado": "Encontre o resultado dos cálculos abaixo:<br><span class=\"pb\"></span>a) $ {7|5} − {3|5} = $<br>b) $ {4|8} + {2|8} = $<br>c) $ {3|4} + {5|12} = $",
    "resolucao": "",
    "gabarito": "a) ${4|5}$. b) ${6|8} = {3|4}$. c) ${9|12} + {5|12} = {14|12} = {7|6}$.",
    "tipo": "aberta",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-ficha-de-avaliacao-divisoe-01",
@@ -157624,8 +157481,6 @@
   },
   {
    "id": "cdb-l-funcao-polinomial-01",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Polinômios",
@@ -157636,12 +157491,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Dada a função polinomial f(x) = x³ – 3x² + 2x – ½ , determine os pares ordenados quando x = – 1, x = 0 e x = 1 .",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-01.jpg"
-   ],
-   "larguraMm": 140.8,
+   "enunciado": "Dada a função polinomial $ f(x) = x^3 − 3x^2 + 2x − {1|2} $, determine os pares ordenados quando $ x = −1 $, $ x = 0 $ e $ x = 1 $.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-polinomial-01-r.jpg",
@@ -157651,12 +157501,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-02",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Polinômios",
@@ -157667,12 +157516,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "Determine os valores de a, b, c e d para que as funções polinomiais f(x) = 9x³ + (2 – b 3d a)x² – 3x + 2 e g(x) = ( / )x³ + 7x² – 4cx + / sejam iguais. 2 2",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-02.jpg"
-   ],
-   "larguraMm": 146.6,
+   "enunciado": "Determine os valores de $ a $, $ b $, $ c $ e $ d $ para que as funções polinomiais<br><span class=\"pb\"></span>$ f(x) = 9x^3 + (2 − a)x^2 − 3x + 2 $ e $ g(x) = {b|2}x^3 + 7x^2 − 4cx + {3d|2} $<br><span class=\"pb\"></span>sejam iguais.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-polinomial-02-r.jpg",
@@ -157682,12 +157526,11 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-03",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Polinômios",
@@ -157699,12 +157542,7 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(Unicamp) Três planos de telefonia celular são apresentados na tabela abaixo: Plano Custo fixo mensal Custo adicional por minuto A R$ 35,00 R$ 0,50 B R$ 20,00 R$ 0,80 C 0 R$ 1,20 a) Qual é o plano mais vantajoso para alguém que utilize 25 minutos por mês? b) A partir de quantos minutos de uso mensal o plano A é mais vantajoso que os outros dois?",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-03.jpg"
-   ],
-   "larguraMm": 153.5,
+   "enunciado": "(Unicamp) Três planos de telefonia celular são apresentados na tabela abaixo:",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-polinomial-03-r.jpg",
@@ -157714,12 +157552,38 @@
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "pergunta": "a) Qual é o plano mais vantajoso para alguém que utilize 25 minutos por mês?<br><span class=\"pb\"></span>b) A partir de quantos minutos de uso mensal o plano A é mais vantajoso que os outros dois?",
+   "figura": {
+    "tipo": "tabela",
+    "cab": [
+     "Plano",
+     "Custo fixo mensal",
+     "Custo adicional por minuto"
+    ],
+    "linhas": [
+     [
+      "A",
+      "R$ 35,00",
+      "R$ 0,50"
+     ],
+     [
+      "B",
+      "R$ 20,00",
+      "R$ 0,80"
+     ],
+     [
+      "C",
+      "0",
+      "R$ 1,20"
+     ]
+    ],
+    "largura": "90%"
+   },
+   "transcrita": true
   },
   {
    "id": "cdb-l-funcao-polinomial-04",
-   "soImagem": true,
-   "imgPrevia": true,
    "materia": "Matemática",
    "serie": "9º Ano",
    "unidade": "Polinômios",
@@ -157731,22 +157595,20 @@
    "dificuldade": 2,
    "fonte": "Listas de exercícios (CD)",
    "pontos": 1,
-   "enunciado": "",
-   "busca": "(UFG) Uma agência de turismo deseja fretar um ônibus de 50 lugares . Duas empresas, A e B , candidatam - se para fazer a viagem. Se for contratada a empresa A , o custo da viagem terá uma parte fixa de R$ 280,50 , mais um custo, por passageiro, de R$ 12,00 . Se for contratada a empresa B , o custo terá um valor fixo de R$ 250,00 , mais um custo (C) , por passageiro, dado por C(n) = 35 – 0,5n , onde n é o número de passageiros que fará a viagem. De acordo com essas informações, julgue os itens a seguir. (01) Caso contrate a empresa B, o custo máximo da viagem será de R$ 862,50. (02) Se todos os lugares do ônibus forem ocupados, será mais caro contratar a empresa B. (03) Para um mesmo número d",
-   "imagens": [
-    "img:cdb-l-funcao-polinomial-04.jpg"
-   ],
-   "larguraMm": 151.2,
+   "enunciado": "(UFG) Uma agência de turismo deseja fretar um ônibus de <i>50 lugares</i>. Duas empresas, <b>A</b> e <b>B</b>, candidatam-se para fazer a viagem. Se for contratada a empresa <b>A</b>, o custo da viagem terá uma parte fixa de <b>R&#36; 280,50</b>, mais um custo, por passageiro, de <b>R&#36; 12,00</b>. Se for contratada a empresa <b>B</b>, o custo terá um valor fixo de <b>R&#36; 250,00</b>, mais um custo <b>(C)</b>, por passageiro, dado por $ C(n) = 35 − 0,5n $, onde $ n $ é o número de passageiros que fará a viagem.<br><span class=\"pb\"></span>De acordo com essas informações, julgue os itens a seguir.<br><span class=\"pb\"></span>(01) Caso contrate a empresa B, o custo máximo da viagem será de R&#36; 862,50.<br>(02) Se todos os lugares do ônibus forem ocupados, será mais caro contratar a empresa B.<br>(03) Para um mesmo número de passageiros, os valores cobrados pelas empresas A e B serão diferentes.<br>(04) Para um custo de R&#36; 700,50, a empresa A levará mais que o dobro de passageiros que a empresa B.",
    "resolucao": "",
    "resolucaoImg": {
     "src": "img:cdb-l-funcao-polinomial-04-r.jpg",
     "larguraMm": 82.6
    },
-   "tipo": "aberta",
+   "tipo": "vf",
    "resposta": {
     "modo": "branco",
     "altura": 45
-   }
+   },
+   "gabarito": "",
+   "afirmacoes": [],
+   "transcrita": true
   },
   {
    "id": "cdb-l-lista-de-revisao-de-matema-01",
