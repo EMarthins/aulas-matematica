@@ -293,7 +293,8 @@
     var a, b;
     if(s.t === 'p' || s.t === 'q') return s.pts.map(function(q){ return [q[0] * c.w, q[1] * c.h]; });
     if(s.t === 'l' || s.t === 'a' || s.t === 'm') return [P(c, s.p[0]), P(c, s.p[1])];
-    a = s.p && P(c, s.p[0]); b = s.p && P(c, s.p[1]);
+    if(!s.p || !s.p[0] || !s.p[1]) return null; // texto, carimbo etc.: nada para desenrolar
+    a = P(c, s.p[0]); b = P(c, s.p[1]);
     if(s.t === 'r') return [a, [b[0], a[1]], b, [a[0], b[1]], a];
     if(s.t === 'u'){ var top = [(a[0] + b[0]) / 2, Math.min(a[1], b[1])], bl = [Math.min(a[0], b[0]), Math.max(a[1], b[1])], br = [Math.max(a[0], b[0]), Math.max(a[1], b[1])]; return [top, bl, br, top]; }
     if(s.t === 'o') return elipsePts((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, Math.abs(b[0] - a[0]) / 2, Math.abs(b[1] - a[1]) / 2);

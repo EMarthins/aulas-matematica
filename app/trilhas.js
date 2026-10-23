@@ -65,6 +65,9 @@ function ler() { try { const o = JSON.parse(ls.get(KEY) || 'null'); if (o && o.v
 function gravar(o) { return ls.set(KEY, JSON.stringify(o)); }
 /** Lista plana (na ordem sugerida) das aulas da trilha: guardada na turma para as aulas saberem qual é a próxima. */
 const roteiroDe = tr => { const r = []; if (tr) tr.modulos.forEach(m => m.aulas.forEach(a => r.push({ a: a.arquivo, t: a.titulo, m: m.n }))); return r; };
+const ymd = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const paraData = s => { const p = String(s).split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); };
+const esc = s => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
 const novoId = () => 't' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 const agora = () => Date.now();
 
@@ -144,6 +147,52 @@ export const Trilhas = {
     if (ultima && !turma.feitas[ultima.aula.arquivo]) proxima = ultima;
     else { const x = todas.find(y => !turma.feitas[y.a.arquivo] && !y.m.pendente) || todas.find(y => !turma.feitas[y.a.arquivo]); if (x) proxima = { modulo: x.m, aula: x.a, pos: turma.pos[x.a.arquivo] || null }; }
     return { trilha: tr, feitas, total: todas.length, pct: todas.length ? Math.round(feitas / todas.length * 100) : 0, ultima, proxima };
+  },
+  /* ----- plano de aulas por data (trilha guiada): cada aula pendente ganha o dia do encontro em que deve ser dada ----- */
+  /** cfg: { ini:'AAAA-MM-DD', dias:[0-6] (dom=0), porDia:1|2 }. Distribui as aulas ainda não concluídas, em ordem, nos dias de aula a partir de `ini`. */
+  planejar(id, cfg) {
+    const o = ler(), t = o.turmas[id]; if (!t) return null;
+    const tr = trilhaPorId(t.trilha); if (!tr) return null;
+    const dias = (cfg.dias && cfg.dias.length ? cfg.dias : [1, 3]).map(Number), porDia = Math.max(1, Math.min(4, Number(cfg.porDia) || 1));
+    const ini = cfg.ini ? paraData(cfg.ini) : new Date(); ini.setHours(0, 0, 0, 0);
+    const pend = []; tr.modulos.forEach(m => m.aulas.forEach(a => { if (!t.feitas[a.arquivo]) pend.push(a.arquivo); }));
+    const datas = {}; let d = new Date(ini), k = 0, guarda = 0;
+    while (k < pend.length && guarda++ < 800) { if (dias.indexOf(d.getDay()) >= 0) { for (let j = 0; j < porDia && k < pend.length; j++) datas[pend[k++]] = ymd(d); } d.setDate(d.getDate() + 1); }
+    t.plano = { ini: ymd(ini), dias, porDia, datas }; t.atualizado = agora(); gravar(o); return t.plano;
+  },
+  removerPlano(id) { const o = ler(), t = o.turmas[id]; if (!t) return; delete t.plano; t.atualizado = agora(); gravar(o); },
+  /** Replaneja o que falta a partir de hoje (ou de uma data), mantendo os dias de aula e a quantidade por encontro. */
+  replanejar(id, desde) { const t = ler().turmas[id]; if (!t || !t.plano) return null; return this.planejar(id, { ini: desde || ymd(new Date()), dias: t.plano.dias, porDia: t.plano.porDia }); },
+  /** Agenda da turma: aulas com data, em ordem, com o estado em relação a `hoje` (feita · atrasada · hoje · futura). */
+  agenda(turma, hoje) {
+    const tr = trilhaPorId(turma.trilha); if (!tr || !turma.plano) return [];
+    const h = ymd(hoje || new Date()), out = [];
+    tr.modulos.forEach(m => m.aulas.forEach(a => {
+      const data = turma.plano.datas[a.arquivo]; if (!data) return;
+      const feita = !!turma.feitas[a.arquivo];
+      out.push({ data, aula: a, modulo: m, feita, estado: feita ? 'feita' : data < h ? 'atrasada' : data === h ? 'hoje' : 'futura' });
+    }));
+    return out.sort((x, y) => x.data < y.data ? -1 : x.data > y.data ? 1 : 0);
+  },
+  /** O que pede atenção: aulas de hoje e atrasadas (para a Home e os cartões). */
+  pendencias(turma, hoje) { const ag = this.agenda(turma, hoje); return { hoje: ag.filter(x => x.estado === 'hoje'), atrasadas: ag.filter(x => x.estado === 'atrasada'), proximas: ag.filter(x => x.estado === 'futura') }; },
+  /** Calendário (.ics) com um evento de dia inteiro por aula pendente — importa no Google Agenda, Outlook, celular. */
+  ics(turma, base) {
+    const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//EduMath//Plano de aulas//PT', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:' + esc(turma.nome) + ' (EduMath)'];
+    this.agenda(turma).filter(x => !x.feita).forEach(x => {
+      const d1 = x.data.replace(/-/g, ''), d2 = ymd((() => { const z = paraData(x.data); z.setDate(z.getDate() + 1); return z; })()).replace(/-/g, '');
+      L.push('BEGIN:VEVENT', 'UID:' + turma.id + '-' + d1 + '-' + x.aula.arquivo.replace(/[^a-z0-9]/gi, '') + '@edumath', 'DTSTAMP:' + new Date().toISOString().replace(/[-:]|\.\d+/g, ''), 'DTSTART;VALUE=DATE:' + d1, 'DTEND;VALUE=DATE:' + d2,
+        'SUMMARY:' + esc(turma.nome + ' · ' + x.aula.rotulo + ': ' + x.aula.titulo), 'DESCRIPTION:' + esc('Módulo ' + String(x.modulo.n).padStart(2, '0') + ' · ' + x.modulo.titulo) + (base ? '\\n' + esc(base + x.aula.arquivo + '#t=' + turma.id) : ''), 'END:VEVENT');
+    });
+    L.push('END:VCALENDAR'); return L.join('\r\n');
+  },
+  /** Plano de aulas em texto (datas, módulo e aula) para copiar ou imprimir. */
+  planoTexto(turma) {
+    const tr = trilhaPorId(turma.trilha); if (!tr || !turma.plano) return '';
+    const NS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'], f = s => { const d = paraData(s); return NS[d.getDay()] + ' ' + String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0'); };
+    const L = ['Plano de aulas — ' + turma.nome, tr.titulo, 'Dias de aula: ' + turma.plano.dias.map(d => NS[d]).join(', ') + ' · ' + turma.plano.porDia + ' aula(s) por encontro', ''];
+    this.agenda(turma).forEach(x => L.push((x.feita ? '[x] ' : '[ ] ') + f(x.data) + ' · Módulo ' + String(x.modulo.n).padStart(2, '0') + ' · ' + x.aula.rotulo + ': ' + x.aula.titulo + (x.estado === 'atrasada' ? ' (atrasada)' : '')));
+    return L.join('\n');
   },
   /** Endereço para abrir uma aula já no contexto da turma (o app/ferramentas.js retoma o slide e registra o avanço). */
   href(arquivo, turmaId, slide) { return arquivo + '#t=' + turmaId + (slide > 0 ? '&s=' + (slide + 1) : ''); }

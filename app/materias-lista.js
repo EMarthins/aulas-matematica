@@ -19,3 +19,9 @@ export const MATERIAS_ATUACAO = [
 ];
 export const materiaValida = id => MATERIAS_ATUACAO.some(m => m.id === id);
 export const optionsMateria = sel => '<option value="">Escolha…</option>' + MATERIAS_ATUACAO.map(m => '<option value="' + m.id + '"' + (m.id === sel ? ' selected' : '') + '>' + m.nome + '</option>').join('');
+
+// Anos/séries que o professor pode marcar ("onde eu dou aula"). A chave é o número do ano no catálogo ("6° Ano" … "9° Ano" no Fundamental; "1° Ano" … "3° Ano" no Médio).
+export const ANOS_ATUACAO = [
+  { id: '6', nome: '6º ano' }, { id: '7', nome: '7º ano' }, { id: '8', nome: '8º ano' }, { id: '9', nome: '9º ano' },
+  { id: '1', nome: '1ª série' }, { id: '2', nome: '2ª série' }, { id: '3', nome: '3ª série' }
+];

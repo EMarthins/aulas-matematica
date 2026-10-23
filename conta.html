@@ -10,6 +10,7 @@
 <style>
   .cc{ max-width:40rem; margin:0 auto; }
   .cc .card + .card{ margin-top:16px; }
+  .atu-chips{ display:flex; flex-wrap:wrap; gap:6px; } .atu-chips label{ display:flex; align-items:center; gap:5px; border:1.5px solid var(--line-strong); border-radius:99px; padding:.3em .8em; cursor:pointer; font-weight:700; font-size:.84rem; } .atu-chips label:has(input:checked){ background:var(--primary-soft); border-color:var(--primary); color:var(--primary); }
   .cc dl{ display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:8px 0 0; font-size:.92rem; }
   .cc dt{ color:var(--ink-faint); font-weight:700; } .cc dd{ margin:0; }
   .cc .perigo{ border-color:color-mix(in srgb,var(--danger) 45%,var(--line)); }
@@ -44,10 +45,15 @@
     </div>
 
     <div class="card" id="cardMateria" hidden>
-      <h2>Minha matéria</h2>
-      <p class="sub">A matéria em que você mais atua. As trilhas, a Home e o catálogo mostram essa matéria primeiro. Mudou de turmas? Troque aqui quando quiser.</p>
+      <h2>Onde eu dou aula</h2>
+      <p class="sub">A Home, o catálogo e as trilhas abrem direto na sua matéria e nos seus anos. Mudou de turmas? Troque aqui quando quiser.</p>
+      <label for="selMateria" style="font-weight:700;display:block;margin-bottom:4px;">Matéria principal</label>
       <select id="selMateria" style="max-width:340px;"></select>
-      <button type="button" class="btn" id="bMateria" style="margin-left:8px;">Salvar</button>
+      <p style="font-weight:700;margin:14px 0 4px;">Outras matérias que leciono <small style="font-weight:500;color:var(--ink-faint)">(opcional)</small></p>
+      <div id="chMaterias" class="atu-chips"></div>
+      <p style="font-weight:700;margin:14px 0 4px;">Anos e séries das minhas turmas</p>
+      <div id="chAnos" class="atu-chips"></div>
+      <button type="button" class="btn" id="bMateria" style="margin-top:14px;">Salvar</button>
       <div id="msgMateria" style="margin-top:12px;"></div>
     </div>
 
@@ -74,8 +80,8 @@
 
 <script type="module">
 import { iniciarThemeToggle } from './app/theme-toggle.js';
-import { aoMudarAuth, buscarPerfil, mensagemErroAuth, definirMateria } from './app/auth.js';
-import { optionsMateria } from './app/materias-lista.js';
+import { aoMudarAuth, buscarPerfil, mensagemErroAuth, definirAtuacao } from './app/auth.js';
+import { optionsMateria, MATERIAS_ATUACAO, ANOS_ATUACAO } from './app/materias-lista.js';
 import { coletarDados, excluirConta } from './app/conta.js';
 import { lerProfessor } from './app/nuvem-firestore.js';
 import { planoVigente, fmtData } from './app/planos.js';
@@ -93,13 +99,19 @@ aoMudarAuth(async function(u){
     linhas.push(['Plano', p.nome + (p.teste ? ' — até ' + fmtData(p.ate) : '')]); $('linkPlanos').hidden = false;
     $('oQue').textContent = 'turmas, atividades, provas, questões próprias e configurações';
     $('cardMateria').hidden = false; $('selMateria').innerHTML = optionsMateria(perfil.materia || '');
+    $('chMaterias').innerHTML = MATERIAS_ATUACAO.filter(function(m){ return m.id !== 'varias'; }).map(function(m){ return '<label><input type="checkbox" name="mats" value="' + m.id + '"' + ((perfil.materias || []).indexOf(m.id) >= 0 ? ' checked' : '') + '> ' + m.nome + '</label>'; }).join('');
+    $('chAnos').innerHTML = ANOS_ATUACAO.map(function(a){ return '<label><input type="checkbox" name="anos" value="' + a.id + '"' + ((perfil.anos || []).indexOf(a.id) >= 0 ? ' checked' : '') + '> ' + a.nome + '</label>'; }).join('');
   }
   $('dados').innerHTML = linhas.map(function(l){ return '<dt>' + escapeHtml(l[0]) + '</dt><dd>' + escapeHtml(String(l[1])) + '</dd>'; }).join('');
 });
 
 $('bMateria').addEventListener('click', async function(){
   var box = $('msgMateria'); box.innerHTML = ''; this.disabled = true;
-  try{ await definirMateria(usuario.uid, $('selMateria').value); perfil.materia = $('selMateria').value; box.innerHTML = '<div class="alert success">Pronto! Sua matéria principal foi atualizada.</div>'; }
+  try{
+    var pick = function(n){ return [].map.call(document.querySelectorAll('input[name=' + n + ']:checked'), function(i){ return i.value; }); };
+    var at = { materia: $('selMateria').value, materias: pick('mats').filter(function(m){ return m !== $('selMateria').value; }), anos: pick('anos') };
+    await definirAtuacao(usuario.uid, at); perfil.materia = at.materia; perfil.materias = at.materias; perfil.anos = at.anos;
+    box.innerHTML = '<div class="alert success">Pronto! A Home e o catálogo já abrem na sua matéria e nos seus anos.</div>'; }
   catch(e){ box.innerHTML = '<div class="alert error">Não foi possível salvar agora. Tente de novo.</div>'; }
   this.disabled = false;
 });

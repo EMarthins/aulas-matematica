@@ -31,7 +31,8 @@ onIdTokenChanged(auth, (u) => { if(u) u.getIdToken().then(gravaCookieSessao).cat
 // Guarda nome e papel do usuário neste aparelho para a barra lateral (app/sidebar.js) montar o menu sem carregar o Firebase.
 export function lembrarUsuario(perfil){
   try{
-    if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role, materia: perfil.materia || "" }));
+    if(perfil) localStorage.setItem("sb:user", JSON.stringify({ nome: perfil.nome, role: perfil.role, materia: perfil.materia || "", materias: perfil.materias || [], anos: perfil.anos || [] }));
+    if(perfil.materia && perfil.materia !== "varias" && !localStorage.getItem("materia-pref")) localStorage.setItem("materia-pref", perfil.materia);
     else { localStorage.removeItem("sb:user"); localStorage.removeItem("sb:admin"); }
   }catch(e){}
 }
@@ -72,6 +73,17 @@ export async function registrarAcesso(uid, forcar){
     if(!forcar && sessionStorage.getItem(k)) return;
     await updateDoc(doc(db, "users", uid), { ultimoAcesso: serverTimestamp(), acessos: increment(1) });
     sessionStorage.setItem(k, "1");
+  }catch(e){}
+}
+
+// Onde o professor atua: matéria principal + outras matérias + anos/séries (a Home e o catálogo abrem direto aí).
+export async function definirAtuacao(uid, atuacao){
+  var dados = { materia: atuacao.materia || "", materias: atuacao.materias || [], anos: atuacao.anos || [] };
+  await updateDoc(doc(db, "users", uid), dados);
+  try{
+    var u = JSON.parse(localStorage.getItem("sb:user") || "null");
+    if(u){ Object.assign(u, dados); localStorage.setItem("sb:user", JSON.stringify(u)); }
+    if(dados.materia && dados.materia !== "varias") localStorage.setItem("materia-pref", dados.materia);
   }catch(e){}
 }
 

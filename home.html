@@ -216,6 +216,16 @@ function acha(arq) { return lista.find(x => x.it.arquivo === arq); }
   const prox = alvo && lista.find(x => x.m === alvo.m && x.tipo === 'aula' && !visto(x.it) && !bloqueado(x.it));
   if (prox && (!ult || prox.it.arquivo !== (u && u.a))) h += '<a class="hb-cc alt" href="' + esc(prox.it.arquivo) + '"><span class="hb-cc-k">★ Próxima aula sugerida</span><b>' + prox.it.titulo + '</b><small>' + esc(prox.m.nome + ' · ' + prox.a + ' · ' + prox.u) + '</small></a>';
   if (!LOGADO) h += '<a class="hb-cc gratis" href="catalogo.html#gratis"><span class="hb-cc-k">🎁 Sem conta</span><b>' + plural(LISTA_GRATIS.length, 'aula liberada', 'aulas liberadas') + '</b><small>1 por ano e trimestre — crie sua conta para abrir tudo</small></a>';
+  // plano de aulas por data: o que é de hoje e o que atrasou, no topo (só turmas com plano)
+  try {
+    let plano = '';
+    Trilhas.turmas().forEach(t => {
+      if (!t.plano) return; const p = Trilhas.pendencias(t);
+      p.hoje.slice(0, 2).forEach(x => { plano += '<a class="hb-cc turma" href="' + esc(Trilhas.href(x.aula.arquivo, t.id, 0)) + '"><span class="hb-cc-k">📅 Hoje · ' + esc(t.nome) + '</span><b>' + esc(x.aula.titulo) + '</b><small>' + esc(x.aula.rotulo + ' · Módulo ' + String(x.modulo.n).padStart(2, '0')) + '</small></a>'; });
+      if (p.atrasadas.length) { const x = p.atrasadas[0]; plano += '<a class="hb-cc alt" href="trilhas.html#turma/' + esc(t.id) + '"><span class="hb-cc-k">⚠ ' + esc(t.nome) + ' · ' + p.atrasadas.length + (p.atrasadas.length === 1 ? ' aula atrasada' : ' aulas atrasadas') + '</span><b>' + esc(x.aula.titulo) + '</b><small>Toque para replanejar</small></a>'; }
+    });
+    h = plano + h;
+  } catch (e) { /* sem plano */ }
   // turmas das trilhas: onde cada uma parou (até 3, as mais recentes)
   try {
     Trilhas.turmas().slice(0, 3).forEach(t => {
@@ -296,12 +306,13 @@ window.addEventListener('beforeinstallprompt', e => {
 
 // ---------- matérias ----------
 const acentoDe = m => ACENTOS[Math.max(0, MATERIAS.filter(x => x.id !== 'gratis').indexOf(m)) % ACENTOS.length];
-const prefMat = user && user.materia;
-const ordemMats = comConteudo.slice().sort((a, b) => (b.m.id === prefMat) - (a.m.id === prefMat));
+const minhas = user ? [user.materia].concat(user.materias || []).filter(x => x && x !== 'varias') : [];
+const rankM = x => { const i = minhas.indexOf(x.m.id); return i < 0 ? 99 : i; };
+const ordemMats = comConteudo.slice().sort((a, b) => rankM(a) - rankM(b));
 $('hbMats').innerHTML = ordemMats.map(({ m, c }) => {
   const ac = acentoDe(m), pc = c.total ? Math.round(c.vistos / c.total * 100) : 0;
   return '<a class="hb-mat" href="catalogo.html#' + m.id + '" style="--accent:var(--' + ac + ');--accent-soft:var(--' + ac + '-soft)">' +
-    '<span class="hb-ic">' + svg(ICONS[m.icon] || ICONS.grid) + '</span><span class="hb-tx"><b>' + esc(m.nome) + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' +
+    '<span class="hb-ic">' + svg(ICONS[m.icon] || ICONS.grid) + '</span><span class="hb-tx"><b>' + esc(m.nome) + (minhas.indexOf(m.id) >= 0 ? ' <span title="Uma das suas matérias" style="color:var(--accent)">★</span>' : '') + '</b><small>' + plural(c.mods, 'módulo', 'módulos') + ' · ' + plural(c.aulas, 'aula', 'aulas') + '</small></span>' +
     '<span class="hb-pc">' + pc + '%</span><span class="bar-prog" role="img" aria-label="' + c.vistos + ' de ' + c.total + ' vistos"><i style="width:' + pc + '%"></i></span></a>';
 }).join('');
 const breve = mats.filter(x => !x.c.total);

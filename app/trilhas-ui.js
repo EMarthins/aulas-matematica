@@ -38,7 +38,8 @@ function listaModulos(tr, turma, aluno) {
       const parou = pos && !feita && pos.s > 0;
       const href = turma ? Trilhas.href(a.arquivo, turma.id, 0) : a.arquivo;
       const estado = feita ? '<span class="tl-st ok" title="Concluída">' + ICO.ok + '</span>' : parou ? '<span class="tl-st par" title="Parou aqui">' + ICO.play + '</span>' : '<span class="tl-st"></span>';
-      const notaPos = parou ? '<small class="tl-pos">parou no slide ' + (pos.s + 1) + (pos.n ? ' de ' + pos.n : '') + ' · ' + quando(pos.t) + '</small>' : '';
+      const dtPl = turma && turma.plano && turma.plano.datas[a.arquivo], noPlano = dtPl && !feita ? '<small class="tl-pos">📅 ' + fData(dtPl) + '</small>' : '';
+      const notaPos = (parou ? '<small class="tl-pos">parou no slide ' + (pos.s + 1) + (pos.n ? ' de ' + pos.n : '') + ' · ' + quando(pos.t) + '</small>' : '') + noPlano;
       const nota = turma && turma.notas && turma.notas[a.arquivo] ? turma.notas[a.arquivo] : '';
       const acao = turma ? '<button type="button" class="tl-notab' + (nota ? ' on' : '') + '" data-nota="' + esc(a.arquivo) + '" title="Anotação desta aula">✎</button><button type="button" class="tl-chk' + (feita ? ' on' : '') + '" data-feita="' + esc(a.arquivo) + '" title="' + (feita ? 'Desmarcar como concluída' : 'Marcar como concluída') + '" aria-pressed="' + (!!feita) + '">' + ICO.ok + '</button>' : '';
       const notaLi = turma ? '<li class="tl-nota-li" data-nl="' + esc(a.arquivo) + '"' + (nota ? '' : ' hidden') + '><textarea class="tl-nota-ta" data-nota-ta="' + esc(a.arquivo) + '" rows="2" placeholder="Anotação desta aula para esta turma (ex.: faltou o exemplo 3; revisar na terça)">' + esc(nota) + '</textarea></li>' : '';
@@ -69,6 +70,7 @@ function cartaoTurma(t) {
       corpo += '<div class="tl-onde"><small>' + (p ? 'Parou em' : (r.feitas ? 'Próxima aula' : 'Começar por')) + '</small><b>Módulo ' + String(prox.modulo.n).padStart(2, '0') + ' · ' + esc(prox.aula.titulo) + '</b>' +
         (p ? '<span>slide ' + (prox.pos.s + 1) + (prox.pos.n ? ' de ' + prox.pos.n : '') + ' · ' + quando(prox.pos.t) + '</span>' : '') + '</div>';
     } else corpo += '<div class="tl-onde ok"><b>Trilha concluída 🎉</b></div>';
+    if (t.plano) { const pp = Trilhas.pendencias(t); corpo += pp.atrasadas.length ? '<div class="tl-pa atr">⚠ ' + pp.atrasadas.length + (pp.atrasadas.length === 1 ? ' aula atrasada' : ' aulas atrasadas') + '</div>' : pp.hoje.length ? '<div class="tl-pa hoje">📅 Hoje: ' + esc(pp.hoje[0].aula.titulo) + '</div>' : pp.proximas.length ? '<div class="tl-pa">📅 Próxima aula: ' + fData(pp.proximas[0].data) + '</div>' : ''; }
   }
   const href = prox ? Trilhas.href(prox.aula.arquivo, t.id, prox.pos && !t.feitas[prox.aula.arquivo] ? prox.pos.s : 0) : '';
   return '<article class="tl-card" data-id="' + esc(t.id) + '">' +
@@ -102,8 +104,34 @@ function viewTurma(id) {
     '<button type="button" class="tl-btn danger" data-excluir title="Excluir esta ' + rotuloTurma + '">' + ICO.lixo + '</button></header>' +
     (t.classId ? '<p class="tl-vinc">Ligada à turma do Painel · os alunos aprovados veem esta trilha e a aula em que a turma está.</p>' : '') +
     (tr ? '<div class="tl-resumo">' + barra(r.pct) + '<button type="button" class="tl-btn" data-registro>Registro de aulas</button>' + '<span><b>' + r.pct + '%</b> · ' + r.feitas + ' de ' + r.total + ' aulas</span>' +
-      (prox && href ? '<a class="tl-btn p" href="' + esc(href) + '">' + ICO.play + (r.feitas || (prox.pos && prox.pos.s > 0) ? 'Continuar' : 'Começar') + ': ' + esc(prox.aula.titulo) + '</a>' : '') + '</div>' + listaModulos(tr, t)
+      (prox && href ? '<a class="tl-btn p" href="' + esc(href) + '">' + ICO.play + (r.feitas || (prox.pos && prox.pos.s > 0) ? 'Continuar' : 'Começar') + ': ' + esc(prox.aula.titulo) + '</a>' : '') + '</div>' + blocoPlano(t) + listaModulos(tr, t)
       : '<p class="tl-vazio-s">Escolha uma trilha acima para ver o roteiro.</p>');
+}
+
+/* ---------------- plano de aulas por data ---------------- */
+const NSEM = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+const fData = s => { const p = s.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]); return NSEM[d.getDay()] + ' ' + p[2] + '/' + p[1]; };
+function blocoPlano(t) {
+  const tr = trilhaPorId(t.trilha); if (!tr) return '';
+  const hj = new Date(), hs = hj.getFullYear() + '-' + String(hj.getMonth() + 1).padStart(2, '0') + '-' + String(hj.getDate()).padStart(2, '0');
+  if (!t.plano) {
+    const dias = NSEM.map((n, i) => i > 0 && i < 6 ? '<label class="tl-dia"><input type="checkbox" name="pdia" value="' + i + '"' + (i === 1 || i === 3 ? ' checked' : '') + '> ' + n + '</label>' : '').join('');
+    return '<section class="tl-plano"><h3>📅 Plano de aulas</h3><p class="tl-vazio-s" style="margin:0 0 10px">Escolha os dias de aula e o EduMath distribui as aulas da trilha nas datas: você vê o que é de hoje, o que atrasou e exporta para o seu calendário.</p>' +
+      '<form class="tl-pf" data-planoform><label>Começa em <input type="date" name="ini" value="' + hs + '" required></label><span class="tl-dias">' + dias + '</span><label>Aulas por encontro <select name="porDia"><option>1</option><option>2</option><option>3</option></select></label><button type="submit" class="tl-btn p">Criar plano</button></form></section>';
+  }
+  const p = Trilhas.pendencias(t), prox = Trilhas.agenda(t).filter(x => !x.feita);
+  const lin = x => '<li class="tl-pl ' + x.estado + '"><span class="tl-pd">' + fData(x.data) + '</span><a href="' + esc(Trilhas.href(x.aula.arquivo, t.id, 0)) + '"><b>' + esc(x.aula.rotulo) + '</b> · ' + esc(x.aula.titulo) + '<small>Módulo ' + String(x.modulo.n).padStart(2, '0') + ' · ' + esc(x.modulo.titulo) + '</small></a><button type="button" class="tl-chk" data-feita="' + esc(x.aula.arquivo) + '" title="Marcar como dada">' + ICO.ok + '</button></li>';
+  let aviso = '';
+  if (p.atrasadas.length) aviso += '<div class="tl-pa atr">⚠ ' + p.atrasadas.length + (p.atrasadas.length === 1 ? ' aula atrasada' : ' aulas atrasadas') + '</div>';
+  if (p.hoje.length) aviso += '<div class="tl-pa hoje">📅 Hoje: ' + p.hoje.map(x => esc(x.aula.rotulo + ' · ' + x.aula.titulo)).join(' + ') + '</div>';
+  const mostrar = prox.slice(0, 8);
+  return '<section class="tl-plano"><h3>📅 Plano de aulas <small>' + t.plano.dias.map(d => NSEM[d]).join(', ') + ' · ' + t.plano.porDia + ' por encontro</small></h3>' + aviso +
+    (mostrar.length ? '<ul class="tl-pls">' + mostrar.map(lin).join('') + '</ul>' + (prox.length > 8 ? '<p class="tl-vazio-s" style="margin:6px 0 0">… e mais ' + (prox.length - 8) + ' aulas até ' + fData(prox[prox.length - 1].data) + '.</p>' : '') : '<p class="tl-vazio-s">Todas as aulas do plano foram dadas 🎉</p>') +
+    '<div class="tl-plb"><button type="button" class="tl-btn" data-replanejar>Replanejar a partir de hoje</button><button type="button" class="tl-btn" data-ics>Exportar para o calendário (.ics)</button><button type="button" class="tl-btn" data-plano-txt>Copiar / imprimir</button><button type="button" class="tl-btn danger" data-plano-del>Remover plano</button></div></section>';
+}
+function baixarIcs(t) {
+  const blob = new Blob([Trilhas.ics(t, location.origin + location.pathname.replace(/[^/]*$/, ''))], { type: 'text/calendar' }), a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'plano-' + t.nome.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.ics'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 
 /* ---------------- trilhas prontas ---------------- */
@@ -156,10 +184,10 @@ function dialogoNova(trilhaId) {
 }
 
 /* ---------------- registro de aulas da turma ---------------- */
-function dialogoRegistro(id) {
+function dialogoRegistro(id, plano) {
   const t = Trilhas.turma(id); if (!t) return;
-  const d = document.getElementById('tlDlg'), txt = Trilhas.registro(t);
-  d.innerHTML = '<form method="dialog" class="tl-dlg-f"><h2>Registro de aulas</h2><p class="tl-vazio-s" style="margin:0">Aulas dadas, onde parou e suas anotações — copie para o diário ou imprima.</p><textarea class="tl-nota-ta" id="dgReg" rows="14" readonly style="font-family:JetBrains Mono,monospace;font-size:.8rem"></textarea><div class="tl-dlg-b"><button type="button" class="tl-btn" data-fechar>Fechar</button><button type="button" class="tl-btn" data-copiar>Copiar</button><button type="button" class="tl-btn p" data-imprimir>Imprimir</button></div></form>';
+  const d = document.getElementById('tlDlg'), txt = plano ? Trilhas.planoTexto(t) : Trilhas.registro(t);
+  d.innerHTML = '<form method="dialog" class="tl-dlg-f"><h2>' + (plano ? 'Plano de aulas' : 'Registro de aulas') + '</h2><p class="tl-vazio-s" style="margin:0">' + (plano ? 'Datas, módulos e aulas — copie para o seu PTD ou imprima.' : 'Aulas dadas, onde parou e suas anotações — copie para o diário ou imprima.') + '</p><textarea class="tl-nota-ta" id="dgReg" rows="14" readonly style="font-family:JetBrains Mono,monospace;font-size:.8rem"></textarea><div class="tl-dlg-b"><button type="button" class="tl-btn" data-fechar>Fechar</button><button type="button" class="tl-btn" data-copiar>Copiar</button><button type="button" class="tl-btn p" data-imprimir>Imprimir</button></div></form>';
   d.querySelector('#dgReg').value = txt; d.showModal();
   d.querySelector('[data-fechar]').addEventListener('click', () => d.close());
   d.querySelector('[data-copiar]').addEventListener('click', async e => { try { await navigator.clipboard.writeText(txt); e.target.textContent = 'Copiado ✓'; } catch (_) { d.querySelector('#dgReg').select(); document.execCommand('copy'); e.target.textContent = 'Copiado ✓'; } });
@@ -184,8 +212,18 @@ $app.addEventListener('click', e => {
   if (t.hasAttribute('data-ano')) { filtroP.ano = t.dataset.ano; return render(); }
   if (t.dataset.nota) { const li = $app.querySelector('[data-nl="' + CSS.escape(t.dataset.nota) + '"]'); if (li) { li.hidden = !li.hidden; if (!li.hidden) li.querySelector('textarea').focus(); } return; }
   if (t.hasAttribute('data-registro')) return dialogoRegistro(rota().a);
+  if (t.hasAttribute('data-replanejar')) { Trilhas.replanejar(rota().a); salvou(); return render(); }
+  if (t.hasAttribute('data-ics')) { const tt = Trilhas.turma(rota().a); if (tt) baixarIcs(tt); return; }
+  if (t.hasAttribute('data-plano-txt')) return dialogoRegistro(rota().a, true);
+  if (t.hasAttribute('data-plano-del')) { if (confirm('Remover o plano de datas desta turma? O registro do que já foi dado continua.')) { Trilhas.removerPlano(rota().a); salvou(); render(); } return; }
   if (t.dataset.feita) { const id = rota().a; Trilhas.alternarFeita(id, t.dataset.feita); salvou(); return render(); }
   if (t.hasAttribute('data-excluir')) { const id = rota().a, tt = Trilhas.turma(id); if (tt && confirm('Excluir "' + tt.nome + '"? O registro de onde ela parou será apagado.')) { Trilhas.remover(id); salvou(); location.hash = '#turmas'; } return; }
+});
+$app.addEventListener('submit', e => {
+  const f = e.target.closest('[data-planoform]'); if (!f) return; e.preventDefault();
+  const fd = new FormData(f), dias = fd.getAll('pdia').map(Number);
+  if (!dias.length) { alert('Escolha ao menos um dia de aula.'); return; }
+  Trilhas.planejar(rota().a, { ini: fd.get('ini'), dias, porDia: +fd.get('porDia') }); salvou(); render();
 });
 $app.addEventListener('change', e => {
   if (e.target.id === 'tlTrilha') { Trilhas.trocarTrilha(rota().a, e.target.value); salvou(); render(); }

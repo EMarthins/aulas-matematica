@@ -170,9 +170,12 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
   }
   function escolheAno(a){ estado.ano = a; js('home:ano:' + MATERIAS[estado.idx].id, a); gravarHash(); renderTudo(); }
   // ano inicial: o primeiro que ainda tem aula não vista
+  function meusAnos(){ try{ var u = JSON.parse(localStorage.getItem('sb:user') || 'null'); return u && u.anos ? u.anos : []; }catch(e){ return []; } }
   function anoInicial(i){
-    var m = MATERIAS[i];
-    for(var a = 0; a < m.CATALOG.length; a++){ var c = contaAno(m.CATALOG[a]); if(c.vistos < c.total) return a; }
+    var m = MATERIAS[i], mine = meusAnos(), a, c, d, primeiro = -1;
+    if(mine.length) for(a = 0; a < m.CATALOG.length; a++){ d = (String(m.CATALOG[a].ano).match(/d/) || [''])[0]; if(mine.indexOf(d) < 0) continue; if(primeiro < 0) primeiro = a; c = contaAno(m.CATALOG[a]); if(c.vistos < c.total) return a; }
+    if(primeiro >= 0) return primeiro;
+    for(a = 0; a < m.CATALOG.length; a++){ c = contaAno(m.CATALOG[a]); if(c.vistos < c.total) return a; }
     return 0;
   }
 

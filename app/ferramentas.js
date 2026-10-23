@@ -211,6 +211,24 @@
     (D.head || R).appendChild(s);
   }
 
+  // marcar a aula como dada em uma turma (trilhas): sem precisar chegar ao último slide
+  var marc = el('div', 'ft-float'); marc.style.cssText = 'right:14px;bottom:78px;min-width:16rem';
+  function marcarDada(){
+    if(!KEY){ aviso('Esta página não faz parte de uma trilha.'); return; }
+    var o = jget('trilhas:v1', null), ids = o && o.turmas ? Object.keys(o.turmas) : [];
+    var raiz = (SRC || (D.getElementById('ferramentas') || {}).src || '').replace(/app\/ferramentas\.js.*$/, '');
+    marc.innerHTML = '<h4><span>Marcar como dada em…</span><button class="ft-x" type="button" aria-label="Fechar">✕</button></h4>';
+    marc.querySelector('.ft-x').addEventListener('click', function(){ marc.classList.remove('on'); });
+    if(!ids.length){ var p = el('p', null, 'Você ainda não tem turmas. Crie uma e escolha a trilha para acompanhar as aulas dadas.'); p.style.cssText = 'margin:0 0 8px;font-size:.88rem'; marc.appendChild(p); var a = el('a', null, 'Abrir Trilhas'); a.href = raiz + 'trilhas.html'; a.style.cssText = 'font-weight:800;color:var(--primary,#382EAE)'; marc.appendChild(a); }
+    ids.forEach(function(id){
+      var t = o.turmas[id], b = el('button', 'ft-chip'); b.type = 'button'; b.style.cssText = 'display:flex;width:100%;justify-content:space-between;gap:10px;margin:4px 0';
+      function pinta(){ var feita = !!(t.feitas && t.feitas[KEY]); b.classList.toggle('on', feita); b.innerHTML = '<span>' + String(t.nome || 'Turma').replace(/</g, '&lt;') + '</span><span>' + (feita ? '✓ dada' : 'marcar') + '</span>'; }
+      b.addEventListener('click', function(){ var oo = jget('trilhas:v1', null); if(!oo || !oo.turmas[id]) return; var tt = oo.turmas[id]; tt.feitas = tt.feitas || {}; if(tt.feitas[KEY]) delete tt.feitas[KEY]; else tt.feitas[KEY] = Date.now(); tt.atualizado = Date.now(); jset('trilhas:v1', oo); t = tt; pinta(); });
+      pinta(); marc.appendChild(b);
+    });
+    marc.classList.toggle('on'); notas.classList.remove('on'); tempo.classList.remove('on');
+  }
+
   // gráficos de funções (app/graficos.js, carregado só quando alguém usa)
   function abrirGraf(){
     if(W.EduGraficos){ W.EduGraficos.alternar(); return; }
@@ -245,7 +263,7 @@
   function ajustaZoom(d){ zoom = Math.max(.8, Math.min(1.6, Math.round((zoom + d) * 100) / 100)); lsSet('ft:zoom', zoom); aplicaZoom(); aviso('Tamanho do texto: ' + Math.round(zoom * 100) + '%'); if(isDeck) W.dispatchEvent(new Event('resize')); }
   function alternaHC(){ lsSet('ft:hc', lsGet('ft:hc') === '1' ? '0' : '1'); aplicaHC(); aviso(lsGet('ft:hc') === '1' ? 'Alto contraste ligado' : 'Alto contraste desligado'); }
 
-  if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
+  if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('📚 Marcar como dada numa turma', '', marcarDada); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
   acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
   acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('🧮 Calculadora', 'K', abrirCalc, true); acao('ƒ Gráficos de funções', 'G', abrirGraf, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
   if(RAIZ && !EMBUTIDA){
@@ -260,14 +278,14 @@
   btn.addEventListener('click', function(e){ e.stopPropagation(); panel.classList.toggle('on'); });
   D.addEventListener('click', function(e){ if(!dock.contains(e.target)) panel.classList.remove('on'); });
 
-  function montar(){ var b = D.body || R; [dock, mapa, notas, tempo, toast].forEach(function(n){ b.appendChild(n); }); }
+  function montar(){ var b = D.body || R; [dock, mapa, notas, tempo, marc, toast].forEach(function(n){ b.appendChild(n); }); }
   if(D.body) montar(); else D.addEventListener('DOMContentLoaded', montar);
 
   // atalhos
   D.addEventListener('keydown', function(e){
     var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || e.ctrlKey || e.metaKey || e.altKey) return;
     var k = (e.key || '').toLowerCase();
-    if(e.key === 'Escape'){ fechar(); panel.classList.remove('on'); notas.classList.remove('on'); tempo.classList.remove('on'); return; }
+    if(e.key === 'Escape'){ fechar(); panel.classList.remove('on'); notas.classList.remove('on'); tempo.classList.remove('on'); marc.classList.remove('on'); return; }
     if(k === 'm' && isDeck){ mapa.classList.contains('on') ? fechar() : abrirMapa(); }
     else if(k === 'n' && isDeck){ alternaNotas(); e.preventDefault(); }
     else if(k === 't' && isDeck){ alternaTempo(); }

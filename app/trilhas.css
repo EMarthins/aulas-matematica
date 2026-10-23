@@ -122,3 +122,14 @@
 .tl-nota-ta{ width:100%; font:500 .86rem/1.4 'Archivo',sans-serif; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:10px; padding:.5em .7em; resize:vertical; }
 .tl-nota-ta:focus{ outline:2px solid var(--primary); outline-offset:1px; }
 .tl-vinc{ margin:-6px 0 14px; font-size:.84rem; color:var(--decay-ink); background:var(--decay-soft); border-radius:10px; padding:.5em .9em; }
+
+/* ---- plano de aulas por data ---- */
+.tl-plano{ background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:14px 16px; margin-bottom:20px; }
+.tl-plano h3{ margin:0 0 8px; font:800 1rem Archivo,sans-serif; } .tl-plano h3 small{ font-weight:600; color:var(--ink-faint); margin-left:.5em; }
+.tl-pf{ display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; font-size:.9rem; } .tl-pf input[type=date], .tl-pf select{ font:inherit; border:1px solid var(--line-strong); border-radius:8px; padding:.3em .5em; background:var(--surface); color:inherit; }
+.tl-dias{ display:flex; gap:8px; flex-wrap:wrap; } .tl-dia{ display:flex; gap:4px; align-items:center; border:1px solid var(--line-strong); border-radius:99px; padding:.2em .7em; cursor:pointer; font-weight:700; font-size:.82rem; }
+.tl-pa{ border-radius:10px; padding:.5em .9em; margin:0 0 8px; font-size:.9rem; font-weight:700; background:var(--surface-2); } .tl-pa.atr{ background:var(--decay-soft); color:var(--decay-ink); } .tl-pa.hoje{ background:var(--growth-soft); color:var(--growth-ink); }
+.tl-card .tl-pa{ margin:8px 0 0; font-size:.82rem; }
+.tl-pls{ list-style:none; margin:0; padding:0; display:grid; gap:6px; } .tl-pl{ display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:10px; padding:6px 10px; } .tl-pl.hoje{ border-color:var(--growth); } .tl-pl.atrasada{ border-color:var(--decay); }
+.tl-pd{ font:800 .8rem 'JetBrains Mono',monospace; min-width:5.4em; color:var(--ink-soft); } .tl-pl a{ flex:1; text-decoration:none; color:inherit; } .tl-pl a small{ display:block; color:var(--ink-faint); font-size:.74rem; }
+.tl-plb{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
