@@ -26,11 +26,22 @@ const passos = [
   ['monitoramento de erros', 'scripts/testar-monitor.js'],
   ['testes estáticos', 'scripts/testar.js']
 ];
+// Saída enxuta (economiza leitura): cada passo vira 1 linha com tempo e a última linha de aviso; em falha mostra tudo.
+// Use --verbose para ver a saída completa de todos os passos.
+const verboso = process.argv.includes('--verbose');
 let falhou = false;
+const t0 = Date.now();
 for(const [nome, arq] of passos){
-  console.log('\n▶ ' + nome);
-  const r = spawnSync(process.execPath, [arq, '.'], { stdio: 'inherit' });
-  if(r.status !== 0){ falhou = true; console.log('✘ falhou: ' + arq); break; }
+  const t = Date.now();
+  const r = spawnSync(process.execPath, [arq, '.'], { encoding: 'utf8', maxBuffer: 1 << 28 });
+  const saida = (r.stdout || '') + (r.stderr || '');
+  const seg = ((Date.now() - t) / 1000).toFixed(1) + 's';
+  if(r.status !== 0){ falhou = true; console.log('✘ ' + nome + ' (' + seg + ') — falhou: ' + arq + '\n' + saida); break; }
+  if(verboso) console.log('\n▶ ' + nome + '\n' + saida);
+  else {
+    const linhas = saida.split(/\r?\n/).filter(Boolean);
+    console.log('✔ ' + nome + ' (' + seg + ')' + (linhas.length ? ' · ' + linhas[linhas.length - 1].slice(0, 120) : ''));
+  }
 }
-console.log(falhou ? '\nHá problemas a corrigir antes de publicar.' : '\n✔ Pronto para publicar (git add -A && git commit && git push).');
+console.log(falhou ? '\nHá problemas a corrigir antes de publicar.' : '\n✔ Pronto para publicar (git add -A && git commit && git push) · ' + ((Date.now() - t0) / 1000).toFixed(0) + 's');
 process.exit(falhou ? 1 : 0);

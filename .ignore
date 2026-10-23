@@ -1,0 +1,20 @@
+# Ignorado pelo Grep/Glob do Claude (ripgrep). Para olhar algo daqui, passe o caminho explícito.
+node_modules/
+.wrangler/
+app/img-questoes/
+app/banco-provas.json
+app/banco.json
+scripts/banco-provas/transcrever/lote-*.jsonl
+scripts/banco-provas/transcrever/ocr*.json
+scripts/banco-provas/transcrever/transcritas.json
+scripts/banco-provas/uno/
+*.log
+*.pptx
+*.docx
+scripts/banco-provas/listas/itens.json
+scripts/banco-provas/transcrever/revisar-todas.json
+scripts/banco-provas/transcrever/figuras-auto.json
+# aulas geradas (HTML de 60–115 KB cada, linhas enormes): editar os geradores, não os HTML
+aulas/
+educacao-financeira/
+ena-profmat/
