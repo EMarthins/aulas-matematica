@@ -186,6 +186,34 @@
     (D.head || R).appendChild(s);
   }
 
+  // sugerir melhoria: mesma janelinha do erro, em modo "sugestão" (vai para a coleção reports, categoria "Sugestão: …")
+  function sugerirMelhoria(){
+    var go = function(){ W.EduReportar.abrir({ modo: 'sugestao', tipo: 'aula', alvo: KEY || P, titulo: pageTitle + (isDeck ? ' — slide ' + (atual() + 1) + ' de ' + total() : ''), slide: isDeck ? atual() + 1 : 0 }); };
+    if(W.EduReportar){ go(); return; }
+    var base = SRC || (D.getElementById('ferramentas') || {}).src || '';
+    var s = D.createElement('script'); s.src = base.replace(/ferramentas.js.*$/, 'reportar.js'); s.onload = go; s.onerror = function(){ aviso('Não foi possível abrir o formulário agora.'); };
+    (D.head || R).appendChild(s);
+  }
+
+  // caneta e quadro (app/quadro.js, carregado só quando alguém usa)
+  function abrirQuadro(){
+    if(W.EduQuadro){ W.EduQuadro.alternar(); return; }
+    var base = SRC || (D.getElementById('ferramentas') || {}).src || '';
+    var s = D.createElement('script'); s.src = base.replace(/ferramentas.js.*$/, 'quadro.js'); s.onload = function(){ if(W.EduQuadro) W.EduQuadro.abrir(); }; s.onerror = function(){ aviso('Não foi possível abrir a caneta agora.'); };
+    (D.head || R).appendChild(s);
+  }
+
+  // tela cheia (F) e tela preta/volta (B): para apresentar
+  function telaCheia(){ try{ if(D.fullscreenElement){ D.exitFullscreen(); } else { (R.requestFullscreen || R.webkitRequestFullscreen).call(R); } }catch(e){ aviso('Seu navegador não permitiu a tela cheia.'); } }
+  var preta = null;
+  function telaPreta(){
+    if(preta){ preta.remove(); preta = null; return; }
+    preta = el('div', 'ft-preta'); preta.setAttribute('role', 'dialog'); preta.setAttribute('aria-label', 'Tela apagada — toque ou tecle B para voltar');
+    preta.style.cssText = 'position:fixed;inset:0;z-index:99993;background:#000;color:#555;font:600 .8rem Archivo,Arial,sans-serif;display:flex;align-items:flex-end;justify-content:center;padding:14px;cursor:pointer';
+    preta.textContent = 'Tela apagada — toque ou tecle B para voltar';
+    preta.addEventListener('click', function(){ telaPreta(); }); (D.body || R).appendChild(preta);
+  }
+
   // leitura em voz alta
   var falando = false;
   function textoParaLer(){ var base = isDeck ? D.querySelector('.slide.active .slide-inner') : (D.querySelector('.app') || D.querySelector('.sheet') || D.body); if(!base) return ''; var c = base.cloneNode(true); [].forEach.call(c.querySelectorAll('script,style,svg,button.reveal,.ft-tip,input,textarea,select'), function(n){ n.remove(); }); return c.textContent.replace(/\s+/g, ' ').trim(); }
@@ -203,7 +231,7 @@
 
   if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
   acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
-  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('⚑ Reportar um erro', '', reportarErro);
+  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
   if(RAIZ && !EMBUTIDA){
     var casa = el('a', 'ft-home', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>');
     casa.href = RAIZ + 'home.html'; casa.title = 'Home — voltar ao início do EduMath'; casa.setAttribute('aria-label', 'Home: voltar ao início do EduMath');
@@ -227,6 +255,9 @@
     if(k === 'm' && isDeck){ mapa.classList.contains('on') ? fechar() : abrirMapa(); }
     else if(k === 'n' && isDeck){ alternaNotas(); e.preventDefault(); }
     else if(k === 't' && isDeck){ alternaTempo(); }
+    else if(k === 'd' && isDeck){ abrirQuadro(); }
+    else if(k === 'f' && isDeck){ telaCheia(); }
+    else if(k === 'b' && isDeck){ telaPreta(); }
     else if(k === 'l'){ copiarLink(); }
     else if(k === 'o'){ ouvir(); }
     else if(k === 'h'){ alternaHC(); }

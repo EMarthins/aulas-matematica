@@ -12,6 +12,7 @@
     questao: ['Gabarito errado', 'Enunciado com erro ou incompleto', 'Figura ou imagem errada', 'Alternativas repetidas ou faltando', 'Resolução errada', 'Outro'],
     site: ['Algo não funciona', 'Erro de texto', 'Sugestão', 'Outro']
   };
+  var SUGESTOES = ['Mais ilustração ou animação', 'Mais interação na figura (arrastar, deslizar, clicar)', 'Falta conteúdo ou exemplo', 'Mais exercícios ou desafios', 'Explicar de outro jeito (mais claro)', 'Melhorar a aparência ou a leitura', 'Outra ideia'];
   function lsGet(k){ try{ return W.localStorage.getItem(k); }catch(e){ return null; } }
   function lsSet(k, v){ try{ W.localStorage.setItem(k, v); }catch(e){} }
   function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -43,15 +44,15 @@
 
   function abrir(o){
     o = o || {}; fechar();
-    var tipo = CATEGORIAS[o.tipo] ? o.tipo : 'site';
-    var ov = D.createElement('dialog'); ov.className = 'rp-ov'; ov.setAttribute('aria-label', 'Reportar erro'); // janela nativa: fica acima de outras janelas abertas
-    ov.innerHTML = '<div class="rp-box"><h3><span>⚑ Reportar um erro</span><button class="rp-x" type="button" aria-label="Fechar">✕</button></h3>' +
+    var tipo = CATEGORIAS[o.tipo] ? o.tipo : 'site', sug = o.modo === 'sugestao', cats = sug ? SUGESTOES : CATEGORIAS[tipo];
+    var ov = D.createElement('dialog'); ov.className = 'rp-ov'; ov.setAttribute('aria-label', sug ? 'Sugerir melhoria' : 'Reportar erro'); // janela nativa: fica acima de outras janelas abertas
+    ov.innerHTML = '<div class="rp-box"><h3><span>' + (sug ? '💡 Sugerir melhoria' : '⚑ Reportar um erro') + '</span><button class="rp-x" type="button" aria-label="Fechar">✕</button></h3>' +
       '<div class="rp-alvo">' + esc(o.titulo || o.alvo || W.location.pathname) + '</div>' +
-      '<label for="rp-cat">O que aconteceu?</label><select id="rp-cat">' + CATEGORIAS[tipo].map(function(c){ return '<option>' + esc(c) + '</option>'; }).join('') + '</select>' +
-      '<label for="rp-txt">Conte o erro <span style="font-weight:600;color:var(--ink-faint,#777)">(onde está e qual seria o correto, se souber)</span></label><textarea id="rp-txt" maxlength="2000" placeholder="Ex.: no slide 5, a resposta correta é 12, e não 10."></textarea>' +
+      '<label for="rp-cat">' + (sug ? 'Que tipo de melhoria?' : 'O que aconteceu?') + '</label><select id="rp-cat">' + cats.map(function(c){ return '<option>' + esc(c) + '</option>'; }).join('') + '</select>' +
+      '<label for="rp-txt">' + (sug ? 'Conte a sua ideia' : 'Conte o erro') + ' <span style="font-weight:600;color:var(--ink-faint,#777)">(onde está e qual seria o correto, se souber)</span></label><textarea id="rp-txt" maxlength="2000" placeholder="' + (sug ? 'Ex.: deixar o aluno arrastar o ponto da reta e ver o gráfico mudar.' : 'Ex.: no slide 5, a resposta correta é 12, e não 10.') + '"></textarea>' +
       '<label for="rp-ct">Seu e-mail ou WhatsApp <span style="font-weight:600;color:var(--ink-faint,#777)">(opcional, para avisarmos quando corrigir)</span></label><input type="text" id="rp-ct" maxlength="120" autocomplete="email">' +
       '<input class="rp-hp" type="text" id="rp-site" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<div id="rp-msg"></div><div class="rp-acoes"><button class="rp-b" type="button" data-c>Cancelar</button><button class="rp-b p" type="button" data-e>Enviar relato</button></div></div>';
+      '<div id="rp-msg"></div><div class="rp-acoes"><button class="rp-b" type="button" data-c>Cancelar</button><button class="rp-b p" type="button" data-e>' + (sug ? 'Enviar sugestão' : 'Enviar relato') + '</button></div></div>';
     D.body.appendChild(ov); aberto = ov; D.addEventListener('keydown', teclas, true);
     if(ov.showModal) ov.showModal(); else ov.setAttribute('open', '');
     ov.addEventListener('cancel', function(e){ e.preventDefault(); fechar(); });
@@ -64,11 +65,11 @@
     btn.addEventListener('click', function(){
       var mensagem = txt.value.trim();
       if(ov.querySelector('#rp-site').value) { fechar(); return; } // robô: o campo invisível foi preenchido
-      if(mensagem.length < 5){ aviso('Escreva pelo menos uma frase curta sobre o erro.', false); txt.focus(); return; }
+      if(mensagem.length < 5){ aviso(sug ? 'Escreva pelo menos uma frase curta com a sua ideia.' : 'Escreva pelo menos uma frase curta sobre o erro.', false); txt.focus(); return; }
       var agora = Date.now(), ultimo = +lsGet('rp:ultimo') || 0;
       if(agora - ultimo < 20000){ aviso('Aguarde alguns segundos antes de enviar outro relato.', false); return; }
       var corpo = {
-        tipo: tipo, categoria: corta(ov.querySelector('#rp-cat').value, 120), alvo: corta(o.alvo || W.location.pathname, 300), titulo: corta(o.titulo || D.title, 200),
+        tipo: tipo, categoria: corta((sug ? 'Sugestão: ' : '') + ov.querySelector('#rp-cat').value, 120), alvo: corta(o.alvo || W.location.pathname, 300), titulo: corta(o.titulo || D.title, 200),
         mensagem: corta(mensagem, 2000), pagina: corta(W.location.href.split('#')[0] + (o.slide ? '#s=' + o.slide : ''), 300), quando: new Date(), status: 'novo', app: corta(navigator.userAgent, 120)
       };
       var contato = ct.value.trim(); if(contato) corpo.contato = corta(contato, 120);
@@ -76,7 +77,7 @@
       enviar(corpo).then(function(){
         lsSet('rp:ultimo', String(Date.now())); if(contato) lsSet('rp:contato', contato);
         txt.disabled = true; btn.style.display = 'none'; ov.querySelector('[data-c]').textContent = 'Fechar';
-        aviso('Obrigado! Recebemos o seu relato e vamos conferir.', true);
+        aviso(sug ? 'Obrigado pela ideia! Vamos analisar com carinho.' : 'Obrigado! Recebemos o seu relato e vamos conferir.', true);
       }, function(e){
         btn.disabled = false; btn.textContent = 'Tentar de novo';
         var offline = navigator.onLine === false;
