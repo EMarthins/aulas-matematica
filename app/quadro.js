@@ -129,7 +129,7 @@
       cx.beginPath(); cx.moveTo(a[0], a[1]); cx.lineTo(b[0], b[1]); cx.moveTo(a[0] - nx * 8, a[1] - ny * 8); cx.lineTo(a[0] + nx * 8, a[1] + ny * 8); cx.moveTo(b[0] - nx * 8, b[1] - ny * 8); cx.lineTo(b[0] + nx * 8, b[1] + ny * 8); cx.stroke();
       if(dm > 14){ cx.setLineDash([]); var tx = (a[0] + b[0]) / 2 + nx * 16, ty = (a[1] + b[1]) / 2 + ny * 16; if(ty > (a[1] + b[1]) / 2 + 1 && Math.abs(Math.sin(an2)) < .3){ tx = (a[0] + b[0]) / 2 - nx * 16; ty = (a[1] + b[1]) / 2 - ny * 16; }
         cx.font = '800 15px Archivo,Arial,sans-serif'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.globalAlpha = 1; var tt = (dm / uC(c)).toFixed(1).replace('.', ',') + ' cm'; cx.lineWidth = 4; cx.strokeStyle = c.id === 'b' && estado.escura ? '#1e3a2f' : (getComputedStyle(R).getPropertyValue('--surface').trim() || '#fff'); cx.strokeText(tt, tx, ty); cx.fillText(tt, tx, ty); } }
-    else if(s.t === 'q'){ cx.beginPath(); s.pts.forEach(function(q, n){ var z = P(c, q); if(n) cx.lineTo(z[0], z[1]); else cx.moveTo(z[0], z[1]); }); cx.stroke(); }
+    else if(s.t === 'q'){ cx.beginPath(); s.pts.forEach(function(q, n){ var z = P(c, q); if(n) cx.lineTo(z[0], z[1]); else cx.moveTo(z[0], z[1]); }); if(s.f){ cx.save(); cx.globalAlpha = 1; cx.fillStyle = s.f; cx.fill(); cx.restore(); } cx.stroke(); }
     else if(s.t === 'k'){ a = P(c, s.p[0]); b = P(c, s.p[1]); var rk = Math.hypot(b[0] - a[0], b[1] - a[1]);
       cx.beginPath(); cx.arc(a[0], a[1], rk, 0, 6.2832); cx.stroke(); cx.setLineDash([]); cx.beginPath(); cx.arc(a[0], a[1], 3.5, 0, 6.2832); cx.fill();
       if(rk > 12){ cx.globalAlpha = .75; cx.setLineDash([6, 5]); cx.lineWidth = Math.max(1.5, (s.w || 3) * .6); cx.beginPath(); cx.moveTo(a[0], a[1]); cx.lineTo(b[0], b[1]); cx.stroke(); cx.setLineDash([]); cx.globalAlpha = 1;
@@ -593,11 +593,22 @@
   }
   function alternaLado(l){ if(estado.lado === l) fechaQuadro(); else abreQuadro(l); }
   function aplicaEscura(){ board.style.background = estado.escura ? '#1e3a2f' : ''; board.style.borderColor = estado.escura ? '#0f2a20' : ''; var lb = board.querySelector('.qd-lbl'); if(lb) lb.style.color = estado.escura ? '#b7d3c4' : ''; }
-  function carregaCalc(){
-    if(W.EduCalc){ W.EduCalc.alternar(); return; }
-    var s = D.createElement('script'); s.src = (SRC || (D.getElementById('ferramentas') || {}).src || '').replace(/(quadro|ferramentas)\.js.*$/, 'calculadora.js'); s.onload = function(){ if(W.EduCalc) W.EduCalc.alternar(); }; s.onerror = function(){ dica('Não foi possível abrir a calculadora agora.'); };
+  function carregaMod(glob, arq, nome){ // módulos opcionais carregados só quando usados
+    if(W[glob]){ W[glob].alternar(); return; }
+    var s = D.createElement('script'); s.src = (SRC || (D.getElementById('ferramentas') || {}).src || '').replace(/(quadro|ferramentas)\.js.*$/, arq); s.onload = function(){ if(W[glob]) W[glob].alternar(); }; s.onerror = function(){ dica('Não foi possível abrir ' + nome + ' agora.'); };
     (D.head || R).appendChild(s);
   }
+  function inserir(lista){ // insere traços prontos (coordenadas em unidades, centradas) no centro da camada e os seleciona
+    if(!estado.aberto) abre();
+    var c = estado.lado === 'tudo' ? cb : cs, k = Math.max(.55, Math.min(1.6, Math.min(c.w / 1100, c.h / 650))) * 1.2, ox = c.w / 2, oy = c.h / 2, novos = [], l;
+    function cv(p){ return [(ox + p[0] * k) / c.w, (oy + p[1] * k) / c.h]; }
+    marca(); l = dado(idx());
+    lista.forEach(function(d){ var s = { l: c.id, c: d.c || estado.cor, w: d.w || estado.esp, d: d.d ? 1 : 0, t: d.t }; if(d.f) s.f = d.f; if(d.p) s.p = d.p.map(cv); if(d.pts) s.pts = d.pts.map(cv); if(d.t === 'x'){ s.s = d.s; s.z = Math.round(d.z * k); } l.push(s); novos.push(s); });
+    salvar(); ferr('selec'); selecionaTudo(c, novos); atualizaBotoes(); dica('Figura inserida: arraste, redimensione ou gire; escreva por cima');
+  }
+  function carregaFig(){ carregaMod('EduFiguras', 'figuras-apoio.js', 'as figuras'); }
+  function carregaCalc(){ carregaMod('EduCalc', 'calculadora.js', 'a calculadora'); }
+  function carregaGraf(){ carregaMod('EduGraficos', 'graficos.js', 'os gráficos'); }
 
   // ---------- votação rápida (A–E): o professor toca na letra a cada mão levantada ----------
   var voto = null, cont = { A: 0, B: 0, C: 0, D: 0, E: 0 };
@@ -647,6 +658,8 @@
   [['regua', '📏', 'Régua de 15 cm (arraste, gire pela alça ↻ ou roda do mouse; risque junto à borda) — R'], ['esq45', '◺', 'Esquadro 45° (90°-45°-45°)'], ['esq60', '◿', 'Esquadro 60° (90°-60°-30°)'], ['transf', '◔', 'Transferidor 180° (o centro vermelho gruda o vértice do ângulo)']].forEach(function(f){ btn('i-' + f[0], f[1], f[2], function(){ alternaInst(f[0]); }); });
   btn('malha', '#', 'Malha sobre o slide: quadriculada → pontilhada → eixos numerados → nenhuma', function(){ estado.malha = (estado.malha + 1) % 4; dica('Malha: ' + ['nenhuma', 'quadriculada', 'pontilhada', 'eixos cartesianos numerados'][estado.malha]); renderTudo(); atualizaBotoes(); });
   btn('calc', '🧮', 'Calculadora científica — K', function(){ carregaCalc(); });
+  btn('fig', '🧩', 'Figuras de apoio: sólidos, círculo trigonométrico, reta numérica, plano cartesiano… — I', function(){ carregaFig(); });
+  btn('graf', 'ƒ', 'Gráficos de funções: digite y = x² − 4x + 3, use a, b, c deslizantes — G', function(){ carregaGraf(); });
   grupo('Apresentar');
   [['laser', '🔴', 'Laser — 5'], ['foco', '🔦', 'Holofote — 6'], ['cobrir', '⬛', 'Cobrir uma área (revele com a borracha) — 7']].forEach(ferrBtn);
   grupo('Cor e espessura');
@@ -721,6 +734,8 @@
     if(mapa[k]){ e.preventDefault(); e.stopPropagation(); ferr(mapa[k]); return; }
     if(k === 'r'){ e.preventDefault(); e.stopPropagation(); alternaInst('regua'); return; }
     if(k === 'k'){ e.preventDefault(); e.stopPropagation(); carregaCalc(); return; }
+    if(k === 'g'){ e.preventDefault(); e.stopPropagation(); carregaGraf(); return; }
+    if(k === 'i'){ e.preventDefault(); e.stopPropagation(); carregaFig(); return; }
     if((k === '[' || k === ']') && estado.inst.length){ e.preventDefault(); e.stopPropagation(); var iu = estado.ult && estado.inst.indexOf(estado.ult) >= 0 ? estado.ult : estado.inst[estado.inst.length - 1]; iu.a += (k === ']' ? 1 : -1) * (e.shiftKey ? 1 : 5) * Math.PI / 180; renderTudo(); return; }
     if(k === 'd'){ e.preventDefault(); e.stopPropagation(); fecha(); return; }
     if((k === 'delete' || k === 'backspace') && estado.ferr === 'selec' && estado.sel && !curv){ e.preventDefault(); e.stopPropagation(); excluir(); return; }
@@ -733,5 +748,5 @@
   new MutationObserver(function(){ renderTudo(); }).observe(R, { attributes: true, attributeFilter: ['data-theme', 'class'] });
   ferr('mao'); camadas.forEach(function(c){ c.cv.classList.add('mao'); }); setTimeout(renderTudo, 50);
 
-  W.EduQuadro = { abrir: abre, fechar: fecha, alternar: alterna, aberto: function(){ return estado.aberto; } };
+  W.EduQuadro = { inserir: inserir, abrir: abre, fechar: fecha, alternar: alterna, aberto: function(){ return estado.aberto; } };
 })();
