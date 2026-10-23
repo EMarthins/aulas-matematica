@@ -4,6 +4,7 @@
 //   node scripts/preparar.js        (a partir da raiz do site)
 const { spawnSync } = require('child_process');
 const passos = [
+  ['estrutura do RCO (Matemática 6º–9º ano)', 'scripts/rco/montar-rco.js'],
   ['aulas na estrutura padrão (reestruturação automática)', 'scripts/reestruturar/reestruturar.js'],
   ['conferência da estrutura das aulas', 'scripts/reestruturar/conferir.js'],
   ['contas das questões dos módulos do CD', 'scripts/gerador-padrao/conferir-contas.js'],
@@ -19,6 +20,7 @@ const passos = [
   ['página inicial (números reais)', 'scripts/landing/montar.js'],
   ['Home (hub depois do login)', 'scripts/hub/montar.js'],
   ['Trilhas de estudo por turma', 'scripts/trilhas/montar.js'],
+  ['pendências do RCO (aulas por módulo)', 'scripts/rco/pendencias-rco.js'],
   ['pendências de guia e atividades', 'scripts/pendencias-atividades.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],

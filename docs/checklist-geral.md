@@ -67,3 +67,6 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 - [x] Banco de questões com gabaritos criados (4.314 questões).
 - [x] Backup do CD em `arquivo-cd-educador/` (DOCS, EXER, ANIM). VIDEO e TOOLS não foram copiados.
 - [x] Fechado: gabaritos de todas as mc, listas não segmentadas recortadas à mão (3 listas; 2 eram duplicata/folha em branco), módulo de vetores e Heron (p63). Amortização já está em p62.
+
+## ⭐ PRIORIDADE (24/10/2026): aulas da Matemática 6º–9º ano na divisão do RCO
+- [ ] 🤖 A divisão em módulos/trimestres já está no catálogo (`scripts/rco/estrutura-spec.js`; 108 módulos, 457 aulas previstas); falta **colocar as aulas** módulo a módulo. Lista em `docs/pendencias-rco.md` (73 módulos sem nenhuma aula). 8º ano 2º/3º tri: divisão provisória (RCO sem slides).

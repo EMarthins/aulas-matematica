@@ -6,76 +6,76 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 
 **Total: 123 módulos (284 aulas) aguardando atividades.**
 
-### Matemática · 6° Ano · 1° Trimestre (4 módulos)
+### Matemática · 6° Ano · 1° Trimestre (2 módulos)
 
 - [ ] **Sistema de numeração decimal** — 4 aulas (`aulas/6-ano/1-tri/sistema-de-numeracao-decimal/`)
-- [ ] **Potenciação e expressões numéricas** — 2 aulas (`aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/`)
-- [ ] **Múltiplos, divisores e números primos** — 3 aulas (`aulas/6-ano/1-tri/multiplos-divisores-e-primos/`)
-- [ ] **MMC e MDC** — 2 aulas (`aulas/6-ano/1-tri/mmc-e-mdc/`)
+- [ ] **Propriedades da igualdade e expressões numéricas** — 2 aulas (`aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/`)
 
-### Matemática · 6° Ano · 2° Trimestre (5 módulos)
+### Matemática · 6° Ano · 2° Trimestre (8 módulos)
 
-- [ ] **Frações** — 2 aulas (`aulas/6-ano/2-tri/fracoes/`)
-- [ ] **Operações com frações** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-fracoes/`)
-- [ ] **Números decimais** — 2 aulas (`aulas/6-ano/2-tri/numeros-decimais/`)
-- [ ] **Operações com números decimais** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-decimais/`)
-- [ ] **Porcentagem** — 2 aulas (`aulas/6-ano/2-tri/porcentagem/`)
+- [ ] **Ângulos** — 2 aulas (`aulas/6-ano/3-tri/geometria-e-angulos/`)
+- [ ] **Polígonos e quadriláteros** — 2 aulas (`aulas/6-ano/3-tri/poligonos-e-circunferencia/`)
+- [ ] **Critérios de divisibilidade, múltiplos e divisores** — 3 aulas (`aulas/6-ano/1-tri/multiplos-divisores-e-primos/`)
+- [ ] **Números primos e decomposição em fatores** — 2 aulas (`aulas/6-ano/1-tri/mmc-e-mdc/`)
+- [ ] **A ideia de fração** — 2 aulas (`aulas/6-ano/2-tri/fracoes/`)
+- [ ] **Adição e subtração de frações** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-fracoes/`)
+- [ ] **Porcentagem e frações** — 2 aulas (`aulas/6-ano/2-tri/porcentagem/`)
+- [ ] **Retomadas do 2º trimestre (naturais, inteiros e gráficos)** — 2 aulas (`aulas/6-ano/3-tri/numeros-inteiros/`)
 
-### Matemática · 6° Ano · 3° Trimestre (5 módulos)
+### Matemática · 6° Ano · 3° Trimestre (4 módulos)
 
-- [ ] **Números inteiros** — 2 aulas (`aulas/6-ano/3-tri/numeros-inteiros/`)
-- [ ] **Ponto, reta, plano e ângulos** — 2 aulas (`aulas/6-ano/3-tri/geometria-e-angulos/`)
-- [ ] **Polígonos e circunferência** — 2 aulas (`aulas/6-ano/3-tri/poligonos-e-circunferencia/`)
-- [ ] **Perímetro e área** — 2 aulas (`aulas/6-ano/3-tri/perimetro-e-area/`)
+- [ ] **Números decimais na reta e comparação** — 2 aulas (`aulas/6-ano/2-tri/numeros-decimais/`)
+- [ ] **Multiplicação e divisão com números decimais** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-decimais/`)
+- [ ] **Medidas de superfície e área** — 2 aulas (`aulas/6-ano/3-tri/perimetro-e-area/`)
 - [ ] **Volume, capacidade e massa** — 2 aulas (`aulas/6-ano/3-tri/volume-capacidade-e-massa/`)
 
 ### Matemática · 7° Ano · 1° Trimestre (2 módulos)
 
-- [ ] **Inteiros: propriedades e potenciação** — 2 aulas (`aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/`)
-- [ ] **Números racionais** — 2 aulas (`aulas/7-ano/1-tri/numeros-racionais/`)
+- [ ] **Potenciação e raiz quadrada de números inteiros** — 2 aulas (`aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/`)
+- [ ] **Números racionais e a reta numérica** — 2 aulas (`aulas/7-ano/1-tri/numeros-racionais/`)
 
-### Matemática · 7° Ano · 2° Trimestre (2 módulos)
+### Matemática · 7° Ano · 2° Trimestre (1 módulos)
 
-- [ ] **Equações e inequações do 1º grau** — 2 aulas (`aulas/7-ano/2-tri/equacoes-e-inequacoes/`)
-- [ ] **Razão, proporção e regra de três** — 2 aulas (`aulas/7-ano/2-tri/proporcao-e-regra-de-tres/`)
+- [ ] **Ângulos** — 2 aulas (`aulas/7-ano/3-tri/angulos-e-poligonos/`)
 
-### Matemática · 7° Ano · 3° Trimestre (3 módulos)
+### Matemática · 7° Ano · 3° Trimestre (4 módulos)
 
-- [ ] **Ângulos e polígonos** — 2 aulas (`aulas/7-ano/3-tri/angulos-e-poligonos/`)
-- [ ] **Poliedros e sólidos que giram** — 2 aulas (`aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/`)
-- [ ] **Estatística e probabilidade** — 2 aulas (`aulas/7-ano/3-tri/estatistica-e-probabilidade/`)
+- [ ] **Equações do 1º grau** — 2 aulas (`aulas/7-ano/2-tri/equacoes-e-inequacoes/`)
+- [ ] **Média aritmética** — 2 aulas (`aulas/7-ano/3-tri/estatistica-e-probabilidade/`)
+- [ ] **Razão e proporção** — 2 aulas (`aulas/7-ano/2-tri/proporcao-e-regra-de-tres/`)
+- [ ] **Unidades de medida e volume** — 2 aulas (`aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/`)
 
-### Matemática · 8° Ano · 1° Trimestre (4 módulos)
+### Matemática · 8° Ano · 1° Trimestre (3 módulos)
 
-- [ ] **Números reais e irracionais** — 2 aulas (`aulas/8-ano/1-tri/numeros-reais-e-irracionais/`)
-- [ ] **Potências e raízes** — 2 aulas (`aulas/8-ano/1-tri/potencias-e-raizes/`)
-- [ ] **Cálculo algébrico e produtos notáveis** — 2 aulas (`aulas/8-ano/1-tri/calculo-algebrico/`)
+- [ ] **Dízimas periódicas e fração geratriz** — 2 aulas (`aulas/8-ano/1-tri/numeros-reais-e-irracionais/`)
+- [ ] **Potenciação com números racionais** — 2 aulas (`aulas/8-ano/1-tri/potencias-e-raizes/`)
+- [ ] **Linguagem algébrica e valor numérico** — 2 aulas (`aulas/8-ano/1-tri/calculo-algebrico/`)
+
+### Matemática · 8° Ano · 2° Trimestre (1 módulos)
+
 - [ ] **Equações do 1º grau e sistemas** — 2 aulas (`aulas/8-ano/1-tri/equacoes-e-sistemas/`)
 
-### Matemática · 8° Ano · 2° Trimestre (3 módulos)
+### Matemática · 8° Ano · 3° Trimestre (5 módulos)
 
-- [ ] **Ângulos, triângulos e polígonos** — 2 aulas (`aulas/8-ano/2-tri/triangulos-e-poligonos/`)
+- [ ] **Ângulos, triângulos e quadriláteros** — 2 aulas (`aulas/8-ano/2-tri/triangulos-e-poligonos/`)
 - [ ] **Circunferência e círculo** — 2 aulas (`aulas/8-ano/2-tri/circunferencia-e-circulo/`)
 - [ ] **Áreas e volumes** — 2 aulas (`aulas/8-ano/2-tri/areas-e-volumes/`)
-
-### Matemática · 8° Ano · 3° Trimestre (2 módulos)
-
 - [ ] **Juros simples e proporcionalidade** — 2 aulas (`aulas/8-ano/3-tri/juros-simples-e-proporcionalidade/`)
 - [ ] **Contagem, probabilidade e estatística** — 2 aulas (`aulas/8-ano/3-tri/contagem-e-estatistica/`)
 
-### Matemática · 9° Ano · 1° Trimestre (2 módulos)
+### Matemática · 9° Ano · 1° Trimestre (1 módulos)
 
-- [ ] **Equações do 2º grau** — 2 aulas (`aulas/9-ano/1-tri/equacoes-do-2-grau/`)
-- [ ] **Radicais e potências** — 2 aulas (`aulas/9-ano/1-tri/radicais-e-potencias/`)
+- [ ] **Potência com expoente racional e radicais** — 2 aulas (`aulas/9-ano/1-tri/radicais-e-potencias/`)
 
-### Matemática · 9° Ano · 2° Trimestre (1 módulos)
+### Matemática · 9° Ano · 2° Trimestre (2 módulos)
 
-- [ ] **Semelhança, Pitágoras e trigonometria** — 2 aulas (`aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/`)
+- [ ] **Equação do 2º grau** — 2 aulas (`aulas/9-ano/1-tri/equacoes-do-2-grau/`)
+- [ ] **Figuras e triângulos semelhantes** — 2 aulas (`aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/`)
 
 ### Matemática · 9° Ano · 3° Trimestre (2 módulos)
 
-- [ ] **Funções afim e quadrática** — 2 aulas (`aulas/9-ano/3-tri/funcoes-afim-e-quadratica/`)
-- [ ] **Probabilidade e estatística** — 2 aulas (`aulas/9-ano/3-tri/probabilidade-e-estatistica/`)
+- [ ] **Função afim: gráfico e zero** — 2 aulas (`aulas/9-ano/3-tri/funcoes-afim-e-quadratica/`)
+- [ ] **Estatística: gráficos, medidas e pesquisa** — 2 aulas (`aulas/9-ano/3-tri/probabilidade-e-estatistica/`)
 
 ### Matemática · 2° Ano · 2° Trimestre (23 módulos)
 

@@ -225,6 +225,12 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     return true;
   }
 
+  // ---- aulas previstas do RCO (módulos ainda sem aula no site) ----
+  function rotuloPrev(c){ return c === '—' ? '' : /^N/.test(c) ? 'Nivelamento ' + c : /^R/.test(c) ? 'Retomada ' + c : 'Aula ' + c; }
+  function listaPrevistas(u){
+    var ol = el('ul', 'prev-list'); u.previstas.forEach(function(p){ var r = rotuloPrev(p[0]); ol.appendChild(el('li', null, (r ? '<span class="prev-c">' + esc(r) + '</span>' : '') + '<span>' + esc(p[1]) + '</span>')); }); return ol;
+  }
+  function etiquetasMod(u){ return (u.provisorio ? ' · divisão provisória' : '') + (u.complemento ? ' · complemento do site' : ''); }
   // ---- módulo (unidade) ----
   var TIPO_ICONE = { aula: 'tp-aula', guia: 'tp-guia', ENEM: 'tp-enem', Criativa: 'tp-criativa', 'Prática': 'tp-pratica', ENA: 'tp-ena' };
   function itemLink(item, rotulo){
@@ -248,6 +254,11 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
   function modulo(m, a, tri, u, num, o){
     if(!u.itens.length){
       if(estado.tipo !== 'todos' || norm(estado.q.trim())) return null;
+      if(u.previstas && u.previstas.length){
+        var dv = el('details', 'mod vazia prev'); dv.style.setProperty('--accent', 'var(--' + u.accent + ')'); dv.style.setProperty('--accent-soft', 'var(--' + u.accent + '-soft)');
+        dv.appendChild(el('summary', null, '<span class="m-ic">' + svgIcon(u.icon) + '</span><span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + '</span><b>' + esc(u.titulo) + '</b><small>' + plural(u.previstas.length, 'aula prevista', 'aulas previstas') + ' no RCO · em breve' + etiquetasMod(u) + '</small></span><span class="chev">' + CHEV + '</span>'));
+        var bd = el('div', 'mod-body'); bd.appendChild(el('div', 'g-tit', 'Aulas previstas <span>' + u.previstas.length + '</span>')); bd.appendChild(listaPrevistas(u)); dv.appendChild(bd); return dv;
+      }
       var v = el('div', 'mod vazia');
       v.style.setProperty('--accent', 'var(--' + u.accent + ')'); v.style.setProperty('--accent-soft', 'var(--' + u.accent + '-soft)');
       v.innerHTML = '<div class="vz"><span class="m-ic">' + svgIcon(u.icon) + '</span><span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + '</span><b>' + esc(u.titulo) + '</b><small>Em breve</small></span></div>';
@@ -263,7 +274,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var feito = c.vistos === c.total && c.total > 0;
     var s = el('summary', null,
       '<span class="m-ic">' + svgIcon(u.icon) + '</span>' +
-      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + (u.pendente ? ' · atividades em breve' : '') + '</small></span>' +
+      '<span class="m-tx"><span class="m-n">Módulo ' + String(num).padStart(2, '0') + (feito ? ' · <em>concluído ✓</em>' : '') + '</span><b>' + esc(u.titulo) + '</b><small>' + resumo(c) + (u.pendente ? ' · atividades em breve' : '') + etiquetasMod(u) + '</small></span>' +
       '<span class="m-pr">' + barra(c.vistos, c.total) + '<span>' + c.vistos + '/' + c.total + '</span></span>' +
       '<span class="chev">' + CHEV + '</span>');
     d.appendChild(s);
@@ -271,6 +282,7 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var aulas = visiveis.filter(function(i){ return tipoDe(i) === 'aula'; }), guias = visiveis.filter(function(i){ return tipoDe(i) === 'guia'; }), ativ = visiveis.filter(function(i){ return tipoDe(i) === 'atividade'; });
     [grupo('Aulas', aulas, function(i){ return 'Aula ' + (u.itens.filter(function(x){ return tipoDe(x) === 'aula'; }).indexOf(i) + 1); }), grupo('Guia visual', guias, function(i){ return i.tipo; }), grupo('Atividades', ativ, function(i){ return i.sub || 'Atividade'; })].forEach(function(g){ if(g) body.appendChild(g); });
     if(u.pendente && estado.tipo !== 'aula' && !norm(estado.q.trim())) body.appendChild(el('div', 'grupo em-breve', '<div class="g-tit">Guia visual e atividades <span>em breve</span></div><div class="eb-box"><span class="eb-ic" aria-hidden="true">⏳</span><span>As atividades (ENEM, criativa e prática) e o guia visual deste módulo ainda estão sendo preparados. <b>Por enquanto, estude pelas aulas acima.</b></span></div>'));
+    if(u.previstas && u.previstas.length && estado.tipo !== 'aula' && !norm(estado.q.trim())){ var pv = el('details', 'grupo prev-bloco'); pv.appendChild(el('summary', null, 'Plano do RCO neste módulo · ' + plural(u.previstas.length, 'aula', 'aulas'))); pv.appendChild(listaPrevistas(u)); body.appendChild(pv); }
     var rv = u.revisado || m.revisado || '2026-09-22';
     var meses = (Date.now() - new Date(rv + 'T00:00:00').getTime()) / 2592e6;
     body.appendChild(el('div', 'rev-flag' + (meses > 6 ? ' velho' : ''), 'conteúdo revisado em ' + new Date(rv + 'T00:00:00').toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' }) + (meses > 6 ? ' · precisa de revisão' : '')));

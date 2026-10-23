@@ -186,6 +186,14 @@ export const ICONES_NOVOS = {
   'tp-pratica': '<path d="M4 20l1-4.500L16.500 4l3.500 3.500L8.500 19Z"/><path d="M14 6.500 17.500 10"/>',
   'tp-ena': '<path d="M8 4h8v5a4 4 0 0 1-8 0ZM8 6H4.500v1.500A3 3 0 0 0 8 10.500M16 6h3.500v1.500A3 3 0 0 1 16 10.500M12 13v4M8.500 20h7M10 17h4"/>',
   'tp-atividade': '<rect x="4" y="3.500" width="16" height="17" rx="2"/><path d="M8 9l1.500 1.500L12 8M8 15l1.500 1.500L12 14M14.500 9h2.500M14.500 15h2.500"/>',
+  'nivelamento': '<path d="M3 20h4v-4h4v-4h4V8h4"/><path d="M18 8V3M18 3l3 2-3 2"/>',
+  'adicao-subtracao': '<path d="M12 3.500v8M8 7.500h8M8 17h8"/>',
+  'mult': '<path d="M6 6l12 12M18 6 6 18"/>' + dot(12, 4, 1.200) + dot(12, 20, 1.200),
+  'comparar': '<path d="M18 5 6 10.500l12 5.500"/><path d="M6 20h12"/>',
+  'linhas-graf': '<path d="M4 4v16h16"/><path d="M6.500 16l4-5 3.500 2.500 5-7"/>' + dot(10.500, 11, 1.300) + dot(14, 13.500, 1.300) + dot(19, 6.500, 1.300),
+  'transform': '<path d="M4 4v16h16"/><path d="M6.500 17l3-7 3 7Z"/><path d="M13.500 10l3 7 3-7Z" stroke-dasharray="2 2"/>',
+  'fatora': '<path d="M5 5c-2 4-2 10 0 14M9 5c2 4 2 10 0 14M15 5c-2 4-2 10 0 14M19 5c2 4 2 10 0 14"/>',
+  'paralelas': '<path d="M3 8h18M3 16h18M8.500 3.500l7 17"/>',
   'urna': '<rect x="4" y="12" width="16" height="8" rx="1.500"/><path d="M9.500 15.500h5"/><path d="M9 3.500h6v6H9Z"/><path d="M10.500 6.500l1 1 2-2"/>'
 };
 
@@ -211,6 +219,12 @@ const REGRAS = [
   ['sociologia', /cultura e sociedade/, 'm-soc'], ['sociologia', /trabalho e desigualdade/, 'capacete'], ['sociologia', /politica e cidadania/, 'urna'],
   // matemática (e recomposição)
   [null, /versao compacta/, 'm-recomp'], [null, /matrizes/, 'matriz'],
+  // Matemática 6º–9º ano (divisão do RCO)
+  [null, /^nivelamento/, 'nivelamento'], [null, /^reta numerica|na reta numerica/, 'reta-num'], [null, /adicao e subtracao de numeros naturais/, 'adicao-subtracao'], [null, /^multiplicacao de numeros naturais|operacoes com naturais/, 'mult'], [null, /^divisao de numeros naturais/, 'divisao'],
+  [null, /mapas, croquis/, 'mapa'], [null, /^potenciacao$|^potencias com expoente/, 'potencia'], [null, /unidades de medida de comprimento/, 'regua'], [null, /criterios de divisibilidade/, 'divisores'], [null, /comparacao e equivalencia de fracoes/, 'comparar'],
+  [null, /grafico de segmentos/, 'linhas-graf'], [null, /classificacao de triangulos|^triangulos$/, 'tri-geral'], [null, /transformacoes no plano/, 'transform'], [null, /area do retangulo e do quadrado/, 'area-perimetro'], [null, /regra de tres/, 'proporcao'],
+  [null, /dados em tabelas|interpretacao de dados/, 'tabela'], [null, /^raiz quadrada/, 'radical'], [null, /monomios/, 'cubica'], [null, /irracionais e numeros reais/, 'infinito'], [null, /^produtos notaveis/, 'parenteses'], [null, /^fatoracao/, 'fatora'],
+  [null, /angulos formados por retas/, 'paralelas'], [null, /teorema de tales|segmentos proporcionais/, 'thales'], [null, /relacoes metricas/, 'pitagoras'], [null, /^plano cartesiano/, 'plano-cart'], [null, /^funcoes: nocoes/, 'maquina'], [null, /principio fundamental/, 'arvore'],
   [null, /notacao cientifica/, 'cientifica'], [null, /sistema internacional|^comprimento e perimetro/, 'regua'], [null, /algarismos significativos/, 'lupa-num'], [null, /armazenamento/, 'banco-dados'],
   [null, /razoes entre grandezas|razao, proporcao|grandezas proporcionais/, 'proporcao'],
   [null, /sistema de numeracao/, 'decimal'], [null, /numeros decimais|operacoes com numeros decimais/, 'decimais'], [null, /potenciacao e expressoes/, 'potencia'], [null, /^potencias e raizes|radicais e potencias|^radicais/, 'radical'],

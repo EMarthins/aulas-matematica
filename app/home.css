@@ -367,3 +367,12 @@ html.sb-on .subjects, html.sb-on .tools{ display:none; }
 
 /* ícone do tipo (aula, guia, atividade) dentro do selo de cada item */
 .item .badge .ti{ display:inline-flex; vertical-align:-.2em; margin-right:.4em; font-style:normal; } .item .badge .ti svg{ width:1.25em; height:1.25em; }
+
+/* módulos do RCO ainda sem aula (aulas previstas) */
+.mod.vazia.prev summary{ cursor:pointer; display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; padding:.85em 1em; list-style:none; } .mod.vazia.prev summary::-webkit-details-marker{ display:none; }
+.mod.vazia.prev .m-tx small{ color:var(--ink-faint); }
+.mod.vazia.prev[open] .chev{ transform:rotate(180deg); }
+.prev-list{ list-style:none; margin:6px 0 4px; padding:0; display:grid; gap:4px; }
+.prev-list li{ display:flex; gap:10px; align-items:baseline; font-size:.86rem; color:var(--ink-soft); padding:.28em .5em; border-radius:8px; background:var(--surface-2); }
+.prev-c{ flex:none; min-width:6.4em; font:700 .66rem 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-faint); }
+.prev-bloco summary{ cursor:pointer; font-size:.8rem; font-weight:700; color:var(--ink-faint); padding:.4em 0; }

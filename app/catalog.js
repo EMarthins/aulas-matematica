@@ -3310,6 +3310,7 @@ export const MATERIAS = [
 ];
 
 import { completar } from './catalog-extra.js';
+import { aplicarRCO } from './catalog-rco.js';
 import { especificarIcones } from './icones.js';
 
 export const ICONS = {
@@ -3367,4 +3368,5 @@ export function listarAulasParaSelecao(){
 }
 
 completar(MATERIAS);
+aplicarRCO(MATERIAS); // Matemática 6º–9º ano na divisão do RCO (módulos + aulas previstas)
 especificarIcones(MATERIAS, ICONS); // ícone específico de cada matéria e módulo (app/icones.js)
