@@ -301,6 +301,31 @@ export const MATERIAS = [
           {
             nome: '1° Trimestre',
             unidades: [
+              // >>> mat-6ano-novas
+              {
+                titulo: 'Reta numérica',
+                accent: 'primary',
+                icon: 'reta-num',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Reta numérica I', arquivo:'aulas/6-ano/1-tri/reta-numerica/aula-1-reta-numerica-i.html' },
+                  { tipo:'Aula 2', titulo:'Reta numérica II', arquivo:'aulas/6-ano/1-tri/reta-numerica/aula-2-reta-numerica-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Adição e subtração de números naturais',
+                accent: 'growth',
+                icon: 'adicao-subtracao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Processos de adição', arquivo:'aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/aula-1-processos-de-adicao.html' },
+                  { tipo:'Aula 2', titulo:'Adição: propriedades', arquivo:'aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/aula-2-propriedades-da-adicao.html' },
+                  { tipo:'Aula 3', titulo:'Subtração: ideias associadas', arquivo:'aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/aula-3-subtracao-ideias-associadas.html' },
+                  { tipo:'Aula 4', titulo:'Subtração: relação fundamental', arquivo:'aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/aula-4-subtracao-relacao-fundamental.html' },
+                  { tipo:'Aula 5', titulo:'Adição e subtração: situações-problema', arquivo:'aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/aula-5-adicao-e-subtracao-situacoes-problema.html' }
+                ]
+              },
+              // <<< mat-6ano-novas
               {
                 titulo: 'Sistema de numeração decimal',
                 accent: 'primary',

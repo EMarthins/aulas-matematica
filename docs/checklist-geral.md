@@ -70,3 +70,4 @@ Atualizado em 16/10/2026 (depois da reestruturação de todas as aulas). Marque 
 
 ## ⭐ PRIORIDADE (24/10/2026): aulas da Matemática 6º–9º ano na divisão do RCO
 - [ ] 🤖 A divisão em módulos/trimestres já está no catálogo (`scripts/rco/estrutura-spec.js`; 108 módulos, 457 aulas previstas); falta **colocar as aulas** módulo a módulo. Lista em `docs/pendencias-rco.md` (73 módulos sem nenhuma aula). 8º ano 2º/3º tri: divisão provisória (RCO sem slides).
+- [x] 🤖 24/10: 7 aulas do 6º ano 1º tri publicadas (Reta numérica ×2; Adição e subtração ×5) em `scripts/gerador-6ano/` (`node scripts/gerador-6ano/build.js && node scripts/gerador-6ano/catalogo.js`). Próximas: multiplicação, divisão, tabelas e expressões (6º T1), depois 7º T1 (inteiros) — ordem em `docs/sequencia-matematica.md`.

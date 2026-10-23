@@ -21,6 +21,7 @@ const passos = [
   ['Home (hub depois do login)', 'scripts/hub/montar.js'],
   ['Trilhas de estudo por turma', 'scripts/trilhas/montar.js'],
   ['pendências do RCO (aulas por módulo)', 'scripts/rco/pendencias-rco.js'],
+  ['sequência de módulos e aulas por turma', 'scripts/rco/sequencia-doc.js'],
   ['pendências de guia e atividades', 'scripts/pendencias-atividades.js'],
   ['banco de questões', 'scripts/gerar-banco.js'],
   ['banco autoral do Proveiro', 'scripts/validar-banco-provas.js'],

@@ -16,7 +16,7 @@ export function aplicarRCO(MATERIAS) {
       novos[nomeTri] = mods.map((m, i) => {
         const u = { titulo: m.t, accent: ACC[i % 4], icon: 'grid', itens: [], vazio: true, previstas: m.p, rco: true };
         if (m.prov) u.provisorio = true; if (m.comp) u.complemento = true;
-        (m.ex || []).forEach((tit, k) => {
+        [m.t].concat(m.ex || []).forEach((tit, k) => { // módulo com o mesmo título do RCO (ex.: aulas novas) entra sozinho
           const e = exist.get(tit); if (!e || usados.has(tit)) return; usados.add(tit);
           if (k === 0) { u.accent = e.accent || u.accent; u.icon = e.icon || u.icon; if (e.revisado) u.revisado = e.revisado; }
           u.itens = u.itens.concat(e.itens); if (e.pendente) u.pendente = true; u.vazio = false;

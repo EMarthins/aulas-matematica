@@ -24,13 +24,13 @@ module.exports = {
       { t: 'Polígonos e quadriláteros', r: ['43-46'], ex: ['Polígonos e circunferência'] },
       { t: 'Sólidos geométricos, prismas e pirâmides', r: ['47-49'] },
       { t: 'Critérios de divisibilidade, múltiplos e divisores', r: ['50-52'], ex: ['Múltiplos, divisores e números primos'] },
+      { t: 'Retomadas do 2º trimestre (naturais, inteiros e gráficos)', r: ['R9-R16'], ex: ['Números inteiros'] },
       { t: 'Números primos e decomposição em fatores', r: ['53-54'], ex: ['MMC e MDC'] },
       { t: 'A ideia de fração', r: ['55-57'], ex: ['Frações'] },
       { t: 'Comparação e equivalência de frações', r: ['58-59'] },
       { t: 'Adição e subtração de frações', r: ['60-62'], ex: ['Operações com frações'] },
       { t: 'Frações na reta numérica', r: ['63-64'] },
-      { t: 'Porcentagem e frações', r: ['65-68'], ex: ['Porcentagem'] },
-      { t: 'Retomadas do 2º trimestre (naturais, inteiros e gráficos)', r: ['R9-R16'], ex: ['Números inteiros'] }
+      { t: 'Porcentagem e frações', r: ['65-68'], ex: ['Porcentagem'] }
     ],
     [T3]: [
       { t: 'Números decimais: representação e leitura', r: ['69-71'] },
@@ -66,10 +66,10 @@ module.exports = {
       { t: 'Área do retângulo e do quadrado', r: ['60-61'] },
       { t: 'Porcentagem', r: ['62-64'] },
       { t: 'Expressões algébricas e sequências', r: ['65-71'] },
+      { t: 'Retomadas do 2º trimestre', r: ['R11-R20'] },
       { t: 'Ângulos', r: ['72-75'], ex: ['Ângulos e polígonos'] },
       { t: 'Triângulos', r: ['76-79'] },
-      { t: 'Polígonos', r: ['80-85'] },
-      { t: 'Retomadas do 2º trimestre', r: ['R11-R20'] }
+      { t: 'Polígonos', r: ['80-85'] }
     ],
     [T3]: [
       { t: 'Círculo e circunferência', r: ['86-87'] },
@@ -126,11 +126,11 @@ module.exports = {
       { t: 'Equação do 2º grau', r: ['46-56'], ex: ['Equações do 2º grau'] },
       { t: 'Ângulos formados por retas', r: ['57-59'] },
       { t: 'Figuras e triângulos semelhantes', r: ['61-64'], ex: ['Semelhança, Pitágoras e trigonometria'] },
+      { t: 'Retomadas do 2º trimestre', r: ['R11-R19'] },
       { t: 'Segmentos proporcionais e Teorema de Tales', r: ['66-68'] },
       { t: 'Relações métricas no triângulo retângulo', r: ['69-76'] },
       { t: 'Circunferência e círculo', r: ['77-82'] },
-      { t: 'Plano cartesiano', r: ['83-84'] },
-      { t: 'Retomadas do 2º trimestre', r: ['R11-R19'] }
+      { t: 'Plano cartesiano', r: ['83-84'] }
     ],
     [T3]: [
       { t: 'Funções: noções e situações-problema', r: ['86-89'] },

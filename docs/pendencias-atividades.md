@@ -4,11 +4,13 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 123 módulos (284 aulas) aguardando atividades.**
+**Total: 125 módulos (291 aulas) aguardando atividades.**
 
-### Matemática · 6° Ano · 1° Trimestre (2 módulos)
+### Matemática · 6° Ano · 1° Trimestre (4 módulos)
 
 - [ ] **Sistema de numeração decimal** — 4 aulas (`aulas/6-ano/1-tri/sistema-de-numeracao-decimal/`)
+- [ ] **Reta numérica** — 2 aulas (`aulas/6-ano/1-tri/reta-numerica/`)
+- [ ] **Adição e subtração de números naturais** — 5 aulas (`aulas/6-ano/1-tri/adicao-e-subtracao-de-numeros-naturais/`)
 - [ ] **Propriedades da igualdade e expressões numéricas** — 2 aulas (`aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/`)
 
 ### Matemática · 6° Ano · 2° Trimestre (8 módulos)
@@ -16,11 +18,11 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Ângulos** — 2 aulas (`aulas/6-ano/3-tri/geometria-e-angulos/`)
 - [ ] **Polígonos e quadriláteros** — 2 aulas (`aulas/6-ano/3-tri/poligonos-e-circunferencia/`)
 - [ ] **Critérios de divisibilidade, múltiplos e divisores** — 3 aulas (`aulas/6-ano/1-tri/multiplos-divisores-e-primos/`)
+- [ ] **Retomadas do 2º trimestre (naturais, inteiros e gráficos)** — 2 aulas (`aulas/6-ano/3-tri/numeros-inteiros/`)
 - [ ] **Números primos e decomposição em fatores** — 2 aulas (`aulas/6-ano/1-tri/mmc-e-mdc/`)
 - [ ] **A ideia de fração** — 2 aulas (`aulas/6-ano/2-tri/fracoes/`)
 - [ ] **Adição e subtração de frações** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-fracoes/`)
 - [ ] **Porcentagem e frações** — 2 aulas (`aulas/6-ano/2-tri/porcentagem/`)
-- [ ] **Retomadas do 2º trimestre (naturais, inteiros e gráficos)** — 2 aulas (`aulas/6-ano/3-tri/numeros-inteiros/`)
 
 ### Matemática · 6° Ano · 3° Trimestre (4 módulos)
 

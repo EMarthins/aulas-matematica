@@ -40,6 +40,7 @@ const REGRAS = [
   [/area-do-circulo|problemas-de-area-com-circulos|circulo-e-circunferencia|circunferencia-e-circulo/, 'circulo'],
   [/poligonos-regulares|propriedades-dos-poligonos|ladrilhamento|poligonos-e-circunferencia/, 'poligonos'],
   [/prisma|cilindro|cone|piramide|esfera|poliedros|volume/, 'volume'],
+  [/^reta-numerica$|^adicao-e-subtracao/, 'reta-soma'],
   [/area-de-poligonos|area-e-perimetro|perimetro-e-area|area-de-figuras|areas-irregulares|variacao-do-perimetro|areas-e-volumes/, 'areas'],
   [/quadrilateros/, 'quadrilateros'], [/angulos-na-circunferencia/, 'angulo-inscrito'], [/geometria-e-angulos/, 'opv'], [/geometria-analitica|vetores/, 'plano-pontos'], [/conicas/, 'conicas'],
   [/numeros-decimais|operacoes-com-decimais|sistema-de-numeracao/, 'decimal'], [/mmc-e-mdc/, 'mmcmdc'], [/multiplos-divisores/, 'divisores'],
