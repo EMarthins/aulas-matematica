@@ -21,3 +21,8 @@ Menu ⋯ → **💡 Sugerir melhoria**: mesma janela do "Reportar erro" (`app/re
 
 ## Ideias para depois
 Lupa em figuras · gravar/replay das anotações · exportar a aula com as anotações em PDF · "modo aluno" que replica a caneta do professor em tempo real · rubricas/stickers (✔ ✘ ★) · cronômetro visível em tela cheia · controle por celular (clicker).
+
+## Figuras específicas e interativas de abertura (23/10/2026)
+- As 34 aulas grátis (mais usadas) trocaram a figura genérica do 1º slide por uma cena interativa (`app/cenas.js` = motor + 23 cenas de Matemática; `app/cenas2.js` = 11 cenas de outras matérias, carregado sob demanda).
+- Ligação: `scripts/aplicar-cenas.js` (passo do `preparar.js`) marca `<figure class="fig-ctx" data-cena="id">` e adiciona o script. Se o JS falhar, a figura genérica continua.
+- Nova cena: `EduCenas.reg(id, {alt, leg, est, ctl, svg(e), lei(e)})` e mapear a pasta em `MAPA` do script.

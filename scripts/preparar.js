@@ -13,6 +13,7 @@ const passos = [
   ['progresso no aparelho do aluno', 'scripts/aplicar-progresso.js'],
   ['trava de acesso (aulas grátis x conta)', 'scripts/aplicar-acesso.js'],
   ['ferramentas (mapa, notas, glossário…)', 'scripts/aplicar-ferramentas.js'],
+  ['figuras específicas e interativas das aulas mais usadas', 'scripts/aplicar-cenas.js'],
   ['aulas numeradas por módulo (sem o nº do RCO)', 'scripts/normalizar-aulas.js'],
   ['barra lateral (dados do catálogo)', 'scripts/gerar-nav.js'],
   ['página inicial (números reais)', 'scripts/landing/montar.js'],
