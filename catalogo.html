@@ -226,13 +226,15 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
   }
 
   // ---- módulo (unidade) ----
+  var TIPO_ICONE = { aula: 'tp-aula', guia: 'tp-guia', ENEM: 'tp-enem', Criativa: 'tp-criativa', 'Prática': 'tp-pratica', ENA: 'tp-ena' };
   function itemLink(item, rotulo){
     var a = el('a', 'item'), p = prog(item.arquivo), marca = '', sel = '';
     a.href = item.arquivo;
     if(bloqueado(item)){ a.classList.add('bloq'); a.dataset.arq = item.arquivo; sel = '<span class="lock" title="Entre com sua conta para liberar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>'; }
     else if(!LOGADO && GRATIS[item.arquivo]) sel = '<span class="gratis">Grátis</span>';
     if(p && p.v){ a.classList.add('done'); marca = '<span class="prog" title="visto neste aparelho' + (p.t ? ' · melhor nota ' + p.s + '/' + p.t : '') + '">' + (p.t ? p.s + '/' + p.t : '✓') + '</span>'; }
-    a.innerHTML = '<span class="badge">' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + sel + '<span class="arrow">' + ARROW + '</span>';
+    var tIc = tipoDe(item) === 'atividade' ? (TIPO_ICONE[item.sub] || 'tp-atividade') : TIPO_ICONE[tipoDe(item)];
+    a.innerHTML = '<span class="badge"><i class="ti">' + svgIcon(tIc) + '</i>' + esc(rotulo) + '</span><span class="txt">' + item.titulo + '</span>' + marca + sel + '<span class="arrow">' + ARROW + '</span>';
     return a;
   }
   function grupo(titulo, itens, rotuloFn){
@@ -317,7 +319,8 @@ import { aulasGratis, logado, linkLogin } from './app/acesso.js';
     var menu = el('div', 'troca-menu'); menu.setAttribute('role', 'listbox'); menu.setAttribute('aria-label', 'Matérias'); menu.hidden = true;
     MATERIAS.forEach(function(x, i){
       var c = contaMateria(x), on = i === estado.idx;
-      var b = el('button', 'tm' + (on ? ' on' : '') + (c.total ? '' : ' vz'), '<span class="s-ic">' + svgIcon(x.icon) + '</span><span class="tm-tx"><b>' + esc(x.nome) + '</b><small>' + (x.id === 'gratis' ? plural(c.aulas, 'aula', 'aulas') : c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + c.vistos + '/' + c.total + ' vistos' : 'em breve') + '</small></span>');
+      var b = el('button', 'tm' + (on ? ' on' : '') + (c.total ? '' : ' vz'), '<span class="s-ic">' + svgIcon(x.icon) + '</span><span class="tm-tx"><b>' + esc(x.nome) + '</b><small>' + (x.id === 'gratis' ? plural(c.aulas, 'aula', 'aulas') : c.total ? plural(c.mods, 'módulo', 'módulos') + ' · ' + c.vistos + '/' + c.total : 'em breve') + '</small></span>');
+      b.title = x.nome + (c.total ? ' — ' + c.vistos + ' de ' + c.total + ' vistos' : '');
       b.type = 'button'; b.setAttribute('role', 'option'); b.setAttribute('aria-selected', on);
       b.style.setProperty('--accent', 'var(--' + acento(i) + ')'); b.style.setProperty('--accent-soft', 'var(--' + acento(i) + '-soft)');
       b.addEventListener('click', function(){ fecha(); if(estado.q) limpaBusca(); escolheMateria(i); });
