@@ -229,6 +229,14 @@
     marc.classList.toggle('on'); notas.classList.remove('on'); tempo.classList.remove('on');
   }
 
+  // demonstração automática de ~2 min (app/tour.js): endereço da aula com #tour ou menu ⋯
+  function abrirTour(){
+    if(W.EduTour){ W.EduTour.iniciar(); return; }
+    var base = SRC || (D.getElementById('ferramentas') || {}).src || '';
+    var s = D.createElement('script'); s.src = base.replace(/ferramentas.js.*$/, 'tour.js'); s.onerror = function(){ aviso('Não foi possível abrir a demonstração agora.'); };
+    (D.head || R).appendChild(s);
+  }
+
   // gráficos de funções (app/graficos.js, carregado só quando alguém usa)
   function abrirGraf(){
     if(W.EduGraficos){ W.EduGraficos.alternar(); return; }
@@ -265,7 +273,7 @@
 
   if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('📚 Marcar como dada numa turma', '', marcarDada); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
   acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
-  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('🧮 Calculadora', 'K', abrirCalc, true); acao('ƒ Gráficos de funções', 'G', abrirGraf, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
+  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('🧮 Calculadora', 'K', abrirCalc, true); acao('ƒ Gráficos de funções', 'G', abrirGraf, true); acao('🎬 Ver a demonstração (2 min)', '', abrirTour, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
   if(RAIZ && !EMBUTIDA){
     var casa = el('a', 'ft-home', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>');
     casa.href = RAIZ + 'home.html'; casa.title = 'Home — voltar ao início do EduMath'; casa.setAttribute('aria-label', 'Home: voltar ao início do EduMath');
@@ -280,6 +288,7 @@
 
   function montar(){ var b = D.body || R; [dock, mapa, notas, tempo, marc, toast].forEach(function(n){ b.appendChild(n); }); }
   if(D.body) montar(); else D.addEventListener('DOMContentLoaded', montar);
+  if(isDeck && /(?:^#|&)tour(?:&|$)/.test(W.location.hash)) W.addEventListener('load', function(){ setTimeout(abrirTour, 900); });
 
   // atalhos
   D.addEventListener('keydown', function(e){

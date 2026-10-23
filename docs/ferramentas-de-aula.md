@@ -44,3 +44,9 @@ Lupa em figuras · gravar/replay das anotações · exportar a aula com as anota
 - **155 aulas** (a 1ª de cada módulo de Matemática do 6º ao 9º ano e do EM) receberam a cena do tema por **regras de nome de pasta** em `scripts/aplicar-cenas.js` (`REGRAS`; roda no `preparar.js`). Para ligar outro módulo: acrescentar/ajustar uma regra (ou uma linha em `MAPA`) e rodar o script.
 - Módulos sem cena (ficam com a figura genérica): Língua Portuguesa, recomposição, "retomadas", armazenamento de dados e os 6 módulos cuja 1ª aula não tem a figura padrão de abertura. Falta também cena nos demais slides das aulas ("interagir em todos os slides").
 - Nova cena: `EduCenas.reg(id, {alt, leg, est, ctl, svg(e), lei(e)})` em `cenas3.js` e uma regra no script.
+
+## Demonstração automática de 2 minutos (`app/tour.js`, 23/10/2026)
+- **Como abrir:** `demo.html` → botão "▶ Ver a aula em ação" (abre uma aula grátis com `#tour`), ou menu ⋯ de qualquer aula em slides → "🎬 Ver a demonstração (2 min)". Espaço pausa, Esc sai; no fim aparece o cartão "Criar conta grátis / Ver planos / Ver de novo".
+- **O que mostra (usando as ferramentas reais, com cursor visível e legendas):** cena interativa de abertura → roteiro de slides → marca-texto, caneta, seta → régua com a caneta "colando" na borda → compasso, "1 rad" e "Endireitar" (radianos) → figura pronta (cilindro) movida com a seleção → gráfico de função com a, b, c deslizantes → quadro lateral com texto e caneta → calculadora e votação A–E → cartão final.
+- **Para ajustar o roteiro:** array `PASSOS` em `app/tour.js` (cada passo é uma função que devolve uma Promise; os helpers `traco`, `toque`, `aperta('parte do título do botão')`, `chip('texto')`, `esp(ms)`, `legenda()` já existem). Um passo que falha é pulado, não derruba a demonstração.
+- Sem gravação nem envio de dados; as anotações feitas pela demonstração são apagadas ao terminar.
