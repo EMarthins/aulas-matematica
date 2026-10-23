@@ -296,10 +296,11 @@
 
   // ---------- partida ----------
   var SRC = (D.currentScript && D.currentScript.src) || '';
+  var C2 = { arte: 1, celula: 1, vivos: 1, esportes: 1, mito: 1, referencial: 1, bussola: 1, fontes: 1, greetings: 1, misturas: 1, iceberg: 1 }; // Humanas/Ciências em cenas2.js; o resto da Matemática em cenas3.js
   function acha(id, fig, tentou){
     if(REG[id]){ monta(fig, REG[id]); return; }
     if(tentou || !SRC) return;
-    var s = D.createElement('script'); s.src = SRC.replace(/cenas\.js.*$/, 'cenas2.js'); s.onload = function(){ acha(id, fig, true); }; (D.head || D.documentElement).appendChild(s);
+    var s = D.createElement('script'); s.src = SRC.replace(/cenas\.js.*$/, C2[id] ? 'cenas2.js' : 'cenas3.js'); s.onload = function(){ acha(id, fig, true); }; (D.head || D.documentElement).appendChild(s);
   }
   function iniciar(){ [].slice.call(D.querySelectorAll('figure[data-cena]')).forEach(function(f){ try{ acha(f.getAttribute('data-cena'), f); }catch(e){ if(W.console) console.warn('cena:', e); } }); }
   if(D.readyState === 'loading') D.addEventListener('DOMContentLoaded', iniciar); else iniciar();

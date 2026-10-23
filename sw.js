@@ -11,7 +11,7 @@ function limpa(res){
   if(!res || !res.redirected) return Promise.resolve(res);
   return res.blob().then(function(b){ return new Response(b, { status: res.status, statusText: res.statusText, headers: res.headers }); });
 }
-var BASE = ['./', 'index.html', 'home.html', 'catalogo.html', 'app/hub.css', 'app/landing.css', 'app/landing.js', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/quadro.js', 'app/calculadora.js', 'app/graficos.js', 'app/figuras-apoio.js', 'app/reportar.js', 'app/cenas.js', 'app/cenas2.js', 'app/banco.json', 'app/theme-toggle.js', 'app/sidebar.js', 'app/acesso.js', 'app/planos.js', 'app/nuvem.js', 'planos.html', 'app/sidebar.css', 'app/nav-data.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
+var BASE = ['./', 'index.html', 'home.html', 'catalogo.html', 'app/hub.css', 'app/landing.css', 'app/landing.js', 'simulado.html', 'revisao.html', 'app/style.css', 'app/home.css', 'app/estudo.css', 'app/catalog.js', 'app/ferramentas.js', 'app/quadro.js', 'app/calculadora.js', 'app/graficos.js', 'app/figuras-apoio.js', 'app/reportar.js', 'app/cenas.js', 'app/cenas2.js', 'app/cenas3.js', 'app/banco.json', 'app/theme-toggle.js', 'app/sidebar.js', 'app/acesso.js', 'app/planos.js', 'app/nuvem.js', 'planos.html', 'app/sidebar.css', 'app/nav-data.js', 'assets/fonts.css', 'manifest.webmanifest', 'icon.svg'];
 
 self.addEventListener('install', function(e){
   e.waitUntil(caches.open(CACHE).then(function(c){ return Promise.all(BASE.map(function(u){ return fetch(u, { cache: 'reload' }).then(limpa).then(function(r){ if(r && r.status === 200) return c.put(u, r); }).catch(function(){}); })); }).then(function(){ return self.skipWaiting(); }));
