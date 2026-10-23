@@ -3310,6 +3310,7 @@ export const MATERIAS = [
 ];
 
 import { completar } from './catalog-extra.js';
+import { especificarIcones } from './icones.js';
 
 export const ICONS = {
   'gift': '<rect x="3.5" y="8" width="17" height="4.5" rx="1"/><path d="M12 8v13M5 12.5V20h14v-7.5M12 8c-1.5-3.8-5.5-3.2-4.6-.8.6 1.4 2.9.8 4.6.8ZM12 8c1.5-3.8 5.5-3.2 4.6-.8-.6 1.4-2.9.8-4.6.8Z"/>',
@@ -3366,3 +3367,4 @@ export function listarAulasParaSelecao(){
 }
 
 completar(MATERIAS);
+especificarIcones(MATERIAS, ICONS); // ícone específico de cada matéria e módulo (app/icones.js)

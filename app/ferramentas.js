@@ -63,8 +63,11 @@
   '.ft-home{position:absolute;top:0;right:52px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong,#bbb);background:var(--surface,#fff);color:var(--ink,#111);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -10px var(--shadow,rgba(0,0,0,.4));text-decoration:none;transition:transform .15s}' +
   '.ft-home:hover{transform:scale(1.07);border-color:var(--primary,#382EAE);color:var(--primary,#382EAE)}' +
   '.ft-home svg{width:21px;height:21px}' +
-  '.ft-panel{position:absolute;top:52px;right:0;width:min(17rem,calc(100vw - 28px));background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line-strong,#bbb);border-radius:16px;padding:8px;box-shadow:0 24px 50px -18px var(--shadow,rgba(0,0,0,.4));display:none}' +
-  '.ft-panel.on{display:block}' +
+  '.ft-panel{position:absolute;top:52px;right:0;width:min(30rem,calc(100vw - 28px));max-height:calc(100vh - 76px);overflow-y:auto;overscroll-behavior:contain;background:var(--surface,#fff);color:var(--ink,#111);border:1px solid var(--line-strong,#bbb);border-radius:16px;padding:8px;box-shadow:0 24px 50px -18px var(--shadow,rgba(0,0,0,.4));display:none}' +
+  '.ft-panel.on{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;align-items:start}' +
+  '.ft-panel .ft-g{min-width:0}.ft-panel .ft-gt{margin:6px 0 2px;padding:0 .7em;font:800 .62rem Archivo,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint,#777)}' +
+  '.ft-panel>hr,.ft-panel>a{grid-column:1/-1}' +
+  '@media (max-width:560px){.ft-panel.on{grid-template-columns:1fr}}' +
   '.ft-panel button{display:flex;align-items:center;gap:.6em;width:100%;text-align:left;font:inherit;font-size:.82rem;font-weight:700;border:0;background:transparent;color:inherit;border-radius:10px;padding:.55em .7em;cursor:pointer}' +
   '.ft-panel button:hover{background:var(--primary-soft,#eef)}' +
   '.ft-panel .k{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:.68rem;color:var(--ink-faint,#777);border:1px solid var(--line-strong,#bbb);border-radius:6px;padding:0 .4em}' +
@@ -127,8 +130,10 @@
   var dock = el('div', 'ft-dock'), btn = el('button', 'ft-btn', '⋯'), panel = el('div', 'ft-panel');
   btn.type = 'button'; btn.setAttribute('aria-label', 'Ferramentas da aula'); btn.setAttribute('aria-haspopup', 'true'); btn.title = 'Ferramentas';
   var acoes = [];
-  function acao(rotulo, tecla, fn, soDeck){ if(soDeck && !isDeck) return; var b = el('button', null, rotulo + (tecla ? '<span class="k">' + tecla + '</span>' : '')); b.type = 'button'; b.addEventListener('click', function(){ panel.classList.remove('on'); fn(); }); panel.appendChild(b); }
-  function sep(){ panel.appendChild(el('hr')); }
+  var alvoG = null, tituloG = '';
+  function acao(rotulo, tecla, fn, soDeck){ if(soDeck && !isDeck) return; if(!alvoG || (tituloG && !alvoG.parentNode)){ alvoG = el('div', 'ft-g'); if(tituloG) alvoG.appendChild(el('div', 'ft-gt', tituloG)); panel.appendChild(alvoG); } var b = el('button', null, rotulo + (tecla ? '<span class="k">' + tecla + '</span>' : '')); b.type = 'button'; b.addEventListener('click', function(){ panel.classList.remove('on'); fn(); }); alvoG.appendChild(b); }
+  function grupo(t){ alvoG = null; tituloG = t; }
+  function sep(){ alvoG = null; tituloG = ''; }
 
   // mapa
   var mapa = el('div', 'ft-overlay'); mapa.setAttribute('role', 'dialog'); mapa.setAttribute('aria-label', 'Mapa dos slides');
@@ -271,9 +276,10 @@
   function ajustaZoom(d){ zoom = Math.max(.8, Math.min(1.6, Math.round((zoom + d) * 100) / 100)); lsSet('ft:zoom', zoom); aplicaZoom(); aviso('Tamanho do texto: ' + Math.round(zoom * 100) + '%'); if(isDeck) W.dispatchEvent(new Event('resize')); }
   function alternaHC(){ lsSet('ft:hc', lsGet('ft:hc') === '1' ? '0' : '1'); aplicaHC(); aviso(lsGet('ft:hc') === '1' ? 'Alto contraste ligado' : 'Alto contraste desligado'); }
 
-  if(isDeck){ acao('🗺 Mapa dos slides', 'M', abrirMapa); acao('📝 Notas do professor', 'N', alternaNotas); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo); acao('📚 Marcar como dada numa turma', '', marcarDada); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }); sep(); }
-  acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); sep();
-  acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); }); sep(); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('🧮 Calculadora', 'K', abrirCalc, true); acao('ƒ Gráficos de funções', 'G', abrirGraf, true); acao('🎬 Ver a demonstração (2 min)', '', abrirTour, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
+  grupo('Apresentar'); acao('🗺 Mapa dos slides', 'M', abrirMapa, true); acao('📝 Notas do professor', 'N', alternaNotas, true); acao('⏱ Cronômetro e sorteio', 'T', alternaTempo, true); acao('📚 Marcar como dada numa turma', '', marcarDada, true); acao('↺ Recomeçar do slide 1', '', function(){ ir(0); }, true); acao('⛶ Tela cheia', 'F', telaCheia, true); acao('⬛ Apagar a tela (atenção da turma)', 'B', telaPreta, true);
+  grupo('Lousa e ferramentas'); acao('✏️ Caneta e quadro', 'D', abrirQuadro, true); acao('🧮 Calculadora', 'K', abrirCalc, true); acao('ƒ Gráficos de funções', 'G', abrirGraf, true); acao('🎬 Ver a demonstração (2 min)', '', abrirTour, true);
+  grupo('Esta página'); acao('🔗 Copiar link' + (isDeck ? ' deste slide' : ''), 'L', copiarLink); acao('🔊 Ouvir (voz alta)', 'O', ouvir); acao('A+  Texto maior', '+', function(){ ajustaZoom(.1); }); acao('A−  Texto menor', '−', function(){ ajustaZoom(-.1); }); acao('◐ Alto contraste', 'H', alternaHC); acao('🖨 Imprimir', '', function(){ W.print(); });
+  grupo('Ajuda'); acao('💡 Sugerir melhoria', '', sugerirMelhoria); acao('⚑ Reportar um erro', '', reportarErro);
   if(RAIZ && !EMBUTIDA){
     var casa = el('a', 'ft-home', '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z"/></svg>');
     casa.href = RAIZ + 'home.html'; casa.title = 'Home — voltar ao início do EduMath'; casa.setAttribute('aria-label', 'Home: voltar ao início do EduMath');
