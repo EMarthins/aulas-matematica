@@ -74,7 +74,7 @@ module.exports = [
     ]
   }),
   modulo({
-    ano: '7° Ano', tri: 2, titulo: 'Área do retângulo e do quadrado', accent: 'success', icon: 'area', key: 'm7ar2',
+    ano: '7° Ano', tri: 2, titulo: 'Área do retângulo e do quadrado', accent: 'success', icon: 'area-pol', key: 'm7ar2',
     aulas: [
       { t: 'Área do retângulo', sub: 'A área mede a superfície: no retângulo, é o produto da base pela altura.',
         o: ['Calcular a <strong>área do retângulo</strong>.', 'Usar <strong>unidades de área</strong> (m², cm²).', 'Resolver problemas de revestimento.'],

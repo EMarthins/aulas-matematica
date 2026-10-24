@@ -3,7 +3,7 @@ const { modulo, tbl } = require('./lib.js');
 
 module.exports = [
   modulo({
-    ano: '7° Ano', tri: 3, titulo: 'Perímetro, quadriláteros e áreas', accent: 'success', icon: 'area', key: 'm7pq',
+    ano: '7° Ano', tri: 3, titulo: 'Perímetro, quadriláteros e áreas', accent: 'success', icon: 'area-pol', key: 'm7pq',
     aulas: [
       { t: 'Perímetro de figuras planas – resolução de problemas', sub: 'Resolva problemas de perímetro com lados desconhecidos, figuras compostas e expressões algébricas.',
         o: ['Resolver <strong>problemas de perímetro</strong>.', 'Calcular o perímetro de <strong>figuras compostas</strong>.', 'Escrever perímetros com <strong>expressões algébricas</strong>.'],

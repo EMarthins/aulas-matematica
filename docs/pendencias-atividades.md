@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 187 módulos (575 aulas) aguardando atividades.**
+**Total: 193 módulos (698 aulas) aguardando atividades.**
 
 ### Matemática · 6° Ano · 1° Trimestre (9 módulos)
 
@@ -15,7 +15,7 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Tabelas e gráficos de colunas** — 3 aulas (`aulas/6-ano/1-tri/tabelas-e-graficos-de-colunas/`)
 - [ ] **Multiplicação de números naturais** — 5 aulas (`aulas/6-ano/1-tri/multiplicacao-de-numeros-naturais/`)
 - [ ] **Divisão de números naturais** — 7 aulas (`aulas/6-ano/1-tri/divisao-de-numeros-naturais/`)
-- [ ] **Propriedades da igualdade e expressões numéricas** — 2 aulas (`aulas/6-ano/1-tri/potenciacao-e-expressoes-numericas/`)
+- [ ] **Propriedades da igualdade e expressões numéricas** — 6 aulas (`aulas/6-ano/1-tri/propriedades-da-igualdade-e-expressoes-numericas/`)
 - [ ] **Localização em mapas, croquis e representações gráficas** — 2 aulas (`aulas/6-ano/1-tri/localizacao-em-mapas/`)
 
 ### Matemática · 6° Ano · 2° Trimestre (14 módulos)
@@ -23,28 +23,28 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Potenciação** — 1 aula (`aulas/6-ano/2-tri/potenciacao/`)
 - [ ] **Unidades de medida de comprimento** — 3 aulas (`aulas/6-ano/2-tri/unidades-de-medida-de-comprimento/`)
 - [ ] **Perímetro de figuras planas** — 2 aulas (`aulas/6-ano/2-tri/perimetro-de-figuras-planas/`)
-- [ ] **Ângulos** — 2 aulas (`aulas/6-ano/3-tri/geometria-e-angulos/`)
-- [ ] **Polígonos e quadriláteros** — 2 aulas (`aulas/6-ano/3-tri/poligonos-e-circunferencia/`)
+- [ ] **Ângulos** — 6 aulas (`aulas/6-ano/2-tri/angulos/`)
+- [ ] **Polígonos e quadriláteros** — 6 aulas (`aulas/6-ano/2-tri/poligonos-e-quadrilateros/`)
 - [ ] **Sólidos geométricos, prismas e pirâmides** — 3 aulas (`aulas/6-ano/2-tri/solidos-geometricos-prismas-e-piramides/`)
 - [ ] **Critérios de divisibilidade, múltiplos e divisores** — 3 aulas (`aulas/6-ano/1-tri/multiplos-divisores-e-primos/`)
-- [ ] **Retomadas do 2º trimestre (naturais, inteiros e gráficos)** — 2 aulas (`aulas/6-ano/3-tri/numeros-inteiros/`)
+- [ ] **Retomadas do 2º trimestre (naturais, inteiros e gráficos)** — 10 aulas (`aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/`)
 - [ ] **Números primos e decomposição em fatores** — 2 aulas (`aulas/6-ano/1-tri/mmc-e-mdc/`)
-- [ ] **A ideia de fração** — 2 aulas (`aulas/6-ano/2-tri/fracoes/`)
+- [ ] **A ideia de fração** — 5 aulas (`aulas/6-ano/2-tri/a-ideia-de-fracao/`)
 - [ ] **Comparação e equivalência de frações** — 2 aulas (`aulas/6-ano/2-tri/comparacao-e-equivalencia-de-fracoes/`)
-- [ ] **Adição e subtração de frações** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-fracoes/`)
+- [ ] **Adição e subtração de frações** — 5 aulas (`aulas/6-ano/2-tri/adicao-e-subtracao-de-fracoes/`)
 - [ ] **Frações na reta numérica** — 2 aulas (`aulas/6-ano/2-tri/fracoes-na-reta-numerica/`)
-- [ ] **Porcentagem e frações** — 2 aulas (`aulas/6-ano/2-tri/porcentagem/`)
+- [ ] **Porcentagem e frações** — 6 aulas (`aulas/6-ano/2-tri/porcentagem-e-fracoes/`)
 
 ### Matemática · 6° Ano · 3° Trimestre (10 módulos)
 
 - [ ] **Números decimais: representação e leitura** — 3 aulas (`aulas/6-ano/3-tri/numeros-decimais-representacao-e-leitura/`)
 - [ ] **Frações e números decimais** — 4 aulas (`aulas/6-ano/3-tri/fracoes-e-numeros-decimais/`)
-- [ ] **Números decimais na reta e comparação** — 2 aulas (`aulas/6-ano/2-tri/numeros-decimais/`)
+- [ ] **Números decimais na reta e comparação** — 6 aulas (`aulas/6-ano/3-tri/numeros-decimais-na-reta-e-comparacao/`)
 - [ ] **Adição e subtração com números decimais** — 2 aulas (`aulas/6-ano/3-tri/adicao-e-subtracao-com-numeros-decimais/`)
 - [ ] **Gráfico de segmentos** — 2 aulas (`aulas/6-ano/3-tri/grafico-de-segmentos/`)
-- [ ] **Multiplicação e divisão com números decimais** — 2 aulas (`aulas/6-ano/2-tri/operacoes-com-decimais/`)
+- [ ] **Multiplicação e divisão com números decimais** — 6 aulas (`aulas/6-ano/3-tri/multiplicacao-e-divisao-com-numeros-decimais/`)
 - [ ] **Porcentagem com números decimais** — 6 aulas (`aulas/6-ano/3-tri/porcentagem-com-numeros-decimais/`)
-- [ ] **Medidas de superfície e área** — 2 aulas (`aulas/6-ano/3-tri/perimetro-e-area/`)
+- [ ] **Medidas de superfície e área** — 8 aulas (`aulas/6-ano/3-tri/medidas-de-superficie-e-area/`)
 - [ ] **Classificação de triângulos** — 2 aulas (`aulas/6-ano/3-tri/classificacao-de-triangulos/`)
 - [ ] **Volume, capacidade e massa** — 2 aulas (`aulas/6-ano/3-tri/volume-capacidade-e-massa/`)
 
@@ -56,11 +56,11 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Números inteiros: conceito, reta numérica e módulo** — 4 aulas (`aulas/7-ano/1-tri/numeros-inteiros-conceito-reta-numerica-e-modulo/`)
 - [ ] **Adição e subtração de números inteiros** — 8 aulas (`aulas/7-ano/1-tri/adicao-e-subtracao-de-numeros-inteiros/`)
 - [ ] **Multiplicação e divisão de números inteiros** — 6 aulas (`aulas/7-ano/1-tri/multiplicacao-e-divisao-de-numeros-inteiros/`)
-- [ ] **Potenciação e raiz quadrada de números inteiros** — 2 aulas (`aulas/7-ano/1-tri/inteiros-propriedades-e-potenciacao/`)
+- [ ] **Potenciação e raiz quadrada de números inteiros** — 8 aulas (`aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/`)
 - [ ] **Transformações no plano cartesiano e polígonos** — 4 aulas (`aulas/7-ano/1-tri/transformacoes-no-plano-cartesiano-e-poligonos/`)
-- [ ] **Números racionais e a reta numérica** — 2 aulas (`aulas/7-ano/1-tri/numeros-racionais/`)
+- [ ] **Números racionais e a reta numérica** — 7 aulas (`aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/`)
 
-### Matemática · 7° Ano · 2° Trimestre (10 módulos)
+### Matemática · 7° Ano · 2° Trimestre (11 módulos)
 
 - [ ] **Frações e frações equivalentes** — 4 aulas (`aulas/7-ano/2-tri/fracoes-e-fracoes-equivalentes/`)
 - [ ] **Adição e subtração de números racionais** — 3 aulas (`aulas/7-ano/2-tri/adicao-e-subtracao-de-numeros-racionais/`)
@@ -69,20 +69,22 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Área do retângulo e do quadrado** — 2 aulas (`aulas/7-ano/2-tri/area-do-retangulo-e-do-quadrado/`)
 - [ ] **Porcentagem** — 3 aulas (`aulas/7-ano/2-tri/porcentagem/`)
 - [ ] **Expressões algébricas e sequências** — 7 aulas (`aulas/7-ano/2-tri/expressoes-algebricas-e-sequencias/`)
-- [ ] **Ângulos** — 2 aulas (`aulas/7-ano/3-tri/angulos-e-poligonos/`)
+- [ ] **Retomadas do 2º trimestre** — 10 aulas (`aulas/7-ano/2-tri/retomadas-do-2-trimestre/`)
+- [ ] **Ângulos** — 6 aulas (`aulas/7-ano/2-tri/angulos/`)
 - [ ] **Triângulos** — 4 aulas (`aulas/7-ano/2-tri/triangulos/`)
 - [ ] **Polígonos** — 6 aulas (`aulas/7-ano/2-tri/poligonos/`)
 
-### Matemática · 7° Ano · 3° Trimestre (8 módulos)
+### Matemática · 7° Ano · 3° Trimestre (9 módulos)
 
 - [ ] **Círculo e circunferência** — 2 aulas (`aulas/7-ano/3-tri/circulo-e-circunferencia/`)
-- [ ] **Equações do 1º grau** — 2 aulas (`aulas/7-ano/2-tri/equacoes-e-inequacoes/`)
-- [ ] **Média aritmética** — 2 aulas (`aulas/7-ano/3-tri/estatistica-e-probabilidade/`)
-- [ ] **Razão e proporção** — 2 aulas (`aulas/7-ano/2-tri/proporcao-e-regra-de-tres/`)
+- [ ] **Equações do 1º grau** — 10 aulas (`aulas/7-ano/3-tri/equacoes-do-1-grau/`)
+- [ ] **Média aritmética** — 5 aulas (`aulas/7-ano/3-tri/media-aritmetica/`)
+- [ ] **Razão e proporção** — 7 aulas (`aulas/7-ano/3-tri/razao-e-proporcao/`)
 - [ ] **Grandezas proporcionais** — 7 aulas (`aulas/7-ano/3-tri/grandezas-proporcionais/`)
 - [ ] **Regra de três simples** — 2 aulas (`aulas/7-ano/3-tri/regra-de-tres-simples/`)
 - [ ] **Perímetro, quadriláteros e áreas** — 7 aulas (`aulas/7-ano/3-tri/perimetro-quadrilateros-e-areas/`)
-- [ ] **Unidades de medida e volume** — 2 aulas (`aulas/7-ano/3-tri/poliedros-e-solidos-que-giram/`)
+- [ ] **Unidades de medida e volume** — 8 aulas (`aulas/7-ano/3-tri/unidades-de-medida-e-volume/`)
+- [ ] **Retomadas do 3º trimestre** — 2 aulas (`aulas/7-ano/3-tri/retomadas-do-3-trimestre/`)
 
 ### Matemática · 8° Ano · 1° Trimestre (9 módulos)
 
@@ -93,20 +95,22 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Dízimas periódicas e fração geratriz** — 2 aulas (`aulas/8-ano/1-tri/numeros-reais-e-irracionais/`)
 - [ ] **Porcentagem** — 2 aulas (`aulas/8-ano/1-tri/porcentagem/`)
 - [ ] **Interpretação de dados em tabelas** — 3 aulas (`aulas/8-ano/1-tri/interpretacao-de-dados-em-tabelas/`)
-- [ ] **Potenciação com números racionais** — 2 aulas (`aulas/8-ano/1-tri/potencias-e-raizes/`)
-- [ ] **Linguagem algébrica e valor numérico** — 2 aulas (`aulas/8-ano/1-tri/calculo-algebrico/`)
+- [ ] **Potenciação com números racionais** — 6 aulas (`aulas/8-ano/1-tri/potenciacao-com-numeros-racionais/`)
+- [ ] **Linguagem algébrica e valor numérico** — 5 aulas (`aulas/8-ano/1-tri/linguagem-algebrica-e-valor-numerico/`)
 
-### Matemática · 8° Ano · 2° Trimestre (1 módulos)
+### Matemática · 8° Ano · 2° Trimestre (3 módulos)
 
-- [ ] **Equações do 1º grau e sistemas** — 2 aulas (`aulas/8-ano/1-tri/equacoes-e-sistemas/`)
+- [ ] **Raiz quadrada e números irracionais** — 2 aulas (`aulas/8-ano/2-tri/raiz-quadrada-e-numeros-irracionais/`)
+- [ ] **Monômios e polinômios** — 3 aulas (`aulas/8-ano/2-tri/monomios-e-polinomios/`)
+- [ ] **Equações do 1º grau e sistemas** — 3 aulas (`aulas/8-ano/2-tri/equacoes-do-1-grau-e-sistemas/`)
 
 ### Matemática · 8° Ano · 3° Trimestre (5 módulos)
 
-- [ ] **Ângulos, triângulos e quadriláteros** — 2 aulas (`aulas/8-ano/2-tri/triangulos-e-poligonos/`)
+- [ ] **Ângulos, triângulos e quadriláteros** — 5 aulas (`aulas/8-ano/3-tri/angulos-triangulos-e-quadrilateros/`)
 - [ ] **Circunferência e círculo** — 2 aulas (`aulas/8-ano/2-tri/circunferencia-e-circulo/`)
 - [ ] **Áreas e volumes** — 2 aulas (`aulas/8-ano/2-tri/areas-e-volumes/`)
 - [ ] **Juros simples e proporcionalidade** — 2 aulas (`aulas/8-ano/3-tri/juros-simples-e-proporcionalidade/`)
-- [ ] **Contagem, probabilidade e estatística** — 2 aulas (`aulas/8-ano/3-tri/contagem-e-estatistica/`)
+- [ ] **Contagem, probabilidade e estatística** — 3 aulas (`aulas/8-ano/3-tri/contagem-probabilidade-e-estatistica/`)
 
 ### Matemática · 9° Ano · 1° Trimestre (8 módulos)
 
@@ -119,18 +123,19 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Fatoração** — 3 aulas (`aulas/9-ano/1-tri/fatoracao/`)
 - [ ] **Razão e grandezas proporcionais** — 2 aulas (`aulas/9-ano/1-tri/razao-e-grandezas-proporcionais/`)
 
-### Matemática · 9° Ano · 2° Trimestre (8 módulos)
+### Matemática · 9° Ano · 2° Trimestre (9 módulos)
 
 - [ ] **Fatoração e equações** — 4 aulas (`aulas/9-ano/2-tri/fatoracao-e-equacoes/`)
 - [ ] **Equação do 2º grau** — 11 aulas (`aulas/9-ano/2-tri/equacao-do-2-grau/`)
 - [ ] **Ângulos formados por retas** — 3 aulas (`aulas/9-ano/2-tri/angulos-formados-por-retas/`)
 - [ ] **Figuras e triângulos semelhantes** — 6 aulas (`aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/`)
+- [ ] **Retomadas do 2º trimestre** — 9 aulas (`aulas/9-ano/2-tri/retomadas-do-2-trimestre/`)
 - [ ] **Segmentos proporcionais e Teorema de Tales** — 3 aulas (`aulas/9-ano/2-tri/segmentos-proporcionais-e-teorema-de-tales/`)
 - [ ] **Relações métricas no triângulo retângulo** — 6 aulas (`aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/`)
 - [ ] **Circunferência e círculo** — 5 aulas (`aulas/9-ano/2-tri/circunferencia-e-circulo/`)
 - [ ] **Plano cartesiano** — 2 aulas (`aulas/9-ano/2-tri/plano-cartesiano/`)
 
-### Matemática · 9° Ano · 3° Trimestre (8 módulos)
+### Matemática · 9° Ano · 3° Trimestre (9 módulos)
 
 - [ ] **Funções: noções e situações-problema** — 4 aulas (`aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/`)
 - [ ] **Função afim: gráfico e zero** — 6 aulas (`aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/`)
@@ -140,6 +145,7 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Probabilidade** — 4 aulas (`aulas/9-ano/3-tri/probabilidade/`)
 - [ ] **Estatística: gráficos, medidas e pesquisa** — 12 aulas (`aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/`)
 - [ ] **Propriedades dos polígonos** — 2 aulas (`aulas/9-ano/3-tri/propriedades-dos-poligonos/`)
+- [ ] **Retomadas do 3º trimestre** — 4 aulas (`aulas/9-ano/3-tri/retomadas-do-3-trimestre/`)
 
 ### Matemática · 2° Ano · 2° Trimestre (23 módulos)
 

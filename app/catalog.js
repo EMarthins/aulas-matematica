@@ -313,6 +313,35 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Propriedades dos polígonos II', arquivo:'aulas/9-ano/3-tri/propriedades-dos-poligonos/aula-2-propriedades-dos-poligonos-ii.html' }
                 ]
               },
+              {
+                titulo: 'Retomadas do 2º trimestre',
+                accent: 'growth',
+                icon: 'retomada',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada: cálculos com números inteiros', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-1-retomada-calculos-com-numeros-inteiros.html' },
+                  { tipo:'Aula 2', titulo:'Retomada: problema com números inteiros', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-2-retomada-problema-com-numeros-inteiros.html' },
+                  { tipo:'Aula 3', titulo:'Retomada: problema com números inteiros II', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-3-retomada-problema-com-numeros-inteiros-ii.html' },
+                  { tipo:'Aula 4', titulo:'Retomada: cálculos que envolvam operações com números racionais', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-4-retomada-calculos-que-envolvam-operacoes-com-numeros-racionais.html' },
+                  { tipo:'Aula 5', titulo:'Retomada: resolver problemas com números racionais', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-5-retomada-resolver-problemas-com-numeros-racionais.html' },
+                  { tipo:'Aula 6', titulo:'Retomada: operações com números racionais', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-6-retomada-operacoes-com-numeros-racionais.html' },
+                  { tipo:'Aula 7', titulo:'Retomada: variação proporcional entre grandezas I', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-7-retomada-variacao-proporcional-entre-grandezas-i.html' },
+                  { tipo:'Aula 8', titulo:'Retomada: variação proporcional entre grandezas II', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-8-retomada-variacao-proporcional-entre-grandezas-ii.html' },
+                  { tipo:'Aula 9', titulo:'Retomada: problema utilizando relações entre diferentes unidades de medida', arquivo:'aulas/9-ano/2-tri/retomadas-do-2-trimestre/aula-9-retomada-problema-utilizando-relacoes-entre-diferentes-unidades-de-med.html' }
+                ]
+              },
+              {
+                titulo: 'Retomadas do 3º trimestre',
+                accent: 'decay',
+                icon: 'retomada',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada: semelhança de triângulos', arquivo:'aulas/9-ano/3-tri/retomadas-do-3-trimestre/aula-1-retomada-semelhanca-de-triangulos.html' },
+                  { tipo:'Aula 2', titulo:'Retomada: equações do 2º grau I', arquivo:'aulas/9-ano/3-tri/retomadas-do-3-trimestre/aula-2-retomada-equacoes-do-2-grau-i.html' },
+                  { tipo:'Aula 3', titulo:'Retomada: equações do 2º grau II', arquivo:'aulas/9-ano/3-tri/retomadas-do-3-trimestre/aula-3-retomada-equacoes-do-2-grau-ii.html' },
+                  { tipo:'Aula 4', titulo:'Retomada: ângulos formados por retas paralelas cortadas por uma transversal', arquivo:'aulas/9-ano/3-tri/retomadas-do-3-trimestre/aula-4-retomada-angulos-formados-por-retas-paralelas-cortadas-por-uma-transve.html' }
+                ]
+              },
               // <<< mat-9ano-novas
               {
                 titulo: 'Equações do 2º grau',
@@ -457,6 +486,83 @@ export const MATERIAS = [
                   { tipo:'Aula 1', titulo:'Interpretar e analisar dados apresentados em tabelas', arquivo:'aulas/8-ano/1-tri/interpretacao-de-dados-em-tabelas/aula-1-interpretar-e-analisar-dados-apresentados-em-tabelas.html' },
                   { tipo:'Aula 2', titulo:'Interpretar e analisar dados apresentados em tabelas e diferentes tipos de gráficos divulgados pela mídia', arquivo:'aulas/8-ano/1-tri/interpretacao-de-dados-em-tabelas/aula-2-interpretar-e-analisar-dados-apresentados-em-tabelas-e-diferentes-tipo.html' },
                   { tipo:'Aula 3', titulo:'Interpretar e analisar dados apresentados em tabelas e diferentes tipos de gráficos na resolução de problemas', arquivo:'aulas/8-ano/1-tri/interpretacao-de-dados-em-tabelas/aula-3-interpretar-e-analisar-dados-apresentados-em-tabelas-e-diferentes-tipo.html' }
+                ]
+              },
+              {
+                titulo: 'Potenciação com números racionais',
+                accent: 'growth',
+                icon: 'potencia',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Potenciação de racionais e propriedades operatórias I', arquivo:'aulas/8-ano/1-tri/potenciacao-com-numeros-racionais/aula-1-potenciacao-de-racionais-e-propriedades-operatorias-i.html' },
+                  { tipo:'Aula 2', titulo:'Potenciação de racionais e propriedades operatórias II', arquivo:'aulas/8-ano/1-tri/potenciacao-com-numeros-racionais/aula-2-potenciacao-de-racionais-e-propriedades-operatorias-ii.html' },
+                  { tipo:'Aula 3', titulo:'Potenciação de racionais: problemas com as propriedades das potências', arquivo:'aulas/8-ano/1-tri/potenciacao-com-numeros-racionais/aula-3-potenciacao-de-racionais-problemas-com-as-propriedades-das-potencias.html' },
+                  { tipo:'Aula 4', titulo:'Potenciação de racionais: problemas com quadrados perfeitos', arquivo:'aulas/8-ano/1-tri/potenciacao-com-numeros-racionais/aula-4-potenciacao-de-racionais-problemas-com-quadrados-perfeitos.html' }
+                ]
+              },
+              {
+                titulo: 'Linguagem algébrica e valor numérico',
+                accent: 'primary',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Representar situações-problema por meio da linguagem algébrica', arquivo:'aulas/8-ano/1-tri/linguagem-algebrica-e-valor-numerico/aula-1-representar-situacoes-problema-por-meio-da-linguagem-algebrica.html' },
+                  { tipo:'Aula 2', titulo:'Modelar problemas do cotidiano em sentenças matemáticas, identificando a estrutura algébrica', arquivo:'aulas/8-ano/1-tri/linguagem-algebrica-e-valor-numerico/aula-2-modelar-problemas-do-cotidiano-em-sentencas-matematicas-identificando-.html' },
+                  { tipo:'Aula 3', titulo:'Determinar o valor numérico de expressões algébricas utilizando a substituição de variáveis por números', arquivo:'aulas/8-ano/1-tri/linguagem-algebrica-e-valor-numerico/aula-3-determinar-o-valor-numerico-de-expressoes-algebricas-utilizando-a-subs.html' }
+                ]
+              },
+              {
+                titulo: 'Raiz quadrada e números irracionais',
+                accent: 'decay',
+                icon: 'radical',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Raiz quadrada exata e aproximada', arquivo:'aulas/8-ano/2-tri/raiz-quadrada-e-numeros-irracionais/aula-1-raiz-quadrada-exata-e-aproximada.html' },
+                  { tipo:'Aula 2', titulo:'Números irracionais e reais', arquivo:'aulas/8-ano/2-tri/raiz-quadrada-e-numeros-irracionais/aula-2-numeros-irracionais-e-reais.html' }
+                ]
+              },
+              {
+                titulo: 'Monômios e polinômios',
+                accent: 'success',
+                icon: 'algebra',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Monômios: operações', arquivo:'aulas/8-ano/2-tri/monomios-e-polinomios/aula-1-monomios-operacoes.html' },
+                  { tipo:'Aula 2', titulo:'Polinômios: adição, subtração e multiplicação', arquivo:'aulas/8-ano/2-tri/monomios-e-polinomios/aula-2-polinomios-adicao-subtracao-e-multiplicacao.html' },
+                  { tipo:'Aula 3', titulo:'Produtos notáveis e fatoração', arquivo:'aulas/8-ano/2-tri/monomios-e-polinomios/aula-3-produtos-notaveis-e-fatoracao.html' }
+                ]
+              },
+              {
+                titulo: 'Equações do 1º grau e sistemas',
+                accent: 'primary',
+                icon: 'sistema',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Isolar a incógnita e resolver equações do 1º grau', arquivo:'aulas/8-ano/2-tri/equacoes-do-1-grau-e-sistemas/aula-1-isolar-a-incognita-e-resolver-equacoes-do-1-grau.html' },
+                  { tipo:'Aula 2', titulo:'Problemas com equações', arquivo:'aulas/8-ano/2-tri/equacoes-do-1-grau-e-sistemas/aula-2-problemas-com-equacoes.html' },
+                  { tipo:'Aula 3', titulo:'Sistemas de equações do 1º grau', arquivo:'aulas/8-ano/2-tri/equacoes-do-1-grau-e-sistemas/aula-3-sistemas-de-equacoes-do-1-grau.html' }
+                ]
+              },
+              {
+                titulo: 'Ângulos, triângulos e quadriláteros',
+                accent: 'primary',
+                icon: 'triangulo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ângulos entre retas paralelas e transversal', arquivo:'aulas/8-ano/3-tri/angulos-triangulos-e-quadrilateros/aula-1-angulos-entre-retas-paralelas-e-transversal.html' },
+                  { tipo:'Aula 2', titulo:'Triângulos: propriedades e congruência', arquivo:'aulas/8-ano/3-tri/angulos-triangulos-e-quadrilateros/aula-2-triangulos-propriedades-e-congruencia.html' },
+                  { tipo:'Aula 3', titulo:'Quadriláteros e polígonos', arquivo:'aulas/8-ano/3-tri/angulos-triangulos-e-quadrilateros/aula-3-quadrilateros-e-poligonos.html' }
+                ]
+              },
+              {
+                titulo: 'Contagem, probabilidade e estatística',
+                accent: 'growth',
+                icon: 'dado',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Princípio multiplicativo e árvore de possibilidades', arquivo:'aulas/8-ano/3-tri/contagem-probabilidade-e-estatistica/aula-1-principio-multiplicativo-e-arvore-de-possibilidades.html' },
+                  { tipo:'Aula 2', titulo:'Probabilidade', arquivo:'aulas/8-ano/3-tri/contagem-probabilidade-e-estatistica/aula-2-probabilidade.html' },
+                  { tipo:'Aula 3', titulo:'Gráficos, média e amplitude', arquivo:'aulas/8-ano/3-tri/contagem-probabilidade-e-estatistica/aula-3-graficos-media-e-amplitude.html' }
                 ]
               },
               // <<< mat-8ano-novas
@@ -723,7 +829,7 @@ export const MATERIAS = [
               {
                 titulo: 'Área do retângulo e do quadrado',
                 accent: 'success',
-                icon: 'area',
+                icon: 'area-pol',
                 pendente: true,
                 itens: [
                   { tipo:'Aula 1', titulo:'Área do retângulo', arquivo:'aulas/7-ano/2-tri/area-do-retangulo-e-do-quadrado/aula-1-area-do-retangulo.html' },
@@ -820,7 +926,7 @@ export const MATERIAS = [
               {
                 titulo: 'Perímetro, quadriláteros e áreas',
                 accent: 'success',
-                icon: 'area',
+                icon: 'area-pol',
                 pendente: true,
                 itens: [
                   { tipo:'Aula 1', titulo:'Perímetro de figuras planas – resolução de problemas', arquivo:'aulas/7-ano/3-tri/perimetro-quadrilateros-e-areas/aula-1-perimetro-de-figuras-planas-resolucao-de-problemas.html' },
@@ -830,6 +936,127 @@ export const MATERIAS = [
                   { tipo:'Aula 5', titulo:'Área de quadriláteros: paralelogramo - resolução de problemas', arquivo:'aulas/7-ano/3-tri/perimetro-quadrilateros-e-areas/aula-5-area-de-quadrilateros-paralelogramo-resolucao-de-problemas.html' },
                   { tipo:'Aula 6', titulo:'Área de quadriláteros: trapézio - resolução de problemas', arquivo:'aulas/7-ano/3-tri/perimetro-quadrilateros-e-areas/aula-6-area-de-quadrilateros-trapezio-resolucao-de-problemas.html' },
                   { tipo:'Aula 7', titulo:'Área de quadriláteros - resolução de problemas', arquivo:'aulas/7-ano/3-tri/perimetro-quadrilateros-e-areas/aula-7-area-de-quadrilateros-resolucao-de-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Potenciação e raiz quadrada de números inteiros',
+                accent: 'decay',
+                icon: 'potencia',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Potenciação I', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-1-potenciacao-i.html' },
+                  { tipo:'Aula 2', titulo:'Potenciação II', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-2-potenciacao-ii.html' },
+                  { tipo:'Aula 3', titulo:'Potenciação III', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-3-potenciacao-iii.html' },
+                  { tipo:'Aula 4', titulo:'Raiz quadrada exata de números inteiros I', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-4-raiz-quadrada-exata-de-numeros-inteiros-i.html' },
+                  { tipo:'Aula 5', titulo:'Raiz quadrada exata de números inteiros II', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-5-raiz-quadrada-exata-de-numeros-inteiros-ii.html' },
+                  { tipo:'Aula 6', titulo:'Expressões numéricas com números inteiros', arquivo:'aulas/7-ano/1-tri/potenciacao-e-raiz-quadrada-de-numeros-inteiros/aula-6-expressoes-numericas-com-numeros-inteiros.html' }
+                ]
+              },
+              {
+                titulo: 'Números racionais e a reta numérica',
+                accent: 'success',
+                icon: 'racional',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Números decimais: representação (ordens)', arquivo:'aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/aula-1-numeros-decimais-representacao-ordens.html' },
+                  { tipo:'Aula 2', titulo:'Módulo ou valor absoluto de um número racional', arquivo:'aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/aula-2-modulo-ou-valor-absoluto-de-um-numero-racional.html' },
+                  { tipo:'Aula 3', titulo:'Números racionais: reta numérica', arquivo:'aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/aula-3-numeros-racionais-reta-numerica.html' },
+                  { tipo:'Aula 4', titulo:'Números racionais na forma decimal e a reta numérica', arquivo:'aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/aula-4-numeros-racionais-na-forma-decimal-e-a-reta-numerica.html' },
+                  { tipo:'Aula 5', titulo:'Números racionais na forma fracionária e a reta numérica', arquivo:'aulas/7-ano/1-tri/numeros-racionais-e-a-reta-numerica/aula-5-numeros-racionais-na-forma-fracionaria-e-a-reta-numerica.html' }
+                ]
+              },
+              {
+                titulo: 'Ângulos',
+                accent: 'primary',
+                icon: 'angulo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Definição, medida e classificação de ângulos', arquivo:'aulas/7-ano/2-tri/angulos/aula-1-definicao-medida-e-classificacao-de-angulos.html' },
+                  { tipo:'Aula 2', titulo:'Ângulos complementares', arquivo:'aulas/7-ano/2-tri/angulos/aula-2-angulos-complementares.html' },
+                  { tipo:'Aula 3', titulo:'Ângulos suplementares', arquivo:'aulas/7-ano/2-tri/angulos/aula-3-angulos-suplementares.html' },
+                  { tipo:'Aula 4', titulo:'Ângulos opostos pelo vértice', arquivo:'aulas/7-ano/2-tri/angulos/aula-4-angulos-opostos-pelo-vertice.html' }
+                ]
+              },
+              {
+                titulo: 'Retomadas do 2º trimestre',
+                accent: 'growth',
+                icon: 'retomada',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada D05: conservação ou modificação de medidas na ampliação e redução', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-1-retomada-d05-conservacao-ou-modificacao-de-medidas-na-ampliacao-e-redu.html' },
+                  { tipo:'Aula 2', titulo:'Retomada D19: problemas com números naturais — diferentes significados I', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-2-retomada-d19-problemas-com-numeros-naturais-diferentes-significados-i.html' },
+                  { tipo:'Aula 3', titulo:'Retomada D19: problemas com números naturais — diferentes significados II', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-3-retomada-d19-problemas-com-numeros-naturais-diferentes-significados-ii.html' },
+                  { tipo:'Aula 4', titulo:'Retomada D18: cálculos com números inteiros — adição e subtração', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-4-retomada-d18-calculos-com-numeros-inteiros-adicao-e-subtracao.html' },
+                  { tipo:'Aula 5', titulo:'Retomada D18: cálculos com números inteiros — multiplicação, divisão e potenciação', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-5-retomada-d18-calculos-com-numeros-inteiros-multiplicacao-divisao-e-pot.html' },
+                  { tipo:'Aula 6', titulo:'Retomada D20: problemas com números inteiros I', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-6-retomada-d20-problemas-com-numeros-inteiros-i.html' },
+                  { tipo:'Aula 7', titulo:'Retomada D20: problemas com números inteiros II', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-7-retomada-d20-problemas-com-numeros-inteiros-ii.html' },
+                  { tipo:'Aula 8', titulo:'Retomada D20: problemas com números inteiros III', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-8-retomada-d20-problemas-com-numeros-inteiros-iii.html' },
+                  { tipo:'Aula 9', titulo:'Retomada D24: representações decimais dos números racionais I', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-9-retomada-d24-representacoes-decimais-dos-numeros-racionais-i.html' },
+                  { tipo:'Aula 10', titulo:'Retomada D24: representações decimais dos números racionais II', arquivo:'aulas/7-ano/2-tri/retomadas-do-2-trimestre/aula-10-retomada-d24-representacoes-decimais-dos-numeros-racionais-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Equações do 1º grau',
+                accent: 'decay',
+                icon: 'equacao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equações polinomiais do 1º grau: conceitos iniciais', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-1-equacoes-polinomiais-do-1-grau-conceitos-iniciais.html' },
+                  { tipo:'Aula 2', titulo:'Solução ou raiz de uma equação do 1º grau', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-2-solucao-ou-raiz-de-uma-equacao-do-1-grau.html' },
+                  { tipo:'Aula 3', titulo:'Resolvendo equações do 1º grau com uma incógnita I', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-3-resolvendo-equacoes-do-1-grau-com-uma-incognita-i.html' },
+                  { tipo:'Aula 4', titulo:'Resolvendo equações do 1º grau com uma incógnita II', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-4-resolvendo-equacoes-do-1-grau-com-uma-incognita-ii.html' },
+                  { tipo:'Aula 5', titulo:'Equação de 1º grau expressa em um problema I', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-5-equacao-de-1-grau-expressa-em-um-problema-i.html' },
+                  { tipo:'Aula 6', titulo:'Equação de 1º grau expressa em um problema II', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-6-equacao-de-1-grau-expressa-em-um-problema-ii.html' },
+                  { tipo:'Aula 7', titulo:'Equações do 1º grau – resolução de problemas I', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-7-equacoes-do-1-grau-resolucao-de-problemas-i.html' },
+                  { tipo:'Aula 8', titulo:'Equações do 1º grau – resolução de problemas II', arquivo:'aulas/7-ano/3-tri/equacoes-do-1-grau/aula-8-equacoes-do-1-grau-resolucao-de-problemas-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Média aritmética',
+                accent: 'primary',
+                icon: 'histograma',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Medidas de tendência central: média aritmética simples I', arquivo:'aulas/7-ano/3-tri/media-aritmetica/aula-1-medidas-de-tendencia-central-media-aritmetica-simples-i.html' },
+                  { tipo:'Aula 2', titulo:'Medidas de tendência central: média aritmética simples II', arquivo:'aulas/7-ano/3-tri/media-aritmetica/aula-2-medidas-de-tendencia-central-media-aritmetica-simples-ii.html' },
+                  { tipo:'Aula 3', titulo:'Medidas de tendência central: média aritmética ponderada', arquivo:'aulas/7-ano/3-tri/media-aritmetica/aula-3-medidas-de-tendencia-central-media-aritmetica-ponderada.html' }
+                ]
+              },
+              {
+                titulo: 'Razão e proporção',
+                accent: 'primary',
+                icon: 'proporcao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Razão e proporção: razão', arquivo:'aulas/7-ano/3-tri/razao-e-proporcao/aula-1-razao-e-proporcao-razao.html' },
+                  { tipo:'Aula 2', titulo:'Razão e proporção: razões escritas na forma decimal', arquivo:'aulas/7-ano/3-tri/razao-e-proporcao/aula-2-razao-e-proporcao-razoes-escritas-na-forma-decimal.html' },
+                  { tipo:'Aula 3', titulo:'Razão e proporção: razões escritas na forma percentual', arquivo:'aulas/7-ano/3-tri/razao-e-proporcao/aula-3-razao-e-proporcao-razoes-escritas-na-forma-percentual.html' },
+                  { tipo:'Aula 4', titulo:'Razão e proporção: proporção', arquivo:'aulas/7-ano/3-tri/razao-e-proporcao/aula-4-razao-e-proporcao-proporcao.html' },
+                  { tipo:'Aula 5', titulo:'Razão e proporção: propriedade fundamental das proporções', arquivo:'aulas/7-ano/3-tri/razao-e-proporcao/aula-5-razao-e-proporcao-propriedade-fundamental-das-proporcoes.html' }
+                ]
+              },
+              {
+                titulo: 'Unidades de medida e volume',
+                accent: 'success',
+                icon: 'volume-copo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Unidades de medida - resolução de problemas I', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-1-unidades-de-medida-resolucao-de-problemas-i.html' },
+                  { tipo:'Aula 2', titulo:'Unidades de medida - resolução de problemas II', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-2-unidades-de-medida-resolucao-de-problemas-ii.html' },
+                  { tipo:'Aula 3', titulo:'Volume: unidades de medida - resolução de problemas', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-3-volume-unidades-de-medida-resolucao-de-problemas.html' },
+                  { tipo:'Aula 4', titulo:'Volume do bloco retangular - resolução de problemas', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-4-volume-do-bloco-retangular-resolucao-de-problemas.html' },
+                  { tipo:'Aula 5', titulo:'Volume: cubo - resolução de problemas', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-5-volume-cubo-resolucao-de-problemas.html' },
+                  { tipo:'Aula 6', titulo:'Volume de blocos retangulares - resolução de problemas', arquivo:'aulas/7-ano/3-tri/unidades-de-medida-e-volume/aula-6-volume-de-blocos-retangulares-resolucao-de-problemas.html' }
+                ]
+              },
+              {
+                titulo: 'Retomadas do 3º trimestre',
+                accent: 'growth',
+                icon: 'retomada',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada D22: fração como representação associada a diferentes significados I', arquivo:'aulas/7-ano/3-tri/retomadas-do-3-trimestre/aula-1-retomada-d22-fracao-como-representacao-associada-a-diferentes-signific.html' },
+                  { tipo:'Aula 2', titulo:'Retomada D22: fração como representação associada a diferentes significados II', arquivo:'aulas/7-ano/3-tri/retomadas-do-3-trimestre/aula-2-retomada-d22-fracao-como-representacao-associada-a-diferentes-signific.html' }
                 ]
               },
               // <<< mat-7ano-novas
@@ -1141,6 +1368,130 @@ export const MATERIAS = [
                 itens: [
                   { tipo:'Aula 1', titulo:'Classificação dos triângulos quanto aos lados', arquivo:'aulas/6-ano/3-tri/classificacao-de-triangulos/aula-1-classificacao-dos-triangulos-quanto-aos-lados.html' },
                   { tipo:'Aula 2', titulo:'Classificação dos triângulos quanto aos ângulos', arquivo:'aulas/6-ano/3-tri/classificacao-de-triangulos/aula-2-classificacao-dos-triangulos-quanto-aos-angulos.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades da igualdade e expressões numéricas',
+                accent: 'decay',
+                icon: 'equacao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Propriedades da igualdade', arquivo:'aulas/6-ano/1-tri/propriedades-da-igualdade-e-expressoes-numericas/aula-1-propriedades-da-igualdade.html' },
+                  { tipo:'Aula 2', titulo:'Expressões Numéricas I', arquivo:'aulas/6-ano/1-tri/propriedades-da-igualdade-e-expressoes-numericas/aula-2-expressoes-numericas-i.html' },
+                  { tipo:'Aula 3', titulo:'Expressões Numéricas II', arquivo:'aulas/6-ano/1-tri/propriedades-da-igualdade-e-expressoes-numericas/aula-3-expressoes-numericas-ii.html' },
+                  { tipo:'Aula 4', titulo:'Expressões Numéricas III', arquivo:'aulas/6-ano/1-tri/propriedades-da-igualdade-e-expressoes-numericas/aula-4-expressoes-numericas-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Ângulos',
+                accent: 'primary',
+                icon: 'angulo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Noção de ângulo', arquivo:'aulas/6-ano/2-tri/angulos/aula-1-nocao-de-angulo.html' },
+                  { tipo:'Aula 2', titulo:'Medida de ângulo I ( giro e volta )', arquivo:'aulas/6-ano/2-tri/angulos/aula-2-medida-de-angulo-i-giro-e-volta.html' },
+                  { tipo:'Aula 3', titulo:'Medida de ângulo II ( transferidor)', arquivo:'aulas/6-ano/2-tri/angulos/aula-3-medida-de-angulo-ii-transferidor.html' },
+                  { tipo:'Aula 4', titulo:'Classificação de ângulos', arquivo:'aulas/6-ano/2-tri/angulos/aula-4-classificacao-de-angulos.html' }
+                ]
+              },
+              {
+                titulo: 'Polígonos e quadriláteros',
+                accent: 'success',
+                icon: 'quadrilatero',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Classificação de polígonos quanto ao número de lados', arquivo:'aulas/6-ano/2-tri/poligonos-e-quadrilateros/aula-1-classificacao-de-poligonos-quanto-ao-numero-de-lados.html' },
+                  { tipo:'Aula 2', titulo:'Quadriláteros', arquivo:'aulas/6-ano/2-tri/poligonos-e-quadrilateros/aula-2-quadrilateros.html' },
+                  { tipo:'Aula 3', titulo:'Paralelogramos', arquivo:'aulas/6-ano/2-tri/poligonos-e-quadrilateros/aula-3-paralelogramos.html' },
+                  { tipo:'Aula 4', titulo:'Polígonos - Trapézios', arquivo:'aulas/6-ano/2-tri/poligonos-e-quadrilateros/aula-4-poligonos-trapezios.html' }
+                ]
+              },
+              {
+                titulo: 'A ideia de fração',
+                accent: 'primary',
+                icon: 'fracao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'A ideia de fração I', arquivo:'aulas/6-ano/2-tri/a-ideia-de-fracao/aula-1-a-ideia-de-fracao-i.html' },
+                  { tipo:'Aula 2', titulo:'A ideia de fração II', arquivo:'aulas/6-ano/2-tri/a-ideia-de-fracao/aula-2-a-ideia-de-fracao-ii.html' },
+                  { tipo:'Aula 3', titulo:'A ideia de fração III', arquivo:'aulas/6-ano/2-tri/a-ideia-de-fracao/aula-3-a-ideia-de-fracao-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Adição e subtração de frações',
+                accent: 'success',
+                icon: 'adicao-subtracao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Adição e subtração de frações com denominadores iguais e diferentes', arquivo:'aulas/6-ano/2-tri/adicao-e-subtracao-de-fracoes/aula-1-adicao-e-subtracao-de-fracoes-com-denominadores-iguais-e-diferentes.html' },
+                  { tipo:'Aula 2', titulo:'Adição e subtração de frações com denominadores diferentes', arquivo:'aulas/6-ano/2-tri/adicao-e-subtracao-de-fracoes/aula-2-adicao-e-subtracao-de-fracoes-com-denominadores-diferentes.html' },
+                  { tipo:'Aula 3', titulo:'A forma mista', arquivo:'aulas/6-ano/2-tri/adicao-e-subtracao-de-fracoes/aula-3-a-forma-mista.html' }
+                ]
+              },
+              {
+                titulo: 'Porcentagem e frações',
+                accent: 'decay',
+                icon: 'porcentagem',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem e sua relação com as frações', arquivo:'aulas/6-ano/2-tri/porcentagem-e-fracoes/aula-1-porcentagem-e-sua-relacao-com-as-fracoes.html' },
+                  { tipo:'Aula 2', titulo:'Calcular porcentagem por meio de sua relação com frações I', arquivo:'aulas/6-ano/2-tri/porcentagem-e-fracoes/aula-2-calcular-porcentagem-por-meio-de-sua-relacao-com-fracoes-i.html' },
+                  { tipo:'Aula 3', titulo:'Calcular porcentagem por meio de sua relação com frações II', arquivo:'aulas/6-ano/2-tri/porcentagem-e-fracoes/aula-3-calcular-porcentagem-por-meio-de-sua-relacao-com-fracoes-ii.html' },
+                  { tipo:'Aula 4', titulo:'Calcular porcentagem por meio de sua relação com frações III', arquivo:'aulas/6-ano/2-tri/porcentagem-e-fracoes/aula-4-calcular-porcentagem-por-meio-de-sua-relacao-com-fracoes-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Retomadas do 2º trimestre (naturais, inteiros e gráficos)',
+                accent: 'growth',
+                icon: 'retomada',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Retomada: expressões numéricas', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-1-retomada-expressoes-numericas.html' },
+                  { tipo:'Aula 2', titulo:'Retomada: resolução de problemas com números naturais', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-2-retomada-resolucao-de-problemas-com-numeros-naturais.html' },
+                  { tipo:'Aula 3', titulo:'Retomada: problemas com números naturais — diferentes significados', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-3-retomada-problemas-com-numeros-naturais-diferentes-significados.html' },
+                  { tipo:'Aula 4', titulo:'Retomada: localização de números inteiros na reta numérica I', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-4-retomada-localizacao-de-numeros-inteiros-na-reta-numerica-i.html' },
+                  { tipo:'Aula 5', titulo:'Retomada: localização de números inteiros na reta numérica II', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-5-retomada-localizacao-de-numeros-inteiros-na-reta-numerica-ii.html' },
+                  { tipo:'Aula 6', titulo:'Retomada: gráfico de barras', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-6-retomada-grafico-de-barras.html' },
+                  { tipo:'Aula 7', titulo:'Retomada: gráfico de colunas', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-7-retomada-grafico-de-colunas.html' },
+                  { tipo:'Aula 8', titulo:'Retomada: localização e movimentação no plano cartesiano', arquivo:'aulas/6-ano/2-tri/retomadas-do-2-trimestre-naturais-inteiros-e-graficos/aula-8-retomada-localizacao-e-movimentacao-no-plano-cartesiano.html' }
+                ]
+              },
+              {
+                titulo: 'Números decimais na reta e comparação',
+                accent: 'primary',
+                icon: 'decimal',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Números decimais na reta numérica I', arquivo:'aulas/6-ano/3-tri/numeros-decimais-na-reta-e-comparacao/aula-1-numeros-decimais-na-reta-numerica-i.html' },
+                  { tipo:'Aula 2', titulo:'Números decimais na reta numérica II', arquivo:'aulas/6-ano/3-tri/numeros-decimais-na-reta-e-comparacao/aula-2-numeros-decimais-na-reta-numerica-ii.html' },
+                  { tipo:'Aula 3', titulo:'Comparação de números decimais I', arquivo:'aulas/6-ano/3-tri/numeros-decimais-na-reta-e-comparacao/aula-3-comparacao-de-numeros-decimais-i.html' },
+                  { tipo:'Aula 4', titulo:'Comparação de números decimais II', arquivo:'aulas/6-ano/3-tri/numeros-decimais-na-reta-e-comparacao/aula-4-comparacao-de-numeros-decimais-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Multiplicação e divisão com números decimais',
+                accent: 'decay',
+                icon: 'mult',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Multiplicando um número natural por um número na forma decimal', arquivo:'aulas/6-ano/3-tri/multiplicacao-e-divisao-com-numeros-decimais/aula-1-multiplicando-um-numero-natural-por-um-numero-na-forma-decimal.html' },
+                  { tipo:'Aula 2', titulo:'Multiplicação com números na forma decimal I', arquivo:'aulas/6-ano/3-tri/multiplicacao-e-divisao-com-numeros-decimais/aula-2-multiplicacao-com-numeros-na-forma-decimal-i.html' },
+                  { tipo:'Aula 3', titulo:'Divisão com números na forma decimal- I', arquivo:'aulas/6-ano/3-tri/multiplicacao-e-divisao-com-numeros-decimais/aula-3-divisao-com-numeros-na-forma-decimal-i.html' },
+                  { tipo:'Aula 4', titulo:'Divisão com números na forma decimal II', arquivo:'aulas/6-ano/3-tri/multiplicacao-e-divisao-com-numeros-decimais/aula-4-divisao-com-numeros-na-forma-decimal-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Medidas de superfície e área',
+                accent: 'success',
+                icon: 'area-pol',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Unidade de medida de superfície I', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-1-unidade-de-medida-de-superficie-i.html' },
+                  { tipo:'Aula 2', titulo:'Unidade de medida de superfície II', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-2-unidade-de-medida-de-superficie-ii.html' },
+                  { tipo:'Aula 3', titulo:'Área de polígonos na malha quadriculada', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-3-area-de-poligonos-na-malha-quadriculada.html' },
+                  { tipo:'Aula 4', titulo:'Área do retângulo I', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-4-area-do-retangulo-i.html' },
+                  { tipo:'Aula 5', titulo:'Área do retângulo II', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-5-area-do-retangulo-ii.html' },
+                  { tipo:'Aula 6', titulo:'Área do triângulo retângulo', arquivo:'aulas/6-ano/3-tri/medidas-de-superficie-e-area/aula-6-area-do-triangulo-retangulo.html' }
                 ]
               },
               // <<< mat-6ano-novas

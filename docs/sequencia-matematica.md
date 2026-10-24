@@ -15,7 +15,7 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 5 | Tabelas e gráficos de colunas | 12 → 14 | 3 | 3 |
 | 6 | Multiplicação de números naturais | 15 → 19 | 5 | 5 |
 | 7 | Divisão de números naturais | 20 → 26 | 7 | 7 |
-| 8 | Propriedades da igualdade e expressões numéricas | 27 → 30 | 4 | 2 |
+| 8 | Propriedades da igualdade e expressões numéricas | 27 → 30 | 4 | 6 |
 | 9 | Localização em mapas, croquis e representações gráficas | 31 → 32 | 2 | 2 |
 
 ### 2° Trimestre
@@ -25,17 +25,17 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 1 | Potenciação | aula 33 | 1 | 1 |
 | 2 | Unidades de medida de comprimento | 34 → 36 | 3 | 3 |
 | 3 | Perímetro de figuras planas | 37 → 38 | 2 | 2 |
-| 4 | Ângulos | 39 → 42 | 4 | 2 |
-| 5 | Polígonos e quadriláteros | 43 → 46 | 4 | 2 |
+| 4 | Ângulos | 39 → 42 | 4 | 6 |
+| 5 | Polígonos e quadriláteros | 43 → 46 | 4 | 6 |
 | 6 | Sólidos geométricos, prismas e pirâmides | 47 → 49 | 3 | 3 |
 | 7 | Critérios de divisibilidade, múltiplos e divisores | 50 → 52 | 3 | 3 |
-| 8 | Retomadas do 2º trimestre (naturais, inteiros e gráficos) | R9 → R16 | 8 | 2 |
+| 8 | Retomadas do 2º trimestre (naturais, inteiros e gráficos) | R9 → R16 | 8 | 10 |
 | 9 | Números primos e decomposição em fatores | 53 → 54 | 2 | 2 |
-| 10 | A ideia de fração | 55 → 57 | 3 | 2 |
+| 10 | A ideia de fração | 55 → 57 | 3 | 5 |
 | 11 | Comparação e equivalência de frações | 58 → 59 | 2 | 2 |
-| 12 | Adição e subtração de frações | 60 → 62 | 3 | 2 |
+| 12 | Adição e subtração de frações | 60 → 62 | 3 | 5 |
 | 13 | Frações na reta numérica | 63 → 64 | 2 | 2 |
-| 14 | Porcentagem e frações | 65 → 68 | 4 | 2 |
+| 14 | Porcentagem e frações | 65 → 68 | 4 | 6 |
 
 ### 3° Trimestre
 
@@ -43,12 +43,12 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 |---:|---|---|---:|---:|
 | 1 | Números decimais: representação e leitura | 69 → 71 | 3 | 3 |
 | 2 | Frações e números decimais | 72 → 75 | 4 | 4 |
-| 3 | Números decimais na reta e comparação | 76 → 79 | 4 | 2 |
+| 3 | Números decimais na reta e comparação | 76 → 79 | 4 | 6 |
 | 4 | Adição e subtração com números decimais | 80 → 81 | 2 | 2 |
 | 5 | Gráfico de segmentos | 82 → 83 | 2 | 2 |
-| 6 | Multiplicação e divisão com números decimais | 84 → 87 | 4 | 2 |
+| 6 | Multiplicação e divisão com números decimais | 84 → 87 | 4 | 6 |
 | 7 | Porcentagem com números decimais | 88 → 92 | 5 | 6 |
-| 8 | Medidas de superfície e área | 93 → 98 | 6 | 2 |
+| 8 | Medidas de superfície e área | 93 → 98 | 6 | 8 |
 | 9 | Classificação de triângulos | 99 → 100 | 2 | 2 |
 | 10 | Retomadas do 3º trimestre | R17 → R24 | 8 | 0 |
 | 11 | Volume, capacidade e massa *(complemento)* | — | — | 2 |
@@ -65,9 +65,9 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 4 | Números inteiros: conceito, reta numérica e módulo | 08 → 11 | 4 | 4 |
 | 5 | Adição e subtração de números inteiros | 12 → 19 | 8 | 8 |
 | 6 | Multiplicação e divisão de números inteiros | 20 → 25 | 6 | 6 |
-| 7 | Potenciação e raiz quadrada de números inteiros | 26 → 31 | 6 | 2 |
+| 7 | Potenciação e raiz quadrada de números inteiros | 26 → 31 | 6 | 8 |
 | 8 | Transformações no plano cartesiano e polígonos | 32 → 35 | 4 | 4 |
-| 9 | Números racionais e a reta numérica | 36 → 40 | 5 | 2 |
+| 9 | Números racionais e a reta numérica | 36 → 40 | 5 | 7 |
 
 ### 2° Trimestre
 
@@ -80,8 +80,8 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 5 | Área do retângulo e do quadrado | 60 → 61 | 2 | 2 |
 | 6 | Porcentagem | 62 → 64 | 3 | 3 |
 | 7 | Expressões algébricas e sequências | 65 → 71 | 7 | 7 |
-| 8 | Retomadas do 2º trimestre | R11 → R20 | 10 | 0 |
-| 9 | Ângulos | 72 → 75 | 4 | 2 |
+| 8 | Retomadas do 2º trimestre | R11 → R20 | 10 | 10 |
+| 9 | Ângulos | 72 → 75 | 4 | 6 |
 | 10 | Triângulos | 76 → 79 | 4 | 4 |
 | 11 | Polígonos | 80 → 85 | 6 | 6 |
 
@@ -90,14 +90,14 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
 | 1 | Círculo e circunferência | 86 → 87 | 2 | 2 |
-| 2 | Equações do 1º grau | 88 → 95 | 8 | 2 |
-| 3 | Média aritmética | 96 → 98 | 3 | 2 |
-| 4 | Razão e proporção | 99 → 103 | 5 | 2 |
+| 2 | Equações do 1º grau | 88 → 95 | 8 | 10 |
+| 3 | Média aritmética | 96 → 98 | 3 | 5 |
+| 4 | Razão e proporção | 99 → 103 | 5 | 7 |
 | 5 | Grandezas proporcionais | 104 → 110 | 7 | 7 |
 | 6 | Regra de três simples | 111 → 112 | 2 | 2 |
 | 7 | Perímetro, quadriláteros e áreas | 113 → 119 | 7 | 7 |
-| 8 | Unidades de medida e volume | 120 → 125 | 6 | 2 |
-| 9 | Retomadas do 3º trimestre | R21 → R30 | 10 | 0 |
+| 8 | Unidades de medida e volume | 120 → 125 | 6 | 8 |
+| 9 | Retomadas do 3º trimestre | R21 → R30 | 10 | 2 |
 
 ## 8° Ano
 
@@ -112,27 +112,27 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 5 | Dízimas periódicas e fração geratriz | 14 → 15 | 2 | 2 |
 | 6 | Porcentagem | 17 → 18 | 2 | 2 |
 | 7 | Interpretação de dados em tabelas | 19 → 22 | 3 | 3 |
-| 8 | Potenciação com números racionais | 23 → 27 | 4 | 2 |
-| 9 | Linguagem algébrica e valor numérico | 29 → 31 | 3 | 2 |
+| 8 | Potenciação com números racionais | 23 → 27 | 4 | 6 |
+| 9 | Linguagem algébrica e valor numérico | 29 → 31 | 3 | 5 |
 
 ### 2° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Raiz quadrada e números irracionais *(provisório)* | a definir | 2 | 0 |
-| 2 | Monômios e polinômios *(provisório)* | a definir | 3 | 0 |
-| 3 | Equações do 1º grau e sistemas *(provisório)* | a definir | 3 | 2 |
+| 1 | Raiz quadrada e números irracionais *(provisório)* | a definir | 2 | 2 |
+| 2 | Monômios e polinômios *(provisório)* | a definir | 3 | 3 |
+| 3 | Equações do 1º grau e sistemas *(provisório)* | a definir | 3 | 3 |
 | 4 | Retomadas do 2º trimestre *(provisório)* | a definir | 1 | 0 |
 
 ### 3° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Ângulos, triângulos e quadriláteros *(provisório)* | a definir | 3 | 2 |
+| 1 | Ângulos, triângulos e quadriláteros *(provisório)* | a definir | 3 | 5 |
 | 2 | Circunferência e círculo *(provisório)* | a definir | 2 | 2 |
 | 3 | Áreas e volumes *(provisório)* | a definir | 2 | 2 |
 | 4 | Juros simples e proporcionalidade *(provisório)* | a definir | 2 | 2 |
-| 5 | Contagem, probabilidade e estatística *(provisório)* | a definir | 3 | 2 |
+| 5 | Contagem, probabilidade e estatística *(provisório)* | a definir | 3 | 3 |
 | 6 | Retomadas do 3º trimestre *(provisório)* | a definir | 1 | 0 |
 
 ## 9° Ano
@@ -158,7 +158,7 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 2 | Equação do 2º grau | 46 → 56 | 9 | 11 |
 | 3 | Ângulos formados por retas | 57 → 59 | 3 | 3 |
 | 4 | Figuras e triângulos semelhantes | 61 → 64 | 4 | 6 |
-| 5 | Retomadas do 2º trimestre | R11 → R19 | 9 | 0 |
+| 5 | Retomadas do 2º trimestre | R11 → R19 | 9 | 9 |
 | 6 | Segmentos proporcionais e Teorema de Tales | 66 → 68 | 3 | 3 |
 | 7 | Relações métricas no triângulo retângulo | 69 → 76 | 6 | 6 |
 | 8 | Circunferência e círculo | 77 → 82 | 5 | 5 |
@@ -176,7 +176,7 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 | 6 | Probabilidade | 106 → 109 | 4 | 4 |
 | 7 | Estatística: gráficos, medidas e pesquisa | 111 → 122 | 10 | 12 |
 | 8 | Propriedades dos polígonos | 123 → 124 | 2 | 2 |
-| 9 | Retomadas do 3º trimestre | R22 → R29 | 7 | 0 |
+| 9 | Retomadas do 3º trimestre | R22 → R29 | 7 | 4 |
 
 ## 1° Ano (Ensino Médio — 1ª, 2ª e 3ª série)
 
