@@ -264,7 +264,7 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 
 ### História · 6° Ano · 1° Trimestre (1 módulos)
 
-- [ ] **Antiguidade e Idade Média** — 1 aula (`aulas/historia/6-ano/1-tri/antiguidade-e-idade-media/`)
+- [ ] **Introdução ao estudo da História** — 1 aula (`aulas/historia/6-ano/1-tri/antiguidade-e-idade-media/`)
 
 ### Geografia · 6° Ano · 1° Trimestre (1 módulos)
 
