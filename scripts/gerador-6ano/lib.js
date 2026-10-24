@@ -9,6 +9,7 @@ const K = require('../gerador-9ano/kit.js');
 const { g2, card, callout, tbl, checks } = K;
 const { unidade } = require('../gerador-materias/aula.js');
 const { linha, co } = require('./util.js');
+const { guia } = require('./guia.js');
 
 const slug = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70);
 const ICONES = ['target', 'bulb', 'scale', 'link', 'check', 'book'];
@@ -39,8 +40,17 @@ function expande(a, i, todas, u) {
 }
 
 function modulo(m) {
+  const pasta = 'aulas/' + PASTA[m.ano] + '/' + m.tri + '-tri/' + (m.pasta || slug(m.titulo)) + '/';
+  const r = modulo0(m, pasta);
+  if (m.semGuia) return r;
+  // guia visual (infográfico) montado a partir das próprias aulas
+  r.pages.push(guia(m, { pasta, area: AREA[m.ano], ano: m.ano.replace('° ', 'º '), keyp: 'm' + PASTA[m.ano][0] }));
+  r.meta.aulas.push(['Guia', 'Guia visual — ' + m.titulo, 'infografico.html']);
+  return r;
+}
+function modulo0(m, pasta) {
   return unidade({
-    materia: 'matematica', ano: m.ano, tri: m.tri, pasta: 'aulas/' + PASTA[m.ano] + '/' + m.tri + '-tri/' + (m.pasta || slug(m.titulo)) + '/',
+    materia: 'matematica', ano: m.ano, tri: m.tri, pasta,
     titulo: m.titulo, accent: m.accent || 'primary', icon: m.icon || 'numbers', key: m.key, keyp: 'm' + PASTA[m.ano][0], area: AREA[m.ano],
     refs: m.refs || ['Aulas do plano de Matemática do ' + AREA[m.ano].split('· ')[1] + ' (RCO/NRE 2026), reescritas e ampliadas com problemas originais.', 'Exercícios e problemas originais (estilo SAEB); questões de provas oficiais só quando citadas.'],
     aulas: m.aulas.map((a, i) => expande(a, i, m.aulas, m))
