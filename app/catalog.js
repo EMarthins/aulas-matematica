@@ -4236,6 +4236,46 @@ export const MATERIAS = [
     ]
   },
   // <<< ena-profmat
+  // >>> padrao-portugues
+  {
+    id: 'portugues',
+    nome: 'Língua Portuguesa',
+    icon: 'dots',
+    lede: 'Leitura, gramática, produção de texto e literatura, do 6º ano ao 3º ano do Ensino Médio.',
+    CATALOG: [
+      {
+        ano: '6° Ano',
+        trimestres: [
+          {
+            nome: '1° Trimestre',
+            unidades: [
+              {
+                titulo: 'Leitura e interpretação',
+                accent: 'primary',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Ler para compreender: ideia central e informações explícitas', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-1-ler-para-compreender-ideia-central-e-informacoes-explicitas.html' },
+                  { tipo:'Aula 2', titulo:'Informações implícitas e inferências', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-2-informacoes-implicitas-e-inferencias.html' },
+                  { tipo:'Aula 3', titulo:'Gêneros textuais: bilhete, aviso e notícia', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-3-generos-textuais-bilhete-aviso-e-noticia.html' }
+                ]
+              },
+              {
+                titulo: 'Literatura',
+                accent: 'decay',
+                icon: 'dots',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'A narrativa: narrador, personagens, tempo e espaço', arquivo:'aulas/portugues/6-ano/1-tri/literatura/aula-1-a-narrativa-narrador-personagens-tempo-e-espaco.html' }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  // <<< padrao-portugues
   // >>> novas-ingles
   {
     id: 'ingles',
@@ -4410,35 +4450,6 @@ export const MATERIAS = [
     ]
   },
   // <<< novas-geografia
-  // >>> novas-fisica
-  {
-    id: 'fisica',
-    nome: 'Física',
-    icon: 'wave',
-    lede: 'Física do Ensino Médio.',
-    CATALOG: [
-      {
-        ano: '1° Ano',
-        trimestres: [
-          {
-            nome: '1° Trimestre',
-            unidades: [
-              {
-                titulo: 'Mecânica',
-                accent: 'primary',
-                icon: 'wave',
-                pendente: true,
-                itens: [
-                  { tipo:'Aula 1', titulo:'Movimento: referencial, deslocamento e velocidade média', arquivo:'aulas/fisica/1-ano/1-tri/mecanica/aula-1-movimento-referencial-e-velocidade-media.html' }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  // <<< novas-fisica
   // >>> novas-quimica
   {
     id: 'quimica',
@@ -4555,46 +4566,6 @@ export const MATERIAS = [
     ]
   },
   // <<< novas-sociologia
-  // >>> padrao-portugues
-  {
-    id: 'portugues',
-    nome: 'Língua Portuguesa',
-    icon: 'dots',
-    lede: 'Leitura, gramática, produção de texto e literatura, do 6º ano ao 3º ano do Ensino Médio.',
-    CATALOG: [
-      {
-        ano: '6° Ano',
-        trimestres: [
-          {
-            nome: '1° Trimestre',
-            unidades: [
-              {
-                titulo: 'Leitura e interpretação',
-                accent: 'primary',
-                icon: 'dots',
-                pendente: true,
-                itens: [
-                  { tipo:'Aula 1', titulo:'Ler para compreender: ideia central e informações explícitas', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-1-ler-para-compreender-ideia-central-e-informacoes-explicitas.html' },
-                  { tipo:'Aula 2', titulo:'Informações implícitas e inferências', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-2-informacoes-implicitas-e-inferencias.html' },
-                  { tipo:'Aula 3', titulo:'Gêneros textuais: bilhete, aviso e notícia', arquivo:'aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/aula-3-generos-textuais-bilhete-aviso-e-noticia.html' }
-                ]
-              },
-              {
-                titulo: 'Literatura',
-                accent: 'decay',
-                icon: 'dots',
-                pendente: true,
-                itens: [
-                  { tipo:'Aula 1', titulo:'A narrativa: narrador, personagens, tempo e espaço', arquivo:'aulas/portugues/6-ano/1-tri/literatura/aula-1-a-narrativa-narrador-personagens-tempo-e-espaco.html' }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  // <<< padrao-portugues
 ];
 
 import { completar } from './catalog-extra.js';

@@ -6,6 +6,7 @@
 // aulas previstas (`previstas`), para as aulas entrarem aos poucos sem mexer na organização.
 import { RCO } from './catalog-rco-dados.js';
 import { PLANO } from './catalog-plano-dados.js';
+import { ITENS } from './catalog-plano-itens.js';
 
 const ACC = ['primary', 'growth', 'decay', 'success'];
 const ICONE_MATERIA = { portugues: 'm-port', ingles: 'm-ing', arte: 'm-arte', 'educacao-fisica': 'm-edf', ciencias: 'm-cien', historia: 'm-hist', geografia: 'm-geo', fisica: 'm-fis', quimica: 'm-qui', biologia: 'm-bio', filosofia: 'm-fil', sociologia: 'm-soc' };
@@ -27,6 +28,9 @@ function aplicarEstrutura(mat, dados, plano) {
           if (k === 0) { u.accent = e.accent || u.accent; u.icon = e.icon || u.icon; if (e.revisado) u.revisado = e.revisado; }
           u.itens = u.itens.concat(e.itens); if (e.pendente) u.pendente = true; u.vazio = false;
         });
+        // aulas já geradas para este módulo do plano (scripts/plano/itens.js)
+        const gen = plano && (((ITENS[mat.id] || {})[ano] || {})[nomeTri] || {})[m.t];
+        if (gen && gen.length) { const tem = new Set(u.itens.map(i => i.arquivo)); u.itens = u.itens.concat(gen.filter(i => !tem.has(i.arquivo))); u.vazio = false; u.pendente = true; u.revisado = u.revisado || '2026-10-24'; }
         return u;
       });
     }
@@ -43,5 +47,9 @@ function aplicarEstrutura(mat, dados, plano) {
 
 export function aplicarRCO(MATERIAS) {
   const mat = MATERIAS.find(m => m.id === 'matematica'); if (mat) aplicarEstrutura(mat, RCO, false);
-  for (const [id, dados] of Object.entries(PLANO)) { const m = MATERIAS.find(x => x.id === id); if (m) aplicarEstrutura(m, dados, true); }
+  for (const [id, dados] of Object.entries(PLANO)) {
+    const m = MATERIAS.find(x => x.id === id); if (!m) continue;
+    aplicarEstrutura(m, dados, true);
+    if (m.CATALOG.some(a => a.trimestres.some(t => t.unidades.some(u => u.itens.length)))) m.emBreve = false; // já tem aulas: sai do grupo "em breve" da barra lateral
+  }
 }

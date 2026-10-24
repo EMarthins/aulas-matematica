@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 193 módulos (792 aulas) aguardando atividades.**
+**Total: 219 módulos (887 aulas) aguardando atividades.**
 
 ### Matemática · 6° Ano · 1° Trimestre (9 módulos)
 
@@ -246,6 +246,11 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Expressões algébricas** — 3 aulas (`aulas/9-ano/3-tri/expressoes-algebricas/`)
 - [ ] **Sequências e padrões** — 4 aulas (`aulas/9-ano/3-tri/sequencias-e-padroes/`)
 
+### Língua Portuguesa · 6° Ano · 1° Trimestre (2 módulos)
+
+- [ ] **Leitura e interpretação** — 3 aulas (`aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/`)
+- [ ] **Literatura** — 1 aula (`aulas/portugues/6-ano/1-tri/literatura/`)
+
 ### Língua Inglesa · 6° Ano · 1° Trimestre (1 módulos)
 
 - [ ] **Vocabulário e comunicação** — 1 aula (`aulas/ingles/6-ano/1-tri/vocabulario-e-comunicacao/`)
@@ -270,10 +275,6 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 
 - [ ] **Espaço e cartografia** — 1 aula (`aulas/geografia/6-ano/1-tri/espaco-e-cartografia/`)
 
-### Física · 1° Ano · 1° Trimestre (1 módulos)
-
-- [ ] **Mecânica** — 1 aula (`aulas/fisica/1-ano/1-tri/mecanica/`)
-
 ### Química · 1° Ano · 1° Trimestre (1 módulos)
 
 - [ ] **Matéria e estrutura atômica** — 1 aula (`aulas/quimica/1-ano/1-tri/materia-e-estrutura-atomica/`)
@@ -290,7 +291,56 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 
 - [ ] **Cultura e sociedade** — 1 aula (`aulas/sociologia/1-ano/1-tri/cultura-e-sociedade/`)
 
-### Língua Portuguesa · 6° Ano · 1° Trimestre (2 módulos)
+### Física · 1° Ano · 1° Trimestre (3 módulos)
 
-- [ ] **Leitura e interpretação** — 3 aulas (`aulas/portugues/6-ano/1-tri/leitura-e-interpretacao/`)
-- [ ] **Literatura** — 1 aula (`aulas/portugues/6-ano/1-tri/literatura/`)
+- [ ] **Mecânica** — 4 aulas (`aulas/fisica/1-ano/1-tri/mecanica/`)
+- [ ] **Movimento variado** — 4 aulas (`aulas/fisica/1-ano/1-tri/movimento-variado/`)
+- [ ] **Grandezas e medidas** — 3 aulas (`aulas/fisica/1-ano/1-tri/grandezas-e-medidas/`)
+
+### Física · 1° Ano · 2° Trimestre (3 módulos)
+
+- [ ] **Dinâmica: leis de Newton** — 4 aulas (`aulas/fisica/1-ano/2-tri/dinamica-leis-de-newton/`)
+- [ ] **Aplicações das leis de Newton** — 3 aulas (`aulas/fisica/1-ano/2-tri/aplicacoes-das-leis-de-newton/`)
+- [ ] **Movimentos em duas dimensões** — 4 aulas (`aulas/fisica/1-ano/2-tri/movimentos-em-duas-dimensoes/`)
+
+### Física · 1° Ano · 3° Trimestre (3 módulos)
+
+- [ ] **Trabalho e energia** — 5 aulas (`aulas/fisica/1-ano/3-tri/trabalho-e-energia/`)
+- [ ] **Impulso e quantidade de movimento** — 3 aulas (`aulas/fisica/1-ano/3-tri/impulso-e-quantidade-de-movimento/`)
+- [ ] **Gravitação** — 3 aulas (`aulas/fisica/1-ano/3-tri/gravitacao/`)
+
+### Física · 2° Ano · 1° Trimestre (3 módulos)
+
+- [ ] **Termologia** — 4 aulas (`aulas/fisica/2-ano/1-tri/termologia/`)
+- [ ] **Mudanças de estado e propagação do calor** — 3 aulas (`aulas/fisica/2-ano/1-tri/mudancas-de-estado-e-propagacao-do-calor/`)
+- [ ] **Termodinâmica** — 3 aulas (`aulas/fisica/2-ano/1-tri/termodinamica/`)
+
+### Física · 2° Ano · 2° Trimestre (3 módulos)
+
+- [ ] **Óptica geométrica** — 4 aulas (`aulas/fisica/2-ano/2-tri/optica-geometrica/`)
+- [ ] **Lentes e instrumentos ópticos** — 3 aulas (`aulas/fisica/2-ano/2-tri/lentes-e-instrumentos-opticos/`)
+- [ ] **Ondulatória** — 4 aulas (`aulas/fisica/2-ano/2-tri/ondulatoria/`)
+
+### Física · 2° Ano · 3° Trimestre (3 módulos)
+
+- [ ] **Acústica** — 4 aulas (`aulas/fisica/2-ano/3-tri/acustica/`)
+- [ ] **Hidrostática** — 4 aulas (`aulas/fisica/2-ano/3-tri/hidrostatica/`)
+- [ ] **Física do cotidiano** — 3 aulas (`aulas/fisica/2-ano/3-tri/fisica-do-cotidiano/`)
+
+### Física · 3° Ano · 1° Trimestre (3 módulos)
+
+- [ ] **Eletrostática** — 4 aulas (`aulas/fisica/3-ano/1-tri/eletrostatica/`)
+- [ ] **Eletrodinâmica I** — 4 aulas (`aulas/fisica/3-ano/1-tri/eletrodinamica-i/`)
+- [ ] **Eletrodinâmica II** — 3 aulas (`aulas/fisica/3-ano/1-tri/eletrodinamica-ii/`)
+
+### Física · 3° Ano · 2° Trimestre (3 módulos)
+
+- [ ] **Magnetismo** — 3 aulas (`aulas/fisica/3-ano/2-tri/magnetismo/`)
+- [ ] **Eletromagnetismo** — 3 aulas (`aulas/fisica/3-ano/2-tri/eletromagnetismo/`)
+- [ ] **Ondas eletromagnéticas** — 3 aulas (`aulas/fisica/3-ano/2-tri/ondas-eletromagneticas/`)
+
+### Física · 3° Ano · 3° Trimestre (3 módulos)
+
+- [ ] **Física moderna** — 4 aulas (`aulas/fisica/3-ano/3-tri/fisica-moderna/`)
+- [ ] **Física e tecnologia** — 3 aulas (`aulas/fisica/3-ano/3-tri/fisica-e-tecnologia/`)
+- [ ] **Revisão para o ENEM** — 4 aulas (`aulas/fisica/3-ano/3-tri/revisao-para-o-enem/`)

@@ -61,8 +61,8 @@ function build(u, k, s, slides) {
 
 /** u = { materia, ano, tri, pasta, titulo, accent, icon, key, keyp, area, refs?, tipo: 'exatas' | 'humanas', aulas: [spec…] } */
 function unidade(u) {
-  const fn = u.tipo === 'humanas' ? humanas : exatas;
-  const out = u.aulas.map((s, i) => fn(u, i + 1, s));
+  // cada aula pode escolher o seu modelo (s.tipo); sem isso vale o do módulo (u.tipo)
+  const out = u.aulas.map((s, i) => ((s.tipo || u.tipo) === 'humanas' ? humanas : exatas)(u, i + 1, s));
   return {
     meta: { materia: u.materia, ano: u.ano, tri: u.tri, pasta: u.pasta, titulo: u.titulo, accent: u.accent || 'primary', icon: u.icon || 'numbers', aulas: out.map((o, i) => ['Aula ' + (u.inicio ? u.inicio + i : i + 1), o.titulo, o.file]), pendente: true, padrao: true, destino: u.destino },
     pages: out.map(o => o.page)

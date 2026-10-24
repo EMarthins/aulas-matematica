@@ -6,6 +6,7 @@ const { spawnSync } = require('child_process');
 const passos = [
   ['estrutura do RCO (Matemática 6º–9º ano)', 'scripts/rco/montar-rco.js'],
   ['plano de módulos e aulas das demais matérias', 'scripts/plano/montar-plano.js'],
+  ['aulas geradas ligadas ao plano (Física…)', 'scripts/plano/itens.js'],
   ['aulas na estrutura padrão (reestruturação automática)', 'scripts/reestruturar/reestruturar.js'],
   ['conferência da estrutura das aulas', 'scripts/reestruturar/conferir.js'],
   ['contas das questões dos módulos do CD', 'scripts/gerador-padrao/conferir-contas.js'],
