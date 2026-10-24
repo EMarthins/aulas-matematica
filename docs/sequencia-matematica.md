@@ -8,48 +8,48 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Nivelamento: números naturais e operações | N1 → N8 | 8 | 0 |
+| 1 | Nivelamento: números naturais e operações | N1 → N8 | 8 | 8 |
 | 2 | Sistema de numeração decimal | 01 → 04 | 4 | 4 |
 | 3 | Reta numérica | 05 → 06 | 2 | 2 |
 | 4 | Adição e subtração de números naturais | 07 → 11 | 5 | 5 |
-| 5 | Tabelas e gráficos de colunas | 12 → 14 | 3 | 0 |
-| 6 | Multiplicação de números naturais | 15 → 19 | 5 | 0 |
-| 7 | Divisão de números naturais | 20 → 26 | 7 | 0 |
+| 5 | Tabelas e gráficos de colunas | 12 → 14 | 3 | 3 |
+| 6 | Multiplicação de números naturais | 15 → 19 | 5 | 5 |
+| 7 | Divisão de números naturais | 20 → 26 | 7 | 7 |
 | 8 | Propriedades da igualdade e expressões numéricas | 27 → 30 | 4 | 2 |
-| 9 | Localização em mapas, croquis e representações gráficas | 31 → 32 | 2 | 0 |
+| 9 | Localização em mapas, croquis e representações gráficas | 31 → 32 | 2 | 2 |
 
 ### 2° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Potenciação | aula 33 | 1 | 0 |
-| 2 | Unidades de medida de comprimento | 34 → 36 | 3 | 0 |
-| 3 | Perímetro de figuras planas | 37 → 38 | 2 | 0 |
+| 1 | Potenciação | aula 33 | 1 | 1 |
+| 2 | Unidades de medida de comprimento | 34 → 36 | 3 | 3 |
+| 3 | Perímetro de figuras planas | 37 → 38 | 2 | 2 |
 | 4 | Ângulos | 39 → 42 | 4 | 2 |
 | 5 | Polígonos e quadriláteros | 43 → 46 | 4 | 2 |
-| 6 | Sólidos geométricos, prismas e pirâmides | 47 → 49 | 3 | 0 |
+| 6 | Sólidos geométricos, prismas e pirâmides | 47 → 49 | 3 | 3 |
 | 7 | Critérios de divisibilidade, múltiplos e divisores | 50 → 52 | 3 | 3 |
 | 8 | Retomadas do 2º trimestre (naturais, inteiros e gráficos) | R9 → R16 | 8 | 2 |
 | 9 | Números primos e decomposição em fatores | 53 → 54 | 2 | 2 |
 | 10 | A ideia de fração | 55 → 57 | 3 | 2 |
-| 11 | Comparação e equivalência de frações | 58 → 59 | 2 | 0 |
+| 11 | Comparação e equivalência de frações | 58 → 59 | 2 | 2 |
 | 12 | Adição e subtração de frações | 60 → 62 | 3 | 2 |
-| 13 | Frações na reta numérica | 63 → 64 | 2 | 0 |
+| 13 | Frações na reta numérica | 63 → 64 | 2 | 2 |
 | 14 | Porcentagem e frações | 65 → 68 | 4 | 2 |
 
 ### 3° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Números decimais: representação e leitura | 69 → 71 | 3 | 0 |
-| 2 | Frações e números decimais | 72 → 75 | 4 | 0 |
+| 1 | Números decimais: representação e leitura | 69 → 71 | 3 | 3 |
+| 2 | Frações e números decimais | 72 → 75 | 4 | 4 |
 | 3 | Números decimais na reta e comparação | 76 → 79 | 4 | 2 |
-| 4 | Adição e subtração com números decimais | 80 → 81 | 2 | 0 |
-| 5 | Gráfico de segmentos | 82 → 83 | 2 | 0 |
+| 4 | Adição e subtração com números decimais | 80 → 81 | 2 | 2 |
+| 5 | Gráfico de segmentos | 82 → 83 | 2 | 2 |
 | 6 | Multiplicação e divisão com números decimais | 84 → 87 | 4 | 2 |
-| 7 | Porcentagem com números decimais | 88 → 92 | 5 | 0 |
+| 7 | Porcentagem com números decimais | 88 → 92 | 5 | 6 |
 | 8 | Medidas de superfície e área | 93 → 98 | 6 | 2 |
-| 9 | Classificação de triângulos | 99 → 100 | 2 | 0 |
+| 9 | Classificação de triângulos | 99 → 100 | 2 | 2 |
 | 10 | Retomadas do 3º trimestre | R17 → R24 | 8 | 0 |
 | 11 | Volume, capacidade e massa *(complemento)* | — | — | 2 |
 
@@ -59,43 +59,43 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Nivelamento: naturais, tabelas e ampliação de figuras | N1 → N10 | 10 | 0 |
-| 2 | Interpretação de dados em tabelas e gráficos | 01 → 04 | 4 | 0 |
-| 3 | Operações com naturais, múltiplos e divisores | 05 → 07 | 3 | 0 |
-| 4 | Números inteiros: conceito, reta numérica e módulo | 08 → 11 | 4 | 0 |
-| 5 | Adição e subtração de números inteiros | 12 → 19 | 8 | 0 |
-| 6 | Multiplicação e divisão de números inteiros | 20 → 25 | 6 | 0 |
+| 1 | Nivelamento: naturais, tabelas e ampliação de figuras | N1 → N10 | 10 | 10 |
+| 2 | Interpretação de dados em tabelas e gráficos | 01 → 04 | 4 | 4 |
+| 3 | Operações com naturais, múltiplos e divisores | 05 → 07 | 3 | 3 |
+| 4 | Números inteiros: conceito, reta numérica e módulo | 08 → 11 | 4 | 4 |
+| 5 | Adição e subtração de números inteiros | 12 → 19 | 8 | 8 |
+| 6 | Multiplicação e divisão de números inteiros | 20 → 25 | 6 | 6 |
 | 7 | Potenciação e raiz quadrada de números inteiros | 26 → 31 | 6 | 2 |
-| 8 | Transformações no plano cartesiano e polígonos | 32 → 35 | 4 | 0 |
+| 8 | Transformações no plano cartesiano e polígonos | 32 → 35 | 4 | 4 |
 | 9 | Números racionais e a reta numérica | 36 → 40 | 5 | 2 |
 
 ### 2° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Frações e frações equivalentes | 41 → 44 | 4 | 0 |
-| 2 | Adição e subtração de números racionais | 45 → 47 | 3 | 0 |
-| 3 | Multiplicação e divisão de números racionais | 48 → 54 | 7 | 0 |
-| 4 | Expressões, potências e raízes de números racionais | 55 → 59 | 5 | 0 |
-| 5 | Área do retângulo e do quadrado | 60 → 61 | 2 | 0 |
-| 6 | Porcentagem | 62 → 64 | 3 | 0 |
-| 7 | Expressões algébricas e sequências | 65 → 71 | 7 | 0 |
+| 1 | Frações e frações equivalentes | 41 → 44 | 4 | 4 |
+| 2 | Adição e subtração de números racionais | 45 → 47 | 3 | 3 |
+| 3 | Multiplicação e divisão de números racionais | 48 → 54 | 7 | 7 |
+| 4 | Expressões, potências e raízes de números racionais | 55 → 59 | 5 | 5 |
+| 5 | Área do retângulo e do quadrado | 60 → 61 | 2 | 2 |
+| 6 | Porcentagem | 62 → 64 | 3 | 3 |
+| 7 | Expressões algébricas e sequências | 65 → 71 | 7 | 7 |
 | 8 | Retomadas do 2º trimestre | R11 → R20 | 10 | 0 |
 | 9 | Ângulos | 72 → 75 | 4 | 2 |
-| 10 | Triângulos | 76 → 79 | 4 | 0 |
-| 11 | Polígonos | 80 → 85 | 6 | 0 |
+| 10 | Triângulos | 76 → 79 | 4 | 4 |
+| 11 | Polígonos | 80 → 85 | 6 | 6 |
 
 ### 3° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Círculo e circunferência | 86 → 87 | 2 | 0 |
+| 1 | Círculo e circunferência | 86 → 87 | 2 | 2 |
 | 2 | Equações do 1º grau | 88 → 95 | 8 | 2 |
 | 3 | Média aritmética | 96 → 98 | 3 | 2 |
 | 4 | Razão e proporção | 99 → 103 | 5 | 2 |
-| 5 | Grandezas proporcionais | 104 → 110 | 7 | 0 |
-| 6 | Regra de três simples | 111 → 112 | 2 | 0 |
-| 7 | Perímetro, quadriláteros e áreas | 113 → 119 | 7 | 0 |
+| 5 | Grandezas proporcionais | 104 → 110 | 7 | 7 |
+| 6 | Regra de três simples | 111 → 112 | 2 | 2 |
+| 7 | Perímetro, quadriláteros e áreas | 113 → 119 | 7 | 7 |
 | 8 | Unidades de medida e volume | 120 → 125 | 6 | 2 |
 | 9 | Retomadas do 3º trimestre | R21 → R30 | 10 | 0 |
 
@@ -105,13 +105,13 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Nivelamento: inteiros, tabelas e racionais | N1 → N8 | 8 | 0 |
-| 2 | Números racionais na reta numérica | 01 → 02 | 2 | 0 |
-| 3 | Adição e subtração de números racionais | 03 → 06 | 3 | 0 |
-| 4 | Multiplicação e divisão de números racionais | 07 → 13 | 5 | 0 |
+| 1 | Nivelamento: inteiros, tabelas e racionais | N1 → N8 | 8 | 8 |
+| 2 | Números racionais na reta numérica | 01 → 02 | 2 | 2 |
+| 3 | Adição e subtração de números racionais | 03 → 06 | 3 | 3 |
+| 4 | Multiplicação e divisão de números racionais | 07 → 13 | 5 | 5 |
 | 5 | Dízimas periódicas e fração geratriz | 14 → 15 | 2 | 2 |
-| 6 | Porcentagem | 17 → 18 | 2 | 0 |
-| 7 | Interpretação de dados em tabelas | 19 → 22 | 3 | 0 |
+| 6 | Porcentagem | 17 → 18 | 2 | 2 |
+| 7 | Interpretação de dados em tabelas | 19 → 22 | 3 | 3 |
 | 8 | Potenciação com números racionais | 23 → 27 | 4 | 2 |
 | 9 | Linguagem algébrica e valor numérico | 29 → 31 | 3 | 2 |
 
@@ -141,14 +141,14 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Nivelamento: inteiros e racionais | N1 → N9 | 8 | 0 |
-| 2 | Números irracionais e números reais | 01 → 06 | 5 | 0 |
-| 3 | Potências com expoente inteiro | 07 → 16 | 8 | 0 |
-| 4 | Notação científica e unidades de medida | 17 → 22 | 5 | 0 |
+| 1 | Nivelamento: inteiros e racionais | N1 → N9 | 8 | 8 |
+| 2 | Números irracionais e números reais | 01 → 06 | 5 | 5 |
+| 3 | Potências com expoente inteiro | 07 → 16 | 8 | 8 |
+| 4 | Notação científica e unidades de medida | 17 → 22 | 5 | 5 |
 | 5 | Potência com expoente racional e radicais | 23 → 24 | 2 | 2 |
-| 6 | Produtos notáveis | 26 → 33 | 7 | 0 |
-| 7 | Fatoração | 34 → 37 | 3 | 0 |
-| 8 | Razão e grandezas proporcionais | 38 → 39 | 2 | 0 |
+| 6 | Produtos notáveis | 26 → 33 | 7 | 7 |
+| 7 | Fatoração | 34 → 37 | 3 | 3 |
+| 8 | Razão e grandezas proporcionais | 38 → 39 | 2 | 2 |
 
 ### 2° Trimestre
 

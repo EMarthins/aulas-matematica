@@ -315,7 +315,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <div>
               <h1 class="disp" style="font-size:clamp(1.8rem,4.2vw,3rem);font-weight:900;line-height:1.02;margin:0 0 10px;">Racionais: <span style="color:var(--growth);">o mesmo número, vários jeitos</span></h1>
               <p class="subtitle" style="font-size:clamp(.98rem,1.6vw,1.15rem);">Fração, número decimal e porcentagem são três "roupas" do mesmo número racional. Saber trocar de roupa é a base de quase todo problema com frações.</p>
-              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Uma receita pede <strong>{3|4} de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p>
+              <p class="hint" style="margin:6px 0 0;"><strong>Pense nisto:</strong> Uma receita pede <strong><span class="tex"><span class="fr"><span>3</span><span>4</span></span></span> de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p>
               <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
             <span class="badge">fração</span>
             <span class="badge" style="color:var(--growth);background:var(--growth-soft);border-color:transparent;">decimal</span>
@@ -336,10 +336,10 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
           <h2 class="title">A receita e o copo medidor</h2>
           
           
-          <p class="lede">Uma receita pede <strong>{3|4} de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p>
+          <p class="lede">Uma receita pede <strong><span class="tex"><span class="fr"><span>3</span><span>4</span></span></span> de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p>
           <div class="grid2" style="margin-top:6px;">
             
-            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;">{3|4} de xícara equivale a:</p><button class="choice mqo" data-i="0">0,34</button><button class="choice mqo" data-i="1">0,75</button><button class="choice mqo" data-i="2">0,43</button><button class="choice mqo" data-i="3">3,4</button><div class="fb"></div><div class="answer"><p><span class="tex">3 ÷ 4 = 0,75</span>. <strong>Alternativa B.</strong></p></div></div>
+            <div class="mq" data-a="1"><p style="font-weight:700;font-size:.92rem;margin:0 0 8px;"><span class="tex"><span class="fr"><span>3</span><span>4</span></span></span> de xícara equivale a:</p><button class="choice mqo" data-i="0">0,34</button><button class="choice mqo" data-i="1">0,75</button><button class="choice mqo" data-i="2">0,43</button><button class="choice mqo" data-i="3">3,4</button><div class="fb"></div><div class="answer"><p><span class="tex">3 ÷ 4 = 0,75</span>. <strong>Alternativa B.</strong></p></div></div>
           </div>
         
         </div>
@@ -511,7 +511,7 @@ table.tbl th, table.tbl td{ padding:.45rem .7rem !important; }
             <h4>A mensagem central</h4>
             <p class="formula big" style="display:block;text-align:center;margin-top:8px;">Agora você troca de representação com segurança. Próxima aula: fração como parte do todo, razão e número misto.</p>
           </div>
-        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Uma receita pede <strong>{3|4} de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p></div>
+        <div class="callout success" style="margin-top:12px;"><h4>Pergunta de revisão</h4><p>Voltando ao início da aula: Uma receita pede <strong><span class="tex"><span class="fr"><span>3</span><span>4</span></span></span> de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?</p></div>
         </div>
       </section>
 
@@ -928,28 +928,6 @@ function pot(f){ return f.map(function(x){ return x[0] + (x[1] > 1 ? sup(x[1]) :
   pintar(); ajustar();
 })();
 </script>
-
-<script id="progresso-local">
-(function(){
-  try{
-    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
-    var key = 'prog:' + p.slice(i + 1);
-    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
-    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
-    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
-    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
-    window.addEventListener('message', function(e){
-      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
-      if(m.event === 'quiz-completed' && m.total){
-        var c = ler(); c.v = 1;
-        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
-        c.d = Date.now(); gravar(c);
-      }
-    });
-  }catch(e){}
-})();
-</script>
-<script src="../../../../app/ferramentas.js" id="ferramentas"></script>
 <script id="padrao-js">(function(){
 var st = document.createElement('style');
 st.textContent = '.rv{display:none;} div.rv.on{display:block;} .step-row.rv.on{display:flex;} .rv-btn{margin-top:10px;} .rf-btn{text-align:left;} .rf-btn.sel{border-color:var(--primary);background:var(--primary-soft);}';
@@ -974,4 +952,26 @@ document.querySelectorAll('.rf-btn').forEach(function(b){
   });
 });
 })();</script>
+
+<script id="progresso-local">
+(function(){
+  try{
+    var p = location.pathname, i = p.indexOf('/aulas/'); if(i < 0) i = p.indexOf('/educacao-financeira/'); if(i < 0) i = p.indexOf('/ena-profmat/'); if(i < 0) return;
+    var key = 'prog:' + p.slice(i + 1);
+    function ler(){ try{ return JSON.parse(localStorage.getItem(key) || 'null') || {}; }catch(e){ return {}; } }
+    function gravar(o){ try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){} }
+    var o = ler(); if(!o.v){ o.v = 1; o.d = Date.now(); gravar(o); }
+    // aberta direto (sem iframe) o postMessage das aulas chega à própria janela
+    window.addEventListener('message', function(e){
+      var m = e.data; if(e.source !== window || !m || m.type !== 'lesson-progress') return;
+      if(m.event === 'quiz-completed' && m.total){
+        var c = ler(); c.v = 1;
+        if(c.t !== m.total || (m.score / m.total) >= ((c.s || 0) / (c.t || 1))){ c.s = m.score; c.t = m.total; }
+        c.d = Date.now(); gravar(c);
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script src="../../../../app/ferramentas.js" id="ferramentas"></script>
 <script src="../../../../app/cenas.js" id="cenas-esp" defer></script>

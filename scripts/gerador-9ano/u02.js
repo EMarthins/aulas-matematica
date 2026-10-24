@@ -18,7 +18,7 @@ module.exports = unidade({
       roteiro: ['De fração para decimal, de decimal para porcentagem e de volta.', [['O que é racional', 'a razão de dois inteiros', 'bulb'], ['Fração → decimal', 'dividir numerador por denominador', 'scale'], ['Decimal → fração', 'potências de 10', 'chart'], ['Dízimas periódicas', 'a fração geratriz', 'target'], ['Porcentagem', 'fração de denominador 100', 'coin']]],
       objetivos: ['Reconhecer um número <strong>racional</strong> como quociente de inteiros.', 'Converter entre <strong>fração, decimal e porcentagem</strong>.', 'Encontrar a <strong>fração geratriz</strong> de uma dízima periódica simples.'],
       dica: 'Para passar de fração a decimal, <strong>divida</strong> o numerador pelo denominador. Para o caminho de volta, use denominadores $10$, $100$, $1000$…',
-      gancho: { titulo: 'A receita e o copo medidor', texto: 'Uma receita pede <strong>{3|4} de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?', mini: ['{3|4} de xícara equivale a:', ['0,34', '0,75', '0,43', '3,4'], 1, '$3 ÷ 4 = 0,75$. <strong>Alternativa B.</strong>'] },
+      gancho: { titulo: 'A receita e o copo medidor', texto: 'Uma receita pede <strong>${3|4}$ de xícara</strong> de leite, mas o copo medidor da cozinha está graduado em números decimais. Quanto devemos medir?', mini: ['${3|4}$ de xícara equivale a:', ['0,34', '0,75', '0,43', '3,4'], 1, '$3 ÷ 4 = 0,75$. <strong>Alternativa B.</strong>'] },
       teoria: [
         ['Teoria · racionais', 'Um número, três representações', g2(`<div>
               ${checks(['<strong>Racional</strong> é todo número que pode ser escrito como ${a|b}$ com $a$ e $b$ inteiros e $b ≠ 0$.', 'A <strong>fração</strong> indica uma divisão: ${3|4}$ é $3 ÷ 4$.', 'O <strong>decimal</strong> é o resultado da divisão: $0,75$.', 'A <strong>porcentagem</strong> é a fração de denominador $100$: $75\%$ vale ${75|100}$.'], '.95rem')}
@@ -101,12 +101,12 @@ module.exports = unidade({
       gancho: { titulo: 'Dois descontos', texto: 'Uma loja oferece desconto de <strong>${1|3}$</strong> do preço em uma camisa e de <strong>${2|5}$</strong> em uma calça. Sem calcular o valor, qual é o <strong>maior</strong> desconto em fração?', mini: ['Qual fração é maior?', ['${1|3}$', '${2|5}$', 'São iguais', 'Não dá para comparar'], 1, '${1|3} ≈ 0,333$ e ${2|5} = 0,4$. Como $0,4 > 0,333$, o maior é ${2|5}$. <strong>Alternativa B.</strong>'] },
       teoria: [
         ['Teoria · fração de uma quantidade', 'Dividir por baixo, multiplicar por cima', g2(`<div>
-              ${checks(['<strong>${2|5} de 60:</strong> $60 ÷ 5 = 12$ (um quinto) e $2 · 12 = 24$.', 'Em uma conta só: ${2|5} · 60 = {2 · 60|5} = 24$.', '<strong>${3|4} de R$ 80:</strong> $80 ÷ 4 = 20$ e $3 · 20 = 60$ reais.', 'Fração do todo: se $5$ de $20$ alunos faltaram, faltaram ${5|20} = {1|4}$ da turma.'], '.95rem')}
-            </div>`, callout('Palavra "de"', 'Em matemática, "fração <strong>de</strong> um número" significa <strong>multiplicar</strong>: ${2|5} de 60 é ${2|5} · 60$.', 'growth'))],
+              ${checks(['<strong>${2|5}$ de $60$:</strong> $60 ÷ 5 = 12$ (um quinto) e $2 · 12 = 24$.', 'Em uma conta só: ${2|5} · 60 = {2 · 60|5} = 24$.', '<strong>${3|4}$ de R$ 80:</strong> $80 ÷ 4 = 20$ e $3 · 20 = 60$ reais.', 'Fração do todo: se $5$ de $20$ alunos faltaram, faltaram ${5|20} = {1|4}$ da turma.'], '.95rem')}
+            </div>`, callout('Palavra "de"', 'Em matemática, "fração <strong>de</strong> um número" significa <strong>multiplicar</strong>: ${2|5}$ de $60$ é ${2|5} · 60$.', 'growth'))],
         ['Teoria · comparando frações', 'Três atalhos', g2(`<div>
               ${checks(['<strong>Mesmo denominador:</strong> é maior a de maior numerador: ${5|9} > {2|9}$.', '<strong>Mesmo numerador:</strong> é maior a de <strong>menor</strong> denominador: ${3|4} > {3|7}$.', '<strong>Referências:</strong> compare com ${1|2}$ e com $1$: ${4|7} > {1|2}$ (pois $4 > 3,5$) e ${3|8} < {1|2}$.', 'Se nada ajudar, use <strong>frações equivalentes</strong> (mesmo denominador) ou os <strong>decimais</strong>.'], '.95rem')}
             </div>`, card(`<strong>Ordem crescente</strong>
-              <p style="font-size:.92rem;margin-top:8px;">${1|4} < {1|3} < {1|2} < {3|4}$.</p>
+              <p style="font-size:.92rem;margin-top:8px;">\${1|4} < {1|3} < {1|2} < {3|4}$.</p>
               <p class="hint" style="margin-top:6px;">Com numerador $1$, quanto maior o denominador, menor a fração.</p>`, 'primary'))]
       ],
       exemplos: [

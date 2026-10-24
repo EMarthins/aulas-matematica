@@ -13,6 +13,7 @@ for (const f of arqs) {
   const m2 = txt.match(/\{[^{}]{1,12}\|[^{}]{1,12}\}/g); if (m2) ach.push('{a|b}: ' + m2.slice(0, 3).join(' | '));
   const m3 = txt.match(/√\{/g); if (m3) ach.push('√{');
   const m4 = txt.match(/\\[a-z]+/g); if (m4) ach.push('barra invertida: ' + m4.slice(0, 3).join(' '));
+  const m5 = h.match(/&lt;\/?<i>|&lt;<i>(div|span|p|li|section)/g); if (m5) ach.push('página engolida por "$" sem par (tags escapadas dentro de fórmula)');
   if (ach.length) { ruins++; console.log('✘', f.replace(/\\/g, '/'), '—', ach.join('; ')); }
 }
 console.log(ruins ? ruins + ' arquivo(s) com sobras' : '✔ ' + arqs.length + ' arquivo(s) sem sobras da mini-linguagem');

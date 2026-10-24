@@ -9,6 +9,7 @@ const passos = [
   ['conferência da estrutura das aulas', 'scripts/reestruturar/conferir.js'],
   ['contas das questões dos módulos do CD', 'scripts/gerador-padrao/conferir-contas.js'],
   ['sobras da mini-linguagem nos módulos do CD', 'scripts/gerador-padrao/vazamentos-cd.js'],
+  ['sobras da mini-linguagem nas aulas de Matemática 6º–9º', 'scripts/gerador-6ano/vazamentos-mat.js'],
   ['layout legível em qualquer tela', 'scripts/aplicar-layout.js'],
   ['fontes locais', 'scripts/aplicar-fontes.js'],
   ['progresso no aparelho do aluno', 'scripts/aplicar-progresso.js'],
