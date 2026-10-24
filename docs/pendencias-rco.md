@@ -5,9 +5,9 @@ Gerado por `scripts/rco/pendencias-rco.js` (roda no `preparar.js`). A divisão e
 - **6° Ano**: 124 aulas previstas no RCO · 95 aulas no site
 - **7° Ano**: 155 aulas previstas no RCO · 112 aulas no site
 - **8° Ano**: 54 aulas previstas no RCO · 41 aulas no site
-- **9° Ano**: 124 aulas previstas no RCO · 48 aulas no site
+- **9° Ano**: 124 aulas previstas no RCO · 116 aulas no site
 
-Total: **457** aulas previstas, **296** no site, **21 módulos ainda sem nenhuma aula**.
+Total: **457** aulas previstas, **364** no site, **9 módulos ainda sem nenhuma aula**.
 
 > 8º ano 2º e 3º trimestre: o RCO ainda não publicou as aulas de Matemática (só Educação Financeira e o projeto "Investigação no Mundo Invertido"); a divisão desses trimestres é provisória (BNCC + temas dos planos).
 
@@ -163,27 +163,27 @@ Total: **457** aulas previstas, **296** no site, **21 módulos ainda sem nenhuma
 
 | Módulo | Previstas (RCO) | No site | Situação |
 |---|---:|---:|---|
-| 01 · Fatoração e equações | 4 | 0 | **fazer** |
-| 02 · Equação do 2º grau | 9 | 2 | parcial |
-| 03 · Ângulos formados por retas | 3 | 0 | **fazer** |
-| 04 · Figuras e triângulos semelhantes | 4 | 2 | parcial |
+| 01 · Fatoração e equações | 4 | 4 | ok |
+| 02 · Equação do 2º grau | 9 | 11 | ok |
+| 03 · Ângulos formados por retas | 3 | 3 | ok |
+| 04 · Figuras e triângulos semelhantes | 4 | 6 | ok |
 | 05 · Retomadas do 2º trimestre | 9 | 0 | **fazer** |
-| 06 · Segmentos proporcionais e Teorema de Tales | 3 | 0 | **fazer** |
-| 07 · Relações métricas no triângulo retângulo | 6 | 0 | **fazer** |
-| 08 · Circunferência e círculo | 5 | 0 | **fazer** |
-| 09 · Plano cartesiano | 2 | 0 | **fazer** |
+| 06 · Segmentos proporcionais e Teorema de Tales | 3 | 3 | ok |
+| 07 · Relações métricas no triângulo retângulo | 6 | 6 | ok |
+| 08 · Circunferência e círculo | 5 | 5 | ok |
+| 09 · Plano cartesiano | 2 | 2 | ok |
 
 ### 3° Trimestre
 
 | Módulo | Previstas (RCO) | No site | Situação |
 |---|---:|---:|---|
-| 01 · Funções: noções e situações-problema | 4 | 0 | **fazer** |
-| 02 · Função afim: gráfico e zero | 4 | 2 | parcial |
-| 03 · Porcentagem: acréscimos e decréscimos | 2 | 0 | **fazer** |
-| 04 · Juros simples e compostos | 4 | 0 | **fazer** |
-| 05 · Princípio fundamental da contagem | 2 | 0 | **fazer** |
-| 06 · Probabilidade | 4 | 0 | **fazer** |
-| 07 · Estatística: gráficos, medidas e pesquisa | 10 | 2 | parcial |
-| 08 · Propriedades dos polígonos | 2 | 0 | **fazer** |
+| 01 · Funções: noções e situações-problema | 4 | 4 | ok |
+| 02 · Função afim: gráfico e zero | 4 | 6 | ok |
+| 03 · Porcentagem: acréscimos e decréscimos | 2 | 2 | ok |
+| 04 · Juros simples e compostos | 4 | 4 | ok |
+| 05 · Princípio fundamental da contagem | 2 | 2 | ok |
+| 06 · Probabilidade | 4 | 4 | ok |
+| 07 · Estatística: gráficos, medidas e pesquisa | 10 | 12 | ok |
+| 08 · Propriedades dos polígonos | 2 | 2 | ok |
 | 09 · Retomadas do 3º trimestre | 7 | 0 | **fazer** |
 

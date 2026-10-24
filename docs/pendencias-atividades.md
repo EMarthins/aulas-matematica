@@ -4,7 +4,7 @@ Estes módulos foram publicados **só com as aulas**. No catálogo aparece o avi
 Para cada um falta: **guia visual** (infográfico) e **3 atividades** (ENEM de 5 questões, criativa e trilha prática), no mesmo padrão dos módulos completos.
 Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua guia e atividades nas `pages`; depois rode o `catalogo.js` do gerador e `node scripts/preparar.js`.
 
-**Total: 175 módulos (507 aulas) aguardando atividades.**
+**Total: 187 módulos (575 aulas) aguardando atividades.**
 
 ### Matemática · 6° Ano · 1° Trimestre (9 módulos)
 
@@ -119,15 +119,27 @@ Ao concluir um módulo, remova `pendente: true` (no `meta` do gerador) e inclua 
 - [ ] **Fatoração** — 3 aulas (`aulas/9-ano/1-tri/fatoracao/`)
 - [ ] **Razão e grandezas proporcionais** — 2 aulas (`aulas/9-ano/1-tri/razao-e-grandezas-proporcionais/`)
 
-### Matemática · 9° Ano · 2° Trimestre (2 módulos)
+### Matemática · 9° Ano · 2° Trimestre (8 módulos)
 
-- [ ] **Equação do 2º grau** — 2 aulas (`aulas/9-ano/1-tri/equacoes-do-2-grau/`)
-- [ ] **Figuras e triângulos semelhantes** — 2 aulas (`aulas/9-ano/2-tri/semelhanca-pitagoras-e-trigonometria/`)
+- [ ] **Fatoração e equações** — 4 aulas (`aulas/9-ano/2-tri/fatoracao-e-equacoes/`)
+- [ ] **Equação do 2º grau** — 11 aulas (`aulas/9-ano/2-tri/equacao-do-2-grau/`)
+- [ ] **Ângulos formados por retas** — 3 aulas (`aulas/9-ano/2-tri/angulos-formados-por-retas/`)
+- [ ] **Figuras e triângulos semelhantes** — 6 aulas (`aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/`)
+- [ ] **Segmentos proporcionais e Teorema de Tales** — 3 aulas (`aulas/9-ano/2-tri/segmentos-proporcionais-e-teorema-de-tales/`)
+- [ ] **Relações métricas no triângulo retângulo** — 6 aulas (`aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/`)
+- [ ] **Circunferência e círculo** — 5 aulas (`aulas/9-ano/2-tri/circunferencia-e-circulo/`)
+- [ ] **Plano cartesiano** — 2 aulas (`aulas/9-ano/2-tri/plano-cartesiano/`)
 
-### Matemática · 9° Ano · 3° Trimestre (2 módulos)
+### Matemática · 9° Ano · 3° Trimestre (8 módulos)
 
-- [ ] **Função afim: gráfico e zero** — 2 aulas (`aulas/9-ano/3-tri/funcoes-afim-e-quadratica/`)
-- [ ] **Estatística: gráficos, medidas e pesquisa** — 2 aulas (`aulas/9-ano/3-tri/probabilidade-e-estatistica/`)
+- [ ] **Funções: noções e situações-problema** — 4 aulas (`aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/`)
+- [ ] **Função afim: gráfico e zero** — 6 aulas (`aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/`)
+- [ ] **Porcentagem: acréscimos e decréscimos** — 2 aulas (`aulas/9-ano/3-tri/porcentagem-acrescimos-e-decrescimos/`)
+- [ ] **Juros simples e compostos** — 4 aulas (`aulas/9-ano/3-tri/juros-simples-e-compostos/`)
+- [ ] **Princípio fundamental da contagem** — 2 aulas (`aulas/9-ano/3-tri/principio-fundamental-da-contagem/`)
+- [ ] **Probabilidade** — 4 aulas (`aulas/9-ano/3-tri/probabilidade/`)
+- [ ] **Estatística: gráficos, medidas e pesquisa** — 12 aulas (`aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/`)
+- [ ] **Propriedades dos polígonos** — 2 aulas (`aulas/9-ano/3-tri/propriedades-dos-poligonos/`)
 
 ### Matemática · 2° Ano · 2° Trimestre (23 módulos)
 

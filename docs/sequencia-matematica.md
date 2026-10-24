@@ -154,28 +154,28 @@ Gerado por `scripts/rco/sequencia-doc.js` (roda no `preparar.js`). A ordem dos m
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Fatoração e equações | 41 → 44 | 4 | 0 |
-| 2 | Equação do 2º grau | 46 → 56 | 9 | 2 |
-| 3 | Ângulos formados por retas | 57 → 59 | 3 | 0 |
-| 4 | Figuras e triângulos semelhantes | 61 → 64 | 4 | 2 |
+| 1 | Fatoração e equações | 41 → 44 | 4 | 4 |
+| 2 | Equação do 2º grau | 46 → 56 | 9 | 11 |
+| 3 | Ângulos formados por retas | 57 → 59 | 3 | 3 |
+| 4 | Figuras e triângulos semelhantes | 61 → 64 | 4 | 6 |
 | 5 | Retomadas do 2º trimestre | R11 → R19 | 9 | 0 |
-| 6 | Segmentos proporcionais e Teorema de Tales | 66 → 68 | 3 | 0 |
-| 7 | Relações métricas no triângulo retângulo | 69 → 76 | 6 | 0 |
-| 8 | Circunferência e círculo | 77 → 82 | 5 | 0 |
-| 9 | Plano cartesiano | 83 → 84 | 2 | 0 |
+| 6 | Segmentos proporcionais e Teorema de Tales | 66 → 68 | 3 | 3 |
+| 7 | Relações métricas no triângulo retângulo | 69 → 76 | 6 | 6 |
+| 8 | Circunferência e círculo | 77 → 82 | 5 | 5 |
+| 9 | Plano cartesiano | 83 → 84 | 2 | 2 |
 
 ### 3° Trimestre
 
 | # | Módulo | Aulas RCO | Previstas | No site |
 |---:|---|---|---:|---:|
-| 1 | Funções: noções e situações-problema | 86 → 89 | 4 | 0 |
-| 2 | Função afim: gráfico e zero | 91 → 94 | 4 | 2 |
-| 3 | Porcentagem: acréscimos e decréscimos | 96 → 97 | 2 | 0 |
-| 4 | Juros simples e compostos | 98 → 102 | 4 | 0 |
-| 5 | Princípio fundamental da contagem | 103 → 104 | 2 | 0 |
-| 6 | Probabilidade | 106 → 109 | 4 | 0 |
-| 7 | Estatística: gráficos, medidas e pesquisa | 111 → 122 | 10 | 2 |
-| 8 | Propriedades dos polígonos | 123 → 124 | 2 | 0 |
+| 1 | Funções: noções e situações-problema | 86 → 89 | 4 | 4 |
+| 2 | Função afim: gráfico e zero | 91 → 94 | 4 | 6 |
+| 3 | Porcentagem: acréscimos e decréscimos | 96 → 97 | 2 | 2 |
+| 4 | Juros simples e compostos | 98 → 102 | 4 | 4 |
+| 5 | Princípio fundamental da contagem | 103 → 104 | 2 | 2 |
+| 6 | Probabilidade | 106 → 109 | 4 | 4 |
+| 7 | Estatística: gráficos, medidas e pesquisa | 111 → 122 | 10 | 12 |
+| 8 | Propriedades dos polígonos | 123 → 124 | 2 | 2 |
 | 9 | Retomadas do 3º trimestre | R22 → R29 | 7 | 0 |
 
 ## 1° Ano (Ensino Médio — 1ª, 2ª e 3ª série)

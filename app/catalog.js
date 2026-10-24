@@ -117,6 +117,202 @@ export const MATERIAS = [
                   { tipo:'Aula 2', titulo:'Grandezas diretamente e inversamente proporcionais', arquivo:'aulas/9-ano/1-tri/razao-e-grandezas-proporcionais/aula-2-grandezas-diretamente-e-inversamente-proporcionais.html' }
                 ]
               },
+              {
+                titulo: 'Fatoração e equações',
+                accent: 'growth',
+                icon: 'fatoracao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Fatoração: trinômio quadrado perfeito I', arquivo:'aulas/9-ano/2-tri/fatoracao-e-equacoes/aula-1-fatoracao-trinomio-quadrado-perfeito-i.html' },
+                  { tipo:'Aula 2', titulo:'Fatoração: trinômio quadrado perfeito II', arquivo:'aulas/9-ano/2-tri/fatoracao-e-equacoes/aula-2-fatoracao-trinomio-quadrado-perfeito-ii.html' },
+                  { tipo:'Aula 3', titulo:'Usando a fatoração para resolver equações I', arquivo:'aulas/9-ano/2-tri/fatoracao-e-equacoes/aula-3-usando-a-fatoracao-para-resolver-equacoes-i.html' },
+                  { tipo:'Aula 4', titulo:'Usando a fatoração para resolver equações II', arquivo:'aulas/9-ano/2-tri/fatoracao-e-equacoes/aula-4-usando-a-fatoracao-para-resolver-equacoes-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Equação do 2º grau',
+                accent: 'primary',
+                icon: 'parabola-raizes',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Equação do 2º grau', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-1-equacao-do-2-grau.html' },
+                  { tipo:'Aula 2', titulo:'Equação incompleta do 2º grau I', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-2-equacao-incompleta-do-2-grau-i.html' },
+                  { tipo:'Aula 3', titulo:'Equação incompleta do 2º grau II', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-3-equacao-incompleta-do-2-grau-ii.html' },
+                  { tipo:'Aula 4', titulo:'Equação incompleta do 2º grau III', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-4-equacao-incompleta-do-2-grau-iii.html' },
+                  { tipo:'Aula 5', titulo:'Equação completa do 2º grau: forma resolutiva I', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-5-equacao-completa-do-2-grau-forma-resolutiva-i.html' },
+                  { tipo:'Aula 6', titulo:'Equação completa do 2º grau: forma resolutiva II', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-6-equacao-completa-do-2-grau-forma-resolutiva-ii.html' },
+                  { tipo:'Aula 7', titulo:'Equação completa do 2º grau: resolução de problemas I', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-7-equacao-completa-do-2-grau-resolucao-de-problemas-i.html' },
+                  { tipo:'Aula 8', titulo:'Equação completa do 2º grau: resolução de problemas II', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-8-equacao-completa-do-2-grau-resolucao-de-problemas-ii.html' },
+                  { tipo:'Aula 9', titulo:'Equações completa do 2º grau: resolução de problemas III', arquivo:'aulas/9-ano/2-tri/equacao-do-2-grau/aula-9-equacoes-completa-do-2-grau-resolucao-de-problemas-iii.html' }
+                ]
+              },
+              {
+                titulo: 'Ângulos formados por retas',
+                accent: 'success',
+                icon: 'angulos',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Relações entre ângulos: ângulos opostos pelo vértice', arquivo:'aulas/9-ano/2-tri/angulos-formados-por-retas/aula-1-relacoes-entre-angulos-angulos-opostos-pelo-vertice.html' },
+                  { tipo:'Aula 2', titulo:'Relações entre ângulos: ângulos formados por retas paralelas cortadas por uma transversal I', arquivo:'aulas/9-ano/2-tri/angulos-formados-por-retas/aula-2-relacoes-entre-angulos-angulos-formados-por-retas-paralelas-cortadas-p.html' },
+                  { tipo:'Aula 3', titulo:'Relações entre ângulos: ângulos formados por retas paralelas cortadas por uma transversal II', arquivo:'aulas/9-ano/2-tri/angulos-formados-por-retas/aula-3-relacoes-entre-angulos-angulos-formados-por-retas-paralelas-cortadas-p.html' }
+                ]
+              },
+              {
+                titulo: 'Figuras e triângulos semelhantes',
+                accent: 'primary',
+                icon: 'semelhanca',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Figuras semelhantes: polígonos semelhantes', arquivo:'aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/aula-1-figuras-semelhantes-poligonos-semelhantes.html' },
+                  { tipo:'Aula 2', titulo:'Figuras semelhantes: triângulos semelhantes', arquivo:'aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/aula-2-figuras-semelhantes-triangulos-semelhantes.html' },
+                  { tipo:'Aula 3', titulo:'Triângulos semelhantes: teorema fundamental - I', arquivo:'aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/aula-3-triangulos-semelhantes-teorema-fundamental-i.html' },
+                  { tipo:'Aula 4', titulo:'Triângulos semelhantes: teorema fundamental - II', arquivo:'aulas/9-ano/2-tri/figuras-e-triangulos-semelhantes/aula-4-triangulos-semelhantes-teorema-fundamental-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Segmentos proporcionais e Teorema de Tales',
+                accent: 'decay',
+                icon: 'tales',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Segmentos proporcionais', arquivo:'aulas/9-ano/2-tri/segmentos-proporcionais-e-teorema-de-tales/aula-1-segmentos-proporcionais.html' },
+                  { tipo:'Aula 2', titulo:'Teorema de Tales I', arquivo:'aulas/9-ano/2-tri/segmentos-proporcionais-e-teorema-de-tales/aula-2-teorema-de-tales-i.html' },
+                  { tipo:'Aula 3', titulo:'Teorema de Tales II', arquivo:'aulas/9-ano/2-tri/segmentos-proporcionais-e-teorema-de-tales/aula-3-teorema-de-tales-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Relações métricas no triângulo retângulo',
+                accent: 'primary',
+                icon: 'pitagoras',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Relações métricas no triângulo retângulo: teorema de Pitágoras', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-1-relacoes-metricas-no-triangulo-retangulo-teorema-de-pitagoras.html' },
+                  { tipo:'Aula 2', titulo:'Relações métricas no triângulo retângulo: 1ª e 2ª relação', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-2-relacoes-metricas-no-triangulo-retangulo-1-e-2-relacao.html' },
+                  { tipo:'Aula 3', titulo:'Relações métricas no triângulo retângulo: 3ª e 4ª relação', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-3-relacoes-metricas-no-triangulo-retangulo-3-e-4-relacao.html' },
+                  { tipo:'Aula 4', titulo:'As relações métricas no triângulo retângulo: resolução de situações-problema - I', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-4-as-relacoes-metricas-no-triangulo-retangulo-resolucao-de-situacoes-pro.html' },
+                  { tipo:'Aula 5', titulo:'As relações métricas no triângulo retângulo: resolução de situações-problema - II', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-5-as-relacoes-metricas-no-triangulo-retangulo-resolucao-de-situacoes-pro.html' },
+                  { tipo:'Aula 6', titulo:'As relações métricas no triângulo retângulo: resolução de situações-problema - III', arquivo:'aulas/9-ano/2-tri/relacoes-metricas-no-triangulo-retangulo/aula-6-as-relacoes-metricas-no-triangulo-retangulo-resolucao-de-situacoes-pro.html' }
+                ]
+              },
+              {
+                titulo: 'Circunferência e círculo',
+                accent: 'growth',
+                icon: 'circulo',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Circunferência e círculo', arquivo:'aulas/9-ano/2-tri/circunferencia-e-circulo/aula-1-circunferencia-e-circulo.html' },
+                  { tipo:'Aula 2', titulo:'Circunferência – posições relativas de uma reta em relação a uma circunferência', arquivo:'aulas/9-ano/2-tri/circunferencia-e-circulo/aula-2-circunferencia-posicoes-relativas-de-uma-reta-em-relacao-a-uma-circunf.html' },
+                  { tipo:'Aula 3', titulo:'Circunferência: propriedades da reta tangente', arquivo:'aulas/9-ano/2-tri/circunferencia-e-circulo/aula-3-circunferencia-propriedades-da-reta-tangente.html' },
+                  { tipo:'Aula 4', titulo:'Circunferência: ângulo central e ângulo inscrito - I', arquivo:'aulas/9-ano/2-tri/circunferencia-e-circulo/aula-4-circunferencia-angulo-central-e-angulo-inscrito-i.html' },
+                  { tipo:'Aula 5', titulo:'Circunferência: ângulo central e ângulo inscrito - II', arquivo:'aulas/9-ano/2-tri/circunferencia-e-circulo/aula-5-circunferencia-angulo-central-e-angulo-inscrito-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Plano cartesiano',
+                accent: 'decay',
+                icon: 'cartesiano',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Plano cartesiano I', arquivo:'aulas/9-ano/2-tri/plano-cartesiano/aula-1-plano-cartesiano-i.html' },
+                  { tipo:'Aula 2', titulo:'Plano cartesiano II', arquivo:'aulas/9-ano/2-tri/plano-cartesiano/aula-2-plano-cartesiano-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Funções: noções e situações-problema',
+                accent: 'primary',
+                icon: 'funcao',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Funções: noções de funções', arquivo:'aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/aula-1-funcoes-nocoes-de-funcoes.html' },
+                  { tipo:'Aula 2', titulo:'Funções: noções de funções - conjuntos domínio e imagem', arquivo:'aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/aula-2-funcoes-nocoes-de-funcoes-conjuntos-dominio-e-imagem.html' },
+                  { tipo:'Aula 3', titulo:'Funções: resolução de situações-problema envolvendo uma função afim I', arquivo:'aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/aula-3-funcoes-resolucao-de-situacoes-problema-envolvendo-uma-funcao-afim-i.html' },
+                  { tipo:'Aula 4', titulo:'Funções: resolução de situações-problema envolvendo uma função afim II', arquivo:'aulas/9-ano/3-tri/funcoes-nocoes-e-situacoes-problema/aula-4-funcoes-resolucao-de-situacoes-problema-envolvendo-uma-funcao-afim-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Função afim: gráfico e zero',
+                accent: 'growth',
+                icon: 'funcao-afim',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Funções: Representação gráfica da função afim I', arquivo:'aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/aula-1-funcoes-representacao-grafica-da-funcao-afim-i.html' },
+                  { tipo:'Aula 2', titulo:'Funções: Representação gráfica da função afim II', arquivo:'aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/aula-2-funcoes-representacao-grafica-da-funcao-afim-ii.html' },
+                  { tipo:'Aula 3', titulo:'Funções: zero da função afim I', arquivo:'aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/aula-3-funcoes-zero-da-funcao-afim-i.html' },
+                  { tipo:'Aula 4', titulo:'Funções: Zero da função afim II', arquivo:'aulas/9-ano/3-tri/funcao-afim-grafico-e-zero/aula-4-funcoes-zero-da-funcao-afim-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Porcentagem: acréscimos e decréscimos',
+                accent: 'decay',
+                icon: 'porcentagem',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem: acréscimos e decréscimos I', arquivo:'aulas/9-ano/3-tri/porcentagem-acrescimos-e-decrescimos/aula-1-porcentagem-acrescimos-e-decrescimos-i.html' },
+                  { tipo:'Aula 2', titulo:'Porcentagem: acréscimos e decréscimos II', arquivo:'aulas/9-ano/3-tri/porcentagem-acrescimos-e-decrescimos/aula-2-porcentagem-acrescimos-e-decrescimos-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Juros simples e compostos',
+                accent: 'primary',
+                icon: 'juros',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Porcentagem e problemas envolvendo juros: juros simples I', arquivo:'aulas/9-ano/3-tri/juros-simples-e-compostos/aula-1-porcentagem-e-problemas-envolvendo-juros-juros-simples-i.html' },
+                  { tipo:'Aula 2', titulo:'Porcentagem e problemas envolvendo juros: juros simples II', arquivo:'aulas/9-ano/3-tri/juros-simples-e-compostos/aula-2-porcentagem-e-problemas-envolvendo-juros-juros-simples-ii.html' },
+                  { tipo:'Aula 3', titulo:'Porcentagem e problemas envolvendo juros: juros compostos I', arquivo:'aulas/9-ano/3-tri/juros-simples-e-compostos/aula-3-porcentagem-e-problemas-envolvendo-juros-juros-compostos-i.html' },
+                  { tipo:'Aula 4', titulo:'Porcentagem e problemas envolvendo juros: juros compostos II', arquivo:'aulas/9-ano/3-tri/juros-simples-e-compostos/aula-4-porcentagem-e-problemas-envolvendo-juros-juros-compostos-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Princípio fundamental da contagem',
+                accent: 'growth',
+                icon: 'contagem',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Princípio fundamental da contagem I', arquivo:'aulas/9-ano/3-tri/principio-fundamental-da-contagem/aula-1-principio-fundamental-da-contagem-i.html' },
+                  { tipo:'Aula 2', titulo:'Princípio fundamental da contagem II', arquivo:'aulas/9-ano/3-tri/principio-fundamental-da-contagem/aula-2-principio-fundamental-da-contagem-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Probabilidade',
+                accent: 'decay',
+                icon: 'dado',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Probabilidade: espaço amostral e evento aleatório', arquivo:'aulas/9-ano/3-tri/probabilidade/aula-1-probabilidade-espaco-amostral-e-evento-aleatorio.html' },
+                  { tipo:'Aula 2', titulo:'Probabilidade: eventos independentes I', arquivo:'aulas/9-ano/3-tri/probabilidade/aula-2-probabilidade-eventos-independentes-i.html' },
+                  { tipo:'Aula 3', titulo:'Probabilidade: eventos independentes II', arquivo:'aulas/9-ano/3-tri/probabilidade/aula-3-probabilidade-eventos-independentes-ii.html' },
+                  { tipo:'Aula 4', titulo:'Probabilidade: eventos dependentes', arquivo:'aulas/9-ano/3-tri/probabilidade/aula-4-probabilidade-eventos-dependentes.html' }
+                ]
+              },
+              {
+                titulo: 'Estatística: gráficos, medidas e pesquisa',
+                accent: 'primary',
+                icon: 'histograma',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Organização de dados em gráficos e tabelas I', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-1-organizacao-de-dados-em-graficos-e-tabelas-i.html' },
+                  { tipo:'Aula 2', titulo:'Organização de dados em gráficos e tabelas II', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-2-organizacao-de-dados-em-graficos-e-tabelas-ii.html' },
+                  { tipo:'Aula 3', titulo:'Estatística: Medidas de tendência central - média aritmética simples e mediana', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-3-estatistica-medidas-de-tendencia-central-media-aritmetica-simples-e-me.html' },
+                  { tipo:'Aula 4', titulo:'Estatística: Medidas de tendência central - moda', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-4-estatistica-medidas-de-tendencia-central-moda.html' },
+                  { tipo:'Aula 5', titulo:'Estatística: tipos de gráficos I', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-5-estatistica-tipos-de-graficos-i.html' },
+                  { tipo:'Aula 6', titulo:'Estatística: tipos de gráficos II', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-6-estatistica-tipos-de-graficos-ii.html' },
+                  { tipo:'Aula 7', titulo:'Estatística: interpretação e construção de gráficos I', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-7-estatistica-interpretacao-e-construcao-de-graficos-i.html' },
+                  { tipo:'Aula 8', titulo:'Estatística: interpretação e construção de gráficos II', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-8-estatistica-interpretacao-e-construcao-de-graficos-ii.html' },
+                  { tipo:'Aula 9', titulo:'Estatística: elaborando uma pesquisa I', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-9-estatistica-elaborando-uma-pesquisa-i.html' },
+                  { tipo:'Aula 10', titulo:'Estatística: elaborando uma pesquisa II', arquivo:'aulas/9-ano/3-tri/estatistica-graficos-medidas-e-pesquisa/aula-10-estatistica-elaborando-uma-pesquisa-ii.html' }
+                ]
+              },
+              {
+                titulo: 'Propriedades dos polígonos',
+                accent: 'success',
+                icon: 'poligono',
+                pendente: true,
+                itens: [
+                  { tipo:'Aula 1', titulo:'Propriedades dos polígonos I', arquivo:'aulas/9-ano/3-tri/propriedades-dos-poligonos/aula-1-propriedades-dos-poligonos-i.html' },
+                  { tipo:'Aula 2', titulo:'Propriedades dos polígonos II', arquivo:'aulas/9-ano/3-tri/propriedades-dos-poligonos/aula-2-propriedades-dos-poligonos-ii.html' }
+                ]
+              },
               // <<< mat-9ano-novas
               {
                 titulo: 'Equações do 2º grau',
